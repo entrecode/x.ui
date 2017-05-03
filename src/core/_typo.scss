@@ -1,0 +1,16 @@
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+
+body {
+  font-family: $bodyFont;
+  font-size: 14px;
+
+  @media (min-width: $bpSm) {
+    font-size: 100%;
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+.mega, .giga, .kilo {
+  font-family: $headerFont;
+}

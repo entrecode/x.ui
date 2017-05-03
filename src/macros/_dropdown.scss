@@ -1,0 +1,125 @@
+// dropdown.scss
+// 1.0.0
+// @author Bernhard Ruoff, Michael Locher
+// ------
+//
+// css only dropdown
+//
+// @example
+//  <ul class="dropdown">
+//    <li tabindex="1">
+//      Label
+//      <ul class="dropdown-select">
+//        <li>
+//          <span class="btn clear">Label</span>
+//        </li>
+//        <li class="divider"></li>
+//        <li>
+//          <span class="btn clear">Label</span>
+//        </li>
+//      </ul>
+//    </li>
+//  </ul>
+
+ul.dropdown {
+  @extend ul.unstyled;
+  outline: none;
+
+  > li {
+    position: relative;
+    outline: none;
+    cursor: pointer;
+
+    > a {
+      &:hover,
+      &:focus {
+        & + ul.dropdown-options {
+          display: inherit;
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus {
+      > .btn {
+        @extend .btn.active;
+      }
+
+      > .btn.minor {
+        @extend .btn.minor.active;
+      }
+
+      > .btn.super {
+        @extend .btn.super.active;
+      }
+
+      > .btn.clear {
+        @extend .btn.clear.active;
+      }
+
+      ul.dropdown-options {
+        display: inherit;
+        opacity: 1;
+      }
+    }
+  }
+
+  ul.dropdown-options {
+    position: absolute;
+    top: 100%;
+    background-color: getColor(base, background);
+    @include border-radius(rem($dropdown-radius));
+    @extend %shadow%dropdown;
+    @include transition(opacity .4s);
+    max-height: 320px;
+    overflow-y: auto;
+    display: none;
+    opacity: 0;
+    z-index: 100;
+    padding: rem(4);
+    margin: 0;
+
+    li {
+      display: block;
+      text-align: left;
+
+      .btn {
+        @extend .btn.block;
+        text-align: left;
+      }
+
+      &.divider {
+        margin: rem(8) 0;
+        background-color: getColor(base, divider);
+        height: 1px;
+      }
+    }
+  }
+
+  &.center {
+    ul.dropdown-options {
+      left: 50%;
+      @include transform(translateX(-50%));
+    }
+  }
+
+  &.right {
+    ul.dropdown-options {
+      right: 0;
+    }
+  }
+
+  &.left {
+    ul.dropdown-options {
+      left: 0;
+    }
+  }
+
+  &.full {
+    ul.dropdown-options {
+      left: 0;
+      width: 100%;
+    }
+  }
+}

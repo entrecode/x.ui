@@ -1,0 +1,111 @@
+/// typo
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+
+body {
+  color: getColor(base, text);
+}
+
+a {
+  color: getColor(base, link);
+  @include transition(color .2s);
+  cursor: pointer;
+
+  * {
+    cursor: pointer;
+  }
+
+  &:hover {
+    color: getColor(base, linkHover);
+  }
+}
+
+p {
+  margin: rem(8) 0;
+
+  &.small {
+    vertical-align: baseline;
+    font-size: rem(12);
+    line-height: rem(16);
+  }
+
+  &.big,
+  &.lead {
+    font-size: em(18);
+    line-height: em(28, 18);
+    font-weight: lighter;
+  }
+
+  strong,
+  small {
+    vertical-align: baseline;
+  }
+}
+
+.text-default {
+  color: getColor(base, text) !important;
+}
+
+.text-light {
+  color: getColor(text, light) !important;
+}
+
+.text-lighter {
+  color: getColor(text, lighter) !important;
+}
+
+.text-lightest {
+  color: getColor(text, lightest) !important;
+}
+
+.text-invert {
+  color: getColor(text, invert) !important;
+}
+
+.text-link {
+  color: getColor(base, link) !important;
+}
+
+.text-super {
+  color: getColor(base, super) !important;
+}
+
+.text-highlight {
+  color: getColor(base, highlight) !important;
+}
+
+.text-info {
+  color: getColor(state, info) !important;
+}
+
+.text-disabled {
+  color: getColor(state, disabled) !important;
+}
+
+.text-error {
+  color: getColor(state, error) !important;
+}
+
+.text-success {
+  color: getColor(state, success) !important;
+}
+
+.text-warning {
+  color: getColor(state, warning) !important;
+}
+
+mark {
+  background-color: transparent;
+  color: getColor(base, highlight);
+  vertical-align: baseline;
+}
+
+.nowrap {
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.ellipsis {
+  @include ellipsis;
+  display: block;
+}

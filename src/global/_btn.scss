@@ -1,0 +1,283 @@
+/// button styles
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+///
+/// @param {boolean} $btn-round - can be set in config.scss
+/// @param {string} $btn-weight - for font-weight. can be set in config.scss
+/// @param {number} $btn-radius - for default button radius. can be set in config.scss
+/// @param {number} $btn-wide -  button width for .wide . can be set in config.scss
+/// @param {number} $btn-wide-small - button width for .wide.small . can be set in config.scss
+
+input[type=submit],
+input[type=reset],
+button,
+.btn {
+  // button core style
+  @include appearance(none);
+  @include user-select(none);
+  outline: none;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  touch-action: manipulation;
+  text-decoration: none;
+  position: relative;
+  @include transition(background-color .4s);
+  height: auto;
+
+  // button typo style
+  font-size: rem(16);
+  line-height: rem(24);
+  font-weight: $btn-weight;
+  min-width: rem(40);
+  margin: rem(4);
+  padding: rem(8) rem(16);
+
+  // button default color style
+  background-color: getColor(base ,link);
+  color: setColor(getColor(base ,link));
+  @include border-radius(rem($btn-radius));
+
+  * {
+    cursor: pointer;
+  }
+
+  strong {
+    vertical-align: baseline;
+  }
+
+  // default :hover and .active state
+  &.active,
+  &:hover,
+  &:focus {
+    background-color: getColor(base, linkHover);
+    color: setColor(getColor(base ,link));
+    outline: none;
+  }
+
+  // disabled state style for buttons
+  &.disabled,
+  &[disabled*='disabled'] {
+    opacity: .6;
+    cursor: not-allowed;
+    @include box-shadow(none);
+  }
+
+  // little transform animation onclick
+  &:active {
+    @include transform(translate3d(0, 2px, 0));
+  }
+
+  // ec-icon styles for default btn
+  .ec-icon {
+    display: inline;
+
+    &:before {
+      padding-right: rem(8);
+      vertical-align: top;
+    }
+
+    &:empty {
+      margin-left: rem(-16);
+      margin-right: rem(-16);
+
+      &:before {
+        padding-right: 0;
+      }
+    }
+  }
+
+  // minor button style, for secondary or minor interactions
+  &.minor {
+    background-color: getColor(base, minor);
+    color: setColor(getColor(base, minor));
+
+    &.active,
+    &:hover,
+    &:focus {
+      background-color: getColor(base, minorHover);
+      color: setColor(getColor(base, minor));
+    }
+  }
+
+  // super button style, for call to action
+  &.super {
+    background-color: getColor(base, super);
+    color: setColor(getColor(base, super));
+
+    &.active,
+    &:hover,
+    &:focus {
+      background-color: getColor(base, superHover);
+      color: setColor(getColor(base, super));
+    }
+  }
+
+  // invert button style
+  &.invert {
+    background-color: getColor(base, background);
+    color: getColor(base, link);
+
+    &.active,
+    &:hover,
+    &:focus {
+      color: getColor(base, linkHover);
+    }
+  }
+
+  // clear button style, for link-alike buttons
+  &.clear {
+    background-color: transparent;
+    color: getColor(base, link);
+
+    &.active,
+    &:hover,
+    &:focus {
+      background-color: getColor(state, hover);
+      color: getColor(base, linkHover);
+    }
+  }
+
+  // outlined button style
+
+  &.outlined {
+    background-color: transparent !important;
+    color: getColor(base, link);
+    @include box-shadow(0 0 0 1px getColor(base, link));
+
+    &.active,
+    &:hover,
+    &:focus {
+      color: getColor(base, linkHover);
+      background-color: transparent;
+      @include box-shadow(0 0 0 1px getColor(base, linkHover));
+    }
+
+    &.minor {
+      color: getColor(base, link);
+      @include box-shadow(0 0 0 1px getColor(base, minor));
+
+      &.active,
+      &:hover,
+      &:focus {
+        color: getColor(base, link);
+        @include box-shadow(0 0 0 1px getColor(base, minorHover));
+      }
+    }
+
+    &.super {
+      color: getColor(base, super);
+      @include box-shadow(0 0 0 1px getColor(base, super));
+
+      &.active,
+      &:hover,
+      &:focus {
+        color: getColor(base, superHover);
+        @include box-shadow(0 0 0 1px getColor(base, superHover));
+      }
+    }
+
+    &.invert {
+      color: getColor(text, invert);
+      @include box-shadow(0 0 0 1px getColor(base, background));
+
+      &.active,
+      &:hover,
+      &:focus {
+        color: getColor(text, invert);
+        @include box-shadow(0 0 0 1px getColor(text, invert));
+      }
+    }
+  }
+
+  // additional embossed class
+  &.embossed {
+    @include box-shadow(0 4px 8px rgba(black, .2), 0 4px 24px rgba(black, .2));
+
+    &:hover {
+      @include box-shadow(0 2px 4px rgba(black, .2), 0 2px 8px rgba(black, .2));
+    }
+  }
+
+  // small buttons
+  &.small {
+    font-size: rem(14);
+    line-height: rem(24);
+    min-width: rem(24);
+    height: auto;
+    @include border-radius(rem($btn-radius * .5));
+
+    .ec-icon {
+      &:before {
+        font-size: rem(14);
+        line-height: rem(24);
+      }
+    }
+  }
+
+  // big buttons
+  &.big {
+    font-size: rem(20);
+    line-height: rem(28);
+    padding: rem(10) rem(16);
+    height: auto;
+
+    .ec-icon {
+      &:before {
+        font-size: rem(28);
+        line-height: rem(28);
+      }
+    }
+  }
+
+  // buttons with a minimum width
+  &.wide {
+    min-width: $btn-wide;
+
+    &.small {
+      min-width: $btn-wide-small;
+    }
+  }
+
+  &.round {
+    @include border-radius(rem(20));
+
+    &.small {
+      @include border-radius(rem(12));
+    }
+
+    &.big {
+      @include border-radius(rem(24));
+    }
+  }
+
+  // full-width buttons
+  &.block {
+    width: 100%;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/// sets buttons to rounded
+/// @param {boolean} $btn-round - can be set in config.scss
+
+@if $btn-round == true {
+  input[type=submit],
+  input[type=reset],
+  button,
+  .btn {
+    @include border-radius(rem(20));
+
+    &.small {
+      @include border-radius(rem(12));
+    }
+
+    &.big {
+      @include border-radius(rem(24));
+    }
+  }
+}

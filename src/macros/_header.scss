@@ -1,0 +1,52 @@
+////
+/// header - 1.0.0
+
+header {
+  &.header {
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-content(center);
+    @include align-items(center);
+    padding: 0 rem(8);
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    nav {
+      margin-right: rem(-8);
+
+      &:only-child {
+        @include flexbox;
+        @include justify-content(flex-end);
+        width: 100%;
+      }
+
+      ul {
+        @include flexbox;
+        @include justify-content(flex-end);
+      }
+    }
+
+    &.stacked {
+      @include flex-direction(column);
+      @include align-items(flex-start);
+
+      nav {
+        margin-right: 0;
+        ul {
+          @include justify-content(flex-start);
+        }
+      }
+    }
+
+    &.small {
+      font-size: 1em;
+      margin-bottom: 0;
+    }
+  }
+}

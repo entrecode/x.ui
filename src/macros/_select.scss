@@ -1,0 +1,171 @@
+//// 
+/// select.scss - 1.0.0
+/// css only select
+///
+/// @author Bernhard Ruoff, Michael Locher
+///
+/// @example
+///  <ul class="select">
+///    <li tabindex="1">
+///      Label
+///      <ul class="select-options">
+///        <li>
+///          <span class="btn clear">Label</span>
+///        </li>
+///        <li class="divider"></li>
+///        <li>
+///          <span class="btn clear">Label</span>
+///        </li>
+///      </ul>
+///    </li>
+///  </ul>
+
+.select {
+  @extend ul.unstyled;
+  outline: none;
+
+  > li {
+    @extend %input;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+
+    .placeholder {
+      display: inline;
+      color: getColor(text, light);
+      font-size: 1em;
+      @include ellipsis;
+      cursor: pointer;
+    }
+
+    &:hover {
+      .placeholder {
+        color: getColor(base, text);
+      }
+    }
+
+    &:after {
+      @extend .caret;
+    }
+
+    &[tabindex] {
+      &:focus {
+        ul.select-options {
+          display: inherit;
+          opacity: 1;
+        }
+      }
+    }
+
+    > input:not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]) {
+      border: none;
+      padding: 0;
+      margin: 0;
+      @include border-radius(0);
+      @include box-shadow(none);
+      display: inline-block;
+      width: 100%;
+      vertical-align: middle;
+
+      &[tabindex] {
+        &:focus {
+          & + ul.select-options {
+            display: inherit;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  ul.select-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: getColor(base, background);
+    @include border-radius(rem($dropdown-radius));
+    @extend %shadow%dropdown;
+    @include transition(opacity .4s);
+    max-height: 320px;
+    overflow-y: auto;
+    display: none;
+    opacity: 0;
+    z-index: 100;
+    padding: rem(4);
+    margin: 0;
+    margin-top: 1px;
+
+    li {
+      display: block;
+      text-align: left;
+
+      &.select-options-intro {
+        background-color: getColor(background, lightest);
+        color: getColor(text, light);
+        text-align: center;
+        padding: rem(4) rem(8);
+        font-size: rem(12);
+        vertical-align: baseline;
+      }
+
+      .btn {
+        @extend .btn.block;
+        @include border-radius(rem($btn-radius));
+        text-align: left;
+        position: relative;
+
+        .label {
+          position: absolute;
+          right: rem(8);
+          top: 50%;
+          @include transform(translateY(-50%));
+          @extend .label;
+        }
+      }
+
+      &.divider {
+        margin: rem(8) 0;
+        background-color: getColor(base, divider);
+        height: 1px;
+      }
+    }
+  }
+
+  &.search {
+    > li {
+      padding-left: rem(40) !important;
+
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        @extend .ec-icon;
+        content: "\e0e5";
+        position: absolute;
+        color: getColor(text, light);
+        left: rem(16);
+        top: 50%;
+        @include transform(translateY(-50%));
+        z-index: 1;
+      }
+
+      ul.select-options {
+        li {
+
+          &.select-options-intro {
+            text-align: left;
+            padding-left: rem(36);
+          }
+        }
+      }
+    }
+  }
+
+  &.big {
+    > li {
+      @extend %input.big;
+    }
+  }
+}

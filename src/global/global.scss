@@ -1,0 +1,17 @@
+/// globals.scss
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+///
+/// global styles for xlcss-ui
+/// global styles refer single objects, that can be combined to macros
+/// all styles should be highly adaptable for other project
+
+@import "btn";
+@import "fieldset";
+@import "fieldset-grid";
+@import "headings";
+@import "input";
+@import "label";
+@import "nav";
+@import "table";
+@import "typo";

@@ -1,0 +1,71 @@
+/// label.scss
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+
+
+.label {
+  font-size: rem(14);
+  line-height: rem(20);
+  font-weight: $btn-weight;
+  white-space: nowrap;
+  display: inline-block;
+  padding: 0 rem(8);
+  background-color: getColor(base, minor);
+  color: setColor(getColor(base, minor));
+  @include border-radius(rem($label-radius));
+
+  &.link {
+    background-color: getColor(base, link);
+    color: setColor(getColor(base, link));
+  }
+
+  &.super {
+    background-color: getColor(base, super);
+    color: setColor(getColor(base, super));
+  }
+
+  &.invert {
+    background-color: getColor(base, background);
+    color: setColor(getColor(base, background));
+  }
+
+  &.highlight {
+    background-color: getColor(base, highlight);
+    color: setColor(getColor(base, highlight));
+  }
+
+  &.active {
+    background-color: getColor(state, active);
+    color: setColor(getColor(state, active));
+  }
+
+  &.disabled {
+    background-color: getColor(state, disabled);
+    color: getColor(state, disabled);
+  }
+
+  &.info {
+    background-color: getColor(state, info);
+    color: setColor(getColor(state, info));
+  }
+
+  &.error {
+    background-color: getColor(state, error);
+    color: setColor(getColor(state, error));
+  }
+
+  &.success {
+    background-color: getColor(state, success);
+    color: setColor(getColor(state, success));
+  }
+
+  &.warning {
+    background-color: getColor(state, warning);
+    color: setColor(getColor(state, warning));
+  }
+
+  &.small {
+    font-size: rem(12);
+    line-height: rem(16);
+  }
+}

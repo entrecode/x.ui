@@ -1,0 +1,132 @@
+/// form
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+
+%input {
+  display: block;
+  outline: none;
+  border: 1px solid getColor(base, border);
+  background-color: getColor(base, background);
+  color: getColor(base, text);
+  font-size: 1em;
+  width: 100%;
+  line-height: rem(24);
+  padding: rem(4) rem(16);
+  @include border-radius(rem($input-radius));
+  margin: rem(4) 0;
+  text-align: left;
+
+  @include placeholder {
+    font-size: 1em;
+    line-height: rem(24);
+    color: getColor(text, light);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus,
+  &:hover {
+    border-color: darken(getColor(base, border), 20);
+    @extend %shadow%hover;
+    @include placeholder {
+      color: getColor(base, text);
+    }
+  }
+
+  &:focus:hover {
+    @include placeholder {
+      color: getColor(text, lightest);
+    }
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: getColor(background, lightest);
+    border-color: getColor(background, light);
+  }
+
+  &:invalid {
+    border-color: red;
+  }
+
+  &.small {
+    font-size: em(14);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &.embossed {
+    border: none;
+    @extend %shadow%dropdown;
+  }
+
+  &.big {
+    padding-top: rem(8);
+    padding-bottom: rem(8);
+  }
+
+  // reset for webkit-autofill background
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    color: white;
+  }
+}
+
+input:not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  @extend %input;
+}
+
+select {
+  height: rem(32);
+  padding: 0;
+
+  &[multiple] {
+    height: auto;
+  }
+
+  option {
+    padding: 0 rem(8);
+  }
+}
+
+// Keep the original size
+input[type="checkbox"],
+input[type="file"],
+input[type="image"],
+input[type="radio"] {
+  height: auto;
+  width: auto;
+  display: inline-block;
+}
+
+// Checkbox & radio
+input[type="checkbox"],
+input[type="radio"] {
+  line-height: normal;
+  padding: 0;
+  vertical-align: middle;
+
+  &:hover,
+  &:focus {
+    @extend %shadow%hover;
+  }
+
+  & + small {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+// Textarea
+textarea {
+  height: auto;
+  resize: vertical;
+}

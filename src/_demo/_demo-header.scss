@@ -1,0 +1,18 @@
+.demo-intro {
+  padding: 8vw 0;
+  @include transform(skewY(-8deg));
+  @include transform-origin(0);
+  background-color: getColor(base, super);
+  margin-bottom: rem(80);
+
+  .demo-intro-body {
+    @include transform(skewY(8deg));
+    color: getColor(text, invert);
+    font-size: rem(24);
+    
+    a {
+      color: getColor(text, invert);
+      border-bottom: 2px dotted getColor(text, invert);
+    }
+  }
+}

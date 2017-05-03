@@ -1,0 +1,87 @@
+/// headings
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.giga, .mega, .kilo {
+  font-weight: $headings-weight;
+  margin: rem(16) 0 rem(8);
+
+  small,
+  .small {
+    font-size: 87.5%;
+    vertical-align: baseline;
+  }
+
+  .big {
+    font-size: 112.5%;
+  }
+}
+
+// Ratio for downscaling on mobile devices
+$ratioXS: .8;
+
+h1,
+.h1,
+.giga {
+  font-size: em($h1-size * $ratioXS);
+  line-height: em(($h1-height * $ratioXS), ($h1-size * $ratioXS));
+
+  @media (min-width: $bpSm) {
+    font-size: em($h1-size);
+    line-height: em($h1-height, $h1-size);
+  }
+}
+
+h2,
+.h2 {
+  font-size: em($h2-size * $ratioXS);
+  line-height: em(($h2-height * $ratioXS), ($h2-size * $ratioXS));
+
+  @media (min-width: $bpSm) {
+    font-size: em($h2-size);
+    line-height: em($h2-height, $h2-size);
+  }
+}
+
+h3,
+.h3,
+.mega {
+  font-size: em($h3-size * $ratioXS);
+  line-height: em(($h3-height * $ratioXS), ($h3-size * $ratioXS));
+
+  @media (min-width: $bpSm) {
+    font-size: em($h3-size);
+    line-height: em($h3-height, $h3-size);
+  }
+}
+
+h4,
+.h4 {
+  font-size: em($h4-size * $ratioXS);
+  line-height: em(($h4-height * $ratioXS), ($h4-size * $ratioXS));
+
+  @media (min-width: $bpSm) {
+    font-size: em($h4-size);
+    line-height: em($h4-height, $h4-size);
+  }
+}
+
+h5,
+.h5,
+.kilo {
+  font-size: em($h5-size * $ratioXS);
+  line-height: em(($h5-height * $ratioXS), ($h5-size * $ratioXS));
+
+  @media (min-width: $bpSm) {
+    font-size: em($h5-size);
+    line-height: em($h5-height, $h5-size);
+  }
+}
+
+h6,
+.h6 {
+  font-size: em($h6-size);
+  line-height: em($h6-height, $h6-size);
+}

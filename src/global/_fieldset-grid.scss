@@ -1,0 +1,17 @@
+/// global form-grid
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+
+form {
+  fieldset {
+    [data-row] {
+      margin-left: rem(-8);
+      margin-right: rem(-8);
+    }
+
+    [data-col] {
+      padding-left: rem(8);
+      padding-right: rem(8);
+    }
+  }
+}

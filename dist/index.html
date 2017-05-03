@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>x.ui docu</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="xlcss-ui.css">
+  <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var codes = document.getElementsByTagName('code');
+      for (var i = 0; i < codes.length; i++) {
+        codes[i].innerHTML = codes[i].innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/, '');
+        hljs.highlightBlock(codes[i]);
+      }
+    });
+  </script>
+</head>
+<body class="demo">
+<header class="demo-intro">
+  <div class="demo-intro-body">
+    <div data-row>
+      <div data-col="+4sm +3md 8sm 6md">
+        <h1>x.ui</h1>
+        <div class="label invert">v 0.0.1</div>
+        <div class="label invert">xlcss-3.0.0</div>
+        <div class="label invert">ec-icons-1.1.14</div>
+        <p class="lead">x.ui is based on the scss framework <strong><a
+            href="https://github.com/entrecode/xlcss" target="_blank">xlcss</a></strong>. It is
+          inspired by the
+          <a href="https://medium.com/re-write/the-unicorn-workflow-design-to-code-with-atomic-design-principles-and-sketch-8b0fe7d05a37"
+             target="_blank">unicorn workflow</a>. <br>
+          the concept is based on a modular approach.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div data-row>
+  <div data-col="4sm 3md">
+    <aside class="demo-aside">
+      <nav>
+        <ul>
+          <li>
+            <a href="">Basics</a>
+          </li>
+          <li>
+            <a href="">Config</a>
+          </li>
+          <li>
+            <a href="">Core</a>
+          </li>
+          <li>
+            <a href="">Global</a>
+          </li>
+          <li>
+            <a href="">Macros</a>
+          </li>
+          <li>
+            <a href="">Project</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="bumper">
+
+      </div>
+    </aside>
+  </div>
+  <div data-col="8sm 6lg">
+    <main class="demo-body">
+      <section>
+        <header class="demo-header">
+          <h2>basics</h2>
+        </header>
+
+        <section>
+          <h3 class="text-super">files</h3>
+          <pre><code>
+  xlcss-ui/
+  ├── _config.scss
+  ├── core/
+  │   ├── _colors.scss
+  │   ├── _typo.scss
+  │   └── core.scss
+  ├── global/
+  ├── macros/
+  └── partials/</code></pre>
+        </section>
+      </section>
+
+      <section>
+        <header class="demo-header">
+          <h2>core</h2>
+        </header>
+
+        <div data-row>
+          <div data-col="4sm">
+            <h3 class="text-super">core.colors</h3>
+            <p class="lead">the colors are organised via a map and can be accessed via <span
+                class="code">getColor()</span> function.</p>
+            <pre><code class="scss">.example { color: getColor(base, link); }</code></pre>
+            <div class="spacing small"></div>
+            <h4>used variables in config</h4>
+            <pre><code class="scss">
+$background: white;
+$text: #212121;
+$link: #2962FF;
+$super: #FF5252;
+$minor: #D7F2FF;
+$highlight: #A7FFEB;</code>
+            </pre>
+          </div>
+          <div data-col="8sm">
+            <h4>base colors</h4>
+            <ul class="ui-colors-list">
+              <li>
+                <div class="ui-color base-text">
+                  <label>text</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-background">
+                  <label>background</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-link">
+                  <label>link</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-linkHover">
+                  <label>linkHover</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-super">
+                  <label>super</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-superHover">
+                  <label>superHover</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-minor">
+                  <label>minor</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-minorHover">
+                  <label>minorHover</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-highlight">
+                  <label>base, highlight</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-highlightHover">
+                  <label>highlightHover</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-border">
+                  <label>border</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-divider">
+                  <label>divider</label>
+                </div>
+              </li>
+            </ul>
+            <h4>text colors</h4>
+            <ul class="ui-colors-list">
+              <li>
+                <div class="ui-color text-light">
+                  <label>light</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color text-lighter">
+                  <label>lighter</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color text-lightest">
+                  <label>lightest</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color text-invert">
+                  <label>invert</label>
+                </div>
+              </li>
+            </ul>
+            <h4>background colors</h4>
+            <ul class="ui-colors-list">
+              <li>
+                <div class="ui-color background-light">
+                  <label>light</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color background-lighter">
+                  <label>lighter</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color background-lightest">
+                  <label>lightest</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color background-invert">
+                  <label>invert</label>
+                </div>
+              </li>
+            </ul>
+            <h4>state colors</h4>
+            <ul class="ui-colors-list">
+              <li>
+                <div class="ui-color state-hover">
+                  <label>hover</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-selected">
+                  <label>selected</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-active">
+                  <label>active</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-disabled">
+                  <label>disabled</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-info">
+                  <label>info</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-error">
+                  <label>error</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-success">
+                  <label>success</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-warning">
+                  <label>warning</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="text-super">core.typo</h3>
+        <p class="lead">defines font-family and basic font-sizes for <span class="code">body</span>
+          and headings like <span class="code">h1</span> <span class="code">h2</span> <span
+              class="code">h3</span> <span class="code">h4</span> <span class="code">h5</span> <span
+              class="code">h6</span></p>
+        <h4>used variables in config</h4>
+        <pre><code class="scss">
+$bodyFont: 'Nunito', sans-serif;
+$headerFont: 'Nunito', sans-serif;
+
+// font-weight config
+$weight-light: 300;
+$weight-normal: 400;
+$weight-bold: 700;</code></pre>
+      </section>
+
+      <section>
+        <header class="demo-header">
+          <h2>global</h2>
+        </header>
+        <p class="lead">global styles for html tags and basic design elements like buttons, heading,
+          forms or general typography, Global UI elements are the smallest </p>
+
+        <h3 class="text-super">global.buttons</h3>
+        <div data-row>
+          <div data-col="6sm">
+          </div>
+          <div data-col="6sm">
+            <h4>Markup</h4>
+            <pre><code class="html">
+<input type="submit" value="default">
+
+<input type="reset" value="default">
+
+<button>default</button>
+
+<a href="" class="btn">default</a></code></pre>
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="3sm">
+            <h5>default</h5>
+            <div class="well small">
+              <a class="btn block">.btn</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <h5>minor</h5>
+            <div class="well small">
+              <a class="btn minor block">.btn.minor</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <h5>super</h5>
+            <div class="well small">
+              <a class="btn super block">.btn.super</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <h5>clear</h5>
+            <div class="well small">
+              <a class="btn clear block">.btn.clear</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <h5>invert</h5>
+            <div class="well small">
+              <a class="btn invert block">.btn.invert</a>
+            </div>
+          </div>
+        </div>
+
+        <h4>outlined</h4>
+        <div data-row>
+          <div data-col="3sm">
+            <div class="well small">
+              <a class="btn outlined block">.btn.outlined</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <div class="well small">
+              <a class="btn outlined minor block">.btn.outlined.minor</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <div class="well small">
+              <a class="btn outlined super block">.btn.outlined.super</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <div class="well small super">
+              <a class="btn outlined invert block">.btn.outlined.invert</a>
+            </div>
+          </div>
+        </div>
+
+        <h4>round</h4>
+        <div data-row>
+          <div data-col="3sm">
+            <div class="well small">
+              <a class="btn round block">.btn.round</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <div class="well small">
+              <a class="btn round minor block">.btn.round.minor</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <div class="well small">
+              <a class="btn round super block">.btn.round.super</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <div class="well small super">
+              <a class="btn round invert block">.btn.round.invert</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <div class="well small">
+              <a class="btn round outlined block">.btn.round.outlined</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <div class="well small">
+              <a class="btn round minor outlined block">.btn.round.minor.outlined</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <div class="well small">
+              <a class="btn round super outlined block">.btn.round.super.outlined</a>
+            </div>
+          </div>
+          <div data-col="3sm">
+            <div class="well small super">
+              <a class="btn round invert outlined block">.btn.round.invert.outlined</a>
+            </div>
+          </div>
+        </div>
+
+        <h4>embossed</h4>
+        <a class="btn embossed">.btn.round</a>
+        <a class="btn minor embossed">.btn.minor.round</a>
+        <a class="btn super embossed">.btn.super.round</a>
+
+        <div class="bumper"></div>
+
+        <h4>sizes</h4>
+        <a class="btn small">.btn.small</a>
+        <a class="btn big">.btn.big</a>
+        <a class="btn wide">.btn.wide</a>
+        <a class="btn block">.btn.block</a>
+
+        <div class="bumper big"></div>
+
+        <h3 class="text-super">global.form</h3>
+        <p>styles for forms</p>
+
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="text"]</span>
+            <label>
+              Label
+              <input type="text" placeholder="Placeholder...">
+              <p>additional input information</p>
+            </label>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<label>
+  Label
+  <input type="text" placeholder="Placeholder...">
+  <p>additional input information</p>
+</label></code></pre>
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="number"]</span>
+            <label>
+              <input type="number" placeholder="Placeholder...">
+            </label>
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="tel"]</span>
+            <label>
+              <input type="tel" placeholder="Placeholder...">
+            </label>
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="email"]</span>
+            <label>
+              <input type="email" placeholder="Placeholder...">
+            </label>
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="date"]</span>
+            <label>
+              <input type="date" placeholder="Placeholder...">
+            </label>
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="file"]</span>
+            <label>
+              <input type="file">
+            </label>
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="password"]</span>
+            <label>
+              <input type="password" placeholder="Placeholder...">
+            </label>
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="checkbox"]</span>
+            <label>
+              <input type="checkbox">
+              Label
+              <p>additional input information</p>
+            </label>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<label>
+  <input type="checkbox">
+  Label
+  <p>additional input information</p>
+</label></code></pre>
+          </div>
+        </div>
+
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="radio"]</span>
+            <label>
+              <input type="radio">
+              Label
+              <p>additional input information</p>
+            </label>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<label>
+  <input type="radio">
+  Label
+  <p>additional input information</p>
+</label></code></pre>
+          </div>
+        </div>
+
+
+        <h4>form grid</h4>
+        <p>within a <span class="code">fieldset</span> the gutter-with is reduced to <span
+            class="code">1rem</span> (16px).</p>
+        <div data-row>
+          <div data-col="6sm">
+            <fieldset>
+              <div data-row>
+                <div data-col="6sm">
+                  <label>
+                    Label
+                    <input type="text" placeholder="Placeholder...">
+                    <p>additional input information</p>
+                  </label>
+                </div>
+                <div data-col="6sm">
+                  <label>
+                    Label
+                    <input type="text" placeholder="Placeholder...">
+                    <p>additional input information</p>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<fieldset>
+  <div data-row>
+    <div data-col="6sm">
+      <label>
+        Label
+        <input type="text" placeholder="Placeholder...">
+        <p>additional input information</p>
+      </label>
+    </div>
+    <div data-col="6sm">
+      <label>
+        Label
+        <input type="text" placeholder="Placeholder...">
+        <p>additional input information</p>
+      </label>
+    </div>
+  </div>
+</fieldset></code></pre>
+          </div>
+        </div>
+
+        <h4>form sizes</h4>
+        <span class="code">.big</span>
+        <div data-row>
+          <div data-col="6sm">
+            <label>
+              Label
+              <input type="text" class="big" placeholder="Placeholder...">
+              <p>additional input information</p>
+            </label>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<label>
+  Label
+  <input type="text" class="big" placeholder="Placeholder...">
+  <p>additional input information</p>
+</label></code></pre>
+          </div>
+        </div>
+        <span class="code">.small</span>
+        <div data-row>
+          <div data-col="6sm">
+            <label>
+              Label
+              <input type="text" class="small" placeholder="Placeholder...">
+              <p>additional input information</p>
+            </label>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<label>
+  Label
+  <input type="text" class="small" placeholder="Placeholder...">
+  <p>additional input information</p>
+</label></code></pre>
+          </div>
+        </div>
+
+        <h4>input validation</h4>
+
+        <h3 class="text-super">global.headings</h3>
+        <div data-row>
+          <div data-col="6sm">
+            <h1><span class="code">&lt;h1&gt;</span> Heading 1</h1>
+            <div class="h1"><span class="code">.h1</span> Heading 1</div>
+            <h2><span class="code">&lt;h2&gt;</span> Heading 2</h2>
+            <div class="h2"><span class="code">.h2</span> Heading 2</div>
+            <h3><span class="code">&lt;h3&gt;</span> Heading 3</h3>
+            <div class="h3"><span class="code">.h3</span> Heading 3</div>
+            <h4><span class="code">&lt;h4&gt;</span> Heading 4</h4>
+            <div class="h4"><span class="code">.h4</span> Heading 4</div>
+            <h5><span class="code">&lt;h5&gt;</span> Heading 5</h5>
+            <div class="h5"><span class="code">.h5</span> Heading 5</div>
+            <h6><span class="code">&lt;h6&gt;</span> Heading 6</h6>
+            <div class="h6"><span class="code">.h6</span> Heading 6</div>
+          </div>
+          <div data-col="6sm">
+            <div class="giga"><span class="code">.giga</span> Heading giga</div>
+            <div class="mega"><span class="code">.mega</span> Heading mega</div>
+            <div class="kilo"><span class="code">.kilo</span> Heading kilo</div>
+          </div>
+        </div>
+
+        <h3 class="text-super">global.typo</h3>
+        <p class="lead"><span class="code">p.lead</span>Sie mußte irgend etwas davon fühlen, denn
+          sie
+          spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen will: der Haß
+          zwischen
+          uns war plötzlich nackt.</p>
+        <p class="big"><span class="code">p.big</span>Sie mußte irgend etwas davon fühlen, denn sie
+          spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen will: der Haß
+          zwischen
+          uns war plötzlich nackt.</p>
+        <p><span class="code">&lt;p&gt;</span>Sie mußte irgend etwas davon fühlen, denn sie spannte
+          ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen will: der Haß zwischen uns
+          war
+          plötzlich nackt.</p>
+        <p class="small"><span class="code">p.small</span>Sie mußte irgend etwas davon fühlen, denn
+          sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen will: der Haß
+          zwischen uns war plötzlich nackt.</p>
+
+        <h4>typo colors</h4>
+        <p class="text-light"><span class="code">.text-light</span>Sie mußte irgend etwas davon
+          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
+          will:
+          der Haß zwischen uns war plötzlich nackt.</p>
+        <p class="text-lighter"><span class="code">.text-lighter</span>Sie mußte irgend etwas davon
+          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
+          will:
+          der Haß zwischen uns war plötzlich nackt.</p>
+        <p class="text-lightest"><span class="code">.text-lightest</span>Sie mußte irgend etwas
+          davon
+          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
+          will:
+          der Haß zwischen uns war plötzlich nackt.</p>
+        <div class="well invert">
+          <p class="text-invert"><span class="code">.text-invert</span>Sie mußte irgend etwas davon
+            fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
+            will: der Haß zwischen uns war plötzlich nackt.</p>
+        </div>
+        <p class="text-link"><span class="code">.text-link</span>Sie mußte irgend etwas davon
+          fühlen,
+          denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen will: der
+          Haß
+          zwischen uns war plötzlich nackt.</p>
+        <p class="text-super"><span class="code">.text-super</span>Sie mußte irgend etwas davon
+          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
+          will:
+          der Haß zwischen uns war plötzlich nackt.</p>
+        <p class="text-highlight"><span class="code">.text-highlight</span>Sie mußte irgend etwas
+          davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen
+          wegweisen
+          will: der Haß zwischen uns war plötzlich nackt.</p>
+        <p class="text-info"><span class="code">.text-info</span>Sie mußte irgend etwas davon
+          fühlen,
+          denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen will: der
+          Haß
+          zwischen uns war plötzlich nackt.</p>
+        <p class="text-disabled"><span class="code">.text-disabled</span>Sie mußte irgend etwas
+          davon
+          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
+          will:
+          der Haß zwischen uns war plötzlich nackt.</p>
+        <p class="text-error"><span class="code">.text-error</span>Sie mußte irgend etwas davon
+          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
+          will:
+          der Haß zwischen uns war plötzlich nackt.</p>
+        <p class="text-success"><span class="code">.text-success</span>Sie mußte irgend etwas davon
+          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
+          will:
+          der Haß zwischen uns war plötzlich nackt.</p>
+        <p class="text-warning"><span class="code">.text-warning</span>Sie mußte irgend etwas davon
+          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
+          will:
+          der Haß zwischen uns war plötzlich nackt.</p>
+      </section>
+
+      <section>
+        <header class="demo-header">
+          <h2>macros</h2>
+        </header>
+
+        <h4>alert</h4>
+        <pre><code class="html">
+<div class="alert error">Error Message</div>
+<p class="alert error">Error Message</p></code></pre>
+        <div class="alert">
+          <span class="code">.alert</span>
+          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
+          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
+        </div>
+        <div class="alert info">
+          <span class="code">.alert.info</span>
+          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
+          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
+        </div>
+        <div class="alert error">
+          <span class="code">.alert.error</span>
+          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
+          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
+        </div>
+        <div class="alert success">
+          <span class="code">.alert.success</span>
+          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
+          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
+        </div>
+        <div class="alert warning">
+          <span class="code">.alert.warning</span>
+          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
+          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
+        </div>
+        <div class="alert outlined">
+          <span class="code">.alert.outlined</span>
+          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
+          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
+        </div>
+        <div class="well invert">
+          <div class="alert invert">
+            <span class="code">.alert.invert</span>
+            Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn
+            man
+            jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
+          </div>
+        </div>
+        <div class="alert super">
+          <span class="code">.alert.super</span>
+          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
+          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
+        </div>
+        <div class="alert highlight">
+          <span class="code">.alert.highlight</span>
+          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
+          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
+        </div>
+      </section>
+      <section>
+        <header class="demo-header">
+          <h2>grid</h2>
+        </header>
+
+        <h3>12 columns</h3>
+        <div class="demo-grid">
+          <div data-row>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="5">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="7">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="8">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="9">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="10">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="11">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="12">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h3>nested</h3>
+        <div class="demo-grid">
+          <div data-row>
+            <div data-col="12">
+              <div class="demo-grid-placeholder">
+                <div data-row>
+                  <div data-col="8">
+                    <div class="demo-grid-placeholder">
+                      <div data-row>
+                        <div data-col="8">
+                          <div class="demo-grid-placeholder"></div>
+                        </div>
+                        <div data-col="4">
+                          <div class="demo-grid-placeholder"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-col="4">
+                    <div class="demo-grid-placeholder">
+                      <div data-row>
+                        <div data-col="6">
+                          <div class="demo-grid-placeholder"></div>
+                        </div>
+                        <div data-col="6">
+                          <div class="demo-grid-placeholder"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>grid.offset</h3>
+        <div class="demo-grid">
+          <div data-row>
+            <div data-col="11 +1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="10 +2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="9 +3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="8 +4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="7 +5">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="6 +6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="5 +7">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="4 +8">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="3 +9">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="2 +10">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="1 +11">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>grid.sorting</h3>
+        <div class="demo-grid">
+          <div data-row>
+            <div data-col="11 push1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1 pull11">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="10 push2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2 pull10">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="9 push3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="3 pull9">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="8 push4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="4 pull8">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="7 push5">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="5 pull7">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="6 push6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="6 pull6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="5 push7">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="7 pull5">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="4 push8">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="8 pull4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="3 push9">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="9 pull3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="2 push10">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="10 pull2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="1 push11">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="11 pull1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+</body>
+</html>

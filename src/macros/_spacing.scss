@@ -1,0 +1,11 @@
+.spacing {
+  height: rem(32);
+
+  &.small {
+    height: rem(16);
+  }
+
+  &.big {
+    height: rem(48);
+  }
+}

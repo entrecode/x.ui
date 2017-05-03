@@ -1,0 +1,90 @@
+/// tooltip - 1.0.0
+
+%tooltip {
+  position: relative;
+  overflow: visible;
+
+  &:after {
+    text-transform: initial;
+    background-color: getColor(background, backdrop);
+    display: block;
+    font-size: em(12);
+    font-weight: normal;
+    position: absolute;
+    letter-spacing: 0;
+    padding: 0 rem(8);
+    line-height: rem(16);
+    @include border-radius(rem(8));
+    text-decoration: none;
+    text-align: center;
+    @include transition(all .4s);
+    z-index: 100;
+    color: white;
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+[data-tooltip-bottom] {
+  @extend %tooltip;
+
+  &:after {
+    content: attr(data-tooltip-bottom);
+    top: 100%;
+    left: 50%;
+    @include transform(translateX(-50%));
+    opacity: 0;
+    margin-top: rem(-8);
+  }
+
+  &:hover {
+
+    &:after {
+      margin-top: rem(4);
+    }
+  }
+}
+
+[data-tooltip-left] {
+  @extend %tooltip;
+
+  &:after {
+    content: attr(data-tooltip-left);
+    top: 50%;
+    right: 100%;
+    margin-right: rem(-8);
+    @include transform(translateY(-50%));
+    opacity: 0;
+  }
+
+  &:hover {
+
+    &:after {
+      margin-right: rem(4);
+    }
+  }
+}
+
+[data-tooltip-top] {
+  @extend %tooltip;
+
+  &:after {
+    content: attr(data-tooltip-top);
+    bottom: 100%;
+    left: 50%;
+    @include transform(translateX(-50%));
+    opacity: 0;
+    margin-top: rem(-8);
+  }
+
+  &:hover {
+
+    &:after {
+      margin-top: rem(4);
+    }
+  }
+}

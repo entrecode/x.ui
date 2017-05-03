@@ -1,0 +1,123 @@
+.ui-colors-list {
+  list-style: none;
+  margin: 0 rem(-16);
+  margin-bottom: rem(32);
+  padding: 0;
+  @include flexbox;
+  @include flex-wrap(wrap);
+
+  li {
+    padding: rem(16);
+    width: 100 / 6 *1%;
+    @include flex(0 0 auto);
+
+    .ui-color {
+      width: 100%;
+      height: 80px;
+      @include border-radius(rem(2));
+      @include box-shadow(0 1px 2px rgba(black, .2));
+      position: relative;
+      overflow: hidden;
+
+      label {
+        font-size: rem(12);
+        line-height: rem(20);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        @include border-radius(0);
+        text-align: center;
+        margin: 0;
+        display: block;
+        background-color: getColor(base, background);
+      }
+    }
+
+    .text-light {
+      background-color: getColor(text, light);
+    }
+    .text-lighter {
+      background-color: getColor(text, lighter);
+    }
+    .text-lightest {
+      background-color: getColor(text, lightest);
+    }
+    .text-invert {
+      background-color: getColor(text, invert);
+    }
+  }
+}
+
+.base-text {
+  background-color: getColor(base, text);
+}
+.base-border {
+  background-color: getColor(base, border);
+}
+.base-divider {
+  background-color: getColor(base, divider);
+}
+.base-background {
+  background-color: getColor(base, background);
+}
+.background-light {
+  background-color: getColor(background, light);
+}
+.background-lighter {
+  background-color: getColor(background, lighter);
+}
+.background-lightest {
+  background-color: getColor(background, lightest);
+}
+.base-link {
+  background-color: getColor(base, link);
+}
+.base-linkHover {
+  background-color: getColor(base, linkHover);
+}
+.base-super {
+  background-color: getColor(base, super);
+}
+.base-superHover {
+  background-color: getColor(base, superHover);
+}
+.base-minor {
+  background-color: getColor(base, minor);
+}
+.base-minorHover {
+  background-color: getColor(base, minorHover);
+}
+.base-highlight {
+  background-color: getColor(base, highlight);
+}
+.base-highlightHover {
+  background-color: getColor(base, highlightHover);
+}
+.state-hover {
+  background-color: getColor(state, hover);
+}
+.state-selected {
+  background-color: getColor(state, selected);
+}
+.state-active {
+  background-color: getColor(state, active);
+}
+.state-disabled {
+  background-color: getColor(state, disabled);
+}
+.state-info {
+  background-color: getColor(state, info);
+}
+.state-error {
+  background-color: getColor(state, error);
+}
+.state-success {
+  background-color: getColor(state, success);
+}
+.state-warning {
+  background-color: getColor(state, warning);
+}
+.background-invert {
+  background-color: getColor(background, invert);
+}

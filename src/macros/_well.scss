@@ -1,0 +1,37 @@
+.well {
+  background-color: getColor(background, lightest);
+  padding: rem(16);
+  border-radius: 4px;
+  margin: rem(16) 0;
+
+  &.invert {
+    background-color: getColor(background, invert);
+    color: getColor(text, invert);
+  }
+
+  &.link {
+    background-color: getColor(base, link);
+    color: setColor(getColor(base, link));
+  }
+
+  &.minor {
+    background-color: getColor(base, minor);
+    color: setColor(getColor(base, minor));
+  }
+
+  &.super {
+    background-color: getColor(base, super);
+    color: setColor(getColor(base, super));
+  }
+
+  &.highlight {
+    background-color: getColor(base, highlight);
+    color: setColor(getColor(base, highlight));
+  }
+
+  &.small {
+    padding: rem(8);
+    margin: rem(8) 0;
+  }
+
+}

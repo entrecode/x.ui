@@ -1,0 +1,43 @@
+////
+/// input.scss - 1.0.0
+/// @author Bernhard Ruoff
+///
+/// @example
+///  <div class="input search">
+///    <input type="text" placeholder="Suchbegriff eingeben...">
+///  </div>
+
+.input {
+  @extend %input;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+
+  input:not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]) {
+    border: none;
+    padding: 0;
+    margin: 0;
+    @include border-radius(0);
+    @include box-shadow(none);
+    vertical-align: middle;
+  }
+
+  &.big {
+    @extend %input.big;
+  }
+
+  &.search {
+    padding-left: rem(40) !important;
+
+    &:before {
+      @extend .ec-icon;
+      content: "\e0e5";
+      position: absolute;
+      color: getColor(text, light);
+      left: rem(16);
+      top: 50%;
+      @include transform(translateY(-50%));
+      z-index: 1;
+    }
+  }
+}

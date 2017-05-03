@@ -1,0 +1,10 @@
+.code {
+  font-family: monospace;
+  background-color: getColor(base, highlight);
+  font-size: .825em;
+  padding: 0 rem(8);
+  display: inline-block;
+  color: getColor(base, text);
+  margin: .0875em 0;
+  @include border-radius(rem(2));
+}

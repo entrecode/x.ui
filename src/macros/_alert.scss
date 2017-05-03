@@ -1,0 +1,55 @@
+/// alert
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+/// @example
+///   <p class="alert error">Error Message</p>
+
+.alert {
+  padding: rem(4) rem(8);
+  margin: rem(8) 0;
+  @include border-radius(2px);
+  font-size: rem(14);
+  line-height: rem(20);
+  background-color: getColor(background, lightest);
+  text-align: center;
+
+  &.highlight {
+    background-color: getColor(base, highlight);
+    color: setColor(getColor(base, highlight));
+  }
+
+  &.super {
+    background-color: getColor(base, super);
+    color: setColor(getColor(base, super));
+  }
+
+  &.info {
+    background-color: getColor(state, info);
+    color: setColor(getColor(state, info));
+  }
+
+  &.error {
+    background-color: getColor(state, error);
+    color: setColor(getColor(state, error));
+  }
+
+  &.success {
+    background-color: getColor(state, success);
+    color: setColor(getColor(state, success));
+  }
+
+  &.warning {
+    background-color: getColor(state, warning);
+    color: setColor(getColor(state, warning));
+  }
+
+  &.invert {
+    background-color: getColor(base, background);
+    color: setColor(getColor(base, background));
+  }
+
+  &.outlined {
+    border: 1px solid getColor(base, divider);
+    background-color: transparent;
+  }
+}

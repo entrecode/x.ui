@@ -1,0 +1,66 @@
+label {
+  margin: rem(8) 0;
+  color: getColor(base, text);
+  cursor: pointer;
+  display: block;
+  font-size: rem(14);
+  @include transition(color .2s);
+  @include clearfix;
+
+  a, small, strong {
+    display: inline-block;
+  }
+
+  small {
+    display: inline-block;
+    font-size: rem(12);
+    line-height: rem(16);
+    color: getColor(text, light);
+
+    &:last-child {
+      margin: rem(4) 0;
+    }
+  }
+
+  p, small {
+    &:empty {
+      display: none;
+    }
+  }
+
+  &:hover {
+    color: getColor(base, text);
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    &:hover {
+      color: getColor(base, text);
+    }
+
+    &:not(.active) {
+      opacity: .4;
+
+      &:hover {
+        opacity: .2;
+      }
+    }
+  }
+
+  &.text-center {
+    input:not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
+    select,
+    textarea {
+      text-align: center;
+    }
+  }
+
+  &.mandatory {
+    input:not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
+    select,
+    textarea {
+      @include box-shadow(0 0 0 2px rgba(getColor(base, link), .6));
+    }
+  }
+}

@@ -1,0 +1,27 @@
+/// shadow styles for extension
+
+%shadow {
+  &%hover {
+    @include box-shadow(0 0 0 2px getColor(state, hover));
+  }
+
+  &%input {
+    @include box-shadow(0 4px 16px rgba(getColor(base, super), .2), 0 4px 32px rgba(getColor(base, super), .1) !important);
+  }
+
+  &%dropdown {
+    @include box-shadow(0 4px 8px rgba(black, 0.1), 0 4px 24px rgba(black, 0.1));
+  }
+
+  &%overlay {
+    @include box-shadow(0 4px 8px rgba(black, 0.1), 0 4px 24px rgba(black, 0.1));
+
+    &%big {
+      @include box-shadow(0 8px 16px rgba(black, 0.1), 0 8px 48px rgba(black, 0.2));
+    }
+  }
+
+  &%selected {
+    @include box-shadow(0 0 0 4px getColor(base, minor));
+  }
+}

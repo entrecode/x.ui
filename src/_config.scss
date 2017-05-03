@@ -1,0 +1,85 @@
+//
+// @font-face
+// -------------
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
+@import url('https://icons.entrecode.de/ec-icons-1.1.13.min.css');
+
+$bodyFont: 'Nunito', sans-serif;
+$headerFont: 'Nunito', sans-serif;
+
+//
+// Color Palette
+// -------------
+
+$background: white;
+$text: #212121;
+$link: #2962FF;
+$super: #FF5252;
+$minor: #D7F2FF;
+$highlight: #A7FFEB;
+
+// function for setColor
+@if (lightness($text) > 50) {
+  $setDark: $background;
+  $setLight: $text;
+} @else {
+  $setDark: $text;
+  $setLight: $background;
+}
+
+// font-weight config
+$weight-light: 300;
+$weight-normal: 400;
+$weight-bold: 700;
+
+// radius of input-elements
+$input-radius: 4 !default;
+
+// radius of buttons
+// if is btn is round
+$btn-round: false;
+
+// if $btn-round === false
+$btn-radius: 4 !default;
+
+// font-weight of btn
+$btn-weight: $weight-bold;
+
+// min width for wide buttons
+$btn-wide: 240px;
+
+// min width for wide small buttons
+$btn-wide-small: 160px;
+
+// config for labels
+$label-radius: 4 !default;
+$label-weight: $weight-bold !default;
+
+// radius of dropdown-elements
+$dropdown-radius: 4 !default;
+
+// headings variables
+$base-size: 16;
+
+$headings-weight: $weight-bold;
+
+$h1-size: 48;
+$h1-height: 56;
+
+$h2-size: 40;
+$h2-height: 48;
+
+$h3-size: 32;
+$h3-height: 40;
+
+$h4-size: 24;
+$h4-height: 32;
+
+$h5-size: 20;
+$h5-height: 28;
+
+$h6-size: 16;
+$h6-height: 24;
+
+// Breakpoint for responsive navigation
+$bpNav: $bpLg;
