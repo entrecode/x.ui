@@ -8,9 +8,6 @@
 /// @param {number} $btn-wide -  button width for .wide . can be set in config.scss
 /// @param {number} $btn-wide-small - button width for .wide.small . can be set in config.scss
 
-input[type=submit],
-input[type=reset],
-button,
 .btn {
   // button core style
   @include appearance(none);
@@ -59,7 +56,7 @@ button,
 
   // disabled state style for buttons
   &.disabled,
-  &[disabled*='disabled'] {
+  &[disabled] {
     opacity: .6;
     cursor: not-allowed;
     @include box-shadow(none);
@@ -266,9 +263,6 @@ button,
 /// @param {boolean} $btn-round - can be set in config.scss
 
 @if $btn-round == true {
-  input[type=submit],
-  input[type=reset],
-  button,
   .btn {
     @include border-radius(rem(20));
 
