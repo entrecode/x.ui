@@ -1,11 +1,11 @@
 {
   "name": "xlcss-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "UI based on xlcss",
-  "main": "dist/xlcss-ui.css",
+  "main": "src/xlcss-ui.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build.scss": "node-sass --watch --recursive --output-style compressed --source-map-embed src/xlcss-ui.scss dist/xlcss-ui.css"
+    "build.scss": "node-sass --watch --recursive --output-style compressed --source-map-embed src/xlcss-ui.scss docs/xlcss-ui.css"
   },
   "keywords": [
     "xlcss",
