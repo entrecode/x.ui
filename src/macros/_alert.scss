@@ -13,39 +13,44 @@
   background-color: getColor(background, lightest);
   text-align: center;
 
-  &.highlight {
-    background-color: getColor(base, highlight);
-    color: setColor(getColor(base, highlight));
+  &.minor {
+    @include setText(base, minor);
+  }
+
+  &.link {
+    @include setText(base, link);
   }
 
   &.super {
-    background-color: getColor(base, super);
-    color: setColor(getColor(base, super));
+    @include setText(base, super);
+  }
+
+  &.highlight {
+    @include setText(base, highlight);
   }
 
   &.info {
-    background-color: getColor(state, info);
-    color: setColor(getColor(state, info));
+    @include setText(state, info);
   }
 
   &.error {
-    background-color: getColor(state, error);
-    color: setColor(getColor(state, error));
+    @include setText(state, error);
   }
 
   &.success {
-    background-color: getColor(state, success);
-    color: setColor(getColor(state, success));
+    @include setText(state, success);
   }
 
   &.warning {
-    background-color: getColor(state, warning);
-    color: setColor(getColor(state, warning));
+    @include setText(state, warning);
   }
 
   &.invert {
-    background-color: getColor(base, background);
-    color: setColor(getColor(base, background));
+    @include setText(base, background);
+  }
+
+  &.active{
+    @include setText(state, active);
   }
 
   &.outlined {

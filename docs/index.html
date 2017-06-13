@@ -5,7 +5,7 @@
   <title>x.ui docu</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="xlcss-ui.css">
+  <link rel="stylesheet" href="../dist/xlcss-ui.css">
   <link rel="stylesheet"
         href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
@@ -299,11 +299,11 @@ $weight-bold: 700;</code></pre>
           <div data-col="6sm">
             <h4>Markup</h4>
             <pre><code class="html">
-<input type="submit" value="default">
+<input type="submit" class="btn" value="default">
 
-<input type="reset" value="default">
+<input type="reset" class="btn" value="default">
 
-<button>default</button>
+<button class="btn">default</button>
 
 <a href="" class="btn">default</a></code></pre>
           </div>
@@ -409,10 +409,39 @@ $weight-bold: 700;</code></pre>
           </div>
         </div>
 
-        <h4>embossed</h4>
-        <a class="btn embossed">Button</a>
-        <a class="btn minor embossed">Button</a>
-        <a class="btn super embossed">Button</a>
+        <h4>raised</h4>
+        <div data-row>
+          <div data-col="4sm">
+            <a class="btn raised block">Button</a>
+          </div>
+          <div data-col="4sm">
+            <a class="btn minor raised block">Button</a>
+          </div>
+          <div data-col="4sm">
+            <a class="btn super raised block">Button</a>
+          </div>
+        </div>
+
+        <div class="bumper"></div>
+
+        <h4>glowing</h4>
+        <div data-row>
+          <div data-col="4sm">
+            <div class="glowing">
+              <a class="btn block">Button</a>
+            </div>
+          </div>
+          <div data-col="4sm">
+            <div class="glowing">
+              <a class="btn minor block">Button</a>
+            </div>
+          </div>
+          <div data-col="4sm">
+            <div class="glowing">
+              <a class="btn super block">Button</a>
+            </div>
+          </div>
+        </div>
 
         <div class="bumper"></div>
 
@@ -639,6 +668,15 @@ $weight-bold: 700;</code></pre>
             <div class="giga"><span class="code">.giga</span> Heading giga</div>
             <div class="mega"><span class="code">.mega</span> Heading mega</div>
             <div class="kilo"><span class="code">.kilo</span> Heading kilo</div>
+          </div>
+        </div>
+
+        <div data-row>
+          <div data-col="6sm">
+            <h1 class="h3"><span class="code">&lt;h1.h3&gt;</span> Heading 1</h1>
+            <h1 class="h4"><span class="code">&lt;h1.h4&gt;</span> Heading 1</h1>
+            <h1 class="h5"><span class="code">&lt;h1.h5&gt;</span> Heading 1</h1>
+            <h1 class="h6"><span class="code">&lt;h1.h6&gt;</span> Heading 1</h1>
           </div>
         </div>
 

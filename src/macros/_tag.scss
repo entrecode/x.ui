@@ -5,67 +5,66 @@
 
 .tag {
   font-size: rem(14);
-  line-height: rem(20);
-  font-weight: $btn-weight;
+  line-height: rem(24);
+  font-weight: $tag-weight;
   white-space: nowrap;
   display: inline-block;
-  padding: 0 rem(8);
-  background-color: getColor(base, minor);
-  color: setColor(getColor(base, minor));
-  @include border-radius(rem($label-radius));
+  padding: rem(4) rem(26);
+  @include border-radius(rem($tag-radius));
+  @include setText(base, minor);
 
   &.link {
-    background-color: getColor(base, link);
-    color: setColor(getColor(base, link));
+    @include setText(base, link);
   }
 
   &.super {
-    background-color: getColor(base, super);
-    color: setColor(getColor(base, super));
-  }
-
-  &.invert {
-    background-color: getColor(base, background);
-    color: setColor(getColor(base, background));
+    @include setText(base, super);
   }
 
   &.highlight {
-    background-color: getColor(base, highlight);
-    color: setColor(getColor(base, highlight));
-  }
-
-  &.active {
-    background-color: getColor(state, active);
-    color: setColor(getColor(state, active));
-  }
-
-  &.disabled {
-    background-color: getColor(state, disabled);
-    color: getColor(state, disabled);
+    @include setText(base, highlight);
   }
 
   &.info {
-    background-color: getColor(state, info);
-    color: setColor(getColor(state, info));
+    @include setText(state, info);
   }
 
   &.error {
-    background-color: getColor(state, error);
-    color: setColor(getColor(state, error));
+    @include setText(state, error);
   }
 
   &.success {
-    background-color: getColor(state, success);
-    color: setColor(getColor(state, success));
+    @include setText(state, success);
   }
 
   &.warning {
-    background-color: getColor(state, warning);
-    color: setColor(getColor(state, warning));
+    @include setText(state, warning);
+  }
+
+  &.invert {
+    @include setText(base, background);
+  }
+
+  &.active{
+    @include setText(state, active);
   }
 
   &.small {
     font-size: rem(12);
     line-height: rem(16);
+  }
+}
+
+a.tag {
+  &:hover {
+    background-color: getColor(base, minorHover);
+
+    &.link {
+      background-color: getColor(base, linkHover);
+    }
+
+    &.super {
+      background-color: getColor(base, superHover);
+    }
   }
 }

@@ -120,7 +120,7 @@
           right: rem(8);
           top: 50%;
           @include transform(translateY(-50%));
-          @extend .label;
+          @extend .tag;
         }
       }
 

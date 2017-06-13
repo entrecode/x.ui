@@ -9,7 +9,7 @@ header {
     @include align-items(center);
     padding: 0 rem(8);
 
-    h1, h2, h3, h4, h5, h6 {
+    @include headings {
       margin: 0;
     }
 
