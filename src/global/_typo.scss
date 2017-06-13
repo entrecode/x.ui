@@ -2,10 +2,6 @@
 /// @author Bernhard Ruoff
 /// @since 0.0.1
 
-body {
-  color: getColor(base, text);
-}
-
 a {
   color: getColor(base, link);
   @include transition(color .2s);

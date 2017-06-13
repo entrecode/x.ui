@@ -13,15 +13,47 @@
   padding: 0 rem(8);
   @include border-radius(rem(8));
 
+  &.minor {
+    @include setText(base, minor);
+  }
+
+  &.link {
+    @include setText(base, link);
+  }
+
   &.super {
-    background-color: getColor(base, super);
-    color: setColor(getColor(base, super));
+    @include setText(base, super);
+  }
+
+  &.highlight {
+    @include setText(base, highlight);
+  }
+
+  &.info {
+    @include setText(state, info);
+  }
+
+  &.error {
+    @include setText(state, error);
+  }
+
+  &.success {
+    @include setText(state, success);
+  }
+
+  &.warning {
+    @include setText(state, warning);
+  }
+
+  &.invert {
+    @include setText(base, background);
+  }
+
+  &.active{
+    @include setText(state, active);
   }
 }
 
-input[type=submit],
-input[type=reset],
-button,
 .btn {
   .bubble {
     position: absolute;

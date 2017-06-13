@@ -5,7 +5,7 @@
   <title>x.ui docu</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="xlcss-ui.css">
+  <link rel="stylesheet" href="../dist/xlcss-ui.css">
   <link rel="stylesheet"
         href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
@@ -25,9 +25,9 @@
     <div data-row>
       <div data-col="+4sm +3md 8sm 6md">
         <h1>x.ui</h1>
-        <div class="label invert">v 0.0.1</div>
-        <div class="label invert">xlcss-3.0.0</div>
-        <div class="label invert">ec-icons-1.1.14</div>
+        <div class="tag invert">v 0.0.2</div>
+        <div class="tag invert">xlcss-3.0.5</div>
+        <div class="tag invert">ec-icons-1.1.15</div>
         <p class="lead">x.ui is based on the scss framework <strong><a
             href="https://github.com/entrecode/xlcss" target="_blank">xlcss</a></strong>. It is
           inspired by the
@@ -299,11 +299,11 @@ $weight-bold: 700;</code></pre>
           <div data-col="6sm">
             <h4>Markup</h4>
             <pre><code class="html">
-<input type="submit" value="default">
+<input type="submit" class="btn" value="default">
 
-<input type="reset" value="default">
+<input type="reset" class="btn" value="default">
 
-<button>default</button>
+<button class="btn">default</button>
 
 <a href="" class="btn">default</a></code></pre>
           </div>
@@ -312,31 +312,31 @@ $weight-bold: 700;</code></pre>
           <div data-col="3sm">
             <h5>default</h5>
             <div class="well small">
-              <a class="btn block">.btn</a>
+              <a class="btn block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <h5>minor</h5>
             <div class="well small">
-              <a class="btn minor block">.btn.minor</a>
+              <a class="btn minor block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <h5>super</h5>
             <div class="well small">
-              <a class="btn super block">.btn.super</a>
+              <a class="btn super block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <h5>clear</h5>
             <div class="well small">
-              <a class="btn clear block">.btn.clear</a>
+              <a class="btn clear block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <h5>invert</h5>
             <div class="well small">
-              <a class="btn invert block">.btn.invert</a>
+              <a class="btn invert block">Button</a>
             </div>
           </div>
         </div>
@@ -345,22 +345,22 @@ $weight-bold: 700;</code></pre>
         <div data-row>
           <div data-col="3sm">
             <div class="well small">
-              <a class="btn outlined block">.btn.outlined</a>
+              <a class="btn outlined block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <div class="well small">
-              <a class="btn outlined minor block">.btn.outlined.minor</a>
+              <a class="btn outlined minor block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <div class="well small">
-              <a class="btn outlined super block">.btn.outlined.super</a>
+              <a class="btn outlined super block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <div class="well small super">
-              <a class="btn outlined invert block">.btn.outlined.invert</a>
+              <a class="btn outlined invert block">Button</a>
             </div>
           </div>
         </div>
@@ -369,58 +369,87 @@ $weight-bold: 700;</code></pre>
         <div data-row>
           <div data-col="3sm">
             <div class="well small">
-              <a class="btn round block">.btn.round</a>
+              <a class="btn round block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <div class="well small">
-              <a class="btn round minor block">.btn.round.minor</a>
+              <a class="btn round minor block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <div class="well small">
-              <a class="btn round super block">.btn.round.super</a>
+              <a class="btn round super block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <div class="well small super">
-              <a class="btn round invert block">.btn.round.invert</a>
+              <a class="btn round invert block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <div class="well small">
-              <a class="btn round outlined block">.btn.round.outlined</a>
+              <a class="btn round outlined block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <div class="well small">
-              <a class="btn round minor outlined block">.btn.round.minor.outlined</a>
+              <a class="btn round minor outlined block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <div class="well small">
-              <a class="btn round super outlined block">.btn.round.super.outlined</a>
+              <a class="btn round super outlined block">Button</a>
             </div>
           </div>
           <div data-col="3sm">
             <div class="well small super">
-              <a class="btn round invert outlined block">.btn.round.invert.outlined</a>
+              <a class="btn round invert outlined block">Button</a>
             </div>
           </div>
         </div>
 
-        <h4>embossed</h4>
-        <a class="btn embossed">.btn.round</a>
-        <a class="btn minor embossed">.btn.minor.round</a>
-        <a class="btn super embossed">.btn.super.round</a>
+        <h4>raised</h4>
+        <div data-row>
+          <div data-col="4sm">
+            <a class="btn raised block">Button</a>
+          </div>
+          <div data-col="4sm">
+            <a class="btn minor raised block">Button</a>
+          </div>
+          <div data-col="4sm">
+            <a class="btn super raised block">Button</a>
+          </div>
+        </div>
+
+        <div class="bumper"></div>
+
+        <h4>glowing</h4>
+        <div data-row>
+          <div data-col="4sm">
+            <div class="glowing">
+              <a class="btn block">Button</a>
+            </div>
+          </div>
+          <div data-col="4sm">
+            <div class="glowing">
+              <a class="btn minor block">Button</a>
+            </div>
+          </div>
+          <div data-col="4sm">
+            <div class="glowing">
+              <a class="btn super block">Button</a>
+            </div>
+          </div>
+        </div>
 
         <div class="bumper"></div>
 
         <h4>sizes</h4>
-        <a class="btn small">.btn.small</a>
-        <a class="btn big">.btn.big</a>
-        <a class="btn wide">.btn.wide</a>
-        <a class="btn block">.btn.block</a>
+        <a class="btn small">Button</a>
+        <a class="btn big">Button</a>
+        <a class="btn wide">Button</a>
+        <a class="btn block">Button</a>
 
         <div class="bumper big"></div>
 
@@ -639,6 +668,15 @@ $weight-bold: 700;</code></pre>
             <div class="giga"><span class="code">.giga</span> Heading giga</div>
             <div class="mega"><span class="code">.mega</span> Heading mega</div>
             <div class="kilo"><span class="code">.kilo</span> Heading kilo</div>
+          </div>
+        </div>
+
+        <div data-row>
+          <div data-col="6sm">
+            <h1 class="h3"><span class="code">&lt;h1.h3&gt;</span> Heading 1</h1>
+            <h1 class="h4"><span class="code">&lt;h1.h4&gt;</span> Heading 1</h1>
+            <h1 class="h5"><span class="code">&lt;h1.h5&gt;</span> Heading 1</h1>
+            <h1 class="h6"><span class="code">&lt;h1.h6&gt;</span> Heading 1</h1>
           </div>
         </div>
 

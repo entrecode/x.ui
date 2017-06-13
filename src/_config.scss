@@ -1,21 +1,21 @@
 //
 // @font-face
-// -------------
+// ------------------------------------------------------
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
-@import url('https://icons.entrecode.de/ec-icons-1.1.13.min.css');
+@import url('https://icons.entrecode.de/ec-icons-1.1.15.min.css');
 
 $bodyFont: 'Nunito', sans-serif;
 $headerFont: 'Nunito', sans-serif;
 
 //
-// Color Palette
-// -------------
+// COLORS
+// ------------------------------------------------------
 
 $background: white;
 $text: #212121;
 $link: #2962FF;
 $super: #FF5252;
-$minor: #D7F2FF;
+$minor: #FFFFFF;
 $highlight: #A7FFEB;
 
 // function for setColor
@@ -27,41 +27,19 @@ $highlight: #A7FFEB;
   $setLight: $background;
 }
 
+//
+// TYPO
+// ------------------------------------------------------
+
 // font-weight config
-$weight-light: 300;
-$weight-normal: 400;
-$weight-bold: 700;
-
-// radius of input-elements
-$input-radius: 4 !default;
-
-// radius of buttons
-// if is btn is round
-$btn-round: false;
-
-// if $btn-round === false
-$btn-radius: 4 !default;
-
-// font-weight of btn
-$btn-weight: $weight-bold;
-
-// min width for wide buttons
-$btn-wide: 240px;
-
-// min width for wide small buttons
-$btn-wide-small: 160px;
-
-// config for labels
-$label-radius: 4 !default;
-$label-weight: $weight-bold !default;
-
-// radius of dropdown-elements
-$dropdown-radius: 4 !default;
+$light: 300;
+$normal: 400;
+$bold: 700;
 
 // headings variables
 $base-size: 16;
 
-$headings-weight: $weight-bold;
+$headings-weight: $bold;
 
 $h1-size: 48;
 $h1-height: 56;
@@ -80,6 +58,99 @@ $h5-height: 28;
 
 $h6-size: 16;
 $h6-height: 24;
+
+//additional styles for headings
+%heading-style {
+  // put styles here...
+}
+
+//
+// BUTTONS
+// ------------------------------------------------------
+
+// font-family of btn
+$btn-font-family: $bodyFont;
+
+// Typo of .btn
+// --------------------
+
+// font-size of btn
+$btn-font-size: 16;
+
+// line-height of btn, has to be an em value
+$btn-line-height: 1.5;
+
+// font-weight of btn
+$btn-weight: $bold;
+
+// additional styles for .btn
+%btn-style {
+  // put styles here...
+}
+
+// Typo of .btn.small
+// --------------------
+
+// font-size of btn.small
+$btn-small-font-size: 14;
+
+// line-height of btn, has to be an em value
+$btn-small-line-height: 1.5;
+
+// font-weight of btn
+$btn-small-weight: $bold;
+
+// additional styles for .btn
+%btn-small-style {
+  // put styles here...
+}
+
+// Typo of .btn.big
+// --------------------
+
+// font-size of btn.big
+$btn-big-font-size: 16;
+
+// line-height of btn, has to be an em value
+$btn-big-line-height: 1.5;
+
+// font-weight of btn
+$btn-big-weight: $bold;
+
+// additional styles for .btn
+%btn-big-style {
+  // put styles here...
+}
+
+
+// radius of buttons
+// if is btn-round
+// sets border-radius to 50% of button height
+$btn-round: false;
+
+// if $btn-round === false
+$btn-radius: 4 !default;
+$btn-small-radius: 4 !default;
+$btn-big-radius: 4 !default;
+
+// min width for .wide buttons
+$btn-wide: 240px;
+
+// min width for .wide.small buttons
+$btn-small-wide: 160px;
+
+//
+// Tags
+// ------------------------------------------------------
+
+$tag-radius: 4 !default;
+$tag-weight: $bold !default;
+
+// radius of dropdown-elements
+$dropdown-radius: 4 !default;
+
+// radius of input-elements
+$input-radius: 4 !default;
 
 // Breakpoint for responsive navigation
 $bpNav: $bpLg;

@@ -1,6 +1,6 @@
 /// button styles
 /// @author Bernhard Ruoff
-/// @since 0.0.1
+/// @since 0.0.2
 ///
 /// @param {boolean} $btn-round - can be set in config.scss
 /// @param {string} $btn-weight - for font-weight. can be set in config.scss
@@ -8,36 +8,98 @@
 /// @param {number} $btn-wide -  button width for .wide . can be set in config.scss
 /// @param {number} $btn-wide-small - button width for .wide.small . can be set in config.scss
 
-input[type=submit],
-input[type=reset],
-button,
-.btn {
+//placeholder for button metrics
+%btn {
   // button core style
   @include appearance(none);
   @include user-select(none);
   outline: none;
   border: none;
+  cursor: pointer;
+  touch-action: manipulation;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
-  touch-action: manipulation;
   text-decoration: none;
   position: relative;
-  @include transition(background-color .4s);
   height: auto;
 
   // button typo style
-  font-size: rem(16);
-  line-height: rem(24);
+  font-family: $btn-font-family;
+  font-size: rem($btn-font-size);
+  line-height: rem(nearest($btn-font-size, $btn-line-height, 4));
   font-weight: $btn-weight;
   min-width: rem(40);
   margin: rem(4);
   padding: rem(8) rem(16);
 
+  // additional styles via config
+  @extend %btn-style !optional;
+
+  // small buttons
+  &.small {
+    font-size: rem($btn-small-font-size);
+    line-height: rem(nearest($btn-small-font-size, $btn-small-line-height, 4));
+    font-weight: $btn-small-weight;
+    min-width: rem(24);
+    @include border-radius(rem($btn-small-radius));
+
+    // additional styles via config
+    @extend %btn-small-style !optional;
+
+    .ec-icon {
+      &:before {
+        font-size: rem(14);
+        line-height: rem(24);
+      }
+    }
+  }
+
+  // big buttons
+  &.big {
+    font-size: rem($btn-big-font-size);
+    line-height: rem(nearest($btn-big-font-size, $btn-big-line-height, 4));
+    font-weight: $btn-big-weight;
+    padding: rem(10) rem(16);
+    @include border-radius(rem($btn-big-radius));
+
+    // additional styles via config
+    @extend %btn-big-style !optional;
+
+    .ec-icon {
+      &:before {
+        font-size: rem(28);
+        line-height: rem(28);
+      }
+    }
+  }
+
+  // buttons with a minimum width
+  &.wide {
+    min-width: $btn-wide;
+
+    &.small {
+      min-width: $btn-small-wide;
+    }
+  }
+
+  // full-width buttons
+  &.block {
+    width: 100%;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.btn {
+  @extend %btn;
+
+  // button core style
+  @include transition(background-color .2s);
+
   // button default color style
-  background-color: getColor(base ,link);
-  color: setColor(getColor(base ,link));
+  @include setText(base, link);
   @include border-radius(rem($btn-radius));
 
   * {
@@ -52,14 +114,13 @@ button,
   &.active,
   &:hover,
   &:focus {
-    background-color: getColor(base, linkHover);
-    color: setColor(getColor(base ,link));
+    @include setText(base, linkHover, true);
     outline: none;
   }
 
   // disabled state style for buttons
   &.disabled,
-  &[disabled*='disabled'] {
+  &[disabled] {
     opacity: .6;
     cursor: not-allowed;
     @include box-shadow(none);
@@ -91,34 +152,29 @@ button,
 
   // minor button style, for secondary or minor interactions
   &.minor {
-    background-color: getColor(base, minor);
-    color: setColor(getColor(base, minor));
+    @include setText(base, minor, true);
 
     &.active,
     &:hover,
     &:focus {
-      background-color: getColor(base, minorHover);
-      color: setColor(getColor(base, minor));
+      @include setText(base, minorHover, true);
     }
   }
 
   // super button style, for call to action
   &.super {
-    background-color: getColor(base, super);
-    color: setColor(getColor(base, super));
+    @include setText(base, super, true);
 
     &.active,
     &:hover,
     &:focus {
-      background-color: getColor(base, superHover);
-      color: setColor(getColor(base, super));
+      @include setText(base, superHover, true);
     }
   }
 
   // invert button style
   &.invert {
-    background-color: getColor(base, background);
-    color: getColor(base, link);
+    @include setText(base, background, true);
 
     &.active,
     &:hover,
@@ -193,52 +249,8 @@ button,
   }
 
   // additional embossed class
-  &.embossed {
-    @include box-shadow(0 4px 8px rgba(black, .2), 0 4px 24px rgba(black, .2));
-
-    &:hover {
-      @include box-shadow(0 2px 4px rgba(black, .2), 0 2px 8px rgba(black, .2));
-    }
-  }
-
-  // small buttons
-  &.small {
-    font-size: rem(14);
-    line-height: rem(24);
-    min-width: rem(24);
-    height: auto;
-    @include border-radius(rem($btn-radius * .5));
-
-    .ec-icon {
-      &:before {
-        font-size: rem(14);
-        line-height: rem(24);
-      }
-    }
-  }
-
-  // big buttons
-  &.big {
-    font-size: rem(20);
-    line-height: rem(28);
-    padding: rem(10) rem(16);
-    height: auto;
-
-    .ec-icon {
-      &:before {
-        font-size: rem(28);
-        line-height: rem(28);
-      }
-    }
-  }
-
-  // buttons with a minimum width
-  &.wide {
-    min-width: $btn-wide;
-
-    &.small {
-      min-width: $btn-wide-small;
-    }
+  &.raised {
+    @include btn-raised;
   }
 
   &.round {
@@ -252,23 +264,12 @@ button,
       @include border-radius(rem(24));
     }
   }
-
-  // full-width buttons
-  &.block {
-    width: 100%;
-    display: block;
-    margin-left: 0;
-    margin-right: 0;
-  }
 }
 
 /// sets buttons to rounded
 /// @param {boolean} $btn-round - can be set in config.scss
 
 @if $btn-round == true {
-  input[type=submit],
-  input[type=reset],
-  button,
   .btn {
     @include border-radius(rem(20));
 
@@ -279,5 +280,15 @@ button,
     &.big {
       @include border-radius(rem(24));
     }
+  }
+}
+
+/// make button glow
+.glowing {
+  position: relative;
+  z-index: 10;
+
+  .btn {
+    @extend %glow !optional;
   }
 }

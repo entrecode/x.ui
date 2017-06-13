@@ -1,13 +1,13 @@
 .ui-colors-list {
   list-style: none;
-  margin: 0 rem(-16);
+  margin: 0 rem(-8);
   margin-bottom: rem(32);
   padding: 0;
   @include flexbox;
   @include flex-wrap(wrap);
 
   li {
-    padding: rem(16);
+    padding: rem(8);
     width: 100 / 6 *1%;
     @include flex(0 0 auto);
 

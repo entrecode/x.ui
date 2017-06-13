@@ -1,21 +1,17 @@
-/// alert
+/// label.scss
 /// @author Bernhard Ruoff
 /// @since 0.0.1
-/// @example
-///   <p class="alert error">Error Message</p>
 
-.alert {
-  padding: rem(4) rem(8);
-  margin: rem(8) 0;
-  @include border-radius(2px);
+
+.tag {
   font-size: rem(14);
-  line-height: rem(20);
-  background-color: getColor(background, lightest);
-  text-align: center;
-
-  &.minor {
-    @include setText(base, minor);
-  }
+  line-height: rem(24);
+  font-weight: $tag-weight;
+  white-space: nowrap;
+  display: inline-block;
+  padding: rem(4) rem(26);
+  @include border-radius(rem($tag-radius));
+  @include setText(base, minor);
 
   &.link {
     @include setText(base, link);
@@ -53,8 +49,22 @@
     @include setText(state, active);
   }
 
-  &.outlined {
-    border: 1px solid getColor(base, divider);
-    background-color: transparent;
+  &.small {
+    font-size: rem(12);
+    line-height: rem(16);
+  }
+}
+
+a.tag {
+  &:hover {
+    background-color: getColor(base, minorHover);
+
+    &.link {
+      background-color: getColor(base, linkHover);
+    }
+
+    &.super {
+      background-color: getColor(base, superHover);
+    }
   }
 }

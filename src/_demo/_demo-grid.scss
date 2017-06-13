@@ -13,11 +13,11 @@
   [data-col] {
     &:before {
       content: attr(data-col);
-      font-size: rem(12);
+      font-size: rem(10);
       line-height: rem(20);
       font-family: monospace;
       font-weight: bold;
+      white-space: nowrap;
     }
   }
 }
-

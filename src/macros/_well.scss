@@ -4,34 +4,48 @@
   border-radius: 4px;
   margin: rem(16) 0;
 
-  &.invert {
-    background-color: getColor(background, invert);
-    color: getColor(text, invert);
+  &.minor {
+    @include setText(base, minor);
   }
 
   &.link {
-    background-color: getColor(base, link);
-    color: setColor(getColor(base, link));
-  }
-
-  &.minor {
-    background-color: getColor(base, minor);
-    color: setColor(getColor(base, minor));
+    @include setText(base, link);
   }
 
   &.super {
-    background-color: getColor(base, super);
-    color: setColor(getColor(base, super));
+    @include setText(base, super);
   }
 
   &.highlight {
-    background-color: getColor(base, highlight);
-    color: setColor(getColor(base, highlight));
+    @include setText(base, highlight);
+  }
+
+  &.info {
+    @include setText(state, info);
+  }
+
+  &.error {
+    @include setText(state, error);
+  }
+
+  &.success {
+    @include setText(state, success);
+  }
+
+  &.warning {
+    @include setText(state, warning);
+  }
+
+  &.invert {
+    @include setText(base, background);
+  }
+
+  &.active {
+    @include setText(state, active);
   }
 
   &.small {
     padding: rem(8);
     margin: rem(8) 0;
   }
-
 }
