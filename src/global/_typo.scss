@@ -29,7 +29,7 @@ p {
   &.lead {
     font-size: em(18);
     line-height: em(28, 18);
-    font-weight: lighter;
+    font-weight: $light;
   }
 
   strong,
@@ -60,6 +60,10 @@ p {
 
 .text-link {
   color: getColor(base, link) !important;
+}
+
+.text-minor {
+  color: getColor(base, minor) !important;
 }
 
 .text-super {
@@ -99,6 +103,15 @@ mark {
 .nowrap {
   white-space: nowrap;
   vertical-align: baseline;
+}
+
+.hyphen {
+  @include word-wrap;
+}
+
+.hyphen-block {
+  text-align: justify;
+  @include word-wrap;
 }
 
 .ellipsis {

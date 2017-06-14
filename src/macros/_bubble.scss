@@ -7,7 +7,7 @@
 .bubble {
   font-size: em(10);
   line-height: rem(16);
-  font-weight: bold;
+  font-weight: $bold;
   white-space: nowrap;
   display: inline-block;
   padding: 0 rem(8);
@@ -49,7 +49,7 @@
     @include setText(base, background);
   }
 
-  &.active{
+  &.active {
     @include setText(state, active);
   }
 }

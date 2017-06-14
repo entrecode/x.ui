@@ -52,72 +52,95 @@
 .base-text {
   background-color: getColor(base, text);
 }
+
 .base-border {
   background-color: getColor(base, border);
 }
+
 .base-divider {
   background-color: getColor(base, divider);
 }
+
 .base-background {
   background-color: getColor(base, background);
 }
+
 .background-light {
   background-color: getColor(background, light);
 }
+
 .background-lighter {
   background-color: getColor(background, lighter);
 }
+
 .background-lightest {
   background-color: getColor(background, lightest);
 }
+
 .base-link {
   background-color: getColor(base, link);
 }
+
 .base-linkHover {
   background-color: getColor(base, linkHover);
 }
+
 .base-super {
   background-color: getColor(base, super);
 }
+
 .base-superHover {
   background-color: getColor(base, superHover);
 }
+
 .base-minor {
   background-color: getColor(base, minor);
 }
+
 .base-minorHover {
   background-color: getColor(base, minorHover);
 }
+
 .base-highlight {
   background-color: getColor(base, highlight);
 }
+
 .base-highlightHover {
   background-color: getColor(base, highlightHover);
 }
+
 .state-hover {
   background-color: getColor(state, hover);
 }
+
 .state-selected {
   background-color: getColor(state, selected);
 }
+
 .state-active {
   background-color: getColor(state, active);
 }
+
 .state-disabled {
   background-color: getColor(state, disabled);
 }
+
 .state-info {
   background-color: getColor(state, info);
 }
+
 .state-error {
   background-color: getColor(state, error);
 }
+
 .state-success {
   background-color: getColor(state, success);
 }
+
 .state-warning {
   background-color: getColor(state, warning);
 }
+
 .background-invert {
   background-color: getColor(background, invert);
 }

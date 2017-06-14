@@ -2,7 +2,6 @@
 /// @author Bernhard Ruoff
 /// @since 0.0.1
 
-
 .tag {
   font-size: rem(14);
   line-height: rem(24);
@@ -45,7 +44,7 @@
     @include setText(base, background);
   }
 
-  &.active{
+  &.active {
     @include setText(state, active);
   }
 

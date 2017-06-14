@@ -92,7 +92,7 @@ a.pill {
   .pill {
     background-color: getColor(base, background);
     font-size: rem(12);
-    font-weight: bold;
+    font-weight: $bold;
     line-height: rem(16);
     margin: 0;
     margin-right: rem(4);

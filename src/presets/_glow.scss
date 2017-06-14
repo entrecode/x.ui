@@ -1,5 +1,5 @@
-@mixin btn-glow ($glow-color, $glow-color-hover){
-  $btn-glow-shadow: rgba(getColor(background, invert),.1);
+@mixin btn-glow($glow-color, $glow-color-hover) {
+  $btn-glow-shadow: rgba(getColor(background, invert), .1);
 
   position: relative;
   //@include box-shadow(0 4px 4px $btn-glow-shadow, 0 4px 8px $btn-glow-shadow);
@@ -38,7 +38,7 @@
 }
 
 %glow {
-@include btn-glow(getColor(base, link), getColor(base, linkHover));
+  @include btn-glow(getColor(base, link), getColor(base, linkHover));
 
   &.super {
     @include btn-glow(getColor(base, super), getColor(base, superHover));

@@ -23,6 +23,7 @@
   text-decoration: none;
   position: relative;
   height: auto;
+  border: 1px solid transparent;
 
   // button typo style
   font-family: $btn-font-family;
@@ -80,6 +81,10 @@
 
     &.small {
       min-width: $btn-small-wide;
+    }
+
+    &.big {
+      min-width: $btn-big-wide;
     }
   }
 
@@ -201,49 +206,49 @@
   &.outlined {
     background-color: transparent !important;
     color: getColor(base, link);
-    @include box-shadow(0 0 0 1px getColor(base, link));
+    border-color: getColor(base, link);
 
     &.active,
     &:hover,
     &:focus {
       color: getColor(base, linkHover);
       background-color: transparent;
-      @include box-shadow(0 0 0 1px getColor(base, linkHover));
+      border-color: getColor(base, linkHover);
     }
 
     &.minor {
       color: getColor(base, link);
-      @include box-shadow(0 0 0 1px getColor(base, minor));
+      border-color: getColor(base, minor);
 
       &.active,
       &:hover,
       &:focus {
         color: getColor(base, link);
-        @include box-shadow(0 0 0 1px getColor(base, minorHover));
+        border-color: getColor(base, minorHover);
       }
     }
 
     &.super {
       color: getColor(base, super);
-      @include box-shadow(0 0 0 1px getColor(base, super));
+      border-color: getColor(base, super);
 
       &.active,
       &:hover,
       &:focus {
         color: getColor(base, superHover);
-        @include box-shadow(0 0 0 1px getColor(base, superHover));
+        border-color: getColor(base, superHover);
       }
     }
 
     &.invert {
       color: getColor(text, invert);
-      @include box-shadow(0 0 0 1px getColor(base, background));
+      border-color: getColor(base, background);
 
       &.active,
       &:hover,
       &:focus {
         color: getColor(text, invert);
-        @include box-shadow(0 0 0 1px getColor(text, invert));
+        border-color: getColor(base, background);
       }
     }
   }
@@ -286,6 +291,7 @@
 /// make button glow
 .glowing {
   position: relative;
+  display: inline-block;
   z-index: 10;
 
   .btn {

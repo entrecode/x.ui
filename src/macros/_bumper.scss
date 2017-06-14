@@ -23,8 +23,8 @@
 
   &.invert {
     &:before {
-      background-color: rgba(getColor(base, background),.2);
-      @include box-shadow(rem(8) 0 0 rgba(getColor(base, background),.2), rem(16) 0 0 rgba(getColor(base, background),.2));
+      background-color: rgba(getColor(base, background), .2);
+      @include box-shadow(rem(8) 0 0 rgba(getColor(base, background), .2), rem(16) 0 0 rgba(getColor(base, background), .2));
     }
   }
 

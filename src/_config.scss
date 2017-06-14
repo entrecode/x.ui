@@ -4,8 +4,8 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
 @import url('https://icons.entrecode.de/ec-icons-1.1.15.min.css');
 
-$bodyFont: 'Nunito', sans-serif;
-$headerFont: 'Nunito', sans-serif;
+$body-font: 'Nunito', sans-serif;
+$headings-font: 'Nunito', sans-serif;
 
 //
 // COLORS
@@ -15,7 +15,7 @@ $background: white;
 $text: #212121;
 $link: #2962FF;
 $super: #FF5252;
-$minor: #FFFFFF;
+$minor: #D4E0FF;
 $highlight: #A7FFEB;
 
 // function for setColor
@@ -69,9 +69,9 @@ $h6-height: 24;
 // ------------------------------------------------------
 
 // font-family of btn
-$btn-font-family: $bodyFont;
+$btn-font-family: $body-font;
 
-// Typo of .btn
+// Style for .btn
 // --------------------
 
 // font-size of btn
@@ -88,7 +88,7 @@ $btn-weight: $bold;
   // put styles here...
 }
 
-// Typo of .btn.small
+// Style for .btn.small
 // --------------------
 
 // font-size of btn.small
@@ -105,7 +105,7 @@ $btn-small-weight: $bold;
   // put styles here...
 }
 
-// Typo of .btn.big
+// Style for .btn.big
 // --------------------
 
 // font-size of btn.big
@@ -122,7 +122,6 @@ $btn-big-weight: $bold;
   // put styles here...
 }
 
-
 // radius of buttons
 // if is btn-round
 // sets border-radius to 50% of button height
@@ -138,6 +137,9 @@ $btn-wide: 240px;
 
 // min width for .wide.small buttons
 $btn-small-wide: 160px;
+
+// min width for .wide.big buttons
+$btn-big-wide: 240px;
 
 //
 // Tags

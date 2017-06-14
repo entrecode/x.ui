@@ -1,11 +1,8 @@
 @import "../node_modules/xlcss/sass/xlcss";
-
 @import "_config";
 @import "core/core";
-
 @import "presets/presets";
 @import "global/global";
 @import "macros/macros";
-
-@import "_demo/demo";
-
+@import "partials/partials";
+@import "templates/templates";

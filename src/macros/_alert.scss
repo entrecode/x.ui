@@ -48,13 +48,4 @@
   &.invert {
     @include setText(base, background);
   }
-
-  &.active{
-    @include setText(state, active);
-  }
-
-  &.outlined {
-    border: 1px solid getColor(base, divider);
-    background-color: transparent;
-  }
 }

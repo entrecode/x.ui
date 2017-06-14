@@ -1,6 +1,16 @@
+#0.0.5
+### changes
+- optimized button styles
+- `$bodyFont` to `$body-font`, `$headerFont` to `$headings-font`
+- updated doc
+- moved doc styles to `/docs`
+
+### added
+- additional variables for button configuration
+
 ## 0.0.2
 ### changes
-- changed `.btn.embossed` to `.btn.raised
+- changed `.btn.embossed` to `.btn.raised`
 - `$weight-light` to `$light`, `$weight-normal` to `$normal`, `$weight-bold` to `$bold`
 
 ### added

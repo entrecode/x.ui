@@ -27,9 +27,9 @@ $heading-heights: $h1-height $h2-height $h3-height $h4-height $h5-height $h6-hei
 
   @media (min-width: 48em) {
     font-size: em(nth($heading-sizes, $order));
-    line-height: em(nth($heading-heights, $order),nth($heading-sizes, $order));
+    line-height: em(nth($heading-heights, $order), nth($heading-sizes, $order));
   }
-};
+}
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
