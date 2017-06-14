@@ -9,7 +9,7 @@
     background-color: getColor(background, backdrop);
     display: block;
     font-size: em(12);
-    font-weight: normal;
+    font-weight: $normal;
     position: absolute;
     letter-spacing: 0;
     padding: 0 rem(8);

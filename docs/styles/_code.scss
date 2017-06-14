@@ -1,0 +1,14 @@
+.code {
+  font-family: monospace;
+  background-color: #333;
+  color: getColor(text, invert);
+  font-size: rem(12);
+  line-height: rem(16);
+  padding: 0 rem(8);
+  display: inline-block;
+  font-weight: $normal;
+  margin: rem(2);
+  vertical-align: baseline;
+  @include border-radius(rem(2));
+  white-space: nowrap;
+}

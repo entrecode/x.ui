@@ -9,7 +9,7 @@
     @include transform(skewY(8deg));
     color: getColor(text, invert);
     font-size: rem(24);
-    
+
     a {
       color: getColor(text, invert);
       border-bottom: 2px dotted getColor(text, invert);

@@ -37,7 +37,7 @@
   }
 
   &.invert {
-    @include setText(base, background);
+    @include setText(background, invert);
   }
 
   &.active {

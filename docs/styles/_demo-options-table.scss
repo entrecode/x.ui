@@ -1,0 +1,28 @@
+.demo-options-table {
+  font-size: rem(12);
+  margin: rem(32) 0;
+  
+  thead {
+    border-bottom: 1px solid getColor(base, divider);
+  }
+
+  td {
+    border-bottom: 1px solid getColor(base, divider);
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  td, th {
+    padding: rem(8);
+    border-right: 1px solid getColor(base, divider);
+  }
+
+  tbody {
+    tr {
+      td:first-child {
+        font-weight: $bold;
+        text-align: left;
+      }
+    }
+  }
+}

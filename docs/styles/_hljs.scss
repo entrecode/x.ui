@@ -1,5 +1,7 @@
 .hljs {
-  background-color: getColor(background, lightest) !important;
   padding: rem(16) rem(8) !important;
   @include border-radius(rem(4));
+  color: #eee !important;
+  font-size: rem(12);
+  line-height: rem(16);
 }

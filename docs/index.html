@@ -7,7 +7,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="xlcss-ui.css">
   <link rel="stylesheet"
-        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/agate.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -23,11 +23,10 @@
 <header class="demo-intro">
   <div class="demo-intro-body">
     <div data-row>
-      <div data-col="+4sm +3md 8sm 6md">
+      <div data-col="+2sm 8sm">
         <h1>x.ui</h1>
-        <div class="tag invert">v 0.0.4</div>
-        <div class="tag invert">xlcss-3.0.5</div>
-        <div class="tag invert">ec-icons-1.1.15</div>
+        <div class="tag invert">v 0.0.5</div>
+        <div class="tag invert">xlcss-3.0.6</div>
         <p class="lead">x.ui is based on the scss framework <strong><a
             href="https://github.com/entrecode/xlcss" target="_blank">xlcss</a></strong>. It is
           inspired by the
@@ -40,54 +39,31 @@
 </header>
 
 <div data-row>
-  <div data-col="4sm 3md">
-    <aside class="demo-aside">
-      <nav>
-        <ul>
-          <li>
-            <a href="">Basics</a>
-          </li>
-          <li>
-            <a href="">Config</a>
-          </li>
-          <li>
-            <a href="">Core</a>
-          </li>
-          <li>
-            <a href="">Global</a>
-          </li>
-          <li>
-            <a href="">Macros</a>
-          </li>
-          <li>
-            <a href="">Project</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="bumper">
-
-      </div>
-    </aside>
-  </div>
-  <div data-col="8sm 6lg">
+  <div data-col="+2sm 8sm">
     <main class="demo-body">
-      <section>
+      <section id="basics">
         <header class="demo-header">
           <h2>basics</h2>
         </header>
 
         <section>
           <h3 class="text-super">files</h3>
+          <p class="lead">x.ui and xlcss are the solid foundation of a project based on an unicorn workflow. x.ui sets the basic elements, which can be combined top bigger elements like partials or templates. In <strong>_config.scss</strong>, you can adjust several variables for colors, sizes or font-face. Those variables then are used throuout the project.</p>
+          <p class="lead">The first four layers should be highly adaptable to other projects. Those Layers are <strong>core-elements</strong>, <strong>global-elements</strong>, <strong>marco-elements</strong> and <strong>presets</strong></p>
           <pre><code>
-  xlcss-ui/
+  x.ui/
   ├── _config.scss
   ├── core/
-  │   ├── _colors.scss
-  │   ├── _typo.scss
-  │   └── core.scss
+  ├── presets/
   ├── global/
   ├── macros/
-  └── partials/</code></pre>
+  ...</code></pre>
+
+          <p class="lead">the layers <strong>partials</strong> and <strong>templates</strong> are reserved for the specific project.</p>
+          <pre><code>
+  ...
+  ├── partials/
+  └── templates/</code></pre>
         </section>
       </section>
 
@@ -95,24 +71,9 @@
         <header class="demo-header">
           <h2>core</h2>
         </header>
-
+        <p class="lead">core styles, are styles that don't refer a specific DOM object, but the whole project in general like colors and basic font settings</p>
+        <h3 class="text-super">core.colors</h3>
         <div data-row>
-          <div data-col="4sm">
-            <h3 class="text-super">core.colors</h3>
-            <p class="lead">the colors are organised via a map and can be accessed via <span
-                class="code">getColor()</span> function.</p>
-            <pre><code class="scss">.example { color: getColor(base, link); }</code></pre>
-            <div class="spacing small"></div>
-            <h4>used variables in config</h4>
-            <pre><code class="scss">
-$background: white;
-$text: #212121;
-$link: #2962FF;
-$super: #FF5252;
-$minor: #D7F2FF;
-$highlight: #A7FFEB;</code>
-            </pre>
-          </div>
           <div data-col="8sm">
             <h4>base colors</h4>
             <ul class="ui-colors-list">
@@ -267,6 +228,22 @@ $highlight: #A7FFEB;</code>
               </li>
             </ul>
           </div>
+          <div data-col="4sm">
+            <p class="lead">the colors are organised via a map and can be accessed via <span
+                class="code">getColor()</span> function.</p>
+            <pre><code class="scss">.example { color: getColor(base, link); }</code></pre>
+            <div class="spacing small"></div>
+            <p class="lead">the colornap itself refers to variables set in <span class="code">_config.scss</span>
+            </p>
+            <pre><code class="scss">
+$background: white;
+$text: #212121;
+$link: #2962FF;
+$super: #FF5252;
+$minor: #D7F2FF;
+$highlight: #A7FFEB;</code>
+            </pre>
+          </div>
         </div>
 
         <h3 class="text-super">core.typo</h3>
@@ -274,15 +251,39 @@ $highlight: #A7FFEB;</code>
           and headings like <span class="code">h1</span> <span class="code">h2</span> <span
               class="code">h3</span> <span class="code">h4</span> <span class="code">h5</span> <span
               class="code">h6</span></p>
-        <h4>used variables in config</h4>
-        <pre><code class="scss">
-$bodyFont: 'Nunito', sans-serif;
-$headerFont: 'Nunito', sans-serif;
+        <table class="demo-options-table">
+          <thead>
+          <tr>
+            <th></th>
+            <th>Extra small devices Phones (<480px)</th>
+            <th>Smaller devices Phones (>480px) <span class="code">$bpXs</span></th>
+            <th>Small devices Tablets (>768px) <span class="code">$bpSm</span></th>
+            <th>Medium devices Netbooks (>960px) <span class="code">$bpMd</span></th>
+            <th>Large devices Desktop (>1120px) <span class="code">$bpLg</span></th>
+            <th>Extra large devices Desktop (>1280px) <span class="code">$bpXs</span></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>body font-family</td>
+            <td colspan="6"><span class="code">$body-font</span></td>
+          </tr>
+          <tr>
+            <td>body color</td>
+            <td colspan="6"><span class="code">getColor(base, text)</span></td>
+          </tr>
+          <tr>
+            <td>body font-size</td>
+            <td colspan="3">14px</td>
+            <td colspan="3">100% (16px)</td>
+          </tr>
+          <tr>
+            <td>Headings font-family</td>
+            <td colspan="6"><span class="code">$headings-font</span></td>
+          </tr>
 
-// font-weight config
-$weight-light: 300;
-$weight-normal: 400;
-$weight-bold: 700;</code></pre>
+          </tbody>
+        </table>
       </section>
 
       <section>
@@ -290,172 +291,138 @@ $weight-bold: 700;</code></pre>
           <h2>global</h2>
         </header>
         <p class="lead">global styles for html tags and basic design elements like buttons, heading,
-          forms or general typography, Global UI elements are the smallest </p>
+          forms or general text-elements. Global elements are the smallest elements in the unicorn
+          worklflow.</p>
 
-        <h3 class="text-super">global.buttons</h3>
-        <div data-row>
-          <div data-col="6sm">
-          </div>
-          <div data-col="6sm">
-            <h4>Markup</h4>
-            <pre><code class="html">
-<input type="submit" class="btn" value="default">
-
-<input type="reset" class="btn" value="default">
-
-<button class="btn">default</button>
-
-<a href="" class="btn">default</a></code></pre>
-          </div>
+        <h3 class="text-super">buttons</h3>
+        <div class="well">
+          <a class="btn">default</a>
+          <a class="btn minor">minor</a>
+          <a class="btn super">super</a>
+          <a class="btn clear">clear</a>
+          <a class="btn invert">invert</a>
         </div>
-        <div data-row>
-          <div data-col="3sm">
-            <h5>default</h5>
-            <div class="well small">
-              <a class="btn block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <h5>minor</h5>
-            <div class="well small">
-              <a class="btn minor block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <h5>super</h5>
-            <div class="well small">
-              <a class="btn super block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <h5>clear</h5>
-            <div class="well small">
-              <a class="btn clear block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <h5>invert</h5>
-            <div class="well small">
-              <a class="btn invert block">Button</a>
-            </div>
-          </div>
-        </div>
+        <pre><code class="html">
+<a class="btn">default</a>
+<a class="btn minor">minor</a>
+<a class="btn super">super</a>
+<a class="btn clear">clear</a>
+<a class="btn invert">invert</a></code></pre>
+
+        <div class="bumper"></div>
 
         <h4>outlined</h4>
-        <div data-row>
-          <div data-col="3sm">
-            <div class="well small">
-              <a class="btn outlined block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <div class="well small">
-              <a class="btn outlined minor block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <div class="well small">
-              <a class="btn outlined super block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <div class="well small super">
-              <a class="btn outlined invert block">Button</a>
-            </div>
-          </div>
+        <div class="well">
+          <a class="btn outlined">default</a>
+          <a class="btn outlined minor">minor</a>
+          <a class="btn outlined super">super</a>
+          <a class="btn outlined invert">invert</a>
         </div>
+        <pre><code class="html">
+<a class="btn outlined">default</a>
+<a class="btn outlined minor">minor</a>
+<a class="btn outlined super">super</a>
+<a class="btn outlined invert">invert</a></code></pre>
+
+        <div class="bumper"></div>
 
         <h4>round</h4>
-        <div data-row>
-          <div data-col="3sm">
-            <div class="well small">
-              <a class="btn round block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <div class="well small">
-              <a class="btn round minor block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <div class="well small">
-              <a class="btn round super block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <div class="well small super">
-              <a class="btn round invert block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <div class="well small">
-              <a class="btn round outlined block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <div class="well small">
-              <a class="btn round minor outlined block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <div class="well small">
-              <a class="btn round super outlined block">Button</a>
-            </div>
-          </div>
-          <div data-col="3sm">
-            <div class="well small super">
-              <a class="btn round invert outlined block">Button</a>
-            </div>
-          </div>
+        <div class="well">
+          <a class="btn round">default</a>
+          <a class="btn round minor">minor</a>
+          <a class="btn round super">super</a>
+          <a class="btn round invert">invert</a>
+          <a class="btn round outlined">default</a>
+          <a class="btn round minor outlined">minor</a>
+          <a class="btn round super outlined">super</a>
+          <a class="btn round invert outlined">invert</a>
         </div>
+        <pre><code class="html">
+<a class="btn round">default</a>
+<a class="btn round minor">minor</a>
+<a class="btn round super">super</a>
+<a class="btn round invert">invert</a>
+<a class="btn round outlined">default</a>
+<a class="btn round minor outlined">minor</a>
+<a class="btn round super outlined">super</a>
+<a class="btn round invert outlined">invert</a></code></pre>
+
+        <div class="bumper"></div>
 
         <h4>raised</h4>
-        <div data-row>
-          <div data-col="4sm">
-            <a class="btn raised block">Button</a>
-          </div>
-          <div data-col="4sm">
-            <a class="btn minor raised block">Button</a>
-          </div>
-          <div data-col="4sm">
-            <a class="btn super raised block">Button</a>
-          </div>
+        <div class="well">
+          <a class="btn raised">default</a>
+          <a class="btn minor raised">minor</a>
+          <a class="btn super raised">super</a>
         </div>
+        <pre><code class="html">
+<a class="btn raised">default</a>
+<a class="btn minor raised">minor</a>
+<a class="btn super raised">super</a></code></pre>
 
         <div class="bumper"></div>
 
         <h4>glowing</h4>
-        <div data-row>
-          <div data-col="4sm">
-            <div class="glowing">
-              <a class="btn block">Button</a>
-            </div>
+        <div class="well">
+          <div class="glowing">
+            <a class="btn">default</a>
           </div>
-          <div data-col="4sm">
-            <div class="glowing">
-              <a class="btn minor block">Button</a>
-            </div>
+          <div class="glowing">
+            <a class="btn minor">minor</a>
           </div>
-          <div data-col="4sm">
-            <div class="glowing">
-              <a class="btn super block">Button</a>
-            </div>
+          <div class="glowing">
+            <a class="btn super">super</a>
           </div>
         </div>
+        <pre><code class="html">
+<div class="glowing">
+  <a class="btn">default</a>
+</div>
+<div class="glowing">
+  <a class="btn minor">minor</a>
+</div>
+<div class="glowing">
+  <a class="btn super">super</a>
+</div></code></pre>
 
         <div class="bumper"></div>
 
         <h4>sizes</h4>
-        <a class="btn small">Button</a>
-        <a class="btn big">Button</a>
-        <a class="btn wide">Button</a>
-        <a class="btn block">Button</a>
+        <div class="well">
+          <a class="btn small">small</a>
+          <a class="btn">default</a>
+          <a class="btn big">big</a><br>
+          <a class="btn small wide">wide small</a>
+          <a class="btn wide">wide default</a>
+          <a class="btn big wide">wide big</a>
+          <a class="btn block">block</a>
+        </div>
+        <pre><code class="html">
+<a class="btn small">small</a>
+<a class="btn">default</a>
+<a class="btn big">big</a>
+<a class="btn small wide">wide small</a>
+<a class="btn wide">wide default</a>
+<a class="btn big wide">wide big</a>
+<a class="btn block">block</a></code></pre>
+
+
+        <div class="bumper"></div>
+
+        <h4>sizes</h4>
+        <div class="well">
+          <a class="btn" disabled>default</a>
+          <a class="btn minor" disabled>minor</a>
+          <a class="btn super" disabled>super</a>
+        </div>
+        <pre><code class="html">
+<a class="btn" disabled>default</a>
+<a class="btn minor" disabled>minor</a>
+<a class="btn super" disabled>super</a></code></pre>
 
         <div class="bumper big"></div>
 
-        <h3 class="text-super">global.form</h3>
-        <p>styles for forms</p>
-
+        <h3 class="text-super">form elements</h3>
         <div data-row>
           <div data-col="6sm">
             <span class="code">[type="text"]</span>
@@ -562,7 +529,7 @@ $weight-bold: 700;</code></pre>
 
 
         <h4>form grid</h4>
-        <p>within a <span class="code">fieldset</span> the gutter-with is reduced to <span
+        <p>within a <span class="code">fieldset</span> the gutter-witdh is reduced to <span
             class="code">1rem</span> (16px).</p>
         <div data-row>
           <div data-col="6sm">
@@ -608,7 +575,7 @@ $weight-bold: 700;</code></pre>
           </div>
         </div>
 
-        <h4>form sizes</h4>
+        <h4>alternative input sizes</h4>
         <span class="code">.big</span>
         <div data-row>
           <div data-col="6sm">
@@ -646,112 +613,125 @@ $weight-bold: 700;</code></pre>
           </div>
         </div>
 
-        <h4>input validation</h4>
+        <div class="bumper big"></div>
 
-        <h3 class="text-super">global.headings</h3>
+        <h3 class="text-super">headings</h3>
         <div data-row>
           <div data-col="6sm">
-            <h1><span class="code">&lt;h1&gt;</span> Heading 1</h1>
-            <div class="h1"><span class="code">.h1</span> Heading 1</div>
-            <h2><span class="code">&lt;h2&gt;</span> Heading 2</h2>
-            <div class="h2"><span class="code">.h2</span> Heading 2</div>
-            <h3><span class="code">&lt;h3&gt;</span> Heading 3</h3>
-            <div class="h3"><span class="code">.h3</span> Heading 3</div>
-            <h4><span class="code">&lt;h4&gt;</span> Heading 4</h4>
-            <div class="h4"><span class="code">.h4</span> Heading 4</div>
-            <h5><span class="code">&lt;h5&gt;</span> Heading 5</h5>
-            <div class="h5"><span class="code">.h5</span> Heading 5</div>
-            <h6><span class="code">&lt;h6&gt;</span> Heading 6</h6>
-            <div class="h6"><span class="code">.h6</span> Heading 6</div>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
           </div>
           <div data-col="6sm">
-            <div class="giga"><span class="code">.giga</span> Heading giga</div>
-            <div class="mega"><span class="code">.mega</span> Heading mega</div>
-            <div class="kilo"><span class="code">.kilo</span> Heading kilo</div>
+        <pre><code class="html">
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6></code></pre>
           </div>
         </div>
 
+        <div class="bumper"></div>
+
+        <h3 class="text-super">paragraphs</h3>
         <div data-row>
           <div data-col="6sm">
-            <h1 class="h3"><span class="code">&lt;h1.h3&gt;</span> Heading 1</h1>
-            <h1 class="h4"><span class="code">&lt;h1.h4&gt;</span> Heading 1</h1>
-            <h1 class="h5"><span class="code">&lt;h1.h5&gt;</span> Heading 1</h1>
-            <h1 class="h6"><span class="code">&lt;h1.h6&gt;</span> Heading 1</h1>
+            <p class="lead">»Hören Sie nur,« sagte der Prokurist im Nebenzimmer, »er dreht den
+              Schlüssel um.« Das war für Gregor eine große Aufmunterung; aber alle hätten ihm
+              zurufen sollen, auch der Vater und die Mutter: »Frisch, Gregor,« hätten sie rufen
+              sollen, </p>
+            <p>»immer nur heran, fest an das Schloß heran!« Und in der Vorstellung, daß alle seine
+              Bemühungen mit Spannung verfolgten, verbiß er sich mit allem, was er an Kraft
+              aufbringen konnte, besinnungslos in den Schlüssel. Je nach dem Fortschreiten der
+              Drehung des Schlüssels umtanzte er das Schloß; hielt sich jetzt nur noch mit dem Munde
+              aufrecht, und je nach Bedarf hing er sich an den Schlüssel oder drückte ihn dann
+              wieder nieder mit der ganzen Last seines Körpers.</p>
+            <p class="small">Die Schwester suchte freilich die Peinlichkeit des Ganzen möglichst zu
+              verwischen, und je längere Zeit verging, desto besser gelang es ihr natürlich auch,
+              aber auch Gregor durchschaute mit der Zeit alles viel genauer. Schon ihr Eintritt war
+              für ihn schrecklich. </p>
+          </div>
+          <div data-col="6sm">
+        <pre><code class="html">
+<p class="lead">»Hören Sie nur,« ...</p>
+<p>»immer nur heran, ...</p>
+<p class="small">Die Schwester suchte ...</p></code></pre>
+
+            <h4>additional styles</h4>
+            <span class="code">.nowrap</span>
+            <span class="code">.hyphen</span>
+            <span class="code">.hyphen-block</span>
+            <span class="code">.ellipsis</span>
           </div>
         </div>
 
-        <h3 class="text-super">global.typo</h3>
-        <p class="lead"><span class="code">p.lead</span>Sie mußte irgend etwas davon fühlen, denn
-          sie
-          spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen will: der Haß
-          zwischen
-          uns war plötzlich nackt.</p>
-        <p class="big"><span class="code">p.big</span>Sie mußte irgend etwas davon fühlen, denn sie
-          spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen will: der Haß
-          zwischen
-          uns war plötzlich nackt.</p>
-        <p><span class="code">&lt;p&gt;</span>Sie mußte irgend etwas davon fühlen, denn sie spannte
-          ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen will: der Haß zwischen uns
-          war
-          plötzlich nackt.</p>
-        <p class="small"><span class="code">p.small</span>Sie mußte irgend etwas davon fühlen, denn
-          sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen will: der Haß
-          zwischen uns war plötzlich nackt.</p>
+        <div class="bumper"></div>
 
-        <h4>typo colors</h4>
-        <p class="text-light"><span class="code">.text-light</span>Sie mußte irgend etwas davon
-          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
-          will:
-          der Haß zwischen uns war plötzlich nackt.</p>
-        <p class="text-lighter"><span class="code">.text-lighter</span>Sie mußte irgend etwas davon
-          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
-          will:
-          der Haß zwischen uns war plötzlich nackt.</p>
-        <p class="text-lightest"><span class="code">.text-lightest</span>Sie mußte irgend etwas
-          davon
-          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
-          will:
-          der Haß zwischen uns war plötzlich nackt.</p>
-        <div class="well invert">
-          <p class="text-invert"><span class="code">.text-invert</span>Sie mußte irgend etwas davon
-            fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
-            will: der Haß zwischen uns war plötzlich nackt.</p>
-        </div>
-        <p class="text-link"><span class="code">.text-link</span>Sie mußte irgend etwas davon
-          fühlen,
-          denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen will: der
-          Haß
-          zwischen uns war plötzlich nackt.</p>
-        <p class="text-super"><span class="code">.text-super</span>Sie mußte irgend etwas davon
-          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
-          will:
-          der Haß zwischen uns war plötzlich nackt.</p>
-        <p class="text-highlight"><span class="code">.text-highlight</span>Sie mußte irgend etwas
-          davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen
-          wegweisen
-          will: der Haß zwischen uns war plötzlich nackt.</p>
-        <p class="text-info"><span class="code">.text-info</span>Sie mußte irgend etwas davon
-          fühlen,
-          denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen will: der
-          Haß
-          zwischen uns war plötzlich nackt.</p>
-        <p class="text-disabled"><span class="code">.text-disabled</span>Sie mußte irgend etwas
-          davon
-          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
-          will:
-          der Haß zwischen uns war plötzlich nackt.</p>
-        <p class="text-error"><span class="code">.text-error</span>Sie mußte irgend etwas davon
-          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
-          will:
-          der Haß zwischen uns war plötzlich nackt.</p>
-        <p class="text-success"><span class="code">.text-success</span>Sie mußte irgend etwas davon
-          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
-          will:
-          der Haß zwischen uns war plötzlich nackt.</p>
-        <p class="text-warning"><span class="code">.text-warning</span>Sie mußte irgend etwas davon
-          fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man jemand Lästigen wegweisen
-          will:
-          der Haß zwischen uns war plötzlich nackt.</p>
+        <h4>text colors</h4>
+
+        <ul class="ui-colors-list text-center">
+          <li>
+            <div class="ui-color base-text"></div>
+            <small>default</small>
+          </li>
+          <li>
+            <div class="ui-color base-link"></div>
+            <span class="code">.text-link</span>
+          </li>
+          <li>
+            <div class="ui-color base-super"></div>
+            <span class="code">.text-super</span>
+          </li>
+          <li>
+            <div class="ui-color base-minor"></div>
+            <span class="code">.text-minor</span>
+          </li>
+          <li>
+            <div class="ui-color base-highlight"></div>
+            <span class="code">.text-highlight</span>
+          </li>
+          <li>
+            <div class="ui-color text-light"></div>
+            <span class="code">.text-light</span>
+          </li>
+          <li>
+            <div class="ui-color text-lighter"></div>
+            <span class="code">.text-lighter</span>
+          </li>
+          <li>
+            <div class="ui-color text-lightest"></div>
+            <span class="code">.text-lightest</span>
+          </li>
+          <li>
+            <div class="ui-color text-invert"></div>
+            <span class="code">.text-invert</span>
+          </li>
+          <li>
+            <div class="ui-color state-disabled"></div>
+            <span class="code">.text-disabled</span>
+          </li>
+          <li>
+            <div class="ui-color state-info"></div>
+            <span class="code">.text-info</span>
+          </li>
+          <li>
+            <div class="ui-color state-error"></div>
+            <span class="code">.text-error</span>
+          </li>
+          <li>
+            <div class="ui-color state-success"></div>
+            <span class="code">.text-success</span>
+          </li>
+          <li>
+            <div class="ui-color state-warning"></div>
+            <span class="code">.text-warning</span>
+          </li>
+        </ul>
       </section>
 
       <section>
@@ -759,63 +739,90 @@ $weight-bold: 700;</code></pre>
           <h2>macros</h2>
         </header>
 
-        <h4>alert</h4>
+        <h3 class="text-super">alert</h3>
+        <div class="alert error">Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
+          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.</div>
         <pre><code class="html">
-<div class="alert error">Error Message</div>
-<p class="alert error">Error Message</p></code></pre>
-        <div class="alert">
-          <span class="code">.alert</span>
-          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
-          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
-        </div>
-        <div class="alert info">
-          <span class="code">.alert.info</span>
-          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
-          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
-        </div>
-        <div class="alert error">
-          <span class="code">.alert.error</span>
-          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
-          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
-        </div>
-        <div class="alert success">
-          <span class="code">.alert.success</span>
-          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
-          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
-        </div>
-        <div class="alert warning">
-          <span class="code">.alert.warning</span>
-          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
-          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
-        </div>
-        <div class="alert outlined">
-          <span class="code">.alert.outlined</span>
-          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
-          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
-        </div>
-        <div class="well invert">
-          <div class="alert invert">
-            <span class="code">.alert.invert</span>
-            Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn
-            man
-            jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
-          </div>
-        </div>
-        <div class="alert super">
-          <span class="code">.alert.super</span>
-          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
-          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
-        </div>
-        <div class="alert highlight">
-          <span class="code">.alert.highlight</span>
-          Sie mußte irgend etwas davon fühlen, denn sie spannte ihre Augenbrauen hoch, wie wenn man
-          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
-        </div>
+<div class="alert error">Sie mußte irgend ...</div></code></pre>
+
+        <div class="bumper"></div>
+
+        <h4>alert states</h4>
+        <span class="alert minor">.minor</span>
+        <span class="alert link">.link</span>
+        <span class="alert super">.super</span>
+        <span class="alert highlight">.highlight</span>
+        <span class="alert info">.info</span>
+        <span class="alert error">.error</span>
+        <span class="alert success">.success</span>
+        <span class="alert warning">.warning</span>
+        <span class="alert invert">.invert</span>
       </section>
+
+      <div class="bumper"></div>
+
       <section>
         <header class="demo-header">
           <h2>grid</h2>
         </header>
+
+        <h3>Grid options</h3>
+        <table class="demo-options-table">
+          <thead>
+          <tr>
+            <th></th>
+            <th>Extra small devices Phones (<480px)</th>
+            <th>Smaller devices Phones (>480px)</th>
+            <th>Small devices Tablets (>768px)</th>
+            <th>Medium devices Netbooks (>960px)</th>
+            <th>Large devices Desktop (>1120px)</th>
+            <th>Extra large devices Desktop (>1280px)</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>data-container width</td>
+            <td colspan="6">100% (max-width: 100%)</td>
+          </tr>
+          <tr>
+            <td>data-col value postfix. e.g. <span class="code">data-col="6xs"</span></td>
+            <td>none</td>
+            <td>#<span class="code">xs</span></td>
+            <td>#<span class="code">sm</span></td>
+            <td>#<span class="code">md</span></td>
+            <td>#<span class="code">lg</span></td>
+            <td>#<span class="code">xl</span></td>
+          </tr>
+          <tr>
+            <td>number of colums</td>
+            <td colspan="6">12</td>
+          </tr>
+          <tr>
+            <td>gutter width</td>
+            <td colspan="6">2rem (32px)</td>
+          </tr>
+          <tr>
+            <td>offest. e.g. <span class="code">data-col="+6xs"</span></td>
+            <td colspan="6"><span class="code">+</span>#</td>
+          </tr>
+          <tr>
+            <td>sorting. e.g. <span class="code">data-col="push6xs"</span></td>
+            <td colspan="6">
+              <span class="code">push</span>#, <span class="code">pull</span>#
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <pre><code class="html">
+<div data-container>
+  <div data-row>
+    <div data-col="4">...</div>
+    <div data-col="6">...</div>
+    <div data-col="2">...</div>
+  </div>
+</div>
+</code></pre>
 
         <h3>12 columns</h3>
         <div class="demo-grid">
@@ -1148,6 +1155,201 @@ $weight-bold: 700;</code></pre>
             </div>
           </div>
         </div>
+      </section>
+      <section>
+        <header class="demo-header">
+          <h2>flex-grid</h2>
+        </header>
+        <table class="demo-options-table">
+          <thead>
+          <tr>
+            <th></th>
+            <th>Extra small devices Phones (<480px)</th>
+            <th>Smaller devices Phones (>480px)</th>
+            <th>Small devices Tablets (>768px)</th>
+            <th>Medium devices Netbooks (>960px)</th>
+            <th>Large devices Desktop (>1120px)</th>
+            <th>Extra large devices Desktop (>1280px)</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>data-flex-col value postfix. e.g. <span class="code">data-flex-col="6xs"</span></td>
+            <td>none</td>
+            <td>#<span class="code">xs</span></td>
+            <td>#<span class="code">sm</span></td>
+            <td>#<span class="code">md</span></td>
+            <td>#<span class="code">lg</span></td>
+            <td>#<span class="code">xl</span></td>
+          </tr>
+          <tr>
+            <td>number of colums</td>
+            <td colspan="6">12</td>
+          </tr>
+          <tr>
+            <td>gutter width</td>
+            <td colspan="6">2rem (32px)</td>
+          </tr>
+          <tr>
+            <td>offest. e.g. <span class="code">data-flex-col="+6xs"</span></td>
+            <td colspan="6"><span class="code">+</span>#</td>
+          </tr>
+          <tr>
+            <td>sorting values. e.g. <span class="code">data-flex-order="first-xs"</span>, <span
+                class="code">data-flex-order="2xs"</span></td>
+            <td colspan="6">
+              <span class="code">first</span>, <span class="code">last</span>, <span class="code">first-</span>#,
+              <span class="code">last-</span>#, <span class="code">1</span># - <span
+                class="code">12</span>#
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <h3>dynamic flex columns</h3>
+        <pre><code class="html">
+<div data-flex="grid">
+  <div>...</div>
+  <div>...</div>
+  ...
+</div>
+</code></pre>
+        <div class="demo-grid">
+          <div data-flex="grid">
+            <div>
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-flex="grid">
+            <div>
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div>
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-flex="grid">
+            <div>
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div>
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div>
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>flex columns</h3>
+        <pre><code class="html">
+<div data-flex="grid">
+  <div data-flex-col="4">...</div>
+  <div data-flex-col="6">...</div>
+  <div data-flex-col="2">...</div>
+  <div data-flex-col="12">...</div>
+  ...
+</div>
+</code></pre>
+        <div class="demo-grid">
+          <div data-flex="grid">
+            <div data-flex-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-flex-col="6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-flex-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-flex-col="12">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <h3>flex columns offset</h3>
+        <pre><code class="html">
+<div data-flex="grid">
+  <div data-flex-col="4 +2sm">...</div>
+  <div data-flex-col="6 +4">...</div>
+  <div data-flex-col="2 +6">...</div>
+  <div data-flex-col="12">...</div>
+  ...
+</div>
+</code></pre>
+        <div class="demo-grid">
+          <div data-flex="grid">
+            <div data-flex-col="4 +2sm">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-flex-col="6 +4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-flex-col="2 +6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-flex-col="12">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>flex-grid justify-content</h3>
+        <pre><code class="html">
+<div data-flex="grid center">
+  <div data-flex-col="4">...</div>
+  <div data-flex-col="4">...</div>
+  <div data-flex-col="8">...</div>
+  <div data-flex-col="6">...</div>
+  ...
+</div>
+</code></pre>
+
+        <p>values for justify-content <span class="code">around</span> <span
+            class="code">between</span> <span class="code">center</span> <span
+            class="code">start</span> <span class="code">end</span></p>
+
+        <div class="demo-grid">
+          <div data-flex="grid center">
+            <div data-flex-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-flex-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-flex-col="8">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-flex-col="6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>flex-grid col size</h3>
+        <table class="demo-options-table">
+          <thead>
+          <tr>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>data-flex-col value postfix. e.g. <span class="code">data-flex-col="6xs"</span></td>
+            <td>none</td>
+          </tr>
+          </tbody>
+        </table>
+        <pre><code class="html">
+<div data-flex="grid center">
+  <div data-flex-col="self">...</div>
+  <div data-flex-col="grow">...</div>
+</div>
+</code></pre>
+
       </section>
     </main>
   </div>
