@@ -15,6 +15,7 @@
     bottom: 0;
     left: 10%;
     @include transition(all .1s);
+    opacity: .6;
   }
 
   &:hover {
@@ -37,7 +38,7 @@
   }
 }
 
-%glow {
+%btn-glow {
   @include btn-glow(getColor(base, link), getColor(base, linkHover));
 
   &.super {

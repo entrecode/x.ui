@@ -26,7 +26,7 @@
       <div data-col="+2sm 8sm">
         <h1>x.ui</h1>
         <div class="tag invert">v 0.0.5</div>
-        <div class="tag invert">xlcss-3.0.6</div>
+        <div class="tag invert">xlcss-3.0.7</div>
         <p class="lead">x.ui is based on the scss framework <strong><a
             href="https://github.com/entrecode/xlcss" target="_blank">xlcss</a></strong>. It is
           inspired by the
@@ -1174,7 +1174,7 @@ $highlight: #A7FFEB;</code>
           </thead>
           <tbody>
           <tr>
-            <td>data-flex-col value postfix. e.g. <span class="code">data-flex-col="6xs"</span></td>
+            <td>data-col value postfix. e.g. <span class="code">data-col="6xs"</span></td>
             <td>none</td>
             <td>#<span class="code">xs</span></td>
             <td>#<span class="code">sm</span></td>
@@ -1191,12 +1191,13 @@ $highlight: #A7FFEB;</code>
             <td colspan="6">2rem (32px)</td>
           </tr>
           <tr>
-            <td>offest. e.g. <span class="code">data-flex-col="+6xs"</span></td>
+            <td>offest. e.g. <span class="code">data-col="+6xs"</span></td>
             <td colspan="6"><span class="code">+</span>#</td>
           </tr>
           <tr>
-            <td>sorting values. e.g. <span class="code">data-flex-order="first-xs"</span>, <span
-                class="code">data-flex-order="2xs"</span></td>
+            <td>sorting values. e.g. <br>
+              <span class="code">data-flex-order="first-xs"<br>
+                data-flex-order="2xs"</span></td>
             <td colspan="6">
               <span class="code">first</span>, <span class="code">last</span>, <span class="code">first-</span>#,
               <span class="code">last-</span>#, <span class="code">1</span># - <span
@@ -1244,25 +1245,25 @@ $highlight: #A7FFEB;</code>
         <h3>flex columns</h3>
         <pre><code class="html">
 <div data-flex="grid">
-  <div data-flex-col="4">...</div>
-  <div data-flex-col="6">...</div>
-  <div data-flex-col="2">...</div>
-  <div data-flex-col="12">...</div>
+  <div data-col="4">...</div>
+  <div data-col="6">...</div>
+  <div data-col="2">...</div>
+  <div data-col="12">...</div>
   ...
 </div>
 </code></pre>
         <div class="demo-grid">
           <div data-flex="grid">
-            <div data-flex-col="4">
+            <div data-col="4">
               <div class="demo-grid-placeholder"></div>
             </div>
-            <div data-flex-col="6">
+            <div data-col="6">
               <div class="demo-grid-placeholder"></div>
             </div>
-            <div data-flex-col="2">
+            <div data-col="2">
               <div class="demo-grid-placeholder"></div>
             </div>
-            <div data-flex-col="12">
+            <div data-col="12">
               <div class="demo-grid-placeholder"></div>
             </div>
           </div>
@@ -1272,25 +1273,25 @@ $highlight: #A7FFEB;</code>
         <h3>flex columns offset</h3>
         <pre><code class="html">
 <div data-flex="grid">
-  <div data-flex-col="4 +2sm">...</div>
-  <div data-flex-col="6 +4">...</div>
-  <div data-flex-col="2 +6">...</div>
-  <div data-flex-col="12">...</div>
+  <div data-col="4 +2sm">...</div>
+  <div data-col="6 +4">...</div>
+  <div data-col="2 +6">...</div>
+  <div data-col="12">...</div>
   ...
 </div>
 </code></pre>
         <div class="demo-grid">
           <div data-flex="grid">
-            <div data-flex-col="4 +2sm">
+            <div data-col="4 +2sm">
               <div class="demo-grid-placeholder"></div>
             </div>
-            <div data-flex-col="6 +4">
+            <div data-col="6 +4">
               <div class="demo-grid-placeholder"></div>
             </div>
-            <div data-flex-col="2 +6">
+            <div data-col="2 +6">
               <div class="demo-grid-placeholder"></div>
             </div>
-            <div data-flex-col="12">
+            <div data-col="12">
               <div class="demo-grid-placeholder"></div>
             </div>
           </div>
@@ -1299,10 +1300,10 @@ $highlight: #A7FFEB;</code>
         <h3>flex-grid justify-content</h3>
         <pre><code class="html">
 <div data-flex="grid center">
-  <div data-flex-col="4">...</div>
-  <div data-flex-col="4">...</div>
-  <div data-flex-col="8">...</div>
-  <div data-flex-col="6">...</div>
+  <div data-col="4">...</div>
+  <div data-col="4">...</div>
+  <div data-col="8">...</div>
+  <div data-col="6">...</div>
   ...
 </div>
 </code></pre>
@@ -1313,16 +1314,16 @@ $highlight: #A7FFEB;</code>
 
         <div class="demo-grid">
           <div data-flex="grid center">
-            <div data-flex-col="4">
+            <div data-col="4">
               <div class="demo-grid-placeholder"></div>
             </div>
-            <div data-flex-col="4">
+            <div data-col="4">
               <div class="demo-grid-placeholder"></div>
             </div>
-            <div data-flex-col="8">
+            <div data-col="8">
               <div class="demo-grid-placeholder"></div>
             </div>
-            <div data-flex-col="6">
+            <div data-col="6">
               <div class="demo-grid-placeholder"></div>
             </div>
           </div>
@@ -1338,15 +1339,19 @@ $highlight: #A7FFEB;</code>
           </thead>
           <tbody>
           <tr>
-            <td>data-flex-col value postfix. e.g. <span class="code">data-flex-col="6xs"</span></td>
-            <td>none</td>
+            <td><span class="code">self</span></td>
+            <td>sets <span class="code">flex: 0 0 auto;</span> Element doesn't grow</td>
+          </tr>
+          <tr>
+            <td><span class="code">grow</span></td>
+            <td>sets <span class="code">flex: 1 1 auto;</span> Element grows and uses available space</td>
           </tr>
           </tbody>
         </table>
         <pre><code class="html">
-<div data-flex="grid center">
-  <div data-flex-col="self">...</div>
-  <div data-flex-col="grow">...</div>
+<div data-flex="grid">
+  <div data-col="self">...</div>
+  <div data-col="grow">...</div>
 </div>
 </code></pre>
 

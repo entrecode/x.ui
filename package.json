@@ -16,6 +16,6 @@
   "author": "entrecode GmbH",
   "devDependencies": {
     "node-sass": "^4.5.2",
-    "xlcss": "^3.0.5"
+    "xlcss": "^3.0.7"
   }
 }
