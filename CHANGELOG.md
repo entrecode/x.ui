@@ -1,3 +1,12 @@
+#0.0.7
+### changes
+- update to xlcss 3.0.9
+
+#0.0.6
+### changes
+- changed `display:inherit;` to `display:initial;`
+- update to xlcss 3.0.7 
+
 #0.0.5
 ### changes
 - optimized button styles

@@ -2,6 +2,10 @@
 /// @author Bernhard Ruoff
 /// @since 0.0.1
 
+//
+// Link styles
+// --------
+
 a {
   color: getColor(base, link);
   @include transition(color .2s);
@@ -15,6 +19,10 @@ a {
     color: getColor(base, linkHover);
   }
 }
+
+//
+// Paragraph styles
+// --------
 
 p {
   margin: rem(8) 0;
@@ -37,6 +45,106 @@ p {
     vertical-align: baseline;
   }
 }
+
+//
+// Defaults
+// --------
+
+i,
+em {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+small {
+  font-size: 75%;
+  vertical-align: baseline;
+}
+
+u {
+  text-decoration: underline;
+}
+
+sup,
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+
+//
+// Abbreviations
+// -------------
+
+abbr[title] {
+  cursor: help;
+}
+
+//
+// Pre, Code, and User Input
+// -------------------------
+
+code,
+pre,
+kbd,
+samp {
+  font-size: em(14);
+}
+
+code {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+pre code {
+  white-space: pre;
+}
+
+kbd {
+  display: inline-block;
+  line-height: 1.75;
+  white-space: nowrap;
+}
+
+samp {
+  vertical-align: bottom;
+}
+
+//
+// Addresses
+// ---------
+
+address {
+  font-style: normal;
+}
+
+mark {
+  background-color: transparent;
+  color: getColor(base, highlight);
+  vertical-align: baseline;
+}
+
+//
+// Generated text color styles
+// ---------
 
 .text-default {
   color: getColor(base, text) !important;
@@ -94,26 +202,30 @@ p {
   color: getColor(state, warning) !important;
 }
 
-mark {
-  background-color: transparent;
-  color: getColor(base, highlight);
-  vertical-align: baseline;
-}
 
+//
+// text overflow behavior styles
+// --------
+
+
+// no text wrapping
 .nowrap {
   white-space: nowrap;
   vertical-align: baseline;
 }
 
+// use automatic text wrapping
 .hyphen {
   @include word-wrap;
 }
 
+// use automatic text wrapping with justification
 .hyphen-block {
   text-align: justify;
   @include word-wrap;
 }
 
+// automatic text cut off with ...
 .ellipsis {
   @include ellipsis;
   display: block;

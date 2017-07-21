@@ -34,7 +34,7 @@ ul.dropdown {
       &:hover,
       &:focus {
         & + ul.dropdown-options {
-          display: inherit;
+          display: initial;
           opacity: 1;
         }
       }
@@ -59,7 +59,7 @@ ul.dropdown {
       }
 
       ul.dropdown-options {
-        display: inherit;
+        display: initial;
         opacity: 1;
       }
     }

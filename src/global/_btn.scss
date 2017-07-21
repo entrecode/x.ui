@@ -253,7 +253,7 @@
     }
   }
 
-  // additional embossed class
+  // additional raised class
   &.raised {
     @include btn-raised;
   }
@@ -295,6 +295,6 @@
   z-index: 10;
 
   .btn {
-    @extend %glow !optional;
+    @extend %btn-glow !optional;
   }
 }

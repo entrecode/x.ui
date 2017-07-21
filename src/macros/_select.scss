@@ -51,7 +51,7 @@
     &[tabindex] {
       &:focus {
         ul.select-options {
-          display: inherit;
+          display: initial;
           opacity: 1;
         }
       }
@@ -70,7 +70,7 @@
       &[tabindex] {
         &:focus {
           & + ul.select-options {
-            display: inherit;
+            display: initial;
             opacity: 1;
           }
         }

@@ -155,4 +155,9 @@ $dropdown-radius: 4 !default;
 $input-radius: 4 !default;
 
 // Breakpoint for responsive navigation
-$bpNav: $bpLg;
+// @example @media (min-width: $bp-nav) { ... }
+$bp-nav: $bp-lg;
+
+// @example @media (max-width: $bp-nav-max) { ... }
+$bp-nav-max: $bp-lg-max;
+
