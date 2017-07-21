@@ -1,3 +1,6 @@
+// color for shadow of raised inputs
+$input-raised-shadow: rgba(getColor(background, invert), .1) !default;
+
 @mixin input-raised($color: $input-raised-shadow) {
   @include box-shadow(0 2px 4px $color, 0 2px 8px $color);
 

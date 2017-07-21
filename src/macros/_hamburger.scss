@@ -19,7 +19,7 @@ $hamburger-color: getColor(base, link); // The transition duration
   border-radius: ($hamburger-width * .5);
   background-color: transparent;
 
-  @media (min-width: $bpNav) {
+  @media (min-width: $bp-nav) {
     display: none;
   }
 

@@ -127,9 +127,6 @@ $btn-big-weight: $bold;
 // sets border-radius to 50% of button height
 $btn-round: false;
 
-// color for shadow of raised buttons
-$btn-raised-shadow: rgba(getColor(background, invert), .1) !default;
-
 // if $btn-round === false
 $btn-radius: 4 !default;
 $btn-small-radius: 4 !default;
@@ -157,12 +154,10 @@ $dropdown-radius: 4 !default;
 // radius of input-elements
 $input-radius: 4 !default;
 
-// color for shadow of raised inputs
-$input-raised-shadow: rgba(getColor(background, invert), .1) !default;
-
 // Breakpoint for responsive navigation
-// @example @media (min-width: $bpNav) { ... }
-$bpNav: $bpLg;
+// @example @media (min-width: $bp-nav) { ... }
+$bp-nav: $bp-lg;
 
-// @example @media (max-width: $bpNavMax) { ... }
-$bpNavMax: $bpLgMax;
+// @example @media (max-width: $bp-nav-max) { ... }
+$bp-nav-max: $bp-lg-max;
+

@@ -6,7 +6,7 @@ body {
   color: getColor(base, text);
   font-size: 14px;
 
-  @media (min-width: $bpSm) {
+  @media (min-width: $bp-sm) {
     font-size: 100%;
   }
 }
