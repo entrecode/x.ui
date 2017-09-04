@@ -1,0 +1,54 @@
+@mixin btn-glow($glow-color, $glow-color-hover) {
+  $btn-glow-shadow: rgba(getColor(background, invert), .1);
+
+  position: relative;
+
+  &:after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    height: 60%;
+    width: 80%;
+    background-color: desaturate(darken($glow-color, 16), 24);
+    @include filter(blur(4px));
+    bottom: 0;
+    left: 10%;
+    @include transition(all .1s);
+    opacity: .6;
+  }
+
+  &:hover {
+    &:after {
+      bottom: 0;
+      left: 2%;
+      width: 96%;
+      @include filter(blur(1px));
+      background-color: desaturate(darken($glow-color-hover, 16), 24);
+    }
+  }
+
+  &:active,
+  &:focus {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.glowing {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+
+  .btn {
+    @include btn-glow(getColor(link), getColor(linkHover));
+
+    &._super {
+      @include btn-glow(getColor(super), getColor(superHover));
+    }
+
+    &._minor {
+      @include btn-glow(getColor(minor), getColor(minorHover));
+    }
+  }
+}

@@ -1,0 +1,239 @@
+/// typo
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+
+///
+/// Link styles
+/// --------
+
+a {
+  color: getColor(link);
+  @include transition(color .2s);
+  cursor: pointer;
+
+  * {
+    cursor: pointer;
+  }
+
+  &:hover {
+    color: getColor(linkHover);
+  }
+}
+
+///
+/// Paragraph styles
+/// --------
+
+p {
+  margin: rem(8) 0;
+
+  &._small {
+    vertical-align: baseline;
+    font-size: .875em;
+  }
+
+  &._big,
+  &.lead {
+    font-size: 1.125em;
+    font-weight: $light;
+  }
+
+  strong,
+  small {
+    vertical-align: baseline;
+  }
+}
+
+//
+/// Defaults
+/// --------
+
+i,
+em {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+small {
+  font-size: 0.875em;
+  vertical-align: baseline;
+}
+
+u {
+  text-decoration: underline;
+}
+
+sup,
+sub {
+  font-size: 0.875em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+///
+/// Abbreviations
+/// -------------
+
+abbr[title] {
+  cursor: help;
+}
+
+///
+/// Pre, Code, and User Input
+/// -------------------------
+
+code,
+pre,
+kbd,
+samp {
+  font-size: em($font-size);
+}
+
+code {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+pre code {
+  white-space: pre;
+}
+
+kbd {
+  display: inline-block;
+  line-height: 1.75;
+  white-space: nowrap;
+}
+
+samp {
+  vertical-align: bottom;
+}
+
+///
+/// Addresses
+/// ---------
+
+address {
+  font-style: normal;
+}
+
+mark {
+  background-color: transparent;
+  color: getColor(highlight);
+  vertical-align: baseline;
+}
+
+///
+/// Generated text color styles
+/// ---------
+
+.text-default {
+  color: getColor(text) !important;
+}
+
+.text-light {
+  color: getColor(text, light) !important;
+}
+
+.text-lighter {
+  color: getColor(text, lighter) !important;
+}
+
+.text-lightest {
+  color: getColor(text, lightest) !important;
+}
+
+.text-invert {
+  color: getColor(text, invert) !important;
+}
+
+.text-link {
+  color: getColor(link) !important;
+}
+
+.text-minor {
+  color: getColor(minor) !important;
+}
+
+.text-super {
+  color: getColor(super) !important;
+}
+
+.text-highlight {
+  color: getColor(highlight) !important;
+}
+
+.text-info {
+  color: getColor(state, info) !important;
+}
+
+.text-disabled {
+  color: getColor(state, disabled) !important;
+}
+
+.text-error {
+  color: getColor(state, error) !important;
+}
+
+.text-success {
+  color: getColor(state, success) !important;
+}
+
+.text-warning {
+  color: getColor(state, warning) !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+///
+/// text overflow behavior styles
+/// --------
+
+/// no text wrapping
+.nowrap {
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+/// use automatic text wrapping
+.hyphen {
+  @include word-wrap;
+}
+
+/// use automatic text wrapping with justification
+.hyphen-block {
+  text-align: justify;
+  @include word-wrap;
+}
+
+/// automatic text cut off with ...
+.ellipsis {
+  @include ellipsis;
+  display: block;
+}

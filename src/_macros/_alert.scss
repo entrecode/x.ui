@@ -1,0 +1,79 @@
+/// alert
+/// @author Bernhard Ruoff
+/// @since 4.0.0
+/// @example
+///   <p class="alert error">Error Message</p>
+
+.alert {
+  margin: rem(8) 0;
+  text-align: center;
+  @include macro-metrics($alert-font-size, $alert-line-height, $alert-min-height);
+  @include border-radius(rem($alert-radius));
+  font-weight: $alert-weight;
+  @include set-colors(getColor(minor));
+
+  &._small {
+    @include macro-metrics($alert-small-font-size, $alert-small-line-height, $alert-small-min-height);
+    @include border-radius(rem($alert-small-radius));
+    font-weight: $alert-small-weight;
+  }
+
+  &._big {
+    @include macro-metrics($alert-big-font-size, $alert-big-line-height, $alert-big-min-height);
+    @include border-radius(rem($alert-big-radius));
+    font-weight: $alert-big-weight;
+  }
+
+  &._minor {
+    @include set-colors(getColor(minor));
+  }
+
+  &._link {
+    @include set-colors(getColor(link));
+  }
+
+  &._super {
+    @include set-colors(getColor(super));
+  }
+
+  &._highlight {
+    @include set-colors(getColor(highlight));
+  }
+
+  &._info {
+    @include set-colors(getColor(state, info));
+  }
+
+  &._error {
+    @include set-colors(getColor(state, error));
+  }
+
+  &._success {
+    @include set-colors(getColor(state, success));
+  }
+
+  &._warning {
+    @include set-colors(getColor(state, warning));
+  }
+
+  &._invert {
+    @include set-colors(getColor(background));
+  }
+}
+
+/// for fluffy round alerts
+/// @param {boolean} $alert-round - can be set in config.scss
+
+@if $alert-round == true {
+  .alert {
+    @include border-radius(rem($alert-min-height / 2));
+
+    &._small {
+      @include border-radius(rem($alert-small-min-height / 2));
+    }
+
+    &._big {
+      @include border-radius(rem($alert-big-min-height / 2));
+    }
+  }
+}

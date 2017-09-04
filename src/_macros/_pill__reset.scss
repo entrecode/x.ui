@@ -1,0 +1,13 @@
+.pill.pill__reset {
+  position: relative;
+  padding-right: rem(32);
+
+  &:after {
+    content: '\00d7';
+    position: absolute;
+    color: getColor(text, lighter);
+    right: 0;
+    top: 0;
+    padding: 0 rem(8);
+  }
+}

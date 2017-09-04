@@ -1,0 +1,125 @@
+/// dropdown.scss
+/// 1.0.0
+/// @author Bernhard Ruoff, Michael Locher
+/// ------
+//
+/// css only dropdown
+//
+/// @example
+///  <ul class="dropdown">
+///    <li tabindex="1">
+///      Label
+///      <ul class="dropdown-select">
+///        <li>
+///          <span class="btn clear">Label</span>
+///        </li>
+///        <li class="divider"></li>
+///        <li>
+///          <span class="btn clear">Label</span>
+///        </li>
+///      </ul>
+///    </li>
+///  </ul>
+
+ul.dropdown {
+  @extend ul.unstyled;
+  outline: none;
+
+  > li {
+    position: relative;
+    outline: none;
+    cursor: pointer;
+
+    > a {
+      &:hover,
+      &:focus {
+        & + ul.dropdown-options {
+          display: initial;
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus {
+      > .btn {
+        @extend .btn._active;
+      }
+
+      > .btn._minor {
+        @extend .btn._minor._active;
+      }
+
+      > .btn._super {
+        @extend .btn._super._active;
+      }
+
+      > .btn._clear {
+        @extend .btn._clear._active;
+      }
+
+      ul.dropdown-options {
+        display: initial;
+        opacity: 1;
+      }
+    }
+  }
+
+  ul.dropdown-options {
+    position: absolute;
+    top: 100%;
+    background-color: getColor(background);
+    @include border-radius(rem($dropdown-radius));
+    @include box-shadow(0 4px 8px rgba(getColor(background, invert), 0.1), 0 4px 24px rgba(getColor(background, invert), 0.2));
+    @include transition(opacity .4s);
+    max-height: 320px;
+    overflow-y: auto;
+    display: none;
+    opacity: 0;
+    z-index: 100;
+    padding: rem(4);
+    margin: 0;
+
+    li {
+      display: block;
+      text-align: left;
+
+      .btn {
+        @extend .btn._block;
+        text-align: left;
+      }
+
+      &.divider {
+        margin: rem(8) 0;
+        background-color: getColor(divider);
+        height: 1px;
+      }
+    }
+  }
+
+  &.center {
+    ul.dropdown-options {
+      left: 50%;
+      @include transform(translateX(-50%));
+    }
+  }
+
+  &.right {
+    ul.dropdown-options {
+      right: 0;
+    }
+  }
+
+  &.left {
+    ul.dropdown-options {
+      left: 0;
+    }
+  }
+
+  &.full {
+    ul.dropdown-options {
+      left: 0;
+      width: 100%;
+    }
+  }
+}

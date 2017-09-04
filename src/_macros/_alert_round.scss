@@ -1,0 +1,13 @@
+.alert {
+  &._round {
+    @include border-radius(rem($alert-min-height / 2));
+
+    &._small {
+      @include border-radius(rem($alert-small-min-height / 2));
+    }
+
+    &._big {
+      @include border-radius(rem($alert-big-min-height / 2));
+    }
+  }
+}

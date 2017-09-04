@@ -1,25 +1,25 @@
 .demo-options-table {
   font-size: rem(12);
   margin: rem(32) 0;
-  
+
   thead {
-    border-top: 1px solid getColor(base, divider);
-    border-top: 1px solid getColor(base, divider);
-    border-bottom: 1px solid getColor(base, divider);
+    border-top: 1px solid getColor(divider);
+    border-top: 1px solid getColor(divider);
+    border-bottom: 1px solid getColor(divider);
   }
 
   td {
-    border-bottom: 1px solid getColor(base, divider);
+    border-bottom: 1px solid getColor(divider);
     text-align: center;
     vertical-align: middle;
   }
 
   td, th {
     padding: rem(8);
-    border-right: 1px solid getColor(base, divider);
+    border-right: 1px solid getColor(divider);
 
     &:first-child {
-      border-left: 1px solid getColor(base, divider);
+      border-left: 1px solid getColor(divider);
     }
   }
 

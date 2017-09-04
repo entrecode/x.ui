@@ -30,7 +30,7 @@
         text-align: center;
         margin: 0;
         display: block;
-        background-color: getColor(base, background);
+        background-color: getColor(background);
       }
     }
 
@@ -50,19 +50,19 @@
 }
 
 .base-text {
-  background-color: getColor(base, text);
+  background-color: getColor(text);
 }
 
 .base-border {
-  background-color: getColor(base, border);
+  background-color: getColor(border);
 }
 
 .base-divider {
-  background-color: getColor(base, divider);
+  background-color: getColor(divider);
 }
 
 .base-background {
-  background-color: getColor(base, background);
+  background-color: getColor(background);
 }
 
 .background-light {
@@ -78,35 +78,35 @@
 }
 
 .base-link {
-  background-color: getColor(base, link);
+  background-color: getColor(link);
 }
 
 .base-linkHover {
-  background-color: getColor(base, linkHover);
+  background-color: getColor(linkHover);
 }
 
 .base-super {
-  background-color: getColor(base, super);
+  background-color: getColor(super);
 }
 
 .base-superHover {
-  background-color: getColor(base, superHover);
+  background-color: getColor(superHover);
 }
 
 .base-minor {
-  background-color: getColor(base, minor);
+  background-color: getColor(minor);
 }
 
 .base-minorHover {
-  background-color: getColor(base, minorHover);
+  background-color: getColor(minorHover);
 }
 
 .base-highlight {
-  background-color: getColor(base, highlight);
+  background-color: getColor(highlight);
 }
 
 .base-highlightHover {
-  background-color: getColor(base, highlightHover);
+  background-color: getColor(highlightHover);
 }
 
 .state-hover {
