@@ -1,0 +1,13 @@
+.input {
+  ._round {
+    @include border-radius(rem($input-min-height / 2));
+
+    &._small {
+      @include border-radius(rem($input-small-min-height / 2));
+    }
+
+    &._big {
+      @include border-radius(rem($input-big-min-height / 2));
+    }
+  }
+}

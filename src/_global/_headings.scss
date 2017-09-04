@@ -1,0 +1,84 @@
+/// headings
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+
+/// Ratio for downscaling on mobile devices
+$ratioXS: .8;
+
+$heading-sizes: $h1-size $h2-size $h3-size $h4-size $h5-size $h6-size;
+$heading-heights: $h1-height $h2-height $h3-height $h4-height $h5-height $h6-height;
+
+@mixin h($order: null) {
+
+  @if $order == 'giga' {
+    $order: 1;
+  }
+
+  @if $order == 'mega' {
+    $order: 3;
+  }
+
+  @if $order == 'kilo' {
+    $order: 5;
+  }
+
+  font-size: em(nth($heading-sizes, $order) * $ratioXS);
+  line-height: em((nth($heading-heights, $order) * $ratioXS), (nth($heading-sizes, $order) * $ratioXS));
+
+  @media (min-width: 48em) {
+    font-size: em(nth($heading-sizes, $order));
+    line-height: em(nth($heading-heights, $order), nth($heading-sizes, $order));
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.giga, .mega, .kilo {
+  font-weight: $headings-weight;
+  margin: rem(16) 0 rem(8);
+
+  @extend %heading-style !optional;
+
+  small,
+  ._small {
+    font-size: 0.875em;
+    vertical-align: baseline;
+  }
+
+  ._big {
+    font-size: 1.125em;
+  }
+}
+
+h1,
+.h1,
+.giga {
+  @include h(1);
+}
+
+h2,
+.h2 {
+  @include h(2);
+}
+
+h3,
+.h3,
+.mega {
+  @include h(3);
+}
+
+h4,
+.h4 {
+  @include h(4);
+}
+
+h5,
+.h5,
+.kilo {
+  @include h(5);
+}
+
+h6,
+.h6 {
+  @include h(6);
+}

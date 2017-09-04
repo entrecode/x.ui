@@ -1,0 +1,52 @@
+/// colors.scss
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+///
+/// color map for xlcss-ui based projects
+/// @param {variable} $colors [$colors] - set a custom variable for each project
+/// @require custom variable for $colors
+
+/// colormap
+$colors: (
+        base: (
+                "text": $text,
+                "background": $background,
+                "link": $link,
+                "linkHover": varColor($link, -4),
+                "minor": $minor,
+                "minorHover": varColor($minor, -4),
+                "super": $super,
+                "superHover": varColor($super, -4),
+                "highlight": $highlight,
+                "highlightHover": varColor($highlight, -4),
+                "divider": rgba($text, .1),
+                "border": borderColor($background, $text)
+        ),
+        text: (
+                "invert": $background,
+                "light": rgba($text, .6),
+                "lighter": rgba($text, .4),
+                "lightest": rgba($text, .2),
+        ),
+        background: (
+                "invert": $text,
+                "light": setColor($background, darken($background, 12), lighten($background, 12)),
+                "lighter": setColor($background, darken($background, 8), lighten($background, 8)),
+                "lightest": setColor($background, darken($background, 4), lighten($background, 4)),
+                "backdrop": setColor($background, rgba($text, .8), rgba($background, .8)),
+        ),
+        state: (
+                "hover": rgba(desaturate($link, 60), .1),
+                "selected": setLightness($link, 98%),
+                "active": $link,
+                "disabled": rgba($text, .2),
+                "info": systemColor(#80D8FF),
+                "error": systemColor(red),
+                "success": systemColor(#00E676),
+                "warning": systemColor(orange),
+        )
+) !default;
+
+/// set custom map-name for getColor function
+/// if you use mutliple color Maps
+$colors: $colors;

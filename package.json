@@ -1,21 +1,21 @@
 {
   "name": "xlcss-ui",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "description": "UI based on xlcss",
-  "main": "src/xlcss-ui.scss",
+  "main": "src/x.ui.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build.scss": "node-sass --watch --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/xlcss-ui.css"
+    "build.scss": "node-sass --watch --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/x.ui.css"
   },
   "keywords": [
     "xlcss",
-    "xlcss-ui",
+    "x.ui",
     "styles",
     "scss"
   ],
   "author": "entrecode GmbH",
   "devDependencies": {
     "node-sass": "^4.5.2",
-    "xlcss": "^3.0.9"
+    "xlcss": "^4.1.0"
   }
 }

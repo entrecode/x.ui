@@ -1,0 +1,292 @@
+/// button styles
+/// @author Bernhard Ruoff
+/// @since 0.0.8
+///
+/// @see _config.scss
+///
+/// @param {variable} $btn-font-family - can be set in config.scss
+///
+/// @param {number} $btn-font-size - normal button font-size
+/// @param {number} $btn-line-height - normal button line-height
+/// @param {variable} $btn-weight - normal button font-weight
+/// @param {number} $btn-min-height - min-height of default btn
+///
+/// @param {variable} $btn-small-font-size - small button font-size
+/// @param {variable} $btn-small-line-height - small button line-height
+/// @param {variable} $btn-small-weight - small button font-weight
+/// @param {number} $btn-small-min-height - min-height of small btn
+///
+/// @param {variable} $btn-big-font-size - big button font-size
+/// @param {variable} $btn-big-line-height - big button line-height
+/// @param {variable} $btn-big-weight - big button font-weight
+/// @param {number} $btn-big-min-height - min-height of big btn
+///
+/// @param {boolean} $btn-round - sets buttons to rounded buttons
+/// @param {number} $btn-radius - radius for default button
+/// @param {number} $btn-small-radius - radius for small button
+/// @param {number} $btn-big-radius - radius for big button
+/// @param {number} $btn-wide -  min width for ._wide button
+/// @param {number} $btn-small-wide - min width for ._wide._small button
+/// @param {number} $btn-big-wide - min width for ._wide._big button
+///
+/// @param {boolean} $btn-outline - sets border-width for btn._outlined
+/// @param {boolean} $flex-support - sets buttons to display flex
+
+/// placeholder for button metrics
+%btn {
+  /// button core style
+  @include appearance(none);
+  @include user-select(none);
+  outline: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  position: relative;
+  height: auto;
+  border: none;
+
+  /// button typo style
+  font-family: $btn-font-family;
+  font-weight: $btn-weight;
+  margin: rem(4) 0;
+
+  @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height) {
+    $padding: ($btn-min-height - $btn-line-height) / 2;
+    .ec-icon {
+      margin-left: rem($padding * -1);
+
+      &:empty {
+        margin-left: rem($padding * -2);
+        margin-right: rem($padding * -2);
+      }
+    }
+  }
+;
+
+  /// ec-icon styles for default btn
+  .ec-icon {
+
+    @if $flex-support == false {
+      display: inline;
+    }
+
+    &:before {
+      line-height: inherit;
+      padding-right: rem(8);
+      vertical-align: top;
+    }
+
+    &:empty {
+      &:before {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &%small {
+    font-weight: $btn-small-weight;
+    @include border-radius(rem($btn-small-radius));
+    @include macro-metrics($btn-small-font-size, $btn-small-line-height, $btn-small-min-height) {
+      $padding: ($btn-small-min-height - $btn-small-line-height) / 2;
+      .ec-icon {
+        margin-left: rem($padding * -1);
+
+        &:empty {
+          margin-left: rem($padding * -2);
+          margin-right: rem($padding * -2);
+        }
+      }
+    }
+  ;
+  }
+
+  &%big {
+    font-weight: $btn-big-weight;
+    @include border-radius(rem($btn-big-radius));
+    @include macro-metrics($btn-big-font-size, $btn-big-line-height, $btn-big-min-height) {
+      $padding: ($btn-big-min-height - $btn-big-line-height) / 2;
+      .ec-icon {
+        margin-left: rem($padding * -1);
+
+        &:empty {
+          margin-left: rem($padding * -2);
+          margin-right: rem($padding * -2);
+        }
+      }
+    }
+  ;
+
+    .ec-icon {
+      &:before {
+        font-size: rem(16);
+        line-height: inherit;
+      }
+    }
+  }
+}
+
+.btn {
+  @extend %btn !optional;
+  @include transition(background-color .2s);
+  @include border-radius(rem($btn-radius));
+  @include set-colors(getColor(link));
+
+  /// additional styles via config
+  @extend %btn-style !optional;
+
+  * {
+    cursor: pointer;
+  }
+
+  strong {
+    vertical-align: baseline;
+  }
+
+  ///
+  /// states
+  /// ------------------------------------------------------
+
+  /// default :hover and ._active state
+  &._active,
+  &:hover,
+  &:focus {
+    @include set-colors(getColor(linkHover));
+    outline: none;
+  }
+
+  /// disabled state style for buttons
+  &._disabled,
+  &[disabled] {
+    opacity: .6;
+    cursor: not-allowed;
+    @include box-shadow(none);
+  }
+
+  /// little transform animation onclick
+  &:active {
+    @include transform(translate3d(0, 2px, 0));
+  }
+
+  ///
+  /// sizes
+  /// ------------------------------------------------------
+
+  /// small buttons
+  &._small {
+    @extend %btn%small;
+
+    /// additional styles via config
+    @extend %btn-small-style !optional;
+  }
+
+  /// big buttons
+  &._big {
+    @extend %btn%big;
+
+    /// additional styles via config
+    @extend %btn-big-style !optional;
+  }
+
+  /// buttons with a minimum width
+  &._wide {
+    min-width: $btn-wide;
+
+    &._small {
+      min-width: $btn-small-wide;
+    }
+
+    &._big {
+      min-width: $btn-big-wide;
+    }
+  }
+
+  /// full-width buttons
+  &._block {
+    width: 100%;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  ///
+  /// Styles
+  /// ------------------------------------------------------
+
+  /// minor button style, for secondary or minor interactions
+  &._minor {
+    @include set-colors(getColor(minor));
+
+    &._active,
+    &:hover
+    &:focus {
+      @include set-colors(getColor(minorHover));
+    }
+  }
+
+  /// super button style, for call to action
+  &._super {
+    @include set-colors(getColor(super));
+
+    &._active,
+    &:hover,
+    &:focus {
+      @include set-colors(getColor(superHover));
+    }
+  }
+
+  /// invert button style
+  &._invert {
+    color: getColor(link);
+    background-color: getColor(background);
+
+    &._active,
+    &:hover,
+    &:focus {
+      color: getColor(linkHover);
+    }
+  }
+
+  /// clear button style, for link-alike buttons
+  &._clear {
+    background-color: transparent;
+    color: getColor(link);
+
+    &._active,
+    &:hover,
+    &:focus {
+      background-color: getColor(state, hover);
+      color: getColor(linkHover);
+    }
+
+    &._invert {
+      color: getColor(text, invert);
+
+      &._active,
+      &:hover,
+      &:focus {
+        background-color: invert(getColor(state, hover));
+        color: getColor(text, invert);
+      }
+    }
+  }
+}
+
+/// sets buttons to rounded
+/// @param {boolean} $btn-round - can be set in config.scss
+
+@if $btn-round == true {
+  .btn {
+    @include border-radius(rem($btn-min-height / 2));
+
+    &._small {
+      @include border-radius(rem($btn-small-min-height / 2));
+    }
+
+    &._big {
+      @include border-radius(rem($btn-big-min-height / 2));
+    }
+  }
+}

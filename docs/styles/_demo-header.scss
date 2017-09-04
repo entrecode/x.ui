@@ -2,8 +2,9 @@
   padding: 8vw 0;
   @include transform(skewY(-8deg));
   @include transform-origin(0);
-  background-color: getColor(base, super);
+  background-color: getColor(super);
   margin-bottom: rem(80);
+  overflow: hidden;
 
   .demo-intro-body {
     @include transform(skewY(8deg));

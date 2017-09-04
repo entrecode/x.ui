@@ -1,0 +1,126 @@
+////
+/// pill.scss - 1.0.0
+/// @author Bernhard Ruoff
+
+.pill {
+  margin: rem(4);
+  overflow: hidden;
+  @include user-select(none);
+  position: relative;
+  font-weight: $pill-weight;
+  @include macro-metrics($pill-font-size, $pill-line-height, $pill-min-height);
+  @include border-radius(rem($pill-radius));
+  @include set-colors(getColor(minor));
+
+  &._small {
+    @include macro-metrics($pill-small-font-size, $pill-small-line-height, $pill-small-min-height);
+    @include border-radius(rem($pill-small-radius));
+    font-weight: $pill-small-weight;
+  }
+
+  &._big {
+    @include macro-metrics($pill-big-font-size, $pill-big-line-height, $pill-big-min-height);
+    @include border-radius(rem($pill-big-radius));
+    font-weight: $pill-big-weight;
+  }
+
+  @at-root a.pill {
+    @include transition(all .2s);
+    cursor: pointer;
+
+    * {
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+
+  &._minor {
+    @include set-colors(getColor(minor));
+
+    @at-root a.pill._minor {
+      &:hover {
+        background-color: getColor(minorHover);
+      }
+    }
+  }
+
+  &._link {
+    @include set-colors(getColor(link));
+
+    @at-root a.pill._link {
+      &:hover {
+        background-color: getColor(linkHover);
+      }
+    }
+  }
+
+  &._super {
+    @include set-colors(getColor(super));
+
+    @at-root a.pill._super {
+      &:hover {
+        background-color: getColor(superHover);
+      }
+    }
+  }
+
+  &._highlight {
+    @include set-colors(getColor(highlight));
+
+    @at-root a.pill._highlight {
+      &:hover {
+        background-color: getColor(highlightHover);
+      }
+    }
+  }
+
+  &._info {
+    @include set-colors(getColor(state, info));
+
+    @at-root a.pill._info {
+      &:hover {
+        background-color: varColor(getColor(state, info), -4);
+      }
+    }
+  }
+
+  &._error {
+    @include set-colors(getColor(state, error));
+
+    @at-root a.pill._error {
+      &:hover {
+        background-color: varColor(getColor(state, error), -4);
+      }
+    }
+  }
+
+  &._success {
+    @include set-colors(getColor(state, success));
+
+    @at-root a.pill._success {
+      &:hover {
+        background-color: varColor(getColor(state, success), -4);
+      }
+    }
+  }
+
+  &._warning {
+    @include set-colors(getColor(state, warning));
+
+    @at-root a.pill._warning {
+      &:hover {
+        background-color: varColor(getColor(state, warning), -4);
+      }
+    }
+  }
+
+  &._invert {
+    @include set-colors(getColor(background));
+
+    @at-root a.pill._invert {
+      &:hover {
+        background-color: varColor(getColor(background), -4);
+      }
+    }
+  }
+}

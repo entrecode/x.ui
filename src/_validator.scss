@@ -1,0 +1,4 @@
+/// $font-size
+@if $font-size < 14 {
+  @warn '`$font-size` #{$font-size} is too small!'
+}

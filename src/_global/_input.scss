@@ -1,0 +1,154 @@
+/// form
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+
+.input {
+  display: block;
+  outline: none;
+  border-style: solid;
+  border-color: getColor(border);
+  background-color: getColor(background);
+  color: getColor(text) !important;
+  width: 100%;
+  margin: rem(4) 0;
+  text-align: left;
+  @include border-radius(rem($input-radius));
+  @include macro-metrics($input-font-size, $input-line-height, $input-min-height, $input-border);
+
+  /// additional styles via config
+  @extend %btn-style !optional;
+
+  @include placeholder {
+    font-size: 1em;
+    line-height: rem(24);
+    color: getColor(text, light);
+  }
+
+  ///
+  /// states
+  /// ------------------------------------------------------
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus,
+  &:hover {
+    border-color: darken(getColor(border), 20);
+    @include box-shadow(0 0 0 2px getColor(state, hover));
+    @include placeholder {
+      color: getColor(text);
+    }
+  }
+
+  &:focus:hover {
+    @include placeholder {
+      color: getColor(text, lightest);
+    }
+  }
+
+  &._disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: getColor(background, lightest);
+    border-color: getColor(background, light);
+  }
+
+  &:invalid {
+    border-color: getColor(state, error);
+  }
+
+  ///
+  /// sizes
+  /// ------------------------------------------------------
+
+  &._small {
+    @include border-radius(rem($input-small-radius));
+    @include macro-metrics($input-small-font-size, $input-small-line-height, $input-small-min-height, $input-border);
+
+    /// additional styles via config
+    @extend %btn-small-style !optional;
+  }
+
+  &._big {
+    @include border-radius(rem($input-big-radius));
+    @include macro-metrics($input-big-font-size, $input-big-line-height, $input-big-min-height, $input-border);
+
+    /// additional styles via config
+    @extend %btn-big-style !optional;
+  }
+
+  /// reset for webkit-autofill background
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    color: getColor(text);
+    -webkit-text-fill-color: getColor(text);
+  }
+}
+
+/// for fluffy round inputs
+/// @param {boolean} $input-round - can be set in config.scss
+
+@if $input-round == true {
+  .input {
+    @include border-radius(rem($input-min-height / 2));
+
+    &._small {
+      @include border-radius(rem($input-small-min-height / 2));
+    }
+
+    &._big {
+      @include border-radius(rem($input-big-min-height / 2));
+    }
+  }
+}
+
+select {
+  height: rem(32);
+  padding: 0;
+
+  &[multiple] {
+    height: auto;
+  }
+
+  option {
+    padding: 0 rem(8);
+  }
+}
+
+/// Keep the original size
+input[type="checkbox"],
+input[type="file"],
+input[type="image"],
+input[type="radio"] {
+  height: auto;
+  width: auto;
+  display: inline-block;
+}
+
+/// Checkbox & radio
+input[type="checkbox"],
+input[type="radio"] {
+  line-height: normal;
+  padding: 0;
+  vertical-align: middle;
+
+  &:hover,
+  &:focus {
+    @include box-shadow(0 0 0 2px getColor(state, hover));
+  }
+
+  & + small {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+/// Textarea
+textarea {
+  height: auto;
+  resize: vertical;
+}

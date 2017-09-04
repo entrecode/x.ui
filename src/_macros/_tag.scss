@@ -1,0 +1,95 @@
+/// label.scss
+/// @author Bernhard Ruoff
+/// @since 4.0.0
+
+/// TODO add new metrics
+
+.tag {
+  white-space: nowrap;
+  margin: rem(4) 0;
+  text-align: center;
+  font-weight: $tag-weight;
+  @include set-colors(getColor(minor));
+  @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height);
+  @include border-radius(rem($tag-radius));
+
+  &._small {
+    @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height);
+    @include border-radius(rem($tag-small-radius));
+    font-weight: $tag-small-weight;
+  }
+
+  &._big {
+    @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height);
+    @include border-radius(rem($tag-big-radius));
+    font-weight: $tag-big-weight;
+  }
+
+  &._minor {
+    @include set-colors(getColor(minor));
+  }
+
+  &._link {
+    @include set-colors(getColor(link));
+  }
+
+  &._super {
+    @include set-colors(getColor(super));
+  }
+
+  &._highlight {
+    @include set-colors(getColor(highlight));
+  }
+
+  &._info {
+    @include set-colors(getColor(state, info));
+  }
+
+  &._error {
+    @include set-colors(getColor(state, error));
+  }
+
+  &._success {
+    @include set-colors(getColor(state, success));
+  }
+
+  &._warning {
+    @include set-colors(getColor(state, warning));
+  }
+
+  &._invert {
+    @include set-colors(getColor(background));
+  }
+}
+
+/// for fluffy round tags
+/// @param {boolean} $tag-round - can be set in config.scss
+
+@if $tag-round == true {
+  .tag {
+    @include border-radius(rem($tag-min-height / 2));
+
+    &._small {
+      @include border-radius(rem($tag-small-min-height / 2));
+    }
+
+    &._big {
+      @include border-radius(rem($tag-big-min-height / 2));
+    }
+  }
+}
+
+a.tag {
+  &:hover {
+    background-color: getColor(minorHover);
+    text-decoration: none;
+
+    &._link {
+      background-color: getColor(linkHover);
+    }
+
+    &._super {
+      background-color: getColor(superHover);
+    }
+  }
+}

@@ -4,8 +4,8 @@
 
     h2 {
       margin: .5em 0;
-      border: 2px solid getColor(base, super);
-      color: getColor(base, super);
+      border: 2px solid getColor(super);
+      color: getColor(super);
       display: inline-block;
       padding: .25em;
       text-align: center;
@@ -14,7 +14,7 @@
 
     h3 {
       margin: .5em 0;
-      border: 2px solid getColor(base, text);
+      border: 2px solid getColor(text);
       display: inline-block;
       padding: .25em;
       text-align: center;
