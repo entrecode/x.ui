@@ -262,13 +262,13 @@
     }
 
     &._invert {
-      color: getColor(text, invert);
+      color: setContrast(getColor(background, invert), getColor(link));
 
       &._active,
       &:hover,
       &:focus {
         background-color: invert(getColor(state, hover));
-        color: getColor(text, invert);
+        color: setContrast(getColor(background, invert), getColor(link));
       }
     }
   }

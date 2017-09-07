@@ -1,21 +1,25 @@
 //
 /// @font-face
 /// ------------------------------------------------------
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
-@import url('https://icons.entrecode.de/ec-icons-1.1.15.min.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
 
-$body-font: 'Nunito', sans-serif;
-$headings-font: 'Nunito', sans-serif;
+$body-font: 'Roboto Mono', sans-serif;
+$headings-font: 'Roboto Mono', sans-serif;
+
+/// font-weight config
+$light: 400;
+$normal: 400;
+$bold: 700;
 
 //
 /// COLORS
 /// ------------------------------------------------------
 
 $background: white;
-$text: #222222;
-$link: #2962FF;
-$super: #F61C8A;
-$minor: rgba($link, .2);
+$text: #2D3A47;
+$link: #E74A7A;
+$super: #FC6563;
+$minor: #D5DDE4;
 $highlight: #A7FFEB;
 
 $setDark: $text !default;
@@ -412,3 +416,7 @@ $pill-round: false;
 $pill-radius: 2 !default;
 $pill-small-radius: 2 !default;
 $pill-big-radius: 2 !default;
+
+/// menu / sub-menu
+/// ------------------------------------------------------
+$sub-menu-radius: 2;
