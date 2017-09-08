@@ -1,6 +1,6 @@
 .demo-grid-placeholder {
-  background-color: rgba(#00BFA5, .2);
-  color: rgba(setColor(rgba(#00BFA5, .2)), .6);
+  background-color: getColor(minor);
+  //color: rgba(setColor(rgba(#00BFA5, .2)), .6);
   margin: rem(4) 0;
   min-height: rem(32);
 

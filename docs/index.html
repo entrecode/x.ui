@@ -42,12 +42,12 @@
   <h3>menubar</h3>
 </div>
 
-<div class="menubar invert">
+<div class="menubar">
   <strong class="menubar__brand">x.ui</strong>
   <nav class="menu menu_dropbown">
     <ul class="menu__items">
       <li class="menu-item parent" tabindex="0">
-        <a href="" class="btn clear invert">ui</a>
+        <a href="" class="btn clear">ui</a>
         <div class="sub-menu">
           <ul class="sub-menu__items">
             <li class="sub-menu-item level1 parent" tabindex="0">
@@ -120,6 +120,199 @@
 </div>
 
 <div data-container>
+  <h3>toolbar</h3>
+</div>
+
+<div class="toolbar">
+  <button class="drawer-toogle" data-target="id"></button>
+  <div class="toolbar__title">
+    <h2>x.ui</h2>
+  </div>
+  <nav class="nav">
+    <ul class="nav__items">
+      <li class="nav__item">
+        <a href="" class="btn outlined">save</a>
+      </li>
+      <li class="nav__item">
+        <a href="" class="btn outlined">delete</a>
+      </li>
+      <li class="nav__item">
+        <a href="" class="btn clear">&times;</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="toolbar invert">
+  <button class="drawer-toogle" data-target="id"></button>
+  <div class="toolbar__title">
+    <h2>x.ui</h2>
+  </div>
+  <nav class="nav">
+    <ul class="nav__items">
+      <li class="nav__item">
+        <a href="" class="btn outlined invert">save</a>
+      </li>
+      <li class="nav__item">
+        <a href="" class="btn outlined invert">delete</a>
+      </li>
+      <li class="nav__item">
+        <a href="" class="btn clear invert">&times;</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="toolbar super">
+  <button class="drawer-toogle" data-target="id"></button>
+  <div class="toolbar__title">
+    <h2>x.ui</h2>
+  </div>
+  <nav class="nav">
+    <ul class="nav__items">
+      <li class="nav__item">
+        <a href="" class="btn outlined invert">save</a>
+      </li>
+      <li class="nav__item">
+        <a href="" class="btn outlined invert">delete</a>
+      </li>
+      <li class="nav__item">
+        <a href="" class="btn clear invert">&times;</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div data-container>
+  <h3>Kiosk</h3>
+
+  <p>a kiosk can be used for structuring data. it uses <span class="code">display: grid</span></p>
+
+  <section>
+    <div class="kiosk">
+      <header class="kiosk-header">
+        <div class="toolbar invert dense">
+          <button class="drawer-toogle" data-target="id"></button>
+          <div class="toolbar__title">
+            <h2>x.ui</h2>
+          </div>
+          <nav class="nav">
+            <ul class="nav__items">
+              <li class="nav__item">
+                <a href="" class="btn outlined invert">save</a>
+              </li>
+              <li class="nav__item">
+                <a href="" class="btn outlined invert">delete</a>
+              </li>
+              <li class="nav__item">
+                <a href="" class="btn clear invert">&times;</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="kiosk-body">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-body</span>
+        </div>
+      </div>
+      <footer class="kiosk-footer">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-footer</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <section>
+    <div class="kiosk">
+      <header class="kiosk-header">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-header</span>
+        </div>
+      </header>
+      <aside class="kiosk-aside">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-aside</span>
+        </div>
+      </aside>
+      <div class="kiosk-body">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-body</span>
+        </div>
+      </div>
+      <footer class="kiosk-footer">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-footer</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <section>
+    <div class="kiosk kiosk_reverse">
+      <header class="kiosk-header">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-header</span>
+        </div>
+      </header>
+      <aside class="kiosk-aside">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-aside</span>
+        </div>
+      </aside>
+      <div class="kiosk-body">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-body</span>
+        </div>
+      </div>
+      <footer class="kiosk-footer">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-footer</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <section>
+    <div class="kiosk">
+      <header class="kiosk-header">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-header</span>
+        </div>
+      </header>
+      <div class="kiosk-body">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-body</span>
+        </div>
+      </div>
+      <footer class="kiosk-footer">
+        <div class="demo-grid-placeholder">
+          <span class="code">kiosk-footer</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <pre><code>
+<div class="kiosk">
+  <header class="kiosk-header">
+    ...
+  </header>
+  <div class="kiosk-body">
+    ...
+  </div>
+  <aside class="kiosk-aside">
+    ...
+  </aside>
+  <footer class="kiosk-footer">
+    ...
+  </footer>
+</div>
+  </code></pre>
+</div>
+
+<div data-container>
   <main class="demo-body">
     <section id="basics">
       <h2>basics</h2>
@@ -157,7 +350,7 @@
 
     <section>
       <h2>naming conventions</h2>
-      <p>x.ui follows the BEM (Block, Element, Modifier) approach. For more see <a href="https://en.bem.info/methodology/quick-start/" target="_blank">https://en.bem.info/methodology/quick-start/</a>.</p>
+      <p>x.ui follows the <strong>BEM (Block, Element, Modifier)</strong> approach. For more see <a href="https://en.bem.info/methodology/quick-start/" target="_blank">https://en.bem.info/methodology/quick-start/</a>.</p>
       <h3>Modifier</h3>
       <p>An entity that defines the appearance, state, or behavior of a block or element. With x.ui there are some global modifier classes.</p>
       <table class="table">
@@ -172,6 +365,10 @@
         <tr>
           <td>size modifier</td>
           <td><span class="code">small</span>, <span class="code">big</span>, <span class="code">wide</span>, <span class="code">dense</span></td>
+        </tr>
+        <tr>
+          <td>layout modifier</td>
+          <td><span class="code">inline</span>, <span class="code">stacked</span></td>
         </tr>
       </table>
     </section>

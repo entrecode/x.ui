@@ -1,0 +1,105 @@
+.toolbar {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(center);
+  padding: rem(8) rem(16);
+  position: relative;
+
+  .drawer-toogle {
+    &:first-child {
+      margin-right: rem(16);
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-left: rem(16);
+      margin-right: 0;
+    }
+  }
+
+  .toolbar__title {
+    @include flex-grow(1);
+
+    @include headings {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      @include transform(translate3d(-50%, -50%, 0));
+      margin: 0;
+      font-size: em(18);
+    }
+  }
+
+  .nav {
+    @include flex-grow(0);
+    padding: rem(8) 0;
+
+    &:first-child {
+      margin-right: rem(16);
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-left: rem(16);
+      margin-right: 0;
+    }
+
+    .nav__items {
+
+    }
+
+    .btn {
+      margin: 0;
+    }
+  }
+
+  &.invert {
+    background-color: getColor(background, invert);
+    color: getColor(text, invert);
+
+    a {
+      &:not(.btn) {
+        color: setContrast(getColor(background, invert), getColor(link));
+      }
+    }
+
+    .drawer-toogle {
+      @extend .drawer-toogle.invert
+    }
+  }
+
+  &.super {
+    background-color: getColor(super);
+    color: setContrast(getColor(super));
+
+    a {
+      &:not(.btn) {
+        color: setContrast(getColor(super), getColor(link));
+      }
+    }
+
+    .drawer-toogle {
+      $drawer-toogle-color: setContrast(getColor(super), getColor(link));
+
+      &:after {
+        background-color: $drawer-toogle-color;
+        @include box-shadow(0 rem(($drawer-bar-height+$drawer-bar-spacing)) 0 0 $drawer-toogle-color, 0 rem(-($drawer-bar-height+$drawer-bar-spacing)) 0 0 $drawer-toogle-color);
+      }
+
+      &:before {
+        background-color: $drawer-toogle-color;
+      }
+
+      &.active {
+        &:after {
+          @include box-shadow(0 0 0 0 transparent, 0 0 0 0 transparent);
+        }
+      }
+    }
+  }
+
+  &.dense {
+    padding: 0 rem(16);
+    font-size: .875em;
+  }
+}

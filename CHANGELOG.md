@@ -1,3 +1,7 @@
+### added
+- new ui.component `kiosk`
+- new ui.component `toolbar`
+
 ## 2.0.0
 ### breaking changes
 - new markup for form-elements `.input-group`

@@ -48,14 +48,14 @@
     }
 
     &.invert {
-      color: getColor(text, invert);
-      border-color: getColor(background);
+      color: setContrast(getColor(background, invert), getColor(link));
+      border-color:  setContrast(getColor(background, invert), getColor(link));
 
       &.active,
       &:hover,
       &:focus {
-        color: getColor(text, invert);
-        border-color: getColor(background);
+        color: setContrast(getColor(background, invert), getColor(link));
+        border-color: setContrast(getColor(background, invert), getColor(link));
       }
     }
   }

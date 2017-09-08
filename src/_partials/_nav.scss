@@ -1,0 +1,19 @@
+.nav {
+  .nav__items {
+    @include flexbox;
+    margin-right: rem(-4);
+    margin-left: rem(-4);
+
+    .nav__item {
+      padding: rem(4);
+    }
+  }
+
+  &.inline {
+
+  }
+
+  &.stacked {
+
+  }
+}
