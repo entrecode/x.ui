@@ -47,7 +47,7 @@
     }
   }
 
-  &._disabled,
+  &.disabled,
   &[disabled] {
     cursor: not-allowed;
     background-color: getColor(background, lightest);
@@ -62,7 +62,7 @@
   /// sizes
   /// ------------------------------------------------------
 
-  &._small {
+  &.small {
     @include border-radius(rem($input-small-radius));
     @include macro-metrics($input-small-font-size, $input-small-line-height, $input-small-min-height, $input-border);
 
@@ -70,7 +70,7 @@
     @extend %btn-small-style !optional;
   }
 
-  &._big {
+  &.big {
     @include border-radius(rem($input-big-radius));
     @include macro-metrics($input-big-font-size, $input-big-line-height, $input-big-min-height, $input-border);
 
@@ -96,11 +96,11 @@
   .input {
     @include border-radius(rem($input-min-height / 2));
 
-    &._small {
+    &.small {
       @include border-radius(rem($input-small-min-height / 2));
     }
 
-    &._big {
+    &.big {
       @include border-radius(rem($input-big-min-height / 2));
     }
   }

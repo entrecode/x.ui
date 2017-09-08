@@ -27,12 +27,12 @@ a {
 p {
   margin: rem(8) 0;
 
-  &._small {
+  &.small {
     vertical-align: baseline;
     font-size: .875em;
   }
 
-  &._big,
+  &.big,
   &.lead {
     font-size: 1.125em;
     font-weight: $light;

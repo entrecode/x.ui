@@ -2,7 +2,7 @@
 $shadow: rgba(getColor(background, invert), .1) !default;
 
 .input {
-  &._raised {
+  &.raised {
     @include macro-metrics($input-font-size, $input-line-height, $input-min-height);
     @include box-shadow(0 2px 4px $shadow, 0 2px 8px $shadow);
 
@@ -10,11 +10,11 @@ $shadow: rgba(getColor(background, invert), .1) !default;
       @include box-shadow(0 1px 2px $shadow, 0 1px 4px $shadow);
     }
 
-    &._small {
+    &.small {
       @include macro-metrics($input-small-font-size, $input-small-line-height, $input-small-min-height);
     }
 
-    &._big {
+    &.big {
       @include macro-metrics($input-big-font-size, $input-big-line-height, $input-big-min-height);
     }
   }

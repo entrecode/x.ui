@@ -32,14 +32,14 @@ label {
     color: getColor(text);
   }
 
-  &._disabled {
+  &.disabled {
     cursor: not-allowed;
 
     &:hover {
       color: getColor(text);
     }
 
-    &:not(._active) {
+    &:not(.active) {
       opacity: .4;
 
       &:hover {

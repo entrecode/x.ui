@@ -12,51 +12,51 @@
   font-weight: $alert-weight;
   @include set-colors(getColor(minor));
 
-  &._small {
+  &.small {
     @include macro-metrics($alert-small-font-size, $alert-small-line-height, $alert-small-min-height);
     @include border-radius(rem($alert-small-radius));
     font-weight: $alert-small-weight;
   }
 
-  &._big {
+  &.big {
     @include macro-metrics($alert-big-font-size, $alert-big-line-height, $alert-big-min-height);
     @include border-radius(rem($alert-big-radius));
     font-weight: $alert-big-weight;
   }
 
-  &._minor {
+  &.minor {
     @include set-colors(getColor(minor));
   }
 
-  &._link {
+  &.link {
     @include set-colors(getColor(link));
   }
 
-  &._super {
+  &.super {
     @include set-colors(getColor(super));
   }
 
-  &._highlight {
+  &.highlight {
     @include set-colors(getColor(highlight));
   }
 
-  &._info {
+  &.info {
     @include set-colors(getColor(state, info));
   }
 
-  &._error {
+  &.error {
     @include set-colors(getColor(state, error));
   }
 
-  &._success {
+  &.success {
     @include set-colors(getColor(state, success));
   }
 
-  &._warning {
+  &.warning {
     @include set-colors(getColor(state, warning));
   }
 
-  &._invert {
+  &.invert {
     @include set-colors(getColor(background));
   }
 }
@@ -68,11 +68,11 @@
   .alert {
     @include border-radius(rem($alert-min-height / 2));
 
-    &._small {
+    &.small {
       @include border-radius(rem($alert-small-min-height / 2));
     }
 
-    &._big {
+    &.big {
       @include border-radius(rem($alert-big-min-height / 2));
     }
   }

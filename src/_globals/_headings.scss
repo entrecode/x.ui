@@ -40,12 +40,12 @@ h1, h2, h3, h4, h5, h6,
   @extend %heading-style !optional;
 
   small,
-  ._small {
+  .small {
     font-size: 0.875em;
     vertical-align: baseline;
   }
 
-  ._big {
+  .big {
     font-size: 1.125em;
   }
 }

@@ -2,7 +2,7 @@
 $shadow: rgba(getColor(background, invert), .1) !default;
 
 .btn {
-  &._raised {
+  &.raised {
     @include box-shadow(0 2px 4px $shadow, 0 2px 8px $shadow);
 
     &:hover {

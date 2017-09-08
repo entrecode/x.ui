@@ -1,21 +1,21 @@
 .btn {
   /// outlined button style
 
-  &._outlined {
+  &.outlined {
     background-color: transparent !important;
     color: getColor(link);
     border-color: getColor(link);
     @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height, $btn-outline);
 
-    &._small {
+    &.small {
       @include macro-metrics($btn-small-font-size, $btn-small-line-height, $btn-small-min-height, $btn-outline);
     }
 
-    &._big {
+    &.big {
       @include macro-metrics($btn-big-font-size, $btn-big-line-height, $btn-big-min-height, $btn-outline);
     }
 
-    &._active,
+    &.active,
     &:hover,
     &:focus {
       color: getColor(linkHover);
@@ -23,11 +23,11 @@
       border-color: getColor(linkHover);
     }
 
-    &._minor {
+    &.minor {
       color: getColor(link);
       border-color: getColor(minor);
 
-      &._active,
+      &.active,
       &:hover,
       &:focus {
         color: getColor(link);
@@ -35,11 +35,11 @@
       }
     }
 
-    &._super {
+    &.super {
       color: getColor(super);
       border-color: getColor(super);
 
-      &._active,
+      &.active,
       &:hover,
       &:focus {
         color: getColor(superHover);
@@ -47,11 +47,11 @@
       }
     }
 
-    &._invert {
+    &.invert {
       color: getColor(text, invert);
       border-color: getColor(background);
 
-      &._active,
+      &.active,
       &:hover,
       &:focus {
         color: getColor(text, invert);

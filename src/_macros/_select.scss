@@ -110,7 +110,7 @@
       }
 
       .btn {
-        @extend .btn._block;
+        @extend .btn.block;
         @include border-radius(rem($btn-radius));
         text-align: left;
         position: relative;
@@ -163,15 +163,15 @@
     }
   }
 
-  &._small {
+  &.small {
     > li {
-      @extend .input._small;
+      @extend .input.small;
     }
   }
 
-  &._big {
+  &.big {
     > li {
-      @extend .input._big;
+      @extend .input.big;
     }
   }
 }
