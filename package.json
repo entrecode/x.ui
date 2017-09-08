@@ -5,7 +5,8 @@
   "main": "src/x.ui.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build.scss": "node-sass --watch --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/x.ui.css"
+    "build": "node-sass --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/x.ui.css",
+    "watch": "node-sass --watch --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/x.ui.css"
   },
   "keywords": [
     "xlcss",
