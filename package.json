@@ -1,5 +1,5 @@
 {
-  "name": "xlcss-ui",
+  "name": "x.ui",
   "version": "1.0.0",
   "description": "UI based on xlcss",
   "main": "src/x.ui.scss",
