@@ -157,10 +157,21 @@
 
     <section>
       <h2>naming conventions</h2>
+      <p>x.ui follows the BEM (Block, Element, Modifier) approach. For more see <a href="https://en.bem.info/methodology/quick-start/" target="_blank">https://en.bem.info/methodology/quick-start/</a>.</p>
+      <h3>Modifier</h3>
+      <p>An entity that defines the appearance, state, or behavior of a block or element. With x.ui there are some global modifier classes.</p>
       <table class="table">
         <tr>
-          <td>inline style classes</td>
-          <td><span class="code">minor</span>, <span class="code">super</span>, <span class="code">link</span>, <span class="code">invert</span></td>
+          <td>style modifier</td>
+          <td><span class="code">minor</span>, <span class="code">super</span>, <span class="code">link</span>, <span class="code">invert</span>, <span class="code">highlight</span></td>
+        </tr>
+        <tr>
+          <td>state modifier</td>
+          <td><span class="code">info</span>, <span class="code">error</span>, <span class="code">success</span>, <span class="code">warning</span>, <span class="code">active</span>, <span class="code">disabled</span></td>
+        </tr>
+        <tr>
+          <td>size modifier</td>
+          <td><span class="code">small</span>, <span class="code">big</span>, <span class="code">wide</span>, <span class="code">dense</span></td>
         </tr>
       </table>
     </section>
@@ -524,7 +535,7 @@ $highlight: #A7FFEB;</code>
           <div class="input-group">
             <label for="id">Label</label>
             <input type="text" placeholder="Placeholder..." class="input" id="id">
-            <p class="input_help">additional input information</p>
+            <p class="input__help">additional input information</p>
           </div>
         </div>
         <div data-col="6sm">
@@ -532,7 +543,7 @@ $highlight: #A7FFEB;</code>
 <div class="input-group">
   <label for="id">Label</label>
   <input type="text" placeholder="Placeholder..." class="input" id="id">
-  <p class="input_help">additional input information</p>
+  <p class="input__help">additional input information</p>
 </div></code></pre>
         </div>
       </div>

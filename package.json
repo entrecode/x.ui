@@ -1,6 +1,6 @@
 {
-  "name": "xlcss-ui",
-  "version": "1.0.0",
+  "name": "x.ui",
+  "version": "2.0.0",
   "description": "UI based on xlcss",
   "main": "src/x.ui.scss",
   "scripts": {

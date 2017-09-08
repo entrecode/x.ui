@@ -5,19 +5,18 @@
 /// global styles for xlcss-ui
 /// global styles refer single objects, that can be combined to macros
 /// all styles should be highly adaptable for other project
-@import "body.scss";
-@import "btn";
-@import "btn_outlined";
-@import "btn_raised";
-@import "btn_round";
-@import "fieldset";
-@import "headings";
-@import "img";
-@import "input";
-@import "input_raised";
-@import "input_round";
-@import "label";
-@import "nav";
-@import "table";
-@import "typo";
-@import "list";
+@import 'body.scss';
+@import 'btn';
+@import 'btn_outlined';
+@import 'btn_raised';
+@import 'btn_round';
+@import 'fieldset';
+@import 'headings';
+@import 'img';
+@import 'input';
+@import 'input_raised';
+@import 'input_round';
+@import 'nav';
+@import 'table';
+@import 'typo';
+@import 'list';

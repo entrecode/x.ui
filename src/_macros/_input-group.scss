@@ -1,0 +1,23 @@
+.input-group {
+  margin: rem(4) 0;
+
+  label {
+    color: getColor(text);
+    cursor: pointer;
+    @include transition(color .2s);
+    display: block;
+    padding-bottom: rem(4);
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    &:not(.active) {
+      opacity: .4;
+
+      &:hover {
+        opacity: .2;
+      }
+    }
+  }
+}

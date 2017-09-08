@@ -5,19 +5,20 @@
 /// macro styles for x.ui
 /// macro styles refer objects with multiple children which can be a combination of multiple global elements
 /// all styles should be highly adaptable for other project
-@import "alert";
-@import "alert_outlined";
-@import "alert_round";
-@import "bubble";
-@import "bumper";
-@import "caret";
-@import "dropdown";
-@import "drawer-toogle";
-@import "header";
-@import "pill";
-@import "pill_reset";
-@import "select";
-@import "spacing";
-@import "tooltip";
-@import "tag";
-@import "well";
+@import 'alert';
+@import 'alert_outlined';
+@import 'alert_round';
+@import 'bubble';
+@import 'bumper';
+@import 'caret';
+@import 'dropdown';
+@import 'drawer-toogle';
+@import 'header';
+@import 'input-group';
+@import 'pill';
+@import 'pill_reset';
+@import 'select';
+@import 'spacing';
+@import 'tooltip';
+@import 'tag';
+@import 'well';
