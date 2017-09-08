@@ -1,9 +1,13 @@
 ## 2.0.0
 ### breaking changes
-- new markup for form-elements
+- new markup for form-elements `.input-group`
+- removed styles for `<label>`
 
 ### added
 - x.ui partial `menubar`, `menu`
+
+### changes
+- changed `"` to `'`
 
 ## 1.0.0
 ### breaking changes

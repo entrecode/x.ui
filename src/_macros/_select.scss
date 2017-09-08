@@ -5,16 +5,16 @@
 /// @author Bernhard Ruoff, Michael Locher
 ///
 /// @example
-///  <ul class="select">
-///    <li tabindex="1">
+///  <ul class='select'>
+///    <li tabindex='1'>
 ///      Label
-///      <ul class="select-options">
+///      <ul class='select-options'>
 ///        <li>
-///          <span class="btn clear">Label</span>
+///          <span class='btn clear'>Label</span>
 ///        </li>
-///        <li class="divider"></li>
+///        <li class='divider'></li>
 ///        <li>
-///          <span class="btn clear">Label</span>
+///          <span class='btn clear'>Label</span>
 ///        </li>
 ///      </ul>
 ///    </li>
@@ -57,7 +57,7 @@
       }
     }
 
-    > input:not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]) {
+    > input:not([type='submit']):not([type='reset']):not([type='checkbox']):not([type='radio']) {
       border: none;
       padding: 0;
       margin: 0;
@@ -142,7 +142,7 @@
 
       &:before {
         @extend .ec-icon;
-        content: "\e0e5";
+        content: '\e0e5';
         position: absolute;
         color: getColor(text, light);
         left: rem(16);

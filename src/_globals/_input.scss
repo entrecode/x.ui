@@ -120,18 +120,18 @@ select {
 }
 
 /// Keep the original size
-input[type="checkbox"],
-input[type="file"],
-input[type="image"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='file'],
+input[type='image'],
+input[type='radio'] {
   height: auto;
   width: auto;
   display: inline-block;
 }
 
 /// Checkbox & radio
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   line-height: normal;
   padding: 0;
   vertical-align: middle;
@@ -152,3 +152,5 @@ textarea {
   height: auto;
   resize: vertical;
 }
+
+.input__help {}
