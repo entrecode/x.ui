@@ -1,0 +1,77 @@
+/// @since 2.0.0
+
+$drawer-toogle-color: getColor(link); /// The transition duration
+$drawer-bar-width: 16;
+$drawer-bar-height: 2;
+$drawer-bar-spacing: 4;
+
+.drawer-toogle {
+  @extend %btn;
+  margin: rem(4);
+  background-color: transparent;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: rem($drawer-bar-height);
+    width: rem($drawer-bar-width);
+    background-color: $drawer-toogle-color;
+    left: rem((($btn-min-height - $drawer-bar-width)/2));
+    top: 50%;
+    margin-top: rem(-$drawer-bar-height/2);
+    @include box-shadow(0 rem(($drawer-bar-height+$drawer-bar-spacing)) 0 0 $drawer-toogle-color, 0 rem(-($drawer-bar-height+$drawer-bar-spacing)) 0 0 $drawer-toogle-color);
+    @include transition(all .4s);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: rem($drawer-bar-height);
+    width: rem($drawer-bar-width);
+    background-color: $drawer-toogle-color;
+    left: rem((($btn-min-height - $drawer-bar-width)/2));
+    top: 50%;
+    margin-top: rem(-$drawer-bar-height/2);
+    @include transition(all .4s);
+  }
+
+  &.active {
+    &:after {
+      content: '';
+      position: absolute;
+      height: rem($drawer-bar-height);
+      width: rem($drawer-bar-width);
+      background-color: $drawer-toogle-color;
+      left: rem((($btn-min-height - $drawer-bar-width)/2));
+      top: 50%;
+      margin-top: rem(-$drawer-bar-height/2);
+      @include box-shadow(0 0 0 0 transparent, 0 0 0 0 transparent);
+      @include transform(rotate(45deg));
+    }
+
+    &:before {
+      @include transform(rotate(-45deg));
+    }
+  }
+
+  &.invert {
+    $drawer-toogle-color: setContrast(getColor(background, invert), getColor(link));
+
+    &:after {
+      background-color: $drawer-toogle-color;
+      @include box-shadow(0 rem(($drawer-bar-height+$drawer-bar-spacing)) 0 0 $drawer-toogle-color, 0 rem(-($drawer-bar-height+$drawer-bar-spacing)) 0 0 $drawer-toogle-color);
+    }
+
+    &:before {
+      background-color: $drawer-toogle-color;
+    }
+
+    &.active {
+      &:after {
+        @include box-shadow(0 0 0 0 transparent, 0 0 0 0 transparent);
+      }
+    }
+  }
+}
+

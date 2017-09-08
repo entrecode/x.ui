@@ -33,7 +33,7 @@ header {
       }
     }
 
-    &._stacked {
+    &.stacked {
       @include flex-direction(column);
       @include align-items(flex-start);
 
@@ -45,7 +45,7 @@ header {
       }
     }
 
-    &._small {
+    &.small {
       font-size: 1em;
       margin-bottom: 0;
     }

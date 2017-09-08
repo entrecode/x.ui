@@ -43,11 +43,11 @@
   .btn {
     @include btn-glow(getColor(link), getColor(linkHover));
 
-    &._super {
+    &.super {
       @include btn-glow(getColor(super), getColor(superHover));
     }
 
-    &._minor {
+    &.minor {
       @include btn-glow(getColor(minor), getColor(minorHover));
     }
   }

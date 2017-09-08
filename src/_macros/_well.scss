@@ -6,47 +6,47 @@
   border-radius: 4px;
   margin: rem(16) 0;
 
-  &._minor {
+  &.minor {
     @include setText(base, minor);
   }
 
-  &._link {
+  &.link {
     @include setText(base, link);
   }
 
-  &._super {
+  &.super {
     @include setText(base, super);
   }
 
-  &._highlight {
+  &.highlight {
     @include setText(base, highlight);
   }
 
-  &._info {
+  &.info {
     @include setText(state, info);
   }
 
-  &._error {
+  &.error {
     @include setText(state, error);
   }
 
-  &._success {
+  &.success {
     @include setText(state, success);
   }
 
-  &._warning {
+  &.warning {
     @include setText(state, warning);
   }
 
-  &._invert {
+  &.invert {
     @include setText(background, invert);
   }
 
-  &._active {
+  &.active {
     @include setText(state, active);
   }
 
-  &._small {
+  &.small {
     padding: rem(8);
     margin: rem(8) 0;
   }

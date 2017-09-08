@@ -4,6 +4,18 @@
   @include align-items(center);
   padding: rem(8) rem(16);
 
+  .drawer-toogle {
+    &:first-child {
+      margin-right: rem(16);
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-left: rem(16);
+      margin-right: 0;
+    }
+  }
+
   .menubar__brand {
     @include flex-grow(0);
     padding: rem(8) rem(16);
@@ -19,7 +31,7 @@
     }
   }
 
-  &._invert {
+  &.invert {
     background-color: getColor(background, invert);
     color: getColor(text, invert);
 
@@ -28,15 +40,38 @@
         color: setContrast(getColor(background, invert), getColor(link));
       }
     }
+
+    .drawer-toogle {
+      @extend .drawer-toogle.invert
+    }
   }
 
-  &._super {
+  &.super {
     background-color: getColor(super);
     color: setContrast(getColor(super));
 
     a {
       &:not(.btn) {
         color: setContrast(getColor(super), getColor(link));
+      }
+    }
+
+    .drawer-toogle {
+      $drawer-toogle-color: setContrast(getColor(super), getColor(link));
+
+      &:after {
+        background-color: $drawer-toogle-color;
+        @include box-shadow(0 rem(($drawer-bar-height+$drawer-bar-spacing)) 0 0 $drawer-toogle-color, 0 rem(-($drawer-bar-height+$drawer-bar-spacing)) 0 0 $drawer-toogle-color);
+      }
+
+      &:before {
+        background-color: $drawer-toogle-color;
+      }
+
+      &.active {
+        &:after {
+          @include box-shadow(0 0 0 0 transparent, 0 0 0 0 transparent);
+        }
       }
     }
   }

@@ -1,12 +1,12 @@
 .alert {
-  &._round {
+  &.round {
     @include border-radius(rem($alert-min-height / 2));
 
-    &._small {
+    &.small {
       @include border-radius(rem($alert-small-min-height / 2));
     }
 
-    &._big {
+    &.big {
       @include border-radius(rem($alert-big-min-height / 2));
     }
   }

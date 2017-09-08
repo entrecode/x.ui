@@ -12,13 +12,13 @@
   @include border-radius(rem($pill-radius));
   @include set-colors(getColor(minor));
 
-  &._small {
+  &.small {
     @include macro-metrics($pill-small-font-size, $pill-small-line-height, $pill-small-min-height);
     @include border-radius(rem($pill-small-radius));
     font-weight: $pill-small-weight;
   }
 
-  &._big {
+  &.big {
     @include macro-metrics($pill-big-font-size, $pill-big-line-height, $pill-big-min-height);
     @include border-radius(rem($pill-big-radius));
     font-weight: $pill-big-weight;
@@ -34,90 +34,90 @@
     }
   }
 
-  &._minor {
+  &.minor {
     @include set-colors(getColor(minor));
 
-    @at-root a.pill._minor {
+    @at-root a.pill.minor {
       &:hover {
         background-color: getColor(minorHover);
       }
     }
   }
 
-  &._link {
+  &.link {
     @include set-colors(getColor(link));
 
-    @at-root a.pill._link {
+    @at-root a.pill.link {
       &:hover {
         background-color: getColor(linkHover);
       }
     }
   }
 
-  &._super {
+  &.super {
     @include set-colors(getColor(super));
 
-    @at-root a.pill._super {
+    @at-root a.pill.super {
       &:hover {
         background-color: getColor(superHover);
       }
     }
   }
 
-  &._highlight {
+  &.highlight {
     @include set-colors(getColor(highlight));
 
-    @at-root a.pill._highlight {
+    @at-root a.pill.highlight {
       &:hover {
         background-color: getColor(highlightHover);
       }
     }
   }
 
-  &._info {
+  &.info {
     @include set-colors(getColor(state, info));
 
-    @at-root a.pill._info {
+    @at-root a.pill.info {
       &:hover {
         background-color: varColor(getColor(state, info), -4);
       }
     }
   }
 
-  &._error {
+  &.error {
     @include set-colors(getColor(state, error));
 
-    @at-root a.pill._error {
+    @at-root a.pill.error {
       &:hover {
         background-color: varColor(getColor(state, error), -4);
       }
     }
   }
 
-  &._success {
+  &.success {
     @include set-colors(getColor(state, success));
 
-    @at-root a.pill._success {
+    @at-root a.pill.success {
       &:hover {
         background-color: varColor(getColor(state, success), -4);
       }
     }
   }
 
-  &._warning {
+  &.warning {
     @include set-colors(getColor(state, warning));
 
-    @at-root a.pill._warning {
+    @at-root a.pill.warning {
       &:hover {
         background-color: varColor(getColor(state, warning), -4);
       }
     }
   }
 
-  &._invert {
+  &.invert {
     @include set-colors(getColor(background));
 
-    @at-root a.pill._invert {
+    @at-root a.pill.invert {
       &:hover {
         background-color: varColor(getColor(background), -4);
       }

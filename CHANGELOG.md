@@ -1,3 +1,10 @@
+## 2.0.0
+### breaking changes
+- new markup for form-elements
+
+### added
+- x.ui partial `menubar`, `menu`
+
 ## 1.0.0
 ### breaking changes
 - changed naming convention for inline classes like `_minor`

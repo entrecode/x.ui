@@ -43,19 +43,19 @@ ul.dropdown {
     &:hover,
     &:focus {
       > .btn {
-        @extend .btn._active;
+        @extend .btn.active;
       }
 
-      > .btn._minor {
-        @extend .btn._minor._active;
+      > .btn.minor {
+        @extend .btn.minor.active;
       }
 
-      > .btn._super {
-        @extend .btn._super._active;
+      > .btn.super {
+        @extend .btn.super.active;
       }
 
-      > .btn._clear {
-        @extend .btn._clear._active;
+      > .btn.clear {
+        @extend .btn.clear.active;
       }
 
       ul.dropdown-options {
@@ -85,7 +85,7 @@ ul.dropdown {
       text-align: left;
 
       .btn {
-        @extend .btn._block;
+        @extend .btn.block;
         text-align: left;
       }
 

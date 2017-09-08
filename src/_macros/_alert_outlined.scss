@@ -1,59 +1,59 @@
 .alert {
-  &._outlined {
+  &.outlined {
     background-color: transparent;
     border-style: solid;
     border-color: getColor(minor);
     @include macro-metrics($alert-font-size, $alert-line-height, $alert-min-height, $alert-outlined);
 
-    &._small {
+    &.small {
       @include macro-metrics($alert-small-font-size, $alert-small-line-height, $alert-small-min-height, $alert-outlined);
     }
 
-    &._big {
+    &.big {
       @include macro-metrics($alert-big-font-size, $alert-big-line-height, $alert-big-min-height, $alert-outlined);
     }
 
-    &._minor {
+    &.minor {
       border-color: getColor(minor);
       color: setContrast(getColor(background), getColor(minor));
     }
 
-    &._link {
+    &.link {
       border-color: getColor(link);
       color: setContrast(getColor(background), getColor(link));
     }
 
-    &._super {
+    &.super {
       border-color: getColor(super);
       color: setContrast(getColor(background), getColor(super));
     }
 
-    &._highlight {
+    &.highlight {
       border-color: getColor(highlight);
       color: setContrast(getColor(background), getColor(highlight));
     }
 
-    &._info {
+    &.info {
       border-color: getColor(state, info);
       color: setContrast(getColor(background), getColor(state, info));
     }
 
-    &._error {
+    &.error {
       border-color: getColor(state, error);
       color: setContrast(getColor(background), getColor(state, error));
     }
 
-    &._success {
+    &.success {
       border-color: getColor(state, success);
       color: setContrast(getColor(background), getColor(state, success));
     }
 
-    &._warning {
+    &.warning {
       border-color: getColor(state, warning);
       color: setContrast(getColor(background), getColor(state, warning));
     }
 
-    &._invert {
+    &.invert {
       border-color: getColor(text, invert);
       color: getColor(text, invert);
     }

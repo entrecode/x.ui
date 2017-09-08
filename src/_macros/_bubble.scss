@@ -11,51 +11,51 @@
   @include border-radius(rem($bubble-radius));
   @include set-colors(getColor(minor));
 
-  &._small {
+  &.small {
     @include macro-metrics($bubble-small-font-size, $bubble-small-line-height, $bubble-small-min-height);
     @include border-radius(rem($bubble-small-radius));
     font-weight: $bubble-small-weight;
   }
 
-  &._big {
+  &.big {
     @include macro-metrics($bubble-big-font-size, $bubble-big-line-height, $bubble-big-min-height);
     @include border-radius(rem($bubble-big-radius));
     font-weight: $bubble-big-weight;
   }
 
-  &._minor {
+  &.minor {
     @include set-colors(getColor(minor));
   }
 
-  &._link {
+  &.link {
     @include set-colors(getColor(link));
   }
 
-  &._super {
+  &.super {
     @include set-colors(getColor(super));
   }
 
-  &._highlight {
+  &.highlight {
     @include set-colors(getColor(highlight));
   }
 
-  &._info {
+  &.info {
     @include set-colors(getColor(state, info));
   }
 
-  &._error {
+  &.error {
     @include set-colors(getColor(state, error));
   }
 
-  &._success {
+  &.success {
     @include set-colors(getColor(state, success));
   }
 
-  &._warning {
+  &.warning {
     @include set-colors(getColor(state, warning));
   }
 
-  &._invert {
+  &.invert {
     @include set-colors(getColor(background));
   }
 }
@@ -67,11 +67,11 @@
   .bubble {
     @include border-radius(rem($bubble-min-height / 2));
 
-    &._small {
+    &.small {
       @include border-radius(rem($bubble-small-min-height / 2));
     }
 
-    &._big {
+    &.big {
       @include border-radius(rem($bubble-big-min-height / 2));
     }
   }

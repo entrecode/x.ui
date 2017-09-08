@@ -21,18 +21,18 @@
     @include box-shadow(rem(8) 0 0 getColor(divider), rem(16) 0 0 getColor(divider));
   }
 
-  &._invert {
+  &.invert {
     &:before {
       background-color: rgba(getColor(background), .2);
       @include box-shadow(rem(8) 0 0 rgba(getColor(background), .2), rem(16) 0 0 rgba(getColor(background), .2));
     }
   }
 
-  &._small {
+  &.small {
     margin: rem(16) 0;
   }
 
-  &._big {
+  &.big {
     margin: rem(48) 0;
   }
 }

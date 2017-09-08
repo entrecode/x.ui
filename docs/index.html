@@ -26,8 +26,8 @@
   <div class="demo-intro-body">
     <div data-container>
       <h1>x.ui</h1>
-      <span class="tag _invert">v 1.0.0</span>
-      <span class="tag _invert">xlcss-4.1.0</span>
+      <span class="tag invert">v 1.0.0</span>
+      <span class="tag invert">xlcss-4.1.0</span>
       <p class="lead">x.ui is based on the scss framework <strong><a
           href="https://github.com/entrecode/xlcss" target="_blank">xlcss</a></strong>. It is
         inspired by the
@@ -42,21 +42,20 @@
   <h3>menubar</h3>
 </div>
 
-<div class="menubar _invert">
+<div class="menubar invert">
   <strong class="menubar__brand">x.ui</strong>
-
   <nav class="menu menu_dropbown">
     <ul class="menu__items">
-      <li class="menu-item _parent" tabindex="0">
-        <a href="" class="btn _clear _invert">ui</a>
+      <li class="menu-item parent" tabindex="0">
+        <a href="" class="btn clear invert">ui</a>
         <div class="sub-menu">
           <ul class="sub-menu__items">
-            <li class="sub-menu-item _level1 _parent" tabindex="0">
-              <a href="" class="btn _clear">ui 2</a>
+            <li class="sub-menu-item level1 parent" tabindex="0">
+              <a href="" class="btn clear">ui 2</a>
               <div class="sub-menu">
                 <ul class="sub-menu__items">
-                  <li class="sub-menu-item _level2">
-                    <a href="" class="btn _clear">ui 2</a>
+                  <li class="sub-menu-item level2">
+                    <a href="" class="btn clear">ui 2</a>
                   </li>
                 </ul>
               </div>
@@ -66,24 +65,22 @@
       </li>
     </ul>
   </nav>
-
 </div>
 
-<div class="menubar _super">
+<div class="menubar super">
   <strong class="menubar__brand">x.ui</strong>
-
   <nav class="menu menu_dropbown">
     <ul class="menu__items">
-      <li class="menu-item _parent" tabindex="0">
-        <a href="" class="btn _super">ui</a>
+      <li class="menu-item parent" tabindex="0">
+        <a href="" class="btn super">ui</a>
         <div class="sub-menu">
           <ul class="sub-menu__items">
-            <li class="sub-menu-item _level1 _parent" tabindex="0">
-              <a href="" class="btn _clear">ui 2</a>
+            <li class="sub-menu-item level1 parent" tabindex="0">
+              <a href="" class="btn clear">ui 2</a>
               <div class="sub-menu">
                 <ul class="sub-menu__items">
-                  <li class="sub-menu-item _level2">
-                    <a href="" class="btn _clear">ui 2</a>
+                  <li class="sub-menu-item level2">
+                    <a href="" class="btn clear">ui 2</a>
                   </li>
                 </ul>
               </div>
@@ -93,15 +90,39 @@
       </li>
     </ul>
   </nav>
+  <button class="drawer-toogle" data-target="id"></button>
+</div>
 
+<div class="menubar invert">
+  <button class="drawer-toogle" data-target="id"></button>
+  <strong class="menubar__brand">x.ui</strong>
+  <nav class="menu menu_dropbown">
+    <ul class="menu__items">
+      <li class="menu-item parent" tabindex="0">
+        <a href="" class="btn clear invert">ui</a>
+        <div class="sub-menu">
+          <ul class="sub-menu__items">
+            <li class="sub-menu-item level1 parent" tabindex="0">
+              <a href="" class="btn clear">ui 2</a>
+              <div class="sub-menu">
+                <ul class="sub-menu__items">
+                  <li class="sub-menu-item level2">
+                    <a href="" class="btn clear">ui 2</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
 </div>
 
 <div data-container>
   <main class="demo-body">
     <section id="basics">
-      <header class="demo-header">
-        <h2>basics</h2>
-      </header>
+      <h2>basics</h2>
 
       <section>
         <h3 class="text-super">files</h3>
@@ -135,16 +156,17 @@
     </section>
 
     <section>
-      <header class="demo-header">
-        <h2>naming conventions</h2>
-      </header>
-
+      <h2>naming conventions</h2>
+      <table class="table">
+        <tr>
+          <td>inline style classes</td>
+          <td><span class="code">minor</span>, <span class="code">super</span>, <span class="code">link</span>, <span class="code">invert</span></td>
+        </tr>
+      </table>
     </section>
 
     <section>
-      <header class="demo-header">
-        <h2>core</h2>
-      </header>
+      <h2>core</h2>
       <p class="lead">core styles, are styles that don't refer a specific DOM object, but the
         whole project in general like colors and basic font settings</p>
       <h3 class="text-super">core.colors</h3>
@@ -307,7 +329,7 @@
           <p class="lead">the colors are organised via a map and can be accessed via <span
               class="code">getColor()</span> function.</p>
           <pre><code class="scss">.example { color: getColor(base, link); }</code></pre>
-          <div class="spacing _small"></div>
+          <div class="spacing small"></div>
           <p class="lead">the colornap itself refers to variables set in <span class="code">_config.scss</span>
           </p>
           <pre><code class="scss">
@@ -326,7 +348,7 @@ $highlight: #A7FFEB;</code>
         and headings like <span class="code">h1</span> <span class="code">h2</span> <span
             class="code">h3</span> <span class="code">h4</span> <span class="code">h5</span> <span
             class="code">h6</span></p>
-      <table class="demo-options-table">
+      <table class="table">
         <thead>
         <tr>
           <th></th>
@@ -362,78 +384,76 @@ $highlight: #A7FFEB;</code>
     </section>
 
     <section>
-      <header class="demo-header">
-        <h2>global</h2>
-      </header>
+      <h2>global</h2>
       <p class="lead">global styles for html tags and basic design elements like buttons, heading,
-        forms or general text-elements. Global elements are the _smallest elements in the unicorn
+        forms or general text-elements. Global elements are the smallest elements in the unicorn
         worklflow.</p>
 
       <h3 class="text-super">buttons</h3>
       <div class="well">
         <a class="btn">default</a>
-        <a class="btn _minor">minor</a>
-        <a class="btn _super">super</a>
-        <a class="btn _clear">clear</a>
-        <a class="btn _invert">invert</a>
+        <a class="btn minor">minor</a>
+        <a class="btn super">super</a>
+        <a class="btn clear">clear</a>
+        <a class="btn invert">invert</a>
       </div>
       <pre><code class="html">
 <a class="btn">default</a>
-<a class="btn _minor">minor</a>
-<a class="btn _super">super</a>
-<a class="btn _clear">clear</a>
-<a class="btn _invert">invert</a></code></pre>
+<a class="btn minor">minor</a>
+<a class="btn super">super</a>
+<a class="btn clear">clear</a>
+<a class="btn invert">invert</a></code></pre>
 
       <div class="bumper"></div>
 
       <h4>outlined</h4>
       <div class="well">
-        <a class="btn _outlined">default</a>
-        <a class="btn _outlined _minor">minor</a>
-        <a class="btn _outlined _super">super</a>
-        <a class="btn _outlined _invert">invert</a>
+        <a class="btn outlined">default</a>
+        <a class="btn outlined minor">minor</a>
+        <a class="btn outlined super">super</a>
+        <a class="btn outlined invert">invert</a>
       </div>
       <pre><code class="html">
-<a class="btn _outlined">default</a>
-<a class="btn _outlined _minor">minor</a>
-<a class="btn _outlined _super">super</a>
-<a class="btn _outlined _invert">invert</a></code></pre>
+<a class="btn outlined">default</a>
+<a class="btn outlined minor">minor</a>
+<a class="btn outlined super">super</a>
+<a class="btn outlined invert">invert</a></code></pre>
 
       <div class="bumper"></div>
 
       <h4>round</h4>
       <div class="well">
-        <a class="btn _round">default</a>
-        <a class="btn _round _minor">minor</a>
-        <a class="btn _round _super">super</a>
-        <a class="btn _round _invert">invert</a>
-        <a class="btn _round _outlined">default</a>
-        <a class="btn _round _minor _outlined">minor</a>
-        <a class="btn _round _super _outlined">super</a>
-        <a class="btn _round _invert _outlined">invert</a>
+        <a class="btn round">default</a>
+        <a class="btn round minor">minor</a>
+        <a class="btn round super">super</a>
+        <a class="btn round invert">invert</a>
+        <a class="btn round outlined">default</a>
+        <a class="btn round minor outlined">minor</a>
+        <a class="btn round super outlined">super</a>
+        <a class="btn round invert outlined">invert</a>
       </div>
       <pre><code class="html">
-<a class="btn _round">default</a>
-<a class="btn _round _minor">minor</a>
-<a class="btn _round _super">super</a>
-<a class="btn _round _invert">invert</a>
-<a class="btn _round _outlined">default</a>
-<a class="btn _round _minor _outlined">minor</a>
-<a class="btn _round _super _outlined">super</a>
-<a class="btn _round _invert _outlined">invert</a></code></pre>
+<a class="btn round">default</a>
+<a class="btn round minor">minor</a>
+<a class="btn round super">super</a>
+<a class="btn round invert">invert</a>
+<a class="btn round outlined">default</a>
+<a class="btn round minor outlined">minor</a>
+<a class="btn round super outlined">super</a>
+<a class="btn round invert outlined">invert</a></code></pre>
 
       <div class="bumper"></div>
 
       <h4>raised</h4>
       <div class="well">
         <a class="btn raised">default</a>
-        <a class="btn _minor raised">minor</a>
-        <a class="btn _super raised">super</a>
+        <a class="btn minor raised">minor</a>
+        <a class="btn super raised">super</a>
       </div>
       <pre><code class="html">
 <a class="btn raised">default</a>
-<a class="btn _minor raised">minor</a>
-<a class="btn _super raised">super</a></code></pre>
+<a class="btn minor raised">minor</a>
+<a class="btn super raised">super</a></code></pre>
 
       <div class="bumper"></div>
 
@@ -443,10 +463,10 @@ $highlight: #A7FFEB;</code>
           <a class="btn">default</a>
         </div>
         <div class="glowing">
-          <a class="btn _minor">minor</a>
+          <a class="btn minor">minor</a>
         </div>
         <div class="glowing">
-          <a class="btn _super">super</a>
+          <a class="btn super">super</a>
         </div>
       </div>
       <pre><code class="html">
@@ -454,32 +474,32 @@ $highlight: #A7FFEB;</code>
   <a class="btn">default</a>
 </div>
 <div class="glowing">
-  <a class="btn _minor">minor</a>
+  <a class="btn minor">minor</a>
 </div>
 <div class="glowing">
-  <a class="btn _super">super</a>
+  <a class="btn super">super</a>
 </div></code></pre>
 
       <div class="bumper"></div>
 
       <h4>sizes</h4>
       <div class="well">
-        <a class="btn _small">small</a>
+        <a class="btn small">small</a>
         <a class="btn">default</a>
-        <a class="btn _big">big</a><br>
-        <a class="btn _small _wide">wide _small</a>
-        <a class="btn _wide">wide default</a>
-        <a class="btn _big _wide">wide _big</a>
-        <a class="btn _block">block</a>
+        <a class="btn big">big</a><br>
+        <a class="btn small wide">wide small</a>
+        <a class="btn wide">wide default</a>
+        <a class="btn big wide">wide big</a>
+        <a class="btn block">block</a>
       </div>
       <pre><code class="html">
-<a class="btn _small">small</a>
+<a class="btn small">small</a>
 <a class="btn">default</a>
-<a class="btn _big">big</a>
-<a class="btn _small _wide">wide _small</a>
-<a class="btn _wide">wide default</a>
-<a class="btn _big _wide">wide _big</a>
-<a class="btn _block">block</a></code></pre>
+<a class="btn big">big</a>
+<a class="btn small wide">wide small</a>
+<a class="btn wide">wide default</a>
+<a class="btn big wide">wide big</a>
+<a class="btn block">block</a></code></pre>
 
 
       <div class="bumper"></div>
@@ -487,87 +507,79 @@ $highlight: #A7FFEB;</code>
       <h4>states</h4>
       <div class="well">
         <a class="btn" disabled>default</a>
-        <a class="btn _minor" disabled>minor</a>
-        <a class="btn _super" disabled>super</a>
+        <a class="btn minor" disabled>minor</a>
+        <a class="btn super" disabled>super</a>
       </div>
       <pre><code class="html">
 <a class="btn" disabled>default</a>
-<a class="btn _minor" disabled>minor</a>
-<a class="btn _super" disabled>super</a></code></pre>
+<a class="btn minor" disabled>minor</a>
+<a class="btn super" disabled>super</a></code></pre>
 
-      <div class="bumper _big"></div>
+      <div class="bumper big"></div>
 
       <h3 class="text-super">form elements</h3>
       <div data-row>
         <div data-col="6sm">
           <span class="code">[type="text"]</span>
-          <label>
-            Label
-            <input type="text" placeholder="Placeholder..." class="input">
-            <p>additional input information</p>
-          </label>
+          <div class="input-group">
+            <label for="id">Label</label>
+            <input type="text" placeholder="Placeholder..." class="input" id="id">
+            <p class="input_help">additional input information</p>
+          </div>
         </div>
         <div data-col="6sm">
           <pre><code class="html">
-<label>
-  Label
-  <input type="text" placeholder="Placeholder..." class="input">
-  <p>additional input information</p>
-</label></code></pre>
+<div class="input-group">
+  <label for="id">Label</label>
+  <input type="text" placeholder="Placeholder..." class="input" id="id">
+  <p class="input_help">additional input information</p>
+</div></code></pre>
         </div>
       </div>
       <div data-row>
         <div data-col="6sm">
           <span class="code">[type="number"]</span>
-          <label>
-            <input type="number" placeholder="Placeholder..." class="input">
-          </label>
+          <input type="number" placeholder="Placeholder..." class="input">
         </div>
       </div>
       <div data-row>
         <div data-col="6sm">
           <span class="code">[type="tel"]</span>
-          <label>
-            <input type="tel" placeholder="Placeholder..." class="input">
-          </label>
+          <input type="tel" placeholder="Placeholder..." class="input">
         </div>
       </div>
       <div data-row>
         <div data-col="6sm">
           <span class="code">[type="email"]</span>
-          <label>
-            <input type="email" placeholder="Placeholder..." class="input">
-          </label>
+          <input type="email" placeholder="Placeholder..." class="input">
         </div>
       </div>
       <div data-row>
         <div data-col="6sm">
           <span class="code">[type="date"]</span>
-          <label>
-            <input type="date" placeholder="Placeholder..." class="input">
-          </label>
+          <input type="date" placeholder="Placeholder..." class="input">
         </div>
       </div>
       <div data-row>
         <div data-col="6sm">
           <span class="code">[type="file"]</span>
-          <label>
-            <input type="file">
-          </label>
+          <input type="file">
         </div>
       </div>
       <div data-row>
         <div data-col="6sm">
           <span class="code">[type="password"]</span>
-          <label>
-            <input type="password" placeholder="Placeholder..." class="input">
-          </label>
+          <input type="password" placeholder="Placeholder..." class="input">
         </div>
       </div>
       <div data-row>
         <div data-col="6sm">
           <span class="code">[type="checkbox"]</span>
-          <label>
+          <div class="input-group">
+            <label></label>
+
+          </div>
+
             <input type="checkbox">
             Label
             <p>additional input information</p>
@@ -656,7 +668,7 @@ $highlight: #A7FFEB;</code>
         <div data-col="6sm">
           <label>
             Label
-            <input type="text" class="input _big" placeholder="Placeholder...">
+            <input type="text" class="input big" placeholder="Placeholder...">
             <p>additional input information</p>
           </label>
         </div>
@@ -664,7 +676,7 @@ $highlight: #A7FFEB;</code>
           <pre><code class="html">
 <label>
   Label
-  <input type="text" class="input _big" placeholder="Placeholder...">
+  <input type="text" class="input big" placeholder="Placeholder...">
   <p>additional input information</p>
 </label></code></pre>
         </div>
@@ -674,7 +686,7 @@ $highlight: #A7FFEB;</code>
         <div data-col="6sm">
           <label>
             Label
-            <input type="text" class="input _small" placeholder="Placeholder...">
+            <input type="text" class="input small" placeholder="Placeholder...">
             <p>additional input information</p>
           </label>
         </div>
@@ -682,13 +694,13 @@ $highlight: #A7FFEB;</code>
           <pre><code class="html">
 <label>
   Label
-  <input type="text" class="input _small" placeholder="Placeholder...">
+  <input type="text" class="input small" placeholder="Placeholder...">
   <p>additional input information</p>
 </label></code></pre>
         </div>
       </div>
 
-      <div class="bumper _big"></div>
+      <div class="bumper big"></div>
 
       <h3 class="text-super">headings</h3>
       <div data-row>
@@ -859,9 +871,7 @@ $highlight: #A7FFEB;</code>
     </section>
 
     <section>
-      <header class="demo-header">
-        <h2>macros</h2>
-      </header>
+      <h2>macros</h2>
 
       <h3 class="text-super">alerts</h3>
       <div class="alert error">Sie mußte irgend etwas davon fühlen, denn sie spannte ihre
@@ -869,42 +879,42 @@ $highlight: #A7FFEB;</code>
         jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
       </div>
       <pre><code class="html">
-<div class="alert _error">Sie mußte irgend ...</div></code></pre>
+<div class="alert error">Sie mußte irgend ...</div></code></pre>
 
       <div class="bumper"></div>
 
       <h4>alert states</h4>
       <pre><code class="html">
-<div class="alert _minor"></div>
+<div class="alert minor"></div>
         </code></pre>
       <div class="well">
         <div data-flex="column">
           <div>
-            <div class="alert _minor">_minor</div>
+            <div class="alert minor">minor</div>
           </div>
           <div>
-            <div class="alert _link">_link</div>
+            <div class="alert link">link</div>
           </div>
           <div>
-            <div class="alert _super">_super</div>
+            <div class="alert super">super</div>
           </div>
           <div>
-            <div class="alert _highlight">_highlight</div>
+            <div class="alert highlight">highlight</div>
           </div>
           <div>
-            <div class="alert _info">_info</div>
+            <div class="alert info">info</div>
           </div>
           <div>
-            <div class="alert _error">_error</div>
+            <div class="alert error">error</div>
           </div>
           <div>
-            <div class="alert _success">_success</div>
+            <div class="alert success">success</div>
           </div>
           <div>
-            <div class="alert _warning">_warning</div>
+            <div class="alert warning">warning</div>
           </div>
           <div>
-            <div class="alert _invert">_invert</div>
+            <div class="alert invert">invert</div>
           </div>
         </div>
       </div>
@@ -913,65 +923,65 @@ $highlight: #A7FFEB;</code>
 
       <h4>alert outlined states</h4>
       <pre><code class="html">
-<div class="alert _outlined _minor"></div>
+<div class="alert outlined minor"></div>
         </code></pre>
       <div class="well">
         <div data-flex="column">
           <div>
-            <div class="alert _outlined _minor"> _minor</div>
+            <div class="alert outlined minor">minor</div>
           </div>
           <div>
-            <div class="alert _outlined _link">_link</div>
+            <div class="alert outlined link">link</div>
           </div>
           <div>
-            <div class="alert _outlined _super"> _super</div>
+            <div class="alert outlined super">super</div>
           </div>
           <div>
-            <div class="alert _outlined _highlight">_highlight</div>
+            <div class="alert outlined highlight">highlight</div>
           </div>
           <div>
-            <div class="alert _outlined _info">_info</div>
+            <div class="alert outlined info">info</div>
           </div>
           <div>
-            <div class="alert _outlined _error">_error</div>
+            <div class="alert outlined error">error</div>
           </div>
           <div>
-            <div class="alert _outlined _success">_success</div>
+            <div class="alert outlined success">success</div>
           </div>
           <div>
-            <div class="alert _outlined _warning">_warning</div>
+            <div class="alert outlined warning">warning</div>
           </div>
           <div>
-            <div class="alert _outlined _invert">_invert</div>
+            <div class="alert outlined invert">invert</div>
           </div>
         </div>
       </div>
 
       <h4>sizes</h4>
       <pre><code class="html">
-<div class="alert _small"></div>
+<div class="alert small"></div>
 <div class="alert"></div>
-<div class="alert _big"></div>
+<div class="alert big"></div>
         </code></pre>
       <div class="well">
         <div data-flex="column">
           <div>
-            <div class="alert _small"> _small</div>
+            <div class="alert small">small</div>
           </div>
           <div>
             <div class="alert">default</div>
           </div>
           <div>
-            <div class="alert _big"> _big</div>
+            <div class="alert big">big</div>
           </div>
           <div>
-            <div class="alert _outlined _small"> _small</div>
+            <div class="alert outlined small">small</div>
           </div>
           <div>
-            <div class="alert _outlined">default</div>
+            <div class="alert outlined">default</div>
           </div>
           <div>
-            <div class="alert _outlined _big"> _big</div>
+            <div class="alert outlined big">big</div>
           </div>
         </div>
       </div>
@@ -981,28 +991,28 @@ $highlight: #A7FFEB;</code>
       <h3>tags</h3>
       <div class="well">
         <div data-flex="small-grid">
-          <div><span class="tag _outlined _minor"> _minor</span></div>
-          <div><span class="tag _outlined _link">_link</span></div>
-          <div><span class="tag _outlined _super"> _super</span></div>
-          <div><span class="tag _outlined _highlight">_highlight</span></div>
-          <div><span class="tag _outlined _info">_info</span></div>
-          <div><span class="tag _outlined _error">_error</span></div>
-          <div><span class="tag _outlined _success">_success</span></div>
-          <div><span class="tag _outlined _warning">_warning</span></div>
-          <div><span class="tag _outlined _invert">_invert</span></div>
+          <div><span class="tag outlined minor">minor</span></div>
+          <div><span class="tag outlined link">link</span></div>
+          <div><span class="tag outlined super">super</span></div>
+          <div><span class="tag outlined highlight">highlight</span></div>
+          <div><span class="tag outlined info">info</span></div>
+          <div><span class="tag outlined error">error</span></div>
+          <div><span class="tag outlined success">success</span></div>
+          <div><span class="tag outlined warning">warning</span></div>
+          <div><span class="tag outlined invert">invert</span></div>
         </div>
       </div>
 
       <h4>sizes</h4>
       <pre><code class="html">
-<span class="tag _small"></span>
+<span class="tag small"></span>
 <span class="tag"></span>
-<span class="tag _big"></span>
+<span class="tag big"></span>
         </code></pre>
       <div class="well">
-        <span class="tag _small"> _small</span>
+        <span class="tag small"> small</span>
         <span class="tag">default</span>
-        <span class="tag _big"> _big</span>
+        <span class="tag big"> big</span>
       </div>
 
       <div class="bumper"></div>
@@ -1010,28 +1020,28 @@ $highlight: #A7FFEB;</code>
       <h3>bubbles</h3>
       <div class="well">
         <div data-flex="small-grid">
-          <div><span class="bubble _outlined _minor"> _minor</span></div>
-          <div><span class="bubble _outlined _link">_link</span></div>
-          <div><span class="bubble _outlined _super"> _super</span></div>
-          <div><span class="bubble _outlined _highlight">_highlight</span></div>
-          <div><span class="bubble _outlined _info">_info</span></div>
-          <div><span class="bubble _outlined _error">_error</span></div>
-          <div><span class="bubble _outlined _success">_success</span></div>
-          <div><span class="bubble _outlined _warning">_warning</span></div>
-          <div><span class="bubble _outlined _invert">_invert</span></div>
+          <div><span class="bubble outlined minor">minor</span></div>
+          <div><span class="bubble outlined link">link</span></div>
+          <div><span class="bubble outlined super">super</span></div>
+          <div><span class="bubble outlined highlight">highlight</span></div>
+          <div><span class="bubble outlined info">info</span></div>
+          <div><span class="bubble outlined error">error</span></div>
+          <div><span class="bubble outlined success">success</span></div>
+          <div><span class="bubble outlined warning">warning</span></div>
+          <div><span class="bubble outlined invert">invert</span></div>
         </div>
       </div>
 
       <h4>sizes</h4>
       <pre><code class="html">
-<span class="bubble _small"></span>
+<span class="bubble small"></span>
 <span class="bubble"></span>
-<span class="bubble _big"></span>
+<span class="bubble big"></span>
         </code></pre>
       <div class="well">
-        <span class="bubble _small"> _small</span>
+        <span class="bubble small"> small</span>
         <span class="bubble">default</span>
-        <span class="bubble _big"> _big</span>
+        <span class="bubble big"> big</span>
       </div>
 
     </section>
@@ -1042,7 +1052,7 @@ $highlight: #A7FFEB;</code>
       </header>
 
       <h3>Grid options</h3>
-      <table class="demo-options-table">
+      <table class="table">
         <thead>
         <tr>
           <th></th>
@@ -1436,7 +1446,7 @@ $highlight: #A7FFEB;</code>
       <header class="demo-header">
         <h2>flex-grid</h2>
       </header>
-      <table class="demo-options-table">
+      <table class="table">
         <thead>
         <tr>
           <th></th>
@@ -1606,7 +1616,7 @@ $highlight: #A7FFEB;</code>
       </div>
 
       <h3>flex-grid col size</h3>
-      <table class="demo-options-table">
+      <table class="table">
         <thead>
         <tr>
           <th>value</th>

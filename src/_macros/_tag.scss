@@ -13,51 +13,51 @@
   @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height);
   @include border-radius(rem($tag-radius));
 
-  &._small {
+  &.small {
     @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height);
     @include border-radius(rem($tag-small-radius));
     font-weight: $tag-small-weight;
   }
 
-  &._big {
+  &.big {
     @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height);
     @include border-radius(rem($tag-big-radius));
     font-weight: $tag-big-weight;
   }
 
-  &._minor {
+  &.minor {
     @include set-colors(getColor(minor));
   }
 
-  &._link {
+  &.link {
     @include set-colors(getColor(link));
   }
 
-  &._super {
+  &.super {
     @include set-colors(getColor(super));
   }
 
-  &._highlight {
+  &.highlight {
     @include set-colors(getColor(highlight));
   }
 
-  &._info {
+  &.info {
     @include set-colors(getColor(state, info));
   }
 
-  &._error {
+  &.error {
     @include set-colors(getColor(state, error));
   }
 
-  &._success {
+  &.success {
     @include set-colors(getColor(state, success));
   }
 
-  &._warning {
+  &.warning {
     @include set-colors(getColor(state, warning));
   }
 
-  &._invert {
+  &.invert {
     @include set-colors(getColor(background));
   }
 }
@@ -69,11 +69,11 @@
   .tag {
     @include border-radius(rem($tag-min-height / 2));
 
-    &._small {
+    &.small {
       @include border-radius(rem($tag-small-min-height / 2));
     }
 
-    &._big {
+    &.big {
       @include border-radius(rem($tag-big-min-height / 2));
     }
   }
@@ -84,11 +84,11 @@ a.tag {
     background-color: getColor(minorHover);
     text-decoration: none;
 
-    &._link {
+    &.link {
       background-color: getColor(linkHover);
     }
 
-    &._super {
+    &.super {
       background-color: getColor(superHover);
     }
   }

@@ -1,17 +1,13 @@
-.demo-options-table {
+.table {
   font-size: rem(12);
   margin: rem(32) 0;
 
   thead {
     border-top: 1px solid getColor(divider);
-    border-top: 1px solid getColor(divider);
-    border-bottom: 1px solid getColor(divider);
   }
 
   td {
     border-bottom: 1px solid getColor(divider);
-    text-align: center;
-    vertical-align: middle;
   }
 
   td, th {
@@ -25,9 +21,10 @@
 
   tbody {
     tr {
-      td:first-child {
-        font-weight: $bold;
-        text-align: left;
+      &:first-child {
+        td {
+          border-top: 1px solid getColor(divider);
+        }
       }
     }
   }

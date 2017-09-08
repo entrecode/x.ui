@@ -27,7 +27,7 @@
   }
 
   .menu-item {
-    &._parent {
+    &.parent {
       position: relative;
       @extend %parent-indicator;
 
@@ -62,7 +62,7 @@
       .sub-menu-item {
         white-space: nowrap;
 
-        &._parent {
+        &.parent {
           position: relative;
           @extend %parent-indicator;
 
