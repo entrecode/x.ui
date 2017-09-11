@@ -1,6 +1,9 @@
+## 2.1.0
 ### added
 - new ui.component `kiosk`
 - new ui.component `toolbar`
+- modifier `.mono` for `.btn`
+- class `.padding`
 
 ## 2.0.0
 ### breaking changes

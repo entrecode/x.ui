@@ -19,7 +19,6 @@
   .menubar__brand {
     @include flex-grow(0);
     padding: rem(8) rem(16);
-    margin-left: rem(-16);
   }
 
   .menu {
@@ -73,6 +72,17 @@
           @include box-shadow(0 0 0 0 transparent, 0 0 0 0 transparent);
         }
       }
+    }
+  }
+
+  .menubar__end {
+    margin-left: rem(16);
+    margin-right: 0;
+
+    &.menu {
+      padding: 0;
+      @include flexbox;
+      @include justify-content(flex-end);
     }
   }
 }

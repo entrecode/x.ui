@@ -27,7 +27,7 @@
     <div data-container>
       <h1>x.ui</h1>
       <span class="tag invert">v 1.0.0</span>
-      <span class="tag invert">xlcss-4.1.0</span>
+      <span class="tag invert">xlcss-4.1.1</span>
       <p class="lead">x.ui is based on the scss framework <strong><a
           href="https://github.com/entrecode/xlcss" target="_blank">xlcss</a></strong>. It is
         inspired by the
@@ -46,15 +46,15 @@
   <strong class="menubar__brand">x.ui</strong>
   <nav class="menu menu_dropbown">
     <ul class="menu__items">
-      <li class="menu-item parent" tabindex="0">
+      <li class="menu__item parent" tabindex="0">
         <a href="" class="btn clear">ui</a>
         <div class="sub-menu">
           <ul class="sub-menu__items">
-            <li class="sub-menu-item level1 parent" tabindex="0">
+            <li class="sub-menu__item level1 parent" tabindex="0">
               <a href="" class="btn clear">ui 2</a>
               <div class="sub-menu">
                 <ul class="sub-menu__items">
-                  <li class="sub-menu-item level2">
+                  <li class="sub-menu__item level2">
                     <a href="" class="btn clear">ui 2</a>
                   </li>
                 </ul>
@@ -71,15 +71,15 @@
   <strong class="menubar__brand">x.ui</strong>
   <nav class="menu menu_dropbown">
     <ul class="menu__items">
-      <li class="menu-item parent" tabindex="0">
+      <li class="menu__item parent" tabindex="0">
         <a href="" class="btn super">ui</a>
         <div class="sub-menu">
           <ul class="sub-menu__items">
-            <li class="sub-menu-item level1 parent" tabindex="0">
+            <li class="sub-menu__item level1 parent" tabindex="0">
               <a href="" class="btn clear">ui 2</a>
               <div class="sub-menu">
                 <ul class="sub-menu__items">
-                  <li class="sub-menu-item level2">
+                  <li class="sub-menu__item level2">
                     <a href="" class="btn clear">ui 2</a>
                   </li>
                 </ul>
@@ -98,15 +98,15 @@
   <strong class="menubar__brand">x.ui</strong>
   <nav class="menu menu_dropbown">
     <ul class="menu__items">
-      <li class="menu-item parent" tabindex="0">
+      <li class="menu__item parent" tabindex="0">
         <a href="" class="btn clear invert">ui</a>
         <div class="sub-menu">
           <ul class="sub-menu__items">
-            <li class="sub-menu-item level1 parent" tabindex="0">
+            <li class="sub-menu__item level1 parent" tabindex="0">
               <a href="" class="btn clear">ui 2</a>
               <div class="sub-menu">
                 <ul class="sub-menu__items">
-                  <li class="sub-menu-item level2">
+                  <li class="sub-menu__item level2">
                     <a href="" class="btn clear">ui 2</a>
                   </li>
                 </ul>
@@ -199,13 +199,13 @@
           <nav class="nav">
             <ul class="nav__items">
               <li class="nav__item">
-                <a href="" class="btn outlined invert">save</a>
+                <a href="" class="btn outlined mono invert">save</a>
               </li>
               <li class="nav__item">
-                <a href="" class="btn outlined invert">delete</a>
+                <a href="" class="btn outlined mono invert">delete</a>
               </li>
               <li class="nav__item">
-                <a href="" class="btn clear invert">&times;</a>
+                <a href="" class="btn clear mono invert">&times;</a>
               </li>
             </ul>
           </nav>
@@ -299,12 +299,12 @@
   <header class="kiosk-header">
     ...
   </header>
-  <div class="kiosk-body">
-    ...
-  </div>
   <aside class="kiosk-aside">
     ...
   </aside>
+  <div class="kiosk-body">
+    ...
+  </div>
   <footer class="kiosk-footer">
     ...
   </footer>
@@ -356,7 +356,7 @@
       <table class="table">
         <tr>
           <td>style modifier</td>
-          <td><span class="code">minor</span>, <span class="code">super</span>, <span class="code">link</span>, <span class="code">invert</span>, <span class="code">highlight</span></td>
+          <td><span class="code">minor</span>, <span class="code">super</span>, <span class="code">link</span>, <span class="code">highlight</span>, <span class="code">invert</span>, <span class="code">mono</span></td>
         </tr>
         <tr>
           <td>state modifier</td>
@@ -603,7 +603,11 @@ $highlight: #A7FFEB;</code>
         <a class="btn minor">minor</a>
         <a class="btn super">super</a>
         <a class="btn clear">clear</a>
+        <a class="btn clear mono">clear mono</a>
+        <a class="btn clear mono invert">clear mono invert</a>
+        <a class="btn mono">mono</a>
         <a class="btn invert">invert</a>
+        <a class="btn mono invert">mono invert</a>
       </div>
       <pre><code class="html">
 <a class="btn">default</a>
@@ -619,6 +623,8 @@ $highlight: #A7FFEB;</code>
         <a class="btn outlined">default</a>
         <a class="btn outlined minor">minor</a>
         <a class="btn outlined super">super</a>
+        <a class="btn outlined mono">mono</a>
+        <a class="btn outlined mono invert">mono invert</a>
         <a class="btn outlined invert">invert</a>
       </div>
       <pre><code class="html">

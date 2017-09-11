@@ -47,6 +47,11 @@
       }
     }
 
+    &.mono {
+      color: getColor(text);
+      border-color: getColor(text);
+    }
+
     &.invert {
       color: setContrast(getColor(background, invert), getColor(link));
       border-color:  setContrast(getColor(background, invert), getColor(link));
@@ -56,6 +61,11 @@
       &:focus {
         color: setContrast(getColor(background, invert), getColor(link));
         border-color: setContrast(getColor(background, invert), getColor(link));
+      }
+
+      &.mono {
+        color: getColor(text, invert);
+        border-color: getColor(text, invert);
       }
     }
   }

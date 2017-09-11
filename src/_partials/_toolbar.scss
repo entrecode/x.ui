@@ -3,6 +3,7 @@
   @include justify-content(space-between);
   @include align-items(center);
   padding: rem(8) rem(16);
+  min-height: rem(80);
   position: relative;
 
   .drawer-toogle {
@@ -101,5 +102,6 @@
   &.dense {
     padding: 0 rem(16);
     font-size: .875em;
+    min-height: rem(64);
   }
 }
