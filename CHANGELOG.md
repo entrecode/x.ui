@@ -1,3 +1,7 @@
+## 2.1.1
+### changes
+- new version of xlcss 4.1.2
+
 ## 2.1.0
 ### added
 - new ui.component `kiosk`
