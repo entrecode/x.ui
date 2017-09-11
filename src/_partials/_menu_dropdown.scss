@@ -26,7 +26,7 @@
   .menu__items {
   }
 
-  .menu-item {
+  .menu__item {
     &.parent {
       position: relative;
       @extend %parent-indicator;
@@ -59,7 +59,7 @@
       padding: 0;
       margin: 0;
 
-      .sub-menu-item {
+      .sub-menu__item {
         white-space: nowrap;
 
         &.parent {
@@ -84,6 +84,5 @@
     a:not(.btn) {
       color: getColor(link);
     }
-
   }
 }

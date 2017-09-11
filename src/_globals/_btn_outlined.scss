@@ -47,15 +47,25 @@
       }
     }
 
+    &.mono {
+      color: getColor(text);
+      border-color: getColor(text);
+    }
+
     &.invert {
-      color: getColor(text, invert);
-      border-color: getColor(background);
+      color: setContrast(getColor(background, invert), getColor(link));
+      border-color:  setContrast(getColor(background, invert), getColor(link));
 
       &.active,
       &:hover,
       &:focus {
+        color: setContrast(getColor(background, invert), getColor(link));
+        border-color: setContrast(getColor(background, invert), getColor(link));
+      }
+
+      &.mono {
         color: getColor(text, invert);
-        border-color: getColor(background);
+        border-color: getColor(text, invert);
       }
     }
   }

@@ -1,5 +1,7 @@
 .input-group {
-  margin: rem(4) 0;
+  margin: rem(8) 0;
+  @include flexbox;
+  @include flex-direction(column);
 
   label {
     color: getColor(text);
@@ -18,6 +20,18 @@
       &:hover {
         opacity: .2;
       }
+    }
+  }
+
+  &.input-group_boolean {
+    @include flex-direction(row);
+
+    label {
+      @include order(1);
+    }
+
+    input[type="checkbox"] {
+      margin-right: rem(8);
     }
   }
 }

@@ -237,6 +237,10 @@
     }
   }
 
+  &.mono {
+    @include set-colors(getColor(background, invert));
+  }
+
   /// invert button style
   &.invert {
     color: getColor(link);
@@ -246,6 +250,10 @@
     &:hover,
     &:focus {
       color: getColor(linkHover);
+    }
+
+    &.mono {
+      @include set-colors(getColor(background));
     }
   }
 
@@ -261,6 +269,10 @@
       color: getColor(linkHover);
     }
 
+    &.mono {
+      color: getColor(text)
+    }
+
     &.invert {
       color: setContrast(getColor(background, invert), getColor(link));
 
@@ -269,6 +281,11 @@
       &:focus {
         background-color: invert(getColor(state, hover));
         color: setContrast(getColor(background, invert), getColor(link));
+      }
+
+      &.mono {
+        color: getColor(text, invert);
+        background-color: transparent;
       }
     }
   }

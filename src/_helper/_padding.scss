@@ -1,0 +1,11 @@
+.padding {
+  padding: rem($base-padding);
+
+  &.small {
+    padding: rem($base-padding/2);
+  }
+
+  &.big {
+    padding: rem($base-padding*2);
+  }
+}

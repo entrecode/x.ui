@@ -1,0 +1,18 @@
+%dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: getColor(background);
+  @include border-radius(rem($dropdown-radius));
+  @include box-shadow(0 4px 8px rgba(getColor(background, invert), 0.1), 0 4px 24px rgba(getColor(background, invert), 0.2));
+  @include transition(opacity .4s);
+  max-height: 320px;
+  width: 100%;
+  overflow-y: auto;
+  padding: rem(4);
+  margin: 0;
+  margin-top: 1px;
+  display: none;
+  opacity: 0;
+  z-index: 10;
+}
