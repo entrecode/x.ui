@@ -1,3 +1,11 @@
+## 2.2.0
+### added
+- new helper classes `.padding-between`, `.padding-center`
+- new nav style`.nav`, `.nav.inline`
+
+### changes
+- new version of xlcss 4.1.3
+
 ## 2.1.1
 ### changes
 - new version of xlcss 4.1.2
