@@ -1,3 +1,16 @@
+## 2.3.0
+
+### added
+- added color `base, shadow` to $colors map 
+- added modifier for `.btn` `.btn_delete` and `.btn_abort` 
+
+### changes
+- changed `.kiosk` from `display: grid` to `display: flex`
+
+### removed
+- defualt styling for `<fieldset>`
+
+
 ## 2.2.1
 - version leap
 

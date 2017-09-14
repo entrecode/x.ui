@@ -25,6 +25,10 @@
     @include flex-grow(1);
     padding: rem(8) rem(16);
 
+    .menu__items {
+      @include align-items(center);
+    }
+
     .btn {
       margin: 0;
     }
