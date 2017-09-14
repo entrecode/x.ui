@@ -10,6 +10,7 @@
     }
   }
 
+
   &.inline {
 
   }
@@ -22,6 +23,12 @@
       .btn {
         @extend .btn.block;
       }
+    }
+
+    .nav__divider {
+      height: rem(1);
+      margin: rem(8) 0;
+      background-color: getColor(divider);
     }
   }
 }

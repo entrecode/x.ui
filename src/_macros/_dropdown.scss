@@ -70,7 +70,7 @@ ul.dropdown {
     top: 100%;
     background-color: getColor(background);
     @include border-radius(rem($dropdown-radius));
-    @include box-shadow(0 4px 8px rgba(getColor(background, invert), 0.1), 0 4px 24px rgba(getColor(background, invert), 0.2));
+    @include box-shadow(0 4px 8px getColor(shadow), 0 4px 24px getColor(shadow));
     @include transition(opacity .4s);
     max-height: 320px;
     overflow-y: auto;

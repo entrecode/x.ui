@@ -1,0 +1,43 @@
+/// @since 2.3.1
+
+$name-array: default, minor, link, super, highlight, invert;
+$color-array: $background, $minor, $link, $super, $highlight, $text;
+$postfix-array: darkest, darker, dark, light, lighter, lightest;
+$shade-array: -30, -20, -10, 10, 20, 30;
+
+@for $i from 1 through length($color-array) {
+  $color: nth($color-array, $i);
+  $name: nth($name-array, $i);
+
+  @if $name == 'default' {
+    .theme {
+      background-color: $color;
+      color: setContrast($color);
+
+      @for $n from 1 through length($postfix-array) {
+        $postfix: nth($postfix-array, $n);
+        $shade: nth($shade-array, $n);
+
+        &_#{$postfix} {
+          background-color: varColor($color, $shade);
+          color: setContrast(varColor($color, $shade));
+        }
+      }
+    }
+  } @else {
+    .theme-#{$name} {
+      background-color: $color;
+      color: setContrast($color);
+
+      @for $n from 1 through length($postfix-array) {
+        $postfix: nth($postfix-array, $n);
+        $shade: nth($shade-array, $n);
+
+        &_#{$postfix} {
+          background-color: varColor($color, $shade);
+          color: setContrast(varColor($color, $shade));
+        }
+      }
+    }
+  }
+}
