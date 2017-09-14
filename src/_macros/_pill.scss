@@ -123,4 +123,14 @@
       }
     }
   }
+
+  &.removeable {
+    .pill_remove {
+      color: getColor(text, light);
+    }
+  }
+}
+
+span.pill {
+  display: inline-block;
 }

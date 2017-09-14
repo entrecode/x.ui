@@ -20,7 +20,8 @@ $colors: (
                 'highlight': $highlight,
                 'highlightHover': varColor($highlight, -4),
                 'divider': rgba($text, .1),
-                'border': borderColor($background, $text)
+                'border': borderColor($background, $text),
+                'shadow': rgba(black, .2)
         ),
         text: (
                 'invert': $background,

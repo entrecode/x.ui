@@ -54,7 +54,7 @@
 
     &.invert {
       color: setContrast(getColor(background, invert), getColor(link));
-      border-color:  setContrast(getColor(background, invert), getColor(link));
+      border-color: setContrast(getColor(background, invert), getColor(link));
 
       &.active,
       &:hover,
