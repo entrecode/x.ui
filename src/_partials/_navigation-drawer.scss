@@ -1,0 +1,44 @@
+%navigation-drawer {
+  background-color: getColor(background);
+  width: rem(280);
+  z-index: 9999;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  @include media(tablet) {
+    width: rem(320);
+  }
+
+  @include media(desktop) {
+    min-width: rem(320);
+    width: auto;
+  }
+}
+
+ec-pop {
+  &.navigation-drawer {
+    > .ec-pop-container {
+      position: fixed;
+      z-index: 9999;
+
+      > .ec-pop {
+        @extend %navigation-drawer;
+        @include box-shadow(4px 0 8px getColor(shadow), 4px 0 16px getColor(shadow));
+      }
+    }
+  }
+
+  &.navigation-drawer_right {
+    > .ec-pop-container {
+      position: fixed;
+      z-index: 9999;
+
+      > .ec-pop {
+        @extend %navigation-drawer;
+        @include box-shadow(-4px 0 8px getColor(shadow), -4px 0 16px getColor(shadow));
+      }
+    }
+  }
+}

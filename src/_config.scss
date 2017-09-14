@@ -106,7 +106,7 @@ $btn-small-line-height: 18;
 $btn-small-min-height: 32;
 
 /// font-weight of btn
-$btn-small-weight: $bold;
+$btn-small-weight: $btn-weight;
 
 /// additional styles for .btn
 %btn-small-style {
@@ -122,7 +122,7 @@ $btn-big-line-height: 24;
 $btn-big-min-height: 48;
 
 /// font-weight of btn
-$btn-big-weight: $bold;
+$btn-big-weight: $btn-weight;
 
 /// additional styles for .btn
 %btn-big-style {
@@ -210,7 +210,7 @@ $alert-line-height: 20 !default;
 $alert-min-height: 40 !default;
 
 /// font-weight of .alert
-$alert-weight: $bold !default;
+$alert-weight: $normal !default;
 
 /// additional styles for .alert
 %alert-style {
@@ -223,7 +223,7 @@ $alert-small-line-height: 18 !default;
 $alert-small-min-height: 32 !default;
 
 /// font-weight of .alert.small
-$alert-small-weight: $bold !default;
+$alert-small-weight: $alert-weight !default;
 
 /// additional styles for .alert.small
 %alert-small-style {
@@ -236,7 +236,7 @@ $alert-big-line-height: 24 !default;
 $alert-big-min-height: 48 !default;
 
 /// font-weight of .alert.big
-$alert-big-weight: $bold;
+$alert-big-weight: $alert-weight;
 
 /// additional styles for .alert.big
 %alert-big-style {
@@ -277,7 +277,7 @@ $bubble-small-line-height: 12 !default;
 $bubble-small-min-height: 24 !default;
 
 /// font-weight of .bubble.small
-$bubble-small-weight: $bold !default;
+$bubble-small-weight: $bubble-weight !default;
 
 /// additional styles for .bubble.small
 %bubble-small-style {
@@ -290,7 +290,7 @@ $bubble-big-line-height: 16 !default;
 $bubble-big-min-height: 32 !default;
 
 /// font-weight of .bubble.big
-$bubble-big-weight: $bold !default;
+$bubble-big-weight: $bubble-weight !default;
 
 /// additional styles for .bubble.big
 %bubble-big-style {

@@ -11,7 +11,7 @@
 
   .kiosk-body {
     @include flex-grow(1);
-    @include flex-basis(auto);
+    @include flex-basis(75%);
     height: 100%;
   }
 

@@ -11,6 +11,26 @@
   @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height);
   @include border-radius(rem($tag-radius));
 
+  /// ec-icon styles for default btn
+  .ec-icon {
+
+    @if $flex-support == false {
+      display: inline;
+    }
+
+    &:before {
+      line-height: inherit;
+      padding-right: rem(8);
+      vertical-align: top;
+    }
+
+    &:empty {
+      &:before {
+        padding-right: 0;
+      }
+    }
+  }
+
   &.small {
     @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height);
     @include border-radius(rem($tag-small-radius));
@@ -90,4 +110,8 @@ a.tag {
       background-color: getColor(superHover);
     }
   }
+}
+
+span.tag {
+  display: inline-block;
 }

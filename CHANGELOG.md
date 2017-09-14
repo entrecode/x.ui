@@ -1,5 +1,13 @@
-## 2.3.0
+## 2.4.0
+### changes
+- improved `.tag` styles
 
+### added
+- new modifier for `.kiosk` - `.kiosk_bordered`
+- new modifier e.g. `.theme-super_light`
+- new style `.navigation-drawer` and `.navigation-drawer_right`
+
+## 2.3.0
 ### added
 - added color `base, shadow` to $colors map 
 - added modifier for `.btn` `.btn_delete` and `.btn_abort` 
