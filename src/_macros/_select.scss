@@ -26,6 +26,7 @@
 
   > li {
     @extend .input;
+    padding-right: rem(32);
     position: relative;
     outline: none;
     cursor: pointer;

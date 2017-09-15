@@ -28,7 +28,7 @@
       <h1>x.ui</h1>
       <span class="tag invert">v 2.4.0</span>
       <span class="tag invert">xlcss-4.1.3</span>
-      <p class="lead">x.ui is based on the scss framework <strong><a
+      <p class="lead"><strong>x.ui</strong> is based on the scss framework <strong><a
           href="https://github.com/entrecode/xlcss" target="_blank">xlcss</a></strong>. It is
         inspired by the
         <a href="https://medium.com/re-write/the-unicorn-workflow-design-to-code-with-atomic-design-principles-and-sketch-8b0fe7d05a37"
@@ -67,7 +67,7 @@
   </nav>
 </div>
 
-<div class="menubar super">
+<div class="menubar theme-super">
   <strong class="menubar__brand">x.ui</strong>
   <nav class="menu menu_dropbown">
     <ul class="menu__items">
@@ -93,7 +93,7 @@
   <button class="drawer-toogle" data-target="id"></button>
 </div>
 
-<div class="menubar invert">
+<div class="menubar theme-invert">
   <button class="drawer-toogle" data-target="id"></button>
   <strong class="menubar__brand">x.ui</strong>
   <nav class="menu menu_dropbown">
@@ -143,7 +143,7 @@
   </nav>
 </div>
 
-<div class="toolbar invert">
+<div class="toolbar theme-super">
   <button class="drawer-toogle" data-target="id"></button>
   <div class="toolbar__title">
     <h2>x.ui</h2>
@@ -163,7 +163,7 @@
   </nav>
 </div>
 
-<div class="toolbar theme_dark">
+<div class="toolbar theme-invert">
   <button class="drawer-toogle" data-target="id"></button>
   <div class="toolbar__title">
     <h2>x.ui</h2>
@@ -186,12 +186,12 @@
 <div data-container>
   <h3>Kiosk</h3>
 
-  <p>a kiosk can be used for structuring data. it uses <span class="code">display: grid</span></p>
+  <p>a kiosk can be used for structuring data.</p>
 
   <section>
     <div class="kiosk">
       <header class="kiosk-header">
-        <div class="toolbar invert dense">
+        <div class="toolbar theme-invert dense">
           <button class="drawer-toogle" data-target="id"></button>
           <div class="toolbar__title">
             <h2>x.ui</h2>
@@ -318,9 +318,9 @@
       <h2>basics</h2>
 
       <section>
-        <h3 class="text-super">files</h3>
-        <p class="lead">x.ui and xlcss are the solid foundation for any project based on an
-          unicorn workflow. x.ui sets the basic elements, which can be combined to bigger elements
+        <h3>files</h3>
+        <p class="lead"><strong>x.ui</strong> and <strong>xlcss</strong> are the solid foundation for any project based on an
+          unicorn workflow. <strong>x.ui</strong> sets the basic elements, which can be combined to bigger elements
           like partials or templates. In <strong>_config.scss</strong>, you can adjust several
           variables for colors, sizes or font-face. Those variables then are used throuout the
           project.</p>
@@ -350,25 +350,30 @@
 
     <section>
       <h2>naming conventions</h2>
-      <p>x.ui follows the <strong>BEM (Block, Element, Modifier)</strong> approach. For more see <a href="https://en.bem.info/methodology/quick-start/" target="_blank">https://en.bem.info/methodology/quick-start/</a>.</p>
+      <p><strong>x.ui</strong> follows the <strong>BEM (Block, Element, Modifier)</strong> approach. For more see <a
+          href="https://en.bem.info/methodology/quick-start/" target="_blank">https://en.bem.info/methodology/quick-start/</a>.
+      </p>
       <h3>Modifier</h3>
-      <p>An entity that defines the appearance, state, or behavior of a block or element. With x.ui there are some global modifier classes.</p>
+      <p>An entity that defines the appearance, state, or behavior of a block or element. With x.ui
+        there are some global modifier classes.</p>
       <table class="table">
         <tr>
           <td>style modifier</td>
-          <td><span class="code">minor</span>, <span class="code">super</span>, <span class="code">link</span>, <span class="code">highlight</span>, <span class="code">invert</span>, <span class="code">mono</span></td>
+          <td><span class="code">minor</span><span class="code">super</span><span class="code">link</span><span class="code">highlight</span><span class="code">invert</span><span
+                class="code">mono</span></td>
         </tr>
         <tr>
           <td>state modifier</td>
-          <td><span class="code">info</span>, <span class="code">error</span>, <span class="code">success</span>, <span class="code">warning</span>, <span class="code">active</span>, <span class="code">disabled</span></td>
+          <td><span class="code">info</span><span class="code">error</span><span class="code">success</span><span class="code">warning</span><span class="code">active</span><span class="code">disabled</span>
+          </td>
         </tr>
         <tr>
           <td>size modifier</td>
-          <td><span class="code">small</span>, <span class="code">big</span>, <span class="code">wide</span>, <span class="code">dense</span></td>
+          <td><span class="code">small</span><span class="code">big</span><span class="code">wide</span><span class="code">dense</span></td>
         </tr>
         <tr>
           <td>layout modifier</td>
-          <td><span class="code">inline</span>, <span class="code">stacked</span></td>
+          <td><span class="code">inline</span><span class="code">stacked</span></td>
         </tr>
       </table>
     </section>
@@ -377,7 +382,7 @@
       <h2>core</h2>
       <p class="lead">core styles, are styles that don't refer a specific DOM object, but the
         whole project in general like colors and basic font settings</p>
-      <h3 class="text-super">core.colors</h3>
+      <h3>core.colors</h3>
       <div data-row>
         <div data-col="8sm">
           <h4>base colors</h4>
@@ -551,7 +556,7 @@ $highlight: #A7FFEB;</code>
         </div>
       </div>
 
-      <h3 class="text-super">core.typo</h3>
+      <h3>core.typo</h3>
       <p class="lead">defines font-family and basic font-sizes for <span class="code">body</span>
         and headings like <span class="code">h1</span> <span class="code">h2</span> <span
             class="code">h3</span> <span class="code">h4</span> <span class="code">h5</span> <span
@@ -590,14 +595,75 @@ $highlight: #A7FFEB;</code>
         </tbody>
       </table>
     </section>
-
+    <div class="bumper big"></div>
+    <section>
+      <h2>theme</h2>
+      <p>based on its 5 base colors, <span class="code">$background</span> <span class="code">$text</span> <span class="code">$link</span> <span class="code">$super</span> <span class="code">$minor</span> and <span class="code">$highlight</span> <strong>x.ui</strong> automatically generates theme classes for 7 shades each using the <strong>xlcss</strong> <span class="function">varColor()</span> function. The theme classes define the background-color and text and link color based using the <strong>xlcss</strong> <span class="function">setContrast()</span> function.</p>
+      <div data-flex="grid">
+        <div data-col="4sm">
+          <div class="tag theme_lightest">.theme_lightest</div>
+          <div class="tag theme_lighter">.theme_lighter</div>
+          <div class="tag theme_light">.theme_light</div>
+          <div class="tag theme">.theme</div>
+          <div class="tag theme_dark">.theme_dark</div>
+          <div class="tag theme_darker">.theme_darker</div>
+          <div class="tag theme_darkest">.theme_darkest</div>
+        </div>
+        <div data-col="4sm">
+          <div class="tag theme-link_lightest">.theme-link_lightest</div>
+          <div class="tag theme-link_lighter">.theme-link_lighter</div>
+          <div class="tag theme-link_light">.theme-link_light</div>
+          <div class="tag theme-link">.theme-link</div>
+          <div class="tag theme-link_dark">.theme-link_dark</div>
+          <div class="tag theme-link_darker">.theme-link_darker</div>
+          <div class="tag theme-link_darkest">.theme-link_darkest</div>
+        </div>
+        <div data-col="4sm">
+          <div class="tag theme-super_lightest">.theme-super_lightest</div>
+          <div class="tag theme-super_lighter">.theme-super_lighter</div>
+          <div class="tag theme-super_light">.theme-super_light</div>
+          <div class="tag theme-super">.theme-super</div>
+          <div class="tag theme-super_dark">.theme-super_dark</div>
+          <div class="tag theme-super_darker">.theme-super_darker</div>
+          <div class="tag theme-super_darkest">.theme-super_darkest</div>
+        </div>
+        <div data-col="4sm">
+          <div class="tag theme-minor_lightest">.theme-minor_lightest</div>
+          <div class="tag theme-minor_lighter">.theme-minor_lighter</div>
+          <div class="tag theme-minor_light">.theme-minor_light</div>
+          <div class="tag theme-minor">.theme-minor</div>
+          <div class="tag theme-minor_dark">.theme-minor_dark</div>
+          <div class="tag theme-minor_darker">.theme-minor_darker</div>
+          <div class="tag theme-minor_darkest">.theme-minor_darkest</div>
+        </div>
+        <div data-col="4sm">
+          <div class="tag theme-highlight_lightest">.theme-highlight_lightest</div>
+          <div class="tag theme-highlight_lighter">.theme-highlight_lighter</div>
+          <div class="tag theme-highlight_light">.theme-highlight_light</div>
+          <div class="tag theme-highlight">.theme-highlight</div>
+          <div class="tag theme-highlight_dark">.theme-highlight_dark</div>
+          <div class="tag theme-highlight_darker">.theme-highlight_darker</div>
+          <div class="tag theme-highlight_darkest">.theme-highlight_darkest</div>
+        </div>
+        <div data-col="4sm">
+          <div class="tag theme-invert_lightest">.theme-invert_lightest</div>
+          <div class="tag theme-invert_lighter">.theme-invert_lighter</div>
+          <div class="tag theme-invert_light">.theme-invert_light</div>
+          <div class="tag theme-invert">.theme-invert</div>
+          <div class="tag theme-invert_dark">.theme-invert_dark</div>
+          <div class="tag theme-invert_darker">.theme-invert_darker</div>
+          <div class="tag theme-invert_darkest">.theme-invert_darkest</div>
+        </div>
+      </div>
+    </section>
+    <div class="bumper big"></div>
     <section>
       <h2>global</h2>
       <p class="lead">global styles for html tags and basic design elements like buttons, heading,
         forms or general text-elements. Global elements are the smallest elements in the unicorn
         worklflow.</p>
 
-      <h3 class="text-super">buttons</h3>
+      <h3>buttons</h3>
       <div class="well">
         <a class="btn">default</a>
         <a class="btn minor">minor</a>
@@ -719,7 +785,7 @@ $highlight: #A7FFEB;</code>
 
       <div class="bumper big"></div>
 
-      <h3 class="text-super">form elements</h3>
+      <h3>form elements</h3>
       <div data-row>
         <div data-col="6sm">
           <span class="code">[type="text"]</span>
@@ -782,9 +848,9 @@ $highlight: #A7FFEB;</code>
 
           </div>
 
-            <input type="checkbox">
-            Label
-            <p>additional input information</p>
+          <input type="checkbox">
+          Label
+          <p>additional input information</p>
           </label>
         </div>
         <div data-col="6sm">
@@ -904,7 +970,7 @@ $highlight: #A7FFEB;</code>
 
       <div class="bumper big"></div>
 
-      <h3 class="text-super">headings</h3>
+      <h3>headings</h3>
       <div data-row>
         <div data-col="6sm">
           <h1>Heading 1</h1>
@@ -927,7 +993,7 @@ $highlight: #A7FFEB;</code>
 
       <div class="bumper"></div>
 
-      <h3 class="text-super">paragraphs</h3>
+      <h3>paragraphs</h3>
       <div data-row>
         <div data-col="6sm">
           <p class="lead">»Hören Sie nur,« sagte der Prokurist im Nebenzimmer, »er dreht den
@@ -1024,7 +1090,7 @@ $highlight: #A7FFEB;</code>
 
       <div class="bumper"></div>
 
-      <h3 class="text-super">image helpers</h3>
+      <h3>image helpers</h3>
       <div data-row>
         <div data-col="6sm">
           <pre><code class="html">
@@ -1041,7 +1107,7 @@ $highlight: #A7FFEB;</code>
           <img src="https://unsplash.it/400/200/?random" alt="" class="full">
         </div>
       </div>
-      <h3 class="text-super">list helpers</h3>
+      <h3>list helpers</h3>
       <div data-row>
         <div data-col="6sm">
           <pre><code class="html">
@@ -1075,7 +1141,7 @@ $highlight: #A7FFEB;</code>
     <section>
       <h2>macros</h2>
 
-      <h3 class="text-super">alerts</h3>
+      <h3>alerts</h3>
       <div class="alert error">Sie mußte irgend etwas davon fühlen, denn sie spannte ihre
         Augenbrauen hoch, wie wenn man
         jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
