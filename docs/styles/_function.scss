@@ -1,7 +1,7 @@
-.code {
+.function {
   font-family: monospace;
-  background-color: getColor(background, invert);
-  color: getColor(text, invert);
+  background-color: getColor(highlight);
+  color: setContrast(getColor(highlight));
   font-size: rem(12);
   line-height: rem(16);
   padding: 0 rem(8);

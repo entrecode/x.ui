@@ -34,51 +34,6 @@
     }
   }
 
-  &.invert {
-    background-color: getColor(background, invert);
-    color: getColor(text, invert);
-
-    a {
-      &:not(.btn) {
-        color: setContrast(getColor(background, invert), getColor(link));
-      }
-    }
-
-    .drawer-toogle {
-      @extend .drawer-toogle.invert
-    }
-  }
-
-  &.super {
-    background-color: getColor(super);
-    color: setContrast(getColor(super));
-
-    a {
-      &:not(.btn) {
-        color: setContrast(getColor(super), getColor(link));
-      }
-    }
-
-    .drawer-toogle {
-      $drawer-toogle-color: setContrast(getColor(super), getColor(link));
-
-      &:after {
-        background-color: $drawer-toogle-color;
-        @include box-shadow(0 rem(($drawer-bar-height+$drawer-bar-spacing)) 0 0 $drawer-toogle-color, 0 rem(-($drawer-bar-height+$drawer-bar-spacing)) 0 0 $drawer-toogle-color);
-      }
-
-      &:before {
-        background-color: $drawer-toogle-color;
-      }
-
-      &.active {
-        &:after {
-          @include box-shadow(0 0 0 0 transparent, 0 0 0 0 transparent);
-        }
-      }
-    }
-  }
-
   .menubar__end {
     margin-left: rem(16);
     margin-right: 0;
