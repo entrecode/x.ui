@@ -1,7 +1,9 @@
-## 2.4.0
+## 2.4.1
 ### changes
-- improved `.tag` styles
+- added `.tag.outlined` styles
+- improved theme modifier 
 
+## 2.4.0
 ### added
 - new modifier for `.kiosk` - `.kiosk_bordered`
 - new modifier e.g. `.theme-super_light`
