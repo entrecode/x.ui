@@ -8,7 +8,6 @@
     cursor: pointer;
     @include transition(color .2s);
     display: block;
-    padding-bottom: rem(4);
   }
 
   &.disabled {

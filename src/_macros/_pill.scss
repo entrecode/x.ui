@@ -124,7 +124,7 @@
     }
   }
 
-  &.removeable {
+  &_removable {
     .pill_remove {
       color: getColor(text, light);
     }

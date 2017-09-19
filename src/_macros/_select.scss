@@ -99,6 +99,7 @@
 
     li {
       display: block;
+      padding: 0;
       text-align: left;
 
       &.select-options-intro {
@@ -167,12 +168,14 @@
   &.small {
     > li {
       @extend .input.small;
+      padding-right: rem(32);
     }
   }
 
   &.big {
     > li {
       @extend .input.big;
+      padding-right: rem(32);
     }
   }
 }

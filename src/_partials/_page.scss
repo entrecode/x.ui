@@ -1,0 +1,24 @@
+.page {
+  @include flexbox;
+  @include flex-direction(column);
+
+  .page-header {
+    @include flex-grow(0);
+
+    &.page-header_fixed {
+      z-index: 100;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+    }
+  }
+
+  .page-body {
+    @include flex-grow(1);
+  }
+
+  .page-footer {
+    @include flex-grow(0);
+  }
+}
