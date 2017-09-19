@@ -1,3 +1,10 @@
+## 2.4.2
+### added
+- added `.page` styles
+
+### changes
+- minor style improvements for `.btn`, `.select`, `.input`, `.input-group`   
+
 ## 2.4.1
 ### changes
 - added `.tag.outlined` styles
