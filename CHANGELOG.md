@@ -1,3 +1,6 @@
+## 3.0.2
+version bump
+
 ## 3.0.1
 ### changes
 - optimized theme-modifier mixin
