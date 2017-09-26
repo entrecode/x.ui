@@ -1,3 +1,10 @@
+## 3.0.0
+### added
+- theme modifier mixin
+
+### breaking changes
+- changed `.input-group` to `.form-group`
+
 ## 2.4.2
 ### added
 - added `.page` styles
