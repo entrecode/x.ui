@@ -1,6 +1,11 @@
+## 3.0.1
+### changes
+- optimized theme-modifier mixin
+- updated documentation 
+
 ## 3.0.0
 ### added
-- theme modifier mixin
+- theme-modifier mixin
 
 ### breaking changes
 - changed `.input-group` to `.form-group`
