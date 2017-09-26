@@ -1,4 +1,4 @@
-.input-group {
+.form-group {
   margin: rem(8) 0;
   @include flexbox;
   @include flex-direction(column);
@@ -22,7 +22,7 @@
     }
   }
 
-  &.input-group_boolean {
+  &.form-group_boolean {
     @include flex-direction(row);
 
     label {
