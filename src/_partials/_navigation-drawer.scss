@@ -6,6 +6,7 @@
   height: 100vh;
   top: 0;
   left: 0;
+  overflow-y: auto;
 
   @include media(tablet) {
     width: rem(320);
@@ -26,6 +27,10 @@ ec-pop {
       > .ec-pop {
         @extend %navigation-drawer;
         @include box-shadow(4px 0 8px getColor(shadow), 4px 0 16px getColor(shadow));
+        
+        > .ec-pop-body {
+          max-height: 100%;
+        }
       }
     }
   }

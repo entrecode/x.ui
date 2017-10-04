@@ -6,7 +6,7 @@
   min-height: rem(64);
   position: relative;
 
-  .drawer-toogle {
+  > .drawer-toogle {
     &:first-child {
       margin-right: rem(16);
       margin-left: 0;
@@ -85,6 +85,6 @@
   &.dense {
     padding: 0 rem(16);
     font-size: .875em;
-    min-height: rem(64);
+    min-height: rem(48);
   }
 }

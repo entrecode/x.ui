@@ -1,3 +1,7 @@
+## 3.0.3
+- optimized `.toolbar`
+- minor changes in `.navigation-drawer`, `.form-group`, `typo.scss`
+
 ## 3.0.2
 version bump
 
