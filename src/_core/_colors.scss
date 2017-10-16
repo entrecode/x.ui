@@ -19,7 +19,7 @@ $colors: (
                 'superHover': varColor($super, -4),
                 'highlight': $highlight,
                 'highlightHover': varColor($highlight, -4),
-                'divider': rgba($text, .2),
+                'divider': rgba($text, $divider-opacity),
                 'border': borderColor($background, $text),
                 'shadow': rgba(black, .2)
         ),
