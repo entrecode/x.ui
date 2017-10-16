@@ -1,3 +1,11 @@
+## 4.0.0
+
+### breaking changes
+- added new config variable for divider color opacity `$divider-opacity`
+
+### changes 
+- removed trailing semicolon 
+
 ## 3.0.3
 - optimized `.toolbar`
 - minor changes in `.navigation-drawer`, `.form-group`, `typo.scss`
