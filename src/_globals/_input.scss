@@ -88,6 +88,32 @@
     color: getColor(text);
     -webkit-text-fill-color: getColor(text);
   }
+
+  &.input_search {
+    input[type="text"] {
+      outline: none !important;
+      border: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    @if $ec-icon-support {
+      position: relative;
+      padding-left: rem(40) !important;
+
+      &:before {
+        @extend %ec-icon;
+        content: "\e0e5";
+        position: absolute;
+        color: getColor(text, light);
+        left: rem(16);
+        top: 50%;
+        @include transform(translateY(-50%));
+        z-index: 1;
+      }
+    }
+  }
 }
 
 /// for fluffy round inputs

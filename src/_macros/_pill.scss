@@ -7,6 +7,7 @@
   overflow: hidden;
   @include user-select(none);
   position: relative;
+  text-align: center;
   font-weight: $pill-weight;
   @include macro-metrics($pill-font-size, $pill-line-height, $pill-min-height);
   @include border-radius(rem($pill-radius));
@@ -131,6 +132,7 @@
   }
 }
 
+a.pill,
 span.pill {
   display: inline-block;
 }
