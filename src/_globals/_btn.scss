@@ -215,7 +215,7 @@
     @include set-colors(getColor(minor));
 
     &.active,
-    &:hover
+    &:hover,
     &:focus {
       @include set-colors(getColor(minorHover));
     }
@@ -299,6 +299,47 @@
 
     &.big {
       @include border-radius(rem($btn-big-min-height / 2));
+    }
+  }
+}
+
+.btn {
+
+  .tag,
+  .pill,
+  .bubble {
+    margin-bottom: 0;
+  }
+
+  .tag {
+    margin-top: rem(-($btn-min-height - $tag-min-height) / 4);
+    margin-bottom: rem(-($btn-min-height - $tag-min-height) / 4);
+  }
+
+  .pill {
+    margin-top: rem(-($btn-min-height - $pill-min-height) / 4);
+    margin-bottom: rem(-($btn-min-height - $pill-min-height) / 4);
+  }
+
+  .bubble {
+    margin-top: rem(-($btn-min-height - $bubble-min-height) / 4);
+    margin-bottom: rem(-($btn-min-height - $bubble-min-height) / 4);
+  }
+
+  &.small {
+    .tag {
+      margin-top: rem(-($btn-small-min-height - $tag-min-height) / 4);
+      margin-bottom: rem(-($btn-small-min-height - $tag-min-height) / 4);
+    }
+
+    .pill {
+      margin-top: rem(-($btn-small-min-height - $pill-min-height) / 4);
+      margin-bottom: rem(-($btn-small-min-height - $pill-min-height) / 4);
+    }
+
+    .bubble {
+      margin-top: rem(-($btn-small-min-height - $bubble-min-height) / 4);
+      margin-bottom: rem(-($btn-small-min-height - $bubble-min-height) / 4);
     }
   }
 }

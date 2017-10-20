@@ -1,6 +1,6 @@
 {
   "name": "x.ui",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "UI based on xlcss",
   "main": "src/x.ui.scss",
   "scripts": {
@@ -17,6 +17,6 @@
   "author": "entrecode GmbH",
   "devDependencies": {
     "node-sass": "^4.5.2",
-    "xlcss": "^4.1.3"
+    "xlcss": "^4.1.4"
   }
 }

@@ -1,3 +1,19 @@
+## 5.0.0 - 20.10.2017
+### breaking changes
+- added variable `$ec-icon-support` in `_config`
+
+### addded
+- support for nested `.tag`, `.bubble` and `.pill` elements in `.btn`
+- support for ec-icons in `.input_search`
+- placeholder `%ec-icon`
+
+### changes
+- minor changes in `.header`
+- minor improvements in `.pill`
+- minor improvements in `.pill_reset`
+- minor improvements in `.select`
+ 
+
 ## 4.0.0
 
 ### breaking changes

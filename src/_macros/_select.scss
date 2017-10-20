@@ -67,6 +67,7 @@
       display: inline-block;
       width: 100%;
       vertical-align: middle;
+      outline: none;
 
       &[tabindex] {
         &:focus {
@@ -102,7 +103,7 @@
       padding: 0;
       text-align: left;
 
-      &.select-options-intro {
+      &.select-options__intro {
         background-color: getColor(background, lightest);
         color: getColor(text, light);
         text-align: center;
@@ -111,18 +112,23 @@
         vertical-align: baseline;
       }
 
-      .btn {
-        @extend .btn.block;
-        @include border-radius(rem($btn-radius));
-        text-align: left;
-        position: relative;
+      &.select-option {
+        &:hover {
+          background-color: getColor(state, hover);
+        }
 
-        .label {
-          position: absolute;
-          right: rem(8);
-          top: 50%;
-          @include transform(translateY(-50%));
-          @extend .tag;
+        a, span {
+          @extend %btn;
+          display: flex;
+          width: 100%;
+          text-align: left;
+          @include justify-content(space-between);
+          @include align-items(center);
+          color: getColor(text) !important;
+
+          &:hover {
+            color: getColor(link);
+          }
         }
       }
 
@@ -134,23 +140,25 @@
     }
   }
 
-  &.search {
+  &.select_search {
     > li {
-      padding-left: rem(40) !important;
+      @if $ec-icon-support {
+        padding-left: rem(40) !important;
+
+        &:before {
+          @extend %ec-icon;
+          content: '\e0e5';
+          position: absolute;
+          color: getColor(text, light);
+          left: rem(16);
+          top: 50%;
+          @include transform(translateY(-50%));
+          z-index: 1;
+        }
+      }
 
       &:after {
         display: none;
-      }
-
-      &:before {
-        @extend .ec-icon;
-        content: '\e0e5';
-        position: absolute;
-        color: getColor(text, light);
-        left: rem(16);
-        top: 50%;
-        @include transform(translateY(-50%));
-        z-index: 1;
       }
 
       ul.select-options {
