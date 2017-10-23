@@ -1,3 +1,7 @@
+## 6.0.0 - 23.10.2017
+### breaking changes
+- added variable `$responsive-headings-ratio` in `_config`
+
 ## 5.0.0 - 20.10.2017
 ### breaking changes
 - added variable `$ec-icon-support` in `_config`
