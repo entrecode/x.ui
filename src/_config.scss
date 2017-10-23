@@ -54,6 +54,9 @@ $root-size: 16;
 /// @prop {number} $font-size [16] - default font-size
 $font-size: 14;
 
+/// @prop {number} $responsive-headings-ratio [.8] - ratio to downscale headings on mobile devices
+$responsive-headings-ratio: .8;
+
 $headings-weight: $bold;
 
 $h1-size: 48;
