@@ -10,6 +10,7 @@ a {
   color: getColor(link);
   @include transition(color .2s);
   cursor: pointer;
+  outline: none;
 
   * {
     cursor: pointer;
