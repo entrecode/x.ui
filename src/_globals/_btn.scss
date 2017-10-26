@@ -164,7 +164,7 @@
 
   /// little transform animation onclick
   &:active {
-    @include transform(translate3d(0, 2px, 0));
+    @include transform(translateY(2px));
   }
 
   ///

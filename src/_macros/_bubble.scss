@@ -11,6 +11,7 @@
   @include border-radius(rem($bubble-radius));
   @include set-colors(getColor(minor));
 
+
   &.small {
     @include macro-metrics($bubble-small-font-size, $bubble-small-line-height, $bubble-small-min-height);
     @include border-radius(rem($bubble-small-radius));

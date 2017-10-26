@@ -1,3 +1,11 @@
+## 6.0.1 - 26.10.2017
+### fixes
+- fixed ie transform bug
+
+### added
+- new style `.from-group_search`
+
+
 ## 6.0.0 - 23.10.2017
 ### breaking changes
 - added variable `$responsive-headings-ratio` in `_config`
