@@ -1,33 +1,86 @@
-.nav {
-  .nav__items {
-    @include flexbox;
-    @include align-items(center);
-    margin-right: rem(-4);
-    margin-left: rem(-4);
+/// nav styles
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @group partials
+///
+/// @see _config.scss
+///
+/// @param {variable} $pfx [''] - global prefixing
+/// @param {boolean} $flex-support [true]
 
-    .nav__item {
-      padding: rem(4);
-    }
-  }
-
-  &.inline {
-
-  }
-
-  &.stacked {
+nav {
+  &.#{$pfx}nav {
     .nav__items {
-      @include flex-direction(column);
-      @include align-items(stretch);
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-      .#{$pfx}btn {
-        @extend .#{$pfx}btn.#{$pfx}btn_block;
+      .nav__item {
+        padding: rem(4);
+      }
+
+      .nav__divider {
+        height: rem(1);
+        margin: rem(8) 0;
+        background-color: getColor(divider);
       }
     }
 
-    .nav__divider {
-      height: rem(1);
-      margin: rem(8) 0;
-      background-color: getColor(divider);
+    &.#{$pfx}nav_inline {
+      @if $flex-support == false {
+        .nav__items {
+          .nav__item {
+            display: inline-block;
+          }
+        }
+      } @else {
+        .nav__items {
+          @include flexbox;
+          @include align-items(center);
+        }
+      }
+
+      .nav__divider {
+        height: 100%;
+        width: rem(1);
+        margin: 0 rem(8);
+        background-color: getColor(divider);
+        display: block;
+      }
+
+      .nav__items {
+        .nav__item {
+          .#{$pfx}btn {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &.#{$pfx}nav_stacked {
+      @if $flex-support == false {
+        .nav__items {
+          .nav__item {
+            display: block;
+          }
+        }
+      } @else {
+        .nav__items {
+          margin: 0 rem(-4);
+          @include flexbox;
+          @include flex-direction(column);
+          @include align-items(stretch);
+        }
+      }
+
+      .nav__items {
+        .nav__item {
+          .#{$pfx}btn {
+            @extend .#{$pfx}btn.#{$pfx}btn_block;
+            margin: 0;
+          }
+        }
+      }
     }
   }
 }
