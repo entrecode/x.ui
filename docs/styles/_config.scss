@@ -3,10 +3,14 @@
 /// ------------------------------------------------------
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
 
+/// @param {value} $body-font
+/// @param {value} $headings-font
 $body-font: 'Roboto Mono', sans-serif;
 $headings-font: 'Roboto Mono', sans-serif;
 
-/// font-weight config
+/// @param {number} $light - font-weight light value
+/// @param {number} $normal - font-weight normal value
+/// @param {number} $bold - font-weight bold value
 $light: 400;
 $normal: 400;
 $bold: 700;
@@ -31,12 +35,12 @@ $setLight: $background !default;
   $setLight: $text;
 }
 
-/// @param {variable} $pfx [''] - global prefixing
+/// @param {value} $pfx [''] - global prefixing
 $pfx: '';
 
 $divider-opacity: .1;
 
-/// if your template supports display:flex
+/// @param {boolean} $flex-support [true]
 $flex-support: true;
 
 /// if your template uses ec-icon
@@ -60,7 +64,7 @@ $font-size: 14;
 /// @param {number} $responsive-headings-ratio [.8] - ratio to downscale headings on mobile devices
 $responsive-headings-ratio: .8;
 
-/// @param {variable} $headings-weight [$bold]
+/// @param {value} $headings-weight [$bold]
 $headings-weight: $bold;
 
 /// @param {number} $headings-margin-top [16]
@@ -120,7 +124,7 @@ $btn-padding-ratio: 2;
 /// @param {number} $btn-font-size [16]
 /// @param {number} $btn-line-height [20]
 /// @param {number} $btn-min-height [40]
-/// @param {variable} $btn-weight [$bold]
+/// @param {value} $btn-weight [$bold]
 $btn-font-size: 16;
 $btn-line-height: 20;
 $btn-min-height: 40;
@@ -131,10 +135,10 @@ $btn-weight: $bold;
   /// put styles here...
 }
 
-/// @param {variable} $btn-small-font-size [14]
-/// @param {variable} $btn-small-line-height [18]
+/// @param {number} $btn-small-font-size [14]
+/// @param {number} $btn-small-line-height [18]
 /// @param {number} $btn-small-min-height [32]
-/// @param {variable} $btn-small-weight [$bold]
+/// @param {value} $btn-small-weight [$bold]
 $btn-small-font-size: 14;
 $btn-small-line-height: 18;
 $btn-small-min-height: 32;
@@ -145,10 +149,10 @@ $btn-small-weight: $btn-weight;
   /// put styles here...
 }
 
-/// @param {variable} $btn-big-font-size [18]
-/// @param {variable} $btn-big-line-height [24]
+/// @param {number} $btn-big-font-size [18]
+/// @param {number} $btn-big-line-height [24]
 /// @param {number} $btn-big-min-height [48]
-/// @param {variable} $btn-big-weight [$bold]
+/// @param {value} $btn-big-weight [$bold]
 $btn-big-font-size: 18;
 $btn-big-line-height: 24;
 $btn-big-min-height: 48;

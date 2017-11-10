@@ -1,5 +1,9 @@
 /// @author Bernhard Ruoff
 /// @since 0.0.1
+/// @group core
+///
+/// @param {value} $body-font
+/// @param {value} $headings-font
 
 body {
   font-family: $body-font;

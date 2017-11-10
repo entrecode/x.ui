@@ -15,46 +15,34 @@ nav {
       margin: 0;
       padding: 0;
 
-      .nav__item {
-        padding: rem(4);
-      }
-
-      .nav__divider {
-        height: rem(1);
-        margin: rem(8) 0;
-        background-color: getColor(divider);
-      }
-    }
-
-    &.#{$pfx}nav_inline {
       @if $flex-support == false {
-        .nav__items {
-          .nav__item {
-            display: inline-block;
-          }
+        .nav__item {
+          display: inline-block;
         }
       } @else {
-        .nav__items {
-          @include flexbox;
-          @include align-items(center);
-        }
+        @include flexbox;
+        @include align-items(center);
       }
 
+      //TODO fix not full height (li line-height bug)
       .nav__divider {
         height: 100%;
         width: rem(1);
         margin: 0 rem(8);
-        background-color: getColor(divider);
         display: block;
       }
 
-      .nav__items {
-        .nav__item {
-          .#{$pfx}btn {
-            margin: 0;
-          }
+      .nav__item {
+        padding: rem(4);
+
+        .#{$pfx}btn {
+          margin: 0;
         }
       }
+    }
+
+    .nav__divider {
+      background-color: getColor(divider);
     }
 
     &.#{$pfx}nav_stacked {
@@ -77,7 +65,6 @@ nav {
         .nav__item {
           .#{$pfx}btn {
             @extend .#{$pfx}btn.#{$pfx}btn_block;
-            margin: 0;
           }
         }
       }

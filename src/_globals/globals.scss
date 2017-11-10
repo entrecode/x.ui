@@ -2,10 +2,10 @@
 /// @author Bernhard Ruoff
 /// @since 0.0.1
 ///
-/// global styles for xlcss-ui
+/// global styles for x.ui
 /// global styles refer single objects, that can be combined to macros
 /// all styles should be highly adaptable for other project
-@import 'body.scss';
+@import 'body';
 @import 'btn';
 @import 'btn_outlined';
 @import 'btn_raised';
@@ -15,7 +15,6 @@
 @import 'input';
 @import 'input_raised';
 @import 'input_round';
-@import 'nav';
 @import 'table';
 @import 'typo';
 @import 'list';

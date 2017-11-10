@@ -35,7 +35,6 @@ p {
     font-size: .875em;
   }
 
-  &.big,
   &.lead {
     font-size: 1.125em;
     font-weight: $light;
@@ -106,7 +105,7 @@ code,
 pre,
 kbd,
 samp {
-  font-size: em($font-size);
+  font-size: 1em;
 }
 
 code {
@@ -143,7 +142,7 @@ mark {
 }
 
 ///
-/// Generated text color styles
+/// text color styles
 /// ---------
 
 .text-default {
@@ -201,6 +200,10 @@ mark {
 .text-warning {
   color: getColor(state, warning) !important;
 }
+
+///
+/// text alignment
+/// ---------
 
 .text-center {
   text-align: center;
