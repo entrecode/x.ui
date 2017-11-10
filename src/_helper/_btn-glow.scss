@@ -1,6 +1,4 @@
 @mixin btn-glow($glow-color, $glow-color-hover) {
-  $btn-glow-shadow: rgba(getColor(background, invert), .1);
-
   position: relative;
 
   &:after {
@@ -40,14 +38,14 @@
   display: inline-block;
   z-index: 10;
 
-  .btn {
+  .#{$pfx}btn {
     @include btn-glow(getColor(link), getColor(linkHover));
 
-    &.super {
+    &.#{$pfx}btn_super {
       @include btn-glow(getColor(super), getColor(superHover));
     }
 
-    &.minor {
+    &.#{$pfx}btn_minor {
       @include btn-glow(getColor(minor), getColor(minorHover));
     }
   }

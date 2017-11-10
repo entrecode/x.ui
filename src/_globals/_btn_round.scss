@@ -1,12 +1,23 @@
-.btn {
-  &.round {
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @group button modifier
+///
+/// @see _config.scss
+///
+/// @param {variable} $pfx [''] - global prefixing
+/// @param {number} $btn-min-height - min-height of default btn
+/// @param {number} $btn-small-min-height - min-height of small btn
+/// @param {number} $btn-big-min-height - min-height of big btn
+
+.#{$pfx}btn {
+  &.#{$pfx}btn_round {
     @include border-radius(rem($btn-min-height / 2));
 
-    &.small {
+    &.#{$pfx}btn_small {
       @include border-radius(rem($btn-small-min-height / 2));
     }
 
-    &.big {
+    &.#{$pfx}btn_big {
       @include border-radius(rem($btn-big-min-height / 2));
     }
   }

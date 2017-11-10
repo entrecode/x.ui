@@ -15,7 +15,7 @@ $bold: 700;
 /// COLORS
 /// ------------------------------------------------------
 
-$background: white;
+$background: #fff;
 $text: #2D3A47;
 $link: #E74A7A;
 $super: #FC6563;
@@ -30,6 +30,9 @@ $setLight: $background !default;
   $setDark: $background;
   $setLight: $text;
 }
+
+/// @prop {variable} $pfx [''] - global prefixing
+$pfx: '';
 
 $divider-opacity: .1;
 
@@ -52,7 +55,7 @@ $bold: 700;
 $root-size: 16;
 
 /// @prop {number} $font-size [16] - default font-size
-$font-size: 14;
+$font-size: 16;
 
 /// @prop {number} $responsive-headings-ratio [.8] - ratio to downscale headings on mobile devices
 $responsive-headings-ratio: .8;
@@ -89,7 +92,7 @@ $h6-height: 24;
 /// font-family of btn
 $btn-font-family: $body-font;
 
-/// Style for .btn
+/// Style for .#{$pfx}btn
 /// --------------------
 
 /// metrics of default btn
@@ -100,12 +103,15 @@ $btn-min-height: 40;
 /// font-weight of btn
 $btn-weight: $bold;
 
-/// additional styles for .btn
+/// @param {number} $btn-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+$btn-padding-ratio: 2;
+
+/// additional styles for .#{$pfx}btn
 %btn-style {
   /// put styles here...
 }
 
-/// Style for .btn.small
+/// Style for .#{$pfx}btn.small
 /// --------------------
 
 /// metrics of btn.small
@@ -116,12 +122,12 @@ $btn-small-min-height: 32;
 /// font-weight of btn
 $btn-small-weight: $btn-weight;
 
-/// additional styles for .btn
+/// additional styles for .#{$pfx}btn
 %btn-small-style {
   /// put styles here...
 }
 
-/// Style for .btn.big
+/// Style for .#{$pfx}btn.big
 /// --------------------
 
 /// metrics of btn.big
@@ -132,7 +138,7 @@ $btn-big-min-height: 48;
 /// font-weight of btn
 $btn-big-weight: $btn-weight;
 
-/// additional styles for .btn
+/// additional styles for .#{$pfx}btn
 %btn-big-style {
   /// put styles here...
 }
@@ -159,6 +165,12 @@ $btn-big-wide: 240px;
 
 /// sets border-width for btn.outlined
 $btn-outline: 2 !default;
+
+/// param {color} $btn-raised-shadow [rgba(black, .1)] - color of drop shadow
+$btn-raised-shadow: rgba(black, .1) !default;
+
+/// dropdown styles
+/// ------------------------------------------------------
 
 /// radius of dropdown-elements
 $dropdown-radius: 4 !default;

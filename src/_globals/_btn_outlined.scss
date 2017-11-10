@@ -1,18 +1,43 @@
-.btn {
-  /// outlined button style
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @group button modifier
+///
+/// @see _config.scss
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @param {number} $btn-font-size - normal button font-size
+/// @param {number} $btn-line-height - normal button line-height
+/// @param {variable} $btn-weight - normal button font-weight
+/// @param {number} $btn-min-height - min-height of default btn
+///
+/// @param {variable} $btn-small-font-size - small button font-size
+/// @param {variable} $btn-small-line-height - small button line-height
+/// @param {variable} $btn-small-weight - small button font-weight
+/// @param {number} $btn-small-min-height - min-height of small btn
+///
+/// @param {variable} $btn-big-font-size - big button font-size
+/// @param {variable} $btn-big-line-height - big button line-height
+/// @param {variable} $btn-big-weight - big button font-weight
+/// @param {number} $btn-big-min-height - min-height of big btn
+///
+/// @param {number} $btn-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+///
+/// @param {boolean} $btn-outline - sets border-width for btn.outlined
 
-  &.outlined {
+.#{$pfx}btn {
+  &.#{$pfx}btn_outlined {
     background-color: transparent !important;
     color: getColor(link);
     border-color: getColor(link);
-    @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height, $btn-outline);
+    @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height, $btn-outline, $padding-ratio: $btn-padding-ratio);
 
     &.small {
-      @include macro-metrics($btn-small-font-size, $btn-small-line-height, $btn-small-min-height, $btn-outline);
+      @include macro-metrics($btn-small-font-size, $btn-small-line-height, $btn-small-min-height, $btn-outline, $padding-ratio: $btn-padding-ratio);
     }
 
     &.big {
-      @include macro-metrics($btn-big-font-size, $btn-big-line-height, $btn-big-min-height, $btn-outline);
+      @include macro-metrics($btn-big-font-size, $btn-big-line-height, $btn-big-min-height, $btn-outline, $padding-ratio: $btn-padding-ratio);
     }
 
     &.active,
@@ -23,7 +48,7 @@
       border-color: getColor(linkHover);
     }
 
-    &.minor {
+    &.#{$pfx}btn_minor {
       color: getColor(link);
       border-color: getColor(minor);
 
@@ -35,7 +60,7 @@
       }
     }
 
-    &.super {
+    &.#{$pfx}btn_super {
       color: getColor(super);
       border-color: getColor(super);
 
@@ -47,12 +72,12 @@
       }
     }
 
-    &.mono {
+    &.#{$pfx}btn_mono {
       color: getColor(text);
       border-color: getColor(text);
     }
 
-    &.invert {
+    &.#{$pfx}btn_invert {
       color: setContrast(getColor(background, invert), getColor(link));
       border-color: setContrast(getColor(background, invert), getColor(link));
 
@@ -63,7 +88,7 @@
         border-color: setContrast(getColor(background, invert), getColor(link));
       }
 
-      &.mono {
+      &.#{$pfx}btn_mono {
         color: getColor(text, invert);
         border-color: getColor(text, invert);
       }

@@ -1,12 +1,15 @@
-/// param {color} $shadow - color of drop shadow
-$shadow: rgba(getColor(background, invert), .1) !default;
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @group button modifier
 
-.btn {
-  &.raised {
-    @include box-shadow(0 2px 4px $shadow, 0 2px 8px $shadow);
+/// param {color} $btn-raised-shadow - color of drop shadow
+
+.#{$pfx}btn {
+  &.#{$pfx}btn_raised {
+    @include box-shadow(0 2px 4px $btn-raised-shadow, 0 2px 8px $btn-raised-shadow);
 
     &:hover {
-      @include box-shadow(0 1px 2px $shadow, 0 1px 4px $shadow);
+      @include box-shadow(0 1px 2px $btn-raised-shadow, 0 1px 4px $btn-raised-shadow);
     }
   }
 }
