@@ -9,13 +9,13 @@
 ///  <ul class='dropdown'>
 ///    <li tabindex='1'>
 ///      Label
-///      <ul class='dropdown-select'>
+///      <ul class='dropdown-options'>
 ///        <li>
-///          <span class='btn clear'>Label</span>
+///          <span class='dropdown-option'>Label</span>
 ///        </li>
 ///        <li class='divider'></li>
 ///        <li>
-///          <span class='btn clear'>Label</span>
+///          <span class='dropdown-option'>Label</span>
 ///        </li>
 ///      </ul>
 ///    </li>
@@ -42,20 +42,20 @@ ul.dropdown {
 
     &:hover,
     &:focus {
-      > .btn {
-        @extend .btn.active;
+      > .#{$pfx}btn {
+        @extend .#{$pfx}btn.active;
       }
 
-      > .btn.minor {
-        @extend .btn.minor.active;
+      > .#{$pfx}btn.#{$pfx}btn_minor {
+        @extend .#{$pfx}btn.#{$pfx}btn_minor.active;
       }
 
-      > .btn.super {
-        @extend .btn.super.active;
+      > .#{$pfx}btn.#{$pfx}btn_super {
+        @extend .#{$pfx}btn.#{$pfx}btn_super.active;
       }
 
-      > .btn.clear {
-        @extend .btn.clear.active;
+      > .#{$pfx}btn.#{$pfx}btn_clear {
+        @extend .#{$pfx}btn.#{$pfx}btn_clear.active;
       }
 
       ul.dropdown-options {
@@ -84,8 +84,8 @@ ul.dropdown {
       display: block;
       text-align: left;
 
-      .btn {
-        @extend .btn.block;
+      .#{$pfx}btn {
+        @extend .#{$pfx}btn.#{$pfx}btn_block;
         text-align: left;
       }
 

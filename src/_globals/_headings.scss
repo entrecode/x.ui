@@ -1,6 +1,29 @@
 /// headings
 /// @author Bernhard Ruoff
-/// @since 0.0.1
+/// @since 7.0.0
+///
+/// @see _config.scss
+///
+/// @param {number} $responsive-headings-ratio [.8] - ratio to downscale headings on mobile devices
+///
+/// @param {variable} $headings-weight [$bold]
+///
+/// @param {number} $headings-margin-top [16]
+/// @param {number} $headings-margin-top [8]
+/// @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
+///
+/// @param {number} $h1-size [40] - font-size
+/// @param {number} $h1-height [48] - line-height
+/// @param {number} $h2-size [32] - font-size
+/// @param {number} $h2-height [40] - line-height
+/// @param {number} $h3-size [28] - font-size
+/// @param {number} $h3-height [28] - line-height
+/// @param {number} $h4-size [24] - font-size
+/// @param {number} $h4-height [32] - line-height
+/// @param {number} $h5-size [24] - font-size
+/// @param {number} $h5-height [32] - line-height
+/// @param {number} $h6-size [16] - font-size
+/// @param {number} $h6-height [24] - line-height
 
 $heading-sizes: $h1-size $h2-size $h3-size $h4-size $h5-size $h6-size;
 $heading-heights: $h1-height $h2-height $h3-height $h4-height $h5-height $h6-height;
@@ -32,18 +55,13 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 .giga, .mega, .kilo {
   font-weight: $headings-weight;
-  margin: rem(16) 0 rem(8);
+  margin: rem($headings-margin-top) 0 rem($headings-margin-bottom);
 
   @extend %heading-style !optional;
 
-  small,
-  .small {
-    font-size: 0.875em;
+  small {
+    font-size: ($heading-inline-small*1em);
     vertical-align: baseline;
-  }
-
-  .big {
-    font-size: 1.125em;
   }
 }
 
