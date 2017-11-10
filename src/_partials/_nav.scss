@@ -19,8 +19,8 @@
       @include flex-direction(column);
       @include align-items(stretch);
 
-      .btn {
-        @extend .btn.block;
+      .#{$pfx}btn {
+        @extend .#{$pfx}btn.#{$pfx}btn_block;
       }
     }
 

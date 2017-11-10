@@ -29,7 +29,7 @@
       @include align-items(center);
     }
 
-    .btn {
+    .#{$pfx}btn {
       margin: 0;
     }
   }

@@ -5,24 +5,29 @@
 /// @see _config.scss
 ///
 /// @param {variable} $pfx [''] - global prefixing
+/// @param {variable} $btn-font-family [$body-font]
 ///
-/// @param {number} $btn-font-size - normal button font-size
-/// @param {number} $btn-line-height - normal button line-height
-/// @param {variable} $btn-weight - normal button font-weight
-/// @param {number} $btn-min-height - min-height of default btn
+/// @param {number} $btn-font-size [16]
+/// @param {number} $btn-line-height [20]
+/// @param {number} $btn-min-height [40]
+/// @param {variable} $btn-weight [$bold]
 ///
-/// @param {variable} $btn-small-font-size - small button font-size
-/// @param {variable} $btn-small-line-height - small button line-height
-/// @param {variable} $btn-small-weight - small button font-weight
-/// @param {number} $btn-small-min-height - min-height of small btn
+/// @param {variable} $btn-small-font-size [14]
+/// @param {variable} $btn-small-line-height [18]
+/// @param {number} $btn-small-min-height [32]
+/// @param {variable} $btn-small-weight [$bold]
 ///
-/// @param {variable} $btn-big-font-size - big button font-size
-/// @param {variable} $btn-big-line-height - big button line-height
-/// @param {variable} $btn-big-weight - big button font-weight
-/// @param {number} $btn-big-min-height - min-height of big btn
+/// @param {variable} $btn-big-font-size [18]
+/// @param {variable} $btn-big-line-height [24]
+/// @param {number} $btn-big-min-height [48]
+/// @param {variable} $btn-big-weight [$bold]
+///
+/// @param {boolean} $btn-round [false] - sets border-radius to 50% of button height
+/// @param {number} $btn-radius [4]
+/// @param {number} $btn-small-radius [4]
+/// @param {number} $btn-big-radius [4]
 ///
 /// @param {number} $btn-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-///
 /// @param {boolean} $btn-outline - sets border-width for btn.outlined
 
 .#{$pfx}btn {

@@ -48,7 +48,7 @@
       @include align-items(center);
     }
 
-    .btn {
+    .#{$pfx}btn {
       margin: 0;
     }
   }
@@ -70,7 +70,7 @@
 
     }
 
-    .btn {
+    .#{$pfx}btn {
       margin: 0;
     }
 

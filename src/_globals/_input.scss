@@ -1,14 +1,36 @@
-/// form
+/// form styles
 /// @author Bernhard Ruoff
-/// @since 0.0.1
+/// @since 7.0.0
+///
+/// @see _config.scss
+///
+/// @param {number} $input-font-size [16]
+/// @param {number} $input-line-height [24]
+/// @param {number} $input-min-height [32]
+///
+/// @param {number} $input-small-font-size [14]
+/// @param {number} $input-small-line-height [18]
+/// @param {number} $input-small-min-height [28]
+///
+/// @param {number} $input-big-font-size [18]
+/// @param {number} $input-big-line-height [24]
+/// @param {number} $input-big-min-height [40]
+///
+/// @param {number} $input-border [1]
+///
+/// @param {boolean} $input-round [false] - sets border-radius to 50% of input height
+///
+/// @param {number} $input-radius [4]
+/// @param {number} $input-small-radius [4]
+/// @param {number} $input-big-radius [4]
 
-.input {
+.#{$pfx}input {
   display: block;
   outline: none;
   border-style: solid;
   border-color: getColor(border);
   background-color: getColor(background);
-  color: getColor(text) !important;
+  color: getColor(text);
   width: 100%;
   margin: rem(4) 0;
   text-align: left;
@@ -20,8 +42,6 @@
   @extend %btn-style !optional;
 
   @include placeholder {
-    font-size: 1em;
-    line-height: rem(24);
     color: getColor(text, light);
   }
 
@@ -63,7 +83,7 @@
   /// sizes
   /// ------------------------------------------------------
 
-  &.small {
+  &.#{$pfx}input_small {
     @include border-radius(rem($input-small-radius));
     @include macro-metrics($input-small-font-size, $input-small-line-height, $input-small-min-height, $input-border);
 
@@ -71,7 +91,7 @@
     @extend %btn-small-style !optional;
   }
 
-  &.big {
+  &.#{$pfx}input_big {
     @include border-radius(rem($input-big-radius));
     @include macro-metrics($input-big-font-size, $input-big-line-height, $input-big-min-height, $input-border);
 
@@ -88,39 +108,11 @@
     color: getColor(text);
     -webkit-text-fill-color: getColor(text);
   }
-
-  &.input_search {
-    input[type="text"] {
-      outline: none !important;
-      border: none;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-    }
-
-    @if $ec-icon-support {
-      position: relative;
-      padding-left: rem(40) !important;
-
-      &:before {
-        @extend %ec-icon;
-        content: "\e0e5";
-        position: absolute;
-        color: getColor(text, light);
-        left: rem(16);
-        top: 50%;
-        @include transform(translateY(-50%));
-        z-index: 1;
-      }
-    }
-  }
 }
 
 /// for fluffy round inputs
-/// @param {boolean} $input-round - can be set in config.scss
-
 @if $input-round == true {
-  .input {
+  .#{$pfx}input {
     @include border-radius(rem($input-min-height / 2));
 
     &.small {
@@ -178,7 +170,4 @@ input[type='radio'] {
 textarea {
   height: auto;
   resize: vertical;
-}
-
-.input__help {
 }

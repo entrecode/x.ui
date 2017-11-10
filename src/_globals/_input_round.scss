@@ -1,13 +1,21 @@
-.input {
-  .round {
-    @include border-radius(rem($input-min-height / 2));
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @group input modifier
+///
+/// @see _config.scss
+///
+/// @param {number} $input-min-height [32]
+/// @param {number} $input-small-min-height [28]
+/// @param {number} $input-big-min-height [40]
 
-    &.small {
-      @include border-radius(rem($input-small-min-height / 2));
-    }
+.#{$pfx}input_round {
+  @include border-radius(rem($input-min-height / 2));
 
-    &.big {
-      @include border-radius(rem($input-big-min-height / 2));
-    }
+  &.small {
+    @include border-radius(rem($input-small-min-height / 2));
+  }
+
+  &.big {
+    @include border-radius(rem($input-big-min-height / 2));
   }
 }

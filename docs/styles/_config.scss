@@ -107,102 +107,98 @@ $h6-height: 24;
   /// put styles here...
 }
 
-//
+///
 /// BUTTONS
 /// ------------------------------------------------------
 
-/// font-family of btn
+/// @param {variable} $btn-font-family [$body-font]
 $btn-font-family: $body-font;
-
-/// Style for .#{$pfx}btn
-/// --------------------
-
-/// metrics of default btn
-$btn-font-size: 16;
-$btn-line-height: 20;
-$btn-min-height: 40;
-
-/// font-weight of btn
-$btn-weight: $bold;
 
 /// @param {number} $btn-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 $btn-padding-ratio: 2;
 
-/// additional styles for .#{$pfx}btn
+/// @param {number} $btn-font-size [16]
+/// @param {number} $btn-line-height [20]
+/// @param {number} $btn-min-height [40]
+/// @param {variable} $btn-weight [$bold]
+$btn-font-size: 16;
+$btn-line-height: 20;
+$btn-min-height: 40;
+$btn-weight: $bold;
+
+/// additional styles for .btn
 %btn-style {
   /// put styles here...
 }
 
-/// Style for .#{$pfx}btn.small
-/// --------------------
-
-/// metrics of btn.small
+/// @param {variable} $btn-small-font-size [14]
+/// @param {variable} $btn-small-line-height [18]
+/// @param {number} $btn-small-min-height [32]
+/// @param {variable} $btn-small-weight [$bold]
 $btn-small-font-size: 14;
 $btn-small-line-height: 18;
 $btn-small-min-height: 32;
-
-/// font-weight of btn
 $btn-small-weight: $btn-weight;
 
-/// additional styles for .#{$pfx}btn
+/// additional styles for .btn_small
 %btn-small-style {
   /// put styles here...
 }
 
-/// Style for .#{$pfx}btn.big
-/// --------------------
-
-/// metrics of btn.big
+/// @param {variable} $btn-big-font-size [18]
+/// @param {variable} $btn-big-line-height [24]
+/// @param {number} $btn-big-min-height [48]
+/// @param {variable} $btn-big-weight [$bold]
 $btn-big-font-size: 18;
 $btn-big-line-height: 24;
 $btn-big-min-height: 48;
-
-/// font-weight of btn
 $btn-big-weight: $btn-weight;
 
-/// additional styles for .#{$pfx}btn
+/// additional styles for .btn_big
 %btn-big-style {
   /// put styles here...
 }
 
-/// radius of buttons
-/// if is btn-round
-/// sets border-radius to 50% of button height
+/// @param {boolean} $btn-round [false] - sets border-radius to 50% of button height
 $btn-round: false;
 
-/// radius of buttons
-/// if $btn-round === false
+/// radius of buttons - if $btn-round === false
+/// @param {number} $btn-radius [4]
+/// @param {number} $btn-small-radius [4]
+/// @param {number} $btn-big-radius [4]
 $btn-radius: 4 !default;
 $btn-small-radius: 4 !default;
 $btn-big-radius: 4 !default;
 
-/// min width for .wide buttons
+/// @param {number} $btn-wide -  min width for .btn_wide button
+/// @param {number} $btn-small-wide - min width for .btn_wide.btn_small button
+/// @param {number} $btn-big-wide - min width for .btn_wide.btn_big button
 $btn-wide: 240px;
-
-/// min width for .wide.small buttons
 $btn-small-wide: 160px;
-
-/// min width for .wide.big buttons
 $btn-big-wide: 240px;
 
-/// sets border-width for btn.outlined
+/// @param {boolean} $btn-outline - sets border-width for btn.outlined
 $btn-outline: 2 !default;
 
 /// param {color} $btn-raised-shadow [rgba(black, .1)] - color of drop shadow
 $btn-raised-shadow: rgba(black, .1) !default;
 
-/// dropdown styles
+///
+/// DROPDOWN
 /// ------------------------------------------------------
 
 /// radius of dropdown-elements
 $dropdown-radius: 4 !default;
 
-/// Input
+///
+/// INPUT
 /// ------------------------------------------------------
 
-/// metrics default input-elements
+/// @param {number} $input-font-size [16]
+/// @param {number} $input-line-height [24]
+/// @param {number} $input-min-height [32]
 $input-font-size: 16 !default;
-$input-line-height: 24 !default;
+$input-line-height: 20 !default;
 $input-min-height: 32 !default;
 
 /// additional styles for .input
@@ -210,7 +206,9 @@ $input-min-height: 32 !default;
   /// put styles here...
 }
 
-/// metrics small input-elements
+/// @param {number} $input-small-font-size [14]
+/// @param {number} $input-small-line-height [18]
+/// @param {number} $input-small-min-height [28]
 $input-small-font-size: 14 !default;
 $input-small-line-height: 18 !default;
 $input-small-min-height: 28 !default;
@@ -220,9 +218,11 @@ $input-small-min-height: 28 !default;
   /// put styles here...
 }
 
-/// metrics small input-elements
+/// @param {number} $input-big-font-size [18]
+/// @param {number} $input-big-line-height [24]
+/// @param {number} $input-big-min-height [40]
 $input-big-font-size: 18 !default;
-$input-big-line-height: 24 !default;
+$input-big-line-height: 22 !default;
 $input-big-min-height: 40 !default;
 
 /// additional styles for .input.big
@@ -230,18 +230,22 @@ $input-big-min-height: 40 !default;
   /// put styles here...
 }
 
-$input-border: 1 !default;
-
-/// radius of buttons
-/// if is btn-round
-/// sets border-radius to 50% of min-height
+/// @param {boolean} $input-round [false] - sets border-radius to 50% of input height
 $input-round: false;
 
-/// radius of input-elements
-/// if $btn-round === false
+/// radius of input - if $input-round === false
+/// @param {number} $input-radius [4]
+/// @param {number} $input-small-radius [4]
+/// @param {number} $input-big-radius [4]
 $input-radius: 4 !default;
 $input-small-radius: 4 !default;
 $input-big-radius: 4 !default;
+
+/// @param {number} $input-border [1]
+$input-border: 1 !default;
+
+/// param {color} $input-raised-shadow
+$input-raised-shadow: rgba(black, .1) !default;
 
 /// Alerts
 /// ------------------------------------------------------
