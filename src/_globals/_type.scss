@@ -1,6 +1,7 @@
-/// typo
 /// @author Bernhard Ruoff
-/// @since 0.0.1
+/// @since 7.0.0
+/// @access public
+/// @group type styles
 
 ///
 /// Link styles
@@ -11,6 +12,7 @@ a {
   @include transition(color .2s);
   cursor: pointer;
   outline: none;
+  @extend %link-styles;
 
   * {
     cursor: pointer;
@@ -29,6 +31,7 @@ p {
   font-size: 1em;
   line-height: 1.5em;
   margin: rem(8) 0 rem(16) 0;
+  @extend %link-styles;
 
   &.small {
     vertical-align: baseline;
@@ -139,107 +142,4 @@ mark {
   background-color: transparent;
   color: getColor(highlight);
   vertical-align: baseline;
-}
-
-///
-/// text color styles
-/// ---------
-
-.text-default {
-  color: getColor(text) !important;
-}
-
-.text-light {
-  color: getColor(text, light) !important;
-}
-
-.text-lighter {
-  color: getColor(text, lighter) !important;
-}
-
-.text-lightest {
-  color: getColor(text, lightest) !important;
-}
-
-.text-invert {
-  color: getColor(text, invert) !important;
-}
-
-.text-link {
-  color: getColor(link) !important;
-}
-
-.text-minor {
-  color: getColor(minor) !important;
-}
-
-.text-super {
-  color: getColor(super) !important;
-}
-
-.text-highlight {
-  color: getColor(highlight) !important;
-}
-
-.text-info {
-  color: getColor(state, info) !important;
-}
-
-.text-disabled {
-  color: getColor(state, disabled) !important;
-}
-
-.text-error {
-  color: getColor(state, error) !important;
-}
-
-.text-success {
-  color: getColor(state, success) !important;
-}
-
-.text-warning {
-  color: getColor(state, warning) !important;
-}
-
-///
-/// text alignment
-/// ---------
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-left {
-  text-align: left;
-}
-
-///
-/// text overflow behavior styles
-/// --------
-
-/// no text wrapping
-.nowrap {
-  white-space: nowrap;
-  vertical-align: baseline;
-}
-
-/// use automatic text wrapping
-.hyphen {
-  @include word-wrap;
-}
-
-/// use automatic text wrapping with justification
-.hyphen-block {
-  text-align: justify;
-  @include word-wrap;
-}
-
-/// automatic text cut off with ...
-.ellipsis {
-  @include ellipsis;
-  display: block;
 }

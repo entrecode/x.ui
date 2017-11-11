@@ -1,0 +1,28 @@
+
+
+///
+/// text overflow behavior styles
+/// --------
+
+/// no text wrapping
+.nowrap {
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+/// use automatic text wrapping
+.hyphen {
+  @include word-wrap;
+}
+
+/// use automatic text wrapping with justification
+.hyphen-block {
+  text-align: justify;
+  @include word-wrap;
+}
+
+/// automatic text cut off with ...
+.ellipsis {
+  @include ellipsis;
+  display: block;
+}
