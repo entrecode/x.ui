@@ -12,7 +12,6 @@ a {
   @include transition(color .2s);
   cursor: pointer;
   outline: none;
-  @extend %link-styles;
 
   * {
     cursor: pointer;
@@ -21,6 +20,8 @@ a {
   &:hover {
     color: getColor(linkHover);
   }
+
+  @extend %link-styles !optional;
 }
 
 ///
@@ -30,8 +31,7 @@ a {
 p {
   font-size: 1em;
   line-height: 1.5em;
-  margin: rem(8) 0 rem(16) 0;
-  @extend %link-styles;
+  margin: rem($paragraph-margin-top) 0 rem($paragraph-margin-bottom) 0;
 
   &.small {
     vertical-align: baseline;
@@ -39,14 +39,17 @@ p {
   }
 
   &.lead {
-    font-size: 1.125em;
-    font-weight: $light;
+    font-size: ($paragraph-lead-size *1em);
+    line-height: ($paragraph-lead-height *1em);
+    font-weight: $paragraph-lead-weight;
   }
 
   strong,
   small {
     vertical-align: baseline;
   }
+
+  @extend %paragraph-styles !optional;
 }
 
 //
@@ -64,7 +67,7 @@ strong {
 }
 
 small {
-  font-size: 0.875em;
+  font-size: ($inline-small-size * 1em);
   vertical-align: baseline;
 }
 

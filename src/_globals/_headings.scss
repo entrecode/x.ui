@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 .giga, .mega, .kilo {
   font-weight: $headings-weight;
-  margin: rem($headings-margin-top) 0 rem($headings-margin-bottom);
+  margin: rem($headings-margin-top) 0 rem($headings-margin-bottom) 0;
 
   @extend %heading-style !optional;
 
