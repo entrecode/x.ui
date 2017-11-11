@@ -1,4 +1,15 @@
-/// @since 2.3.1
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group theme modifier
+///
+/// @param {array} $name-array - postfix names appending `.theme-`
+/// @param {array} $color-array - theme colors
+/// @param {array} $postfix-array - shade postfix names
+/// @param {array} $shade-array - shading values
+///
+/// @return modifier class with background-color and color values
+
 
 $name-array: default, minor, link, super, highlight, invert;
 $color-array: $background, $minor, $link, $super, $highlight, $text;
@@ -9,12 +20,16 @@ $shade-array: -30, -20, -10, 10, 20, 30;
   $color: nth($color-array, $i);
   $name: nth($name-array, $i);
 
+  @if alpha($color) {
+    $color: flattenColor($color);
+  }
+
   @if $name == 'default' {
     .theme {
-      background-color: $color !important;
-      color: setContrast($color, $text);
+      background-color: $color;
+      color: setContrast($color);
 
-      a:not(.btn) {
+      a:not(.#{$pfx}btn) {
         color: setContrast($color, $link);
       }
 
@@ -23,21 +38,21 @@ $shade-array: -30, -20, -10, 10, 20, 30;
         $shade: nth($shade-array, $n);
 
         &_#{$postfix} {
-          background-color: varColor($color, $shade) !important;
-          color: setContrast(varColor($color, $shade), $text);
+          background-color: varColor($color, $shade);
+          color: setContrast(varColor($color, $shade));
 
-          a:not(.btn) {
-            color: setContrast($color, $link);
+          a:not(.#{$pfx}btn) {
+            color: setContrast(varColor($color, $shade), $link);
           }
         }
       }
     }
   } @else {
     .theme-#{$name} {
-      background-color: $color !important;
-      color: setContrast($color, $text);
+      background-color: $color;
+      color: setContrast($color);
 
-      a:not(.btn) {
+      a:not(.#{$pfx}btn) {
         color: setContrast($color, $link);
       }
 
@@ -46,11 +61,11 @@ $shade-array: -30, -20, -10, 10, 20, 30;
         $shade: nth($shade-array, $n);
 
         &_#{$postfix} {
-          background-color: varColor($color, $shade) !important;
-          color: setContrast(varColor($color, $shade), $text);
+          background-color: varColor($color, $shade);
+          color: setContrast(varColor($color, $shade));
 
-          a:not(.btn) {
-            color: setContrast($color, $link);
+          a:not(.#{$pfx}btn) {
+            color: setContrast(varColor($color, $shade), $link);
           }
         }
       }
