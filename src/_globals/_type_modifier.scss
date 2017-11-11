@@ -1,8 +1,7 @@
-
-
-///
-/// text overflow behavior styles
-/// --------
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group type modifier
 
 /// no text wrapping
 .nowrap {
@@ -10,12 +9,12 @@
   vertical-align: baseline;
 }
 
-/// use automatic text wrapping
+/// uses automatic hyphenation
 .hyphen {
   @include word-wrap;
 }
 
-/// use automatic text wrapping with justification
+/// use automatic hyphenation with justification
 .hyphen-block {
   text-align: justify;
   @include word-wrap;
