@@ -11,4 +11,5 @@
   vertical-align: top;
   @include border-radius(rem(2));
   white-space: nowrap;
+  user-select: all;
 }

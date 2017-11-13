@@ -1,10 +1,6 @@
-@import '../../src/x.ui';
-@import 'code';
-@import 'function';
-@import 'demo-grid';
-@import 'demo-header';
-@import 'hljs';
-@import 'header';
-@import 'section';
-@import 'ui-colors-list';
+@import "config";
+@import '../../node_modules/xlcss/sass/xlcss-sandbox';
+@import '../../src/x.ui-sandbox';
+@import 'macros/macros';
+@import 'partials/partials';
 

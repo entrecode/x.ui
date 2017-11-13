@@ -1,0 +1,11 @@
+$demo-macro: rgba(getColor(link), .2);
+
+.demo-paragraph-metrics {
+  overflow: hidden;
+  background-image: linear-gradient(to right, $demo-macro 50%, transparent 50%),
+  linear-gradient(to right, rgba($demo-macro, .1) 0%, rgba($demo-macro, .1) 100%);
+  background-repeat: repeat-x, repeat-x;
+  background-size: 8px 1px, 1px 1.225rem;
+  background-position: top, bottom;
+  color: rgba($demo-macro, .4);
+}
