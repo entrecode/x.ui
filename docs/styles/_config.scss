@@ -29,6 +29,9 @@ $highlight: #A7FFEB;
 $setDark: $text !default;
 $setLight: $background !default;
 
+$divider-opacity: .1;
+
+/// TODO replace this with better solution
 /// function for setColor
 @if (lightness($text) > 50) {
   $setDark: $background;
@@ -38,28 +41,50 @@ $setLight: $background !default;
 /// @param {value} $pfx [''] - global prefixing
 $pfx: '';
 
-$divider-opacity: .1;
-
 /// @param {boolean} $flex-support [true]
 $flex-support: true;
 
 /// if your template uses ec-icon
 $ec-icon-support: true;
 
-//
-/// TYPO
+///
+/// GRID & LAYOUT Settings
 /// ------------------------------------------------------
-
-/// font-weight config
-$light: 300;
-$normal: 400;
-$bold: 700;
 
 /// @param {number} $root-size [16] - default size used for global size calculations
 $root-size: 16;
 
+/// @prop {number} $grid-container-width [1200px] - max-width of container
+$grid-container-width: 1200px !default;
+
+/// @prop {number} $grid-gutter [32] - gutter size in pixels without unit
+$grid-gutter: 32 !default;
+
+/// @prop {value} $outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
+$outer-gutter: true !default;
+
+/// @prop {number} $grid-num-columns [12] - number of columns in a row
+$grid-num-columns: 12 !default;
+
+/// @prop {number} $base-padding [16] - small padding value for padding helper
+$base-padding: 16;
+
+/// @param {map} $breakpoints
+$breakpoints: (
+        'xs': 0, // smartphone
+        'sm': 480, // smartphone landscape
+        'md': 720, // tablet
+        'lg': 1024, // tablet landscape
+        'xl': 1280, // desktop
+        'xxl': 1920 // large
+) !default;
+
+///
+/// TYPO
+/// ------------------------------------------------------
+
 /// @param {number} $base-font-size [1em]
-$base-font-size: .875rem !default;
+$base-font-size: 14px !default;
 
 /// @param {number} $base-line-height [1.4]
 $base-line-height: 1.4;
@@ -84,7 +109,7 @@ $type-scale-xs: (
 );
 
 /// @param {value} $bp-type-scale-md - breakpoint modular scale for tablet
-$bp-type-scale-md: $bp-md;
+$bp-type-scale-md: getBreakpoint(md);
 
 /// @param {map} $type-scale-md - modular scale for tablet
 /// @link http://www.modularscale.com/?1&em&1.25
@@ -100,7 +125,7 @@ $type-scale-md: (
 );
 
 /// @param {value} $bp-type-scale-lg - breakpoint modular scale for desktop
-$bp-type-scale-lg: $bp-lg;
+$bp-type-scale-lg: getBreakpoint(lg);
 
 /// @param {map} $type-scale-lg - modular scale for desktop
 /// @link http://www.modularscale.com/?1.125&em&1.25
