@@ -1,63 +1,66 @@
-//
 /// @author Bernhard Ruoff
-/// @since 1.0.0
-//
+/// @since 7.0.0
+/// @access public
+/// @group macros
+///
+/// @param {number} $bubble-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
+///
+/// @param {number} $bubble-font-size [10]
+/// @param {number} $bubble-line-height [12]
+/// @param {number} $bubble-min-height [24]
+/// @param {value} $bubble-weight [$bold]
+///
+/// @param {number} $bubble-small-font-size [10]
+/// @param {number} $bubble-small-line-height [12]
+/// @param {number} $bubble-small-min-height [24]
+/// @param {value} $bubble-small-weight [$bubble-weight]
+///
+/// @param {number} $bubble-big-font-size [12]
+/// @param {number} $bubble-big-line-height [16]
+/// @param {number} $bubble-big-min-height [32]
+/// @param {value} $bubble-big-weight [$bubble-weight]
+///
+/// @param {boolean} $bubble-round [false] - sets border-radius to 50% of bubble height
+/// @param {number} $bubble-radius [4]
+/// @param {number} $bubble-small-radius [4]
+/// @param {number} $bubble-big-radius [4]
 
-.bubble {
+.#{$pfx}bubble {
   white-space: nowrap;
   display: inline-block;
   font-weight: $bubble-weight;
-  @include macro-metrics($bubble-font-size, $bubble-line-height, $bubble-min-height);
+  text-align: center;
+  @include macro-metrics($bubble-font-size, $bubble-line-height, $bubble-min-height, $padding-ratio: $bubble-padding-ratio);
   @include border-radius(rem($bubble-radius));
-  @include set-colors(getColor(minor));
+  @include set-colors(getColor(background, lightest));
 
-
-  &.small {
-    @include macro-metrics($bubble-small-font-size, $bubble-small-line-height, $bubble-small-min-height);
+  &.#{$pfx}bubble_small {
+    @include macro-metrics($bubble-small-font-size, $bubble-small-line-height, $bubble-small-min-height, $padding-ratio: $bubble-padding-ratio);
     @include border-radius(rem($bubble-small-radius));
     font-weight: $bubble-small-weight;
   }
 
-  &.big {
-    @include macro-metrics($bubble-big-font-size, $bubble-big-line-height, $bubble-big-min-height);
+  &.#{$pfx}bubble_big {
+    @include macro-metrics($bubble-big-font-size, $bubble-big-line-height, $bubble-big-min-height, $padding-ratio: $bubble-padding-ratio);
     @include border-radius(rem($bubble-big-radius));
     font-weight: $bubble-big-weight;
   }
 
-  &.minor {
-    @include set-colors(getColor(minor));
-  }
+  /// @param {value} $prefix ['bubble_']
+  /// @param {array} $name-array - postfix names appending $prefix
+  /// @param {array} $color-array - theme colors
 
-  &.link {
-    @include set-colors(getColor(link));
-  }
+  $prefix: 'bubble_';
+  $name-array: minor, link, super, highlight, invert, info, error, success, warning;
+  $color-array: getColor(minor), getColor(link), getColor(super), getColor(highlight), getColor(text, invert), getColor(state, info), getColor(state, error), getColor(state, success), getColor(state, warning);
 
-  &.super {
-    @include set-colors(getColor(super));
-  }
+  @for $i from 1 through length($color-array) {
+    $color: nth($color-array, $i);
+    $name: nth($name-array, $i);
 
-  &.highlight {
-    @include set-colors(getColor(highlight));
-  }
-
-  &.info {
-    @include set-colors(getColor(state, info));
-  }
-
-  &.error {
-    @include set-colors(getColor(state, error));
-  }
-
-  &.success {
-    @include set-colors(getColor(state, success));
-  }
-
-  &.warning {
-    @include set-colors(getColor(state, warning));
-  }
-
-  &.invert {
-    @include set-colors(getColor(background));
+    &.#{$pfx}#{$prefix}#{$name} {
+      @include set-colors($color);
+    }
   }
 }
 
@@ -68,16 +71,12 @@
   .bubble {
     @include border-radius(rem($bubble-min-height / 2));
 
-    &.small {
+    &.#{$pfx}bubble_small {
       @include border-radius(rem($bubble-small-min-height / 2));
     }
 
-    &.big {
+    &.#{$pfx}bubble_big {
       @include border-radius(rem($bubble-big-min-height / 2));
     }
   }
-}
-
-span.bubble {
-  display: inline-block;
 }
