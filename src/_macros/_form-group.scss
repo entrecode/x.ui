@@ -4,7 +4,6 @@
   @include flex-direction(column);
 
   label {
-    color: getColor(text);
     @include transition(color .2s);
     display: block;
   }
@@ -49,7 +48,7 @@
       }
     }
 
-    .input {
+    .#{$pfx}input {
       padding-left: rem(40) !important;
     }
   }
