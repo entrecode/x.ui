@@ -1,6 +1,8 @@
 /// @author Bernhard Ruoff
 /// @since 7.0.0
 /// @access public
+///
+/// @param {variable} $pfx [''] - global prefixing
 
 .#{$pfx}alert {
   p {

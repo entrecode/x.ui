@@ -3,6 +3,8 @@
 /// @access public
 /// @group macros
 ///
+/// @param {variable} $pfx [''] - global prefixing
+///
 /// @require {mixin} macro-metrics()
 /// @require {mixin} border-radius()
 /// @require {mixin} set-colors()

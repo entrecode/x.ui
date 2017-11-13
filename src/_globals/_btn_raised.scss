@@ -3,6 +3,8 @@
 /// @access public
 /// @group buttons modifier
 ///
+/// @param {variable} $pfx [''] - global prefixing
+///
 /// param {color} $btn-raised-shadow - color of drop shadow
 
 .#{$pfx}btn {
