@@ -1,59 +1,86 @@
-.alert {
-  &.outlined {
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+///
+/// @require {mixin} macro-metrics()
+/// @require {mixin} border-radius()
+/// @require {mixin} set-colors()
+///
+/// @param {number} $alert-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+///
+/// @param {number} $alert-font-size [16]
+/// @param {number} $alert-line-height [20]
+/// @param {number} $alert-min-height [40]
+///
+/// @param {number} $alert-small-font-size [14]
+/// @param {number} $alert-small-line-height [18]
+/// @param {number} $alert-small-min-height [32]
+///
+/// @param {number} $alert-big-font-size [18]
+/// @param {number} $alert-big-line-height [24]
+/// @param {number} $alert-big-min-height [48]
+///
+/// @param {boolean} $alert-outlined - sets border-width for .alert_outlined
+///
+/// @example
+///   <p class='alert alert_outlined'>Error Message</p>
+
+.#{$pfx}alert {
+  &.#{$pfx}alert_outlined {
     background-color: transparent;
     border-style: solid;
     border-color: getColor(minor);
-    @include macro-metrics($alert-font-size, $alert-line-height, $alert-min-height, $alert-outlined);
+    @include macro-metrics($alert-font-size, $alert-line-height, $alert-min-height, $alert-outlined, $padding-ratio: $alert-padding-ratio);
 
-    &.small {
-      @include macro-metrics($alert-small-font-size, $alert-small-line-height, $alert-small-min-height, $alert-outlined);
+    &.#{$pfx}alert_small {
+      @include macro-metrics($alert-small-font-size, $alert-small-line-height, $alert-small-min-height, $alert-outlined, $padding-ratio: $alert-padding-ratio);
     }
 
-    &.big {
-      @include macro-metrics($alert-big-font-size, $alert-big-line-height, $alert-big-min-height, $alert-outlined);
+    &.#{$pfx}alert_big {
+      @include macro-metrics($alert-big-font-size, $alert-big-line-height, $alert-big-min-height, $alert-outlined, $padding-ratio: $alert-padding-ratio);
     }
 
-    &.minor {
+    &.#{$pfx}alert_minor {
       border-color: getColor(minor);
       color: setContrast(getColor(background), getColor(minor));
     }
 
-    &.link {
+    &.#{$pfx}alert_link {
       border-color: getColor(link);
       color: setContrast(getColor(background), getColor(link));
     }
 
-    &.super {
+    &.#{$pfx}alert_super {
       border-color: getColor(super);
       color: setContrast(getColor(background), getColor(super));
     }
 
-    &.highlight {
+    &.#{$pfx}alert_highlight {
       border-color: getColor(highlight);
       color: setContrast(getColor(background), getColor(highlight));
     }
 
-    &.info {
+    &.#{$pfx}alert_info {
       border-color: getColor(state, info);
       color: setContrast(getColor(background), getColor(state, info));
     }
 
-    &.error {
+    &.#{$pfx}alert_error {
       border-color: getColor(state, error);
       color: setContrast(getColor(background), getColor(state, error));
     }
 
-    &.success {
+    &.#{$pfx}alert_success {
       border-color: getColor(state, success);
       color: setContrast(getColor(background), getColor(state, success));
     }
 
-    &.warning {
+    &.#{$pfx}alert_warning {
       border-color: getColor(state, warning);
       color: setContrast(getColor(background), getColor(state, warning));
     }
 
-    &.invert {
+    &.#{$pfx}alert_invert {
       border-color: getColor(text, invert);
       color: getColor(text, invert);
     }

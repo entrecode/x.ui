@@ -6,8 +6,8 @@
 /// macro styles refer objects with multiple children which can be a combination of multiple global elements
 /// all styles should be highly adaptable for other project
 @import 'alert';
+@import 'alert__inline';
 @import 'alert_outlined';
-@import 'alert_round';
 @import 'bubble';
 @import 'bumper';
 @import 'caret';

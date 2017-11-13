@@ -47,6 +47,25 @@ $flex-support: true;
 /// if your template uses ec-icon
 $ec-icon-support: true;
 
+///
+/// GRID & LAYOUT Settings
+/// ------------------------------------------------------
+
+/// @param {number} $root-size [16] - default size used for global size calculations
+$root-size: 16;
+
+/// @prop {number} $grid-container-width [1200px] - max-width of container
+$grid-container-width: 1200px !default;
+
+/// @prop {number} $grid-gutter [32] - gutter size in pixels without unit
+$grid-gutter: 32 !default;
+
+/// @prop {value} $outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
+$outer-gutter: true !default;
+
+/// @prop {number} $grid-num-columns [12] - number of columns in a row
+$grid-num-columns: 12 !default;
+
 /// @prop {number} $base-padding [16] - small padding value for padding helper
 $base-padding: 16;
 
@@ -60,15 +79,12 @@ $breakpoints: (
         'xxl': 1920 // large
 ) !default;
 
-//
+///
 /// TYPO
 /// ------------------------------------------------------
 
-/// @param {number} $root-size [16] - default size used for global size calculations
-$root-size: 16;
-
 /// @param {number} $base-font-size [1em]
-$base-font-size: 1rem !default;
+$base-font-size: 14px !default;
 
 /// @param {number} $base-line-height [1.4]
 $base-line-height: 1.4;
@@ -297,12 +313,16 @@ $input-raised-shadow: rgba(black, .1) !default;
 /// Alerts
 /// ------------------------------------------------------
 
-/// metrics default alerts
+/// @param {number} $alert-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+$alert-padding-ratio: 2;
+
+/// @param {number} $alert-font-size [16]
+/// @param {number} $alert-line-height [20]
+/// @param {number} $alert-min-height [40]
+/// @param {value} $alert-weight [$normal]
 $alert-font-size: 16 !default;
 $alert-line-height: 20 !default;
 $alert-min-height: 40 !default;
-
-/// font-weight of .alert
 $alert-weight: $normal !default;
 
 /// additional styles for .alert
@@ -310,12 +330,13 @@ $alert-weight: $normal !default;
   /// put styles here...
 }
 
-/// metrics small alerts
+/// @param {number} $alert-small-font-size [14]
+/// @param {number} $alert-small-line-height [18]
+/// @param {number} $alert-small-min-height [32]
+/// @param {value} $alert-small-weight [$alert-weight]
 $alert-small-font-size: 14 !default;
 $alert-small-line-height: 18 !default;
 $alert-small-min-height: 32 !default;
-
-/// font-weight of .alert.small
 $alert-small-weight: $alert-weight !default;
 
 /// additional styles for .alert.small
@@ -323,12 +344,13 @@ $alert-small-weight: $alert-weight !default;
   /// put styles here...
 }
 
-/// metrics small alerts
+/// @param {number} $alert-big-font-size [18]
+/// @param {number} $alert-big-line-height [24]
+/// @param {number} $alert-big-min-height [48]
+/// @param {value} $alert-big-weight [$alert-weight]
 $alert-big-font-size: 18 !default;
 $alert-big-line-height: 24 !default;
 $alert-big-min-height: 48 !default;
-
-/// font-weight of .alert.big
 $alert-big-weight: $alert-weight;
 
 /// additional styles for .alert.big
@@ -336,27 +358,29 @@ $alert-big-weight: $alert-weight;
   /// put styles here...
 }
 
+/// @param {number} $alert-radius [4]
+/// @param {number} $alert-small-radius [4]
+/// @param {number} $alert-big-radius [4]
+$alert-radius: 4 !default;
+$alert-small-radius: 4 !default;
+$alert-big-radius: 4 !default;
+
+/// @param {boolean} $alert-outlined - sets border-width for .alert_outlined
 $alert-outlined: 2 !default;
-
-/// radius of alerts
-/// sets alertbox-radius to 50% of min-height
-$alert-round: false;
-
-/// radius of alerts
-/// if $alert-round === false
-$alert-radius: 2 !default;
-$alert-small-radius: 2 !default;
-$alert-big-radius: 2 !default;
 
 /// Bubbles
 /// ------------------------------------------------------
 
-/// metrics default bubbles
-$bubble-font-size: 10 !default;
-$bubble-line-height: 12 !default;
-$bubble-min-height: 24 !default;
+/// @param {number} $bubble-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
+$bubble-padding-ratio: 1;
 
-/// font-weight of .bubble
+/// @param {number} $bubble-font-size [10]
+/// @param {number} $bubble-line-height [12]
+/// @param {number} $bubble-min-height [24]
+/// @param {value} $bubble-weight [$bold]
+$bubble-font-size: 14 !default;
+$bubble-line-height: 16 !default;
+$bubble-min-height: 28 !default;
 $bubble-weight: $bold !default;
 
 /// additional styles for .bubble
@@ -364,12 +388,13 @@ $bubble-weight: $bold !default;
   /// put styles here...
 }
 
-/// metrics small bubbles
+/// @param {number} $bubble-small-font-size [10]
+/// @param {number} $bubble-small-line-height [12]
+/// @param {number} $bubble-small-min-height [24]
+/// @param {value} $bubble-small-weight [$bubble-weight]
 $bubble-small-font-size: 10 !default;
 $bubble-small-line-height: 12 !default;
 $bubble-small-min-height: 24 !default;
-
-/// font-weight of .bubble.small
 $bubble-small-weight: $bubble-weight !default;
 
 /// additional styles for .bubble.small
@@ -377,12 +402,13 @@ $bubble-small-weight: $bubble-weight !default;
   /// put styles here...
 }
 
-/// metrics small bubbles
-$bubble-big-font-size: 12 !default;
-$bubble-big-line-height: 16 !default;
+/// @param {number} $bubble-big-font-size [12]
+/// @param {number} $bubble-big-line-height [16]
+/// @param {number} $bubble-big-min-height [32]
+/// @param {value} $bubble-big-weight [$bubble-weight]
+$bubble-big-font-size: 16 !default;
+$bubble-big-line-height: 20 !default;
 $bubble-big-min-height: 32 !default;
-
-/// font-weight of .bubble.big
 $bubble-big-weight: $bubble-weight !default;
 
 /// additional styles for .bubble.big
@@ -390,17 +416,16 @@ $bubble-big-weight: $bubble-weight !default;
   /// put styles here...
 }
 
-$bubble-outlined: 2 !default;
-
-/// radius of bubbles
-/// sets bubblebox-radius to 50% of min-height
+/// @param {boolean} $bubble-round [false] - sets border-radius to 50% of bubble height
 $bubble-round: true;
 
-/// radius of bubbles
-/// if $bubble-round === false
-$bubble-radius: 2 !default;
-$bubble-small-radius: 2 !default;
-$bubble-big-radius: 2 !default;
+/// radius of buttons - if $btn-round === false
+/// @param {number} $bubble-radius [4]
+/// @param {number} $bubble-small-radius [4]
+/// @param {number} $bubble-big-radius [4]
+$bubble-radius: 4 !default;
+$bubble-small-radius: 4 !default;
+$bubble-big-radius: 4 !default;
 
 /// Tags
 /// ------------------------------------------------------

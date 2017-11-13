@@ -1,83 +1,70 @@
-/// alert
 /// @author Bernhard Ruoff
-/// @since 4.0.0
+/// @since 7.0.0
+/// @access public
+/// @group macros
+///
+/// @require {mixin} macro-metrics()
+/// @require {mixin} border-radius()
+/// @require {mixin} set-colors()
+///
+/// @param {number} $alert-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+///
+/// @param {number} $alert-font-size [16]
+/// @param {number} $alert-line-height [20]
+/// @param {number} $alert-min-height [40]
+/// @param {value} $alert-weight [$normal]
+///
+/// @param {number} $alert-small-font-size [14]
+/// @param {number} $alert-small-line-height [18]
+/// @param {number} $alert-small-min-height [32]
+/// @param {value} $alert-small-weight [$alert-weight]
+///
+/// @param {number} $alert-big-font-size [18]
+/// @param {number} $alert-big-line-height [24]
+/// @param {number} $alert-big-min-height [48]
+/// @param {value} $alert-big-weight [$alert-weight]
+///
+/// @param {number} $alert-radius [4]
+/// @param {number} $alert-small-radius [4]
+/// @param {number} $alert-big-radius [4]
 /// @example
-///   <p class='alert error'>Error Message</p>
+///   <p class='alert alert_error'>Error Message</p>
 
-.alert {
+
+.#{$pfx}alert {
   margin: rem(8) 0;
   text-align: center;
-  @include macro-metrics($alert-font-size, $alert-line-height, $alert-min-height);
+  @include macro-metrics($alert-font-size, $alert-line-height, $alert-min-height, $padding-ratio: $alert-padding-ratio);
   @include border-radius(rem($alert-radius));
   font-weight: $alert-weight;
-  @include set-colors(getColor(minor));
+  @include set-colors(getColor(background, lightest));
 
-  &.small {
-    @include macro-metrics($alert-small-font-size, $alert-small-line-height, $alert-small-min-height);
+  &.#{$pfx}alert_small {
+    @include macro-metrics($alert-small-font-size, $alert-small-line-height, $alert-small-min-height, $padding-ratio: $alert-padding-ratio);
     @include border-radius(rem($alert-small-radius));
     font-weight: $alert-small-weight;
   }
 
-  &.big {
-    @include macro-metrics($alert-big-font-size, $alert-big-line-height, $alert-big-min-height);
+  &.#{$pfx}alert_big {
+    @include macro-metrics($alert-big-font-size, $alert-big-line-height, $alert-big-min-height, $padding-ratio: $alert-padding-ratio);
     @include border-radius(rem($alert-big-radius));
     font-weight: $alert-big-weight;
   }
 
-  &.minor {
-    @include set-colors(getColor(minor));
-  }
+  /// @param {value} $prefix ['alert_']
+  /// @param {array} $name-array - postfix names appending $prefix
+  /// @param {array} $color-array - theme colors
 
-  &.link {
-    @include set-colors(getColor(link));
-  }
+  $prefix: 'alert_';
+  $name-array: minor, link, super, highlight, invert, info, error, success, warning;
+  $color-array: getColor(minor), getColor(link), getColor(super), getColor(highlight), getColor(text, invert), getColor(state, info), getColor(state, error), getColor(state, success), getColor(state, warning);
 
-  &.super {
-    @include set-colors(getColor(super));
-  }
+  @for $i from 1 through length($color-array) {
+    $color: nth($color-array, $i);
+    $name: nth($name-array, $i);
 
-  &.highlight {
-    @include set-colors(getColor(highlight));
-  }
-
-  &.info {
-    @include set-colors(getColor(state, info));
-  }
-
-  &.error {
-    @include set-colors(getColor(state, error));
-  }
-
-  &.success {
-    @include set-colors(getColor(state, success));
-  }
-
-  &.warning {
-    @include set-colors(getColor(state, warning));
-  }
-
-  &.invert {
-    @include set-colors(getColor(background));
-  }
-}
-
-/// for fluffy round alerts
-/// @param {boolean} $alert-round - can be set in config.scss
-
-@if $alert-round == true {
-  .alert {
-    @include border-radius(rem($alert-min-height / 2));
-
-    &.small {
-      @include border-radius(rem($alert-small-min-height / 2));
-    }
-
-    &.big {
-      @include border-radius(rem($alert-big-min-height / 2));
+    &.#{$pfx}#{$prefix}#{$name} {
+      @include set-colors($color);
     }
   }
-}
-
-span.alert {
-  display: inline-block;
 }
