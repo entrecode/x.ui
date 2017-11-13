@@ -2,6 +2,11 @@
 /// @since 7.0.0
 /// @access public
 /// @group type styles
+///
+/// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
+/// @param {number} $paragraph-lead-size [1.125] - font-size of `.lead`
+/// @param {value} $paragraph-lead-weight [$light]
+/// @param {number} $inline-small-size [.875] - font-size of `<small>`
 
 ///
 /// Link styles
@@ -29,18 +34,17 @@ a {
 /// --------
 
 p {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin: rem($paragraph-margin-top) 0 rem($paragraph-margin-bottom) 0;
+  @include get-font-size(p);
+  margin: 0;
+  margin-bottom: $vertical-rhythm;
 
   &.small {
     vertical-align: baseline;
-    font-size: .875em;
+    font-size: ($inline-small-size*1em);
   }
 
   &.lead {
-    font-size: ($paragraph-lead-size *1em);
-    line-height: ($paragraph-lead-height *1em);
+    @include get-font-size(lead);
     font-weight: $paragraph-lead-weight;
   }
 

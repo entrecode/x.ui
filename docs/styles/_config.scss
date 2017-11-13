@@ -58,53 +58,68 @@ $bold: 700;
 /// @param {number} $root-size [16] - default size used for global size calculations
 $root-size: 16;
 
-/// @param {number} $font-size [16] - default font-size
-$font-size: 14;
+/// @param {number} $base-font-size [1em]
+$base-font-size: .875rem !default;
 
-/// @param {number} $responsive-headings-ratio [.8] - ratio to downscale headings on mobile devices
-$responsive-headings-ratio: .8;
+/// @param {number} $base-line-height [1.4]
+$base-line-height: 1.4;
+
+/// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
+$vertical-rhythm: $base-line-height * $base-font-size;
+
+/// @param {value} $bp-type-scale-xs - breakpoint modular scale for mobile
+$bp-type-scale-xs: 0;
+
+/// @param {map} $type-scale-xs - modular scale for mobile
+/// @link http://www.modularscale.com/?0.875&rem&1.25
+$type-scale-xs: (
+        h1: 2.67em,
+        h2: 2.136em,
+        h3: 1.709em,
+        h4: 1.367em,
+        h5: 1.094em,
+        h6: .875em,
+        lead: 1.094em,
+        p: .875em
+);
+
+/// @param {value} $bp-type-scale-md - breakpoint modular scale for tablet
+$bp-type-scale-md: $bp-md;
+
+/// @param {map} $type-scale-md - modular scale for tablet
+/// @link http://www.modularscale.com/?1&em&1.25
+$type-scale-md: (
+        h1: 3.052em,
+        h2: 2.441em,
+        h3: 1.953em,
+        h4: 1.563em,
+        h5: 1.25em,
+        h6: 1em,
+        lead: 1.25em,
+        p: 1em
+);
+
+/// @param {value} $bp-type-scale-lg - breakpoint modular scale for desktop
+$bp-type-scale-lg: $bp-lg;
+
+/// @param {map} $type-scale-lg - modular scale for desktop
+/// @link http://www.modularscale.com/?1.125&em&1.25
+$type-scale-lg: (
+        h1: 3.433em,
+        h2: 2.747em,
+        h3: 2.197em,
+        h4: 1.758em,
+        h5: 1.406em,
+        h6: 1.125em,
+        lead: 1.406em,
+        p: 1.125em
+);
 
 /// @param {value} $headings-weight [$bold]
 $headings-weight: $bold;
 
-/// @param {number} $headings-margin-top [16]
-$headings-margin-top: 8;
-
-/// @param {number} $headings-margin-bottom [8]
-$headings-margin-bottom: 16;
-
 /// @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
 $heading-inline-small: .875;
-
-/// @param {number} $h1-size [40] - font-size
-/// @param {number} $h1-height [48] - line-height
-$h1-size: 40;
-$h1-height: 48;
-
-/// @param {number} $h2-size [32] - font-size
-/// @param {number} $h2-height [40] - line-height
-$h2-size: 32;
-$h2-height: 40;
-
-/// @param {number} $h3-size [28] - font-size
-/// @param {number} $h3-height [28] - line-height
-$h3-size: 28;
-$h3-height: 36;
-
-/// @param {number} $h4-size [24] - font-size
-/// @param {number} $h4-height [32] - line-height
-$h4-size: 24;
-$h4-height: 32;
-
-/// @param {number} $h5-size [24] - font-size
-/// @param {number} $h5-height [32] - line-height
-$h5-size: 20;
-$h5-height: 28;
-
-/// @param {number} $h6-size [16] - font-size
-/// @param {number} $h6-height [24] - line-height
-$h6-size: 16;
-$h6-height: 24;
 
 /// additional styles for headings
 %heading-style {
@@ -116,16 +131,8 @@ $h6-height: 24;
   /// put styles here...
 }
 
-/// @param {number} $paragraph-margin-top [16]
-$paragraph-margin-top: 16;
-
-/// @param {number} $paragraph-margin-bottom [8]
-$paragraph-margin-bottom: 8;
-
 /// @param {number} $paragraph-lead-size [1.125] - font-size of `.lead`
-/// @param {number} $paragraph-lead-height [1.5] - line-height of `.lead`
 $paragraph-lead-size: 1.125;
-$paragraph-lead-height: 1.5;
 
 /// @param {value} $paragraph-lead-weight [$light]
 $paragraph-lead-weight: $light;

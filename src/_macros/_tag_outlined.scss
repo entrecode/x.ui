@@ -1,59 +1,59 @@
 .tag {
-  &.outlined {
+  &.tag_outlined {
     background-color: transparent;
     border-style: solid;
     border-color: getColor(minor);
     @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $tag-outlined);
 
-    &.small {
+    &.tag_small {
       @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height, $tag-outlined);
     }
 
-    &.big {
+    &.tag_big {
       @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height, $tag-outlined);
     }
 
-    &.minor {
+    &.tag_minor {
       border-color: getColor(minor);
       color: setContrast(getColor(background), getColor(minor));
     }
 
-    &.link {
+    &.tag_link {
       border-color: getColor(link);
       color: setContrast(getColor(background), getColor(link));
     }
 
-    &.super {
+    &.tag_super {
       border-color: getColor(super);
       color: setContrast(getColor(background), getColor(super));
     }
 
-    &.highlight {
+    &.tag_highlight {
       border-color: getColor(highlight);
       color: setContrast(getColor(background), getColor(highlight));
     }
 
-    &.info {
+    &.tag_info {
       border-color: getColor(state, info);
       color: setContrast(getColor(background), getColor(state, info));
     }
 
-    &.error {
+    &.tag_error {
       border-color: getColor(state, error);
       color: setContrast(getColor(background), getColor(state, error));
     }
 
-    &.success {
+    &.tag_success {
       border-color: getColor(state, success);
       color: setContrast(getColor(background), getColor(state, success));
     }
 
-    &.warning {
+    &.tag_warning {
       border-color: getColor(state, warning);
       color: setContrast(getColor(background), getColor(state, warning));
     }
 
-    &.invert {
+    &.tag_invert {
       border-color: getColor(text, invert);
       color: getColor(text, invert);
     }
