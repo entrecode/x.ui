@@ -68,7 +68,7 @@
 /// @param {boolean} $bubble-round - can be set in config.scss
 
 @if $bubble-round == true {
-  .bubble {
+  .#{$pfx}bubble {
     @include border-radius(rem($bubble-min-height / 2));
 
     &.#{$pfx}bubble_small {

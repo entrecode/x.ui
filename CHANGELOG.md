@@ -1,3 +1,42 @@
+## 7.0.0
+### breaking changes
+- prefixed all `.tag` modifier classes with `.tag_`
+- prefixed all `.btn` modifier classes with `.#{$pfx}btn_`
+- added a new variable for global prefixing `$pfx`
+- added `.img_` prefix for modifier classes
+- added `.#{$pfx}input_` prefix for modifier classes
+- moved `.nav` from global to partials
+- removed `.nav.inline`
+- changed `.nav` to `.#{$pfx}nav`
+- removed `.big` modifier for `<p>`
+- removed `.raise-#` helper
+- renamed `_typo.scss` to `_type.scss`
+- changed typeface sizing to modular scaling with breakpoints
+- added xlcss config options to x.ui config 
+- removed `.alert_round` 
+- prefixed all `.bumper` modifier classes with `.#{$pfx}bumper_`
+
+### removed
+- removed `.input_search`
+- removed `.btn_delete`
+- removed `.btn_abort`
+- removed `theme-modifier` mixin
+- removed `validator.scss`
+
+### added
+- added comments to `<body>` and list style files
+- added `#{$pfx}nav_inline` and `#{$pfx}nav_stacked`
+- added `%link-styles` placeholder in config
+- added `%paragraph-styles` placeholder in config
+- added `_type_modifier.scss` in `globals`
+- added `_type_alignment.scss` in `helper`
+- added `_type_colors.scss` in `helper`
+- added .btn inline-element styles for `.tag`, `.pill`, `.ec-icon` and `.bubble` 
+- added `get-font-size` mixin 
+
+### changed
+- optimized `.bubble` styles and comments
+
 ## 6.0.1 - 26.10.2017
 ### fixes
 - fixed ie transform bug
