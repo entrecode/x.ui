@@ -1,28 +1,33 @@
-/// dropdown.scss
-/// 1.0.0
 /// @author Bernhard Ruoff, Michael Locher
-/// ------
-//
-/// css only dropdown
-//
+/// @since 7.0.0
+/// @access public
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
 /// @example
-///  <ul class='dropdown'>
-///    <li tabindex='1'>
-///      Label
-///      <ul class='dropdown-options'>
-///        <li>
-///          <span class='dropdown-option'>Label</span>
-///        </li>
-///        <li class='divider'></li>
-///        <li>
-///          <span class='dropdown-option'>Label</span>
-///        </li>
-///      </ul>
-///    </li>
-///  </ul>
+/// <ul class="dropdown dropdown_center">
+///   <li tabindex="1">
+///     <span class="btn btn_invert btn_raised">Label</span>
+///     <ul class="dropdown-options">
+///       <li class="dropdown-option">
+///         <a href>Label</a>
+///       </li>
+///       <li class="dropdown-option">
+///         <a href>Label</a>
+///       </li>
+///       <li class="dropdown_divider"></li>
+///       <li class="dropdown-option">
+///         <a href class="btn btn_outlined">Label</a>
+///       </li>
+///     </ul>
+///   </li>
+/// </ul>
 
-ul.dropdown {
-  @extend ul.unstyled;
+ul.#{$pfx}dropdown {
+  list-style: none;
+  display: inline-block;
+  margin: rem(4) 0;
+  padding: 0;
   outline: none;
 
   > li {
@@ -30,96 +35,83 @@ ul.dropdown {
     outline: none;
     cursor: pointer;
 
-    > a {
-      &:hover,
-      &:focus {
-        & + ul.dropdown-options {
-          display: initial;
-          opacity: 1;
-        }
-      }
-    }
-
     &:hover,
     &:focus {
-      > .#{$pfx}btn {
-        @extend .#{$pfx}btn.active;
-      }
 
-      > .#{$pfx}btn.#{$pfx}btn_minor {
-        @extend .#{$pfx}btn.#{$pfx}btn_minor.active;
-      }
-
-      > .#{$pfx}btn.#{$pfx}btn_super {
-        @extend .#{$pfx}btn.#{$pfx}btn_super.active;
-      }
-
-      > .#{$pfx}btn.#{$pfx}btn_clear {
-        @extend .#{$pfx}btn.#{$pfx}btn_clear.active;
-      }
-
-      ul.dropdown-options {
+      ul.#{$pfx}dropdown-options {
         display: initial;
-        opacity: 1;
       }
     }
   }
 
-  ul.dropdown-options {
+  ul.#{$pfx}dropdown-options {
     position: absolute;
     top: 100%;
     background-color: getColor(background);
     @include border-radius(rem($dropdown-radius));
     @include box-shadow(0 4px 8px getColor(shadow), 0 4px 24px getColor(shadow));
-    @include transition(opacity .4s);
     max-height: 320px;
     overflow-y: auto;
     display: none;
-    opacity: 0;
-    z-index: 100;
+    z-index: 10;
+    list-style: none;
     padding: rem(4);
     margin: 0;
 
     li {
       display: block;
-      text-align: left;
 
-      .#{$pfx}btn {
-        @extend .#{$pfx}btn.#{$pfx}btn_block;
-        text-align: left;
+      &.#{$pfx}dropdown-option {
+
+        > a:not(.#{$pfx}btn) {
+          @extend %btn, .#{$pfx}btn.#{$pfx}btn_block !optional;
+          margin: 0;
+
+          &:hover {
+            background-color: getColor(state, hover);
+          }
+        }
+
+        > .#{$pfx}btn {
+          @extend .#{$pfx}btn.#{$pfx}btn_block !optional;
+          margin: 0;
+        }
       }
 
-      &.divider {
-        margin: rem(8) 0;
+
+      &.#{$pfx}dropdown_divider {
+        margin: rem(4) 0;
+        padding: 0;
         background-color: getColor(divider);
         height: 1px;
       }
     }
   }
 
-  &.center {
-    ul.dropdown-options {
+  &.#{$pfx}dropdown_center {
+    ul.#{$pfx}dropdown-options {
       left: 50%;
       @include transform(translateX(-50%));
     }
   }
 
-  &.right {
-    ul.dropdown-options {
+  &.#{$pfx}dropdown_right {
+    ul.#{$pfx}dropdown-options {
       right: 0;
     }
   }
 
-  &.left {
-    ul.dropdown-options {
+  &.#{$pfx}dropdown_left {
+    ul.#{$pfx}dropdown-options {
       left: 0;
     }
   }
 
-  &.full {
-    ul.dropdown-options {
+  &.#{$pfx}dropdown_full {
+    ul.#{$pfx}dropdown-options {
       left: 0;
       width: 100%;
     }
   }
 }
+
