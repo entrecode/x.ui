@@ -1,11 +1,29 @@
-.form-group {
-  margin: rem(8) 0;
-  @include flexbox;
-  @include flex-direction(column);
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group macros
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @require {mixin} flexbox
+/// @require {mixin} flex-direction()
+/// @require {mixin} order()
+///
+/// @param {boolean} $flex-support [true]
+/// @prop {number} $base-padding [16] - small padding value for padding helper
+
+
+.#{$pfx}form-group {
+  margin: 0 0 rem($base-padding) 0;
+
+  @if $flex-support == true {
+    @include flexbox;
+    @include flex-direction(column);
+  }
 
   label {
-    @include transition(color .2s);
     display: block;
+    margin: 0 0 rem(8) 0;
   }
 
   &.disabled {
@@ -20,36 +38,17 @@
     }
   }
 
-  &.form-group_boolean {
-    @include flex-direction(row);
+  .#{$pfx}form-group_boolean {
+    @if $flex-support == true {
+      @include flex-direction(row);
 
-    label {
-      @include order(1);
+      label {
+        @include order(1);
+      }
     }
 
     input[type="checkbox"] {
       margin-right: rem(8);
-    }
-  }
-
-  &.form-group_search {
-    @if $ec-icon-support {
-      position: relative;
-
-      &:before {
-        @extend %ec-icon;
-        content: "\e0e5";
-        position: absolute;
-        color: getColor(text, light);
-        left: rem(16);
-        top: 50%;
-        @include transform(translateY(-50%));
-        z-index: 1;
-      }
-    }
-
-    .#{$pfx}input {
-      padding-left: rem(40) !important;
     }
   }
 }
