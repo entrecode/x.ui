@@ -51,7 +51,7 @@
   /// button typo style
   font-family: $btn-font-family;
   font-weight: $btn-weight;
-  margin: rem(4) 0;
+  margin: 0;
 
   @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio) {
   }
