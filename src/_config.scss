@@ -44,7 +44,7 @@ $pfx: '';
 /// @param {boolean} $flex-support [true]
 $flex-support: true;
 
-/// if your template uses ec-icon
+/// @param {boolean} $ec-icon-support [true] - set ec-icon support
 $ec-icon-support: true;
 
 ///
@@ -240,7 +240,7 @@ $btn-wide: 240px;
 $btn-small-wide: 160px;
 $btn-big-wide: 240px;
 
-/// @param {boolean} $btn-outline - sets border-width for btn.outlined
+/// @param {boolean} $btn-outline - sets border-width for btn_outlined
 $btn-outline: 2 !default;
 
 /// param {color} $btn-raised-shadow [rgba(black, .1)] - color of drop shadow
@@ -371,61 +371,61 @@ $alert-outlined: 2 !default;
 /// Bubbles
 /// ------------------------------------------------------
 
-/// @param {number} $bubble-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
-$bubble-padding-ratio: 1;
+/// @param {number} $pill-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
+$pill-padding-ratio: 1;
 
-/// @param {number} $bubble-font-size [10]
-/// @param {number} $bubble-line-height [12]
-/// @param {number} $bubble-min-height [24]
-/// @param {value} $bubble-weight [$bold]
-$bubble-font-size: 14 !default;
-$bubble-line-height: 16 !default;
-$bubble-min-height: 28 !default;
-$bubble-weight: $bold !default;
+/// @param {number} $pill-font-size [10]
+/// @param {number} $pill-line-height [12]
+/// @param {number} $pill-min-height [24]
+/// @param {value} $pill-weight [$bold]
+$pill-font-size: 14 !default;
+$pill-line-height: 16 !default;
+$pill-min-height: 28 !default;
+$pill-weight: $bold !default;
 
 /// additional styles for .bubble
 %bubble-style {
   /// put styles here...
 }
 
-/// @param {number} $bubble-small-font-size [10]
-/// @param {number} $bubble-small-line-height [12]
-/// @param {number} $bubble-small-min-height [24]
-/// @param {value} $bubble-small-weight [$bubble-weight]
-$bubble-small-font-size: 10 !default;
-$bubble-small-line-height: 12 !default;
-$bubble-small-min-height: 24 !default;
-$bubble-small-weight: $bubble-weight !default;
+/// @param {number} $pill-small-font-size [10]
+/// @param {number} $pill-small-line-height [12]
+/// @param {number} $pill-small-min-height [24]
+/// @param {value} $pill-small-weight [$pill-weight]
+$pill-small-font-size: 10 !default;
+$pill-small-line-height: 12 !default;
+$pill-small-min-height: 24 !default;
+$pill-small-weight: $pill-weight !default;
 
 /// additional styles for .bubble.small
 %bubble-small-style {
   /// put styles here...
 }
 
-/// @param {number} $bubble-big-font-size [12]
-/// @param {number} $bubble-big-line-height [16]
-/// @param {number} $bubble-big-min-height [32]
-/// @param {value} $bubble-big-weight [$bubble-weight]
-$bubble-big-font-size: 16 !default;
-$bubble-big-line-height: 20 !default;
-$bubble-big-min-height: 32 !default;
-$bubble-big-weight: $bubble-weight !default;
+/// @param {number} $pill-big-font-size [12]
+/// @param {number} $pill-big-line-height [16]
+/// @param {number} $pill-big-min-height [32]
+/// @param {value} $pill-big-weight [$pill-weight]
+$pill-big-font-size: 16 !default;
+$pill-big-line-height: 20 !default;
+$pill-big-min-height: 32 !default;
+$pill-big-weight: $pill-weight !default;
 
 /// additional styles for .bubble.big
 %bubble-big-style {
   /// put styles here...
 }
 
-/// @param {boolean} $bubble-round [false] - sets border-radius to 50% of bubble height
-$bubble-round: true;
+/// @param {boolean} $pill-round [false] - sets border-radius to 50% of bubble height
+$pill-round: true;
 
 /// radius of buttons - if $btn-round === false
-/// @param {number} $bubble-radius [4]
-/// @param {number} $bubble-small-radius [4]
-/// @param {number} $bubble-big-radius [4]
-$bubble-radius: 4 !default;
-$bubble-small-radius: 4 !default;
-$bubble-big-radius: 4 !default;
+/// @param {number} $pill-radius [4]
+/// @param {number} $pill-small-radius [4]
+/// @param {number} $pill-big-radius [4]
+$pill-radius: 4 !default;
+$pill-small-radius: 4 !default;
+$pill-big-radius: 4 !default;
 
 /// Tags
 /// ------------------------------------------------------
@@ -484,12 +484,16 @@ $tag-big-radius: 2 !default;
 /// Pills
 /// ------------------------------------------------------
 
-/// metrics default pills
+/// @param {number} $pill-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
+$pill-padding-ratio: 1;
+
+/// @param {number} $pill-font-size [10]
+/// @param {number} $pill-line-height [12]
+/// @param {number} $pill-min-height [24]
+/// @param {value} $pill-weight [$bold]
 $pill-font-size: 12 !default;
 $pill-line-height: 14 !default;
 $pill-min-height: 24 !default;
-
-/// font-weight of .pill
 $pill-weight: $bold !default;
 
 /// additional styles for .pill
@@ -497,43 +501,47 @@ $pill-weight: $bold !default;
   /// put styles here...
 }
 
-/// metrics small pills
+/// @param {number} $pill-small-font-size [10]
+/// @param {number} $pill-small-line-height [12]
+/// @param {number} $pill-small-min-height [24]
+/// @param {value} $pill-small-weight [$pill-weight]
 $pill-small-font-size: 10 !default;
 $pill-small-line-height: 12 !default;
-$pill-small-min-height: 20 !default;
-
-/// font-weight of .pill.small
-$pill-small-weight: $bold !default;
+$pill-small-min-height: 24 !default;
+$pill-small-weight: $pill-weight !default;
 
 /// additional styles for .pill.small
 %pill-small-style {
   /// put styles here...
 }
 
-/// metrics small pills
+/// @param {number} $pill-big-font-size [12]
+/// @param {number} $pill-big-line-height [16]
+/// @param {number} $pill-big-min-height [32]
+/// @param {value} $pill-big-weight [$pill-weight]
 $pill-big-font-size: 12 !default;
 $pill-big-line-height: 16 !default;
 $pill-big-min-height: 32 !default;
-
-/// font-weight of .pill.big
-$pill-big-weight: $bold !default;
+$pill-big-weight: $pill-weight !default;
 
 /// additional styles for .pill.big
 %pill-big-style {
   /// put styles here...
 }
 
+/// @param {boolean} $pill-outlined - sets border-width for pill_outlined
 $pill-outlined: 2 !default;
 
-/// radius of pills
-/// sets pillbox-radius to 50% of min-height
+/// @param {boolean} $pill-round [false] - sets border-radius to 50% of pill height
 $pill-round: false;
 
-/// radius of pills
-/// if $pill-round === false
-$pill-radius: 2 !default;
-$pill-small-radius: 2 !default;
-$pill-big-radius: 2 !default;
+/// radius of buttons - if $btn-round === false
+/// @param {number} $pill-radius [4]
+/// @param {number} $pill-small-radius [4]
+/// @param {number} $pill-big-radius [4]
+$pill-radius: 4 !default;
+$pill-small-radius: 4 !default;
+$pill-big-radius: 4 !default;
 
 /// menu / sub-menu
 /// ------------------------------------------------------
