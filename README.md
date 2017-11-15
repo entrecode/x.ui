@@ -14,15 +14,16 @@ set up your style.scss in your project
 
 using typescript:
 ```
-@import '~xlcss/sass/xlcss';
 @import '_config';
+@import '~xlcss/sass/xlcss';
 @import '~x.ui/src/x.ui-sandbox.scss';
 ...
 ```  
 without typescript:
 ```
-@import '../node_modlues/xlcss/sass/xlcss';
 @import '_config';
+@import '../node_modlues/xlcss/sass/xlcss';
 @import '../node_modlues/src/x.ui-sandbox.scss';
 ...
 ```
+
