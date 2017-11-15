@@ -1,11 +1,21 @@
-.spacing {
-  height: rem(32);
+/// bumper
+/// @author Bernhard Ruoff
+/// @since 0.0.1
+///
+/// @param {variable} $pfx [''] - global prefixing
+/// @prop {number} $base-padding [16] - small padding value for padding helper
+///
+/// @example
+///   <div class='spacing'></div>
 
-  &.small {
-    height: rem(16);
+.spacing {
+  height: rem($base-padding*2);
+
+  &.#{$pfx}spacing_small {
+    height: rem($base-padding);
   }
 
-  &.big {
-    height: rem(48);
+  .#{$pfx}spacing_big {
+    height: rem($base-padding*3);
   }
 }
