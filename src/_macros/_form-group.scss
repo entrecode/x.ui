@@ -4,11 +4,6 @@
 /// @group macros
 ///
 /// @param {variable} $pfx [''] - global prefixing
-///
-/// @require {mixin} flexbox
-/// @require {mixin} flex-direction()
-/// @require {mixin} order()
-///
 /// @param {boolean} $flex-support [true]
 /// @prop {number} $base-padding [16] - small padding value for padding helper
 
