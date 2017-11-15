@@ -9,6 +9,8 @@
 /// @require {mixin} border-radius()
 /// @require {mixin} set-colors()
 ///
+/// @prop {number} $base-padding [16] - small padding value for padding helper
+///
 /// @param {number} $alert-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 ///
 /// @param {number} $alert-font-size [16]
@@ -34,7 +36,7 @@
 
 
 .#{$pfx}alert {
-  margin: rem(8) 0;
+  margin: 0 0 rem($base-padding) 0;
   text-align: center;
   @include macro-metrics($alert-font-size, $alert-line-height, $alert-min-height, $padding-ratio: $alert-padding-ratio);
   @include border-radius(rem($alert-radius));
