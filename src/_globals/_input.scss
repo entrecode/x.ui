@@ -33,7 +33,7 @@
   background-color: getColor(background);
   color: getColor(text);
   width: 100%;
-  margin: rem(4) 0;
+  margin: 0;
   text-align: left;
   @include flex-grow(1);
   @include border-radius(rem($input-radius));
