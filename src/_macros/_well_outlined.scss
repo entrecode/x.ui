@@ -1,0 +1,19 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @param {boolean} $well-outlined - sets border-width for .well_outlined
+///
+/// @example
+///   <p class='well well_outlined'>Error Message</p>
+
+.#{$pfx}well {
+  &.#{$pfx}well_outlined {
+    background-color: transparent;
+    border-style: solid;
+    border-color: getColor(background, lightest);
+    border-width: rem($well-outlined);
+  }
+}

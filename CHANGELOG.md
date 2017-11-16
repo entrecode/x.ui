@@ -44,6 +44,8 @@
 - refactored `.tag` styles and comments
 - refactored `.tooltip` styles and comments
 - refactored `.padding` styles and comments
+- refactored `.well` styles and comments
+- refactored `.alert` styles and comments
 
 ## 6.0.1 - 26.10.2017
 ### fixes

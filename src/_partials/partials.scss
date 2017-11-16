@@ -2,9 +2,10 @@
 @import 'menu_dropdown';
 @import 'menubar';
 @import 'nav';
-@import "navigation-drawer";
-@import 'toolbar';
+@import 'navigation-drawer';
+@import 'kiosk';
+@import 'kiosk_bordered';
+@import 'page';
+@import 'partial';
 @import 'table';
-@import "kiosk";
-@import "kiosk_bordered";
-@import "page";
+@import 'toolbar';

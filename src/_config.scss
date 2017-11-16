@@ -485,14 +485,28 @@ $tooltip-radius: 2 !default;
 $tooltip-small-radius: 2 !default;
 $tooltip-big-radius: 2 !default;
 
-/// Well
+/// Wells
 /// ------------------------------------------------------
 
-/// @param {number} $well-radius [2]
-$well-radius: 2 !default;
+/// @param {number} $well-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+$well-padding-ratio: 2;
 
-/// @param {number} $well-radius [$base-padding]
-$well-padding: $base-padding !default;
+/// @param {number} $well-padding [$base-padding]
+$well-padding: $base-padding;
+
+/// @param {value} $well-weight [$normal]
+$well-weight: $normal !default;
+
+/// additional styles for .alert
+%alert-style {
+  /// put styles here...
+}
+
+/// @param {number} $well-radius [4]
+$well-radius: 4 !default;
+
+/// @param {boolean} $well-outlined - sets border-width for .alert_outlined
+$well-outlined: 2 !default;
 
 /// menu / sub-menu
 /// ------------------------------------------------------

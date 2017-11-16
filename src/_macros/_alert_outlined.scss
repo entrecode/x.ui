@@ -4,24 +4,6 @@
 ///
 /// @param {variable} $pfx [''] - global prefixing
 ///
-/// @require {mixin} macro-metrics()
-/// @require {mixin} border-radius()
-/// @require {mixin} set-colors()
-///
-/// @param {number} $alert-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-///
-/// @param {number} $alert-font-size [16]
-/// @param {number} $alert-line-height [20]
-/// @param {number} $alert-min-height [40]
-///
-/// @param {number} $alert-small-font-size [14]
-/// @param {number} $alert-small-line-height [18]
-/// @param {number} $alert-small-min-height [32]
-///
-/// @param {number} $alert-big-font-size [18]
-/// @param {number} $alert-big-line-height [24]
-/// @param {number} $alert-big-min-height [48]
-///
 /// @param {boolean} $alert-outlined - sets border-width for .alert_outlined
 ///
 /// @example
@@ -31,7 +13,7 @@
   &.#{$pfx}alert_outlined {
     background-color: transparent;
     border-style: solid;
-    border-color: getColor(minor);
+    border-color: getColor(background, lightest);
     border-width: rem($alert-outlined);
 
     /// @param {value} $prefix ['alert_']

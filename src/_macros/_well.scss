@@ -1,54 +1,29 @@
-/// TODO add config
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group macros
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @param {number} $well-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+/// @param {number} $well-padding [$base-padding]
+///
+/// @param {value} $well-weight [$normal]
+///
+/// @param {number} $well-radius [4]
 
-.well {
+.#{$pfx}well {
   background-color: getColor(background, lightest);
-  padding: rem(16);
-  border-radius: 4px;
-  margin: rem(16) 0;
+  border-radius: rem($well-radius);
+  margin: 0 0 rem($base-padding) 0;
+  padding: rem($well-padding) rem($well-padding * $well-padding-ratio);
+  font-weight: $well-weight;
 
-  &.minor {
-    @include setText(base, minor);
+  &.#{$pfx}well_small {
+    padding: rem($well-padding / 2) rem($well-padding / 2 * $well-padding-ratio);
   }
 
-  &.link {
-    @include setText(base, link);
-  }
-
-  &.super {
-    @include setText(base, super);
-  }
-
-  &.highlight {
-    @include setText(base, highlight);
-  }
-
-  &.info {
-    @include setText(state, info);
-  }
-
-  &.error {
-    @include setText(state, error);
-  }
-
-  &.success {
-    @include setText(state, success);
-  }
-
-  &.warning {
-    @include setText(state, warning);
-  }
-
-  &.invert {
-    @include setText(background, invert);
-  }
-
-  &.active {
-    @include setText(state, active);
-  }
-
-  &.small {
-    padding: rem(8);
-    margin: rem(8) 0;
+  &.#{$pfx}well_big {
+    padding: rem($well-padding * 2) rem($well-padding * 2 * $well-padding-ratio);
   }
 }
-
