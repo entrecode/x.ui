@@ -18,7 +18,6 @@
 /// @param {number} $alert-big-line-height [24]
 /// @param {number} $alert-big-min-height [48]
 
-
 @mixin btnInlineComponents($parent, $child) {
   $margin: $parent - $child;
   margin-top: rem($margin / 2);
@@ -27,8 +26,7 @@
 
 .#{$pfx}btn {
   .tag,
-  .pill,
-  .bubble {
+  .#{$pfx}bubble {
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -45,26 +43,14 @@
     }
   }
 
-  .pill {
-    @include btnInlineComponents($btn-line-height, $pill-min-height);
-
-    &.pill_small {
-      @include btnInlineComponents($btn-line-height, $pill-small-min-height);
-    }
-
-    &.pill_big {
-      @include btnInlineComponents($btn-line-height, $pill-big-min-height);
-    }
-  }
-
-  .bubble {
+  .#{$pfx}bubble {
     @include btnInlineComponents($btn-line-height, $bubble-min-height);
 
-    &.bubble_small {
+    &.#{$pfx}bubble_small {
       @include btnInlineComponents($btn-line-height, $bubble-small-min-height);
     }
 
-    &.bubble_big {
+    &.#{$pfx}bubble_big {
       @include btnInlineComponents($btn-line-height, $bubble-big-min-height);
     }
   }
@@ -82,26 +68,14 @@
       }
     }
 
-    .pill {
-      @include btnInlineComponents($btn-small-line-height, $pill-min-height);
-
-      &.pill_small {
-        @include btnInlineComponents($btn-small-line-height, $pill-small-min-height);
-      }
-
-      &.pill_big {
-        @include btnInlineComponents($btn-small-line-height, $pill-big-min-height);
-      }
-    }
-
-    .bubble {
+    .#{$pfx}bubble {
       @include btnInlineComponents($btn-small-line-height, $bubble-min-height);
 
-      &.bubble_small {
+      &.#{$pfx}bubble_small {
         @include btnInlineComponents($btn-small-line-height, $bubble-small-min-height);
       }
 
-      &.bubble_big {
+      &.#{$pfx}bubble_big {
         @include btnInlineComponents($btn-small-line-height, $bubble-big-min-height);
       }
     }
@@ -120,26 +94,14 @@
       }
     }
 
-    .pill {
-      @include btnInlineComponents($btn-big-line-height, $pill-min-height);
-
-      &.pill_small {
-        @include btnInlineComponents($btn-big-line-height, $pill-small-min-height);
-      }
-
-      &.pill_big {
-        @include btnInlineComponents($btn-big-line-height, $pill-big-min-height);
-      }
-    }
-
-    .bubble {
+    .#{$pfx}bubble {
       @include btnInlineComponents($btn-big-line-height, $bubble-min-height);
 
-      &.bubble_small {
+      &.#{$pfx}bubble_small {
         @include btnInlineComponents($btn-big-line-height, $bubble-small-min-height);
       }
 
-      &.bubble_big {
+      &.#{$pfx}bubble_big {
         @include btnInlineComponents($btn-big-line-height, $bubble-big-min-height);
       }
     }
