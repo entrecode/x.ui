@@ -1,61 +1,70 @@
-.tag {
-  &.tag_outlined {
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group macros modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+///
+/// @param {number} $tag-font-size [12]
+/// @param {number} $tag-line-height [14]
+/// @param {number} $tag-min-height [24]
+///
+/// @param {number} $tag-small-font-size [10]
+/// @param {number} $tag-small-line-height [12]
+/// @param {number} $tag-small-min-height [20]
+///
+/// @param {number} $tag-big-font-size [12]
+/// @param {number} $tag-big-line-height [16]
+/// @param {number} $tag-big-min-height [32]
+///
+/// @param {boolean} $tag-outlined - sets border-width for .tag_outlined
+
+
+.#{$pfx}tag {
+  &.#{$pfx}tag_outlined {
     background-color: transparent;
     border-style: solid;
-    border-color: getColor(minor);
-    @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $tag-outlined);
+    border-color: getColor(background, lightest);
+    @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
 
-    &.tag_small {
-      @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height, $tag-outlined);
+    &.#{$pfx}tag_small {
+      @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
     }
 
-    &.tag_big {
-      @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height, $tag-outlined);
+    &.#{$pfx}tag_big {
+      @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
     }
 
-    &.tag_minor {
-      border-color: getColor(minor);
-      color: setContrast(getColor(background), getColor(minor));
+    /// @param {value} $prefix ['tag_']
+    /// @param {array} $name-array - postfix names appending $prefix
+    /// @param {array} $color-array - theme colors
+
+    $prefix: 'tag_';
+    $name-array: minor, link, super, highlight, invert, info, error, success, warning;
+    $color-array: getColor(minor), getColor(link), getColor(super), getColor(highlight), getColor(text, invert), getColor(state, info), getColor(state, error), getColor(state, success), getColor(state, warning);
+
+    @for $i from 1 through length($color-array) {
+      $color: nth($color-array, $i);
+      $name: nth($name-array, $i);
+
+      &.#{$pfx}#{$prefix}#{$name} {
+        border-color: $color;
+        color: setContrast(getColor(background), $color);
+
+        @at-root a.#{$pfx}tag_outlined.#{$pfx}#{$prefix}#{$name} {
+          &:hover {
+            background-color: transparent;
+            border-color: varColor($color, -4);
+            color: setContrast(getColor(background), $color);
+          }
+        }
+      }
     }
 
-    &.tag_link {
-      border-color: getColor(link);
-      color: setContrast(getColor(background), getColor(link));
-    }
-
-    &.tag_super {
-      border-color: getColor(super);
-      color: setContrast(getColor(background), getColor(super));
-    }
-
-    &.tag_highlight {
-      border-color: getColor(highlight);
-      color: setContrast(getColor(background), getColor(highlight));
-    }
-
-    &.tag_info {
-      border-color: getColor(state, info);
-      color: setContrast(getColor(background), getColor(state, info));
-    }
-
-    &.tag_error {
-      border-color: getColor(state, error);
-      color: setContrast(getColor(background), getColor(state, error));
-    }
-
-    &.tag_success {
-      border-color: getColor(state, success);
-      color: setContrast(getColor(background), getColor(state, success));
-    }
-
-    &.tag_warning {
-      border-color: getColor(state, warning);
-      color: setContrast(getColor(background), getColor(state, warning));
-    }
-
-    &.tag_invert {
-      border-color: getColor(text, invert);
-      color: getColor(text, invert);
+    & + .#{$pfx}tag {
+      margin-left: rem(4);
     }
   }
 }

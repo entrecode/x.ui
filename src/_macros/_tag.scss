@@ -1,82 +1,78 @@
-/// label.scss
 /// @author Bernhard Ruoff
-/// @since 4.0.0
+/// @since 7.0.0
+/// @access public
+/// @group macros
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+///
+/// @param {number} $tag-font-size [12]
+/// @param {number} $tag-line-height [14]
+/// @param {number} $tag-min-height [24]
+/// @param {value} $tag-weight [$bold]
+///
+/// @param {number} $tag-small-font-size [10]
+/// @param {number} $tag-small-line-height [12]
+/// @param {number} $tag-small-min-height [20]
+/// @param {value} $tag-small-weight [$tag-weight]
+///
+/// @param {number} $tag-big-font-size [12]
+/// @param {number} $tag-big-line-height [16]
+/// @param {number} $tag-big-min-height [32]
+/// @param {value} $tag-big-weight [$tag-weight]
+///
+/// @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
+/// @param {number} $tag-radius [4]
+/// @param {number} $tag-small-radius [4]
+/// @param {number} $tag-big-radius [4]
 
-.tag {
+.#{$pfx}tag {
   white-space: nowrap;
   margin: rem(4) 0;
   text-align: center;
   font-weight: $tag-weight;
-  @include set-colors(getColor(minor));
-  @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height);
+  @include set-colors(getColor(background, lightest));
+  @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
   @include border-radius(rem($tag-radius));
 
-  /// ec-icon styles for default btn
-  .ec-icon {
-
-    @if $flex-support == false {
-      display: inline;
-    }
-
-    &:before {
-      line-height: inherit;
-      padding-right: rem(8);
-      vertical-align: top;
-    }
-
-    &:empty {
-      &:before {
-        padding-right: 0;
-      }
-    }
-  }
-
-  &.small {
-    @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height);
+  &.#{$pfx}tag_small {
+    @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height, $padding-ratio: $tag-padding-ratio);
     @include border-radius(rem($tag-small-radius));
     font-weight: $tag-small-weight;
   }
 
-  &.big {
-    @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height);
+  &.#{$pfx}tag_big {
+    @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height, $padding-ratio: $tag-padding-ratio);
     @include border-radius(rem($tag-big-radius));
     font-weight: $tag-big-weight;
   }
 
-  &.minor {
-    @include set-colors(getColor(minor));
+  /// @param {value} $prefix ['tag_']
+  /// @param {array} $name-array - postfix names appending $prefix
+  /// @param {array} $color-array - theme colors
+
+  $prefix: 'tag_';
+  $name-array: minor, link, super, highlight, invert, info, error, success, warning;
+  $color-array: getColor(minor), getColor(link), getColor(super), getColor(highlight), getColor(text, invert), getColor(state, info), getColor(state, error), getColor(state, success), getColor(state, warning);
+
+  @for $i from 1 through length($color-array) {
+    $color: nth($color-array, $i);
+    $name: nth($name-array, $i);
+
+    &.#{$pfx}#{$prefix}#{$name} {
+      @include set-colors($color);
+
+      @at-root a.#{$pfx}#{$prefix}#{$name} {
+        &:hover {
+          background-color: varColor($color, -4);
+        }
+      }
+    }
   }
 
-  &.link {
-    @include set-colors(getColor(link));
-  }
-
-  &.super {
-    @include set-colors(getColor(super));
-  }
-
-  &.highlight {
-    @include set-colors(getColor(highlight));
-  }
-
-  &.info {
-    @include set-colors(getColor(state, info));
-  }
-
-  &.error {
-    @include set-colors(getColor(state, error));
-  }
-
-  &.success {
-    @include set-colors(getColor(state, success));
-  }
-
-  &.warning {
-    @include set-colors(getColor(state, warning));
-  }
-
-  &.invert {
-    @include set-colors(getColor(background));
+  & + .#{$pfx}tag {
+    margin-left: rem(4);
   }
 }
 
@@ -84,34 +80,15 @@
 /// @param {boolean} $tag-round - can be set in config.scss
 
 @if $tag-round == true {
-  .tag {
+  .#{$pfx}tag {
     @include border-radius(rem($tag-min-height / 2));
 
-    &.small {
+    &.#{$pfx}tag_small {
       @include border-radius(rem($tag-small-min-height / 2));
     }
 
-    &.big {
+    &.#{$pfx}tag_big {
       @include border-radius(rem($tag-big-min-height / 2));
     }
   }
-}
-
-a.tag {
-  &:hover {
-    background-color: getColor(minorHover);
-    text-decoration: none;
-
-    &.link {
-      background-color: getColor(linkHover);
-    }
-
-    &.super {
-      background-color: getColor(superHover);
-    }
-  }
-}
-
-span.tag {
-  display: inline-block;
 }

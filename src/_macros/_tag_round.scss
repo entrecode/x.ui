@@ -1,0 +1,24 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group macros modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @param {number} $tag-min-height [24]
+/// @param {number} $tag-small-min-height [20]
+/// @param {number} $tag-big-min-height [32]
+
+.#{$pfx}tag {
+  &.#{$pfx}tag_round {
+    @include border-radius(rem($tag-min-height / 2));
+
+    &.#{$pfx}tag_small {
+      @include border-radius(rem($tag-small-min-height / 2));
+    }
+
+    &.#{$pfx}tag_big {
+      @include border-radius(rem($tag-big-min-height / 2));
+    }
+  }
+}
