@@ -17,6 +17,7 @@
 - prefixed all `.bumper` modifier classes with `.#{$pfx}bumper_`
 - removed `.form-group`
 - removed `.pill` styles - use `.tag` instead
+- prefixed all `.padding` modifier classes with `.padding_`
 
 ### removed
 - removed `.input_search`
@@ -36,6 +37,7 @@
 - added .btn inline-element styles for `.tag`, `.pill`, `.ec-icon` and `.bubble` 
 - added `get-font-size` mixin 
 - added `.input-group` styles
+- added `.padding-top`, `.padding-bottom`, `.padding-left` and `.padding-right` 
 
 ### changed
 - optimized `.bubble` styles and comments

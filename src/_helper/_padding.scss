@@ -3,16 +3,16 @@
 /// @access public
 /// @group layout helper
 ///
-
+/// @prop {number} $base-padding [16] - small padding value for padding helper
 
 .padding {
   padding: rem($base-padding);
 
-  &.small {
+  &.padding_small {
     padding: rem($base-padding/2);
   }
 
-  &.big {
+  &.padding_big {
     padding: rem($base-padding*2);
   }
 }
@@ -21,13 +21,37 @@
   padding-top: rem($base-padding);
   padding-bottom: rem($base-padding);
 
-  &.small {
+  &.padding_small {
     padding-top: rem($base-padding/2);
     padding-bottom: rem($base-padding/2);
   }
 
-  &.big {
+  &.padding_big {
     padding-top: rem($base-padding*2);
+    padding-bottom: rem($base-padding*2);
+  }
+}
+
+.padding-top {
+  padding-top: rem($base-padding);
+
+  &.padding_small {
+    padding-top: rem($base-padding/2);
+  }
+
+  &.padding_big {
+    padding-top: rem($base-padding*2);
+  }
+}
+
+.padding-bottom {
+  padding-bottom: rem($base-padding);
+
+  &.padding_small {
+    padding-bottom: rem($base-padding/2);
+  }
+
+  &.padding_big {
     padding-bottom: rem($base-padding*2);
   }
 }
@@ -36,13 +60,35 @@
   padding-left: rem($base-padding);
   padding-right: rem($base-padding);
 
-  &.small {
+  &.padding_small {
     padding-left: rem($base-padding/2);
     padding-right: rem($base-padding/2);
   }
 
-  &.big {
+  &.padding_big {
     padding-left: rem($base-padding*2);
+    padding-right: rem($base-padding*2);
+  }
+}
+.padding-left {
+  padding-left: rem($base-padding);
+
+  &.padding_small {
+    padding-left: rem($base-padding/2);
+  }
+
+  &.padding_big {
+    padding-left: rem($base-padding*2);
+  }
+}
+.padding-right {
+  padding-right: rem($base-padding);
+
+  &.padding_small {
+    padding-right: rem($base-padding/2);
+  }
+
+  &.padding_big {
     padding-right: rem($base-padding*2);
   }
 }
