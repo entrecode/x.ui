@@ -316,13 +316,10 @@ $input-raised-shadow: rgba(black, .1) !default;
 /// @param {number} $alert-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 $alert-padding-ratio: 2;
 
-/// @param {number} $alert-font-size [16]
-/// @param {number} $alert-line-height [20]
-/// @param {number} $alert-min-height [40]
+/// @param {number} $alert-padding [$base-padding]
+$alert-padding: $base-padding;
+
 /// @param {value} $alert-weight [$normal]
-$alert-font-size: 16 !default;
-$alert-line-height: 20 !default;
-$alert-min-height: 40 !default;
 $alert-weight: $normal !default;
 
 /// additional styles for .alert
@@ -330,40 +327,8 @@ $alert-weight: $normal !default;
   /// put styles here...
 }
 
-/// @param {number} $alert-small-font-size [14]
-/// @param {number} $alert-small-line-height [18]
-/// @param {number} $alert-small-min-height [32]
-/// @param {value} $alert-small-weight [$alert-weight]
-$alert-small-font-size: 14 !default;
-$alert-small-line-height: 18 !default;
-$alert-small-min-height: 32 !default;
-$alert-small-weight: $alert-weight !default;
-
-/// additional styles for .alert.small
-%alert-small-style {
-  /// put styles here...
-}
-
-/// @param {number} $alert-big-font-size [18]
-/// @param {number} $alert-big-line-height [24]
-/// @param {number} $alert-big-min-height [48]
-/// @param {value} $alert-big-weight [$alert-weight]
-$alert-big-font-size: 18 !default;
-$alert-big-line-height: 24 !default;
-$alert-big-min-height: 48 !default;
-$alert-big-weight: $alert-weight;
-
-/// additional styles for .alert.big
-%alert-big-style {
-  /// put styles here...
-}
-
 /// @param {number} $alert-radius [4]
-/// @param {number} $alert-small-radius [4]
-/// @param {number} $alert-big-radius [4]
 $alert-radius: 4 !default;
-$alert-small-radius: 4 !default;
-$alert-big-radius: 4 !default;
 
 /// @param {boolean} $alert-outlined - sets border-width for .alert_outlined
 $alert-outlined: 2 !default;
@@ -519,6 +484,15 @@ $tooltip-round: false;
 $tooltip-radius: 2 !default;
 $tooltip-small-radius: 2 !default;
 $tooltip-big-radius: 2 !default;
+
+/// Well
+/// ------------------------------------------------------
+
+/// @param {number} $well-radius [2]
+$well-radius: 2 !default;
+
+/// @param {number} $well-radius [$base-padding]
+$well-padding: $base-padding !default;
 
 /// menu / sub-menu
 /// ------------------------------------------------------

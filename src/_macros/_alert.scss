@@ -5,53 +5,31 @@
 ///
 /// @param {variable} $pfx [''] - global prefixing
 ///
-/// @require {mixin} macro-metrics()
-/// @require {mixin} border-radius()
-/// @require {mixin} set-colors()
-///
 /// @prop {number} $base-padding [16] - small padding value for padding helper
 ///
 /// @param {number} $alert-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+/// @param {number} $alert-padding [$base-padding]
 ///
-/// @param {number} $alert-font-size [16]
-/// @param {number} $alert-line-height [20]
-/// @param {number} $alert-min-height [40]
 /// @param {value} $alert-weight [$normal]
 ///
-/// @param {number} $alert-small-font-size [14]
-/// @param {number} $alert-small-line-height [18]
-/// @param {number} $alert-small-min-height [32]
-/// @param {value} $alert-small-weight [$alert-weight]
-///
-/// @param {number} $alert-big-font-size [18]
-/// @param {number} $alert-big-line-height [24]
-/// @param {number} $alert-big-min-height [48]
-/// @param {value} $alert-big-weight [$alert-weight]
-///
 /// @param {number} $alert-radius [4]
-/// @param {number} $alert-small-radius [4]
-/// @param {number} $alert-big-radius [4]
 /// @example
 ///   <p class='alert alert_error'>Error Message</p>
 
 .#{$pfx}alert {
   margin: 0 0 rem($base-padding) 0;
   text-align: center;
-  @include macro-metrics($alert-font-size, $alert-line-height, $alert-min-height, $padding-ratio: $alert-padding-ratio);
+  padding: rem($alert-padding) rem($alert-padding * $alert-padding-ratio);
   @include border-radius(rem($alert-radius));
   font-weight: $alert-weight;
   @include set-colors(getColor(background, lightest));
 
   &.#{$pfx}alert_small {
-    @include macro-metrics($alert-small-font-size, $alert-small-line-height, $alert-small-min-height, $padding-ratio: $alert-padding-ratio);
-    @include border-radius(rem($alert-small-radius));
-    font-weight: $alert-small-weight;
+    padding: rem($alert-padding / 2) rem($alert-padding / 2 * $alert-padding-ratio);
   }
 
   &.#{$pfx}alert_big {
-    @include macro-metrics($alert-big-font-size, $alert-big-line-height, $alert-big-min-height, $padding-ratio: $alert-padding-ratio);
-    @include border-radius(rem($alert-big-radius));
-    font-weight: $alert-big-weight;
+    padding: rem($alert-padding * 2) rem($alert-padding * 2 * $alert-padding-ratio);
   }
 
   /// @param {value} $prefix ['alert_']
