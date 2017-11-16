@@ -32,7 +32,7 @@ $colors: (
         ),
         background: (
                 'invert': $text,
-                // TODO find a better solution for background shades
+          // TODO find a better solution for background shades
                 'light': setColor($background, darken($background, 12), lighten($background, 12)),
                 'lighter': setColor($background, darken($background, 8), lighten($background, 8)),
                 'lightest': setColor($background, darken($background, 4), lighten($background, 4)),

@@ -19,13 +19,13 @@
     @include transform(translateY(-50%));
     z-index: 1;
 
-    &+ .#{$pfx}input {
+    & + .#{$pfx}input {
       padding-left: rem(32);
     }
   }
 
   .#{$pfx}input {
-    &+ .#{$pfx}input-group__icon {
+    & + .#{$pfx}input-group__icon {
       left: auto;
       right: rem(4);
     }
