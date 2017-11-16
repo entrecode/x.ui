@@ -41,6 +41,9 @@
 
 ### changed
 - optimized `.bubble` styles and comments
+- refactored `.tag` styles and comments
+- refactored `.tooltip` styles and comments
+- refactored `.padding` styles and comments
 
 ## 6.0.1 - 26.10.2017
 ### fixes

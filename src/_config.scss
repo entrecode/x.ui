@@ -485,9 +485,40 @@ $tag-round: false;
 /// @param {number} $tag-radius [4]
 /// @param {number} $tag-small-radius [4]
 /// @param {number} $tag-big-radius [4]
-$tag-radius: 2 !default;
-$tag-small-radius: 2 !default;
-$tag-big-radius: 2 !default;
+$tag-radius: 4 !default;
+$tag-small-radius: 4 !default;
+$tag-big-radius: 4 !default;
+
+/// Tooltip
+/// ------------------------------------------------------
+
+/// @param {number} $tooltip-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+$tooltip-padding-ratio: 2;
+
+/// @param {number} $tooltip-font-size [12]
+/// @param {number} $tooltip-line-height [14]
+/// @param {number} $tooltip-min-height [24]
+/// @param {value} $tooltip-weight [$bold]
+$tooltip-font-size: 12 !default;
+$tooltip-line-height: 14 !default;
+$tooltip-min-height: 20 !default;
+$tooltip-weight: $normal !default;
+
+/// additional styles for .tooltip
+%tooltip-style {
+  /// put styles here...
+}
+
+/// @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
+$tooltip-round: false;
+
+/// radius of buttons - if $tooltip-round === false
+/// @param {number} $tooltip-radius [2]
+/// @param {number} $tooltip-small-radius [2]
+/// @param {number} $tooltip-big-radius [2]
+$tooltip-radius: 2 !default;
+$tooltip-small-radius: 2 !default;
+$tooltip-big-radius: 2 !default;
 
 /// menu / sub-menu
 /// ------------------------------------------------------
