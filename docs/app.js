@@ -1,12 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-  Vue.component('xui-btns', function(resolve, reject) {
-    Vue.http.get('./components/btn.html')
-      .then(function(response) {
-        resolve({
-          template: response.body
-        });
-      });
-  });
+  Vue.component('placeholder2line', {
+    template: '<p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>'
+  })
   
   new Vue({
     el:   '#app',
@@ -14,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
       name:         'x.ui',
       version:      '7.0.0',
       dependancies: ['xlcss 5.0.1', 'ec.icons 3.0.0'],
-      authors: {
+      authors:      {
         author: {
-          name: 'Bernhard Ruoff',
+          name:   'Bernhard Ruoff',
           github: 'https://github.com/bernester'
         }
       },
@@ -63,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         type:  {
           colorModifiers: ['text-default', 'text-light', 'text-lighter', 'text-lightest', 'text-minor', 'text-link',
-                          'text-super', 'text-highlight', 'text-invert', 'text-info', 'text-disabled', 'text-error',
-                          'text-success', 'text-warning'],
+                           'text-super', 'text-highlight', 'text-invert', 'text-info', 'text-disabled', 'text-error',
+                           'text-success', 'text-warning'],
         },
         input: {
           modifiers: {
@@ -77,7 +72,25 @@ document.addEventListener('DOMContentLoaded', function() {
             big:    'input_big'
           }
         }
-      }, // :before \{\n(.*)";\n}
+      },
+      macros:       {
+        alerts: {
+          themeModifiers: ['alert_minor', 'alert_link', 'alert_super', 'alert_highlight', 'alert_invert'],
+          stateModifiers: ['alert_info', 'alert_error', 'alert_success', 'alert_warning'],
+          styleModifiers: ['alert_outlined']
+        },
+        bubbles: {
+          themeModifiers: ['bubble_minor', 'bubble_link', 'bubble_super', 'bubble_highlight', 'bubble_invert'],
+          stateModifiers: ['bubble_info', 'bubble_error', 'bubble_success', 'bubble_warning'],
+          sizeModifiers: ['bubble_small', '', 'bubble_big']
+        },
+        tags: {
+          themeModifiers: ['tag_minor', 'tag_link', 'tag_super', 'tag_highlight', 'tag_invert'],
+          stateModifiers: ['tag_info', 'tag_error', 'tag_success', 'tag_warning'],
+          sizeModifiers: ['tag_small', '', 'tag_big']
+        }
+      }, 
+      // :before \{\n(.*)";\n}
       iconset:      ['add', 'add-circle', 'alarm', 'alarm-clock', 'alarm-silent', 'align-center', 'align-justify',
                      'align-left', 'align-right', 'all-caps', 'brackets', 'angle-tool', 'arrange-1-to-9',
                      'arrange-9-to-1', 'arrange-a-to-z', 'arrange-z-to-a', 'arrow-down', 'arrow-down-left',

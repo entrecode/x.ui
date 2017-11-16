@@ -27,8 +27,9 @@
 </head>
 <body class="demo">
 <div class="kiosk" id="app">
-  
+
   <header class="kiosk-header theme-super padding">
+    <div data-container>
       <h1>{{name}}</h1>
       <span class="tag tag_invert">{{version}}</span><span class="tag tag_invert" v-for="dependancy in dependancies">{{dependancy}}</span>
       <p class="lead"><strong>x.ui</strong> is based on the scss framework <strong><a
@@ -36,323 +37,550 @@
         inspired by the
         <a href="https://medium.com/re-write/the-unicorn-workflow-design-to-code-with-atomic-design-principles-and-sketch-8b0fe7d05a37"
            target="_blank">unicorn workflow</a>. the concept is based on a modular approach.</p>
+    </div>
   </header>
 
-  <aside class="kiosk-aside" data-col="2sm">
-    <nav class="nav nav_stackes">
-      <ul class="nav__items">
-        <li class="nav__item">
-          <a href="#config">config</a>
-        </li>
-      </ul>
-    </nav>
-  </aside>
-
-
-  <div class="kiosk-body" data-col="8sm">
-    <section>
-      <h2>Config</h2>
-      <div v-for="group in config">
-        <h3>{{ group.title }}</h3>
-        <div data-flex="small-grid">
-          <div data-col="4" v-for="(value, key) in group.variables">
-            <div class="form-group">
-              <label>{{key}}</label>
-              <input :type="group.type" :value="value" class="input">
+  <div class="kiosk-body">
+    <div data-container>
+      <section>
+        <h2>Config</h2>
+        <div v-for="group in config">
+          <h3>{{ group.title }}</h3>
+          <div data-flex="small-grid">
+            <div data-col="4" v-for="(value, key) in group.variables">
+              <div class="form-group">
+                <label>{{key}}</label>
+                <input :type="group.type" :value="value" class="input">
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <div class="bumper"></div>
-    <h2>Globals</h2>
-    <section>
-      <h3>Button Styles</h3>
-      <p>There six basic styles for buttons</p>
-      <div class="well">
-        <ul data-flex="small-grid">
-          <li v-for="(value, key) in globals.btn.styles" data-col="4">
-            <a class="btn btn_block" :class="value">{{key}}</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <div class="bumper"></div>
-    <section>
-      <h4>Button Modifier</h4>
-      <p>The button modifier classes give you additional options for your individual ui needs</p>
-      <div class="well">
-        <ul data-flex="small-grid">
-          <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
-            <a class="btn btn_block" :class="value">
-              {{key}}
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <div class="bumper"></div>
-    <section>
-      <h4>Button Size Modifier</h4>
-      <div class="well">
-        <ul data-flex="small-grid">
-          <li v-for="(value, key) in globals.btn.sizes" data-col="4" data-flex="center center-items">
-            <a class="btn" :class="value">
-              {{ key }}
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <div class="bumper"></div>
-    <section>
-      <h4>Button Width Modifier</h4>
-      <div class="well">
-        <ul data-flex="small-grid">
-          <li v-for="(value, key) in globals.btn.width" data-col="4" data-flex="center">
-            <a class="btn" :class="[value]">
-              Button {{key}}
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <div class="bumper"></div>
-    <section>
-      <h4>Button Inline Elements</h4>
-      <h5>Button Inline Icons</h5>
-      <div class="well">
-        <ul data-flex="small-grid">
-          <li v-for="(value, key) in globals.btn.modifier" data-col="2">
-            <a class="btn btn_block" :class="[value]">
-              <span class="ec-icon skull">Button</span>
-            </a>
-          </li>
-        </ul>
-        <ul data-flex="small-grid">
-          <li v-for="(value, key) in globals.btn.modifier" data-col="2">
-            <a class="btn btn_block" :class="[value]">
-              <span class="ec-icon skull ec-icon_right">Button</span>
-            </a>
-          </li>
-        </ul>
-        <ul data-flex="small-grid">
-          <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
-            <a class="btn" :class="[value]">
-              <span class="ec-icon skull"></span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <h5>Button Inline Pill</h5>
-      <div class="well">
-        <ul data-flex="small-grid">
-          <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
-            <a class="btn btn_block" :class="value">
-              Button <span class="pill" :class="{pill_invert: value === 'btn_mono' }">1</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <h5>Button Inline Tag</h5>
-      <div class="well">
-        <ul data-flex="small-grid">
-          <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
-            <a class="btn btn_block" :class="value">
-              Button <span class="tag" :class="{tag_invert: value === 'btn_mono'}">tag</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <div class="bumper"></div>
-    <section>
-      <h4>Button Width Modifier</h4>
-      <div class="well">
-        <ul data-flex="small-grid">
-          <li v-for="(value, key) in globals.btn.width" data-col="4" data-flex="center">
-            <a class="btn" :class="[value]">
-              Button {{key}}
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <div class="spacing"></div>
-
-    <h3>Headings</h3>
-    <section>
-      <div class="demo-heading-metrics demo-heading-metrics_h1"><h1>Heading 1</h1></div>
-      <div class="demo-heading-metrics"><h2>Heading 2</h2></div>
-      <div class="demo-heading-metrics"><h3>Heading 3</h3></div>
-      <div class="demo-heading-metrics"><h4>Heading 4</h4></div>
-      <div class="demo-heading-metrics"><h5>Heading 5</h5></div>
-      <div class="demo-heading-metrics"><h6>Heading 6</h6></div>
-    </section>
-    <section>
-      <h3>Type</h3>
-      <div class="demo-paragraph-metrics">
-        <p class="lead">Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß dies
-          wohl nur ein Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine Tagereise
-          lang sei, nicht länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das achtzehnte
-          Mal nicht durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er
-          entweder den Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
-      </div>
-      <div class="demo-paragraph-metrics">
-        <p>Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß dies wohl nur ein
-          Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine Tagereise lang sei,
-          nicht
-          länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das achtzehnte Mal nicht
-          durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er entweder den
-          Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
-      </div>
-      <div class="well">
-        <div v-for="mod in globals.type.colorModifiers" :class="mod">Lorem ipsum dolor sit amet, consetetur sadipscin
+      </section>
+      <div class="bumper"></div>
+      <h2>Globals</h2>
+      <section>
+        <h3>Button Styles</h3>
+        <p>There six basic styles for buttons</p>
+        <div class="well">
+          <ul data-flex="small-grid">
+            <li v-for="(value, key) in globals.btn.styles" data-col="4">
+              <a class="btn btn_block" :class="value">{{key}}</a>
+            </li>
+          </ul>
         </div>
-      </div>
-    </section>
+      </section>
+      <div class="bumper"></div>
+      <section>
+        <h4>Button Modifier</h4>
+        <p>The button modifier classes give you additional options for your individual ui needs</p>
+        <div class="well">
+          <ul data-flex="small-grid">
+            <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
+              <a class="btn btn_block" :class="value">
+                {{key}}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="bumper"></div>
+      <section>
+        <h4>Button Size Modifier</h4>
+        <div class="well">
+          <ul data-flex="small-grid">
+            <li v-for="(value, key) in globals.btn.sizes" data-col="4" data-flex="center center-items">
+              <a class="btn" :class="value">
+                {{ key }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="bumper"></div>
+      <section>
+        <h4>Button Width Modifier</h4>
+        <div class="well">
+          <ul data-flex="small-grid">
+            <li v-for="(value, key) in globals.btn.width" data-col="4" data-flex="center">
+              <a class="btn" :class="[value]">
+                Button {{key}}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="bumper"></div>
+      <section>
+        <h4>Button Inline Elements</h4>
+        <h5>Button Inline Icons</h5>
+        <div class="well">
+          <ul data-flex="small-grid">
+            <li v-for="(value, key) in globals.btn.modifier" data-col="2">
+              <a class="btn btn_block" :class="[value]">
+                <span class="ec-icon skull">Button</span>
+              </a>
+            </li>
+          </ul>
+          <ul data-flex="small-grid">
+            <li v-for="(value, key) in globals.btn.modifier" data-col="2">
+              <a class="btn btn_block" :class="[value]">
+                <span class="ec-icon skull ec-icon_right">Button</span>
+              </a>
+            </li>
+          </ul>
+          <ul data-flex="small-grid">
+            <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
+              <a class="btn" :class="[value]">
+                <span class="ec-icon skull"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <h5>Button Inline Pill</h5>
+        <div class="well">
+          <ul data-flex="small-grid">
+            <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
+              <a class="btn btn_block" :class="value">
+                Button <span class="pill" :class="{pill_invert: value === 'btn_mono' }">1</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <h5>Button Inline Bubble</h5>
+        <div class="well">
+          <ul data-flex="small-grid">
+            <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
+              <a class="btn btn_block" :class="value">
+                Button <span class="bubble" :class="{bubble_invert: value === 'btn_mono' }">1</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <h5>Button Inline Tag</h5>
+        <div class="well">
+          <ul data-flex="small-grid">
+            <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
+              <a class="btn btn_block" :class="value">
+                Button <span class="tag" :class="{tag_invert: value === 'btn_mono'}">tag</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-    <div class="spacing"></div>
-    <h3>List styles</h3>
-    <div data-flex="grid">
-      <div data-col="6sm">
-        <ul class="unstyled">
-          <li>unstyled list</li>
-          <li>unstyled list</li>
-          <li>unstyled list</li>
-        </ul>
-      </div>
-      <div data-col="6sm">
-        <ul class="inline">
-          <li>unstyled list</li>
-          <li>unstyled list</li>
-          <li>unstyled list</li>
-        </ul>
-      </div>
-    </div>
-    <div class="spacing"></div>
+      <div class="bumper"></div>
+      <section>
+        <h4>Button Width Modifier</h4>
+        <div class="well">
+          <ul data-flex="small-grid">
+            <li v-for="(value, key) in globals.btn.width" data-col="4" data-flex="center">
+              <a class="btn" :class="[value]">
+                Button {{key}}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-    <h3>Images</h3>
-    <section>
+      <div class="spacing"></div>
+
+      <h3>Headings</h3>
+      <section>
+        <div class="demo-heading-metrics demo-heading-metrics_h1"><h1>Heading 1</h1></div>
+        <div class="demo-heading-metrics"><h2>Heading 2</h2></div>
+        <div class="demo-heading-metrics"><h3>Heading 3</h3></div>
+        <div class="demo-heading-metrics"><h4>Heading 4</h4></div>
+        <div class="demo-heading-metrics"><h5>Heading 5</h5></div>
+        <div class="demo-heading-metrics"><h6>Heading 6</h6></div>
+      </section>
+      <section>
+        <h3>Type</h3>
+        <div class="demo-paragraph-metrics">
+          <p class="lead">Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß dies
+            wohl nur ein Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine Tagereise
+            lang sei, nicht länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das achtzehnte
+            Mal nicht durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er
+            entweder den Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
+        </div>
+        <div class="demo-paragraph-metrics">
+          <p>Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß dies wohl nur ein
+            Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine Tagereise lang sei,
+            nicht
+            länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das achtzehnte Mal nicht
+            durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er entweder den
+            Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
+        </div>
+        <div class="well">
+          <div v-for="mod in globals.type.colorModifiers" :class="mod">Lorem ipsum dolor sit amet, consetetur sadipscin
+          </div>
+        </div>
+      </section>
+
+      <div class="spacing"></div>
+      <h3>List styles</h3>
       <div data-flex="grid">
         <div data-col="6sm">
-          <img src="https://source.unsplash.com/user/erondu/400x300" class="img_responsive">
+          <ul class="unstyled">
+            <li>unstyled list</li>
+            <li>unstyled list</li>
+            <li>unstyled list</li>
+          </ul>
         </div>
         <div data-col="6sm">
-          <img src="https://source.unsplash.com/user/erondu/400x300" class="img_full">
+          <ul class="inline">
+            <li>unstyled list</li>
+            <li>unstyled list</li>
+            <li>unstyled list</li>
+          </ul>
         </div>
       </div>
-    </section>
+      <div class="spacing"></div>
 
-    <div class="spacing"></div>
-
-    <h3>Form Elements</h3>
-    <section>
-      <div data-flex="grid" v-for="size in globals.input.sizes">
-        <div data-col="6sm">
-          <div class="form-group">
-            <label>Input Label</label>
-            <input type="text" class="input" :class="size" placeholder="Placeholder...">
+      <h3>Images</h3>
+      <section>
+        <div data-flex="grid">
+          <div data-col="6sm">
+            <img src="https://source.unsplash.com/user/erondu/400x300" class="img_responsive">
+          </div>
+          <div data-col="6sm">
+            <img src="https://source.unsplash.com/user/erondu/400x300" class="img_full">
           </div>
         </div>
-        <div data-col="6sm">
-          <div class="form-group">
-            <label>Input Label</label>
-            <input type="text" class="input" :class="size" placeholder="Placeholder..." value="Input value">
+      </section>
+
+      <div class="spacing"></div>
+
+      <section>
+        <h2>Forms</h2>
+        <div data-flex="grid" v-for="size in globals.input.sizes">
+          <div data-col="6sm">
+            <div class="form-group">
+              <label>Input Label</label>
+              <input type="text" class="input" :class="size" placeholder="Placeholder...">
+            </div>
+          </div>
+          <div data-col="6sm">
+            <div class="form-group">
+              <label>Input Label</label>
+              <input type="text" class="input" :class="size" placeholder="Placeholder..." value="Input value">
+            </div>
           </div>
         </div>
+      </section>
+      <div class="bumper"></div>
+      <section>
+        <h4>Input style modifier</h4>
+        <div data-flex="grid" v-for="modifier in globals.input.modifiers">
+          <div data-col="6sm">
+            <div class="form-group">
+              <label>Input Label</label>
+              <input type="text" class="input" :class="modifier" placeholder="Placeholder...">
+            </div>
+          </div>
+          <div data-col="6sm">
+            <div class="form-group">
+              <label>Input Label</label>
+              <input type="text" class="input" :class="modifier" placeholder="Placeholder..." value="Input value">
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="bumper"></div>
+      <section>
+        <h3>input groups</h3>
+        <div data-flex="grid">
+          <div data-col="6sm">
+            <div class="form-group" v-for="size in globals.input.sizes">
+              <label>Input Label</label>
+              <div class="input-group">
+                <span class="ec-icon lock-closed input-group__icon"></span>
+                <input type="text" class="input" :class="size" placeholder="Placeholder...">
+              </div>
+            </div>
+          </div>
+          <div data-col="6sm">
+            <div class="form-group" v-for="size in globals.input.sizes">
+              <label>Input Label</label>
+              <div class="input-group">
+                <input type="text" class="input" :class="size" placeholder="Placeholder...">
+                <span class="ec-icon lock-closed input-group__icon"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="bumper"></div>
+      <h2>Macros</h2>
+      <section>
+        <h3>alerts</h3>
+        <div class="alert">
+          <placeholder2line></placeholder2line>
+        </div>
+        <div class="alert" :class="mod" v-for="mod in macros.alerts.themeModifiers">
+          <placeholder2line></placeholder2line>
+        </div>
+        <div class="bumper"></div>
+        <h3>state modifier</h3>
+        <div class="alert" :class="mod" v-for="mod in macros.alerts.stateModifiers">
+          <placeholder2line></placeholder2line>
+        </div>
+        <div class="bumper"></div>
+        <h3>style modifier</h3>
+        <div v-for="mod in macros.alerts.stateModifiers">
+          <div class="alert" :class="[mod, style]" v-for="style in macros.alerts.styleModifiers">
+            <placeholder2line></placeholder2line>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h3>bubble</h3>
+        <ul data-flex="center">
+          <li class="padding">
+            <span class="bubble">2</span>
+          </li>
+          <li class="padding" v-for="theme in macros.bubbles.themeModifiers">
+            <span class="bubble" :class="theme">2</span>
+          </li>
+        </ul>
+        <h3>state modifier</h3>
+        <ul data-flex="center">
+          <li class="padding" v-for="state in macros.bubbles.stateModifiers">
+            <span class="bubble" :class="state">2</span>
+          </li>
+        </ul>
+        <h3>size modifier</h3>
+        <ul data-flex="center">
+          <li class="padding" v-for="size in macros.bubbles.sizeModifiers">
+            <span class="bubble" :class="size">2</span>
+          </li>
+        </ul>
+      </section>
+      <div class="bumper"></div>
+      <section>
+        <h3>tag</h3>
+        <ul data-flex="center">
+          <li class="padding">
+            <span class="tag">Label</span>
+          </li>
+          <li class="padding" v-for="theme in macros.tags.themeModifiers">
+            <span class="tag" :class="theme">Label</span>
+          </li>
+        </ul>
+        <h3>state modifier</h3>
+        <ul data-flex="center">
+          <li class="padding" v-for="state in macros.tags.stateModifiers">
+            <span class="tag" :class="state">Label</span>
+          </li>
+        </ul>
+        <h3>size modifier</h3>
+        <ul data-flex="center">
+          <li class="padding" v-for="size in macros.tags.sizeModifiers">
+            <span class="tag" :class="size">Label</span>
+          </li>
+        </ul>
+        <h3>style modifier</h3>
+        <ul data-flex="center">
+          <li class="padding">
+            <span class="tag tag_outlined">Label</span>
+          </li>
+          <li class="padding" v-for="theme in macros.tags.themeModifiers">
+            <span class="tag tag_outlined" :class="theme">Label</span>
+          </li>
+          <li class="padding" v-for="state in macros.tags.stateModifiers">
+            <span class="tag tag_outlined" :class="state">Label</span>
+          </li>
+          <li class="padding" v-for="size in macros.tags.sizeModifiers">
+            <span class="tag tag_outlined" :class="size">Label</span>
+          </li>
+        </ul>
+        <ul data-flex="center">
+          <li class="padding">
+            <span class="tag tag_round">Label</span>
+          </li>
+          <li class="padding" v-for="theme in macros.tags.themeModifiers">
+            <span class="tag tag_round" :class="theme">Label</span>
+          </li>
+          <li class="padding" v-for="state in macros.tags.stateModifiers">
+            <span class="tag tag_round" :class="state">Label</span>
+          </li>
+          <li class="padding" v-for="size in macros.tags.sizeModifiers">
+            <span class="tag tag_round" :class="size">Label</span>
+          </li>
+        </ul>
+        <div class="bumper"></div>
+        <h3>as a link</h3>
+        <ul data-flex="center wrap">
+          <li class="padding">
+            <a class="tag">Label</a>
+          </li>
+          <li class="padding" v-for="theme in macros.tags.themeModifiers">
+            <a class="tag" :class="theme">Label</a>
+          </li>
+          <li class="padding" v-for="state in macros.tags.stateModifiers">
+            <a class="tag" :class="state">Label</a>
+          </li>
+        </ul>
+        <ul data-flex="center wrap">
+          <li class="padding">
+            <a class="tag tag_outlined">Label</a>
+          </li>
+          <li class="padding" v-for="theme in macros.tags.themeModifiers">
+            <a class="tag tag_outlined" :class="theme">Label</a>
+          </li>
+          <li class="padding" v-for="state in macros.tags.stateModifiers">
+            <a class="tag tag_outlined" :class="state">Label</a>
+          </li>
+        </ul>
+      </section>
+      <div class="bumper"></div>
+      <section>
+        <h2>Tooltip</h2>
+        <a href="" data-tooltip-top="This is a tooltip" class="btn btn_clear">tooltip top</a>
+        <a href="" data-tooltip-right="This is a tooltip" class="btn btn_clear">tooltip right</a>
+        <a href="" data-tooltip-bottom="This is a tooltip" class="btn btn_clear">tooltip bottom</a>
+        <a href="" data-tooltip-left="This is a tooltip" class="btn btn_clear">tooltip left</a>
+      </section>
+      <div class="bumper"></div>
+      <h2>dropdown</h2>
+      <div class="well">
+        <ul class="dropdown dropdown_center">
+          <li tabindex="1">
+            <span class="btn btn_invert btn_raised">dropdown center</span>
+            <ul class="dropdown-options">
+              <li class="dropdown-option">
+                <a href>Label</a>
+              </li>
+              <li class="dropdown-option">
+                <a href>Label</a>
+              </li>
+              <li class="dropdown_divider"></li>
+              <li class="dropdown-option">
+                <a href class="btn btn_outlined">Label</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="dropdown dropdown_right">
+          <li tabindex="1">
+            <span class="btn btn_invert btn_raised">dropdown right</span>
+            <ul class="dropdown-options">
+              <li class="dropdown-option">
+                <a href>Label</a>
+              </li>
+              <li class="dropdown-option">
+                <a href>Label</a>
+              </li>
+              <li class="dropdown_divider"></li>
+              <li class="dropdown-option">
+                <a href class="btn btn_outlined">Label</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="dropdown dropdown_left">
+          <li tabindex="1">
+            <span class="btn btn_invert btn_raised">dropdown left</span>
+            <ul class="dropdown-options">
+              <li class="dropdown-option">
+                <a href>Label</a>
+              </li>
+              <li class="dropdown-option">
+                <a href>Label</a>
+              </li>
+              <li class="dropdown_divider"></li>
+              <li class="dropdown-option">
+                <a href class="btn btn_outlined">Label</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="dropdown dropdown_full">
+          <li tabindex="1">
+            <span class="btn btn_invert btn_raised">dropdown full</span>
+            <ul class="dropdown-options">
+              <li class="dropdown-option">
+                <a href>Label</a>
+              </li>
+              <li class="dropdown-option">
+                <a href>Label</a>
+              </li>
+              <li class="dropdown_divider"></li>
+              <li class="dropdown-option">
+                <a href class="btn btn_outlined">Label</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </section>
-    <div class="bumper"></div>
-    <section>
-      <h4>Input modifier</h4>
-      <div data-flex="grid" v-for="modifier in globals.input.modifiers">
-        <div data-col="6sm">
-          <div class="form-group">
-            <label>Input Label</label>
-            <input type="text" class="input" :class="modifier" placeholder="Placeholder...">
+
+      <div class="bumper"></div>
+
+      <h2>Partials</h2>
+      <h3>Nav</h3>
+      <section>
+        <nav class="nav">
+          <ul class="nav__items">
+            <li class="nav__item">
+              <a href="" class="btn btn_clear">Nav Link</a>
+            </li>
+            <li class="nav__item">
+              <a href="" class="btn btn_clear">Nav Link</a>
+            </li>
+            <li class="nav__divider">&nbsp;</li>
+            <li class="nav__item">
+              <a href="" class="btn btn_clear">Nav Link</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav nav_stacked">
+          <ul class="nav__items">
+            <li class="nav__item">
+              <a href="" class="btn btn_clear">Nav Link</a>
+            </li>
+            <li class="nav__item">
+              <a href="" class="btn btn_clear">Nav Link</a>
+            </li>
+            <li class="nav__divider">&nbsp;</li>
+            <li class="nav__item">
+              <a href="" class="btn btn_clear">Nav Link</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav nav_inline">
+          <ul class="nav__items">
+            <li class="nav__item">
+              <a href="" class="btn btn_clear">Nav Link</a>
+            </li>
+            <li class="nav__item">
+              <a href="" class="btn btn_clear">Nav Link</a>
+            </li>
+            <li class="nav__divider">&nbsp;</li>
+            <li class="nav__item">
+              <a href="" class="btn btn_clear">Nav Link</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <div class="bumper"></div>
+      <section class="partial">
+        <header class="partial-header">
+          <h2>Icons</h2>
+        </header>
+        <div class="partial-body">
+          <p class="lead"><strong>x.ui</strong> is optimized for the usage with ec.ions.</p>
+          <div class="form-group form-group_search">
+            <input type="text" v-model="query" class="input input_round" placeholder="search for icon class...">
           </div>
+          <ul data-flex="small-grid" class="icons-list">
+            <li v-for="icon in iconset" data-col="3" :class="{hide: icon.indexOf(query) === -1}">
+              <span class="ec-icon" :class="icon"></span><span class="quickselect">{{ icon }}</span>
+            </li>
+          </ul>
         </div>
-        <div data-col="6sm">
-          <div class="form-group">
-            <label>Input Label</label>
-            <input type="text" class="input" :class="modifier" placeholder="Placeholder..." value="Input value">
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="bumper"></div>
-    <section>
-      <h3>form groups</h3>
-    </section>
-    <div class="bumper"></div>
-    <h2>Partials</h2>
-    <h3>Nav</h3>
-    <section>
-      <nav class="nav">
-        <ul class="nav__items">
-          <li class="nav__item">
-            <a href="" class="btn btn_clear">Nav Link</a>
-          </li>
-          <li class="nav__item">
-            <a href="" class="btn btn_clear">Nav Link</a>
-          </li>
-          <li class="nav__divider">&nbsp;</li>
-          <li class="nav__item">
-            <a href="" class="btn btn_clear">Nav Link</a>
-          </li>
-        </ul>
-      </nav>
-
-      <nav class="nav nav_stacked">
-        <ul class="nav__items">
-          <li class="nav__item">
-            <a href="" class="btn btn_clear">Nav Link</a>
-          </li>
-          <li class="nav__item">
-            <a href="" class="btn btn_clear">Nav Link</a>
-          </li>
-          <li class="nav__divider">&nbsp;</li>
-          <li class="nav__item">
-            <a href="" class="btn btn_clear">Nav Link</a>
-          </li>
-        </ul>
-      </nav>
-
-      <nav class="nav nav_inline">
-        <ul class="nav__items">
-          <li class="nav__item">
-            <a href="" class="btn btn_clear">Nav Link</a>
-          </li>
-          <li class="nav__item">
-            <a href="" class="btn btn_clear">Nav Link</a>
-          </li>
-          <li class="nav__divider">&nbsp;</li>
-          <li class="nav__item">
-            <a href="" class="btn btn_clear">Nav Link</a>
-          </li>
-        </ul>
-      </nav>
-    </section>
-
-    <section class="partial">
-      <header class="partial-header">
-        <h2>Icons</h2>
-      </header>
-      <div class="partial-body">
-        <p class="lead"><strong>x.ui</strong> is optimized for the usage with ec.ions.</p>
-        <div class="form-group form-group_search">
-          <input type="text" v-model="query" class="input input_round" placeholder="search for icon class...">
-        </div>
-        <ul data-flex="small-grid" class="icons-list">
-          <li v-for="icon in iconset" data-col="3" :class="{hide: icon.indexOf(query) === -1}">
-            <span class="ec-icon" :class="icon"></span><span class="quickselect">{{ icon }}</span>
-          </li>
-        </ul>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </div>
 </body>
