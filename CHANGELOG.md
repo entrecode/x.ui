@@ -15,6 +15,8 @@
 - added xlcss config options to x.ui config 
 - removed `.alert_round` 
 - prefixed all `.bumper` modifier classes with `.#{$pfx}bumper_`
+- removed `.form-group`
+- removed `.pill` styles - use `.tag` instead
 
 ### removed
 - removed `.input_search`
@@ -33,6 +35,7 @@
 - added `_type_colors.scss` in `helper`
 - added .btn inline-element styles for `.tag`, `.pill`, `.ec-icon` and `.bubble` 
 - added `get-font-size` mixin 
+- added `.input-group` styles
 
 ### changed
 - optimized `.bubble` styles and comments
