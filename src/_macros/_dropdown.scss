@@ -23,6 +23,18 @@
 ///   </li>
 /// </ul>
 
+@include keyframes(rollDownDropdown) {
+  0% {
+    opacity: 0;
+    @include transform(scaleY(0))
+  }
+
+  100% {
+    opacity: 1;
+    @include transform(scaleY(1))
+  }
+}
+
 ul.#{$pfx}dropdown {
   list-style: none;
   display: inline-block;
@@ -57,6 +69,8 @@ ul.#{$pfx}dropdown {
     list-style: none;
     padding: rem(4);
     margin: 0;
+    @include transform-origin(top);
+    @include animation(rollDownDropdown .4s forwards);
 
     li {
       display: block;
