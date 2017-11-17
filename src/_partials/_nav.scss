@@ -10,13 +10,13 @@
 
 nav {
   &.#{$pfx}nav {
-    .nav__items {
+    .#{$pfx}nav__items {
       list-style: none;
       margin: 0;
       padding: 0;
 
       @if $flex-support == false {
-        .nav__item {
+        .#{$pfx}nav__item {
           display: inline-block;
         }
       } @else {
@@ -25,14 +25,14 @@ nav {
       }
 
       //TODO fix not full height (li line-height bug)
-      .nav__divider {
+      .#{$pfx}nav__divider {
         height: 100%;
         width: rem(1);
         margin: 0 rem(8);
         display: block;
       }
 
-      .nav__item {
+      .#{$pfx}nav__item {
         padding: rem(4);
 
         .#{$pfx}btn {
@@ -41,19 +41,19 @@ nav {
       }
     }
 
-    .nav__divider {
+    .#{$pfx}nav__divider {
       background-color: getColor(divider);
     }
 
     &.#{$pfx}nav_stacked {
       @if $flex-support == false {
-        .nav__items {
-          .nav__item {
+        .#{$pfx}nav__items {
+          .#{$pfx}nav__item {
             display: block;
           }
         }
       } @else {
-        .nav__items {
+        .#{$pfx}nav__items {
           margin: 0 rem(-4);
           @include flexbox;
           @include flex-direction(column);
@@ -61,8 +61,13 @@ nav {
         }
       }
 
-      .nav__items {
-        .nav__item {
+      .#{$pfx}nav__divider {
+        width: 100%;
+        height: rem(1);
+      }
+
+      .#{$pfx}nav__items {
+        .#{$pfx}nav__item {
           .#{$pfx}btn {
             @extend .#{$pfx}btn.#{$pfx}btn_block;
           }
