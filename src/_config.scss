@@ -426,11 +426,11 @@ $tag-small-weight: $tag-weight !default;
   /// put styles here...
 }
 
-/// @param {number} $tag-big-font-size [12]
+/// @param {number} $tag-big-font-size [14]
 /// @param {number} $tag-big-line-height [16]
 /// @param {number} $tag-big-min-height [32]
 /// @param {value} $tag-big-weight [$tag-weight]
-$tag-big-font-size: 12 !default;
+$tag-big-font-size: 14 !default;
 $tag-big-line-height: 16 !default;
 $tag-big-min-height: 32 !default;
 $tag-big-weight: $tag-weight !default;
@@ -447,12 +447,12 @@ $tag-outlined: 2 !default;
 $tag-round: false;
 
 /// radius of buttons - if $tag-round === false
-/// @param {number} $tag-radius [4]
-/// @param {number} $tag-small-radius [4]
-/// @param {number} $tag-big-radius [4]
-$tag-radius: 4 !default;
-$tag-small-radius: 4 !default;
-$tag-big-radius: 4 !default;
+/// @param {number} $tag-radius [2]
+/// @param {number} $tag-small-radius [2]
+/// @param {number} $tag-big-radius [2]
+$tag-radius: 2 !default;
+$tag-small-radius: 2 !default;
+$tag-big-radius: 2 !default;
 
 /// Tooltip
 /// ------------------------------------------------------

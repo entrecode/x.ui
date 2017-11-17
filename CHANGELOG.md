@@ -34,7 +34,8 @@
 - added `_type_modifier.scss` in `globals`
 - added `_type_alignment.scss` in `helper`
 - added `_type_colors.scss` in `helper`
-- added .btn inline-element styles for `.tag`, `.pill`, `.ec-icon` and `.bubble` 
+- added .btn inline-element styles for `.tag`, `.ec-icon` and `.bubble` 
+- added headings inline-element styles for `.tag` and `.bubble` 
 - added `get-font-size` mixin 
 - added `.input-group` styles
 - added `.padding-top`, `.padding-bottom`, `.padding-left` and `.padding-right` 
