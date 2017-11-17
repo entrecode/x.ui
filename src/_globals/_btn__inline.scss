@@ -31,14 +31,14 @@
     margin-bottom: 0;
   }
 
-  .tag {
+  .#{$pfx}tag {
     @include btnInlineComponents($btn-line-height, $tag-min-height);
 
-    &.tag_small {
+    &.#{$pfx}tag_small {
       @include btnInlineComponents($btn-line-height, $tag-small-min-height);
     }
 
-    &.tag_big {
+    &.#{$pfx}tag_big {
       @include btnInlineComponents($btn-line-height, $tag-big-min-height);
     }
   }
@@ -56,14 +56,14 @@
   }
 
   &.#{$pfx}btn_small {
-    .tag {
+    .#{$pfx}tag {
       @include btnInlineComponents($btn-small-line-height, $tag-min-height);
 
-      &.tag_small {
+      &.#{$pfx}tag_small {
         @include btnInlineComponents($btn-small-line-height, $tag-small-min-height);
       }
 
-      &.tag_big {
+      &.#{$pfx}tag_big {
         @include btnInlineComponents($btn-small-line-height, $tag-big-min-height);
       }
     }
@@ -82,14 +82,14 @@
   }
 
   &.#{$pfx}btn_big {
-    .tag {
+    .#{$pfx}tag {
       @include btnInlineComponents($btn-big-line-height, $tag-min-height);
 
-      &.tag_small {
+      &.#{$pfx}tag_small {
         @include btnInlineComponents($btn-big-line-height, $tag-small-min-height);
       }
 
-      &.tag_big {
+      &.#{$pfx}tag_big {
         @include btnInlineComponents($btn-big-line-height, $tag-big-min-height);
       }
     }
