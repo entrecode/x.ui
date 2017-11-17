@@ -29,12 +29,12 @@
 
 .#{$pfx}tag {
   white-space: nowrap;
-  margin: rem(4) 0;
+  display: inline-block;
   text-align: center;
   font-weight: $tag-weight;
-  @include set-colors(getColor(background, lightest));
   @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
   @include border-radius(rem($tag-radius));
+  @include set-colors(getColor(background, lightest));
 
   &.#{$pfx}tag_small {
     @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height, $padding-ratio: $tag-padding-ratio);
