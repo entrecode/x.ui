@@ -1,3 +1,18 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group macros inline
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @param {number} $tag-font-size [12]
+/// @param {number} $tag-small-font-size [10]
+/// @param {number} $tag-big-font-size [14]
+///
+/// @param {number} $bubble-font-size [10]
+/// @param {number} $bubble-small-font-size [10]
+/// @param {number} $bubble-big-font-size [12]
+
 @include headings {
   .#{$pfx}tag {
     font-size: rem($tag-font-size);
