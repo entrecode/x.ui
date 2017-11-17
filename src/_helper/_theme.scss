@@ -13,7 +13,7 @@
 $name-array: default, minor, link, super, highlight, invert;
 $color-array: $background, $minor, $link, $super, $highlight, $text;
 $postfix-array: darkest, darker, dark, light, lighter, lightest;
-$shade-array: -30, -20, -10, 10, 20, 30;
+$shade-array: -16, -8, -4, 4, 8, 16;
 
 @for $i from 1 through length($color-array) {
   $color: nth($color-array, $i);
