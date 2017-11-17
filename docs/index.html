@@ -68,10 +68,10 @@
             <a href="#xui-macros" class="btn btn_clear">macros</a>
           </li>
           <li class="nav__item">
-            <a href="#form-group" class="btn btn_clear btn_small">form-group</a>
+            <a href="#xui-form-group" class="btn btn_clear btn_small">form-group</a>
           </li>
           <li class="nav__item">
-            <a href="#input-group" class="btn btn_clear btn_small">input-group</a>
+            <a href="#xui-input-group" class="btn btn_clear btn_small">input-group</a>
           </li>
           <li class="nav__item">
             <a href="#xui-bubble" class="btn btn_clear btn_small">bubble</a>
@@ -87,6 +87,12 @@
           </li>
           <li class="nav__item">
             <a href="#xui-well" class="btn btn_clear btn_small">well</a>
+          </li>
+          <li>
+            <div class="bumper bumper_small"></div>
+          </li>
+          <li class="nav__item">
+            <a href="#xui-partials" class="btn btn_clear">partials</a>
           </li>
         </ul>
       </nav>
@@ -157,27 +163,9 @@
                 </li>
               </ul>
             </div>
-            <h4 class="h6">button inline elements</h4>
-            <div class="well">
-              <a class="btn">
-                <span class="ec-icon skull">Button</span>
-              </a>
-              <a class="btn">
-                <span class="ec-icon skull"></span>
-              </a>
-              <a class="btn">
-                <span class="bubble">1</span>
-              </a>
-              <a class="btn">
-                <span>Button</span> <span class="bubble">1</span>
-              </a>
-              <a class="btn">
-                <span>Button</span> <span class="tag">Tag</span>
-              </a>
-            </div>
           </section>
 
-          <div class="spacing"></div>
+          <div class="bumper"></div>
 
           <section>
             <h3 id="xui-headings" class="kilo">Headings <span class="tag tag_small">_headings.scss</span></h3>
@@ -365,6 +353,36 @@
           <h2 id="xui-macros" class="mega">Macros</h2>
           <section>
             <h3 id="xui-form-group" class="kilo">form-group <span class="tag tag_small">_form-group.scss</span></h3>
+            <div data-flex="grid">
+              <div data-col="6">
+                <div class="form-group">
+                  <label for="textID">Label</label>
+                  <input type="text" id="textID" placeholder="input..." class="input">
+                </div>
+              </div>
+              <div data-col="6" data-flex="end-items">
+                <div class="form-group form-group_boolean">
+                  <label for="radioID">Label</label>
+                  <input type="radio" id="radioID">
+                </div>
+              </div>
+            </div>
+            <div data-flex="grid">
+              <div data-col="6">
+                <pre><code class="html">
+<div class="form-group">
+  <label for="">Label</label>
+  <input type="text" id="" placeholder="input..." class="input">
+</div></code></pre>
+              </div>
+              <div data-col="6">
+                <pre><code class="html">
+<div class="form-group form-group_boolean">
+  <label for="">Label</label>
+  <input type="radio" id="">
+</div></code></pre>
+              </div>
+            </div>
           </section>
 
           <div class="spacing"></div>
@@ -378,12 +396,22 @@
                   <span class="ec-icon lock-closed input-group__icon"></span>
                   <input type="text" class="input" placeholder="Placeholder...">
                 </div>
+                <pre><code class="html">
+<div class="input-group">
+  <span class="ec-icon lock-closed input-group__icon"></span>
+  <input type="text" class="input" placeholder="Placeholder...">
+</div></code></pre>
               </div>
               <div data-col="6sm">
                 <div class="input-group">
                   <input type="text" class="input" placeholder="Placeholder...">
                   <span class="ec-icon lock-closed input-group__icon"></span>
                 </div>
+                <pre><code class="html">
+<div class="input-group">
+  <input type="text" class="input" placeholder="Placeholder...">
+  <span class="ec-icon lock-closed input-group__icon"></span>
+</div></code></pre>
               </div>
             </div>
           </section>
@@ -544,7 +572,8 @@
 
           <section>
             <h3 id="xui-tooltip" class="kilo">Tooltip <span class="tag tag_small">_tooltip.scss</span> <span
-                class="tag tag_small tag_super">css only</span></h3>
+                class="tag tag_small tag_super">css only</span> <span class="tag tag_small tag_info">in progress</span>
+            </h3>
             <div class="alert alert_small alert_highlight">the tooltip only works with single line tooltips</div>
             <div class="well">
               <div data-flex="grid">
@@ -577,7 +606,8 @@
 
           <section>
             <h3 id="xui-dropdown" class="kilo">dropdown <span class="tag tag_small">_dropdown.scss</span> <span
-                class="tag tag_small tag_super">css only</span></h3>
+                class="tag tag_small tag_super">css only</span> <span class="tag tag_small tag_info">in progress</span>
+            </h3>
             <div class="well">
               <div data-flex="grid">
                 <div data-col="3" data-flex="center">
@@ -718,7 +748,7 @@
             </table>
           </section>
           <div class="bumper"></div>
-          <h2 class="mega">Partials</h2>
+          <h2 id="xui-partials" class="mega">partials <span class="tag tag_small">partials.scss</span></h2>
           <h3 class="kilo">Nav</h3>
           <section>
             <nav class="nav">
