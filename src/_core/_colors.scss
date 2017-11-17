@@ -43,10 +43,10 @@ $colors: (
                 'selected': setLightness($link, 98%),
                 'active': $link,
                 'disabled': rgba($text, .2),
-                'info': systemColor(#80D8FF),
+                'info': systemColor(cyan),
                 'error': systemColor(red),
-                'success': systemColor(#00E676),
-                'warning': systemColor(orange),
+                'success': systemColor(green),
+                'warning': systemColor(gold),
         )
 ) !default;
 

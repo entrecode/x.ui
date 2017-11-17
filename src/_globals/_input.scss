@@ -80,8 +80,12 @@
     border-color: getColor(state, error);
   }
 
+  @at-root select.#{$pfx}input {
+    height: em($input-min-height, $input-font-size);
+  }
+
   ///
-  /// sizes
+  /// size modifier
   /// ------------------------------------------------------
 
   &.#{$pfx}input_small {
@@ -90,6 +94,10 @@
 
     /// additional styles via config
     @extend %btn-small-style !optional;
+
+    @at-root select.#{$pfx}input_small {
+      height: em($input-small-min-height, $input-small-font-size);
+    }
   }
 
   &.#{$pfx}input_big {
@@ -98,6 +106,10 @@
 
     /// additional styles via config
     @extend %btn-big-style !optional;
+
+    @at-root select.#{$pfx}input_small {
+      height: em($input-big-min-height, $input-big-font-size);
+    }
   }
 
   /// reset for webkit-autofill background

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="x.ui.css">
   <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-3.0.0.min.css"/>
   <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/agate.min.css">-->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/github.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/dracula.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -35,10 +35,31 @@
       <nav class="nav nav_stacked">
         <ul class="nav__items">
           <li class="nav__item">
+            <a href="#xui-globals" class="btn btn_clear">getting started</a>
+          </li>
+          <li>
+            <div class="bumper bumper_small"></div>
+          </li>
+          <li class="nav__item">
             <a href="#xui-globals" class="btn btn_clear">globals</a>
           </li>
           <li class="nav__item">
             <a href="#xui-btn" class="btn btn_clear btn_small">Button</a>
+          </li>
+          <li class="nav__item">
+            <a href="#xui-headings" class="btn btn_clear btn_small">Headings</a>
+          </li>
+          <li class="nav__item">
+            <a href="#xui-type" class="btn btn_clear btn_small">Type</a>
+          </li>
+          <li class="nav__item">
+            <a href="#xui-list" class="btn btn_clear btn_small">List</a>
+          </li>
+          <li class="nav__item">
+            <a href="#xui-img" class="btn btn_clear btn_small">Image</a>
+          </li>
+          <li class="nav__item">
+            <a href="#xui-form" class="btn btn_clear btn_small">Form</a>
           </li>
         </ul>
       </nav>
@@ -48,18 +69,26 @@
     <div data-flex="grid">
       <div data-col="10">
         <div class="padding">
-          <h1 class="mega">x.ui
-            <span class="tag tag_super tag_small">{{version}}</span><span class="tag tag_super tag_small"
-                                                                          v-for="dependancy in dependancies">{{dependancy}}</span>
-          </h1>
-          <p class="lead"><strong>x.ui</strong> is a framework developed for a fast forward unicorn frontend-development
-            workflow. the unicon workflow is based on modularity and structure.</p>
-          <div class="bumper"></div>
-          <h2 class="mega" id="xui-globals">globals</h2>
-          <p class="lead">Globals are basic HTML elements like headings, typeface, lists, form elements, images and
-            tables.
-            Globals are the smallest particles in an unicorn driven frontend-development workflow.</p>
-          <div class="bumper"></div>
+          <section>
+            <h1 class="mega">x.ui
+              <span class="tag tag_super tag_small">{{version}}</span><span class="tag tag_super tag_small"
+                                                                            v-for="dependancy in dependancies">{{dependancy}}</span>
+            </h1>
+            <p class="lead"><strong>x.ui</strong> is a framework developed for a fast forward unicorn
+              frontend-development
+              workflow. the unicon workflow is focused on modularity and structure. From the smallest inline-element,
+              through more complex macro elements and even more advanced partial elements to templates - to pages.
+              Everything is highly adaptable and flexible.</p>
+            <div class="bumper"></div>
+          </section>
+          <section>
+            <h2 class="mega" id="xui-globals">globals</h2>
+            <p class="lead">Globals are basic HTML elements like headings, typeface, lists, form elements, images and
+              tables. Globals are the smallest particles in an unicorn driven frontend-development workflow.</p>
+          </section>
+
+          <div class="spacing"></div>
+
           <section>
             <h3 class="kilo" id="xui-btn">buttons <span class="tag tag_small">_btn.scss</span></h3>
             <p>there are three basic button styles which should be used to to emphasis or weaken functions. Throughout
@@ -124,7 +153,7 @@
           <div class="spacing"></div>
 
           <section>
-            <h3 class="kilo">Headings <span class="tag tag_small">_headings.scss</span></h3>
+            <h3 id="xui-headings" class="kilo">Headings <span class="tag tag_small">_headings.scss</span></h3>
             <div class="demo-heading-metrics demo-heading-metrics_h1"><h1>Heading 1</h1></div>
             <div class="demo-heading-metrics"><h2>Heading 2</h2></div>
             <div class="demo-heading-metrics"><h3>Heading 3</h3></div>
@@ -132,9 +161,11 @@
             <div class="demo-heading-metrics"><h5>Heading 5</h5></div>
             <div class="demo-heading-metrics"><h6>Heading 6</h6></div>
           </section>
+
           <div class="spacing"></div>
+
           <section>
-            <h3 class="kilo">Type <span class="tag tag_small">_type.scss</span></h3>
+            <h3 class="kilo" id="xui-type">Type <span class="tag tag_small">_type.scss</span></h3>
             <div class="demo-paragraph-metrics">
               <p class="lead">Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß
                 dies
@@ -154,88 +185,90 @@
                 durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er entweder den
                 Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
             </div>
+            <div class="spacing"></div>
+            <h4 class="h6">text helper <span class="tag tag_small">_text-color.scss</span></h4>
             <div class="well">
-              <div v-for="mod in globals.type.colorModifiers" :class="mod">Lorem ipsum dolor sit amet, consetetur
-                sadipscin
+              <div v-for="mod in globals.type.colorModifiers" :class="mod">
+                Lorem ipsum dolor sit amet, consetetur sadipscin <span class="code">.{{mod}}</span>
               </div>
             </div>
           </section>
 
           <div class="spacing"></div>
-          <h3 class="kilo">Lists <span class="tag tag_small">_list.scss</span></h3>
+          <h3 class="kilo" id="xui-list">Lists <span class="tag tag_small">_list.scss</span></h3>
           <div data-flex="grid">
-            <div data-col="6sm">
+            <div data-col="6sm" data-flex="center-items">
               <ul class="unstyled">
                 <li>unstyled list</li>
                 <li>unstyled list</li>
                 <li>unstyled list</li>
               </ul>
             </div>
-            <div data-col="6sm">
-  <pre><code class="html">
-  <ul class="unstyled">
-    <li>unstyled list</li>
-    <li>unstyled list</li>
-    <li>unstyled list</li>
-  </ul></code></pre>
+            <div data-col="6sm"><pre><code class="html">
+<ul class="unstyled">
+  <li>unstyled list</li>
+  <li>unstyled list</li>
+  <li>unstyled list</li>
+</ul></code></pre>
             </div>
-            <div data-col="6sm">
+            <div data-col="6sm" data-flex="center-items">
               <ul class="inline">
                 <li>unstyled list</li>
                 <li>unstyled list</li>
                 <li>unstyled list</li>
               </ul>
             </div>
-            <div data-col="6sm">
-  <pre><code class="html">
-  <ul class="inline">
-    <li>unstyled list</li>
-    <li>unstyled list</li>
-    <li>unstyled list</li>
-  </ul></code></pre>
+            <div data-col="6sm"><pre><code class="html">
+<ul class="inline">
+  <li>unstyled list</li>
+  <li>unstyled list</li>
+  <li>unstyled list</li>
+</ul></code></pre>
             </div>
           </div>
           <div class="spacing"></div>
 
-          <h3 class="kilo">Images</h3>
+          <h3 class="kilo">Images <span class="tag tag_small">_img.scss</span></h3>
           <section>
             <div data-flex="grid">
               <div data-col="6sm">
                 <pre><code class="html">
-  <img src="..." class="img_responsive"></code></pre>
+<img src="..." class="img_responsive"></code></pre>
                 <img src="./assets/placeholder.jpg" class="img_responsive">
               </div>
               <div data-col="6sm">
                 <pre><code class="html">
-  <img src="..." class="img_full"></code></pre>
+<img src="..." class="img_full"></code></pre>
                 <img src="./assets/placeholder.jpg" class="img_full">
               </div>
             </div>
-            <h4 class="h6">Image helper</h4>
+            <div class="spacing"></div>
+            <h4 class="h6">Image helper <span class="tag tag_small">_crop.scss</span><span
+                class="tag tag_error tag_small">object-fit</span></h4>
             <div data-flex="grid">
               <div data-col="4sm">
                 <pre><code class="html">
-  <div class="crop-1-1">
-    <img src="..">
-  </div></code></pre>
+<div class="crop-1-1">
+  <img src="..">
+</div></code></pre>
                 <div class="crop-1-1">
                   <img src="./assets/placeholder.jpg">
                 </div>
               </div>
               <div data-col="4sm">
                 <pre><code class="html">
-  <div class="crop-4-3">
-    <img src="..">
-  </div></code></pre>
+<div class="crop-4-3">
+  <img src="..">
+</div></code></pre>
                 <div class="crop-4-3">
                   <img src="./assets/placeholder.jpg">
                 </div>
               </div>
               <div data-col="4sm">
                 <pre><code class="html">
-  <div class="crop-16-9">
-    <img src="..">
-  </div></code></pre>
+<div class="crop-16-9">
+  <img src="..">
+</div></code></pre>
                 <div class="crop-16-9">
                   <img src="./assets/placeholder.jpg">
                 </div>
@@ -243,201 +276,280 @@
             </div>
           </section>
 
+          <div class="bumper"></div>
+
+          <section>
+            <h3 id="xui-form" class="kilo">forms <span class="tag tag_small">_forms.scss</span></h3>
+            <div class="spacing"></div>
+            <h4 class="h6">input <span class="tag tag_small">_input.scss</span></h4>
+            <div data-flex="grid">
+              <div data-col="6">
+                <input type="text" class="input" placeholder="Placeholder...">
+                <pre><code class="html">
+<input class="input"></code></pre>
+              </div>
+              <div data-col="6">
+                <select class="input">
+                  <option selected value="volvo">Apple</option>
+                  <option value="saab">Blueberry</option>
+                  <option value="mercedes">Cranberry</option>
+                </select>
+                <pre><code class="html">
+<select class="input">...</select></code></pre>
+              </div>
+            </div>
+
+            <div class="spacing spacing_small"></div>
+
+            <h5 class="h6">input size modifier</h5>
+            <div data-flex="grid">
+              <div data-col="6sm">
+                <input type="text" class="input input_small" value="input_small">
+                <pre><code class="html">
+<input class="input input_small"></code></pre>
+              </div>
+              <div data-col="6sm">
+                <input type="text" class="input input_big" value="input_big">
+                <pre><code class="html">
+<input class="input input_big"></code></pre>
+              </div>
+            </div>
+
+            <div class="spacing spacing_small"></div>
+
+            <h4 class="h6">input style modifier</h4>
+            <div data-flex="grid">
+              <div data-col="6sm">
+                <input type="text" class="input input_round" value="input_round">
+                <pre><code class="html">
+<input class="input input_round"></code></pre>
+              </div>
+              <div data-col="6sm">
+                <input type="text" class="input input_raised" value="input_raised">
+                <pre><code class="html">
+<input class="input input_raised"></code></pre>
+              </div>
+            </div>
+          </section>
+
+          <div class="bumper"></div>
+
+
+          <h2 class="mega">Macros</h2>
+          <section>
+            <h3 class="kilo">form-group <span class="tag tag_small">_form-group.scss</span></h3>
+          </section>
+
           <div class="spacing"></div>
 
           <section>
-            <h2 class="mega">Forms</h2>
-            <div data-flex="grid" v-for="size in globals.input.sizes">
-              <div data-col="6sm">
-                <div class="form-group">
-                  <label>Input Label</label>
-                  <input type="text" class="input" :class="size" placeholder="Placeholder...">
-                </div>
-              </div>
-              <div data-col="6sm">
-                <div class="form-group">
-                  <label>Input Label</label>
-                  <input type="text" class="input" :class="size" placeholder="Placeholder..." value="Input value">
-                </div>
-              </div>
-            </div>
-          </section>
-          <div class="bumper"></div>
-          <section>
-            <h4 class="h6">Input style modifier</h4>
-            <div data-flex="grid" v-for="modifier in globals.input.modifiers">
-              <div data-col="6sm">
-                <div class="form-group">
-                  <label>Input Label</label>
-                  <input type="text" class="input" :class="modifier" placeholder="Placeholder...">
-                </div>
-              </div>
-              <div data-col="6sm">
-                <div class="form-group">
-                  <label>Input Label</label>
-                  <input type="text" class="input" :class="modifier" placeholder="Placeholder..." value="Input value">
-                </div>
-              </div>
-            </div>
-          </section>
-          <div class="bumper"></div>
-          <section>
-            <h3 class="kilo">input groups</h3>
+            <h3 class="kilo">input-group <span class="tag tag_small">_input-group.scss</span> <span
+                class="tag tag_small tag_info">in progress</span></h3>
             <div data-flex="grid">
               <div data-col="6sm">
-                <div class="form-group" v-for="size in globals.input.sizes">
-                  <label>Input Label</label>
-                  <div class="input-group">
-                    <span class="ec-icon lock-closed input-group__icon"></span>
-                    <input type="text" class="input" :class="size" placeholder="Placeholder...">
-                  </div>
+                <div class="input-group">
+                  <span class="ec-icon lock-closed input-group__icon"></span>
+                  <input type="text" class="input" placeholder="Placeholder...">
                 </div>
               </div>
               <div data-col="6sm">
-                <div class="form-group" v-for="size in globals.input.sizes">
-                  <label>Input Label</label>
-                  <div class="input-group">
-                    <input type="text" class="input" :class="size" placeholder="Placeholder...">
-                    <span class="ec-icon lock-closed input-group__icon"></span>
-                  </div>
+                <div class="input-group">
+                  <input type="text" class="input" placeholder="Placeholder...">
+                  <span class="ec-icon lock-closed input-group__icon"></span>
                 </div>
               </div>
             </div>
           </section>
+
           <div class="bumper"></div>
-          <h2 class="mega">Macros</h2>
+
           <section>
-            <h3 class="kilo">alerts</h3>
+            <h3 class="kilo">alerts <span class="tag tag_small">_alert.scss</span></h3>
             <div class="alert">
-              <placeholder2line></placeholder2line>
+              <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen Reitstock,
+                mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>
             </div>
-            <div class="alert" :class="mod" v-for="mod in macros.alerts.themeModifiers">
-              <placeholder2line></placeholder2line>
+            <pre><code class="html">
+<div class="alert">...</div></code></pre>
+            <div class="spacing"></div>
+            <h4 class="h6">alert theme modifier</h4>
+            <div data-flex="grid">
+              <div data-col="6" v-for="mod in macros.alerts.themeModifiers">
+                <div class="alert" :class="mod">
+                  <p>Sie sprach weiter und weiter.</p>
+                </div>
+                <pre><code class="html">
+<div class="alert {{mod}}">...</div></code></pre>
+              </div>
             </div>
-            <div class="bumper"></div>
-            <h3 class="kilo">state modifier</h3>
-            <div class="alert" :class="mod" v-for="mod in macros.alerts.stateModifiers">
-              <placeholder2line></placeholder2line>
+            <div class="spacing"></div>
+            <h4 class="h6">alert state modifier</h4>
+            <div data-flex="grid">
+              <div data-col="6" v-for="mod in macros.alerts.stateModifiers">
+                <div class="alert" :class="mod">
+                  <p>Sie sprach weiter und weiter.</p>
+                </div>
+                <pre><code class="html">
+<div class="alert {{mod}}">...</div></code></pre>
+              </div>
             </div>
-            <div class="bumper"></div>
-            <h3 class="kilo">style modifier</h3>
-            <div v-for="mod in macros.alerts.stateModifiers">
-              <div class="alert" :class="[mod, style]" v-for="style in macros.alerts.styleModifiers">
-                <placeholder2line></placeholder2line>
+            <div class="spacing"></div>
+            <h4 class="h6">alert style modifier</h4>
+            <div data-flex="grid">
+              <div data-col="6" v-for="style in macros.alerts.styleModifiers">
+                <div class="alert" :class="[style]">
+                  <p>Sie sprach weiter und weiter.</p>
+                </div>
+                <pre><code class="html">
+<div class="alert {{style}}">...</div></code></pre>
               </div>
             </div>
           </section>
-          <section>
-            <h3 class="kilo">bubble</h3>
-            <ul data-flex="center">
-              <li class="padding">
-                <span class="bubble">2</span>
-              </li>
-              <li class="padding" v-for="theme in macros.bubbles.themeModifiers">
-                <span class="bubble" :class="theme">2</span>
-              </li>
-            </ul>
-            <h3 class="kilo">state modifier</h3>
-            <ul data-flex="center">
-              <li class="padding" v-for="state in macros.bubbles.stateModifiers">
-                <span class="bubble" :class="state">2</span>
-              </li>
-            </ul>
-            <h3 class="kilo">size modifier</h3>
-            <ul data-flex="center">
-              <li class="padding" v-for="size in macros.bubbles.sizeModifiers">
-                <span class="bubble" :class="size">2</span>
-              </li>
-            </ul>
-          </section>
+
           <div class="bumper"></div>
+
           <section>
-            <h3 class="kilo">tag</h3>
-            <ul data-flex="center">
-              <li class="padding">
-                <span class="tag">Label</span>
-              </li>
-              <li class="padding" v-for="theme in macros.tags.themeModifiers">
-                <span class="tag" :class="theme">Label</span>
-              </li>
-            </ul>
-            <h3 class="kilo">state modifier</h3>
-            <ul data-flex="center">
-              <li class="padding" v-for="state in macros.tags.stateModifiers">
-                <span class="tag" :class="state">Label</span>
-              </li>
-            </ul>
-            <h3 class="kilo">size modifier</h3>
-            <ul data-flex="center">
-              <li class="padding" v-for="size in macros.tags.sizeModifiers">
-                <span class="tag" :class="size">Label</span>
-              </li>
-            </ul>
-            <h3 class="kilo">style modifier</h3>
-            <ul data-flex="center">
-              <li class="padding">
-                <span class="tag tag_outlined">Label</span>
-              </li>
-              <li class="padding" v-for="theme in macros.tags.themeModifiers">
-                <span class="tag tag_outlined" :class="theme">Label</span>
-              </li>
-              <li class="padding" v-for="state in macros.tags.stateModifiers">
-                <span class="tag tag_outlined" :class="state">Label</span>
-              </li>
-              <li class="padding" v-for="size in macros.tags.sizeModifiers">
-                <span class="tag tag_outlined" :class="size">Label</span>
-              </li>
-            </ul>
-            <ul data-flex="center">
-              <li class="padding">
-                <span class="tag tag_round">Label</span>
-              </li>
-              <li class="padding" v-for="theme in macros.tags.themeModifiers">
-                <span class="tag tag_round" :class="theme">Label</span>
-              </li>
-              <li class="padding" v-for="state in macros.tags.stateModifiers">
-                <span class="tag tag_round" :class="state">Label</span>
-              </li>
-              <li class="padding" v-for="size in macros.tags.sizeModifiers">
-                <span class="tag tag_round" :class="size">Label</span>
-              </li>
-            </ul>
-            <div class="bumper"></div>
-            <h3 class="kilo">as a link</h3>
-            <ul data-flex="center wrap">
-              <li class="padding">
-                <a class="tag">Label</a>
-              </li>
-              <li class="padding" v-for="theme in macros.tags.themeModifiers">
-                <a class="tag" :class="theme">Label</a>
-              </li>
-              <li class="padding" v-for="state in macros.tags.stateModifiers">
-                <a class="tag" :class="state">Label</a>
-              </li>
-            </ul>
-            <ul data-flex="center wrap">
-              <li class="padding">
-                <a class="tag tag_outlined">Label</a>
-              </li>
-              <li class="padding" v-for="theme in macros.tags.themeModifiers">
-                <a class="tag tag_outlined" :class="theme">Label</a>
-              </li>
-              <li class="padding" v-for="state in macros.tags.stateModifiers">
-                <a class="tag tag_outlined" :class="state">Label</a>
-              </li>
-            </ul>
+            <h3 class="kilo">bubble <span class="tag tag_small">_bubble.scss</span></h3>
+            <div class="well">
+              <div data-flex="grid">
+                <div data-col="4" data-flex="center-items center">
+                  <a class="btn"><span>bubble </span><span class="bubble bubble_invert">2</span></a>
+                </div>
+                <div data-col="4" data-flex="center-items center">
+                  <a class="btn"><span class="bubble bubble_invert">2</span></a>
+                </div>
+                <div data-col="4" data-flex="center-items center">
+                  <span class="bubble bubble_link">2</span>
+                </div>
+              </div>
+            </div>
+            <pre><code class="html">
+<a class="btn"><span>bubble </span><span class="bubble bubble_invert">2</span></a>
+...
+<a class="btn"><span class="bubble bubble_invert">2</span></a>
+...
+<span class="bubble">2</span></code></pre>
+
+            <table class="table">
+              <tbody>
+              <tr>
+                <td><strong>theme modifier</strong></td>
+                <td>
+                  <span class="code" v-for="theme in macros.bubbles.themeModifiers">{{ '.' + theme}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>state modifier</strong></td>
+                <td>
+                  <span class="code" v-for="state in macros.bubbles.stateModifiers">{{ '.' + state}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>size modifier</strong></td>
+                <td>
+                  <span class="code" v-for="size in macros.bubbles.sizeModifiers">{{ '.' + size}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>style modifier</strong></td>
+                <td>
+                  -
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </section>
+
           <div class="bumper"></div>
+
           <section>
-            <h2 class="mega">Tooltip <span class="tag tag_super">css only</span></h2>
-            <a href="" data-tooltip-top="This is a tooltip" class="btn btn_clear">tooltip top</a>
-            <a href="" data-tooltip-right="This is a tooltip" class="btn btn_clear">tooltip right</a>
-            <a href="" data-tooltip-bottom="This is a tooltip" class="btn btn_clear">tooltip bottom</a>
-            <a href="" data-tooltip-left="This is a tooltip" class="btn btn_clear">tooltip left</a>
+            <h3 class="kilo">tag <span class="tag tag_small">_tag.scss</span></h3>
+            <div class="well">
+              <div data-flex="grid">
+                <div data-col="4" data-flex="center-items center">
+                  <a class="btn"><span>tag </span><span class="tag tag_invert">tag</span></a>
+                </div>
+                <div data-col="4" data-flex="center-items center">
+                  <span class="tag tag_link">tag</span>
+                </div>
+                <div data-col="4" data-flex="center-items center">
+                  <a class="tag tag_link">tag</a>
+                </div>
+              </div>
+            </div>
+            <pre><code class="html">
+<a class="btn"><span>tag </span><span class="tag tag_invert">tag</span></a>
+...
+<span class="tag">tag</span>
+...
+<a class="tag tag_link">tag</a></code></pre>
+            <table class="table">
+              <tbody>
+              <tr>
+                <td><strong>theme modifier</strong></td>
+                <td>
+                  <span class="code" v-for="theme in macros.tags.themeModifiers">{{ '.' + theme}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>state modifier</strong></td>
+                <td>
+                  <span class="code" v-for="state in macros.tags.stateModifiers">{{ '.' + state}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>size modifier</strong></td>
+                <td>
+                  <span class="code" v-for="size in macros.tags.sizeModifiers">{{ '.' + size}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>style modifier</strong></td>
+                <td>
+                  <span class="code" v-for="style in macros.tags.styleModifiers">{{ '.' + style}}</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </section>
+
           <div class="bumper"></div>
+
           <section>
-            <h2 class="mega">dropdown <span class="tag tag_super">css only</span></h2>
+            <h3 class="kilo">Tooltip <span class="tag tag_small">_tooltip.scss</span> <span
+                class="tag tag_small tag_super">css only</span></h3>
+
+            <div class="well">
+              <div data-flex="grid">
+                <div data-col="3" data-flex="center">
+                  <a href="" data-tooltip-top="This is a tooltip" class="btn btn_clear">tooltip top</a>
+                </div>
+                <div data-col="3" data-flex="center">
+                  <a href="" data-tooltip-right="This is a tooltip" class="btn btn_clear">tooltip right</a>
+                </div>
+                <div data-col="3" data-flex="center">
+                  <a href="" data-tooltip-bottom="This is a tooltip" class="btn btn_clear">tooltip bottom</a>
+                </div>
+                <div data-col="3" data-flex="center">
+                  <a href="" data-tooltip-left="This is a tooltip" class="btn btn_clear">tooltip left</a>
+                </div>
+              </div>
+            </div>
+            <pre><code class="html">
+<... data-tooltip-top="This is a tooltip" ... >
+...
+<... data-tooltip-right="This is a tooltip" ... >
+...
+<... data-tooltip-bottom="This is a tooltip" ... >
+...
+<... data-tooltip-left="This is a tooltip" ... >
+</code></pre>
+          </section>
+
+          <div class="bumper"></div>
+
+          <section>
+            <h3 class="kilo">dropdown <span class="tag tag_small">_dropdown.scss</span> <span class="tag tag_small tag_super">css only</span></h3>
             <div class="well">
               <ul class="dropdown dropdown_center">
                 <li tabindex="1">

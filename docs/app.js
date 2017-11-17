@@ -83,12 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
         bubbles: {
           themeModifiers: ['bubble_minor', 'bubble_link', 'bubble_super', 'bubble_highlight', 'bubble_invert'],
           stateModifiers: ['bubble_info', 'bubble_error', 'bubble_success', 'bubble_warning'],
-          sizeModifiers:  ['bubble_small', '', 'bubble_big']
+          sizeModifiers:  ['bubble_small', 'bubble_big']
         },
         tags:    {
           themeModifiers: ['tag_minor', 'tag_link', 'tag_super', 'tag_highlight', 'tag_invert'],
           stateModifiers: ['tag_info', 'tag_error', 'tag_success', 'tag_warning'],
-          sizeModifiers:  ['tag_small', '', 'tag_big']
+          sizeModifiers:  ['tag_small', 'tag_big'],
+          styleModifiers:  ['tag_outlined', 'tag_round']
         }
       }, // :before \{\n(.*)";\n}
       iconset:      ['add', 'add-circle', 'alarm', 'alarm-clock', 'alarm-silent', 'align-center', 'align-justify',

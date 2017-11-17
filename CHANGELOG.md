@@ -44,6 +44,7 @@
 ### changed
 - optimized `.bubble` styles and comments
 - optimized `.kiosk` styles and comments
+- optimized `select.input` styles and comments
 - refactored `.tag` styles and comments
 - refactored `.tooltip` styles and comments
 - refactored `.padding` styles and comments
