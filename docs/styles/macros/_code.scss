@@ -1,7 +1,7 @@
 .code {
   font-family: monospace;
-  background-color: getColor(background, invert);
-  color: getColor(text, invert);
+  background-color: getColor(background, lighter);
+  color: getColor(text);
   font-size: rem(12);
   line-height: rem(16);
   padding: 0 rem(8);

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     el:   '#app',
     data: {
       name:         'x.ui',
+      versionName:  'Finger-Lime',
       version:      '7.0.0',
       dependancies: ['xlcss 5.0.1', 'ec.icons 3.0.0'],
       authors:      {
@@ -74,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       },
       macros:       {
-        alerts: {
+        alerts:  {
           themeModifiers: ['alert_minor', 'alert_link', 'alert_super', 'alert_highlight', 'alert_invert'],
           stateModifiers: ['alert_info', 'alert_error', 'alert_success', 'alert_warning'],
           styleModifiers: ['alert_outlined']
@@ -82,15 +83,14 @@ document.addEventListener('DOMContentLoaded', function() {
         bubbles: {
           themeModifiers: ['bubble_minor', 'bubble_link', 'bubble_super', 'bubble_highlight', 'bubble_invert'],
           stateModifiers: ['bubble_info', 'bubble_error', 'bubble_success', 'bubble_warning'],
-          sizeModifiers: ['bubble_small', '', 'bubble_big']
+          sizeModifiers:  ['bubble_small', '', 'bubble_big']
         },
-        tags: {
+        tags:    {
           themeModifiers: ['tag_minor', 'tag_link', 'tag_super', 'tag_highlight', 'tag_invert'],
           stateModifiers: ['tag_info', 'tag_error', 'tag_success', 'tag_warning'],
-          sizeModifiers: ['tag_small', '', 'tag_big']
+          sizeModifiers:  ['tag_small', '', 'tag_big']
         }
-      }, 
-      // :before \{\n(.*)";\n}
+      }, // :before \{\n(.*)";\n}
       iconset:      ['add', 'add-circle', 'alarm', 'alarm-clock', 'alarm-silent', 'align-center', 'align-justify',
                      'align-left', 'align-right', 'all-caps', 'brackets', 'angle-tool', 'arrange-1-to-9',
                      'arrange-9-to-1', 'arrange-a-to-z', 'arrange-z-to-a', 'arrow-down', 'arrow-down-left',

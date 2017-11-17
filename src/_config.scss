@@ -1,13 +1,13 @@
 //
 /// @font-face
 /// ------------------------------------------------------
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
 
 
 /// @param {value} $body-font
 /// @param {value} $headings-font
-$body-font: 'PT Sans', sans-serif;
-$headings-font: 'PT Sans', sans-serif;
+$body-font: 'Roboto Mono ', sans-serif;
+$headings-font: 'Roboto Mono', sans-serif;
 
 /// @param {number} $light - font-weight light value
 /// @param {number} $normal - font-weight normal value
@@ -21,11 +21,11 @@ $bold: 700;
 /// ------------------------------------------------------
 
 $background: #fff;
-$text: #2D3A47;
-$link: #E74A7A;
-$super: #FC6563;
-$minor: #D5DDE4;
-$highlight: #A7FFEB;
+$text: #2a3d54;
+$link: #2fce6f;
+$super: #9de263;
+$minor: rgba($link, .2);
+$highlight: #9de263;
 
 $setDark: $text !default;
 $setLight: $background !default;
@@ -417,9 +417,9 @@ $tag-weight: $bold !default;
 /// @param {number} $tag-small-line-height [14]
 /// @param {number} $tag-small-min-height [24]
 /// @param {value} $tag-small-weight [$tag-weight]
-$tag-small-font-size: 12 !default;
-$tag-small-line-height: 14 !default;
-$tag-small-min-height: 24 !default;
+$tag-small-font-size: 10 !default;
+$tag-small-line-height: 12 !default;
+$tag-small-min-height: 20 !default;
 $tag-small-weight: $tag-weight !default;
 
 /// additional styles for .tag.small
