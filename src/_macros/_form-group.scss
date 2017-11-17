@@ -32,7 +32,8 @@
     }
   }
 
-  .#{$pfx}form-group_boolean {
+  &.#{$pfx}form-group_boolean {
+
     @if $flex-support == true {
       @include flex-direction(row);
 
@@ -41,6 +42,11 @@
       }
     }
 
+    label {
+      margin-bottom: rem(4);
+    }
+
+    input[type="radio"],
     input[type="checkbox"] {
       margin-right: rem(8);
     }
