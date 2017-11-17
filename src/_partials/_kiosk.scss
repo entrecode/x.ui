@@ -1,3 +1,8 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group partials
+
 .kiosk {
   @include flexbox;
   @include flex-wrap(wrap);
@@ -10,15 +15,10 @@
   }
 
   .kiosk-body {
-    @include flex-grow(1);
-    @include flex-basis(75%);
     height: 100%;
   }
 
-  .kiosk-aside {
-    @include flex-basis(25%);
-    min-width: rem(160);
-  }
+  .kiosk-aside {}
 
   .kiosk-footer {
     @include flex-grow(0);
@@ -41,6 +41,19 @@
 
     .kiosk-footer {
       @include order(1);
+    }
+  }
+
+  &.kiosk_fixed {
+    height: 100vh;
+    overflow: hidden;
+
+    .kiosk-body {
+      overflow-y: auto;
+    }
+
+    .kiosk-aside {
+      overflow-y: auto;
     }
   }
 }
