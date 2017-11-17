@@ -1,0 +1,27 @@
+@include headings {
+  .#{$pfx}tag {
+    font-size: rem($tag-font-size);
+    vertical-align: middle;
+
+    &.#{$pfx}tag_small {
+      font-size: rem($tag-small-font-size);
+    }
+
+    &.#{$pfx}tag_big {
+      font-size: rem($tag-big-font-size);
+    }
+  }
+  
+  .#{$pfx}bubble {
+    font-size: rem($bubble-font-size);
+    vertical-align: middle;
+
+    &.#{$pfx}bubble_small {
+      font-size: rem($bubble-small-font-size);
+    }
+
+    &.#{$pfx}bubble_big {
+      font-size: rem($bubble-big-font-size);
+    }
+  }
+}
