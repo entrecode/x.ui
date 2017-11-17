@@ -170,7 +170,7 @@ input[type='radio'] {
 
   &:hover,
   &:focus {
-    @include box-shadow(0 0 0 2px getColor(state, hover));
+    //@include box-shadow(0 0 0 2px getColor(state, hover));
   }
 
   & + small {
