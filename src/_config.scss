@@ -1,12 +1,13 @@
 //
 /// @font-face
 /// ------------------------------------------------------
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
 
 /// @param {value} $body-font
 /// @param {value} $headings-font
-$body-font: 'Roboto Mono', sans-serif;
-$headings-font: 'Roboto Mono', sans-serif;
+$body-font: 'PT Sans', sans-serif;
+$headings-font: 'PT Sans', sans-serif;
 
 /// @param {number} $light - font-weight light value
 /// @param {number} $normal - font-weight normal value
@@ -398,13 +399,13 @@ $bubble-big-radius: 4 !default;
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 $tag-padding-ratio: 2;
 
-/// @param {number} $tag-font-size [12]
-/// @param {number} $tag-line-height [14]
-/// @param {number} $tag-min-height [24]
+/// @param {number} $tag-font-size [14]
+/// @param {number} $tag-line-height [16]
+/// @param {number} $tag-min-height [28]
 /// @param {value} $tag-weight [$bold]
-$tag-font-size: 12 !default;
-$tag-line-height: 14 !default;
-$tag-min-height: 24 !default;
+$tag-font-size: 14 !default;
+$tag-line-height: 16 !default;
+$tag-min-height: 28 !default;
 $tag-weight: $bold !default;
 
 /// additional styles for .tag
@@ -412,13 +413,13 @@ $tag-weight: $bold !default;
   /// put styles here...
 }
 
-/// @param {number} $tag-small-font-size [10]
-/// @param {number} $tag-small-line-height [12]
-/// @param {number} $tag-small-min-height [20]
+/// @param {number} $tag-small-font-size [12]
+/// @param {number} $tag-small-line-height [14]
+/// @param {number} $tag-small-min-height [24]
 /// @param {value} $tag-small-weight [$tag-weight]
-$tag-small-font-size: 10 !default;
-$tag-small-line-height: 12 !default;
-$tag-small-min-height: 20 !default;
+$tag-small-font-size: 12 !default;
+$tag-small-line-height: 14 !default;
+$tag-small-min-height: 24 !default;
 $tag-small-weight: $tag-weight !default;
 
 /// additional styles for .tag.small
@@ -426,12 +427,12 @@ $tag-small-weight: $tag-weight !default;
   /// put styles here...
 }
 
-/// @param {number} $tag-big-font-size [14]
-/// @param {number} $tag-big-line-height [16]
+/// @param {number} $tag-big-font-size [16]
+/// @param {number} $tag-big-line-height [18]
 /// @param {number} $tag-big-min-height [32]
 /// @param {value} $tag-big-weight [$tag-weight]
-$tag-big-font-size: 14 !default;
-$tag-big-line-height: 16 !default;
+$tag-big-font-size: 16 !default;
+$tag-big-line-height: 18 !default;
 $tag-big-min-height: 32 !default;
 $tag-big-weight: $tag-weight !default;
 
