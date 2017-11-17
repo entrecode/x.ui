@@ -1,0 +1,20 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group macros inline
+///
+/// @param {variable} $pfx [''] - global prefixing
+
+.#{$pfx}well {
+  p {
+    &:only-child {
+      margin: 0;
+    }
+  }
+
+  @include headings {
+    &:only-child {
+      margin: 0;
+    }
+  }
+}
