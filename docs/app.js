@@ -90,6 +90,13 @@ document.addEventListener('DOMContentLoaded', function() {
           stateModifiers: ['tag_info', 'tag_error', 'tag_success', 'tag_warning'],
           sizeModifiers:  ['tag_small', 'tag_big'],
           styleModifiers:  ['tag_outlined', 'tag_round']
+        },
+        dropdown: {
+          behaviorModifiers: ['dropdown_center', 'dropdown_right', 'dropdown_right', 'dropdown_full' ]
+        },
+        well:    {
+          sizeModifiers:  ['well_small', 'well_big'],
+          styleModifiers:  ['well_outlined']
         }
       }, // :before \{\n(.*)";\n}
       iconset:      ['add', 'add-circle', 'alarm', 'alarm-clock', 'alarm-silent', 'align-center', 'align-justify',

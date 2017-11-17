@@ -61,6 +61,33 @@
           <li class="nav__item">
             <a href="#xui-form" class="btn btn_clear btn_small">Form</a>
           </li>
+          <li>
+            <div class="bumper bumper_small"></div>
+          </li>
+          <li class="nav__item">
+            <a href="#xui-macros" class="btn btn_clear">macros</a>
+          </li>
+          <li class="nav__item">
+            <a href="#form-group" class="btn btn_clear btn_small">form-group</a>
+          </li>
+          <li class="nav__item">
+            <a href="#input-group" class="btn btn_clear btn_small">input-group</a>
+          </li>
+          <li class="nav__item">
+            <a href="#xui-bubble" class="btn btn_clear btn_small">bubble</a>
+          </li>
+          <li class="nav__item">
+            <a href="#xui-tag" class="btn btn_clear btn_small">tag</a>
+          </li>
+          <li class="nav__item">
+            <a href="#xui-tooltip" class="btn btn_clear btn_small">tooltip</a>
+          </li>
+          <li class="nav__item">
+            <a href="#xui-dropdown" class="btn btn_clear btn_small">dropdown</a>
+          </li>
+          <li class="nav__item">
+            <a href="#xui-well" class="btn btn_clear btn_small">well</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -335,15 +362,15 @@
           <div class="bumper"></div>
 
 
-          <h2 class="mega">Macros</h2>
+          <h2 id="xui-macros" class="mega">Macros</h2>
           <section>
-            <h3 class="kilo">form-group <span class="tag tag_small">_form-group.scss</span></h3>
+            <h3 id="xui-form-group" class="kilo">form-group <span class="tag tag_small">_form-group.scss</span></h3>
           </section>
 
           <div class="spacing"></div>
 
           <section>
-            <h3 class="kilo">input-group <span class="tag tag_small">_input-group.scss</span> <span
+            <h3 id="xui-input-group" class="kilo">input-group <span class="tag tag_small">_input-group.scss</span> <span
                 class="tag tag_small tag_info">in progress</span></h3>
             <div data-flex="grid">
               <div data-col="6sm">
@@ -409,7 +436,7 @@
           <div class="bumper"></div>
 
           <section>
-            <h3 class="kilo">bubble <span class="tag tag_small">_bubble.scss</span></h3>
+            <h3 id="xui-bubble" class="kilo">bubble <span class="tag tag_small">_bubble.scss</span></h3>
             <div class="well">
               <div data-flex="grid">
                 <div data-col="4" data-flex="center-items center">
@@ -463,7 +490,7 @@
           <div class="bumper"></div>
 
           <section>
-            <h3 class="kilo">tag <span class="tag tag_small">_tag.scss</span></h3>
+            <h3 id="xui-tag" class="kilo">tag <span class="tag tag_small">_tag.scss</span></h3>
             <div class="well">
               <div data-flex="grid">
                 <div data-col="4" data-flex="center-items center">
@@ -516,9 +543,9 @@
           <div class="bumper"></div>
 
           <section>
-            <h3 class="kilo">Tooltip <span class="tag tag_small">_tooltip.scss</span> <span
+            <h3 id="xui-tooltip" class="kilo">Tooltip <span class="tag tag_small">_tooltip.scss</span> <span
                 class="tag tag_small tag_super">css only</span></h3>
-
+            <div class="alert alert_small alert_highlight">the tooltip only works with single line tooltips</div>
             <div class="well">
               <div data-flex="grid">
                 <div data-col="3" data-flex="center">
@@ -549,93 +576,146 @@
           <div class="bumper"></div>
 
           <section>
-            <h3 class="kilo">dropdown <span class="tag tag_small">_dropdown.scss</span> <span class="tag tag_small tag_super">css only</span></h3>
+            <h3 id="xui-dropdown" class="kilo">dropdown <span class="tag tag_small">_dropdown.scss</span> <span
+                class="tag tag_small tag_super">css only</span></h3>
             <div class="well">
-              <ul class="dropdown dropdown_center">
-                <li tabindex="1">
-                  <span class="btn btn_invert btn_raised">dropdown center</span>
-                  <ul class="dropdown-options">
-                    <li class="dropdown-option">
-                      <a href>Label</a>
-                    </li>
-                    <li class="dropdown-option">
-                      <a href>Label</a>
-                    </li>
-                    <li class="dropdown_divider"></li>
-                    <li class="dropdown-option">
-                      <a href class="btn btn_outlined">Label</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              <ul class="dropdown dropdown_right">
-                <li tabindex="1">
-                  <span class="btn btn_invert btn_raised">dropdown right</span>
-                  <ul class="dropdown-options">
-                    <li class="dropdown-option">
-                      <a href>Label</a>
-                    </li>
-                    <li class="dropdown-option">
-                      <a href>Label</a>
-                    </li>
-                    <li class="dropdown_divider"></li>
-                    <li class="dropdown-option">
-                      <a href class="btn btn_outlined">Label</a>
+              <div data-flex="grid">
+                <div data-col="3" data-flex="center">
+                  <ul class="dropdown dropdown_center">
+                    <li tabindex="1">
+                      <span class="btn btn_invert btn_raised">dropdown center</span>
+                      <ul class="dropdown-options">
+                        <li class="dropdown-option">
+                          <a href>Label</a>
+                        </li>
+                        <li class="dropdown-option">
+                          <a href>Label</a>
+                        </li>
+                        <li class="dropdown_divider"></li>
+                        <li class="dropdown-option">
+                          <a href>Label</a>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
-                </li>
-              </ul>
-              <ul class="dropdown dropdown_left">
-                <li tabindex="1">
-                  <span class="btn btn_invert btn_raised">dropdown left</span>
-                  <ul class="dropdown-options">
-                    <li class="dropdown-option">
-                      <a href>Label</a>
-                    </li>
-                    <li class="dropdown-option">
-                      <a href>Label</a>
-                    </li>
-                    <li class="dropdown_divider"></li>
-                    <li class="dropdown-option">
-                      <a href class="btn btn_outlined">Label</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              <ul class="dropdown dropdown_full">
-                <li tabindex="1">
-                  <span class="btn btn_invert btn_raised">dropdown full</span>
-                  <ul class="dropdown-options">
-                    <li class="dropdown-option">
-                      <a href>Label</a>
-                    </li>
-                    <li class="dropdown-option">
-                      <a href>Label</a>
-                    </li>
-                    <li class="dropdown_divider"></li>
-                    <li class="dropdown-option">
-                      <a href class="btn btn_outlined">Label</a>
+                </div>
+                <div data-col="3" data-flex="center">
+                  <ul class="dropdown dropdown_right">
+                    <li tabindex="1">
+                      <span class="btn btn_invert btn_raised">dropdown right</span>
+                      <ul class="dropdown-options">
+                        <li class="dropdown-option">
+                          <a href>Label</a>
+                        </li>
+                        <li class="dropdown-option">
+                          <a href>Label</a>
+                        </li>
+                        <li class="dropdown_divider"></li>
+                        <li class="dropdown-option">
+                          <a href>Label</a>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
-                </li>
-              </ul>
+                </div>
+                <div data-col="3" data-flex="center">
+                  <ul class="dropdown dropdown_left">
+                    <li tabindex="1">
+                      <span class="btn btn_invert btn_raised">dropdown left</span>
+                      <ul class="dropdown-options">
+                        <li class="dropdown-option">
+                          <a href>Label</a>
+                        </li>
+                        <li class="dropdown-option">
+                          <a href>Label</a>
+                        </li>
+                        <li class="dropdown_divider"></li>
+                        <li class="dropdown-option">
+                          <a href>Label</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div data-col="3" data-flex="center">
+                  <ul class="dropdown dropdown_full">
+                    <li tabindex="1">
+                      <span class="btn btn_invert btn_raised">dropdown full</span>
+                      <ul class="dropdown-options">
+                        <li class="dropdown-option">
+                          <a href>Label</a>
+                        </li>
+                        <li class="dropdown-option">
+                          <a href>Label</a>
+                        </li>
+                        <li class="dropdown_divider"></li>
+                        <li class="dropdown-option">
+                          <a href>Label</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
+            <pre><code class="html">
+<ul class="dropdown dropdown_full">
+  <li tabindex="1">
+    <span class="btn btn_invert btn_raised">dropdown full</span>
+    <ul class="dropdown-options">
+      <li class="dropdown-option">
+        <a href>Label</a>
+      </li>
+      <li class="dropdown-option">
+        <a href>Label</a>
+      </li>
+      <li class="dropdown_divider"></li>
+      <li class="dropdown-option">
+        <a href>Label</a>
+      </li>
+    </ul>
+  </li>
+</ul></code></pre>
+            <table class="table">
+              <tbody>
+              <tr>
+                <td><strong>behavior modifier</strong></td>
+                <td>
+                  <span class="code" v-for="behavior in macros.dropdown.behaviorModifiers">{{ '.' + behavior}}</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </section>
+
           <div class="bumper"></div>
+
           <section>
-            <h3 class="kilo">Well</h3>
-            <div class="well well_small">
-              <placeholder2line></placeholder2line>
-            </div>
+            <h3 id="xui-well" class="kilo">Well</h3>
             <div class="well">
-              <placeholder2line></placeholder2line>
+              <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen Reitstock,
+                mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>
             </div>
-            <div class="well well_big">
-              <placeholder2line></placeholder2line>
-            </div>
-            <div class="well well_outlined">
-              <placeholder2line></placeholder2line>
-            </div>
+            <pre><code class="html">
+<div class="well">
+  ...
+</div></code></pre>
+            <table class="table">
+              <tbody>
+              <tr>
+                <td><strong>size modifier</strong></td>
+                <td>
+                  <span class="code" v-for="size in macros.well.sizeModifiers">{{ '.' + size}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>style modifier</strong></td>
+                <td>
+                  <span class="code" v-for="style in macros.well.styleModifiers">{{ '.' + style}}</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </section>
           <div class="bumper"></div>
           <h2 class="mega">Partials</h2>
