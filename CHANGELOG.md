@@ -19,6 +19,7 @@
 - removed `.pill` styles - use `.tag` instead
 - prefixed all `.padding` modifier classes with `.padding_`
 - renamed `.drawer-toggle` to `.drawer-btn`
+- removed `.select` - use `.dropdown` instead
 
 ### removed
 - removed `.input_search`
