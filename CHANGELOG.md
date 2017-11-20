@@ -18,6 +18,7 @@
 - removed `.form-group`
 - removed `.pill` styles - use `.tag` instead
 - prefixed all `.padding` modifier classes with `.padding_`
+- renamed `.drawer-toggle` to `.drawer-btn`
 
 ### removed
 - removed `.input_search`

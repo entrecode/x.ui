@@ -509,6 +509,19 @@ $well-radius: 4 !default;
 /// @param {boolean} $well-outlined - sets border-width for .alert_outlined
 $well-outlined: 2 !default;
 
+
+/// drawer button
+/// ------------------------------------------------------
+
+/// @param {number} $drawer-btn-width [16] - width of hamburger menu
+$drawer-btn-width: 16;
+
+/// @param {number} $drawer-btn-height [2] - height of hamburger menu bars
+$drawer-btn-height: 2;
+
+/// @param {number} $drawer-btn-spacing [4] - spacing of hamburger menu bars
+$drawer-btn-spacing: 4;
+
 /// menu / sub-menu
 /// ------------------------------------------------------
 $sub-menu-radius: 2;
