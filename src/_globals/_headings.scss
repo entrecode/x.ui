@@ -25,7 +25,7 @@ h1,
 .h1,
 .giga {
   @include get-font-size(h1);
-  margin-bottom: $vertical-rhythm * 2;
+  margin-bottom: round($vertical-rhythm * 2);
 }
 
 h2,
@@ -51,11 +51,11 @@ h5,
 .h5,
 .kilo {
   @include get-font-size(h5);
-  margin-bottom: $vertical-rhythm;
+  margin-bottom: round($vertical-rhythm / 2);
 }
 
 h6,
 .h6 {
   @include get-font-size(h6);
-  margin-bottom: $vertical-rhythm;
+  margin-bottom: round($vertical-rhythm / 2);
 }
