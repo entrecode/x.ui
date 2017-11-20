@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
           styleModifiers:  ['tag_outlined', 'tag_round']
         },
         dropdown: {
-          behaviorModifiers: ['dropdown_center', 'dropdown_right', 'dropdown_right', 'dropdown_full' ]
+          behaviorModifiers: ['dropdown_center', 'dropdown_right', 'dropdown_right', 'dropdown_full', 'dropdown_above' ]
         },
         well:    {
           sizeModifiers:  ['well_small', 'well_big'],

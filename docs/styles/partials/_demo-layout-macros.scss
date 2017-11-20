@@ -1,0 +1,7 @@
+$demo-macro: rgba(getColor(link), .2);
+
+.demo-layout-macros {
+  background-color: $demo-macro;
+  margin: 0 0 rem($base-padding) 0;
+  overflow: hidden;
+}
