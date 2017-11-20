@@ -39,7 +39,8 @@
 - added `get-font-size` mixin 
 - added `.input-group` styles
 - added `.padding-top`, `.padding-bottom`, `.padding-left` and `.padding-right` 
-- added image helper `.crop-1-1`, `.crop-4-3`, `.crop-16-9` 
+- added image helper `.crop-1-1`, `.crop-4-3`, `.crop-16-9`
+- added `.table_small`, `.table_big` and `.table_bordered` 
 
 ### changed
 - optimized `.bubble` styles and comments
