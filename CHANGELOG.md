@@ -36,7 +36,7 @@
 - added `#{$pfx}nav_inline` and `#{$pfx}nav_stacked`
 - added `%link-styles` placeholder in config
 - added `%paragraph-styles` placeholder in config
-- added `_type_modifier.scss` in `globals`
+- added `_type_setting.scss` in `helper`
 - added `_type_alignment.scss` in `helper`
 - added `_type_colors.scss` in `helper`
 - added .btn inline-element styles for `.tag`, `.ec-icon` and `.bubble` 
