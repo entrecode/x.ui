@@ -1,59 +1,67 @@
-.toolbar {
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group partials
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @param {em} $toolbar-title-size [20] - font-size of .toolbar__title
+/// @param {px} $toolbar-title-img-height [32] - height of .toolbar__title > img
+/// @param {px} $toolbar-min-height [64] - min-height
+
+.#{$pfx}toolbar {
   @include flexbox;
   @include justify-content(space-between);
   @include align-items(center);
-  padding: rem(8) rem(16);
-  min-height: rem(64);
+  padding: rem($base-padding / 2) rem($base-padding);
+  min-height: rem($toolbar-min-height);
   position: relative;
 
-  > .drawer-toogle {
+  > .drawer-btn {
+    margin: 0;
+
     &:first-child {
       margin-right: rem(16);
-      margin-left: 0;
     }
 
     &:last-child {
       margin-left: rem(16);
-      margin-right: 0;
     }
   }
 
-  .toolbar__title {
+  .#{$pfx}toolbar__title {
     @include flex-grow(1);
 
     @include headings {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      @include transform(translateY(-50%) translateX(-50%));
       margin: 0;
-      font-size: em(18);
+      font-size: em($toolbar-title-size);
+      line-height: 1em;
     }
 
     img {
-      height: rem(32);
+      height: rem($toolbar-title-img-height);
       width: auto;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      @include transform(translateY(-50%) translateX(-50%));
+    }
+
+    &.#{$pfx}toolbar__title_center {
+      @include headings {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include transform(translateY(-50%) translateX(-50%));
+        margin: 0;
+      }
+
+      img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include transform(translateY(-50%) translateX(-50%));
+      }
     }
   }
 
-  .menu {
-    @include flex-grow(0);
-    padding: rem(8) 0;
-
-    .menu__items {
-      @include align-items(center);
-    }
-
-    .#{$pfx}btn {
-      margin: 0;
-    }
-  }
-
-  .nav {
+  .#{$pfx}nav {
     @include flex-grow(0);
     padding: 0;
     margin: 0;
@@ -64,10 +72,6 @@
 
     &:last-child {
       margin-left: rem(16);
-    }
-
-    .nav__items {
-
     }
 
     .#{$pfx}btn {
