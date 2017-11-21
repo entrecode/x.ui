@@ -31,7 +31,6 @@
   border-style: solid;
   border-color: getColor(border);
   background-color: getColor(background);
-  color: getColor(text);
   width: 100%;
   margin: 0;
   text-align: left;
@@ -120,6 +119,25 @@
     transition: background-color 5000s ease-in-out 0s;
     color: getColor(text);
     -webkit-text-fill-color: getColor(text);
+  }
+
+  &.#{$pfx}input_invert {
+    background-color: transparent;
+    border-color: getColor(text, invert);
+    color: getColor(text, invert);
+
+    @include placeholder {
+      color: rgba(getColor(text, invert), .6);
+    }
+
+    &:focus,
+    &:hover {
+      border-color: getColor(text, invert);
+
+      @include placeholder {
+        color: getColor(text, invert);
+      }
+    }
   }
 }
 
