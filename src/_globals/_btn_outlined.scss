@@ -37,11 +37,11 @@
     border-color: getColor(link);
     @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height, $btn-outline, $padding-ratio: $btn-padding-ratio);
 
-    &.small {
+    &.#{$pfx}btn_small {
       @include macro-metrics($btn-small-font-size, $btn-small-line-height, $btn-small-min-height, $btn-outline, $padding-ratio: $btn-padding-ratio);
     }
 
-    &.big {
+    &.#{$pfx}btn_big {
       @include macro-metrics($btn-big-font-size, $btn-big-line-height, $btn-big-min-height, $btn-outline, $padding-ratio: $btn-padding-ratio);
     }
 
