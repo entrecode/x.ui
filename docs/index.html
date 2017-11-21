@@ -50,7 +50,7 @@
             <a href="#xui-headings" class="btn btn_clear btn_small">headings</a>
           </li>
           <li class="nav__item">
-            <a href="#xui-type" class="btn btn_clear btn_small">typeface</a>
+            <a href="#xui-type" class="btn btn_clear btn_small">type</a>
           </li>
           <li class="nav__item">
             <a href="#xui-list" class="btn btn_clear btn_small">list</a>
@@ -103,6 +103,9 @@
           <li class="nav__item">
             <a href="#xui-partials" class="btn btn_clear">partials</a>
           </li>
+          <li class="nav__item">
+            <a href="#xui-nav" class="btn btn_clear btn_small">nav</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -132,7 +135,7 @@
           <div class="spacing"></div>
 
           <section>
-            <h3 class="kilo" id="xui-btn">button <span class="tag tag_small">_btn.scss</span></h3>
+            <h3 class="kilo" id="xui-btn">button <span class="tag tag_small">globals/_btn.scss</span></h3>
             <p>there are three basic button styles which should be used to to emphasis or weaken functions. Throughout
               <strong>x.ui</strong> there are three steps of importance. The default style always reached with th
               default class <span class="code">btn</span>, the minor style by an additional modifier class <span
@@ -186,7 +189,7 @@
           <div class="bumper"></div>
 
           <section>
-            <h3 id="xui-headings" class="kilo">headings <span class="tag tag_small">_headings.scss</span></h3>
+            <h3 id="xui-headings" class="kilo">headings <span class="tag tag_small">globals/_headings.scss</span></h3>
             <div class="demo-heading-metrics demo-heading-metrics_h1"><h1>Heading 1</h1></div>
             <div class="demo-heading-metrics"><h2>Heading 2</h2></div>
             <div class="demo-heading-metrics"><h3>Heading 3</h3></div>
@@ -206,7 +209,7 @@
           <div class="spacing"></div>
 
           <section>
-            <h3 class="kilo" id="xui-type">type <span class="tag tag_small">_type.scss</span></h3>
+            <h3 class="kilo" id="xui-type">type <span class="tag tag_small">globals/_type.scss</span></h3>
             <div class="demo-paragraph-metrics">
               <p class="lead">Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß
                 dies
@@ -230,7 +233,7 @@
 
           <div class="spacing"></div>
 
-          <h4 class="h6">type alignment helper</h4>
+          <h4 class="h6">type alignment helper <span class="tag tag_small">helper/_text-alignment.scss</span></h4>
           <div data-flex="grid">
             <div data-col="4sm">
               <p class="text-left"><span class="code">text-left</span><br>
@@ -250,7 +253,7 @@
           </div>
 
           <div class="spacing"></div>
-          <h4 class="h6">type helper</h4>
+          <h4 class="h6">type setting helper <span class="tag tag_small">helper/_type-setting.scss</span></h4>
           <table class="table">
             <tbody>
             <tr>
@@ -277,7 +280,18 @@
 
           <div class="spacing"></div>
 
-          <h3 class="kilo" id="xui-list">lists <span class="tag tag_small">_list.scss</span></h3>
+          <h3 class="kilo">type color helper <span class="tag tag_small">helper/_text-color.scss</span></h3>
+          <div class="well well_small">
+            <div data-flex="grid">
+              <div v-for="mod in globals.type.colorModifiers" data-col="2sm">
+                <strong :class="mod">{{mod}}</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="bumper"></div>
+
+          <h3 class="kilo" id="xui-list">lists <span class="tag tag_small">globals/_list.scss</span></h3>
           <div data-flex="grid">
             <div data-col="6sm" data-flex="center-items">
               <ul class="unstyled">
@@ -312,7 +326,7 @@
           <div class="spacing"></div>
 
           <section>
-            <h3 class="kilo" id="xui-table">table <span class="tag tag_small">_table.scss</span> <span
+            <h3 class="kilo" id="xui-table">table <span class="tag tag_small">globals/_table.scss</span> <span
                 class="tag tag_small tag_error">in progress</span></h3>
             <table class="table">
               <thead>
@@ -354,8 +368,8 @@
 
           <div class="bumper"></div>
 
-          <h3 id="xui-img" class="kilo">image <span class="tag tag_small">_img.scss</span></h3>
           <section>
+            <h3 id="xui-img" class="kilo">image <span class="tag tag_small">globals/_img.scss</span></h3>
             <div data-flex="grid">
               <div data-col="6sm">
                 <pre><code class="html">
@@ -370,14 +384,48 @@
                 <img src="./assets/placeholder.jpg" class="img_full">
               </div>
             </div>
+
+            <div class="spacing"></div>
+            <h4 class="h6">Image helper <span class="tag tag_small">_crop.scss</span><a
+                href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
+                class="tag tag_error tag_small">object-fit</a></h4>
+            <div data-flex="grid">
+              <div data-col="4sm">
+                <pre><code class="html">
+<div class="crop-1-1">
+  <img src="..">
+</div></code></pre>
+                <div class="crop-1-1">
+                  <img src="./assets/placeholder.jpg">
+                </div>
+              </div>
+              <div data-col="4sm">
+                <pre><code class="html">
+<div class="crop-4-3">
+  <img src="..">
+</div></code></pre>
+                <div class="crop-4-3">
+                  <img src="./assets/placeholder.jpg">
+                </div>
+              </div>
+              <div data-col="4sm">
+                <pre><code class="html">
+<div class="crop-16-9">
+  <img src="..">
+</div></code></pre>
+                <div class="crop-16-9">
+                  <img src="./assets/placeholder.jpg">
+                </div>
+              </div>
+            </div>
           </section>
 
           <div class="bumper"></div>
 
           <section>
-            <h3 id="xui-form" class="kilo">forms <span class="tag tag_small">_forms.scss</span></h3>
+            <h3 id="xui-form" class="kilo">form</h3>
             <div class="spacing"></div>
-            <h4 class="h6">input <span class="tag tag_small">_input.scss</span></h4>
+            <h4 class="h6">input <span class="tag tag_small">globals/_input.scss</span></h4>
             <div data-flex="grid">
               <div data-col="6">
                 <input type="text" class="input" placeholder="Placeholder...">
@@ -435,7 +483,8 @@
           <div class="spacing"></div>
 
           <section>
-            <h3 id="xui-form-group" class="kilo">form-group <span class="tag tag_small">_form-group.scss</span></h3>
+            <h3 id="xui-form-group" class="kilo">form-group <span class="tag tag_small">macros/_form-group.scss</span>
+            </h3>
             <div data-flex="grid">
               <div data-col="6">
                 <div class="form-group">
@@ -471,7 +520,8 @@
           <div class="spacing"></div>
 
           <section>
-            <h3 id="xui-input-group" class="kilo">input-group <span class="tag tag_small">_input-group.scss</span> <span
+            <h3 id="xui-input-group" class="kilo">input-group <span
+                class="tag tag_small">macros/_input-group.scss</span> <span
                 class="tag tag_small tag_error">in progress</span></h3>
             <div data-flex="grid">
               <div data-col="6sm">
@@ -502,7 +552,7 @@
           <div class="bumper"></div>
 
           <section>
-            <h3 class="kilo" id="xui-alert">alert <span class="tag tag_small">_alert.scss</span></h3>
+            <h3 class="kilo" id="xui-alert">alert <span class="tag tag_small">macros/_alert.scss</span></h3>
             <div class="alert">
               <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen Reitstock,
                 mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>
@@ -547,7 +597,7 @@
           <div class="bumper"></div>
 
           <section>
-            <h3 id="xui-bubble" class="kilo">bubble <span class="tag tag_small">_bubble.scss</span></h3>
+            <h3 id="xui-bubble" class="kilo">bubble <span class="tag tag_small">macros/_bubble.scss</span></h3>
             <div class="well">
               <div data-flex="grid">
                 <div data-col="4" data-flex="center-items center">
@@ -601,7 +651,7 @@
           <div class="bumper"></div>
 
           <section>
-            <h3 id="xui-tag" class="kilo">tag <span class="tag tag_small">_tag.scss</span></h3>
+            <h3 id="xui-tag" class="kilo">tag <span class="tag tag_small">macros/_tag.scss</span></h3>
             <div class="well">
               <div data-flex="grid">
                 <div data-col="4" data-flex="center-items center">
@@ -654,7 +704,7 @@
           <div class="bumper"></div>
 
           <section>
-            <h3 id="xui-tooltip" class="kilo">tooltip <span class="tag tag_small">_tooltip.scss</span> <span
+            <h3 id="xui-tooltip" class="kilo">tooltip <span class="tag tag_small">macros/_tooltip.scss</span> <span
                 class="tag tag_small tag_super">css only</span> <span class="tag tag_small tag_error">in progress</span>
             </h3>
             <div class="alert alert_small">the tooltip only works with single line tooltips</div>
@@ -689,7 +739,7 @@
           <div class="bumper"></div>
 
           <section>
-            <h3 id="xui-dropdown" class="kilo">dropdown <span class="tag tag_small">_dropdown.scss</span> <span
+            <h3 id="xui-dropdown" class="kilo">dropdown <span class="tag tag_small">macros/_dropdown.scss</span> <span
                 class="tag tag_small tag_super">css only</span> <span class="tag tag_small tag_info">in progress</span>
             </h3>
             <div class="well">
@@ -884,7 +934,9 @@
           <div class="bumper"></div>
 
           <section>
-            <h3 id="xui-well" class="kilo">well</h3>
+            <h3 id="xui-well" class="kilo">well
+              <div class="tag tag_small">macros/_well.scss</div>
+            </h3>
             <div class="well">
               <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen Reitstock,
                 mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>
@@ -915,7 +967,7 @@
 
           <section>
             <h3 id="xui-layout-macros" class="kilo">layout macros</h3>
-            <h4 class="h6">bumper <span class="tag tag_small">_bumper.scss</span></h4>
+            <h4 class="h6">bumper <span class="tag tag_small">macros/_bumper.scss</span></h4>
             <div class="demo-layout-macros">
               <div class="bumper"></div>
             </div>
@@ -936,7 +988,7 @@
               </tbody>
             </table>
             <div class="spacing"></div>
-            <h4 class="h6">spacing <span class="tag tag_small">_spacing.scss</span></h4>
+            <h4 class="h6">spacing <span class="tag tag_small">macros/_spacing.scss</span></h4>
             <div class="demo-layout-macros">
               <div class="spacing"></div>
             </div>
@@ -953,89 +1005,166 @@
 
           </section>
           <div class="bumper"></div>
-          <h2 id="xui-partials" class="mega">partials <span class="tag tag_small">partials.scss</span></h2>
-          <h3 class="kilo">Nav</h3>
+          <h2 id="xui-partials" class="mega">partials <span class="tag tag_small">partials/partials.scss</span></h2>
+
           <section>
-            <nav class="nav">
-              <ul class="nav__items">
-                <li class="nav__item">
-                  <a href="" class="btn btn_clear">Nav Link</a>
-                </li>
-                <li class="nav__item">
-                  <a href="" class="btn btn_clear">Nav Link</a>
-                </li>
-                <li class="nav__divider">&nbsp;</li>
-                <li class="nav__item">
-                  <a href="" class="btn btn_clear">Nav Link</a>
-                </li>
-              </ul>
-            </nav>
-
-            <nav class="nav nav_stacked">
-              <ul class="nav__items">
-                <li class="nav__item">
-                  <a href="" class="btn btn_clear">Nav Link</a>
-                </li>
-                <li class="nav__item">
-                  <a href="" class="btn btn_clear">Nav Link</a>
-                </li>
-                <li class="nav__divider">&nbsp;</li>
-                <li class="nav__item">
-                  <a href="" class="btn btn_clear">Nav Link</a>
-                </li>
-              </ul>
-            </nav>
-          </section>
-
-          <div class="bumper"></div>
-
-          <h2 class="mega">helper</h2>
-          <section>
-            <h3 class="kilo">typeface <span class="tag tag_small">_text-color.scss</span></h3>
-            <div class="well well_small">
-              <div data-flex="grid">
-                <div v-for="mod in globals.type.colorModifiers" data-col="2sm">
-                  <strong :class="mod">{{mod}}</strong>
-                </div>
-              </div>
+            <h3 id="xui-nav" class="kilo">nav
+              <div class="tag tag_small">partials/_nav.scss</div>
+            </h3>
+            <div class="well">
+              <nav class="nav">
+                <ul class="nav__items">
+                  <li class="nav__item">
+                    <a href="" class="btn btn_clear">Nav Link</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="" class="btn btn_clear">Nav Link</a>
+                  </li>
+                  <li class="nav__divider">&nbsp;</li>
+                  <li class="nav__item">
+                    <a href="" class="btn btn_clear">Nav Link</a>
+                  </li>
+                </ul>
+              </nav>
             </div>
-          </section>
-          <section>
+            <pre><code class="html">
+<nav class="nav">
+  <ul class="nav__items">
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+    <li class="nav__divider">&nbsp;</li>
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+  </ul>
+</nav></code></pre>
+
             <div class="spacing"></div>
-            <h3 class="kilo">Image helper <span class="tag tag_small">_crop.scss</span><a
-                href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
-                class="tag tag_error tag_small">object-fit</a></h3>
-            <div data-flex="grid">
-              <div data-col="4sm">
-                <pre><code class="html">
-<div class="crop-1-1">
-  <img src="..">
-</div></code></pre>
-                <div class="crop-1-1">
-                  <img src="./assets/placeholder.jpg">
-                </div>
-              </div>
-              <div data-col="4sm">
-                <pre><code class="html">
-<div class="crop-4-3">
-  <img src="..">
-</div></code></pre>
-                <div class="crop-4-3">
-                  <img src="./assets/placeholder.jpg">
-                </div>
-              </div>
-              <div data-col="4sm">
-                <pre><code class="html">
-<div class="crop-16-9">
-  <img src="..">
-</div></code></pre>
-                <div class="crop-16-9">
-                  <img src="./assets/placeholder.jpg">
-                </div>
-              </div>
+
+            <div class="well">
+              <nav class="nav nav_stacked">
+                <ul class="nav__items">
+                  <li class="nav__item">
+                    <a href="" class="btn btn_clear">Nav Link</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="" class="btn btn_clear">Nav Link</a>
+                  </li>
+                  <li class="nav__divider">&nbsp;</li>
+                  <li class="nav__item">
+                    <a href="" class="btn btn_clear">Nav Link</a>
+                  </li>
+                </ul>
+              </nav>
             </div>
+            <pre><code class="html">
+<nav class="nav nav_stacked">
+  <ul class="nav__items">
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+    <li class="nav__divider">&nbsp;</li>
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+  </ul>
+</nav></code></pre>
           </section>
+
           <div class="bumper"></div>
+
+          <section>
+            <h3 id="xui-toolbar" class="kilo">toolbar <span class="tag tag_small">partials/_toolbar.scss</span> <a
+                href="https://caniuse.com/#search=flex" target="_blank" rel="noopener" class="tag tag_small tag_error">flex</a>
+            </h3>
+
+            <div class="toolbar theme-invert">
+              <div class="toolbar__title">
+                <h2>Title</h2>
+              </div>
+              <nav class="nav">
+                <ul class="nav__items">
+                  <li class="nav__item">
+                    <a href="" class="btn btn_clear btn_invert">Menu</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="" class="drawer-btn drawer-btn_invert"></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="spacing"></div>
+
+            <div class="toolbar theme-invert">
+              <div class="toolbar__title toolbar__title_center">
+                <h2>Title</h2>
+              </div>
+              <nav class="nav">
+                <ul class="nav__items">
+                  <li class="nav__item">
+                    <a href="" class="btn btn_clear btn_invert">Menu</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="" class="drawer-btn drawer-btn_invert"></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="spacing"></div>
+
+            <div class="toolbar theme-invert">
+              <a href="" class="drawer-btn drawer-btn_invert"></a>
+              <div class="toolbar__title">
+                <h2>Title</h2>
+              </div>
+              <div class="input-group">
+                <input type="text" class="input" placeholder="Search...">
+                <span class="ec-icon find input-group__icon"></span>
+              </div>
+              <nav class="nav">
+                <ul class="nav__items">
+                  <li class="nav__item">
+                    <a href="" class="btn btn_clear btn_invert">Menu</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="" class="btn btn_super">Profil</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="spacing"></div>
+
+            <div class="toolbar theme-invert">
+              <a href="" class="drawer-btn drawer-btn_invert"></a>
+              <div class="toolbar__title toolbar__title_center">
+                <h2>Title</h2>
+              </div>
+              <nav class="nav">
+                <ul class="nav__items">
+                  <li class="nav__item">
+                    <a href="" class="btn btn_clear btn_invert">Menu</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="" class="btn btn_super">Profil</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+          </section>
+
+          <div class="bumper"></div>
+
           <section class="partial">
             <header class="partial-header">
               <h2 class="mega">Icons</h2>
