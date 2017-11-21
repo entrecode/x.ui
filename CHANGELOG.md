@@ -20,6 +20,8 @@
 - prefixed all `.padding` modifier classes with `.padding_`
 - renamed `.drawer-toggle` to `.drawer-btn`
 - removed `.select` - use `.dropdown` instead
+- removed `.menubar` - use `.toolbar` instead
+- removed `.navigation-drawer`
 
 ### removed
 - removed `.input_search`
@@ -53,6 +55,7 @@
 - refactored `.padding` styles and comments
 - refactored `.well` styles and comments
 - refactored `.alert` styles and comments
+- changed `.page` to configurable `.#{$project-class}`
 
 ## 6.0.1 - 26.10.2017
 ### fixes

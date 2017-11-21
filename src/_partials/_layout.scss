@@ -1,0 +1,23 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group partial layout
+///
+/// @param {value} $project-class [page] - class name of main layout wrapper
+
+.#{$project-class} {
+  @include flexbox;
+  @include flex-direction(column);
+
+  .#{$project-class}-header {
+    @include flex-grow(0);
+  }
+
+  .#{$project-class}-body {
+    @include flex-grow(1);
+  }
+
+  .#{$project-class}-footer {
+    @include flex-grow(0);
+  }
+}

@@ -1,12 +1,17 @@
-//
+/// Project
+/// ------------------------------------------------------
+
+/// @param {value} $project-class [page] - class name of main layout wrapper
+/// @see _partials/_layout.scss
+$project-class: page;
+
 /// @font-face
 /// ------------------------------------------------------
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
 
-
 /// @param {value} $body-font
 /// @param {value} $headings-font
-$body-font: 'Roboto Mono ', sans-serif;
+$body-font: sans-serif;
 $headings-font: 'Roboto Mono', sans-serif;
 
 /// @param {number} $light - font-weight light value
@@ -522,6 +527,13 @@ $drawer-btn-height: 2;
 /// @param {number} $drawer-btn-spacing [4] - spacing of hamburger menu bars
 $drawer-btn-spacing: 4;
 
-/// menu / sub-menu
+
+/// toolbar
 /// ------------------------------------------------------
-$sub-menu-radius: 2;
+
+/// @param {em} $toolbar-title-size [20] - font-size of .toolbar__title
+/// @param {px} $toolbar-title-img-height [32] - height of .toolbar__title > img
+/// @param {px} $toolbar-min-height [64] - min-height
+$toolbar-title-size: 20;
+$toolbar-title-img-height: 32;
+$toolbar-min-height: 64;
