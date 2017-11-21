@@ -246,11 +246,19 @@ $btn-wide: 240px;
 $btn-small-wide: 160px;
 $btn-big-wide: 240px;
 
-/// @param {boolean} $btn-outline - sets border-width for btn_outlined
+/// @param {rem} $btn-outline - sets border-width for btn_outlined
 $btn-outline: 2 !default;
 
 /// param {color} $btn-raised-shadow [rgba(black, .1)] - color of drop shadow
 $btn-raised-shadow: rgba(black, .1) !default;
+
+///
+/// BUTTON GROUP
+/// ------------------------------------------------------
+
+/// @param {boolean} $btn-group-divider [true] - if btn-group items are divided by a thin border
+$btn-group-divider: true;
+
 
 ///
 /// DROPDOWN
