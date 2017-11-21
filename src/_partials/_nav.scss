@@ -1,9 +1,7 @@
-/// nav styles
 /// @author Bernhard Ruoff
 /// @since 7.0.0
+/// @access public
 /// @group partials
-///
-/// @see _config.scss
 ///
 /// @param {variable} $pfx [''] - global prefixing
 /// @param {boolean} $flex-support [true]
@@ -24,16 +22,15 @@ nav {
         @include align-items(center);
       }
 
-      //TODO fix not full height (li line-height bug)
       .#{$pfx}nav__divider {
         height: 100%;
         width: rem(1);
-        margin: 0 rem(8);
+        margin: 0 rem(4);
         display: block;
       }
 
       .#{$pfx}nav__item {
-        padding: rem(4);
+        padding: 0;
 
         .#{$pfx}btn {
           margin: 0;
@@ -64,6 +61,7 @@ nav {
       .#{$pfx}nav__divider {
         width: 100%;
         height: rem(1);
+        margin: rem(4) 0;
       }
 
       .#{$pfx}nav__items {
