@@ -22,6 +22,7 @@
 - removed `.select` - use `.dropdown` instead
 - removed `.menubar` - use `.toolbar` instead
 - removed `.navigation-drawer`
+- removed `_menu.scss`, `_menu-dropdown.scss` and `_menubar.scss`
 
 ### removed
 - removed `.input_search`
@@ -55,6 +56,7 @@
 - refactored `.padding` styles and comments
 - refactored `.well` styles and comments
 - refactored `.alert` styles and comments
+- renamed `_page.scss` to `_layout.scss`
 - changed `.page` to configurable `.#{$project-class}`
 
 ## 6.0.1 - 26.10.2017
