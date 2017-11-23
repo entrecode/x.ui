@@ -1,0 +1,23 @@
+.section {
+  @include flexbox;
+  @include flex-wrap(wrap);
+  width: 100%;
+
+  .section-header {
+    @include flex-grow(0);
+    @include align-self(flex-start);
+    width: 100%;
+  }
+
+  .section-body {
+    @include flex-grow(1);
+    @include flex-basis(75%);
+    height: 100%;
+  }
+
+  .section-footer {
+    @include flex-grow(0);
+    @include align-self(flex-end);
+    width: 100%
+  }
+}

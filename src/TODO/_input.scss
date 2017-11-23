@@ -1,0 +1,44 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group core
+
+select {
+
+  &[multiple] {
+    height: auto;
+  }
+
+  option {
+    padding: 0 rem(8);
+  }
+}
+
+/// Keep the original size
+input[type='checkbox'],
+input[type='file'],
+input[type='image'],
+input[type='radio'] {
+  height: auto;
+  width: auto;
+  display: inline-block;
+}
+
+/// Checkbox & radio
+input[type='checkbox'],
+input[type='radio'] {
+  line-height: normal;
+  padding: 0;
+  vertical-align: middle;
+
+  & + small {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+/// Textarea
+textarea {
+  height: auto;
+  resize: vertical;
+}

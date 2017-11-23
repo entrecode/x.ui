@@ -24,12 +24,17 @@
   font-weight: $alert-weight;
   @include set-colors(getColor(background, lightest));
 
+  /// additional styles via config
+  @extend %alert-style !optional;
+
   &.#{$pfx}alert_small {
     padding: rem($alert-padding / 2) rem($alert-padding / 2 * $alert-padding-ratio);
+    font-size: 87.5%;
   }
 
   &.#{$pfx}alert_big {
     padding: rem($alert-padding * 2) rem($alert-padding * 2 * $alert-padding-ratio);
+    font-size: 112.5%;
   }
 
   /// @param {value} $prefix ['alert_']

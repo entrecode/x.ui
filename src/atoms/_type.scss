@@ -1,12 +1,22 @@
 /// @author Bernhard Ruoff
 /// @since 7.0.0
-/// @access public
-/// @group type styles
+/// @group core
+///
+/// @param {value} $body-font
+/// @param {value} $headings-font
+/// @param {number} $base-font-size [16]
+/// @param {number} $base-line-height [1.4]
 ///
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
-/// @param {number} $paragraph-lead-size [1.125] - font-size of `.lead`
-/// @param {value} $paragraph-lead-weight [$light]
 /// @param {number} $inline-small-size [.875] - font-size of `<small>`
+/// @param {value} $paragraph-lead-weight [$light]
+
+body {
+  font-family: $body-font;
+  color: getColor(text);
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
 
 ///
 /// Link styles
@@ -38,6 +48,14 @@ p {
   margin: 0;
   margin-bottom: $vertical-rhythm;
 
+  strong,
+  small {
+    vertical-align: baseline;
+  }
+
+  @extend %paragraph-styles !optional;
+
+
   &.small {
     vertical-align: baseline;
     font-size: ($inline-small-size*1em);
@@ -47,13 +65,6 @@ p {
     @include get-font-size(lead);
     font-weight: $paragraph-lead-weight;
   }
-
-  strong,
-  small {
-    vertical-align: baseline;
-  }
-
-  @extend %paragraph-styles !optional;
 }
 
 //

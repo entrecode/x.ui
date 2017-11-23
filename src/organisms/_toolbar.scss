@@ -13,9 +13,12 @@
   @include flexbox;
   @include justify-content(space-between);
   @include align-items(center);
-  padding: rem($base-padding / 2) rem($base-padding);
+  padding: rem($toolbar-padding / 2) rem($toolbar-padding);
   min-height: rem($toolbar-min-height);
   position: relative;
+
+  /// additional styles via config
+  @extend %toolbar-style !optional;
 
   > .drawer-btn {
     margin: 0;
@@ -49,6 +52,7 @@
         left: 50%;
         top: 50%;
         @include transform(translateY(-50%) translateX(-50%));
+        -webkit-font-smoothing: antialiased;
         margin: 0;
       }
 
@@ -86,9 +90,23 @@
     }
   }
 
-  &.dense {
-    padding: 0 rem(16);
-    font-size: .875em;
-    min-height: rem(48);
+  &.#{$pfx}toolbar_small {
+    padding: rem($toolbar-padding / 4) rem($toolbar-padding);
+    font-size: 87.5%;
+    min-height: rem($toolbar-small-min-height);
+
+    /// additional styles via config
+    @extend %toolbar-small-style !optional;
+
+    .#{$pfx}toolbar__title {
+
+      @include headings {
+        font-size: em($toolbar-small-title-size);
+      }
+
+      img {
+        height: rem($toolbar-small-title-img-height);
+      }
+    }
   }
 }

@@ -1,11 +1,11 @@
 ## 7.0.0
 ### breaking changes
+- new file-structure
 - prefixed all `.tag` modifier classes with `.tag_`
 - prefixed all `.btn` modifier classes with `.#{$pfx}btn_`
 - added a new variable for global prefixing `$pfx`
-- added `.img_` prefix for modifier classes
+- added `.img_` prefix for `img` modifier classes
 - added `.#{$pfx}input_` prefix for modifier classes
-- moved `.nav` from global to partials
 - removed `.nav.inline`
 - changed `.nav` to `.#{$pfx}nav`
 - removed `.big` modifier for `<p>`
@@ -36,9 +36,9 @@
 - added `#{$pfx}nav_inline` and `#{$pfx}nav_stacked`
 - added `%link-styles` placeholder in config
 - added `%paragraph-styles` placeholder in config
-- added `_type_setting.scss` in `helper`
-- added `_type_alignment.scss` in `helper`
-- added `_type_colors.scss` in `helper`
+- added `_type_setting.scss`
+- added `_type_alignment.scss`
+- added `_type_colors.scss`
 - added .btn inline-element styles for `.tag`, `.ec-icon` and `.bubble` 
 - added headings inline-element styles for `.tag` and `.bubble` 
 - added `get-font-size` mixin 

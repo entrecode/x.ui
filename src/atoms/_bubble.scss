@@ -36,16 +36,25 @@
   @include border-radius(rem($bubble-radius));
   @include set-colors(getColor(background, lightest));
 
+  /// additional styles via config
+  @extend %bubble-style !optional;
+
   &.#{$pfx}bubble_small {
     @include macro-metrics($bubble-small-font-size, $bubble-small-line-height, $bubble-small-min-height, $padding-ratio: $bubble-padding-ratio);
     @include border-radius(rem($bubble-small-radius));
     font-weight: $bubble-small-weight;
+
+    /// additional styles via config
+    @extend %bubble-small-style !optional;
   }
 
   &.#{$pfx}bubble_big {
     @include macro-metrics($bubble-big-font-size, $bubble-big-line-height, $bubble-big-min-height, $padding-ratio: $bubble-padding-ratio);
     @include border-radius(rem($bubble-big-radius));
     font-weight: $bubble-big-weight;
+
+    /// additional styles via config
+    @extend %bubble-big-style !optional;
   }
 
   /// @param {value} $prefix ['bubble_']

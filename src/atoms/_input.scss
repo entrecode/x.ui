@@ -39,7 +39,7 @@
   @include macro-metrics($input-font-size, $input-line-height, $input-min-height, $input-border);
 
   /// additional styles via config
-  @extend %btn-style !optional;
+  @extend %input-style !optional;
 
   @include placeholder {
     color: getColor(text, light);
@@ -92,7 +92,7 @@
     @include macro-metrics($input-small-font-size, $input-small-line-height, $input-small-min-height, $input-border);
 
     /// additional styles via config
-    @extend %btn-small-style !optional;
+    @extend %input-small-style !optional;
 
     @at-root select.#{$pfx}input_small {
       height: em($input-small-min-height, $input-small-font-size);
@@ -104,7 +104,7 @@
     @include macro-metrics($input-big-font-size, $input-big-line-height, $input-big-min-height, $input-border);
 
     /// additional styles via config
-    @extend %btn-big-style !optional;
+    @extend %input-big-style !optional;
 
     @at-root select.#{$pfx}input_small {
       height: em($input-big-min-height, $input-big-font-size);
@@ -154,51 +154,4 @@
       @include border-radius(rem($input-big-min-height / 2));
     }
   }
-}
-
-select {
-  height: rem(32);
-  padding: 0;
-
-  &[multiple] {
-    height: auto;
-  }
-
-  option {
-    padding: 0 rem(8);
-  }
-}
-
-/// Keep the original size
-input[type='checkbox'],
-input[type='file'],
-input[type='image'],
-input[type='radio'] {
-  height: auto;
-  width: auto;
-  display: inline-block;
-}
-
-/// Checkbox & radio
-input[type='checkbox'],
-input[type='radio'] {
-  line-height: normal;
-  padding: 0;
-  vertical-align: middle;
-
-  &:hover,
-  &:focus {
-    //@include box-shadow(0 0 0 2px getColor(state, hover));
-  }
-
-  & + small {
-    display: inline-block;
-    cursor: pointer;
-  }
-}
-
-/// Textarea
-textarea {
-  height: auto;
-  resize: vertical;
 }

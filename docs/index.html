@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="x.ui.css">
   <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-3.0.0.min.css"/>
   <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/agate.min.css">-->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/dracula.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/dracula.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var codes = document.getElementsByTagName('code');
@@ -26,101 +26,122 @@
   <script src="app.js"></script>
 </head>
 <body class="page">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px">
+  <defs>
+    <linearGradient id="logoGradient">
+      <stop offset="0%" stop-color="#2fce6f"/>
+      <stop offset="100%" stop-color="#9de263"/>
+    </linearGradient>
+  </defs>
+</svg>
+
 <div class="page-body">
   <div class="kiosk kiosk_fixed" id="app">
     <aside class="kiosk-aside theme_dark" data-col="2">
       <div class="padding padding_big">
         <img src="./assets/xui-logo.svg" class="img_full">
       </div>
-      <div class="navbar">
-        <nav class="nav nav_stacked">
-          <ul class="nav__items">
-            <li class="nav__item">
-              <a href="#xui-globals" class="btn btn_clear">getting started</a>
-            </li>
-            <li>
-              <div class="bumper bumper_small"></div>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-globals" class="btn btn_clear">globals</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-btn" class="btn btn_clear btn_small">button</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-headings" class="btn btn_clear btn_small">headings</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-type" class="btn btn_clear btn_small">type</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-list" class="btn btn_clear btn_small">list</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-table" class="btn btn_clear btn_small">table</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-img" class="btn btn_clear btn_small">image</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-form" class="btn btn_clear btn_small">form</a>
-            </li>
-            <li>
-              <div class="bumper bumper_small"></div>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-macros" class="btn btn_clear">macros</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-btn-group" class="btn btn_clear btn_small">button-group</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-form-group" class="btn btn_clear btn_small">form-group</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-input-group" class="btn btn_clear btn_small">input-group</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-alert" class="btn btn_clear btn_small">alert</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-bubble" class="btn btn_clear btn_small">bubble</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-tag" class="btn btn_clear btn_small">tag</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-tooltip" class="btn btn_clear btn_small">tooltip</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-dropdown" class="btn btn_clear btn_small">dropdown</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-well" class="btn btn_clear btn_small">well</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-layout-macros" class="btn btn_clear btn_small">layout macros</a>
-            </li>
-            <li>
-              <div class="bumper bumper_small"></div>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-partials" class="btn btn_clear">partials</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-nav" class="btn btn_clear btn_small">nav</a>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-toolbar" class="btn btn_clear btn_small">toolbar</a>
-            </li>
-            <li>
-              <div class="bumper bumper_small"></div>
-            </li>
-            <li class="nav__item">
-              <a href="#xui-ec-icon" class="btn btn_clear">ec.icons</a>
-            </li>
-          </ul>
-        </nav>
+      <div class="padding padding_big">
+        <div class="navbar">
+          <nav class="nav nav_stacked">
+            <ul class="nav__items">
+              <li class="nav__item">
+                <a href="#xui-globals" class="btn btn_clear">getting started</a>
+              </li>
+              <li class="nav__item">
+                <a href="#xui-structure" class="btn btn_clear">structure</a>
+              </li>
+              <li>
+                <div class="bumper bumper_small"></div>
+              </li>
+              <li class="nav__item">
+                <a href="#xui-atoms" class="btn btn_clear">atoms</a>
+                <ul class="nav__items">
+                  <li class="nav__item"><a href="#xui-type" class="btn btn_clear btn_small">type</a></li>
+                  <li class="nav__item"><a href="#xui-headings" class="btn btn_clear btn_small">headings</a></li>
+                  <li class="nav__item"><a href="#xui-img" class="btn btn_clear btn_small">img</a></li>
+                  <li class="nav__item"><a href="#xui-img_crop" class="btn btn_clear btn_small">img_crop</a></li>
+                  <li class="nav__item"><a href="#xui-btn" class="btn btn_clear btn_small">btn</a></li>
+                  <!--<li class="nav__item"><a href="#xui-btn-glow" class="btn btn_clear btn_small">btn-glow</a></li>-->
+                  <li class="nav__item"><a href="#xui-bubble" class="btn btn_clear btn_small">bubble</a></li>
+                  <li class="nav__item"><a href="#xui-tag" class="btn btn_clear btn_small">tag</a></li>
+                  <li class="nav__item"><a href="#xui-input" class="btn btn_clear btn_small">input</a></li>
+                  <li class="nav__item"><a href="#xui-input-group" class="btn btn_clear btn_small">input-group</a></li>
+                  <li class="nav__item"><a href="#xui-bumper" class="btn btn_clear btn_small">bumper</a></li>
+                  <li class="nav__item"><a href="#xui-spacing" class="btn btn_clear btn_small">spacing</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="bumper bumper_small"></div>
+              </li>
+              <li class="nav__item">
+                <a href="#xui-molecules" class="btn btn_clear">molecules</a>
+                <ul class="nav__items">
+                  <li class="nav__item"><a href="#xui-list" class="btn btn_clear btn_small">list</a></li>
+                  <li class="nav__item"><a href="#xui-alert" class="btn btn_clear btn_small">alert</a></li>
+                  <li class="nav__item"><a href="#xui-well" class="btn btn_clear btn_small">well</a></li>
+                  <li class="nav__item"><a href="#xui-dropdown" class="btn btn_clear btn_small">dropdown</a></li>
+                  <li class="nav__item"><a href="#xui-btn-group" class="btn btn_clear btn_small">btn-group</a></li>
+                  <li class="nav__item"><a href="#xui-form-group" class="btn btn_clear btn_small">form-group</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="bumper bumper_small"></div>
+              </li>
+              <li class="nav__item">
+                <a href="#xui-organisms" class="btn btn_clear">organisms</a>
+                <ul class="nav__items">
+                  <li class="nav__item"><a href="#xui-toolbar" class="btn btn_clear btn_small">toolbar</a></li>
+                  <li class="nav__item"><a href="#xui-" class="btn btn_clear btn_small">header</a></li>
+                  <li class="nav__item"><a href="#xui-header" class="btn btn_clear btn_small">nav</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="bumper bumper_small"></div>
+              </li>
+              <li class="nav__item">
+                <a href="#xui-templates" class="btn btn_clear">templates</a>
+                <ul class="nav__items">
+                  <li class="nav__item"><a href="#xui-table" class="btn btn_clear btn_small">table</a></li>
+                  <li class="nav__item"><a href="#xui-section" class="btn btn_clear btn_small">section</a></li>
+                  <li class="nav__item"><a href="#xui-kiosk" class="btn btn_clear btn_small">kiosk</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="bumper bumper_small"></div>
+              </li>
+              <li class="nav__item">
+                <a href="#xui-pages" class="btn btn_clear">pages</a>
+                <ul class="nav__items">
+                  <li class="nav__item"><a href="#xui-body" class="btn btn_clear btn_small">body</a></li>
+                  <li class="nav__item"><a href="#xui-page" class="btn btn_clear btn_small">page</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="bumper bumper_small"></div>
+              </li>
+              <li class="nav__item">
+                <a href="#xui-modifier" class="btn btn_clear">modifier</a>
+                <ul class="nav__items">
+                  <li class="nav__item"><a href="#xui-text-color" class="btn btn_clear btn_small">text-color</a></li>
+                  <li class="nav__item"><a href="#xui-theme" class="btn btn_clear btn_small">theme</a></li>
+                  <li class="nav__item"><a href="#xui-padding" class="btn btn_clear btn_small">padding</a></li>
+                  <li class="nav__item"><a href="#xui-text-alignment" class="btn btn_clear btn_small">text-alignment</a>
+                  </li>
+                  <li class="nav__item"><a href="#xui-type-setting" class="btn btn_clear btn_small">type-setting</a>
+                  </li>
+                  <li class="nav__item"><a href="#xui-tooltip" class="btn btn_clear btn_small">tooltip</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="bumper bumper_small"></div>
+              </li>
+              <li class="nav__item">
+                <a href="#xui-ec-icon" class="btn btn_clear">ec.icons</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </aside>
     <div class="kiosk-body" data-col="10">
@@ -132,23 +153,272 @@
                 <span class="tag tag_super tag_small">{{version}}</span><span class="tag tag_super tag_small"
                                                                               v-for="dependancy in dependancies">{{dependancy}}</span>
               </h1>
-              <p class="lead"><strong>x.ui</strong> is a framework developed for a fast forward unicorn
-                frontend-development
-                workflow. the unicon workflow is focused on modularity and structure. From the smallest inline-element,
-                through more complex macro elements and even more advanced partial elements to templates - to pages.
-                Everything is highly adaptable and flexible.</p>
-              <div class="bumper"></div>
+              <p class="lead"><strong>x.ui</strong> is a framework base on the atomic design methodology. the unicon
+                workflow is focused on modularity and structure. Everything is highly adaptable and flexible.</p>
             </section>
+
+            <div class="bumper"></div>
+
             <section>
-              <h2 class="mega" id="xui-globals">globals</h2>
-              <p class="lead">Globals are basic HTML elements like headings, typeface, lists, form elements, images and
-                tables. Globals are the smallest particles in an unicorn driven frontend-development workflow.</p>
+              <h2 class="mega" id="xui-structure">structure</h2>
+              _config
+
+              _caret
+              _drawer-btn
+
+              _ec-icon
+              <div data-flex="grid">
+                <div data-col="4">
+                  <svg class="structure-icon" id="core-icon" data-name="core" xmlns="http://www.w3.org/2000/svg"
+                       viewBox="0 0 160 160">
+                    <circle fill="url(#logoGradient)" cx="80" cy="80" r="12"/>
+                  </svg>
+                  <h3 class="kilo">core</h3>
+                  <ul class="unstyled">
+                    <li>_body</li>
+                    <li>_colors</li>
+                  </ul>
+                </div>
+                <div data-col="4">
+                  <svg class="structure-icon" id="svg_atoms" data-name="atoms" xmlns="http://www.w3.org/2000/svg"
+                       viewBox="0 0 160 160">
+                    <path fill="url(#logoGradient)"
+                          d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z"/>
+                  </svg>
+                  <h3 class="kilo">atoms</h3>
+                  <ul class="unstyled">
+                    <li>_type</li>
+                    <li>_headings
+                      <ul>
+                        <li>_headings__inline</li>
+                      </ul>
+                    </li>
+                    <li>_img</li>
+                    <li>_img_crop</li>
+                    <li>_btn
+                      <ul>
+                        <li>_btn_outlined</li>
+                        <li>_btn_raised</li>
+                        <li>_btn_round</li>
+                        <li>_btn__inline</li>
+                      </ul>
+                    </li>
+                    <li>_btn-glow</li>
+                    <li>_bubble</li>
+                    <li>_tag
+                      <ul>
+                        <li>_tag_outlined</li>
+                        <li>_tag_round</li>
+                      </ul>
+                    </li>
+                    <li>_input
+                      <ul>
+                        <li>_input_raised</li>
+                        <li>_input_round</li>
+                      </ul>
+                    </li>
+                    <li>_input-group</li>
+                    <li>_bumper</li>
+                    <li>_spacing</li>
+                  </ul>
+                  <div class="spacing"></div>
+                </div>
+                <div data-col="4">
+                  <svg class="structure-icon" id="svg_molecules" data-name="molecules"
+                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+                    <path fill="url(#logoGradient)"
+                          d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
+                  </svg>
+                  <h3 class="kilo">molecules</h3>
+                  <ul class="unstyled">
+                    <li>_list</li>
+                    <li>_alert
+                      <ul>
+                        <li>_alert_outlined</li>
+                        <li>_alert__inline</li>
+                      </ul>
+                    </li>
+                    <li>_well
+                      <ul>
+                        <li>_well__inline</li>
+                        <li>_well_outlined</li>
+                      </ul>
+                    </li>
+                    <li>_dropdown</li>
+                    <li>_btn-group</li>
+                    <li>_form-group</li>
+                  </ul>
+                </div>
+                <div data-col="4">
+                  <svg class="structure-icon" id="svg_organisms" data-name="organisms"
+                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+                    <path fill="url(#logoGradient)"
+                          d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
+                  </svg>
+                  <h3 class="kilo">organisms</h3>
+                  <ul class="unstyled">
+                    <li>_toolbar</li>
+                    <li>_header</li>
+                    <li>_nav</li>
+                  </ul>
+                </div>
+                <div data-col="4">
+                  <svg class="structure-icon" id="svg_templates" data-name="templates"
+                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+                    <path fill="url(#logoGradient)"
+                          d="M126,98h-8a2,2,0,0,0,0,4h8a2,2,0,0,0,0-4Zm0-6.29V98h0a2,2,0,1,0,2.62,3A4,4,0,0,0,130,98V91.71a2,2,0,1,0-4,0Zm0-20v8a2,2,0,0,0,4,0v-8a2,2,0,1,0-4,0ZM118.86,62H126a2,2,0,1,0,1.66-3.64A4,4,0,0,0,126,58h-7.14a2,2,0,0,0,0,4Zm-20,0h8a2,2,0,1,0,0-4h-8a2,2,0,0,0,0,4Zm-20,0h8a2,2,0,1,0,0-4h-8a2,2,0,0,0,0,4Zm-20,0h8a2,2,0,0,0,0-4h-8a2,2,0,0,0,0,4Zm-20,0h8a2,2,0,0,0,0-4h-8a2,2,0,0,0,0,4ZM34,73.14v-8a2,2,0,0,0-4,0v8a2,2,0,0,0,4,0Zm0,20v-8a2,2,0,0,0-4,0v8a2,2,0,0,0,4,0ZM46,98H38a2,2,0,0,0,0,4h8a2,2,0,0,0,0-4Zm20,0H58a2,2,0,0,0,0,4h8a2,2,0,0,0,0-4Zm20,0H78a2,2,0,0,0,0,4h8a2,2,0,0,0,0-4Zm20,0H98a2,2,0,0,0,0,4h8a2,2,0,0,0,0-4Z"/>
+                  </svg>
+                  <h3 class="kilo">templates</h3>
+                  <ul class="unstyled">
+                    <li>_table</li>
+                    <li>_section</li>
+                    <li>_kiosk</li>
+                  </ul>
+                </div>
+                <div data-col="4">
+                  <svg class="structure-icon" id="svg_pages" data-name="pages" xmlns="http://www.w3.org/2000/svg"
+                       viewBox="0 0 160 160">
+                    <path fill="url(#logoGradient)"
+                          d="M56.86,36a2,2,0,0,1,2-2h8a2,2,0,0,1,0,4h-8A2,2,0,0,1,56.86,36Zm22,2h8a2,2,0,0,0,0-4h-8a2,2,0,0,0,0,4Zm-40,0h8a2,2,0,0,0,0-4h-8a2,2,0,0,0,0,4ZM126,47.71v8a2,2,0,1,0,4,0v-8a2,2,0,0,0-4,0ZM78,78h8a2,2,0,0,0,0-4H78a2,2,0,0,0,0,4Zm40,0h8a2,2,0,0,0,1.31-.5,2,2,0,0,0,1.31-.48A4,4,0,0,0,130,74V67.71a2,2,0,1,0-4,0h0V74h-8a2,2,0,0,0,0,4ZM58,78h8a2,2,0,0,0,0-4H58a2,2,0,0,0,0,4ZM32,71.14a2,2,0,0,0,2-2v-8a2,2,0,0,0-4,0v8A2,2,0,0,0,32,71.14ZM38,78h8a2,2,0,0,0,0-4H38a2,2,0,0,0,0,4Zm80.86-40H126a2,2,0,1,0,1.66-3.64A4,4,0,0,0,126,34h-7.14a2,2,0,0,0,0,4Zm-20,0h8a2,2,0,1,0,0-4h-8a2,2,0,0,0,0,4ZM98,78h8a2,2,0,0,0,0-4H98a2,2,0,0,0,0,4ZM32,51.14a2,2,0,0,0,2-2v-8a2,2,0,0,0-4,0v8A2,2,0,0,0,32,51.14ZM126,86a2,2,0,1,0,1.66-3.64A4,4,0,0,0,126,82h-7.14a2,2,0,0,0,0,4Zm2,7.71a2,2,0,0,0-2,2v8a2,2,0,0,0,4,0v-8A2,2,0,0,0,128,93.71ZM66.86,82h-8a2,2,0,0,0,0,4h8a2,2,0,1,0,0-4Zm20,0h-8a2,2,0,0,0,0,4h8a2,2,0,1,0,0-4Zm20,0h-8a2,2,0,0,0,0,4h8a2,2,0,1,0,0-4Zm-60,0h-8a2,2,0,0,0,0,4h8a2,2,0,1,0,0-4ZM32,99.14a2,2,0,0,0,2-2v-8a2,2,0,0,0-4,0v8A2,2,0,0,0,32,99.14Zm0,20a2,2,0,0,0,2-2v-8a2,2,0,1,0-4,0v8A2,2,0,0,0,32,119.14ZM38,126h8a2,2,0,0,0,0-4H38a2,2,0,0,0,0,4Zm80,0h8a2,2,0,0,0,1.31-.5,2,2,0,0,0,1.31-.48,4,4,0,0,0,1.38-3v-6.29a2,2,0,1,0-4,0h0V122h-8a2,2,0,0,0,0,4Zm-20,0h8a2,2,0,0,0,0-4H98a2,2,0,0,0,0,4Zm-40,0h8a2,2,0,0,0,0-4H58a2,2,0,0,0,0,4Zm20,0h8a2,2,0,0,0,0-4H78a2,2,0,0,0,0,4ZM142,24V136a2,2,0,0,1-2,2H20a2,2,0,0,1-2-2V22H140A2,2,0,0,1,142,24Zm-8,6H26V130H134Z"/>
+                  </svg>
+                  <h3 class="kilo">pages</h3>
+                  <ul class="unstyled">
+                    <li>_page</li>
+                  </ul>
+                </div>
+                <div data-col="4">
+                  <svg class="structure-icon" id="svg_modifier" data-name="modifier" xmlns="http://www.w3.org/2000/svg"
+                       viewBox="0 0 160 160">
+                    <path fill="url(#logoGradient)"
+                          d="M100,76H86.93l6.53-11.32a4,4,0,1,0-6.92-4L80,72,73.46,60.68a4,4,0,0,0-6.92,4L73.07,76H60a4,4,0,0,0,0,8H73.07L66.54,95.32a4,4,0,0,0,6.92,4L80,88l6.54,11.32a4,4,0,1,0,6.92-4L86.93,84H100a4,4,0,0,0,0-8Z"/>
+                  </svg>
+                  <h3 class="kilo">modifier</h3>
+                  <ul class="unstyled">
+                    <li>_text-color</li>
+                    <li>_theme</li>
+                    <li>_padding</li>
+                    <li>_text-alignment</li>
+                    <li>_type-setting</li>
+                    <li>_tooltip</li>
+                  </ul>
+                </div>
+              </div>
+
+            </section>
+
+            <div class="bumper bumper_big"></div>
+
+            <h2 class="mega" id="xui-atoms">atoms</h2>
+            <p class="lead">Atoms are the basic building blocks of matter.</p>
+
+            <div class="spacing"></div>
+
+            <section>
+              <h3 class="kilo" id="xui-type">type <span class="tag tag_small">atoms/type</span></h3>
+              <div class="demo-paragraph-metrics">
+                <p class="lead">Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß
+                  dies
+                  wohl nur ein Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine
+                  Tagereise
+                  lang sei, nicht länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das
+                  achtzehnte
+                  Mal nicht durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er
+                  entweder den Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
+              </div>
+              <div class="demo-paragraph-metrics">
+                <p>Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß dies wohl nur
+                  ein
+                  Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine Tagereise lang
+                  sei,
+                  nicht
+                  länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das achtzehnte Mal nicht
+                  durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er entweder
+                  den
+                  Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
+              </div>
+            </section>
+
+            <div class="bumper"></div>
+
+            <section>
+              <h3 id="xui-headings" class="kilo">headings <span class="tag tag_small">atoms/headings</span></h3>
+              <div class="demo-heading-metrics demo-heading-metrics_h1"><h1>Heading 1</h1></div>
+              <div class="demo-heading-metrics"><h2>Heading 2</h2></div>
+              <div class="demo-heading-metrics"><h3>Heading 3</h3></div>
+              <div class="demo-heading-metrics"><h4>Heading 4</h4></div>
+              <div class="demo-heading-metrics demo-heading-metrics_h5"><h5>Heading 5</h5></div>
+              <div class="demo-heading-metrics demo-heading-metrics_h6"><h6>Heading 6</h6></div>
+              <div class="spacing"></div>
+              <p>in addition there are heading helper classes <span class="code">h1</span>, <span class="code">h2</span>,
+                <span class="code">h3</span>, <span class="code">h4</span>, <span class="code">h5</span> and <span
+                    class="code">h6</span> to influence the appearance of headings</p>
+              <h4 class="h6">Special heading classes</h4>
+              <p>for data-rich / admin interfaces there is a set of three heading styles <span class="code">giga</span>,
+                <span class="code">mega</span> and <span class="code">kilo</span> to provide a cleaner typeface without
+                losing the hierarchical structure of the markup.</p>
+            </section>
+
+            <div class="bumper"></div>
+
+            <section>
+              <h3 id="xui-img" class="kilo">img <span class="tag tag_small">atoms/img</span></h3>
+              <div data-flex="grid">
+                <div data-col="6sm">
+                <pre><code class="html">
+<img src="..." class="img_responsive"></code></pre>
+                  <p>add responsive behavior to images. image shrinks and grows up to it's original width.</p>
+                  <img src="./assets/placeholder.jpg" class="img_responsive">
+                </div>
+                <div data-col="6sm">
+                <pre><code class="html">
+<img src="..." class="img_full"></code></pre>
+                  <p>add responsive behavior to images. image shrinks and grows independent of it's original width.</p>
+                  <img src="./assets/placeholder.jpg" class="img_full">
+                </div>
+              </div>
             </section>
 
             <div class="spacing"></div>
 
             <section>
-              <h3 class="kilo" id="xui-btn">button <span class="tag tag_small">globals/_btn.scss</span></h3>
+              <h4 class="h6">Image helper <span class="tag tag_small">atoms/img_crop</span><a
+                  href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
+                  class="tag tag_error tag_small">object-fit</a></h4>
+              <div data-flex="grid">
+                <div data-col="4sm">
+                <pre><code class="html">
+<div class="img_crop-1-1">
+  <img src="..">
+</div></code></pre>
+                  <div class="img_crop-1-1">
+                    <img src="./assets/placeholder.jpg">
+                  </div>
+                </div>
+                <div data-col="4sm">
+                <pre><code class="html">
+<div class="img_crop-4-3">
+  <img src="..">
+</div></code></pre>
+                  <div class="img_crop-4-3">
+                    <img src="./assets/placeholder.jpg">
+                  </div>
+                </div>
+                <div data-col="4sm">
+                <pre><code class="html">
+<div class="img_crop-16-9">
+  <img src="..">
+</div></code></pre>
+                  <div class="img_crop-16-9">
+                    <img src="./assets/placeholder.jpg">
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="bumper"></div>
+
+            <section>
+              <h3 class="kilo" id="xui-btn">button <span class="tag tag_small">atoms/btn</span></h3>
               <p>there are three basic button styles which should be used to to emphasis or weaken functions. Throughout
                 <strong>x.ui</strong> there are three steps of importance. The default style always reached with th
                 default class <span class="code">btn</span>, the minor style by an additional modifier class <span
@@ -202,508 +472,7 @@
             <div class="bumper"></div>
 
             <section>
-              <h3 id="xui-headings" class="kilo">headings <span class="tag tag_small">globals/_headings.scss</span></h3>
-              <div class="demo-heading-metrics demo-heading-metrics_h1"><h1>Heading 1</h1></div>
-              <div class="demo-heading-metrics"><h2>Heading 2</h2></div>
-              <div class="demo-heading-metrics"><h3>Heading 3</h3></div>
-              <div class="demo-heading-metrics"><h4>Heading 4</h4></div>
-              <div class="demo-heading-metrics demo-heading-metrics_h5"><h5>Heading 5</h5></div>
-              <div class="demo-heading-metrics demo-heading-metrics_h6"><h6>Heading 6</h6></div>
-              <div class="spacing"></div>
-              <p>in addition there are heading helper classes <span class="code">h1</span>, <span class="code">h2</span>,
-                <span class="code">h3</span>, <span class="code">h4</span>, <span class="code">h5</span> and <span
-                    class="code">h6</span> to influence the appearance of headings</p>
-              <h4 class="h6">Special heading classes</h4>
-              <p>for data-rich / admin interfaces there is a set of three heading styles <span class="code">giga</span>,
-                <span class="code">mega</span> and <span class="code">kilo</span> to provide a cleaner typeface without
-                losing the hierarchical structure of the markup.</p>
-            </section>
-
-            <div class="spacing"></div>
-
-            <section>
-              <h3 class="kilo" id="xui-type">type <span class="tag tag_small">globals/_type.scss</span></h3>
-              <div class="demo-paragraph-metrics">
-                <p class="lead">Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß
-                  dies
-                  wohl nur ein Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine
-                  Tagereise
-                  lang sei, nicht länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das
-                  achtzehnte
-                  Mal nicht durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er
-                  entweder den Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
-              </div>
-              <div class="demo-paragraph-metrics">
-                <p>Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß dies wohl nur
-                  ein
-                  Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine Tagereise lang
-                  sei,
-                  nicht
-                  länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das achtzehnte Mal nicht
-                  durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er entweder
-                  den
-                  Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
-              </div>
-            </section>
-
-            <div class="spacing"></div>
-
-            <h4 class="h6">type alignment helper <span class="tag tag_small">helper/_text-alignment.scss</span></h4>
-            <div data-flex="grid">
-              <div data-col="4sm">
-                <p class="text-left"><span class="code">text-left</span><br>
-                  Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie vor
-                  mir, in mir, füllen die Sinne meiner Stirn. Was ist der Mensch, der gepriesene Halbgott!</p>
-              </div>
-              <div data-col="4sm">
-                <p class="text-center"><span class="code">text-center</span><br>
-                  Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie vor
-                  mir, in mir, füllen die Sinne meiner Stirn. Was ist der Mensch, der gepriesene Halbgott!</p>
-              </div>
-              <div data-col="4sm">
-                <p class="text-right"><span class="code">text-right</span><br>
-                  Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie vor
-                  mir, in mir, füllen die Sinne meiner Stirn. Was ist der Mensch, der gepriesene Halbgott!</p>
-              </div>
-            </div>
-
-            <div class="spacing"></div>
-            <h4 class="h6">type setting helper <span class="tag tag_small">helper/_type-setting.scss</span></h4>
-            <table class="table">
-              <tbody>
-              <tr>
-                <td><span class="code">nowrap</span></td>
-                <td>no whitespace wrapping</td>
-              </tr>
-              <tr>
-                <td><span class="code">hyphen</span></td>
-                <td>use automatic hyphenation <a href="https://caniuse.com/#search=hyphen" target="_blank"
-                                                 rel="noopener"
-                                                 class="tag tag_error tag_small">hyphen</a></td>
-              </tr>
-              <tr>
-                <td><span class="code">hyphen-block</span></td>
-                <td>use automatic hyphenation with justification <a href="https://caniuse.com/#search=hyphen"
-                                                                    target="_blank" rel="noopener"
-                                                                    class="tag tag_error tag_small">hyphen</a></td>
-              </tr>
-              <tr>
-                <td><span class="code">ellipsis</span></td>
-                <td>automatic text cut off with ...</td>
-              </tr>
-              </tbody>
-            </table>
-
-            <div class="spacing"></div>
-
-            <h3 class="kilo">type color helper <span class="tag tag_small">helper/_text-color.scss</span></h3>
-            <div class="well well_small">
-              <div data-flex="grid">
-                <div v-for="mod in globals.type.colorModifiers" data-col="2sm">
-                  <strong :class="mod">{{mod}}</strong>
-                </div>
-              </div>
-            </div>
-
-            <div class="bumper"></div>
-
-            <h3 class="kilo" id="xui-list">lists <span class="tag tag_small">globals/_list.scss</span></h3>
-            <div data-flex="grid">
-              <div data-col="6sm" data-flex="center-items">
-                <ul class="unstyled">
-                  <li>list item 01</li>
-                  <li>list item 02</li>
-                  <li>list item 03</li>
-                </ul>
-              </div>
-              <div data-col="6sm"><pre><code class="html">
-<ul class="unstyled">
-  <li>list item 01</li>
-  <li>list item 02</li>
-  <li>list item 03</li>
-</ul></code></pre>
-              </div>
-              <div data-col="6sm" data-flex="center-items">
-                <ul class="inline">
-                  <li>list item 01</li>
-                  <li>list item 02</li>
-                  <li>list item 03</li>
-                </ul>
-              </div>
-              <div data-col="6sm"><pre><code class="html">
-<ul class="inline">
-  <li>list item 01</li>
-  <li>list item 02</li>
-  <li>list item 03</li>
-</ul></code></pre>
-              </div>
-            </div>
-
-            <div class="spacing"></div>
-
-            <section>
-              <h3 class="kilo" id="xui-table">table <span class="tag tag_small">globals/_table.scss</span> <span
-                  class="tag tag_small tag_error">in progress</span></h3>
-              <table class="table">
-                <thead>
-                <tr>
-                  <th>title</th>
-                  <th>description</th>
-                  <th>date</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>title</td>
-                  <td>Gewiß. Aber was steht nicht alles - von Kinderfreund gar nicht zu reden - in Bibel und
-                    Katechismus,
-                    und die Leute wissen es doch nicht. Ich zum Beispiel.
-                  </td>
-                  <td>17-11-20</td>
-                </tr>
-                </tbody>
-              </table>
-              <table class="table table_bordered">
-                <thead>
-                <tr>
-                  <th>title</th>
-                  <th>description</th>
-                  <th>date</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>title</td>
-                  <td>Gewiß. Aber was steht nicht alles - von Kinderfreund gar nicht zu reden - in Bibel und
-                    Katechismus,
-                    und die Leute wissen es doch nicht. Ich zum Beispiel.
-                  </td>
-                  <td>17-11-20</td>
-                </tr>
-                </tbody>
-              </table>
-            </section>
-
-            <div class="bumper"></div>
-
-            <section>
-              <h3 id="xui-img" class="kilo">image <span class="tag tag_small">globals/_img.scss</span></h3>
-              <div data-flex="grid">
-                <div data-col="6sm">
-                <pre><code class="html">
-<img src="..." class="img_responsive"></code></pre>
-                  <p>add responsive behavior to images. image shrinks and grows up to it's original width.</p>
-                  <img src="./assets/placeholder.jpg" class="img_responsive">
-                </div>
-                <div data-col="6sm">
-                <pre><code class="html">
-<img src="..." class="img_full"></code></pre>
-                  <p>add responsive behavior to images. image shrinks and grows independent of it's original width.</p>
-                  <img src="./assets/placeholder.jpg" class="img_full">
-                </div>
-              </div>
-
-              <div class="spacing"></div>
-              <h4 class="h6">Image helper <span class="tag tag_small">_crop.scss</span><a
-                  href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
-                  class="tag tag_error tag_small">object-fit</a></h4>
-              <div data-flex="grid">
-                <div data-col="4sm">
-                <pre><code class="html">
-<div class="crop-1-1">
-  <img src="..">
-</div></code></pre>
-                  <div class="crop-1-1">
-                    <img src="./assets/placeholder.jpg">
-                  </div>
-                </div>
-                <div data-col="4sm">
-                <pre><code class="html">
-<div class="crop-4-3">
-  <img src="..">
-</div></code></pre>
-                  <div class="crop-4-3">
-                    <img src="./assets/placeholder.jpg">
-                  </div>
-                </div>
-                <div data-col="4sm">
-                <pre><code class="html">
-<div class="crop-16-9">
-  <img src="..">
-</div></code></pre>
-                  <div class="crop-16-9">
-                    <img src="./assets/placeholder.jpg">
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <div class="bumper"></div>
-
-            <section>
-              <h3 id="xui-form" class="kilo">form</h3>
-              <div class="spacing"></div>
-              <h4 class="h6">input <span class="tag tag_small">globals/_input.scss</span></h4>
-              <div data-flex="grid">
-                <div data-col="6">
-                  <input type="text" class="input" placeholder="Placeholder...">
-                  <pre><code class="html">
-<input class="input"></code></pre>
-                </div>
-                <div data-col="6">
-                  <select class="input">
-                    <option selected value="volvo">Apple</option>
-                    <option value="saab">Blueberry</option>
-                    <option value="mercedes">Cranberry</option>
-                  </select>
-                  <pre><code class="html">
-<select class="input">...</select></code></pre>
-                </div>
-              </div>
-
-              <div class="spacing spacing_small"></div>
-
-              <h5 class="h6">input size modifier</h5>
-              <div data-flex="grid">
-                <div data-col="6sm">
-                  <input type="text" class="input input_small" value="input_small">
-                  <pre><code class="html">
-<input class="input input_small"></code></pre>
-                </div>
-                <div data-col="6sm">
-                  <input type="text" class="input input_big" value="input_big">
-                  <pre><code class="html">
-<input class="input input_big"></code></pre>
-                </div>
-              </div>
-
-              <div class="spacing spacing_small"></div>
-
-              <h4 class="h6">input style modifier</h4>
-              <div data-flex="grid">
-                <div data-col="6sm">
-                  <input type="text" class="input input_round" value="input_round">
-                  <pre><code class="html">
-<input class="input input_round"></code></pre>
-                </div>
-                <div data-col="6sm">
-                  <input type="text" class="input input_raised" value="input_raised">
-                  <pre><code class="html">
-<input class="input input_raised"></code></pre>
-                </div>
-              </div>
-            </section>
-
-            <div class="bumper"></div>
-
-            <h2 id="xui-macros" class="mega">Macros</h2>
-
-            <div class="spacing"></div>
-
-            <section>
-              <h3 class="kilo" id="xui-btn-group">button-group <span class="tag tag_small">macros/_btn-group.scss</span>
-              </h3>
-              <p><span class="code">.btn-group</span> supports <span class="code">.btn</span> and <span class="code">.dropdown</span>
-                with all their modfifier classes.</p>
-
-              <div data-flex="small-grid">
-                <div data-col="6">
-                  <div class="well" data-flex="center">
-                    <div class="btn-group">
-                      <a href="" class="btn">button</a>
-                      <a href="" class="btn">button</a>
-                      <a href="" class="btn btn_mono"><span class="ec-icon trash"></span></a>
-                    </div>
-                  </div>
-                  <pre><code class="html">
-<div class="btn-group">
-  <a href="" class="btn">button</a>
-  <a href="" class="btn">button</a>
-  <a href="" class="btn btn_mono"><span class="ec-icon trash"></span></a>
-</div></code></pre>
-                </div>
-
-                <div data-col="6">
-                  <div class="well" data-flex="center">
-                    <div class="btn-group">
-                      <ul class="dropdown dropdown_left dropdown_above">
-                        <li tabindex="0">
-                          <span class="btn btn_round">Options</span>
-                          <ul class="dropdown-options">
-                            <li class="dropdown-option">
-                              <a href="">Label</a>
-                            </li>
-                            <li class="dropdown-option">
-                              <a href="">Label</a>
-                            </li>
-                            <li class="dropdown_divider"></li>
-                            <li class="dropdown-option">
-                              <a href="">Label</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <ul class="dropdown dropdown_right dropdown_above">
-                        <li tabindex="0">
-                          <span class="btn btn_round"><span class="ec-icon more-vertical"></span></span>
-                          <ul class="dropdown-options">
-                            <li class="dropdown-option">
-                              <a href="">Label</a>
-                            </li>
-                            <li class="dropdown-option">
-                              <a href="">Label</a>
-                            </li>
-                            <li class="dropdown_divider"></li>
-                            <li class="dropdown-option">
-                              <a href="">Label</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <pre><code class="html">
-<div class="btn-group">
-  <ul class="dropdown dropdown_left dropdown_above">
-    <li tabindex="0">
-      <span class="btn btn_round">Options</span>
-      <ul class="dropdown-options">
-        ...
-      </ul>
-    </li>
-  </ul>
-  <ul class="dropdown dropdown_right dropdown_above">
-    <li tabindex="0">
-      <span class="btn btn_round"><span class="ec-icon more-vertical"></span></span>
-      <ul class="dropdown-options">
-        ...
-      </ul>
-    </li>
-  </ul>
-</div></code></pre>
-                </div>
-              </div>
-            </section>
-
-            <div class="bumper"></div>
-
-            <section>
-              <h3 id="xui-form-group" class="kilo">form-group <span class="tag tag_small">macros/_form-group.scss</span>
-              </h3>
-              <div data-flex="grid">
-                <div data-col="6">
-                  <div class="form-group">
-                    <label for="textID">Label</label>
-                    <input type="text" id="textID" placeholder="input..." class="input">
-                  </div>
-                </div>
-                <div data-col="6" data-flex="end-items">
-                  <div class="form-group form-group_boolean">
-                    <label for="radioID">Label</label>
-                    <input type="radio" id="radioID">
-                  </div>
-                </div>
-              </div>
-              <div data-flex="grid">
-                <div data-col="6">
-                <pre><code class="html">
-<div class="form-group">
-  <label for="">Label</label>
-  <input type="text" id="" placeholder="input..." class="input">
-</div></code></pre>
-                </div>
-                <div data-col="6">
-                <pre><code class="html">
-<div class="form-group form-group_boolean">
-  <label for="">Label</label>
-  <input type="radio" id="">
-</div></code></pre>
-                </div>
-              </div>
-            </section>
-
-            <div class="spacing"></div>
-
-            <section>
-              <h3 id="xui-input-group" class="kilo">input-group <span
-                  class="tag tag_small">macros/_input-group.scss</span> <span
-                  class="tag tag_small tag_error">in progress</span></h3>
-              <div data-flex="grid">
-                <div data-col="6sm">
-                  <div class="input-group">
-                    <span class="ec-icon lock-closed input-group__icon"></span>
-                    <input type="text" class="input" placeholder="Placeholder...">
-                  </div>
-                  <pre><code class="html">
-<div class="input-group">
-  <span class="ec-icon lock-closed input-group__icon"></span>
-  <input type="text" class="input" placeholder="Placeholder...">
-</div></code></pre>
-                </div>
-                <div data-col="6sm">
-                  <div class="input-group">
-                    <input type="text" class="input" placeholder="Placeholder...">
-                    <span class="ec-icon lock-closed input-group__icon"></span>
-                  </div>
-                  <pre><code class="html">
-<div class="input-group">
-  <input type="text" class="input" placeholder="Placeholder...">
-  <span class="ec-icon lock-closed input-group__icon"></span>
-</div></code></pre>
-                </div>
-              </div>
-            </section>
-
-            <div class="bumper"></div>
-
-            <section>
-              <h3 class="kilo" id="xui-alert">alert <span class="tag tag_small">macros/_alert.scss</span></h3>
-              <div class="alert">
-                <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen
-                  Reitstock,
-                  mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>
-              </div>
-              <pre><code class="html">
-<div class="alert">...</div></code></pre>
-              <div class="spacing"></div>
-              <h4 class="h6">alert theme modifier</h4>
-              <div data-flex="grid">
-                <div data-col="6" v-for="mod in macros.alerts.themeModifiers">
-                  <div class="alert" :class="mod">
-                    <p>Sie sprach weiter und weiter.</p>
-                  </div>
-                  <pre><code class="html">
-<div class="alert {{mod}}">...</div></code></pre>
-                </div>
-              </div>
-              <div class="spacing"></div>
-              <h4 class="h6">alert state modifier</h4>
-              <div data-flex="grid">
-                <div data-col="6" v-for="mod in macros.alerts.stateModifiers">
-                  <div class="alert" :class="mod">
-                    <p>Sie sprach weiter und weiter.</p>
-                  </div>
-                  <pre><code class="html">
-<div class="alert {{mod}}">...</div></code></pre>
-                </div>
-              </div>
-              <div class="spacing"></div>
-              <h4 class="h6">alert style modifier</h4>
-              <div data-flex="grid">
-                <div data-col="6" v-for="style in macros.alerts.styleModifiers">
-                  <div class="alert" :class="[style]">
-                    <p>Sie sprach weiter und weiter.</p>
-                  </div>
-                  <pre><code class="html">
-<div class="alert {{style}}">...</div></code></pre>
-                </div>
-              </div>
-            </section>
-
-            <div class="bumper"></div>
-
-            <section>
-              <h3 id="xui-bubble" class="kilo">bubble <span class="tag tag_small">macros/_bubble.scss</span></h3>
+              <h3 id="xui-bubble" class="kilo">bubble <span class="tag tag_small">atoms/bubble</span></h3>
               <div class="well">
                 <div data-flex="grid">
                   <div data-col="4" data-flex="center-items center">
@@ -757,7 +526,7 @@
             <div class="bumper"></div>
 
             <section>
-              <h3 id="xui-tag" class="kilo">tag <span class="tag tag_small">macros/_tag.scss</span></h3>
+              <h3 id="xui-tag" class="kilo">tag <span class="tag tag_small">atoms/tag</span></h3>
               <div class="well">
                 <div data-flex="grid">
                   <div data-col="4" data-flex="center-items center">
@@ -810,44 +579,260 @@
             <div class="bumper"></div>
 
             <section>
-              <h3 id="xui-tooltip" class="kilo">tooltip <span class="tag tag_small">macros/_tooltip.scss</span> <span
-                  class="tag tag_small tag_super">css only</span> <span
-                  class="tag tag_small tag_error">in progress</span>
-              </h3>
-              <div class="alert alert_small">the tooltip only works with single line tooltips</div>
-              <div class="well">
-                <div data-flex="grid">
-                  <div data-col="3" data-flex="center">
-                    <a href="" data-tooltip-top="This is a tooltip" class="btn btn_invert btn_raised">tooltip top</a>
-                  </div>
-                  <div data-col="3" data-flex="center">
-                    <a href="" data-tooltip-right="This is a tooltip" class="btn btn_invert btn_raised">tooltip
-                      right</a>
-                  </div>
-                  <div data-col="3" data-flex="center">
-                    <a href="" data-tooltip-bottom="This is a tooltip" class="btn btn_invert btn_raised">tooltip
-                      bottom</a>
-                  </div>
-                  <div data-col="3" data-flex="center">
-                    <a href="" data-tooltip-left="This is a tooltip" class="btn btn_invert btn_raised">tooltip left</a>
-                  </div>
+              <h3 id="xui-input" class="kilo">input <span class="tag tag_small">atoms/input</span></h3>
+              <div data-flex="grid">
+                <div data-col="6">
+                  <input type="text" class="input" placeholder="Placeholder...">
+                  <pre><code class="html">
+<input class="input"></code></pre>
+                </div>
+                <div data-col="6">
+                  <select class="input">
+                    <option selected value="volvo">Apple</option>
+                    <option value="saab">Blueberry</option>
+                    <option value="mercedes">Cranberry</option>
+                  </select>
+                  <pre><code class="html">
+<select class="input">...</select></code></pre>
                 </div>
               </div>
-              <pre><code class="html">
-<... data-tooltip-top="This is a tooltip" ... >
-...
-<... data-tooltip-right="This is a tooltip" ... >
-...
-<... data-tooltip-bottom="This is a tooltip" ... >
-...
-<... data-tooltip-left="This is a tooltip" ... >
-</code></pre>
+
+              <div class="spacing spacing_small"></div>
+
+              <h5 class="h6">input size modifier</h5>
+              <div data-flex="grid">
+                <div data-col="6sm">
+                  <input type="text" class="input input_small" value="input_small">
+                  <pre><code class="html">
+<input class="input input_small"></code></pre>
+                </div>
+                <div data-col="6sm">
+                  <input type="text" class="input input_big" value="input_big">
+                  <pre><code class="html">
+<input class="input input_big"></code></pre>
+                </div>
+              </div>
+
+              <div class="spacing spacing_small"></div>
+
+              <h4 class="h6">input style modifier</h4>
+              <div data-flex="grid">
+                <div data-col="6sm">
+                  <input type="text" class="input input_round" value="input_round">
+                  <pre><code class="html">
+<input class="input input_round"></code></pre>
+                </div>
+                <div data-col="6sm">
+                  <input type="text" class="input input_raised" value="input_raised">
+                  <pre><code class="html">
+<input class="input input_raised"></code></pre>
+                </div>
+              </div>
             </section>
 
             <div class="bumper"></div>
 
             <section>
-              <h3 id="xui-dropdown" class="kilo">dropdown <span class="tag tag_small">macros/_dropdown.scss</span> <span
+              <h3 id="xui-input-group" class="kilo">input-group <span
+                  class="tag tag_small">atoms/input-group</span> <span
+                  class="tag tag_small tag_error">in progress</span></h3>
+              <div data-flex="grid">
+                <div data-col="6sm">
+                  <div class="input-group">
+                    <span class="ec-icon lock-closed input-group__icon"></span>
+                    <input type="text" class="input" placeholder="Placeholder...">
+                  </div>
+                  <pre><code class="html">
+<div class="input-group">
+  <span class="ec-icon lock-closed input-group__icon"></span>
+  <input type="text" class="input" placeholder="Placeholder...">
+</div></code></pre>
+                </div>
+                <div data-col="6sm">
+                  <div class="input-group">
+                    <input type="text" class="input" placeholder="Placeholder...">
+                    <span class="ec-icon lock-closed input-group__icon"></span>
+                  </div>
+                  <pre><code class="html">
+<div class="input-group">
+  <input type="text" class="input" placeholder="Placeholder...">
+  <span class="ec-icon lock-closed input-group__icon"></span>
+</div></code></pre>
+                </div>
+              </div>
+            </section>
+
+            <div class="bumper"></div>
+
+            <section>
+              <h3 id="xui-bumper" class="kilo">bumper <span class="tag tag_small">atoms/bumper</span></h3>
+              <div class="demo-layout-macros">
+                <div class="bumper"></div>
+              </div>
+              <table class="table">
+                <tbody>
+                <tr>
+                  <td>
+                    <strong>size modifier</strong>
+                  </td>
+                  <td><span class="code">bumper_small</span>, <span class="code">bumper_big</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>style modifier</strong>
+                  </td>
+                  <td><span class="code">bumper_invert</span></td>
+                </tr>
+                </tbody>
+              </table>
+            </section>
+
+            <div class="spacing"></div>
+
+            <section>
+              <h3 id="xui-spacing" class="kilo">spacing <span class="tag tag_small">atoms/spacing</span></h3>
+              <div class="demo-layout-macros">
+                <div class="spacing"></div>
+              </div>
+              <table class="table">
+                <tbody>
+                <tr>
+                  <td>
+                    <strong>size modifier</strong>
+                  </td>
+                  <td><span class="code">spacing_small</span>, <span class="code">spacing_big</span></td>
+                </tr>
+                </tbody>
+              </table>
+            </section>
+
+            <div class="bumper bumper_big"></div>
+
+            <h2 class="mega" id="xui-molecules">molecules</h2>
+            <p class="lead">Molecules are groups of atoms bonded together and are the smallest fundamental units of a
+              compound.</p>
+
+            <div class="spacing"></div>
+
+            <section>
+              <h3 class="kilo" id="xui-list">lists <span class="tag tag_small">molecules/list</span></h3>
+              <div data-flex="grid">
+                <div data-col="6sm">
+                  <div class="well" data-flex="center-items">
+                    <ul class="unstyled">
+                      <li>list item 01</li>
+                      <li>list item 02</li>
+                      <li>list item 03</li>
+                    </ul>
+                  </div>
+                </div>
+                <div data-col="6sm"><pre><code class="html">
+<ul class="unstyled">
+  <li>list item 01</li>
+  <li>list item 02</li>
+  <li>list item 03</li>
+</ul></code></pre>
+                </div>
+                <div data-col="6sm">
+                  <div class="well" data-flex="center-items">
+                    <ul class="inline">
+                      <li>list item 01</li>
+                      <li>list item 02</li>
+                      <li>list item 03</li>
+                    </ul>
+                  </div>
+                </div>
+                <div data-col="6sm"><pre><code class="html">
+<ul class="inline">
+  <li>list item 01</li>
+  <li>list item 02</li>
+  <li>list item 03</li>
+</ul></code></pre>
+                </div>
+              </div>
+            </section>
+
+            <div class="bumper"></div>
+
+            <section>
+              <h3 class="kilo" id="xui-alert">alert <span class="tag tag_small">molecules/alert</span></h3>
+              <div class="alert">
+                <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen
+                  Reitstock,
+                  mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>
+              </div>
+              <pre><code class="html">
+<div class="alert">...</div></code></pre>
+              <div class="spacing"></div>
+              <h4 class="h6">alert theme modifier</h4>
+              <div data-flex="grid">
+                <div data-col="6" v-for="mod in macros.alerts.themeModifiers">
+                  <div class="alert" :class="mod">
+                    <p>Sie sprach weiter und weiter.</p>
+                  </div>
+                  <pre><code class="html">
+<div class="alert {{mod}}">...</div></code></pre>
+                </div>
+              </div>
+              <div class="spacing"></div>
+              <h4 class="h6">alert state modifier</h4>
+              <div data-flex="grid">
+                <div data-col="6" v-for="mod in macros.alerts.stateModifiers">
+                  <div class="alert" :class="mod">
+                    <p>Sie sprach weiter und weiter.</p>
+                  </div>
+                  <pre><code class="html">
+<div class="alert {{mod}}">...</div></code></pre>
+                </div>
+              </div>
+              <div class="spacing"></div>
+              <h4 class="h6">alert style modifier</h4>
+              <div data-flex="grid">
+                <div data-col="6" v-for="style in macros.alerts.styleModifiers">
+                  <div class="alert" :class="[style]">
+                    <p>Sie sprach weiter und weiter.</p>
+                  </div>
+                  <pre><code class="html">
+<div class="alert {{style}}">...</div></code></pre>
+                </div>
+              </div>
+            </section>
+
+            <div class="bumper"></div>
+
+            <section>
+              <h3 id="xui-well" class="kilo">well <span class="tag tag_small">molecules/well</span></h3>
+              <div class="well">
+                <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen
+                  Reitstock,
+                  mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>
+              </div>
+              <pre><code class="html">
+<div class="well">
+  ...
+</div></code></pre>
+              <table class="table">
+                <tbody>
+                <tr>
+                  <td><strong>size modifier</strong></td>
+                  <td>
+                    <span class="code" v-for="size in macros.well.sizeModifiers">{{ '.' + size}}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>style modifier</strong></td>
+                  <td>
+                    <span class="code" v-for="style in macros.well.styleModifiers">{{ '.' + style}}</span>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </section>
+
+            <div class="bumper"></div>
+
+            <section>
+              <h3 id="xui-dropdown" class="kilo">dropdown <span class="tag tag_small">molecules/dropdown</span> <span
                   class="tag tag_small tag_super">css only</span> <span
                   class="tag tag_small tag_info">in progress</span>
               </h3>
@@ -1043,155 +1028,138 @@
             <div class="bumper"></div>
 
             <section>
-              <h3 id="xui-well" class="kilo">well
-                <div class="tag tag_small">macros/_well.scss</div>
+              <h3 class="kilo" id="xui-btn-group">btn-group <span
+                  class="tag tag_small">molecules/_btn-group</span>
               </h3>
-              <div class="well">
-                <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen
-                  Reitstock,
-                  mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>
-              </div>
-              <pre><code class="html">
-<div class="well">
-  ...
+              <p><span class="code">.btn-group</span> supports <span class="code">.btn</span> and <span class="code">.dropdown</span>
+                with all their modfifier classes.</p>
+
+              <div data-flex="small-grid">
+                <div data-col="6">
+                  <div class="well" data-flex="center">
+                    <div class="btn-group">
+                      <a href="" class="btn">button</a>
+                      <a href="" class="btn">button</a>
+                      <a href="" class="btn btn_mono"><span class="ec-icon trash"></span></a>
+                    </div>
+                  </div>
+                  <pre><code class="html">
+<div class="btn-group">
+  <a href="" class="btn">button</a>
+  <a href="" class="btn">button</a>
+  <a href="" class="btn btn_mono"><span class="ec-icon trash"></span></a>
 </div></code></pre>
-              <table class="table">
-                <tbody>
-                <tr>
-                  <td><strong>size modifier</strong></td>
-                  <td>
-                    <span class="code" v-for="size in macros.well.sizeModifiers">{{ '.' + size}}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>style modifier</strong></td>
-                  <td>
-                    <span class="code" v-for="style in macros.well.styleModifiers">{{ '.' + style}}</span>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div data-col="6">
+                  <div class="well" data-flex="center">
+                    <div class="btn-group">
+                      <ul class="dropdown dropdown_left dropdown_above">
+                        <li tabindex="0">
+                          <span class="btn btn_round">Options</span>
+                          <ul class="dropdown-options">
+                            <li class="dropdown-option">
+                              <a href="">Label</a>
+                            </li>
+                            <li class="dropdown-option">
+                              <a href="">Label</a>
+                            </li>
+                            <li class="dropdown_divider"></li>
+                            <li class="dropdown-option">
+                              <a href="">Label</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <ul class="dropdown dropdown_right dropdown_above">
+                        <li tabindex="0">
+                          <span class="btn btn_round"><span class="ec-icon more-vertical"></span></span>
+                          <ul class="dropdown-options">
+                            <li class="dropdown-option">
+                              <a href="">Label</a>
+                            </li>
+                            <li class="dropdown-option">
+                              <a href="">Label</a>
+                            </li>
+                            <li class="dropdown_divider"></li>
+                            <li class="dropdown-option">
+                              <a href="">Label</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <pre><code class="html">
+<div class="btn-group">
+  <ul class="dropdown dropdown_left dropdown_above">
+    <li tabindex="0">
+      <span class="btn btn_round">Options</span>
+      <ul class="dropdown-options">
+        ...
+      </ul>
+    </li>
+  </ul>
+  <ul class="dropdown dropdown_right dropdown_above">
+    <li tabindex="0">
+      <span class="btn btn_round"><span class="ec-icon more-vertical"></span></span>
+      <ul class="dropdown-options">
+        ...
+      </ul>
+    </li>
+  </ul>
+</div></code></pre>
+                </div>
+              </div>
             </section>
 
             <div class="bumper"></div>
 
             <section>
-              <h3 id="xui-layout-macros" class="kilo">layout macros</h3>
-              <h4 class="h6">bumper <span class="tag tag_small">macros/_bumper.scss</span></h4>
-              <div class="demo-layout-macros">
-                <div class="bumper"></div>
-              </div>
-              <table class="table">
-                <tbody>
-                <tr>
-                  <td>
-                    <strong>size modifier</strong>
-                  </td>
-                  <td><span class="code">bumper_small</span>, <span class="code">bumper_big</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>style modifier</strong>
-                  </td>
-                  <td><span class="code">bumper_invert</span></td>
-                </tr>
-                </tbody>
-              </table>
-              <div class="spacing"></div>
-              <h4 class="h6">spacing <span class="tag tag_small">macros/_spacing.scss</span></h4>
-              <div class="demo-layout-macros">
-                <div class="spacing"></div>
-              </div>
-              <table class="table">
-                <tbody>
-                <tr>
-                  <td>
-                    <strong>size modifier</strong>
-                  </td>
-                  <td><span class="code">spacing_small</span>, <span class="code">spacing_big</span></td>
-                </tr>
-                </tbody>
-              </table>
-
-            </section>
-            <div class="bumper"></div>
-            <h2 id="xui-partials" class="mega">partials <span class="tag tag_small">partials/partials.scss</span></h2>
-
-            <section>
-              <h3 id="xui-nav" class="kilo">nav
-                <div class="tag tag_small">partials/_nav.scss</div>
+              <h3 id="xui-form-group" class="kilo">form-group <span class="tag tag_small">molecules/form-group</span>
               </h3>
-              <div class="well">
-                <nav class="nav">
-                  <ul class="nav__items">
-                    <li class="nav__item">
-                      <a href="" class="btn btn_clear">Nav Link</a>
-                    </li>
-                    <li class="nav__item">
-                      <a href="" class="btn btn_clear">Nav Link</a>
-                    </li>
-                    <li class="nav__divider">&nbsp;</li>
-                    <li class="nav__item">
-                      <a href="" class="btn btn_clear">Nav Link</a>
-                    </li>
-                  </ul>
-                </nav>
+              <div data-flex="grid">
+                <div data-col="6">
+                  <div class="form-group">
+                    <label for="textID">Label</label>
+                    <input type="text" id="textID" placeholder="input..." class="input">
+                  </div>
+                </div>
+                <div data-col="6" data-flex="end-items">
+                  <div class="form-group form-group_boolean">
+                    <label for="radioID">Label</label>
+                    <input type="radio" id="radioID">
+                  </div>
+                </div>
               </div>
-              <pre><code class="html">
-<nav class="nav">
-  <ul class="nav__items">
-    <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
-    </li>
-    <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
-    </li>
-    <li class="nav__divider">&nbsp;</li>
-    <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
-    </li>
-  </ul>
-</nav></code></pre>
-
-              <div class="spacing"></div>
-
-              <div class="well">
-                <nav class="nav nav_stacked">
-                  <ul class="nav__items">
-                    <li class="nav__item">
-                      <a href="" class="btn btn_clear">Nav Link</a>
-                    </li>
-                    <li class="nav__item">
-                      <a href="" class="btn btn_clear">Nav Link</a>
-                    </li>
-                    <li class="nav__divider">&nbsp;</li>
-                    <li class="nav__item">
-                      <a href="" class="btn btn_clear">Nav Link</a>
-                    </li>
-                  </ul>
-                </nav>
+              <div data-flex="grid">
+                <div data-col="6">
+                <pre><code class="html">
+<div class="form-group">
+  <label for="">Label</label>
+  <input type="text" id="" placeholder="input..." class="input">
+</div></code></pre>
+                </div>
+                <div data-col="6">
+                <pre><code class="html">
+<div class="form-group form-group_boolean">
+  <label for="">Label</label>
+  <input type="radio" id="">
+</div></code></pre>
+                </div>
               </div>
-              <pre><code class="html">
-<nav class="nav nav_stacked">
-  <ul class="nav__items">
-    <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
-    </li>
-    <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
-    </li>
-    <li class="nav__divider">&nbsp;</li>
-    <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
-    </li>
-  </ul>
-</nav></code></pre>
             </section>
 
-            <div class="bumper"></div>
+            <div class="bumper bumper_big"></div>
+
+            <h2 class="mega" id="xui-organisms">organisms</h2>
+            <p class="lead">Organisms are groups of molecules joined together to form a relatively complex, distinct
+              section of an interface.</p>
+
+            <div class="spacing"></div>
 
             <section>
-              <h3 id="xui-toolbar" class="kilo">toolbar <span class="tag tag_small">partials/_toolbar.scss</span> <a
+              <h3 id="xui-toolbar" class="kilo">toolbar <span class="tag tag_small">organisms/toolbar</span> <a
                   href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
                   class="tag tag_small tag_error">flex</a>
               </h3>
@@ -1271,10 +1239,284 @@
                   </ul>
                 </nav>
               </div>
-
             </section>
 
             <div class="bumper"></div>
+
+            <!--TODO documentation-->
+            <section>
+              <h3 id="xui-header" class="kilo">header <span class="tag tag_small">organisms/header</span> <a
+                  href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
+                  class="tag tag_small tag_error">flex</a>
+              </h3>
+            </section>
+
+            <div class="bumper"></div>
+
+            <section>
+              <h3 id="xui-nav" class="kilo">nav<span class="tag tag_small">organisms/nav</span></h3>
+              <div class="well">
+                <nav class="nav">
+                  <ul class="nav__items">
+                    <li class="nav__item">
+                      <a href="" class="btn btn_clear">Nav Link</a>
+                    </li>
+                    <li class="nav__item">
+                      <a href="" class="btn btn_clear">Nav Link</a>
+                    </li>
+                    <li class="nav__divider">&nbsp;</li>
+                    <li class="nav__item">
+                      <a href="" class="btn btn_clear">Nav Link</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <pre><code class="html">
+<nav class="nav">
+  <ul class="nav__items">
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+    <li class="nav__divider">&nbsp;</li>
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+  </ul>
+</nav></code></pre>
+
+              <div class="spacing"></div>
+
+              <div class="well">
+                <nav class="nav nav_stacked">
+                  <ul class="nav__items">
+                    <li class="nav__item">
+                      <a href="" class="btn btn_clear">Nav Link</a>
+                    </li>
+                    <li class="nav__item">
+                      <a href="" class="btn btn_clear">Nav Link</a>
+                    </li>
+                    <li class="nav__divider">&nbsp;</li>
+                    <li class="nav__item">
+                      <a href="" class="btn btn_clear">Nav Link</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <pre><code class="html">
+<nav class="nav nav_stacked">
+  <ul class="nav__items">
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+    <li class="nav__divider">&nbsp;</li>
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+  </ul>
+</nav></code></pre>
+            </section>
+
+            <div class="bumper bumper_big"></div>
+
+            <h2 class="mega" id="xui-templates">templates</h2>
+            <p class="lead">with templates are not really part of an atomic structure but layout elements, that hold
+              everything together</p>
+
+            <div class="spacing"></div>
+
+            <section>
+              <h3 class="kilo" id="xui-table">table <span class="tag tag_small">templates/_table</span> <span
+                  class="tag tag_small tag_error">in progress</span></h3>
+              <table class="table">
+                <thead>
+                <tr>
+                  <th>title</th>
+                  <th>description</th>
+                  <th>date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>title</td>
+                  <td>Gewiß. Aber was steht nicht alles - von Kinderfreund gar nicht zu reden - in Bibel und
+                    Katechismus,
+                    und die Leute wissen es doch nicht. Ich zum Beispiel.
+                  </td>
+                  <td>17-11-20</td>
+                </tr>
+                </tbody>
+              </table>
+              <table class="table table_bordered">
+                <thead>
+                <tr>
+                  <th>title</th>
+                  <th>description</th>
+                  <th>date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>title</td>
+                  <td>Gewiß. Aber was steht nicht alles - von Kinderfreund gar nicht zu reden - in Bibel und
+                    Katechismus,
+                    und die Leute wissen es doch nicht. Ich zum Beispiel.
+                  </td>
+                  <td>17-11-20</td>
+                </tr>
+                </tbody>
+              </table>
+            </section>
+
+            <!--TODO documentation-->
+            <section>
+              <h3 id="xui-section" class="kilo">section <span class="tag tag_small">templates/section</span></h3>
+            </section>
+
+            <!--TODO documentation-->
+            <section>
+              <h3 id="xui-kiosk" class="kilo">kiosk <span class="tag tag_small">templates/kiosk</span></h3>
+            </section>
+
+            <div class="bumper bumper_big"></div>
+
+            <h2 class="mega" id="xui-pages">pages</h2>
+
+            <div class="spacing"></div>
+
+            <!--TODO documentation-->
+            <section>
+              <h3 id="xui-page" class="kilo">page <span class="tag tag_small">pages/page</span></h3>
+            </section>
+
+            <div class="bumper bumper_big"></div>
+
+            <h2 class="mega" id="xui-modifier">modifier</h2>
+            <div class="spacing"></div>
+
+            <section>
+              <h3 class="kilo" id="xui-text-color">text-color <span class="tag tag_small">modifier/text-color</span>
+              </h3>
+              <div class="well well_small">
+                <div data-flex="grid">
+                  <div v-for="mod in globals.type.colorModifiers" data-col="2sm">
+                    <strong :class="mod">{{mod}}</strong>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="bumper"></div>
+
+            <!--TODO documentation-->
+            <section>
+              <h3 id="xui-theme" class="kilo">theme <span class="tag tag_small">modifier/theme</span></h3>
+            </section>
+
+            <div class="bumper"></div>
+
+            <!--TODO documentation-->
+            <section>
+              <h3 id="xui-padding" class="kilo">padding <span class="tag tag_small">modifier/padding</span></h3>
+            </section>
+
+            <div class="bumper"></div>
+
+            <section>
+              <h3 id="xui-text-alignment" class="h6">text-alignment <span
+                  class="tag tag_small">modifier/text-alignment</span></h3>
+              <div data-flex="grid">
+                <div data-col="4sm">
+                  <p class="text-left"><span class="code">text-left</span><br>
+                    Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie vor
+                    mir, in mir, füllen die Sinne meiner Stirn. Was ist der Mensch, der gepriesene Halbgott!</p>
+                </div>
+                <div data-col="4sm">
+                  <p class="text-center"><span class="code">text-center</span><br>
+                    Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie vor
+                    mir, in mir, füllen die Sinne meiner Stirn. Was ist der Mensch, der gepriesene Halbgott!</p>
+                </div>
+                <div data-col="4sm">
+                  <p class="text-right"><span class="code">text-right</span><br>
+                    Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie vor
+                    mir, in mir, füllen die Sinne meiner Stirn. Was ist der Mensch, der gepriesene Halbgott!</p>
+                </div>
+              </div>
+            </section>
+
+            <div class="bumper"></div>
+
+            <section>
+              <h3 class="kilo">type-setting <span class="tag tag_small">modifier/type-setting</span></h3>
+              <table class="table">
+                <tbody>
+                <tr>
+                  <td><span class="code">nowrap</span></td>
+                  <td>no whitespace wrapping</td>
+                </tr>
+                <tr>
+                  <td><span class="code">hyphen</span></td>
+                  <td>use automatic hyphenation <a href="https://caniuse.com/#search=hyphen" target="_blank"
+                                                   rel="noopener"
+                                                   class="tag tag_error tag_small">hyphen</a></td>
+                </tr>
+                <tr>
+                  <td><span class="code">hyphen-block</span></td>
+                  <td>use automatic hyphenation with justification <a href="https://caniuse.com/#search=hyphen"
+                                                                      target="_blank" rel="noopener"
+                                                                      class="tag tag_error tag_small">hyphen</a></td>
+                </tr>
+                <tr>
+                  <td><span class="code">ellipsis</span></td>
+                  <td>automatic text cut off with ...</td>
+                </tr>
+                </tbody>
+              </table>
+            </section>
+
+            <div class="bumper"></div>
+
+            <section>
+              <h3 id="xui-tooltip" class="kilo">tooltip <span class="tag tag_small">modifier/_tooltip</span> <span
+                  class="tag tag_small tag_super">css only</span> <span
+                  class="tag tag_small tag_error">in progress</span>
+              </h3>
+              <div class="alert alert_small">the tooltip only works with single line tooltips</div>
+              <div class="well">
+                <div data-flex="grid">
+                  <div data-col="3" data-flex="center">
+                    <a href="" data-tooltip-top="This is a tooltip" class="btn btn_invert btn_raised">tooltip top</a>
+                  </div>
+                  <div data-col="3" data-flex="center">
+                    <a href="" data-tooltip-right="This is a tooltip" class="btn btn_invert btn_raised">tooltip
+                      right</a>
+                  </div>
+                  <div data-col="3" data-flex="center">
+                    <a href="" data-tooltip-bottom="This is a tooltip" class="btn btn_invert btn_raised">tooltip
+                      bottom</a>
+                  </div>
+                  <div data-col="3" data-flex="center">
+                    <a href="" data-tooltip-left="This is a tooltip" class="btn btn_invert btn_raised">tooltip left</a>
+                  </div>
+                </div>
+              </div>
+              <pre><code class="html">
+<... data-tooltip-top="This is a tooltip" ... >
+...
+<... data-tooltip-right="This is a tooltip" ... >
+...
+<... data-tooltip-bottom="This is a tooltip" ... >
+...
+<... data-tooltip-left="This is a tooltip" ... >
+</code></pre>
+            </section>
+
+            <div class="bumper bumper_big"></div>
 
             <section class="partial">
               <header class="partial-header">

@@ -69,6 +69,8 @@
   position: relative;
   overflow: visible;
 
+  @extend %tooltip-style !optional;
+
   &:after {
     @include macro-metrics($tooltip-font-size, $tooltip-line-height, $tooltip-min-height, $padding-ratio: $tooltip-padding-ratio);
     @include border-radius(rem($tooltip-radius));

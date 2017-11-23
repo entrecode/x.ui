@@ -511,8 +511,18 @@ $well-padding: $base-padding;
 /// @param {value} $well-weight [$normal]
 $well-weight: $normal !default;
 
-/// additional styles for .alert
-%alert-style {
+/// additional styles for .well
+%well-style {
+  /// put styles here...
+}
+
+/// additional styles for .well
+%well-small-style {
+  /// put styles here...
+}
+
+/// additional styles for .well
+%well-big-style {
   /// put styles here...
 }
 
@@ -539,9 +549,35 @@ $drawer-btn-spacing: 4;
 /// toolbar
 /// ------------------------------------------------------
 
+/// @param {number} $toolbar-padding [$base-padding]
+$toolbar-padding: $base-padding;
+
 /// @param {em} $toolbar-title-size [20] - font-size of .toolbar__title
 /// @param {px} $toolbar-title-img-height [32] - height of .toolbar__title > img
 /// @param {px} $toolbar-min-height [64] - min-height
 $toolbar-title-size: 20;
 $toolbar-title-img-height: 32;
 $toolbar-min-height: 64;
+
+/// additional styles for .well
+%toolbar-style {
+  /// put styles here...
+}
+
+/// @param {em} $toolbar-small-title-size [20] - font-size of .toolbar-dense__title
+/// @param {px} $toolbar-small-title-img-height [32] - height of .toolbar-dense__title > img
+/// @param {px} $toolbar-small-min-height [64] - min-height
+$toolbar-small-title-size: 20;
+$toolbar-small-title-img-height: 32;
+$toolbar-small-min-height: 48;
+
+/// additional styles for .well
+%toolbar-small-style {
+  /// put styles here...
+}
+
+/// header
+/// ------------------------------------------------------
+
+/// @param {number} $header-padding [$base-padding] - top and bottom
+$header-padding: $base-padding;

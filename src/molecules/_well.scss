@@ -20,13 +20,22 @@
   font-weight: $well-weight;
   font-size: 100%;
 
+  /// additional styles via config
+  @extend %well-style !optional;
+
   &.#{$pfx}well_small {
     padding: rem($well-padding / 2) rem($well-padding / 2 * $well-padding-ratio);
     font-size: 87.5%;
+
+    /// additional styles via config
+    @extend %well-small-style !optional;
   }
 
   &.#{$pfx}well_big {
     padding: rem($well-padding * 2) rem($well-padding * 2 * $well-padding-ratio);
     font-size: 112.5%;
+
+    /// additional styles via config
+    @extend %well-big-style !optional;
   }
 }

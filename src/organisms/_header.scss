@@ -1,0 +1,49 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group macros
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @param {number} $header-padding [$base-padding] - top and bottom
+
+.#{$pfx}header {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-content(center);
+  @include align-items(center);
+  padding: rem($header-padding) 0;
+
+  @include headings {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  nav {
+    &:only-child {
+      @include flexbox;
+      @include justify-content(flex-end);
+      width: 100%;
+    }
+
+    ul {
+      @include flexbox;
+      @include justify-content(flex-end);
+    }
+  }
+
+  &.#{$pfx}header_stacked {
+    @include flex-direction(column);
+    @include align-items(flex-start);
+
+    nav {
+      margin-right: 0;
+      ul {
+        @include justify-content(flex-start);
+      }
+    }
+  }
+}
