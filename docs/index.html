@@ -63,6 +63,7 @@
                   <li class="nav__item"><a href="#xui-img_crop" class="btn btn_clear btn_small">img_crop</a></li>
                   <li class="nav__item"><a href="#xui-btn" class="btn btn_clear btn_small">btn</a></li>
                   <!--<li class="nav__item"><a href="#xui-btn-glow" class="btn btn_clear btn_small">btn-glow</a></li>-->
+                  <!--<li class="nav__item"><a href="#xui-hamburger-btn" class="btn btn_clear btn_small">hamburger-btn</a></li>-->
                   <li class="nav__item"><a href="#xui-bubble" class="btn btn_clear btn_small">bubble</a></li>
                   <li class="nav__item"><a href="#xui-tag" class="btn btn_clear btn_small">tag</a></li>
                   <li class="nav__item"><a href="#xui-input" class="btn btn_clear btn_small">input</a></li>
@@ -153,164 +154,154 @@
                 <span class="tag tag_super tag_small">{{version}}</span><span class="tag tag_super tag_small"
                                                                               v-for="dependancy in dependancies">{{dependancy}}</span>
               </h1>
-              <p class="lead"><strong>x.ui</strong> is a framework base on the atomic design methodology. the unicon
-                workflow is focused on modularity and structure. Everything is highly adaptable and flexible.</p>
+              <p class="lead"><strong>x.ui</strong> is a framework based on the atomic design methodology. this workflow is focused on modularity and structure. It is inspired </p>
             </section>
 
             <div class="bumper"></div>
 
             <section>
               <h2 class="mega" id="xui-structure">structure</h2>
-              _config
 
-              _caret
-              _hamburger-btn
-
-              _ec-icon
-              <div data-flex="grid">
-                <div data-col="4">
-                  <svg class="structure-icon" id="core-icon" data-name="core" xmlns="http://www.w3.org/2000/svg"
-                       viewBox="0 0 160 160">
-                    <circle fill="url(#logoGradient)" cx="80" cy="80" r="12"/>
-                  </svg>
-                  <h3 class="kilo">core</h3>
-                  <ul class="unstyled">
-                    <li>_body</li>
-                    <li>_colors</li>
-                  </ul>
-                </div>
-                <div data-col="4">
-                  <svg class="structure-icon" id="svg_atoms" data-name="atoms" xmlns="http://www.w3.org/2000/svg"
-                       viewBox="0 0 160 160">
-                    <path fill="url(#logoGradient)"
-                          d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z"/>
-                  </svg>
-                  <h3 class="kilo">atoms</h3>
-                  <ul class="unstyled">
-                    <li>_type</li>
-                    <li>_headings
-                      <ul>
-                        <li>_headings__inline</li>
-                      </ul>
+              <ul class="structure-list">
+                <!--<li>
+                  <ul class="structure-list_config">
+                    <li>
+                      <svg class="structure-icon" id="core-icon" data-name="core" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 160 160">
+                      </svg>
+                      <h3>config</h3>
                     </li>
-                    <li>_img</li>
-                    <li>_img_crop</li>
-                    <li>_btn
-                      <ul>
-                        <li>_btn_outlined</li>
-                        <li>_btn_raised</li>
-                        <li>_btn_round</li>
-                        <li>_btn__inline</li>
-                      </ul>
+                  </ul>
+                </li>-->
+                <!--<li>
+                  <ul class="structure-list_core">
+                    <li>
+                      <svg class="structure-icon" id="core-icon" data-name="core" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 160 160">
+                        <circle cx="80" cy="80" r="12"/>
+                      </svg>
+                      <h3>core</h3>
                     </li>
-                    <li>_btn-glow</li>
-                    <li>_hamburger-btn</li>
-                    <li>_bubble</li>
-                    <li>_tag
-                      <ul>
-                        <li>_tag_outlined</li>
-                        <li>_tag_round</li>
-                      </ul>
+                    <li>body</li>
+                    <li>colors</li>
+                  </ul>
+                </li>-->
+                <li>
+                  <ul class="structure-list_atoms">
+                    <li>
+                      <div>
+                        <svg class="structure-icon" id="svg_atoms" data-name="atoms" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 160 160">
+                          <path d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z"/>
+                        </svg>
+                        <h3>atoms</h3>
+                      </div>
                     </li>
-                    <li>_input
-                      <ul>
-                        <li>_input_raised</li>
-                        <li>_input_round</li>
-                      </ul>
+                    <li>type</li>
+                    <li>headings
                     </li>
-                    <li>_input-group</li>
-                    <li>_bumper</li>
-                    <li>_spacing</li>
+                    <li>img</li>
+                    <li>img_crop</li>
+                    <li>btn</li>
+                    <li>btn-glow</li>
+                    <li>hamburger-btn</li>
+                    <li>bubble</li>
+                    <li>tag</li>
+                    <li>input</li>
+                    <li>input-group</li>
+                    <li>bumper</li>
+                    <li>spacing</li>
                   </ul>
-                  <div class="spacing"></div>
-                </div>
-                <div data-col="4">
-                  <svg class="structure-icon" id="svg_molecules" data-name="molecules"
-                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                    <path fill="url(#logoGradient)"
-                          d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
-                  </svg>
-                  <h3 class="kilo">molecules</h3>
-                  <ul class="unstyled">
-                    <li>_list</li>
-                    <li>_alert
-                      <ul>
-                        <li>_alert_outlined</li>
-                        <li>_alert__inline</li>
-                      </ul>
+                </li>
+                <li>
+                  <ul class="structure-list_molecules">
+                    <li>
+                      <div>
+                        <svg class="structure-icon" id="svg_molecules" data-name="molecules"
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+                          <path d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
+                        </svg>
+                        <h3>molecules</h3>
+                      </div>
                     </li>
-                    <li>_well
-                      <ul>
-                        <li>_well__inline</li>
-                        <li>_well_outlined</li>
-                      </ul>
+                    <li>list</li>
+                    <li>alert</li>
+                    <li>well</li>
+                    <li>dropdown</li>
+                    <li>btn-group</li>
+                    <li>form-group</li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="structure-list_organisms">
+                    <li>
+                      <div>
+                        <svg class="structure-icon" id="svg_organisms" data-name="organisms"
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+                          <path d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
+                        </svg>
+                        <h3>organisms</h3>
+                      </div>
                     </li>
-                    <li>_dropdown</li>
-                    <li>_btn-group</li>
-                    <li>_form-group</li>
+                    <li>toolbar</li>
+                    <li>header</li>
+                    <li>nav</li>
                   </ul>
-                </div>
-                <div data-col="4">
-                  <svg class="structure-icon" id="svg_organisms" data-name="organisms"
-                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                    <path fill="url(#logoGradient)"
-                          d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
-                  </svg>
-                  <h3 class="kilo">organisms</h3>
-                  <ul class="unstyled">
-                    <li>_toolbar</li>
-                    <li>_header</li>
-                    <li>_nav</li>
+                </li>
+                <li>
+                  <ul class="structure-list_templates">
+                    <li>
+                      <div>
+                        <svg class="structure-icon" id="svg_templates" data-name="templates" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+                          <g><path d="M116,44V68H44V44h72m8-8H36V76h88Z"/><path d="M116,92v24H44V92h72m8-8H36v40h88Z"/></g>
+                        </svg>
+                        <h3>templates</h3>
+                      </div>
+                    </li>
+                    <li>table</li>
+                    <li>section</li>
+                    <li>kiosk</li>
                   </ul>
-                </div>
-                <div data-col="4">
-                  <svg class="structure-icon" id="svg_templates" data-name="templates"
-                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                    <path fill="url(#logoGradient)"
-                          d="M126,98h-8a2,2,0,0,0,0,4h8a2,2,0,0,0,0-4Zm0-6.29V98h0a2,2,0,1,0,2.62,3A4,4,0,0,0,130,98V91.71a2,2,0,1,0-4,0Zm0-20v8a2,2,0,0,0,4,0v-8a2,2,0,1,0-4,0ZM118.86,62H126a2,2,0,1,0,1.66-3.64A4,4,0,0,0,126,58h-7.14a2,2,0,0,0,0,4Zm-20,0h8a2,2,0,1,0,0-4h-8a2,2,0,0,0,0,4Zm-20,0h8a2,2,0,1,0,0-4h-8a2,2,0,0,0,0,4Zm-20,0h8a2,2,0,0,0,0-4h-8a2,2,0,0,0,0,4Zm-20,0h8a2,2,0,0,0,0-4h-8a2,2,0,0,0,0,4ZM34,73.14v-8a2,2,0,0,0-4,0v8a2,2,0,0,0,4,0Zm0,20v-8a2,2,0,0,0-4,0v8a2,2,0,0,0,4,0ZM46,98H38a2,2,0,0,0,0,4h8a2,2,0,0,0,0-4Zm20,0H58a2,2,0,0,0,0,4h8a2,2,0,0,0,0-4Zm20,0H78a2,2,0,0,0,0,4h8a2,2,0,0,0,0-4Zm20,0H98a2,2,0,0,0,0,4h8a2,2,0,0,0,0-4Z"/>
-                  </svg>
-                  <h3 class="kilo">templates</h3>
-                  <ul class="unstyled">
-                    <li>_table</li>
-                    <li>_section</li>
-                    <li>_kiosk</li>
+                </li>
+                <li>
+                  <ul class="structure-list_pages">
+                    <li>
+                      <div>
+                        <svg id="svg_pages" class="structure-icon" data-name="pages" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+                          <g><path d="M116,44V68H44V44h72m8-8H36V76h88Z"/><path d="M116,92v24H44V92h72m8-8H36v40h88Z"/><path d="M132,28V132H28V28H132m8-8H20V140H140Z"/></g>
+                        </svg>
+                        <h3>pages</h3>
+                      </div>
+                    </li>
+                    <li>page</li>
                   </ul>
-                </div>
-                <div data-col="4">
-                  <svg class="structure-icon" id="svg_pages" data-name="pages" xmlns="http://www.w3.org/2000/svg"
-                       viewBox="0 0 160 160">
-                    <path fill="url(#logoGradient)"
-                          d="M56.86,36a2,2,0,0,1,2-2h8a2,2,0,0,1,0,4h-8A2,2,0,0,1,56.86,36Zm22,2h8a2,2,0,0,0,0-4h-8a2,2,0,0,0,0,4Zm-40,0h8a2,2,0,0,0,0-4h-8a2,2,0,0,0,0,4ZM126,47.71v8a2,2,0,1,0,4,0v-8a2,2,0,0,0-4,0ZM78,78h8a2,2,0,0,0,0-4H78a2,2,0,0,0,0,4Zm40,0h8a2,2,0,0,0,1.31-.5,2,2,0,0,0,1.31-.48A4,4,0,0,0,130,74V67.71a2,2,0,1,0-4,0h0V74h-8a2,2,0,0,0,0,4ZM58,78h8a2,2,0,0,0,0-4H58a2,2,0,0,0,0,4ZM32,71.14a2,2,0,0,0,2-2v-8a2,2,0,0,0-4,0v8A2,2,0,0,0,32,71.14ZM38,78h8a2,2,0,0,0,0-4H38a2,2,0,0,0,0,4Zm80.86-40H126a2,2,0,1,0,1.66-3.64A4,4,0,0,0,126,34h-7.14a2,2,0,0,0,0,4Zm-20,0h8a2,2,0,1,0,0-4h-8a2,2,0,0,0,0,4ZM98,78h8a2,2,0,0,0,0-4H98a2,2,0,0,0,0,4ZM32,51.14a2,2,0,0,0,2-2v-8a2,2,0,0,0-4,0v8A2,2,0,0,0,32,51.14ZM126,86a2,2,0,1,0,1.66-3.64A4,4,0,0,0,126,82h-7.14a2,2,0,0,0,0,4Zm2,7.71a2,2,0,0,0-2,2v8a2,2,0,0,0,4,0v-8A2,2,0,0,0,128,93.71ZM66.86,82h-8a2,2,0,0,0,0,4h8a2,2,0,1,0,0-4Zm20,0h-8a2,2,0,0,0,0,4h8a2,2,0,1,0,0-4Zm20,0h-8a2,2,0,0,0,0,4h8a2,2,0,1,0,0-4Zm-60,0h-8a2,2,0,0,0,0,4h8a2,2,0,1,0,0-4ZM32,99.14a2,2,0,0,0,2-2v-8a2,2,0,0,0-4,0v8A2,2,0,0,0,32,99.14Zm0,20a2,2,0,0,0,2-2v-8a2,2,0,1,0-4,0v8A2,2,0,0,0,32,119.14ZM38,126h8a2,2,0,0,0,0-4H38a2,2,0,0,0,0,4Zm80,0h8a2,2,0,0,0,1.31-.5,2,2,0,0,0,1.31-.48,4,4,0,0,0,1.38-3v-6.29a2,2,0,1,0-4,0h0V122h-8a2,2,0,0,0,0,4Zm-20,0h8a2,2,0,0,0,0-4H98a2,2,0,0,0,0,4Zm-40,0h8a2,2,0,0,0,0-4H58a2,2,0,0,0,0,4Zm20,0h8a2,2,0,0,0,0-4H78a2,2,0,0,0,0,4ZM142,24V136a2,2,0,0,1-2,2H20a2,2,0,0,1-2-2V22H140A2,2,0,0,1,142,24Zm-8,6H26V130H134Z"/>
-                  </svg>
-                  <h3 class="kilo">pages</h3>
-                  <ul class="unstyled">
-                    <li>_page</li>
+                </li>
+                <li>
+                  <ul class="structure-list_modifier">
+                    <li>
+                      <div>
+                        <svg class="structure-icon" id="svg_modifier" data-name="modifier" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 160 160">
+                          <path d="M100,76H86.93l6.53-11.32a4,4,0,1,0-6.92-4L80,72,73.46,60.68a4,4,0,0,0-6.92,4L73.07,76H60a4,4,0,0,0,0,8H73.07L66.54,95.32a4,4,0,0,0,6.92,4L80,88l6.54,11.32a4,4,0,1,0,6.92-4L86.93,84H100a4,4,0,0,0,0-8Z"/>
+                        </svg>
+                        <h3>modifier</h3>
+                      </div>
+                    </li>
+                    <li>text-color</li>
+                    <li>theme</li>
+                    <li>padding</li>
+                    <li>text-alignment</li>
+                    <li>type-setting</li>
+                    <li>tooltip</li>
                   </ul>
-                </div>
-                <div data-col="4">
-                  <svg class="structure-icon" id="svg_modifier" data-name="modifier" xmlns="http://www.w3.org/2000/svg"
-                       viewBox="0 0 160 160">
-                    <path fill="url(#logoGradient)"
-                          d="M100,76H86.93l6.53-11.32a4,4,0,1,0-6.92-4L80,72,73.46,60.68a4,4,0,0,0-6.92,4L73.07,76H60a4,4,0,0,0,0,8H73.07L66.54,95.32a4,4,0,0,0,6.92,4L80,88l6.54,11.32a4,4,0,1,0,6.92-4L86.93,84H100a4,4,0,0,0,0-8Z"/>
-                  </svg>
-                  <h3 class="kilo">modifier</h3>
-                  <ul class="unstyled">
-                    <li>_text-color</li>
-                    <li>_theme</li>
-                    <li>_padding</li>
-                    <li>_text-alignment</li>
-                    <li>_type-setting</li>
-                    <li>_tooltip</li>
-                  </ul>
-                </div>
-              </div>
-
+                </li>
+              </ul>
             </section>
 
             <div class="bumper bumper_big"></div>
 
             <h2 class="mega" id="xui-atoms">atoms</h2>
-            <p class="lead">Atoms are the basic building blocks of matter.</p>
+            <p class="lead">Atoms are the smallest building blocks in this methodology. Atoms are elements like type, headings, inputs, buttons and more.</p>
 
             <div class="spacing"></div>
 
@@ -468,6 +459,20 @@
                   </li>
                 </ul>
               </div>
+            </section>
+
+            <div class="bumper"></div>
+
+            <!--TODO documentation-->
+            <section>
+              <h3 id="xui-btn-glow" class="kilo">btn-glow <span class="tag tag_small">atoms/btn-glow</span></h3>
+              <div class="alert alert_small"><strong>TODO documentation</strong></div>
+            </section>
+
+            <!--TODO documentation-->
+            <section>
+              <h3 id="xui-hamburger-btn" class="kilo">btn-glow <span class="tag tag_small">atoms/hamburger-btn</span></h3>
+              <div class="alert alert_small"><strong>TODO documentation</strong></div>
             </section>
 
             <div class="bumper"></div>
@@ -1250,6 +1255,7 @@
                   href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
                   class="tag tag_small tag_error">flex</a>
               </h3>
+              <div class="alert alert_small"><strong>TODO documentation</strong></div>
             </section>
 
             <div class="bumper"></div>
@@ -1374,14 +1380,20 @@
               </table>
             </section>
 
+            <div class="bumper"></div>
+
             <!--TODO documentation-->
             <section>
               <h3 id="xui-section" class="kilo">section <span class="tag tag_small">templates/section</span></h3>
+              <div class="alert alert_small"><strong>TODO documentation</strong></div>
             </section>
+
+            <div class="bumper"></div>
 
             <!--TODO documentation-->
             <section>
               <h3 id="xui-kiosk" class="kilo">kiosk <span class="tag tag_small">templates/kiosk</span></h3>
+              <div class="alert alert_small"><strong>TODO documentation</strong></div>
             </section>
 
             <div class="bumper bumper_big"></div>
@@ -1393,6 +1405,7 @@
             <!--TODO documentation-->
             <section>
               <h3 id="xui-page" class="kilo">page <span class="tag tag_small">pages/page</span></h3>
+              <div class="alert alert_small"><strong>TODO documentation</strong></div>
             </section>
 
             <div class="bumper bumper_big"></div>
@@ -1417,6 +1430,7 @@
             <!--TODO documentation-->
             <section>
               <h3 id="xui-theme" class="kilo">theme <span class="tag tag_small">modifier/theme</span></h3>
+              <div class="alert alert_small"><strong>TODO documentation</strong></div>
             </section>
 
             <div class="bumper"></div>
@@ -1424,6 +1438,7 @@
             <!--TODO documentation-->
             <section>
               <h3 id="xui-padding" class="kilo">padding <span class="tag tag_small">modifier/padding</span></h3>
+              <div class="alert alert_small"><strong>TODO documentation</strong></div>
             </section>
 
             <div class="bumper"></div>

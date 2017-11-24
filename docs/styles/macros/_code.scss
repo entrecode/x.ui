@@ -1,6 +1,7 @@
 .code {
   font-family: monospace;
   background-color: getColor(background, lighter);
+  border: 1px solid rgba(black,.2);
   color: getColor(text);
   font-size: rem(12);
   line-height: rem(16);
