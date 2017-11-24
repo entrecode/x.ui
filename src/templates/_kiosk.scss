@@ -1,58 +1,60 @@
 /// @author Bernhard Ruoff
 /// @since 7.0.0
 /// @access public
-/// @group partials
+/// @group templates
+///
+/// @param {variable} $pfx [''] - global prefixing
 
-.kiosk {
+.#{$pfx}kiosk {
   @include flexbox;
   @include flex-wrap(wrap);
   width: 100%;
 
-  .kiosk-header {
+  .#{$pfx}kiosk-header {
     @include flex-grow(0);
     @include align-self(flex-start);
     width: 100%
   }
 
-  .kiosk-body {
+  .#{$pfx}kiosk-body {
     height: 100%;
   }
 
-  .kiosk-aside {}
+  .#{$pfx}kiosk-aside {}
 
-  .kiosk-footer {
+  .#{$pfx}kiosk-footer {
     @include flex-grow(0);
     @include align-self(flex-end);
     width: 100%
   }
 
-  &.kiosk_reverse {
-    .kiosk-header {
+  &.#{$pfx}kiosk_reverse {
+    .#{$pfx}kiosk-header {
       @include order(1);
     }
 
-    .kiosk-body {
+    .#{$pfx}kiosk-body {
       @include order(2);
     }
 
-    .kiosk-aside {
+    .#{$pfx}kiosk-aside {
       @include order(3);
     }
 
-    .kiosk-footer {
+    .#{$pfx}kiosk-footer {
       @include order(1);
     }
   }
 
-  &.kiosk_fixed {
+  &.#{$pfx}kiosk_fixed {
     height: 100vh;
     overflow: hidden;
 
-    .kiosk-body {
+    .#{$pfx}kiosk-body {
       overflow-y: auto;
     }
 
-    .kiosk-aside {
+    .#{$pfx}kiosk-aside {
       overflow-y: auto;
     }
   }
