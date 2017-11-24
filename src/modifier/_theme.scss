@@ -3,6 +3,8 @@
 /// @access public
 /// @group theme modifier
 ///
+/// @param {variable} $pfx [''] - global prefixing
+///
 /// @param {array} $name-array - postfix names appending `.theme-`
 /// @param {array} $color-array - theme colors
 /// @param {array} $postfix-array - shade postfix names
@@ -24,7 +26,7 @@ $shade-array: -16, -8, -4, 4, 8, 16;
   }
 
   @if $name == 'default' {
-    .theme {
+    .#{$pfx}theme {
       background-color: $color;
       color: setContrast($color);
 
@@ -47,7 +49,7 @@ $shade-array: -16, -8, -4, 4, 8, 16;
       }
     }
   } @else {
-    .theme-#{$name} {
+    .#{$pfx}theme-#{$name} {
       background-color: $color;
       color: setContrast($color);
 
