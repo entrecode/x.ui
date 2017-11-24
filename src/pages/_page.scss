@@ -1,23 +1,24 @@
 /// @author Bernhard Ruoff
 /// @since 7.0.0
 /// @access public
-/// @group partial layout
+/// @group pages
 ///
+/// @param {variable} $pfx [''] - global prefixing
 /// @param {value} $project-class [page] - class name of main layout wrapper
 
-.#{$project-class} {
+.#{$pfx}#{$project-class} {
   @include flexbox;
   @include flex-direction(column);
 
-  .#{$project-class}-header {
+  .#{$pfx}#{$project-class}-header {
     @include flex-grow(0);
   }
 
-  .#{$project-class}-body {
+  .#{$pfx}#{$project-class}-body {
     @include flex-grow(1);
   }
 
-  .#{$project-class}-footer {
+  .#{$pfx}#{$project-class}-footer {
     @include flex-grow(0);
   }
 }
