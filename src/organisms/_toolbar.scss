@@ -20,7 +20,7 @@
   /// additional styles via config
   @extend %toolbar-style !optional;
 
-  > .drawer-btn {
+  > .#{$pfx}hamburger-btn {
     margin: 0;
 
     &:first-child {

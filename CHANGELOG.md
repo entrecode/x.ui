@@ -18,7 +18,7 @@
 - removed `.form-group`
 - removed `.pill` styles - use `.tag` instead
 - prefixed all `.padding` modifier classes with `.padding_`
-- renamed `.drawer-toggle` to `.drawer-btn`
+- renamed `.drawer-toggle` to `.hamburger-btn`
 - removed `.select` - use `.dropdown` instead
 - removed `.menubar` - use `.toolbar` instead
 - removed `.navigation-drawer`
