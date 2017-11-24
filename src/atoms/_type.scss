@@ -3,6 +3,8 @@
 /// @access public
 /// @group atoms
 ///
+/// @param {variable} $pfx [''] - global prefixing
+///
 /// @param {value} $body-font
 /// @param {value} $headings-font
 /// @param {number} $base-font-size [16]
@@ -57,12 +59,12 @@ p {
   @extend %paragraph-styles !optional;
 
 
-  &.small {
+  &.#{$pfx}small {
     vertical-align: baseline;
     font-size: ($inline-small-size*1em);
   }
 
-  &.lead {
+  &.#{$pfx}lead {
     @include get-font-size(lead);
     font-weight: $paragraph-lead-weight;
   }
