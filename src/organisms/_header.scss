@@ -1,11 +1,15 @@
 /// @author Bernhard Ruoff
 /// @since 7.0.0
 /// @access public
-/// @group macros
+/// @group organism
 ///
 /// @param {variable} $pfx [''] - global prefixing
 ///
 /// @param {number} $header-padding [$base-padding] - top and bottom
+
+
+
+//TODO optimize
 
 .#{$pfx}header {
   @include flexbox;
