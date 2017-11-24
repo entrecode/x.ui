@@ -1,6 +1,7 @@
-/// bumper
 /// @author Bernhard Ruoff
-/// @since 0.0.1
+/// @since 7.0.0
+/// @access public
+/// @group atoms
 ///
 /// @param {variable} $pfx [''] - global prefixing
 /// @prop {number} $base-padding [16] - small padding value for padding helper
@@ -8,7 +9,7 @@
 /// @example
 ///   <div class='spacing'></div>
 
-.spacing {
+.#{$pfx}spacing {
   height: rem($base-padding*2);
 
   &.#{$pfx}spacing_small {

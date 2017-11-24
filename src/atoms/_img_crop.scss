@@ -1,4 +1,11 @@
-.img_crop-1-1 {
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {variable} $pfx [''] - global prefixing
+
+.#{$pfx}img_crop-1-1 {
   width: 100%;
   padding-top: 100%;
   position: relative;
@@ -14,7 +21,7 @@
   }
 }
 
-.img_crop-4-3 {
+.#{$pfx}img_crop-4-3 {
   width: 100%;
   padding-top: 100 / 4 * 3%;
   position: relative;
@@ -30,7 +37,7 @@
   }
 }
 
-.img_crop-16-9 {
+.#{$pfx}img_crop-16-9 {
   width: 100%;
   padding-top: 100 / 16 * 9%;
   position: relative;
