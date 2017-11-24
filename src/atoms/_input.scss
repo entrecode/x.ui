@@ -81,6 +81,19 @@
 
   @at-root select.#{$pfx}input {
     height: em($input-min-height, $input-font-size);
+
+    &[multiple] {
+      height: auto;
+    }
+
+    option {
+      padding: 0 rem(8);
+    }
+  }
+
+  @at-root textarea.#{$pfx}input {
+    height: auto;
+    resize: vertical;
   }
 
   ///
@@ -153,5 +166,28 @@
     &.big {
       @include border-radius(rem($input-big-min-height / 2));
     }
+  }
+}
+
+/// Keep the original size
+input[type='checkbox'],
+input[type='file'],
+input[type='image'],
+input[type='radio'] {
+  height: auto;
+  width: auto;
+  display: inline-block;
+}
+
+/// Checkbox & radio
+input[type='checkbox'],
+input[type='radio'] {
+  line-height: normal;
+  padding: 0;
+  vertical-align: middle;
+
+  & + small {
+    display: inline-block;
+    cursor: pointer;
   }
 }
