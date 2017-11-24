@@ -1,7 +1,9 @@
 /// @author Bernhard Ruoff
 /// @since 7.0.0
 /// @access public
-/// @group theme modifier
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
 ///
 /// @param {value} $prefix ['text-']
 /// @param {array} $name-array - postfix names appending $prefix
@@ -17,7 +19,7 @@ $color-array: getColor(text), getColor(text, light), getColor(text, lighter), ge
   $color: nth($color-array, $i);
   $name: nth($name-array, $i);
 
-  .#{$prefix}#{$name} {
+  .#{$pfx}#{$prefix}#{$name} {
     color: $color !important;
   }
 }

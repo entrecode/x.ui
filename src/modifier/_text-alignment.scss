@@ -1,16 +1,18 @@
 /// @author Bernhard Ruoff
 /// @since 7.0.0
 /// @access public
-/// @group type modifier
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
 
-.text-center {
+.#{$pfx}text-center {
   text-align: center;
 }
 
-.text-right {
+.#{$pfx}text-right {
   text-align: right;
 }
 
-.text-left {
+.#{$pfx}text-left {
   text-align: left;
 }

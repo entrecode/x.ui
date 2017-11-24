@@ -1,27 +1,29 @@
 /// @author Bernhard Ruoff
 /// @since 7.0.0
 /// @access public
-/// @group type modifier
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
 
 /// no text wrapping
-.nowrap {
+.#{$pfx}nowrap {
   white-space: nowrap;
   vertical-align: baseline;
 }
 
 /// uses automatic hyphenation
-.hyphen {
+.#{$pfx}hyphen {
   @include word-wrap;
 }
 
 /// use automatic hyphenation with justification
-.hyphen-block {
+.#{$pfx}hyphen-block {
   text-align: justify;
   @include word-wrap;
 }
 
 /// automatic text cut off with ...
-.ellipsis {
+.#{$pfx}ellipsis {
   @include ellipsis;
   display: block;
 }
