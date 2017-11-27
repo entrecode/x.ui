@@ -871,7 +871,7 @@
             <section>
               <h3 id="xui-dropdown" class="kilo">dropdown <span class="tag tag_small">molecules/dropdown</span> <span
                   class="tag tag_small tag_super">css only</span> <span
-                  class="tag tag_small tag_info">in progress</span>
+                  class="tag tag_small tag_error">in progress</span>
               </h3>
               <div class="well">
                 <div data-flex="grid">
@@ -1447,6 +1447,7 @@
             <section>
               <h3 class="kilo" id="xui-text-color">text-color <span class="tag tag_small">modifier/text-color</span>
               </h3>
+              <p>the text-color modifiers only affect the css color attribute. it can be uses on all elements.</p>
               <div class="well well_small">
                 <div data-flex="grid">
                   <div v-for="mod in globals.type.colorModifiers" data-col="2sm">
@@ -1458,10 +1459,83 @@
 
             <div class="bumper"></div>
 
-            <!--TODO documentation-->
             <section>
               <h3 id="xui-theme" class="kilo">theme <span class="tag tag_small">modifier/theme</span></h3>
-              <div class="alert alert_small"><strong>TODO documentation</strong></div>
+              <p>the theme-modifier affect the color and background-color attribute. the color is calculated according
+                to the
+                <a href="https://www.w3.org/TR/AERT/#color-contrast" target="_blank" rel="noopener">Web Content
+                  Accessibility Guidelines</a> suggested by W3C. the six theme-presets with their 6 shades are based on
+                the 6 core colors defined in <span class="code">_config.scss</span>.</p>
+              <div class="demo-theme">
+                <div data-flex="grid">
+                  <div data-col="4sm">
+                    <h4 class="h6">default</h4>
+                    <div class="theme_lightest">theme_lightest</div>
+                    <div class="theme_lighter">theme_lighter</div>
+                    <div class="theme_light">theme_light</div>
+                    <div class="theme">theme</div>
+                    <div class="theme_dark">theme_dark</div>
+                    <div class="theme_darker">theme_darker</div>
+                    <div class="theme_darkest">theme_darkest</div>
+                    <div class="spacing spacing_small"></div>
+                  </div>
+                  <div data-col="4sm">
+                    <h4 class="h6">link</h4>
+                    <div class="theme-link_lightest">theme-link_lightest</div>
+                    <div class="theme-link_lighter">theme-link_lighter</div>
+                    <div class="theme-link_light">theme-link_light</div>
+                    <div class="theme-link">theme-link</div>
+                    <div class="theme-link_dark">theme-link_dark</div>
+                    <div class="theme-link_darker">theme-link_darker</div>
+                    <div class="theme-link_darkest">theme-link_darkest</div>
+                    <div class="spacing spacing_small"></div>
+                  </div>
+                  <div data-col="4sm">
+                    <h4 class="h6">super</h4>
+                    <div class="theme-super_lightest">theme-super_lightest</div>
+                    <div class="theme-super_lighter">theme-super_lighter</div>
+                    <div class="theme-super_light">theme-super_light</div>
+                    <div class="theme-super">theme-super</div>
+                    <div class="theme-super_dark">theme-super_dark</div>
+                    <div class="theme-super_darker">theme-super_darker</div>
+                    <div class="theme-super_darkest">theme-super_darkest</div>
+                    <div class="spacing spacing_small"></div>
+                  </div>
+                  <div data-col="4sm">
+                    <h4 class="h6">minor</h4>
+                    <div class="theme-minor_lightest">theme-minor_lightest</div>
+                    <div class="theme-minor_lighter">theme-minor_lighter</div>
+                    <div class="theme-minor_light">theme-minor_light</div>
+                    <div class="theme-minor">theme-minor</div>
+                    <div class="theme-minor_dark">theme-minor_dark</div>
+                    <div class="theme-minor_darker">theme-minor_darker</div>
+                    <div class="theme-minor_darkest">theme-minor_darkest</div>
+                    <div class="spacing spacing_small"></div>
+                  </div>
+                  <div data-col="4sm">
+                    <h4 class="h6">highlight</h4>
+                    <div class="theme-highlight_lightest">theme-highlight_lightest</div>
+                    <div class="theme-highlight_lighter">theme-highlight_lighter</div>
+                    <div class="theme-highlight_light">theme-highlight_light</div>
+                    <div class="theme-highlight">theme-highlight</div>
+                    <div class="theme-highlight_dark">theme-highlight_dark</div>
+                    <div class="theme-highlight_darker">theme-highlight_darker</div>
+                    <div class="theme-highlight_darkest">theme-highlight_darkest</div>
+                    <div class="spacing spacing_small"></div>
+                  </div>
+                  <div data-col="4sm">
+                    <h4 class="h6">invert</h4>
+                    <div class="theme-invert_lightest">theme-invert_lightest</div>
+                    <div class="theme-invert_lighter">theme-invert_lighter</div>
+                    <div class="theme-invert_light">theme-invert_light</div>
+                    <div class="theme-invert">theme-invert</div>
+                    <div class="theme-invert_dark">theme-invert_dark</div>
+                    <div class="theme-invert_darker">theme-invert_darker</div>
+                    <div class="theme-invert_darkest">theme-invert_darkest</div>
+                    <div class="spacing spacing_small"></div>
+                  </div>
+                </div>
+              </div>
             </section>
 
             <div class="bumper"></div>
@@ -1469,7 +1543,44 @@
             <!--TODO documentation-->
             <section>
               <h3 id="xui-padding" class="kilo">padding <span class="tag tag_small">modifier/padding</span></h3>
-              <div class="alert alert_small"><strong>TODO documentation</strong></div>
+              <table class="table">
+                <tr>
+                  <td><span class="code">padding</span></td>
+                  <td>adds a surrounding padding</td>
+                </tr>
+                <tr>
+                  <td><span class="code">padding-middle</span></td>
+                  <td>adds padding-top and padding-bottom</td>
+                </tr>
+                <tr>
+                  <td><span class="code">padding-center</span></td>
+                  <td>adds padding-left and padding-right</td>
+                </tr>
+                <tr>
+                  <td><span class="code">padding-top</span></td>
+                  <td>adds padding-top</td>
+                </tr>
+                <tr>
+                  <td><span class="code">padding-right</span></td>
+                  <td>adds padding-right</td>
+                </tr>
+                <tr>
+                  <td><span class="code">padding-bottom</span></td>
+                  <td>adds padding-bottom</td>
+                </tr>
+                <tr>
+                  <td><span class="code">padding-left</span></td>
+                  <td>adds padding-left</td>
+                </tr>
+              </table>
+              <table class="table">
+                <tbody>
+                <tr>
+                  <td><strong>size-modifier</strong></td>
+                  <td><span class="code">padding_small</span>, <span class="code">padding_big</span></td>
+                </tr>
+                </tbody>
+              </table>
             </section>
 
             <div class="bumper"></div>
