@@ -58,7 +58,6 @@ p {
 
   @extend %paragraph-styles !optional;
 
-
   &.#{$pfx}small {
     vertical-align: baseline;
     font-size: ($inline-small-size*1em);
