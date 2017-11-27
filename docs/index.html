@@ -55,6 +55,16 @@
                 <div class="bumper bumper_small"></div>
               </li>
               <li class="nav__item">
+                <a href="#xui-xlcss" class="btn btn_clear">xlcss</a>
+                <ul class="nav__items">
+                  <li class="nav__item"><a href="#xui-grid" class="btn btn_clear btn_small">grid</a></li>
+                  <li class="nav__item"><a href="#xui-flex-grid" class="btn btn_clear btn_small">flex-grid</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="bumper bumper_small"></div>
+              </li>
+              <li class="nav__item">
                 <a href="#xui-atoms" class="btn btn_clear">atoms</a>
                 <ul class="nav__items">
                   <li class="nav__item"><a href="#xui-type" class="btn btn_clear btn_small">type</a></li>
@@ -62,12 +72,13 @@
                   <li class="nav__item"><a href="#xui-img" class="btn btn_clear btn_small">img</a></li>
                   <li class="nav__item"><a href="#xui-img_crop" class="btn btn_clear btn_small">img_crop</a></li>
                   <li class="nav__item"><a href="#xui-btn" class="btn btn_clear btn_small">btn</a></li>
-                  <li class="nav__item"><a href="#xui-btn-glow"
-                                           class="btn btn_clear btn_small"><span>btn-glow </span><span
-                      class="tag tag_error tag_small">TODO</span></a></li>
-                  <li class="nav__item"><a href="#xui-hamburger-btn"
-                                           class="btn btn_clear btn_small"><span>hamburger-btn</span> <span
-                      class="tag tag_error tag_small">TODO</span></a></li>
+                  <li class="nav__item">
+                    <a href="#xui-btn-glow" class="btn btn_clear btn_small"><span>btn-glow </span>
+                      <span class="tag tag_error tag_small">TODO</span></a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="#xui-hamburger-btn" class="btn btn_clear btn_small"><span>hamburger-btn</span>
+                      <span class="tag tag_error tag_small">TODO</span></a></li>
                   <li class="nav__item"><a href="#xui-bubble" class="btn btn_clear btn_small">bubble</a></li>
                   <li class="nav__item"><a href="#xui-tag" class="btn btn_clear btn_small">tag</a></li>
                   <li class="nav__item"><a href="#xui-input" class="btn btn_clear btn_small">input</a></li>
@@ -108,8 +119,10 @@
                 <a href="#xui-templates" class="btn btn_clear">templates</a>
                 <ul class="nav__items">
                   <li class="nav__item"><a href="#xui-table" class="btn btn_clear btn_small">table</a></li>
-                  <li class="nav__item"><a href="#xui-section" class="btn btn_clear btn_small">section</a></li>
-                  <li class="nav__item"><a href="#xui-kiosk" class="btn btn_clear btn_small">kiosk</a></li>
+                  <li class="nav__item"><a href="#xui-section" class="btn btn_clear btn_small"><span>section</span>
+                    <span class="tag tag_error tag_small">TODO</span></a></li>
+                  <li class="nav__item"><a href="#xui-kiosk" class="btn btn_clear btn_small"><span>kiosk</span> <span
+                      class="tag tag_error tag_small">TODO</span></a></li>
                 </ul>
               </li>
               <li>
@@ -320,6 +333,56 @@
 
             <div class="bumper bumper_big"></div>
 
+            <section>
+              <h2 class="mega" id="xui-xlcss">xlcss</h2>
+              <p class="lead"><strong>x.ui</strong> inherits a lot of functions and mixins from <a
+                  href="https://github.com/entrecode/xlcss" target="_blank" rel="noopener">xlcss</a>. xlcss also
+                delivers the grid-system, that is a core layout system throughout <strong>x.ui</strong>.</p>
+              <div class="spacing"></div>
+              <h3 class="h6">breakpoints</h3>
+              <div data-flex="grid">
+                <div data-col="2sm">
+                  <div class="form-group">
+                    <label for="bpXs">mobile <strong>xs</strong></label>
+                    <input type="number" id="bpXs" :value="grid.breakpoints.xs" class="input">
+                  </div>
+                </div>
+                <div data-col="2sm">
+                  <div class="form-group">
+                    <label for="bpSm">mobile landscape <strong>sm</strong></label>
+                    <input type="number" id="bpSm" :value="grid.breakpoints.sm" class="input">
+                  </div>
+                </div>
+                <div data-col="2sm">
+                  <div class="form-group">
+                    <label for="bpMd">tablet <strong>md</strong></label>
+                    <input type="number" id="bpMd" :value="grid.breakpoints.md" class="input">
+                  </div>
+                </div>
+                <div data-col="2sm">
+                  <div class="form-group">
+                    <label for="bpLg">tablet landscape <strong>lg</strong></label>
+                    <input type="number" id="bpLg" :value="grid.breakpoints.lg" class="input">
+                  </div>
+                </div>
+                <div data-col="2sm">
+                  <div class="form-group">
+                    <label for="bpXl">desktop <strong>xl</strong></label>
+                    <input type="number" id="bpXl" :value="grid.breakpoints.xl" class="input">
+                  </div>
+                </div>
+                <div data-col="2sm">
+                  <div class="form-group">
+                    <label for="bpXxl">desktop <strong>xxl</strong></label>
+                    <input type="number" id="bpXxl" :value="grid.breakpoints.xxl" class="input">
+                  </div>
+                </div>
+              </div>
+
+            </section>
+
+            <div class="bumper bumper_big"></div>
+
             <h2 class="mega" id="xui-atoms">atoms</h2>
             <p class="lead">Atoms are the smallest building blocks in this methodology. Atoms are elements like type,
               headings, inputs, buttons and more. Atoms only have one function. Most atoms have specific modifiers that
@@ -440,7 +503,7 @@
                 the superior style by the additional modifier <span class="code">btn_super</span></p>
               <div class="well">
                 <ul data-flex="small-grid">
-                  <li v-for="(value, key) in globals.btn.styles" data-col="4">
+                  <li v-for="(value, key) in atoms.btn.styles" data-col="4">
                     <a class="btn btn_block" :class="value">{{key}}</a>
                   </li>
                 </ul>
@@ -455,7 +518,7 @@
               <h4 class="h6">button style modifier</h4>
               <div class="well">
                 <ul data-flex="small-grid">
-                  <li v-for="(value, key) in globals.btn.modifiers" class="text-center" data-col="2">
+                  <li v-for="(value, key) in atoms.btn.modifiers" class="text-center" data-col="2">
                     <a class="btn btn_block" :class="value">{{key}}</a>
                     <span class="code" style="margin-top: 8px;">btn_{{key}}</span>
                   </li>
@@ -464,8 +527,8 @@
               <div class="spacing"></div>
               <h4 class="h6">button size modifier</h4>
               <div class="well">
-                <ul data-flex="small-grid">
-                  <li v-for="(value, key) in globals.btn.sizes" data-col="4" class="text-center">
+                <ul data-flex="small-grid center">
+                  <li v-for="(value, key) in atoms.btn.sizes" data-col="4" class="text-center">
                     <a class="btn" :class="value">{{ key }}</a><br>
                     <span class="code" style="margin-top: 8px;">btn_{{key}}</span>
                   </li>
@@ -474,8 +537,8 @@
               <div class="spacing"></div>
               <h4 class="h6">button width modifier</h4>
               <div class="well">
-                <ul data-flex="small-grid">
-                  <li v-for="(value, key) in globals.btn.width" data-col="4" class="text-center">
+                <ul data-flex="small-grid center">
+                  <li v-for="(value, key) in atoms.btn.width" data-col="4" class="text-center">
                     <a class="btn" :class="[value]">{{key}}</a><br v-if="value !== 'btn_block'">
                     <span class="code" style="margin-top: 8px;">btn_{{key}}</span>
                   </li>
@@ -533,19 +596,19 @@
                 <tr>
                   <td><strong>theme modifier</strong></td>
                   <td>
-                    <span class="code" v-for="theme in macros.bubbles.themeModifiers">{{ '.' + theme}}</span>
+                    <span class="code" v-for="theme in atoms.bubbles.themeModifiers">{{ '.' + theme}}</span>
                   </td>
                 </tr>
                 <tr>
                   <td><strong>state modifier</strong></td>
                   <td>
-                    <span class="code" v-for="state in macros.bubbles.stateModifiers">{{ '.' + state}}</span>
+                    <span class="code" v-for="state in atoms.bubbles.stateModifiers">{{ '.' + state}}</span>
                   </td>
                 </tr>
                 <tr>
                   <td><strong>size modifier</strong></td>
                   <td>
-                    <span class="code" v-for="size in macros.bubbles.sizeModifiers">{{ '.' + size}}</span>
+                    <span class="code" v-for="size in atoms.bubbles.sizeModifiers">{{ '.' + size}}</span>
                   </td>
                 </tr>
                 <tr>
@@ -586,25 +649,25 @@
                 <tr>
                   <td><strong>theme modifier</strong></td>
                   <td>
-                    <span class="code" v-for="theme in macros.tags.themeModifiers">{{ '.' + theme}}</span>
+                    <span class="code" v-for="theme in atoms.tags.themeModifiers">{{ '.' + theme}}</span>
                   </td>
                 </tr>
                 <tr>
                   <td><strong>state modifier</strong></td>
                   <td>
-                    <span class="code" v-for="state in macros.tags.stateModifiers">{{ '.' + state}}</span>
+                    <span class="code" v-for="state in atoms.tags.stateModifiers">{{ '.' + state}}</span>
                   </td>
                 </tr>
                 <tr>
                   <td><strong>size modifier</strong></td>
                   <td>
-                    <span class="code" v-for="size in macros.tags.sizeModifiers">{{ '.' + size}}</span>
+                    <span class="code" v-for="size in atoms.tags.sizeModifiers">{{ '.' + size}}</span>
                   </td>
                 </tr>
                 <tr>
                   <td><strong>style modifier</strong></td>
                   <td>
-                    <span class="code" v-for="style in macros.tags.styleModifiers">{{ '.' + style}}</span>
+                    <span class="code" v-for="style in atoms.tags.styleModifiers">{{ '.' + style}}</span>
                   </td>
                 </tr>
                 </tbody>
@@ -661,6 +724,24 @@
                   <input type="text" class="input input_raised" value="input_raised">
                   <pre><code class="html">
 <input class="input input_raised"></code></pre>
+                </div>
+              </div>
+
+              <div class="spacing spacing_small"></div>
+              <h4 class="h6">input validation modifier</h4>
+              <p>the validation modifier are classes generated by <strong>angular js</strong>.</p>
+              <div data-flex="grid">
+                <div data-col="3sm">
+                  <input type="text" class="input ng-dirty ng-valid" value="ng-valid">
+                </div>
+                <div data-col="3sm">
+                  <input type="text" class="input ng-dirty ng-invalid" value="ng-invalid">
+                </div>
+                <div data-col="3sm">
+                  <input type="text" class="input ng-dirty ng-pending" value="ng-pending">
+                </div>
+                <div data-col="3sm">
+                  <input type="text" class="input ng-dirty ng-submitted" value="ng-submitted">
                 </div>
               </div>
             </section>
@@ -803,7 +884,7 @@
               <div class="spacing"></div>
               <h4 class="h6">alert theme modifier</h4>
               <div data-flex="grid">
-                <div data-col="6" v-for="mod in macros.alerts.themeModifiers">
+                <div data-col="6" v-for="mod in molecules.alerts.themeModifiers">
                   <div class="alert" :class="mod">
                     <p>Sie sprach weiter und weiter.</p>
                   </div>
@@ -814,7 +895,7 @@
               <div class="spacing"></div>
               <h4 class="h6">alert state modifier</h4>
               <div data-flex="grid">
-                <div data-col="6" v-for="mod in macros.alerts.stateModifiers">
+                <div data-col="6" v-for="mod in molecules.alerts.stateModifiers">
                   <div class="alert" :class="mod">
                     <p>Sie sprach weiter und weiter.</p>
                   </div>
@@ -825,7 +906,7 @@
               <div class="spacing"></div>
               <h4 class="h6">alert style modifier</h4>
               <div data-flex="grid">
-                <div data-col="6" v-for="style in macros.alerts.styleModifiers">
+                <div data-col="6" v-for="style in molecules.alerts.styleModifiers">
                   <div class="alert" :class="[style]">
                     <p>Sie sprach weiter und weiter.</p>
                   </div>
@@ -853,13 +934,13 @@
                 <tr>
                   <td><strong>size modifier</strong></td>
                   <td>
-                    <span class="code" v-for="size in macros.well.sizeModifiers">{{ '.' + size}}</span>
+                    <span class="code" v-for="size in molecules.well.sizeModifiers">{{ '.' + size}}</span>
                   </td>
                 </tr>
                 <tr>
                   <td><strong>style modifier</strong></td>
                   <td>
-                    <span class="code" v-for="style in macros.well.styleModifiers">{{ '.' + style}}</span>
+                    <span class="code" v-for="style in molecules.well.styleModifiers">{{ '.' + style}}</span>
                   </td>
                 </tr>
                 </tbody>
@@ -1055,7 +1136,7 @@
                 <tr>
                   <td><strong>alignment modifier</strong></td>
                   <td>
-                    <span class="code" v-for="behavior in macros.dropdown.behaviorModifiers">{{behavior}}</span>
+                    <span class="code" v-for="behavior in molecules.dropdown.behaviorModifiers">{{behavior}}</span>
                   </td>
                 </tr>
                 </tbody>
@@ -1450,7 +1531,7 @@
               <p>the text-color modifiers only affect the css color attribute. it can be uses on all elements.</p>
               <div class="well well_small">
                 <div data-flex="grid">
-                  <div v-for="mod in globals.type.colorModifiers" data-col="2sm">
+                  <div v-for="mod in modifiers.type.colorModifiers" data-col="2sm">
                     <strong :class="mod">{{mod}}</strong>
                   </div>
                 </div>

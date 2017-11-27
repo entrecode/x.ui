@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  Vue.component('placeholder2line', {
-    template: '<p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>'
-  })
-  
   new Vue({
     el:   '#app',
     data: {
@@ -31,8 +27,19 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
       },
-      globals:      {
-        btn:   {
+      grid:         {
+        gridNumColumns: 12,
+        breakpoints:    {
+          xs:  0,
+          sm:  480,
+          md:  720,
+          lg:  1024,
+          xl:  1280,
+          xxl: 1920
+        }
+      },
+      atoms:        {
+        btn:     {
           styles:    {
             default: '',
             minor:   'btn_minor',
@@ -47,56 +54,55 @@ document.addEventListener('DOMContentLoaded', function() {
             round:    'btn_round'
           },
           sizes:     {
-            small:  'btn_small',
-            normal: '',
-            big:    'btn_big'
+            small: 'btn_small',
+            big:   'btn_big'
           },
           width:     {
-            normal: '',
-            wide:   'btn_wide',
-            block:  'btn_block'
+            wide:  'btn_wide',
+            block: 'btn_block'
           }
         },
-        type:  {
-          colorModifiers: ['text-default', 'text-light', 'text-lighter', 'text-lightest', 'text-minor', 'text-link',
-                           'text-super', 'text-highlight', 'text-invert', 'text-info', 'text-disabled', 'text-error',
-                           'text-success', 'text-warning'],
-        },
-        input: {
-          modifiers: {
-            raised: 'input_raised',
-            round:  'input_round'
-          },
-          sizes:     {
-            small:  'input_small',
-            normal: '',
-            big:    'input_big'
-          }
-        }
-      },
-      macros:       {
-        alerts:  {
-          themeModifiers: ['alert_minor', 'alert_link', 'alert_super', 'alert_highlight', 'alert_invert'],
-          stateModifiers: ['alert_info', 'alert_error', 'alert_success', 'alert_warning'],
-          styleModifiers: ['alert_outlined']
+        tags:    {
+          themeModifiers: ['tag_minor', 'tag_link', 'tag_super', 'tag_highlight', 'tag_invert'],
+          stateModifiers: ['tag_info', 'tag_error', 'tag_success', 'tag_warning'],
+          sizeModifiers:  ['tag_small', 'tag_big'],
+          styleModifiers: ['tag_outlined', 'tag_round']
         },
         bubbles: {
           themeModifiers: ['bubble_minor', 'bubble_link', 'bubble_super', 'bubble_highlight', 'bubble_invert'],
           stateModifiers: ['bubble_info', 'bubble_error', 'bubble_success', 'bubble_warning'],
           sizeModifiers:  ['bubble_small', 'bubble_big']
         },
-        tags:    {
-          themeModifiers: ['tag_minor', 'tag_link', 'tag_super', 'tag_highlight', 'tag_invert'],
-          stateModifiers: ['tag_info', 'tag_error', 'tag_success', 'tag_warning'],
-          sizeModifiers:  ['tag_small', 'tag_big'],
-          styleModifiers:  ['tag_outlined', 'tag_round']
+        input:   {
+          modifiers: {
+            raised: 'input_raised',
+            round:  'input_round'
+          },
+          sizes:     {
+            small: 'input_small',
+            big:   'input_big'
+          }
+        }
+      },
+      molecules:    {
+        alerts:   {
+          themeModifiers: ['alert_minor', 'alert_link', 'alert_super', 'alert_highlight', 'alert_invert'],
+          stateModifiers: ['alert_info', 'alert_error', 'alert_success', 'alert_warning'],
+          styleModifiers: ['alert_outlined']
         },
         dropdown: {
-          behaviorModifiers: ['dropdown_center', 'dropdown_right', 'dropdown_right', 'dropdown_full', 'dropdown_above' ]
+          behaviorModifiers: ['dropdown_center', 'dropdown_right', 'dropdown_right', 'dropdown_full', 'dropdown_above']
         },
-        well:    {
+        well:     {
           sizeModifiers:  ['well_small', 'well_big'],
-          styleModifiers:  ['well_outlined']
+          styleModifiers: ['well_outlined']
+        }
+      },
+      modifiers:    {
+        type: {
+          colorModifiers: ['text-default', 'text-light', 'text-lighter', 'text-lightest', 'text-minor', 'text-link',
+                           'text-super', 'text-highlight', 'text-invert', 'text-info', 'text-disabled', 'text-error',
+                           'text-success', 'text-warning']
         }
       }, // :before \{\n(.*)";\n}
       iconset:      ['add', 'add-circle', 'alarm', 'alarm-clock', 'alarm-silent', 'align-center', 'align-justify',
