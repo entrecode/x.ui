@@ -578,3 +578,13 @@ $toolbar-small-min-height: 48;
 
 /// @param {number} $header-padding [$base-padding] - top and bottom
 $header-padding: $base-padding;
+
+
+/// card
+/// ------------------------------------------------------
+
+/// @param {number} $card-radius [4]
+$card-radius: 4 !default;
+
+/// @param {number} $card-padding [$base-padding]
+$card-padding: $base-padding;

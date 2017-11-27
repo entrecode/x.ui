@@ -1,0 +1,24 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group organism
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @param {number} $card-padding [$base-padding]
+
+.#{$pfx}card {
+  padding: rem($card-padding);
+  margin-bottom: rem($base-padding);
+  @include border-radius(rem($card-radius));
+
+  &.#{$pfx}card_small {
+    padding: rem($card-padding / 2);
+    font-size: 87.5%;
+  }
+
+  &.#{$pfx}card_big {
+    padding: rem($card-padding * 2);
+    font-size: 112.5%;
+  }
+}
