@@ -62,8 +62,8 @@
                   <li class="nav__item"><a href="#xui-img" class="btn btn_clear btn_small">img</a></li>
                   <li class="nav__item"><a href="#xui-img_crop" class="btn btn_clear btn_small">img_crop</a></li>
                   <li class="nav__item"><a href="#xui-btn" class="btn btn_clear btn_small">btn</a></li>
-                  <!--<li class="nav__item"><a href="#xui-btn-glow" class="btn btn_clear btn_small">btn-glow</a></li>-->
-                  <!--<li class="nav__item"><a href="#xui-hamburger-btn" class="btn btn_clear btn_small">hamburger-btn</a></li>-->
+                  <li class="nav__item"><a href="#xui-btn-glow" class="btn btn_clear btn_small"><span>btn-glow </span><span class="tag tag_error tag_small">TODO</span></a></li>
+                  <li class="nav__item"><a href="#xui-hamburger-btn" class="btn btn_clear btn_small"><span>hamburger-btn</span> <span class="tag tag_error tag_small">TODO</span></a></li>
                   <li class="nav__item"><a href="#xui-bubble" class="btn btn_clear btn_small">bubble</a></li>
                   <li class="nav__item"><a href="#xui-tag" class="btn btn_clear btn_small">tag</a></li>
                   <li class="nav__item"><a href="#xui-input" class="btn btn_clear btn_small">input</a></li>
@@ -154,7 +154,8 @@
                 <span class="tag tag_super tag_small">{{version}}</span><span class="tag tag_super tag_small"
                                                                               v-for="dependancy in dependancies">{{dependancy}}</span>
               </h1>
-              <p class="lead"><strong>x.ui</strong> is a framework based on the atomic design methodology. this workflow is focused on modularity and structure. It is inspired </p>
+              <p class="lead"><strong>x.ui</strong> is a framework based on the atomic design methodology. this workflow
+                is focused on modularity and structure. It is inspired </p>
             </section>
 
             <div class="bumper"></div>
@@ -192,7 +193,8 @@
                       <div>
                         <svg class="structure-icon" id="svg_atoms" data-name="atoms" xmlns="http://www.w3.org/2000/svg"
                              viewBox="0 0 160 160">
-                          <path d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z"/>
+                          <path
+                              d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z"/>
                         </svg>
                         <h3>atoms</h3>
                       </div>
@@ -219,7 +221,8 @@
                       <div>
                         <svg class="structure-icon" id="svg_molecules" data-name="molecules"
                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                          <path d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
+                          <path
+                              d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
                         </svg>
                         <h3>molecules</h3>
                       </div>
@@ -238,7 +241,8 @@
                       <div>
                         <svg class="structure-icon" id="svg_organisms" data-name="organisms"
                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                          <path d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
+                          <path
+                              d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
                         </svg>
                         <h3>organisms</h3>
                       </div>
@@ -252,8 +256,12 @@
                   <ul class="structure-list_templates">
                     <li>
                       <div>
-                        <svg class="structure-icon" id="svg_templates" data-name="templates" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                          <g><path d="M116,44V68H44V44h72m8-8H36V76h88Z"/><path d="M116,92v24H44V92h72m8-8H36v40h88Z"/></g>
+                        <svg class="structure-icon" id="svg_templates" data-name="templates"
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+                          <g>
+                            <path d="M116,44V68H44V44h72m8-8H36V76h88Z"/>
+                            <path d="M116,92v24H44V92h72m8-8H36v40h88Z"/>
+                          </g>
                         </svg>
                         <h3>templates</h3>
                       </div>
@@ -267,8 +275,13 @@
                   <ul class="structure-list_pages">
                     <li>
                       <div>
-                        <svg id="svg_pages" class="structure-icon" data-name="pages" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                          <g><path d="M116,44V68H44V44h72m8-8H36V76h88Z"/><path d="M116,92v24H44V92h72m8-8H36v40h88Z"/><path d="M132,28V132H28V28H132m8-8H20V140H140Z"/></g>
+                        <svg id="svg_pages" class="structure-icon" data-name="pages" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 160 160">
+                          <g>
+                            <path d="M116,44V68H44V44h72m8-8H36V76h88Z"/>
+                            <path d="M116,92v24H44V92h72m8-8H36v40h88Z"/>
+                            <path d="M132,28V132H28V28H132m8-8H20V140H140Z"/>
+                          </g>
                         </svg>
                         <h3>pages</h3>
                       </div>
@@ -281,9 +294,11 @@
                   <ul class="structure-list_modifier">
                     <li>
                       <div>
-                        <svg class="structure-icon" id="svg_modifier" data-name="modifier" xmlns="http://www.w3.org/2000/svg"
+                        <svg class="structure-icon" id="svg_modifier" data-name="modifier"
+                             xmlns="http://www.w3.org/2000/svg"
                              viewBox="0 0 160 160">
-                          <path d="M100,76H86.93l6.53-11.32a4,4,0,1,0-6.92-4L80,72,73.46,60.68a4,4,0,0,0-6.92,4L73.07,76H60a4,4,0,0,0,0,8H73.07L66.54,95.32a4,4,0,0,0,6.92,4L80,88l6.54,11.32a4,4,0,1,0,6.92-4L86.93,84H100a4,4,0,0,0,0-8Z"/>
+                          <path
+                              d="M100,76H86.93l6.53-11.32a4,4,0,1,0-6.92-4L80,72,73.46,60.68a4,4,0,0,0-6.92,4L73.07,76H60a4,4,0,0,0,0,8H73.07L66.54,95.32a4,4,0,0,0,6.92,4L80,88l6.54,11.32a4,4,0,1,0,6.92-4L86.93,84H100a4,4,0,0,0,0-8Z"/>
                         </svg>
                         <h3>modifier</h3>
                       </div>
@@ -302,7 +317,9 @@
             <div class="bumper bumper_big"></div>
 
             <h2 class="mega" id="xui-atoms">atoms</h2>
-            <p class="lead">Atoms are the smallest building blocks in this methodology. Atoms are elements like type, headings, inputs, buttons and more.</p>
+            <p class="lead">Atoms are the smallest building blocks in this methodology. Atoms are elements like type,
+              headings, inputs, buttons and more. Atoms only have one function. Most atoms have specific modifiers that
+              change things like size, style or color.</p>
 
             <div class="spacing"></div>
 
@@ -470,9 +487,12 @@
               <div class="alert alert_small"><strong>TODO documentation</strong></div>
             </section>
 
+            <div class="bumper"></div>
+
             <!--TODO documentation-->
             <section>
-              <h3 id="xui-hamburger-btn" class="kilo">btn-glow <span class="tag tag_small">atoms/hamburger-btn</span></h3>
+              <h3 id="xui-hamburger-btn" class="kilo">hamburger-btn <span class="tag tag_small">atoms/hamburger-btn</span>
+              </h3>
               <div class="alert alert_small"><strong>TODO documentation</strong></div>
             </section>
 
@@ -676,6 +696,7 @@
               <div class="demo-layout-macros">
                 <div class="bumper"></div>
               </div>
+              <pre><code class="html"><div class="bumper"></div></code></pre>
               <table class="table">
                 <tbody>
                 <tr>
@@ -701,6 +722,7 @@
               <div class="demo-layout-macros">
                 <div class="spacing"></div>
               </div>
+              <pre><code class="html"><div class="spacing"></div></code></pre>
               <table class="table">
                 <tbody>
                 <tr>

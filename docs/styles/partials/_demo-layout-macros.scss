@@ -1,7 +1,13 @@
-$demo-macro: rgba(getColor(link), .2);
+$demo-macro: rgba(getColor(link), .1);
 
 .demo-layout-macros {
   background-color: $demo-macro;
   margin: 0 0 rem($base-padding) 0;
+  background-image: url('assets/space-top.svg'), url('assets/space-bottom.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: center top 2px, center bottom 2px;
+  background-size: 12px, 12px;
   overflow: hidden;
+  border-bottom: 1px dashed getColor(divider);
+  border-top: 1px dashed getColor(divider);
 }
