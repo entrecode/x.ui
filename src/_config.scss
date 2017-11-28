@@ -277,7 +277,7 @@ $btn-group-divider: true;
 /// DROPDOWN
 /// ------------------------------------------------------
 
-/// radius of dropdown-elements
+/// @param {px} $dropdown-radius [4]
 $dropdown-radius: 4 !default;
 
 ///

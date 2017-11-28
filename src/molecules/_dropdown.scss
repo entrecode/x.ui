@@ -5,24 +5,7 @@
 ///
 /// @param {variable} $pfx [''] - global prefixing
 ///
-/// @example
-/// <ul class="dropdown dropdown_center">
-///   <li tabindex="1">
-///     <span class="btn btn_invert btn_raised">Label</span>
-///     <ul class="dropdown-options">
-///       <li class="dropdown-option">
-///         <a href>Label</a>
-///       </li>
-///       <li class="dropdown-option">
-///         <a href>Label</a>
-///       </li>
-///       <li class="dropdown_divider"></li>
-///       <li class="dropdown-option">
-///         <a href class="btn btn_outlined">Label</a>
-///       </li>
-///     </ul>
-///   </li>
-/// </ul>
+/// @param {px} $dropdown-radius [4]
 
 @include keyframes(rollDownDropdown) {
   0% {
@@ -46,11 +29,20 @@ ul.#{$pfx}dropdown {
     outline: none;
     cursor: pointer;
 
-    &:hover,
     &:focus {
 
       ul.#{$pfx}dropdown-options {
         display: initial;
+      }
+    }
+  }
+
+  &.on-hover {
+    > li {
+      &:hover {
+        ul.#{$pfx}dropdown-options {
+          display: initial;
+        }
       }
     }
   }
@@ -60,7 +52,7 @@ ul.#{$pfx}dropdown {
     top: 100%;
     background-color: getColor(background);
     @include border-radius(rem($dropdown-radius));
-    @include box-shadow(0 4px 8px getColor(shadow), 0 4px 24px getColor(shadow));
+    @include box-shadow(0 4px 8px rgba(black, .2), 0 4px 24px rgba(black, .2));
     max-height: 320px;
     overflow-y: auto;
     display: none;

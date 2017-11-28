@@ -23,6 +23,8 @@
 - removed `.menubar` - use `.toolbar` instead
 - removed `.navigation-drawer`
 - removed `_menu.scss`, `_menu-dropdown.scss` and `_menubar.scss`
+- renamed `.btn-glow` to `.btn_glow`
+- removed `shadow` from color-map
 
 ### removed
 - removed `.input_search`
@@ -49,6 +51,7 @@
 - added `.btn-group`
 - added `.avatar`
 - added ng-validation classes for `.input` 
+- added a behavior modifier `on-hover` for `dropdown`
 
 ### changed
 - optimized `.bubble` styles and comments
