@@ -25,7 +25,8 @@
 - removed `_menu.scss`, `_menu-dropdown.scss` and `_menubar.scss`
 - renamed `.btn-glow` to `.btn_glow`
 - removed `shadow` from color-map
-
+- renamed `header` to `title`
+``
 ### removed
 - removed `.input_search`
 - removed `.btn_delete`
