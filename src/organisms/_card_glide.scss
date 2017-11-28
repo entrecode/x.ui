@@ -1,6 +1,6 @@
 .#{$pfx}card_glide {
   position: relative;
-  @include box-shadow(0 2px 16px rgba(black, .1));
+  //@include box-shadow(0 2px 16px rgba(black, .1));
 
   &:after {
     content: '';

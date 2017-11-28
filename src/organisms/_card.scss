@@ -8,19 +8,19 @@
 /// @param {number} $card-padding [$base-padding]
 
 .#{$pfx}card {
-  padding: rem($card-padding);
   margin-bottom: rem($base-padding);
   @include border-radius(rem($card-radius));
   background-color: getColor(background);
   @include box-shadow(0 2px 4px rgba(black, .1), 0 2px 8px rgba(black, .1));
 
+  .#{$pfx}card-body {
+  }
+
   &.#{$pfx}card_small {
-    padding: rem($card-padding / 2);
     font-size: 87.5%;
   }
 
   &.#{$pfx}card_big {
-    padding: rem($card-padding * 2);
     font-size: 112.5%;
   }
 }
