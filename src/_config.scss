@@ -177,6 +177,13 @@ $paragraph-lead-weight: $light;
 $inline-small-size: .875;
 
 ///
+/// Image
+/// ------------------------------------------------------
+
+/// @param {px} $img-rounded-radius [4] - for modifier class `.img_rounded`
+$img-rounded-radius: 4;
+
+///
 /// Avatars
 /// ------------------------------------------------------
 

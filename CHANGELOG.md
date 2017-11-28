@@ -52,6 +52,7 @@
 - added `.img-avatar`
 - added ng-validation classes for `.input` 
 - added a behavior modifier `on-hover` for `dropdown`
+- added `img_rounded`
 
 ### changed
 - optimized `.bubble` styles and comments
