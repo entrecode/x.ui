@@ -46,10 +46,10 @@
 - added `get-font-size` mixin 
 - added `.input-group` styles
 - added `.padding-top`, `.padding-bottom`, `.padding-left` and `.padding-right` 
-- added image helper `.crop-1-1`, `.crop-4-3`, `.crop-16-9`
+- added image helper `.img-crop-1-1`, `.img-crop-4-3`, `.img-crop-16-9`
 - added `.table_small`, `.table_big` and `.table_bordered`
 - added `.btn-group`
-- added `.avatar`
+- added `.img-avatar`
 - added ng-validation classes for `.input` 
 - added a behavior modifier `on-hover` for `dropdown`
 

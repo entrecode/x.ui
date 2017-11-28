@@ -10,7 +10,7 @@
 /// @param {px} $avatar-big-size-size [48]
 /// @param {px} $avatar-border [2]
 
-.#{$pfx}avatar {
+.#{$pfx}img-avatar {
   width: rem($avatar-size);
   height: rem($avatar-size);
   overflow: hidden;
@@ -24,12 +24,12 @@
     object-position: center;
   }
 
-  &.#{$pfx}avatar_small {
+  &._small {
     width: rem($avatar-small-size);
     height: rem($avatar-small-size);
   }
 
-  &.#{$pfx}avatar_big {
+  &._big {
     width: rem($avatar-big-size);
     height: rem($avatar-big-size);
   }

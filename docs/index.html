@@ -70,8 +70,8 @@
                   <li class="nav__item"><a href="#xui-type" class="btn btn_clear btn_small">type</a></li>
                   <li class="nav__item"><a href="#xui-headings" class="btn btn_clear btn_small">headings</a></li>
                   <li class="nav__item"><a href="#xui-img" class="btn btn_clear btn_small">img</a></li>
-                  <li class="nav__item"><a href="#xui-img_crop" class="btn btn_clear btn_small">img_crop</a></li>
-                  <li class="nav__item"><a href="#xui-avatar" class="btn btn_clear btn_small">avatar</a></li>
+                  <li class="nav__item"><a href="#xui-img-crop" class="btn btn_clear btn_small">img-crop</a></li>
+                  <li class="nav__item"><a href="#xui-img-avatar" class="btn btn_clear btn_small">img-avatar</a></li>
                   <li class="nav__item"><a href="#xui-btn" class="btn btn_clear btn_small">btn</a></li>
                   <li class="nav__item">
                     <a href="#xui-btn-glow" class="btn btn_clear btn_small">btn-glow</a>
@@ -221,8 +221,8 @@
                     <li>headings
                     </li>
                     <li>img</li>
-                    <li>img_crop</li>
-                    <li>avatar</li>
+                    <li>img-crop</li>
+                    <li>img-avatar</li>
                     <li>btn</li>
                     <li>btn-glow</li>
                     <li>hamburger-btn</li>
@@ -461,34 +461,34 @@
             <div class="spacing"></div>
 
             <section>
-              <h4 id="xui-img_crop" class="h6">Image helper <span class="tag tag_small">atoms/img_crop</span><a
+              <h4 id="xui-img-crop" class="h6">Image helper <span class="tag tag_small">atoms/img-crop</span><a
                   href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
                   class="tag tag_error tag_small">object-fit</a></h4>
               <div data-flex="grid">
                 <div data-col="4sm">
                 <pre><code class="html">
-<div class="img_crop-1-1">
+<div class="img-crop-1-1">
   <img src="..">
 </div></code></pre>
-                  <div class="img_crop-1-1">
+                  <div class="img-crop-1-1">
                     <img src="./assets/placeholder.jpg">
                   </div>
                 </div>
                 <div data-col="4sm">
                 <pre><code class="html">
-<div class="img_crop-4-3">
+<div class="img-crop-4-3">
   <img src="..">
 </div></code></pre>
-                  <div class="img_crop-4-3">
+                  <div class="img-crop-4-3">
                     <img src="./assets/placeholder.jpg">
                   </div>
                 </div>
                 <div data-col="4sm">
                 <pre><code class="html">
-<div class="img_crop-16-9">
+<div class="img-crop-16-9">
   <img src="..">
 </div></code></pre>
-                  <div class="img_crop-16-9">
+                  <div class="img-crop-16-9">
                     <img src="./assets/placeholder.jpg">
                   </div>
                 </div>
@@ -498,16 +498,16 @@
             <div class="bumper"></div>
 
             <section>
-              <h3 id="xui-avatar" class="kilo">avatar <span class="tag tag_small">atoms/avatar</span><a
+              <h3 id="xui-img-avatar" class="kilo">img-avatar <span class="tag tag_small">atoms/img-avatar</span><a
                   href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
                   class="tag tag_error tag_small">object-fit</a></h3>
-              <p>avatars are mostly used for facial pictures such as profile pictures, because they accentuate faces
-                more than square ones. even thought the avatar atom uses <span class="code">object-fit: cover</span> to
+              <p>img-avatar is mostly used for facial pictures such as profile pictures, because they accentuate faces
+                more than square ones. even thought the img-avatar atom uses <span class="code">object-fit: cover</span> to
                 scale/crop images down to a square thumbnail, you should use quare assets with a matching size.</p>
               <div class="well" data-flex="center">
-                <div class="avatar"><img src="assets/avatar.jpg" alt=""></div>
+                <div class="img-avatar"><img src="assets/avatar.jpg" alt=""></div>
               </div>
-              <pre><code class="html"><div class="avatar"><img src="assets/avatar.jpg" alt=""></div></code></pre>
+              <pre><code class="html"><div class="img-avatar"><img src="assets/avatar.jpg" alt=""></div></code></pre>
             </section>
 
             <div class="bumper"></div>
@@ -1316,18 +1316,14 @@
               <div data-flex="grid">
                 <div data-col="4">
                   <div class="card card_glide">
-                    <div class="img_crop-16-9">
+                    <div class="img-crop-16-9">
                       <img src="./assets/placeholder.jpg">
                     </div>
                     <div class="padding-center">
                       <div class="spacing spacing_small"></div>
-                      <h2 class="mega">Title
-                        <div class="tag tag_small tag_super">Tag</div>
-                      </h2>
-                      <p>Nun, ganz abgesehen davon, daß die Türen versperrt waren, hätte er wirklich um Hilfe rufen
-                        sollen? Trotz aller Not konnte er bei diesem Gedanken ein Lächeln nicht unterdrücken.</p>
+                      <h2 class="mega">Title <span class="tag tag_small tag_super">Tag</span></h2>
                     </div>
-                    <div class="padding">
+                    <div class="padding-center padding-bottom">
                       <div data-flex="small-grid">
                         <div data-col="6sm">
                           <a href="" class="btn btn_block">Action</a>
@@ -1338,18 +1334,18 @@
                       </div>
                     </div>
                   </div>
-                  <div class="card">
-                    <div data-flex="small-grid">
+                  <div class="card card_glide">
+                    <div data-flex="small-grid center-items">
                       <div data-col="2">
-                        <div class="img_crop-1-1">
-                          <img src="./assets/placeholder.jpg">
+                        <div class="padding padding_small">
+                          <div class="img-avatar">
+                            <img src="./assets/avatar.jpg">
+                          </div>
                         </div>
                       </div>
                       <div data-col="10">
-                        <div class="header">
-                          <h2 class="kilo">Title
-                            <div class="tag tag_small tag_super">Tag</div>
-                          </h2>
+                        <div class="header padding-center padding_small">
+                          <h2 class="h6">Title <span class="tag tag_small tag_super">Tag</span></h2>
                           <nav class="nav">
                             <ul class="dropdown dropdown_right">
                               <li tabindex="1">
@@ -1375,29 +1371,70 @@
                   </div>
                 </div>
                 <div data-col="4">
-                  <div class="card card_small">
-                    <div class="img_crop-16-9">
-                      <img src="./assets/placeholder.jpg">
+                  <div class="card padding padding_small">
+                    <div data-flex="small-grid center-items">
+                      <div data-col="2">
+                        <div class="img-avatar"><img src="./assets/avatar.jpg"></div>
+                      </div>
+                      <div data-col="10">
+                        <strong>Melissa Carter</strong><br>
+                        <small class="text-light">melissa.carter@gmail.com</small>
+                      </div>
+                      <div data-col="10 +2">
+                        <div class="padding-top">
+                          <ul class="inline">
+                            <li>
+                              <div class="tag tag_small">tag</div>
+                            </li>
+                            <li>
+                              <div class="tag tag_small">tag</div>
+                            </li>
+                            <li>
+                              <div class="tag tag_small">tag</div>
+                            </li>
+                            <li>
+                              <div class="tag tag_small">tag</div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                    <div class="spacing spacing_small"></div>
-                    <h2 class="mega">Title
-                      <div class="tag tag_small tag_super">Tag</div>
-                    </h2>
-                    <p>Nun, ganz abgesehen davon, daß die Türen versperrt waren, hätte er wirklich um Hilfe rufen
-                      sollen? Trotz aller Not konnte er bei diesem Gedanken ein Lächeln nicht unterdrücken.</p>
-                    <div data-flex="small-grid">
-                      <div data-col="6sm">
-                        <a href="" class="btn btn_block">Action</a>
+                  </div>
+
+                  <div class="card">
+                    <div class="padding padding_small">
+                      <div data-flex="small-grid center-items">
+                        <div data-col="2">
+                          <div class="img-avatar"><img src="./assets/avatar.jpg"></div>
+                        </div>
+                        <div data-col="10">
+                          <strong>Melissa Carter</strong><br>
+                          <small class="text-light">melissa.carter@gmail.com</small>
+                        </div>
                       </div>
-                      <div data-col="6sm">
-                        <a href="" class="btn btn_minor btn_block">Cancel</a>
-                      </div>
+                    </div>
+
+                    <div class="padding padding_small theme_dark">
+                      <ul class="inline">
+                        <li>
+                          <div class="tag tag_minor tag_small">tag</div>
+                        </li>
+                        <li>
+                          <div class="tag tag_minor tag_small">tag</div>
+                        </li>
+                        <li>
+                          <div class="tag tag_minor tag_small">tag</div>
+                        </li>
+                        <li>
+                          <div class="tag tag_minor tag_small">tag</div>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
                 <div data-col="4">
                   <div class="card card_big">
-                    <div class="img_crop-16-9">
+                    <div class="img-crop-16-9">
                       <img src="./assets/placeholder.jpg">
                     </div>
                     <div class="spacing spacing_small"></div>
