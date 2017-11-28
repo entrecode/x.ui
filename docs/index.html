@@ -6,10 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>x.ui docu</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="x.ui.css">
   <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-3.0.0.min.css"/>
-  <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/agate.min.css">-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/dracula.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
   <script>
@@ -464,7 +462,7 @@
             <div class="spacing"></div>
 
             <section>
-              <h4 id="xui-img_crop"  class="h6">Image helper <span class="tag tag_small">atoms/img_crop</span><a
+              <h4 id="xui-img_crop" class="h6">Image helper <span class="tag tag_small">atoms/img_crop</span><a
                   href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
                   class="tag tag_error tag_small">object-fit</a></h4>
               <div data-flex="grid">
@@ -504,7 +502,9 @@
               <h3 id="xui-avatar" class="kilo">avatar <span class="tag tag_small">atoms/avatar</span><a
                   href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
                   class="tag tag_error tag_small">object-fit</a></h3>
-              <p>avatars are mostly used for facial pictures such as profile pictures, because they accentuate faces more than square ones. even thought the avatar atom uses <span class="code">object-fit: cover</span> to scale/crop images down to a square thumbnail, you should use quare assets with a matching size.</p>
+              <p>avatars are mostly used for facial pictures such as profile pictures, because they accentuate faces
+                more than square ones. even thought the avatar atom uses <span class="code">object-fit: cover</span> to
+                scale/crop images down to a square thumbnail, you should use quare assets with a matching size.</p>
               <div class="well" data-flex="center">
                 <div class="avatar"><img src="assets/avatar.jpg" alt=""></div>
               </div>
@@ -1273,15 +1273,15 @@
                 <div data-col="6">
                 <pre><code class="html">
 <div class="form-group">
-  <label for="">Label</label>
-  <input type="text" id="" placeholder="input..." class="input">
+  <label for="ID01">Label</label>
+  <input type="text" id="ID01" placeholder="input..." class="input">
 </div></code></pre>
                 </div>
                 <div data-col="6">
                 <pre><code class="html">
 <div class="form-group form-group_boolean">
-  <label for="">Label</label>
-  <input type="radio" id="">
+  <label for="ID02">Label</label>
+  <input type="radio" id="ID02">
 </div></code></pre>
                 </div>
               </div>
@@ -1301,12 +1301,10 @@
               <div data-flex="grid">
                 <div data-col="4">
                   <div class="card card_glide">
-                    <div class="card-header">
-                      <div class="img_crop-16-9">
-                        <img src="./assets/placeholder.jpg">
-                      </div>
+                    <div class="img_crop-16-9">
+                      <img src="./assets/placeholder.jpg">
                     </div>
-                    <div class="card-body">
+                    <div class="padding-center">
                       <div class="spacing spacing_small"></div>
                       <h2 class="mega">Title
                         <div class="tag tag_small tag_super">Tag</div>
@@ -1314,7 +1312,7 @@
                       <p>Nun, ganz abgesehen davon, daß die Türen versperrt waren, hätte er wirklich um Hilfe rufen
                         sollen? Trotz aller Not konnte er bei diesem Gedanken ein Lächeln nicht unterdrücken.</p>
                     </div>
-                    <footer class="card-footer">
+                    <div class="padding">
                       <div data-flex="small-grid">
                         <div data-col="6sm">
                           <a href="" class="btn btn_block">Action</a>
@@ -1323,7 +1321,7 @@
                           <a href="" class="btn btn_minor btn_block">Cancel</a>
                         </div>
                       </div>
-                    </footer>
+                    </div>
                   </div>
                   <div class="card">
                     <div data-flex="small-grid">
@@ -1576,7 +1574,8 @@
             <div class="bumper bumper_big"></div>
 
             <h2 class="mega" id="xui-templates">templates</h2>
-            <p class="lead">with templates we leave the atomic structure. templates are layout elements to structure an organise your interface.</p>
+            <p class="lead">with templates we leave the atomic structure. templates are layout elements to structure an
+              organise your interface.</p>
 
             <div class="spacing"></div>
 

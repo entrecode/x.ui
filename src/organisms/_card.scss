@@ -13,6 +13,21 @@
   background-color: getColor(background);
   @include box-shadow(0 2px 4px rgba(black, .1), 0 2px 8px rgba(black, .1));
 
+  > .#{$pfx}img_crop-1-1,
+  > .#{$pfx}img_crop-4-3,
+  > .#{$pfx}img_crop-16-9 {
+
+    &:first-child {
+      @include border-radius(rem($card-radius) rem($card-radius) 0 0);
+      overflow: hidden;
+    }
+
+    &:last-child {
+      @include border-radius(0 0 rem($card-radius) rem($card-radius));
+      overflow: hidden;
+    }
+  }
+
   .#{$pfx}card-body {
   }
 

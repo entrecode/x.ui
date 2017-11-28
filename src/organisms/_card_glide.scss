@@ -1,17 +1,4 @@
 .#{$pfx}card_glide {
-  position: relative;
-  //@include box-shadow(0 2px 16px rgba(black, .1));
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: rem(-16);
-    left: 10%;
-    width: 80%;
-    height: 80%;
-    z-index: -1;
-    background-color: rgba(black, .2);
-    @include border-radius(rem($card-radius*4));
-    @include filter(blur(16px));
-  }
+  z-index: 1;
+  @include box-shadow(0 34px 16px -24px rgba(black, .2), 0 20px 32px 0px rgba(black, .1));
 }
