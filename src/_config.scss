@@ -177,6 +177,20 @@ $paragraph-lead-weight: $light;
 $inline-small-size: .875;
 
 ///
+/// Avatars
+/// ------------------------------------------------------
+
+/// @param {px} $avatar-size [48]
+/// @param {px} $avatar-small-size-size [32]
+/// @param {px} $avatar-big-size-size [48]
+$avatar-size: 40;
+$avatar-small-size: 32;
+$avatar-big-size: 48;
+
+/// @param {px} $avatar-border [2]
+$avatar-border: 2;
+
+///
 /// BUTTONS
 /// ------------------------------------------------------
 
@@ -577,7 +591,7 @@ $toolbar-small-min-height: 48;
 /// ------------------------------------------------------
 
 /// @param {number} $header-padding [$base-padding] - top and bottom
-$header-padding: $base-padding;
+$header-padding: $base-padding / 2;
 
 
 /// card

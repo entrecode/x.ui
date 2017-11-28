@@ -47,6 +47,7 @@
 - added image helper `.crop-1-1`, `.crop-4-3`, `.crop-16-9`
 - added `.table_small`, `.table_big` and `.table_bordered`
 - added `.btn-group`
+- added `.avatar`
 - added ng-validation classes for `.input` 
 
 ### changed

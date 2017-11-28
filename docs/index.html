@@ -73,6 +73,7 @@
                   <li class="nav__item"><a href="#xui-headings" class="btn btn_clear btn_small">headings</a></li>
                   <li class="nav__item"><a href="#xui-img" class="btn btn_clear btn_small">img</a></li>
                   <li class="nav__item"><a href="#xui-img_crop" class="btn btn_clear btn_small">img_crop</a></li>
+                  <li class="nav__item"><a href="#xui-avatar" class="btn btn_clear btn_small">avatar</a></li>
                   <li class="nav__item"><a href="#xui-btn" class="btn btn_clear btn_small">btn</a></li>
                   <li class="nav__item">
                     <a href="#xui-btn-glow" class="btn btn_clear btn_small"><span>btn-glow </span>
@@ -224,6 +225,7 @@
                     </li>
                     <li>img</li>
                     <li>img_crop</li>
+                    <li>avatar</li>
                     <li>btn</li>
                     <li>btn-glow</li>
                     <li>hamburger-btn</li>
@@ -267,7 +269,6 @@
                         <h3>organisms</h3>
                       </div>
                     </li>
-                    <li>card</li>
                     <li>toolbar</li>
                     <li>header</li>
                     <li>nav</li>
@@ -287,6 +288,7 @@
                         <h3>templates</h3>
                       </div>
                     </li>
+                    <li>card</li>
                     <li>table</li>
                     <li>section</li>
                     <li>kiosk</li>
@@ -462,7 +464,7 @@
             <div class="spacing"></div>
 
             <section>
-              <h4 class="h6">Image helper <span class="tag tag_small">atoms/img_crop</span><a
+              <h4 id="xui-img_crop"  class="h6">Image helper <span class="tag tag_small">atoms/img_crop</span><a
                   href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
                   class="tag tag_error tag_small">object-fit</a></h4>
               <div data-flex="grid">
@@ -494,6 +496,19 @@
                   </div>
                 </div>
               </div>
+            </section>
+
+            <div class="bumper"></div>
+
+            <section>
+              <h3 id="xui-avatar" class="kilo">avatar <span class="tag tag_small">atoms/avatar</span><a
+                  href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
+                  class="tag tag_error tag_small">object-fit</a></h3>
+              <p>avatars are mostly used for facial pictures such as profile pictures, because they accentuate faces more than square ones. even thought the avatar atom uses <span class="code">object-fit: cover</span> to scale/crop images down to a square thumbnail, you should use quare assets with a matching size.</p>
+              <div class="well" data-flex="center">
+                <div class="avatar"><img src="assets/avatar.jpg" alt=""></div>
+              </div>
+              <pre><code class="html"><div class="avatar"><img src="assets/avatar.jpg" alt=""></div></code></pre>
             </section>
 
             <div class="bumper"></div>
@@ -1286,23 +1301,29 @@
               <div data-flex="grid">
                 <div data-col="4">
                   <div class="card card_glide">
-                    <div class="img_crop-16-9">
-                      <img src="./assets/placeholder.jpg">
-                    </div>
-                    <div class="spacing spacing_small"></div>
-                    <h2 class="mega">Title
-                      <div class="tag tag_small tag_super">Tag</div>
-                    </h2>
-                    <p>Nun, ganz abgesehen davon, daß die Türen versperrt waren, hätte er wirklich um Hilfe rufen
-                      sollen? Trotz aller Not konnte er bei diesem Gedanken ein Lächeln nicht unterdrücken.</p>
-                    <div data-flex="small-grid">
-                      <div data-col="6sm">
-                        <a href="" class="btn btn_block">Action</a>
-                      </div>
-                      <div data-col="6sm">
-                        <a href="" class="btn btn_minor btn_block">Cancel</a>
+                    <div class="card-header">
+                      <div class="img_crop-16-9">
+                        <img src="./assets/placeholder.jpg">
                       </div>
                     </div>
+                    <div class="card-body">
+                      <div class="spacing spacing_small"></div>
+                      <h2 class="mega">Title
+                        <div class="tag tag_small tag_super">Tag</div>
+                      </h2>
+                      <p>Nun, ganz abgesehen davon, daß die Türen versperrt waren, hätte er wirklich um Hilfe rufen
+                        sollen? Trotz aller Not konnte er bei diesem Gedanken ein Lächeln nicht unterdrücken.</p>
+                    </div>
+                    <footer class="card-footer">
+                      <div data-flex="small-grid">
+                        <div data-col="6sm">
+                          <a href="" class="btn btn_block">Action</a>
+                        </div>
+                        <div data-col="6sm">
+                          <a href="" class="btn btn_minor btn_block">Cancel</a>
+                        </div>
+                      </div>
+                    </footer>
                   </div>
                   <div class="card">
                     <div data-flex="small-grid">
@@ -1555,8 +1576,7 @@
             <div class="bumper bumper_big"></div>
 
             <h2 class="mega" id="xui-templates">templates</h2>
-            <p class="lead">with templates are not really part of an atomic structure but layout elements, that hold
-              everything together</p>
+            <p class="lead">with templates we leave the atomic structure. templates are layout elements to structure an organise your interface.</p>
 
             <div class="spacing"></div>
 
