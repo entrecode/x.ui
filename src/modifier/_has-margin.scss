@@ -1,0 +1,111 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @prop {number} $base-spacing [16] - small padding value for padding helper
+
+.#{$pfx}has-margin {
+  margin: rem($base-spacing);
+
+  &_small {
+    margin: rem($base-spacing/2);
+  }
+
+  &_big {
+    margin: rem($base-spacing*2);
+  }
+}
+
+.#{$pfx}has-margin-y {
+  margin-top: rem($base-spacing);
+  margin-bottom: rem($base-spacing);
+
+  &_small {
+    margin-top: rem($base-spacing/2);
+    margin-bottom: rem($base-spacing/2);
+  }
+
+  &_big {
+    margin-top: rem($base-spacing*2);
+    margin-bottom: rem($base-spacing*2);
+  }
+}
+
+.#{$pfx}has-margin-t {
+  margin-top: rem($base-spacing);
+
+  &_small {
+    margin-top: rem($base-spacing/2);
+  }
+
+  &_big {
+    margin-top: rem($base-spacing*2);
+  }
+}
+
+.#{$pfx}has-margin-b {
+  margin-bottom: rem($base-spacing);
+
+  &_small {
+    margin-bottom: rem($base-spacing/2);
+  }
+
+  &_big {
+    margin-bottom: rem($base-spacing*2);
+  }
+}
+
+.#{$pfx}has-margin-x {
+  margin-left: rem($base-spacing);
+  margin-right: rem($base-spacing);
+
+  &_small {
+    margin-left: rem($base-spacing/2);
+    margin-right: rem($base-spacing/2);
+  }
+
+  &_big {
+    margin-left: rem($base-spacing*2);
+    margin-right: rem($base-spacing*2);
+  }
+
+  &_auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.#{$pfx}has-margin-l {
+  margin-left: rem($base-spacing);
+
+  &_small {
+    margin-left: rem($base-spacing/2);
+  }
+
+  &_big {
+    margin-left: rem($base-spacing*2);
+  }
+
+  &_auto {
+    margin-left: auto;
+  }
+}
+
+.#{$pfx}has-margin-r {
+  margin-right: rem($base-spacing);
+
+  &_small {
+    margin-right: rem($base-spacing/2);
+  }
+
+  &_big {
+    margin-right: rem($base-spacing*2);
+  }
+
+  &_auto {
+    margin-right: auto;
+  }
+}
