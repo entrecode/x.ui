@@ -100,7 +100,7 @@
   /// size modifier
   /// ------------------------------------------------------
 
-  &.#{$pfx}input_small {
+  &_small {
     @include border-radius(rem($input-small-radius));
     @include macro-metrics($input-small-font-size, $input-small-line-height, $input-small-min-height, $input-border);
 
@@ -112,7 +112,7 @@
     }
   }
 
-  &.#{$pfx}input_big {
+  &_big {
     @include border-radius(rem($input-big-radius));
     @include macro-metrics($input-big-font-size, $input-big-line-height, $input-big-min-height, $input-border);
 
@@ -134,7 +134,7 @@
     -webkit-text-fill-color: getColor(text);
   }
 
-  &.#{$pfx}input_invert {
+  &_invert {
     background-color: transparent;
     border-color: getColor(text, invert);
     color: getColor(text, invert);
@@ -152,6 +152,20 @@
       }
     }
   }
+
+  &_clear {
+    border: none;
+    @include macro-metrics($input-font-size, $input-line-height, $input-min-height);
+
+    &_small {
+      @include macro-metrics($input-small-font-size, $input-small-line-height, $input-small-min-height);
+    }
+
+    &_big {
+      @include macro-metrics($input-big-font-size, $input-big-line-height, $input-big-min-height);
+    }
+
+  }
 }
 
 /// for fluffy round inputs
@@ -159,11 +173,11 @@
   .#{$pfx}input {
     @include border-radius(rem($input-min-height / 2));
 
-    &.small {
+    &_small {
       @include border-radius(rem($input-small-min-height / 2));
     }
 
-    &.big {
+    &_big {
       @include border-radius(rem($input-big-min-height / 2));
     }
   }

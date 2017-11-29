@@ -60,6 +60,7 @@
 - added ng-validation classes for `.input` 
 - added a behavior modifier `on-hover` for `dropdown`
 - added `.has-margin#`
+- added `.input_clear`
 
 ### changed
 - optimized `.bubble` styles and comments

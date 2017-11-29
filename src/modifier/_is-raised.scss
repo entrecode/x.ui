@@ -11,8 +11,10 @@
 }
 
 a,
+.input,
 .btn {
   &.#{$pfx}is-raised {
+    &:focus,
     &:hover {
       @include box-shadow(0 1px 2px $btn-raised-shadow, 0 1px 4px $btn-raised-shadow);
     }
