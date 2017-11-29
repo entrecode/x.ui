@@ -28,9 +28,9 @@ $shade-array: -12, -8, -4, 4, 8, 12;
   @if $name == 'default' {
     .#{$pfx}theme {
       background-color: $color;
-      color: setContrast($color);
+      color: $text;
 
-      a:not(.#{$pfx}btn) {
+      a:not(.#{$pfx}btn):not(.#{$pfx}tag) {
         color: setContrast($color, $link);
       }
 
@@ -53,7 +53,7 @@ $shade-array: -12, -8, -4, 4, 8, 12;
       background-color: $color;
       color: setContrast($color);
 
-      a:not(.#{$pfx}btn) {
+      a:not(.#{$pfx}btn):not(.#{$pfx}tag) {
         color: setContrast($color, $link);
       }
 
