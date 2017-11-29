@@ -75,6 +75,9 @@ $grid-num-columns: 12 !default;
 /// @prop {number} $base-padding [16] - small padding value for padding helper
 $base-padding: 16;
 
+/// @prop {number} $base-margin [16] - small padding value for padding helper
+$base-spacing: 16;
+
 /// @param {map} $breakpoints
 $breakpoints: (
         'xs': 0, // smartphone
