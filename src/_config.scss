@@ -177,13 +177,6 @@ $paragraph-lead-weight: $light;
 $inline-small-size: .875;
 
 ///
-/// Image
-/// ------------------------------------------------------
-
-/// @param {px} $img-rounded-radius [4] - for modifier class `.img_rounded`
-$img-rounded-radius: 4;
-
-///
 /// Avatars
 /// ------------------------------------------------------
 
@@ -599,3 +592,17 @@ $toolbar-small-min-height: 48;
 
 /// @param {number} $card-radius [4]
 $card-radius: 4 !default;
+
+///
+/// Modifier
+/// ------------------------------------------------------
+
+/// is-rounded
+/// ------------------------------------------------------
+
+/// @param {number} $is-rounded-min-radius [2]
+/// @param {number} $is-rounded-radius [4]
+/// @param {number} $is-rounded-max-radius [8]
+$is-rounded-min-radius: 2 !default;
+$is-rounded-radius: 4 !default;
+$is-rounded-max-radius: 8 !default;

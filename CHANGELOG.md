@@ -9,7 +9,7 @@
 - removed `.nav.inline`
 - changed `.nav` to `.#{$pfx}nav`
 - removed `.big` modifier for `<p>`
-- removed `.raise-#` helper
+- renamed `.raise-#` helper to `.is-raised`
 - renamed `_typo.scss` to `_type.scss`
 - changed typeface sizing to modular scaling with breakpoints
 - added xlcss config options to x.ui config 
@@ -26,7 +26,12 @@
 - renamed `.btn-glow` to `.btn_glow`
 - removed `shadow` from color-map
 - renamed `header` to `title`
-``
+- removed `.page`
+- removed `.section`
+- removed `.btn_raised` use `is-raised` intead
+- removed `.input_raised` use `is-raised` intead
+- renamed `.padding#` to `.has-padding#`
+
 ### removed
 - removed `.input_search`
 - removed `.btn_delete`
@@ -53,7 +58,6 @@
 - added `.img-avatar`
 - added ng-validation classes for `.input` 
 - added a behavior modifier `on-hover` for `dropdown`
-- added `img_rounded`
 
 ### changed
 - optimized `.bubble` styles and comments
@@ -64,8 +68,6 @@
 - refactored `.padding` styles and comments
 - refactored `.well` styles and comments
 - refactored `.alert` styles and comments
-- renamed `_page.scss` to `_layout.scss`
-- changed `.page` to configurable `.#{$project-class}`
 
 ## 6.0.1 - 26.10.2017
 ### fixes

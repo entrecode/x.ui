@@ -1,0 +1,10 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+
+.#{$pfx}is-lifted {
+  @include box-shadow(0 34px 16px -24px rgba(black, .2), 0 20px 32px 0px rgba(black, .1));
+}

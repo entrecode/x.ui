@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
           },
           modifiers: {
             outlined: 'btn_outlined',
-            raised:   'btn_raised',
             clear:    'btn_clear',
             invert:   'btn_invert',
             mono:     'btn_mono',

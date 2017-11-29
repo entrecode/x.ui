@@ -1,0 +1,43 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @param {number} $is-rounded-min-radius [2]
+/// @param {number} $is-rounded-radius [4]
+/// @param {number} $is-rounded-max-radius [8]
+
+@mixin rounded($radius) {
+  @include border-radius($radius);
+
+  &_top {
+    @include border-radius($radius $radius 0 0);
+  }
+
+  &_right {
+    @include border-radius(0 $radius $radius 0 );
+  }
+
+  &_bottom {
+    @include border-radius(0 0 $radius $radius);
+  }
+  
+  &_left {
+    @include border-radius($radius 0 0 $radius);
+  }
+}
+
+
+.#{$pfx}is-rounded {
+  @include rounded(rem($is-rounded-radius));
+
+  &_min {
+    @include rounded(rem($is-rounded-min-radius));
+  }
+
+  &_max {
+    @include rounded(rem($is-rounded-max-radius));
+  }
+}
