@@ -5,94 +5,94 @@
 ///
 /// @param {variable} $pfx [''] - global prefixing
 ///
-/// @prop {number} $base-padding [16] - small padding value for padding helper
+/// @prop {number} $base-spacing [16] - small padding value for padding helper
 
 .#{$pfx}has-padding {
-  padding: rem($base-padding);
+  padding: rem($base-spacing);
 
   &_small {
-    padding: rem($base-padding/2);
+    padding: rem($base-spacing/2);
   }
 
   &_big {
-    padding: rem($base-padding*2);
+    padding: rem($base-spacing*2);
   }
 }
 
-.#{$pfx}has-padding-middle {
-  padding-top: rem($base-padding);
-  padding-bottom: rem($base-padding);
+.#{$pfx}has-padding-y {
+  padding-top: rem($base-spacing);
+  padding-bottom: rem($base-spacing);
 
   &_small {
-    padding-top: rem($base-padding/2);
-    padding-bottom: rem($base-padding/2);
+    padding-top: rem($base-spacing/2);
+    padding-bottom: rem($base-spacing/2);
   }
 
   &_big {
-    padding-top: rem($base-padding*2);
-    padding-bottom: rem($base-padding*2);
+    padding-top: rem($base-spacing*2);
+    padding-bottom: rem($base-spacing*2);
   }
 }
 
-.#{$pfx}has-padding-top {
-  padding-top: rem($base-padding);
+.#{$pfx}has-padding-t {
+  padding-top: rem($base-spacing);
 
   &_small {
-    padding-top: rem($base-padding/2);
+    padding-top: rem($base-spacing/2);
   }
 
   &_big {
-    padding-top: rem($base-padding*2);
+    padding-top: rem($base-spacing*2);
   }
 }
 
-.#{$pfx}has-padding-bottom {
-  padding-bottom: rem($base-padding);
+.#{$pfx}has-padding-b {
+  padding-bottom: rem($base-spacing);
 
   &_small {
-    padding-bottom: rem($base-padding/2);
+    padding-bottom: rem($base-spacing/2);
   }
 
   &_big {
-    padding-bottom: rem($base-padding*2);
+    padding-bottom: rem($base-spacing*2);
   }
 }
 
-.#{$pfx}has-padding-center {
-  padding-left: rem($base-padding);
-  padding-right: rem($base-padding);
+.#{$pfx}has-padding-x {
+  padding-left: rem($base-spacing);
+  padding-right: rem($base-spacing);
 
   &_small {
-    padding-left: rem($base-padding/2);
-    padding-right: rem($base-padding/2);
+    padding-left: rem($base-spacing/2);
+    padding-right: rem($base-spacing/2);
   }
 
   &_big {
-    padding-left: rem($base-padding*2);
-    padding-right: rem($base-padding*2);
+    padding-left: rem($base-spacing*2);
+    padding-right: rem($base-spacing*2);
   }
 }
 
-.#{$pfx}has-padding-left {
-  padding-left: rem($base-padding);
+.#{$pfx}has-padding-l {
+  padding-left: rem($base-spacing);
 
   &_small {
-    padding-left: rem($base-padding/2);
+    padding-left: rem($base-spacing/2);
   }
 
   &_big {
-    padding-left: rem($base-padding*2);
+    padding-left: rem($base-spacing*2);
   }
 }
 
-.#{$pfx}has-padding-right {
-  padding-right: rem($base-padding);
+.#{$pfx}has-padding-r {
+  padding-right: rem($base-spacing);
 
   &_small {
-    padding-right: rem($base-padding/2);
+    padding-right: rem($base-spacing/2);
   }
 
   &_big {
-    padding-right: rem($base-padding*2);
+    padding-right: rem($base-spacing*2);
   }
 }
