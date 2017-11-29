@@ -11,13 +11,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/dracula.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var codes = document.getElementsByTagName('code');
-      for (var i = 0; i < codes.length; i++) {
-        codes[i].innerHTML = codes[i].innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/, '');
-        hljs.highlightBlock(codes[i]);
-      }
-    });
+      document.addEventListener("DOMContentLoaded", function () {
+          var codes = document.getElementsByTagName('code');
+          for (var i = 0; i < codes.length; i++) {
+              codes[i].innerHTML = codes[i].innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/, '');
+              hljs.highlightBlock(codes[i]);
+          }
+      });
   </script>
   <script src="https://unpkg.com/vue"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
@@ -111,7 +111,7 @@
               <ul class="nav__items">
                 <li class="nav__item"><a href="#xui-table" class="btn btn_clear btn_small">table</a></li>
                 <li class="nav__item"><a href="#xui-kiosk" class="btn btn_clear btn_small"><span>kiosk</span> <span
-                    class="tag tag_error tag_small">TODO</span></a></li>
+                  class="tag tag_error tag_small">TODO</span></a></li>
               </ul>
             </li>
             <li>
@@ -122,7 +122,8 @@
               <ul class="nav__items">
                 <li class="nav__item"><a href="#xui-text-color" class="btn btn_clear btn_small">text-color</a></li>
                 <li class="nav__item"><a href="#xui-theme" class="btn btn_clear btn_small">theme</a></li>
-                <li class="nav__item"><a href="#xui-has-padding" class="btn btn_clear btn_small">has-padding</a></li>
+                <li class="nav__item"><a href="#xui-spacing-modifier"
+                                         class="btn btn_clear btn_small">spacing-modifier</a></li>
                 <li class="nav__item"><a href="#xui-text-alignment" class="btn btn_clear btn_small">text-alignment</a>
                 </li>
                 <li class="nav__item"><a href="#xui-type-setting" class="btn btn_clear btn_small">type-setting</a>
@@ -190,7 +191,7 @@
                       <svg class="structure-icon" id="svg_atoms" data-name="atoms" xmlns="http://www.w3.org/2000/svg"
                            viewBox="0 0 160 160">
                         <path
-                            d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z"/>
+                          d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z"/>
                       </svg>
                       <h3>atoms</h3>
                     </div>
@@ -219,7 +220,7 @@
                       <svg class="structure-icon" id="svg_molecules" data-name="molecules"
                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
                         <path
-                            d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
+                          d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
                       </svg>
                       <h3>molecules</h3>
                     </div>
@@ -239,7 +240,7 @@
                       <svg class="structure-icon" id="svg_organisms" data-name="organisms"
                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
                         <path
-                            d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
+                          d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
                       </svg>
                       <h3>organisms</h3>
                     </div>
@@ -275,7 +276,7 @@
                            xmlns="http://www.w3.org/2000/svg"
                            viewBox="0 0 160 160">
                         <path
-                            d="M100,76H86.93l6.53-11.32a4,4,0,1,0-6.92-4L80,72,73.46,60.68a4,4,0,0,0-6.92,4L73.07,76H60a4,4,0,0,0,0,8H73.07L66.54,95.32a4,4,0,0,0,6.92,4L80,88l6.54,11.32a4,4,0,1,0,6.92-4L86.93,84H100a4,4,0,0,0,0-8Z"/>
+                          d="M100,76H86.93l6.53-11.32a4,4,0,1,0-6.92-4L80,72,73.46,60.68a4,4,0,0,0-6.92,4L73.07,76H60a4,4,0,0,0,0,8H73.07L66.54,95.32a4,4,0,0,0,6.92,4L80,88l6.54,11.32a4,4,0,1,0,6.92-4L86.93,84H100a4,4,0,0,0,0-8Z"/>
                       </svg>
                       <h3>modifier</h3>
                     </div>
@@ -283,6 +284,7 @@
                   <li>text-color</li>
                   <li>theme</li>
                   <li>has-padding</li>
+                  <li>has-margin</li>
                   <li>text-alignment</li>
                   <li>type-setting</li>
                   <li>tooltip</li>
@@ -299,7 +301,7 @@
           <section>
             <h2 class="mega" id="xui-xlcss">xlcss</h2>
             <p class="lead"><strong>x.ui</strong> inherits a lot of functions and mixins from <a
-                href="https://github.com/entrecode/xlcss" target="_blank" rel="noopener">xlcss</a>. xlcss also
+              href="https://github.com/entrecode/xlcss" target="_blank" rel="noopener">xlcss</a>. xlcss also
               delivers the grid-system, that is a core layout system throughout <strong>x.ui</strong>.</p>
             <div class="spacing"></div>
             <h3 class="h6">breakpoints</h3>
@@ -391,7 +393,7 @@
             <div class="spacing"></div>
             <p>in addition there are heading helper classes <span class="code">h1</span>, <span class="code">h2</span>,
               <span class="code">h3</span>, <span class="code">h4</span>, <span class="code">h5</span> and <span
-                  class="code">h6</span> to influence the appearance of headings</p>
+                class="code">h6</span> to influence the appearance of headings</p>
             <h4 class="h6">Special heading classes</h4>
             <p>for data-rich / admin interfaces there is a set of three heading styles <span class="code">giga</span>,
               <span class="code">mega</span> and <span class="code">kilo</span> to provide a cleaner typeface without
@@ -422,8 +424,8 @@
 
           <section>
             <h4 id="xui-img-crop" class="h6">Image helper <span class="tag tag_small">atoms/img-crop</span><a
-                href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
-                class="tag tag_error tag_small">object-fit</a></h4>
+              href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
+              class="tag tag_error tag_small">object-fit</a></h4>
             <div data-flex="grid">
               <div data-col="4sm">
                 <pre><code class="html">
@@ -459,8 +461,8 @@
 
           <section>
             <h3 id="xui-img-avatar" class="kilo">img-avatar <span class="tag tag_small">atoms/img-avatar</span><a
-                href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
-                class="tag tag_error tag_small">object-fit</a></h3>
+              href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
+              class="tag tag_error tag_small">object-fit</a></h3>
             <p>img-avatar is mostly used for facial pictures such as profile pictures, because they accentuate faces
               more than square ones. even thought the img-avatar atom uses <span class="code">object-fit: cover</span>
               to
@@ -478,7 +480,7 @@
             <p>there are three basic button styles which should be used to to emphasis or weaken functions. Throughout
               <strong>x.ui</strong> there are three steps of importance. The default style always reached with th
               default class <span class="code">btn</span>, the minor style by an additional modifier class <span
-                  class="code">btn_minor</span>and
+                class="code">btn_minor</span>and
               the superior style by the additional modifier <span class="code">btn_super</span></p>
             <div class="well">
               <ul data-flex="small-grid">
@@ -734,8 +736,8 @@
 
           <section>
             <h3 id="xui-input-group" class="kilo">input-group <span
-                class="tag tag_small">atoms/input-group</span> <span
-                class="tag tag_small tag_error">in progress</span></h3>
+              class="tag tag_small">atoms/input-group</span> <span
+              class="tag tag_small tag_error">in progress</span></h3>
             <div data-flex="grid">
               <div data-col="6sm">
                 <div class="input-group">
@@ -935,8 +937,8 @@
 
           <section>
             <h3 id="xui-dropdown" class="kilo">dropdown <span class="tag tag_small">molecules/dropdown</span> <span
-                class="tag tag_small tag_super">css only</span> <span
-                class="tag tag_small tag_error">in progress</span>
+              class="tag tag_small tag_super">css only</span> <span
+              class="tag tag_small tag_error">in progress</span>
             </h3>
             <div class="well">
               <div data-flex="grid">
@@ -1137,7 +1139,7 @@
 
           <section>
             <h3 class="kilo" id="xui-btn-group">btn-group <span
-                class="tag tag_small">molecules/_btn-group</span>
+              class="tag tag_small">molecules/_btn-group</span>
             </h3>
             <p><span class="code">.btn-group</span> supports <span class="code">.btn</span> and <span class="code">.dropdown</span>
               with all their modfifier classes.</p>
@@ -1271,15 +1273,15 @@
 
             <div data-flex="grid">
               <div data-col="4">
-                <div class="is-lifted is-rounded">
+                <div class="is-lifted has-margin-b is-rounded">
                   <div class="img-crop-16-9">
                     <img src="./assets/placeholder.jpg" class="is-rounded_top">
                   </div>
-                  <div class="has-padding-center">
+                  <div class="has-padding-x">
                     <div class="spacing spacing_small"></div>
                     <h2 class="mega">Title <span class="tag tag_small tag_super">Tag</span></h2>
                   </div>
-                  <div class="has-padding-center has-padding-bottom">
+                  <div class="has-padding-x has-padding-b">
                     <div data-flex="small-grid">
                       <div data-col="6sm">
                         <a href="" class="btn btn_block">Action</a>
@@ -1290,7 +1292,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="is-lifted theme-invert is-rounded">
+                <div class="is-lifted has-margin-b theme-invert is-rounded">
                   <div data-flex="small-grid center-items">
                     <div data-col="2">
                       <div class="has-padding_small">
@@ -1300,7 +1302,7 @@
                       </div>
                     </div>
                     <div data-col="10">
-                      <div class="title has-padding-center has-padding_small">
+                      <div class="title has-padding-x has-padding_small">
                         <h2 class="h6">Title <span class="tag tag_small tag_super">Tag</span></h2>
                         <nav class="nav">
                           <ul class="dropdown dropdown_right">
@@ -1327,7 +1329,7 @@
                 </div>
               </div>
               <div data-col="4">
-                <div class="has-padding is-raised is-rounded">
+                <div class="has-padding has-margin-b is-raised is-rounded">
                   <div data-flex="small-grid center-items">
                     <div data-col="2">
                       <div class="img-avatar"><img src="./assets/avatar.jpg"></div>
@@ -1337,7 +1339,7 @@
                       <small class="text-light">melissa.carter@gmail.com</small>
                     </div>
                     <div data-col="10 +2">
-                      <div class="has-padding-top">
+                      <div class="has-padding-t">
                         <ul class="inline">
                           <li>
                             <div class="tag tag_small">tag</div>
@@ -1357,7 +1359,7 @@
                   </div>
                 </div>
 
-                <div class="is-raised is-rounded">
+                <div class="is-raised is-rounded has-margin-b">
                   <div class="has-padding_small">
                     <div data-flex="small-grid center-items">
                       <div data-col="2">
@@ -1388,7 +1390,7 @@
                   </div>
                 </div>
 
-                <div class="is-raised has-padding_small is-rounded">
+                <div class="is-raised has-margin-b has-padding_small is-rounded">
                   <div data-flex="small-grid center-items">
                     <div data-col="2">
                       <img src="./assets/avatar.jpg" class="img_responsive is-rounded">
@@ -1449,8 +1451,8 @@
 
           <section>
             <h3 id="xui-toolbar" class="kilo">toolbar <span class="tag tag_small">organisms/toolbar</span> <a
-                href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
-                class="tag tag_small tag_error">flex</a>
+              href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
+              class="tag tag_small tag_error">flex</a>
             </h3>
 
             <div class="toolbar theme-invert">
@@ -1535,8 +1537,8 @@
           <!--TODO documentation-->
           <section>
             <h3 id="xui-title" class="kilo">title <span class="tag tag_small">organisms/title</span> <a
-                href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
-                class="tag tag_small tag_error">flex</a>
+              href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
+              class="tag tag_small tag_error">flex</a>
             </h3>
             <div class="alert alert_small"><strong>TODO documentation</strong></div>
           </section>
@@ -1622,7 +1624,7 @@
 
           <section>
             <h3 class="kilo" id="xui-table">table <span class="tag tag_small">templates/_table</span> <span
-                class="tag tag_small tag_error">in progress</span></h3>
+              class="tag tag_small tag_error">in progress</span></h3>
             <table class="table">
               <thead>
               <tr>
@@ -1781,53 +1783,77 @@
           <div class="bumper"></div>
 
           <section>
-            <h3 id="xui-has-padding" class="kilo">has-padding <span class="tag tag_small">modifier/has-padding</span>
+            <h3 id="xui-spacing-modifier" class="kilo">spacing modifier<span
+              class="tag tag_small">modifier/has-padding</span>
+              <span class="tag tag_small">modifier/has-margin</span>
             </h3>
-            <table class="table">
-              <tr>
-                <td><span class="code">has-padding</span></td>
-                <td>adds a surrounding padding</td>
-              </tr>
-              <tr>
-                <td><span class="code">has-padding-middle</span></td>
-                <td>adds padding-top and padding-bottom</td>
-              </tr>
-              <tr>
-                <td><span class="code">has-padding-center</span></td>
-                <td>adds padding-left and padding-right</td>
-              </tr>
-              <tr>
-                <td><span class="code">has-padding-top</span></td>
-                <td>adds padding-top</td>
-              </tr>
-              <tr>
-                <td><span class="code">has-padding-right</span></td>
-                <td>adds padding-right</td>
-              </tr>
-              <tr>
-                <td><span class="code">has-padding-bottom</span></td>
-                <td>adds padding-bottom</td>
-              </tr>
-              <tr>
-                <td><span class="code">has-padding-left</span></td>
-                <td>adds padding-left</td>
-              </tr>
-            </table>
-            <table class="table">
-              <tbody>
-              <tr>
-                <td><strong>size-modifier postifex</strong></td>
-                <td><span class="code">_small</span><span class="code">_big</span></td>
-              </tr>
-              </tbody>
-            </table>
+            <p>the syntax of spacing modifier is <span class="code">has-{property}-{sides}_{size}</span>. <span
+              class="code">{property}</span> be either <span class="code">padding</span> or <span
+              class="code">margin</span></p>
+            <div data-flex="grid">
+              <div data-col="6">
+                <h4 class="h6">available sides</h4>
+                <table class="table">
+                  <tr>
+                    <td><em>no value</em></td>
+                    <td>adds margin or padding to all sides</td>
+                  </tr>
+                  <tr>
+                    <td><span class="code">y</span></td>
+                    <td>top and bottom</td>
+                  </tr>
+                  <tr>
+                    <td><span class="code">x</span></td>
+                    <td>left and right</td>
+                  </tr>
+                  <tr>
+                    <td><span class="code">t</span></td>
+                    <td>top</td>
+                  </tr>
+                  <tr>
+                    <td><span class="code">r</span></td>
+                    <td>right</td>
+                  </tr>
+                  <tr>
+                    <td><span class="code">b</span></td>
+                    <td>bottom</td>
+                  </tr>
+                  <tr>
+                    <td><span class="code">l</span></td>
+                    <td>left</td>
+                  </tr>
+                </table>
+              </div>
+              <div data-col="6">
+                <h4 class="h6">available sides</h4>
+                <table class="table">
+                  <tr>
+                    <td><em>no value</em></td>
+                    <td>default size <span class="code">$base-spacing</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="code">small</span></td>
+                    <td><span class="code">$base-spacing / 2</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="code">big</span></td>
+                    <td><span class="code">$base-spacing * 2</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="code">auto</span></td>
+                    <td>only with <span class="code">margin-l</span><span class="code">margin-r</span><span class="code">margin-x</span></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
           </section>
 
           <div class="bumper"></div>
 
           <section>
             <h3 id="xui-text-alignment" class="h6">text-alignment <span
-                class="tag tag_small">modifier/text-alignment</span></h3>
+              class="tag tag_small">modifier/text-alignment</span></h3>
             <div data-flex="grid">
               <div data-col="4sm">
                 <p class="text-left"><span class="code">text-left</span><br>
@@ -1881,8 +1907,8 @@
 
           <section>
             <h3 id="xui-tooltip" class="kilo">tooltip <span class="tag tag_small">modifier/_tooltip</span> <span
-                class="tag tag_small tag_super">css only</span> <span
-                class="tag tag_small tag_error">in progress</span>
+              class="tag tag_small tag_super">css only</span> <span
+              class="tag tag_small tag_error">in progress</span>
             </h3>
             <div class="alert alert_small">the tooltip only works with single line tooltips</div>
             <div class="well">

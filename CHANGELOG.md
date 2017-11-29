@@ -31,6 +31,7 @@
 - removed `.btn_raised` use `is-raised` intead
 - removed `.input_raised` use `is-raised` intead
 - renamed `.padding#` to `.has-padding#`
+- new naming convention for `.has-padding`
 
 ### removed
 - removed `.input_search`
@@ -58,6 +59,7 @@
 - added `.img-avatar`
 - added ng-validation classes for `.input` 
 - added a behavior modifier `on-hover` for `dropdown`
+- added `.has-margin#`
 
 ### changed
 - optimized `.bubble` styles and comments

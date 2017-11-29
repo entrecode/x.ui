@@ -17,18 +17,17 @@
   }
 
   &_right {
-    @include border-radius(0 $radius $radius 0 );
+    @include border-radius(0 $radius $radius 0);
   }
 
   &_bottom {
     @include border-radius(0 0 $radius $radius);
   }
-  
+
   &_left {
     @include border-radius($radius 0 0 $radius);
   }
 }
-
 
 .#{$pfx}is-rounded {
   @include rounded(rem($is-rounded-radius));
