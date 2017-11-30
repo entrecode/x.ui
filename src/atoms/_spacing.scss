@@ -10,13 +10,19 @@
 ///   <div class='spacing'></div>
 
 .#{$pfx}spacing {
-  height: rem($base-padding*2);
+  @include set-breakpoints {
+    height: rem($base-padding*2);
+  }
 
   &_small {
-    height: rem($base-padding);
+    @include set-breakpoints {
+      height: rem($base-padding);
+    }
   }
 
   &_big {
-    height: rem($base-padding*3);
+    @include set-breakpoints {
+      height: rem($base-padding*3);
+    }
   }
 }

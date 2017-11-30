@@ -119,17 +119,19 @@
             <li class="nav__item">
               <a href="#xui-modifier" class="btn btn_clear">modifier</a>
               <ul class="nav__items">
+                <li class="nav__item"><a href="#xui-is-rounded" class="btn btn_clear btn_small">is-rounded</a></li>
+                <li class="nav__item"><a href="#xui-is-raised" class="btn btn_clear btn_small">is-raised</a></li>
+                <li class="nav__item"><a href="#xui-is-lifted" class="btn btn_clear btn_small">is-lifted</a></li>
                 <li class="nav__item"><a href="#xui-text-color" class="btn btn_clear btn_small">text-color</a></li>
                 <li class="nav__item"><a href="#xui-theme" class="btn btn_clear btn_small">theme</a></li>
                 <li class="nav__item"><a href="#xui-spacing-modifier" class="btn btn_clear btn_small">spacing</a></li>
                 <li class="nav__item"><a href="#xui-height-modifier" class="btn btn_clear btn_small">height</a></li>
                 <li class="nav__item"><a href="#xui-overflow-modifier" class="btn btn_clear btn_small">overflow</a></li>
-                <li class="nav__item"><a href="#xui-text-alignment" class="btn btn_clear btn_small">text-alignment</a>
-                </li>
-                <li class="nav__item"><a href="#xui-type-setting" class="btn btn_clear btn_small">type-setting</a>
-                </li>
+                <li class="nav__item"><a href="#xui-text-alignment" class="btn btn_clear btn_small">text-alignment</a></li>
+                <li class="nav__item"><a href="#xui-type-setting" class="btn btn_clear btn_small">type-setting</a></li>
                 <li class="nav__item"><a href="#xui-tooltip" class="btn btn_clear btn_small">tooltip</a></li>
                 <li class="nav__item"><a href="#xui-position-modifier" class="btn btn_clear btn_small">position-modifier</a></li>
+                <li class="nav__item"><a href="#xui-is-position" class="btn btn_clear btn_small">is-position</a></li>
                 <li class="nav__item"><a href="#xui-is-fab" class="btn btn_clear btn_small">is-fab</a></li>
               </ul>
             </li>
@@ -1697,6 +1699,24 @@
           <div class="spacing"></div>
 
           <section>
+            <h3 class="kilo" id="xui-is-rounded">is-rounded</h3>
+          </section>
+
+          <div class="bumper"></div>
+
+          <section>
+            <h3 class="kilo" id="xui-is-raised">is-raised</h3>
+          </section>
+
+          <div class="bumper"></div>
+
+          <section>
+            <h3 class="kilo" id="xui-is-lifted">is-lifted</h3>
+          </section>
+
+          <div class="bumper"></div>
+
+          <section>
             <h3 class="kilo" id="xui-text-color">text-color <span class="tag tag_small">modifier/text-color</span>
             </h3>
             <p>the text-color modifiers only affect the css color attribute. it can be uses on all elements.</p>
@@ -1961,12 +1981,29 @@
           <div class="bumper"></div>
 
           <section>
+            <h3 id="xui-is-position" class="kilo">is-position</h3>
+            <div class="well is-relative" style="height: 160px;">
+              <strong class="code is-positioned-n is-absolute">n</strong>
+              <strong class="code is-positioned-ne is-absolute">ne</strong>
+              <strong class="code is-positioned-e is-absolute">e</strong>
+              <strong class="code is-positioned-se is-absolute">se</strong>
+              <strong class="code is-positioned-s is-absolute">s</strong>
+              <strong class="code is-positioned-sw is-absolute">sw</strong>
+              <strong class="code is-positioned-w is-absolute">w</strong>
+              <strong class="code is-positioned-nw is-absolute">nw</strong>
+              <strong class="code is-positioned-0 is-absolute">0</strong>
+            </div>
+          </section>
+
+          <div class="bumper"></div>
+
+          <section>
             <h3 id="xui-is-fab" class="kilo">is-fab</h3>
             <p>FAB (Floating Action Buttons) is a modifier for positioning elements with a spacing of 16px. Use with
               <span class="code">is-absolute</span> or <span class="code">is-fixed</span>. the syntax is <span
                 class="code">is-fab-{direction}</span></p>
             <div class="well is-relative" style="height: 160px;">
-              <strong class="code code is-fab-n is-absolute">n</strong>
+              <strong class="code is-fab-n is-absolute">n</strong>
               <strong class="code is-fab-ne is-absolute">ne</strong>
               <strong class="code is-fab-e is-absolute">e</strong>
               <strong class="code is-fab-se is-absolute">se</strong>

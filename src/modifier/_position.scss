@@ -6,13 +6,19 @@
 /// @param {variable} $pfx [''] - global prefixing
 
 .#{$pfx}is-relative {
-  position: relative;
+  @include set-breakpoints {
+    position: relative;
+  }
 }
 
 .#{$pfx}is-absolute {
-  position: absolute;
+  @include set-breakpoints {
+    position: absolute;
+  }
 }
 
 .#{$pfx}is-fixed {
-  position: fixed;
+  @include set-breakpoints {
+    position: fixed;
+  }
 }

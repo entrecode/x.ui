@@ -11,26 +11,32 @@
 /// @param {px} $avatar-border [2]
 
 .#{$pfx}img-avatar {
-  width: rem($avatar-size);
-  height: rem($avatar-size);
-  overflow: hidden;
-  border-radius: 50%;
-  border: rem($avatar-border) solid getColor(background);
+  @include set-breakpoints {
+    width: rem($avatar-size);
+    height: rem($avatar-size);
+    overflow: hidden;
+    border-radius: 50%;
+    border: rem($avatar-border) solid getColor(background);
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
   }
 
   &._small {
-    width: rem($avatar-small-size);
-    height: rem($avatar-small-size);
+    @include set-breakpoints {
+      width: rem($avatar-small-size);
+      height: rem($avatar-small-size);
+    }
   }
 
   &._big {
-    width: rem($avatar-big-size);
-    height: rem($avatar-big-size);
+    @include set-breakpoints {
+      width: rem($avatar-big-size);
+      height: rem($avatar-big-size);
+    }
   }
 }

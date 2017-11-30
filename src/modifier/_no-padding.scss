@@ -6,31 +6,45 @@
 /// @param {variable} $pfx [''] - global prefixing
 
 .#{$pfx}no-padding {
-  padding: 0 !important;
+  @include set-breakpoints {
+    padding: 0 !important;
+  }
 }
 
 .#{$pfx}no-padding-middle {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  @include set-breakpoints {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
 }
 
 .#{$pfx}no-padding-top {
-  padding-top: 0 !important;
+  @include set-breakpoints {
+    padding-top: 0 !important;
+  }
 }
 
 .#{$pfx}no-padding-bottom {
-  padding-bottom: 0 !important;
+  @include set-breakpoints {
+    padding-bottom: 0 !important;
+  }
 }
 
 .#{$pfx}no-padding-center {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  @include set-breakpoints {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
 .#{$pfx}no-padding-left {
-  padding-left: 0 !important;
+  @include set-breakpoints {
+    padding-left: 0 !important;
+  }
 }
 
 .#{$pfx}no-padding-right {
-  padding-right: 0 !important;
+  @include set-breakpoints {
+    padding-right: 0 !important;
+  }
 }

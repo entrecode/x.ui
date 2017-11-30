@@ -30,13 +30,25 @@
 }
 
 .#{$pfx}is-rounded {
-  @include rounded(rem($is-rounded-radius));
+  @include set-breakpoints {
+    @include rounded(rem($is-rounded-radius));
+  }
 
   &_min {
-    @include rounded(rem($is-rounded-min-radius));
+    @include set-breakpoints {
+      @include rounded(rem($is-rounded-min-radius));
+    }
   }
 
   &_max {
-    @include rounded(rem($is-rounded-max-radius));
+    @include set-breakpoints {
+      @include rounded(rem($is-rounded-max-radius));
+    }
+  }
+}
+
+.#{$pfx}not-rounded {
+  @include set-breakpoints {
+    border-radius: initial;
   }
 }

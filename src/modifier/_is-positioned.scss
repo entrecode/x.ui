@@ -4,14 +4,12 @@
 /// @group modifier
 ///
 /// @param {variable} $pfx [''] - global prefixing
-///
-/// @param {number} $fab-spacing [16]
 
-.#{$pfx}is-fab {
+.#{$pfx}is-positioned {
 
   &-n {
     @include set-breakpoints {
-      top: rem($fab-spacing);
+      top: 0;
       left: 50%;
       @include transform(translateX(-50%));
     }
@@ -19,14 +17,14 @@
 
   &-ne {
     @include set-breakpoints {
-      top: rem($fab-spacing);
-      right: rem($fab-spacing);
+      top: 0;
+      right: 0;
     }
   }
 
   &-e {
     @include set-breakpoints {
-      right: rem($fab-spacing);
+      right: 0;
       top: 50%;
       @include transform(translateY(-50%));
     }
@@ -34,14 +32,14 @@
 
   &-se {
     @include set-breakpoints {
-      right: rem($fab-spacing);
-      bottom: rem($fab-spacing);
+      right: 0;
+      bottom: 0;
     }
   }
 
   &-s {
     @include set-breakpoints {
-      bottom: rem($fab-spacing);
+      bottom: 0;
       left: 50%;
       @include transform(translateX(-50%));
     }
@@ -49,14 +47,14 @@
 
   &-sw {
     @include set-breakpoints {
-      bottom: rem($fab-spacing);
-      left: rem($fab-spacing);
+      bottom: 0;
+      left: 0;
     }
   }
 
   &-w {
     @include set-breakpoints {
-      left: rem($fab-spacing);
+      left: 0;
       top: 50%;
       @include transform(translateY(-50%));
     }
@@ -64,8 +62,8 @@
 
   &-nw {
     @include set-breakpoints {
-      left: rem($fab-spacing);
-      top: rem($fab-spacing);
+      left: 0;
+      top: 0;
     }
   }
 
@@ -76,8 +74,4 @@
       @include transform(translateY(-50%) translateX(-50%));
     }
   }
-}
-
-[class*="is-fab-"] {
-  z-index: 10;
 }

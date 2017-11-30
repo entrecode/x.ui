@@ -66,6 +66,8 @@
 - added size-modifier
 - added `is-fab#` modifier
 - added position modifier
+- added `set-breakpoint` mixin
+- added `is-positioned#` modifier
 
 ### changed
 - optimized `.bubble` styles and comments

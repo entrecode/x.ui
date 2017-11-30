@@ -10,53 +10,71 @@
 .#{$pfx}is-fab {
 
   &-n {
-    top: rem($fab-spacing);
-    left: 50%;
-    @include transform(translateX(-50%));
+    @include set-breakpoints {
+      top: rem($fab-spacing);
+      left: 50%;
+      @include transform(translateX(-50%));
+    }
   }
 
   &-ne {
-    top: rem($fab-spacing);
-    right: rem($fab-spacing);
+    @include set-breakpoints {
+      top: rem($fab-spacing);
+      right: rem($fab-spacing);
+    }
   }
 
   &-e {
-    right: rem($fab-spacing);
-    top: 50%;
-    @include transform(translateY(-50%));
+    @include set-breakpoints {
+      right: rem($fab-spacing);
+      top: 50%;
+      @include transform(translateY(-50%));
+    }
   }
 
   &-se {
-    right: rem($fab-spacing);
-    bottom: rem($fab-spacing);
+    @include set-breakpoints {
+      right: rem($fab-spacing);
+      bottom: rem($fab-spacing);
+    }
   }
 
   &-s {
-    bottom: rem($fab-spacing);
-    left: 50%;
-    @include transform(translateX(-50%));
+    @include set-breakpoints {
+      bottom: rem($fab-spacing);
+      left: 50%;
+      @include transform(translateX(-50%));
+    }
   }
 
   &-sw {
-    bottom: rem($fab-spacing);
-    left: rem($fab-spacing);
+    @include set-breakpoints {
+      bottom: rem($fab-spacing);
+      left: rem($fab-spacing);
+    }
   }
 
   &-w {
-    left: rem($fab-spacing);
-    top: 50%;
-    @include transform(translateY(-50%));
+    @include set-breakpoints {
+      left: rem($fab-spacing);
+      top: 50%;
+      @include transform(translateY(-50%));
+    }
   }
 
   &-nw {
-    left: rem($fab-spacing);
-    top: rem($fab-spacing)
+    @include set-breakpoints {
+      left: rem($fab-spacing);
+      top: rem($fab-spacing);
+    }
   }
 
   &-0 {
-    left: 50%;
-    top: 50%;
-    @include transform(translateY(-50%) translateX(-50%));
+    @include set-breakpoints {
+      left: 50%;
+      top: 50%;
+      @include transform(translateY(-50%) translateX(-50%));
+    }
   }
 }
 

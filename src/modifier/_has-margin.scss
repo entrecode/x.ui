@@ -8,104 +8,152 @@
 /// @prop {number} $base-spacing [16] - small padding value for padding helper
 
 .#{$pfx}has-margin {
-  margin: rem($base-spacing);
+  @include set-breakpoints {
+    margin: rem($base-spacing);
+  }
 
   &_small {
-    margin: rem($base-spacing/2);
+    @include set-breakpoints {
+      margin: rem($base-spacing/2);
+    }
   }
 
   &_big {
-    margin: rem($base-spacing*2);
+    @include set-breakpoints {
+      margin: rem($base-spacing*2);
+    }
   }
 }
 
 .#{$pfx}has-margin-middle {
-  margin-top: rem($base-spacing);
-  margin-bottom: rem($base-spacing);
+  @include set-breakpoints {
+    margin-top: rem($base-spacing);
+    margin-bottom: rem($base-spacing);
+  }
 
   &_small {
-    margin-top: rem($base-spacing/2);
-    margin-bottom: rem($base-spacing/2);
+    @include set-breakpoints {
+      margin-top: rem($base-spacing/2);
+      margin-bottom: rem($base-spacing/2);
+    }
   }
 
   &_big {
-    margin-top: rem($base-spacing*2);
-    margin-bottom: rem($base-spacing*2);
+    @include set-breakpoints {
+      margin-top: rem($base-spacing*2);
+      margin-bottom: rem($base-spacing*2);
+    }
   }
 }
 
 .#{$pfx}has-margin-top {
-  margin-top: rem($base-spacing);
+  @include set-breakpoints {
+    margin-top: rem($base-spacing);
+  }
 
   &_small {
-    margin-top: rem($base-spacing/2);
+    @include set-breakpoints {
+      margin-top: rem($base-spacing/2);
+    }
   }
 
   &_big {
-    margin-top: rem($base-spacing*2);
+    @include set-breakpoints {
+      margin-top: rem($base-spacing*2);
+    }
   }
 }
 
 .#{$pfx}has-margin-bottom {
-  margin-bottom: rem($base-spacing);
+  @include set-breakpoints {
+    margin-bottom: rem($base-spacing);
+  }
 
   &_small {
-    margin-bottom: rem($base-spacing/2);
+    @include set-breakpoints {
+      margin-bottom: rem($base-spacing/2);
+    }
   }
 
   &_big {
-    margin-bottom: rem($base-spacing*2);
+    @include set-breakpoints {
+      margin-bottom: rem($base-spacing*2);
+    }
   }
 }
 
 .#{$pfx}has-margin-center {
-  margin-left: rem($base-spacing);
-  margin-right: rem($base-spacing);
+  @include set-breakpoints {
+    margin-left: rem($base-spacing);
+    margin-right: rem($base-spacing);
+  }
 
   &_small {
-    margin-left: rem($base-spacing/2);
-    margin-right: rem($base-spacing/2);
+    @include set-breakpoints {
+      margin-left: rem($base-spacing/2);
+      margin-right: rem($base-spacing/2);
+    }
   }
 
   &_big {
-    margin-left: rem($base-spacing*2);
-    margin-right: rem($base-spacing*2);
+    @include set-breakpoints {
+      margin-left: rem($base-spacing*2);
+      margin-right: rem($base-spacing*2);
+    }
   }
 
   &_auto {
-    margin-left: auto;
-    margin-right: auto;
+    @include set-breakpoints {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
 .#{$pfx}has-margin-left {
-  margin-left: rem($base-spacing);
+  @include set-breakpoints {
+    margin-left: rem($base-spacing);
+  }
 
   &_small {
-    margin-left: rem($base-spacing/2);
+    @include set-breakpoints {
+      margin-left: rem($base-spacing/2);
+    }
   }
 
   &_big {
-    margin-left: rem($base-spacing*2);
+    @include set-breakpoints {
+      margin-left: rem($base-spacing*2);
+    }
   }
 
   &_auto {
-    margin-left: auto;
+    @include set-breakpoints {
+      margin-left: auto;
+    }
   }
 }
 
 .#{$pfx}has-margin-right {
-  margin-right: rem($base-spacing);
+  @include set-breakpoints {
+    margin-right: rem($base-spacing);
+  }
 
   &_small {
-    margin-right: rem($base-spacing/2);
+    @include set-breakpoints {
+      margin-right: rem($base-spacing/2);
+    }
   }
 
   &_big {
-    margin-right: rem($base-spacing*2);
+    @include set-breakpoints {
+      margin-right: rem($base-spacing*2);
+    }
   }
 
   &_auto {
-    margin-right: auto;
+    @include set-breakpoints {
+      margin-right: auto;
+    }
   }
 }

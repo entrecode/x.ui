@@ -6,13 +6,19 @@
 /// @param {variable} $pfx [''] - global prefixing
 
 .#{$pfx}text-center {
-  text-align: center;
+  @include set-breakpoints {
+    text-align: center;
+  }
 }
 
 .#{$pfx}text-right {
-  text-align: right;
+  @include set-breakpoints {
+    text-align: right;
+  }
 }
 
 .#{$pfx}text-left {
-  text-align: left;
+  @include set-breakpoints {
+    text-align: left;
+  }
 }

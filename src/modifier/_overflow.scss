@@ -6,28 +6,40 @@
 /// @param {variable} $pfx [''] - global prefixing
 
 .#{$pfx}is-clipped {
-  overflow: hidden;
+  @include set-breakpoints {
+    overflow: hidden;
+  }
 }
 
 .#{$pfx}is-clipped-x {
-  overflow-x: hidden;
+  @include set-breakpoints {
+    overflow-x: hidden;
+  }
 }
 
 .#{$pfx}is-clipped-y {
-  overflow-y: hidden;
+  @include set-breakpoints {
+    overflow-y: hidden;
+  }
 }
 
 .#{$pfx}is-scrollable {
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  @include set-breakpoints {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 .#{$pfx}is-scrollable-x {
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
+  @include set-breakpoints {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 .#{$pfx}is-scrollable-y {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  @include set-breakpoints {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 }
