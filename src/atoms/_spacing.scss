@@ -12,11 +12,11 @@
 .#{$pfx}spacing {
   height: rem($base-padding*2);
 
-  &.#{$pfx}spacing_small {
+  &_small {
     height: rem($base-padding);
   }
 
-  .#{$pfx}spacing_big {
+  &_big {
     height: rem($base-padding*3);
   }
 }
