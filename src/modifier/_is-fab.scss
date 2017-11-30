@@ -1,0 +1,65 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+///
+/// @param {number} $fab-spacing [16]
+
+.#{$pfx}is-fab {
+
+  &-n {
+    top: rem($fab-spacing);
+    left: 50%;
+    @include transform(translateX(-50%));
+  }
+
+  &-ne {
+    top: rem($fab-spacing);
+    right: rem($fab-spacing);
+  }
+
+  &-e {
+    right: rem($fab-spacing);
+    top: 50%;
+    @include transform(translateY(-50%));
+  }
+
+  &-se {
+    right: rem($fab-spacing);
+    bottom: rem($fab-spacing);
+  }
+
+  &-s {
+    bottom: rem($fab-spacing);
+    left: 50%;
+    @include transform(translateX(-50%));
+  }
+
+  &-sw {
+    bottom: rem($fab-spacing);
+    left: rem($fab-spacing);
+  }
+
+  &-w {
+    left: rem($fab-spacing);
+    top: 50%;
+    @include transform(translateY(-50%));
+  }
+
+  &-nw {
+    left: rem($fab-spacing);
+    top: rem($fab-spacing)
+  }
+
+  &-0 {
+    left: 50%;
+    top: 50%;
+    @include transform(translateY(-50%) translateX(-50%));
+  }
+}
+
+[class*="is-fab-"] {
+  z-index: 10;
+}

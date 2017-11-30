@@ -28,11 +28,6 @@ $shade-array: -12, -8, -4, 4, 8, 12;
   @if $name == 'default' {
     .#{$pfx}theme {
       background-color: $color;
-      color: $text;
-
-      a:not(.#{$pfx}btn):not(.#{$pfx}tag) {
-        color: setContrast($color, $link);
-      }
 
       @for $n from 1 through length($postfix-array) {
         $postfix: nth($postfix-array, $n);
@@ -40,11 +35,6 @@ $shade-array: -12, -8, -4, 4, 8, 12;
 
         &_#{$postfix} {
           background-color: varColor($color, $shade);
-          color: setContrast(varColor($color, $shade));
-
-          a:not(.#{$pfx}btn) {
-            color: setContrast(varColor($color, $shade), $link);
-          }
         }
       }
     }

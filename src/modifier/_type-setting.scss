@@ -6,24 +6,24 @@
 /// @param {variable} $pfx [''] - global prefixing
 
 /// no text wrapping
-.#{$pfx}nowrap {
+.#{$pfx}is-nowrap {
   white-space: nowrap;
   vertical-align: baseline;
 }
 
 /// uses automatic hyphenation
-.#{$pfx}hyphen {
+.#{$pfx}is-hyphen {
   @include word-wrap;
 }
 
 /// use automatic hyphenation with justification
-.#{$pfx}hyphen-block {
+.#{$pfx}is-hyphen-block {
   text-align: justify;
   @include word-wrap;
 }
 
 /// automatic text cut off with ...
-.#{$pfx}ellipsis {
+.#{$pfx}is-ellipsis {
   @include ellipsis;
   display: block;
 }

@@ -1,0 +1,32 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+
+.#{$pfx}has-height {
+  &-full {
+    height: 100vh;
+  }
+
+  &-1-4 {
+    min-height: (100vh/4);
+  }
+
+  &-half {
+    min-height: (100vh/4*2);
+  }
+
+  &-3-4 {
+    min-height: (100vh/4*3);
+  }
+
+  &-golden-h {
+    min-height: (100vh*0.618);
+  }
+
+  &-golden-w {
+    min-height: (100vw*0.618);
+  }
+}

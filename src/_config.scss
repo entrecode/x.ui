@@ -609,3 +609,10 @@ $card-radius: 4 !default;
 $is-rounded-min-radius: 2 !default;
 $is-rounded-radius: 4 !default;
 $is-rounded-max-radius: 8 !default;
+
+/// fab
+/// ------------------------------------------------------
+
+/// @param {number} $fab-spacing [16]
+$fab-spacing: 16 !default;
+
