@@ -24,9 +24,8 @@
   <script src="app.js"></script>
 </head>
 <body class="theme">
-
-<div data-flex="grid" id="app">
-  <aside class="theme_dark" data-col="2">
+<div data-flex="grid" id="app" class="size-vp-full">
+  <aside class="theme_dark is-scrollable-y" data-col="2">
     <div class="has-padding_big">
       <img src="./assets/xui-logo.svg" class="img_full">
     </div>
@@ -122,8 +121,8 @@
               <ul class="nav__items">
                 <li class="nav__item"><a href="#xui-text-color" class="btn btn_clear btn_small">text-color</a></li>
                 <li class="nav__item"><a href="#xui-theme" class="btn btn_clear btn_small">theme</a></li>
-                <li class="nav__item"><a href="#xui-spacing-modifier"
-                                         class="btn btn_clear btn_small">spacing-modifier</a></li>
+                <li class="nav__item"><a href="#xui-spacing-modifier" class="btn btn_clear btn_small">spacing</a></li>
+                <li class="nav__item"><a href="#xui-overflow-modifier" class="btn btn_clear btn_small">overflow</a></li>
                 <li class="nav__item"><a href="#xui-text-alignment" class="btn btn_clear btn_small">text-alignment</a>
                 </li>
                 <li class="nav__item"><a href="#xui-type-setting" class="btn btn_clear btn_small">type-setting</a>
@@ -142,7 +141,7 @@
       </div>
     </div>
   </aside>
-  <div data-col="10">
+  <div data-col="10" class="is-scrollable-y">
     <div data-flex="grid">
       <div data-col="10">
         <div class="has-padding">
@@ -283,8 +282,8 @@
                   </li>
                   <li>text-color</li>
                   <li>theme</li>
-                  <li>has-padding</li>
-                  <li>has-margin</li>
+                  <li>spacing</li>
+                  <li>overflow</li>
                   <li>text-alignment</li>
                   <li>type-setting</li>
                   <li>tooltip</li>
@@ -1825,6 +1824,18 @@
             </table>
 
           </section>
+
+          <div class="bumper"></div>
+
+          <section>
+            <h3 id="xui-overflow-modifier" class="h6">overflow-modifier</h3>
+            <p>the syntax is <span class="code">is-{overflow}-{axis}</span></p>
+            <p><span class="code">{overflow}</span> can be <span class="code">clipped</span> for <em>hidden</em> or
+              <span class="code">scrollable</span> for <em>scroll</em>.<br>
+              <span class="code">{axis}</span> can be <span class="code">x</span>, <span class="code">y</span> or <em>empty</em>.
+            </p>
+          </section>
+
 
           <div class="bumper"></div>
 
