@@ -1,0 +1,25 @@
+.#{$pfx}size {
+  &-vp-full {
+    height: 100vh;
+  }
+
+  &-vp-1-4 {
+    min-height: (100vh/4);
+  }
+
+  &-vp-half {
+    min-height: (100vh/4*2);
+  }
+
+  &-vp-3-4 {
+    min-height: (100vh/4*3);
+  }
+
+  &-vp-golden-y {
+    min-height: (100vh*0.618);
+  }
+
+  &-vp-golden-x {
+    min-height: (100vw*0.618);
+  }
+}

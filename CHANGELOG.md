@@ -62,6 +62,8 @@
 - added `.has-margin#`
 - added `.input_clear`
 - added `.no-margin#` and `.no-padding#`
+- added overflow-modifier `.is-clipped#` and `.is-scrollable#`
+- added size-modifier
 
 ### changed
 - optimized `.bubble` styles and comments
