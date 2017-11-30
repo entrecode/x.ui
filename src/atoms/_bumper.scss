@@ -9,9 +9,9 @@
 /// @example
 ///   <div class='bumper'></div>
 
-.#{$pfx}bumper {
+
+%bumper {
   position: relative;
-  margin: rem($base-padding*2) 0;
   height: rem(4);
   text-align: center;
 
@@ -25,6 +25,11 @@
     background-color: getColor(divider);
     @include box-shadow(rem(8) 0 0 getColor(divider), rem(16) 0 0 getColor(divider));
   }
+}
+
+.#{$pfx}bumper {
+  @extend %bumper;
+  margin: rem($base-padding*2) 0;
 
   &.#{$pfx}bumper_invert {
     &:before {
@@ -33,11 +38,13 @@
     }
   }
 
-  &.#{$pfx}bumper_small {
+  &_small {
+    @extend %bumper;
     margin: rem($base-padding) 0;
   }
 
-  &.#{$pfx}bumper_big {
+  &_big {
+    @extend %bumper;
     margin: rem($base-padding*3) 0;
   }
 }
