@@ -61,6 +61,7 @@
 - added a behavior modifier `on-hover` for `dropdown`
 - added `.has-margin#`
 - added `.input_clear`
+- added `.no-margin#` and `.no-padding#`
 
 ### changed
 - optimized `.bubble` styles and comments
