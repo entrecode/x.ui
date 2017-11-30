@@ -1,0 +1,33 @@
+@mixin set-breakpoints {
+  @content;
+
+  &-sm {
+    @media (min-width: getBreakpoint(sm)) {
+     @content;
+    }
+  }
+
+  &-md {
+    @media (min-width: getBreakpoint(md)) {
+     @content;
+    }
+  }
+
+  &-lg {
+    @media (min-width: getBreakpoint(lg)) {
+     @content;
+    }
+  }
+
+  &-xl {
+    @media (min-width: getBreakpoint(xl)) {
+     @content;
+    }
+  }
+
+  &-xxl {
+    @media (min-width: getBreakpoint(xxl)) {
+     @content;
+    }
+  }
+}
