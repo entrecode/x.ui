@@ -19,7 +19,7 @@
   }
 }
 
-.#{$pfx}has-margin-y {
+.#{$pfx}has-margin-middle {
   margin-top: rem($base-spacing);
   margin-bottom: rem($base-spacing);
 
@@ -34,7 +34,7 @@
   }
 }
 
-.#{$pfx}has-margin-t {
+.#{$pfx}has-margin-top {
   margin-top: rem($base-spacing);
 
   &_small {
@@ -46,7 +46,7 @@
   }
 }
 
-.#{$pfx}has-margin-b {
+.#{$pfx}has-margin-bottom {
   margin-bottom: rem($base-spacing);
 
   &_small {
@@ -58,7 +58,7 @@
   }
 }
 
-.#{$pfx}has-margin-x {
+.#{$pfx}has-margin-center {
   margin-left: rem($base-spacing);
   margin-right: rem($base-spacing);
 
@@ -78,7 +78,7 @@
   }
 }
 
-.#{$pfx}has-margin-l {
+.#{$pfx}has-margin-left {
   margin-left: rem($base-spacing);
 
   &_small {
@@ -94,7 +94,7 @@
   }
 }
 
-.#{$pfx}has-margin-r {
+.#{$pfx}has-margin-right {
   margin-right: rem($base-spacing);
 
   &_small {
