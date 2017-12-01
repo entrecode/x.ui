@@ -1,7 +1,7 @@
 {
   "name": "x.ui",
   "version": "6.0.1",
-  "description": "UI based on xlcss",
+  "description": "x.ui is a framework based on the atomic design methodology",
   "main": "src/x.ui.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,12 @@
     "watch": "node-sass --watch --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/x.ui.css"
   },
   "keywords": [
-    "xlcss",
     "x.ui",
     "styles",
     "scss"
   ],
   "author": "entrecode GmbH",
   "devDependencies": {
-    "node-sass": "4.5.2",
-    "xlcss": "^5.0.0"
+    "node-sass": "4.5.2"
   }
 }
