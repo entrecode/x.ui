@@ -12,13 +12,13 @@
     padding: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       padding: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       padding: rem($base-spacing*2);
     }
@@ -31,14 +31,14 @@
     padding-bottom: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       padding-top: rem($base-spacing/2);
       padding-bottom: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       padding-top: rem($base-spacing*2);
       padding-bottom: rem($base-spacing*2);
@@ -51,13 +51,13 @@
     padding-top: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       padding-top: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       padding-top: rem($base-spacing*2);
     }
@@ -69,13 +69,13 @@
     padding-bottom: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       padding-bottom: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       padding-bottom: rem($base-spacing*2);
     }
@@ -88,14 +88,14 @@
     padding-right: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       padding-left: rem($base-spacing/2);
       padding-right: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       padding-left: rem($base-spacing*2);
       padding-right: rem($base-spacing*2);
@@ -108,13 +108,13 @@
     padding-left: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       padding-left: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       padding-left: rem($base-spacing*2);
     }
@@ -126,13 +126,13 @@
     padding-right: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       padding-right: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       padding-right: rem($base-spacing*2);
     }

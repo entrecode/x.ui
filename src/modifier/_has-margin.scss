@@ -12,13 +12,13 @@
     margin: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       margin: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       margin: rem($base-spacing*2);
     }
@@ -31,14 +31,14 @@
     margin-bottom: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       margin-top: rem($base-spacing/2);
       margin-bottom: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       margin-top: rem($base-spacing*2);
       margin-bottom: rem($base-spacing*2);
@@ -51,13 +51,13 @@
     margin-top: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       margin-top: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       margin-top: rem($base-spacing*2);
     }
@@ -69,13 +69,13 @@
     margin-bottom: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       margin-bottom: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       margin-bottom: rem($base-spacing*2);
     }
@@ -88,21 +88,21 @@
     margin-right: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       margin-left: rem($base-spacing/2);
       margin-right: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       margin-left: rem($base-spacing*2);
       margin-right: rem($base-spacing*2);
     }
   }
 
-  &_auto {
+  &-auto {
     @include set-breakpoints {
       margin-left: auto;
       margin-right: auto;
@@ -115,19 +115,19 @@
     margin-left: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       margin-left: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       margin-left: rem($base-spacing*2);
     }
   }
 
-  &_auto {
+  &-auto {
     @include set-breakpoints {
       margin-left: auto;
     }
@@ -139,19 +139,19 @@
     margin-right: rem($base-spacing);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       margin-right: rem($base-spacing/2);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       margin-right: rem($base-spacing*2);
     }
   }
 
-  &_auto {
+  &-auto {
     @include set-breakpoints {
       margin-right: auto;
     }
