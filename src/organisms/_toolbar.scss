@@ -30,6 +30,10 @@
     &:last-child {
       margin-left: rem(16);
     }
+
+    &:only-child {
+      margin: 0;
+    }
   }
 
   .#{$pfx}toolbar__title {
