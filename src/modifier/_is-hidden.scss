@@ -6,7 +6,7 @@
 /// @param {variable} $pfx [''] - global prefixing
 
 .#{$pfx}is-hidden {
-  @include set-breakpoints {
+  @include set-breakpoints($area: true) {
     display: none !important;
   }
 }

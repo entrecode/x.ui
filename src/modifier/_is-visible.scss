@@ -5,16 +5,8 @@
 ///
 /// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}is-visible-xs,
-.#{$pfx}is-visible-sm,
-.#{$pfx}is-visible-md,
-.#{$pfx}is-visible-lg,
-.#{$pfx}is-visible-xl {
-  display: none !important;
-}
-
 .#{$pfx}is-visible {
-  @include set-breakpoints {
+  @include set-breakpoints($area: true, $hasRoot: false) {
     display: inherit !important;
   }
 }
