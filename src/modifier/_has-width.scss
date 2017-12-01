@@ -1,0 +1,32 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+
+.#{$pfx}has-width {
+  &-full {
+    width: 100vw;
+  }
+
+  &-1-4 {
+    min-width: (100vw/4);
+  }
+
+  &-half {
+    min-width: (100vw/4*2);
+  }
+
+  &-3-4 {
+    min-width: (100vw/4*3);
+  }
+
+  &-golden-h {
+    min-width: (100vw*0.618);
+  }
+
+  &-golden-w {
+    min-width: (100vw*0.618);
+  }
+}

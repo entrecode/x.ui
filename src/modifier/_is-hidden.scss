@@ -1,0 +1,12 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+
+.#{$pfx}is-hidden {
+  @include set-breakpoints {
+    display: none !important;
+  }
+}

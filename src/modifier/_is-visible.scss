@@ -1,0 +1,20 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+
+.#{$pfx}is-visible-xs,
+.#{$pfx}is-visible-sm,
+.#{$pfx}is-visible-md,
+.#{$pfx}is-visible-lg,
+.#{$pfx}is-visible-xl {
+  display: none !important;
+}
+
+.#{$pfx}is-visible {
+  @include set-breakpoints {
+    display: inherit !important;
+  }
+}

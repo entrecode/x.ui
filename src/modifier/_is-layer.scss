@@ -1,0 +1,25 @@
+.#{$pfx}is-layer {
+  @for $i from 0 through 9 {
+    $index: $i*10;
+
+    &-#{$index} {
+      z-index: #{$index};
+    }
+  }
+
+  @for $i from 1 through 10 {
+    $index: $i*100;
+
+    &-#{$index} {
+      z-index: #{$index};
+    }
+  }
+
+  &-behind {
+    z-index: -1;
+  }
+
+  &-max {
+    z-index: 99999;
+  }
+}
