@@ -1,33 +1,25 @@
-@mixin set-breakpoints {
-  @content;
+@mixin set-breakpoints($area: false, $hasRoot: true) {
+  $keys: map-keys($breakpoints);
 
-  &-sm {
-    @media (min-width: getBreakpoint(sm)) {
-     @content;
-    }
+  @if $hasRoot == true {
+    @content;
   }
 
-  &-md {
-    @media (min-width: getBreakpoint(md)) {
-     @content;
+  @if $area == true {
+    @each $key in $keys {
+      &-#{$key} {
+        @media (min-width: getBreakpoint(#{$key})) and (max-width: getBreakpoint(#{$key}, max)) {
+          @content;
+        }
+      }
     }
-  }
-
-  &-lg {
-    @media (min-width: getBreakpoint(lg)) {
-     @content;
-    }
-  }
-
-  &-xl {
-    @media (min-width: getBreakpoint(xl)) {
-     @content;
-    }
-  }
-
-  &-xxl {
-    @media (min-width: getBreakpoint(xxl)) {
-     @content;
+  } @else {
+    @each $key in $keys {
+      &-#{$key} {
+        @media (min-width: getBreakpoint(#{$key})) {
+          @content;
+        }
+      }
     }
   }
 }
