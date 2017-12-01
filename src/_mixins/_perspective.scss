@@ -1,0 +1,13 @@
+@mixin perspective($val) {
+  -webkit-perspective: $val;
+  -moz-perspective: $val;
+  -ms-perspective: $val;
+  perspective: $val;
+}
+
+@mixin perspective-origin($val) {
+  -webkit-perspective-origin: $val;
+  -moz-perspective-origin: $val;
+  -ms-perspective-origin: $val;
+  perspective-origin: $val;
+}

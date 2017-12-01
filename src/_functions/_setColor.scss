@@ -1,0 +1,41 @@
+////
+/// @group color-functions
+/// @since 2.1.5
+/// @author Bernhard Ruoff
+/// @access public
+/// @deprecated since 6.0.0
+////
+
+/// sets color based on luminosity of another color
+/// @example
+/// color: setColor(#222222); // returns #fff
+///
+/// @param {Color} $color - Name of base color
+/// @param {Color} $setDark [#000] - Name of dark color
+/// @param {Color} $setLight [#fff] - Name of light color
+///
+/// @return {Color} value of $setLight or $setDark
+
+@function setColor($color, $setDark: #000, $setLight: #fff) {
+  $hue: hue($color);
+
+  @if (opacity($color) > .5) {
+
+    /// if color is not a light color (yellow, cyan)
+    @if ($hue >= 190 or $hue <= 40) {
+      @if (lightness($color) >= 80) {
+        @return $setDark; // Lighter background, return dark color
+      } @else {
+        @return $setLight; // Lighter background, return dark color
+      }
+    } @else {
+      @if (lightness($color) >= 40) {
+        @return $setDark; // Lighter background, return dark color
+      } @else {
+        @return $setLight; // Lighter background, return dark color
+      }
+    }
+  } @else {
+    @return $setDark;
+  }
+}

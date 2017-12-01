@@ -1,0 +1,24 @@
+/// @since 3.0.6
+/// @group grid
+/// @author Bernhard Ruoff
+/// @access public
+
+@include data-flex-bp(end-items) {
+  @include align-items(flex-end);
+}
+
+@include data-flex-bp(start-items) {
+  @include align-items(flex-start);
+}
+
+@include data-flex-bp(center-items) {
+  @include align-items(center);
+}
+
+@include data-flex-bp(baseline-items) {
+  @include align-items(baseline);
+}
+
+@include data-flex-bp(stretch-items) {
+  @include align-items(stretch);
+}

@@ -1,0 +1,24 @@
+/// @since 3.0.6
+/// @group grid
+/// @author Bernhard Ruoff
+/// @access public
+
+@include data-flex-bp(around) {
+  @include justify-content(space-around);
+}
+
+@include data-flex-bp(between) {
+  @include justify-content(space-between);
+}
+
+@include data-flex-bp(center) {
+  @include justify-content(center);
+}
+
+@include data-flex-bp(start) {
+  @include justify-content(flex-start);
+}
+
+@include data-flex-bp(end) {
+  @include justify-content(flex-end);
+}

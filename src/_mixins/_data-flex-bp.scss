@@ -1,0 +1,54 @@
+////
+/// @group layout
+/// @since 3.0.9
+/// @author Bernhard Ruoff
+/// @access public
+////
+
+/// mixin to generate breakpoints for data-flex values
+/// @param {value} $name - name of value
+///
+/// @example
+/// data-flex-bp(name) {
+///   /*some content*/
+/// }
+
+@mixin data-flex-bp($name) {
+  [data-flex~="#{$name}"] {
+    @content;
+  }
+
+  [data-flex~="#{$name}-xs"] {
+    @content;
+  }
+
+  [data-flex~="#{$name}-sm"] {
+    @media (min-width: getBreakpoint(sm)) {
+      @content;
+    }
+  }
+
+  [data-flex~="#{$name}-md"] {
+    @media (min-width: getBreakpoint(md)) {
+      @content;
+    }
+  }
+
+  [data-flex~="#{$name}-lg"] {
+    @media (min-width: getBreakpoint(lg)) {
+      @content;
+    }
+  }
+
+  [data-flex~="#{$name}-xl"] {
+    @media (min-width: getBreakpoint(xl)) {
+      @content;
+    }
+  }
+
+  [data-flex~="#{$name}-xxl"] {
+    @media (min-width: getBreakpoint(xxl)) {
+      @content;
+    }
+  }
+}

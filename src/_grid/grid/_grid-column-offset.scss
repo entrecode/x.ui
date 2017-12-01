@@ -1,0 +1,94 @@
+/// @since 3.0.0
+/// @group grid
+/// @author Bernhard Ruoff
+/// @access public
+
+@for $i from 1 through ($grid-num-columns - 1) {
+  [data-col~="+#{$i}"] {
+    margin-left: (($i / $grid-num-columns) * 100%);
+  }
+}
+
+@for $i from 1 through ($grid-num-columns - 1) {
+  [data-col~="+#{$i}xs"] {
+    margin-left: (($i / $grid-num-columns) * 100%);
+  }
+}
+
+@for $i from 1 through ($grid-num-columns - 1) {
+  [data-col~="+#{$i}sm"] {
+    @media (min-width: getBreakpoint(sm)) {
+      margin-left: (($i / $grid-num-columns) * 100%);
+    }
+  }
+}
+
+@for $i from 1 through ($grid-num-columns - 1) {
+  [data-col~="+#{$i}md"] {
+    @media (min-width: getBreakpoint(md)) {
+      margin-left: (($i / $grid-num-columns) * 100%);
+    }
+  }
+}
+
+@for $i from 1 through ($grid-num-columns - 1) {
+  [data-col~="+#{$i}lg"] {
+    @media (min-width: getBreakpoint(lg)) {
+      margin-left: (($i / $grid-num-columns) * 100%);
+    }
+  }
+}
+
+@for $i from 1 through ($grid-num-columns - 1) {
+  [data-col~="+#{$i}xl"] {
+    @media (min-width: getBreakpoint(xl)) {
+      margin-left: (($i / $grid-num-columns) * 100%);
+    }
+  }
+}
+
+@for $i from 1 through ($grid-num-columns - 1) {
+  [data-col~="+#{$i}xxl"] {
+    @media (min-width: getBreakpoint(xxl)) {
+      margin-left: (($i / $grid-num-columns) * 100%);
+    }
+  }
+}
+
+[data-col~="+0"] {
+  margin-left: 0;
+}
+
+[data-col~="+0xs"] {
+  margin-left: 0;
+}
+
+[data-col~="+0sm"] {
+  @media (min-width: getBreakpoint(sm)) {
+    margin-left: 0;
+  }
+}
+
+[data-col~="+0md"] {
+  @media (min-width: getBreakpoint(md)) {
+    margin-left: 0;
+  }
+}
+
+[data-col~="+0lg"] {
+  @media (min-width: getBreakpoint(lg)) {
+    margin-left: 0;
+  }
+}
+
+[data-col~="+0xl"] {
+  @media (min-width: getBreakpoint(xl)) {
+    margin-left: 0;
+  }
+}
+
+[data-col~="+0xxl"] {
+  @media (min-width: getBreakpoint(xxl)) {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,70 @@
+/// @since 3.0.6
+/// @group grid
+/// @author Bernhard Ruoff
+/// @access public
+
+[data-flex] {
+  > [data-col] {
+    @include flex(0 0 auto);
+    float: initial;
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}"] {
+      @include flex-basis(($i / $grid-num-columns) * 100%);
+      max-width: ($i / $grid-num-columns) * 100%;
+    }
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}xs"] {
+      @include flex-basis(($i / $grid-num-columns) * 100%);
+      max-width: ($i / $grid-num-columns) * 100%;
+    }
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}sm"] {
+      @media (min-width: getBreakpoint(sm)) {
+        @include flex-basis(($i / $grid-num-columns) * 100%);
+        max-width: ($i / $grid-num-columns) * 100%;
+      }
+    }
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}md"] {
+      @media (min-width: getBreakpoint(md)) {
+        @include flex-basis(($i / $grid-num-columns) * 100%);
+        max-width: ($i / $grid-num-columns) * 100%;
+      }
+    }
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}lg"] {
+      @media (min-width: getBreakpoint(lg)) {
+        @include flex-basis(($i / $grid-num-columns) * 100%);
+        max-width: ($i / $grid-num-columns) * 100%;
+      }
+    }
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}xl"] {
+      @media (min-width: getBreakpoint(xl)) {
+        @include flex-basis(($i / $grid-num-columns) * 100%);
+        max-width: ($i / $grid-num-columns) * 100%;
+      }
+    }
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}xxl"] {
+      @media (min-width: getBreakpoint(xxl)) {
+        @include flex-basis(($i / $grid-num-columns) * 100%);
+        max-width: ($i / $grid-num-columns) * 100%;
+      }
+    }
+  }
+}

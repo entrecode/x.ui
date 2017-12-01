@@ -1,0 +1,31 @@
+////
+/// @group color-functions
+/// @since 3.0.10
+/// @author Bernhard Ruoff
+/// @access public
+////
+
+/// Easily retrieve colors for use.
+/// @example
+/// color: getColor(text, invert);
+/// color: getColor(link);
+///
+/// @param {String} $color - Name of the color
+///
+/// @return {Color} Value of the color
+
+@function getColor($colorstring...) {
+  $color-length: length($colorstring);
+
+  @if $color-length == 1 {
+    $color-value: nth($colorstring, 1);
+    @return map-get(map-get($colors, base), $color-value);
+  }
+
+  @if $color-length == 2 {
+    $color-base: nth($colorstring, 1);
+    $color-value: nth($colorstring, 2);
+
+    @return map-get(map-get($colors, $color-base), $color-value);
+  }
+}

@@ -1,0 +1,23 @@
+////
+/// @group color-functions
+/// @since 2.0.1
+/// @author Bernhard Ruoff
+/// @access public
+////
+
+/// set saturation of a color to a specific value
+/// @example
+/// color: setSaturation(#E51F00, 40); // returns #E5968A
+///
+/// @access public
+/// @param {Color} $color - Name of base color
+/// @param {Color} $value - saturation value
+///
+/// @return {Color} value with new saturation value
+
+@function setSaturation($color, $value) {
+  $color-hue: hue($color);
+  $color-lightness: lightness($color);
+
+  @return hsl($color-hue, $value, $color-lightness);
+}

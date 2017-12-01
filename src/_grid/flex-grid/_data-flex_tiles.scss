@@ -1,0 +1,55 @@
+[data-flex~="tiles"] {
+  @include flex-wrap(wrap);
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}"] {
+      min-height: ($i / $grid-num-columns) * 100vw;
+    }
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}xs"] {
+      min-height: ($i / $grid-num-columns) * 100vw;
+    }
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}sm"] {
+      @media (min-width: getBreakpoint(sm)) {
+        min-height: ($i / $grid-num-columns) * 100vw;
+      }
+    }
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}md"] {
+      @media (min-width: getBreakpoint(md)) {
+        min-height: ($i / $grid-num-columns) * 100vw;
+      }
+    }
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}lg"] {
+      @media (min-width: getBreakpoint(lg)) {
+        min-height: ($i / $grid-num-columns) * 100vw;
+      }
+    }
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}xl"] {
+      @media (min-width: getBreakpoint(xl)) {
+        min-height: ($i / $grid-num-columns) * 100vw;
+      }
+    }
+  }
+
+  @for $i from 1 through $grid-num-columns {
+    > [data-col~="#{$i}xxl"] {
+      @media (min-width: getBreakpoint(xxl)) {
+        min-height: ($i / $grid-num-columns) * 100vw;
+      }
+    }
+  }
+}

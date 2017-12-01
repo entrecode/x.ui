@@ -1,0 +1,43 @@
+////
+/// @group animation
+/// @since 2.0.1
+/// @author Bernhard Ruoff
+/// @access public
+////
+
+/// keyframe mixin
+/// @param {string} $value - name of animation
+///
+/// @example
+/// keyframes(width) {
+///   0% {
+///     width: 8px;
+///   }
+///   100% {
+///     width: 16px;
+///   }
+/// }
+
+@mixin keyframes($str) {
+  @-webkit-keyframes #{$str} {
+    @content;
+  }
+  @-moz-keyframes #{$str} {
+    @content;
+  }
+  @keyframes #{$str} {
+    @content;
+  }
+}
+
+/// keyframe animation
+/// @param {string} $str - string for animation
+///
+/// @example
+/// animation(width .4s infinite);
+
+@mixin animation($str) {
+  -webkit-animation: $str;
+  -moz-animation: $str;
+  -ms-animation: $str;
+}

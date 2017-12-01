@@ -1,0 +1,57 @@
+/// @since 3.0.6
+/// @group grid
+/// @author Bernhard Ruoff
+/// @access public
+
+@mixin flex-order($name, $value) {
+  $divider: null;
+
+  @if $name == 'first' or $name == 'last' {
+    $divider: '-';
+  }
+
+  [data-flex-order~="#{$name}"] {
+    @include order($value);
+  }
+
+  [data-flex-order~="#{$name}#{$divider}xs"] {
+    @include order($value);
+  }
+
+  [data-flex-order~="#{$name}#{$divider}sm"] {
+    @media (min-width: getBreakpoint(sm)) {
+      @include order($value);
+    }
+  }
+
+  [data-flex-order~="#{$name}#{$divider}md"] {
+    @media (min-width: getBreakpoint(md)) {
+      @include order($value);
+    }
+  }
+
+  [data-flex-order~="#{$name}#{$divider}lg"] {
+    @media (min-width: getBreakpoint(lg)) {
+      @include order($value);
+    }
+  }
+
+  [data-flex-order~="#{$name}#{$divider}xl"] {
+    @media (min-width: getBreakpoint(xl)) {
+      @include order($value);
+    }
+  }
+
+  [data-flex-order~="#{$name}#{$divider}xxl"] {
+    @media (min-width: getBreakpoint(xxl)) {
+      @include order($value);
+    }
+  }
+}
+
+@include flex-order(first, 1);
+@include flex-order(last, -1);
+
+@for $i from 1 through $grid-num-columns {
+  @include flex-order($i, $i);
+}

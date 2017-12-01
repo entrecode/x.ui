@@ -1,0 +1,23 @@
+////
+/// @since 3.0.5
+/// @author Bernhard Ruoff
+/// @access public
+/// @deprecated since 4.0.0
+////
+
+/// sets background-color and matching text-color with
+/// @example
+/// include setText(base, super);
+///
+/// @param {String} $color - color map values
+
+@mixin setText($value...) {
+  $source: getColor(nth($value, 1), nth($value, 2));
+  background-color: $source;
+
+  @if length($value) == 3 and nth($value, 3) == true {
+    color: setContrast($source, getColor(link));
+  } @else {
+    color: setContrast($source);
+  }
+}

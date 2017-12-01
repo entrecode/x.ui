@@ -1,0 +1,144 @@
+// https://www.w3.org/TR/AERT#color-contrast
+// http://contrastchecker.com/
+
+//TODO doc
+
+@function getBrightness($color) {
+  @return ((red($color) * 299)+(green($color)*587)+(blue($color)*587))/1000;
+}
+
+@function brightnessDifference($color1, $color2) {
+  @return abs(getBrightness($color1) - getBrightness($color2))
+}
+
+@function colorDifference($color1, $color2) {
+  @return max(red($color1), red($color2)) - min(red($color1), red($color2)) + max(green($color1), green($color2)) - min(green($color1), green($color2))  + max(blue($color1), blue($color2)) - min(blue($color1), blue($color2));
+}
+
+@function colorPass($base, $color, $brightness-threshold: 125, $color-threshold: 500) {
+  $brightness-difference: brightnessDifference($base, $color);
+  $color-difference: colorDifference($base, $color);
+
+  @return if($brightness-difference >= $brightness-threshold and $color-difference >= $color-threshold, true, false);
+}
+
+@function colorMargin($base, $color, $brightness-threshold: 125, $color-threshold: 500) {
+  $brightness-difference: brightnessDifference($base, $color);
+  $color-difference: colorDifference($base, $color);
+
+  @return if($brightness-difference >= $brightness-threshold or $color-difference >= $color-threshold, true, false);
+}
+
+@function luma($color) {
+  $red: red($color) / 255;
+  $green: green($color) / 255;
+  $blue: blue($color) / 255;
+
+  $red: if($red < .03928, $red / 12.92, pow(($red + .055) / 1.055, 2.4));
+  $green: if($green < .03928, $green / 12.92, pow(($green + .055) / 1.055, 2.4));
+  $blue: if($blue < .03928, $blue / 12.92, pow(($blue + .055) / 1.055, 2.4));
+
+  $luma: (0.2126 * $red + 0.7152 * $green + 0.0722 * $blue);
+  @return $luma;
+}
+
+@function contrastRatio($color1, $color2) {
+  $luma1: luma($color1);
+  $luma2: luma($color2);
+  @return round((max($luma1, $luma2) + .05)/(min($luma1, $luma2) + .05)*100)/100;
+}
+
+@function checkCompliance($base, $color, $aaa, $aa) {
+  $contrast-ratio: contrastRatio($base, $color);
+
+  @if ($contrast-ratio >= $aaa) {
+    @return $color;
+  } @else if ($contrast-ratio >= $aa) {
+    @return $color;
+  } @else {
+    @return false;
+  }
+}
+
+@function setContrast($color, $hue: $color, $compliance: 'large') {
+  $aaa: 4.5;
+  $aa: 3;
+
+  @if $compliance == 'small' {
+    $aaa: 7;
+    $aa: 4.5;
+  }
+
+  $lighter-fallback: white !default;
+  $darker-fallback: black !default;
+
+  $list: 10 20 30 40 50 60 70 80 90 100;
+  $last: nth($list, length($list));
+
+  @if (alpha($color) < 1) {
+    $color: flattenColor($color);
+  }
+
+  @if (alpha($hue) < 1) {
+    $hue: flattenColor($hue);
+  }
+
+  @each $percent in $list {
+    $darker: darken($hue, $percent);
+    $darker-brightness: brightnessDifference($color, $darker);
+    $darker-pass: colorPass($color, $darker);
+    $darker-margin: colorMargin($color, $darker);
+    $darker-contrast: contrastRatio($color, $darker);
+    $lighter: lighten($hue, $percent);
+    $lighter-brightness: brightnessDifference($color, $lighter);
+    $lighter-pass: colorPass($color, $lighter);
+    $lighter-margin: colorMargin($color, $lighter);
+    $lighter-contrast: contrastRatio($color, $lighter);
+
+    @if ($hue != $color) {
+      @if $lighter-contrast > $darker-contrast or $darker-pass == false and $lighter-margin {
+        @if $lighter-pass {
+          @return checkCompliance($color, $lighter, $aaa, $aa);
+        } @else if $percent == $last {
+          @if $lighter-margin {
+            @if (checkCompliance($color, $lighter, $aaa, $aa)) {
+              @return checkCompliance($color, $lighter, $aaa, $aa)
+            } @else {
+              @return $lighter-fallback;
+            }
+          } @else {
+            @return $lighter-fallback;
+          }
+        }
+      } @else {
+        @if $darker-pass {
+          @return checkCompliance($color, $darker, $aaa, $aa);
+        } @else if $percent == $last {
+          @if $darker-margin {
+            @if (checkCompliance($color, $darker, $aaa, $aa)) {
+              @return checkCompliance($color, $darker, $aaa, $aa)
+            } @else {
+              @return $darker-fallback;
+            }
+          } @else {
+            @return $darker-fallback;
+          }
+        }
+      }
+    } @else {
+      @if $lighter-contrast > $darker-contrast or $darker-pass == false and $lighter-margin {
+        @if $lighter-pass {
+          @return $lighter-fallback;
+        } @else if $percent == $last and $lighter-margin {
+          @return $lighter-fallback;
+        }
+      } @else {
+        @if $darker-pass {
+          @return $darker-fallback;
+        } @else if $percent == $last and $darker-margin {
+          @return $darker-fallback;
+        }
+      }
+    }
+  }
+}

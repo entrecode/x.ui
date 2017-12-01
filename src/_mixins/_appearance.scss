@@ -1,0 +1,20 @@
+////
+/// @group resets
+/// @since 2.0.1
+/// @author Bernhard Ruoff
+/// @access public
+////
+
+/// appearance mixin
+/// @example
+/// button {
+///   @include appearance(none);
+/// }
+///
+/// @param {normal|icon|window|button|menu|field|none} $value
+
+@mixin appearance($value) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  appearance: $value;
+}

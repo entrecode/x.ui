@@ -1,0 +1,20 @@
+/// @since 3.0.6
+/// @group grid
+/// @author Bernhard Ruoff
+/// @access public
+
+@include data-flex-bp(column) {
+  @include flex-direction(column);
+}
+
+@include data-flex-bp(column-reverse) {
+  @include flex-direction(column-reverse);
+}
+
+@include data-flex-bp(row) {
+  @include flex-direction(row);
+}
+
+@include data-flex-bp(row-reverse) {
+  @include flex-direction(row-reverse);
+}

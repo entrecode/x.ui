@@ -1,0 +1,24 @@
+////
+/// @group color-functions
+/// @since 2.0.1
+/// @author Bernhard Ruoff
+/// @access public
+////
+
+/// generate two additional colors based on triad color harmony
+/// @author Michael Locher
+/// @example
+/// color: triad(#5FEFBF, 2); // returns #bf5fef
+///
+/// @param {Color} $base-color - Name of base-color
+/// @param {1 | 2 | 3} $nth - selector for color
+///
+/// @return {Color} return nth triad-color for base-color
+
+@function triad($base-color, $nth) {
+  $colors: hsl(hue($base-color), saturation($base-color), lightness($base-color));
+  $colors: append($colors, adjust-hue($base-color, 120), comma);
+  $colors: append($colors, adjust-hue($base-color, -120), comma);
+
+  @return nth($colors, $nth);
+}

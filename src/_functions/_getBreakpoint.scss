@@ -1,0 +1,20 @@
+@function nextBreakpoint($breakpoint, $map: $breakpoints) {
+  $keys: map-keys($map);
+  $current: index($keys, $breakpoint);
+
+  @return if($current < length($map), map-get($map, nth($keys, $current + 1)), null);
+}
+
+@function getBreakpoint($breakpoint, $max: null ) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @if $max == max {
+      $breakpoint-max: nextBreakpoint($breakpoint);
+      @return if($breakpoint-max, $breakpoint-max - 1 * 1px, map-get($breakpoints, $breakpoint) * 1px);
+    } @else {
+      @return map-get($breakpoints, $breakpoint) * 1px;
+    }
+  } @else {
+    @warn '#{$breakpoint} is not a key';
+    @return null;
+  }
+}
