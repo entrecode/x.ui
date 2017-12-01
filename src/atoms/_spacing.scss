@@ -14,13 +14,13 @@
     height: rem($base-padding*2);
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       height: rem($base-padding);
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       height: rem($base-padding*3);
     }

@@ -39,14 +39,14 @@
     }
   }
 
-  &_small {
+  &-small {
     @include set-breakpoints {
       @include bumper;
       margin: rem($base-padding) 0;
     }
   }
 
-  &_big {
+  &-big {
     @include set-breakpoints {
       @include bumper;
       margin: rem($base-padding*3) 0;
