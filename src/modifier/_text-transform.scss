@@ -1,0 +1,14 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+
+.#{$pfx}is-uppercase {
+  text-transform: uppercase;
+}
+
+.#{$pfx}is-lowercase {
+  text-transform: lowercase;
+}
