@@ -3,3 +3,10 @@
 @import '../../src/x.ui-sandbox';
 @import 'macros/macros';
 @import 'partials/partials';
+
+
+.hero {
+  background-image: url('assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+}

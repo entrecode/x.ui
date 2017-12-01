@@ -32,6 +32,7 @@
 - removed `.input_raised` use `is-raised` intead
 - renamed `.padding#` to `.has-padding#`
 - new naming convention for `.has-padding`
+- removed xlcss dependencies
 
 ### removed
 - removed `.input_search`
@@ -68,6 +69,7 @@
 - added position modifier
 - added `set-breakpoint` mixin
 - added `is-positioned#` modifier
+- added `is-visible#` and `is-hidden#`
 
 ### changed
 - optimized `.bubble` styles and comments

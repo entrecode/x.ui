@@ -24,10 +24,27 @@
   <script src="app.js"></script>
 </head>
 <body class="theme">
-<div data-flex="grid" id="app" class="has-height-full">
-  <aside class="theme_dark is-scrollable-y" data-col="2">
+<div id="app">
+  <header class="is-fixed is-positioned-nw has-padding is-layer-10" style="width: 100%;">
+    <div class="toolbar">
+      <a href="" class="hamburger-btn"></a>
+      <div class="toolbar__title toolbar__title_center">
+        <a href="#top">
+          <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
+        </a>
+      </div>
+      <nav class="nav">
+        <ul class="nav__items">
+          <li class="nav__item">
+            <a href="" class="btn btn_outlined">git</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <aside class="theme_dark is-scrollable-y hide" data-col="2">
     <div class="has-padding_big">
-      <img src="./assets/xui-logo.svg" class="img_full">
+      <img src="assets/xui-logo-2.svg" class="img_full">
     </div>
     <div class="has-padding_big">
       <div class="navbar">
@@ -40,7 +57,7 @@
               <a href="#xui-structure" class="btn btn_clear">structure</a>
             </li>
             <li>
-              <div class="bumper_small"></div>
+              <div class="bumper-small"></div>
             </li>
             <li class="nav__item">
               <a href="#xui-xlcss" class="btn btn_clear">xlcss</a>
@@ -52,7 +69,7 @@
               </ul>
             </li>
             <li>
-              <div class="bumper_small"></div>
+              <div class="bumper-small"></div>
             </li>
             <li class="nav__item">
               <a href="#xui-atoms" class="btn btn_clear">atoms</a>
@@ -78,7 +95,7 @@
               </ul>
             </li>
             <li>
-              <div class="bumper_small"></div>
+              <div class="bumper-small"></div>
             </li>
             <li class="nav__item">
               <a href="#xui-molecules" class="btn btn_clear">molecules</a>
@@ -92,7 +109,7 @@
               </ul>
             </li>
             <li>
-              <div class="bumper_small"></div>
+              <div class="bumper-small"></div>
             </li>
             <li class="nav__item">
               <a href="#xui-organisms" class="btn btn_clear">organisms</a>
@@ -103,18 +120,16 @@
               </ul>
             </li>
             <li>
-              <div class="bumper_small"></div>
+              <div class="bumper-small"></div>
             </li>
             <li class="nav__item">
               <a href="#xui-templates" class="btn btn_clear">templates</a>
               <ul class="nav__items">
                 <li class="nav__item"><a href="#xui-table" class="btn btn_clear btn_small">table</a></li>
-                <li class="nav__item"><a href="#xui-kiosk" class="btn btn_clear btn_small"><span>kiosk</span> <span
-                  class="tag tag_error tag_small">TODO</span></a></li>
               </ul>
             </li>
             <li>
-              <div class="bumper_small"></div>
+              <div class="bumper-small"></div>
             </li>
             <li class="nav__item">
               <a href="#xui-modifier" class="btn btn_clear">modifier</a>
@@ -127,16 +142,18 @@
                 <li class="nav__item"><a href="#xui-spacing-modifier" class="btn btn_clear btn_small">spacing</a></li>
                 <li class="nav__item"><a href="#xui-height-modifier" class="btn btn_clear btn_small">height</a></li>
                 <li class="nav__item"><a href="#xui-overflow-modifier" class="btn btn_clear btn_small">overflow</a></li>
-                <li class="nav__item"><a href="#xui-text-alignment" class="btn btn_clear btn_small">text-alignment</a></li>
+                <li class="nav__item"><a href="#xui-text-alignment" class="btn btn_clear btn_small">text-alignment</a>
+                </li>
                 <li class="nav__item"><a href="#xui-type-setting" class="btn btn_clear btn_small">type-setting</a></li>
                 <li class="nav__item"><a href="#xui-tooltip" class="btn btn_clear btn_small">tooltip</a></li>
-                <li class="nav__item"><a href="#xui-position-modifier" class="btn btn_clear btn_small">position-modifier</a></li>
+                <li class="nav__item"><a href="#xui-position-modifier"
+                                         class="btn btn_clear btn_small">position-modifier</a></li>
                 <li class="nav__item"><a href="#xui-is-position" class="btn btn_clear btn_small">is-position</a></li>
                 <li class="nav__item"><a href="#xui-is-fab" class="btn btn_clear btn_small">is-fab</a></li>
               </ul>
             </li>
             <li>
-              <div class="bumper_small"></div>
+              <div class="bumper-small"></div>
             </li>
             <li class="nav__item">
               <a href="#xui-ec-icon" class="btn btn_clear">ec.icons</a>
@@ -146,972 +163,1092 @@
       </div>
     </div>
   </aside>
-  <div data-col="10" class="is-scrollable-y">
+
+  <div class="hero has-margin has-height-vp-golden-w theme-invert" data-flex="center center-items">
+    <div class="text-center">
+      <img src="assets/xui-logo.svg" alt="x.ui - atomic css framwork" width="240px">
+      <div class="spacing-small"></div>
+      <a href="" class="btn btn_outlined btn_invert">get started</a>
+      <div class="spacing-small"></div>
+      <p class="text-center text-invert">
+        <small>v. {{version}}</small>
+      </p>
+    </div>
+  </div>
+
+  <div class="spacing-big"></div>
+
+  <div data-container>
+    <div data-flex="grid center">
+      <div data-col="8sm">
+        <h1 class="h2 text-center is-uppercase">welcome to the atomsphere.</h1>
+        <p class="lead is-hyphen-block"><strong>x.ui</strong> is a framework based on the atomic design methodology.
+          this workflow
+          is inspired by nature and physics and has a pretty serious focus on modularity and structure. it structure
+          begins with the smallest part and builds up to complex structure. as a result, there is very little redundancy
+          with a remarkable felxibility.</p>
+        <p class="is-hyphen-block">the goal of <strong>x.ui</strong> is to translate the atomic philosophy into a new
+          kind of framework,
+          unattached to design-trends and 100% focused on user-driven ux-design and combine it a with a strict set of
+          rules regarding naming conventions and front-end development.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bumper-big"></div>
+
+  <div data-container>
+    <div data-flex="grid center">
+      <div data-col="8sm">
+        <section>
+          <h2 class="mega text-center is-uppercase" id="xui-structure">structure</h2>
+          <div data-flex="grid">
+            <div data-col="4sm">
+              <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="80px">
+                  <path fill="#2fce6f"
+                        d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z"/>
+                </svg>
+                <h3 class="h5"><a href="#xui-atoms">atoms</a></h3>
+              </div>
+              <p class="is-hyphen-block">
+                <small>Atoms are the smallest building blocks of <strong>x.ui</strong>. Atoms are elements like type,
+                  headings, inputs, buttons and more. Atoms only have one function. Most atoms have specific modifiers
+                  that change attributes like size, style or color.
+                </small>
+              </p>
+              <div class="spacing"></div>
+            </div>
+            <div data-col="4sm">
+              <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="80px">
+                  <path fill="#2fce6f"
+                        d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
+                </svg>
+                <h3 class="h5"><a href="#xui-molecules">molecules</a></h3>
+              </div>
+              <p class="is-hyphen-block">
+                <small>Molecules are groups of atoms bonded together and are the smallest fundamental units of a
+                  compound. molecules group connected information and/or interactions.
+                </small>
+              </p>
+              <div class="spacing"></div>
+            </div>
+            <div data-col="4sm">
+              <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="80px">
+                  <path fill="#2fce6f"
+                        d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
+                </svg>
+                <h3 class="h5"><a href="#xui-organisms">organisms</a></h3>
+                <p class="is-hyphen-block">
+                  <small>organisms combine complex groups of molecules and molecules. they are the biggest parts of the
+                    atomsphere.
+                  </small>
+                </p>
+                <div class="spacing"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacing-big"></div>
+
+  <div>
+    <ul data-flex="no-gutter">
+      <li class="theme_darker" style="flex:1;">
+        <ul class="unstyled text-center">
+          <li class="has-padding">
+            <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+              <path fill="#2a3d54" fill-opacity=".6"
+                    d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z"/>
+            </svg>
+            <h3 class="h6">atoms</h3>
+          </li>
+          <li>btn</li>
+          <li>btn_glow</li>
+          <li>bubble</li>
+          <li>bumper</li>
+          <li>hamburger-btn</li>
+          <li>headings</li>
+          <li>img</li>
+          <li>img-avatar</li>
+          <li>img-crop</li>
+          <li>input</li>
+          <li>input-group</li>
+          <li>inputround</li>
+          <li>input_validation</li>
+          <li>list</li>
+          <li>spacing</li>
+          <li>tag</li>
+          <li>type</li>
+        </ul>
+      </li>
+      <li class="theme_darker" style="flex:1;">
+        <ul class="unstyled text-center">
+          <li class="has-padding">
+            <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+              <path fill="#2a3d54" fill-opacity=".6"
+                    d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
+            </svg>
+            <h3 class="h6">molecules</h3>
+          </li>
+          <li>alert</li>
+          <li>btn-group</li>
+          <li>dropdown</li>
+          <li>form-group</li>
+          <li>table</li>
+          <li>well</li>
+        </ul>
+      </li>
+      <li class="theme_dark" style="flex:1;">
+        <ul class="unstyled text-center">
+          <li class="has-padding">
+            <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+              <path fill="#2a3d54" fill-opacity=".6"
+                    d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
+            </svg>
+            <h3 class="h6">organisms</h3>
+          </li>
+          <li>nav</li>
+          <li>toolbar</li>
+          <li>title</li>
+        </ul>
+      </li>
+      <li class="theme-link" style="flex:1;">
+        <ul class="unstyled text-center">
+          <li class="has-padding">
+            <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+              <path fill="#ffffff" fill-opacity=".8"
+                    d="M100,76H86.93l6.53-11.32a4,4,0,1,0-6.92-4L80,72,73.46,60.68a4,4,0,0,0-6.92,4L73.07,76H60a4,4,0,0,0,0,8H73.07L66.54,95.32a4,4,0,0,0,6.92,4L80,88l6.54,11.32a4,4,0,1,0,6.92-4L86.93,84H100a4,4,0,0,0,0-8Z"/>
+            </svg>
+            <h3 class="h6">modifier</h3>
+          </li>
+          <li>has-height</li>
+          <li>has-margin</li>
+          <li>has-padding</li>
+          <li>has-width</li>
+          <li>is-fab</li>
+          <li>is-lifted</li>
+          <li>is-positioned</li>
+          <li>is-raised</li>
+          <li>is-rounded</li>
+          <li>no-margin</li>
+          <li>no-padding</li>
+          <li>overflow</li>
+          <li>position</li>
+          <li>text-alignment</li>
+          <li>text-color</li>
+          <li>theme</li>
+          <li>tooltip</li>
+          <li class="has-padding-bottom">type-setting</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="bumper-big"></div>
+
+  <div data-container>
+    <div data-flex="grid center">
+      <div data-col="8sm">
+        <h2 class="mega text-center is-uppercase" id="xui-the-grid">the grid</h2>
+      </div>
+    </div>
+
     <div data-flex="grid">
-      <div data-col="10">
-        <div class="has-padding">
-          <section>
-            <h1 class="mega">x.ui
-              <span class="tag tag_super tag_small">{{version}}</span><span class="tag tag_super tag_small"
-                                                                            v-for="dependancy in dependancies">{{dependancy}}</span>
-            </h1>
-            <p class="lead"><strong>x.ui</strong> is a framework based on the atomic design methodology. this workflow
-              is focused on modularity and structure.</p>
-          </section>
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+    </div>
+    <div data-flex="grid">
+      <div data-col="2"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">2</div></div>
+      <div data-col="2"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">2</div></div>
+      <div data-col="2"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">2</div></div>
+      <div data-col="2"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">2</div></div>
+      <div data-col="2"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">2</div></div>
+      <div data-col="2"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">2</div></div>
+    </div>
+    <div data-flex="grid">
+      <div data-col="3"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">3</div></div>
+      <div data-col="3"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">3</div></div>
+      <div data-col="3"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">3</div></div>
+      <div data-col="3"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">3</div></div>
+    </div>
+    <div data-flex="grid">
+      <div data-col="4"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">4</div></div>
+      <div data-col="4"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">4</div></div>
+      <div data-col="4"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">4</div></div>
+    </div>
+    <div data-flex="grid">
+      <div data-col="5"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">5</div></div>
+      <div data-col="7"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">7</div></div>
+    </div>
+    <div data-flex="grid">
+      <div data-col="6"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">6</div></div>
+      <div data-col="6"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">6</div></div>
+    </div>
+    <div data-flex="grid">
+      <div data-col="5"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">5</div></div>
+      <div data-col="7"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">7</div></div>
+    </div>
+    <div data-flex="grid">
+      <div data-col="8"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">8</div></div>
+      <div data-col="4"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">4</div></div>
+    </div>
+    <div data-flex="grid">
+      <div data-col="3"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">3</div></div>
+      <div data-col="9"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">9</div></div>
+    </div>
+    <div data-flex="grid">
+      <div data-col="10"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">10</div></div>
+      <div data-col="2"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">2</div></div>
+    </div>
+    <div data-flex="grid">
+      <div data-col="1"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">1</div></div>
+      <div data-col="11"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">11</div></div>
+    </div>
+    <div data-flex="grid">
+      <div data-col="12"><div class="has-padding-smallest theme-minor text-center has-margin-bottom">12</div></div>
+    </div>
+  </div>
 
-          <div class="bumper"></div>
+  <div class="spacing"></div>
 
-          <section>
-            <h2 class="mega" id="xui-structure">structure</h2>
 
-            <ul class="structure-list">
-              <!--<li>
-                <ul class="structure-list_config">
-                  <li>
-                    <svg class="structure-icon" id="core-icon" data-name="core" xmlns="http://www.w3.org/2000/svg"
-                         viewBox="0 0 160 160">
-                    </svg>
-                    <h3>config</h3>
-                  </li>
-                </ul>
-              </li>-->
-              <!--<li>
-                <ul class="structure-list_core">
-                  <li>
-                    <svg class="structure-icon" id="core-icon" data-name="core" xmlns="http://www.w3.org/2000/svg"
-                         viewBox="0 0 160 160">
-                      <circle cx="80" cy="80" r="12"/>
-                    </svg>
-                    <h3>core</h3>
-                  </li>
-                  <li>body</li>
-                  <li>colors</li>
-                </ul>
-              </li>-->
-              <li>
-                <ul class="structure-list_atoms">
-                  <li>
-                    <div>
-                      <svg class="structure-icon" id="svg_atoms" data-name="atoms" xmlns="http://www.w3.org/2000/svg"
-                           viewBox="0 0 160 160">
-                        <path
-                          d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z"/>
-                      </svg>
-                      <h3>atoms</h3>
-                    </div>
-                  </li>
-                  <li>type</li>
-                  <li>headings
-                  </li>
-                  <li>img</li>
-                  <li>img-crop</li>
-                  <li>img-avatar</li>
-                  <li>btn</li>
-                  <li>btn-glow</li>
-                  <li>hamburger-btn</li>
-                  <li>bubble</li>
-                  <li>tag</li>
-                  <li>input</li>
-                  <li>input-group</li>
-                  <li>bumper</li>
-                  <li>spacing</li>
-                </ul>
-              </li>
-              <li>
-                <ul class="structure-list_molecules">
-                  <li>
-                    <div>
-                      <svg class="structure-icon" id="svg_molecules" data-name="molecules"
-                           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                        <path
-                          d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
-                      </svg>
-                      <h3>molecules</h3>
-                    </div>
-                  </li>
-                  <li>list</li>
-                  <li>alert</li>
-                  <li>well</li>
-                  <li>dropdown</li>
-                  <li>btn-group</li>
-                  <li>form-group</li>
-                </ul>
-              </li>
-              <li>
-                <ul class="structure-list_organisms">
-                  <li>
-                    <div>
-                      <svg class="structure-icon" id="svg_organisms" data-name="organisms"
-                           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                        <path
-                          d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
-                      </svg>
-                      <h3>organisms</h3>
-                    </div>
-                  </li>
-                  <li>toolbar</li>
-                  <li>title</li>
-                  <li>nav</li>
-                </ul>
-              </li>
-              <li>
-                <ul class="structure-list_templates">
-                  <li>
-                    <div>
-                      <svg class="structure-icon" id="svg_templates" data-name="templates"
-                           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                        <g>
-                          <path d="M116,44V68H44V44h72m8-8H36V76h88Z"/>
-                          <path d="M116,92v24H44V92h72m8-8H36v40h88Z"/>
-                        </g>
-                      </svg>
-                      <h3>templates</h3>
-                    </div>
-                  </li>
-                  <li>table</li>
-                  <li>kiosk</li>
-                </ul>
-              </li>
-              <li>
-                <ul class="structure-list_modifier">
-                  <li>
-                    <div>
-                      <svg class="structure-icon" id="svg_modifier" data-name="modifier"
-                           xmlns="http://www.w3.org/2000/svg"
-                           viewBox="0 0 160 160">
-                        <path
-                          d="M100,76H86.93l6.53-11.32a4,4,0,1,0-6.92-4L80,72,73.46,60.68a4,4,0,0,0-6.92,4L73.07,76H60a4,4,0,0,0,0,8H73.07L66.54,95.32a4,4,0,0,0,6.92,4L80,88l6.54,11.32a4,4,0,1,0,6.92-4L86.93,84H100a4,4,0,0,0,0-8Z"/>
-                      </svg>
-                      <h3>modifier</h3>
-                    </div>
-                  </li>
-                  <li>text-color</li>
-                  <li>theme</li>
-                  <li>spacing</li>
-                  <li>size</li>
-                  <li>overflow</li>
-                  <li>text-alignment</li>
-                  <li>type-setting</li>
-                  <li>tooltip</li>
-                  <li>is-lifted</li>
-                  <li>is-raised</li>
-                  <li>is-rounded</li>
-                  <li>is-fab</li>
-                  <li>position</li>
-                </ul>
-              </li>
-            </ul>
-          </section>
+  <div data-container>
+    <div data-flex="grid center">
+      <div data-col="8">
+        <h3>breakpoints</h3>
+        <p><strong>x.ui</strong> has a relative datiles set of breakpoints.</p>
+        <div data-flex="grid">
+          <div data-col="2">
+            <span class="h2 is-uppercase">mobile</span>
+            <span>0</span>
+          </div>
+          <div data-col="2">
+            <span class="h2 is-uppercase">mobile landscape</span>
+            <span>480</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <div class="bumper_big"></div>
-
-          <section>
-            <h2 class="mega" id="xui-xlcss">xlcss</h2>
-            <p class="lead"><strong>x.ui</strong> inherits a lot of functions and mixins from <a
-              href="https://github.com/entrecode/xlcss" target="_blank" rel="noopener">xlcss</a>. xlcss also
-              delivers the grid-system, that is a core layout system throughout <strong>x.ui</strong>.</p>
-            <div class="spacing"></div>
-            <h3 class="h6">breakpoints</h3>
-            <div data-flex="grid">
-              <div data-col="2sm">
-                <div class="form-group">
-                  <label for="bpXs">mobile <strong>xs</strong></label>
-                  <input type="number" id="bpXs" :value="grid.breakpoints.xs" class="input">
-                </div>
-              </div>
-              <div data-col="2sm">
-                <div class="form-group">
-                  <label for="bpSm">mobile landscape <strong>sm</strong></label>
-                  <input type="number" id="bpSm" :value="grid.breakpoints.sm" class="input">
-                </div>
-              </div>
-              <div data-col="2sm">
-                <div class="form-group">
-                  <label for="bpMd">tablet <strong>md</strong></label>
-                  <input type="number" id="bpMd" :value="grid.breakpoints.md" class="input">
-                </div>
-              </div>
-              <div data-col="2sm">
-                <div class="form-group">
-                  <label for="bpLg">tablet landscape <strong>lg</strong></label>
-                  <input type="number" id="bpLg" :value="grid.breakpoints.lg" class="input">
-                </div>
-              </div>
-              <div data-col="2sm">
-                <div class="form-group">
-                  <label for="bpXl">desktop <strong>xl</strong></label>
-                  <input type="number" id="bpXl" :value="grid.breakpoints.xl" class="input">
-                </div>
-              </div>
-              <div data-col="2sm">
-                <div class="form-group">
-                  <label for="bpXxl">desktop <strong>xxl</strong></label>
-                  <input type="number" id="bpXxl" :value="grid.breakpoints.xxl" class="input">
-                </div>
+  <div data-flex="grid center">
+    <div data-col="8">
+      <div>
+        <section>
+          <h3 class="h6">breakpoints</h3>
+          <div data-flex="grid">
+            <div data-col="2sm">
+              <div class="form-group">
+                <label for="bpXs">mobile <strong>xs</strong></label>
+                <input type="number" id="bpXs" :value="grid.breakpoints.xs" class="input">
               </div>
             </div>
+            <div data-col="2sm">
+              <div class="form-group">
+                <label for="bpSm">mobile landscape <strong>sm</strong></label>
+                <input type="number" id="bpSm" :value="grid.breakpoints.sm" class="input">
+              </div>
+            </div>
+            <div data-col="2sm">
+              <div class="form-group">
+                <label for="bpMd">tablet <strong>md</strong></label>
+                <input type="number" id="bpMd" :value="grid.breakpoints.md" class="input">
+              </div>
+            </div>
+            <div data-col="2sm">
+              <div class="form-group">
+                <label for="bpLg">tablet landscape <strong>lg</strong></label>
+                <input type="number" id="bpLg" :value="grid.breakpoints.lg" class="input">
+              </div>
+            </div>
+            <div data-col="2sm">
+              <div class="form-group">
+                <label for="bpXl">desktop <strong>xl</strong></label>
+                <input type="number" id="bpXl" :value="grid.breakpoints.xl" class="input">
+              </div>
+            </div>
+            <div data-col="2sm">
+              <div class="form-group">
+                <label for="bpXxl">desktop <strong>xxl</strong></label>
+                <input type="number" id="bpXxl" :value="grid.breakpoints.xxl" class="input">
+              </div>
+            </div>
+          </div>
 
-          </section>
+        </section>
 
-          <div class="bumper_big"></div>
+        <div class="bumper-big"></div>
 
-          <h2 class="mega" id="xui-atoms">atoms</h2>
-          <p class="lead">Atoms are the smallest building blocks in this methodology. Atoms are elements like type,
-            headings, inputs, buttons and more. Atoms only have one function. Most atoms have specific modifiers that
-            change things like size, style or color.</p>
+        <h2 class="mega" id="xui-atoms">atoms</h2>
 
+        <div class="spacing"></div>
+
+        <section>
+          <h3 class="kilo" id="xui-type">type <span class="tag tag_small">atoms/type</span></h3>
+          <div class="demo-paragraph-metrics">
+            <p class="lead">Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß
+              dies
+              wohl nur ein Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine
+              Tagereise
+              lang sei, nicht länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das
+              achtzehnte
+              Mal nicht durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er
+              entweder den Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
+          </div>
+          <div class="demo-paragraph-metrics">
+            <p>Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß dies wohl nur
+              ein
+              Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine Tagereise lang
+              sei,
+              nicht
+              länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das achtzehnte Mal nicht
+              durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er entweder
+              den
+              Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
+          </div>
+        </section>
+
+        <div class="bumper"></div>
+
+        <section>
+          <h3 id="xui-headings" class="kilo">headings <span class="tag tag_small">atoms/headings</span></h3>
+          <div class="demo-heading-metrics demo-heading-metrics_h1"><h1>Heading 1</h1></div>
+          <div class="demo-heading-metrics"><h2>Heading 2</h2></div>
+          <div class="demo-heading-metrics"><h3>Heading 3</h3></div>
+          <div class="demo-heading-metrics"><h4>Heading 4</h4></div>
+          <div class="demo-heading-metrics demo-heading-metrics_h5"><h5>Heading 5</h5></div>
+          <div class="demo-heading-metrics demo-heading-metrics_h6"><h6>Heading 6</h6></div>
           <div class="spacing"></div>
+          <p>in addition there are heading helper classes <span class="code">h1</span>, <span class="code">h2</span>,
+            <span class="code">h3</span>, <span class="code">h4</span>, <span class="code">h5</span> and <span
+              class="code">h6</span> to influence the appearance of headings</p>
+          <h4 class="h6">Special heading classes</h4>
+          <p>for data-rich / admin interfaces there is a set of three heading styles <span class="code">giga</span>,
+            <span class="code">mega</span> and <span class="code">kilo</span> to provide a cleaner typeface without
+            losing the hierarchical structure of the markup.</p>
+        </section>
 
-          <section>
-            <h3 class="kilo" id="xui-type">type <span class="tag tag_small">atoms/type</span></h3>
-            <div class="demo-paragraph-metrics">
-              <p class="lead">Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß
-                dies
-                wohl nur ein Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine
-                Tagereise
-                lang sei, nicht länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das
-                achtzehnte
-                Mal nicht durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er
-                entweder den Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
-            </div>
-            <div class="demo-paragraph-metrics">
-              <p>Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß dies wohl nur
-                ein
-                Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine Tagereise lang
-                sei,
-                nicht
-                länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das achtzehnte Mal nicht
-                durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er entweder
-                den
-                Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
-            </div>
-          </section>
+        <div class="bumper"></div>
 
-          <div class="bumper"></div>
-
-          <section>
-            <h3 id="xui-headings" class="kilo">headings <span class="tag tag_small">atoms/headings</span></h3>
-            <div class="demo-heading-metrics demo-heading-metrics_h1"><h1>Heading 1</h1></div>
-            <div class="demo-heading-metrics"><h2>Heading 2</h2></div>
-            <div class="demo-heading-metrics"><h3>Heading 3</h3></div>
-            <div class="demo-heading-metrics"><h4>Heading 4</h4></div>
-            <div class="demo-heading-metrics demo-heading-metrics_h5"><h5>Heading 5</h5></div>
-            <div class="demo-heading-metrics demo-heading-metrics_h6"><h6>Heading 6</h6></div>
-            <div class="spacing"></div>
-            <p>in addition there are heading helper classes <span class="code">h1</span>, <span class="code">h2</span>,
-              <span class="code">h3</span>, <span class="code">h4</span>, <span class="code">h5</span> and <span
-                class="code">h6</span> to influence the appearance of headings</p>
-            <h4 class="h6">Special heading classes</h4>
-            <p>for data-rich / admin interfaces there is a set of three heading styles <span class="code">giga</span>,
-              <span class="code">mega</span> and <span class="code">kilo</span> to provide a cleaner typeface without
-              losing the hierarchical structure of the markup.</p>
-          </section>
-
-          <div class="bumper"></div>
-
-          <section>
-            <h3 id="xui-img" class="kilo">img <span class="tag tag_small">atoms/img</span></h3>
-            <div data-flex="grid">
-              <div data-col="6sm">
+        <section>
+          <h3 id="xui-img" class="kilo">img <span class="tag tag_small">atoms/img</span></h3>
+          <div data-flex="grid">
+            <div data-col="6sm">
                 <pre><code class="html">
 <img src="..." class="img_responsive"></code></pre>
-                <p>add responsive behavior to images. image shrinks and grows up to it's original width.</p>
-                <img src="./assets/placeholder.jpg" class="img_responsive">
-              </div>
-              <div data-col="6sm">
+              <p>add responsive behavior to images. image shrinks and grows up to it's original width.</p>
+              <img src="./assets/placeholder.jpg" class="img_responsive">
+            </div>
+            <div data-col="6sm">
                 <pre><code class="html">
 <img src="..." class="img_full"></code></pre>
-                <p>add responsive behavior to images. image shrinks and grows independent of it's original width.</p>
-                <img src="./assets/placeholder.jpg" class="img_full">
-              </div>
+              <p>add responsive behavior to images. image shrinks and grows independent of it's original width.</p>
+              <img src="./assets/placeholder.jpg" class="img_full">
             </div>
-          </section>
+          </div>
+        </section>
 
-          <div class="spacing"></div>
+        <div class="spacing"></div>
 
-          <section>
-            <h4 id="xui-img-crop" class="h6">Image helper <span class="tag tag_small">atoms/img-crop</span><a
-              href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
-              class="tag tag_error tag_small">object-fit</a></h4>
-            <div data-flex="grid">
-              <div data-col="4sm">
+        <section>
+          <h4 id="xui-img-crop" class="h6">Image helper <span class="tag tag_small">atoms/img-crop</span><a
+            href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
+            class="tag tag_error tag_small">object-fit</a></h4>
+          <div data-flex="grid">
+            <div data-col="4sm">
                 <pre><code class="html">
 <div class="img-crop-1-1">
   <img src="..">
 </div></code></pre>
-                <div class="img-crop-1-1">
-                  <img src="./assets/placeholder.jpg">
-                </div>
+              <div class="img-crop-1-1">
+                <img src="./assets/placeholder.jpg">
               </div>
-              <div data-col="4sm">
+            </div>
+            <div data-col="4sm">
                 <pre><code class="html">
 <div class="img-crop-4-3">
   <img src="..">
 </div></code></pre>
-                <div class="img-crop-4-3">
-                  <img src="./assets/placeholder.jpg">
-                </div>
+              <div class="img-crop-4-3">
+                <img src="./assets/placeholder.jpg">
               </div>
-              <div data-col="4sm">
+            </div>
+            <div data-col="4sm">
                 <pre><code class="html">
 <div class="img-crop-16-9">
   <img src="..">
 </div></code></pre>
-                <div class="img-crop-16-9">
-                  <img src="./assets/placeholder.jpg">
-                </div>
+              <div class="img-crop-16-9">
+                <img src="./assets/placeholder.jpg">
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 id="xui-img-avatar" class="kilo">img-avatar <span class="tag tag_small">atoms/img-avatar</span><a
-              href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
-              class="tag tag_error tag_small">object-fit</a></h3>
-            <p>img-avatar is mostly used for facial pictures such as profile pictures, because they accentuate faces
-              more than square ones. even thought the img-avatar atom uses <span class="code">object-fit: cover</span>
-              to
-              scale/crop images down to a square thumbnail, you should use square assets with a matching size.</p>
-            <div class="well" data-flex="center">
-              <div class="img-avatar"><img src="assets/avatar.jpg" alt=""></div>
-            </div>
-            <pre><code class="html"><div class="img-avatar"><img src="assets/avatar.jpg" alt=""></div></code></pre>
-          </section>
+        <section>
+          <h3 id="xui-img-avatar" class="kilo">img-avatar <span class="tag tag_small">atoms/img-avatar</span><a
+            href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
+            class="tag tag_error tag_small">object-fit</a></h3>
+          <p>img-avatar is mostly used for facial pictures such as profile pictures, because they accentuate faces
+            more than square ones. even thought the img-avatar atom uses <span class="code">object-fit: cover</span>
+            to
+            scale/crop images down to a square thumbnail, you should use square assets with a matching size.</p>
+          <div class="well" data-flex="center">
+            <div class="img-avatar"><img src="assets/avatar.jpg" alt=""></div>
+          </div>
+          <pre><code class="html"><div class="img-avatar"><img src="assets/avatar.jpg" alt=""></div></code></pre>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 class="kilo" id="xui-btn">button <span class="tag tag_small">atoms/btn</span></h3>
-            <p>there are three basic button styles which should be used to to emphasis or weaken functions. Throughout
-              <strong>x.ui</strong> there are three steps of importance. The default style always reached with th
-              default class <span class="code">btn</span>, the minor style by an additional modifier class <span
-                class="code">btn_minor</span>and
-              the superior style by the additional modifier <span class="code">btn_super</span></p>
-            <div class="well">
-              <ul data-flex="small-grid">
-                <li v-for="(value, key) in atoms.btn.styles" data-col="4">
-                  <a class="btn btn_block" :class="value">{{key}}</a>
-                </li>
-              </ul>
-            </div>
-            <pre><code class="html">
+        <section>
+          <h3 class="kilo" id="xui-btn">button <span class="tag tag_small">atoms/btn</span></h3>
+          <p>there are three basic button styles which should be used to to emphasis or weaken functions. Throughout
+            <strong>x.ui</strong> there are three steps of importance. The default style always reached with th
+            default class <span class="code">btn</span>, the minor style by an additional modifier class <span
+              class="code">btn_minor</span>and
+            the superior style by the additional modifier <span class="code">btn_super</span></p>
+          <div class="well">
+            <ul data-flex="small-grid">
+              <li v-for="(value, key) in atoms.btn.styles" data-col="4">
+                <a class="btn btn_block" :class="value">{{key}}</a>
+              </li>
+            </ul>
+          </div>
+          <pre><code class="html">
 <a class="btn">...</a>
 ...
 <a class="btn btn_minor">...</a>
 ...
 <a class="btn btn_super">...</a></code></pre>
-            <div class="spacing"></div>
-            <h4 class="h6">button style modifier</h4>
-            <div class="well">
-              <ul data-flex="small-grid">
-                <li v-for="(value, key) in atoms.btn.modifiers" class="text-center" data-col="2">
-                  <a class="btn btn_block" :class="value">{{key}}</a>
-                  <span class="code" style="margin-top: 8px;">btn_{{key}}</span>
-                </li>
-              </ul>
-            </div>
-            <div class="spacing"></div>
-            <h4 class="h6">button size modifier</h4>
-            <div class="well">
-              <ul data-flex="small-grid center">
-                <li v-for="(value, key) in atoms.btn.sizes" data-col="4" class="text-center">
-                  <a class="btn" :class="value">{{ key }}</a><br>
-                  <span class="code" style="margin-top: 8px;">btn_{{key}}</span>
-                </li>
-              </ul>
-            </div>
-            <div class="spacing"></div>
-            <h4 class="h6">button width modifier</h4>
-            <div class="well">
-              <ul data-flex="small-grid center">
-                <li v-for="(value, key) in atoms.btn.width" data-col="4" class="text-center">
-                  <a class="btn" :class="[value]">{{key}}</a><br v-if="value !== 'btn_block'">
-                  <span class="code" style="margin-top: 8px;">btn_{{key}}</span>
-                </li>
-              </ul>
-            </div>
-          </section>
+          <div class="spacing"></div>
+          <h4 class="h6">button style modifier</h4>
+          <div class="well">
+            <ul data-flex="small-grid">
+              <li v-for="(value, key) in atoms.btn.modifiers" class="text-center" data-col="2">
+                <a class="btn btn_block" :class="value">{{key}}</a>
+                <span class="code" style="margin-top: 8px;">btn_{{key}}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="spacing"></div>
+          <h4 class="h6">button size modifier</h4>
+          <div class="well">
+            <ul data-flex="small-grid center">
+              <li v-for="(value, key) in atoms.btn.sizes" data-col="4" class="text-center">
+                <a class="btn" :class="value">{{ key }}</a><br>
+                <span class="code" style="margin-top: 8px;">btn_{{key}}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="spacing"></div>
+          <h4 class="h6">button width modifier</h4>
+          <div class="well">
+            <ul data-flex="small-grid center">
+              <li v-for="(value, key) in atoms.btn.width" data-col="4" class="text-center">
+                <a class="btn" :class="[value]">{{key}}</a><br v-if="value !== 'btn_block'">
+                <span class="code" style="margin-top: 8px;">btn_{{key}}</span>
+              </li>
+            </ul>
+          </div>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 id="xui-btn-glow" class="kilo">btn_glow <span class="tag tag_small">atoms/btn_glow</span></h3>
-            <p>modifier to simulate a 3D glowing effect.</p>
-            <div class="well">
-              <div data-flex="grid center">
-                <div data-col="3">
-                  <a href="" class="btn btn_block btn_big btn_glow">Button</a>
-                </div>
-                <div data-col="3">
-                  <a href="" class="btn btn_block btn_big btn_invert btn_glow">Button</a>
-                </div>
+        <section>
+          <h3 id="xui-btn-glow" class="kilo">btn_glow <span class="tag tag_small">atoms/btn_glow</span></h3>
+          <p>modifier to simulate a 3D glowing effect.</p>
+          <div class="well">
+            <div data-flex="grid center">
+              <div data-col="3">
+                <a href="" class="btn btn_block btn_big btn_glow">Button</a>
+              </div>
+              <div data-col="3">
+                <a href="" class="btn btn_block btn_big btn_invert btn_glow">Button</a>
               </div>
             </div>
-            <pre><code class="html"><a href="" class="btn btn_glow">Button</a></code></pre>
-          </section>
+          </div>
+          <pre><code class="html"><a href="" class="btn btn_glow">Button</a></code></pre>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <!--TODO documentation-->
-          <section>
-            <h3 id="xui-hamburger-btn" class="kilo">hamburger-btn
-              <span class="tag tag_small">atoms/hamburger-btn</span>
-              <span class="tag tag_small tag_error">in progress</span>
-            </h3>
-            <div class="alert">
-              <button class="hamburger-btn"></button>
-            </div>
-          </section>
+        <!--TODO documentation-->
+        <section>
+          <h3 id="xui-hamburger-btn" class="kilo">hamburger-btn
+            <span class="tag tag_small">atoms/hamburger-btn</span>
+            <span class="tag tag_small tag_error">in progress</span>
+          </h3>
+          <div class="alert">
+            <button class="hamburger-btn"></button>
+          </div>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 id="xui-bubble" class="kilo">bubble <span class="tag tag_small">atoms/bubble</span></h3>
-            <div class="well">
-              <div data-flex="grid">
-                <div data-col="4" data-flex="center-items center">
-                  <a class="btn"><span>bubble </span><span class="bubble bubble_invert">2</span></a>
-                </div>
-                <div data-col="4" data-flex="center-items center">
-                  <a class="btn"><span class="bubble bubble_invert">2</span></a>
-                </div>
-                <div data-col="4" data-flex="center-items center">
-                  <span class="bubble bubble_link">2</span>
-                </div>
+        <section>
+          <h3 id="xui-bubble" class="kilo">bubble <span class="tag tag_small">atoms/bubble</span></h3>
+          <div class="well">
+            <div data-flex="grid">
+              <div data-col="4" data-flex="center-items center">
+                <a class="btn"><span>bubble </span><span class="bubble bubble_invert">2</span></a>
+              </div>
+              <div data-col="4" data-flex="center-items center">
+                <a class="btn"><span class="bubble bubble_invert">2</span></a>
+              </div>
+              <div data-col="4" data-flex="center-items center">
+                <span class="bubble bubble_link">2</span>
               </div>
             </div>
-            <pre><code class="html">
+          </div>
+          <pre><code class="html">
 <a class="btn"><span>bubble </span><span class="bubble bubble_invert">2</span></a>
 ...
 <a class="btn"><span class="bubble bubble_invert">2</span></a>
 ...
 <span class="bubble">2</span></code></pre>
 
-            <table class="table">
-              <tbody>
-              <tr>
-                <td><strong>theme modifier</strong></td>
-                <td>
-                  <span class="code" v-for="theme in atoms.bubbles.themeModifiers">{{ '.' + theme}}</span>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>state modifier</strong></td>
-                <td>
-                  <span class="code" v-for="state in atoms.bubbles.stateModifiers">{{ '.' + state}}</span>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>size modifier</strong></td>
-                <td>
-                  <span class="code" v-for="size in atoms.bubbles.sizeModifiers">{{ '.' + size}}</span>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>style modifier</strong></td>
-                <td>
-                  -
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </section>
+          <table class="table">
+            <tbody>
+            <tr>
+              <td><strong>theme modifier</strong></td>
+              <td>
+                <span class="code" v-for="theme in atoms.bubbles.themeModifiers">{{ '.' + theme}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>state modifier</strong></td>
+              <td>
+                <span class="code" v-for="state in atoms.bubbles.stateModifiers">{{ '.' + state}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>size modifier</strong></td>
+              <td>
+                <span class="code" v-for="size in atoms.bubbles.sizeModifiers">{{ '.' + size}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>style modifier</strong></td>
+              <td>
+                -
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 id="xui-tag" class="kilo">tag <span class="tag tag_small">atoms/tag</span></h3>
-            <div class="well">
-              <div data-flex="grid">
-                <div data-col="4" data-flex="center-items center">
-                  <a class="btn"><span>button </span><span class="tag tag_invert">tag</span></a>
-                </div>
-                <div data-col="4" data-flex="center-items center">
-                  <span class="tag tag_link">tag</span>
-                </div>
-                <div data-col="4" data-flex="center-items center">
-                  <a class="tag tag_link">tag</a>
-                </div>
+        <section>
+          <h3 id="xui-tag" class="kilo">tag <span class="tag tag_small">atoms/tag</span></h3>
+          <div class="well">
+            <div data-flex="grid">
+              <div data-col="4" data-flex="center-items center">
+                <a class="btn"><span>button </span><span class="tag tag_invert">tag</span></a>
+              </div>
+              <div data-col="4" data-flex="center-items center">
+                <span class="tag tag_link">tag</span>
+              </div>
+              <div data-col="4" data-flex="center-items center">
+                <a class="tag tag_link">tag</a>
               </div>
             </div>
-            <pre><code class="html">
+          </div>
+          <pre><code class="html">
 <a class="btn"><span>tag </span><span class="tag tag_invert">tag</span></a>
 ...
 <span class="tag">tag</span>
 ...
 <a class="tag tag_link">tag</a></code></pre>
-            <table class="table">
-              <tbody>
-              <tr>
-                <td><strong>theme modifier</strong></td>
-                <td>
-                  <span class="code" v-for="theme in atoms.tags.themeModifiers">{{ '.' + theme}}</span>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>state modifier</strong></td>
-                <td>
-                  <span class="code" v-for="state in atoms.tags.stateModifiers">{{ '.' + state}}</span>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>size modifier</strong></td>
-                <td>
-                  <span class="code" v-for="size in atoms.tags.sizeModifiers">{{ '.' + size}}</span>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>style modifier</strong></td>
-                <td>
-                  <span class="code" v-for="style in atoms.tags.styleModifiers">{{ '.' + style}}</span>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </section>
+          <table class="table">
+            <tbody>
+            <tr>
+              <td><strong>theme modifier</strong></td>
+              <td>
+                <span class="code" v-for="theme in atoms.tags.themeModifiers">{{ '.' + theme}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>state modifier</strong></td>
+              <td>
+                <span class="code" v-for="state in atoms.tags.stateModifiers">{{ '.' + state}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>size modifier</strong></td>
+              <td>
+                <span class="code" v-for="size in atoms.tags.sizeModifiers">{{ '.' + size}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>style modifier</strong></td>
+              <td>
+                <span class="code" v-for="style in atoms.tags.styleModifiers">{{ '.' + style}}</span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 id="xui-input" class="kilo">input <span class="tag tag_small">atoms/input</span></h3>
-            <div data-flex="grid">
-              <div data-col="6">
-                <input type="text" class="input" placeholder="Placeholder...">
-                <pre><code class="html">
+        <section>
+          <h3 id="xui-input" class="kilo">input <span class="tag tag_small">atoms/input</span></h3>
+          <div data-flex="grid">
+            <div data-col="6">
+              <input type="text" class="input" placeholder="Placeholder...">
+              <pre><code class="html">
 <input class="input"></code></pre>
-              </div>
-              <div data-col="6">
-                <select class="input">
-                  <option selected value="volvo">Apple</option>
-                  <option value="saab">Blueberry</option>
-                  <option value="mercedes">Cranberry</option>
-                </select>
-                <pre><code class="html">
+            </div>
+            <div data-col="6">
+              <select class="input">
+                <option selected value="volvo">Apple</option>
+                <option value="saab">Blueberry</option>
+                <option value="mercedes">Cranberry</option>
+              </select>
+              <pre><code class="html">
 <select class="input">...</select></code></pre>
-              </div>
             </div>
+          </div>
 
-            <div class="spacing_small"></div>
+          <div class="spacing-small"></div>
 
-            <h5 class="h6">input size modifier</h5>
-            <div data-flex="grid">
-              <div data-col="6sm">
-                <input type="text" class="input input_small" value="input_small">
-                <pre><code class="html">
+          <h5 class="h6">input size modifier</h5>
+          <div data-flex="grid">
+            <div data-col="6sm">
+              <input type="text" class="input input_small" value="input_small">
+              <pre><code class="html">
 <input class="input input_small"></code></pre>
-              </div>
-              <div data-col="6sm">
-                <input type="text" class="input input_big" value="input_big">
-                <pre><code class="html">
+            </div>
+            <div data-col="6sm">
+              <input type="text" class="input input_big" value="input_big">
+              <pre><code class="html">
 <input class="input input_big"></code></pre>
-              </div>
             </div>
+          </div>
 
-            <div class="spacing_small"></div>
+          <div class="spacing-small"></div>
 
-            <h4 class="h6">input style modifier</h4>
-            <div data-flex="grid">
-              <div data-col="6sm">
-                <input type="text" class="input input_round" value="input_round">
-                <pre><code class="html">
+          <h4 class="h6">input style modifier</h4>
+          <div data-flex="grid">
+            <div data-col="6sm">
+              <input type="text" class="input input_round" value="input_round">
+              <pre><code class="html">
 <input class="input input_round"></code></pre>
-              </div>
-              <div data-col="6sm">
-                <input type="text" class="input input_clear is-raised" value="input_round">
-                <pre><code class="html">
+            </div>
+            <div data-col="6sm">
+              <input type="text" class="input input_clear is-raised" value="input_round">
+              <pre><code class="html">
 <input class="input input_clear"></code></pre>
-              </div>
             </div>
+          </div>
 
-            <div class="spacing_small"></div>
-            <h4 class="h6">input validation modifier</h4>
-            <p>the validation modifier are classes generated by <strong>angular js</strong>.</p>
-            <div data-flex="grid">
-              <div data-col="3sm">
-                <input type="text" class="input ng-dirty ng-valid" value="ng-valid">
-              </div>
-              <div data-col="3sm">
-                <input type="text" class="input ng-dirty ng-invalid" value="ng-invalid">
-              </div>
-              <div data-col="3sm">
-                <input type="text" class="input ng-dirty ng-pending" value="ng-pending">
-              </div>
-              <div data-col="3sm">
-                <input type="text" class="input ng-dirty ng-submitted" value="ng-submitted">
-              </div>
+          <div class="spacing-small"></div>
+          <h4 class="h6">input validation modifier</h4>
+          <p>the validation modifier are classes generated by <strong>angular js</strong>.</p>
+          <div data-flex="grid">
+            <div data-col="3sm">
+              <input type="text" class="input ng-dirty ng-valid" value="ng-valid">
             </div>
-          </section>
+            <div data-col="3sm">
+              <input type="text" class="input ng-dirty ng-invalid" value="ng-invalid">
+            </div>
+            <div data-col="3sm">
+              <input type="text" class="input ng-dirty ng-pending" value="ng-pending">
+            </div>
+            <div data-col="3sm">
+              <input type="text" class="input ng-dirty ng-submitted" value="ng-submitted">
+            </div>
+          </div>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 id="xui-input-group" class="kilo">input-group <span
-              class="tag tag_small">atoms/input-group</span> <span
-              class="tag tag_small tag_error">in progress</span></h3>
-            <div data-flex="grid">
-              <div data-col="6sm">
-                <div class="input-group">
-                  <span class="ec-icon lock-closed input-group__icon"></span>
-                  <input type="text" class="input" placeholder="Placeholder...">
-                </div>
-                <pre><code class="html">
+        <section>
+          <h3 id="xui-input-group" class="kilo">input-group <span
+            class="tag tag_small">atoms/input-group</span> <span
+            class="tag tag_small tag_error">in progress</span></h3>
+          <div data-flex="grid">
+            <div data-col="6sm">
+              <div class="input-group">
+                <span class="ec-icon lock-closed input-group__icon"></span>
+                <input type="text" class="input" placeholder="Placeholder...">
+              </div>
+              <pre><code class="html">
 <div class="input-group">
   <span class="ec-icon lock-closed input-group__icon"></span>
   <input type="text" class="input" placeholder="Placeholder...">
 </div></code></pre>
+            </div>
+            <div data-col="6sm">
+              <div class="input-group">
+                <input type="text" class="input" placeholder="Placeholder...">
+                <span class="ec-icon lock-closed input-group__icon"></span>
               </div>
-              <div data-col="6sm">
-                <div class="input-group">
-                  <input type="text" class="input" placeholder="Placeholder...">
-                  <span class="ec-icon lock-closed input-group__icon"></span>
-                </div>
-                <pre><code class="html">
+              <pre><code class="html">
 <div class="input-group">
   <input type="text" class="input" placeholder="Placeholder...">
   <span class="ec-icon lock-closed input-group__icon"></span>
 </div></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <div class="bumper"></div>
+
+        <section>
+          <h3 id="xui-bumper" class="kilo">bumper <span class="tag tag_small">atoms/bumper</span></h3>
+          <div class="demo-layout-macros">
+            <div class="bumper"></div>
+          </div>
+          <pre><code class="html"><div class="bumper"></div></code></pre>
+          <table class="table">
+            <tbody>
+            <tr>
+              <td>
+                <strong>size modifier</strong>
+              </td>
+              <td><span class="code">bumper-small</span><span class="code">bumper-big</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong>style modifier</strong>
+              </td>
+              <td><span class="code">bumper-invert</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <div class="spacing"></div>
+
+        <section>
+          <h3 id="xui-spacing" class="kilo">spacing <span class="tag tag_small">atoms/spacing</span></h3>
+          <div class="demo-layout-macros">
+            <div class="spacing"></div>
+          </div>
+          <pre><code class="html"><div class="spacing"></div></code></pre>
+          <table class="table">
+            <tbody>
+            <tr>
+              <td>
+                <strong>size modifier</strong>
+              </td>
+              <td><span class="code">spacing-small</span><span class="code">spacing-big</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <div class="bumper-big"></div>
+
+        <h2 class="mega" id="xui-molecules">molecules</h2>
+        <p class="lead">Molecules are groups of atoms bonded together and are the smallest fundamental units of a
+          compound.</p>
+
+        <div class="spacing"></div>
+
+        <section>
+          <h3 class="kilo" id="xui-list">lists <span class="tag tag_small">molecules/list</span></h3>
+          <div data-flex="grid">
+            <div data-col="6sm">
+              <div class="well" data-flex="center-items">
+                <ul class="unstyled">
+                  <li>list item 01</li>
+                  <li>list item 02</li>
+                  <li>list item 03</li>
+                </ul>
               </div>
             </div>
-          </section>
-
-          <div class="bumper"></div>
-
-          <section>
-            <h3 id="xui-bumper" class="kilo">bumper <span class="tag tag_small">atoms/bumper</span></h3>
-            <div class="demo-layout-macros">
-              <div class="bumper"></div>
-            </div>
-            <pre><code class="html"><div class="bumper"></div></code></pre>
-            <table class="table">
-              <tbody>
-              <tr>
-                <td>
-                  <strong>size modifier</strong>
-                </td>
-                <td><span class="code">bumper_small</span><span class="code">bumper_big</span></td>
-              </tr>
-              <tr>
-                <td>
-                  <strong>style modifier</strong>
-                </td>
-                <td><span class="code">bumper_invert</span></td>
-              </tr>
-              </tbody>
-            </table>
-          </section>
-
-          <div class="spacing"></div>
-
-          <section>
-            <h3 id="xui-spacing" class="kilo">spacing <span class="tag tag_small">atoms/spacing</span></h3>
-            <div class="demo-layout-macros">
-              <div class="spacing"></div>
-            </div>
-            <pre><code class="html"><div class="spacing"></div></code></pre>
-            <table class="table">
-              <tbody>
-              <tr>
-                <td>
-                  <strong>size modifier</strong>
-                </td>
-                <td><span class="code">spacing_small</span><span class="code">spacing_big</span></td>
-              </tr>
-              </tbody>
-            </table>
-          </section>
-
-          <div class="bumper_big"></div>
-
-          <h2 class="mega" id="xui-molecules">molecules</h2>
-          <p class="lead">Molecules are groups of atoms bonded together and are the smallest fundamental units of a
-            compound.</p>
-
-          <div class="spacing"></div>
-
-          <section>
-            <h3 class="kilo" id="xui-list">lists <span class="tag tag_small">molecules/list</span></h3>
-            <div data-flex="grid">
-              <div data-col="6sm">
-                <div class="well" data-flex="center-items">
-                  <ul class="unstyled">
-                    <li>list item 01</li>
-                    <li>list item 02</li>
-                    <li>list item 03</li>
-                  </ul>
-                </div>
-              </div>
-              <div data-col="6sm"><pre><code class="html">
+            <div data-col="6sm"><pre><code class="html">
 <ul class="unstyled">
   <li>list item 01</li>
   <li>list item 02</li>
   <li>list item 03</li>
 </ul></code></pre>
+            </div>
+            <div data-col="6sm">
+              <div class="well" data-flex="center-items">
+                <ul class="inline">
+                  <li>list item 01</li>
+                  <li>list item 02</li>
+                  <li>list item 03</li>
+                </ul>
               </div>
-              <div data-col="6sm">
-                <div class="well" data-flex="center-items">
-                  <ul class="inline">
-                    <li>list item 01</li>
-                    <li>list item 02</li>
-                    <li>list item 03</li>
-                  </ul>
-                </div>
-              </div>
-              <div data-col="6sm"><pre><code class="html">
+            </div>
+            <div data-col="6sm"><pre><code class="html">
 <ul class="inline">
   <li>list item 01</li>
   <li>list item 02</li>
   <li>list item 03</li>
 </ul></code></pre>
-              </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 class="kilo" id="xui-alert">alert <span class="tag tag_small">molecules/alert</span></h3>
-            <div class="alert">
-              <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen
-                Reitstock,
-                mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>
-            </div>
-            <pre><code class="html">
+        <section>
+          <h3 class="kilo" id="xui-alert">alert <span class="tag tag_small">molecules/alert</span></h3>
+          <div class="alert">
+            <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen
+              Reitstock,
+              mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>
+          </div>
+          <pre><code class="html">
 <div class="alert">...</div></code></pre>
-            <div class="spacing"></div>
-            <h4 class="h6">alert theme modifier</h4>
-            <div data-flex="grid">
-              <div data-col="6" v-for="mod in molecules.alerts.themeModifiers">
-                <div class="alert" :class="mod">
-                  <p>Sie sprach weiter und weiter.</p>
-                </div>
-                <pre><code class="html">
-<div class="alert {{mod}}">...</div></code></pre>
+          <div class="spacing"></div>
+          <h4 class="h6">alert theme modifier</h4>
+          <div data-flex="grid">
+            <div data-col="6" v-for="mod in molecules.alerts.themeModifiers">
+              <div class="alert" :class="mod">
+                <p>Sie sprach weiter und weiter.</p>
               </div>
-            </div>
-            <div class="spacing"></div>
-            <h4 class="h6">alert state modifier</h4>
-            <div data-flex="grid">
-              <div data-col="6" v-for="mod in molecules.alerts.stateModifiers">
-                <div class="alert" :class="mod">
-                  <p>Sie sprach weiter und weiter.</p>
-                </div>
-                <pre><code class="html">
+              <pre><code class="html">
 <div class="alert {{mod}}">...</div></code></pre>
-              </div>
             </div>
-            <div class="spacing"></div>
-            <h4 class="h6">alert style modifier</h4>
-            <div data-flex="grid">
-              <div data-col="6" v-for="style in molecules.alerts.styleModifiers">
-                <div class="alert" :class="[style]">
-                  <p>Sie sprach weiter und weiter.</p>
-                </div>
-                <pre><code class="html">
+          </div>
+          <div class="spacing"></div>
+          <h4 class="h6">alert state modifier</h4>
+          <div data-flex="grid">
+            <div data-col="6" v-for="mod in molecules.alerts.stateModifiers">
+              <div class="alert" :class="mod">
+                <p>Sie sprach weiter und weiter.</p>
+              </div>
+              <pre><code class="html">
+<div class="alert {{mod}}">...</div></code></pre>
+            </div>
+          </div>
+          <div class="spacing"></div>
+          <h4 class="h6">alert style modifier</h4>
+          <div data-flex="grid">
+            <div data-col="6" v-for="style in molecules.alerts.styleModifiers">
+              <div class="alert" :class="[style]">
+                <p>Sie sprach weiter und weiter.</p>
+              </div>
+              <pre><code class="html">
 <div class="alert {{style}}">...</div></code></pre>
-              </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 id="xui-well" class="kilo">well <span class="tag tag_small">molecules/well</span></h3>
-            <div class="well">
-              <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen
-                Reitstock,
-                mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>
-            </div>
-            <pre><code class="html">
+        <section>
+          <h3 id="xui-well" class="kilo">well <span class="tag tag_small">molecules/well</span></h3>
+          <div class="well">
+            <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr einen
+              Reitstock,
+              mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und weiter.</p>
+          </div>
+          <pre><code class="html">
 <div class="well">
   ...
 </div></code></pre>
-            <table class="table">
-              <tbody>
-              <tr>
-                <td><strong>size modifier</strong></td>
-                <td>
-                  <span class="code" v-for="size in molecules.well.sizeModifiers">{{ '.' + size}}</span>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>style modifier</strong></td>
-                <td>
-                  <span class="code" v-for="style in molecules.well.styleModifiers">{{ '.' + style}}</span>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </section>
+          <table class="table">
+            <tbody>
+            <tr>
+              <td><strong>size modifier</strong></td>
+              <td>
+                <span class="code" v-for="size in molecules.well.sizeModifiers">{{ '.' + size}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>style modifier</strong></td>
+              <td>
+                <span class="code" v-for="style in molecules.well.styleModifiers">{{ '.' + style}}</span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 id="xui-dropdown" class="kilo">dropdown <span class="tag tag_small">molecules/dropdown</span> <span
-              class="tag tag_small tag_super">css only</span> <span
-              class="tag tag_small tag_error">in progress</span>
-            </h3>
-            <div class="well">
-              <div data-flex="grid">
-                <div data-col="3" data-flex="center">
-                  <ul class="dropdown dropdown_center">
-                    <li tabindex="1">
-                      <span class="btn btn_invert is-raised">dropdown center</span>
-                      <ul class="dropdown-options">
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown_divider"></li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <div data-col="3" data-flex="center">
-                  <ul class="dropdown dropdown_right">
-                    <li tabindex="1">
-                      <span class="btn btn_invert is-raised">dropdown right</span>
-                      <ul class="dropdown-options">
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown_divider"></li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <div data-col="3" data-flex="center">
-                  <ul class="dropdown dropdown_left">
-                    <li tabindex="1">
-                      <span class="btn btn_invert is-raised">dropdown left</span>
-                      <ul class="dropdown-options">
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown_divider"></li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <div data-col="3" data-flex="center">
-                  <ul class="dropdown dropdown_full">
-                    <li tabindex="1">
-                      <span class="btn btn_invert is-raised">dropdown full</span>
-                      <ul class="dropdown-options">
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown_divider"></li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
+        <section>
+          <h3 id="xui-dropdown" class="kilo">dropdown <span class="tag tag_small">molecules/dropdown</span> <span
+            class="tag tag_small tag_super">css only</span> <span
+            class="tag tag_small tag_error">in progress</span>
+          </h3>
+          <div class="well">
+            <div data-flex="grid">
+              <div data-col="3" data-flex="center">
+                <ul class="dropdown dropdown_center">
+                  <li tabindex="1">
+                    <span class="btn btn_invert is-raised">dropdown center</span>
+                    <ul class="dropdown-options">
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown_divider"></li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
-              <div class="spacing_small"></div>
-              <div data-flex="grid">
-                <div data-col="3" data-flex="center">
-                  <ul class="dropdown dropdown_center dropdown_above">
-                    <li tabindex="1">
-                      <span class="btn btn_invert is-raised">center above</span>
-                      <ul class="dropdown-options">
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown_divider"></li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <div data-col="3" data-flex="center">
-                  <ul class="dropdown dropdown_right dropdown_above">
-                    <li tabindex="1">
-                      <span class="btn btn_invert is-raised">right above</span>
-                      <ul class="dropdown-options">
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown_divider"></li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <div data-col="3" data-flex="center">
-                  <ul class="dropdown dropdown_left dropdown_above">
-                    <li tabindex="1">
-                      <span class="btn btn_invert is-raised">left above</span>
-                      <ul class="dropdown-options">
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown_divider"></li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <div data-col="3" data-flex="center">
-                  <ul class="dropdown dropdown_full dropdown_above">
-                    <li tabindex="1">
-                      <span class="btn btn_invert is-raised">full above</span>
-                      <ul class="dropdown-options">
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown_divider"></li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
+              <div data-col="3" data-flex="center">
+                <ul class="dropdown dropdown_right">
+                  <li tabindex="1">
+                    <span class="btn btn_invert is-raised">dropdown right</span>
+                    <ul class="dropdown-options">
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown_divider"></li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div data-col="3" data-flex="center">
+                <ul class="dropdown dropdown_left">
+                  <li tabindex="1">
+                    <span class="btn btn_invert is-raised">dropdown left</span>
+                    <ul class="dropdown-options">
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown_divider"></li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div data-col="3" data-flex="center">
+                <ul class="dropdown dropdown_full">
+                  <li tabindex="1">
+                    <span class="btn btn_invert is-raised">dropdown full</span>
+                    <ul class="dropdown-options">
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown_divider"></li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
             </div>
-            <pre><code class="html">
+            <div class="spacing-small"></div>
+            <div data-flex="grid">
+              <div data-col="3" data-flex="center">
+                <ul class="dropdown dropdown_center dropdown_above">
+                  <li tabindex="1">
+                    <span class="btn btn_invert is-raised">center above</span>
+                    <ul class="dropdown-options">
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown_divider"></li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div data-col="3" data-flex="center">
+                <ul class="dropdown dropdown_right dropdown_above">
+                  <li tabindex="1">
+                    <span class="btn btn_invert is-raised">right above</span>
+                    <ul class="dropdown-options">
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown_divider"></li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div data-col="3" data-flex="center">
+                <ul class="dropdown dropdown_left dropdown_above">
+                  <li tabindex="1">
+                    <span class="btn btn_invert is-raised">left above</span>
+                    <ul class="dropdown-options">
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown_divider"></li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div data-col="3" data-flex="center">
+                <ul class="dropdown dropdown_full dropdown_above">
+                  <li tabindex="1">
+                    <span class="btn btn_invert is-raised">full above</span>
+                    <ul class="dropdown-options">
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                      <li class="dropdown_divider"></li>
+                      <li class="dropdown-option">
+                        <a href>Label</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <pre><code class="html">
 <ul class="dropdown dropdown_full">
   <li tabindex="1">
     <span class="btn btn_invert is-raised">dropdown full</span>
@@ -1129,90 +1266,90 @@
     </ul>
   </li>
 </ul></code></pre>
-            <table class="table">
-              <tbody>
-              <tr>
-                <td><strong>alignment modifier</strong></td>
-                <td>
-                  <span class="code" v-for="behavior in molecules.dropdown.behaviorModifiers">{{behavior}}</span>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>behavior modifier</strong></td>
-                <td>
-                  <span class="code">on-hover</span>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </section>
+          <table class="table">
+            <tbody>
+            <tr>
+              <td><strong>alignment modifier</strong></td>
+              <td>
+                <span class="code" v-for="behavior in molecules.dropdown.behaviorModifiers">{{behavior}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>behavior modifier</strong></td>
+              <td>
+                <span class="code">on-hover</span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 class="kilo" id="xui-btn-group">btn-group <span
-              class="tag tag_small">molecules/_btn-group</span>
-            </h3>
-            <p><span class="code">.btn-group</span> supports <span class="code">.btn</span> and <span class="code">.dropdown</span>
-              with all their modfifier classes.</p>
+        <section>
+          <h3 class="kilo" id="xui-btn-group">btn-group <span
+            class="tag tag_small">molecules/_btn-group</span>
+          </h3>
+          <p><span class="code">.btn-group</span> supports <span class="code">.btn</span> and <span class="code">.dropdown</span>
+            with all their modfifier classes.</p>
 
-            <div data-flex="small-grid">
-              <div data-col="6">
-                <div class="well" data-flex="center">
-                  <div class="btn-group">
-                    <a href="" class="btn">button</a>
-                    <a href="" class="btn">button</a>
-                    <a href="" class="btn btn_mono"><span class="ec-icon trash"></span></a>
-                  </div>
+          <div data-flex="small-grid">
+            <div data-col="6">
+              <div class="well" data-flex="center">
+                <div class="btn-group">
+                  <a href="" class="btn">button</a>
+                  <a href="" class="btn">button</a>
+                  <a href="" class="btn btn_mono"><span class="ec-icon trash"></span></a>
                 </div>
-                <pre><code class="html">
+              </div>
+              <pre><code class="html">
 <div class="btn-group">
   <a href="" class="btn">button</a>
   <a href="" class="btn">button</a>
   <a href="" class="btn btn_mono"><span class="ec-icon trash"></span></a>
 </div></code></pre>
-              </div>
+            </div>
 
-              <div data-col="6">
-                <div class="well" data-flex="center">
-                  <div class="btn-group">
-                    <ul class="dropdown dropdown_left dropdown_above">
-                      <li tabindex="0">
-                        <span class="btn btn_round">Options</span>
-                        <ul class="dropdown-options">
-                          <li class="dropdown-option">
-                            <a href="">Label</a>
-                          </li>
-                          <li class="dropdown-option">
-                            <a href="">Label</a>
-                          </li>
-                          <li class="dropdown_divider"></li>
-                          <li class="dropdown-option">
-                            <a href="">Label</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <ul class="dropdown dropdown_right dropdown_above">
-                      <li tabindex="0">
-                        <span class="btn btn_round"><span class="ec-icon more-vertical"></span></span>
-                        <ul class="dropdown-options">
-                          <li class="dropdown-option">
-                            <a href="">Label</a>
-                          </li>
-                          <li class="dropdown-option">
-                            <a href="">Label</a>
-                          </li>
-                          <li class="dropdown_divider"></li>
-                          <li class="dropdown-option">
-                            <a href="">Label</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
+            <div data-col="6">
+              <div class="well" data-flex="center">
+                <div class="btn-group">
+                  <ul class="dropdown dropdown_left dropdown_above">
+                    <li tabindex="0">
+                      <span class="btn btn_round">Options</span>
+                      <ul class="dropdown-options">
+                        <li class="dropdown-option">
+                          <a href="">Label</a>
+                        </li>
+                        <li class="dropdown-option">
+                          <a href="">Label</a>
+                        </li>
+                        <li class="dropdown_divider"></li>
+                        <li class="dropdown-option">
+                          <a href="">Label</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <ul class="dropdown dropdown_right dropdown_above">
+                    <li tabindex="0">
+                      <span class="btn btn_round"><span class="ec-icon more-vertical"></span></span>
+                      <ul class="dropdown-options">
+                        <li class="dropdown-option">
+                          <a href="">Label</a>
+                        </li>
+                        <li class="dropdown-option">
+                          <a href="">Label</a>
+                        </li>
+                        <li class="dropdown_divider"></li>
+                        <li class="dropdown-option">
+                          <a href="">Label</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
                 </div>
-                <pre><code class="html">
+              </div>
+              <pre><code class="html">
 <div class="btn-group">
   <ul class="dropdown dropdown_left dropdown_above">
     <li tabindex="0">
@@ -1231,191 +1368,95 @@
     </li>
   </ul>
 </div></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <div class="bumper"></div>
+
+        <section>
+          <h3 id="xui-form-group" class="kilo">form-group <span class="tag tag_small">molecules/form-group</span>
+          </h3>
+          <div data-flex="grid">
+            <div data-col="6">
+              <div class="form-group">
+                <label for="textID">Label</label>
+                <input type="text" id="textID" placeholder="input..." class="input">
               </div>
             </div>
-          </section>
-
-          <div class="bumper"></div>
-
-          <section>
-            <h3 id="xui-form-group" class="kilo">form-group <span class="tag tag_small">molecules/form-group</span>
-            </h3>
-            <div data-flex="grid">
-              <div data-col="6">
-                <div class="form-group">
-                  <label for="textID">Label</label>
-                  <input type="text" id="textID" placeholder="input..." class="input">
-                </div>
-              </div>
-              <div data-col="6" data-flex="end-items">
-                <div class="form-group form-group_boolean">
-                  <label for="radioID">Label</label>
-                  <input type="radio" id="radioID">
-                </div>
+            <div data-col="6" data-flex="end-items">
+              <div class="form-group form-group_boolean">
+                <label for="radioID">Label</label>
+                <input type="radio" id="radioID">
               </div>
             </div>
-            <div data-flex="grid">
-              <div data-col="6">
+          </div>
+          <div data-flex="grid">
+            <div data-col="6">
                 <pre><code class="html">
 <div class="form-group">
   <label for="ID01">Label</label>
   <input type="text" id="ID01" placeholder="input..." class="input">
 </div></code></pre>
-              </div>
-              <div data-col="6">
+            </div>
+            <div data-col="6">
                 <pre><code class="html">
 <div class="form-group form-group_boolean">
   <label for="ID02">Label</label>
   <input type="radio" id="ID02">
 </div></code></pre>
-              </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <div class="bumper_big"></div>
+        <div class="bumper-big"></div>
 
-          <h2 class="mega" id="xui-organisms">organisms</h2>
-          <p class="lead">Organisms are groups of molecules joined together to form a relatively complex, distinct
-            section of an interface.</p>
+        <h2 class="mega" id="xui-organisms">organisms</h2>
+        <p class="lead">Organisms are groups of molecules joined together to form a relatively complex, distinct
+          section of an interface.</p>
 
-          <div class="spacing"></div>
+        <div class="spacing"></div>
 
-          <section>
-            <h3 id="xui-card" class="kilo">card <span class="tag tag_small">organisms/card</span></h3>
+        <section>
+          <h3 id="xui-card" class="kilo">card <span class="tag tag_small">organisms/card</span></h3>
 
-            <div data-flex="grid">
-              <div data-col="4">
-                <div class="is-lifted has-margin-bottom is-rounded">
-                  <div class="img-crop-16-9">
-                    <img src="./assets/placeholder.jpg" class="is-rounded_top">
-                  </div>
-                  <div class="has-padding-center">
-                    <div class="spacing_small"></div>
-                    <h2 class="mega">Title <span class="tag tag_small tag_super">Tag</span></h2>
-                  </div>
-                  <div class="has-padding-center has-padding-bottom">
-                    <div data-flex="small-grid">
-                      <div data-col="6sm">
-                        <a href="" class="btn btn_block">Action</a>
-                      </div>
-                      <div data-col="6sm">
-                        <a href="" class="btn btn_minor btn_block">Cancel</a>
-                      </div>
-                    </div>
-                  </div>
+          <div data-flex="grid">
+            <div data-col="4">
+              <div class="is-lifted has-margin-bottom is-rounded">
+                <div class="img-crop-16-9">
+                  <img src="./assets/placeholder.jpg" class="is-rounded_top">
                 </div>
-                <div class="is-lifted has-margin-bottom theme-invert is-rounded">
-                  <div data-flex="small-grid center-items">
-                    <div data-col="2">
-                      <div class="has-padding_small">
-                        <div class="img-avatar">
-                          <img src="./assets/avatar.jpg">
-                        </div>
-                      </div>
+                <div class="has-padding-center">
+                  <div class="spacing-small"></div>
+                  <h2 class="mega">Title <span class="tag tag_small tag_super">Tag</span></h2>
+                </div>
+                <div class="has-padding-center has-padding-bottom">
+                  <div data-flex="small-grid">
+                    <div data-col="6sm">
+                      <a href="" class="btn btn_block">Action</a>
                     </div>
-                    <div data-col="10">
-                      <div class="title has-padding-center has-padding_small">
-                        <h2 class="h6">Title <span class="tag tag_small tag_super">Tag</span></h2>
-                        <nav class="nav">
-                          <ul class="dropdown dropdown_right">
-                            <li tabindex="1">
-                              <span class="btn btn_clear btn_invert"><span class="ec-icon more-vertical"></span></span>
-                              <ul class="dropdown-options">
-                                <li class="dropdown-option">
-                                  <a href>Label</a>
-                                </li>
-                                <li class="dropdown-option">
-                                  <a href>Label</a>
-                                </li>
-                                <li class="dropdown_divider"></li>
-                                <li class="dropdown-option">
-                                  <a href>Label</a>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </nav>
-                      </div>
+                    <div data-col="6sm">
+                      <a href="" class="btn btn_minor btn_block">Cancel</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div data-col="4">
-                <div class="has-padding has-margin-bottom is-raised is-rounded">
-                  <div data-flex="small-grid center-items">
-                    <div data-col="2">
-                      <div class="img-avatar"><img src="./assets/avatar.jpg"></div>
-                    </div>
-                    <div data-col="10">
-                      <strong>Melissa Carter</strong><br>
-                      <small class="text-light">melissa.carter@gmail.com</small>
-                    </div>
-                    <div data-col="10 +2">
-                      <div class="has-padding-top">
-                        <ul class="inline">
-                          <li>
-                            <div class="tag tag_small">tag</div>
-                          </li>
-                          <li>
-                            <div class="tag tag_small">tag</div>
-                          </li>
-                          <li>
-                            <div class="tag tag_small">tag</div>
-                          </li>
-                          <li>
-                            <div class="tag tag_small">tag</div>
-                          </li>
-                        </ul>
+              <div class="is-lifted has-margin-bottom theme-invert is-rounded">
+                <div data-flex="small-grid center-items">
+                  <div data-col="2">
+                    <div class="has-padding-small">
+                      <div class="img-avatar">
+                        <img src="./assets/avatar.jpg">
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div class="is-raised is-rounded has-margin-bottom">
-                  <div class="has-padding_small">
-                    <div data-flex="small-grid center-items">
-                      <div data-col="2">
-                        <div class="img-avatar"><img src="./assets/avatar.jpg"></div>
-                      </div>
-                      <div data-col="10">
-                        <strong>Melissa Carter</strong><br>
-                        <small class="text-light">melissa.carter@gmail.com</small>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="has-padding_small theme_dark">
-                    <ul class="inline">
-                      <li>
-                        <div class="tag tag_minor tag_small">tag</div>
-                      </li>
-                      <li>
-                        <div class="tag tag_minor tag_small">tag</div>
-                      </li>
-                      <li>
-                        <div class="tag tag_minor tag_small">tag</div>
-                      </li>
-                      <li>
-                        <div class="tag tag_minor tag_small">tag</div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="is-raised has-margin-bottom has-padding_small is-rounded">
-                  <div data-flex="small-grid center-items">
-                    <div data-col="2">
-                      <img src="./assets/avatar.jpg" class="img_responsive is-rounded">
-                    </div>
-                    <div data-col="10" data-flex="between center-items">
-                      <div>
-                        <strong>Melissa Carter</strong><br>
-                        <small class="text-light">melissa.carter@gmail.com</small>
-                      </div>
+                  <div data-col="10">
+                    <div class="title has-padding-center has-padding-small">
+                      <h2 class="h6">Title <span class="tag tag_small tag_super">Tag</span></h2>
                       <nav class="nav">
                         <ul class="dropdown dropdown_right">
                           <li tabindex="1">
-                            <span class="btn btn_invert"><span class="ec-icon more-vertical"></span></span>
+                            <span class="btn btn_clear btn_invert"><span class="ec-icon more-vertical"></span></span>
                             <ul class="dropdown-options">
                               <li class="dropdown-option">
                                 <a href>Label</a>
@@ -1435,147 +1476,243 @@
                   </div>
                 </div>
               </div>
-              <div data-col="4">
-                <div class="is-raised is-rounded has-padding_small">
-                  <div class="img-crop-16-9">
-                    <img src="./assets/placeholder.jpg" class="is-rounded">
+            </div>
+            <div data-col="4">
+              <div class="has-padding has-margin-bottom is-raised is-rounded">
+                <div data-flex="small-grid center-items">
+                  <div data-col="2">
+                    <div class="img-avatar"><img src="./assets/avatar.jpg"></div>
                   </div>
-                  <div class="spacing_small"></div>
-                  <h2 class="mega">Title
-                    <div class="tag tag_small tag_super">Tag</div>
-                  </h2>
-                  <p>Nun, ganz abgesehen davon, daß die Türen versperrt waren, hätte er wirklich um Hilfe rufen
-                    sollen? Trotz aller Not konnte er bei diesem Gedanken ein Lächeln nicht unterdrücken.</p>
-                  <div data-flex="small-grid">
-                    <div data-col="6sm">
-                      <a href="" class="btn btn_block">Action</a>
-                    </div>
-                    <div data-col="6sm">
-                      <a href="" class="btn btn_minor btn_block">Cancel</a>
+                  <div data-col="10">
+                    <strong>Melissa Carter</strong><br>
+                    <small class="text-light">melissa.carter@gmail.com</small>
+                  </div>
+                  <div data-col="10 +2">
+                    <div class="has-padding-top">
+                      <ul class="inline">
+                        <li>
+                          <div class="tag tag_small">tag</div>
+                        </li>
+                        <li>
+                          <div class="tag tag_small">tag</div>
+                        </li>
+                        <li>
+                          <div class="tag tag_small">tag</div>
+                        </li>
+                        <li>
+                          <div class="tag tag_small">tag</div>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
 
-          <div class="bumper"></div>
+              <div class="is-raised is-rounded has-margin-bottom">
+                <div class="has-padding-small">
+                  <div data-flex="small-grid center-items">
+                    <div data-col="2">
+                      <div class="img-avatar"><img src="./assets/avatar.jpg"></div>
+                    </div>
+                    <div data-col="10">
+                      <strong>Melissa Carter</strong><br>
+                      <small class="text-light">melissa.carter@gmail.com</small>
+                    </div>
+                  </div>
+                </div>
 
-          <section>
-            <h3 id="xui-toolbar" class="kilo">toolbar <span class="tag tag_small">organisms/toolbar</span> <a
-              href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
-              class="tag tag_small tag_error">flex</a>
-            </h3>
-
-            <div class="toolbar theme-invert">
-              <div class="toolbar__title">
-                <h2>Title</h2>
+                <div class="has-padding-small theme_dark">
+                  <ul class="inline">
+                    <li>
+                      <div class="tag tag_minor tag_small">tag</div>
+                    </li>
+                    <li>
+                      <div class="tag tag_minor tag_small">tag</div>
+                    </li>
+                    <li>
+                      <div class="tag tag_minor tag_small">tag</div>
+                    </li>
+                    <li>
+                      <div class="tag tag_minor tag_small">tag</div>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <nav class="nav">
-                <ul class="nav__items">
-                  <li class="nav__item">
-                    <a href="" class="btn btn_clear btn_invert">Menu</a>
-                  </li>
-                  <li class="nav__item">
-                    <a href="" class="hamburger-btn hamburger-btn_invert"></a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
 
-            <div class="spacing"></div>
-
-            <div class="toolbar theme-invert">
-              <div class="toolbar__title toolbar__title_center">
-                <h2>Title</h2>
+              <div class="is-raised has-margin-bottom has-padding-small is-rounded">
+                <div data-flex="small-grid center-items">
+                  <div data-col="2">
+                    <img src="./assets/avatar.jpg" class="img_responsive is-rounded">
+                  </div>
+                  <div data-col="10" data-flex="between center-items">
+                    <div>
+                      <strong>Melissa Carter</strong><br>
+                      <small class="text-light">melissa.carter@gmail.com</small>
+                    </div>
+                    <nav class="nav">
+                      <ul class="dropdown dropdown_right">
+                        <li tabindex="1">
+                          <span class="btn btn_invert"><span class="ec-icon more-vertical"></span></span>
+                          <ul class="dropdown-options">
+                            <li class="dropdown-option">
+                              <a href>Label</a>
+                            </li>
+                            <li class="dropdown-option">
+                              <a href>Label</a>
+                            </li>
+                            <li class="dropdown_divider"></li>
+                            <li class="dropdown-option">
+                              <a href>Label</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
               </div>
-              <nav class="nav">
-                <ul class="nav__items">
-                  <li class="nav__item">
-                    <a href="" class="btn btn_clear btn_invert">Menu</a>
-                  </li>
-                  <li class="nav__item">
-                    <a href="" class="hamburger-btn hamburger-btn_invert"></a>
-                  </li>
-                </ul>
-              </nav>
             </div>
-
-            <div class="spacing"></div>
-
-            <div class="toolbar theme-invert">
-              <a href="" class="hamburger-btn hamburger-btn_invert"></a>
-              <div class="toolbar__title">
-                <h2>Title</h2>
+            <div data-col="4">
+              <div class="is-raised is-rounded has-padding-small">
+                <div class="img-crop-16-9">
+                  <img src="./assets/placeholder.jpg" class="is-rounded">
+                </div>
+                <div class="spacing-small"></div>
+                <h2 class="mega">Title
+                  <div class="tag tag_small tag_super">Tag</div>
+                </h2>
+                <p>Nun, ganz abgesehen davon, daß die Türen versperrt waren, hätte er wirklich um Hilfe rufen
+                  sollen? Trotz aller Not konnte er bei diesem Gedanken ein Lächeln nicht unterdrücken.</p>
+                <div data-flex="small-grid">
+                  <div data-col="6sm">
+                    <a href="" class="btn btn_block">Action</a>
+                  </div>
+                  <div data-col="6sm">
+                    <a href="" class="btn btn_minor btn_block">Cancel</a>
+                  </div>
+                </div>
               </div>
-              <div class="input-group">
-                <input type="text" class="input" placeholder="Search...">
-                <span class="ec-icon find input-group__icon"></span>
-              </div>
-              <nav class="nav">
-                <ul class="nav__items">
-                  <li class="nav__item">
-                    <a href="" class="btn btn_clear btn_invert">Menu</a>
-                  </li>
-                  <li class="nav__item">
-                    <a href="" class="btn btn_super">Profil</a>
-                  </li>
-                </ul>
-              </nav>
             </div>
+          </div>
+        </section>
 
-            <div class="spacing"></div>
+        <div class="bumper"></div>
 
-            <div class="toolbar theme-invert">
-              <a href="" class="hamburger-btn hamburger-btn_invert"></a>
-              <div class="toolbar__title toolbar__title_center">
-                <h2>Title</h2>
-              </div>
-              <nav class="nav">
-                <ul class="nav__items">
-                  <li class="nav__item">
-                    <a href="" class="btn btn_clear btn_invert">Menu</a>
-                  </li>
-                  <li class="nav__item">
-                    <a href="" class="btn btn_super">Profil</a>
-                  </li>
-                </ul>
-              </nav>
+        <section>
+          <h3 id="xui-toolbar" class="kilo">toolbar <span class="tag tag_small">organisms/toolbar</span> <a
+            href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
+            class="tag tag_small tag_error">flex</a>
+          </h3>
+
+          <div class="toolbar theme-invert">
+            <div class="toolbar__title">
+              <h2>Title</h2>
             </div>
-          </section>
+            <nav class="nav">
+              <ul class="nav__items">
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear btn_invert">Menu</a>
+                </li>
+                <li class="nav__item">
+                  <a href="" class="hamburger-btn hamburger-btn_invert"></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
 
-          <div class="bumper"></div>
+          <div class="spacing"></div>
 
-          <!--TODO documentation-->
-          <section>
-            <h3 id="xui-title" class="kilo">title <span class="tag tag_small">organisms/title</span> <a
-              href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
-              class="tag tag_small tag_error">flex</a>
-            </h3>
-            <div class="alert alert_small"><strong>TODO documentation</strong></div>
-          </section>
-
-          <div class="bumper"></div>
-
-          <section>
-            <h3 id="xui-nav" class="kilo">nav<span class="tag tag_small">organisms/nav</span></h3>
-            <div class="well">
-              <nav class="nav">
-                <ul class="nav__items">
-                  <li class="nav__item">
-                    <a href="" class="btn btn_clear">Nav Link</a>
-                  </li>
-                  <li class="nav__item">
-                    <a href="" class="btn btn_clear">Nav Link</a>
-                  </li>
-                  <li class="nav__divider">&nbsp;</li>
-                  <li class="nav__item">
-                    <a href="" class="btn btn_clear">Nav Link</a>
-                  </li>
-                </ul>
-              </nav>
+          <div class="toolbar theme-invert">
+            <div class="toolbar__title toolbar__title_center">
+              <h2>Title</h2>
             </div>
-            <pre><code class="html">
+            <nav class="nav">
+              <ul class="nav__items">
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear btn_invert">Menu</a>
+                </li>
+                <li class="nav__item">
+                  <a href="" class="hamburger-btn hamburger-btn_invert"></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="spacing"></div>
+
+          <div class="toolbar theme-invert">
+            <a href="" class="hamburger-btn hamburger-btn_invert"></a>
+            <div class="toolbar__title">
+              <h2>Title</h2>
+            </div>
+            <div class="input-group">
+              <input type="text" class="input" placeholder="Search...">
+              <span class="ec-icon find input-group__icon"></span>
+            </div>
+            <nav class="nav">
+              <ul class="nav__items">
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear btn_invert">Menu</a>
+                </li>
+                <li class="nav__item">
+                  <a href="" class="btn btn_super">Profil</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="spacing"></div>
+
+          <div class="toolbar theme-invert">
+            <a href="" class="hamburger-btn hamburger-btn_invert"></a>
+            <div class="toolbar__title toolbar__title_center">
+              <h2>Title</h2>
+            </div>
+            <nav class="nav">
+              <ul class="nav__items">
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear btn_invert">Menu</a>
+                </li>
+                <li class="nav__item">
+                  <a href="" class="btn btn_super">Profil</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        <div class="bumper"></div>
+
+        <!--TODO documentation-->
+        <section>
+          <h3 id="xui-title" class="kilo">title <span class="tag tag_small">organisms/title</span> <a
+            href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
+            class="tag tag_small tag_error">flex</a>
+          </h3>
+          <div class="alert alert_small"><strong>TODO documentation</strong></div>
+        </section>
+
+        <div class="bumper"></div>
+
+        <section>
+          <h3 id="xui-nav" class="kilo">nav<span class="tag tag_small">organisms/nav</span></h3>
+          <div class="well">
+            <nav class="nav">
+              <ul class="nav__items">
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">Nav Link</a>
+                </li>
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">Nav Link</a>
+                </li>
+                <li class="nav__divider">&nbsp;</li>
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">Nav Link</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <pre><code class="html">
 <nav class="nav">
   <ul class="nav__items">
     <li class="nav__item">
@@ -1591,25 +1728,25 @@
   </ul>
 </nav></code></pre>
 
-            <div class="spacing"></div>
+          <div class="spacing"></div>
 
-            <div class="well">
-              <nav class="nav nav_stacked">
-                <ul class="nav__items">
-                  <li class="nav__item">
-                    <a href="" class="btn btn_clear">Nav Link</a>
-                  </li>
-                  <li class="nav__item">
-                    <a href="" class="btn btn_clear">Nav Link</a>
-                  </li>
-                  <li class="nav__divider">&nbsp;</li>
-                  <li class="nav__item">
-                    <a href="" class="btn btn_clear">Nav Link</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <pre><code class="html">
+          <div class="well">
+            <nav class="nav nav_stacked">
+              <ul class="nav__items">
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">Nav Link</a>
+                </li>
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">Nav Link</a>
+                </li>
+                <li class="nav__divider">&nbsp;</li>
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">Nav Link</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <pre><code class="html">
 <nav class="nav nav_stacked">
   <ul class="nav__items">
     <li class="nav__item">
@@ -1624,343 +1761,343 @@
     </li>
   </ul>
 </nav></code></pre>
-          </section>
+        </section>
 
-          <div class="bumper_big"></div>
+        <div class="bumper-big"></div>
 
-          <h2 class="mega" id="xui-templates">templates</h2>
-          <p class="lead">with templates we leave the atomic structure. templates are layout elements to structure an
-            organise your interface.</p>
+        <h2 class="mega" id="xui-templates">templates</h2>
+        <p class="lead">with templates we leave the atomic structure. templates are layout elements to structure an
+          organise your interface.</p>
 
-          <div class="spacing"></div>
+        <div class="spacing"></div>
 
-          <section>
-            <h3 class="kilo" id="xui-table">table <span class="tag tag_small">templates/_table</span> <span
-              class="tag tag_small tag_error">in progress</span></h3>
-            <table class="table">
-              <thead>
-              <tr>
-                <th>title</th>
-                <th>description</th>
-                <th>date</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>title</td>
-                <td>Gewiß. Aber was steht nicht alles - von Kinderfreund gar nicht zu reden - in Bibel und
-                  Katechismus,
-                  und die Leute wissen es doch nicht. Ich zum Beispiel.
-                </td>
-                <td>17-11-20</td>
-              </tr>
-              </tbody>
-            </table>
-            <table class="table table_bordered">
-              <thead>
-              <tr>
-                <th>title</th>
-                <th>description</th>
-                <th>date</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>title</td>
-                <td>Gewiß. Aber was steht nicht alles - von Kinderfreund gar nicht zu reden - in Bibel und
-                  Katechismus,
-                  und die Leute wissen es doch nicht. Ich zum Beispiel.
-                </td>
-                <td>17-11-20</td>
-              </tr>
-              </tbody>
-            </table>
-          </section>
+        <section>
+          <h3 class="kilo" id="xui-table">table <span class="tag tag_small">templates/_table</span> <span
+            class="tag tag_small tag_error">in progress</span></h3>
+          <table class="table">
+            <thead>
+            <tr>
+              <th>title</th>
+              <th>description</th>
+              <th>date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>title</td>
+              <td>Gewiß. Aber was steht nicht alles - von Kinderfreund gar nicht zu reden - in Bibel und
+                Katechismus,
+                und die Leute wissen es doch nicht. Ich zum Beispiel.
+              </td>
+              <td>17-11-20</td>
+            </tr>
+            </tbody>
+          </table>
+          <table class="table table_bordered">
+            <thead>
+            <tr>
+              <th>title</th>
+              <th>description</th>
+              <th>date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>title</td>
+              <td>Gewiß. Aber was steht nicht alles - von Kinderfreund gar nicht zu reden - in Bibel und
+                Katechismus,
+                und die Leute wissen es doch nicht. Ich zum Beispiel.
+              </td>
+              <td>17-11-20</td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <!--TODO documentation-->
-          <section>
-            <h3 id="xui-section" class="kilo">section <span class="tag tag_small">templates/section</span></h3>
-            <div class="alert alert_small"><strong>TODO documentation</strong></div>
-          </section>
+        <!--TODO documentation-->
+        <section>
+          <h3 id="xui-section" class="kilo">section <span class="tag tag_small">templates/section</span></h3>
+          <div class="alert alert_small"><strong>TODO documentation</strong></div>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <!--TODO documentation-->
-          <section>
-            <h3 id="xui-kiosk" class="kilo">kiosk <span class="tag tag_small">templates/kiosk</span></h3>
-            <div class="alert alert_small"><strong>TODO documentation</strong></div>
-          </section>
+        <!--TODO documentation-->
+        <section>
+          <h3 id="xui-kiosk" class="kilo">kiosk <span class="tag tag_small">templates/kiosk</span></h3>
+          <div class="alert alert_small"><strong>TODO documentation</strong></div>
+        </section>
 
-          <div class="bumper_big"></div>
+        <div class="bumper-big"></div>
 
-          <h2 class="mega" id="xui-modifier">modifier</h2>
-          <div class="spacing"></div>
+        <h2 class="mega" id="xui-modifier">modifier</h2>
+        <div class="spacing"></div>
 
-          <section>
-            <h3 class="kilo" id="xui-is-rounded">is-rounded</h3>
-          </section>
+        <section>
+          <h3 class="kilo" id="xui-is-rounded">is-rounded</h3>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 class="kilo" id="xui-is-raised">is-raised</h3>
-          </section>
+        <section>
+          <h3 class="kilo" id="xui-is-raised">is-raised</h3>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 class="kilo" id="xui-is-lifted">is-lifted</h3>
-          </section>
+        <section>
+          <h3 class="kilo" id="xui-is-lifted">is-lifted</h3>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 class="kilo" id="xui-text-color">text-color <span class="tag tag_small">modifier/text-color</span>
-            </h3>
-            <p>the text-color modifiers only affect the css color attribute. it can be uses on all elements.</p>
-            <div class="well well_small">
-              <div data-flex="grid">
-                <div v-for="mod in modifiers.type.colorModifiers" data-col="2sm">
-                  <strong :class="mod">{{mod}}</strong>
-                </div>
+        <section>
+          <h3 class="kilo" id="xui-text-color">text-color <span class="tag tag_small">modifier/text-color</span>
+          </h3>
+          <p>the text-color modifiers only affect the css color attribute. it can be uses on all elements.</p>
+          <div class="well well_small">
+            <div data-flex="grid">
+              <div v-for="mod in modifiers.type.colorModifiers" data-col="2sm">
+                <strong :class="mod">{{mod}}</strong>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 id="xui-theme" class="kilo">theme <span class="tag tag_small">modifier/theme</span></h3>
-            <p>the theme-modifier affect the color and background-color attribute. the color is calculated according
-              to the
-              <a href="https://www.w3.org/TR/AERT/#color-contrast" target="_blank" rel="noopener">Web Content
-                Accessibility Guidelines</a> suggested by W3C. the six theme-presets with their 6 shades are based on
-              the 6 core colors defined in <span class="code">_config.scss</span>.</p>
-            <div class="demo-theme">
-              <div data-flex="grid">
-                <div data-col="4sm">
-                  <h4 class="h6">default</h4>
-                  <div class="theme_lightest">theme_lightest</div>
-                  <div class="theme_lighter">theme_lighter</div>
-                  <div class="theme_light">theme_light</div>
-                  <div class="theme">theme</div>
-                  <div class="theme_dark">theme_dark</div>
-                  <div class="theme_darker">theme_darker</div>
-                  <div class="theme_darkest">theme_darkest</div>
-                  <div class="spacing_small"></div>
-                </div>
-                <div data-col="4sm">
-                  <h4 class="h6">link</h4>
-                  <div class="theme-link_lightest">theme-link_lightest</div>
-                  <div class="theme-link_lighter">theme-link_lighter</div>
-                  <div class="theme-link_light">theme-link_light</div>
-                  <div class="theme-link">theme-link</div>
-                  <div class="theme-link_dark">theme-link_dark</div>
-                  <div class="theme-link_darker">theme-link_darker</div>
-                  <div class="theme-link_darkest">theme-link_darkest</div>
-                  <div class="spacing_small"></div>
-                </div>
-                <div data-col="4sm">
-                  <h4 class="h6">super</h4>
-                  <div class="theme-super_lightest">theme-super_lightest</div>
-                  <div class="theme-super_lighter">theme-super_lighter</div>
-                  <div class="theme-super_light">theme-super_light</div>
-                  <div class="theme-super">theme-super</div>
-                  <div class="theme-super_dark">theme-super_dark</div>
-                  <div class="theme-super_darker">theme-super_darker</div>
-                  <div class="theme-super_darkest">theme-super_darkest</div>
-                  <div class="spacing_small"></div>
-                </div>
-                <div data-col="4sm">
-                  <h4 class="h6">minor</h4>
-                  <div class="theme-minor_lightest">theme-minor_lightest</div>
-                  <div class="theme-minor_lighter">theme-minor_lighter</div>
-                  <div class="theme-minor_light">theme-minor_light</div>
-                  <div class="theme-minor">theme-minor</div>
-                  <div class="theme-minor_dark">theme-minor_dark</div>
-                  <div class="theme-minor_darker">theme-minor_darker</div>
-                  <div class="theme-minor_darkest">theme-minor_darkest</div>
-                  <div class="spacing_small"></div>
-                </div>
-                <div data-col="4sm">
-                  <h4 class="h6">highlight</h4>
-                  <div class="theme-highlight_lightest">theme-highlight_lightest</div>
-                  <div class="theme-highlight_lighter">theme-highlight_lighter</div>
-                  <div class="theme-highlight_light">theme-highlight_light</div>
-                  <div class="theme-highlight">theme-highlight</div>
-                  <div class="theme-highlight_dark">theme-highlight_dark</div>
-                  <div class="theme-highlight_darker">theme-highlight_darker</div>
-                  <div class="theme-highlight_darkest">theme-highlight_darkest</div>
-                  <div class="spacing_small"></div>
-                </div>
-                <div data-col="4sm">
-                  <h4 class="h6">invert</h4>
-                  <div class="theme-invert_lightest">theme-invert_lightest</div>
-                  <div class="theme-invert_lighter">theme-invert_lighter</div>
-                  <div class="theme-invert_light">theme-invert_light</div>
-                  <div class="theme-invert">theme-invert</div>
-                  <div class="theme-invert_dark">theme-invert_dark</div>
-                  <div class="theme-invert_darker">theme-invert_darker</div>
-                  <div class="theme-invert_darkest">theme-invert_darkest</div>
-                  <div class="spacing_small"></div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <div class="bumper"></div>
-
-          <section>
-            <h3 id="xui-spacing-modifier" class="kilo">spacing modifier</h3>
-            <p>the syntax of spacing modifier is <span class="code">{state}-{property}-{sides}_{size}</span>.</p>
-            <h4 class="h6">available sides</h4>
-            <table class="table">
-              <tr>
-                <td><span class="code">{state}</span></td>
-                <td><span class="code">has</span> or <span class="code">no</span></td>
-              </tr>
-              <tr>
-                <td><span class="code">{property}</span></td>
-                <td>either <span class="code">padding</span> or <span class="code">margin</span></td>
-              </tr>
-              <tr>
-                <td><span class="code">{sides}</span></td>
-                <td>
-                  <em>no value</em> - adds margin or padding to all sides<br>
-                  <span class="code">middle</span> - top and bottom<br>
-                  <span class="code">center</span> - left and right<br>
-                  <span class="code">top</span> <span class="code">right</span> <span class="code">bottom</span>
-                  <span class="code">left</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="code">{size}</div>
-                </td>
-                <td>
-                  <em>no value</em> - default size <span class="code">$base-spacing</span><br>
-                  <span class="code">small</span> - <span class="code">$base-spacing / 2</span><br>
-                  <span class="code">big</span> - <span class="code">$base-spacing * 2</span><br>
-                  <span class="code">auto</span> - only with <span class="code">margin-l</span>
-                  <span class="code">margin-r</span><span class="code">margin-center</span>
-                </td>
-              </tr>
-            </table>
-
-          </section>
-
-          <div class="bumper"></div>
-
-          <section>
-            <h3 id="xui-height-modifier" class="kilo">height modifier</h3>
-            <p>size modifier are the vertical layout equivalent for columns. size modifier set the min-height of an
-              element based on the viewport. the syntax is <span class="code">has-height-{ratio}</span>. Ratios are:</p>
-            <p>
-              <span class="code">full</span> - 100vh<br>
-              <span class="code">1-4</span> - 100vh &times; .25<br>
-              <span class="code">half</span> - 100vh &times; .5<br>
-              <span class="code">3-4</span> - 100vh &times; .75<br>
-              <span class="code">golden-h</span> - golden ratio of viewport-height<br>
-              <span class="code">golden-w</span> - golden ratio of viewport-width
-            </p>
-          </section>
-
-          <div class="bumper"></div>
-
-          <section>
-            <h3 id="xui-overflow-modifier" class="h6">overflow-modifier</h3>
-            <p>the syntax is <span class="code">is-{overflow}-{axis}</span></p>
-            <p><span class="code">{overflow}</span> can be <span class="code">clipped</span> for <em>hidden</em> or
-              <span class="code">scrollable</span> for <em>scroll</em>.<br>
-              <span class="code">{axis}</span> can be <span class="code">x</span>, <span class="code">y</span> or <em>empty</em>.
-            </p>
-          </section>
-
-
-          <div class="bumper"></div>
-
-          <section>
-            <h3 id="xui-text-alignment" class="h6">text-alignment <span
-              class="tag tag_small">modifier/text-alignment</span></h3>
+        <section>
+          <h3 id="xui-theme" class="kilo">theme <span class="tag tag_small">modifier/theme</span></h3>
+          <p>the theme-modifier affect the color and background-color attribute. the color is calculated according
+            to the
+            <a href="https://www.w3.org/TR/AERT/#color-contrast" target="_blank" rel="noopener">Web Content
+              Accessibility Guidelines</a> suggested by W3C. the six theme-presets with their 6 shades are based on
+            the 6 core colors defined in <span class="code">_config.scss</span>.</p>
+          <div class="demo-theme">
             <div data-flex="grid">
               <div data-col="4sm">
-                <p class="text-left"><span class="code">text-left</span><br>
-                  Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie vor
-                  mir, in mir, füllen die Sinne meiner Stirn. Was ist der Mensch, der gepriesene Halbgott!</p>
+                <h4 class="h6">default</h4>
+                <div class="theme_lightest">theme_lightest</div>
+                <div class="theme_lighter">theme_lighter</div>
+                <div class="theme_light">theme_light</div>
+                <div class="theme">theme</div>
+                <div class="theme_dark">theme_dark</div>
+                <div class="theme_darker">theme_darker</div>
+                <div class="theme_darkest">theme_darkest</div>
+                <div class="spacing-small"></div>
               </div>
               <div data-col="4sm">
-                <p class="text-center"><span class="code">text-center</span><br>
-                  Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie vor
-                  mir, in mir, füllen die Sinne meiner Stirn. Was ist der Mensch, der gepriesene Halbgott!</p>
+                <h4 class="h6">link</h4>
+                <div class="theme-link_lightest">theme-link_lightest</div>
+                <div class="theme-link_lighter">theme-link_lighter</div>
+                <div class="theme-link_light">theme-link_light</div>
+                <div class="theme-link">theme-link</div>
+                <div class="theme-link_dark">theme-link_dark</div>
+                <div class="theme-link_darker">theme-link_darker</div>
+                <div class="theme-link_darkest">theme-link_darkest</div>
+                <div class="spacing-small"></div>
               </div>
               <div data-col="4sm">
-                <p class="text-right"><span class="code">text-right</span><br>
-                  Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie vor
-                  mir, in mir, füllen die Sinne meiner Stirn. Was ist der Mensch, der gepriesene Halbgott!</p>
+                <h4 class="h6">super</h4>
+                <div class="theme-super_lightest">theme-super_lightest</div>
+                <div class="theme-super_lighter">theme-super_lighter</div>
+                <div class="theme-super_light">theme-super_light</div>
+                <div class="theme-super">theme-super</div>
+                <div class="theme-super_dark">theme-super_dark</div>
+                <div class="theme-super_darker">theme-super_darker</div>
+                <div class="theme-super_darkest">theme-super_darkest</div>
+                <div class="spacing-small"></div>
+              </div>
+              <div data-col="4sm">
+                <h4 class="h6">minor</h4>
+                <div class="theme-minor_lightest">theme-minor_lightest</div>
+                <div class="theme-minor_lighter">theme-minor_lighter</div>
+                <div class="theme-minor_light">theme-minor_light</div>
+                <div class="theme-minor">theme-minor</div>
+                <div class="theme-minor_dark">theme-minor_dark</div>
+                <div class="theme-minor_darker">theme-minor_darker</div>
+                <div class="theme-minor_darkest">theme-minor_darkest</div>
+                <div class="spacing-small"></div>
+              </div>
+              <div data-col="4sm">
+                <h4 class="h6">highlight</h4>
+                <div class="theme-highlight_lightest">theme-highlight_lightest</div>
+                <div class="theme-highlight_lighter">theme-highlight_lighter</div>
+                <div class="theme-highlight_light">theme-highlight_light</div>
+                <div class="theme-highlight">theme-highlight</div>
+                <div class="theme-highlight_dark">theme-highlight_dark</div>
+                <div class="theme-highlight_darker">theme-highlight_darker</div>
+                <div class="theme-highlight_darkest">theme-highlight_darkest</div>
+                <div class="spacing-small"></div>
+              </div>
+              <div data-col="4sm">
+                <h4 class="h6">invert</h4>
+                <div class="theme-invert_lightest">theme-invert_lightest</div>
+                <div class="theme-invert_lighter">theme-invert_lighter</div>
+                <div class="theme-invert_light">theme-invert_light</div>
+                <div class="theme-invert">theme-invert</div>
+                <div class="theme-invert_dark">theme-invert_dark</div>
+                <div class="theme-invert_darker">theme-invert_darker</div>
+                <div class="theme-invert_darkest">theme-invert_darkest</div>
+                <div class="spacing-small"></div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 id="xui-type-setting" class="kilo">type-setting <span class="tag tag_small">modifier/type-setting</span>
-            </h3>
-            <table class="table">
-              <tbody>
-              <tr>
-                <td><span class="code">is-nowrap</span></td>
-                <td>no whitespace wrapping</td>
-              </tr>
-              <tr>
-                <td><span class="code">is-hyphen</span></td>
-                <td>use automatic hyphenation <a href="https://caniuse.com/#search=hyphen" target="_blank"
-                                                 rel="noopener"
-                                                 class="tag tag_error tag_small">hyphen</a></td>
-              </tr>
-              <tr>
-                <td><span class="code">is-hyphen-block</span></td>
-                <td>use automatic hyphenation with justification <a href="https://caniuse.com/#search=hyphen"
-                                                                    target="_blank" rel="noopener"
-                                                                    class="tag tag_error tag_small">hyphen</a></td>
-              </tr>
-              <tr>
-                <td><span class="code">is-ellipsis</span></td>
-                <td>automatic text cut off with ...</td>
-              </tr>
-              </tbody>
-            </table>
-          </section>
+        <section>
+          <h3 id="xui-spacing-modifier" class="kilo">spacing modifier</h3>
+          <p>the syntax of spacing modifier is <span class="code">{state}-{property}-{sides}-{size}</span>.</p>
+          <h4 class="h6">available sides</h4>
+          <table class="table">
+            <tr>
+              <td><span class="code">{state}</span></td>
+              <td><span class="code">has</span> or <span class="code">no</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">{property}</span></td>
+              <td>either <span class="code">padding</span> or <span class="code">margin</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">{sides}</span></td>
+              <td>
+                <em>no value</em> - adds margin or padding to all sides<br>
+                <span class="code">middle</span> - top and bottom<br>
+                <span class="code">center</span> - left and right<br>
+                <span class="code">top</span> <span class="code">right</span> <span class="code">bottom</span>
+                <span class="code">left</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="code">{size}</div>
+              </td>
+              <td>
+                <em>no value</em> - default size <span class="code">$base-spacing</span><br>
+                <span class="code">small</span> - <span class="code">$base-spacing / 2</span><br>
+                <span class="code">big</span> - <span class="code">$base-spacing * 2</span><br>
+                <span class="code">auto</span> - only with <span class="code">margin-l</span>
+                <span class="code">margin-r</span><span class="code">margin-center</span>
+              </td>
+            </tr>
+          </table>
 
-          <div class="bumper"></div>
+        </section>
 
-          <section>
-            <h3 id="xui-tooltip" class="kilo">tooltip <span class="tag tag_small">modifier/_tooltip</span> <span
-              class="tag tag_small tag_super">css only</span> <span
-              class="tag tag_small tag_error">in progress</span>
-            </h3>
-            <div class="alert alert_small">the tooltip only works with single line tooltips</div>
-            <div class="well">
-              <div data-flex="grid">
-                <div data-col="3" data-flex="center">
-                  <a href="" data-tooltip-top="This is a tooltip" class="btn btn_invert is-raised">tooltip top</a>
-                </div>
-                <div data-col="3" data-flex="center">
-                  <a href="" data-tooltip-right="This is a tooltip" class="btn btn_invert is-raised">tooltip
-                    right</a>
-                </div>
-                <div data-col="3" data-flex="center">
-                  <a href="" data-tooltip-bottom="This is a tooltip" class="btn btn_invert is-raised">tooltip
-                    bottom</a>
-                </div>
-                <div data-col="3" data-flex="center">
-                  <a href="" data-tooltip-left="This is a tooltip" class="btn btn_invert is-raised">tooltip left</a>
-                </div>
+        <div class="bumper"></div>
+
+        <section>
+          <h3 id="xui-height-modifier" class="kilo">height modifier</h3>
+          <p>size modifier are the vertical layout equivalent for columns. size modifier set the min-height of an
+            element based on the viewport. the syntax is <span class="code">has-height-{realation}-{ratio}</span>. Relation can be <span class="code">vp</span> for viewport or <em>empty</em> for relative (%). Ratios are:</p>
+          <p>
+            <span class="code">full</span> - 100vh<br>
+            <span class="code">1-4</span> - 100vh &times; .25<br>
+            <span class="code">half</span> - 100vh &times; .5<br>
+            <span class="code">3-4</span> - 100vh &times; .75<br>
+            <span class="code">golden-h</span> - golden ratio of viewport-height<br>
+            <span class="code">golden-w</span> - golden ratio of viewport-width
+          </p>
+        </section>
+
+        <div class="bumper"></div>
+
+        <section>
+          <h3 id="xui-overflow-modifier" class="h6">overflow-modifier</h3>
+          <p>the syntax is <span class="code">is-{overflow}-{axis}</span></p>
+          <p><span class="code">{overflow}</span> can be <span class="code">clipped</span> for <em>hidden</em> or
+            <span class="code">scrollable</span> for <em>scroll</em>.<br>
+            <span class="code">{axis}</span> can be <span class="code">x</span>, <span class="code">y</span> or <em>empty</em>.
+          </p>
+        </section>
+
+
+        <div class="bumper"></div>
+
+        <section>
+          <h3 id="xui-text-alignment" class="h6">text-alignment <span
+            class="tag tag_small">modifier/text-alignment</span></h3>
+          <div data-flex="grid">
+            <div data-col="4sm">
+              <p class="text-left"><span class="code">text-left</span><br>
+                Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie vor
+                mir, in mir, füllen die Sinne meiner Stirn. Was ist der Mensch, der gepriesene Halbgott!</p>
+            </div>
+            <div data-col="4sm">
+              <p class="text-center"><span class="code">text-center</span><br>
+                Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie vor
+                mir, in mir, füllen die Sinne meiner Stirn. Was ist der Mensch, der gepriesene Halbgott!</p>
+            </div>
+            <div data-col="4sm">
+              <p class="text-right"><span class="code">text-right</span><br>
+                Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie vor
+                mir, in mir, füllen die Sinne meiner Stirn. Was ist der Mensch, der gepriesene Halbgott!</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="bumper"></div>
+
+        <section>
+          <h3 id="xui-type-setting" class="kilo">type-setting <span class="tag tag_small">modifier/type-setting</span>
+          </h3>
+          <table class="table">
+            <tbody>
+            <tr>
+              <td><span class="code">is-nowrap</span></td>
+              <td>no whitespace wrapping</td>
+            </tr>
+            <tr>
+              <td><span class="code">is-hyphen</span></td>
+              <td>use automatic hyphenation <a href="https://caniuse.com/#search=hyphen" target="_blank"
+                                               rel="noopener"
+                                               class="tag tag_error tag_small">hyphen</a></td>
+            </tr>
+            <tr>
+              <td><span class="code">is-hyphen-block</span></td>
+              <td>use automatic hyphenation with justification <a href="https://caniuse.com/#search=hyphen"
+                                                                  target="_blank" rel="noopener"
+                                                                  class="tag tag_error tag_small">hyphen</a></td>
+            </tr>
+            <tr>
+              <td><span class="code">is-ellipsis</span></td>
+              <td>automatic text cut off with ...</td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <div class="bumper"></div>
+
+        <section>
+          <h3 id="xui-tooltip" class="kilo">tooltip <span class="tag tag_small">modifier/_tooltip</span> <span
+            class="tag tag_small tag_super">css only</span> <span
+            class="tag tag_small tag_error">in progress</span>
+          </h3>
+          <div class="alert alert_small">the tooltip only works with single line tooltips</div>
+          <div class="well">
+            <div data-flex="grid">
+              <div data-col="3" data-flex="center">
+                <a href="" data-tooltip-top="This is a tooltip" class="btn btn_invert is-raised">tooltip top</a>
+              </div>
+              <div data-col="3" data-flex="center">
+                <a href="" data-tooltip-right="This is a tooltip" class="btn btn_invert is-raised">tooltip
+                  right</a>
+              </div>
+              <div data-col="3" data-flex="center">
+                <a href="" data-tooltip-bottom="This is a tooltip" class="btn btn_invert is-raised">tooltip
+                  bottom</a>
+              </div>
+              <div data-col="3" data-flex="center">
+                <a href="" data-tooltip-left="This is a tooltip" class="btn btn_invert is-raised">tooltip left</a>
               </div>
             </div>
-            <pre><code class="html">
+          </div>
+          <pre><code class="html">
 <... data-tooltip-top="This is a tooltip" ... >
 ...
 <... data-tooltip-right="This is a tooltip" ... >
@@ -1969,74 +2106,76 @@
 ...
 <... data-tooltip-left="This is a tooltip" ... >
 </code></pre>
-          </section>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 id="xui-position-modifier" class="kilo">position-modifier</h3>
-            <span class="code">is-relative</span> <span class="code">is-absolute</span> <span class="code">is-fixed</span>
-          </section>
+        <section>
+          <h3 id="xui-position-modifier" class="kilo">position-modifier</h3>
+          <span class="code">is-relative</span> <span class="code">is-absolute</span> <span class="code">is-fixed</span>
+        </section>
 
-          <div class="bumper"></div>
+        <div class="bumper"></div>
 
-          <section>
-            <h3 id="xui-is-position" class="kilo">is-position</h3>
-            <div class="well is-relative" style="height: 160px;">
-              <strong class="code is-positioned-n is-absolute">n</strong>
-              <strong class="code is-positioned-ne is-absolute">ne</strong>
-              <strong class="code is-positioned-e is-absolute">e</strong>
-              <strong class="code is-positioned-se is-absolute">se</strong>
-              <strong class="code is-positioned-s is-absolute">s</strong>
-              <strong class="code is-positioned-sw is-absolute">sw</strong>
-              <strong class="code is-positioned-w is-absolute">w</strong>
-              <strong class="code is-positioned-nw is-absolute">nw</strong>
-              <strong class="code is-positioned-0 is-absolute">0</strong>
+        <section>
+          <h3 id="xui-is-position" class="kilo">is-position</h3>
+          <div class="well is-relative" style="height: 160px;">
+            <strong class="code is-positioned-n is-absolute">n</strong>
+            <strong class="code is-positioned-ne is-absolute">ne</strong>
+            <strong class="code is-positioned-e is-absolute">e</strong>
+            <strong class="code is-positioned-se is-absolute">se</strong>
+            <strong class="code is-positioned-s is-absolute">s</strong>
+            <strong class="code is-positioned-sw is-absolute">sw</strong>
+            <strong class="code is-positioned-w is-absolute">w</strong>
+            <strong class="code is-positioned-nw is-absolute">nw</strong>
+            <strong class="code is-positioned-0 is-absolute">0</strong>
+          </div>
+        </section>
+
+        <div class="bumper"></div>
+
+        <section>
+          <h3 id="xui-is-fab" class="kilo">is-fab</h3>
+          <p>FAB (Floating Action Buttons) is a modifier for positioning elements with a spacing of 16px. Use with
+            <span class="code">is-absolute</span> or <span class="code">is-fixed</span>. the syntax is <span
+              class="code">is-fab-{direction}</span></p>
+          <div class="well is-relative" style="height: 160px;">
+            <strong class="code is-fab-n is-absolute">n</strong>
+            <strong class="code is-fab-ne is-absolute">ne</strong>
+            <strong class="code is-fab-e is-absolute">e</strong>
+            <strong class="code is-fab-se is-absolute">se</strong>
+            <strong class="code is-fab-s is-absolute">s</strong>
+            <strong class="code is-fab-sw is-absolute">sw</strong>
+            <strong class="code is-fab-w is-absolute">w</strong>
+            <strong class="code is-fab-nw is-absolute">nw</strong>
+            <strong class="code is-fab-0 is-absolute">0</strong>
+          </div>
+        </section>
+
+        <div class="bumper-big"></div>
+
+        <section class="partial">
+          <header class="partial-header">
+            <h2 class="mega">Icons</h2>
+          </header>
+          <div class="partial-body">
+            <p class="lead"><strong>x.ui</strong> is optimized for the usage with ec.ions.</p>
+            <div class="form-group form-group_search">
+              <input type="text" v-model="query" class="input input_round" placeholder="search for icon class...">
             </div>
-          </section>
-
-          <div class="bumper"></div>
-
-          <section>
-            <h3 id="xui-is-fab" class="kilo">is-fab</h3>
-            <p>FAB (Floating Action Buttons) is a modifier for positioning elements with a spacing of 16px. Use with
-              <span class="code">is-absolute</span> or <span class="code">is-fixed</span>. the syntax is <span
-                class="code">is-fab-{direction}</span></p>
-            <div class="well is-relative" style="height: 160px;">
-              <strong class="code is-fab-n is-absolute">n</strong>
-              <strong class="code is-fab-ne is-absolute">ne</strong>
-              <strong class="code is-fab-e is-absolute">e</strong>
-              <strong class="code is-fab-se is-absolute">se</strong>
-              <strong class="code is-fab-s is-absolute">s</strong>
-              <strong class="code is-fab-sw is-absolute">sw</strong>
-              <strong class="code is-fab-w is-absolute">w</strong>
-              <strong class="code is-fab-nw is-absolute">nw</strong>
-              <strong class="code is-fab-0 is-absolute">0</strong>
-            </div>
-          </section>
-
-          <div class="bumper_big"></div>
-
-          <section class="partial">
-            <header class="partial-header">
-              <h2 class="mega">Icons</h2>
-            </header>
-            <div class="partial-body">
-              <p class="lead"><strong>x.ui</strong> is optimized for the usage with ec.ions.</p>
-              <div class="form-group form-group_search">
-                <input type="text" v-model="query" class="input input_round" placeholder="search for icon class...">
-              </div>
-              <ul data-flex="small-grid" class="icons-list">
-                <li v-for="icon in iconset" data-col="3" :class="{hide: icon.indexOf(query) === -1}">
-                  <span class="ec-icon" :class="icon"></span><span class="quickselect">{{ icon }}</span>
-                </li>
-              </ul>
-            </div>
-          </section>
-        </div>
+            <ul data-flex="small-grid" class="icons-list">
+              <li v-for="icon in iconset" data-col="3" :class="{hide: icon.indexOf(query) === -1}">
+                <span class="ec-icon" :class="icon"></span><span class="quickselect">{{ icon }}</span>
+              </li>
+            </ul>
+          </div>
+        </section>
       </div>
     </div>
   </div>
 </div>
+<footer>
+  Photo by Laura Lefurgey-Smith on Unsplash
+</footer>
 </body>
 </html>
