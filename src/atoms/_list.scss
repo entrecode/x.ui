@@ -1,0 +1,32 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group molecules
+///
+/// @param {variable} $pfx [''] - global prefixing
+
+%list-unstyled {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+%list-inline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    display: inline-block;
+  }
+}
+
+ul.#{$pfx}unstyled,
+ol.#{$pfx}unstyled {
+  @extend %list-unstyled;
+}
+
+ul.#{$pfx}inline,
+ol.#{$pfx}inline {
+  @extend %list-inline;
+}
