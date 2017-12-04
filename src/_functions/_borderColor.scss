@@ -7,7 +7,7 @@
 
 /// color function to automatically generate a harmonic border-color based on two colors
 /// @example
-/// border-color: borderColor($background, $text) // returns #555555
+/// border-color: borderColor(white, black) // returns #555555
 ///
 /// @param {variable} $color1 - first color
 /// @param {variable} $color2 - second color
@@ -15,29 +15,20 @@
 @function borderColor($color1, $color2) {
   $lightness1: lightness($color1);
   $lightness2: lightness($color2);
+  $lightnessborder: null;
 
   @if ($lightness1 < $lightness2) {
     $lightnessborder: ($lightness2 - $lightness1);
-
-    @if ($lightnessborder > 75) {
-      @return lighten($color1, $lightnessborder / 3);
-    } @else if ($lightnessborder > 75) {
-      @return lighten($color1, $lightnessborder / 2);
-    } @else {
-      @return lighten($color1, $lightnessborder * .25);
-    }
+  } @else if ($lightness1 > $lightness2){
+    $lightnessborder: ($lightness1 - $lightness2);
   }
 
-  @if ($lightness1 > $lightness2) {
-    $lightnessborder: ($lightness1 - $lightness2);
-
-    @if ($lightnessborder > 75) {
-      @return darken($color1, $lightnessborder / 3);
-    } @else if ($lightnessborder > 75) {
-      @return darken($color1, $lightnessborder / 2);
-    } @else {
-      @return darken($color1, $lightnessborder * .25);
-    }
+  @if ($lightnessborder > 75) {
+    @return lighten($color1, $lightnessborder / 3);
+  } @else if ($lightnessborder > 75) {
+    @return lighten($color1, $lightnessborder / 2);
+  } @else {
+    @return lighten($color1, $lightnessborder * .25);
   }
 
   @error "Sorry, but `#{$color1}` is equal to `#{$color2}`.";
