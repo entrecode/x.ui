@@ -1,0 +1,14 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group layout modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+
+.#{$pfx}pull-right {
+  float: right !important;
+}
+
+.#{$pfx}pull-left {
+  float: left !important;
+}
