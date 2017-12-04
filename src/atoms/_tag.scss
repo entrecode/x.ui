@@ -33,7 +33,7 @@
   text-align: center;
   font-weight: $tag-weight;
   @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
-  @include border-radius(rem($tag-radius));
+  border-radius: rem($tag-radius);
   @include set-colors(getColor(background, lightest));
 
   /// additional styles via config
@@ -41,7 +41,7 @@
 
   &.#{$pfx}tag_small {
     @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height, $padding-ratio: $tag-padding-ratio);
-    @include border-radius(rem($tag-small-radius));
+    border-radius: rem($tag-small-radius);
     font-weight: $tag-small-weight;
 
     /// additional styles via config
@@ -50,7 +50,7 @@
 
   &.#{$pfx}tag_big {
     @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height, $padding-ratio: $tag-padding-ratio);
-    @include border-radius(rem($tag-big-radius));
+    border-radius: rem($tag-big-radius);
     font-weight: $tag-big-weight;
 
     /// additional styles via config
@@ -90,14 +90,14 @@
 
 @if $tag-round == true {
   .#{$pfx}tag {
-    @include border-radius(rem($tag-min-height / 2));
+    border-radius: rem($tag-min-height / 2);
 
     &.#{$pfx}tag_small {
-      @include border-radius(rem($tag-small-min-height / 2));
+      border-radius: rem($tag-small-min-height / 2);
     }
 
     &.#{$pfx}tag_big {
-      @include border-radius(rem($tag-big-min-height / 2));
+      border-radius: rem($tag-big-min-height / 2);
     }
   }
 }

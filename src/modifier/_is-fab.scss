@@ -13,7 +13,7 @@
     @include set-breakpoints {
       top: rem($fab-spacing);
       left: 50%;
-      @include transform(translateX(-50%));
+      transform: translateX(-50%);
     }
   }
 
@@ -28,7 +28,7 @@
     @include set-breakpoints {
       right: rem($fab-spacing);
       top: 50%;
-      @include transform(translateY(-50%));
+      transform: translateY(-50%);
     }
   }
 
@@ -43,7 +43,7 @@
     @include set-breakpoints {
       bottom: rem($fab-spacing);
       left: 50%;
-      @include transform(translateX(-50%));
+      transform: translateX(-50%);
     }
   }
 
@@ -58,7 +58,7 @@
     @include set-breakpoints {
       left: rem($fab-spacing);
       top: 50%;
-      @include transform(translateY(-50%));
+      transform: translateY(-50%);
     }
   }
 
@@ -73,7 +73,7 @@
     @include set-breakpoints {
       left: 50%;
       top: 50%;
-      @include transform(translateY(-50%) translateX(-50%));
+      transform: translateY(-50%) translateX(-50%);
     }
   }
 }

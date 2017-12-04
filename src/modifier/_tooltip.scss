@@ -15,51 +15,51 @@
 /// @param {number} $tooltip-small-radius [4]
 /// @param {number} $tooltip-big-radius [4]
 
-@include keyframes(tooltipBottom) {
+@keyframes tooltipBottom {
   0% {
     opacity: 0;
-    @include transform(translateX(-50%) translateY(rem(-4)));
+    transform: translateX(-50%) translateY(rem(-4));
   }
 
   100% {
     opacity: 1;
-    @include transform(translateX(-50%) translateY(rem(4)));
+    transform: translateX(-50%) translateY(rem(4));
   }
 }
 
-@include keyframes(tooltipTop) {
+@keyframes tooltipTop {
   0% {
     opacity: 0;
-    @include transform(translateX(-50%) translateY(rem(4)));
+    transform: translateX(-50%) translateY(rem(4));
   }
 
   100% {
     opacity: 1;
-    @include transform(translateX(-50%) translateY(rem(-4)));
+    transform: translateX(-50%) translateY(rem(-4));
   }
 }
 
-@include keyframes(tooltipLeft) {
+@keyframes tooltipLeft {
   0% {
     opacity: 0;
-    @include transform(translateX(rem(4)) translateY(-50%));
+    transform: translateX(rem(4)) translateY(-50%);
   }
 
   100% {
     opacity: 1;
-    @include transform(translateX(rem(-4)) translateY(-50%));
+    transform: translateX(rem(-4)) translateY(-50%);
   }
 }
 
-@include keyframes(tooltipRight) {
+@keyframes tooltipRight {
   0% {
     opacity: 0;
-    @include transform(translateX(rem(-4)) translateY(-50%));
+    transform: translateX(rem(-4)) translateY(-50%);
   }
 
   100% {
     opacity: 1;
-    @include transform(translateX(rem(4)) translateY(-50%));
+    transform: translateX(rem(4)) translateY(-50%);
   }
 }
 
@@ -71,7 +71,7 @@
 
   &:after {
     @include macro-metrics($tooltip-font-size, $tooltip-line-height, $tooltip-min-height, $padding-ratio: $tooltip-padding-ratio);
-    @include border-radius(rem($tooltip-radius));
+    border-radius: rem($tooltip-radius);
     text-transform: initial;
     letter-spacing: 0;
     background-color: getColor(background, backdrop);
@@ -99,7 +99,7 @@
 
   &:after {
     content: attr(data-tooltip-bottom);
-    @include animation(tooltipBottom .2s forwards);
+    animation: tooltipBottom .2s forwards;
     top: 100%;
     left: 50%;
     opacity: 0;
@@ -120,7 +120,7 @@
     content: attr(data-tooltip-left);
     top: 50%;
     right: 100%;
-    @include animation(tooltipLeft .2s forwards);
+    animation: tooltipLeft .2s forwards;
     opacity: 0;
   }
 
@@ -139,7 +139,7 @@
     content: attr(data-tooltip-right);
     top: 50%;
     left: 100%;
-    @include animation(tooltipRight .2s forwards);
+    animation: tooltipRight .2s forwards;
     opacity: 0;
   }
 
@@ -158,7 +158,7 @@
     content: attr(data-tooltip-top);
     bottom: 100%;
     left: 50%;
-    @include animation(tooltipTop .2s forwards);
+    animation: tooltipTop .2s forwards;
     opacity: 0;
   }
 

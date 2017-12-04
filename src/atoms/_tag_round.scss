@@ -11,14 +11,14 @@
 
 .#{$pfx}tag {
   &.#{$pfx}tag_round {
-    @include border-radius(rem($tag-min-height / 2));
+    border-radius: rem($tag-min-height / 2);
 
     &.#{$pfx}tag_small {
-      @include border-radius(rem($tag-small-min-height / 2));
+      border-radius: rem($tag-small-min-height / 2);
     }
 
     &.#{$pfx}tag_big {
-      @include border-radius(rem($tag-big-min-height / 2));
+      border-radius: rem($tag-big-min-height / 2);
     }
   }
 }

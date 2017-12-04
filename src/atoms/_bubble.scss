@@ -33,7 +33,7 @@
   font-weight: $bubble-weight;
   text-align: center;
   @include macro-metrics($bubble-font-size, $bubble-line-height, $bubble-min-height, $padding-ratio: $bubble-padding-ratio);
-  @include border-radius(rem($bubble-radius));
+  border-radius: rem($bubble-radius);
   @include set-colors(getColor(background, lightest));
 
   /// additional styles via config
@@ -41,7 +41,7 @@
 
   &.#{$pfx}bubble_small {
     @include macro-metrics($bubble-small-font-size, $bubble-small-line-height, $bubble-small-min-height, $padding-ratio: $bubble-padding-ratio);
-    @include border-radius(rem($bubble-small-radius));
+    border-radius: rem($bubble-small-radius);
     font-weight: $bubble-small-weight;
 
     /// additional styles via config
@@ -50,7 +50,7 @@
 
   &.#{$pfx}bubble_big {
     @include macro-metrics($bubble-big-font-size, $bubble-big-line-height, $bubble-big-min-height, $padding-ratio: $bubble-padding-ratio);
-    @include border-radius(rem($bubble-big-radius));
+    border-radius: rem($bubble-big-radius);
     font-weight: $bubble-big-weight;
 
     /// additional styles via config
@@ -80,14 +80,14 @@
 
 @if $bubble-round == true {
   .#{$pfx}bubble {
-    @include border-radius(rem($bubble-min-height / 2));
+    border-radius: rem($bubble-min-height / 2);
 
     &.#{$pfx}bubble_small {
-      @include border-radius(rem($bubble-small-min-height / 2));
+      border-radius: rem($bubble-small-min-height / 2);
     }
 
     &.#{$pfx}bubble_big {
-      @include border-radius(rem($bubble-big-min-height / 2));
+      border-radius: rem($bubble-big-min-height / 2);
     }
   }
 }

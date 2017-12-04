@@ -7,7 +7,7 @@
 ///
 /// @param {px} $dropdown-radius [4]
 
-@include keyframes(rollDownDropdown) {
+@keyframes rollDownDropdown {
   0% {
     opacity: 0;
   }
@@ -51,8 +51,8 @@ ul.#{$pfx}dropdown {
     position: absolute;
     top: 100%;
     background-color: getColor(background);
-    @include border-radius(rem($dropdown-radius));
-    @include box-shadow(0 4px 8px rgba(black, .2), 0 4px 24px rgba(black, .2));
+    border-radius: rem($dropdown-radius);
+    box-shadow: 0 4px 8px rgba(black, .2), 0 4px 24px rgba(black, .2);
     max-height: 320px;
     overflow-y: auto;
     display: none;
@@ -60,7 +60,7 @@ ul.#{$pfx}dropdown {
     list-style: none;
     padding: rem(4);
     margin: 0;
-    @include animation(rollDownDropdown .4s forwards);
+    animation: rollDownDropdown .4s forwards;
 
     li {
       display: block;
@@ -94,7 +94,7 @@ ul.#{$pfx}dropdown {
   &.#{$pfx}dropdown_center {
     ul.#{$pfx}dropdown-options {
       left: 50%;
-      @include transform(translateX(-50%));
+      transform: translateX(-50%);
     }
   }
 

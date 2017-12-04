@@ -20,7 +20,7 @@
   margin: 0 0 rem($base-padding) 0;
   text-align: center;
   padding: rem($alert-padding) rem($alert-padding * $alert-padding-ratio);
-  @include border-radius(rem($alert-radius));
+  border-radius: rem($alert-radius);
   font-weight: $alert-weight;
   @include set-colors(getColor(background, lightest));
 

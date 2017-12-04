@@ -10,9 +10,9 @@
 /// @param {px} $toolbar-min-height [64] - min-height
 
 .#{$pfx}toolbar {
-  @include flexbox;
-  @include justify-content(space-between);
-  @include align-items(center);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: rem($toolbar-padding / 2) rem($toolbar-padding);
   min-height: rem($toolbar-min-height);
   position: relative;
@@ -37,7 +37,7 @@
   }
 
   .#{$pfx}toolbar__title {
-    @include flex-grow(1);
+    flex-grow: 1;
 
     @include headings {
       margin: 0;
@@ -55,7 +55,7 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        @include transform(translateY(-50%) translateX(-50%));
+        transform: translateY(-50%) translateX(-50%);
         -webkit-font-smoothing: antialiased;
         margin: 0;
       }
@@ -64,13 +64,13 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        @include transform(translateY(-50%) translateX(-50%));
+        transform: translateY(-50%) translateX(-50%);
       }
     }
   }
 
   .#{$pfx}nav {
-    @include flex-grow(0);
+    flex-grow: 0;
     padding: 0;
     margin: 0;
 
@@ -89,8 +89,8 @@
     &:only-child {
       width: 100%;
       margin: 0;
-      @include flexbox;
-      @include justify-content(flex-end);
+      display: flex;
+      justify-content: flex-end;
     }
   }
 

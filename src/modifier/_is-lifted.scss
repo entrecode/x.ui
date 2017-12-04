@@ -7,6 +7,6 @@
 
 .#{$pfx}is-lifted {
   @include set-breakpoints {
-    @include box-shadow(0 34px 16px -24px rgba(black, .2), 0 20px 32px 0px rgba(black, .1));
+    box-shadow: 0 34px 16px -24px rgba(black, .2), 0 20px 32px 0px rgba(black, .1);
   }
 }

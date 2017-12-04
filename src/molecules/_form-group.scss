@@ -11,8 +11,8 @@
   margin: 0 0 rem($base-padding) 0;
 
   @if $flex-support == true {
-    @include flexbox;
-    @include flex-direction(column);
+    display: flex;
+    flex-direction: column;
   }
 
   label {
@@ -35,10 +35,10 @@
   &.#{$pfx}form-group_boolean {
 
     @if $flex-support == true {
-      @include flex-direction(row);
+      flex-direction: row;
 
       label {
-        @include order(1);
+        order: 1;
       }
     }
 

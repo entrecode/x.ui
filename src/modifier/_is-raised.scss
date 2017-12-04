@@ -7,7 +7,7 @@
 
 .#{$pfx}is-raised {
   @include set-breakpoints {
-    @include box-shadow(0 2px 4px rgba(black, .1), 0 2px 8px rgba(black, .1));
+    box-shadow: 0 2px 4px rgba(black, .1), 0 2px 8px rgba(black, .1);
   }
 }
 
@@ -18,7 +18,7 @@ a,
     @include set-breakpoints {
       &:focus,
       &:hover {
-        @include box-shadow(0 1px 2px $btn-raised-shadow, 0 1px 4px $btn-raised-shadow);
+        box-shadow: 0 1px 2px $btn-raised-shadow, 0 1px 4px $btn-raised-shadow;
       }
     }
   }

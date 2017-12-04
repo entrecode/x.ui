@@ -11,7 +11,7 @@
     @include set-breakpoints {
       top: 0;
       left: 50%;
-      @include transform(translateX(-50%));
+      transform: translateX(-50%);
     }
   }
 
@@ -26,7 +26,7 @@
     @include set-breakpoints {
       right: 0;
       top: 50%;
-      @include transform(translateY(-50%));
+      transform: translateX(-50%);
     }
   }
 
@@ -41,7 +41,7 @@
     @include set-breakpoints {
       bottom: 0;
       left: 50%;
-      @include transform(translateX(-50%));
+      transform: translateX(-50%);
     }
   }
 
@@ -56,7 +56,7 @@
     @include set-breakpoints {
       left: 0;
       top: 50%;
-      @include transform(translateY(-50%));
+      transform: translateY(-50%);
     }
   }
 
@@ -71,7 +71,7 @@
     @include set-breakpoints {
       left: 50%;
       top: 50%;
-      @include transform(translateY(-50%) translateX(-50%));
+      transform: translateY(-50%) translateX(-50%);
     }
   }
 }

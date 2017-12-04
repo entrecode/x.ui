@@ -11,14 +11,14 @@
 
 .#{$pfx}btn {
   &.#{$pfx}btn_round {
-    @include border-radius(rem($btn-min-height / 2));
+    border-radius: rem($btn-min-height / 2);
 
     &.#{$pfx}btn_small {
-      @include border-radius(rem($btn-small-min-height / 2));
+      border-radius: rem($btn-small-min-height / 2);
     }
 
     &.#{$pfx}btn_big {
-      @include border-radius(rem($btn-big-min-height / 2));
+      border-radius: rem($btn-big-min-height / 2);
     }
   }
 }

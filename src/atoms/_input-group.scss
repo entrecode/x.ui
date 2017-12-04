@@ -16,7 +16,7 @@
     color: getColor(text, light);
     left: rem(4);
     top: 50%;
-    @include transform(translateY(-50%));
+    transform: translateY(-50%);
     z-index: 1;
 
     & + .#{$pfx}input {

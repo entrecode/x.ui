@@ -27,8 +27,8 @@ $hamburger-btn-color: getColor(link);
     left: rem((($btn-min-height - $hamburger-btn-width)/2));
     top: 50%;
     margin-top: rem(-$hamburger-btn-height/2);
-    @include box-shadow(0 rem(($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color, 0 rem(-($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color);
-    @include transition(all .4s);
+    box-shadow: 0 rem(($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color, 0 rem(-($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color;
+    transition: all .4s;
   }
 
   &:before {
@@ -40,7 +40,7 @@ $hamburger-btn-color: getColor(link);
     left: rem((($btn-min-height - $hamburger-btn-width)/2));
     top: 50%;
     margin-top: rem(-$hamburger-btn-height/2);
-    @include transition(all .4s);
+    transition: all .4s;
   }
 
   &.active {
@@ -53,12 +53,12 @@ $hamburger-btn-color: getColor(link);
       left: rem((($btn-min-height - $hamburger-btn-width)/2));
       top: 50%;
       margin-top: rem(-$hamburger-btn-height/2);
-      @include box-shadow(0 0 0 0 transparent, 0 0 0 0 transparent);
-      @include transform(rotate(45deg));
+      box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+      transform: rotate(45deg);
     }
 
     &:before {
-      @include transform(rotate(-45deg));
+      transform: rotate(-45deg);
     }
   }
 
@@ -67,7 +67,7 @@ $hamburger-btn-color: getColor(link);
 
     &:after {
       background-color: $hamburger-btn-color;
-      @include box-shadow(0 rem(($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color, 0 rem(-($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color);
+      box-shadow: 0 rem(($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color, 0 rem(-($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color;
     }
 
     &:before {
@@ -76,7 +76,7 @@ $hamburger-btn-color: getColor(link);
 
     &.active {
       &:after {
-        @include box-shadow(0 0 0 0 transparent, 0 0 0 0 transparent);
+        box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
       }
     }
   }

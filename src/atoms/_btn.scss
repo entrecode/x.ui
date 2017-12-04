@@ -35,8 +35,8 @@
 /// placeholder for button metrics
 %btn {
   /// button core style
-  @include appearance(none);
-  @include user-select(none);
+  appearance: none;
+  user-select: none;
   outline: none;
   cursor: pointer;
   touch-action: manipulation;
@@ -78,14 +78,14 @@
 
   &%small {
     font-weight: $btn-small-weight;
-    @include border-radius(rem($btn-small-radius));
+    border-radius: rem($btn-small-radius);
     @include macro-metrics($btn-small-font-size, $btn-small-line-height, $btn-small-min-height, $padding-ratio: $btn-padding-ratio) {
     }
   }
 
   &%big {
     font-weight: $btn-big-weight;
-    @include border-radius(rem($btn-big-radius));
+    border-radius: rem($btn-big-radius);
     @include macro-metrics($btn-big-font-size, $btn-big-line-height, $btn-big-min-height, $padding-ratio: $btn-padding-ratio) {
     }
 
@@ -100,8 +100,8 @@
 
 .#{$pfx}btn {
   @extend %btn !optional;
-  @include transition(background-color .2s);
-  @include border-radius(rem($btn-radius));
+  transition: background-color .2s;
+  border-radius: rem($btn-radius);
   @include set-colors(getColor(link));
 
   /// additional styles via config
@@ -132,12 +132,12 @@
   &[disabled] {
     opacity: .6;
     cursor: not-allowed;
-    @include box-shadow(none);
+    box-shadow: none;
   }
 
   /// little transform animation onclick
   &:active {
-    @include transform(translateY(2px));
+    transform: translateY(2px);
   }
 
   ///
@@ -268,14 +268,14 @@
 
 @if $btn-round == true {
   .#{$pfx}btn {
-    @include border-radius(rem($btn-min-height / 2));
+    border-radius: rem($btn-min-height / 2);
 
     &.#{$pfx}btn_small {
-      @include border-radius(rem($btn-small-min-height / 2));
+      border-radius: rem($btn-small-min-height / 2);
     }
 
     &.#{$pfx}btn_big {
-      @include border-radius(rem($btn-big-min-height / 2));
+      border-radius: rem($btn-big-min-height / 2);
     }
   }
 }

@@ -6,10 +6,10 @@
 /// @param {variable} $pfx [''] - global prefixing
 
 @mixin btn-glow($glow-color) {
-  @include box-shadow(0 12px 24px -8px rgba($glow-color, .6));
+  box-shadow: 0 12px 24px -8px rgba($glow-color, .6);
 
   &:hover {
-    @include box-shadow(0 8px 16px -8px rgba($glow-color, .6));
+    box-shadow: 0 8px 16px -8px rgba($glow-color, .6);
   }
 }
 
