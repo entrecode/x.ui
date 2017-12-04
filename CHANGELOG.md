@@ -33,6 +33,8 @@
 - renamed `.padding#` to `.has-padding#`
 - new naming convention for `.has-padding`
 - removed xlcss dependencies
+- changed naming convention of `data-col` e.g.: `data-col="2xs +2xs"` to `data-col="2-xs +2-xs"`
+- changed naming convention of `data-flex-order` e.g.: `data-flex-order="2xs"` to `data-flex-order="2-xs"`
 
 ### removed
 - removed `.input_search`
@@ -70,6 +72,8 @@
 - added `set-breakpoint` mixin
 - added `is-positioned#` modifier
 - added `is-visible#` and `is-hidden#`
+- added breakpoints to all flex-grid and grid elements
+- added font-weight modifier
 
 ### changed
 - optimized `.bubble` styles and comments
@@ -80,6 +84,7 @@
 - refactored `.padding` styles and comments
 - refactored `.well` styles and comments
 - refactored `.alert` styles and comments
+- refactored float-grid an flex-grid
 
 ## 6.0.1 - 26.10.2017
 ### fixes
