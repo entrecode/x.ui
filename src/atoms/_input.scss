@@ -29,7 +29,7 @@
   display: block;
   outline: none;
   border-style: solid;
-  border-color: getColor(border);
+  border-color: $input-border-color;
   background-color: getColor(background);
   width: 100%;
   margin: 0;
@@ -55,7 +55,7 @@
 
   &:focus,
   &:hover {
-    border-color: darken(getColor(border), 20);
+    border-color: darken($input-border-color, 20);
     @include box-shadow(0 0 0 2px getColor(state, hover));
     @include placeholder {
       color: getColor(text);
