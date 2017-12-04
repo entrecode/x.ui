@@ -1,10 +1,8 @@
-////
-/// @group color-functions
-/// @since 2.0.1
 /// @author Bernhard Ruoff
+/// @since 7.0.0
 /// @access public
-////
-
+/// @group color-functions
+///
 /// color function to automatically generate a harmonic border-color based on two colors
 /// @example
 /// border-color: borderColor(white, black) // returns #555555

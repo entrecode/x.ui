@@ -1,19 +1,17 @@
-////
-/// @group color-functions
-/// @since 2.0.1
 /// @author Bernhard Ruoff
+/// @since 7.0.0
 /// @access public
-////
-
+/// @group color-functions
+///
 /// generate darker or lighter variation
 /// @link https://medium.com/@erikdkennedy/color-in-ui-design-a-practical-framework-e18cacd97f9e#.78i84mre8
 /// @example
 ///  color: varColor(#ff0000, 20); // returns color: #fe6e67;
 ///
-/// @param {Color} $source - source color
+/// @param {color} $source - source color
 /// @param {number} $amount - positive or negative number for color transformation
 ///
-/// @return {Color} color variation
+/// @return {color} color variation
 
 @function varColor($source, $amount) {
   /// @prop {value} $hue: hue value of source color

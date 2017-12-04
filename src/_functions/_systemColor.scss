@@ -1,19 +1,17 @@
-////
-/// @group color-functions
-/// @since 2.0.1
 /// @author Bernhard Ruoff
+/// @since 7.0.0
 /// @access public
-////
-
+/// @group color-functions
+///
 /// generate color based on a set of colors
 /// @example
 /// color: systemColor(#00E676); // returns a color with a hue value of 151
 ///
 /// @access public
-/// @param {Color} $target - name of target color
-/// @param {String} $colors [$link $super $minor $highlight] - string of colors
+/// @param {color} $target - name of target color
+/// @param {string} $colors [$link $super $minor $highlight] - string of colors
 ///
-/// @return {Color} color with harmonic lightness and saturation
+/// @return {color} color with harmonic lightness and saturation
 
 @function systemColor($target, $colors: $link $super $highlight) {
   $targetHue: hue($target);

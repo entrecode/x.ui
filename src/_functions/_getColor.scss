@@ -1,18 +1,16 @@
-////
-/// @group color-functions
-/// @since 3.0.10
 /// @author Bernhard Ruoff
+/// @since 7.0.0
 /// @access public
-////
-
+/// @group color-functions
+///
 /// Easily retrieve colors for use.
 /// @example
 /// color: getColor(text, invert);
 /// color: getColor(link);
 ///
-/// @param {String} $color - Name of the color
+/// @param {string} $color - Name of the color
 ///
-/// @return {Color} Value of the color
+/// @return {color} Value of the color
 
 @function getColor($colorstring...) {
   $color-length: length($colorstring);

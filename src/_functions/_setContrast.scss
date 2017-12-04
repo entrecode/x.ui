@@ -1,19 +1,41 @@
-// https://www.w3.org/TR/AERT#color-contrast
-// http://contrastchecker.com/
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group color-functions
+///
+/// sets a contrast color based on the Web Content Accessibility Guidelines (WCAG)
+/// @link https://www.w3.org/TR/AERT#color-contrast
+/// @link http://contrastchecker.com/
 
-//TODO doc
+
+/// @param {color} $color
+/// @return {decimal} This algorithm is taken from a formula for converting RGB values to YIQ values. This brightness value gives a perceived brightness for a color.
 
 @function getBrightness($color) {
   @return ((red($color) * 299)+(green($color)*587)+(blue($color)*587))/1000;
 }
 
+/// @param {color} $color1
+/// @param {color} $color2
+/// @return {number} - an absolute number for the perceived brightness difference of two colors.
 @function brightnessDifference($color1, $color2) {
   @return abs(getBrightness($color1) - getBrightness($color2))
 }
 
+/// @param {color} $color1
+/// @param {color} $color2
+/// @return {number} - color difference
 @function colorDifference($color1, $color2) {
   @return max(red($color1), red($color2)) - min(red($color1), red($color2)) + max(green($color1), green($color2)) - min(green($color1), green($color2))  + max(blue($color1), blue($color2)) - min(blue($color1), blue($color2));
 }
+
+/// @require {function} brightnessDifference
+/// @require {function} colorDifference
+/// @param {color} $base - reference color
+/// @param {color} $color
+/// @param {number} $brightness-threshold [125] - The range for color brightness difference is 125
+/// @param {number} $color-threshold [500] - The range for color difference is 500
+/// @return {boolean} - if a color passes both thresholds compared to the reference color
 
 @function colorPass($base, $color, $brightness-threshold: 125, $color-threshold: 500) {
   $brightness-difference: brightnessDifference($base, $color);
@@ -22,12 +44,24 @@
   @return if($brightness-difference >= $brightness-threshold and $color-difference >= $color-threshold, true, false);
 }
 
+/// @require {function} brightnessDifference
+/// @require {function} colorDifference
+/// @param {color} $base - reference color
+/// @param {color} $color
+/// @param {number} $brightness-threshold [125] - The range for color brightness difference is 125
+/// @param {number} $color-threshold [500] - The range for color difference is 500
+/// @return {boolean} - if a color passes at least on threshold compared to the reference color
+
 @function colorMargin($base, $color, $brightness-threshold: 125, $color-threshold: 500) {
   $brightness-difference: brightnessDifference($base, $color);
   $color-difference: colorDifference($base, $color);
 
   @return if($brightness-difference >= $brightness-threshold or $color-difference >= $color-threshold, true, false);
 }
+
+/// @require {function} pow
+/// @param {color} $color
+/// @return calculates the perceptual brightness or luma of a color object.
 
 @function luma($color) {
   $red: red($color) / 255;
@@ -42,12 +76,25 @@
   @return $luma;
 }
 
+/// @require {function} luma
+/// @param {color} $color1 - reference color
+/// @param {color} $color2
+/// @return {number} contrast ratios can range from 1 to 21
+
 @function contrastRatio($color1, $color2) {
   $luma1: luma($color1);
   $luma2: luma($color2);
   @return round((max($luma1, $luma2) + .05)/(min($luma1, $luma2) + .05)*100)/100;
 }
 
+
+/// @link https://www.w3.org/TR/WCAG/#contrast-ratiodef
+/// @require {function} contrastRatio
+/// @param {color} $base - reference color
+/// @param {color} $color
+/// @param {decimal} $aaa
+/// @param {decimal} $aa
+/// @return {color | false} - checks if a color meets the WCAG
 @function checkCompliance($base, $color, $aaa, $aa) {
   $contrast-ratio: contrastRatio($base, $color);
 
@@ -60,6 +107,16 @@
   }
 }
 
+/// @require {function} flattenColor - returns an absolute color for colors with alpha transparency
+/// @require {function} brightnessDifference
+/// @require {function} colorPass
+/// @require {function} colorMargin
+/// @require {function} contrastRatio
+/// @require {function} checkCompliance
+/// @param {color} $color - reference color
+/// @param {color} $hue - changes the output towards a specific hue
+/// @param {large | small} $compliance - switches between compliance guidelines for contrast-ratio
+/// @return {color} contrast color, that meets the WCAG
 @function setContrast($color, $hue: $color, $compliance: 'large') {
   $aaa: 4.5;
   $aa: 3;
