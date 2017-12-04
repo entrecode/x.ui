@@ -102,7 +102,7 @@
   @extend %btn !optional;
   transition: background-color .2s;
   border-radius: rem($btn-radius);
-  @include set-colors(getColor(link));
+  @include set-theme-colors(getColor(link));
 
   /// additional styles via config
   @extend %btn-style !optional;
@@ -123,7 +123,7 @@
   &.active,
   &:hover,
   &:focus {
-    @include set-colors(getColor(linkHover));
+    @include set-theme-colors(getColor(linkHover));
     outline: none;
   }
 
@@ -185,28 +185,28 @@
 
   /// minor button style, for secondary or minor interactions
   &.#{$pfx}btn_minor {
-    @include set-colors(getColor(minor));
+    @include set-theme-colors(getColor(minor));
 
     &.active,
     &:hover,
     &:focus {
-      @include set-colors(getColor(minorHover));
+      @include set-theme-colors(getColor(minorHover));
     }
   }
 
   /// super button style, for call to action
   &.#{$pfx}btn_super {
-    @include set-colors(getColor(super));
+    @include set-theme-colors(getColor(super));
 
     &.active,
     &:hover,
     &:focus {
-      @include set-colors(getColor(superHover));
+      @include set-theme-colors(getColor(superHover));
     }
   }
 
   &.#{$pfx}btn_mono {
-    @include set-colors(getColor(background, invert));
+    @include set-theme-colors(getColor(background, invert));
   }
 
   /// invert button style
@@ -221,7 +221,7 @@
     }
 
     &.#{$pfx}btn_mono {
-      @include set-colors(getColor(background));
+      @include set-theme-colors(getColor(background));
     }
   }
 

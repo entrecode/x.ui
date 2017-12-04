@@ -34,7 +34,7 @@
   text-align: center;
   @include macro-metrics($bubble-font-size, $bubble-line-height, $bubble-min-height, $padding-ratio: $bubble-padding-ratio);
   border-radius: rem($bubble-radius);
-  @include set-colors(getColor(background, lightest));
+  @include set-theme-colors(getColor(background, lightest));
 
   /// additional styles via config
   @extend %bubble-style !optional;
@@ -70,7 +70,7 @@
     $name: nth($name-array, $i);
 
     &.#{$pfx}#{$prefix}#{$name} {
-      @include set-colors($color);
+      @include set-theme-colors($color);
     }
   }
 }

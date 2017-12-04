@@ -6,12 +6,12 @@
 
 /// sets background-color and matching text-color with
 /// @example
-/// include set-colors(getColor(link));
+/// include set-theme-colors(getColor(link));
 ///
 /// @param {color} $color - color value
 /// @param {color} $hue [$color] - color value for hue orientation
 
-@mixin set-colors($color, $hue: false) {
+@mixin set-theme-colors($color, $hue: false) {
   background-color: $color;
   @if $hue {
     color: setContrast($color, $hue);

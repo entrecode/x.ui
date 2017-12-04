@@ -34,7 +34,7 @@
   font-weight: $tag-weight;
   @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
   border-radius: rem($tag-radius);
-  @include set-colors(getColor(background, lightest));
+  @include set-theme-colors(getColor(background, lightest));
 
   /// additional styles via config
   @extend %tag-style !optional;
@@ -70,7 +70,7 @@
     $name: nth($name-array, $i);
 
     &.#{$pfx}#{$prefix}#{$name} {
-      @include set-colors($color);
+      @include set-theme-colors($color);
 
       @at-root a.#{$pfx}#{$prefix}#{$name} {
         &:hover {

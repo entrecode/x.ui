@@ -22,7 +22,7 @@
   padding: rem($alert-padding) rem($alert-padding * $alert-padding-ratio);
   border-radius: rem($alert-radius);
   font-weight: $alert-weight;
-  @include set-colors(getColor(background, lightest));
+  @include set-theme-colors(getColor(background, lightest));
 
   /// additional styles via config
   @extend %alert-style !optional;
@@ -50,7 +50,7 @@
     $name: nth($name-array, $i);
 
     &.#{$pfx}#{$prefix}#{$name} {
-      @include set-colors($color);
+      @include set-theme-colors($color);
     }
   }
 }
