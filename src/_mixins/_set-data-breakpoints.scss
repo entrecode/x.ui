@@ -1,0 +1,27 @@
+@mixin set-data-breakpoints($data, $data-value, $area: false, $hasRoot: true) {
+  $keys: map-keys($breakpoints);
+
+  @if $hasRoot == true {
+    [data-#{$data}~="#{$data-value}"] {
+      @content;
+    }
+  }
+
+  @if $area == true {
+    @each $key in $keys {
+      [data-#{$data}~="#{$data-value}-#{$key}"] {
+        @media (min-width: getBreakpoint(#{$key})) and (max-width: getBreakpoint(#{$key}, max)) {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @each $key in $keys {
+      [data-#{$data}~="#{$data-value}-#{$key}"] {
+        @media (min-width: getBreakpoint(#{$key})) {
+          @content;
+        }
+      }
+    }
+  }
+}
