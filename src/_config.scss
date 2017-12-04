@@ -7,11 +7,11 @@ $project-class: page;
 
 /// @font-face
 /// ------------------------------------------------------
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700;Open+Sans:400,700');
 
 /// @param {value} $body-font
 /// @param {value} $headings-font
-$body-font: sans-serif;
+$body-font: 'Open Sans', sans-serif;
 $headings-font: 'Roboto Mono', sans-serif;
 
 /// @param {number} $light - font-weight light value
@@ -60,16 +60,16 @@ $ec-icon-support: true;
 /// @param {number} $root-size [16] - default size used for global size calculations
 $root-size: 16;
 
-/// @prop {number} $grid-container-width [1200px] - max-width of container
+/// @prop {number} $float-grid-container-width [1200px] - max-width of container
 $grid-container-width: 1200px;
 
-/// @prop {number} $grid-gutter [32] - gutter size in pixels without unit
+/// @prop {number} $float-grid-gutter [32] - gutter size in pixels without unit
 $grid-gutter: 32;
 
-/// @prop {value} $outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
+/// @prop {value} $outer-gutter [true] - sets an outer gutter of ($float-grid-gutter / 2)
 $outer-gutter: true;
 
-/// @prop {number} $grid-num-columns [12] - number of columns in a row
+/// @prop {number} $float-grid-num-columns [12] - number of columns in a row
 $grid-num-columns: 12;
 
 /// @prop {number} $base-padding [16] - small padding value for padding helper
