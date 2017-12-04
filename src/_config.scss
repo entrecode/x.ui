@@ -50,15 +50,10 @@ $divider-color: rgba($text, .1);
 /// @param {color} $input-border-color [ mix($text, $background, 25%)]
 $input-border-color: mix($text, $background, 25%);
 
-$setDark: $text;
-$setLight: $background;
-
-/// TODO replace this with better solution
-/// function for setColor
-@if (lightness($text) > 50) {
-  $setDark: $background;
-  $setLight: $text;
-}
+/// @param {color} $lighter-fallback [$background] - light fallback color for setContrast
+/// @param {color} $darker-fallback [$text] - darker fallback color for setContrast
+$lighter-fallback: $background;
+$darker-fallback: $text;
 
 /// @param {value} $pfx [''] - global prefixing
 $pfx: '';
