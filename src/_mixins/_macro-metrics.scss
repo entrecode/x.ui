@@ -1,11 +1,10 @@
-////
-/// @group styling
-/// @since 4.0.0
 /// @author Bernhard Ruoff
+/// @since 7.0.0
 /// @access public
-////
-
+/// @group macro mixins
+///
 /// mixin for precise macro element sizing
+/// @param {variable} $pfx [''] - global prefixing
 /// @param {number} $font-size - font-size of element
 /// @param {number} $line-height - line-height of element
 /// @param {number} $min-height - min-height of element

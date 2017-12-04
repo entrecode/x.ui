@@ -1,3 +1,8 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group form mixins
+
 @mixin placeholder {
   &::-webkit-input-placeholder {
     @content;

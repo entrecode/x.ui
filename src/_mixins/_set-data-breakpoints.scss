@@ -1,3 +1,15 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group layout mixins
+///
+/// @require {map} $breakpoints
+/// @param {value} $data - name of the data-attribute
+/// @param {value} $data-value - value of the data-attribute
+/// @param {boolean} $area - set a range for the media query
+/// @param {boolean} $hasRoot - sets @content for a root element without a media-query
+/// @return a set of styles for one data-attribute element with all available breakpoints
+
 @mixin set-data-breakpoints($data, $data-value, $area: false, $hasRoot: true) {
   $keys: map-keys($breakpoints);
 

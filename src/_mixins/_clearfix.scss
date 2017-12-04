@@ -1,9 +1,7 @@
-////
-/// @group layout
-/// @since 0.0.0
 /// @author Bernhard Ruoff
+/// @since 7.0.0
 /// @access public
-////
+/// @group layout mixins
 
 @mixin clearfix() {
   &:before,
