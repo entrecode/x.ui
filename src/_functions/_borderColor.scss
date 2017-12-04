@@ -17,7 +17,7 @@
 
   @if ($lightness1 < $lightness2) {
     $lightnessborder: ($lightness2 - $lightness1);
-  } @else if ($lightness1 > $lightness2){
+  } @else if ($lightness1 > $lightness2) {
     $lightnessborder: ($lightness1 - $lightness2);
   }
 

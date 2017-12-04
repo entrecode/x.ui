@@ -7,7 +7,6 @@
 /// @link https://www.w3.org/TR/AERT#color-contrast
 /// @link http://contrastchecker.com/
 
-
 /// @param {color} $color
 /// @return {decimal} This algorithm is taken from a formula for converting RGB values to YIQ values. This brightness value gives a perceived brightness for a color.
 
@@ -86,7 +85,6 @@
   $luma2: luma($color2);
   @return round((max($luma1, $luma2) + .05)/(min($luma1, $luma2) + .05)*100)/100;
 }
-
 
 /// @link https://www.w3.org/TR/WCAG/#contrast-ratiodef
 /// @require {function} contrastRatio

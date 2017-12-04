@@ -15,7 +15,7 @@ $offset: $grid-num-columns - 1;
       left: initial;
     }
 
-  } @else  {
+  } @else {
     @include set-data-breakpoints('col', 'pull-#{$i}') {
       right: 100 / $grid-num-columns * $i * 1%;
     }

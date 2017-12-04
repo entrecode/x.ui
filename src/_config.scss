@@ -32,7 +32,6 @@ $super: #14a656;
 $minor: rgba($link, .2);
 $highlight: #9de263;
 
-
 ///
 /// optional color config
 /// ------------------------------------------------------
@@ -46,14 +45,13 @@ $text-invert: $background;
 $hover-shading: -4;
 
 /// @param {color} $divider-color [rgba($text,.1)] -  color if divider used by e.b. .bumper
-$divider-color: rgba($text,.1);
+$divider-color: rgba($text, .1);
 
 /// @param {color} $input-border-color [ mix($text, $background, 25%)]
 $input-border-color: mix($text, $background, 25%);
 
 $setDark: $text;
 $setLight: $background;
-
 
 /// TODO replace this with better solution
 /// function for setColor

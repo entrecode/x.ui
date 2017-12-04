@@ -3,10 +3,10 @@
 /// @author Bernhard Ruoff
 /// @access public
 
-@include set-data-breakpoints('flex','grow') {
+@include set-data-breakpoints('flex', 'grow') {
   flex: 1 1 auto;
 }
 
-@include set-data-breakpoints('flex','fit-self') {
+@include set-data-breakpoints('flex', 'fit-self') {
   flex: 0 0 auto;
 }
