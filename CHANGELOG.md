@@ -35,6 +35,8 @@
 - removed xlcss dependencies
 - changed naming convention of `data-col` e.g.: `data-col="2xs +2xs"` to `data-col="2-xs +2-xs"`
 - changed naming convention of `data-flex-order` e.g.: `data-flex-order="2xs"` to `data-flex-order="2-xs"`
+- renamed `set-colors` mixin to `set-theme-colors`
+
 
 ### removed
 - removed `.input_search`
@@ -42,6 +44,7 @@
 - removed `.btn_abort`
 - removed `theme-modifier` mixin
 - removed `validator.scss`
+- removed `setText` mixin
 
 ### added
 - added comments to `<body>` and list style files
