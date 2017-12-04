@@ -21,7 +21,7 @@ $light: 400;
 $normal: 400;
 $bold: 700;
 
-//
+///
 /// COLORS
 /// ------------------------------------------------------
 
@@ -32,10 +32,28 @@ $super: #14a656;
 $minor: rgba($link, .2);
 $highlight: #9de263;
 
+
+///
+/// optional color config
+/// ------------------------------------------------------
+
+/// @param {color} $background-invert [$text] - inverted color for background
+$background-invert: $text;
+/// @param {color} $text-invert [$background] - inverted color for text
+$text-invert: $background;
+
+/// @param {number} $hover-shading [-4] - amount by which colors are darkened or lightened on hover
+$hover-shading: -4;
+
+/// @param {color} $divider-color [rgba($text,.1)] -  color if divider used by e.b. .bumper
+$divider-color: rgba($text,.1);
+
+/// @param {color} $input-border-color [ mix($text, $background, 25%)]
+$input-border-color: mix($text, $background, 25%);
+
 $setDark: $text;
 $setLight: $background;
 
-$divider-opacity: .1;
 
 /// TODO replace this with better solution
 /// function for setColor
