@@ -1,16 +1,15 @@
-/// @since 3.0.6
-/// @group grid
+/// @since 7.0.0
+/// @group flex-float-grid
 /// @author Bernhard Ruoff
 /// @access public
 
-@include data-flex-bp(wrap) {
-  @include flex-wrap(wrap);
-}
+$values: 'wrap', 'nowrap', 'wrap-reverse';
+$css: 'wrap', 'nowrap', 'wrap-reverse';
 
-@include data-flex-bp(nowrap) {
-  @include flex-wrap(nowrap);
-}
-
-@include data-flex-bp(wrap-reverse) {
-  @include flex-wrap(wrap-reverse);
+@each $value in $values {
+  $i: index($values, $value);
+  $c: nth($css, $i);
+  @include set-data-breakpoints('flex', #{$value}) {
+    flex-wrap: #{$c};
+  }
 }

@@ -1,28 +1,15 @@
-/// @since 3.0.6
-/// @group grid
+/// @since 7.0.0
+/// @group flex-float-grid
 /// @author Bernhard Ruoff
 /// @access public
 
-@include data-flex-bp(end-content) {
-  @include align-content(flex-end);
-}
+$values: 'end-content', 'start-content', 'center-content', 'stretch-content', 'between-content', 'around-content';
+$css: 'flex-end', 'flex-start', 'center', 'stretch', 'space-between', 'space-around';
 
-@include data-flex-bp(start-content) {
-  @include align-content(flex-start);
-}
-
-@include data-flex-bp(center-content) {
-  @include align-content(center);
-}
-
-@include data-flex-bp(stretch-content) {
-  @include align-content(stretch);
-}
-
-@include data-flex-bp(between-content) {
-  @include align-content(space-between);
-}
-
-@include data-flex-bp(around-content) {
-  @include align-content(space-around);
+@each $value in $values {
+  $i: index($values, $value);
+  $c: nth($css, $i);
+  @include set-data-breakpoints('flex', #{$value}) {
+    align-content: #{$c};
+  }
 }

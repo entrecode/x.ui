@@ -1,0 +1,38 @@
+/// @since 7.0.0
+/// @group float-grid
+/// @author Bernhard Ruoff
+/// @access public
+
+@for $i from 1 through $grid-num-columns {
+  @include set-data-breakpoints('col', $i) {
+    flex-basis: ($i / $grid-num-columns) * 100%;
+    max-width: ($i / $grid-num-columns) * 100%;
+    width: ($i / $grid-num-columns) * 100%;
+  }
+}
+
+[data-col] {
+  min-height: 1px;
+  width: 100%;
+  padding-left: ($grid-gutter / 2) + px;
+  padding-right: ($grid-gutter / 2) + px;
+}
+
+[data-col~="no-gutter"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+[data-flex] {
+  > [data-col] {
+    flex: 0 0 auto;
+    float: initial;
+  }
+}
+
+[data-row] {
+  > [data-col] {
+    float: left;
+    position: relative;
+  }
+}

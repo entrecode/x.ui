@@ -1,24 +1,15 @@
-/// @since 3.0.6
-/// @group grid
+/// @since 7.0.0
+/// @group flex-float-grid
 /// @author Bernhard Ruoff
 /// @access public
 
-@include data-flex-bp(around) {
-  @include justify-content(space-around);
-}
+$values: 'around', 'between', 'center', 'start', 'end';
+$css: 'space-around', 'space-between', 'center', 'flex-start', 'flex-end';
 
-@include data-flex-bp(between) {
-  @include justify-content(space-between);
-}
-
-@include data-flex-bp(center) {
-  @include justify-content(center);
-}
-
-@include data-flex-bp(start) {
-  @include justify-content(flex-start);
-}
-
-@include data-flex-bp(end) {
-  @include justify-content(flex-end);
+@each $value in $values {
+  $i: index($values, $value);
+  $c: nth($css, $i);
+  @include set-data-breakpoints('flex', #{$value}) {
+    justify-content: #{$c};
+  }
 }

@@ -1,12 +1,12 @@
-/// @since 3.0.6
-/// @group grid
+/// @since 7.0.0
+/// @group flex-float-grid
 /// @author Bernhard Ruoff
 /// @access public
 
-@include data-col-bp(grow) {
-  @include flex(1 1 auto);
+@include set-data-breakpoints('flex','grow') {
+  flex: 1 1 auto;
 }
 
-@include data-col-bp(self) {
-  @include flex(0 0 auto);
+@include set-data-breakpoints('flex','fit-self') {
+  flex: 0 0 auto;
 }
