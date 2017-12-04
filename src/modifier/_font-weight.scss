@@ -1,0 +1,11 @@
+.#{$pfx}is-bold {
+  font-weight: $bold;
+}
+
+.#{$pfx}is-normal {
+  font-weight: $normal;
+}
+
+.#{$pfx}is-light {
+  font-weight: $light;
+}
