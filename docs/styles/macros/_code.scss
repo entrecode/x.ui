@@ -1,16 +1,14 @@
 .code {
   font-family: monospace;
   background-color: getColor(background, lightest);
-  border: 1px solid rgba(black,.2);
   color: setContrast(getColor(background, lightest), getColor(link));
   font-size: rem(12);
   line-height: inherit;
   padding: 0 rem(8);
   display: inline-block;
   font-weight: $normal;
-  margin: 0 rem(2);
-  vertical-align: top;
-  @include border-radius(rem(2));
+  vertical-align: baseline;
+  border-radius: rem(2);
   white-space: nowrap;
   user-select: all;
 }

@@ -36,7 +36,8 @@
 - changed naming convention of `data-col` e.g.: `data-col="2xs +2xs"` to `data-col="2-xs +2-xs"`
 - changed naming convention of `data-flex-order` e.g.: `data-flex-order="2xs"` to `data-flex-order="2-xs"`
 - renamed `set-colors` mixin to `set-theme-colors`
-
+- renamed `text-center`, `text-right`, `text-left` to `align-center`, `align-right`, `align-left`
+- changed flex-grid attibute from `data-flex="grid"` to `data-grid`
 
 ### removed
 - removed `.input_search`
@@ -77,6 +78,7 @@
 - added `is-visible#` and `is-hidden#`
 - added breakpoints to all flex-grid and grid elements
 - added font-weight modifier
+- new function `setHover` for hover shade colors
 
 ### changed
 - optimized `.bubble` styles and comments
