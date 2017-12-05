@@ -4,31 +4,48 @@
 /// @group modifier
 ///
 /// @param {variable} $pfx [''] - global prefixing
+/// @param {map} $has-height-options - available height options
+
+$has-height-options: (
+        full: 100,
+        '1-4': 25,
+        half: 50,
+        '3-4': 75,
+        '16-9': 56.25,
+        golden: 61.803
+);
 
 .#{$pfx}has-height {
-  &-vp {
-    &-full {
-      height: 100vh;
-    }
+  $keys: map-keys($has-height-options);
 
-    &-1-4 {
-      min-height: (100vh/4);
-    }
+  @each $key in $keys {
+    $i: index($keys, $key);
+    $value: map-get($has-height-options, $key);
 
-    &-half {
-      min-height: (100vh/4*2);
+    &-#{$key} {
+      min-height: $value * 1%;
     }
+  }
 
-    &-3-4 {
-      min-height: (100vh/4*3);
+  &-vh {
+    @each $key in $keys {
+      $i: index($keys, $key);
+      $value: map-get($has-height-options, $key);
+
+      &-#{$key} {
+        min-height: $value * 1vh;
+      }
     }
+  }
 
-    &-golden-h {
-      min-height: (100vh*0.618);
-    }
+  &-vw {
+    @each $key in $keys {
+      $i: index($keys, $key);
+      $value: map-get($has-height-options, $key);
 
-    &-golden-w {
-      min-height: (100vw*0.618);
+      &-#{$key} {
+        min-height: $value * 1vw;
+      }
     }
   }
 }
