@@ -8,18 +8,14 @@
 /// @require custom variable for $colors
 
 /// colormap
-$colors: (
+$xui-colors: (
         base: (
                 'text': $text,
                 'background': $background,
                 'link': $link,
-                'linkHover': varColor($link, $hover-shading),
                 'minor': $minor,
-                'minorHover': varColor($minor, $hover-shading),
                 'super': $super,
-                'superHover': varColor($super, $hover-shading),
                 'highlight': $highlight,
-                'highlightHover': varColor($highlight, $hover-shading),
                 'divider': $divider-color,
         ),
         text: (
@@ -37,15 +33,10 @@ $colors: (
         ),
         state: (
                 'hover': rgba(desaturate($link, 60), .1),
-                'active': $link,
                 'disabled': rgba($text, .2),
-                'info': systemColor(cyan),
-                'error': systemColor(red),
-                'success': systemColor(green),
-                'warning': systemColor(gold),
+                'info': systemColor($state-info),
+                'error': systemColor($state-error),
+                'success': systemColor($state-success),
+                'warning': systemColor($state-warning),
         )
 ) !default;
-
-/// set custom map-name for getColor function
-/// if you use mutliple color Maps
-$colors: $colors;

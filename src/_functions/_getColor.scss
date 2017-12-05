@@ -14,16 +14,17 @@
 
 @function getColor($colorstring...) {
   $color-length: length($colorstring);
+  $color-map: $xui-colors;
 
   @if $color-length == 1 {
     $color-value: nth($colorstring, 1);
-    @return map-get(map-get($colors, base), $color-value);
+    @return map-get(map-get($color-map, base), $color-value);
   }
 
   @if $color-length == 2 {
     $color-base: nth($colorstring, 1);
     $color-value: nth($colorstring, 2);
 
-    @return map-get(map-get($colors, $color-base), $color-value);
+    @return map-get(map-get($color-map, $color-base), $color-value);
   }
 }
