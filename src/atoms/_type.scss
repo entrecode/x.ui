@@ -36,7 +36,7 @@ a {
   }
 
   &:hover {
-    color: getColor(linkHover);
+    color: setHover($link);
   }
 
   @extend %link-styles !optional;

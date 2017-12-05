@@ -48,9 +48,9 @@
     &.active,
     &:hover,
     &:focus {
-      color: getColor(linkHover);
+      color: setHover($link);
       background-color: transparent;
-      border-color: getColor(linkHover);
+      border-color: setHover($link);
     }
 
     &.#{$pfx}btn_minor {
@@ -61,7 +61,7 @@
       &:hover,
       &:focus {
         color: getColor(link);
-        border-color: getColor(minorHover);
+        border-color: setHover($minor);
       }
     }
 
@@ -72,8 +72,8 @@
       &.active,
       &:hover,
       &:focus {
-        color: getColor(superHover);
-        border-color: getColor(superHover);
+        color: setHover($super);
+        border-color: setHover($super);
       }
     }
 

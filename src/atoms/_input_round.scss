@@ -10,13 +10,13 @@
 /// @param {number} $input-big-min-height [40]
 
 .#{$pfx}input_round {
-  @include border-radius(rem($input-min-height / 2));
+  border-radius: rem($input-min-height / 2);
 
   &.small {
-    @include border-radius(rem($input-small-min-height / 2));
+    border-radius: rem($input-small-min-height / 2);
   }
 
   &.big {
-    @include border-radius(rem($input-big-min-height / 2));
+    border-radius: rem($input-big-min-height / 2);
   }
 }

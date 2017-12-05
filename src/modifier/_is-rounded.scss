@@ -10,22 +10,22 @@
 /// @param {number} $is-rounded-max-radius [8]
 
 @mixin rounded($radius) {
-  @include border-radius($radius);
+  border-radius: $radius;
 
   &_top {
-    @include border-radius($radius $radius 0 0);
+    border-radius: $radius $radius 0 0;
   }
 
   &_right {
-    @include border-radius(0 $radius $radius 0);
+    border-radius: $radius $radius 0;
   }
 
   &_bottom {
-    @include border-radius(0 0 $radius $radius);
+    border-radius: 0 0 $radius $radius;
   }
 
   &_left {
-    @include border-radius($radius 0 0 $radius);
+    border-radius: $radius 0 0 $radius;
   }
 }
 
