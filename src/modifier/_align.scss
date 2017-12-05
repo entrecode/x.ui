@@ -1,0 +1,26 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {variable} $pfx [''] - global prefixing
+
+.#{$pfx}align {
+  &-center {
+    @include set-breakpoints {
+      text-align: center;
+    }
+  }
+
+  &-right {
+    @include set-breakpoints {
+      text-align: right;
+    }
+  }
+
+  &-left {
+    @include set-breakpoints {
+      text-align: left;
+    }
+  }
+}
