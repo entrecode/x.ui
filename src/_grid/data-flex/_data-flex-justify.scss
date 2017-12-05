@@ -1,15 +1,15 @@
 /// @since 7.0.0
-/// @group flex-float-grid
+/// @group flex-grid
 /// @author Bernhard Ruoff
 /// @access public
 
-$values: 'wrap', 'nowrap', 'wrap-reverse';
-$css: 'wrap', 'nowrap', 'wrap-reverse';
+$values: 'around', 'between', 'center', 'start', 'end';
+$css: 'space-around', 'space-between', 'center', 'flex-start', 'flex-end';
 
 @each $value in $values {
   $i: index($values, $value);
   $c: nth($css, $i);
   @include set-data-breakpoints('flex', #{$value}) {
-    flex-wrap: #{$c};
+    justify-content: #{$c};
   }
 }

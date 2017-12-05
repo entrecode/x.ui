@@ -1,39 +1,40 @@
-[data-flex~="grid"] {
+[data-grid] {
+  display: flex;
   flex-wrap: wrap;
   flex: 0 1 auto;
+
+  @at-root ul[data-grid] {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
   @if $outer-gutter {
     margin-left: ($grid-gutter / -2) + px !important;
     margin-right: ($grid-gutter / -2) + px !important;
   }
 
-  > [data-col],
-  > div,
-  > li {
+  > [data-col] {
     padding-left: ($grid-gutter / 2) + px !important;
     padding-right: ($grid-gutter / 2) + px !important;
+    float: initial;
   }
 }
 
-[data-flex~="small-grid"] {
-  flex-wrap: wrap;
-  flex: 0 1 auto;
+[data-grid~="small"] {
 
   @if $outer-gutter {
     margin-left: ($grid-gutter / -4) + px !important;
     margin-right: ($grid-gutter / -4) + px !important;
   }
 
-  > [data-col],
-  > div,
-  > li {
+  > [data-col] {
     padding-left: ($grid-gutter / 4) + px !important;
     padding-right: ($grid-gutter / 4) + px !important;
   }
 }
 
-[data-flex~="no-gutter"] {
-  flex-wrap: wrap;
+[data-grid~="no-gutter"] {
   margin-left: 0 !important;
   margin-right: 0 !important;
 

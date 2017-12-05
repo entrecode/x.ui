@@ -50,6 +50,11 @@ $divider-color: rgba($text, .1);
 /// @param {color} $input-border-color [ mix($text, $background, 25%)]
 $input-border-color: mix($text, $background, 25%);
 
+$state-info: cyan;
+$state-error: red;
+$state-success: green;
+$state-warning: gold;
+
 /// @param {color} $lighter-fallback [$background] - light fallback color for setContrast
 /// @param {color} $darker-fallback [$text] - darker fallback color for setContrast
 $lighter-fallback: $background;
@@ -71,16 +76,16 @@ $ec-icon-support: true;
 /// @param {number} $root-size [16] - default size used for global size calculations
 $root-size: 16;
 
-/// @prop {number} $float-grid-container-width [1200px] - max-width of container
+/// @prop {number} $grid-container-width [1200px] - max-width of container
 $grid-container-width: 1200px;
 
-/// @prop {number} $float-grid-gutter [32] - gutter size in pixels without unit
+/// @prop {number} $grid-gutter [32] - gutter size in pixels without unit
 $grid-gutter: 32;
 
-/// @prop {value} $outer-gutter [true] - sets an outer gutter of ($float-grid-gutter / 2)
+/// @prop {value} $outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
 $outer-gutter: true;
 
-/// @prop {number} $float-grid-num-columns [12] - number of columns in a row
+/// @prop {number} $grid-num-columns [12] - number of columns in a row
 $grid-num-columns: 12;
 
 /// @prop {number} $base-padding [16] - small padding value for padding helper

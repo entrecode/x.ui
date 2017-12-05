@@ -1,0 +1,32 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group grid-columns
+
+[data-col] {
+  min-height: 1px;
+  width: 100%;
+}
+
+@for $i from 1 through $grid-num-columns {
+  [data-col~="#{$i}"] {
+    flex-basis: ($i / $grid-num-columns) * 100%;
+    max-width: ($i / $grid-num-columns) * 100%;
+  }
+}
+
+@each $key in map-keys($breakpoints) {
+  @for $i from 1 through $grid-num-columns {
+    [data-col~="#{$i}-#{$key}"] {
+      @media (min-width: getBreakpoint(#{$key})) {
+        flex-basis: ($i / $grid-num-columns) * 100%;
+        max-width: ($i / $grid-num-columns) * 100%;
+      }
+    }
+  }
+}
+
+[data-col~="no-gutter"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
