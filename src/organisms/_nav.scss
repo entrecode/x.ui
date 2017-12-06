@@ -3,18 +3,17 @@
 /// @access public
 /// @group organism
 ///
-/// @param {variable} $pfx [''] - global prefixing
 /// @param {boolean} $flex-support [true]
 
 nav {
-  &.#{$pfx}nav {
-    .#{$pfx}nav__items {
+  &.nav {
+    .nav__items {
       list-style: none;
       margin: 0;
       padding: 0;
 
       @if $flex-support == false {
-        .#{$pfx}nav__item {
+        .nav__item {
           display: inline-block;
         }
       } @else {
@@ -22,35 +21,35 @@ nav {
         align-items: center;
       }
 
-      .#{$pfx}nav__divider {
+      .nav__divider {
         height: 100%;
         width: rem(1);
         margin: 0 rem(4);
         display: block;
       }
 
-      .#{$pfx}nav__item {
+      .nav__item {
         padding: 0;
 
-        .#{$pfx}btn {
+        .btn {
           margin: 0;
         }
       }
     }
 
-    .#{$pfx}nav__divider {
+    .nav__divider {
       background-color: getColor(divider);
     }
 
-    &.#{$pfx}nav_stacked {
+    &.nav_stacked {
       @if $flex-support == false {
-        .#{$pfx}nav__items {
-          .#{$pfx}nav__item {
+        .nav__items {
+          .nav__item {
             display: block;
           }
         }
       } @else {
-        .#{$pfx}nav__items {
+        .nav__items {
           margin: 0 rem(-4);
           display: flex;
           flex-direction: column;
@@ -58,16 +57,16 @@ nav {
         }
       }
 
-      .#{$pfx}nav__divider {
+      .nav__divider {
         width: 100%;
         height: rem(1);
         margin: rem(4) 0;
       }
 
-      .#{$pfx}nav__items {
-        .#{$pfx}nav__item {
-          .#{$pfx}btn {
-            @extend .#{$pfx}btn.#{$pfx}btn_block;
+      .nav__items {
+        .nav__item {
+          .btn {
+            @extend .btn.btn_block;
           }
         }
       }

@@ -2,10 +2,8 @@
 /// @since 7.0.0
 /// @access public
 /// @group organism
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}title {
+.title {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +31,7 @@
     }
   }
 
-  &.#{$pfx}title_stacked {
+  &.title_stacked {
     flex-direction: column;
     align-items: flex-start;
 

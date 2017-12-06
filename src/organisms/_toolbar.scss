@@ -3,13 +3,11 @@
 /// @access public
 /// @group organism
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {em} $toolbar-title-size [20] - font-size of .toolbar__title
 /// @param {px} $toolbar-title-img-height [32] - height of .toolbar__title > img
 /// @param {px} $toolbar-min-height [64] - min-height
 
-.#{$pfx}toolbar {
+.toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,7 +18,7 @@
   /// additional styles via config
   @extend %toolbar-style !optional;
 
-  > .#{$pfx}hamburger-btn {
+  > .hamburger-btn {
     margin: 0;
 
     &:first-child {
@@ -36,7 +34,7 @@
     }
   }
 
-  .#{$pfx}toolbar__title {
+  .toolbar__title {
     flex-grow: 1;
 
     @include headings {
@@ -50,7 +48,7 @@
       width: auto;
     }
 
-    &.#{$pfx}toolbar__title_center {
+    &.toolbar__title_center {
       @include headings {
         position: absolute;
         left: 50%;
@@ -69,7 +67,7 @@
     }
   }
 
-  .#{$pfx}nav {
+  .nav {
     flex-grow: 0;
     padding: 0;
     margin: 0;
@@ -82,7 +80,7 @@
       margin-left: rem(16);
     }
 
-    .#{$pfx}btn {
+    .btn {
       margin: 0;
     }
 
@@ -94,7 +92,7 @@
     }
   }
 
-  &.#{$pfx}toolbar_small {
+  &.toolbar_small {
     padding: rem($toolbar-padding / 4) rem($toolbar-padding);
     font-size: 87.5%;
     min-height: rem($toolbar-small-min-height);
@@ -102,7 +100,7 @@
     /// additional styles via config
     @extend %toolbar-small-style !optional;
 
-    .#{$pfx}toolbar__title {
+    .toolbar__title {
 
       @include headings {
         font-size: em($toolbar-small-title-size);
