@@ -2,13 +2,11 @@
 /// @since 7.0.0
 /// @access public
 /// @group atoms
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}input-group {
+.input-group {
   position: relative;
 
-  .#{$pfx}input-group__icon {
+  .input-group__icon {
     position: absolute;
     display: block;
     min-width: rem(24);
@@ -19,13 +17,13 @@
     transform: translateY(-50%);
     z-index: 1;
 
-    & + .#{$pfx}input {
+    & + .input {
       padding-left: rem(32);
     }
   }
 
-  .#{$pfx}input {
-    & + .#{$pfx}input-group__icon {
+  .input {
+    & + .input-group__icon {
       left: auto;
       right: rem(4);
     }

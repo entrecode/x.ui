@@ -3,8 +3,6 @@
 /// @access public
 /// @group atoms
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {number} $bubble-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
 ///
 /// @param {number} $bubble-font-size [10]
@@ -27,7 +25,7 @@
 /// @param {number} $bubble-small-radius [4]
 /// @param {number} $bubble-big-radius [4]
 
-.#{$pfx}bubble {
+.bubble {
   white-space: nowrap;
   display: inline-block;
   font-weight: $bubble-weight;
@@ -39,7 +37,7 @@
   /// additional styles via config
   @extend %bubble-style !optional;
 
-  &.#{$pfx}bubble_small {
+  &.bubble_small {
     @include macro-metrics($bubble-small-font-size, $bubble-small-line-height, $bubble-small-min-height, $padding-ratio: $bubble-padding-ratio);
     border-radius: rem($bubble-small-radius);
     font-weight: $bubble-small-weight;
@@ -48,7 +46,7 @@
     @extend %bubble-small-style !optional;
   }
 
-  &.#{$pfx}bubble_big {
+  &.bubble_big {
     @include macro-metrics($bubble-big-font-size, $bubble-big-line-height, $bubble-big-min-height, $padding-ratio: $bubble-padding-ratio);
     border-radius: rem($bubble-big-radius);
     font-weight: $bubble-big-weight;
@@ -69,7 +67,7 @@
     $color: nth($color-array, $i);
     $name: nth($name-array, $i);
 
-    &.#{$pfx}#{$prefix}#{$name} {
+    &.#{$prefix}#{$name} {
       @include set-theme-colors($color);
     }
   }
@@ -79,14 +77,14 @@
 /// @param {boolean} $bubble-round - can be set in config.scss
 
 @if $bubble-round == true {
-  .#{$pfx}bubble {
+  .bubble {
     border-radius: rem($bubble-min-height / 2);
 
-    &.#{$pfx}bubble_small {
+    &.bubble_small {
       border-radius: rem($bubble-small-min-height / 2);
     }
 
-    &.#{$pfx}bubble_big {
+    &.bubble_big {
       border-radius: rem($bubble-big-min-height / 2);
     }
   }

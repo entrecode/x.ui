@@ -2,18 +2,16 @@
 /// @since 7.0.0
 /// @access public
 /// @group molecules
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-ul.#{$pfx}is-unstyled,
-ol.#{$pfx}is-unstyled {
+ul.is-unstyled,
+ol.is-unstyled {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-ul.#{$pfx}is-inline,
-ol.#{$pfx}is-inline {
+ul.is-inline,
+ol.is-inline {
   margin: 0;
   padding: 0;
   list-style: none;

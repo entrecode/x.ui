@@ -3,14 +3,12 @@
 /// @access public
 /// @group atoms
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {px} $avatar-size [48]
 /// @param {px} $avatar-small-size-size [32]
 /// @param {px} $avatar-big-size-size [48]
 /// @param {px} $avatar-border [2]
 
-.#{$pfx}img-avatar {
+.img-avatar {
   @include set-breakpoints {
     width: rem($avatar-size);
     height: rem($avatar-size);

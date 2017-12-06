@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6,
 .giga, .mega, .kilo {
   font-family: $headings-font;
   font-weight: $headings-weight;
-  margin: 0;
+  margin-top: 0;
 
   @extend %heading-style !optional;
 
@@ -23,41 +23,47 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
+h1 {
+  margin-bottom: round($vertical-rhythm * 2);
+}
+
+h2, h3, h4 {
+  margin-bottom: $vertical-rhythm;
+}
+
+h5, h6 {
+  margin-bottom: round($vertical-rhythm / 2);
+}
+
 h1,
 .h1,
 .giga {
   @include get-font-size(h1);
-  margin-bottom: round($vertical-rhythm * 2);
 }
 
 h2,
 .h2 {
   @include get-font-size(h2);
-  margin-bottom: $vertical-rhythm;
 }
 
 h3,
 .h3,
 .mega {
   @include get-font-size(h3);
-  margin-bottom: $vertical-rhythm;
 }
 
 h4,
 .h4 {
   @include get-font-size(h4);
-  margin-bottom: $vertical-rhythm;
 }
 
 h5,
 .h5,
 .kilo {
   @include get-font-size(h5);
-  margin-bottom: round($vertical-rhythm / 2);
 }
 
 h6,
 .h6 {
   @include get-font-size(h6);
-  margin-bottom: round($vertical-rhythm / 2);
 }

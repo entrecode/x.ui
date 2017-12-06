@@ -2,19 +2,17 @@
 /// @since 7.0.0
 /// @access public
 /// @group atoms modifier
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-img {
+.img {
 
   // image grows up to its initial width
-  &.#{$pfx}img_responsive {
+  &_responsive {
     max-width: 100%;
     height: auto;
   }
 
   // image grows up to its parents width
-  &.#{$pfx}img_full {
+  &_full {
     width: 100%;
     height: auto;
   }

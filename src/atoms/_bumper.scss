@@ -3,7 +3,6 @@
 /// @access public
 /// @group atoms
 ///
-/// @param {variable} $pfx [''] - global prefixing
 /// @prop {number} $base-padding [16] - small padding value for padding helper
 ///
 /// @example
@@ -26,13 +25,13 @@
   }
 }
 
-.#{$pfx}bumper {
+.bumper {
   @include set-breakpoints {
     @include bumper;
     margin: rem($base-padding*2) 0;
   }
 
-  &.#{$pfx}bumper_invert {
+  &.bumper_invert {
     &:before {
       background-color: rgba(getColor(background), .2);
       box-shadow: rem(8) 0 0 rgba(getColor(background), .2), rem(16) 0 0 rgba(getColor(background), .2);

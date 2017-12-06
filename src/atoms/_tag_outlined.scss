@@ -3,8 +3,6 @@
 /// @access public
 /// @group atoms modifier
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 ///
 /// @param {number} $tag-font-size [12]
@@ -21,18 +19,18 @@
 ///
 /// @param {boolean} $tag-outlined - sets border-width for .tag_outlined
 
-.#{$pfx}tag {
-  &.#{$pfx}tag_outlined {
+.tag {
+  &.tag_outlined {
     background-color: transparent;
     border-style: solid;
     border-color: getColor(background, lightest);
     @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
 
-    &.#{$pfx}tag_small {
+    &.tag_small {
       @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
     }
 
-    &.#{$pfx}tag_big {
+    &.tag_big {
       @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
     }
 
@@ -48,11 +46,11 @@
       $color: nth($color-array, $i);
       $name: nth($name-array, $i);
 
-      &.#{$pfx}#{$prefix}#{$name} {
+      &.#{$prefix}#{$name} {
         border-color: $color;
         color: setContrast(getColor(background), $color);
 
-        @at-root a.#{$pfx}tag_outlined.#{$pfx}#{$prefix}#{$name} {
+        @at-root a.tag_outlined.#{$prefix}#{$name} {
           &:hover {
             background-color: transparent;
             border-color: varColor($color, -4);
@@ -62,7 +60,7 @@
       }
     }
 
-    & + .#{$pfx}tag {
+    & + .tag {
       margin-left: rem(4);
     }
   }

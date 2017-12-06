@@ -3,8 +3,6 @@
 /// @access public
 /// @group atoms inline
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {number} $btn-line-height - normal button line-height
 /// @param {variable} $btn-small-line-height - small button line-height
 /// @param {variable} $btn-big-line-height - big button line-height
@@ -24,84 +22,84 @@
   margin-bottom: rem($margin / 2);
 }
 
-.#{$pfx}btn {
+.btn {
   .tag,
-  .#{$pfx}bubble {
+  .bubble {
     margin-top: 0;
     margin-bottom: 0;
   }
 
-  .#{$pfx}tag {
+  .tag {
     @include btnInlineComponents($btn-line-height, $tag-min-height);
 
-    &.#{$pfx}tag_small {
+    &.tag_small {
       @include btnInlineComponents($btn-line-height, $tag-small-min-height);
     }
 
-    &.#{$pfx}tag_big {
+    &.tag_big {
       @include btnInlineComponents($btn-line-height, $tag-big-min-height);
     }
   }
 
-  .#{$pfx}bubble {
+  .bubble {
     @include btnInlineComponents($btn-line-height, $bubble-min-height);
 
-    &.#{$pfx}bubble_small {
+    &.bubble_small {
       @include btnInlineComponents($btn-line-height, $bubble-small-min-height);
     }
 
-    &.#{$pfx}bubble_big {
+    &.bubble_big {
       @include btnInlineComponents($btn-line-height, $bubble-big-min-height);
     }
   }
 
-  &.#{$pfx}btn_small {
-    .#{$pfx}tag {
+  &.btn_small {
+    .tag {
       @include btnInlineComponents($btn-small-line-height, $tag-min-height);
 
-      &.#{$pfx}tag_small {
+      &.tag_small {
         @include btnInlineComponents($btn-small-line-height, $tag-small-min-height);
       }
 
-      &.#{$pfx}tag_big {
+      &.tag_big {
         @include btnInlineComponents($btn-small-line-height, $tag-big-min-height);
       }
     }
 
-    .#{$pfx}bubble {
+    .bubble {
       @include btnInlineComponents($btn-small-line-height, $bubble-min-height);
 
-      &.#{$pfx}bubble_small {
+      &.bubble_small {
         @include btnInlineComponents($btn-small-line-height, $bubble-small-min-height);
       }
 
-      &.#{$pfx}bubble_big {
+      &.bubble_big {
         @include btnInlineComponents($btn-small-line-height, $bubble-big-min-height);
       }
     }
   }
 
-  &.#{$pfx}btn_big {
-    .#{$pfx}tag {
+  &.btn_big {
+    .tag {
       @include btnInlineComponents($btn-big-line-height, $tag-min-height);
 
-      &.#{$pfx}tag_small {
+      &.tag_small {
         @include btnInlineComponents($btn-big-line-height, $tag-small-min-height);
       }
 
-      &.#{$pfx}tag_big {
+      &.tag_big {
         @include btnInlineComponents($btn-big-line-height, $tag-big-min-height);
       }
     }
 
-    .#{$pfx}bubble {
+    .bubble {
       @include btnInlineComponents($btn-big-line-height, $bubble-min-height);
 
-      &.#{$pfx}bubble_small {
+      &.bubble_small {
         @include btnInlineComponents($btn-big-line-height, $bubble-small-min-height);
       }
 
-      &.#{$pfx}bubble_big {
+      &.bubble_big {
         @include btnInlineComponents($btn-big-line-height, $bubble-big-min-height);
       }
     }

@@ -3,21 +3,19 @@
 /// @access public
 /// @group atoms modifier
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {number} $tag-min-height [24]
 /// @param {number} $tag-small-min-height [20]
 /// @param {number} $tag-big-min-height [32]
 
-.#{$pfx}tag {
-  &.#{$pfx}tag_round {
+.tag {
+  &.tag_round {
     border-radius: rem($tag-min-height / 2);
 
-    &.#{$pfx}tag_small {
+    &.tag_small {
       border-radius: rem($tag-small-min-height / 2);
     }
 
-    &.#{$pfx}tag_big {
+    &.tag_big {
       border-radius: rem($tag-big-min-height / 2);
     }
   }

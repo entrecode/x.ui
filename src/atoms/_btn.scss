@@ -3,7 +3,6 @@
 /// @access public
 /// @group atoms
 ///
-/// @param {variable} $pfx [''] - global prefixing
 /// @param {variable} $btn-font-family - can be set in config.scss
 ///
 /// @param {number} $btn-font-size - normal button font-size
@@ -98,7 +97,7 @@
   }
 }
 
-.#{$pfx}btn {
+.btn {
   @extend %btn !optional;
   transition: background-color .2s;
   border-radius: rem($btn-radius);
@@ -145,7 +144,7 @@
   /// ------------------------------------------------------
 
   /// small buttons
-  &.#{$pfx}btn_small {
+  &.btn_small {
     @extend %btn%small;
 
     /// additional styles via config
@@ -153,7 +152,7 @@
   }
 
   /// big buttons
-  &.#{$pfx}btn_big {
+  &.btn_big {
     @extend %btn%big;
 
     /// additional styles via config
@@ -161,20 +160,20 @@
   }
 
   /// buttons with a minimum width
-  &.#{$pfx}btn_wide {
+  &.btn_wide {
     min-width: $btn-wide;
 
-    &.#{$pfx}btn_small {
+    &.btn_small {
       min-width: $btn-small-wide;
     }
 
-    &.#{$pfx}btn_big {
+    &.btn_big {
       min-width: $btn-big-wide;
     }
   }
 
   /// full-width buttons
-  &.#{$pfx}btn_block {
+  &.btn_block {
     width: 100%;
     display: block;
   }
@@ -184,7 +183,7 @@
   /// ------------------------------------------------------
 
   /// minor button style, for secondary or minor interactions
-  &.#{$pfx}btn_minor {
+  &.btn_minor {
     @include set-theme-colors(getColor(minor));
 
     &.active,
@@ -195,7 +194,7 @@
   }
 
   /// super button style, for call to action
-  &.#{$pfx}btn_super {
+  &.btn_super {
     @include set-theme-colors(getColor(super));
 
     &.active,
@@ -205,12 +204,12 @@
     }
   }
 
-  &.#{$pfx}btn_mono {
+  &.btn_mono {
     @include set-theme-colors(getColor(background, invert));
   }
 
   /// invert button style
-  &.#{$pfx}btn_invert {
+  &.btn_invert {
     color: getColor(link);
     background-color: getColor(background);
 
@@ -220,13 +219,13 @@
       color: setHover($link);
     }
 
-    &.#{$pfx}btn_mono {
+    &.btn_mono {
       @include set-theme-colors(getColor(background));
     }
   }
 
   /// clear button style, for link-alike buttons
-  &.#{$pfx}btn_clear {
+  &.btn_clear {
     background-color: transparent;
     color: getColor(link);
 
@@ -237,11 +236,11 @@
       color: setHover($link);
     }
 
-    &.#{$pfx}btn_mono {
+    &.btn_mono {
       color: getColor(text)
     }
 
-    &.#{$pfx}btn_invert {
+    &.btn_invert {
       color: setContrast(getColor(background, invert), getColor(link));
 
       &.active,
@@ -251,7 +250,7 @@
         color: setContrast(getColor(background, invert), getColor(link));
       }
 
-      &.#{$pfx}btn_mono {
+      &.btn_mono {
         color: getColor(text, invert);
         background-color: transparent;
       }
@@ -267,14 +266,14 @@
 /// @param {boolean} $btn-round - can be set in config.scss
 
 @if $btn-round == true {
-  .#{$pfx}btn {
+  .btn {
     border-radius: rem($btn-min-height / 2);
 
-    &.#{$pfx}btn_small {
+    &.btn_small {
       border-radius: rem($btn-small-min-height / 2);
     }
 
-    &.#{$pfx}btn_big {
+    &.btn_big {
       border-radius: rem($btn-big-min-height / 2);
     }
   }

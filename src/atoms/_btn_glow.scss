@@ -2,8 +2,6 @@
 /// @since 7.0.0
 /// @access public
 /// @group atoms modifier
-///
-/// @param {variable} $pfx [''] - global prefixing
 
 @mixin btn-glow($glow-color) {
   box-shadow: 0 12px 24px -8px rgba($glow-color, .6);
@@ -13,15 +11,15 @@
   }
 }
 
-.#{$pfx}btn_glow {
-  &.#{$pfx}btn {
+.btn_glow {
+  &.btn {
     @include btn-glow(getColor(link));
 
-    &.#{$pfx}btn_super {
+    &.btn_super {
       @include btn-glow(getColor(super));
     }
 
-    &.#{$pfx}btn_minor {
+    &.btn_minor {
       @include btn-glow(getColor(minor));
     }
   }

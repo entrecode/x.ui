@@ -2,10 +2,8 @@
 /// @since 7.0.0
 /// @access public
 /// @group atoms
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}img-crop-1-1 {
+.img-crop-1-1 {
   width: 100%;
   padding-top: 100%;
   position: relative;
@@ -21,7 +19,7 @@
   }
 }
 
-.#{$pfx}img-crop-4-3 {
+.img-crop-4-3 {
   width: 100%;
   padding-top: 100 / 4 * 3%;
   position: relative;
@@ -37,7 +35,7 @@
   }
 }
 
-.#{$pfx}img-crop-16-9 {
+.img-crop-16-9 {
   width: 100%;
   padding-top: 100 / 16 * 9%;
   position: relative;

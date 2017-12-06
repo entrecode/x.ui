@@ -3,8 +3,6 @@
 /// @access public
 /// @group atoms
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 ///
 /// @param {number} $tag-font-size [12]
@@ -27,7 +25,7 @@
 /// @param {number} $tag-small-radius [4]
 /// @param {number} $tag-big-radius [4]
 
-.#{$pfx}tag {
+.tag {
   white-space: nowrap;
   display: inline-block;
   text-align: center;
@@ -39,7 +37,7 @@
   /// additional styles via config
   @extend %tag-style !optional;
 
-  &.#{$pfx}tag_small {
+  &.tag_small {
     @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height, $padding-ratio: $tag-padding-ratio);
     border-radius: rem($tag-small-radius);
     font-weight: $tag-small-weight;
@@ -48,7 +46,7 @@
     @extend %tag-small-style !optional;
   }
 
-  &.#{$pfx}tag_big {
+  &.tag_big {
     @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height, $padding-ratio: $tag-padding-ratio);
     border-radius: rem($tag-big-radius);
     font-weight: $tag-big-weight;
@@ -69,10 +67,10 @@
     $color: nth($color-array, $i);
     $name: nth($name-array, $i);
 
-    &.#{$pfx}#{$prefix}#{$name} {
+    &.#{$prefix}#{$name} {
       @include set-theme-colors($color);
 
-      @at-root a.#{$pfx}#{$prefix}#{$name} {
+      @at-root a.#{$prefix}#{$name} {
         &:hover {
           background-color: varColor($color, -4);
         }
@@ -80,7 +78,7 @@
     }
   }
 
-  & + .#{$pfx}tag {
+  & + .tag {
     margin-left: rem(4);
   }
 }
@@ -89,14 +87,14 @@
 /// @param {boolean} $tag-round - can be set in config.scss
 
 @if $tag-round == true {
-  .#{$pfx}tag {
+  .tag {
     border-radius: rem($tag-min-height / 2);
 
-    &.#{$pfx}tag_small {
+    &.tag_small {
       border-radius: rem($tag-small-min-height / 2);
     }
 
-    &.#{$pfx}tag_big {
+    &.tag_big {
       border-radius: rem($tag-big-min-height / 2);
     }
   }

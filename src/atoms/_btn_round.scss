@@ -3,21 +3,19 @@
 /// @access public
 /// @group atoms modifier
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {number} $btn-min-height - min-height of default btn
 /// @param {number} $btn-small-min-height - min-height of small btn
 /// @param {number} $btn-big-min-height - min-height of big btn
 
-.#{$pfx}btn {
-  &.#{$pfx}btn_round {
+.btn {
+  &.btn_round {
     border-radius: rem($btn-min-height / 2);
 
-    &.#{$pfx}btn_small {
+    &.btn_small {
       border-radius: rem($btn-small-min-height / 2);
     }
 
-    &.#{$pfx}btn_big {
+    &.btn_big {
       border-radius: rem($btn-big-min-height / 2);
     }
   }

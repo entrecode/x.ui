@@ -3,13 +3,11 @@
 /// @access public
 /// @group atom modifier
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {number} $input-min-height [32]
 /// @param {number} $input-small-min-height [28]
 /// @param {number} $input-big-min-height [40]
 
-.#{$pfx}input_round {
+.input_round {
   border-radius: rem($input-min-height / 2);
 
   &.small {
