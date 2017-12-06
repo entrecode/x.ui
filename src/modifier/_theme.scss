@@ -3,8 +3,6 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {array} $name-array - postfix names appending `.theme-`
 /// @param {array} $color-array - theme colors
 /// @param {array} $postfix-array - shade postfix names
@@ -15,7 +13,7 @@
 $name-array: default, minor, link, super, highlight, invert;
 $color-array: $background, $minor, $link, $super, $highlight, $text;
 $postfix-array: darkest, darker, dark, light, lighter, lightest;
-$shade-array: -12, -8, -4, 4, 8, 12;
+$shade-array: -10, -8, -4, 4, 8, 12;
 
 @for $i from 1 through length($color-array) {
   $color: nth($color-array, $i);
@@ -26,7 +24,7 @@ $shade-array: -12, -8, -4, 4, 8, 12;
   }
 
   @if $name == 'default' {
-    .#{$pfx}theme {
+    .is-theme {
       background-color: $color;
 
       @for $n from 1 through length($postfix-array) {
@@ -39,11 +37,11 @@ $shade-array: -12, -8, -4, 4, 8, 12;
       }
     }
   } @else {
-    .#{$pfx}theme-#{$name} {
+    .is-theme-#{$name} {
       background-color: $color;
       color: setContrast($color);
 
-      a:not(.#{$pfx}btn):not(.#{$pfx}tag) {
+      a:not(.btn):not(.tag) {
         color: setContrast($color, $link);
       }
 
@@ -55,7 +53,7 @@ $shade-array: -12, -8, -4, 4, 8, 12;
           background-color: varColor($color, $shade);
           color: setContrast(varColor($color, $shade));
 
-          a:not(.#{$pfx}btn) {
+          a:not(.btn) {
             color: setContrast(varColor($color, $shade), $link);
           }
         }

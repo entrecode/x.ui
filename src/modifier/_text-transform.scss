@@ -2,13 +2,11 @@
 /// @since 7.0.0
 /// @access public
 /// @group modifier
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}is-uppercase {
+.is-uppercase {
   text-transform: uppercase;
 }
 
-.#{$pfx}is-lowercase {
+.is-lowercase {
   text-transform: lowercase;
 }

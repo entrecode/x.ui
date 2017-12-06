@@ -1,9 +1,11 @@
-.#{$pfx}is-layer {
+.is-layer {
   @for $i from 0 through 9 {
     $index: $i*10;
 
     &-#{$index} {
-      z-index: #{$index};
+      @include set-breakpoints {
+        z-index: #{$index};
+      }
     }
   }
 
@@ -11,15 +13,21 @@
     $index: $i*100;
 
     &-#{$index} {
-      z-index: #{$index};
+      @include set-breakpoints {
+        z-index: #{$index};
+      }
     }
   }
 
   &-behind {
-    z-index: -1;
+    @include set-breakpoints {
+      z-index: -1;
+    }
   }
 
   &-max {
-    z-index: 99999;
+    @include set-breakpoints {
+      z-index: 99999;
+    }
   }
 }

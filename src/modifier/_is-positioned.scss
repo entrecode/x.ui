@@ -2,10 +2,8 @@
 /// @since 7.0.0
 /// @access public
 /// @group modifier
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}is-positioned {
+.is-positioned {
 
   &-n {
     @include set-breakpoints {
@@ -26,7 +24,7 @@
     @include set-breakpoints {
       right: 0;
       top: 50%;
-      transform: translateX(-50%);
+      transform: translateY(-50%);
     }
   }
 

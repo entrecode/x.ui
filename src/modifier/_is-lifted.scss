@@ -2,11 +2,21 @@
 /// @since 7.0.0
 /// @access public
 /// @group modifier
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}is-lifted {
+.is-lifted {
   @include set-breakpoints {
-    box-shadow: 0 34px 16px -24px rgba(black, .2), 0 20px 32px 0px rgba(black, .1);
+    box-shadow: 0 16px 16px -4px rgba(black, .2), 0 16px 24px rgba(black, .1);
+  }
+
+  &-small {
+    @include set-breakpoints {
+      box-shadow: 0 12px 8px -8px rgba(black, .2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      box-shadow: 0 24px 28px 0 rgba(black, .2), 0 24px 40px rgba(black, .1);
+    }
   }
 }

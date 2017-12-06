@@ -3,7 +3,6 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {variable} $pfx [''] - global prefixing
 /// @param {map} $has-height-options - available height options
 
 $has-height-options: (
@@ -15,7 +14,7 @@ $has-height-options: (
         golden: 61.803
 );
 
-.#{$pfx}has-height {
+.has-height {
   $keys: map-keys($has-height-options);
 
   @each $key in $keys {
@@ -23,7 +22,9 @@ $has-height-options: (
     $value: map-get($has-height-options, $key);
 
     &-#{$key} {
-      min-height: $value * 1%;
+      @include set-breakpoints {
+        min-height: $value * 1%;
+      }
     }
   }
 
@@ -33,7 +34,9 @@ $has-height-options: (
       $value: map-get($has-height-options, $key);
 
       &-#{$key} {
-        min-height: $value * 1vh;
+        @include set-breakpoints {
+          min-height: $value * 1vh;
+        }
       }
     }
   }
@@ -44,7 +47,9 @@ $has-height-options: (
       $value: map-get($has-height-options, $key);
 
       &-#{$key} {
-        min-height: $value * 1vw;
+        @include set-breakpoints {
+          min-height: $value * 1vw;
+        }
       }
     }
   }

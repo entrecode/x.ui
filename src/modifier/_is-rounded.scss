@@ -3,52 +3,86 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {number} $is-rounded-min-radius [2]
 /// @param {number} $is-rounded-radius [4]
 /// @param {number} $is-rounded-max-radius [8]
 
 @mixin rounded($radius) {
-  border-radius: $radius;
-
-  &_top {
-    border-radius: $radius $radius 0 0;
-  }
-
-  &_right {
-    border-radius: $radius $radius 0;
-  }
-
-  &_bottom {
-    border-radius: 0 0 $radius $radius;
-  }
-
-  &_left {
-    border-radius: $radius 0 0 $radius;
-  }
-}
-
-.#{$pfx}is-rounded {
   @include set-breakpoints {
-    @include rounded(rem($is-rounded-radius));
+    border-radius: $radius;
   }
 
-  &_min {
+  &-0 {
     @include set-breakpoints {
-      @include rounded(rem($is-rounded-min-radius));
+      border-radius: 0;
     }
   }
 
-  &_max {
+  &-top {
     @include set-breakpoints {
-      @include rounded(rem($is-rounded-max-radius));
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+    }
+
+    &-0 {
+      @include set-breakpoints {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+
+  &-right {
+    @include set-breakpoints {
+      border-top-right-radius: $radius;
+      border-bottom-right-radius: $radius;
+    }
+
+    &-0 {
+      @include set-breakpoints {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+  &-bottom {
+    @include set-breakpoints {
+      border-bottom-right-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    &-0 {
+      @include set-breakpoints {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  &-left {
+    @include set-breakpoints {
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    &-0 {
+      @include set-breakpoints {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
     }
   }
 }
 
-.#{$pfx}not-rounded {
-  @include set-breakpoints {
-    border-radius: initial;
+.is-rounded {
+  @include rounded(rem($is-rounded-radius));
+
+  &-min {
+    @include rounded(rem($is-rounded-min-radius));
+  }
+
+  &-max {
+    @include rounded(rem($is-rounded-max-radius));
   }
 }

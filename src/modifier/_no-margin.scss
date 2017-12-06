@@ -2,48 +2,46 @@
 /// @since 7.0.0
 /// @access public
 /// @group modifier
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}no-margin {
+.no-margin {
   @include set-breakpoints {
     margin: 0 !important;
   }
 }
 
-.#{$pfx}no-margin-middle {
+.no-margin-middle {
   @include set-breakpoints {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 }
 
-.#{$pfx}no-margin-top {
+.no-margin-top {
   @include set-breakpoints {
     margin-top: 0 !important;
   }
 }
 
-.#{$pfx}no-margin-bottom {
+.no-margin-bottom {
   @include set-breakpoints {
     margin-bottom: 0 !important;
   }
 }
 
-.#{$pfx}no-margin-center {
+.no-margin-center {
   @include set-breakpoints {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
 }
 
-.#{$pfx}no-margin-left {
+.no-margin-left {
   @include set-breakpoints {
     margin-left: 0 !important;
   }
 }
 
-.#{$pfx}no-margin-right {
+.no-margin-right {
   @include set-breakpoints {
     margin-right: 0 !important;
   }

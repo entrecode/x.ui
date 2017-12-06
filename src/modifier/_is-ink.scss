@@ -3,15 +3,13 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
-/// @param {value} $prefix ['text-']
+/// @param {value} $prefix ['is-ink-']
 /// @param {array} $name-array - postfix names appending $prefix
 /// @param {array} $color-array - theme colors
 ///
 /// @return modifier class with a color values
 
-$prefix: 'text-';
+$prefix: 'is-ink-';
 $name-array: default, light, lighter, lightest, minor, link, super, highlight, invert, info, disabled, error, success, warning;
 $color-array: getColor(text), getColor(text, light), getColor(text, lighter), getColor(text, lightest), getColor(minor), getColor(link), getColor(super), getColor(highlight), getColor(text, invert), getColor(state, info), getColor(state, disabled), getColor(state, error), getColor(state, success), getColor(state, warning);
 
@@ -19,7 +17,7 @@ $color-array: getColor(text), getColor(text, light), getColor(text, lighter), ge
   $color: nth($color-array, $i);
   $name: nth($name-array, $i);
 
-  .#{$pfx}#{$prefix}#{$name} {
+  .#{$prefix}#{$name} {
     color: $color !important;
   }
 }

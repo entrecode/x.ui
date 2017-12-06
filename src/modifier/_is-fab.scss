@@ -3,11 +3,9 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {number} $fab-spacing [16]
 
-.#{$pfx}is-fab {
+.is-fab {
 
   &-n {
     @include set-breakpoints {

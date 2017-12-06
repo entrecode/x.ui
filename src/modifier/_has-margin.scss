@@ -3,11 +3,9 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @prop {number} $base-spacing [16] - small padding value for padding helper
 
-.#{$pfx}has-margin {
+.has-margin {
   @include set-breakpoints {
     margin: rem($base-spacing);
   }
@@ -25,7 +23,7 @@
   }
 }
 
-.#{$pfx}has-margin-middle {
+.has-margin-middle {
   @include set-breakpoints {
     margin-top: rem($base-spacing);
     margin-bottom: rem($base-spacing);
@@ -46,7 +44,7 @@
   }
 }
 
-.#{$pfx}has-margin-top {
+.has-margin-top {
   @include set-breakpoints {
     margin-top: rem($base-spacing);
   }
@@ -64,7 +62,7 @@
   }
 }
 
-.#{$pfx}has-margin-bottom {
+.has-margin-bottom {
   @include set-breakpoints {
     margin-bottom: rem($base-spacing);
   }
@@ -82,7 +80,7 @@
   }
 }
 
-.#{$pfx}has-margin-center {
+.has-margin-center {
   @include set-breakpoints {
     margin-left: rem($base-spacing);
     margin-right: rem($base-spacing);
@@ -110,7 +108,7 @@
   }
 }
 
-.#{$pfx}has-margin-left {
+.has-margin-left {
   @include set-breakpoints {
     margin-left: rem($base-spacing);
   }
@@ -134,7 +132,7 @@
   }
 }
 
-.#{$pfx}has-margin-right {
+.has-margin-right {
   @include set-breakpoints {
     margin-right: rem($base-spacing);
   }

@@ -2,22 +2,20 @@
 /// @since 7.0.0
 /// @access public
 /// @group modifier
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}is-relative {
+.is-relative {
   @include set-breakpoints {
     position: relative;
   }
 }
 
-.#{$pfx}is-absolute {
+.is-absolute {
   @include set-breakpoints {
     position: absolute;
   }
 }
 
-.#{$pfx}is-fixed {
+.is-fixed {
   @include set-breakpoints {
     position: fixed;
   }

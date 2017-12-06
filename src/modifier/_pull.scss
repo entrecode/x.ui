@@ -2,13 +2,17 @@
 /// @since 7.0.0
 /// @access public
 /// @group layout modifier
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}pull-right {
-  float: right !important;
-}
+.pull {
+  &-right {
+    @include set-breakpoints {
+      float: right !important;
+    }
+  }
 
-.#{$pfx}pull-left {
-  float: left !important;
+  &-left {
+    @include set-breakpoints {
+      float: left !important;
+    }
+  }
 }

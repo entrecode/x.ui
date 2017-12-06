@@ -2,44 +2,42 @@
 /// @since 7.0.0
 /// @access public
 /// @group modifier
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}is-clipped {
+.is-clipped {
   @include set-breakpoints {
     overflow: hidden;
   }
-}
 
-.#{$pfx}is-clipped-x {
-  @include set-breakpoints {
-    overflow-x: hidden;
+  &-x {
+    @include set-breakpoints {
+      overflow-x: hidden;
+    }
+  }
+
+  &-y {
+    @include set-breakpoints {
+      overflow-y: hidden;
+    }
   }
 }
 
-.#{$pfx}is-clipped-y {
-  @include set-breakpoints {
-    overflow-y: hidden;
-  }
-}
-
-.#{$pfx}is-scrollable {
+.is-scrollable {
   @include set-breakpoints {
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
   }
-}
 
-.#{$pfx}is-scrollable-x {
-  @include set-breakpoints {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
+  &-x {
+    @include set-breakpoints {
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
   }
-}
 
-.#{$pfx}is-scrollable-y {
-  @include set-breakpoints {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+  &-y {
+    @include set-breakpoints {
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
   }
 }

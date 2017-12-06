@@ -2,10 +2,8 @@
 /// @since 7.0.0
 /// @access public
 /// @group modifier
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}is-hidden {
+.is-hidden {
   @include set-breakpoints($area: true) {
     display: none !important;
   }
