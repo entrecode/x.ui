@@ -2,19 +2,15 @@
 ### breaking changes
 - new file-structure
 - prefixed all `.tag` modifier classes with `.tag_`
-- prefixed all `.btn` modifier classes with `.#{$pfx}btn_`
 - added a new variable for global prefixing `$pfx`
 - added `.img_` prefix for `img` modifier classes
-- added `.#{$pfx}input_` prefix for modifier classes
 - removed `.nav.inline`
-- changed `.nav` to `.#{$pfx}nav`
 - removed `.big` modifier for `<p>`
 - renamed `.raise-#` helper to `.is-raised`
 - renamed `_typo.scss` to `_type.scss`
 - changed typeface sizing to modular scaling with breakpoints
 - added xlcss config options to x.ui config 
 - removed `.alert_round` 
-- prefixed all `.bumper` modifier classes with `.#{$pfx}bumper_`
 - removed `.form-group`
 - removed `.pill` styles - use `.tag` instead
 - prefixed all `.padding` modifier classes with `.padding_`
@@ -38,6 +34,7 @@
 - renamed `set-colors` mixin to `set-theme-colors`
 - renamed `text-center`, `text-right`, `text-left` to `align-center`, `align-right`, `align-left`
 - changed flex-grid attibute from `data-flex="grid"` to `data-grid`
+- renamed text-color modifier to `is-ink#`
 
 ### removed
 - removed `.input_search`
@@ -49,7 +46,7 @@
 
 ### added
 - added comments to `<body>` and list style files
-- added `#{$pfx}nav_inline` and `#{$pfx}nav_stacked`
+- added `.nav_inline` and `.nav_stacked`
 - added `%link-styles` placeholder in config
 - added `%paragraph-styles` placeholder in config
 - added `_type_setting.scss`
@@ -79,6 +76,7 @@
 - added breakpoints to all flex-grid and grid elements
 - added font-weight modifier
 - new function `setHover` for hover shade colors
+- added `is-theme#`
 
 ### changed
 - optimized `.bubble` styles and comments

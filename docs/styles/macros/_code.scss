@@ -1,7 +1,7 @@
 .code {
   font-family: monospace;
-  background-color: getColor(background, lightest);
-  color: setContrast(getColor(background, lightest), getColor(link));
+  background-color: rgba(black, .06);
+  color: setContrast(rgba(black, .06), getColor(link));
   font-size: rem(12);
   line-height: inherit;
   padding: 0 rem(8);

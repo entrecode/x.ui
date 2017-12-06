@@ -99,9 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       modifiers:    {
         type: {
-          colorModifiers: ['text-default', 'text-light', 'text-lighter', 'text-lightest', 'text-minor', 'text-link',
-                           'text-super', 'text-highlight', 'text-invert', 'text-info', 'text-disabled', 'text-error',
-                           'text-success', 'text-warning']
+          colorModifiers: ['is-ink-default', 'is-ink-light', 'is-ink-lighter', 'is-ink-lightest', 'is-ink-minor', 'is-ink-link',
+                           'is-ink-super', 'is-ink-highlight', 'is-ink-invert', 'is-ink-info', 'is-ink-disabled', 'is-ink-error',
+                           'is-ink-success', 'is-ink-warning']
         }
       }, // :before \{\n(.*)";\n}
       iconset:      ['add', 'add-circle', 'alarm', 'alarm-clock', 'alarm-silent', 'align-center', 'align-justify',
