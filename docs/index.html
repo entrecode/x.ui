@@ -29,19 +29,19 @@
 <div id="app">
   <header class="is-fixed is-positioned-nw has-padding is-layer-10 has-width-full">
     <div class="toolbar">
-      <a href="" class="hamburger-btn"></a>
+      <!--<a href="" class="hamburger-btn"></a>-->
       <div class="toolbar__title toolbar__title_center">
         <a href="#top">
           <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
         </a>
       </div>
-      <nav class="nav">
+      <!--<nav class="nav">
         <ul class="nav__items">
           <li class="nav__item">
             <a href="" class="btn btn_outlined">git</a>
           </li>
         </ul>
-      </nav>
+      </nav>-->
     </div>
   </header>
 
@@ -777,22 +777,22 @@
 
         <div data-grid>
           <div data-col="2">
-            <div class="has-padding align-center is-bold is-theme-link">xs</div>
+            <div class="h1 align-center is-ink-link">xs</div>
           </div>
           <div data-col="2">
-            <div class="has-padding align-center is-bold is-theme-invert">sm</div>
+            <div class="h1 align-center">sm</div>
           </div>
           <div data-col="2">
-            <div class="has-padding align-center is-bold is-theme-invert">md</div>
+            <div class="h1 align-center">md</div>
           </div>
           <div data-col="2">
-            <div class="has-padding align-center is-bold is-theme-invert">lg</div>
+            <div class="h1 align-center">lg</div>
           </div>
           <div data-col="2">
-            <div class="has-padding align-center is-bold is-theme-invert">xl</div>
+            <div class="h1 align-center">xl</div>
           </div>
           <div data-col="2">
-            <div class="has-padding align-center is-bold is-theme-invert">xxl</div>
+            <div class="h1 align-center">xxl</div>
           </div>
         </div>
         <div class="spacing"></div>
@@ -829,6 +829,10 @@
             <td>widescreen: <em>[1920px]</em> up.</td>
           </tr>
         </table>
+
+        <p>breakpoint shortcodes can postfixed to most of classes or attibute-values. normally it
+          means that the style takes effekt from the breakpoint up. A few styles just use a specific
+          <strong>breakpoint area</strong> (e.g. from xs to xs-max).</p>
 
         <div class="bumper-big"></div>
 
@@ -1933,7 +1937,7 @@
         <section>
           <h3 id="xui-toolbar" class="kilo">toolbar
             <a href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
-              class="tag tag_small tag_error">flex</a>
+               class="tag tag_small tag_error">flex</a>
           </h3>
 
           <div class="toolbar is-theme-invert">
@@ -2019,7 +2023,7 @@
         <section>
           <h3 id="xui-title" class="kilo">title
             <a href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
-                class="tag tag_small tag_error">flex</a>
+               class="tag tag_small tag_error">flex</a>
           </h3>
           <div class="alert alert_small"><strong>TODO documentation</strong></div>
         </section>
@@ -2129,7 +2133,8 @@
         <section>
           <h3 id="xui-overflow-modifier" class="kilo">overflow</h3>
           <div class="well align-center">
-            <span class="h6">is-{overflow}-{axis}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
+            <span class="h6">is-{overflow}-{axis}-{<a
+                href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
           </div>
           <table class="table">
             <tr data-grid="no-gutter">
@@ -2202,7 +2207,8 @@
         <section>
           <h3 id="xui-is-hidden-modifier" class="kilo">is-hidden</h3>
           <div class="well align-center">
-            <span class="h6">is-hidden-{breakpoint-area}</span>
+            <span class="h6">is-hidden-{<a
+                href="#xui-breakpoint-shortcodes">breakpoint-area</a>}</span>
           </div>
         </section>
 
@@ -2211,7 +2217,8 @@
         <section>
           <h3 id="xui-is-visible-modifier" class="kilo">is-visible</h3>
           <div class="well align-center">
-            <span class="h6">is-visible-{breakpoint-area}</span>
+            <span class="h6">is-visible-{<a
+                href="#xui-breakpoint-shortcodes">breakpoint-area</a>}</span>
           </div>
         </section>
 
@@ -2471,7 +2478,9 @@
         <section>
           <h3 class="kilo" id="xui-is-raised-modifier">is-raised</h3>
           <div class="well align-center">
-            <div class="h6">is-raised-{small|big|<em>empty</em>}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</div>
+            <div class="h6">is-raised-{small|big|<em>empty</em>}-{<a
+                href="#xui-breakpoint-shortcodes">breakpoint</a>}
+            </div>
           </div>
           <div class="well is-theme-link">
             <div data-grid="">
@@ -2493,7 +2502,9 @@
         <section>
           <h3 class="kilo" id="xui-is-lifted-modifier">is-lifted</h3>
           <div class="well align-center">
-            <div class="h6">is-lifted-{small|big|<em>empty</em>}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</div>
+            <div class="h6">is-lifted-{small|big|<em>empty</em>}-{<a
+                href="#xui-breakpoint-shortcodes">breakpoint</a>}
+            </div>
           </div>
           <div class="well is-theme-link">
             <div data-grid="">
@@ -2515,7 +2526,9 @@
         <section>
           <h3 class="kilo" id="xui-is-rounded-modifier">is-rounded</h3>
           <div class="well align-center">
-            <div class="h6">is-rounded-{min|max|<em>empty</em>}-{side}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</div>
+            <div class="h6">is-rounded-{min|max|<em>empty</em>}-{side}-{<a
+                href="#xui-breakpoint-shortcodes">breakpoint</a>}
+            </div>
           </div>
           <table class="table">
             <tr data-grid="no-gutter">
@@ -2549,7 +2562,8 @@
             of 16px. Use with <span class="code">is-absolute</span> or <span
                 class="code">is-fixed</span>. the syntax is <span
                 class="code">is-fab-{direction}</span></p>
-          <div class="well align-center"><span class="h6">is-fab-{direction}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span></div>
+          <div class="well align-center"><span class="h6">is-fab-{direction}-{<a
+              href="#xui-breakpoint-shortcodes">breakpoint</a>}</span></div>
           <div class="well is-relative" style="height: 160px;">
             <strong class="code is-fab-n is-absolute">n</strong>
             <strong class="code is-fab-ne is-absolute">ne</strong>
@@ -2564,214 +2578,49 @@
         </section>
 
         <div class="bumper"></div>
-
-        <section class="partial">
-          <header class="partial-header">
-            <h2 class="mega">Icons</h2>
-          </header>
-          <div class="partial-body">
-            <p class="lead"><strong>x.ui</strong> is optimized for the usage with ec.ions.</p>
-            <div class="form-group form-group_search">
-              <input type="text" v-model="query" class="input input_round"
-                     placeholder="search for icon class...">
-            </div>
-            <ul data-grid="small">
-              <li v-for="icon in iconset" data-col="3"
-                  :class="{hide: icon.indexOf(query) === -1}">
-                <span class="ec-icon" :class="icon"></span><span
-                  class="quickselect">{{ icon }}</span>
-              </li>
-            </ul>
-          </div>
-        </section>
       </div>
     </div>
   </div>
 
-  <section>
-    <h3 class="kilo">framework tests</h3>
-
-    <div data-grid>
-      <div data-col="4">
-        <div class="is-lifted has-margin-bottom is-rounded">
-          <div class="img-crop-16-9">
-            <img src="./assets/placeholder.jpg" class="is-rounded_top">
-          </div>
-          <div class="has-padding-center">
-            <div class="spacing-small"></div>
-            <h2 class="mega">Title <span class="tag tag_small tag_super">Tag</span></h2>
-          </div>
-          <div class="has-padding-center has-padding-bottom">
-            <div data-grid="small">
-              <div data-col="6-sm">
-                <a href="" class="btn btn_block">Action</a>
-              </div>
-              <div data-col="6-sm">
-                <a href="" class="btn btn_minor btn_block">Cancel</a>
-              </div>
+  <section class="is-theme_dark">
+    <div data-container>
+      <div data-grid="center">
+        <div data-col="6-md">
+          <div class="has-padding-big">
+            <div class="align-center">
+              <span class="giga ec-icon skull"></span>
+              <h2 class="mega">ec-icons</h2>
             </div>
-          </div>
-        </div>
-        <div class="is-lifted has-margin-bottom is-theme-invert is-rounded">
-          <div data-flex="small-grid center-items">
-            <div data-col="2">
-              <div class="has-padding-small">
-                <div class="img-avatar">
-                  <img src="./assets/avatar.jpg">
-                </div>
-              </div>
-            </div>
-            <div data-col="10">
-              <div class="title has-padding-center has-padding-small">
-                <h2 class="h6">Title <span class="tag tag_small tag_super">Tag</span></h2>
-                <nav class="nav">
-                  <ul class="dropdown dropdown_right">
-                    <li tabindex="1">
-                      <span class="btn btn_clear btn_invert"><span
-                          class="ec-icon more-vertical"></span></span>
-                      <ul class="dropdown-options">
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                        <li class="dropdown_divider"></li>
-                        <li class="dropdown-option">
-                          <a href>Label</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="has-padding has-margin-bottom is-raised is-rounded">
-          <div data-flex="small-grid center-items">
-            <div data-col="2">
-              <div class="img-avatar"><img src="./assets/avatar.jpg"></div>
-            </div>
-            <div data-col="10">
-              <strong>Melissa Carter</strong><br>
-              <small class="is-ink-light">melissa.carter@gmail.com</small>
-            </div>
-            <div data-col="10 +2">
-              <div class="has-padding-top">
-                <ul class="is-inline">
-                  <li>
-                    <div class="tag tag_small">tag</div>
-                  </li>
-                  <li>
-                    <div class="tag tag_small">tag</div>
-                  </li>
-                  <li>
-                    <div class="tag tag_small">tag</div>
-                  </li>
-                  <li>
-                    <div class="tag tag_small">tag</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="is-raised is-rounded has-margin-bottom">
-          <div class="has-padding-small">
-            <div data-flex="small-grid center-items">
-              <div data-col="2">
-                <div class="img-avatar"><img src="./assets/avatar.jpg"></div>
-              </div>
-              <div data-col="10">
-                <strong>Melissa Carter</strong><br>
-                <small class="is-ink-light">melissa.carter@gmail.com</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="has-padding-small is-theme_dark">
-            <ul class="is-inline">
-              <li>
-                <div class="tag tag_minor tag_small">tag</div>
-              </li>
-              <li>
-                <div class="tag tag_minor tag_small">tag</div>
-              </li>
-              <li>
-                <div class="tag tag_minor tag_small">tag</div>
-              </li>
-              <li>
-                <div class="tag tag_minor tag_small">tag</div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="is-raised has-margin-bottom has-padding-small is-rounded">
-          <div data-flex="small-grid center-items">
-            <div data-col="2">
-              <img src="./assets/avatar.jpg" class="img_responsive is-rounded">
-            </div>
-            <div data-col="10" data-flex="between center-items">
-              <div>
-                <strong>Melissa Carter</strong><br>
-                <small class="is-ink-light">melissa.carter@gmail.com</small>
-              </div>
-              <nav class="nav">
-                <ul class="dropdown dropdown_right">
-                  <li tabindex="1">
-                    <span class="btn btn_invert"><span class="ec-icon more-vertical"></span></span>
-                    <ul class="dropdown-options">
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown_divider"></li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded has-padding-small">
-          <div class="img-crop-16-9">
-            <img src="./assets/placeholder.jpg" class="is-rounded">
-          </div>
-          <div class="spacing-small"></div>
-          <h2 class="mega">Title
-            <div class="tag tag_small tag_super">Tag</div>
-          </h2>
-          <p>Nun, ganz abgesehen davon, daß die Türen versperrt waren, hätte er wirklich um Hilfe
-            rufen
-            sollen? Trotz aller Not konnte er bei diesem Gedanken ein Lächeln nicht
-            unterdrücken.</p>
-          <div data-grid="small">
-            <div data-col="6-sm">
-              <a href="" class="btn btn_block">Action</a>
-            </div>
-            <div data-col="6-sm">
-              <a href="" class="btn btn_minor btn_block">Cancel</a>
+            <div class="input-group">
+              <span class="ec-icon find input-group__icon"></span>
+              <input type="text" v-model="query" class="input input_clear input_big is-lifted input_round"
+                     placeholder="search for icon class...">
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="spacing"></div>
+    <div data-grid="center">
+      <div data-col="12 8-lg">
+        <ul data-grid="small">
+          <li v-for="icon in iconset" data-col="3"
+              :class="{hide: icon.indexOf(query) === -1}">
+            <span class="ec-icon" :class="icon"></span><span
+              class="quickselect">{{ icon }}</span>
+          </li>
+        </ul>
+        <div class="spacing-big"></div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    Photo by Laura Lefurgey-Smith on Unsplash
+  <footer class="is-theme_dark">
+    <div class="has-padding align-center">
+      <p>
+        <small>Photo stage-banner by Laura Lefurgey-Smith on Unsplash</small>
+      </p>
+    </div>
   </footer>
 </body>
 </html>

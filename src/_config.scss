@@ -31,6 +31,7 @@ $highlight: #9de263;
 
 /// @param {color} $background-invert [$text] - inverted color for background
 $background-invert: $text;
+
 /// @param {color} $text-invert [$background] - inverted color for text
 $text-invert: $background;
 
@@ -43,6 +44,7 @@ $divider-color: rgba($text, .1);
 /// @param {color} $input-border-color [ mix($text, $background, 25%)]
 $input-border-color: mix($text, $background, 25%);
 
+/// used for theme coloring, colors are used in the x-ui-colormap an adapted to fit to theme colors
 $state-info: cyan;
 $state-error: red;
 $state-success: green;
