@@ -4,7 +4,6 @@
 /// @group macro mixins
 ///
 /// mixin for precise macro element sizing
-/// @param {variable} $pfx [''] - global prefixing
 /// @param {number} $font-size - font-size of element
 /// @param {number} $line-height - line-height of element
 /// @param {number} $min-height - min-height of element
@@ -28,14 +27,14 @@
 
   @content;
 
-  .#{$pfx}tag {
+  .tag {
     &:only-child {
       margin-left: rem($padding * -$padding-ratio);
       margin-right: rem($padding * -$padding-ratio);
     }
   }
 
-  .#{$pfx}bubble {
+  .bubble {
     &:only-child {
       margin-left: rem($padding * -$padding-ratio);
       margin-right: rem($padding * -$padding-ratio);
