@@ -1,0 +1,182 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @prop {number} $base-spacing [16] - small padding value for padding helper
+
+.has-padding {
+  @include set-breakpoints {
+    padding: rem($base-spacing);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      padding: rem($base-spacing/4);
+    }
+  }
+
+  &-small {
+    @include set-breakpoints {
+      padding: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      padding: rem($base-spacing*2);
+    }
+  }
+}
+
+.has-padding-middle {
+  @include set-breakpoints {
+    padding-top: rem($base-spacing);
+    padding-bottom: rem($base-spacing);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      padding-top: rem($base-spacing/4);
+      padding-bottom: rem($base-spacing/4);
+    }
+  }
+
+  &-small {
+    @include set-breakpoints {
+      padding-top: rem($base-spacing/2);
+      padding-bottom: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      padding-top: rem($base-spacing*2);
+      padding-bottom: rem($base-spacing*2);
+    }
+  }
+}
+
+.has-padding-top {
+  @include set-breakpoints {
+    padding-top: rem($base-spacing);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      padding-top: rem($base-spacing/4);
+    }
+  }
+
+  &-small {
+    @include set-breakpoints {
+      padding-top: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      padding-top: rem($base-spacing*2);
+    }
+  }
+}
+
+.has-padding-bottom {
+  @include set-breakpoints {
+    padding-bottom: rem($base-spacing);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      padding-bottom: rem($base-spacing/4);
+    }
+  }
+
+  &-small {
+    @include set-breakpoints {
+      padding-bottom: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      padding-bottom: rem($base-spacing*2);
+    }
+  }
+}
+
+.has-padding-center {
+  @include set-breakpoints {
+    padding-left: rem($base-spacing);
+    padding-right: rem($base-spacing);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      padding-left: rem($base-spacing/4);
+      padding-right: rem($base-spacing/4);
+    }
+  }
+
+  &-small {
+    @include set-breakpoints {
+      padding-left: rem($base-spacing/2);
+      padding-right: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      padding-left: rem($base-spacing*2);
+      padding-right: rem($base-spacing*2);
+    }
+  }
+}
+
+.has-padding-left {
+  @include set-breakpoints {
+    padding-left: rem($base-spacing);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      padding-left: rem($base-spacing/2);
+    }
+  }
+
+  &-small {
+    @include set-breakpoints {
+      padding-left: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      padding-left: rem($base-spacing*2);
+    }
+  }
+}
+
+.has-padding-right {
+  @include set-breakpoints {
+    padding-right: rem($base-spacing);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      padding-right: rem($base-spacing/4);
+    }
+  }
+
+  &-small {
+    @include set-breakpoints {
+      padding-right: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      padding-right: rem($base-spacing*2);
+    }
+  }
+}

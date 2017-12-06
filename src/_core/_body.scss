@@ -1,0 +1,8 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group pages
+
+body {
+  background-color: getColor(background);
+}

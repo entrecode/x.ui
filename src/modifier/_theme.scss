@@ -1,0 +1,63 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {array} $name-array - postfix names appending `.theme-`
+/// @param {array} $color-array - theme colors
+/// @param {array} $postfix-array - shade postfix names
+/// @param {array} $shade-array - shading values
+///
+/// @return modifier class with background-color and color values
+
+$name-array: default, minor, link, super, highlight, invert;
+$color-array: $background, $minor, $link, $super, $highlight, $text;
+$postfix-array: darkest, darker, dark, light, lighter, lightest;
+$shade-array: -10, -8, -4, 4, 8, 12;
+
+@for $i from 1 through length($color-array) {
+  $color: nth($color-array, $i);
+  $name: nth($name-array, $i);
+
+  @if alpha($color) {
+    $color: flattenColor($color);
+  }
+
+  @if $name == 'default' {
+    .is-theme {
+      background-color: $color;
+
+      @for $n from 1 through length($postfix-array) {
+        $postfix: nth($postfix-array, $n);
+        $shade: nth($shade-array, $n);
+
+        &_#{$postfix} {
+          background-color: varColor($color, $shade);
+        }
+      }
+    }
+  } @else {
+    .is-theme-#{$name} {
+      background-color: $color;
+      color: setContrast($color);
+
+      a:not(.btn):not(.tag) {
+        color: setContrast($color, $link);
+      }
+
+      @for $n from 1 through length($postfix-array) {
+        $postfix: nth($postfix-array, $n);
+        $shade: nth($shade-array, $n);
+
+        &_#{$postfix} {
+          background-color: varColor($color, $shade);
+          color: setContrast(varColor($color, $shade));
+
+          a:not(.btn) {
+            color: setContrast(varColor($color, $shade), $link);
+          }
+        }
+      }
+    }
+  }
+}

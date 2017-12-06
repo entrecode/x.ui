@@ -1,0 +1,35 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group layout mixins
+///
+/// @require {map} $breakpoints
+/// @param {boolean} $area - set a range for the media query
+/// @param {boolean} $hasRoot - sets @content for a root element without a media-query
+/// @return a set of styles for one element with all available breakpoints
+
+@mixin set-breakpoints($area: false, $hasRoot: true) {
+  $keys: map-keys($breakpoints);
+
+  @if $hasRoot == true {
+    @content;
+  }
+
+  @if $area == true {
+    @each $key in $keys {
+      &-#{$key} {
+        @media (min-width: getBreakpoint(#{$key})) and (max-width: getBreakpoint(#{$key}, max)) {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @each $key in $keys {
+      &-#{$key} {
+        @media (min-width: getBreakpoint(#{$key})) {
+          @content;
+        }
+      }
+    }
+  }
+}

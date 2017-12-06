@@ -1,0 +1,2109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>x.ui docu</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="x.ui.css">
+  <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-3.0.0.min.css"/>
+  <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/agate.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var codes = document.getElementsByTagName('code');
+      for (var i = 0; i < codes.length; i++) {
+        codes[i].innerHTML = codes[i].innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/, '');
+        hljs.highlightBlock(codes[i]);
+      }
+    });
+  </script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+  <script src="app.js"></script>
+</head>
+<body class="demo">
+<div class="page" id="app">
+  <header class="page-header theme-super">
+    <div data-container>
+      <h1>{{name}}</h1>
+      <span class="tag tag_invert">{{version}}</span><span class="tag tag_invert" v-for="dependancy in dependancies">{{dependancy}}</span>
+      <p class="lead"><strong>x.ui</strong> is based on the scss framework <strong><a
+          href="https://github.com/entrecode/xlcss" target="_blank">xlcss</a></strong>. It is
+        inspired by the
+        <a href="https://medium.com/re-write/the-unicorn-workflow-design-to-code-with-atomic-design-principles-and-sketch-8b0fe7d05a37"
+           target="_blank">unicorn workflow</a>. the concept is based on a modular approach.</p>
+    </div>
+  </header>
+
+  <!--<xui-btns></xui-btns>-->
+
+  <div data-container>
+    <section>
+      <h2>Config</h2>
+      <div v-for="group in config">
+        <h3>{{ group.title }}</h3>
+        <div data-flex="small-grid">
+          <div data-col="4" v-for="(value, key) in group.variables">
+            <div class="form-group">
+              <label>{{key}}</label>
+              <input :type="group.type" :value="value" class="input">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bumper"></div>
+    <h2>Globals</h2>
+    <section>
+      <h3>Button Styles</h3>
+      <p>There six basic styles for buttons</p>
+      <div class="well">
+        <ul data-flex="small-grid">
+          <li v-for="(value, key) in globals.btn.styles" data-col="4">
+            <a class="btn btn_block" :class="value">{{key}}</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="bumper"></div>
+    <section>
+      <h4>Button Modifier</h4>
+      <p>The button modifier classes give you additional options for your individual ui needs</p>
+      <div class="well">
+        <ul data-flex="small-grid">
+          <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
+            <a class="btn btn_block" :class="value">
+              {{key}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="bumper"></div>
+    <section>
+      <h4>Button Size Modifier</h4>
+      <div class="well">
+        <ul data-flex="small-grid">
+          <li v-for="(value, key) in globals.btn.sizes" data-col="4" data-flex="center center-items">
+            <a class="btn" :class="value">
+              {{ key }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="bumper"></div>
+    <section>
+      <h4>Button Width Modifier</h4>
+      <div class="well">
+        <ul data-flex="small-grid">
+          <li v-for="(value, key) in globals.btn.width" data-col="4" data-flex="center">
+            <a class="btn" :class="[value]">
+              Button {{key}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="bumper"></div>
+    <section>
+      <h4>Button Inline Elements</h4>
+      <h5>Button Inline Icons</h5>
+      <div class="well">
+        <ul data-flex="small-grid">
+          <li v-for="(value, key) in globals.btn.modifier" data-col="2">
+            <a class="btn btn_block" :class="[value]">
+              <span class="ec-icon skull">Button</span>
+            </a>
+          </li>
+        </ul>
+        <ul data-flex="small-grid">
+          <li v-for="(value, key) in globals.btn.modifier" data-col="2">
+            <a class="btn btn_block" :class="[value]">
+              <span class="ec-icon skull ec-icon_right">Button</span>
+            </a>
+          </li>
+        </ul>
+        <ul data-flex="small-grid">
+          <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
+            <a class="btn" :class="[value]">
+              <span class="ec-icon skull"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <h5>Button Inline Pill</h5>
+      <div class="well">
+        <ul data-flex="small-grid">
+          <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
+            <a class="btn btn_block" :class="value">
+              Button <span class="pill" :class="{pill_invert: value === 'btn_mono' }">1</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <h5>Button Inline Tag</h5>
+      <div class="well">
+        <ul data-flex="small-grid">
+          <li v-for="(value, key) in globals.btn.modifiers" data-col="2">
+            <a class="btn btn_block" :class="value">
+              Button <span class="tag" :class="{tag_invert: value === 'btn_mono'}">tag</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="bumper"></div>
+    <section>
+      <h4>Button Width Modifier</h4>
+      <div class="well">
+        <ul data-flex="small-grid">
+          <li v-for="(value, key) in globals.btn.width" data-col="4" data-flex="center">
+            <a class="btn" :class="[value]">
+              Button {{key}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="spacing"></div>
+
+    <h3>Headings</h3>
+    <section>
+      <div class="demo-heading-metrics demo-heading-metrics_h1"><h1>Heading 1</h1></div>
+      <div class="demo-heading-metrics"><h2>Heading 2</h2></div>
+      <div class="demo-heading-metrics"><h3>Heading 3</h3></div>
+      <div class="demo-heading-metrics"><h4>Heading 4</h4></div>
+      <div class="demo-heading-metrics"><h5>Heading 5</h5></div>
+      <div class="demo-heading-metrics"><h6>Heading 6</h6></div>
+    </section>
+    <section>
+      <h3>Type</h3>
+      <div class="demo-paragraph-metrics">
+        <p class="lead">Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß dies
+          wohl nur ein Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine Tagereise
+          lang sei, nicht länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das achtzehnte
+          Mal nicht durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er
+          entweder den Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
+      </div>
+      <div class="demo-paragraph-metrics">
+        <p>Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte; daß dies wohl nur ein
+          Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und daß man ihn, da seine Tagereise lang sei,
+          nicht
+          länger unnützer Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das achtzehnte Mal nicht
+          durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er entweder den
+          Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
+      </div>
+      <div class="well">
+        <div v-for="mod in globals.type.colorModifiers" :class="mod">Lorem ipsum dolor sit amet, consetetur sadipscin
+        </div>
+      </div>
+    </section>
+
+    <div class="spacing"></div>
+    <h3>List styles</h3>
+    <div data-flex="grid">
+      <div data-col="6sm">
+        <ul class="unstyled">
+          <li>unstyled list</li>
+          <li>unstyled list</li>
+          <li>unstyled list</li>
+        </ul>
+      </div>
+      <div data-col="6sm">
+        <ul class="inline">
+          <li>unstyled list</li>
+          <li>unstyled list</li>
+          <li>unstyled list</li>
+        </ul>
+      </div>
+    </div>
+    <div class="spacing"></div>
+
+    <h3>Images</h3>
+    <section>
+      <div data-flex="grid">
+        <div data-col="6sm">
+          <img src="https://source.unsplash.com/user/erondu/400x300" class="img_responsive">
+        </div>
+        <div data-col="6sm">
+          <img src="https://source.unsplash.com/user/erondu/400x300" class="img_full">
+        </div>
+      </div>
+    </section>
+
+    <div class="spacing"></div>
+
+    <h3>Form Elements</h3>
+    <section>
+      <div data-flex="grid" v-for="size in globals.input.sizes">
+        <div data-col="6sm">
+          <div class="form-group">
+            <label>Input Label</label>
+            <input type="text" class="input" :class="size" placeholder="Placeholder...">
+          </div>
+        </div>
+        <div data-col="6sm">
+          <div class="form-group">
+            <label>Input Label</label>
+            <input type="text" class="input" :class="size" placeholder="Placeholder..." value="Input value">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h4>Input</h4>
+      <div data-flex="grid" v-for="modifier in globals.input.modifiers">
+        <div data-col="6sm">
+          <div class="form-group">
+            <label>Input Label</label>
+            <input type="text" class="input" :class="modifier" placeholder="Placeholder...">
+          </div>
+        </div>
+        <div data-col="6sm">
+          <div class="form-group">
+            <label>Input Label</label>
+            <input type="text" class="input" :class="modifier" placeholder="Placeholder..." value="Input value">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2>Partials</h2>
+    <h3>Nav</h3>
+    <section>
+      <nav class="nav">
+        <ul class="nav__items">
+          <li class="nav__item">
+            <a href="" class="btn btn_clear">Nav Link</a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="btn btn_clear">Nav Link</a>
+          </li>
+          <li class="nav__divider">&nbsp;</li>
+          <li class="nav__item">
+            <a href="" class="btn btn_clear">Nav Link</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="nav nav_stacked">
+        <ul class="nav__items">
+          <li class="nav__item">
+            <a href="" class="btn btn_clear">Nav Link</a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="btn btn_clear">Nav Link</a>
+          </li>
+          <li class="nav__divider">&nbsp;</li>
+          <li class="nav__item">
+            <a href="" class="btn btn_clear">Nav Link</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="nav nav_inline">
+        <ul class="nav__items">
+          <li class="nav__item">
+            <a href="" class="btn btn_clear">Nav Link</a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="btn btn_clear">Nav Link</a>
+          </li>
+          <li class="nav__divider">&nbsp;</li>
+          <li class="nav__item">
+            <a href="" class="btn btn_clear">Nav Link</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="partial">
+      <header class="partial-header">
+        <h2>Icons</h2>
+      </header>
+      <div class="partial-body">
+        <p class="lead"><strong>x.ui</strong> is optimized for the usage with ec.ions.</p>
+        <div class="form-group form-group_search">
+          <input type="text" v-model="query" class="input input_round" placeholder="search for icon class...">
+        </div>
+        <ul data-flex="small-grid" class="icons-list">
+          <li v-for="icon in iconset" data-col="3" :class="{hide: icon.indexOf(query) === -1}">
+            <span class="ec-icon" :class="icon"></span><span class="quickselect">{{ icon }}</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <h2>partials</h2>
+    <h3>menubar</h3>
+  </div>
+
+  <div class="menubar">
+    <strong class="menubar__brand">x.ui</strong>
+    <nav class="menu menu_dropbown">
+      <ul class="menu__items">
+        <li class="menu__item parent" tabindex="0">
+          <a href="" class="btn clear">ui</a>
+          <div class="sub-menu">
+            <ul class="sub-menu__items">
+              <li class="sub-menu__item level1 parent" tabindex="0">
+                <a href="" class="btn clear">ui 2</a>
+                <div class="sub-menu">
+                  <ul class="sub-menu__items">
+                    <li class="sub-menu__item level2">
+                      <a href="" class="btn clear">ui 2</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="menubar theme-super">
+    <strong class="menubar__brand">x.ui</strong>
+    <nav class="menu menu_dropbown">
+      <ul class="menu__items">
+        <li class="menu__item parent" tabindex="0">
+          <a href="" class="btn super">ui</a>
+          <div class="sub-menu">
+            <ul class="sub-menu__items">
+              <li class="sub-menu__item level1 parent" tabindex="0">
+                <a href="" class="btn clear">ui 2</a>
+                <div class="sub-menu">
+                  <ul class="sub-menu__items">
+                    <li class="sub-menu__item level2">
+                      <a href="" class="btn clear">ui 2</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <button class="drawer-toogle" data-target="id"></button>
+  </div>
+
+  <div class="menubar theme-invert">
+    <button class="drawer-toogle" data-target="id"></button>
+    <strong class="menubar__brand">x.ui</strong>
+    <nav class="menu menu_dropbown">
+      <ul class="menu__items">
+        <li class="menu__item parent" tabindex="0">
+          <a href="" class="btn clear invert">ui</a>
+          <div class="sub-menu">
+            <ul class="sub-menu__items">
+              <li class="sub-menu__item level1 parent" tabindex="0">
+                <a href="" class="btn clear">ui 2</a>
+                <div class="sub-menu">
+                  <ul class="sub-menu__items">
+                    <li class="sub-menu__item level2">
+                      <a href="" class="btn clear">ui 2</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div data-container>
+    <h3>toolbar</h3>
+  </div>
+
+  <div class="toolbar">
+    <button class="drawer-toogle" data-target="id"></button>
+    <div class="toolbar__title">
+      <h2>x.ui</h2>
+    </div>
+    <nav class="nav">
+      <ul class="nav__items">
+        <li class="nav__item">
+          <a href="" class="btn outlined">save</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="btn outlined">delete</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="btn clear">&times;</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="toolbar theme-super">
+    <button class="drawer-toogle" data-target="id"></button>
+    <div class="toolbar__title">
+      <h2>x.ui</h2>
+    </div>
+    <nav class="nav">
+      <ul class="nav__items">
+        <li class="nav__item">
+          <a href="" class="btn outlined invert">save</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="btn outlined invert">delete</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="btn clear invert">&times;</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="toolbar theme-invert">
+    <button class="drawer-toogle" data-target="id"></button>
+    <div class="toolbar__title">
+      <h2>x.ui</h2>
+    </div>
+    <nav class="nav">
+      <ul class="nav__items">
+        <li class="nav__item">
+          <a href="" class="btn outlined invert">save</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="btn outlined invert">delete</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="btn clear invert">&times;</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div data-container>
+    <h3>Kiosk</h3>
+
+    <p>a kiosk can be used for structuring data.</p>
+
+    <section>
+      <div class="kiosk">
+        <header class="kiosk-header">
+          <div class="toolbar theme-invert dense">
+            <button class="drawer-toogle" data-target="id"></button>
+            <div class="toolbar__title">
+              <h2>x.ui</h2>
+            </div>
+            <nav class="nav">
+              <ul class="nav__items">
+                <li class="nav__item">
+                  <a href="" class="btn outlined mono invert">save</a>
+                </li>
+                <li class="nav__item">
+                  <a href="" class="btn outlined mono invert">delete</a>
+                </li>
+                <li class="nav__item">
+                  <a href="" class="btn clear mono invert">&times;</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div class="kiosk-body">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-body</span>
+          </div>
+        </div>
+        <footer class="kiosk-footer">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-footer</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <section>
+      <div class="kiosk">
+        <header class="kiosk-header">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-header</span>
+          </div>
+        </header>
+        <aside class="kiosk-aside">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-aside</span>
+          </div>
+        </aside>
+        <div class="kiosk-body">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-body</span>
+          </div>
+        </div>
+        <footer class="kiosk-footer">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-footer</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <section>
+      <div class="kiosk kiosk_reverse">
+        <header class="kiosk-header">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-header</span>
+          </div>
+        </header>
+        <aside class="kiosk-aside">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-aside</span>
+          </div>
+        </aside>
+        <div class="kiosk-body">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-body</span>
+          </div>
+        </div>
+        <footer class="kiosk-footer">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-footer</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <section>
+      <div class="kiosk">
+        <header class="kiosk-header">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-header</span>
+          </div>
+        </header>
+        <div class="kiosk-body">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-body</span>
+          </div>
+        </div>
+        <footer class="kiosk-footer">
+          <div class="demo-grid-placeholder">
+            <span class="code">kiosk-footer</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <pre><code>
+<div class="kiosk">
+  <header class="kiosk-header">
+    ...
+  </header>
+  <aside class="kiosk-aside">
+    ...
+  </aside>
+  <div class="kiosk-body">
+    ...
+  </div>
+  <footer class="kiosk-footer">
+    ...
+  </footer>
+</div>
+  </code></pre>
+  </div>
+
+  <div data-container>
+    <main class="demo-body">
+      <section id="basics">
+        <h2>basics</h2>
+
+        <section>
+          <h3>files</h3>
+          <p class="lead"><strong>x.ui</strong> and <strong>xlcss</strong> are the solid foundation
+            for any project based on an
+            unicorn workflow. <strong>x.ui</strong> sets the basic elements, which can be combined
+            to bigger elements
+            like partials or templates. In <strong>_config.scss</strong>, you can adjust several
+            variables for colors, sizes or font-face. Those variables then are used throuout the
+            project.</p>
+          <p class="lead">The first four layers should be highly adaptable to other projects. Those
+            Layers are <strong>core-elements</strong>, <strong>global-elements</strong>, <strong>marco-elements</strong>
+            and <strong>presets</strong></p>
+          <pre><code>
+  x.ui/
+  ├── _config.scss
+  ├── _validator.scss
+  ├── _core/
+  ├── _presets/
+  ├── _global/
+  ├── _macros/
+  ...</code></pre>
+
+          <p class="lead">the layers <strong>partials</strong> and <strong>templates</strong> are
+            reserved for the specific project.</p>
+          <pre><code>
+  ...
+  └── project/
+      ├── macros/
+      ├── partials/
+      └── templates/</code></pre>
+        </section>
+      </section>
+
+      <section>
+        <h2>naming conventions</h2>
+        <p><strong>x.ui</strong> follows the <strong>BEM (Block, Element, Modifier)</strong>
+          approach. For more see <a
+              href="https://en.bem.info/methodology/quick-start/" target="_blank">https://en.bem.info/methodology/quick-start/</a>.
+        </p>
+        <h3>Modifier</h3>
+        <p>An entity that defines the appearance, state, or behavior of a block or element. With
+          x.ui
+          there are some global modifier classes.</p>
+        <table class="table">
+          <tr>
+            <td>style modifier</td>
+            <td><span class="code">minor</span><span class="code">super</span><span class="code">link</span><span
+                class="code">highlight</span><span class="code">invert</span><span
+                class="code">mono</span></td>
+          </tr>
+          <tr>
+            <td>state modifier</td>
+            <td><span class="code">info</span><span class="code">error</span><span class="code">success</span><span
+                class="code">warning</span><span class="code">active</span><span class="code">disabled</span>
+            </td>
+          </tr>
+          <tr>
+            <td>size modifier</td>
+            <td><span class="code">small</span><span class="code">big</span><span
+                class="code">wide</span><span class="code">dense</span></td>
+          </tr>
+          <tr>
+            <td>layout modifier</td>
+            <td><span class="code">inline</span><span class="code">stacked</span></td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>core</h2>
+        <p class="lead">core styles, are styles that don't refer a specific DOM object, but the
+          whole project in general like colors and basic font settings</p>
+        <h3>core.colors</h3>
+        <div data-row>
+          <div data-col="8sm">
+            <h4>base colors</h4>
+            <ul class="ui-colors-list">
+              <li>
+                <div class="ui-color base-text">
+                  <label>text</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-background">
+                  <label>background</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-link">
+                  <label>link</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-linkHover">
+                  <label>linkHover</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-super">
+                  <label>super</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-superHover">
+                  <label>superHover</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-minor">
+                  <label>minor</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-minorHover">
+                  <label>minorHover</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-highlight">
+                  <label>highlight</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-highlightHover">
+                  <label>highlightHover</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-border">
+                  <label>border</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color base-divider">
+                  <label>divider</label>
+                </div>
+              </li>
+            </ul>
+            <h4>text colors</h4>
+            <ul class="ui-colors-list">
+              <li>
+                <div class="ui-color text-light">
+                  <label>light</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color text-lighter">
+                  <label>lighter</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color text-lightest">
+                  <label>lightest</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color text-invert">
+                  <label>invert</label>
+                </div>
+              </li>
+            </ul>
+            <h4>background colors</h4>
+            <ul class="ui-colors-list">
+              <li>
+                <div class="ui-color background-light">
+                  <label>light</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color background-lighter">
+                  <label>lighter</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color background-lightest">
+                  <label>lightest</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color background-invert">
+                  <label>invert</label>
+                </div>
+              </li>
+            </ul>
+            <h4>state colors</h4>
+            <ul class="ui-colors-list">
+              <li>
+                <div class="ui-color state-hover">
+                  <label>hover</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-selected">
+                  <label>selected</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-active">
+                  <label>active</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-disabled">
+                  <label>disabled</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-info">
+                  <label>info</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-error">
+                  <label>error</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-success">
+                  <label>success</label>
+                </div>
+              </li>
+              <li>
+                <div class="ui-color state-warning">
+                  <label>warning</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div data-col="4sm">
+            <p class="lead">the colors are organised via a map and can be accessed via <span
+                class="code">getColor()</span> function.</p>
+            <pre><code class="scss">.example { color: getColor(base, link); }</code></pre>
+            <div class="spacing small"></div>
+            <p class="lead">the colornap itself refers to variables set in <span class="code">_config.scss</span>
+            </p>
+            <pre><code class="scss">
+$background: white;
+$text: #212121;
+$link: #2962FF;
+$super: #FF5252;
+$minor: #D7F2FF;
+$highlight: #A7FFEB;</code>
+            </pre>
+          </div>
+        </div>
+
+        <h3>core.typo</h3>
+        <p class="lead">defines font-family and basic font-sizes for <span class="code">body</span>
+          and headings like <span class="code">h1</span> <span class="code">h2</span> <span
+              class="code">h3</span> <span class="code">h4</span> <span class="code">h5</span> <span
+              class="code">h6</span></p>
+        <table class="table">
+          <thead>
+          <tr>
+            <th></th>
+            <th>Smartphones (<480px)</th>
+            <th>Smartphones landscape (>480px)</th>
+            <th>Tablet portrait (>720px)</th>
+            <th>Tablet landscape (>1024px)</th>
+            <th>Desktop (>1280px)</th>
+            <th>Large screens (>1920px)</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>body font-family</td>
+            <td colspan="6"><span class="code">$body-font</span></td>
+          </tr>
+          <tr>
+            <td>body color</td>
+            <td colspan="6"><span class="code">getColor(base, text)</span></td>
+          </tr>
+          <tr>
+            <td>body font-size</td>
+            <td colspan="3">14px</td>
+            <td colspan="3">100% (16px)</td>
+          </tr>
+          <tr>
+            <td>Headings font-family</td>
+            <td colspan="6"><span class="code">$headings-font</span></td>
+          </tr>
+
+          </tbody>
+        </table>
+      </section>
+      <div class="bumper big"></div>
+      <section>
+        <h2>theme</h2>
+        <p>based on its 5 base colors, <span class="code">$background</span> <span class="code">$text</span>
+          <span class="code">$link</span> <span class="code">$super</span> <span
+              class="code">$minor</span> and <span class="code">$highlight</span>
+          <strong>x.ui</strong> automatically generates theme classes for 7 shades each using the
+          <strong>xlcss</strong> <span class="function">varColor()</span> function. The theme
+          classes define the background-color and text and link color based using the
+          <strong>xlcss</strong> <span class="function">setContrast()</span> function.</p>
+        <div data-flex="grid">
+          <div data-col="4sm">
+            <div class="theme_lightest">.theme_lightest</div>
+            <div class="theme_lighter">.theme_lighter</div>
+            <div class="theme_light">.theme_light</div>
+            <div class="theme">.theme</div>
+            <div class="theme_dark">.theme_dark</div>
+            <div class="theme_darker">.theme_darker</div>
+            <div class="theme_darkest">.theme_darkest</div>
+          </div>
+          <div data-col="4sm">
+            <div class="theme-link_lightest">.theme-link_lightest</div>
+            <div class="theme-link_lighter">.theme-link_lighter</div>
+            <div class="theme-link_light">.theme-link_light</div>
+            <div class="theme-link">.theme-link</div>
+            <div class="theme-link_dark">.theme-link_dark</div>
+            <div class="theme-link_darker">.theme-link_darker</div>
+            <div class="theme-link_darkest">.theme-link_darkest</div>
+          </div>
+          <div data-col="4sm">
+            <div class="theme-super_lightest">.theme-super_lightest</div>
+            <div class="theme-super_lighter">.theme-super_lighter</div>
+            <div class="theme-super_light">.theme-super_light</div>
+            <div class="theme-super">.theme-super</div>
+            <div class="theme-super_dark">.theme-super_dark</div>
+            <div class="theme-super_darker">.theme-super_darker</div>
+            <div class="theme-super_darkest">.theme-super_darkest</div>
+          </div>
+          <div data-col="4sm">
+            <div class="theme-minor_lightest">.theme-minor_lightest</div>
+            <div class="theme-minor_lighter">.theme-minor_lighter</div>
+            <div class="theme-minor_light">.theme-minor_light</div>
+            <div class="theme-minor">.theme-minor</div>
+            <div class="theme-minor_dark">.theme-minor_dark</div>
+            <div class="theme-minor_darker">.theme-minor_darker</div>
+            <div class="theme-minor_darkest">.theme-minor_darkest</div>
+          </div>
+          <div data-col="4sm">
+            <div class="theme-highlight_lightest">.theme-highlight_lightest</div>
+            <div class="theme-highlight_lighter">.theme-highlight_lighter</div>
+            <div class="theme-highlight_light">.theme-highlight_light</div>
+            <div class="theme-highlight">.theme-highlight</div>
+            <div class="theme-highlight_dark">.theme-highlight_dark</div>
+            <div class="theme-highlight_darker">.theme-highlight_darker</div>
+            <div class="theme-highlight_darkest">.theme-highlight_darkest</div>
+          </div>
+          <div data-col="4sm">
+            <div class="theme-invert_lightest">.theme-invert_lightest</div>
+            <div class="theme-invert_lighter">.theme-invert_lighter</div>
+            <div class="theme-invert_light">.theme-invert_light</div>
+            <div class="theme-invert">.theme-invert</div>
+            <div class="theme-invert_dark">.theme-invert_dark</div>
+            <div class="theme-invert_darker">.theme-invert_darker</div>
+            <div class="theme-invert_darkest">.theme-invert_darkest</div>
+          </div>
+        </div>
+      </section>
+      <div class="bumper big"></div>
+      <section>
+        <h2>global</h2>
+        <p class="lead">global styles for html tags and basic design elements like buttons, heading,
+          forms or general text-elements. Global elements are the smallest elements in the unicorn
+          worklflow.</p>
+
+
+        <div class="bumper big"></div>
+
+        <h3>form elements</h3>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="text"]</span>
+            <div class="form-group">
+              <label for="id">Label</label>
+              <input type="text" placeholder="Placeholder..." class="input" id="id">
+              <p class="input__help">additional input information</p>
+            </div>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<div class="form-group">
+  <label for="id">Label</label>
+  <input type="text" placeholder="Placeholder..." class="input" id="id">
+  <p class="input__help">additional input information</p>
+</div></code></pre>
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="number"]</span>
+            <input type="number" placeholder="Placeholder..." class="input">
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="tel"]</span>
+            <input type="tel" placeholder="Placeholder..." class="input">
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="email"]</span>
+            <input type="email" placeholder="Placeholder..." class="input">
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="date"]</span>
+            <input type="date" placeholder="Placeholder..." class="input">
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="file"]</span>
+            <input type="file">
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="password"]</span>
+            <input type="password" placeholder="Placeholder..." class="input">
+          </div>
+        </div>
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="checkbox"]</span>
+            <div class="form-group form-group_boolean">
+              <label>Label</label>
+              <input type="checkbox">
+            </div>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<div class="form-group form-group_boolean">
+  <label>Label</label>
+  <input type="checkbox">
+</div></code></pre>
+          </div>
+        </div>
+
+        <div data-row>
+          <div data-col="6sm">
+            <span class="code">[type="radio"]</span>
+            <div class="form-group form-group_boolean">
+              <label>Label</label>
+              <input type="radio">
+            </div>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<div class="form-group form-group_boolean">
+  <label>Label</label>
+  <input type="radio">
+</div></code></pre>
+          </div>
+        </div>
+
+
+        <h4>form grid</h4>
+        <p>within a <span class="code">fieldset</span> the gutter-witdh is reduced to <span
+            class="code">1rem</span> (16px).</p>
+        <div data-row>
+          <div data-col="6sm">
+            <fieldset>
+              <div data-row>
+                <div data-col="6sm">
+                  <div class="form-group">
+                    <label>Label</label>
+                    <input type="text" placeholder="Placeholder..." class="input">
+                    <p>additional input information</p>
+                  </div>
+                </div>
+                <div data-col="6sm">
+                  <div class="form-group">
+                    <label>Label</label>
+                    <input type="text" placeholder="Placeholder..." class="input">
+                    <p>additional input information</p>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<fieldset>
+  <div data-row>
+    <div data-col="6sm">
+      <div class="form-group">
+      <label>Label</label>
+        <input type="text" placeholder="Placeholder..." class="input">
+        <p>additional input information</p>
+      </div>
+    </div>
+    <div data-col="6sm">
+      <div class="form-group">
+        <label>Label</label>
+        <input type="text" placeholder="Placeholder..." class="input">
+        <p>additional input information</p>
+      </div>
+    </div>
+  </div>
+</fieldset></code></pre>
+          </div>
+        </div>
+
+        <h4>alternative input sizes</h4>
+        <span class="code">.big</span>
+        <div data-row>
+          <div data-col="6sm">
+            <label>
+              Label
+              <input type="text" class="input big" placeholder="Placeholder...">
+              <p>additional input information</p>
+            </label>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<label>
+  Label
+  <input type="text" class="input big" placeholder="Placeholder...">
+  <p>additional input information</p>
+</label></code></pre>
+          </div>
+        </div>
+        <span class="code">.small</span>
+        <div data-row>
+          <div data-col="6sm">
+            <label>
+              Label
+              <input type="text" class="input small" placeholder="Placeholder...">
+              <p>additional input information</p>
+            </label>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<label>
+  Label
+  <input type="text" class="input small" placeholder="Placeholder...">
+  <p>additional input information</p>
+</label></code></pre>
+          </div>
+        </div>
+
+        <div class="bumper big"></div>
+
+        <h3>headings</h3>
+        <div data-row>
+          <div data-col="6sm">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+          </div>
+          <div data-col="6sm">
+        <pre><code class="html">
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6></code></pre>
+          </div>
+        </div>
+
+        <div class="bumper"></div>
+
+        <h3>paragraphs</h3>
+        <div data-row>
+          <div data-col="6sm">
+            <p class="lead">»Hören Sie nur,« sagte der Prokurist im Nebenzimmer, »er dreht den
+              Schlüssel um.« Das war für Gregor eine große Aufmunterung; aber alle hätten ihm
+              zurufen sollen, auch der Vater und die Mutter: »Frisch, Gregor,« hätten sie rufen
+              sollen, </p>
+            <p>»immer nur heran, fest an das Schloß heran!« Und in der Vorstellung, daß alle seine
+              Bemühungen mit Spannung verfolgten, verbiß er sich mit allem, was er an Kraft
+              aufbringen konnte, besinnungslos in den Schlüssel. Je nach dem Fortschreiten der
+              Drehung des Schlüssels umtanzte er das Schloß; hielt sich jetzt nur noch mit dem Munde
+              aufrecht, und je nach Bedarf hing er sich an den Schlüssel oder drückte ihn dann
+              wieder nieder mit der ganzen Last seines Körpers.</p>
+            <p class="small">Die Schwester suchte freilich die Peinlichkeit des Ganzen möglichst zu
+              verwischen, und je längere Zeit verging, desto besser gelang es ihr natürlich auch,
+              aber auch Gregor durchschaute mit der Zeit alles viel genauer. Schon ihr Eintritt war
+              für ihn schrecklich. </p>
+          </div>
+          <div data-col="6sm">
+        <pre><code class="html">
+<p class="lead">»Hören Sie nur,« ...</p>
+<p>»immer nur heran, ...</p>
+<p class="small">Die Schwester suchte ...</p></code></pre>
+
+            <h4>additional styles</h4>
+            <span class="code">.nowrap</span>
+            <span class="code">.hyphen</span>
+            <span class="code">.hyphen-block</span>
+            <span class="code">.ellipsis</span>
+          </div>
+        </div>
+
+        <div class="bumper"></div>
+
+        <h4>text colors</h4>
+
+        <ul class="ui-colors-list text-center">
+          <li>
+            <div class="ui-color base-text"></div>
+            <small>default</small>
+          </li>
+          <li>
+            <div class="ui-color base-link"></div>
+            <span class="code">.text-link</span>
+          </li>
+          <li>
+            <div class="ui-color base-super"></div>
+            <span class="code">.text-super</span>
+          </li>
+          <li>
+            <div class="ui-color base-minor"></div>
+            <span class="code">.text-minor</span>
+          </li>
+          <li>
+            <div class="ui-color base-highlight"></div>
+            <span class="code">.text-highlight</span>
+          </li>
+          <li>
+            <div class="ui-color text-light"></div>
+            <span class="code">.text-light</span>
+          </li>
+          <li>
+            <div class="ui-color text-lighter"></div>
+            <span class="code">.text-lighter</span>
+          </li>
+          <li>
+            <div class="ui-color text-lightest"></div>
+            <span class="code">.text-lightest</span>
+          </li>
+          <li>
+            <div class="ui-color text-invert"></div>
+            <span class="code">.text-invert</span>
+          </li>
+          <li>
+            <div class="ui-color state-disabled"></div>
+            <span class="code">.text-disabled</span>
+          </li>
+          <li>
+            <div class="ui-color state-info"></div>
+            <span class="code">.text-info</span>
+          </li>
+          <li>
+            <div class="ui-color state-error"></div>
+            <span class="code">.text-error</span>
+          </li>
+          <li>
+            <div class="ui-color state-success"></div>
+            <span class="code">.text-success</span>
+          </li>
+          <li>
+            <div class="ui-color state-warning"></div>
+            <span class="code">.text-warning</span>
+          </li>
+        </ul>
+
+        <div class="bumper"></div>
+
+        <h3>image helpers</h3>
+        <div data-row>
+          <div data-col="6sm">
+          <pre><code class="html">
+<img src="" class="responsive"/>
+</code></pre>
+            <p>resizes image based on parent element up to its native size</p>
+            <img src="https://unsplash.it/400/200/?random" alt="" class="responsive">
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<img src="" class="full"/>
+</code></pre>
+            <p>resizes image based on parent element ignoring its native size</p>
+            <img src="https://unsplash.it/400/200/?random" alt="" class="full">
+          </div>
+        </div>
+        <h3>list helpers</h3>
+        <div data-row>
+          <div data-col="6sm">
+          <pre><code class="html">
+<ul class="unstyled">
+  <li>...</li>
+  ...
+</ul>
+</code></pre>
+            <p>helper class for clean lists without margin and padding</p>
+            <ul class="unstyled">
+              <li>list entry 1</li>
+              <li>list entry 1</li>
+            </ul>
+          </div>
+          <div data-col="6sm">
+          <pre><code class="html">
+<ul class="inline">
+  <li>...</li>
+  ...
+</ul>
+</code></pre>
+            <p>helper class for clean lists without margin and padding and inline list elements</p>
+            <ul class="inline">
+              <li>list entry 1</li>
+              <li>list entry 1</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>macros</h2>
+
+        <h3>alerts</h3>
+        <div class="alert error">Sie mußte irgend etwas davon fühlen, denn sie spannte ihre
+          Augenbrauen hoch, wie wenn man
+          jemand Lästigen wegweisen will: der Haß zwischen uns war plötzlich nackt.
+        </div>
+        <pre><code class="html">
+<div class="alert error">Sie mußte irgend ...</div></code></pre>
+
+        <div class="bumper"></div>
+
+        <h4>alert states</h4>
+        <pre><code class="html">
+<div class="alert minor"></div>
+        </code></pre>
+        <div class="well">
+          <div data-flex="column">
+            <div>
+              <div class="alert minor">minor</div>
+            </div>
+            <div>
+              <div class="alert link">link</div>
+            </div>
+            <div>
+              <div class="alert super">super</div>
+            </div>
+            <div>
+              <div class="alert highlight">highlight</div>
+            </div>
+            <div>
+              <div class="alert info">info</div>
+            </div>
+            <div>
+              <div class="alert error">error</div>
+            </div>
+            <div>
+              <div class="alert success">success</div>
+            </div>
+            <div>
+              <div class="alert warning">warning</div>
+            </div>
+            <div>
+              <div class="alert invert">invert</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bumper"></div>
+
+        <h4>alert outlined states</h4>
+        <pre><code class="html">
+<div class="alert outlined minor"></div>
+        </code></pre>
+        <div class="well">
+          <div data-flex="column">
+            <div>
+              <div class="alert outlined minor">minor</div>
+            </div>
+            <div>
+              <div class="alert outlined link">link</div>
+            </div>
+            <div>
+              <div class="alert outlined super">super</div>
+            </div>
+            <div>
+              <div class="alert outlined highlight">highlight</div>
+            </div>
+            <div>
+              <div class="alert outlined info">info</div>
+            </div>
+            <div>
+              <div class="alert outlined error">error</div>
+            </div>
+            <div>
+              <div class="alert outlined success">success</div>
+            </div>
+            <div>
+              <div class="alert outlined warning">warning</div>
+            </div>
+            <div>
+              <div class="alert outlined invert">invert</div>
+            </div>
+          </div>
+        </div>
+
+        <h4>sizes</h4>
+        <pre><code class="html">
+<div class="alert small"></div>
+<div class="alert"></div>
+<div class="alert big"></div>
+        </code></pre>
+        <div class="well">
+          <div data-flex="column">
+            <div>
+              <div class="alert small">small</div>
+            </div>
+            <div>
+              <div class="alert">default</div>
+            </div>
+            <div>
+              <div class="alert big">big</div>
+            </div>
+            <div>
+              <div class="alert outlined small">small</div>
+            </div>
+            <div>
+              <div class="alert outlined">default</div>
+            </div>
+            <div>
+              <div class="alert outlined big">big</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bumper"></div>
+
+        <h3>tags</h3>
+        <div class="well">
+          <div data-flex="small-grid">
+            <div><span class="tag outlined minor">minor</span></div>
+            <div><span class="tag outlined link">link</span></div>
+            <div><span class="tag outlined super">super</span></div>
+            <div><span class="tag outlined highlight">highlight</span></div>
+            <div><span class="tag outlined info">info</span></div>
+            <div><span class="tag outlined error">error</span></div>
+            <div><span class="tag outlined success">success</span></div>
+            <div><span class="tag outlined warning">warning</span></div>
+            <div><span class="tag outlined invert">invert</span></div>
+          </div>
+        </div>
+
+        <h4>sizes</h4>
+        <pre><code class="html">
+<span class="tag small"></span>
+<span class="tag"></span>
+<span class="tag big"></span>
+        </code></pre>
+        <div class="well">
+          <span class="tag small"> small</span>
+          <span class="tag">default</span>
+          <span class="tag big"> big</span>
+        </div>
+
+        <div class="bumper"></div>
+
+        <h3>bubbles</h3>
+        <div class="well">
+          <div data-flex="small-grid">
+            <div><span class="bubble outlined minor">minor</span></div>
+            <div><span class="bubble outlined link">link</span></div>
+            <div><span class="bubble outlined super">super</span></div>
+            <div><span class="bubble outlined highlight">highlight</span></div>
+            <div><span class="bubble outlined info">info</span></div>
+            <div><span class="bubble outlined error">error</span></div>
+            <div><span class="bubble outlined success">success</span></div>
+            <div><span class="bubble outlined warning">warning</span></div>
+            <div><span class="bubble outlined invert">invert</span></div>
+          </div>
+        </div>
+
+        <h4>sizes</h4>
+        <pre><code class="html">
+<span class="bubble small"></span>
+<span class="bubble"></span>
+<span class="bubble big"></span>
+        </code></pre>
+        <div class="well">
+          <span class="bubble small"> small</span>
+          <span class="bubble">default</span>
+          <span class="bubble big"> big</span>
+        </div>
+
+      </section>
+
+      <section>
+        <header class="demo-header">
+          <h2>grid</h2>
+        </header>
+
+        <h3>Grid options</h3>
+        <table class="table">
+          <thead>
+          <tr>
+            <th></th>
+            <th>Smartphones (<480px)</th>
+            <th>Smartphones landscape (>480px)</th>
+            <th>Tablet portrait (>720px)</th>
+            <th>Tablet landscape (>1024px)</th>
+            <th>Desktop (>1280px)</th>
+            <th>Large screens (>1920px)</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>data-container width</td>
+            <td colspan="6">100% (max-width: 100%)</td>
+          </tr>
+          <tr>
+            <td>data-col value postfix. e.g. <span class="code">data-col="6sm"</span></td>
+            <td>none</td>
+            <td>#<span class="code">sm</span></td>
+            <td>#<span class="code">md</span></td>
+            <td>#<span class="code">lg</span></td>
+            <td>#<span class="code">xl</span></td>
+            <td>#<span class="code">xxl</span></td>
+          </tr>
+          <tr>
+            <td>number of colums</td>
+            <td colspan="6">12</td>
+          </tr>
+          <tr>
+            <td>gutter width</td>
+            <td colspan="6">2rem (32px)</td>
+          </tr>
+          <tr>
+            <td>offest. e.g. <span class="code">data-col="+6sm"</span></td>
+            <td colspan="6"><span class="code">+</span>#</td>
+          </tr>
+          <tr>
+            <td>sorting. e.g. <span class="code">data-col="push6sm"</span></td>
+            <td colspan="6">
+              <span class="code">push</span>#, <span class="code">pull</span>#
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <pre><code class="html">
+<div data-container>
+  <div data-row>
+    <div data-col="4">...</div>
+    <div data-col="6">...</div>
+    <div data-col="2">...</div>
+  </div>
+</div>
+</code></pre>
+
+        <h3>12 columns</h3>
+
+        <div class="demo-grid">
+          <div data-row>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="5">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="7">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="8">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="9">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="10">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="11">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="12">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h3>nested</h3>
+        <div class="demo-grid">
+          <div data-row>
+            <div data-col="12">
+              <div class="demo-grid-placeholder">
+                <div data-row>
+                  <div data-col="8">
+                    <div class="demo-grid-placeholder">
+                      <div data-row>
+                        <div data-col="8">
+                          <div class="demo-grid-placeholder"></div>
+                        </div>
+                        <div data-col="4">
+                          <div class="demo-grid-placeholder"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-col="4">
+                    <div class="demo-grid-placeholder">
+                      <div data-row>
+                        <div data-col="6">
+                          <div class="demo-grid-placeholder"></div>
+                        </div>
+                        <div data-col="6">
+                          <div class="demo-grid-placeholder"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>grid.offset</h3>
+        <div class="demo-grid">
+          <div data-row>
+            <div data-col="11 +1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="10 +2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="9 +3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="8 +4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="7 +5">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="6 +6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="5 +7">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="4 +8">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="3 +9">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="2 +10">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="1 +11">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>grid.sorting</h3>
+        <div class="demo-grid">
+          <div data-row>
+            <div data-col="11 push1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="1 pull11">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="10 push2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2 pull10">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="9 push3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="3 pull9">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="8 push4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="4 pull8">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="7 push5">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="5 pull7">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="6 push6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="6 pull6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="5 push7">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="7 pull5">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="4 push8">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="8 pull4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="3 push9">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="9 pull3">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="2 push10">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="10 pull2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-row>
+            <div data-col="1 push11">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="11 pull1">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <header class="demo-header">
+          <h2>flex-grid</h2>
+        </header>
+        <table class="table">
+          <thead>
+          <tr>
+            <th></th>
+            <th>Smartphones (<480px)</th>
+            <th>Smartphones landscape (>480px)</th>
+            <th>Tablet portrait (>720px)</th>
+            <th>Tablet landscape (>1024px)</th>
+            <th>Desktop (>1280px)</th>
+            <th>Large screens (>1920px)</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>data-col value postfix. e.g. <span class="code">data-col="6sm"</span></td>
+            <td>none</td>
+            <td>#<span class="code">sm</span></td>
+            <td>#<span class="code">md</span></td>
+            <td>#<span class="code">lg</span></td>
+            <td>#<span class="code">xl</span></td>
+            <td>#<span class="code">xxl</span></td>
+          </tr>
+          <tr>
+            <td>number of colums</td>
+            <td colspan="6">12</td>
+          </tr>
+          <tr>
+            <td>gutter width</td>
+            <td colspan="6">2rem (32px)</td>
+          </tr>
+          <tr>
+            <td>offest. e.g. <span class="code">data-col="+6sm"</span></td>
+            <td colspan="6"><span class="code">+</span>#</td>
+          </tr>
+          <tr>
+            <td>sorting values. e.g. <br>
+              <span class="code">data-flex-order="first-sm"<br>
+                data-flex-order="2sm"</span></td>
+            <td colspan="6">
+              <span class="code">first</span>, <span class="code">last</span>, <span class="code">first-</span>#,
+              <span class="code">last-</span>#, <span class="code">1</span># - <span
+                class="code">12</span>#
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <h3>dynamic flex columns</h3>
+        <pre><code class="html">
+<div data-flex>
+  <div>...</div>
+  <div>...</div>
+  ...
+</div>
+</code></pre>
+        <div class="demo-grid">
+          <div data-flex>
+            <div>
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-flex>
+            <div>
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div>
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+          <div data-flex>
+            <div>
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div>
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div>
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>flex columns</h3>
+        <pre><code class="html">
+<div data-flex="grid">
+  <div data-col="4">...</div>
+  <div data-col="6">...</div>
+  <div data-col="2">...</div>
+  <div data-col="12">...</div>
+  ...
+</div>
+</code></pre>
+        <div class="demo-grid">
+          <div data-flex="grid">
+            <div data-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="12">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <h3>flex columns offset</h3>
+        <pre><code class="html">
+<div data-flex="grid">
+  <div data-col="4 +2sm">...</div>
+  <div data-col="6 +4">...</div>
+  <div data-col="2 +6">...</div>
+  <div data-col="12">...</div>
+  ...
+</div>
+</code></pre>
+        <div class="demo-grid">
+          <div data-flex="grid">
+            <div data-col="4 +2sm">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="6 +4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="2 +6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="12">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>flex-grid justify-content</h3>
+        <pre><code class="html">
+<div data-flex="grid center">
+  <div data-col="4">...</div>
+  <div data-col="4">...</div>
+  <div data-col="8">...</div>
+  <div data-col="6">...</div>
+  ...
+</div>
+</code></pre>
+
+        <p>values for justify-content <span class="code">around</span> <span
+            class="code">between</span> <span class="code">center</span> <span
+            class="code">start</span> <span class="code">end</span></p>
+
+        <div class="demo-grid">
+          <div data-flex="grid center">
+            <div data-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="4">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="8">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+            <div data-col="6">
+              <div class="demo-grid-placeholder"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>flex-grid col size</h3>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="code">self</span></td>
+            <td>sets <span class="code">flex: 0 0 auto;</span> Element doesn't grow</td>
+          </tr>
+          <tr>
+            <td><span class="code">grow</span></td>
+            <td>sets <span class="code">flex: 1 1 auto;</span> Element grows and uses available
+              space
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <pre><code class="html">
+<div data-flex="grid">
+  <div data-col="self">...</div>
+  <div data-col="grow">...</div>
+</div>
+</code></pre>
+
+      </section>
+    </main>
+  </div>
+</div>
+</body>
+</html>

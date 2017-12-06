@@ -1,0 +1,25 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group grid
+
+@mixin container() {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: $grid-container-width;
+  padding-left: ($grid-gutter / 2) + px;
+  padding-right: ($grid-gutter / 2) + px;
+  width: 100%;
+}
+
+[data-container] {
+  @include container();
+}
+
+[data-container*='left'] {
+  margin: 0 0 0 auto;
+}
+
+[data-container*='right'] {
+  margin: 0 auto 0 0;
+}

@@ -1,0 +1,27 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group atoms
+///
+/// @prop {number} $base-padding [16] - small padding value for padding helper
+///
+/// @example
+///   <div class='spacing'></div>
+
+.spacing {
+  @include set-breakpoints {
+    height: rem($base-padding*2);
+  }
+
+  &-small {
+    @include set-breakpoints {
+      height: rem($base-padding);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      height: rem($base-padding*3);
+    }
+  }
+}

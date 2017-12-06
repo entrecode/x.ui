@@ -1,0 +1,163 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {value} $body-font
+/// @param {value} $headings-font
+/// @param {number} $base-font-size [16]
+/// @param {number} $base-line-height [1.4]
+///
+/// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
+/// @param {number} $inline-small-size [.875] - font-size of `<small>`
+/// @param {value} $paragraph-lead-weight [$light]
+
+body {
+  font-family: $body-font;
+  color: getColor(text);
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+///
+/// Link styles
+/// --------
+
+a {
+  color: getColor(link);
+  transition: color .2s;
+  cursor: pointer;
+  outline: none;
+
+  * {
+    cursor: pointer;
+  }
+
+  &:hover {
+    color: setHover($link);
+  }
+
+  @extend %link-styles !optional;
+}
+
+///
+/// Paragraph styles
+/// --------
+
+p {
+  @include get-font-size(p);
+  margin: 0;
+  margin-bottom: $vertical-rhythm;
+
+  strong,
+  small {
+    vertical-align: baseline;
+  }
+
+  @extend %paragraph-styles !optional;
+
+  &.small {
+    vertical-align: baseline;
+    font-size: ($inline-small-size*1em);
+  }
+
+  &.lead {
+    @include get-font-size(lead);
+    font-weight: $paragraph-lead-weight;
+  }
+}
+
+//
+/// Defaults
+/// --------
+
+i,
+em {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+small {
+  font-size: ($inline-small-size * 1em);
+  vertical-align: baseline;
+}
+
+u {
+  text-decoration: underline;
+}
+
+sup,
+sub {
+  font-size: 0.875em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+///
+/// Abbreviations
+/// -------------
+
+abbr[title] {
+  cursor: help;
+}
+
+///
+/// Pre, Code, and User Input
+/// -------------------------
+
+code,
+pre,
+kbd,
+samp {
+  font-size: 1em;
+}
+
+code {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+pre code {
+  white-space: pre;
+}
+
+kbd {
+  display: inline-block;
+  line-height: 1.75;
+  white-space: nowrap;
+}
+
+samp {
+  vertical-align: bottom;
+}
+
+///
+/// Addresses
+/// ---------
+
+address {
+  font-style: normal;
+}
+
+mark {
+  background-color: transparent;
+  color: getColor(highlight);
+  vertical-align: baseline;
+}

@@ -1,10 +1,10 @@
-@import '../../src/x.ui';
-@import 'code';
-@import 'function';
-@import 'demo-grid';
-@import 'demo-header';
-@import 'hljs';
-@import 'header';
-@import 'section';
-@import 'ui-colors-list';
+@import '../../src/config';
+@import '../../src/x.ui-sandbox';
+@import 'macros/macros';
+@import 'partials/partials';
 
+.hero {
+  background-image: url('assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+}

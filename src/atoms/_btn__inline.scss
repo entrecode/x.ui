@@ -1,0 +1,107 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group atoms inline
+///
+/// @param {number} $btn-line-height - normal button line-height
+/// @param {variable} $btn-small-line-height - small button line-height
+/// @param {variable} $btn-big-line-height - big button line-height
+///
+/// @param {number} $alert-line-height [20]
+/// @param {number} $alert-min-height [40]
+///
+/// @param {number} $alert-small-line-height [18]
+/// @param {number} $alert-small-min-height [32]
+///
+/// @param {number} $alert-big-line-height [24]
+/// @param {number} $alert-big-min-height [48]
+
+@mixin btnInlineComponents($parent, $child) {
+  $margin: $parent - $child;
+  margin-top: rem($margin / 2);
+  margin-bottom: rem($margin / 2);
+}
+
+.btn {
+  .tag,
+  .bubble {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .tag {
+    @include btnInlineComponents($btn-line-height, $tag-min-height);
+
+    &.tag_small {
+      @include btnInlineComponents($btn-line-height, $tag-small-min-height);
+    }
+
+    &.tag_big {
+      @include btnInlineComponents($btn-line-height, $tag-big-min-height);
+    }
+  }
+
+  .bubble {
+    @include btnInlineComponents($btn-line-height, $bubble-min-height);
+
+    &.bubble_small {
+      @include btnInlineComponents($btn-line-height, $bubble-small-min-height);
+    }
+
+    &.bubble_big {
+      @include btnInlineComponents($btn-line-height, $bubble-big-min-height);
+    }
+  }
+
+  &.btn_small {
+    .tag {
+      @include btnInlineComponents($btn-small-line-height, $tag-min-height);
+
+      &.tag_small {
+        @include btnInlineComponents($btn-small-line-height, $tag-small-min-height);
+      }
+
+      &.tag_big {
+        @include btnInlineComponents($btn-small-line-height, $tag-big-min-height);
+      }
+    }
+
+    .bubble {
+      @include btnInlineComponents($btn-small-line-height, $bubble-min-height);
+
+      &.bubble_small {
+        @include btnInlineComponents($btn-small-line-height, $bubble-small-min-height);
+      }
+
+      &.bubble_big {
+        @include btnInlineComponents($btn-small-line-height, $bubble-big-min-height);
+      }
+    }
+  }
+
+  &.btn_big {
+    .tag {
+      @include btnInlineComponents($btn-big-line-height, $tag-min-height);
+
+      &.tag_small {
+        @include btnInlineComponents($btn-big-line-height, $tag-small-min-height);
+      }
+
+      &.tag_big {
+        @include btnInlineComponents($btn-big-line-height, $tag-big-min-height);
+      }
+    }
+
+    .bubble {
+      @include btnInlineComponents($btn-big-line-height, $bubble-min-height);
+
+      &.bubble_small {
+        @include btnInlineComponents($btn-big-line-height, $bubble-small-min-height);
+      }
+
+      &.bubble_big {
+        @include btnInlineComponents($btn-big-line-height, $bubble-big-min-height);
+      }
+    }
+  }
+}

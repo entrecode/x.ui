@@ -1,0 +1,101 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+///
+/// @param {number} $tag-font-size [12]
+/// @param {number} $tag-line-height [14]
+/// @param {number} $tag-min-height [24]
+/// @param {value} $tag-weight [$bold]
+///
+/// @param {number} $tag-small-font-size [10]
+/// @param {number} $tag-small-line-height [12]
+/// @param {number} $tag-small-min-height [20]
+/// @param {value} $tag-small-weight [$tag-weight]
+///
+/// @param {number} $tag-big-font-size [12]
+/// @param {number} $tag-big-line-height [16]
+/// @param {number} $tag-big-min-height [32]
+/// @param {value} $tag-big-weight [$tag-weight]
+///
+/// @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
+/// @param {number} $tag-radius [4]
+/// @param {number} $tag-small-radius [4]
+/// @param {number} $tag-big-radius [4]
+
+.tag {
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+  font-weight: $tag-weight;
+  @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
+  border-radius: rem($tag-radius);
+  @include set-theme-colors(getColor(background, lightest));
+
+  /// additional styles via config
+  @extend %tag-style !optional;
+
+  &.tag_small {
+    @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height, $padding-ratio: $tag-padding-ratio);
+    border-radius: rem($tag-small-radius);
+    font-weight: $tag-small-weight;
+
+    /// additional styles via config
+    @extend %tag-small-style !optional;
+  }
+
+  &.tag_big {
+    @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height, $padding-ratio: $tag-padding-ratio);
+    border-radius: rem($tag-big-radius);
+    font-weight: $tag-big-weight;
+
+    /// additional styles via config
+    @extend %tag-big-style !optional;
+  }
+
+  /// @param {value} $prefix ['tag_']
+  /// @param {array} $name-array - postfix names appending $prefix
+  /// @param {array} $color-array - theme colors
+
+  $prefix: 'tag_';
+  $name-array: minor, link, super, highlight, invert, info, error, success, warning;
+  $color-array: getColor(minor), getColor(link), getColor(super), getColor(highlight), getColor(text, invert), getColor(state, info), getColor(state, error), getColor(state, success), getColor(state, warning);
+
+  @for $i from 1 through length($color-array) {
+    $color: nth($color-array, $i);
+    $name: nth($name-array, $i);
+
+    &.#{$prefix}#{$name} {
+      @include set-theme-colors($color);
+
+      @at-root a.#{$prefix}#{$name} {
+        &:hover {
+          background-color: varColor($color, -4);
+        }
+      }
+    }
+  }
+
+  & + .tag {
+    margin-left: rem(4);
+  }
+}
+
+/// for fluffy round tags
+/// @param {boolean} $tag-round - can be set in config.scss
+
+@if $tag-round == true {
+  .tag {
+    border-radius: rem($tag-min-height / 2);
+
+    &.tag_small {
+      border-radius: rem($tag-small-min-height / 2);
+    }
+
+    &.tag_big {
+      border-radius: rem($tag-big-min-height / 2);
+    }
+  }
+}

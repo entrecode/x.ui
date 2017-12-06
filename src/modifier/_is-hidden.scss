@@ -1,0 +1,10 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+
+.is-hidden {
+  @include set-breakpoints($area: true) {
+    display: none !important;
+  }
+}

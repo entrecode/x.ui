@@ -1,0 +1,31 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group atoms
+
+.input-group {
+  position: relative;
+
+  .input-group__icon {
+    position: absolute;
+    display: block;
+    min-width: rem(24);
+    text-align: center;
+    color: getColor(text, light);
+    left: rem(4);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    & + .input {
+      padding-left: rem(32);
+    }
+  }
+
+  .input {
+    & + .input-group__icon {
+      left: auto;
+      right: rem(4);
+    }
+  }
+}

@@ -1,0 +1,125 @@
+/// @author Bernhard Ruoff, Michael Locher
+/// @since 7.0.0
+/// @access public
+/// @group molecules
+///
+/// @param {px} $dropdown-radius [4]
+
+@keyframes rollDownDropdown {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+ul.dropdown {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  outline: none;
+
+  > li {
+    position: relative;
+    outline: none;
+    cursor: pointer;
+
+    &:focus {
+
+      ul.dropdown-options {
+        display: initial;
+      }
+    }
+  }
+
+  &.on-hover {
+    > li {
+      &:hover {
+        ul.dropdown-options {
+          display: initial;
+        }
+      }
+    }
+  }
+
+  ul.dropdown-options {
+    position: absolute;
+    top: 100%;
+    background-color: getColor(background);
+    border-radius: rem($dropdown-radius);
+    box-shadow: 0 4px 8px rgba(black, .2), 0 4px 24px rgba(black, .2);
+    max-height: 320px;
+    overflow-y: auto;
+    display: none;
+    z-index: 10;
+    list-style: none;
+    padding: rem(4);
+    margin: 0;
+    animation: rollDownDropdown .4s forwards;
+
+    li {
+      display: block;
+
+      &.dropdown-option {
+
+        > a:not(.btn) {
+          @extend %btn, .btn.btn_block !optional;
+          margin: 0;
+
+          &:hover {
+            background-color: getColor(state, hover);
+          }
+        }
+
+        > .btn {
+          @extend .btn.btn_block !optional;
+          margin: 0;
+        }
+      }
+
+      &.dropdown_divider {
+        margin: rem(4) 0;
+        padding: 0;
+        background-color: getColor(divider);
+        height: 1px;
+      }
+    }
+  }
+
+  &.dropdown_center {
+    ul.dropdown-options {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.dropdown_right {
+    ul.dropdown-options {
+      right: 0;
+    }
+  }
+
+  &.dropdown_left {
+    ul.dropdown-options {
+      left: 0;
+    }
+  }
+
+  &.dropdown_full {
+    ul.dropdown-options {
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &.dropdown_above {
+    ul.dropdown-options {
+      top: initial;
+      bottom: 100%;
+    }
+  }
+}
+

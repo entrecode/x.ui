@@ -1,0 +1,35 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+
+/// no text wrapping
+.is-nowrap {
+  @include set-breakpoints {
+    white-space: nowrap;
+    vertical-align: baseline;
+  }
+}
+
+/// uses automatic hyphenation
+.is-hyphen {
+  @include set-breakpoints {
+    @include word-wrap;
+  }
+}
+
+/// use automatic hyphenation with justification
+.is-hyphen-block {
+  @include set-breakpoints {
+    text-align: justify;
+    @include word-wrap;
+  }
+}
+
+/// automatic text cut off with ...
+.is-ellipsis {
+  @include set-breakpoints {
+    @include ellipsis;
+    display: block;
+  }
+}

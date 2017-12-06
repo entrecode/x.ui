@@ -1,0 +1,18 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group molecules inline
+
+.well {
+  p {
+    &:only-child {
+      margin: 0;
+    }
+  }
+
+  @include headings {
+    &:only-child {
+      margin: 0;
+    }
+  }
+}

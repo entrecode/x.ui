@@ -1,0 +1,54 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group atoms
+///
+/// @prop {number} $base-padding [16] - small padding value for padding helper
+///
+/// @example
+///   <div class='bumper'></div>
+
+@mixin bumper {
+  position: relative;
+  height: rem(4);
+  text-align: center;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: rem(4);
+    height: rem(4);
+    margin-left: rem(-10);
+    border-radius: 50%;
+    background-color: getColor(divider);
+    box-shadow: rem(8) 0 0 getColor(divider), rem(16) 0 0 getColor(divider);
+  }
+}
+
+.bumper {
+  @include set-breakpoints {
+    @include bumper;
+    margin: rem($base-padding*2) 0;
+  }
+
+  &.bumper_invert {
+    &:before {
+      background-color: rgba(getColor(background), .2);
+      box-shadow: rem(8) 0 0 rgba(getColor(background), .2), rem(16) 0 0 rgba(getColor(background), .2);
+    }
+  }
+
+  &-small {
+    @include set-breakpoints {
+      @include bumper;
+      margin: rem($base-padding) 0;
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      @include bumper;
+      margin: rem($base-padding*3) 0;
+    }
+  }
+}

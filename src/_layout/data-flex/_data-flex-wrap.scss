@@ -1,0 +1,15 @@
+/// @since 7.0.0
+/// @group flex-grid
+/// @author Bernhard Ruoff
+/// @access public
+
+$values: 'wrap', 'nowrap', 'wrap-reverse';
+$css: 'wrap', 'nowrap', 'wrap-reverse';
+
+@each $value in $values {
+  $i: index($values, $value);
+  $c: nth($css, $i);
+  @include set-data-breakpoints('flex', #{$value}) {
+    flex-wrap: #{$c};
+  }
+}

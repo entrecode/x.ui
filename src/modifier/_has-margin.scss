@@ -1,0 +1,157 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @prop {number} $base-spacing [16] - small padding value for padding helper
+
+.has-margin {
+  @include set-breakpoints {
+    margin: rem($base-spacing);
+  }
+
+  &-small {
+    @include set-breakpoints {
+      margin: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      margin: rem($base-spacing*2);
+    }
+  }
+}
+
+.has-margin-middle {
+  @include set-breakpoints {
+    margin-top: rem($base-spacing);
+    margin-bottom: rem($base-spacing);
+  }
+
+  &-small {
+    @include set-breakpoints {
+      margin-top: rem($base-spacing/2);
+      margin-bottom: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      margin-top: rem($base-spacing*2);
+      margin-bottom: rem($base-spacing*2);
+    }
+  }
+}
+
+.has-margin-top {
+  @include set-breakpoints {
+    margin-top: rem($base-spacing);
+  }
+
+  &-small {
+    @include set-breakpoints {
+      margin-top: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      margin-top: rem($base-spacing*2);
+    }
+  }
+}
+
+.has-margin-bottom {
+  @include set-breakpoints {
+    margin-bottom: rem($base-spacing);
+  }
+
+  &-small {
+    @include set-breakpoints {
+      margin-bottom: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      margin-bottom: rem($base-spacing*2);
+    }
+  }
+}
+
+.has-margin-center {
+  @include set-breakpoints {
+    margin-left: rem($base-spacing);
+    margin-right: rem($base-spacing);
+  }
+
+  &-small {
+    @include set-breakpoints {
+      margin-left: rem($base-spacing/2);
+      margin-right: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      margin-left: rem($base-spacing*2);
+      margin-right: rem($base-spacing*2);
+    }
+  }
+
+  &-auto {
+    @include set-breakpoints {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.has-margin-left {
+  @include set-breakpoints {
+    margin-left: rem($base-spacing);
+  }
+
+  &-small {
+    @include set-breakpoints {
+      margin-left: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      margin-left: rem($base-spacing*2);
+    }
+  }
+
+  &-auto {
+    @include set-breakpoints {
+      margin-left: auto;
+    }
+  }
+}
+
+.has-margin-right {
+  @include set-breakpoints {
+    margin-right: rem($base-spacing);
+  }
+
+  &-small {
+    @include set-breakpoints {
+      margin-right: rem($base-spacing/2);
+    }
+  }
+
+  &-big {
+    @include set-breakpoints {
+      margin-right: rem($base-spacing*2);
+    }
+  }
+
+  &-auto {
+    @include set-breakpoints {
+      margin-right: auto;
+    }
+  }
+}

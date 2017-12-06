@@ -1,0 +1,12 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+
+.is-uppercase {
+  text-transform: uppercase;
+}
+
+.is-lowercase {
+  text-transform: lowercase;
+}

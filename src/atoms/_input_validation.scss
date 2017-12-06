@@ -1,0 +1,20 @@
+.input {
+
+  &.ng-dirty {
+    &.ng-valid {
+      border-color: getColor(state, success);
+      color: setContrast(getColor(background), getColor(state, success));
+    }
+
+    &.ng-invalid {
+      border-color: getColor(state, error);
+      color: setContrast(getColor(background), getColor(state, error));
+    }
+
+    &.ng-pending {
+    }
+
+    &.ng-submitted {
+    }
+  }
+}

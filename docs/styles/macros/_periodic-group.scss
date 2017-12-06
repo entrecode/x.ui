@@ -1,0 +1,84 @@
+%periodic {
+  text-align: center;
+  padding: rem(8);
+  border: 1px solid getColor(background);
+}
+
+%family {
+  text-align: center;
+  padding: rem(8);
+  border: 1px solid getColor(background);
+}
+
+.xui-perdiodic-family-atoms {
+  @extend %family;
+}
+
+.xui-perdiodic-family-organisms {
+  @extend %family;
+}
+
+.xui-perdiodic-family-molecules {
+  @extend %family;
+}
+
+.xui-perdiodic-family-modifier {
+  @extend %family;
+}
+
+$group-type: #F9E882;
+$group-media: #8fd16f;
+$group-interaction: #6cc4f2;
+$group-form: #9cb7f2;
+$group-data: #e4c2f2;
+$group-layout: #d0f26d;
+$group-feedback: #f29894;
+$group-ui: $link;
+
+.periodic-group-type {
+  @extend %periodic;
+  background-color: $group-type;
+  color: setContrast($group-type);
+}
+
+.periodic-group-media {
+  @extend %periodic;
+  background-color: $group-media;
+  color: setContrast($group-media);
+}
+
+.periodic-group-data {
+  @extend %periodic;
+  background-color: $group-data;
+  color: setContrast($group-data);
+}
+
+.periodic-group-interaction {
+  @extend %periodic;
+  background-color: $group-interaction;
+  color: setContrast($group-interaction);
+}
+
+.periodic-group-form {
+  @extend %periodic;
+  background-color: $group-form;
+  color: setContrast($group-form);
+}
+
+.periodic-group-layout {
+  @extend %periodic;
+  background-color: $group-layout;
+  color: setContrast($group-layout);
+}
+
+.periodic-group-feedback {
+  @extend %periodic;
+  background-color: $group-feedback;
+  color: setContrast($group-feedback);
+}
+
+.periodic-group-ui {
+  @extend %periodic;
+  background-color: $group-ui;
+  color: setContrast($group-ui);
+}

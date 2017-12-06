@@ -1,0 +1,88 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {number} $is-rounded-min-radius [2]
+/// @param {number} $is-rounded-radius [4]
+/// @param {number} $is-rounded-max-radius [8]
+
+@mixin rounded($radius) {
+  @include set-breakpoints {
+    border-radius: $radius;
+  }
+
+  &-0 {
+    @include set-breakpoints {
+      border-radius: 0;
+    }
+  }
+
+  &-top {
+    @include set-breakpoints {
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+    }
+
+    &-0 {
+      @include set-breakpoints {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+
+  &-right {
+    @include set-breakpoints {
+      border-top-right-radius: $radius;
+      border-bottom-right-radius: $radius;
+    }
+
+    &-0 {
+      @include set-breakpoints {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+  &-bottom {
+    @include set-breakpoints {
+      border-bottom-right-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    &-0 {
+      @include set-breakpoints {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  &-left {
+    @include set-breakpoints {
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    &-0 {
+      @include set-breakpoints {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+.is-rounded {
+  @include rounded(rem($is-rounded-radius));
+
+  &-min {
+    @include rounded(rem($is-rounded-min-radius));
+  }
+
+  &-max {
+    @include rounded(rem($is-rounded-max-radius));
+  }
+}

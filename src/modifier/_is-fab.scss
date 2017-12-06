@@ -1,0 +1,81 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {number} $fab-spacing [16]
+
+.is-fab {
+
+  &-n {
+    @include set-breakpoints {
+      top: rem($fab-spacing);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-ne {
+    @include set-breakpoints {
+      top: rem($fab-spacing);
+      right: rem($fab-spacing);
+    }
+  }
+
+  &-e {
+    @include set-breakpoints {
+      right: rem($fab-spacing);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-se {
+    @include set-breakpoints {
+      right: rem($fab-spacing);
+      bottom: rem($fab-spacing);
+    }
+  }
+
+  &-s {
+    @include set-breakpoints {
+      bottom: rem($fab-spacing);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-sw {
+    @include set-breakpoints {
+      bottom: rem($fab-spacing);
+      left: rem($fab-spacing);
+    }
+  }
+
+  &-w {
+    @include set-breakpoints {
+      left: rem($fab-spacing);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-nw {
+    @include set-breakpoints {
+      left: rem($fab-spacing);
+      top: rem($fab-spacing);
+    }
+  }
+
+  &-0 {
+    @include set-breakpoints {
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+  }
+}
+
+[class*="is-fab-"] {
+  z-index: 10;
+}

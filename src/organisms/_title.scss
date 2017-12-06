@@ -1,0 +1,46 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group organism
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+
+  @include headings {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  nav {
+    &:only-child {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &.title_stacked {
+    flex-direction: column;
+    align-items: flex-start;
+
+    nav {
+      margin-right: 0;
+
+      ul {
+        justify-content: flex-start;
+      }
+    }
+  }
+}

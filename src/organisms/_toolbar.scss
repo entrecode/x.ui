@@ -1,0 +1,114 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group organism
+///
+/// @param {em} $toolbar-title-size [20] - font-size of .toolbar__title
+/// @param {px} $toolbar-title-img-height [32] - height of .toolbar__title > img
+/// @param {px} $toolbar-min-height [64] - min-height
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem($toolbar-padding / 2) rem($toolbar-padding);
+  min-height: rem($toolbar-min-height);
+  position: relative;
+
+  /// additional styles via config
+  @extend %toolbar-style !optional;
+
+  > .hamburger-btn {
+    margin: 0;
+
+    &:first-child {
+      margin-right: rem(16);
+    }
+
+    &:last-child {
+      margin-left: rem(16);
+    }
+
+    &:only-child {
+      margin: 0;
+    }
+  }
+
+  .toolbar__title {
+    flex-grow: 1;
+
+    @include headings {
+      margin: 0;
+      font-size: em($toolbar-title-size);
+      line-height: 1em;
+    }
+
+    img {
+      height: rem($toolbar-title-img-height);
+      width: auto;
+    }
+
+    &.toolbar__title_center {
+      @include headings {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        -webkit-font-smoothing: antialiased;
+        margin: 0;
+      }
+
+      img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+      }
+    }
+  }
+
+  .nav {
+    flex-grow: 0;
+    padding: 0;
+    margin: 0;
+
+    &:first-child {
+      margin-right: rem(16);
+    }
+
+    &:last-child {
+      margin-left: rem(16);
+    }
+
+    .btn {
+      margin: 0;
+    }
+
+    &:only-child {
+      width: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &.toolbar_small {
+    padding: rem($toolbar-padding / 4) rem($toolbar-padding);
+    font-size: 87.5%;
+    min-height: rem($toolbar-small-min-height);
+
+    /// additional styles via config
+    @extend %toolbar-small-style !optional;
+
+    .toolbar__title {
+
+      @include headings {
+        font-size: em($toolbar-small-title-size);
+      }
+
+      img {
+        height: rem($toolbar-small-title-img-height);
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group color-functions
+///
+/// color function to automatically generate a harmonic border-color based on two colors
+/// @example
+/// border-color: borderColor(white, black) // returns #555555
+///
+/// @param {variable} $color1 - first color
+/// @param {variable} $color2 - second color
+
+@function borderColor($color1, $color2) {
+  $lightness1: lightness($color1);
+  $lightness2: lightness($color2);
+  $lightnessborder: null;
+
+  @if ($lightness1 < $lightness2) {
+    $lightnessborder: ($lightness2 - $lightness1);
+  } @else if ($lightness1 > $lightness2) {
+    $lightnessborder: ($lightness1 - $lightness2);
+  }
+
+  @if ($lightnessborder > 75) {
+    @return lighten($color1, $lightnessborder / 3);
+  } @else if ($lightnessborder > 75) {
+    @return lighten($color1, $lightnessborder / 2);
+  } @else {
+    @return lighten($color1, $lightnessborder * .25);
+  }
+
+  @error "Sorry, but `#{$color1}` is equal to `#{$color2}`.";
+}

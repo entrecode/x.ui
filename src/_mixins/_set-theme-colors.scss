@@ -1,0 +1,21 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group theme mixin
+///
+/// sets background-color and matching text-color with
+/// @example
+/// include set-theme-colors(getColor(link));
+///
+/// @require {function} setContrast
+/// @param {color} $color - color value
+/// @param {color} $hue [$color] - color value for hue orientation
+
+@mixin set-theme-colors($color, $hue: false) {
+  background-color: $color;
+  @if $hue {
+    color: setContrast($color, $hue);
+  } @else {
+    color: setContrast($color);
+  }
+}

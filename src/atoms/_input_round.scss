@@ -1,0 +1,20 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group atom modifier
+///
+/// @param {number} $input-min-height [32]
+/// @param {number} $input-small-min-height [28]
+/// @param {number} $input-big-min-height [40]
+
+.input_round {
+  border-radius: rem($input-min-height / 2);
+
+  &.small {
+    border-radius: rem($input-small-min-height / 2);
+  }
+
+  &.big {
+    border-radius: rem($input-big-min-height / 2);
+  }
+}

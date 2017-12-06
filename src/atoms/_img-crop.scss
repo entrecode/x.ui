@@ -1,0 +1,52 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group atoms
+
+.img-crop-1-1 {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.img-crop-4-3 {
+  width: 100%;
+  padding-top: 100 / 4 * 3%;
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.img-crop-16-9 {
+  width: 100%;
+  padding-top: 100 / 16 * 9%;
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+}

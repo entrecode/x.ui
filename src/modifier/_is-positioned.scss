@@ -1,0 +1,75 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+
+.is-positioned {
+
+  &-n {
+    @include set-breakpoints {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-ne {
+    @include set-breakpoints {
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &-e {
+    @include set-breakpoints {
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-se {
+    @include set-breakpoints {
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &-s {
+    @include set-breakpoints {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-sw {
+    @include set-breakpoints {
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &-w {
+    @include set-breakpoints {
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-nw {
+    @include set-breakpoints {
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &-0 {
+    @include set-breakpoints {
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+  }
+}

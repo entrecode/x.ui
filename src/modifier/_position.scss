@@ -1,0 +1,22 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+
+.is-relative {
+  @include set-breakpoints {
+    position: relative;
+  }
+}
+
+.is-absolute {
+  @include set-breakpoints {
+    position: absolute;
+  }
+}
+
+.is-fixed {
+  @include set-breakpoints {
+    position: fixed;
+  }
+}

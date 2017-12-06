@@ -1,0 +1,171 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {number} $tooltip-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+///
+/// @param {number} $tooltip-font-size [12]
+/// @param {number} $tooltip-line-height [14]
+/// @param {number} $tooltip-min-height [24]
+/// @param {value} $tooltip-weight [$normal]
+///
+/// @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
+/// @param {number} $tooltip-radius [4]
+/// @param {number} $tooltip-small-radius [4]
+/// @param {number} $tooltip-big-radius [4]
+
+@keyframes tooltipBottom {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(rem(-4));
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(rem(4));
+  }
+}
+
+@keyframes tooltipTop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(rem(4));
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(rem(-4));
+  }
+}
+
+@keyframes tooltipLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(rem(4)) translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(rem(-4)) translateY(-50%);
+  }
+}
+
+@keyframes tooltipRight {
+  0% {
+    opacity: 0;
+    transform: translateX(rem(-4)) translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(rem(4)) translateY(-50%);
+  }
+}
+
+%tooltip {
+  position: relative;
+  overflow: visible;
+
+  @extend %tooltip-style !optional;
+
+  &:after {
+    @include macro-metrics($tooltip-font-size, $tooltip-line-height, $tooltip-min-height, $padding-ratio: $tooltip-padding-ratio);
+    border-radius: rem($tooltip-radius);
+    text-transform: initial;
+    letter-spacing: 0;
+    background-color: getColor(background, backdrop);
+    color: setContrast(getColor(background, backdrop));
+    display: none;
+    font-weight: $tooltip-weight;
+    position: absolute;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 100;
+    pointer-events: none;
+  }
+
+  &:hover {
+    &:after {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+[data-tooltip-bottom] {
+  @extend %tooltip;
+
+  &:after {
+    content: attr(data-tooltip-bottom);
+    animation: tooltipBottom .2s forwards;
+    top: 100%;
+    left: 50%;
+    opacity: 0;
+  }
+
+  &:hover {
+
+    &:after {
+      margin-top: rem(4);
+    }
+  }
+}
+
+[data-tooltip-left] {
+  @extend %tooltip;
+
+  &:after {
+    content: attr(data-tooltip-left);
+    top: 50%;
+    right: 100%;
+    animation: tooltipLeft .2s forwards;
+    opacity: 0;
+  }
+
+  &:hover {
+
+    &:after {
+      margin-right: rem(4);
+    }
+  }
+}
+
+[data-tooltip-right] {
+  @extend %tooltip;
+
+  &:after {
+    content: attr(data-tooltip-right);
+    top: 50%;
+    left: 100%;
+    animation: tooltipRight .2s forwards;
+    opacity: 0;
+  }
+
+  &:hover {
+
+    &:after {
+      margin-right: rem(4);
+    }
+  }
+}
+
+[data-tooltip-top] {
+  @extend %tooltip;
+
+  &:after {
+    content: attr(data-tooltip-top);
+    bottom: 100%;
+    left: 50%;
+    animation: tooltipTop .2s forwards;
+    opacity: 0;
+  }
+
+  &:hover {
+
+    &:after {
+      margin-top: rem(4);
+    }
+  }
+}

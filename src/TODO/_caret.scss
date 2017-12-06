@@ -1,0 +1,11 @@
+.caret {
+  border: rem(4) solid transparent;
+  border-top-color: getColor(text, lighter);
+  content: '';
+  width: rem(8);
+  height: rem(8);
+  margin-top: rem(-2);
+  position: absolute;
+  top: 50%;
+  right: rem(16);
+}

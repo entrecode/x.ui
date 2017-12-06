@@ -1,0 +1,40 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {px} $avatar-size [48]
+/// @param {px} $avatar-small-size-size [32]
+/// @param {px} $avatar-big-size-size [48]
+/// @param {px} $avatar-border [2]
+
+.img-avatar {
+  @include set-breakpoints {
+    width: rem($avatar-size);
+    height: rem($avatar-size);
+    overflow: hidden;
+    border-radius: 50%;
+    border: rem($avatar-border) solid getColor(background);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &._small {
+    @include set-breakpoints {
+      width: rem($avatar-small-size);
+      height: rem($avatar-small-size);
+    }
+  }
+
+  &._big {
+    @include set-breakpoints {
+      width: rem($avatar-big-size);
+      height: rem($avatar-big-size);
+    }
+  }
+}

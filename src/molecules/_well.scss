@@ -1,0 +1,39 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group molecules
+///
+/// @param {number} $well-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+/// @param {number} $well-padding [$base-padding]
+///
+/// @param {value} $well-weight [$normal]
+///
+/// @param {number} $well-radius [4]
+
+.well {
+  background-color: getColor(background, lightest);
+  border-radius: rem($well-radius);
+  margin: 0 0 rem($base-padding) 0;
+  padding: rem($well-padding) rem($well-padding * $well-padding-ratio);
+  font-weight: $well-weight;
+  font-size: 100%;
+
+  /// additional styles via config
+  @extend %well-style !optional;
+
+  &.well_small {
+    padding: rem($well-padding / 2) rem($well-padding / 2 * $well-padding-ratio);
+    font-size: 87.5%;
+
+    /// additional styles via config
+    @extend %well-small-style !optional;
+  }
+
+  &.well_big {
+    padding: rem($well-padding * 2) rem($well-padding * 2 * $well-padding-ratio);
+    font-size: 112.5%;
+
+    /// additional styles via config
+    @extend %well-big-style !optional;
+  }
+}

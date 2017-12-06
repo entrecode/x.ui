@@ -1,3 +1,94 @@
+## 7.0.0
+### breaking changes
+- new file-structure
+- prefixed all `.tag` modifier classes with `.tag_`
+- added a new variable for global prefixing `$pfx`
+- added `.img_` prefix for `img` modifier classes
+- removed `.nav.inline`
+- removed `.big` modifier for `<p>`
+- renamed `.raise-#` helper to `.is-raised`
+- renamed `_typo.scss` to `_type.scss`
+- changed typeface sizing to modular scaling with breakpoints
+- added xlcss config options to x.ui config 
+- removed `.alert_round` 
+- removed `.form-group`
+- removed `.pill` styles - use `.tag` instead
+- prefixed all `.padding` modifier classes with `.padding_`
+- renamed `.drawer-toggle` to `.hamburger-btn`
+- removed `.select` - use `.dropdown` instead
+- removed `.menubar` - use `.toolbar` instead
+- removed `.navigation-drawer`
+- removed `_menu.scss`, `_menu-dropdown.scss` and `_menubar.scss`
+- renamed `.btn-glow` to `.btn_glow`
+- removed `shadow` from color-map
+- renamed `header` to `title`
+- removed `.page`
+- removed `.section`
+- removed `.btn_raised` use `is-raised` intead
+- removed `.input_raised` use `is-raised` intead
+- renamed `.padding#` to `.has-padding#`
+- new naming convention for `.has-padding`
+- removed xlcss dependencies
+- changed naming convention of `data-col` e.g.: `data-col="2xs +2xs"` to `data-col="2-xs +2-xs"`
+- changed naming convention of `data-flex-order` e.g.: `data-flex-order="2xs"` to `data-flex-order="2-xs"`
+- renamed `set-colors` mixin to `set-theme-colors`
+- renamed `text-center`, `text-right`, `text-left` to `align-center`, `align-right`, `align-left`
+- changed flex-grid attibute from `data-flex="grid"` to `data-grid`
+- renamed text-color modifier to `is-ink#`
+
+### removed
+- removed `.input_search`
+- removed `.btn_delete`
+- removed `.btn_abort`
+- removed `theme-modifier` mixin
+- removed `validator.scss`
+- removed `setText` mixin
+
+### added
+- added comments to `<body>` and list style files
+- added `.nav_inline` and `.nav_stacked`
+- added `%link-styles` placeholder in config
+- added `%paragraph-styles` placeholder in config
+- added `_type_setting.scss`
+- added `_type_alignment.scss`
+- added `_type_colors.scss`
+- added .btn inline-element styles for `.tag`, `.ec-icon` and `.bubble` 
+- added headings inline-element styles for `.tag` and `.bubble` 
+- added `get-font-size` mixin 
+- added `.input-group` styles
+- added `.padding-top`, `.padding-bottom`, `.padding-left` and `.padding-right` 
+- added image helper `.img-crop-1-1`, `.img-crop-4-3`, `.img-crop-16-9`
+- added `.table_small`, `.table_big` and `.table_bordered`
+- added `.btn-group`
+- added `.img-avatar`
+- added ng-validation classes for `.input` 
+- added a behavior modifier `on-hover` for `dropdown`
+- added `.has-margin#`
+- added `.input_clear`
+- added `.no-margin#` and `.no-padding#`
+- added overflow-modifier `.is-clipped#` and `.is-scrollable#`
+- added size-modifier
+- added `is-fab#` modifier
+- added position modifier
+- added `set-breakpoint` mixin
+- added `is-positioned#` modifier
+- added `is-visible#` and `is-hidden#`
+- added breakpoints to all flex-grid and grid elements
+- added font-weight modifier
+- new function `setHover` for hover shade colors
+- added `is-theme#`
+
+### changed
+- optimized `.bubble` styles and comments
+- optimized `.kiosk` styles and comments
+- optimized `select.input` styles and comments
+- refactored `.tag` styles and comments
+- refactored `.tooltip` styles and comments
+- refactored `.padding` styles and comments
+- refactored `.well` styles and comments
+- refactored `.alert` styles and comments
+- refactored float-grid an flex-grid
+
 ## 6.0.1 - 26.10.2017
 ### fixes
 - fixed ie transform bug
