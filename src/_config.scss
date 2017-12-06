@@ -1,10 +1,3 @@
-/// Project
-/// ------------------------------------------------------
-
-/// @param {value} $project-class [page] - class name of main _grid wrapper
-/// @see _partials/_layout.scss
-$project-class: page;
-
 /// @font-face
 /// ------------------------------------------------------
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700;Open+Sans:400,700');
@@ -59,9 +52,6 @@ $state-warning: gold;
 /// @param {color} $darker-fallback [$text] - darker fallback color for setContrast
 $lighter-fallback: $background;
 $darker-fallback: $text;
-
-/// @param {value} $pfx [''] - global prefixing
-$pfx: '';
 
 /// @param {boolean} $flex-support [true]
 $flex-support: true;
@@ -169,7 +159,7 @@ $type-scale-lg: (
 $headings-weight: $bold;
 
 /// @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
-$heading-inline-small: .875;
+$heading-inline-small: .5;
 
 /// additional styles for headings
 %heading-style {
