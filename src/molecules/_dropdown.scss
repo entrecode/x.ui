@@ -3,8 +3,6 @@
 /// @access public
 /// @group molecules
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {px} $dropdown-radius [4]
 
 @keyframes rollDownDropdown {
@@ -17,7 +15,7 @@
   }
 }
 
-ul.#{$pfx}dropdown {
+ul.dropdown {
   list-style: none;
   display: inline-block;
   margin: 0;
@@ -31,7 +29,7 @@ ul.#{$pfx}dropdown {
 
     &:focus {
 
-      ul.#{$pfx}dropdown-options {
+      ul.dropdown-options {
         display: initial;
       }
     }
@@ -40,14 +38,14 @@ ul.#{$pfx}dropdown {
   &.on-hover {
     > li {
       &:hover {
-        ul.#{$pfx}dropdown-options {
+        ul.dropdown-options {
           display: initial;
         }
       }
     }
   }
 
-  ul.#{$pfx}dropdown-options {
+  ul.dropdown-options {
     position: absolute;
     top: 100%;
     background-color: getColor(background);
@@ -65,10 +63,10 @@ ul.#{$pfx}dropdown {
     li {
       display: block;
 
-      &.#{$pfx}dropdown-option {
+      &.dropdown-option {
 
-        > a:not(.#{$pfx}btn) {
-          @extend %btn, .#{$pfx}btn.#{$pfx}btn_block !optional;
+        > a:not(.btn) {
+          @extend %btn, .btn.btn_block !optional;
           margin: 0;
 
           &:hover {
@@ -76,13 +74,13 @@ ul.#{$pfx}dropdown {
           }
         }
 
-        > .#{$pfx}btn {
-          @extend .#{$pfx}btn.#{$pfx}btn_block !optional;
+        > .btn {
+          @extend .btn.btn_block !optional;
           margin: 0;
         }
       }
 
-      &.#{$pfx}dropdown_divider {
+      &.dropdown_divider {
         margin: rem(4) 0;
         padding: 0;
         background-color: getColor(divider);
@@ -91,34 +89,34 @@ ul.#{$pfx}dropdown {
     }
   }
 
-  &.#{$pfx}dropdown_center {
-    ul.#{$pfx}dropdown-options {
+  &.dropdown_center {
+    ul.dropdown-options {
       left: 50%;
       transform: translateX(-50%);
     }
   }
 
-  &.#{$pfx}dropdown_right {
-    ul.#{$pfx}dropdown-options {
+  &.dropdown_right {
+    ul.dropdown-options {
       right: 0;
     }
   }
 
-  &.#{$pfx}dropdown_left {
-    ul.#{$pfx}dropdown-options {
+  &.dropdown_left {
+    ul.dropdown-options {
       left: 0;
     }
   }
 
-  &.#{$pfx}dropdown_full {
-    ul.#{$pfx}dropdown-options {
+  &.dropdown_full {
+    ul.dropdown-options {
       left: 0;
       width: 100%;
     }
   }
 
-  &.#{$pfx}dropdown_above {
-    ul.#{$pfx}dropdown-options {
+  &.dropdown_above {
+    ul.dropdown-options {
       top: initial;
       bottom: 100%;
     }

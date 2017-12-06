@@ -3,8 +3,6 @@
 /// @access public
 /// @group molecules
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @prop {number} $base-padding [16] - small padding value for padding helper
 ///
 /// @param {number} $alert-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
@@ -16,7 +14,7 @@
 /// @example
 ///   <p class='alert alert_error'>Error Message</p>
 
-.#{$pfx}alert {
+.alert {
   margin: 0 0 rem($base-padding) 0;
   text-align: center;
   padding: rem($alert-padding) rem($alert-padding * $alert-padding-ratio);
@@ -27,12 +25,12 @@
   /// additional styles via config
   @extend %alert-style !optional;
 
-  &.#{$pfx}alert_small {
+  &.alert_small {
     padding: rem($alert-padding / 2) rem($alert-padding / 2 * $alert-padding-ratio);
     font-size: 87.5%;
   }
 
-  &.#{$pfx}alert_big {
+  &.alert_big {
     padding: rem($alert-padding * 2) rem($alert-padding * 2 * $alert-padding-ratio);
     font-size: 112.5%;
   }
@@ -49,7 +47,7 @@
     $color: nth($color-array, $i);
     $name: nth($name-array, $i);
 
-    &.#{$pfx}#{$prefix}#{$name} {
+    &.#{$prefix}#{$name} {
       @include set-theme-colors($color);
     }
   }

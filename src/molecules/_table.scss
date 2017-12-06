@@ -2,8 +2,6 @@
 /// @since 1.0.0
 /// @access public
 /// @group templates
-///
-/// @param {variable} $pfx [''] - global prefixing
 
 table {
   width: 100%;
@@ -11,7 +9,7 @@ table {
   border-spacing: 0;
 }
 
-.#{$pfx}table {
+.table {
   margin: 0 0 rem($base-padding) 0;
 
   thead {
@@ -36,7 +34,7 @@ table {
     }
   }
 
-  &.#{$pfx}table_small {
+  &.table_small {
     font-size: 87.5%;
 
     td, th {
@@ -44,7 +42,7 @@ table {
     }
   }
 
-  &.#{$pfx}table_big {
+  &.table_big {
     font-size: 112.5%;
 
     td, th {
@@ -52,7 +50,7 @@ table {
     }
   }
 
-  &.#{$pfx}table_bordered {
+  &.table_bordered {
 
     td, th {
       border-right: 1px solid getColor(divider);

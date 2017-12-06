@@ -3,8 +3,6 @@
 /// @access public
 /// @group molecules
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {number} $well-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 /// @param {number} $well-padding [$base-padding]
 ///
@@ -12,7 +10,7 @@
 ///
 /// @param {number} $well-radius [4]
 
-.#{$pfx}well {
+.well {
   background-color: getColor(background, lightest);
   border-radius: rem($well-radius);
   margin: 0 0 rem($base-padding) 0;
@@ -23,7 +21,7 @@
   /// additional styles via config
   @extend %well-style !optional;
 
-  &.#{$pfx}well_small {
+  &.well_small {
     padding: rem($well-padding / 2) rem($well-padding / 2 * $well-padding-ratio);
     font-size: 87.5%;
 
@@ -31,7 +29,7 @@
     @extend %well-small-style !optional;
   }
 
-  &.#{$pfx}well_big {
+  &.well_big {
     padding: rem($well-padding * 2) rem($well-padding * 2 * $well-padding-ratio);
     font-size: 112.5%;
 

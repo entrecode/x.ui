@@ -2,10 +2,8 @@
 /// @since 7.0.0
 /// @access public
 /// @group molecules inline
-///
-/// @param {variable} $pfx [''] - global prefixing
 
-.#{$pfx}well {
+.well {
   p {
     &:only-child {
       margin: 0;

@@ -3,11 +3,10 @@
 /// @access public
 /// @group molecules
 ///
-/// @param {variable} $pfx [''] - global prefixing
 /// @param {boolean} $flex-support [true]
 /// @prop {number} $base-padding [16] - small padding value for padding helper
 
-.#{$pfx}form-group {
+.form-group {
   margin: 0 0 rem($base-padding) 0;
 
   @if $flex-support == true {
@@ -32,7 +31,7 @@
     }
   }
 
-  &.#{$pfx}form-group_boolean {
+  &.form-group_boolean {
 
     @if $flex-support == true {
       flex-direction: row;

@@ -3,15 +3,13 @@
 /// @access public
 /// @group molecules
 ///
-/// @param {variable} $pfx [''] - global prefixing
-///
 /// @param {boolean} $alert-outlined - sets border-width for .alert_outlined
 ///
 /// @example
 ///   <p class='alert alert_outlined'>Error Message</p>
 
-.#{$pfx}alert {
-  &.#{$pfx}alert_outlined {
+.alert {
+  &.alert_outlined {
     background-color: transparent;
     border-style: solid;
     border-color: getColor(background, lightest);
@@ -29,7 +27,7 @@
       $color: nth($color-array, $i);
       $name: nth($name-array, $i);
 
-      &.#{$pfx}#{$prefix}#{$name} {
+      &.#{$prefix}#{$name} {
         border-color: $color;
         background-color: transparent;
         color: setContrast(getColor(background), $color);

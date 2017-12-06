@@ -3,7 +3,6 @@
 /// @access public
 /// @group molecules
 ///
-/// @param {variable} $pfx [''] - global prefixing
 /// @param {boolean} $flex-support [true]
 ///
 /// @param {boolean} $btn-round [false] - sets border-radius to 50% of button height
@@ -17,12 +16,12 @@
 ///
 /// @param {boolean} $btn-group-divider [true] - if btn-group items are divided by a thin border
 
-.#{$pfx}btn-group {
+.btn-group {
 
   // inline styles for .btn
   // ------------------------------------------------------
 
-  > .#{$pfx}btn {
+  > .btn {
     margin: 0;
     border-radius: 0;
     position: relative;
@@ -46,7 +45,7 @@
     &:first-child {
       border-radius: rem($btn-radius) 0 0 rem($btn-radius);
 
-      &.#{$pfx}btn_round {
+      &.btn_round {
         border-radius: rem($btn-min-height / 2) 0 0 rem($btn-min-height / 2);
       }
 
@@ -58,7 +57,7 @@
     &:last-child {
       border-radius: 0 rem($btn-radius) rem($btn-radius) 0;
 
-      &.#{$pfx}btn_round {
+      &.btn_round {
         border-radius: 0 rem($btn-min-height / 2) rem($btn-min-height / 2) 0;
       }
 
@@ -71,13 +70,13 @@
       }
     }
 
-    &.#{$pfx}btn_small {
+    &.btn_small {
       border-radius: 0;
 
       &:first-child {
         border-radius: rem($btn-small-radius) 0 0 rem($btn-small-radius);
 
-        &.#{$pfx}btn_round {
+        &.btn_round {
           border-radius: rem($btn-small-min-height / 2) 0 0 rem($btn-small-min-height / 2);
         }
 
@@ -89,7 +88,7 @@
       &:last-child {
         border-radius: 0 rem($btn-small-radius) rem($btn-small-radius) 0;
 
-        &.#{$pfx}btn_round {
+        &.btn_round {
           border-radius: 0 rem($btn-small-min-height / 2) rem($btn-small-min-height / 2) 0;
         }
 
@@ -99,13 +98,13 @@
       }
     }
 
-    &.#{$pfx}btn_big {
+    &.btn_big {
       border-radius: 0;
 
       &:first-child {
         border-radius: rem($btn-big-radius) 0 0 rem($btn-big-radius);
 
-        &.#{$pfx}btn_round {
+        &.btn_round {
           border-radius: rem($btn-big-min-height / 2) 0 0 rem($btn-big-min-height / 2);
         }
 
@@ -117,7 +116,7 @@
       &:last-child {
         border-radius: 0 rem($btn-big-radius) rem($btn-big-radius) 0;
 
-        &.#{$pfx}btn_round {
+        &.btn_round {
           border-radius: 0 rem($btn-big-min-height / 2) rem($btn-big-min-height / 2) 0;
         }
 
@@ -127,7 +126,7 @@
       }
     }
 
-    &.#{$pfx}btn_outlined {
+    &.btn_outlined {
       border-left-width: 0;
 
       &:after {
@@ -143,13 +142,13 @@
   // inline styles for .dropdown
   // ------------------------------------------------------
 
-  > .#{$pfx}dropdown {
+  > .dropdown {
     @if $flex-support == false {
       float: left;
     }
 
     > li {
-      > .#{$pfx}btn {
+      > .btn {
         margin: 0;
         position: relative;
         border-radius: 0;
@@ -166,7 +165,7 @@
           }
         }
 
-        &.#{$pfx}btn_outlined {
+        &.btn_outlined {
           border-left-width: 0;
 
           &:after {
@@ -178,10 +177,10 @@
 
     &:first-child {
       > li {
-        > .#{$pfx}btn {
+        > .btn {
           border-radius: rem($btn-radius) 0 0 rem($btn-radius);
 
-          &.#{$pfx}btn_round {
+          &.btn_round {
             border-radius: rem($btn-min-height / 2) 0 0 rem($btn-min-height / 2);
           }
 
@@ -189,10 +188,10 @@
             border-radius: rem($btn-min-height / 2) 0 0 rem($btn-min-height / 2);
           }
 
-          &.#{$pfx}btn_small {
+          &.btn_small {
             border-radius: rem($btn-small-radius) 0 0 rem($btn-small-radius);
 
-            &.#{$pfx}btn_round {
+            &.btn_round {
               border-radius: rem($btn-small-min-height / 2) 0 0 rem($btn-small-min-height / 2);
             }
 
@@ -201,10 +200,10 @@
             }
           }
 
-          &.#{$pfx}btn_big {
+          &.btn_big {
             border-radius: rem($btn-big-radius) 0 0 rem($btn-big-radius);
 
-            &.#{$pfx}btn_round {
+            &.btn_round {
               border-radius: rem($btn-big-min-height / 2) 0 0 rem($btn-big-min-height / 2);
             }
 
@@ -213,7 +212,7 @@
             }
           }
 
-          &.#{$pfx}btn_outlined {
+          &.btn_outlined {
             border-left-width: rem($btn-outline);
           }
         }
@@ -224,10 +223,10 @@
 
       > li {
 
-        > .#{$pfx}btn {
+        > .btn {
           border-radius: 0 rem($btn-radius) rem($btn-radius) 0;
 
-          &.#{$pfx}btn_round {
+          &.btn_round {
             border-radius: 0 rem($btn-min-height / 2) rem($btn-min-height / 2) 0;
           }
 
@@ -239,10 +238,10 @@
             content: initial;
           }
 
-          &.#{$pfx}btn_small {
+          &.btn_small {
             border-radius: 0 rem($btn-small-radius) rem($btn-small-radius) 0;
 
-            &.#{$pfx}btn_round {
+            &.btn_round {
               border-radius: 0 rem($btn-small-min-height / 2) rem($btn-small-min-height / 2) 0;
             }
 
@@ -251,10 +250,10 @@
             }
           }
 
-          &.#{$pfx}btn_big {
+          &.btn_big {
             border-radius: 0 rem($btn-big-radius) rem($btn-big-radius) 0;
 
-            &.#{$pfx}btn_round {
+            &.btn_round {
               border-radius: 0 rem($btn-big-min-height / 2) rem($btn-big-min-height / 2) 0;
             }
 
