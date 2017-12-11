@@ -1,10 +1,10 @@
 # x.ui 7.0.0
-**x.ui** is a framework based on the atomic design methodology. this workflow is inspired by nature and physics and has a pretty serious focus on modularity and structure. it structure begins with the smallest part and builds up to complex structure. as a result, there is very little redundancy with a remarkable flexibility.
+**x.ui** is a framework based on the atomic design methodology. this workflow is inspired by nature and physics and has a pretty serious focus on modularity and structure. its structure begins with the smallest part and builds up to complex structure. as a result, there is very little redundancy with a remarkable flexibility.
 
 ## getting started
-To install all required dependencies for development, run
+To install x.ui, run
 ```
-npm i
+npm i x.ui --save
 ```
 download [_config.scss](https://github.com/entrecode/x.ui/blob/master/src/_config.scss) 
 
