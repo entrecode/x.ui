@@ -24,6 +24,10 @@
     }
   }
 
+  &_square {
+    border-radius: rem($avatar-square-radius);
+  }
+
   &_small {
     @include set-breakpoints {
       width: rem($avatar-small-size);
