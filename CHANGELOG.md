@@ -1,3 +1,13 @@
+## 7.0.1
+### breaking changes
+- use `@import '~x.ui/src/x.ui.scss';` instead of `@import '~x.ui/src/x.ui-sandbox.scss';`
+- renamed `.spacing#` to `.spacer#`
+- renamed `.is-ink#` to `.ink#`
+
+### added
+- `.flex-spacer`
+- `.list` organism
+
 ## 7.0.0
 ### breaking changes
 - new file-structure

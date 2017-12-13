@@ -7,9 +7,9 @@
   <title>x.ui docu</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-3.0.0.min.css"/>
-  <link rel="stylesheet" href="x.ui.css">
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/dracula.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/github.min.css">
+  <link rel="stylesheet" href="x.ui.css">
   <script
       src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
   <script>
@@ -53,7 +53,7 @@
         <nav class="nav nav_stacked">
           <ul class="nav__items">
             <li class="nav__item">
-              <a href="#" class="kilo is-uppercase">get started</a>
+              <a href="#xui-get-started" class="kilo is-uppercase">get started</a>
             </li>
           </ul>
         </nav>
@@ -64,40 +64,57 @@
   <div class="hero has-margin has-height-vh-golden is-theme-invert" data-flex="center center-items">
     <div class="align-center">
       <img src="assets/xui-logo.svg" alt="x.ui - atomic css framwork" width="240px">
-      <div class="spacing-small"></div>
-      <a href="" class="btn btn_outlined btn_invert">get started</a>
-      <div class="spacing-small"></div>
+      <div class="spacer-small"></div>
+      <a href="#xui-get-started" class="btn btn_outlined btn_invert">get started</a>
+      <div class="spacer-small"></div>
       <p class="align-center text-invert">
         <small>v. {{version}}</small>
       </p>
     </div>
   </div>
 
-  <div class="spacing-big"></div>
+  <div class="spacer-big"></div>
 
   <div data-container>
     <div data-grid data-flex="center">
       <div data-col="8-sm">
         <h1 class="h2 align-center is-uppercase">welcome to the atomsphere.</h1>
         <p class="lead is-hyphen-block"><strong>x.ui</strong> is a framework based on the atomic
-          design methodology.
-          this workflow
-          is inspired by nature and physics and has a pretty serious focus on modularity and
-          structure. it structure
-          begins with the smallest part and builds up to complex structure. as a result, there is
-          very little redundancy
-          with a remarkable felxibility.</p>
+          design methodology. this workflow is inspired by nature and physics and has a pretty
+          serious focus on modularity and structure. it structure begins with the smallest part and
+          builds up to complex structure. as a result, there is very little redundancy with a
+          remarkable flexibility.</p>
         <p class="is-hyphen-block">the goal of <strong>x.ui</strong> is to translate the atomic
-          philosophy into a new
-          kind of framework,
-          unattached to design-trends and 100% focused on user-driven ux-design and combine it a
-          with a strict set of
-          rules regarding naming conventions and front-end development.</p>
+          philosophy into a new kind of framework, unattached to design-trends and 100% focused on
+          user-driven ux-design and combine it a with a strict set of rules regarding naming
+          conventions and front-end development.</p>
+        <div class="bumper-big"></div>
+        <h2 class="mega align-center ink-link is-uppercase" id="xui-get-started">get started</h2>
+        <div data-grid="small" data-flex="center-content">
+          <div data-col="4-sm">
+            <h6 class="align-center">1. install</h6>
+            <pre><code>npm i x.ui --save</code></pre>
+          </div>
+          <div data-col="4-sm">
+            <h6 class="align-center">2. download config</h6>
+            <div class="well well_small align-center">
+              <a href="https://github.com/entrecode/x.ui/blob/master/src/_config.scss"
+                 title="config file for x.ui" target="_blank" rel="noopener"
+                 class="btn btn_outlined">Download</a>
+            </div>
+          </div>
+          <div data-col="4-sm">
+            <h6 class="align-center">3. setup root-scss</h6>
+            <pre><code class="css">
+@import '_config';
+@import '~x.ui/src/x.ui.scss';</code></pre>
+          </div>
+        </div>
+        <div class="bumper-big"></div>
       </div>
     </div>
   </div>
 
-  <div class="bumper-big"></div>
 
   <div data-container>
     <div data-grid data-flex="center">
@@ -115,13 +132,12 @@
               </div>
               <p class="is-hyphen-block">
                 <small>Atoms are the smallest building blocks of <strong>x.ui</strong>. Atoms are
-                  elements like type,
-                  headings, inputs, buttons and more. Atoms only have one function. Most atoms have
-                  specific modifiers
-                  that change attributes like size, style or color.
+                  elements like type, headings, inputs, buttons and more. Atoms only have one
+                  function. Most atoms have specific modifiers that change attributes like size,
+                  style or color.
                 </small>
               </p>
-              <div class="spacing"></div>
+              <div class="spacer"></div>
             </div>
             <div data-col="4-sm">
               <div class="align-center">
@@ -133,11 +149,11 @@
               </div>
               <p class="is-hyphen-block">
                 <small>Molecules are groups of atoms bonded together and are the smallest
-                  fundamental units of a
-                  compound. molecules group connected information and/or interactions.
+                  fundamental units of a compound. molecules group connected information and/or
+                  interactions.
                 </small>
               </p>
-              <div class="spacing"></div>
+              <div class="spacer"></div>
             </div>
             <div data-col="4-sm">
               <div class="align-center">
@@ -148,11 +164,10 @@
                 <h3 class="h5"><a href="#xui-organisms">organisms</a></h3>
                 <p class="is-hyphen-block">
                   <small>organisms combine complex groups of molecules and molecules. they are the
-                    biggest parts of the
-                    atomsphere.
+                    biggest parts of the atomsphere.
                   </small>
                 </p>
-                <div class="spacing"></div>
+                <div class="spacer"></div>
               </div>
             </div>
           </div>
@@ -161,7 +176,7 @@
     </div>
   </div>
 
-  <div class="spacing-big"></div>
+  <div class="spacer-big"></div>
 
   <div>
     <ul data-grid="no-gutter" class="xui-perdiodic-table">
@@ -195,7 +210,9 @@
           <li data-col="6-sm 4-md" class="periodic-group-data"><span class="h5">D</span><br>tag</li>
           <li data-col="6-sm 4-md" class="periodic-group-layout"><span class="h5">L</span><br>bumper
           </li>
-          <li data-col="6-sm 4-md" class="periodic-group-layout"><span class="h5">L</span><br>spacing
+          <li data-col="6-sm 4-md" class="periodic-group-layout"><span class="h5">L</span><br>spacer
+          </li>
+          <li data-col="6-sm 4-md" class="periodic-group-layout"><span class="h5">L</span><br>flex-spacer
           </li>
         </ul>
       </li>
@@ -230,6 +247,7 @@
             </svg>
             <h3 class="h6">organisms</h3>
           </li>
+          <li data-col="6-sm 4-md" class="periodic-group-ui"><span class="h5">UI</span><br>list</li>
           <li data-col="6-sm 4-md" class="periodic-group-ui"><span class="h5">UI</span><br>nav</li>
           <li data-col="6-sm 4-md" class="periodic-group-ui"><span class="h5">UI</span><br>toolbar
           </li>
@@ -299,16 +317,16 @@
     <div data-grid data-flex="center">
       <div data-col="8-sm">
         <h2 class="giga align-center is-uppercase" id="xui-the-grid">
-          <small class="is-ink-link">layout</small>
+          <small class="ink-link">layout</small>
           <br>the grid
         </h2>
         <p class="lead">the grid system and additional layout modifier as an ordering structure and
-          a ui-design neccesaty are not part of the atomic structure but belongs to its core
+          a ui-design necessity are not part of the atomic structure but belongs to its core
           fabric.</p>
       </div>
     </div>
 
-    <div class="spacing"></div>
+    <div class="spacer"></div>
 
     <div data-grid>
       <div data-col="1">
@@ -456,26 +474,25 @@
     </div>
   </div>
 
-  <div class="spacing"></div>
+  <div class="spacer"></div>
 
   <div data-container>
     <div data-grid data-flex="center">
       <div data-col="8">
 
-        <div class="spacing"></div>
+        <div class="spacer"></div>
 
         <p class="h2 is-uppercase" style="line-height: 1em">
-          mobile<span class="is-ink-link">first</span> mobile<span
-            class="is-ink-light">landscape</span><span
-            class="is-ink-link">480</span> tablet<span
-            class="is-ink-link">720</span> tablet<span class="is-ink-light">landscape</span><span
-            class="is-ink-link">1024</span> desktop<span
-            class="is-ink-link">1280</span> widescreen<span class="is-ink-link">1920</span>
+          mobile<span class="ink-link">first</span> mobile<span
+            class="ink-light">landscape</span><span
+            class="ink-link">480</span> tablet<span
+            class="ink-link">720</span> tablet<span class="ink-light">landscape</span><span
+            class="ink-link">1024</span> desktop<span
+            class="ink-link">1280</span> widescreen<span class="ink-link">1920</span>
         </p>
-        <div class="spacing"></div>
+        <div class="spacer"></div>
         <p>The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of classes.
-          you can choose
-          between a float or a flex based 12 column grid.</p>
+          you can choose between a float or a flex based 12 column grid.</p>
         <div data-grid>
           <div data-col="6-sm">
             <h4 class="h6 is-uppercase">flex-grid</h4>
@@ -501,7 +518,7 @@
           </div>
         </div>
 
-        <div class="spacing"></div>
+        <div class="spacer"></div>
 
         <div data-grid>
           <div data-col="12">
@@ -527,7 +544,7 @@
                 <td data-col="8">aligns the container right</td>
               </tr>
             </table>
-            <div class="spacing"></div>
+            <div class="spacer"></div>
           </div>
           <div data-col="12">
             <div class="well align-center">
@@ -558,7 +575,7 @@
                 <td data-col="8">centers the columns</td>
               </tr>
             </table>
-            <div class="spacing"></div>
+            <div class="spacer"></div>
           </div>
           <div data-col="12">
             <div class="well align-center">
@@ -719,7 +736,7 @@
               </tr>
               </tbody>
             </table>
-            <div class="spacing"></div>
+            <div class="spacer"></div>
           </div>
 
           <div data-col="12">
@@ -743,7 +760,7 @@
               </tr>
               </tbody>
             </table>
-            <div class="spacing"></div>
+            <div class="spacer"></div>
           </div>
 
           <div data-col="12">
@@ -753,7 +770,7 @@
             <p>By default, flex items are laid out in the source order. However, the order property
               controls the order in which they appear in the flex container. the order-value can be
               <span class="code">[1-12]</span>.</p>
-            <div class="spacing"></div>
+            <div class="spacer"></div>
           </div>
 
           <div data-col="12">
@@ -777,7 +794,7 @@
 
         <div data-grid>
           <div data-col="2">
-            <div class="h1 align-center is-ink-link">xs</div>
+            <div class="h1 align-center ink-link">xs</div>
           </div>
           <div data-col="2">
             <div class="h1 align-center">sm</div>
@@ -795,7 +812,7 @@
             <div class="h1 align-center">xxl</div>
           </div>
         </div>
-        <div class="spacing"></div>
+        <div class="spacer"></div>
         <table class="table">
           <tr>
             <td><em>empty</em></td>
@@ -830,28 +847,27 @@
           </tr>
         </table>
 
-        <p>breakpoint shortcodes can postfixed to most of classes or attibute-values. normally it
-          means that the style takes effekt from the breakpoint up. A few styles just use a specific
+        <p>breakpoint shortcodes can post-fixed to most of classes or attribute-values. normally it
+          means that the style takes effect from the breakpoint up. A few styles just use a specific
           <strong>breakpoint area</strong> (e.g. from xs to xs-max).</p>
 
         <div class="bumper-big"></div>
 
         <h2 class="giga align-center" id="xui-atoms">atoms</h2>
 
-        <div class="spacing"></div>
+        <div class="spacer"></div>
 
-        <h3 id="xui-atoms-type" class="mega">atoms<span class="is-ink-link">/type</span></h3>
+        <h3 id="xui-atoms-type" class="mega">atoms<span class="ink-link">/type</span></h3>
 
         <section>
-          <h3 id="xui-headings" class="kilo">headings <span
-              class="tag tag_small">atoms/headings</span></h3>
+          <h3 id="xui-headings" class="kilo">headings</h3>
           <div class="demo-heading-metrics demo-heading-metrics_h1"><h1>Heading 1</h1></div>
           <div class="demo-heading-metrics"><h2>Heading 2</h2></div>
           <div class="demo-heading-metrics"><h3>Heading 3</h3></div>
           <div class="demo-heading-metrics"><h4>Heading 4</h4></div>
           <div class="demo-heading-metrics demo-heading-metrics_h5"><h5>Heading 5</h5></div>
           <div class="demo-heading-metrics demo-heading-metrics_h6"><h6>Heading 6</h6></div>
-          <div class="spacing"></div>
+          <div class="spacer"></div>
           <p>in addition there are heading helper classes <span class="code">h1</span>, <span
               class="code">h2</span>,
             <span class="code">h3</span>, <span class="code">h4</span>, <span
@@ -868,7 +884,7 @@
         <div class="bumper"></div>
 
         <section>
-          <h3 class="kilo" id="xui-type">type <span class="tag tag_small">atoms/type</span></h3>
+          <h3 class="kilo" id="xui-type">type</h3>
           <div class="demo-paragraph-metrics">
             <p class="lead">Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen,
               genau kennte; daß dies wohl nur ein Irrtum sein würde, wegen dessen er sich zu
@@ -891,7 +907,7 @@
         <div class="bumper"></div>
 
         <section>
-          <h3 class="kilo" id="xui-list">lists <span class="tag tag_small">atoms/list</span></h3>
+          <h3 class="kilo" id="xui-atom-list">ul/ol</h3>
           <div data-grid>
             <div data-col="6-sm">
               <div class="well" data-flex="center-items">
@@ -930,10 +946,10 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-atoms-media" class="mega">atoms<span class="is-ink-link">/media</span></h3>
+        <h3 id="xui-atoms-media" class="mega">atoms<span class="ink-link">/media</span></h3>
 
         <section>
-          <h3 id="xui-img" class="kilo">img <span class="tag tag_small">atoms/img</span></h3>
+          <h3 id="xui-img" class="kilo">img</h3>
           <div data-grid>
             <div data-col="6-sm">
                 <pre><code class="html">
@@ -952,13 +968,12 @@
           </div>
         </section>
 
-        <div class="spacing"></div>
+        <div class="spacer"></div>
 
         <section>
-          <h3 id="xui-img-crop" class="kilo">img-crop <span
-              class="tag tag_small">atoms/img-crop</span><a
-              href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
-              class="tag tag_error tag_small">object-fit</a></h3>
+          <h3 id="xui-img-crop" class="kilo">img-crop
+            <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
+               class="tag tag_error tag_small">object-fit</a></h3>
           <div data-grid>
             <div data-col="4-sm">
                 <pre><code class="html">
@@ -993,37 +1008,44 @@
         <div class="bumper"></div>
 
         <section>
-          <h3 id="xui-img-avatar" class="kilo">img-avatar <span class="tag tag_small">atoms/img-avatar</span><a
-              href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
-              class="tag tag_error tag_small">object-fit</a></h3>
-          <p>img-avatar is mostly used for facial pictures such as profile pictures, because they
-            accentuate faces
-            more than square ones. even thought the img-avatar atom uses <span class="code">object-fit: cover</span>
-            to
-            scale/crop images down to a square thumbnail, you should use square assets with a
-            matching size.</p>
+          <h3 id="xui-avatar" class="kilo">avatar
+            <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
+               class="tag tag_error tag_small">object-fit</a></h3>
+          <p>avatar is mostly used for facial pictures such as profile pictures, because they
+            accentuate faces more than square ones. even thought the avatar atom uses <span
+                class="code">object-fit: cover</span> to scale/crop images down to a square
+            thumbnail, you should use square assets with a matching size.</p>
           <div class="well" data-flex="center">
-            <div class="img-avatar"><img src="assets/avatar.jpg" alt=""></div>
+            <div class="avatar"><img src="assets/avatar.jpg" alt=""></div>&nbsp;
+            <div class="avatar avatar_square"><img src="assets/avatar.jpg" alt=""></div>
           </div>
-          <pre><code class="html"><div class="img-avatar"><img src="assets/avatar.jpg"
-                                                               alt=""></div></code></pre>
+          <pre><code class="html">
+<div class="avatar"><img src="assets/avatar.jpg" alt=""></div>
+<div class="avatar avatar_square"><img src="assets/avatar.jpg" alt=""></div></code></pre>
         </section>
+        <table class="table">
+          <tr>
+            <td><strong>style modifier</strong></td>
+            <td><span class="code">avatar_square</span></td>
+          </tr>
+          <tr>
+            <td><strong>size modifier</strong></td>
+            <td><span class="code">avatar_small</span> <span class="code">avatar_big</span></td>
+          </tr>
+        </table>
 
         <div class="bumper"></div>
 
         <h3 id="xui-atoms-interactions" class="mega">atoms<span
-            class="is-ink-link">/interaction</span></h3>
+            class="ink-link">/interaction</span></h3>
 
         <section>
-          <h3 class="kilo" id="xui-btn">button <span class="tag tag_small">atoms/btn</span></h3>
+          <h3 class="kilo" id="xui-btn">button</h3>
           <p>there are three basic button styles which should be used to to emphasis or weaken
-            functions. Throughout
-            <strong>x.ui</strong> there are three steps of importance. The default style always
-            reached with th
-            default class <span class="code">btn</span>, the minor style by an additional modifier
-            class <span
-                class="code">btn_minor</span>and
-            the superior style by the additional modifier <span class="code">btn_super</span></p>
+            functions. Throughout <strong>x.ui</strong> there are three steps of importance. The
+            default style always reached with the default class <span class="code">btn</span>, the
+            minor style by an additional modifier class <span class="code">btn_minor</span>and the
+            superior style by the additional modifier <span class="code">btn_super</span></p>
           <div class="well">
             <ul data-grid="small">
               <li v-for="(value, key) in atoms.btn.styles" data-col="4">
@@ -1037,7 +1059,7 @@
 <a class="btn btn_minor">...</a>
 ...
 <a class="btn btn_super">...</a></code></pre>
-          <div class="spacing"></div>
+          <div class="spacer"></div>
           <h4 class="h6">button style modifier</h4>
           <div class="well">
             <ul data-grid="small center">
@@ -1047,7 +1069,7 @@
               </li>
             </ul>
           </div>
-          <div class="spacing"></div>
+          <div class="spacer"></div>
           <h4 class="h6">button size modifier</h4>
           <div class="well">
             <ul data-grid="small center">
@@ -1057,7 +1079,7 @@
               </li>
             </ul>
           </div>
-          <div class="spacing"></div>
+          <div class="spacer"></div>
           <h4 class="h6">button width modifier</h4>
           <div class="well">
             <ul data-grid="small center">
@@ -1072,8 +1094,7 @@
         <div class="bumper"></div>
 
         <section>
-          <h3 id="xui-btn-glow" class="kilo">btn_glow <span
-              class="tag tag_small">atoms/btn_glow</span></h3>
+          <h3 id="xui-btn-glow" class="kilo">btn_glow</h3>
           <p>modifier to simulate a 3D glowing effect.</p>
           <div class="well">
             <div data-grid data-flex="center">
@@ -1092,9 +1113,8 @@
 
         <!--TODO documentation-->
         <section>
-          <h3 id="xui-hamburger-btn" class="kilo">hamburger-btn
-            <span class="tag tag_small">atoms/hamburger-btn</span>
-            <span class="tag tag_small tag_error">in progress</span>
+          <h3 id="xui-hamburger-btn" class="kilo">hamburger-btn <span
+              class="tag tag_small tag_error">in progress</span>
           </h3>
           <div class="alert">
             <button class="hamburger-btn"></button>
@@ -1103,11 +1123,10 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-atoms-form" class="mega">atoms<span class="is-ink-link">/form</span></h3>
+        <h3 id="xui-atoms-form" class="mega">atoms<span class="ink-link">/form</span></h3>
 
         <section>
-          <h3 id="xui-input" class="kilo">input <span class="tag tag_small">atoms/input</span>
-          </h3>
+          <h3 id="xui-input" class="kilo">input</h3>
           <div data-grid>
             <div data-col="6">
               <input type="text" class="input" placeholder="Placeholder...">
@@ -1125,7 +1144,7 @@
             </div>
           </div>
 
-          <div class="spacing-small"></div>
+          <div class="spacer-small"></div>
 
           <h5 class="h6">input size modifier</h5>
           <div data-grid>
@@ -1141,7 +1160,7 @@
             </div>
           </div>
 
-          <div class="spacing-small"></div>
+          <div class="spacer-small"></div>
 
           <h4 class="h6">input style modifier</h4>
           <div data-grid>
@@ -1151,13 +1170,13 @@
 <input class="input input_round"></code></pre>
             </div>
             <div data-col="6-sm">
-              <input type="text" class="input input_clear is-raised" value="input_round">
+              <input type="text" class="input input_clear" value="input_clear">
               <pre><code class="html">
 <input class="input input_clear"></code></pre>
             </div>
           </div>
 
-          <div class="spacing-small"></div>
+          <div class="spacer-small"></div>
           <h4 class="h6">input validation modifier</h4>
           <p>the validation modifier are classes generated by <strong>angular js</strong>.</p>
           <div data-grid>
@@ -1180,7 +1199,6 @@
 
         <section>
           <h3 id="xui-input-group" class="kilo">input-group <span
-              class="tag tag_small">atoms/input-group</span> <span
               class="tag tag_small tag_error">in progress</span></h3>
           <div data-grid>
             <div data-col="6-sm">
@@ -1210,11 +1228,10 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-atoms-data" class="mega">atoms<span class="is-ink-link">/data</span></h3>
+        <h3 id="xui-atoms-data" class="mega">atoms<span class="ink-link">/data</span></h3>
 
         <section>
-          <h3 id="xui-bubble" class="kilo">bubble <span class="tag tag_small">atoms/bubble</span>
-          </h3>
+          <h3 id="xui-bubble" class="kilo">bubble</h3>
           <div class="well">
             <div data-grid>
               <div data-col="4" data-flex="center-items center">
@@ -1271,7 +1288,7 @@
         <div class="bumper"></div>
 
         <section>
-          <h3 id="xui-tag" class="kilo">tag <span class="tag tag_small">atoms/tag</span></h3>
+          <h3 id="xui-tag" class="kilo">tag</h3>
           <div class="well">
             <div data-grid>
               <div data-col="4" data-flex="center-items center">
@@ -1326,11 +1343,10 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-atoms-spacing" class="mega">atoms<span class="is-ink-link">/layout</span></h3>
+        <h3 id="xui-atoms-spacer" class="mega">atoms<span class="ink-link">/layout</span></h3>
 
         <section>
-          <h3 id="xui-bumper" class="kilo">bumper <span class="tag tag_small">atoms/bumper</span>
-          </h3>
+          <h3 id="xui-bumper" class="kilo">bumper</h3>
           <div class="demo-layout-macros">
             <div class="bumper"></div>
           </div>
@@ -1353,22 +1369,21 @@
           </table>
         </section>
 
-        <div class="spacing"></div>
+        <div class="spacer"></div>
 
         <section>
-          <h3 id="xui-spacing" class="kilo">spacing <span
-              class="tag tag_small">atoms/spacing</span></h3>
+          <h3 id="xui-spacer" class="kilo">spacer</h3>
           <div class="demo-layout-macros">
-            <div class="spacing"></div>
+            <div class="spacer"></div>
           </div>
-          <pre><code class="html"><div class="spacing"></div></code></pre>
+          <pre><code class="html"><div class="spacer"></div></code></pre>
           <table class="table">
             <tbody>
             <tr>
               <td>
                 <strong>size modifier</strong>
               </td>
-              <td><span class="code">spacing-small</span><span class="code">spacing-big</span>
+              <td><span class="code">spacer-small</span><span class="code">spacer-big</span>
               </td>
             </tr>
             </tbody>
@@ -1380,26 +1395,23 @@
         <h2 id="xui-molecules" class="giga align-center">molecules</h2>
 
         <p class="lead">Molecules are groups of atoms bonded together and are the smallest
-          fundamental units of a
-          compound.</p>
+          fundamental units of a compound.</p>
 
-        <div class="spacing"></div>
+        <div class="spacer"></div>
 
         <h3 id="xui-molecules-feedback" class="mega">molecules<span
-            class="is-ink-link">/feedback</span></h3>
+            class="ink-link">/feedback</span></h3>
 
         <section>
           <h3 class="kilo" id="xui-alert">alert</h3>
           <div class="alert">
-            <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
-              ihr einen
-              Reitstock,
-              mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und
-              weiter.</p>
+            <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr
+              einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
+              sprach weiter und weiter.</p>
           </div>
           <pre><code class="html">
 <div class="alert">...</div></code></pre>
-          <div class="spacing"></div>
+          <div class="spacer"></div>
           <h4 class="h6">alert theme modifier</h4>
           <div data-grid>
             <div data-col="6" v-for="mod in molecules.alerts.themeModifiers">
@@ -1410,7 +1422,7 @@
 <div class="alert {{mod}}">...</div></code></pre>
             </div>
           </div>
-          <div class="spacing"></div>
+          <div class="spacer"></div>
           <h4 class="h6">alert state modifier</h4>
           <div data-grid>
             <div data-col="6" v-for="mod in molecules.alerts.stateModifiers">
@@ -1421,7 +1433,7 @@
 <div class="alert {{mod}}">...</div></code></pre>
             </div>
           </div>
-          <div class="spacing"></div>
+          <div class="spacer"></div>
           <h4 class="h6">alert style modifier</h4>
           <div data-grid>
             <div data-col="6" v-for="style in molecules.alerts.styleModifiers">
@@ -1436,7 +1448,8 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-molecules-interaction" class="mega">molecules<span class="is-ink-link">/interaction</span>
+        <h3 id="xui-molecules-interaction" class="mega">
+          molecules<span class="ink-link">/interaction</span>
         </h3>
 
         <section>
@@ -1523,7 +1536,7 @@
                 </ul>
               </div>
             </div>
-            <div class="spacing-small"></div>
+            <div class="spacer-small"></div>
             <div data-grid>
               <div data-col="3" data-flex="center">
                 <ul class="dropdown dropdown_center dropdown_above">
@@ -1645,7 +1658,7 @@
           <h3 class="kilo" id="xui-btn-group">btn-group</h3>
           <p><span class="code">.btn-group</span> supports <span class="code">.btn</span> and
             <span class="code">.dropdown</span>
-            with all their modfifier classes.</p>
+            with all their modifier classes.</p>
 
           <div data-grid="small">
             <div data-col="6">
@@ -1729,7 +1742,7 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-molecules-form" class="mega">molecules<span class="is-ink-link">/form</span>
+        <h3 id="xui-molecules-form" class="mega">molecules<span class="ink-link">/form</span>
         </h3>
 
         <section>
@@ -1768,7 +1781,7 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-molecules-layout" class="mega">molecules<span class="is-ink-link">/layout</span>
+        <h3 id="xui-molecules-layout" class="mega">molecules<span class="ink-link">/layout</span>
         </h3>
 
         <section>
@@ -1786,9 +1799,7 @@
             <tr>
               <td>title</td>
               <td>Gewiß. Aber was steht nicht alles - von Kinderfreund gar nicht zu reden - in
-                Bibel und
-                Katechismus,
-                und die Leute wissen es doch nicht. Ich zum Beispiel.
+                Bibel und Katechismus, und die Leute wissen es doch nicht. Ich zum Beispiel.
               </td>
               <td>17-11-20</td>
             </tr>
@@ -1806,9 +1817,7 @@
             <tr>
               <td>title</td>
               <td>Gewiß. Aber was steht nicht alles - von Kinderfreund gar nicht zu reden - in
-                Bibel und
-                Katechismus,
-                und die Leute wissen es doch nicht. Ich zum Beispiel.
+                Bibel und Katechismus, und die Leute wissen es doch nicht. Ich zum Beispiel.
               </td>
               <td>17-11-20</td>
             </tr>
@@ -1818,17 +1827,15 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-molecules-theme" class="mega">molecules<span class="is-ink-link">/ui</span>
+        <h3 id="xui-molecules-theme" class="mega">molecules<span class="ink-link">/ui</span>
         </h3>
 
         <section>
           <h4 id="xui-well" class="kilo">well</h4>
           <div class="well">
             <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
-              ihr einen
-              Reitstock,
-              mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie sprach weiter und
-              weiter.</p>
+              ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
+              sprach weiter und weiter.</p>
           </div>
           <pre><code class="html">
 <div class="well">
@@ -1861,7 +1868,106 @@
         <p class="lead">Organisms are groups of molecules joined together to form a relatively
           complex, distinct section of an interface.</p>
 
-        <div class="spacing"></div>
+        <div class="spacer"></div>
+
+        <section>
+          <h3 id="xui-list" class="kilo">list</h3>
+          <p>list can be used with <span class="code">ul</span>, <span class="code">ol</span> or<span class="code">div</span>. all atoms and molecules can be used within the list-items.</p>
+          <div data-grid="">
+            <div data-col="6-sm" data-flex="center-items">
+              <div class="list-group">
+                <div class="list-group__header">
+                  <h6>header</h6>
+                </div>
+                <div class="list">
+                  <div class="list-item">
+                    <div class="list-item__start">
+                      <div class="avatar avatar_small"><img src="assets/avatar.jpg" alt=""></div>
+                    </div>
+                    <div class="list-item__label">
+                      label
+                    </div>
+                    <div class="list-item__end">
+                      <div class="btn btn_clear">
+                        <div class="ec-icon more-vertical"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-item">
+                    <div class="list-item__start">
+                      <div class="avatar avatar_small"><img src="assets/avatar.jpg" alt=""></div>
+                    </div>
+                    <div class="list-item__label">
+                      <h6>label</h6>
+                    </div>
+                    <div class="list-item__end">
+                      <div class="btn btn_clear">
+                        <div class="ec-icon more-vertical"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-item">
+                    <div class="list-item__start">
+                      <div class="avatar avatar_square avatar_small">
+                        <img src="assets/avatar.jpg" alt="">
+                      </div>
+                    </div>
+                    <div class="list-item__label">
+                      <strong>label</strong><br>
+                      <small class="ink-light">kjhgakjhgas</small>
+                    </div>
+                    <div class="list-item__end">
+                      <div class="btn btn_small btn_outlined">
+                        button
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ul class="list">
+                  <li class="list-item">
+                    <div class="list-item__start">
+                      <div class="avatar avatar_square avatar_small">
+                        <img src="assets/avatar.jpg" alt="">
+                      </div>
+                    </div>
+                    <div class="list-item__label">
+                      <strong>label</strong><br>
+                      <small class="ink-light">kjhgakjhgas</small>
+                    </div>
+                    <div class="list-item__end">
+                      <div class="btn btn_small btn_outlined">
+                        button
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div data-col="6-sm">
+              <pre><code class="html">
+<div class="list-group">
+  <div class="list-group__header">
+    ...
+  </div>
+  <div class="list">
+    <div class="list-item">
+      <div class="list-item__start">
+        ...
+      </div>
+      <div class="list-item__label">
+        ...
+      </div>
+      <div class="list-item__end">
+        ...
+      </div>
+    </div>
+  </div>
+</div></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <div class="bumper"></div>
 
         <section>
           <h3 id="xui-nav" class="kilo">nav</h3>
@@ -1897,7 +2003,7 @@
   </ul>
 </nav></code></pre>
 
-          <div class="spacing"></div>
+          <div class="spacer"></div>
 
           <div class="well">
             <nav class="nav nav_stacked">
@@ -1956,7 +2062,7 @@
             </nav>
           </div>
 
-          <div class="spacing"></div>
+          <div class="spacer"></div>
 
           <div class="toolbar is-theme-invert">
             <div class="toolbar__title toolbar__title_center">
@@ -1974,7 +2080,7 @@
             </nav>
           </div>
 
-          <div class="spacing"></div>
+          <div class="spacer"></div>
 
           <div class="toolbar is-theme-invert">
             <a href="" class="hamburger-btn hamburger-btn_invert"></a>
@@ -1997,7 +2103,7 @@
             </nav>
           </div>
 
-          <div class="spacing"></div>
+          <div class="spacer"></div>
 
           <div class="toolbar is-theme-invert">
             <a href="" class="hamburger-btn hamburger-btn_invert"></a>
@@ -2032,7 +2138,7 @@
 
         <h2 id="xui-modifier" class="giga align-center">modifier</h2>
 
-        <h3 id="xui-modifier-layout" class="mega">modifier<span class="is-ink-link">/layout</span>
+        <h3 id="xui-modifier-layout" class="mega">modifier<span class="ink-link">/layout</span>
         </h3>
 
         <section>
@@ -2162,7 +2268,7 @@
             <span class="h6">is-{relative|absolute|fixed}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
           </div>
 
-          <div class="spacing"></div>
+          <div class="spacer"></div>
 
           <h3 id="xui-direction-modifier" class="kilo">direction</h3>
           <div class="well align-center">
@@ -2225,7 +2331,7 @@
         <div class="bumper-big"></div>
 
         <h3 id="xui-modifier-typeface" class="mega">modifier<span
-            class="is-ink-link">/typeface</span></h3>
+            class="ink-link">/typeface</span></h3>
 
         <section>
           <h3 id="xui-align-modifier" class="h6">align</h3>
@@ -2325,7 +2431,7 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-modifier-theme" class="mega">modifier<span class="is-ink-link">/theme</span>
+        <h3 id="xui-modifier-theme" class="mega">modifier<span class="ink-link">/theme</span>
         </h3>
 
         <section>
@@ -2346,13 +2452,11 @@
         <section>
           <h3 id="xui-theme" class="kilo">theme</h3>
           <p>the is-theme-modifier affect the color and background-color attribute. the color is
-            calculated according
-            to the
+            calculated according to the
             <a href="https://www.w3.org/TR/AERT/#color-contrast" target="_blank" rel="noopener">Web
-              Content
-              Accessibility Guidelines</a> suggested by W3C. the six is-theme-presets with their 6
-            shades are based on
-            the 6 core colors defined in <span class="code">_config.scss</span>.</p>
+              Content Accessibility Guidelines</a> suggested by W3C. the six is-theme-presets with
+            their 6 shades are based on the 6 core colors defined in <span
+                class="code">_config.scss</span>.</p>
           <div class="demo-theme">
             <div data-grid>
               <div data-col="4-sm">
@@ -2364,7 +2468,7 @@
                 <div class="is-theme_dark">is-theme_dark</div>
                 <div class="is-theme_darker">is-theme_darker</div>
                 <div class="is-theme_darkest">is-theme_darkest</div>
-                <div class="spacing-small"></div>
+                <div class="spacer-small"></div>
               </div>
               <div data-col="4-sm">
                 <h4 class="h6">link</h4>
@@ -2375,7 +2479,7 @@
                 <div class="is-theme-link_dark">is-theme-link_dark</div>
                 <div class="is-theme-link_darker">is-theme-link_darker</div>
                 <div class="is-theme-link_darkest">is-theme-link_darkest</div>
-                <div class="spacing-small"></div>
+                <div class="spacer-small"></div>
               </div>
               <div data-col="4-sm">
                 <h4 class="h6">super</h4>
@@ -2386,7 +2490,7 @@
                 <div class="is-theme-super_dark">is-theme-super_dark</div>
                 <div class="is-theme-super_darker">is-theme-super_darker</div>
                 <div class="is-theme-super_darkest">is-theme-super_darkest</div>
-                <div class="spacing-small"></div>
+                <div class="spacer-small"></div>
               </div>
               <div data-col="4-sm">
                 <h4 class="h6">minor</h4>
@@ -2397,7 +2501,7 @@
                 <div class="is-theme-minor_dark">is-theme-minor_dark</div>
                 <div class="is-theme-minor_darker">is-theme-minor_darker</div>
                 <div class="is-theme-minor_darkest">is-theme-minor_darkest</div>
-                <div class="spacing-small"></div>
+                <div class="spacer-small"></div>
               </div>
               <div data-col="4-sm">
                 <h4 class="h6">highlight</h4>
@@ -2408,7 +2512,7 @@
                 <div class="is-theme-highlight_dark">is-theme-highlight_dark</div>
                 <div class="is-theme-highlight_darker">is-theme-highlight_darker</div>
                 <div class="is-theme-highlight_darkest">is-theme-highlight_darkest</div>
-                <div class="spacing-small"></div>
+                <div class="spacer-small"></div>
               </div>
               <div data-col="4-sm">
                 <h4 class="h6">invert</h4>
@@ -2419,7 +2523,7 @@
                 <div class="is-theme-invert_dark">is-theme-invert_dark</div>
                 <div class="is-theme-invert_darker">is-theme-invert_darker</div>
                 <div class="is-theme-invert_darkest">is-theme-invert_darkest</div>
-                <div class="spacing-small"></div>
+                <div class="spacer-small"></div>
               </div>
             </div>
           </div>
@@ -2428,7 +2532,7 @@
         <div class="bumper"></div>
 
         <h3 id="xui-modifier-interaction" class="mega">modifier<span
-            class="is-ink-link">/interaction</span>
+            class="ink-link">/interaction</span>
         </h3>
 
         <section>
@@ -2440,22 +2544,20 @@
           <div class="well">
             <div data-grid>
               <div data-col="3" data-flex="center">
-                <a href="" data-tooltip-top="This is a tooltip" class="btn btn_invert is-raised">tooltip
-                  top</a>
+                <a href="" data-tooltip-top="This is a tooltip" class="btn btn_invert is-raised">
+                  tooltip top</a>
               </div>
               <div data-col="3" data-flex="center">
-                <a href="" data-tooltip-right="This is a tooltip"
-                   class="btn btn_invert is-raised">tooltip
-                  right</a>
+                <a href="" data-tooltip-right="This is a tooltip" class="btn btn_invert is-raised">
+                  tooltip right</a>
               </div>
               <div data-col="3" data-flex="center">
-                <a href="" data-tooltip-bottom="This is a tooltip"
-                   class="btn btn_invert is-raised">tooltip
-                  bottom</a>
+                <a href="" data-tooltip-bottom="This is a tooltip" class="btn btn_invert is-raised">
+                  tooltip bottom</a>
               </div>
               <div data-col="3" data-flex="center">
-                <a href="" data-tooltip-left="This is a tooltip" class="btn btn_invert is-raised">tooltip
-                  left</a>
+                <a href="" data-tooltip-left="This is a tooltip" class="btn btn_invert is-raised">
+                  tooltip left</a>
               </div>
             </div>
           </div>
@@ -2472,7 +2574,7 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-modifier-style" class="mega">modifier<span class="is-ink-link">/ui</span></h3>
+        <h3 id="xui-modifier-style" class="mega">modifier<span class="ink-link">/ui</span></h3>
 
 
         <section>
@@ -2559,9 +2661,9 @@
         <section>
           <h3 id="xui-is-fab-modifier" class="kilo">is-fab</h3>
           <p>FAB (Floating Action Buttons) is a modifier for positioning elements with a spacing
-            of 16px. Use with <span class="code">is-absolute</span> or <span
-                class="code">is-fixed</span>. the syntax is <span
-                class="code">is-fab-{direction}</span></p>
+            of 16px. Use with <span class="code">is-absolute</span> or
+            <span class="code">is-fixed</span>. the syntax is
+            <span class="code">is-fab-{direction}</span></p>
           <div class="well align-center"><span class="h6">is-fab-{direction}-{<a
               href="#xui-breakpoint-shortcodes">breakpoint</a>}</span></div>
           <div class="well is-relative" style="height: 160px;">
@@ -2593,14 +2695,15 @@
             </div>
             <div class="input-group">
               <span class="ec-icon find input-group__icon"></span>
-              <input type="text" v-model="query" class="input input_clear input_big is-lifted input_round"
+              <input type="text" v-model="query"
+                     class="input input_clear input_big is-lifted input_round"
                      placeholder="search for icon class...">
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="spacing"></div>
+    <div class="spacer"></div>
     <div data-grid="center">
       <div data-col="12 8-lg">
         <ul data-grid="small">
@@ -2610,7 +2713,7 @@
               class="quickselect">{{ icon }}</span>
           </li>
         </ul>
-        <div class="spacing-big"></div>
+        <div class="spacer-big"></div>
       </div>
     </div>
   </section>

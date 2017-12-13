@@ -1,7 +1,8 @@
 .hljs {
-  padding: rem(16) rem(8) !important;
+  padding: rem(8) !important;
   border-radius: rem(4);
   font-family: monospace;
   font-size: rem(12);
   line-height: rem(16);
+  background-color: getColor(background, lightest);
 }
