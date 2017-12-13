@@ -13,7 +13,7 @@
 .well {
   background-color: getColor(background, lightest);
   border-radius: rem($well-radius);
-  margin: 0 0 rem($base-padding) 0;
+  margin: rem($base-padding) 0;
   padding: rem($well-padding) rem($well-padding * $well-padding-ratio);
   font-weight: $well-weight;
   font-size: 100%;
