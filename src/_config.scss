@@ -110,12 +110,12 @@ $base-line-height: 1.4;
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
 $vertical-rhythm: $base-line-height * $base-font-size;
 
-/// @param {value} $bp-type-scale-xs - breakpoint modular scale for mobile
-$bp-type-scale-xs: 0;
+/// @param {value} $bp-type-scale-small - breakpoint modular scale for small devices
+$bp-type-scale-small: 0;
 
-/// @param {map} $type-scale-xs - modular scale for mobile
+/// @param {map} $type-scale-small - modular scale for small devices
 /// @link http://www.modularscale.com/?0.875&rem&1.25
-$type-scale-xs: (
+$type-scale-small: (
         h1: 2.67em,
         h2: 2.136em,
         h3: 1.709em,
@@ -126,12 +126,12 @@ $type-scale-xs: (
         p: .875em
 );
 
-/// @param {value} $bp-type-scale-md - breakpoint modular scale for tablet
-$bp-type-scale-md: getBreakpoint(md);
+/// @param {value} $bp-type-scale-normal - breakpoint modular scale for normal devices
+$bp-type-scale-normal: getBreakpoint(md);
 
-/// @param {map} $type-scale-md - modular scale for tablet
+/// @param {map} $type-scale-normal - modular scale for normal devices
 /// @link http://www.modularscale.com/?1&em&1.25
-$type-scale-md: (
+$type-scale-normal: (
         h1: 3.052em,
         h2: 2.441em,
         h3: 1.953em,
@@ -142,12 +142,12 @@ $type-scale-md: (
         p: 1em
 );
 
-/// @param {value} $bp-type-scale-lg - breakpoint modular scale for desktop
-$bp-type-scale-lg: getBreakpoint(lg);
+/// @param {value} $bp-type-scale-large - breakpoint modular scale for large devices
+$bp-type-scale-large: getBreakpoint(xxl);
 
-/// @param {map} $type-scale-lg - modular scale for desktop
+/// @param {map} $type-scale-large - modular scale for large devices
 /// @link http://www.modularscale.com/?1.125&em&1.25
-$type-scale-lg: (
+$type-scale-large: (
         h1: 3.433em,
         h2: 2.747em,
         h3: 2.197em,

@@ -3,25 +3,25 @@
 /// @access public
 /// @group typeface mixins
 ///
-/// @param {value} $bp-type-scale-xs - breakpoint modular scale for mobile
-/// @param {map} $type-scale-md - modular scale for tablet
-/// @param {value} $bp-type-scale-md - breakpoint modular scale for tablet
-/// @param {map} $type-scale-lg - modular scale for desktop
-/// @param {value} $bp-type-scale-lg - breakpoint modular scale for desktop
-/// @param {map} $type-scale-lg - modular scale for desktop
+/// @param {value} $bp-type-scale-small - breakpoint modular scale for small devices
+/// @param {map} $type-scale-small - modular scale for small devices
+/// @param {value} $bp-type-scale-normal - breakpoint modular scale for normal devices
+/// @param {map} $type-scale-normal - modular scale for normal devices
+/// @param {value} $bp-type-scale-large - breakpoint modular scale for large devices
+/// @param {map} $type-scale-large - modular scale for large devices
 ///
 /// @returns font-size
 
 @mixin get-font-size($level) {
-  @media (min-width: $bp-type-scale-xs) {
-    font-size: map-get($type-scale-xs, $level);
+  @media (min-width: $bp-type-scale-small) {
+    font-size: map-get($type-scale-small, $level);
   }
 
-  @media (min-width: $bp-type-scale-md) {
-    font-size: map-get($type-scale-md, $level);
+  @media (min-width: $bp-type-scale-normal) {
+    font-size: map-get($type-scale-normal, $level);
   }
 
-  @media (min-width: $bp-type-scale-lg) {
-    font-size: map-get($type-scale-lg, $level);
+  @media (min-width: $bp-type-scale-large) {
+    font-size: map-get($type-scale-large, $level);
   }
 }
