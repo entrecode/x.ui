@@ -32,7 +32,7 @@ $xui-colors: (
                 'backdrop': rgba(black, .8),
         ),
         state: (
-                'hover': rgba(desaturate($link, 60), .1),
+                'hover': $state-hover,
                 'disabled': rgba($text, .2),
                 'info': systemColor($state-info),
                 'error': systemColor($state-error),
