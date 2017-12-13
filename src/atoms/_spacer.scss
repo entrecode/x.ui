@@ -6,9 +6,9 @@
 /// @prop {number} $base-padding [16] - small padding value for padding helper
 ///
 /// @example
-///   <div class='spacing'></div>
+///   <div class='spacer'></div>
 
-.spacing {
+.spacer {
   @include set-breakpoints {
     height: rem($base-padding*2);
   }

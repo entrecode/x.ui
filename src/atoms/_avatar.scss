@@ -8,7 +8,7 @@
 /// @param {px} $avatar-big-size-size [48]
 /// @param {px} $avatar-border [2]
 
-.img-avatar {
+.avatar {
   @include set-breakpoints {
     width: rem($avatar-size);
     height: rem($avatar-size);
@@ -24,14 +24,14 @@
     }
   }
 
-  &._small {
+  &_small {
     @include set-breakpoints {
       width: rem($avatar-small-size);
       height: rem($avatar-small-size);
     }
   }
 
-  &._big {
+  &_big {
     @include set-breakpoints {
       width: rem($avatar-big-size);
       height: rem($avatar-big-size);
