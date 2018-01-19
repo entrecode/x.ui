@@ -1,0 +1,42 @@
+.list-group {
+  width: 100%;
+}
+
+.list {
+  margin-top: 0;
+  margin-bottom: rem(16);
+
+  @at-root ul, ol {
+    &.list {
+      list-style: none;
+      padding: 0;
+    }
+  }
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: rem(8);
+  border-radius: rem($list-item-radius);
+  transition: background-color .4s;
+  transition-delay: .4s;
+
+  @include headings {
+    margin: 0;
+  }
+
+  &:active {
+    background-color: getColor(state, hover);
+    transition-delay: 0s;
+  }
+
+  .list-item__start {
+    margin-right: rem(16);
+  }
+
+  .list-item__end {
+    margin-right: 0;
+    margin-left: auto;
+  }
+}

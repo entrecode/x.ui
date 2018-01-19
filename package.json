@@ -1,6 +1,6 @@
 {
   "name": "x.ui",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "x.ui is a framework based on the atomic design methodology",
   "main": "src/x.ui.scss",
   "scripts": {

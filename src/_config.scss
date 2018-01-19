@@ -45,6 +45,7 @@ $divider-color: rgba($text, .1);
 $input-border-color: mix($text, $background, 25%);
 
 /// used for theme coloring, colors are used in the x-ui-colormap an adapted to fit to theme colors
+$state-hover: rgba(mix($link, $text), .1);
 $state-info: cyan;
 $state-error: red;
 $state-success: green;
@@ -109,12 +110,12 @@ $base-line-height: 1.4;
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
 $vertical-rhythm: $base-line-height * $base-font-size;
 
-/// @param {value} $bp-type-scale-xs - breakpoint modular scale for mobile
-$bp-type-scale-xs: 0;
+/// @param {value} $bp-type-scale-small - breakpoint modular scale for small devices
+$bp-type-scale-small: 0;
 
-/// @param {map} $type-scale-xs - modular scale for mobile
+/// @param {map} $type-scale-small - modular scale for small devices
 /// @link http://www.modularscale.com/?0.875&rem&1.25
-$type-scale-xs: (
+$type-scale-small: (
         h1: 2.67em,
         h2: 2.136em,
         h3: 1.709em,
@@ -125,12 +126,12 @@ $type-scale-xs: (
         p: .875em
 );
 
-/// @param {value} $bp-type-scale-md - breakpoint modular scale for tablet
-$bp-type-scale-md: getBreakpoint(md);
+/// @param {value} $bp-type-scale-normal - breakpoint modular scale for normal devices
+$bp-type-scale-normal: getBreakpoint(md);
 
-/// @param {map} $type-scale-md - modular scale for tablet
+/// @param {map} $type-scale-normal - modular scale for normal devices
 /// @link http://www.modularscale.com/?1&em&1.25
-$type-scale-md: (
+$type-scale-normal: (
         h1: 3.052em,
         h2: 2.441em,
         h3: 1.953em,
@@ -141,12 +142,12 @@ $type-scale-md: (
         p: 1em
 );
 
-/// @param {value} $bp-type-scale-lg - breakpoint modular scale for desktop
-$bp-type-scale-lg: getBreakpoint(lg);
+/// @param {value} $bp-type-scale-large - breakpoint modular scale for large devices
+$bp-type-scale-large: getBreakpoint(xxl);
 
-/// @param {map} $type-scale-lg - modular scale for desktop
+/// @param {map} $type-scale-large - modular scale for large devices
 /// @link http://www.modularscale.com/?1.125&em&1.25
-$type-scale-lg: (
+$type-scale-large: (
         h1: 3.433em,
         h2: 2.747em,
         h3: 2.197em,
@@ -191,15 +192,18 @@ $inline-small-size: .875;
 /// Avatars
 /// ------------------------------------------------------
 
-/// @param {px} $avatar-size [48]
-/// @param {px} $avatar-small-size-size [32]
-/// @param {px} $avatar-big-size-size [48]
+/// @param {number} $avatar-size [48]
+/// @param {number} $avatar-small-size-size [32]
+/// @param {number} $avatar-big-size-size [48]
 $avatar-size: 40;
 $avatar-small-size: 32;
 $avatar-big-size: 48;
 
-/// @param {px} $avatar-border [2]
-$avatar-border: 2;
+/// @param {number} $avatar-border [0]
+$avatar-border: 0;
+
+/// @param {number} $avatar-square-radius [4]
+$avatar-square-radius: 4;
 
 ///
 /// BUTTONS
@@ -624,3 +628,9 @@ $is-rounded-max-radius: 8;
 /// @param {number} $fab-spacing [16]
 $fab-spacing: 16;
 
+
+/// list
+/// ------------------------------------------------------
+
+/// @param {number} $list-item-radius [4]
+$list-item-radius: 4;
