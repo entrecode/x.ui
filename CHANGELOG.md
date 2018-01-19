@@ -8,6 +8,9 @@
 - `.flex-spacer`
 - `.list` organism
 
+### changes
+- added padding to `.nav_item`
+
 ## 7.0.0
 ### breaking changes
 - new file-structure

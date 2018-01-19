@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     data: {
       name:         'x.ui',
       versionName:  'Finger-Lime',
-      version:      '7.0.0',
+      version:      '7.0.1',
       dependancies: ['xlcss 5.0.1', 'ec.icons 3.0.0'],
       authors:      {
         author: {
