@@ -1,3 +1,9 @@
+### breaking changes
+- renamed `.ink#` to `.is-ink#`
+
+### added
+- '.select' atom for custom selects
+
 ## 7.0.1
 ### breaking changes
 - use `@import '~x.ui/src/x.ui.scss';` instead of `@import '~x.ui/src/x.ui-sandbox.scss';`

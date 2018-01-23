@@ -41,9 +41,6 @@ $hover-shading: -4;
 /// @param {color} $divider-color [rgba($text,.1)] -  color if divider used by e.b. .bumper
 $divider-color: rgba($text, .1);
 
-/// @param {color} $input-border-color [ mix($text, $background, 25%)]
-$input-border-color: mix($text, $background, 25%);
-
 /// used for theme coloring, colors are used in the x-ui-colormap an adapted to fit to theme colors
 $state-hover: rgba(mix($link, $text), .1);
 $state-info: cyan;
@@ -349,8 +346,43 @@ $input-big-radius: 4;
 /// @param {number} $input-border [1]
 $input-border: 1;
 
+/// @param {color} $input-border-color [ mix($text, $background, 25%)]
+$input-border-color: mix($text, $background, 25%);
+
 /// param {color} $input-raised-shadow
 $input-raised-shadow: rgba(black, .1);
+
+///
+/// SELECT
+/// ------------------------------------------------------
+
+/// @param {number} $select-font-size [16]
+/// @param {number} $select-line-height [24]
+/// @param {number} $select-min-height [32]
+$select-font-size: 16;
+$select-line-height: 24;
+$select-min-height: 32;
+
+/// additional styles for .input
+%select-style {
+  /// put styles here...
+}
+
+/// @param {boolean} $select-round [false] - sets border-radius to 50% of input height
+$select-round: false;
+
+/// radius of input - if $select-round === false
+/// @param {number} $select-radius [4]
+$select-radius: 4;
+
+/// @param {number} $select-border [1]
+$select-border: 1;
+
+/// @param {color} $select-border-color [ mix($text, $background, 25%)]
+$select-border-color: mix($text, $background, 25%);
+
+/// param {color} $select-raised-shadow
+$select-raised-shadow: rgba(black, .1);
 
 /// Alerts
 /// ------------------------------------------------------
