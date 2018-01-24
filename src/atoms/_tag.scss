@@ -74,6 +74,10 @@
     &.#{$prefix}#{$name} {
       @include set-theme-colors($color);
 
+      a {
+        color: setContrast($color);
+      }
+
       @at-root a.#{$prefix}#{$name} {
         &:hover {
           background-color: varColor($color, -4);

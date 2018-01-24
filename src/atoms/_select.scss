@@ -25,12 +25,15 @@
 
   .select__placeholder {
     color: getColor(text, lighter);
-    white-space: nowrap;
     flex-grow: 1;
     flex-shrink: 0;
+    user-select: none;
   }
 
   &:hover {
+    border-color: darken($input-border-color, 20);
+    box-shadow: 0 0 0 2px getColor(state, hover);
+
     &:after {
       border-top-color: rgba(getColor(text), .4);
     }

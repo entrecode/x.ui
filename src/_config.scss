@@ -42,7 +42,7 @@ $hover-shading: -4;
 $divider-color: rgba($text, .1);
 
 /// used for theme coloring, colors are used in the x-ui-colormap an adapted to fit to theme colors
-$state-hover: rgba(mix($link, $text), .1);
+$state-hover: rgba(mix($link, $text), .04);
 $state-info: cyan;
 $state-error: red;
 $state-success: green;
