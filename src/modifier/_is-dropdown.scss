@@ -1,0 +1,16 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {number} $is-dropdown-radius [8]
+/// @param {number} $is-dropdown-padding [4]
+/// @param {color} $is-dropdown-background
+/// @param {value} $is-dropdown-shadow
+
+.is-dropdown {
+  padding: rem($is-dropdown-padding);
+  box-shadow: $is-dropdown-shadow;
+  border-radius: rem($is-dropdown-radius);
+  background-color: $is-dropdown-background;
+}
