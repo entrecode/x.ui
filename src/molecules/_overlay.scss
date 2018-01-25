@@ -1,0 +1,30 @@
+.overlay {
+
+}
+
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {number} $overlay-radius [8]
+/// @param {number} $overlay-padding [4]
+/// @param {color} $overlay-background
+/// @param {value} $overlay-shadow
+
+.overlay {
+  padding: rem($overlay-padding);
+  box-shadow: $overlay-shadow;
+  border-radius: rem($overlay-radius);
+  background-color: $overlay-background;
+  color: setContrast($overlay-background);
+  position: relative;
+  z-index: 10;
+
+  .overlay__dismiss {
+    @extend %btn;
+    position: absolute;
+    top: rem($overlay-padding);
+    right: rem($overlay-padding);
+  }
+}

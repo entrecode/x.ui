@@ -7,6 +7,7 @@
 ### added
 - '.select' atom for custom selects
 - '.is-dropdown' modifier
+- '.overlay' molecule
 
 ## 7.0.1
 ### breaking changes

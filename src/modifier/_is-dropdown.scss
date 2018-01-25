@@ -3,14 +3,15 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {number} $is-dropdown-radius [8]
-/// @param {number} $is-dropdown-padding [4]
-/// @param {color} $is-dropdown-background
-/// @param {value} $is-dropdown-shadow
+/// @param {number} $dropdown-radius [8]
+/// @param {number} $dropdown-padding [4]
+/// @param {color} $dropdown-background
+/// @param {value} $dropdown-shadow
 
 .is-dropdown {
   padding: rem($dropdown-padding);
   box-shadow: $dropdown-shadow;
   border-radius: rem($dropdown-radius);
   background-color: $dropdown-background;
+  color: setContrast($dropdown-background)
 }

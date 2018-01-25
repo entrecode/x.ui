@@ -676,3 +676,19 @@ $fab-spacing: 16;
 
 /// @param {number} $list-item-radius [4]
 $list-item-radius: 4;
+
+///
+/// OVERLAY
+/// ------------------------------------------------------
+
+/// @param {px} $overlay-radius [4]
+$overlay-radius: 4;
+
+/// @param {number} $overlay-padding [4]
+$overlay-padding: 4;
+
+/// @param {color} $overlay-background
+$overlay-background: $background;
+
+/// @param {value} $overlay-shadow
+$overlay-shadow: 0 8px 16px -4px rgba(black, .16), 0 4px 24px 0px rgba(black, 0.1);
