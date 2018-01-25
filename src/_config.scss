@@ -292,6 +292,16 @@ $btn-group-divider: true;
 /// @param {px} $dropdown-radius [4]
 $dropdown-radius: 4;
 
+/// @param {number} $dropdown-padding [4]
+$dropdown-padding: 4;
+
+/// @param {color} $dropdown-background
+$dropdown-background: $background;
+
+/// @param {value} $dropdown-shadow
+$dropdown-shadow: 0 8px 16px -4px rgba(black, .16), 0 4px 24px 0px rgba(black, 0.1);
+
+
 ///
 /// INPUT
 /// ------------------------------------------------------
@@ -666,18 +676,3 @@ $fab-spacing: 16;
 
 /// @param {number} $list-item-radius [4]
 $list-item-radius: 4;
-
-/// is-dropdown
-/// ------------------------------------------------------
-
-/// @param {number} $is-dropdown-radius [8]
-$is-dropdown-radius: 4;
-
-/// @param {number} $is-dropdown-padding [4]
-$is-dropdown-padding: 4;
-
-/// @param {color} $is-dropdown-background
-$is-dropdown-background: $background;
-
-/// @param {value} $is-dropdown-shadow
-$is-dropdown-shadow: 0 8px 16px -4px rgba(black, .16), 0 4px 24px 0px rgba(black, 0.1);

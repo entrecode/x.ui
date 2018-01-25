@@ -82,7 +82,8 @@
           <h1 class="h2 align-center is-uppercase">welcome to the atomsphere.</h1>
           <p class="lead is-hyphen-block"><strong>x.ui</strong> is a framework based on the atomic
             design methodology. this workflow is inspired by nature and physics and has a pretty
-            serious focus on modularity and structure. it structure begins with the smallest part and
+            serious focus on modularity and structure. it structure begins with the smallest part
+            and
             builds up to complex structure. as a result, there is very little redundancy with a
             remarkable flexibility.</p>
           <p class="is-hyphen-block">the goal of <strong>x.ui</strong> is to translate the atomic
@@ -124,19 +125,28 @@
           <div class="well align-center">
             <div class="kilo">block-name__elem-name_mod-name_mod-val</div>
           </div>
-          <p>a good structure also needs as intuitive set of rules for class names to use. For this <strong>x.ui</strong> follows the
-            <a href="https://en.bem.info/methodology/" target="_blank" rel="noopener">BEM methodology</a> (Block Element Modifier). The rules are:</p>
+          <p>a good structure also needs as intuitive set of rules for class names to use. For this
+            <strong>x.ui</strong> follows the
+            <a href="https://en.bem.info/methodology/" target="_blank" rel="noopener">BEM
+              methodology</a> (Block Element Modifier). The rules are:</p>
           <ul>
             <li>names are written in lowercase Latin letters.</li>
             <li>words are separated by a hyphen (-).</li>
             <li>the element name is separated from the block name by a double underscore (__).</li>
-            <li>the modifier name is separated from the block or element name by a single underscore (_).</li>
-            <li>the modifier value is separated from the modifier name by a single underscore (_).</li>
+            <li>the modifier name is separated from the block or element name by a single underscore
+              (_).
+            </li>
+            <li>the modifier value is separated from the modifier name by a single underscore (_).
+            </li>
           </ul>
           <div class="spacer-small"></div>
-          <p class="ink-light"><small>Source: <strong>Naming convention / Methodology / BEM</strong> -
-            <a href=" https://en.bem.info/methodology/naming-convention/" target="_blank" rel="noopener">
-              https://en.bem.info/methodology/naming-convention/</a> - 13.12.2017</small></p>
+          <p class="ink-light">
+            <small>Source: <strong>Naming convention / Methodology / BEM</strong> -
+              <a href=" https://en.bem.info/methodology/naming-convention/" target="_blank"
+                 rel="noopener">
+                https://en.bem.info/methodology/naming-convention/</a> - 13.12.2017
+            </small>
+          </p>
 
         </section>
 
@@ -1490,180 +1500,162 @@
           <div class="well">
             <div data-grid>
               <div data-col="3" data-flex="center">
-                <ul class="dropdown dropdown_center">
-                  <li tabindex="1">
-                    <span class="btn btn_invert is-raised">dropdown center</span>
-                    <ul class="dropdown-options">
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown_divider"></li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <nav class="dropdown dropdown_center" tabindex="0">
+                  <span class="btn btn_invert is-raised">dropdown center</span>
+                  <ul class="dropdown-options">
+                    <li class="dropdown-option">
+                      <a>Label</a>
+                    </li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown_divider"></li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
               <div data-col="3" data-flex="center">
-                <ul class="dropdown dropdown_right">
-                  <li tabindex="1">
-                    <span class="btn btn_invert is-raised">dropdown right</span>
-                    <ul class="dropdown-options">
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown_divider"></li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <nav class="dropdown dropdown_right" tabindex="0">
+                  <span class="btn btn_invert is-raised">dropdown right</span>
+                  <ul class="dropdown-options">
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown_divider"></li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
               <div data-col="3" data-flex="center">
-                <ul class="dropdown dropdown_left">
-                  <li tabindex="1">
-                    <span class="btn btn_invert is-raised">dropdown left</span>
-                    <ul class="dropdown-options">
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown_divider"></li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <nav class="dropdown dropdown_left" tabindex="0">
+                  <span class="btn btn_invert is-raised">dropdown left</span>
+                  <ul class="dropdown-options">
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown_divider"></li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
               <div data-col="3" data-flex="center">
-                <ul class="dropdown dropdown_full">
-                  <li tabindex="1">
-                    <span class="btn btn_invert is-raised">dropdown full</span>
-                    <ul class="dropdown-options">
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown_divider"></li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <nav class="dropdown dropdown_full" tabindex="0">
+                  <span class="btn btn_invert is-raised">dropdown full</span>
+                  <ul class="dropdown-options">
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown_divider"></li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
             <div class="spacer-small"></div>
             <div data-grid>
               <div data-col="3" data-flex="center">
-                <ul class="dropdown dropdown_center dropdown_above">
-                  <li tabindex="1">
-                    <span class="btn btn_invert is-raised">center above</span>
-                    <ul class="dropdown-options">
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown_divider"></li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <nav class="dropdown dropdown_center dropdown_above" tabindex="0">
+                  <span class="btn btn_invert is-raised">center above</span>
+                  <ul class="dropdown-options">
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown_divider"></li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
               <div data-col="3" data-flex="center">
-                <ul class="dropdown dropdown_right dropdown_above">
-                  <li tabindex="1">
-                    <span class="btn btn_invert is-raised">right above</span>
-                    <ul class="dropdown-options">
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown_divider"></li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <nav class="dropdown dropdown_right dropdown_above" tabindex="0">
+                  <span class="btn btn_invert is-raised">right above</span>
+                  <ul class="dropdown-options">
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown_divider"></li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
               <div data-col="3" data-flex="center">
-                <ul class="dropdown dropdown_left dropdown_above">
-                  <li tabindex="1">
-                    <span class="btn btn_invert is-raised">left above</span>
-                    <ul class="dropdown-options">
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown_divider"></li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <nav class="dropdown dropdown_left dropdown_above" tabindex="0">
+                  <span class="btn btn_invert is-raised">left above</span>
+                  <ul class="dropdown-options">
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown_divider"></li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
               <div data-col="3" data-flex="center">
-                <ul class="dropdown dropdown_full dropdown_above">
-                  <li tabindex="1">
-                    <span class="btn btn_invert is-raised">full above</span>
-                    <ul class="dropdown-options">
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                      <li class="dropdown_divider"></li>
-                      <li class="dropdown-option">
-                        <a href>Label</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <nav class="dropdown dropdown_full dropdown_above" tabindex="0">
+                  <span class="btn btn_invert is-raised">full above</span>
+                  <ul class="dropdown-options">
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                    <li class="dropdown_divider"></li>
+                    <li class="dropdown-option">
+                      <a href>Label</a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
           </div>
           <pre><code class="html">
-<ul class="dropdown dropdown_full">
-  <li tabindex="1">
-    <span class="btn btn_invert is-raised">dropdown full</span>
-    <ul class="dropdown-options">
-      <li class="dropdown-option">
-        <a href>Label</a>
-      </li>
-      <li class="dropdown-option">
-        <a href>Label</a>
-      </li>
-      <li class="dropdown_divider"></li>
-      <li class="dropdown-option">
-        <a href>Label</a>
-      </li>
-    </ul>
-  </li>
-</ul></code></pre>
+<nav class="dropdown dropdown_full" tabindex="0">
+  <span class="btn btn_invert is-raised">dropdown full</span>
+  <ul class="dropdown-options">
+    <li class="dropdown-option">
+      <a href>Label</a>
+    </li>
+    <li class="dropdown-option">
+      <a href>Label</a>
+    </li>
+    <li class="dropdown_divider"></li>
+    <li class="dropdown-option">
+      <a href>Label</a>
+    </li>
+  </ul>
+</nav></code></pre>
           <table class="table">
             <tbody>
             <tr>
@@ -1710,61 +1702,53 @@
             <div data-col="6">
               <div class="well" data-flex="center">
                 <div class="btn-group">
-                  <ul class="dropdown dropdown_left dropdown_above">
-                    <li tabindex="0">
-                      <span class="btn btn_round">Options</span>
-                      <ul class="dropdown-options">
-                        <li class="dropdown-option">
-                          <a href="">Label</a>
-                        </li>
-                        <li class="dropdown-option">
-                          <a href="">Label</a>
-                        </li>
-                        <li class="dropdown_divider"></li>
-                        <li class="dropdown-option">
-                          <a href="">Label</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <ul class="dropdown dropdown_right dropdown_above">
-                    <li tabindex="0">
+                  <nav class="dropdown dropdown_left dropdown_above" tabindex="0">
+                    <span class="btn btn_round">Options</span>
+                    <ul class="dropdown-options">
+                      <li class="dropdown-option">
+                        <a href="">Label</a>
+                      </li>
+                      <li class="dropdown-option">
+                        <a href="">Label</a>
+                      </li>
+                      <li class="dropdown_divider"></li>
+                      <li class="dropdown-option">
+                        <a href="">Label</a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <nav class="dropdown dropdown_right dropdown_above" tabindex="0">
                         <span class="btn btn_round"><span
                             class="ec-icon more-vertical"></span></span>
-                      <ul class="dropdown-options">
-                        <li class="dropdown-option">
-                          <a href="">Label</a>
-                        </li>
-                        <li class="dropdown-option">
-                          <a href="">Label</a>
-                        </li>
-                        <li class="dropdown_divider"></li>
-                        <li class="dropdown-option">
-                          <a href="">Label</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
+                    <ul class="dropdown-options">
+                      <li class="dropdown-option">
+                        <a href="">Label</a>
+                      </li>
+                      <li class="dropdown-option">
+                        <a href="">Label</a>
+                      </li>
+                      <li class="dropdown_divider"></li>
+                      <li class="dropdown-option">
+                        <a href="">Label</a>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
               </div>
               <pre><code class="html">
 <div class="btn-group">
-  <ul class="dropdown dropdown_left dropdown_above">
-    <li tabindex="0">
-      <span class="btn btn_round">Options</span>
-      <ul class="dropdown-options">
-        ...
-      </ul>
-    </li>
-  </ul>
-  <ul class="dropdown dropdown_right dropdown_above">
-    <li tabindex="0">
-      <span class="btn btn_round"><span class="ec-icon more-vertical"></span></span>
-      <ul class="dropdown-options">
-        ...
-      </ul>
-    </li>
-  </ul>
+  <nav class="dropdown dropdown_left dropdown_above" tabindex="0">
+    <span class="btn btn_round">Options</span>
+    <ul class="dropdown-options">
+      ...
+    </ul>
+  </nav>
+  <nav class="dropdown dropdown_right dropdown_above" tabindex="0">
+    <span class="btn btn_round"><span class="ec-icon more-vertical"></span></span>
+    <ul class="dropdown-options">
+      ...
+    </ul>
+  </nav>
 </div></code></pre>
             </div>
           </div>
@@ -1902,7 +1886,9 @@
 
         <section>
           <h3 id="xui-list" class="kilo">list</h3>
-          <p>list can be used with <span class="code">ul</span>, <span class="code">ol</span> or<span class="code">div</span>. all atoms and molecules can be used within the list-items.</p>
+          <p>list can be used with <span class="code">ul</span>, <span class="code">ol</span>
+            or<span class="code">div</span>. all atoms and molecules can be used within the
+            list-items.</p>
           <div data-grid="">
             <div data-col="6-sm" data-flex="center-items">
               <div class="list-group">

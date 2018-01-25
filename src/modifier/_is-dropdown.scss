@@ -9,8 +9,8 @@
 /// @param {value} $is-dropdown-shadow
 
 .is-dropdown {
-  padding: rem($is-dropdown-padding);
-  box-shadow: $is-dropdown-shadow;
-  border-radius: rem($is-dropdown-radius);
-  background-color: $is-dropdown-background;
+  padding: rem($dropdown-padding);
+  box-shadow: $dropdown-shadow;
+  border-radius: rem($dropdown-radius);
+  background-color: $dropdown-background;
 }

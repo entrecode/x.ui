@@ -2,6 +2,7 @@
 - renamed `.ink#` to `.is-ink#`
 - renamed `.active` to `.is-active`
 - renamed `.disabled` to `.is-disabled`
+- fixed .dropdown link bug with new markup
 
 ### added
 - '.select' atom for custom selects
