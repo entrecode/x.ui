@@ -19,10 +19,10 @@
     margin: 0 0 rem(8) 0;
   }
 
-  &.disabled {
+  &.is-disabled {
     cursor: not-allowed;
 
-    &:not(.active) {
+    &:not(.is-active) {
       opacity: .4;
 
       &:hover {

@@ -95,15 +95,12 @@ ul.select {
   top: 100%;
   z-index: 10;
   display: none;
-  padding: rem(4);
   width: 100%;
   margin: 0;
   margin-top: rem($select-border);
-  background-color: getColor(background);
-  box-shadow: 0 8px 16px -4px rgba(black, .16), 0 4px 24px 0px rgba(black, 0.1);
-  border-radius: rem($select-radius);
   animation: selectOptionsPop .2s forwards;
   transform-origin: top;
+  @extend .is-dropdown;
 }
 
 %select-option {

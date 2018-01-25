@@ -1,8 +1,11 @@
 ### breaking changes
 - renamed `.ink#` to `.is-ink#`
+- renamed `.active` to `.is-active`
+- renamed `.disabled` to `.is-disabled`
 
 ### added
 - '.select' atom for custom selects
+- '.is-dropdown' modifier
 
 ## 7.0.1
 ### breaking changes

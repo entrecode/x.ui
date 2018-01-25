@@ -22,6 +22,10 @@
     }
   }
 
+  a.input-group__icon {
+    color: getColor(link);
+  }
+
   .input {
     & + .input-group__icon {
       left: auto;
