@@ -1,11 +1,7 @@
-.overlay {
-
-}
-
 /// @author Bernhard Ruoff
 /// @since 7.0.0
 /// @access public
-/// @group modifier
+/// @group molecules
 ///
 /// @param {number} $overlay-radius [8]
 /// @param {number} $overlay-padding [4]
@@ -24,7 +20,9 @@
   .overlay__dismiss {
     @extend %btn;
     position: absolute;
-    top: rem($overlay-padding);
-    right: rem($overlay-padding);
+    top: 0;
+    right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }

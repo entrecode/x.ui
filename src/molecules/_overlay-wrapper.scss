@@ -1,0 +1,57 @@
+@keyframes showOverlayWrapper {
+  0% {
+    opacity: 0;
+    clip-path: circle(0% at 50% 50%);
+  }
+
+  100% {
+    opacity: 1;
+    clip-path: circle(100% at 50% 50%);
+  }
+}
+
+
+@keyframes showOverlay {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.overlay-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: none;
+  opacity: 0;
+
+
+  &.is-targeted {
+    .overlay {
+      opacity: 0;
+      display: none;
+      animation: showOverlay .4s forwards ease-out;
+      animation-delay: .4s;
+    }
+
+    &:target {
+      display: initial;
+      opacity: 1;
+      animation: showOverlayWrapper .4s forwards ease-in-out;
+
+      .overlay {
+        display: initial;
+      }
+    }
+  }
+
+  &_backdrop {
+    background-color: getColor(background, backdrop);
+  }
+}
