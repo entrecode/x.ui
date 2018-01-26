@@ -15,7 +15,6 @@
   background-color: $overlay-background;
   color: setContrast($overlay-background);
   position: relative;
-  z-index: 10;
 
   .overlay__dismiss {
     @extend %btn;
