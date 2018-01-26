@@ -10,6 +10,7 @@
 - added '.is-dropdown' modifier
 - added '.overlay' molecule
 - added default config to `x.ui.scss`
+- added `overscroll-behavior-#` attribute to `overflow-#: scroll | auto`
 
 ## 7.0.1
 ### breaking changes

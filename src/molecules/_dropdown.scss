@@ -50,6 +50,7 @@ nav.dropdown {
     top: 100%;
     max-height: 320px;
     overflow-y: auto;
+    overscroll-behavior-y: contain;
     display: none;
     z-index: 10;
     list-style: none;
