@@ -124,7 +124,7 @@
         <section>
           <h2 class="mega align-center is-uppercase">BEM</h2>
           <div class="well align-center">
-            <div class="kilo">block-name__elem-name_mod-name_mod-val</div>
+            <div class="kilo">{block-name}__{elem-name}_{mod-name}_{mod-val}</div>
           </div>
           <p>a good structure also needs as intuitive set of rules for class names to use. For this
             <strong>x.ui</strong> follows the
@@ -141,7 +141,7 @@
             </li>
           </ul>
           <div class="spacer-small"></div>
-          <p class="ink-light">
+          <p class="is-ink-light">
             <small>Source: <strong>Naming convention / Methodology / BEM</strong> -
               <a href=" https://en.bem.info/methodology/naming-convention/" target="_blank"
                  rel="noopener">
@@ -369,7 +369,7 @@
     <div data-grid data-flex="center">
       <div data-col="8-sm">
         <h2 class="giga align-center is-uppercase" id="xui-the-grid">
-          <small class="ink-link">layout</small>
+          <small class="is-ink-link">layout</small>
           <br>the grid
         </h2>
         <p class="lead">the grid system and additional layout modifier as an ordering structure and
@@ -535,12 +535,12 @@
         <div class="spacer"></div>
 
         <p class="h2 is-uppercase" style="line-height: 1em">
-          mobile<span class="ink-link">first</span> mobile<span
-            class="ink-light">landscape</span><span
-            class="ink-link">480</span> tablet<span
-            class="ink-link">720</span> tablet<span class="ink-light">landscape</span><span
-            class="ink-link">1024</span> desktop<span
-            class="ink-link">1280</span> widescreen<span class="ink-link">1920</span>
+          mobile<span class="is-ink-link">first</span> mobile<span
+            class="is-ink-light">landscape</span><span
+            class="is-ink-link">480</span> tablet<span
+            class="is-ink-link">720</span> tablet<span class="is-ink-light">landscape</span><span
+            class="is-ink-link">1024</span> desktop<span
+            class="is-ink-link">1280</span> widescreen<span class="is-ink-link">1920</span>
         </p>
         <div class="spacer"></div>
         <p>The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of classes.
@@ -909,7 +909,7 @@
 
         <div class="spacer"></div>
 
-        <h3 id="xui-atoms-type" class="mega">atoms<span class="ink-link">/type</span></h3>
+        <h3 id="xui-atoms-type" class="mega">atoms<span class="is-ink-link">/type</span></h3>
 
         <section>
           <h3 id="xui-headings" class="kilo">headings</h3>
@@ -998,7 +998,7 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-atoms-media" class="mega">atoms<span class="ink-link">/media</span></h3>
+        <h3 id="xui-atoms-media" class="mega">atoms<span class="is-ink-link">/media</span></h3>
 
         <section>
           <h3 id="xui-img" class="kilo">img</h3>
@@ -1067,9 +1067,15 @@
             accentuate faces more than square ones. even thought the avatar atom uses <span
                 class="code">object-fit: cover</span> to scale/crop images down to a square
             thumbnail, you should use square assets with a matching size.</p>
-          <div class="well" data-flex="center">
-            <div class="avatar"><img src="assets/avatar.jpg" alt=""></div>&nbsp;
-            <div class="avatar avatar_square"><img src="assets/avatar.jpg" alt=""></div>
+          <div class="well">
+            <div data-grid>
+              <div data-col="6" data-flex="center">
+                <div class="avatar"><img src="assets/avatar.jpg" alt=""></div>
+              </div>
+              <div data-col="6" data-flex="center">
+                <div class="avatar avatar_square"><img src="assets/avatar.jpg" alt=""></div>
+              </div>
+            </div>
           </div>
           <pre><code class="html">
 <div class="avatar"><img src="assets/avatar.jpg" alt=""></div>
@@ -1089,7 +1095,7 @@
         <div class="bumper"></div>
 
         <h3 id="xui-atoms-interactions" class="mega">atoms<span
-            class="ink-link">/interaction</span></h3>
+            class="is-ink-link">/interaction</span></h3>
 
         <section>
           <h3 class="kilo" id="xui-btn">button</h3>
@@ -1115,7 +1121,8 @@
           <h4 class="h6">button style modifier</h4>
           <div class="well">
             <ul data-grid="small center">
-              <li v-for="(value, key) in atoms.btn.modifiers" class="align-center" data-col="4-sm 2-md">
+              <li v-for="(value, key) in atoms.btn.modifiers" class="align-center"
+                  data-col="4-sm 2-md">
                 <a class="btn btn_block" :class="value">{{key}}</a>
                 <span class="code" style="margin-top: 8px;">btn_{{key}}</span>
                 <div class="spacer is-visible-xs"></div>
@@ -1177,7 +1184,7 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-atoms-form" class="mega">atoms<span class="ink-link">/form</span></h3>
+        <h3 id="xui-atoms-form" class="mega">atoms<span class="is-ink-link">/form</span></h3>
 
         <section>
           <h3 id="xui-input" class="kilo">input</h3>
@@ -1236,12 +1243,15 @@
           <div data-grid>
             <div data-col="3-sm">
               <input type="text" class="input ng-dirty ng-valid" value="ng-valid">
+              <span class="spacer-small is-visible-xs"></span>
             </div>
             <div data-col="3-sm">
               <input type="text" class="input ng-dirty ng-invalid" value="ng-invalid">
+              <span class="spacer-small is-visible-xs"></span>
             </div>
             <div data-col="3-sm">
               <input type="text" class="input ng-dirty ng-pending" value="ng-pending">
+              <span class="spacer-small is-visible-xs"></span>
             </div>
             <div data-col="3-sm">
               <input type="text" class="input ng-dirty ng-submitted" value="ng-submitted">
@@ -1285,8 +1295,8 @@
         <section>
           <h3 id="xui-select" class="kilo">select <span
               class="tag tag_small tag_super">css only</span></h3>
-          <div data-grid="">
-            <div data-col="6">
+          <div data-grid>
+            <div data-col="6-sm">
               <div class="well">
                 <nav class="select" tabindex="0">
                   <span class="select__placeholder">alle Formate</span>
@@ -1317,7 +1327,7 @@
   </ul>
 </nav></code></pre>
             </div>
-            <div data-col="6">
+            <div data-col="6-sm">
               <div class="well">
                 <nav class="select" tabindex="0">
                   <span class="select__selected">Options 1</span>
@@ -1353,19 +1363,19 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-atoms-data" class="mega">atoms<span class="ink-link">/data</span></h3>
+        <h3 id="xui-atoms-data" class="mega">atoms<span class="is-ink-link">/data</span></h3>
 
         <section>
           <h3 id="xui-bubble" class="kilo">bubble</h3>
           <div class="well">
             <div data-grid>
-              <div data-col="4" data-flex="center-items center">
-                <a class="btn"><span>bubble </span><span class="bubble bubble_invert">2</span></a>
+              <div data-col="6 4-sm" data-flex="center-items center">
+                <a class="btn"><span>bubble </span><span class="bubble bubble_small bubble_invert">2</span></a>
               </div>
-              <div data-col="4" data-flex="center-items center">
+              <div data-col="3 4-sm" data-flex="center-items center">
                 <a class="btn"><span class="bubble bubble_invert">2</span></a>
               </div>
-              <div data-col="4" data-flex="center-items center">
+              <div data-col="3 4-sm" data-flex="center-items center">
                 <span class="bubble bubble_link">2</span>
               </div>
             </div>
@@ -1416,13 +1426,13 @@
           <h3 id="xui-tag" class="kilo">tag</h3>
           <div class="well">
             <div data-grid>
-              <div data-col="4" data-flex="center-items center">
-                <a class="btn"><span>button </span><span class="tag tag_invert">tag</span></a>
+              <div data-col="6 4-sm" data-flex="center-items center">
+                <a class="btn"><span>button </span><span class="tag tag_small tag_invert">tag</span></a>
               </div>
-              <div data-col="4" data-flex="center-items center">
+              <div data-col="3 4-sm" data-flex="center-items center">
                 <span class="tag tag_link">tag</span>
               </div>
-              <div data-col="4" data-flex="center-items center">
+              <div data-col="3 4-sm" data-flex="center-items center">
                 <a class="tag tag_link">tag</a>
               </div>
             </div>
@@ -1468,7 +1478,7 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-atoms-spacer" class="mega">atoms<span class="ink-link">/layout</span></h3>
+        <h3 id="xui-atoms-spacer" class="mega">atoms<span class="is-ink-link">/layout</span></h3>
 
         <section>
           <h3 id="xui-bumper" class="kilo">bumper</h3>
@@ -1525,7 +1535,7 @@
         <div class="spacer"></div>
 
         <h3 id="xui-molecules-feedback" class="mega">molecules<span
-            class="ink-link">/feedback</span></h3>
+            class="is-ink-link">/feedback</span></h3>
 
         <section>
           <h3 class="kilo" id="xui-alert">alert</h3>
@@ -1574,7 +1584,7 @@
         <div class="bumper"></div>
 
         <h3 id="xui-molecules-interaction" class="mega">
-          molecules<span class="ink-link">/interaction</span>
+          molecules<span class="is-ink-link">/interaction</span>
         </h3>
 
         <section>
@@ -1584,7 +1594,7 @@
           </h3>
           <div class="well">
             <div data-grid>
-              <div data-col="3" data-flex="center">
+              <div data-col="6 3-sm" data-flex="center">
                 <nav class="dropdown dropdown_center" tabindex="0">
                   <span class="btn btn_invert is-raised">dropdown center</span>
                   <ul class="dropdown-options">
@@ -1601,7 +1611,7 @@
                   </ul>
                 </nav>
               </div>
-              <div data-col="3" data-flex="center">
+              <div data-col="6 3-sm" data-flex="center">
                 <nav class="dropdown dropdown_right" tabindex="0">
                   <span class="btn btn_invert is-raised">dropdown right</span>
                   <ul class="dropdown-options">
@@ -1618,7 +1628,7 @@
                   </ul>
                 </nav>
               </div>
-              <div data-col="3" data-flex="center">
+              <div data-col="6 3-sm" data-flex="center">
                 <nav class="dropdown dropdown_left" tabindex="0">
                   <span class="btn btn_invert is-raised">dropdown left</span>
                   <ul class="dropdown-options">
@@ -1635,7 +1645,7 @@
                   </ul>
                 </nav>
               </div>
-              <div data-col="3" data-flex="center">
+              <div data-col="6 3-sm" data-flex="center">
                 <nav class="dropdown dropdown_full" tabindex="0">
                   <span class="btn btn_invert is-raised">dropdown full</span>
                   <ul class="dropdown-options">
@@ -1655,7 +1665,7 @@
             </div>
             <div class="spacer-small"></div>
             <div data-grid>
-              <div data-col="3" data-flex="center">
+              <div data-col="6 3-sm" data-flex="center">
                 <nav class="dropdown dropdown_center dropdown_above" tabindex="0">
                   <span class="btn btn_invert is-raised">center above</span>
                   <ul class="dropdown-options">
@@ -1672,7 +1682,7 @@
                   </ul>
                 </nav>
               </div>
-              <div data-col="3" data-flex="center">
+              <div data-col="6 3-sm" data-flex="center">
                 <nav class="dropdown dropdown_right dropdown_above" tabindex="0">
                   <span class="btn btn_invert is-raised">right above</span>
                   <ul class="dropdown-options">
@@ -1689,7 +1699,7 @@
                   </ul>
                 </nav>
               </div>
-              <div data-col="3" data-flex="center">
+              <div data-col="6 3-sm" data-flex="center">
                 <nav class="dropdown dropdown_left dropdown_above" tabindex="0">
                   <span class="btn btn_invert is-raised">left above</span>
                   <ul class="dropdown-options">
@@ -1706,7 +1716,7 @@
                   </ul>
                 </nav>
               </div>
-              <div data-col="3" data-flex="center">
+              <div data-col="6 3-sm" data-flex="center">
                 <nav class="dropdown dropdown_full dropdown_above" tabindex="0">
                   <span class="btn btn_invert is-raised">full above</span>
                   <ul class="dropdown-options">
@@ -1841,7 +1851,7 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-molecules-form" class="mega">molecules<span class="ink-link">/form</span>
+        <h3 id="xui-molecules-form" class="mega">molecules<span class="is-ink-link">/form</span>
         </h3>
 
         <section>
@@ -1880,7 +1890,7 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-molecules-layout" class="mega">molecules<span class="ink-link">/layout</span>
+        <h3 id="xui-molecules-layout" class="mega">molecules<span class="is-ink-link">/layout</span>
         </h3>
 
         <section>
@@ -1926,7 +1936,7 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-molecules-theme" class="mega">molecules<span class="ink-link">/ui</span>
+        <h3 id="xui-molecules-theme" class="mega">molecules<span class="is-ink-link">/ui</span>
         </h3>
 
         <section>
@@ -1969,7 +1979,8 @@
               <a href="#" class="overlay__dismiss">&times;</a>
               <div class="has-padding">
                 <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
-                  ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
+                  ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug.
+                  Sie
                   sprach weiter und weiter.</p>
               </div>
             </div>
@@ -1981,8 +1992,10 @@
               <div class="overlay is-fixed is-positioned-0" data-col="4">
                 <a href="#close" class="overlay__dismiss">&times;</a>
                 <div class="has-padding">
-                  <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
-                    ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
+                  <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab
+                    ich
+                    ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug.
+                    Sie
                     sprach weiter und weiter.</p>
                 </div>
               </div>
@@ -2046,7 +2059,7 @@
                     </div>
                     <div class="list-item__label">
                       <strong>label</strong><br>
-                      <small class="ink-light">kjhgakjhgas</small>
+                      <small class="is-ink-light">kjhgakjhgas</small>
                     </div>
                     <div class="list-item__end">
                       <div class="btn btn_small btn_outlined">
@@ -2064,7 +2077,7 @@
                     </div>
                     <div class="list-item__label">
                       <strong>label</strong><br>
-                      <small class="ink-light">kjhgakjhgas</small>
+                      <small class="is-ink-light">kjhgakjhgas</small>
                     </div>
                     <div class="list-item__end">
                       <div class="btn btn_small btn_outlined">
@@ -2270,7 +2283,7 @@
 
         <h2 id="xui-modifier" class="giga align-center">modifier</h2>
 
-        <h3 id="xui-modifier-layout" class="mega">modifier<span class="ink-link">/layout</span>
+        <h3 id="xui-modifier-layout" class="mega">modifier<span class="is-ink-link">/layout</span>
         </h3>
 
         <section>
@@ -2463,7 +2476,7 @@
         <div class="bumper-big"></div>
 
         <h3 id="xui-modifier-typeface" class="mega">modifier<span
-            class="ink-link">/typeface</span></h3>
+            class="is-ink-link">/typeface</span></h3>
 
         <section>
           <h3 id="xui-align-modifier" class="h6">align</h3>
@@ -2563,7 +2576,7 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-modifier-theme" class="mega">modifier<span class="ink-link">/theme</span>
+        <h3 id="xui-modifier-theme" class="mega">modifier<span class="is-ink-link">/theme</span>
         </h3>
 
         <section>
@@ -2664,7 +2677,7 @@
         <div class="bumper"></div>
 
         <h3 id="xui-modifier-interaction" class="mega">modifier<span
-            class="ink-link">/interaction</span>
+            class="is-ink-link">/interaction</span>
         </h3>
 
         <section>
@@ -2706,7 +2719,7 @@
 
         <div class="bumper"></div>
 
-        <h3 id="xui-modifier-style" class="mega">modifier<span class="ink-link">/ui</span></h3>
+        <h3 id="xui-modifier-style" class="mega">modifier<span class="is-ink-link">/ui</span></h3>
 
 
         <section>

@@ -88,7 +88,6 @@ nav.select {
   left: 0;
   top: 100%;
   z-index: 10;
-  display: none;
   list-style: none;
   width: 100%;
   margin: 0;
@@ -121,6 +120,7 @@ nav.select {
 
 ul.select-options {
   @extend %select-options;
+  display: none;
 
   .select-option {
     @extend %select-option;
