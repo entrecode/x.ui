@@ -1,3 +1,4 @@
+## 8.0.0
 ### breaking changes
 - renamed `.ink#` to `.is-ink#`
 - renamed `.active` to `.is-active`
@@ -5,9 +6,10 @@
 - fixed .dropdown link bug with new markup
 
 ### added
-- '.select' atom for custom selects
-- '.is-dropdown' modifier
-- '.overlay' molecule
+- added '.select' atom for custom selects
+- added '.is-dropdown' modifier
+- added '.overlay' molecule
+- added default config to `x.ui.scss`
 
 ## 7.0.1
 ### breaking changes
