@@ -365,10 +365,10 @@ $input-raised-shadow: rgba(black, .1) !default;
 /// ------------------------------------------------------
 
 /// @param {number} $select-font-size [16]
-/// @param {number} $select-line-height [24]
+/// @param {number} $select-line-height [20]
 /// @param {number} $select-min-height [32]
 $select-font-size: 16 !default;
-$select-line-height: 24 !default;
+$select-line-height: 20 !default;
 $select-min-height: 32 !default;
 
 /// additional styles for .input
