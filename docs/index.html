@@ -245,6 +245,8 @@
           </li>
           <li data-col="6-sm 4-md" class="periodic-group-form"><span class="h5">F</span><br>input-group
           </li>
+          <li data-col="6-sm 4-md" class="periodic-group-form"><span class="h5">F</span><br>select
+          </li>
           <li data-col="6-sm 4-md" class="periodic-group-data"><span class="h5">D</span><br>bubble
           </li>
           <li data-col="6-sm 4-md" class="periodic-group-data"><span class="h5">D</span><br>tag</li>
@@ -276,6 +278,7 @@
           <li data-col="6-sm 4-md" class="periodic-group-layout"><span class="h5">L</span><br>table
           </li>
           <li data-col="6-sm 4-md" class="periodic-group-ui"><span class="h5">UI</span><br>well</li>
+          <li data-col="6-sm 4-md" class="periodic-group-ui"><span class="h5">UI</span><br>overlay</li>
         </ul>
       </li>
       <li data-col="3">
@@ -320,9 +323,15 @@
           </li>
           <li data-col="6-sm 4-md" class="periodic-group-layout"><span class="h5">L</span><br>is-positioned
           </li>
+          <li data-col="6-sm 4-md" class="periodic-group-layout"><span class="h5">L</span><br>is-layer
+          </li>
           <li data-col="6-sm 4-md" class="periodic-group-layout"><span class="h5">L</span><br>overflow
           </li>
           <li data-col="6-sm 4-md" class="periodic-group-layout"><span class="h5">L</span><br>pull
+          </li>
+          <li data-col="6-sm 4-md" class="periodic-group-layout"><span class="h5">L</span><br>is-visible
+          </li>
+          <li data-col="6-sm 4-md" class="periodic-group-layout"><span class="h5">L</span><br>is-hidden
           </li>
           <li data-col="6-sm 4-md" class="periodic-group-ui"><span class="h5">UI</span><br>is-fab
           </li>
@@ -332,9 +341,11 @@
           </li>
           <li data-col="6-sm 4-md" class="periodic-group-ui"><span class="h5">UI</span><br>is-rounded
           </li>
-          <li data-col="6-sm 4-md" class="periodic-group-ui"><span class="h5">UI</span><br>theme
+          <li data-col="6-sm 4-md" class="periodic-group-ui"><span class="h5">UI</span><br>is-theme
           </li>
-          <li data-col="6-sm 4-md" class="periodic-group-ui"><span class="h5">UI</span><br>text-color
+          <li data-col="6-sm 4-md" class="periodic-group-ui"><span class="h5">UI</span><br>is-ink
+          </li>
+          <li data-col="6-sm 4-md" class="periodic-group-ui"><span class="h5">UI</span><br>is-dropdown
           </li>
           <li data-col="6-sm 4-md" class="periodic-group-type"><span class="h5">T</span><br>align
           </li>
@@ -1268,6 +1279,77 @@
 
         <div class="bumper"></div>
 
+        <section>
+          <h3 id="xui-select" class="kilo">select <span
+              class="tag tag_small tag_super">css only</span></h3>
+          <div data-grid="">
+            <div data-col="6">
+              <div class="well">
+                <nav class="select" tabindex="0">
+                  <span class="select__placeholder">alle Formate</span>
+                  <ul class="select-options">
+                    <li class="select-option" tabindex="0">
+                      <a href="">Options 1</a>
+                    </li>
+                    <li class="select-option" tabindex="0">
+                      <a href="">Options 2</a>
+                    </li>
+                    <li class="select-option" tabindex="0">
+                      <a href="">Options 3</a>
+                    </li>
+                    <li class="select-option" tabindex="0">
+                      <a href="">Options 4</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <pre><code class="html">
+<nav class="select" tabindex="0">
+  <span class="select__placeholder">...</span>
+  <ul class="select-options">
+    <li class="select-option is-selected" tabindex="0">
+      <a href="">...</a>
+    </li>
+    ...
+  </ul>
+</nav></code></pre>
+            </div>
+            <div data-col="6">
+              <div class="well">
+                <nav class="select" tabindex="0">
+                  <span class="select__selected">Options 1</span>
+                  <ul class="select-options">
+                    <li class="select-option is-selected" tabindex="0">
+                      <a href="">Options 1</a>
+                    </li>
+                    <li class="select-option" tabindex="0">
+                      <a href="">Options 2</a>
+                    </li>
+                    <li class="select-option" tabindex="0">
+                      <a href="">Options 3</a>
+                    </li>
+                    <li class="select-option" tabindex="0">
+                      <a href="">Options 4</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <pre><code class="html">
+<nav class="select" tabindex="0">
+  <span class="select__selected">...</span>
+  <ul class="select-options">
+    <li class="select-option" tabindex="0">
+      <a href="">...</a>
+    </li>
+    ...
+  </ul>
+</nav></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <div class="bumper"></div>
+
         <h3 id="xui-atoms-data" class="mega">atoms<span class="ink-link">/data</span></h3>
 
         <section>
@@ -1875,6 +1957,37 @@
           </table>
         </section>
 
+        <div class="bumper"></div>
+
+        <section>
+          <h4 id="xui-overlay" class="kilo">overlay</h4>
+          <div class="well" data-flex="center">
+            <div class="overlay" data-col="4">
+              <a href="#" class="overlay__dismiss">&times;</a>
+              <div class="has-padding">
+                <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
+                  ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
+                  sprach weiter und weiter.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="well" data-flex="center">
+            <a href="#overlayDemo" class="btn btn_glow">open overlay</a>
+            <div class="overlay-wrapper is-targeted overlay-wrapper_backdrop" id="overlayDemo">
+              <div class="overlay is-fixed is-positioned-0" data-col="4">
+                <a href="#close" class="overlay__dismiss">&times;</a>
+                <div class="has-padding">
+                  <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
+                    ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
+                    sprach weiter und weiter.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
         <div class="bumper-big"></div>
 
         <h2 id="xui-organisms" class="giga align-center">organisms</h2>
@@ -2286,7 +2399,7 @@
 
           <div class="spacer"></div>
 
-          <h3 id="xui-direction-modifier" class="kilo">direction</h3>
+          <h3 id="xui-is-positioned-modifier" class="kilo">is-positioned</h3>
           <div class="well align-center">
             <span class="h6">is-positioned-{direction}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
           </div>
@@ -2451,8 +2564,8 @@
         </h3>
 
         <section>
-          <h3 class="kilo" id="xui-text-color">text-color</h3>
-          <p>the text-color modifiers only affect the css color attribute. it can be uses on all
+          <h3 class="kilo" id="xui-is-ink">is-ink</h3>
+          <p>the is-ink modifiers only affect the css color attribute. it can be uses on all
             elements.</p>
           <div class="well well_small">
             <div data-grid>
@@ -2466,7 +2579,7 @@
         <div class="bumper"></div>
 
         <section>
-          <h3 id="xui-theme" class="kilo">theme</h3>
+          <h3 id="xui-is-theme" class="kilo">is-theme</h3>
           <p>the is-theme-modifier affect the color and background-color attribute. the color is
             calculated according to the
             <a href="https://www.w3.org/TR/AERT/#color-contrast" target="_blank" rel="noopener">Web
@@ -2724,7 +2837,7 @@
       <div data-col="12 8-lg">
         <ul data-grid="small">
           <li v-for="icon in iconset" data-col="3"
-              :class="{hide: icon.indexOf(query) === -1}">
+              :class="{'is-hidden': icon.indexOf(query) === -1}">
             <span class="ec-icon" :class="icon"></span><span
               class="quickselect">{{ icon }}</span>
           </li>
