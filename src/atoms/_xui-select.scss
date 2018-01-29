@@ -60,7 +60,7 @@
   }
 }
 
-nav.select {
+nav.xui-select {
   @extend %select;
 }
 
@@ -118,11 +118,11 @@ nav.select {
   }
 }
 
-ul.select-options {
+ul.xui-select-options {
   @extend %select-options;
   display: none;
 
-  .select-option {
+  .xui-select-option {
     @extend %select-option;
   }
 }
