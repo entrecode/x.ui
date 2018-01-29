@@ -15,6 +15,7 @@
 
 ### changes
 - removed TODO-folder
+- refactored `.has-width-#` modifier
 
 ## 7.0.1
 ### breaking changes
