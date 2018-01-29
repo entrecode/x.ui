@@ -1,20 +1,20 @@
-.list-group {
+.xui-list-group {
   width: 100%;
 }
 
-.list {
+.xui-list {
   margin-top: 0;
   margin-bottom: rem(16);
 
   @at-root ul, ol {
-    &.list {
+    &.xui-list {
       list-style: none;
       padding: 0;
     }
   }
 }
 
-.list-item {
+.xui-list-item {
   display: flex;
   align-items: center;
   padding: rem(8);
@@ -31,11 +31,11 @@
     transition-delay: 0s;
   }
 
-  .list-item__start {
+  &__start {
     margin-right: rem(16);
   }
 
-  .list-item__end {
+  &__end {
     margin-right: 0;
     margin-left: auto;
   }
