@@ -2,13 +2,8 @@
   display: inline-block;
   margin: 0 rem(4);
   border-radius: rem(2);
-  background-color: getColor(minor);
+  background-color: getColor(background);
   user-select: all;
   padding: 0 rem(4);
   transition: all .4s;
-  cursor: copy;
-
-  &:hover {
-    background-color: getColor(highlight);
-  }
 }
