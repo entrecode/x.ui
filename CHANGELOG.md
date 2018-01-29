@@ -3,15 +3,18 @@
 - renamed `.ink#` to `.is-ink#`
 - renamed `.active` to `.is-active`
 - renamed `.disabled` to `.is-disabled`
-- fixed .dropdown link bug with new markup
+- renamed `.list` to `.xui-list`
+- fixed `.dropdown` link bug with new markup
 
 ### added
-- added '.select' atom for custom selects
-- added '.is-dropdown' modifier
-- added '.overlay' molecule
+- added `.xui-select` atom for custom selects
+- added `.is-dropdown` modifier
+- added `.overlay` molecule
 - added default config to `x.ui.scss`
 - added `overscroll-behavior-#` attribute to `overflow-#: scroll | auto`
-- added '.select' documentation
+- added `.select` documentation
+- added `.xui-checkbox` for custom checkboxes inputs
+- added `.xui-radio` for custom radio inputs
 
 ### changes
 - removed TODO-folder
@@ -19,7 +22,7 @@
 
 ## 7.0.1
 ### breaking changes
-- use `@import '~x.ui/src/x.ui.scss';` instead of `@import '~x.ui/src/x.ui-sandbox.scss';`
+- use `@import `~x.ui/src/x.ui.scss`;` instead of `@import `~x.ui/src/x.ui-sandbox.scss`;`
 - renamed `.spacing#` to `.spacer#`
 - renamed `.is-ink#` to `.ink#`
 
@@ -237,7 +240,7 @@ version bump
 - x.ui partial `menubar`, `menu`
 
 ### changes
-- changed `"` to `'`
+- changed `"` to ```
 
 ## 1.0.0
 ### breaking changes

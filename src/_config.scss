@@ -361,6 +361,41 @@ $input-border-color: mix($text, $background, 25%) !default;
 $input-raised-shadow: rgba(black, .1) !default;
 
 ///
+/// XUI-CHECKBOX
+/// ------------------------------------------------------
+
+/// @param {number} $checkbox-font-size [16]
+/// @param {number} $checkbox-line-height [20]
+/// @param {number} $checkbox-min-height [32]
+/// @param {number} $checkbox-radius [6]
+$checkbox-font-size: 14 !default;
+$checkbox-line-height: 24 !default;
+$checkbox-height: 20 !default;
+$checkbox-radius: 6 !default;
+
+/// additional styles for .xui-checkbox
+%checkbox-style {
+  box-shadow: inset 0 1px 2px 1px rgba(black, .2);
+}
+
+///
+/// XUI-RADIO
+/// ------------------------------------------------------
+
+/// @param {number} $radio-font-size [16]
+/// @param {number} $radio-line-height [20]
+/// @param {number} $radio-min-height [32]
+/// @param {number} $radio-radius [6]
+$radio-font-size: 10 !default;
+$radio-line-height: 20 !default;
+$radio-height: 20 !default;
+
+/// additional styles for .xui-radio
+%radio-style {
+  box-shadow: inset 0 1px 2px 1px rgba(black, .2);
+}
+
+///
 /// SELECT
 /// ------------------------------------------------------
 
