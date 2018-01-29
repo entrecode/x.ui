@@ -296,7 +296,6 @@
             </a>
           </li>
           <li data-col="6 4-md">
-            <!--TODO docu-->
             <a href="#xui-flex-spacer" class="periodic-group-layout">
               <span class="h5">L</span> flex-spacer
             </a>
@@ -365,7 +364,7 @@
           </li>
           <li data-col="6 4-md">
             <a href="#xui-nav" class="periodic-group-ui">
-            <span class="h5">UI</span> nav
+              <span class="h5">UI</span> nav
             </a>
           </li>
           <li data-col="6 4-md">
@@ -415,7 +414,6 @@
             </a>
           </li>
           <li data-col="6 4-md">
-            <!--TODO docu-->
             <a href="#xui-width-modifier" class="periodic-group-layout">
               <span class="h5">L</span> has-width
             </a>
@@ -482,11 +480,10 @@
           </li>
           <li data-col="6 4-md">
             <a href="#xui-is-ink" class="periodic-group-ui">
-            <span class="h5">UI</span> is-ink
+              <span class="h5">UI</span> is-ink
             </a>
           </li>
           <li data-col="6 4-md">
-            <!--TODO docu-->
             <a href="#xui-is-dropdown" class="periodic-group-ui">
               <span class="h5">UI</span> is-dropdown
             </a>
@@ -1329,15 +1326,16 @@
         </section>
 
         <div class="bumper"></div>
-
-        <!--TODO documentation-->
+        
         <section>
           <h3 id="xui-hamburger-btn" class="kilo">hamburger-btn <span
               class="tag tag_small tag_error">in progress</span>
           </h3>
           <div class="alert">
             <button class="hamburger-btn"></button>
+            <button class="hamburger-btn is-active"></button>
           </div>
+          <pre><code class="html"><button class="hamburger-btn"></button></code></pre>
         </section>
 
         <div class="bumper"></div>
@@ -1682,6 +1680,24 @@
             </tr>
             </tbody>
           </table>
+        </section>
+
+        <div class="spacer"></div>
+
+        <section>
+          <h3 id="xui-flex-spacer" class="kilo">flex-spacer</h3>
+          <div data-flex>
+            <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
+            <div class="flex-spacer demo-flex-spacer"></div>
+            <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
+          </div>
+          <pre><code class="html">
+<div data-flex>
+  ...
+  <div class="flex-spacer"></div>
+  ...
+</div></code></pre>
+
         </section>
 
         <div class="bumper-big"></div>
@@ -2499,9 +2515,45 @@
           <div class="well align-center">
             <span class="h6">has-height-{relation}-{ratio}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
           </div>
-          <p>size modifier are the vertical layout equivalent for columns. size modifier set the
+          <p>the <span class="code">has-height</span> modifier is the vertical layout equivalent for
+            columns. size modifier set the
             min-height of an element relative to its parent or to the viewport.
           </p>
+          <table class="table">
+            <tr data-grid="no-gutter">
+              <td data-col="4"><strong>{relation}</strong></td>
+              <td data-col="8">
+                <ul class="is-unstyled">
+                  <li><em>empty</em> - relative to it's parent (%)</li>
+                  <li><span class="code">vw</span> - relative to viewport width</li>
+                  <li><span class="code">vh</span> - relative to viewport height</li>
+                </ul>
+            </tr>
+            <tr data-grid="no-gutter">
+              <td data-col="4"><strong>{ratio}</strong></td>
+              <td data-col="8">
+                <ul class="is-unstyled">
+                  <li><span class="code">full</span> - &times; 1</li>
+                  <li><span class="code">1-4</span> - &times; .25</li>
+                  <li><span class="code">half</span> - &times; .5</li>
+                  <li><span class="code">3-4</span> - &times; .75</li>
+                  <li><span class="code">golden</span> - &times; .5625</li>
+                  <li><span class="code">16-9</span> - &times; .6180 (golden-ratio)</li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </section>
+
+        <div class="bumper"></div>
+
+        <section>
+          <h3 id="xui-width-modifier" class="kilo">has-width</h3>
+          <div class="well align-center">
+            <span class="h6">has-width-{relation}-{ratio}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
+          </div>
+          <p>the <span class="code">has-width</span> is an additional size modifier, that can be
+            used instead of <span class="col">data-col</span>.</p>
           <table class="table">
             <tr data-grid="no-gutter">
               <td data-col="4"><strong>{relation}</strong></td>
@@ -2883,6 +2935,18 @@
 
         <h3 id="xui-modifier-style" class="mega">modifier<span class="is-ink-link">/ui</span></h3>
 
+
+        <section>
+          <h3 class="kilo" id="xui-is-dropdown">is-dropdown</h3>
+          <p><span class="code">.is-dropdown</span> is a placeholder style used e.g. in the dropdown molecule.</p>
+          <div class="well align-center">
+            <div class="is-dropdown">
+              ...
+            </div>
+          </div>
+        </section>
+
+        <div class="bumper"></div>
 
         <section>
           <h3 class="kilo" id="xui-is-raised-modifier">is-raised</h3>
