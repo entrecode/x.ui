@@ -6,8 +6,8 @@
 /// @param {boolean} $flex-support [true]
 
 nav {
-  &.xui-nav {
-    .xui-nav__items {
+  &.nav {
+    .nav__items {
       list-style: none;
       margin: 0;
       padding: 0;
@@ -21,14 +21,14 @@ nav {
         align-items: center;
       }
 
-      .xui-nav__divider {
+      .nav__divider {
         height: 100%;
         width: rem(1);
         margin: 0 rem(4);
         display: block;
       }
 
-      .xui-nav__item {
+      .nav__item {
         padding: rem(4);
 
         .btn {
@@ -37,11 +37,11 @@ nav {
       }
     }
 
-    .xui-nav__divider {
+    .nav__divider {
       background-color: getColor(divider);
     }
 
-    &.xui-nav_stacked {
+    &.nav_stacked {
       @if $flex-support == false {
         .xui-nav__items {
           .xui-nav__item {
@@ -49,7 +49,7 @@ nav {
           }
         }
       } @else {
-        .xui-nav__items {
+        .nav__items {
           margin: 0 rem(-4);
           display: flex;
           flex-direction: column;
@@ -57,14 +57,14 @@ nav {
         }
       }
 
-      .xui-nav__divider {
+      .nav__divider {
         width: 100%;
         height: rem(1);
         margin: rem(4) 0;
       }
 
-      .xui-nav__items {
-        .xui-nav__item {
+      .nav__items {
+        .nav__item {
           .btn {
             @extend .btn.btn_block;
           }
