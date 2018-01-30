@@ -24,7 +24,7 @@
     z-index: 1;
   }
 
-  .select__placeholder {
+  .xui-select__placeholder {
     color: getColor(text, lighter);
     flex-grow: 1;
     flex-shrink: 0;
@@ -40,7 +40,7 @@
         margin-bottom: rem(4);
       }
 
-      .select-options {
+      .xui-select-options {
         display: initial;
       }
     }
@@ -54,7 +54,7 @@
       border-top-color: rgba(getColor(text), .4);
     }
 
-    .select__placeholder {
+    .xui-select__placeholder {
       color: getColor(text, light);
     }
   }
@@ -103,6 +103,7 @@ nav.xui-select {
 
 %select-option {
   padding: rem(2) 0;
+  outline: none;
 
   &:hover,
   &.is-selected {
