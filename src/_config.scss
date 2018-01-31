@@ -9,9 +9,9 @@ $headings-font: sans-serif !default;
 /// @param {number} $is-light - font-weight value for .is-light
 /// @param {number} $is-normal - font-weight value for .is-normal
 /// @param {number} $is-bold - font-weight value for .is-bold
-$is-light: 400 !default;
-$is-normal: 400 !default;
-$is-bold: 700 !default;
+$is-light: lighter !default;
+$is-normal: normal !default;
+$is-bold: bold !default;
 
 ///
 /// COLORS
