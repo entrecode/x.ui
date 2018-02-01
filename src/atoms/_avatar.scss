@@ -12,6 +12,7 @@
   @include set-breakpoints {
     width: rem($avatar-size);
     height: rem($avatar-size);
+    display: block;
     overflow: hidden;
     border-radius: 50%;
     border: rem($avatar-border) solid getColor(background);
