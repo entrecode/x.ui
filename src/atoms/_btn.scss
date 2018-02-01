@@ -240,6 +240,14 @@
       color: getColor(text)
     }
 
+    &.btn_minor {
+      color: setContrast(getColor(minor), getColor(minor));
+    }
+
+    &.btn_super {
+      color: setContrast(getColor(super), getColor(super));
+    }
+
     &.btn_invert {
       color: setContrast(getColor(background, invert), getColor(link));
 
