@@ -1,0 +1,5 @@
+@for $i from 1 through 400 {
+  [data-animate~="#{$i}"] {
+    animation-duration: $i / 10 *1s;
+  }
+}
