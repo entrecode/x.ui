@@ -30,7 +30,7 @@
 <div id="app">
   <header class="is-fixed is-positioned-nw has-padding is-layer-10 has-width-full">
     <div class="toolbar">
-      <!--<a href="" class="hamburger-btn"></a>-->
+      <!--<a href="#xui-sidebar-nav" class="hamburger-btn"></a>-->
       <div class="toolbar__title toolbar__title_center">
         <a href="#top">
           <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
@@ -47,17 +47,297 @@
   </header>
 
   <!--menu-->
-  <aside
-      class="is-theme-link is-scrollable-y is-fixed has-height-vh-full is-positioned-nw is-layer-10 has-width-1-4 is-hidden">
+  <aside class="is-theme-link is-scrollable-y is-fixed has-height-vh-full is-positioned-nw is-layer-10 has-width-1-4 is-hidden">
     <div class="has-padding_big">
-      <div class="navbar">
-        <nav class="nav nav_stacked">
-          <ul class="nav__items">
-            <li class="nav__item">
-              <a href="#xui-get-started" class="kilo is-uppercase">get started</a>
-            </li>
-          </ul>
-        </nav>
+      <div class="xui-list-group">
+        <div class="xui-list-group__header"><h3 class="h6">atoms</h3></div>
+        <ul class="xui-list">
+          <li class="xui-list-item">
+            <a href="#xui-headings">
+              headings
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-type">
+              type
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-list">
+              list
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-image">
+              image
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-avatar">
+              avatar
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-btn">
+              button
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-input">
+              input
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-input-group">
+              input-group
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-select">
+              xui-select
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-checkbox">
+              xui-checkbox
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-radio">
+              xui-radio
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-bubble">
+              bubble
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-tag">
+              tag
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-bumper">
+              bumper
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-spacer">
+              spacer
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-flex-spacer">
+              flex-spacer
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="xui-list-group">
+        <div class="xui-list-group__header"><h3 class="h6">molecules</h3></div>
+        <ul class="xui-list">
+          <li class="xui-list-item">
+            <a href="#xui-alert">
+              alert
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-btn-group">
+              btn-group
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-dropdown">
+              xui-dropdown
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-form-group">
+              form-group
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-table">
+              table
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-well">
+              well
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-overlay">
+              overlay
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-tabs">
+              xui-tabs
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="xui-list-group">
+        <div class="xui-list-group__header"><h3 class="h6">organisms</h3></div>
+        <ul class="xui-list">
+          <li class="xui-list-item">
+            <a href="#xui-list">
+              xui-list
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-nav">
+              nav
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-toolbar">
+              toolbar
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-title">
+              title
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="xui-list-group">
+        <div class="xui-list-group__header"><h3 class="h6">modifier</h3></div>
+        <ul class="xui-list">
+          <li class="xui-list-item">
+            <a href="#xui-spacing-modifier">
+              has-margin
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-spacing-modifier">
+              no-margin
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-spacing-modifier">
+              has-padding
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-spacing-modifier">
+              no-padding
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-height-modifier">
+              has-height
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-width-modifier">
+              has-width
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-position-modifier">
+              position
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-is-positioned-modifier">
+              is-positioned
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-is-layer-modifier">
+              is-layer
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-overflow-modifier">
+              overflow
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-pull-modifier">
+              pull
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-is-visible-modifier">
+              is-visible
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-is-hidden-modifier">
+              is-hidden
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-is-fab-modifier">
+              is-fab
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-is-raised-modifier">
+              is-raised
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-is-lifted-modifier">
+              is-lifted
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-is-rounded-modifier">
+              is-rounded
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-is-theme">
+              is-theme
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-is-ink">
+              is-ink
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-is-dropdown">
+              is-dropdown
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-align-modifier">
+              align
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-text-transform-modifier">
+              text-transform
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-font-weight-modifier">
+              font-weight
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-word-wrap">
+              word-wrap
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-toolbar">
+              tooltip
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-data-animate">
+              data-animate
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </aside>
@@ -141,14 +421,15 @@
             </li>
           </ul>
           <div class="spacer-small"></div>
-          <p class="is-ink-light">
-            <small>Source: <strong>Naming convention / Methodology / BEM</strong> -
-              <a href=" https://en.bem.info/methodology/naming-convention/" target="_blank"
-                 rel="noopener">
-                https://en.bem.info/methodology/naming-convention/</a> - 13.12.2017
+
+          <p class="align-center is-ink-light">
+            <small>
+              <small>Source: <strong>Naming convention / Methodology / BEM</strong> - <a
+                  href=" https://en.bem.info/methodology/naming-convention/" target="_blank"
+                  rel="noopener">https://en.bem.info/methodology/naming-convention/</a> - 13.12.2017
+              </small>
             </small>
           </p>
-
         </section>
 
         <div class="bumper-big"></div>
@@ -356,6 +637,11 @@
               <span class="h5">UI</span> overlay
             </a>
           </li>
+          <li data-col="6 4-md">
+            <a href="#xui-tabs" class="periodic-group-ui">
+              <span class="h5">UI</span> xui-tabs
+            </a>
+          </li>
         </ul>
       </li>
       <li data-col="6 3-sm">
@@ -521,6 +807,11 @@
           <li data-col="6 4-md">
             <a href="#xui-toolbar" class="periodic-group-interaction">
               <span class="h5">I</span> tooltip
+            </a>
+          </li>
+          <li data-col="6 4-md">
+            <a href="#xui-data-animate" class="periodic-group-interaction">
+              <span class="h5">I</span> data-animate
             </a>
           </li>
         </ul>
@@ -2207,7 +2498,12 @@
         <div class="bumper"></div>
 
         <section>
-          <h4 id="xui-overlay" class="kilo">overlay</h4>
+          <h4 id="xui-overlay" class="kilo">overlay
+            <a href="https://caniuse.com/#search=%3Atarget"
+               target="_blank" rel="noopener"
+               class="tag tag_error tag_small">object-fit</a>
+            <span class="tag tag_small tag_super">css only</span>
+          </h4>
           <div class="well" data-flex="center">
             <div class="overlay" data-col="4-sm">
               <a href="#" class="overlay__dismiss">&times;</a>
@@ -2224,7 +2520,7 @@
             <a href="#overlayDemo" class="btn btn_glow">open overlay</a>
             <div class="overlay-wrapper is-targeted overlay-wrapper_backdrop" id="overlayDemo">
               <div class="overlay is-fixed is-positioned-0" data-col="8-xs 4-sm">
-                <a href="#close" class="overlay__dismiss">&times;</a>
+                <a href="#overlayDemoClose" class="overlay__dismiss">&times;</a>
                 <div class="has-padding">
                   <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab
                     ich
@@ -2235,7 +2531,85 @@
               </div>
             </div>
           </div>
+        </section>
 
+        <div class="bumper"></div>
+
+        <section>
+          <h4 id="#xui-tabs" class="kilo">xui-tabs
+            <a href="https://caniuse.com/#search=%3Atarget"
+               target="_blank" rel="noopener"
+               class="tag tag_error tag_small">object-fit</a>
+            <span class="tag tag_small tag_super">css only</span>
+          </h4>
+
+          <div class="xui-tabs">
+            <input type="radio" name="tabs" id="content1" checked>
+            <input type="radio" name="tabs" id="content2">
+            <input type="radio" name="tabs" id="content3">
+            <input type="radio" name="tabs" id="content4">
+            <nav class="xui-tabs-nav">
+              <ul>
+                <li><label for="content1">Tab1</label></li>
+                <li><label for="content2">Tab2</label></li>
+                <li><label for="content3">Tab3</label></li>
+                <li><label for="content4">Tab4</label></li>
+              </ul>
+            </nav>
+            <div class="xui-tab" data-animate="fadeIn 4">
+              <p>»Dann gehen wir also,« sagte er dann und sah zu Herrn Samsa auf, als verlange er in
+                einer plötzlich ihn überkommenden Demut sogar für diesen Entschluß eine neue
+                Genehmigung. Herr Samsa nickte ihm bloß mehrmals kurz mit großen Augen zu. </p>
+            </div>
+            <div class="xui-tab" data-animate="fadeIn 4">
+              <p>Daraufhin ging der Herr tatsächlich sofort mit langen Schritten ins Vorzimmer;
+                seine beiden Freunde hatten schon ein Weilchen lang mit ganz ruhigen Händen
+                aufgehorcht und hüpften ihm jetzt geradezu nach, wie in Angst, Herr Samsa könnte vor
+                ihnen ins Vorzimmer eintreten und die Verbindung mit ihrem Führer stören. Im
+                Vorzimmer nahmen alle drei die Hüte vom Kleiderrechen, zogen ihre Stöcke aus dem
+                Stockbehälter, verbeugten sich stumm und verließen die Wohnung. </p>
+            </div>
+            <div class="xui-tab" data-animate="fadeIn 4">
+              <p>In einem, wie sich zeigte, gänzlich unbegründeten Mißtrauen trat Herr Samsa mit den
+                zwei Frauen auf den Vorplatz hinaus; an das Geländer gelehnt, sahen sie zu, wie die
+                drei Herren zwar langsam, aber ständig die lange Treppe hinunterstiegen, in jedem
+                Stockwerk in einer bestimmten Biegung des Treppenhauses verschwanden und nach ein
+                paar Augenblicken wieder hervorkamen; je tiefer sie gelangten, desto mehr verlor
+                sich das Interesse der Familie Samsa für sie, und als ihnen entgegen und dann hoch
+                über sie hinweg ein Fleischergeselle mit der Trage auf dem Kopf in stolzer Haltung
+                heraufstieg, verließ bald Herr Samsa mit den Frauen das Geländer, und alle kehrten,
+                wie erleichtert, in ihre Wohnung zurück. Sie beschlossen, den heutigen Tag zum
+                Ausruhen und Spazierengehen zu verwenden; sie hatten diese Arbeitsunterbrechung
+                nicht nur verdient, sie brauchten sie sogar unbedingt. </p>
+            </div>
+            <div class="xui-tab" data-animate="fadeIn 4">
+              <p>Und so setzten sie sich zum Tisch und schrieben drei Entschuldigungsbriefe, Herr
+                Samsa an seine Direktion, Frau Samsa an ihren Auftraggeber, und Grete an ihren
+                Prinzipal. </p>
+            </div>
+          </div>
+
+          <pre><code class="html">
+<div class="xui-tabs">
+  <input type="radio" name="tabs" id="demoContent1" checked>
+  ...
+  <nav class="xui-tabs-nav">
+    <ul>
+      <li><label for="demoContent1">Tab1</label></li>
+      ...
+    </ul>
+  </nav>
+  <div class="xui-tab">...</div>
+  ...
+</div></code></pre>
+
+          <p class="align-center is-ink-light">
+            <small>
+              <small>Source placeholder text: <strong>Theodor Fontane - Die Verwandlung</strong> <a
+                  href="http://www.blindliteratur.de/" target="_blank" rel="noopener">http://www.blindliteratur.de/</a>
+              </small>
+            </small>
+          </p>
         </section>
 
         <div class="bumper-big"></div>
@@ -2958,22 +3332,22 @@
           <div class="alert alert_small">the tooltip only works with single line tooltips</div>
           <div class="well">
             <div data-grid>
-              <div data-col="6-xs 3-sm" data-flex="center">
+              <div data-col="6-xs 3-sm">
                 <a href="" data-tooltip-top="This is a tooltip"
                    class="btn btn_invert is-raised btn_block has-margin-bottom">
                   tooltip top</a>
               </div>
-              <div data-col="6-xs 3-sm" data-flex="center">
+              <div data-col="6-xs 3-sm">
                 <a href="" data-tooltip-right="This is a tooltip"
                    class="btn btn_invert is-raised btn_block has-margin-bottom">
                   tooltip right</a>
               </div>
-              <div data-col="6-xs 3-sm" data-flex="center">
+              <div data-col="6-xs 3-sm">
                 <a href="" data-tooltip-bottom="This is a tooltip"
                    class="btn btn_invert is-raised btn_block">
                   tooltip bottom</a>
               </div>
-              <div data-col="6-xs 3-sm" data-flex="center">
+              <div data-col="6-xs 3-sm">
                 <a href="" data-tooltip-left="This is a tooltip"
                    class="btn btn_invert is-raised btn_block">
                   tooltip left</a>
@@ -2989,6 +3363,59 @@
 ...
 <... data-tooltip-left="This is a tooltip" ... >
 </code></pre>
+        </section>
+
+        <div class="bumper"></div>
+
+        <section>
+          <h3 id="xui-data-animate" class="kilo">data-animate
+            <span class="tag tag_small tag_super">css only</span>
+            <span class="tag tag_small tag_error">in progress</span>
+          </h3>
+
+          <div class="well">
+            <div data-grid="small" data-flex="center center-items">
+              <div data-col="3">
+                <div class="form-group">
+                  <label for="anaimationType">animation</label>
+                  <select v-model="selectedAnimation" id="anaimationType" class="input">
+                    <option :value="ani" v-for="(ani, index) in animation"
+                            :selected="index === '0'">
+                      {{ani}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div data-col="3">
+                <div class="form-group">
+                  <label for="animationDuration">duration</label>
+                  <input type="number" max="400" v-model="animationDuration" id="animationDuration"
+                         class="input">
+                </div>
+              </div>
+              <div data-col="3">
+                <div class="form-group">
+                  <label for="animationDelay">delay</label>
+                  <input type="number" max="400" v-model="animationDelay" id="animationDelay"
+                         class="input">
+                </div>
+              </div>
+              <button @mousedown="render = false" @mouseup="render = true" class="btn">Play</button>
+            </div>
+          </div>
+
+          <div class="animation-demo">
+            <div v-if="render" class="is-uppercase h1"
+                 :data-animate="selectedAnimation + ' ' + animationDuration + ' +' + animationDelay">
+              demo
+            </div>
+          </div>
+
+          <div class="well align-center">
+            <div class="h6">
+              data-animate="<span class="is-ink-link">{{selectedAnimation}} {{animationDuration }} +{{animationDelay}}</span>"
+            </div>
+          </div>
         </section>
 
         <div class="bumper"></div>

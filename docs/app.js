@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
   new Vue({
     el: '#app',
     data: {
+      render: true,
+      selectedAnimation: 'ambulance',
+      animation: ['fadeIn', 'popIn', 'flipLeft', 'flipRight', 'ambulance'],
+      animationDuration: 8,
+      animationDelay: 0,
       name: 'x.ui',
       versionName: 'Finger-Lime',
       version: '7.0.1',

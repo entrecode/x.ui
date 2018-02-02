@@ -15,6 +15,8 @@
 - added `.select` documentation
 - added `.xui-checkbox` for custom checkboxes inputs
 - added `.xui-radio` for custom radio inputs
+- added `data-animate="#"` interaction modifier
+- added `.xui-tabs`
 
 ### changes
 - removed TODO-folder
