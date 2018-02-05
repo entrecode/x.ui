@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
       animationDelay: 0,
       name: 'x.ui',
       versionName: 'Finger-Lime',
-      version: '7.0.1',
+      version: '8.0.0-beta.0',
       dependancies: ['xlcss 5.0.1', 'ec.icons 3.0.0'],
       authors: {
         author: {
