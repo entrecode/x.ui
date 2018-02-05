@@ -1,3 +1,8 @@
+## 8.0.0-beta.1
+###added
+- added `.xui-accordion` molecule
+- added `.is-hidden-input` modifier
+
 ## 8.0.0-beta.0
 ### breaking changes
 - renamed `.ink#` to `.is-ink#`

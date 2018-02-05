@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   new Vue({
     el: '#app',
     data: {
+      hamburgerActive: false,
       render: true,
       selectedAnimation: 'ambulance',
       animation: ['fadeIn', 'popIn', 'flipLeft', 'flipRight', 'slideLeft', 'slideRight', 'slideUp', 'slideDown', 'ambulance'],
