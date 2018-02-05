@@ -21,7 +21,7 @@
   }
 }
 
-.overlay-wrapper {
+.xui-overlay-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -33,7 +33,7 @@
 
 
   &.is-targeted {
-    .overlay {
+    .xui-overlay {
       opacity: 0;
       display: none;
       animation: showOverlay .4s forwards ease-out;
