@@ -17,6 +17,7 @@
 - added `.xui-radio` for custom radio inputs
 - added `data-animate="#"` interaction modifier
 - added `.xui-tabs`
+- added `.xui-toggle`
 
 ### changes
 - removed TODO-folder

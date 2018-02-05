@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node-sass --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/x.ui.css",
     "watch": "node-sass --watch --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/x.ui.css",
-    "cleanCss": "purgecss --css docs/x.ui.css --content docs/index.html --out docs/"
+    "cleanCss": "purgecss --css docs/x.ui.css --content docs/index.html --out docs/xuix.uix.unpm inpm i"
   },
   "keywords": [
     "x.ui",

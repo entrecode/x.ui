@@ -1,0 +1,65 @@
+%toggle {
+  background-color: flattenColor(getColor(minor));
+  height: 1em;
+  width: 1.75em;
+  border-radius: .5em;
+  cursor: pointer;
+  transition: background-color .2s;
+  direction: ltr;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    background-color: getColor(background);
+    box-shadow: 0 2px 8px 1px rgba(black, .2);
+  }
+
+  &%isActive {
+    background-color: getColor(link);
+    direction: rtl;
+  }
+}
+
+.xui-toggle {
+
+  &:hover {
+    .xui-toggle__control {
+      background-color: setHover(flattenColor(getColor(minor)), -8);
+    }
+  }
+
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    &:checked {
+      + label .xui-toggle__control {
+        @extend %toggle%isActive;
+      }
+    }
+  }
+
+  .xui-toggle__control {
+    @extend %toggle;
+    margin-right: rem(8);
+  }
+
+  label {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+}
