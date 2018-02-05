@@ -30,12 +30,13 @@
 <div id="app">
   <header class="is-fixed is-positioned-nw has-padding is-layer-10 has-width-full">
     <div class="toolbar">
-      <!--<a href="#xui-sidebar-nav" class="hamburger-btn"></a>-->
       <div class="toolbar__title toolbar__title_center">
         <a href="#top">
           <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
         </a>
       </div>
+      <!--<a href="#xui-sidebar-nav" class="hamburger-btn"></a>-->
+
       <!--<nav class="nav">
         <ul class="nav__items">
           <li class="nav__item">
@@ -181,6 +182,11 @@
           <li class="xui-list-item">
             <a href="#xui-tabs">
               xui-tabs
+            </a>
+          </li>
+          <li class="xui-list-item">
+            <a href="#xui-accordion">
+              xui-accordion
             </a>
           </li>
         </ul>
@@ -348,19 +354,18 @@
     </div>
   </aside>
 
-  <div class="hero has-margin has-height-vh-golden is-theme-invert" data-flex="center center-items">
+  <div class="hero has-margin has-height-vh-golden" data-flex="center center-items">
     <div class="align-center">
       <img src="assets/xui-logo.svg" alt="x.ui - atomic css framwork" width="240px">
       <div class="spacer-small"></div>
       <a href="#xui-get-started" class="btn btn_outlined btn_invert">get started</a>
       <div class="spacer-small"></div>
-      <p class="align-center text-invert">
+      <p class="align-center is-ink-invert">
         <small>v. {{version}}</small>
       </p>
     </div>
   </div>
 
-  <div class="spacer-big"></div>
 
   <div data-container>
     <div data-grid data-flex="center">
@@ -651,6 +656,11 @@
           <li data-col="6 4-md">
             <a href="#xui-tabs" class="periodic-group-ui">
               <span class="h5">UI</span> xui-tabs
+            </a>
+          </li>
+          <li data-col="6 4-md">
+            <a href="#xui-accordion" class="periodic-group-ui">
+              <span class="h5">UI</span> xui-accordion
             </a>
           </li>
         </ul>
