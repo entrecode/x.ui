@@ -41,7 +41,7 @@ $hover-shading: -4 !default;
 $divider-color: rgba($text, .1) !default;
 
 /// used for theme coloring, colors are used in the x-ui-colormap an adapted to fit to theme colors
-$state-hover: rgba(mix($link, $text), .04) !default;
+$state-hover: rgba($link, .1) !default;
 $state-info: cyan !default;
 $state-error: red !default;
 $state-success: green !default;
