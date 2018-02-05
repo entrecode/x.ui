@@ -1,8 +1,8 @@
 %toggle {
   background-color: flattenColor(getColor(minor));
-  height: 1em;
-  width: 1.75em;
-  border-radius: .5em;
+  height: rem($root-size);
+  width: rem($root-size * 1.75);
+  border-radius: rem($root-size / 2);
   cursor: pointer;
   transition: background-color .2s;
   direction: ltr;
@@ -12,8 +12,8 @@
     content: '';
     display: block;
     border-radius: 50%;
-    width: 1em;
-    height: 1em;
+    width: rem($root-size);
+    height: rem($root-size);
     background-color: getColor(background);
     box-shadow: 0 2px 8px 1px rgba(black, .2);
   }
@@ -25,6 +25,7 @@
 }
 
 .xui-toggle {
+  margin: 0 0 rem(8) 0;
 
   &:hover {
     .xui-toggle__control {
@@ -61,5 +62,6 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    margin: 0;
   }
 }
