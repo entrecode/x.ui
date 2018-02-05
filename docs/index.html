@@ -170,6 +170,11 @@
             </a>
           </li>
           <li class="xui-list-item">
+            <a href="#xui-nav">
+              nav
+            </a>
+          </li>
+          <li class="xui-list-item">
             <a href="#xui-well">
               well
             </a>
@@ -197,11 +202,6 @@
           <li class="xui-list-item">
             <a href="#xui-list">
               xui-list
-            </a>
-          </li>
-          <li class="xui-list-item">
-            <a href="#xui-nav">
-              nav
             </a>
           </li>
           <li class="xui-list-item">
@@ -644,6 +644,11 @@
             </a>
           </li>
           <li data-col="6 4-md">
+            <a href="#xui-nav" class="periodic-group-ui">
+              <span class="h5">UI</span> nav
+            </a>
+          </li>
+          <li data-col="6 4-md">
             <a href="#xui-well" class="periodic-group-ui">
               <span class="h5">UI</span> well
             </a>
@@ -677,11 +682,6 @@
           <li data-col="6 4-md">
             <a href="#xui-list" class="periodic-group-ui">
               <span class="h5">UI</span> xui-list
-            </a>
-          </li>
-          <li data-col="6 4-md">
-            <a href="#xui-nav" class="periodic-group-ui">
-              <span class="h5">UI</span> nav
             </a>
           </li>
           <li data-col="6 4-md">
@@ -1654,7 +1654,7 @@
               class="tag tag_small tag_error">in progress</span>
           </h3>
           <div class="align-right">
-            <div  class="xui-toggle">
+            <div class="xui-toggle">
               <input type="checkbox" id="hamburgerActive" v-model="hamburgerActive">
               <label for="hamburgerActive">
                 <span class="xui-toggle__switch"></span>
@@ -1665,7 +1665,8 @@
           <div class="alert">
             <button class="hamburger-btn" :class="{'is-active' : hamburgerActive}"></button>
           </div>
-          <pre><code class="html"><button class="hamburger-btn{{hamburgerActive ?' is-active' : ''}}"></button></code></pre>
+          <pre><code class="html"><button
+              class="hamburger-btn{{hamburgerActive ?' is-active' : ''}}"></button></code></pre>
         </section>
 
         <div class="bumper"></div>
@@ -2514,6 +2515,77 @@
 
         <div class="bumper"></div>
 
+        <section>
+          <h3 id="xui-nav" class="kilo">nav</h3>
+          <div class="well">
+            <nav class="nav">
+              <ul class="nav__items">
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">Nav Link</a>
+                </li>
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">Nav Link</a>
+                </li>
+                <li class="nav__divider">&nbsp;</li>
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">Nav Link</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <pre><code class="html">
+<nav class="nav">
+  <ul class="nav__items">
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+    <li class="nav__divider">&nbsp;</li>
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+  </ul>
+</nav></code></pre>
+
+          <div class="spacer"></div>
+
+          <div class="well">
+            <nav class="nav nav_stacked">
+              <ul class="nav__items">
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">Nav Link</a>
+                </li>
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">Nav Link</a>
+                </li>
+                <li class="nav__divider">&nbsp;</li>
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">Nav Link</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <pre><code class="html">
+<nav class="nav nav_stacked">
+  <ul class="nav__items">
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+    <li class="nav__divider">&nbsp;</li>
+    <li class="nav__item">
+      <a href="" class="btn btn_clear">Nav Link</a>
+    </li>
+  </ul>
+</nav></code></pre>
+        </section>
+
+        <div class="bumper"></div>
+
         <h3 id="xui-molecules-theme" class="mega">molecules<span class="is-ink-link">/ui</span>
         </h3>
 
@@ -2859,77 +2931,6 @@
         <div class="bumper"></div>
 
         <section>
-          <h3 id="xui-nav" class="kilo">nav</h3>
-          <div class="well">
-            <nav class="nav">
-              <ul class="nav__items">
-                <li class="nav__item">
-                  <a href="" class="btn btn_clear">Nav Link</a>
-                </li>
-                <li class="nav__item">
-                  <a href="" class="btn btn_clear">Nav Link</a>
-                </li>
-                <li class="nav__divider">&nbsp;</li>
-                <li class="nav__item">
-                  <a href="" class="btn btn_clear">Nav Link</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <pre><code class="html">
-<nav class="nav">
-  <ul class="nav__items">
-    <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
-    </li>
-    <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
-    </li>
-    <li class="nav__divider">&nbsp;</li>
-    <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
-    </li>
-  </ul>
-</nav></code></pre>
-
-          <div class="spacer"></div>
-
-          <div class="well">
-            <nav class="nav nav_stacked">
-              <ul class="nav__items">
-                <li class="nav__item">
-                  <a href="" class="btn btn_clear">Nav Link</a>
-                </li>
-                <li class="nav__item">
-                  <a href="" class="btn btn_clear">Nav Link</a>
-                </li>
-                <li class="nav__divider">&nbsp;</li>
-                <li class="nav__item">
-                  <a href="" class="btn btn_clear">Nav Link</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <pre><code class="html">
-<nav class="nav nav_stacked">
-  <ul class="nav__items">
-    <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
-    </li>
-    <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
-    </li>
-    <li class="nav__divider">&nbsp;</li>
-    <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
-    </li>
-  </ul>
-</nav></code></pre>
-        </section>
-
-        <div class="bumper"></div>
-
-        <section>
           <h3 id="xui-toolbar" class="kilo">toolbar
             <a href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
                class="tag tag_small tag_error">flex</a>
@@ -2986,7 +2987,7 @@
                   <a href="" class="btn btn_clear btn_invert">Menu</a>
                 </li>
                 <li class="nav__item">
-                  <a href="" class="btn">Profil</a>
+                  <a href="" class="btn">Profile</a>
                 </li>
               </ul>
             </nav>
@@ -3005,7 +3006,7 @@
                   <a href="" class="btn btn_clear btn_invert">Menu</a>
                 </li>
                 <li class="nav__item">
-                  <a href="" class="btn">Profil</a>
+                  <a href="" class="btn">Profile</a>
                 </li>
               </ul>
             </nav>
@@ -3014,13 +3015,39 @@
 
         <div class="bumper"></div>
 
-        <!--TODO documentation-->
         <section>
           <h3 id="xui-title" class="kilo">title
             <a href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
                class="tag tag_small tag_error">flex</a>
           </h3>
-          <div class="alert alert_small"><strong>TODO documentation</strong></div>
+
+          <p><span class="code">.title</span> is similar to the toolbar, but without its specific ui metrics.</p>
+
+          <div class="title">
+            <h2>Title</h2>
+            <nav class="nav">
+              <ul class="nav__items">
+                <li class="nav__item">
+                  <a href="" class="btn btn_clear">
+                    <span class="ec-icon more-vertical"></span>
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="" class="btn">save</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <pre><code class="html">
+<div class="title">
+  <h2>...</h2>
+  <nav class="nav">
+    <ul class="nav__items">
+      <li class="nav__item">...</li>
+      ...
+    </ul>
+  </nav>
+</div></code></pre>
         </section>
 
         <div class="bumper-big"></div>
@@ -3722,9 +3749,14 @@
           <small>
             Source placeholder text: <strong>Theodor Fontane - Die Verwandlung</strong>
             <a href="http://www.blindliteratur.de/" target="_blank" rel="noopener">http://www.blindliteratur.de/</a><br>
-            Photo stage-banner by <a href="https://unsplash.com/photos/8NHL3OI5eWc" target="_blank" rel="noopener">Austin Chan on Unsplash</a> &bull;
-            Photo img-placeholder by <a href="https://unsplash.com/photos/bh4LQHcOcxE" target="_blank" rel="noopener">Warren Wong on Unsplash</a> &bull;
-            Photo avatar-placeholder by <a href="https://unsplash.com/photos/8NHL3OI5eWc" target="_blank" rel="noopener">Austin Chan on Unsplash</a>
+            Photo stage-banner by <a href="https://unsplash.com/photos/8NHL3OI5eWc" target="_blank"
+                                     rel="noopener">Austin Chan on Unsplash</a> &bull;
+            Photo img-placeholder by <a href="https://unsplash.com/photos/bh4LQHcOcxE"
+                                        target="_blank" rel="noopener">Warren Wong on Unsplash</a>
+            &bull;
+            Photo avatar-placeholder by <a href="https://unsplash.com/photos/8NHL3OI5eWc"
+                                           target="_blank" rel="noopener">Austin Chan on
+            Unsplash</a>
           </small>
         </small>
       </p>
