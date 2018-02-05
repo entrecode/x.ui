@@ -9,6 +9,11 @@
   &:hover {
     box-shadow: 0 8px 16px -8px rgba($glow-color, .6);
   }
+
+  &.is-disabled,
+  &:disabled {
+    box-shadow: none;
+  }
 }
 
 .btn_glow {

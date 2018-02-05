@@ -1,0 +1,176 @@
+[data-animate] {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  backface-visibility: hidden;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+[data-animate~="fadeIn"] {
+  animation-name: fadeIn;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(.6);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: initial;
+    opacity: 1;
+  }
+}
+
+[data-animate~="popIn"] {
+  animation-name: popIn;
+}
+
+@keyframes flipLeft {
+  0% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+[data-animate~="flipLeft"] {
+  animation-name: flipLeft;
+}
+
+@keyframes flipRight {
+  0% {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+[data-animate~="flipRight"] {
+  animation-name: flipRight;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: initial;
+    opacity: 1;
+  }
+}
+
+[data-animate~="slideRight"] {
+  animation-name: slideRight;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: initial;
+    opacity: 1;
+  }
+}
+
+[data-animate~="slideLeft"] {
+  animation-name: slideLeft;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: initial;
+    opacity: 1;
+  }
+}
+
+[data-animate~="slideUp"] {
+  animation-name: slideUp;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: initial;
+    opacity: 1;
+  }
+}
+
+[data-animate~="slideDown"] {
+  animation-name: slideDown;
+}
+
+@keyframes ambulance {
+  0% {
+    transform: translateX(200%) skewX(-16deg);
+    filter: blur(2px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: initial;
+    filter: initial;
+    opacity: 1;
+  }
+}
+
+@keyframes ambulanceBefore {
+  0% {
+    transform: initial;
+    filter: initial;
+  }
+
+  100% {
+    transform: translateX(-400%) skewX(-16deg);
+    filter: blur(2px);
+    opacity: 0;
+  }
+}
+
+[data-animate~="ambulance"] {
+  animation-name: ambulance;
+  position: relative;
+
+  &:before {
+    content: '\1F691';
+    display: inline-block;
+    animation-name: ambulanceBefore;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    animation-duration: .8s;
+  }
+}

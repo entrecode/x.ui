@@ -1,91 +1,87 @@
 /// @font-face
-/// ------------------------------------------------------
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700;Open+Sans:400,700');
+/// use @import to use custom font-families
 
 /// @param {value} $body-font
 /// @param {value} $headings-font
-$body-font: 'Open Sans', sans-serif;
-$headings-font: 'Roboto Mono', sans-serif;
+$body-font: sans-serif !default;
+$headings-font: sans-serif !default;
 
-/// @param {number} $light - font-weight light value
-/// @param {number} $normal - font-weight normal value
-/// @param {number} $bold - font-weight bold value
-$light: 400;
-$normal: 400;
-$bold: 700;
+/// @param {number} $is-light - font-weight value for .is-light
+/// @param {number} $is-normal - font-weight value for .is-normal
+/// @param {number} $is-bold - font-weight value for .is-bold
+$is-light: lighter !default;
+$is-normal: normal !default;
+$is-bold: bold !default;
 
 ///
 /// COLORS
 /// ------------------------------------------------------
 
-$background: #fff;
-$text: #2a3d54;
-$link: #2fce6f;
-$super: #14a656;
-$minor: rgba($link, .2);
-$highlight: #9de263;
+$background: #fff !default;
+$text: #2a3d54 !default;
+$link: #2fce6f !default;
+$super: #14a656 !default;
+$minor: rgba($link, .2) !default;
+$highlight: #9de263 !default;
 
 ///
 /// optional color config
 /// ------------------------------------------------------
 
 /// @param {color} $background-invert [$text] - inverted color for background
-$background-invert: $text;
+$background-invert: $text !default;
 
 /// @param {color} $text-invert [$background] - inverted color for text
-$text-invert: $background;
+$text-invert: $background !default;
 
 /// @param {number} $hover-shading [-4] - amount by which colors are darkened or lightened on hover
-$hover-shading: -4;
+$hover-shading: -4 !default;
 
 /// @param {color} $divider-color [rgba($text,.1)] -  color if divider used by e.b. .bumper
-$divider-color: rgba($text, .1);
-
-/// @param {color} $input-border-color [ mix($text, $background, 25%)]
-$input-border-color: mix($text, $background, 25%);
+$divider-color: rgba($text, .1) !default;
 
 /// used for theme coloring, colors are used in the x-ui-colormap an adapted to fit to theme colors
-$state-hover: rgba(mix($link, $text), .1);
-$state-info: cyan;
-$state-error: red;
-$state-success: green;
-$state-warning: gold;
+$state-hover: rgba(mix($link, $text), .04) !default;
+$state-info: cyan !default;
+$state-error: red !default;
+$state-success: green !default;
+$state-warning: gold !default;
 
 /// @param {color} $lighter-fallback [$background] - light fallback color for setContrast
 /// @param {color} $darker-fallback [$text] - darker fallback color for setContrast
-$lighter-fallback: $background;
-$darker-fallback: $text;
+$lighter-fallback: $background !default;
+$darker-fallback: $text !default;
 
 /// @param {boolean} $flex-support [true]
-$flex-support: true;
+$flex-support: true !default;
 
 /// @param {boolean} $ec-icon-support [true] - set ec-icon support
-$ec-icon-support: true;
+$ec-icon-support: true !default;
 
 ///
 /// GRID & LAYOUT Settings
 /// ------------------------------------------------------
 
 /// @param {number} $root-size [16] - default size used for global size calculations
-$root-size: 16;
+$root-size: 16 !default;
 
 /// @prop {number} $grid-container-width [1200px] - max-width of container
-$grid-container-width: 1200px;
+$grid-container-width: 1200px !default;
 
 /// @prop {number} $grid-gutter [32] - gutter size in pixels without unit
-$grid-gutter: 32;
+$grid-gutter: 32 !default;
 
 /// @prop {value} $outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
-$outer-gutter: true;
+$outer-gutter: true !default;
 
 /// @prop {number} $grid-num-columns [12] - number of columns in a row
-$grid-num-columns: 12;
+$grid-num-columns: 12 !default;
 
 /// @prop {number} $base-padding [16] - small padding value for padding helper
-$base-padding: 16;
+$base-padding: 16 !default;
 
 /// @prop {number} $base-margin [16] - small padding value for padding helper
-$base-spacing: 16;
+$base-spacing: 16 !default;
 
 /// @param {map} $breakpoints
 $breakpoints: (
@@ -95,23 +91,23 @@ $breakpoints: (
         'lg': 1024, // tablet landscape
         'xl': 1280, // desktop
         'xxl': 1920 // large
-);
+) !default;
 
 ///
 /// TYPO
 /// ------------------------------------------------------
 
 /// @param {number} $base-font-size [1em]
-$base-font-size: 14px;
+$base-font-size: 14px !default;
 
 /// @param {number} $base-line-height [1.4]
-$base-line-height: 1.4;
+$base-line-height: 1.4 !default;
 
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
-$vertical-rhythm: $base-line-height * $base-font-size;
+$vertical-rhythm: $base-line-height * $base-font-size !default;
 
 /// @param {value} $bp-type-scale-small - breakpoint modular scale for small devices
-$bp-type-scale-small: 0;
+$bp-type-scale-small: 0 !default;
 
 /// @param {map} $type-scale-small - modular scale for small devices
 /// @link http://www.modularscale.com/?0.875&rem&1.25
@@ -124,10 +120,10 @@ $type-scale-small: (
         h6: .875em,
         lead: 1.094em,
         p: .875em
-);
+) !default;
 
 /// @param {value} $bp-type-scale-normal - breakpoint modular scale for normal devices
-$bp-type-scale-normal: getBreakpoint(md);
+$bp-type-scale-normal: getBreakpoint(md) !default;
 
 /// @param {map} $type-scale-normal - modular scale for normal devices
 /// @link http://www.modularscale.com/?1&em&1.25
@@ -140,10 +136,10 @@ $type-scale-normal: (
         h6: 1em,
         lead: 1.25em,
         p: 1em
-);
+) !default;
 
 /// @param {value} $bp-type-scale-large - breakpoint modular scale for large devices
-$bp-type-scale-large: getBreakpoint(xxl);
+$bp-type-scale-large: getBreakpoint(xxl) !default;
 
 /// @param {map} $type-scale-large - modular scale for large devices
 /// @link http://www.modularscale.com/?1.125&em&1.25
@@ -156,13 +152,13 @@ $type-scale-large: (
         h6: 1.125em,
         lead: 1.406em,
         p: 1.125em
-);
+) !default;
 
-/// @param {value} $headings-weight [$bold]
-$headings-weight: $bold;
+/// @param {value} $headings-weight [bold]
+$headings-weight: bold !default;
 
 /// @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
-$heading-inline-small: .5;
+$heading-inline-small: .5 !default;
 
 /// additional styles for headings
 %heading-style {
@@ -175,10 +171,10 @@ $heading-inline-small: .5;
 }
 
 /// @param {number} $paragraph-lead-size [1.125] - font-size of `.lead`
-$paragraph-lead-size: 1.125;
+$paragraph-lead-size: 1.125 !default;
 
-/// @param {value} $paragraph-lead-weight [$light]
-$paragraph-lead-weight: $light;
+/// @param {value} $paragraph-lead-weight [light]
+$paragraph-lead-weight: light !default;
 
 /// additional styles for paragraphs
 %paragraph-styles {
@@ -186,7 +182,7 @@ $paragraph-lead-weight: $light;
 }
 
 /// @param {number} $inline-small-size [.875] - font-size of `<small>`
-$inline-small-size: .875;
+$inline-small-size: .875 !default;
 
 ///
 /// Avatars
@@ -195,34 +191,34 @@ $inline-small-size: .875;
 /// @param {number} $avatar-size [48]
 /// @param {number} $avatar-small-size-size [32]
 /// @param {number} $avatar-big-size-size [48]
-$avatar-size: 40;
-$avatar-small-size: 32;
-$avatar-big-size: 48;
+$avatar-size: 40 !default;
+$avatar-small-size: 32 !default;
+$avatar-big-size: 48 !default;
 
 /// @param {number} $avatar-border [0]
-$avatar-border: 0;
+$avatar-border: 0 !default;
 
 /// @param {number} $avatar-square-radius [4]
-$avatar-square-radius: 4;
+$avatar-square-radius: 4 !default;
 
 ///
 /// BUTTONS
 /// ------------------------------------------------------
 
 /// @param {variable} $btn-font-family [$body-font]
-$btn-font-family: $body-font;
+$btn-font-family: $body-font !default;
 
 /// @param {number} $btn-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$btn-padding-ratio: 2;
+$btn-padding-ratio: 2 !default;
 
 /// @param {number} $btn-font-size [16]
 /// @param {number} $btn-line-height [20]
 /// @param {number} $btn-min-height [40]
-/// @param {value} $btn-weight [$bold]
-$btn-font-size: 16;
-$btn-line-height: 20;
-$btn-min-height: 40;
-$btn-weight: $bold;
+/// @param {value} $btn-weight [bold]
+$btn-font-size: 16 !default;
+$btn-line-height: 20 !default;
+$btn-min-height: 40 !default;
+$btn-weight: bold !default;
 
 /// additional styles for .btn
 %btn-style {
@@ -232,11 +228,11 @@ $btn-weight: $bold;
 /// @param {number} $btn-small-font-size [14]
 /// @param {number} $btn-small-line-height [18]
 /// @param {number} $btn-small-min-height [32]
-/// @param {value} $btn-small-weight [$bold]
-$btn-small-font-size: 14;
-$btn-small-line-height: 18;
-$btn-small-min-height: 32;
-$btn-small-weight: $btn-weight;
+/// @param {value} $btn-small-weight [$btn-weight]
+$btn-small-font-size: 14 !default;
+$btn-small-line-height: 18 !default;
+$btn-small-min-height: 32 !default;
+$btn-small-weight: $btn-weight !default;
 
 /// additional styles for .btn_small
 %btn-small-style {
@@ -246,11 +242,11 @@ $btn-small-weight: $btn-weight;
 /// @param {number} $btn-big-font-size [18]
 /// @param {number} $btn-big-line-height [24]
 /// @param {number} $btn-big-min-height [48]
-/// @param {value} $btn-big-weight [$bold]
-$btn-big-font-size: 18;
-$btn-big-line-height: 24;
-$btn-big-min-height: 48;
-$btn-big-weight: $btn-weight;
+/// @param {value} $btn-big-weight [$btn-weight]
+$btn-big-font-size: 18 !default;
+$btn-big-line-height: 24 !default;
+$btn-big-min-height: 48 !default;
+$btn-big-weight: $btn-weight !default;
 
 /// additional styles for .btn_big
 %btn-big-style {
@@ -258,42 +254,51 @@ $btn-big-weight: $btn-weight;
 }
 
 /// @param {boolean} $btn-round [false] - sets border-radius to 50% of button height
-$btn-round: false;
+$btn-round: false !default;
 
 /// radius of buttons - if $btn-round === false
 /// @param {number} $btn-radius [4]
 /// @param {number} $btn-small-radius [4]
 /// @param {number} $btn-big-radius [4]
-$btn-radius: 4;
-$btn-small-radius: 4;
-$btn-big-radius: 4;
+$btn-radius: 4 !default;
+$btn-small-radius: 4 !default;
+$btn-big-radius: 4 !default;
 
 /// @param {number} $btn-wide -  min width for .btn_wide button
 /// @param {number} $btn-small-wide - min width for .btn_wide.btn_small button
 /// @param {number} $btn-big-wide - min width for .btn_wide.btn_big button
-$btn-wide: 240px;
-$btn-small-wide: 160px;
-$btn-big-wide: 240px;
+$btn-wide: 240px !default;
+$btn-small-wide: 160px !default;
+$btn-big-wide: 240px !default;
 
 /// @param {rem} $btn-outline - sets border-width for btn_outlined
-$btn-outline: 2;
+$btn-outline: 2 !default;
 
 /// param {color} $btn-raised-shadow [rgba(black, .1)] - color of drop shadow
-$btn-raised-shadow: rgba(black, .1);
+$btn-raised-shadow: rgba(black, .1) !default;
 
 ///
 /// BUTTON GROUP
 /// ------------------------------------------------------
 
 /// @param {boolean} $btn-group-divider [true] - if btn-group items are divided by a thin border
-$btn-group-divider: true;
+$btn-group-divider: true !default;
 
 ///
 /// DROPDOWN
 /// ------------------------------------------------------
 
 /// @param {px} $dropdown-radius [4]
-$dropdown-radius: 4;
+$dropdown-radius: 4 !default;
+
+/// @param {number} $dropdown-padding [4]
+$dropdown-padding: 4 !default;
+
+/// @param {color} $dropdown-background
+$dropdown-background: $background !default;
+
+/// @param {value} $dropdown-shadow
+$dropdown-shadow: 0 8px 16px -4px rgba(black, .16), 0 4px 24px 0px rgba(black, 0.1) !default;
 
 ///
 /// INPUT
@@ -302,9 +307,9 @@ $dropdown-radius: 4;
 /// @param {number} $input-font-size [16]
 /// @param {number} $input-line-height [24]
 /// @param {number} $input-min-height [32]
-$input-font-size: 16;
-$input-line-height: 20;
-$input-min-height: 32;
+$input-font-size: 16 !default;
+$input-line-height: 20 !default;
+$input-min-height: 32 !default;
 
 /// additional styles for .input
 %input-style {
@@ -314,9 +319,9 @@ $input-min-height: 32;
 /// @param {number} $input-small-font-size [14]
 /// @param {number} $input-small-line-height [18]
 /// @param {number} $input-small-min-height [28]
-$input-small-font-size: 14;
-$input-small-line-height: 18;
-$input-small-min-height: 28;
+$input-small-font-size: 14 !default;
+$input-small-line-height: 18 !default;
+$input-small-min-height: 28 !default;
 
 /// additional styles for .input.small
 %input-small-style {
@@ -326,9 +331,9 @@ $input-small-min-height: 28;
 /// @param {number} $input-big-font-size [18]
 /// @param {number} $input-big-line-height [24]
 /// @param {number} $input-big-min-height [40]
-$input-big-font-size: 18;
-$input-big-line-height: 22;
-$input-big-min-height: 40;
+$input-big-font-size: 18 !default;
+$input-big-line-height: 22 !default;
+$input-big-min-height: 40 !default;
 
 /// additional styles for .input.big
 %input-big-style {
@@ -336,33 +341,103 @@ $input-big-min-height: 40;
 }
 
 /// @param {boolean} $input-round [false] - sets border-radius to 50% of input height
-$input-round: false;
+$input-round: false !default;
 
 /// radius of input - if $input-round === false
 /// @param {number} $input-radius [4]
 /// @param {number} $input-small-radius [4]
 /// @param {number} $input-big-radius [4]
-$input-radius: 4;
-$input-small-radius: 4;
-$input-big-radius: 4;
+$input-radius: 4 !default;
+$input-small-radius: 4 !default;
+$input-big-radius: 4 !default;
 
 /// @param {number} $input-border [1]
-$input-border: 1;
+$input-border: 1 !default;
+
+/// @param {color} $input-border-color [ mix($text, $background, 25%)]
+$input-border-color: mix($text, $background, 25%) !default;
 
 /// param {color} $input-raised-shadow
-$input-raised-shadow: rgba(black, .1);
+$input-raised-shadow: rgba(black, .1) !default;
+
+///
+/// XUI-CHECKBOX
+/// ------------------------------------------------------
+
+/// @param {number} $checkbox-font-size [16]
+/// @param {number} $checkbox-line-height [20]
+/// @param {number} $checkbox-min-height [32]
+/// @param {number} $checkbox-radius [6]
+$checkbox-font-size: 14 !default;
+$checkbox-line-height: 24 !default;
+$checkbox-height: 20 !default;
+$checkbox-radius: 6 !default;
+
+/// additional styles for .xui-checkbox
+%checkbox-style {
+  box-shadow: inset 0 1px 2px 1px rgba(black, .2);
+}
+
+///
+/// XUI-RADIO
+/// ------------------------------------------------------
+
+/// @param {number} $radio-font-size [16]
+/// @param {number} $radio-line-height [20]
+/// @param {number} $radio-min-height [32]
+/// @param {number} $radio-radius [6]
+$radio-font-size: 10 !default;
+$radio-line-height: 20 !default;
+$radio-height: 20 !default;
+
+/// additional styles for .xui-radio
+%radio-style {
+  box-shadow: inset 0 1px 2px 1px rgba(black, .2);
+}
+
+///
+/// SELECT
+/// ------------------------------------------------------
+
+/// @param {number} $select-font-size [16]
+/// @param {number} $select-line-height [20]
+/// @param {number} $select-min-height [32]
+$select-font-size: 16 !default;
+$select-line-height: 20 !default;
+$select-min-height: 32 !default;
+
+/// additional styles for .input
+%select-style {
+  /// put styles here...
+}
+
+/// @param {boolean} $select-round [false] - sets border-radius to 50% of input height
+$select-round: false !default;
+
+/// radius of input - if $select-round === false
+/// @param {number} $select-radius [4]
+$select-radius: 4 !default;
+
+/// @param {number} $select-border [1]
+$select-border: 1 !default;
+
+/// @param {color} $select-border-color [ mix($text, $background, 25%)]
+$select-border-color: mix($text, $background, 25%) !default;
+
+/// param {color} $select-raised-shadow
+$select-raised-shadow: rgba(black, .1) !default;
 
 /// Alerts
 /// ------------------------------------------------------
 
 /// @param {number} $alert-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$alert-padding-ratio: 2;
+$alert-padding-ratio: 2 !default;
 
 /// @param {number} $alert-padding [$base-padding]
-$alert-padding: $base-padding;
+$alert-padding: $base-padding !default;
 
-/// @param {value} $alert-weight [$normal]
-$alert-weight: $normal;
+/// @param {value} $alert-weight [normal]
+$alert-weight: normal !default;
 
 /// additional styles for .alert
 %alert-style {
@@ -370,25 +445,25 @@ $alert-weight: $normal;
 }
 
 /// @param {number} $alert-radius [4]
-$alert-radius: 4;
+$alert-radius: 4 !default;
 
 /// @param {boolean} $alert-outlined - sets border-width for .alert_outlined
-$alert-outlined: 2;
+$alert-outlined: 2 !default;
 
 /// Bubbles
 /// ------------------------------------------------------
 
 /// @param {number} $bubble-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
-$bubble-padding-ratio: 1;
+$bubble-padding-ratio: 1 !default;
 
 /// @param {number} $bubble-font-size [10]
 /// @param {number} $bubble-line-height [12]
 /// @param {number} $bubble-min-height [24]
-/// @param {value} $bubble-weight [$bold]
-$bubble-font-size: 14;
-$bubble-line-height: 16;
-$bubble-min-height: 28;
-$bubble-weight: $bold;
+/// @param {value} $bubble-weight [bold]
+$bubble-font-size: 14 !default;
+$bubble-line-height: 16 !default;
+$bubble-min-height: 28 !default;
+$bubble-weight: bold !default;
 
 /// additional styles for .bubble
 %bubble-style {
@@ -399,10 +474,10 @@ $bubble-weight: $bold;
 /// @param {number} $bubble-small-line-height [12]
 /// @param {number} $bubble-small-min-height [24]
 /// @param {value} $bubble-small-weight [$bubble-weight]
-$bubble-small-font-size: 10;
-$bubble-small-line-height: 12;
-$bubble-small-min-height: 24;
-$bubble-small-weight: $bubble-weight;
+$bubble-small-font-size: 10 !default;
+$bubble-small-line-height: 12 !default;
+$bubble-small-min-height: 24 !default;
+$bubble-small-weight: $bubble-weight !default;
 
 /// additional styles for .bubble.small
 %bubble-small-style {
@@ -413,10 +488,10 @@ $bubble-small-weight: $bubble-weight;
 /// @param {number} $bubble-big-line-height [16]
 /// @param {number} $bubble-big-min-height [32]
 /// @param {value} $bubble-big-weight [$bubble-weight]
-$bubble-big-font-size: 16;
-$bubble-big-line-height: 20;
-$bubble-big-min-height: 32;
-$bubble-big-weight: $bubble-weight;
+$bubble-big-font-size: 16 !default;
+$bubble-big-line-height: 20 !default;
+$bubble-big-min-height: 32 !default;
+$bubble-big-weight: $bubble-weight !default;
 
 /// additional styles for .bubble.big
 %bubble-big-style {
@@ -424,30 +499,30 @@ $bubble-big-weight: $bubble-weight;
 }
 
 /// @param {boolean} $bubble-round [false] - sets border-radius to 50% of bubble height
-$bubble-round: true;
+$bubble-round: true !default;
 
 /// radius of buttons - if $bubble-round === false
 /// @param {number} $bubble-radius [4]
 /// @param {number} $bubble-small-radius [4]
 /// @param {number} $bubble-big-radius [4]
-$bubble-radius: 4;
-$bubble-small-radius: 4;
-$bubble-big-radius: 4;
+$bubble-radius: 4 !default;
+$bubble-small-radius: 4 !default;
+$bubble-big-radius: 4 !default;
 
 /// Tags
 /// ------------------------------------------------------
 
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$tag-padding-ratio: 2;
+$tag-padding-ratio: 2 !default;
 
 /// @param {number} $tag-font-size [14]
 /// @param {number} $tag-line-height [16]
 /// @param {number} $tag-min-height [28]
-/// @param {value} $tag-weight [$bold]
-$tag-font-size: 14;
-$tag-line-height: 16;
-$tag-min-height: 28;
-$tag-weight: $bold;
+/// @param {value} $tag-weight [bold]
+$tag-font-size: 14 !default;
+$tag-line-height: 16 !default;
+$tag-min-height: 28 !default;
+$tag-weight: bold !default;
 
 /// additional styles for .tag
 %tag-style {
@@ -458,10 +533,10 @@ $tag-weight: $bold;
 /// @param {number} $tag-small-line-height [14]
 /// @param {number} $tag-small-min-height [24]
 /// @param {value} $tag-small-weight [$tag-weight]
-$tag-small-font-size: 10;
-$tag-small-line-height: 12;
-$tag-small-min-height: 20;
-$tag-small-weight: $tag-weight;
+$tag-small-font-size: 10 !default;
+$tag-small-line-height: 12 !default;
+$tag-small-min-height: 20 !default;
+$tag-small-weight: $tag-weight !default;
 
 /// additional styles for .tag.small
 %tag-small-style {
@@ -472,10 +547,10 @@ $tag-small-weight: $tag-weight;
 /// @param {number} $tag-big-line-height [18]
 /// @param {number} $tag-big-min-height [32]
 /// @param {value} $tag-big-weight [$tag-weight]
-$tag-big-font-size: 16;
-$tag-big-line-height: 18;
-$tag-big-min-height: 32;
-$tag-big-weight: $tag-weight;
+$tag-big-font-size: 16 !default;
+$tag-big-line-height: 18 !default;
+$tag-big-min-height: 32 !default;
+$tag-big-weight: $tag-weight !default;
 
 /// additional styles for .tag.big
 %tag-big-style {
@@ -483,33 +558,33 @@ $tag-big-weight: $tag-weight;
 }
 
 /// @param {boolean} $tag-outlined - sets border-width for .tag_outlined
-$tag-outlined: 2;
+$tag-outlined: 2 !default;
 
 /// @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
-$tag-round: false;
+$tag-round: false !default;
 
 /// radius of buttons - if $tag-round === false
 /// @param {number} $tag-radius [2]
 /// @param {number} $tag-small-radius [2]
 /// @param {number} $tag-big-radius [2]
-$tag-radius: 2;
-$tag-small-radius: 2;
-$tag-big-radius: 2;
+$tag-radius: 2 !default;
+$tag-small-radius: 2 !default;
+$tag-big-radius: 2 !default;
 
 /// Tooltip
 /// ------------------------------------------------------
 
 /// @param {number} $tooltip-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$tooltip-padding-ratio: 2;
+$tooltip-padding-ratio: 2 !default;
 
 /// @param {number} $tooltip-font-size [12]
 /// @param {number} $tooltip-line-height [14]
 /// @param {number} $tooltip-min-height [24]
-/// @param {value} $tooltip-weight [$bold]
-$tooltip-font-size: 12;
-$tooltip-line-height: 14;
-$tooltip-min-height: 20;
-$tooltip-weight: $normal;
+/// @param {value} $tooltip-weight [normal]
+$tooltip-font-size: 12 !default;
+$tooltip-line-height: 14 !default;
+$tooltip-min-height: 20 !default;
+$tooltip-weight: normal !default;
 
 /// additional styles for .tooltip
 %tooltip-style {
@@ -517,27 +592,27 @@ $tooltip-weight: $normal;
 }
 
 /// @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
-$tooltip-round: false;
+$tooltip-round: false !default;
 
 /// radius of buttons - if $tooltip-round === false
 /// @param {number} $tooltip-radius [2]
 /// @param {number} $tooltip-small-radius [2]
 /// @param {number} $tooltip-big-radius [2]
-$tooltip-radius: 2;
-$tooltip-small-radius: 2;
-$tooltip-big-radius: 2;
+$tooltip-radius: 2 !default;
+$tooltip-small-radius: 2 !default;
+$tooltip-big-radius: 2 !default;
 
 /// Wells
 /// ------------------------------------------------------
 
 /// @param {number} $well-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$well-padding-ratio: 2;
+$well-padding-ratio: 2 !default;
 
 /// @param {number} $well-padding [$base-padding]
-$well-padding: $base-padding;
+$well-padding: $base-padding !default;
 
-/// @param {value} $well-weight [$normal]
-$well-weight: $normal;
+/// @param {value} $well-weight [normal]
+$well-weight: normal !default;
 
 /// additional styles for .well
 %well-style {
@@ -555,35 +630,35 @@ $well-weight: $normal;
 }
 
 /// @param {number} $well-radius [4]
-$well-radius: 4;
+$well-radius: 4 !default;
 
 /// @param {boolean} $well-outlined - sets border-width for .alert_outlined
-$well-outlined: 2;
+$well-outlined: 2 !default;
 
 /// drawer button
 /// ------------------------------------------------------
 
 /// @param {number} $hamburger-btn-width [16] - width of hamburger menu
-$hamburger-btn-width: 16;
+$hamburger-btn-width: 16 !default;
 
 /// @param {number} $hamburger-btn-height [2] - height of hamburger menu bars
-$hamburger-btn-height: 2;
+$hamburger-btn-height: 2 !default;
 
 /// @param {number} $hamburger-btn-spacing [4] - spacing of hamburger menu bars
-$hamburger-btn-spacing: 4;
+$hamburger-btn-spacing: 4 !default;
 
 /// toolbar
 /// ------------------------------------------------------
 
 /// @param {number} $toolbar-padding [$base-padding]
-$toolbar-padding: $base-padding;
+$toolbar-padding: $base-padding !default;
 
 /// @param {em} $toolbar-title-size [20] - font-size of .toolbar__title
 /// @param {px} $toolbar-title-img-height [32] - height of .toolbar__title > img
 /// @param {px} $toolbar-min-height [64] - min-height
-$toolbar-title-size: 20;
-$toolbar-title-img-height: 32;
-$toolbar-min-height: 64;
+$toolbar-title-size: 20 !default;
+$toolbar-title-img-height: 32 !default;
+$toolbar-min-height: 64 !default;
 
 /// additional styles for .well
 %toolbar-style {
@@ -593,9 +668,9 @@ $toolbar-min-height: 64;
 /// @param {em} $toolbar-small-title-size [20] - font-size of .toolbar-dense__title
 /// @param {px} $toolbar-small-title-img-height [32] - height of .toolbar-dense__title > img
 /// @param {px} $toolbar-small-min-height [64] - min-height
-$toolbar-small-title-size: 20;
-$toolbar-small-title-img-height: 32;
-$toolbar-small-min-height: 48;
+$toolbar-small-title-size: 20 !default;
+$toolbar-small-title-img-height: 32 !default;
+$toolbar-small-min-height: 48 !default;
 
 /// additional styles for .well
 %toolbar-small-style {
@@ -606,7 +681,7 @@ $toolbar-small-min-height: 48;
 /// ------------------------------------------------------
 
 /// @param {number} $card-radius [4]
-$card-radius: 4;
+$card-radius: 4 !default;
 
 ///
 /// Modifier
@@ -618,19 +693,34 @@ $card-radius: 4;
 /// @param {number} $is-rounded-min-radius [2]
 /// @param {number} $is-rounded-radius [4]
 /// @param {number} $is-rounded-max-radius [8]
-$is-rounded-min-radius: 2;
-$is-rounded-radius: 4;
-$is-rounded-max-radius: 8;
+$is-rounded-min-radius: 2 !default;
+$is-rounded-radius: 4 !default;
+$is-rounded-max-radius: 8 !default;
 
 /// fab
 /// ------------------------------------------------------
 
 /// @param {number} $fab-spacing [16]
-$fab-spacing: 16;
-
+$fab-spacing: 16 !default;
 
 /// list
 /// ------------------------------------------------------
 
 /// @param {number} $list-item-radius [4]
-$list-item-radius: 4;
+$list-item-radius: 4 !default;
+
+///
+/// OVERLAY
+/// ------------------------------------------------------
+
+/// @param {px} $overlay-radius [4]
+$overlay-radius: 4 !default;
+
+/// @param {number} $overlay-padding [4]
+$overlay-padding: 4 !default;
+
+/// @param {color} $overlay-background
+$overlay-background: $background !default;
+
+/// @param {value} $overlay-shadow
+$overlay-shadow: 0 8px 16px -4px rgba(black, .16), 0 4px 24px 0px rgba(black, 0.1) !default;

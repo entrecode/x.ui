@@ -43,7 +43,7 @@
       @include macro-metrics($btn-big-font-size, $btn-big-line-height, $btn-big-min-height, $btn-outline, $padding-ratio: $btn-padding-ratio);
     }
 
-    &.active,
+    &.is-active,
     &:hover,
     &:focus {
       color: setHover($link);
@@ -55,7 +55,7 @@
       color: getColor(link);
       border-color: getColor(minor);
 
-      &.active,
+      &.is-active,
       &:hover,
       &:focus {
         color: getColor(link);
@@ -67,7 +67,7 @@
       color: getColor(super);
       border-color: getColor(super);
 
-      &.active,
+      &.is-active,
       &:hover,
       &:focus {
         color: setHover($super);
@@ -84,7 +84,7 @@
       color: setContrast(getColor(background, invert), getColor(link));
       border-color: setContrast(getColor(background, invert), getColor(link));
 
-      &.active,
+      &.is-active,
       &:hover,
       &:focus {
         color: setContrast(getColor(background, invert), getColor(link));

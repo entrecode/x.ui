@@ -5,7 +5,7 @@
 @import 'no-margin';
 @import 'has-height';
 @import 'has-width';
-@import "pull";
+@import 'pull';
 @import 'overflow';
 @import 'position';
 @import 'is-positioned';
@@ -18,12 +18,16 @@
 @import 'font-weight';
 @import 'word-wrap';
 /// theme
-@import 'ink';
-@import 'theme';
+@import 'is-ink';
+@import 'is-theme';
 /// interaction
 @import 'tooltip';
+@import 'data-animate';
+@import 'data-animate_delay';
+@import 'data-animate_duration';
 /// ui
 @import 'is-raised';
 @import 'is-lifted';
 @import 'is-rounded';
 @import 'is-fab';
+@import 'is-dropdown';

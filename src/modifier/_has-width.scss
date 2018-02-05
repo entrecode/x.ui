@@ -1,56 +1,56 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0
 /// @access public
 /// @group modifier
+///
+/// @param {map} $has-wodth-options - available width options
+
+$has-width-options: (
+        full: 100,
+        '1-4': 25,
+        half: 50,
+        '3-4': 75,
+        '16-9': 56.25,
+        golden: 61.803
+);
 
 .has-width {
-  &-full {
-    width: 100%;
-  }
+  $keys: map-keys($has-height-options);
 
-  &-1-4 {
-    min-width: (100%/4);
-  }
+  @each $key in $keys {
+    $i: index($keys, $key);
+    $value: map-get($has-height-options, $key);
 
-  &-half {
-    min-width: (100%/4*2);
-  }
-
-  &-3-4 {
-    min-width: (100%/4*3);
-  }
-
-  &-golden-h {
-    min-width: (100%*0.618);
-  }
-
-  &-golden-w {
-    min-width: (100%*0.618);
-  }
-
-  &-vp {
-    &-full {
-      width: 100vw;
+    &-#{$key} {
+      @include set-breakpoints {
+        min-width: $value * 1%;
+      }
     }
+  }
 
-    &-1-4 {
-      min-width: (100vw/4);
+  &-vh {
+    @each $key in $keys {
+      $i: index($keys, $key);
+      $value: map-get($has-height-options, $key);
+
+      &-#{$key} {
+        @include set-breakpoints {
+          min-width: $value * 1vh;
+        }
+      }
     }
+  }
 
-    &-half {
-      min-width: (100vw/4*2);
-    }
+  &-vw {
+    @each $key in $keys {
+      $i: index($keys, $key);
+      $value: map-get($has-height-options, $key);
 
-    &-3-4 {
-      min-width: (100vw/4*3);
-    }
-
-    &-golden-h {
-      min-width: (100vw*0.618);
-    }
-
-    &-golden-w {
-      min-width: (100vw*0.618);
+      &-#{$key} {
+        @include set-breakpoints {
+          min-width: $value * 1vw;
+        }
+      }
     }
   }
 }

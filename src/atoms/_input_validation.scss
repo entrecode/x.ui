@@ -1,6 +1,5 @@
 .input {
-
-  &.ng-dirty {
+  &.ng-touched {
     &.ng-valid {
       border-color: getColor(state, success);
       color: setContrast(getColor(background), getColor(state, success));

@@ -41,7 +41,7 @@ $hamburger-btn-color: getColor(link);
     transition: all .4s;
   }
 
-  &.active {
+  &.is-active {
     &:after {
       content: '';
       position: absolute;
@@ -72,7 +72,7 @@ $hamburger-btn-color: getColor(link);
       background-color: $hamburger-btn-color;
     }
 
-    &.active {
+    &.is-active {
       &:after {
         box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
       }

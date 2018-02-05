@@ -1,0 +1,109 @@
+%tabsNav {
+  margin-bottom: rem(16);
+
+  > ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 rem($base-padding / -2);
+
+    li {
+      padding: rem($base-padding / 4) rem($base-padding / 2);
+      text-align: center;
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 20%;
+        height: rem(4);
+        border-radius: rem(2);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all .4s;
+      }
+
+      &:hover {
+        &:after {
+          background-color: getColor(minor);
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+%tabsNavSelected {
+  &:after {
+    background-color: getColor(link);
+    width: 40%;
+  }
+}
+
+%tabsNavItem {
+  display: block;
+  text-align: center;
+  padding: rem($base-padding / 2);
+  font-weight: $is-bold;
+  cursor: pointer;
+}
+
+.xui-tabs-nav {
+  @extend %tabsNav;
+
+  label {
+    @extend %tabsNavItem;
+
+    &:target {
+      color: getColor(link);
+    }
+  }
+}
+
+$tabCount: 10 !default;
+
+.xui-tab {
+  display: none;
+}
+
+.xui-tabs {
+  input[type="radio"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    @for $i from 1 through $tabCount {
+      &:nth-of-type(#{$i}) {
+        &:checked {
+          ~ .xui-tabs-nav {
+            ul {
+              li {
+                &:nth-child(#{$i}) {
+                  @extend %tabsNavSelected;
+                  
+                  label {
+                    color: getColor(link);
+                  }
+                }
+              }
+            }
+          }
+
+          ~ .xui-tab {
+            &:nth-of-type(#{$i}) {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

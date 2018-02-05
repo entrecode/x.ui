@@ -28,7 +28,7 @@ h1 {
 }
 
 h2, h3, h4 {
-  margin-bottom: $vertical-rhythm;
+  margin-bottom: round($vertical-rhythm);
 }
 
 h5, h6 {

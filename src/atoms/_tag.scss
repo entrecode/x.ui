@@ -34,6 +34,10 @@
   border-radius: rem($tag-radius);
   @include set-theme-colors(getColor(background, lightest));
 
+  a {
+    color: getColor(text, lighter);
+  }
+
   /// additional styles via config
   @extend %tag-style !optional;
 
@@ -69,6 +73,10 @@
 
     &.#{$prefix}#{$name} {
       @include set-theme-colors($color);
+
+      a {
+        color: setContrast($color);
+      }
 
       @at-root a.#{$prefix}#{$name} {
         &:hover {

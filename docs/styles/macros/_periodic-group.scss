@@ -1,7 +1,10 @@
 %periodic {
   text-align: center;
   padding: rem(8);
-  border: 1px solid getColor(background);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 %family {
@@ -39,46 +42,96 @@ $group-ui: $link;
   @extend %periodic;
   background-color: $group-type;
   color: setContrast($group-type);
+
+  &:hover {
+    background-color: setHover($group-type);
+    color: setContrast($group-type);
+  }
 }
 
 .periodic-group-media {
   @extend %periodic;
   background-color: $group-media;
   color: setContrast($group-media);
+
+  &:hover {
+    background-color: setHover($group-media);
+    color: setContrast($group-media);
+  }
 }
 
 .periodic-group-data {
   @extend %periodic;
   background-color: $group-data;
   color: setContrast($group-data);
+
+  &:hover {
+    background-color: setHover($group-data);
+    color: setContrast($group-data);
+  }
 }
 
 .periodic-group-interaction {
   @extend %periodic;
   background-color: $group-interaction;
   color: setContrast($group-interaction);
+
+  &:hover {
+    background-color: setHover($group-interaction);
+    color: setContrast($group-interaction);
+  }
 }
 
 .periodic-group-form {
   @extend %periodic;
   background-color: $group-form;
   color: setContrast($group-form);
+
+  &:hover {
+    background-color: setHover($group-form);
+    color: setContrast($group-form);
+  }
 }
 
 .periodic-group-layout {
   @extend %periodic;
   background-color: $group-layout;
   color: setContrast($group-layout);
+
+  &:hover {
+    background-color: setHover($group-layout);
+    color: setContrast($group-layout);
+  }
 }
 
 .periodic-group-feedback {
   @extend %periodic;
   background-color: $group-feedback;
   color: setContrast($group-feedback);
+
+  &:hover {
+    background-color: setHover($group-feedback);
+    color: setContrast($group-feedback);
+  }
 }
 
 .periodic-group-ui {
   @extend %periodic;
   background-color: $group-ui;
   color: setContrast($group-ui);
+
+  &:hover {
+    background-color: setHover($group-ui);
+    color: setContrast($group-ui);
+  }
+}
+
+.xui-perdiodic-table {
+  li {
+    ul {
+      li {
+        border: 1px solid getColor(background);
+      }
+    }
+  }
 }

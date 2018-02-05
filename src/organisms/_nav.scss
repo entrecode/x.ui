@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0
 /// @access public
 /// @group organism
 ///
@@ -13,7 +13,7 @@ nav {
       padding: 0;
 
       @if $flex-support == false {
-        .nav__item {
+        .xui-nav__item {
           display: inline-block;
         }
       } @else {
@@ -43,8 +43,8 @@ nav {
 
     &.nav_stacked {
       @if $flex-support == false {
-        .nav__items {
-          .nav__item {
+        .xui-nav__items {
+          .xui-nav__item {
             display: block;
           }
         }

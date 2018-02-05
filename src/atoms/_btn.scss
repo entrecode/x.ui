@@ -118,8 +118,8 @@
   /// states
   /// ------------------------------------------------------
 
-  /// default :hover and .active state
-  &.active,
+  /// default :hover and .is-active state
+  &.is-active,
   &:hover,
   &:focus {
     @include set-theme-colors(setHover($link));
@@ -127,7 +127,7 @@
   }
 
   /// disabled state style for buttons
-  &.disabled,
+  &.is-disabled,
   &[disabled] {
     opacity: .6;
     cursor: not-allowed;
@@ -186,7 +186,7 @@
   &.btn_minor {
     @include set-theme-colors(getColor(minor));
 
-    &.active,
+    &.is-active,
     &:hover,
     &:focus {
       @include set-theme-colors(setHover($minor));
@@ -197,7 +197,7 @@
   &.btn_super {
     @include set-theme-colors(getColor(super));
 
-    &.active,
+    &.is-active,
     &:hover,
     &:focus {
       @include set-theme-colors(setHover($super));
@@ -213,7 +213,7 @@
     color: getColor(link);
     background-color: getColor(background);
 
-    &.active,
+    &.is-active,
     &:hover,
     &:focus {
       color: setHover($link);
@@ -229,7 +229,7 @@
     background-color: transparent;
     color: getColor(link);
 
-    &.active,
+    &.is-active,
     &:hover,
     &:focus {
       background-color: getColor(state, hover);
@@ -240,10 +240,18 @@
       color: getColor(text)
     }
 
+    &.btn_minor {
+      color: setContrast(getColor(minor), getColor(minor));
+    }
+
+    &.btn_super {
+      color: setContrast(getColor(super), getColor(super));
+    }
+
     &.btn_invert {
       color: setContrast(getColor(background, invert), getColor(link));
 
-      &.active,
+      &.is-active,
       &:hover,
       &:focus {
         background-color: invert(getColor(state, hover));

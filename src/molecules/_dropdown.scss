@@ -4,6 +4,9 @@
 /// @group molecules
 ///
 /// @param {px} $dropdown-radius [4]
+/// @param {number} $dropdown-padding [4]
+/// @param {color} $dropdown-background
+/// @param {value} $dropdown-shadow
 
 @keyframes rollDownDropdown {
   0% {
@@ -15,32 +18,28 @@
   }
 }
 
-ul.dropdown {
-  list-style: none;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
+nav.dropdown {
   outline: none;
+  position: relative;
+  outline: none;
+  cursor: pointer;
 
-  > li {
-    position: relative;
-    outline: none;
-    cursor: pointer;
+  &:focus {
+    > .dropdown-options {
+      display: initial;
+    }
+  }
 
-    &:focus {
-
-      ul.dropdown-options {
-        display: initial;
-      }
+  .dropdown-options {
+    &:hover {
+      display: initial;
     }
   }
 
   &.on-hover {
-    > li {
-      &:hover {
-        ul.dropdown-options {
-          display: initial;
-        }
+    &:hover {
+      ul.dropdown-options {
+        display: initial;
       }
     }
   }
@@ -48,17 +47,15 @@ ul.dropdown {
   ul.dropdown-options {
     position: absolute;
     top: 100%;
-    background-color: getColor(background);
-    border-radius: rem($dropdown-radius);
-    box-shadow: 0 4px 8px rgba(black, .2), 0 4px 24px rgba(black, .2);
     max-height: 320px;
     overflow-y: auto;
+    overscroll-behavior-y: contain;
     display: none;
     z-index: 10;
     list-style: none;
-    padding: rem(4);
     margin: 0;
     animation: rollDownDropdown .4s forwards;
+    @extend .is-dropdown;
 
     li {
       display: block;

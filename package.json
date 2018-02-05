@@ -1,12 +1,13 @@
 {
   "name": "x.ui",
-  "version": "7.0.1",
+  "version": "8.0.0-beta.0",
   "description": "x.ui is a framework based on the atomic design methodology",
   "main": "src/x.ui.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node-sass --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/x.ui.css",
-    "watch": "node-sass --watch --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/x.ui.css"
+    "watch": "node-sass --watch --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/x.ui.css",
+    "cleanCss": "purgecss --css docs/x.ui.css --content docs/index.html --out docs/xuix.uix.unpm inpm i"
   },
   "keywords": [
     "x.ui",
@@ -15,6 +16,7 @@
   ],
   "author": "entrecode GmbH",
   "devDependencies": {
-    "node-sass": "4.5.2"
+    "node-sass": "4.5.2",
+    "purgecss": "^0.19.0"
   }
 }
