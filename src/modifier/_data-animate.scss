@@ -70,6 +70,70 @@
   animation-name: flipRight;
 }
 
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: initial;
+    opacity: 1;
+  }
+}
+
+[data-animate~="slideRight"] {
+  animation-name: slideRight;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: initial;
+    opacity: 1;
+  }
+}
+
+[data-animate~="slideLeft"] {
+  animation-name: slideLeft;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: initial;
+    opacity: 1;
+  }
+}
+
+[data-animate~="slideUp"] {
+  animation-name: slideUp;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: initial;
+    opacity: 1;
+  }
+}
+
+[data-animate~="slideDown"] {
+  animation-name: slideDown;
+}
+
 @keyframes ambulance {
   0% {
     transform: translateX(200%) skewX(-16deg);

@@ -1,4 +1,4 @@
-## 8.0.0
+## 8.0.0-beta
 ### breaking changes
 - renamed `.ink#` to `.is-ink#`
 - renamed `.active` to `.is-active`

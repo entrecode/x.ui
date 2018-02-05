@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     data: {
       render: true,
       selectedAnimation: 'ambulance',
-      animation: ['fadeIn', 'popIn', 'flipLeft', 'flipRight', 'ambulance'],
+      animation: ['fadeIn', 'popIn', 'flipLeft', 'flipRight', 'slideLeft', 'slideRight', 'slideUp', 'slideDown', 'ambulance'],
       animationDuration: 8,
       animationDelay: 0,
       name: 'x.ui',

@@ -2596,7 +2596,7 @@
                 einer plötzlich ihn überkommenden Demut sogar für diesen Entschluß eine neue
                 Genehmigung. Herr Samsa nickte ihm bloß mehrmals kurz mit großen Augen zu. </p>
             </div>
-            <div class="xui-tab" data-animate="fadeIn 4">
+            <div class="xui-tab" data-animate="flipLeft 8">
               <p>Daraufhin ging der Herr tatsächlich sofort mit langen Schritten ins Vorzimmer;
                 seine beiden Freunde hatten schon ein Weilchen lang mit ganz ruhigen Händen
                 aufgehorcht und hüpften ihm jetzt geradezu nach, wie in Angst, Herr Samsa könnte vor
@@ -2604,7 +2604,7 @@
                 Vorzimmer nahmen alle drei die Hüte vom Kleiderrechen, zogen ihre Stöcke aus dem
                 Stockbehälter, verbeugten sich stumm und verließen die Wohnung. </p>
             </div>
-            <div class="xui-tab" data-animate="fadeIn 4">
+            <div class="xui-tab" data-animate="slideRight 4">
               <p>In einem, wie sich zeigte, gänzlich unbegründeten Mißtrauen trat Herr Samsa mit den
                 zwei Frauen auf den Vorplatz hinaus; an das Geländer gelehnt, sahen sie zu, wie die
                 drei Herren zwar langsam, aber ständig die lange Treppe hinunterstiegen, in jedem
@@ -2617,7 +2617,7 @@
                 Ausruhen und Spazierengehen zu verwenden; sie hatten diese Arbeitsunterbrechung
                 nicht nur verdient, sie brauchten sie sogar unbedingt. </p>
             </div>
-            <div class="xui-tab" data-animate="fadeIn 4">
+            <div class="xui-tab" data-animate="slideDown 4">
               <p>Und so setzten sie sich zum Tisch und schrieben drei Entschuldigungsbriefe, Herr
                 Samsa an seine Direktion, Frau Samsa an ihren Auftraggeber, und Grete an ihren
                 Prinzipal. </p>
@@ -2637,20 +2637,23 @@
   <div class="xui-tab">...</div>
   ...
 </div></code></pre>
-
-          <p class="align-center is-ink-light">
-            <small>
-              <small>Source placeholder text: <strong>Theodor Fontane - Die Verwandlung</strong> <a
-                  href="http://www.blindliteratur.de/" target="_blank" rel="noopener">http://www.blindliteratur.de/</a>
-              </small>
-            </small>
-          </p>
         </section>
 
         <div class="bumper"></div>
 
         <section>
-          <h3 id="xui-list" class="kilo">xui-list</h3>
+          <h3 id="xui-list" class="kilo">xui-toggle-list</h3>
+          <ul class="xui-toggle-list">
+            <li class="xui-toggle-list__item">
+              <label for="toggleList1" class="xui-toggle-list__summary">
+                Entry 1
+              </label>
+              <input type="radio" name="xuiToggleGroup" id="toggleList1">
+              <div class="xui-toggle-list__detail">
+                Content 1
+              </div>
+            </li>
+          </ul>
           https://codepen.io/raubaca/pen/PZzpVe
         </section>
 
@@ -3622,9 +3625,15 @@
   </section>
 
   <footer class="is-theme_dark">
-    <div class="has-padding align-center">
-      <p>
-        <small>Photo stage-banner by Laura Lefurgey-Smith on Unsplash</small>
+    <div class="has-padding">
+      <p class="align-center is-ink-light">
+        <small>
+          <small>
+            Source placeholder text: <strong>Theodor Fontane - Die Verwandlung</strong>
+            <a href="http://www.blindliteratur.de/" target="_blank" rel="noopener">http://www.blindliteratur.de/</a><br>
+            Photo stage-banner by Laura Lefurgey-Smith on Unsplash
+          </small>
+        </small>
       </p>
     </div>
   </footer>
