@@ -7,6 +7,7 @@
   transition: background-color .2s;
   direction: ltr;
   cursor: pointer;
+  display: inline-block;
 
   &:after {
     content: '';
@@ -28,7 +29,7 @@
   margin: 0 0 rem(8) 0;
 
   &:hover {
-    .xui-toggle__control {
+    .xui-toggle__switch {
       background-color: setHover(flattenColor(getColor(minor)), -8);
     }
   }
@@ -36,31 +37,22 @@
 
   input[type="radio"],
   input[type="checkbox"] {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+    @extend .is-hidden-input;
 
     &:checked {
-      + label .xui-toggle__control {
+      + label .xui-toggle__switch {
         @extend %toggle%isActive;
       }
     }
   }
 
-  .xui-toggle__control {
+  .xui-toggle__switch {
     @extend %toggle;
     margin-right: rem(8);
   }
 
   label {
     user-select: none;
-    display: flex;
-    align-items: center;
     cursor: pointer;
     margin: 0;
   }
