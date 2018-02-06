@@ -1,0 +1,20 @@
+.demo-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  @extend .is-scrollable-y;
+  border-right: 1px solid getColor(divider);
+
+  ul {
+    li {
+      padding: rem(4) 0;
+    }
+
+    h3 {
+      @extend .h4;
+      margin: 0;
+      padding: rem(16) 0;
+    }
+  }
+}

@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   new Vue({
     el: '#app',
     data: {
+      menuActive: true,
       hamburgerActive: false,
       render: true,
       selectedAnimation: 'ambulance',
