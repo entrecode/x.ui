@@ -33,18 +33,24 @@
 
   a {
     color: getColor(text);
+
+    &:hover {
+      color: getColor(link);
+    }
   }
 
+  h3 {
+    margin: rem(16) 0 0 0;
+  }
 
   ul {
-    font-size: 1.125em;
-
     li {
-      padding: rem(8) 0;
-    }
+      padding: rem(4) 0;
 
-    h3 {
-      margin: 0;
+      ul {
+        margin-top: rem(4);
+        margin-left: rem(16);
+      }
     }
   }
 }

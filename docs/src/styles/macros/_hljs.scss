@@ -4,5 +4,5 @@
   font-family: monospace;
   font-size: rem(12);
   line-height: rem(16);
-  background-color: getColor(background, lightest);
+  background-color: getColor(background, lightest) !important;
 }
