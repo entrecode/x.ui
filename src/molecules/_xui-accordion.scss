@@ -24,6 +24,10 @@ ul.xui-accordion {
     cursor: pointer;
     transition: all .4s;
 
+    @include headings{
+      margin: 0;
+    }
+
     &:hover {
       color: setHover(getColor(link));
       background-color: getColor(state, hover);
