@@ -7,6 +7,24 @@
 /// @param {variable} $colors [$colors] - set a custom variable for each project
 /// @require custom variable for $colors
 
+@if $background-light {
+  $background-light: $background-light;
+} @else {
+  $background-light: shadeByContrast($background, 12);
+}
+
+@if $background-lighter {
+  $background-lighter: $background-lighter;
+} @else {
+  $background-lighter: shadeByContrast($background, 8);
+}
+
+@if $background-lightest {
+  $background-lightest: $background-lightest;
+} @else {
+  $background-lightest: shadeByContrast($background, 3);
+}
+
 /// colormap
 $xui-colors: (
         base: (
@@ -20,16 +38,16 @@ $xui-colors: (
         ),
         text: (
                 'invert': $text-invert,
-                'light': rgba($text, .6),
-                'lighter': rgba($text, .4),
-                'lightest': rgba($text, .2),
+                'light': $text-light,
+                'lighter': $text-lighter,
+                'lightest': $text-lightest,
         ),
         background: (
                 'invert': $background-invert,
-                'light': shadeByContrast($background, 12),
-                'lighter': shadeByContrast($background, 8),
-                'lightest': shadeByContrast($background, 4),
-                'backdrop': rgba(black, .8),
+                'light': $background-light,
+                'lighter': $background-lighter,
+                'lightest': $background-lightest,
+                'backdrop': $backdrop,
         ),
         state: (
                 'hover': $state-hover,
