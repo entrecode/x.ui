@@ -43,13 +43,13 @@
       opacity: 1;
       animation: showOverlayWrapper .4s forwards ease-in-out;
 
-      .overlay {
+      .xui-overlay {
         display: initial;
       }
     }
   }
 
-  &_backdrop {
+  &.has-backdrop {
     background-color: getColor(background, backdrop);
   }
 }
