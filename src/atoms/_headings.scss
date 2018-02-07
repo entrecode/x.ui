@@ -9,8 +9,8 @@
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6,
-.giga, .mega, .kilo {
+.is-h1, .is-h2, .is-h3, .is-h4, .is-h5, .is-h6,
+.is-giga, .is-mega, .is-kilo {
   font-family: $headings-font;
   font-weight: $headings-weight;
   margin-top: 0;
@@ -36,34 +36,34 @@ h5, h6 {
 }
 
 h1,
-.h1,
-.giga {
+.is-h1,
+.is-giga {
   @include get-font-size(h1);
 }
 
 h2,
-.h2 {
+.is-h2 {
   @include get-font-size(h2);
 }
 
 h3,
-.h3,
-.mega {
+.is-h3,
+.is-mega {
   @include get-font-size(h3);
 }
 
 h4,
-.h4 {
+.is-h4 {
   @include get-font-size(h4);
 }
 
 h5,
-.h5,
-.kilo {
+.is-h5,
+.is-kilo {
   @include get-font-size(h5);
 }
 
 h6,
-.h6 {
+.is-h6 {
   @include get-font-size(h6);
 }

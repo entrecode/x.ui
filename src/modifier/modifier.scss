@@ -11,6 +11,7 @@
 @import 'is-positioned';
 @import 'is-layer';
 @import 'is-hidden';
+@import 'is-hidden-input';
 @import 'is-visible';
 /// typeface
 @import 'align';
@@ -21,13 +22,15 @@
 @import 'is-ink';
 @import 'is-theme';
 /// interaction
-@import 'tooltip';
 @import 'data-animate';
 @import 'data-animate_delay';
 @import 'data-animate_duration';
+@import 'has-transition';
 /// ui
+@import 'tooltip';
 @import 'is-raised';
 @import 'is-lifted';
 @import 'is-rounded';
 @import 'is-fab';
 @import 'is-dropdown';
+@import 'has-scroll-shadow';

@@ -10,7 +10,6 @@
   }
 }
 
-
 @keyframes showOverlay {
   0% {
     opacity: 0;
@@ -21,7 +20,7 @@
   }
 }
 
-.overlay-wrapper {
+.xui-overlay-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -31,9 +30,8 @@
   display: none;
   opacity: 0;
 
-
   &.is-targeted {
-    .overlay {
+    .xui-overlay {
       opacity: 0;
       display: none;
       animation: showOverlay .4s forwards ease-out;
@@ -45,13 +43,13 @@
       opacity: 1;
       animation: showOverlayWrapper .4s forwards ease-in-out;
 
-      .overlay {
+      .xui-overlay {
         display: initial;
       }
     }
   }
 
-  &_backdrop {
+  &.has-backdrop {
     background-color: getColor(background, backdrop);
   }
 }

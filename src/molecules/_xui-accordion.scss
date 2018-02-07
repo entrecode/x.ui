@@ -1,0 +1,90 @@
+/// @author Bernhard Ruoff
+/// @since 8.0.0
+/// @access public
+/// @group molecules
+
+ul.xui-accordion {
+  list-style: none;
+  margin: 0 rem(-8);
+  padding: 0;
+}
+
+.xui-accordion-item {
+  padding: rem(4) 0;
+  position: relative;
+
+  &__summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: $is-bold;
+    color: getColor(link);
+    padding: rem(8);
+    border-radius: rem(4);
+    cursor: pointer;
+    transition: all .4s;
+
+    @include headings{
+      margin: 0;
+    }
+
+    &:hover {
+      color: setHover(getColor(link));
+      background-color: getColor(state, hover);
+
+      &:after {
+        color: setHover(getColor(link));
+      }
+    }
+
+    &:after {
+      color: getColor(text, light);
+      margin: 0 rem(8);
+      transition: all .4s;
+
+      @if $ec-icon-support {
+        @extend %ec-icon;
+        content: "\e01b";
+      } @else {
+        content: "+";
+      }
+    }
+  }
+
+  &__detail {
+    padding: rem(8);
+    display: none;
+    height: auto;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .8s;
+  }
+
+  > input[type="radio"],
+  > input[type="checkbox"] {
+    @extend .is-hidden-input;
+
+    &:checked {
+      + .xui-accordion-item__summary {
+        color: setHover(getColor(link));
+
+        &:after {
+          color: setHover(getColor(link));
+
+          @if $ec-icon-support {
+            content: "\e098";
+          } @else {
+            content: "-";
+          }
+        }
+
+        + .xui-accordion-item__detail {
+          display: block;
+          max-height: 800px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<header class="is-fixed is-positioned-ne has-padding is-layer-10 is-layer-100-xs has-transition" :data-col="menuActive ? '+2-xl 10-xl' : '12'">
+  <div class="toolbar">
+    <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive" class="hamburger-btn"></button>
+    <div class="toolbar__title toolbar__title_center">
+      <a href="#top">
+        <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
+      </a>
+    </div>
+  </div>
+</header>

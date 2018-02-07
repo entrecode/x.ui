@@ -1,0 +1,188 @@
+<section>
+  <h3 id="dropdown" class="is-kilo">dropdown
+    <span class="tag tag_small tag_super">css only</span>
+    <span class="tag tag_small tag_error">in progress</span>
+  </h3>
+  <div class="well">
+    <div data-grid="small">
+      <div data-col="6 3-sm" data-flex="center-sm">
+        <nav class="dropdown dropdown_center has-margin-bottom" tabindex="0"
+             data-flex-item="grow-xs">
+          <span class="btn btn_invert is-raised btn_block">dropdown center</span>
+          <ul class="dropdown-options">
+            <li class="dropdown-option">
+              <a>Label</a>
+            </li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown_divider"></li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div data-col="6 3-sm" data-flex="center-sm">
+        <nav class="dropdown dropdown_right has-margin-bottom" tabindex="0"
+             data-flex-item="grow-xs">
+          <span class="btn btn_invert is-raised btn_block">dropdown right</span>
+          <ul class="dropdown-options">
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown_divider"></li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div data-col="6 3-sm" data-flex="center-sm">
+        <nav class="dropdown dropdown_left has-margin-bottom" tabindex="0"
+             data-flex-item="grow-xs">
+          <span class="btn btn_invert is-raised btn_block">dropdown left</span>
+          <ul class="dropdown-options">
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown_divider"></li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div data-col="6 3-sm" data-flex="center-sm">
+        <nav class="dropdown dropdown_full has-margin-bottom" tabindex="0"
+             data-flex-item="grow-xs">
+          <span class="btn btn_invert is-raised btn_block">dropdown full</span>
+          <ul class="dropdown-options">
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown_divider"></li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div data-col="6 3-sm" data-flex="center-sm">
+        <nav class="dropdown dropdown_center dropdown_above has-margin-bottom" tabindex="0"
+             data-flex-item="grow-xs">
+          <span class="btn btn_invert is-raised btn_block">center above</span>
+          <ul class="dropdown-options">
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown_divider"></li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div data-col="6 3-sm" data-flex="center-sm">
+        <nav class="dropdown dropdown_right dropdown_above has-margin-bottom" tabindex="0"
+             data-flex-item="grow-xs">
+          <span class="btn btn_invert is-raised btn_block">right above</span>
+          <ul class="dropdown-options">
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown_divider"></li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div data-col="6 3-sm" data-flex="center-sm">
+        <nav class="dropdown dropdown_left dropdown_above has-margin-bottom" tabindex="0"
+             data-flex-item="grow-xs">
+          <span class="btn btn_invert is-raised btn_block">left above</span>
+          <ul class="dropdown-options">
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown_divider"></li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div data-col="6 3-sm" data-flex="center-sm">
+        <nav class="dropdown dropdown_full dropdown_above has-margin-bottom" tabindex="0"
+             data-flex-item="grow-xs">
+          <span class="btn btn_invert is-raised btn_block">full above</span>
+          <ul class="dropdown-options">
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+            <li class="dropdown_divider"></li>
+            <li class="dropdown-option">
+              <a href>Label</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <pre><code class="html">
+<nav class="dropdown dropdown_full" tabindex="0">
+  <span class="btn btn_invert is-raised">dropdown full</span>
+  <ul class="dropdown-options">
+    <li class="dropdown-option">
+      <a href>Label</a>
+    </li>
+    <li class="dropdown-option">
+      <a href>Label</a>
+    </li>
+    <li class="dropdown_divider"></li>
+    <li class="dropdown-option">
+      <a href>Label</a>
+    </li>
+  </ul>
+</nav></code></pre>
+  <table class="table">
+    <tbody>
+    <tr>
+      <td><strong>alignment modifier</strong></td>
+      <td>
+        <span class="code" v-for="behavior in molecules.dropdown.behaviorModifiers">${behavior}</span>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>behavior modifier</strong></td>
+      <td>
+        <span class="code">on-hover</span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="bumper"></div>

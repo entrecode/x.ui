@@ -12,8 +12,8 @@
   $lightness: lightness($color);
 
   @if $lightness > 50 {
-    @return darken($color, $amount);
+    @return varColor($color, $amount * -1);
   } @else {
-    @return lighten($color, $amount);
+    @return varColor($color, $amount);
   }
 }

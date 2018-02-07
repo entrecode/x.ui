@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0
 /// @access public
 /// @group molecules
 ///
@@ -8,7 +8,7 @@
 /// @param {color} $overlay-background
 /// @param {value} $overlay-shadow
 
-.overlay {
+.xui-overlay {
   padding: rem($overlay-padding);
   box-shadow: $overlay-shadow;
   border-radius: rem($overlay-radius);
@@ -16,7 +16,7 @@
   color: setContrast($overlay-background);
   position: relative;
 
-  .overlay__dismiss {
+  &__dismiss {
     @extend %btn;
     position: absolute;
     top: 0;
