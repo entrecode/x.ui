@@ -1,5 +1,5 @@
 <div class="well align-center">
-  <div class="kilo">data-container="{option}"</div>
+  <div class="is-kilo">data-container="{option}"</div>
 </div>
 <p>wraps everything in a repsonsive container with a maximum with of
   <strong>1200px</strong>. Per default it is centered horizontally. for full-width
@@ -22,7 +22,7 @@
 </table>
 <div class="spacer"></div>
 <div class="well align-center">
-  <div class="kilo">data-grid="{option}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</div>
+  <div class="is-kilo">data-grid="{option}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</div>
 </div>
 <p>this is part of the flex-based grid. it is a more modern and flexible approach for a
   grid-model which is not prone to floating errors. it can be combined with additional
@@ -49,7 +49,7 @@
 </table>
 <div class="spacer"></div>
 <div class="well align-center">
-  <div class="kilo">data-col="{size | offset}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"
+  <div class="is-kilo">data-col="{size | offset}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"
   </div>
 </div>
 <table class="table">
@@ -68,7 +68,7 @@
 </table>
 <div class="bumper"></div>
 <div class="well align-center">
-  <div class="kilo">data-flex="{option}-{<a
+  <div class="is-kilo">data-flex="{option}-{<a
         href="#xui-breakpoint-shortcodes">breakpoint</a>}"
   </div>
 </div>
@@ -207,7 +207,7 @@
 </table>
 <div class="spacer"></div>
 <div class="well align-center">
-  <span class="kilo">data-flex-item="{options}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</span>
+  <span class="is-kilo">data-flex-item="{options}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</span>
 </div>
 <h6 class="align-center">size</h6>
 <table class="table">
@@ -226,15 +226,44 @@
   </tr>
   </tbody>
 </table>
+<h6 class="align-center">align-self</h6>
+<table class="table">
+  <tbody>
+  <tr data-flex>
+    <td data-col="4"><span class="code">auto</span></td>
+    <td data-col="8">Default. The element inherits its parent container's align-items property, or "stretch" if it has no parent container.</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">stretch</span></td>
+    <td data-col="8">The element is positioned to fit the container.</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">center</span></td>
+    <td data-col="8">The element is positioned at the center of the container.</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">start</span></td>
+    <td data-col="8">The element is positioned at the beginning of the container.</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">end</span></td>
+    <td data-col="8">The element is positioned at the end of the container.</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">baseline</span></td>
+    <td data-col="8">The element is positioned at the baseline of the container.</td>
+  </tr>
+  </tbody>
+</table>
 <div class="spacer"></div>
 <div class="well align-center">
-  <span class="kilo">data-flex-order="{order}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</span>
+  <span class="is-kilo">data-flex-order="{order}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</span>
 </div>
 <p>By default, flex items are laid out in the source order. However, the order property
   controls the order in which they appear in the flex container. the order-value can be
   <span class="code">[1-12]</span>.</p>
 <div class="spacer"></div>
-<h4 class="h6">data-row
+<h4 class="is-h6">data-row
   <div class="tag tag_small tag_error">deprecated</div>
 </h4>
 <p>

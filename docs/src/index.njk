@@ -7,7 +7,7 @@
   <title>x.ui docs</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="x.ui.css">
-  <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-4.0.1.min.css"/>
+  <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-5.0.0.min.css"/>
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
   <script
@@ -20,8 +20,10 @@
 <div id="app" class="xui-demo">
   {% include '_header.njk' %}
   {% include '_aside.njk' %}
+
   <div class="xui-demo-body has-transition" :data-col="menuActive ? '+4-sm +2-md 8-sm 10-md' : ''">
     {% include '_hero.njk' %}
+
     <div class="spacer-big"></div>
     <div data-container="">
       <div data-grid="center">
@@ -39,7 +41,7 @@
     <div data-container>
       <div data-grid="center">
         <div data-col="8-sm">
-          <h2 class="giga align-center is-uppercase" id="the-grid">
+          <h2 class="is-giga align-center is-uppercase" id="the-grid">
             <small class="is-ink-link">layout</small>
             <br>the grid
           </h2>
@@ -57,7 +59,6 @@
 
       <div data-grid="center">
         <div data-col="8-sm">
-
           <p class="h2 is-uppercase" style="line-height: 1em">
             mobile<span class="is-ink-link">first</span>
             mobile<span class="is-ink-light">landscape</span><span class="is-ink-link">480</span>
@@ -69,7 +70,7 @@
             you can choose between a float or a flex based 12 column grid.</p>
           <div data-grid>
             <div data-col="6-sm">
-              <h4 class="h6 is-uppercase">flex-grid</h4>
+              <h4 class="is-h6 is-uppercase">flex-grid</h4>
               <pre><code class="html">
 <div data-container>
   <div data-grid>
@@ -80,7 +81,7 @@
 </div></code></pre>
             </div>
             <div data-col="6-sm">
-              <h4 class="h6 is-uppercase">float-grid</h4>
+              <h4 class="is-h6 is-uppercase">float-grid</h4>
               <pre><code class="html">
 <div data-container>
   <div data-row>
