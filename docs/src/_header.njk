@@ -1,18 +1,10 @@
-<header class="is-fixed is-positioned-nw has-padding is-layer-10 has-width-full">
+<header class="is-fixed is-positioned-ne has-padding is-layer-10 has-transition" :data-col="menuActive ? '+4-sm +2-md 8-sm 10-md' : '12'">
   <div class="toolbar">
+    <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive" class="hamburger-btn"></button>
     <div class="toolbar__title toolbar__title_center">
       <a href="#top">
         <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
       </a>
     </div>
-    <!--<a href="#xui-sidebar-nav" class="hamburger-btn"></a>-->
-
-    <!--<nav class="nav">
-      <ul class="nav__items">
-        <li class="nav__item">
-          <a href="" class="btn btn_outlined">git</a>
-        </li>
-      </ul>
-    </nav>-->
   </div>
 </header>

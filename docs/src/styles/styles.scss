@@ -8,4 +8,49 @@
   background-size: cover;
   background-position: center center;
   clip-path: polygon(0% 0%, 0% 100%, 100% 88%, 100% 0%);
+  position: relative;
+  overflow: hidden;
+  transition: all 1s;
+
+  .hero-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &.menu-active {
+    min-height: auto;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.demo-sidebar {
+  border-right: 1px solid getColor(divider);
+
+  a {
+    color: getColor(text);
+  }
+
+
+  ul {
+    font-size: 1.125em;
+
+    li {
+      padding: rem(8) 0;
+    }
+
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+.xui-header {
+  text-transform: uppercase;
+  text-align: center;
+  @extend .giga;
 }

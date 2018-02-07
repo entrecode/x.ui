@@ -1,7 +1,12 @@
 ## 8.0.0-beta.1
+### breaking changes
+- renamed `.overlay` to `.xui-overlay`
+
 ###added
 - added `.xui-accordion` molecule
 - added `.is-hidden-input` modifier
+- added `.has-scroll-shadow` modifier
+- added `.has-transition` modifier
 
 ###changes
 - moved `.nav` to molecules
