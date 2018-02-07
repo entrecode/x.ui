@@ -1,0 +1,15 @@
+/// @since 8.0.0-beta.1
+/// @group data-flex-item
+/// @author Bernhard Ruoff
+/// @access public
+
+$values: 'auto', 'baseline', 'stretch', 'center', 'start', 'end';
+$css: 'auto', 'baseline', 'stretch', 'center', 'flex-start', 'flex-end';
+
+@each $value in $values {
+  $i: index($values, $value);
+  $c: nth($css, $i);
+  @include set-data-breakpoints('flex-item', #{$value}) {
+    align-self: #{$c};
+  }
+}
