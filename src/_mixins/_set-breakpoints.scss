@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.1
 /// @access public
 /// @group layout mixins
 ///
@@ -10,6 +10,7 @@
 
 @mixin set-breakpoints($area: false, $hasRoot: true) {
   $keys: map-keys($breakpoints);
+  $length: length($breakpoints);
 
   @if $hasRoot == true {
     @content;
@@ -17,9 +18,17 @@
 
   @if $area == true {
     @each $key in $keys {
-      &-#{$key} {
-        @media (min-width: getBreakpoint(#{$key})) and (max-width: getBreakpoint(#{$key}, max)) {
-          @content;
+      @if index($keys, $key) == $length {
+        &-#{$key} {
+          @media (min-width: getBreakpoint(#{$key})) {
+            @content;
+          }
+        }
+      } @else {
+        &-#{$key} {
+          @media (min-width: getBreakpoint(#{$key})) and (max-width: getBreakpoint(#{$key}, max)) {
+            @content;
+          }
         }
       }
     }
