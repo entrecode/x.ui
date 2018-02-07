@@ -1,10 +1,21 @@
 ## 8.0.0-beta.1
+### breaking changes
+- renamed `.overlay` to `.xui-overlay`
+
 ###added
 - added `.xui-accordion` molecule
 - added `.is-hidden-input` modifier
+- added `.has-scroll-shadow` modifier
+- added `.has-transition` modifier
+- added an overwrite config for `background, light`, `background, lighter` and `background, lightest`
+- added `data-flex-item="{align}"` attribute
 
 ###changes
 - moved `.nav` to molecules
+- changed `.is-h1`, `.is-h2`, `.is-h3`, `.is-h4`, `.is-h5`, `.is-h6`, `.is-giga`, `.is-mega`, `.is-kilo`
+- fixed `set-breakpoints` mixin bug
+- fixed `.is-visible`
+- fixed `.is-hidden`
 
 ## 8.0.0-beta.0
 ### breaking changes

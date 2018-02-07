@@ -1,3 +1,8 @@
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.0
+/// @access public
+/// @group atoms
+
 .xui-checkbox {
 
   label {
@@ -11,8 +16,8 @@
 
     + label {
       &:before {
-        font-family: initial;
         content: '\2714';
+        font-family: initial;
         background-color: getColor(background);
         display: flex;
         justify-content: center;

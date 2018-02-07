@@ -11,17 +11,20 @@
 .spacer {
   @include set-breakpoints {
     height: rem($base-padding*2);
+    flex-shrink: 0;
   }
 
   &-small {
     @include set-breakpoints {
       height: rem($base-padding);
+      flex-shrink: 0;
     }
   }
 
   &-big {
     @include set-breakpoints {
       height: rem($base-padding*3);
+      flex-shrink: 0;
     }
   }
 }

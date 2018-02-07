@@ -95,10 +95,6 @@ nav.xui-select {
   animation: selectOptionsPop .2s forwards;
   transform-origin: top;
   @extend .is-dropdown;
-
-  &:hover {
-    display: initial;
-  }
 }
 
 %select-option {
@@ -113,7 +109,8 @@ nav.xui-select {
   a:not(.btn) {
     display: block;
     outline: none;
-    @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio) {}
+    @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio) {
+    }
     transition: all .4s;
     border-radius: rem($btn-radius);
   }
@@ -122,6 +119,12 @@ nav.xui-select {
 ul.xui-select-options {
   @extend %select-options;
   display: none;
+  max-height: rem(240);
+  @extend .is-scrollable-y;
+
+  &:hover {
+    display: initial;
+  }
 
   .xui-select-option {
     @extend %select-option;

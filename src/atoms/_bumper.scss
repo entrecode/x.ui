@@ -29,6 +29,7 @@
   @include set-breakpoints {
     @include bumper;
     margin: rem($base-padding*2) 0;
+    flex-shrink: 0;
   }
 
   &.bumper_invert {
@@ -42,6 +43,7 @@
     @include set-breakpoints {
       @include bumper;
       margin: rem($base-padding) 0;
+      flex-shrink: 0;
     }
   }
 
@@ -49,6 +51,7 @@
     @include set-breakpoints {
       @include bumper;
       margin: rem($base-padding*3) 0;
+      flex-shrink: 0;
     }
   }
 }

@@ -10,7 +10,6 @@
   }
 }
 
-
 @keyframes showOverlay {
   0% {
     opacity: 0;
@@ -31,7 +30,6 @@
   display: none;
   opacity: 0;
 
-
   &.is-targeted {
     .xui-overlay {
       opacity: 0;
@@ -45,13 +43,13 @@
       opacity: 1;
       animation: showOverlayWrapper .4s forwards ease-in-out;
 
-      .overlay {
+      .xui-overlay {
         display: initial;
       }
     }
   }
 
-  &_backdrop {
+  &.has-backdrop {
     background-color: getColor(background, backdrop);
   }
 }

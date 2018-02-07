@@ -16,6 +16,7 @@ $is-bold: bold !default;
 ///
 /// COLORS
 /// ------------------------------------------------------
+/// these variables are used in `_core/_colors.scss`
 
 $background: #fff !default;
 $text: #2a3d54 !default;
@@ -31,8 +32,24 @@ $highlight: #9de263 !default;
 /// @param {color} $background-invert [$text] - inverted color for background
 $background-invert: $text !default;
 
+/// @param {color} $background-light [null] - set value too overwrite generated color
+$background-light: null;
+
+/// @param {color} $background-lighter [null] - set value too overwrite generated color
+$background-lighter: null;
+
+/// @param {color} $background-lightest [null] - set value too overwrite generated color
+$background-lightest: null;
+
 /// @param {color} $text-invert [$background] - inverted color for text
 $text-invert: $background !default;
+
+/// text shading variables
+$text-light: rgba($text, .6);
+$text-lighter: rgba($text, .4);
+$text-lightest: rgba($text, .2);
+
+$backdrop: rgba(black, .8);
 
 /// @param {number} $hover-shading [-4] - amount by which colors are darkened or lightened on hover
 $hover-shading: -4 !default;

@@ -1,0 +1,21 @@
+<section>
+  <h3 id="hamburger-btn" class="is-kilo">hamburger-btn <span
+        class="tag tag_small tag_error">in progress</span>
+  </h3>
+  <div class="align-right">
+    <div class="xui-toggle">
+      <input type="checkbox" id="hamburgerActive" v-model="hamburgerActive">
+      <label for="hamburgerActive">
+        <span class="xui-toggle__switch"></span>
+        is-active
+      </label>
+    </div>
+  </div>
+  <div class="alert">
+    <button class="hamburger-btn" :class="{'is-active' : hamburgerActive}"></button>
+  </div>
+  <pre><code class="html"><button
+          class="hamburger-btn${hamburgerActive ?' is-active' : ''}"></button></code></pre>
+</section>
+
+<div class="bumper"></div>

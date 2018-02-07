@@ -1,22 +1,108 @@
 {
   "name": "x.ui",
-  "version": "8.0.0-beta.0",
+  "version": "8.0.0-beta.1",
   "description": "x.ui is a framework based on the atomic design methodology",
+  "author": "entrecode GmbH",
   "main": "src/x.ui.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node-sass --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/x.ui.css",
-    "watch": "node-sass --watch --recursive --output-style compressed --source-map-embed docs/styles/styles.scss docs/x.ui.css",
-    "cleanCss": "purgecss --css docs/x.ui.css --content docs/index.html --out docs/xuix.uix.unpm inpm i"
+    "build": "npm run build:nunjucks & npm run build:sass & npm run build:js",
+    "build:nunjucks": "nunjucks index.njk package.json --path docs/src --out docs --unsafe",
+    "build:sass": "node-sass --recursive --output-style compressed docs/src/styles/styles.scss docs/x.ui.css",
+    "build:js": "babel docs/src/app.js --out-file docs/app.js",
+    "dev": "npm run watch:nunjucks & npm run watch:sass & npm run watch:js",
+    "watch:nunjucks": "nunjucks index.njk package.json --path docs/src --out docs --watch --unsafe",
+    "watch:sass": "node-sass --watch --recursive  --source-map-embed docs/src/styles/styles.scss docs/x.ui.css",
+    "watch:js": "babel docs/src/app.js --out-file docs/app.js --watch"
   },
   "keywords": [
     "x.ui",
     "styles",
     "scss"
   ],
-  "author": "entrecode GmbH",
+  "structure": {
+    "typeface": [
+      "headings.njk",
+      "type.njk",
+      "list.njk",
+      "align.njk",
+      "font-weight.njk",
+      "text-transform.njk",
+      "word-wrap.njk"
+    ],
+    "media": [
+      "img.njk",
+      "img-crop.njk"
+    ],
+    "form": [
+      "input.njk",
+      "input-group.njk",
+      "xui-select.njk",
+      "xui-checkbox.njk",
+      "xui-radio.njk",
+      "xui-toggle.njk",
+      "form-group.njk"
+    ],
+    "ui": [
+      "btn.njk",
+      "hamburger-btn.njk",
+      "bubble.njk",
+      "tag.njk",
+      "dropdown.njk",
+      "btn-group.njk",
+      "nav.njk",
+      "title.njk",
+      "toolbar.njk",
+      "xui-tabs.njk",
+      "xui-list.njk",
+      "xui-accordion.njk",
+      "overlay.njk",
+      "well.njk",
+      "alert.njk",
+      "data-tooltip.njk",
+      "table.njk",
+      "avatar.njk",
+      "is-ink.njk",
+      "is-theme.njk",
+      "is-rounded.njk",
+      "is-raised.njk",
+      "is-lifted.njk",
+      "is-fab.njk"
+    ],
+    "layout": [
+      "bumper.njk",
+      "spacer.njk",
+      "flex-spacer.njk",
+      "spacing.njk",
+      "has-height.njk",
+      "has-width.njk",
+      "pull.njk",
+      "is-overflow.njk",
+      "is-position.njk",
+      "is-layer.njk",
+      "is-hidden.njk",
+      "is-visible.njk"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7"
+            ]
+          }
+        }
+      ]
+    ]
+  },
   "devDependencies": {
-    "node-sass": "4.5.2",
-    "purgecss": "^0.19.0"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.7.2",
+    "nunjucks-cli": "^0.5.1"
   }
 }

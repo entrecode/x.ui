@@ -4,6 +4,14 @@
 /// @group modifier
 
 .is-visible {
+  $keys: map-keys($breakpoints);
+
+  @each $key in $keys {
+    &-#{$key} {
+      display: none;
+    }
+  }
+
   @include set-breakpoints($area: true, $hasRoot: false) {
     display: inherit !important;
   }

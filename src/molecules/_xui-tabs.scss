@@ -81,7 +81,7 @@ $tabCount: 10 !default;
               li {
                 &:nth-child(#{$i}) {
                   @extend %tabsNavSelected;
-                  
+
                   label {
                     color: getColor(link);
                   }

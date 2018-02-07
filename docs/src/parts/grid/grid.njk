@@ -1,0 +1,278 @@
+<div class="well align-center">
+  <div class="is-kilo">data-container="{option}"</div>
+</div>
+<p>wraps everything in a repsonsive container with a maximum with of
+  <strong>1200px</strong>. Per default it is centered horizontally. for full-width
+  designs just don't use this attribute.</p>
+<table class="table">
+  <tr data-flex>
+    <td data-col="4"><em>empty</em></td>
+    <td data-col="8">centered horizontally
+      <div class="tag tag_small">default</div>
+    </td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">left</span></td>
+    <td data-col="8">aligns the container left</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">right</span></td>
+    <td data-col="8">aligns the container right</td>
+  </tr>
+</table>
+<div class="spacer"></div>
+<div class="well align-center">
+  <div class="is-kilo">data-grid="{option}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</div>
+</div>
+<p>this is part of the flex-based grid. it is a more modern and flexible approach for a
+  grid-model which is not prone to floating errors. it can be combined with additional
+  data-flex values to influence it's behavior.</p>
+<table class="table">
+  <tr data-flex>
+    <td data-col="4"><em>empty</em></td>
+    <td data-col="8">activates flex-gird
+      <div class="tag tag_small">default</div>
+    </td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">no-gutter</span></td>
+    <td data-col="8">removes the space between the inline columns</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">small</span></td>
+    <td data-col="8">half sized spaces between columns</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">center</span></td>
+    <td data-col="8">centers the columns</td>
+  </tr>
+</table>
+<div class="spacer"></div>
+<div class="well align-center">
+  <div class="is-kilo">data-col="{size | offset}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"
+  </div>
+</div>
+<table class="table">
+  <tr data-flex>
+    <td data-col="4"><span class="code">[1-12]</span></td>
+    <td data-col="8">defines the grid-size of the column. can be multiple sizes for
+      different screen-sizes
+    </td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">+[0-11]</span></td>
+    <td data-col="8">defines an grid-based offset of an column. can be multiple offsets
+      for different screen-sizes
+    </td>
+  </tr>
+</table>
+<div class="bumper"></div>
+<div class="well align-center">
+  <div class="is-kilo">data-flex="{option}-{<a
+        href="#xui-breakpoint-shortcodes">breakpoint</a>}"
+  </div>
+</div>
+<h6 class="align-center">flex-direction</h6>
+<table class="table">
+  <tbody>
+  <tr data-flex>
+    <td data-col="4"><span class="code">row</span></td>
+    <td data-col="8">left to right in ltr | right to left in rtl <span
+          class="tag tag_small">default</span></td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">row-reverse</span></td>
+    <td data-col="8">right to left in ltr | left to right in rtl</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">column</span></td>
+    <td data-col="8">same as row but top to bottom</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">column-reverse</span></td>
+    <td data-col="8">same as row-reverse but bottom to top</td>
+  </tr>
+  </tbody>
+</table>
+<h6 class="align-center">flex-wrap</h6>
+<table class="table">
+  <tbody>
+  <tr data-flex>
+    <td data-col="4"><span class="code">nowrap</span></td>
+    <td data-col="8">all flex items will be on one line <span class="tag tag_small">default</span>
+    </td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">wrap</span></td>
+    <td data-col="8">flex items will wrap onto multiple lines, from top to bottom</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">wrap-reverse</span></td>
+    <td data-col="8">flex items will wrap onto multiple lines from bottom to top</td>
+  </tr>
+  </tbody>
+</table>
+<h6 class="align-center">justify-content</h6>
+<table class="table">
+  <tbody>
+  <tr data-flex>
+    <td data-col="4"><span class="code">start</span></td>
+    <td data-col="8">items are packed toward the start line <span
+          class="tag tag_small">default</span>
+    </td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">end</span></td>
+    <td data-col="8">items are packed toward to end line</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">center</span></td>
+    <td data-col="8">items are centered along the line</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">between</span></td>
+    <td data-col="8">items are evenly distributed in the line; first item is on the
+      start line, last item on the end line
+    </td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">around</span></td>
+    <td data-col="8">items are evenly distributed in the line with equal space around
+      them
+    </td>
+  </tr>
+  </tbody>
+</table>
+<h6 class="align-center">align-items</h6>
+<table class="table">
+  <tbody>
+  <tr data-flex>
+    <td data-col="4"><span class="code">start-items</span></td>
+    <td data-col="8">cross-start margin edge of the items is placed on the cross-start
+      line
+    </td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">end-items</span></td>
+    <td data-col="8">cross-end margin edge of the items is placed on the cross-end
+      line
+    </td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">center-items</span></td>
+    <td data-col="8">items are centered in the cross-axis</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">baseline-items</span></td>
+    <td data-col="8">items are aligned such as their baselines align</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">stretch-items</span></td>
+    <td data-col="8">stretch to fill the container <span
+          class="tag tag_small">default</span></td>
+  </tr>
+  </tbody>
+</table>
+<h6 class="align-center">align-content</h6>
+<table class="table">
+  <tbody>
+  <tr data-flex>
+    <td data-col="4"><span class="code">start-content</span></td>
+    <td data-col="8">lines packed to the start of the container</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">end-content</span></td>
+    <td data-col="8">lines packed to the end of the container</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">center-content</span></td>
+    <td data-col="8">lines packed to the center of the container</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">space-content</span></td>
+    <td data-col="8">lines evenly distributed; the first line is at the start of the
+      container while the last one is at the end
+    </td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">arround-content</span></td>
+    <td data-col="8">lines evenly distributed with equal space around each line</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">stretch-content</span></td>
+    <td data-col="8">lines stretch to take up the remaining space <span
+          class="tag tag_small">default</span></td>
+  </tr>
+  </tbody>
+</table>
+<div class="spacer"></div>
+<div class="well align-center">
+  <span class="is-kilo">data-flex-item="{options}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</span>
+</div>
+<h6 class="align-center">size</h6>
+<table class="table">
+  <tbody>
+  <tr data-flex>
+    <td data-col="4"><span class="code">grow</span></td>
+    <td data-col="8">items grows to fill it's parent.</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">grow-even</span></td>
+    <td data-col="8">all children grow evenly an share the space.</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">fit-self</span></td>
+    <td data-col="8">element doesn't shrink and grows up to its content size.</td>
+  </tr>
+  </tbody>
+</table>
+<h6 class="align-center">align-self</h6>
+<table class="table">
+  <tbody>
+  <tr data-flex>
+    <td data-col="4"><span class="code">auto</span></td>
+    <td data-col="8">Default. The element inherits its parent container's align-items property, or "stretch" if it has no parent container.</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">stretch</span></td>
+    <td data-col="8">The element is positioned to fit the container.</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">center</span></td>
+    <td data-col="8">The element is positioned at the center of the container.</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">start</span></td>
+    <td data-col="8">The element is positioned at the beginning of the container.</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">end</span></td>
+    <td data-col="8">The element is positioned at the end of the container.</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">baseline</span></td>
+    <td data-col="8">The element is positioned at the baseline of the container.</td>
+  </tr>
+  </tbody>
+</table>
+<div class="spacer"></div>
+<div class="well align-center">
+  <span class="is-kilo">data-flex-order="{order}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</span>
+</div>
+<p>By default, flex items are laid out in the source order. However, the order property
+  controls the order in which they appear in the flex container. the order-value can be
+  <span class="code">[1-12]</span>.</p>
+<div class="spacer"></div>
+<h4 class="is-h6">data-row
+  <div class="tag tag_small tag_error">deprecated</div>
+</h4>
+<p>
+  <small>is an element of the float grid system, which is the old standard for
+    grid-systems. to avoid floating-errors it should only contain grid-columns with a
+    maximum width of 12 columns. Per default <em>data-row</em> doesn't need a value.
+    Optional values are <span class="code">no-gutter</span> to remove the space between
+    the inline columns or <span class="code">small-grid</span> for half sized spaces
+    between columns.
+  </small>
+</p>
+<div class="bumper"></div>

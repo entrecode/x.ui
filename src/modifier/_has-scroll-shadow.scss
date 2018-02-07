@@ -1,0 +1,15 @@
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.1
+/// @access public
+/// @group modifier
+
+.has-scroll-shadow {
+  background: linear-gradient(getColor(background) 30%, rgba(getColor(background), 0)),
+  linear-gradient(rgba(getColor(background), 0), getColor(background) 70%) 0 100%,
+  radial-gradient(farthest-side at 50% 0, rgba(black, .2), rgba(black, 0)),
+  radial-gradient(farthest-side at 50% 100%, rgba(black, .2), rgba(black, 0)) 0 100%;
+  background-repeat: no-repeat;
+  background-color: getColor(background);
+  background-size: 100% 40px, 100% 40px, 100% 8px, 100% 8px;
+  background-attachment: local, local, scroll, scroll;
+}

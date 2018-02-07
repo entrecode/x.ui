@@ -1,3 +1,8 @@
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.0
+/// @access public
+/// @group atoms
+
 %toggle {
   background-color: flattenColor(getColor(minor));
   height: rem($root-size);
@@ -34,7 +39,6 @@
     }
   }
 
-
   input[type="radio"],
   input[type="checkbox"] {
     @extend .is-hidden-input;
@@ -49,6 +53,7 @@
   .xui-toggle__switch {
     @extend %toggle;
     margin-right: rem(8);
+    margin-top: (($base-font-size * $base-line-height - $root-size) / 2)
   }
 
   label {
