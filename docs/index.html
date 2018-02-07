@@ -18,7 +18,7 @@
 </head>
 <body class="is-theme">
 <div id="app" class="xui-demo">
-<header class="is-fixed is-positioned-ne has-padding is-layer-10 has-transition" :data-col="menuActive ? '+4-sm +2-md 8-sm 10-md' : '12'">
+<header class="is-fixed is-positioned-ne has-padding is-layer-10 is-layer-100-xs has-transition" :data-col="menuActive ? '+2-xl 10-xl' : '12'">
   <div class="toolbar">
     <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive" class="hamburger-btn"></button>
     <div class="toolbar__title toolbar__title_center">
@@ -28,9 +28,10 @@
     </div>
   </div>
 </header>
-<aside v-if="menuActive" data-col="4-sm 2-md" data-flex="column" style="height:100vh;" class="is-theme is-fixed is-positioned-nw demo-sidebar is-layer-10" data-animate="slideRight 4">
+<aside v-if="menuActive" data-col="8-xs 6-sm 4-md 2-xl" data-flex="column" style="height:100vh;" class="is-theme is-fixed is-positioned-nw demo-sidebar is-layer-10" data-animate="slideRight 4">
   <div class="has-padding-big is-scrollable-y" data-flex="self column">
-    <a href="#"><img src="assets/xui-logo-small.svg" style="width: 80px;"></a>
+    <div class="spacer-big is-visible-xs is-visible-sm"></div>
+    <div class="align-center has-padding"><a href="#"><img src="assets/xui-logo-small.svg"></a></div>
     <ul class="is-unstyled" style="width: 100%;">
       <li><h3 class="is-h5"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
         <ul class="is-unstyled">
@@ -135,7 +136,7 @@
     </ul>
   </div>
 </aside>
-  <div class="xui-demo-body has-transition" :data-col="menuActive ? '+4-sm +2-md 8-sm 10-md' : ''">
+  <div class="xui-demo-body has-transition" :data-col="menuActive ? '+2-xl 10-xl' : ''">
 <div class="hero has-margin has-height-vh-golden" data-flex="center center-items">
   <div class="align-center">
     <img src="assets/xui-logo.svg" alt="x.ui - atomic css framwork" width="240px">
@@ -151,7 +152,7 @@
     <div class="spacer-big"></div>
     <div data-container="">
       <div data-grid="center">
-        <div data-col="8-sm">
+        <div data-col="8-md">
 <section class="has-margin-middle-big">
   <h1 class="is-h2 align-center is-uppercase">welcome to the atomsphere.</h1>
   <p class="lead is-hyphen-block"><strong>x.ui</strong> is a framework based on the atomic
@@ -278,7 +279,7 @@
 
 <section>
   <ul data-grid="no-gutter" class="periodic-table">
-    <li data-col="6 3-sm">
+    <li data-col="6 3-md">
       <ul data-grid="no-gutter">
         <li class="periodic-family-atoms is-theme-invert_lightest" data-col="12">
           <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
@@ -379,7 +380,7 @@
         </li>
       </ul>
     </li>
-    <li data-col="6 3-sm">
+    <li data-col="6 3-md">
       <ul data-grid="no-gutter">
         <li class="periodic-family-molecules is-theme-invert_lighter" data-col="12">
           <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
@@ -440,7 +441,7 @@
         </li>
       </ul>
     </li>
-    <li data-col="6 3-sm">
+    <li data-col="6 3-md">
       <ul data-grid="no-gutter">
         <li class="periodic-family-organisms is-theme-invert_light" data-col="12">
           <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
@@ -466,7 +467,7 @@
         </li>
       </ul>
     </li>
-    <li data-col="6 3-sm">
+    <li data-col="6 3-md">
       <ul data-grid="no-gutter">
         <li class="periodic-family-modifier is-theme-link" data-col="12">
           <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
@@ -606,7 +607,7 @@
 </section>
     <div data-container>
       <div data-grid="center">
-        <div data-col="8-sm">
+        <div data-col="8-md">
           <h2 class="is-giga align-center is-uppercase" id="the-grid">
             <small class="is-ink-link">layout</small>
             <br>the grid
@@ -771,7 +772,7 @@
       <div class="spacer"></div>
 
       <div data-grid="center">
-        <div data-col="8-sm">
+        <div data-col="8-md">
           <p class="h2 is-uppercase" style="line-height: 1em">
             mobile<span class="is-ink-link">first</span>
             mobile<span class="is-ink-light">landscape</span><span class="is-ink-link">480</span>
