@@ -7,7 +7,7 @@
 
 .is-lifted {
   @include set-breakpoints {
-    box-shadow: 0 16px 16px -4px opacify($is-lifted-shade,0), 0 16px 24px $is-lifted-shade;
+    box-shadow: 0 16px 16px -4px opacify($is-lifted-shade, .1), 0 16px 24px $is-lifted-shade;
   }
 
   &-small {
@@ -18,7 +18,7 @@
 
   &-big {
     @include set-breakpoints {
-      box-shadow: 0 24px 28px 0 opacify($is-lifted-shade,0), 0 24px 40px $is-lifted-shade;
+      box-shadow: 0 24px 28px 0 opacify($is-lifted-shade, .1), 0 24px 40px $is-lifted-shade;
     }
   }
 }
