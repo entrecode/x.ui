@@ -1,16 +1,16 @@
-/// @since 7.0.0
-/// @group data-flex-item
 /// @author Bernhard Ruoff
+/// @since 8.0.0-beta.2
+/// @group data-flex-item
 /// @access public
 
-@include set-data-breakpoints('flex-item', 'grow') {
+@include set-data-breakpoints('flex-item', 'grows') {
   flex: 1 1 auto;
 }
 
-@include set-data-breakpoints('flex-item', 'grow-even') {
+@include set-data-breakpoints('flex-item', 'grows-even') {
   flex: 1;
 }
 
-@include set-data-breakpoints('flex-item', 'fit-self') {
+@include set-data-breakpoints('flex-item', 'fits-self') {
   flex: 0 0 auto;
 }
