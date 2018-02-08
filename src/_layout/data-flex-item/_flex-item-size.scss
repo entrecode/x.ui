@@ -3,14 +3,14 @@
 /// @group data-flex-item
 /// @access public
 
-@include set-data-breakpoints('flex-item', 'grows') {
+@include set-data-breakpoints('flex-item', 'grow') {
   flex: 1 1 auto;
 }
 
-@include set-data-breakpoints('flex-item', 'grows-even') {
+@include set-data-breakpoints('flex-item', 'grow-even') {
   flex: 1;
 }
 
-@include set-data-breakpoints('flex-item', 'fits-self') {
+@include set-data-breakpoints('flex-item', 'fit-self') {
   flex: 0 0 auto;
 }
