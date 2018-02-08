@@ -1,7 +1,7 @@
-/// select
-/// -----------------------------------
-
-//https://codepen.io/Aoyue/pen/rLExYX
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.2
+/// @access public
+/// @group atoms
 
 %select {
   display: flex;
@@ -26,28 +26,6 @@
     z-index: 1;
   }
 
-  .xui-select__placeholder {
-    color: getColor(text, lighter);
-    flex-grow: 1;
-    flex-shrink: 0;
-    user-select: none;
-  }
-
-  &[tabindex] {
-    &:focus {
-      &:after {
-        z-index: 11;
-        transform: rotate(180deg);
-        margin-top: 0;
-        margin-bottom: rem(4);
-      }
-
-      .xui-select-options {
-        display: initial;
-      }
-    }
-  }
-
   &:hover {
     border-color: darken($input-border-color, 20);
     box-shadow: 0 0 0 2px getColor(state, hover);
@@ -62,30 +40,21 @@
   }
 }
 
-nav.xui-select {
-  @extend %select;
+/// select-placeholder
+/// -----------------------------------
+
+%selectPlaceholder {
+  color: getColor(text, lighter);
+  flex-grow: 1;
+  flex-shrink: 0;
+  user-select: none;
 }
 
 /// select-options styles
 /// -----------------------------------
 
-@keyframes selectOptionsPop {
-  0% {
-    opacity: 0;
-    transform: scale(.6);
-  }
-
-  80% {
-    transform: scale(1.1);
-  }
-
-  100% {
-    opacity: 1;
-    transform: initial;
-  }
-}
-
 %select-options {
+  @extend .is-dropdown;
   position: absolute;
   left: 0;
   top: 100%;
@@ -94,9 +63,6 @@ nav.xui-select {
   width: 100%;
   margin: 0;
   margin-top: rem($select-border);
-  animation: selectOptionsPop .2s forwards;
-  transform-origin: top;
-  @extend .is-dropdown;
 }
 
 %select-option {
@@ -113,20 +79,42 @@ nav.xui-select {
     outline: none;
     @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio) {
     }
-    transition: all .4s;
+    transition: background-color .4s, color .4s;
     border-radius: rem($btn-radius);
+  }
+}
+
+nav.xui-select {
+  @extend %select;
+
+  &:focus {
+    &:after {
+      z-index: 11;
+      transform: rotate(180deg);
+      margin-top: 0;
+      margin-bottom: rem(4);
+    }
+
+    .xui-select-options {
+      visibility: visible;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      opacity: 1;
+    }
+  }
+
+  .xui-select__placeholder {
+    @extend %selectPlaceholder;
   }
 }
 
 ul.xui-select-options {
   @extend %select-options;
-  display: none;
+  @extend .is-scrollable-y-contain;
   max-height: rem(240);
-  @extend .is-scrollable-y;
-
-  &:hover {
-    display: initial;
-  }
+  opacity: 0;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0, 0% 0%);
+  visibility: hidden;
+  transition: visibility .5s, clip-path .2s, opacity .2s;
 
   .xui-select-option {
     @extend %select-option;
