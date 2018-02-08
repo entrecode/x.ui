@@ -28,8 +28,8 @@
     </div>
   </div>
 </header>
-<aside v-if="menuActive" data-col="8-xs 6-sm 4-md 2-xl" data-flex="column" style="height:100vh;" class="is-theme is-fixed is-positioned-nw demo-sidebar is-layer-10" data-animate="slideRight 4">
-  <div class="has-padding-big is-scrollable-y" data-flex="self column">
+<aside v-if="menuActive" data-col="8-xs 6-sm 4-md 2-xl" data-flex="is-column" style="height:100vh;" class="is-theme is-fixed is-positioned-nw demo-sidebar is-layer-10" data-animate="slideRight 4">
+  <div class="has-padding-big is-scrollable-y" data-flex="is-column">
     <div class="spacer-big is-visible-xs is-visible-sm"></div>
     <div class="has-padding"><a href="#"><img src="assets/xui-logo-small.svg" style="width:160px;"></a></div>
     <ul class="is-unstyled" style="width: 100%;">
@@ -137,7 +137,7 @@
   </div>
 </aside>
   <div class="xui-demo-body has-transition" :data-col="menuActive ? '+2-xl 10-xl' : ''">
-<div class="hero has-margin has-height-vh-golden" data-flex="center center-items">
+<div class="hero has-margin has-height-vh-golden" data-flex="is-center is-center-items">
   <div class="align-center">
     <img src="assets/xui-logo.svg" alt="x.ui - atomic css framwork" width="240px">
     <div class="spacer-small"></div>
@@ -150,8 +150,8 @@
 </div>
 
     <div class="spacer-big"></div>
-    <div data-container="">
-      <div data-grid="center">
+    <div data-container>
+      <div data-grid="is-center">
         <div data-col="8-md">
 <section class="has-margin-middle-big">
   <h1 class="is-h2 align-center is-uppercase">welcome to the atomsphere.</h1>
@@ -169,7 +169,7 @@
 <div class="bumper-big"></div>
 <section class="has-margin-middle-big">
   <h2 class="is-mega align-center ink-link is-uppercase" id="get-started">get started</h2>
-  <div data-grid="small" data-flex="center-content">
+  <div data-grid="is-small" data-flex="is-center-content">
     <div data-col="4-sm">
       <h6 class="align-center">1. install</h6>
       <pre class="well"><code>npm i x.ui --save</code></pre>
@@ -278,9 +278,9 @@
     </div>
 
 <section>
-  <ul data-grid="no-gutter" class="periodic-table">
+  <ul data-grid="has-no-gutter" class="periodic-table">
     <li data-col="6 3-md">
-      <ul data-grid="no-gutter">
+      <ul data-grid="has-no-gutter">
         <li class="periodic-family-atoms is-theme-invert_lightest" data-col="12">
           <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
             <path fill="#ffffff"
@@ -381,7 +381,7 @@
       </ul>
     </li>
     <li data-col="6 3-md">
-      <ul data-grid="no-gutter">
+      <ul data-grid="has-no-gutter">
         <li class="periodic-family-molecules is-theme-invert_lighter" data-col="12">
           <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
             <path fill="#ffffff"
@@ -442,7 +442,7 @@
       </ul>
     </li>
     <li data-col="6 3-md">
-      <ul data-grid="no-gutter">
+      <ul data-grid="has-no-gutter">
         <li class="periodic-family-organisms is-theme-invert_light" data-col="12">
           <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
             <path fill="#ffffff"
@@ -468,7 +468,7 @@
       </ul>
     </li>
     <li data-col="6 3-md">
-      <ul data-grid="no-gutter">
+      <ul data-grid="has-no-gutter">
         <li class="periodic-family-modifier is-theme-link" data-col="12">
           <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
             <path fill="#ffffff"
@@ -606,7 +606,7 @@
   </ul>
 </section>
     <div data-container>
-      <div data-grid="center">
+      <div data-grid="is-center">
         <div data-col="8-md">
           <h2 class="is-giga align-center is-uppercase" id="the-grid">
             <small class="is-ink-link">layout</small>
@@ -771,7 +771,7 @@
 </div>
       <div class="spacer"></div>
 
-      <div data-grid="center">
+      <div data-grid="is-center">
         <div data-col="8-md">
           <p class="is-h2 is-uppercase" style="line-height: 1em">
             mobile<span class="is-ink-link">first</span>
@@ -821,11 +821,11 @@
     </td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">left</span></td>
+    <td data-col="4"><span class="code">is-left</span></td>
     <td data-col="8">aligns the container left</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">right</span></td>
+    <td data-col="4"><span class="code">is-right</span></td>
     <td data-col="8">aligns the container right</td>
   </tr>
 </table>
@@ -838,22 +838,30 @@
   data-flex values to influence it's behavior.</p>
 <table class="table">
   <tr data-flex>
-    <td data-col="4"><em>empty</em></td>
-    <td data-col="8">activates flex-gird
+    <td data-col="4"><span class="code">is-default</span> or <em>empty</em></td>
+    <td data-col="8">activates flex-grid
       <div class="tag tag_small">default</div>
     </td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">no-gutter</span></td>
+    <td data-col="4"><span class="code">has-no-gutter</span></td>
     <td data-col="8">removes the space between the inline columns</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">small</span></td>
+    <td data-col="4"><span class="code">is-small</span></td>
     <td data-col="8">half sized spaces between columns</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">center</span></td>
+    <td data-col="4"><span class="code">is-start</span></td>
+    <td data-col="8">aligns columns left</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">is-center</span></td>
     <td data-col="8">centers the columns</td>
+  </tr>
+  <tr data-flex>
+    <td data-col="4"><span class="code">is-end</span></td>
+    <td data-col="8">aligns columns right</td>
   </tr>
 </table>
 <div class="spacer"></div>
@@ -885,20 +893,20 @@
 <table class="table">
   <tbody>
   <tr data-flex>
-    <td data-col="4"><span class="code">row</span></td>
+    <td data-col="4"><span class="code">is-row</span></td>
     <td data-col="8">left to right in ltr | right to left in rtl <span
           class="tag tag_small">default</span></td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">row-reverse</span></td>
+    <td data-col="4"><span class="code">is-row-reverse</span></td>
     <td data-col="8">right to left in ltr | left to right in rtl</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">column</span></td>
+    <td data-col="4"><span class="code">is-column</span></td>
     <td data-col="8">same as row but top to bottom</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">column-reverse</span></td>
+    <td data-col="4"><span class="code">is-column-reverse</span></td>
     <td data-col="8">same as row-reverse but bottom to top</td>
   </tr>
   </tbody>
@@ -907,16 +915,16 @@
 <table class="table">
   <tbody>
   <tr data-flex>
-    <td data-col="4"><span class="code">nowrap</span></td>
+    <td data-col="4"><span class="code">is-nowrap</span></td>
     <td data-col="8">all flex items will be on one line <span class="tag tag_small">default</span>
     </td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">wrap</span></td>
+    <td data-col="4"><span class="code">is-wrap</span></td>
     <td data-col="8">flex items will wrap onto multiple lines, from top to bottom</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">wrap-reverse</span></td>
+    <td data-col="4"><span class="code">is-wrap-reverse</span></td>
     <td data-col="8">flex items will wrap onto multiple lines from bottom to top</td>
   </tr>
   </tbody>
@@ -925,27 +933,27 @@
 <table class="table">
   <tbody>
   <tr data-flex>
-    <td data-col="4"><span class="code">start</span></td>
+    <td data-col="4"><span class="code">is-start</span></td>
     <td data-col="8">items are packed toward the start line <span
           class="tag tag_small">default</span>
     </td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">end</span></td>
+    <td data-col="4"><span class="code">is-end</span></td>
     <td data-col="8">items are packed toward to end line</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">center</span></td>
+    <td data-col="4"><span class="code">is-center</span></td>
     <td data-col="8">items are centered along the line</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">between</span></td>
+    <td data-col="4"><span class="code">is-between</span></td>
     <td data-col="8">items are evenly distributed in the line; first item is on the
       start line, last item on the end line
     </td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">around</span></td>
+    <td data-col="4"><span class="code">is-around</span></td>
     <td data-col="8">items are evenly distributed in the line with equal space around
       them
     </td>
@@ -956,27 +964,27 @@
 <table class="table">
   <tbody>
   <tr data-flex>
-    <td data-col="4"><span class="code">start-items</span></td>
+    <td data-col="4"><span class="code">is-start-items</span></td>
     <td data-col="8">cross-start margin edge of the items is placed on the cross-start
       line
     </td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">end-items</span></td>
+    <td data-col="4"><span class="code">is-end-items</span></td>
     <td data-col="8">cross-end margin edge of the items is placed on the cross-end
       line
     </td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">center-items</span></td>
+    <td data-col="4"><span class="code">is-center-items</span></td>
     <td data-col="8">items are centered in the cross-axis</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">baseline-items</span></td>
+    <td data-col="4"><span class="code">is-baseline-items</span></td>
     <td data-col="8">items are aligned such as their baselines align</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">stretch-items</span></td>
+    <td data-col="4"><span class="code">is-stretch-items</span></td>
     <td data-col="8">stretch to fill the container <span
           class="tag tag_small">default</span></td>
   </tr>
@@ -986,29 +994,29 @@
 <table class="table">
   <tbody>
   <tr data-flex>
-    <td data-col="4"><span class="code">start-content</span></td>
+    <td data-col="4"><span class="code">is-start-content</span></td>
     <td data-col="8">lines packed to the start of the container</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">end-content</span></td>
+    <td data-col="4"><span class="code">is-end-content</span></td>
     <td data-col="8">lines packed to the end of the container</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">center-content</span></td>
+    <td data-col="4"><span class="code">is-center-content</span></td>
     <td data-col="8">lines packed to the center of the container</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">space-content</span></td>
+    <td data-col="4"><span class="code">is-space-content</span></td>
     <td data-col="8">lines evenly distributed; the first line is at the start of the
       container while the last one is at the end
     </td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">arround-content</span></td>
+    <td data-col="4"><span class="code">is-arround-content</span></td>
     <td data-col="8">lines evenly distributed with equal space around each line</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">stretch-content</span></td>
+    <td data-col="4"><span class="code">is-stretch-content</span></td>
     <td data-col="8">lines stretch to take up the remaining space <span
           class="tag tag_small">default</span></td>
   </tr>
@@ -1022,15 +1030,15 @@
 <table class="table">
   <tbody>
   <tr data-flex>
-    <td data-col="4"><span class="code">grow</span></td>
+    <td data-col="4"><span class="code">grows</span></td>
     <td data-col="8">items grows to fill it's parent.</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">grow-even</span></td>
+    <td data-col="4"><span class="code">grows-even</span></td>
     <td data-col="8">all children grow evenly an share the space.</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">fit-self</span></td>
+    <td data-col="4"><span class="code">fits-self</span></td>
     <td data-col="8">element doesn't shrink and grows up to its content size.</td>
   </tr>
   </tbody>
@@ -1039,27 +1047,27 @@
 <table class="table">
   <tbody>
   <tr data-flex>
-    <td data-col="4"><span class="code">auto</span></td>
+    <td data-col="4"><span class="code">is-auto</span></td>
     <td data-col="8">Default. The element inherits its parent container's align-items property, or "stretch" if it has no parent container.</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">stretch</span></td>
+    <td data-col="4"><span class="code">is-stretch</span></td>
     <td data-col="8">The element is positioned to fit the container.</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">center</span></td>
+    <td data-col="4"><span class="code">is-center</span></td>
     <td data-col="8">The element is positioned at the center of the container.</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">start</span></td>
+    <td data-col="4"><span class="code">is-start</span></td>
     <td data-col="8">The element is positioned at the beginning of the container.</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">end</span></td>
+    <td data-col="4"><span class="code">is-end</span></td>
     <td data-col="8">The element is positioned at the end of the container.</td>
   </tr>
   <tr data-flex>
-    <td data-col="4"><span class="code">baseline</span></td>
+    <td data-col="4"><span class="code">is-baseline</span></td>
     <td data-col="8">The element is positioned at the baseline of the container.</td>
   </tr>
   </tbody>
@@ -1190,7 +1198,7 @@
   <h3 class="is-kilo" id="list">ul/ol</h3>
   <div data-grid>
     <div data-col="6-sm">
-      <div class="well" data-flex="center-items">
+      <div class="well" data-flex="is-center-items">
         <ul class="is-unstyled">
           <li>list item 01</li>
           <li>list item 02</li>
@@ -1206,7 +1214,7 @@
 </ul></code></pre>
     </div>
     <div data-col="6-sm">
-      <div class="well" data-flex="center-items">
+      <div class="well" data-flex="is-center-items">
         <ul class="is-inline">
           <li>list item 01</li>
           <li>list item 02</li>
@@ -1482,33 +1490,33 @@
       <div class="well">
         <nav class="xui-select" tabindex="0">
           <span class="xui-select__placeholder">alle Formate</span>
-          <ul class="xui-select-options">
-            <li class="xui-select-option" tabindex="0">
-              <a href="">Options 1</a>
+          <ul class="xui-select-options" tabindex="0">
+            <li class="xui-select-option">
+              <a href="#xui-select">Options 1</a>
             </li>
-            <li class="xui-select-option" tabindex="0">
-              <a href="">Options 2</a>
+            <li class="xui-select-option">
+              <a href="#xui-select">Options 2</a>
             </li>
-            <li class="xui-select-option" tabindex="0">
-              <a href="">Options 3</a>
+            <li class="xui-select-option">
+              <a href="#xui-select">Options 3</a>
             </li>
-            <li class="xui-select-option" tabindex="0">
-              <a href="">Options 4</a>
+            <li class="xui-select-option">
+              <a href="#xui-select">Options 4</a>
             </li>
-            <li class="xui-select-option" tabindex="0">
-              <a href="">Options 5</a>
+            <li class="xui-select-option">
+              <a href="#xui-select">Options 5</a>
             </li>
-            <li class="xui-select-option" tabindex="0">
-              <a href="">Options 6</a>
+            <li class="xui-select-option">
+              <a href="#xui-select">Options 6</a>
             </li>
-            <li class="xui-select-option" tabindex="0">
-              <a href="">Options 7</a>
+            <li class="xui-select-option">
+              <a href="#xui-select">Options 7</a>
             </li>
-            <li class="xui-select-option" tabindex="0">
-              <a href="">Options 8</a>
+            <li class="xui-select-option">
+              <a href="#xui-select">Options 8</a>
             </li>
-            <li class="xui-select-option" tabindex="0">
-              <a href="">Options 9</a>
+            <li class="xui-select-option">
+              <a href="#xui-select">Options 9</a>
             </li>
           </ul>
         </nav>
@@ -1560,7 +1568,7 @@
 
 <div class="bumper"></div><section>
   <h3 id="xui-checkbox" class="is-kilo">xui-checkbox</h3>
-  <div class="well" data-flex="center">
+  <div class="well" data-flex="is-center">
     <div data-col="4">
       <div class="xui-checkbox">
         <input id="xuiCheckbox" type="checkbox">
@@ -1583,7 +1591,7 @@
 <div class="bumper"></div>
 <section>
   <h3 id="xui-radio" class="is-kilo">xui-radio</h3>
-  <div class="well" data-flex="center">
+  <div class="well" data-flex="is-center">
     <div data-col="4">
       <div class="xui-radio">
         <input id="xuiRadio" type="radio">
@@ -1606,7 +1614,7 @@
 <div class="bumper"></div>
 <section>
   <h3 id="xui-toggle" class="is-kilo">xui-toggle</h3>
-  <div class="well" data-flex="center">
+  <div class="well" data-flex="is-center">
     <div class="xui-toggle">
       <input id="xuiToggle" type="checkbox">
       <label for="xuiToggle">
@@ -1658,10 +1666,10 @@
   <p>there are three basic button styles which should be used to to emphasis or weaken
     functions. Throughout <strong>x.ui</strong> there are three steps of importance. The
     default style always reached with the default class <span class="code">btn</span>, the
-    minor style by an additional modifier class <span class="code">btn_minor</span>and the
+    minor style by an additional modifier class <span class="code">btn_minor</span> and the
     superior style by the additional modifier <span class="code">btn_super</span></p>
   <div class="well">
-    <ul data-grid="small">
+    <ul data-grid="is-small">
       <li v-for="(value, key) in atoms.btn.styles" data-col="4">
         <a class="btn btn_block" :class="value">${key}</a>
       </li>
@@ -1676,7 +1684,7 @@
   <div class="spacer"></div>
   <h4 class="is-h6">button style modifier</h4>
   <div class="well">
-    <ul data-grid="small center">
+    <ul data-grid="is-small is-center">
       <li v-for="(value, key) in atoms.btn.modifiers" class="align-center"
           data-col="4-sm 2-md">
         <a class="btn btn_block" :class="value">${key}</a>
@@ -1688,7 +1696,7 @@
   <div class="spacer"></div>
   <h4 class="is-h6">button size modifier</h4>
   <div class="well">
-    <ul data-grid="small center">
+    <ul data-grid="is-small is-center">
       <li v-for="(value, key) in atoms.btn.sizes" data-col="6 4-sm" class="align-center">
         <a class="btn" :class="value">${ key }</a><br>
         <span class="code" style="margin-top: 8px;">btn_${key}</span>
@@ -1698,7 +1706,7 @@
   <div class="spacer"></div>
   <h4 class="is-h6">button width modifier</h4>
   <div class="well">
-    <ul data-grid="small center">
+    <ul data-grid="is-small is-center">
       <li v-for="(value, key) in atoms.btn.width" data-col="6-sm" class="align-center">
         <a class="btn" :class="[value]">${key}</a><br v-if="value !== 'btn_block'">
         <span class="code" style="margin-top: 8px;">btn_${key}</span>
@@ -1714,7 +1722,7 @@
   <h3 id="btn-glow" class="is-kilo">btn_glow</h3>
   <p>modifier to simulate a 3D glowing effect.</p>
   <div class="well">
-    <div data-grid data-flex="center">
+    <div data-grid data-flex="is-center">
       <div data-col="6 3-sm">
         <a href="" class="btn btn_block btn_big btn_glow">Button</a>
       </div>
@@ -1750,14 +1758,14 @@
   <h3 id="bubble" class="is-kilo">bubble</h3>
   <div class="well">
     <div data-grid>
-      <div data-col="6 4-sm" data-flex="center-items center">
+      <div data-col="6 4-sm" data-flex="is-center-items is-center">
         <a class="btn"><span>bubble </span><span
               class="bubble bubble_small bubble_invert">2</span></a>
       </div>
-      <div data-col="3 4-sm" data-flex="center-items center">
+      <div data-col="3 4-sm" data-flex="is-center-items is-center">
         <a class="btn"><span class="bubble bubble_invert">2</span></a>
       </div>
-      <div data-col="3 4-sm" data-flex="center-items center">
+      <div data-col="3 4-sm" data-flex="is-center-items is-center">
         <span class="bubble bubble_link">2</span>
       </div>
     </div>
@@ -1806,13 +1814,13 @@
   <h3 id="tag" class="is-kilo">tag</h3>
   <div class="well">
     <div data-grid>
-      <div data-col="6 4-sm" data-flex="center-items center">
+      <div data-col="6 4-sm" data-flex="is-center-items is-center">
         <a class="btn"><span>button </span><span class="tag tag_small tag_invert">tag</span></a>
       </div>
-      <div data-col="3 4-sm" data-flex="center-items center">
+      <div data-col="3 4-sm" data-flex="is-center-items is-center">
         <span class="tag tag_link">tag</span>
       </div>
-      <div data-col="3 4-sm" data-flex="center-items center">
+      <div data-col="3 4-sm" data-flex="is-center-items is-center">
         <a class="tag tag_link">tag</a>
       </div>
     </div>
@@ -1862,8 +1870,8 @@
     <span class="tag tag_small tag_error">in progress</span>
   </h3>
   <div class="well">
-    <div data-grid="small">
-      <div data-col="6 3-sm" data-flex="center-sm">
+    <div data-grid="is-small">
+      <div data-col="6 3-sm" data-flex="is-center-sm">
         <nav class="dropdown dropdown_center has-margin-bottom" tabindex="0"
              data-flex-item="grow-xs">
           <span class="btn btn_invert is-raised btn_block">dropdown center</span>
@@ -1881,7 +1889,7 @@
           </ul>
         </nav>
       </div>
-      <div data-col="6 3-sm" data-flex="center-sm">
+      <div data-col="6 3-sm" data-flex="is-center-sm">
         <nav class="dropdown dropdown_right has-margin-bottom" tabindex="0"
              data-flex-item="grow-xs">
           <span class="btn btn_invert is-raised btn_block">dropdown right</span>
@@ -1899,7 +1907,7 @@
           </ul>
         </nav>
       </div>
-      <div data-col="6 3-sm" data-flex="center-sm">
+      <div data-col="6 3-sm" data-flex="is-center-sm">
         <nav class="dropdown dropdown_left has-margin-bottom" tabindex="0"
              data-flex-item="grow-xs">
           <span class="btn btn_invert is-raised btn_block">dropdown left</span>
@@ -1917,7 +1925,7 @@
           </ul>
         </nav>
       </div>
-      <div data-col="6 3-sm" data-flex="center-sm">
+      <div data-col="6 3-sm" data-flex="is-center-sm">
         <nav class="dropdown dropdown_full has-margin-bottom" tabindex="0"
              data-flex-item="grow-xs">
           <span class="btn btn_invert is-raised btn_block">dropdown full</span>
@@ -1935,7 +1943,7 @@
           </ul>
         </nav>
       </div>
-      <div data-col="6 3-sm" data-flex="center-sm">
+      <div data-col="6 3-sm" data-flex="is-center-sm">
         <nav class="dropdown dropdown_center dropdown_above has-margin-bottom" tabindex="0"
              data-flex-item="grow-xs">
           <span class="btn btn_invert is-raised btn_block">center above</span>
@@ -1953,7 +1961,7 @@
           </ul>
         </nav>
       </div>
-      <div data-col="6 3-sm" data-flex="center-sm">
+      <div data-col="6 3-sm" data-flex="is-center-sm">
         <nav class="dropdown dropdown_right dropdown_above has-margin-bottom" tabindex="0"
              data-flex-item="grow-xs">
           <span class="btn btn_invert is-raised btn_block">right above</span>
@@ -1971,7 +1979,7 @@
           </ul>
         </nav>
       </div>
-      <div data-col="6 3-sm" data-flex="center-sm">
+      <div data-col="6 3-sm" data-flex="is-center-sm">
         <nav class="dropdown dropdown_left dropdown_above has-margin-bottom" tabindex="0"
              data-flex-item="grow-xs">
           <span class="btn btn_invert is-raised btn_block">left above</span>
@@ -1989,7 +1997,7 @@
           </ul>
         </nav>
       </div>
-      <div data-col="6 3-sm" data-flex="center-sm">
+      <div data-col="6 3-sm" data-flex="is-center-sm">
         <nav class="dropdown dropdown_full dropdown_above has-margin-bottom" tabindex="0"
              data-flex-item="grow-xs">
           <span class="btn btn_invert is-raised btn_block">full above</span>
@@ -2049,9 +2057,9 @@
     <span class="code">.dropdown</span>
     with all their modifier classes.</p>
 
-  <div data-grid="small">
+  <div data-grid="is-small">
     <div data-col="6-sm">
-      <div class="well" data-flex="center">
+      <div class="well" data-flex="is-center">
         <div class="btn-group">
           <a href="" class="btn">button</a>
           <a href="" class="btn">button</a>
@@ -2067,7 +2075,7 @@
     </div>
 
     <div data-col="6-sm">
-      <div class="well" data-flex="center">
+      <div class="well" data-flex="is-center">
         <div class="btn-group">
           <nav class="dropdown dropdown_left dropdown_above" tabindex="0">
             <span class="btn btn_round">Options</span>
@@ -2384,7 +2392,7 @@
     or<span class="code">div</span>. all atoms and molecules can be used within the
     list-items.</p>
   <div data-grid="">
-    <div data-col="6-sm" data-flex="center-items">
+    <div data-col="6-sm" data-flex="is-center-items">
       <div class="xui-list-group">
         <div class="xui-list-group__header">
           <h6>header</h6>
@@ -2573,7 +2581,7 @@
        class="tag tag_error tag_small">target</a>
     <span class="tag tag_small tag_super">css only</span>
   </h4>
-  <div class="well" data-flex="center">
+  <div class="well" data-flex="is-center">
     <div class="xui-overlay" data-col="4-sm">
       <a href="#" class="xui-overlay__dismiss">&times;</a>
       <div class="has-padding">
@@ -2585,7 +2593,7 @@
     </div>
   </div>
 
-  <div class="well" data-flex="center">
+  <div class="well" data-flex="is-center">
     <a href="#overlayDemo" class="btn btn_glow">open overlay</a>
     <div class="xui-overlay-wrapper is-targeted has-backdrop" id="overlayDemo">
       <div class="xui-overlay is-fixed is-positioned-0" data-col="8-xs 4-sm">
@@ -2766,10 +2774,10 @@
     thumbnail, you should use square assets with a matching size.</p>
   <div class="well">
     <div data-grid>
-      <div data-col="6" data-flex="center">
+      <div data-col="6" data-flex="is-center">
         <div class="avatar"><img src="assets/avatar.jpg" alt=""></div>
       </div>
-      <div data-col="6" data-flex="center">
+      <div data-col="6" data-flex="is-center">
         <div class="avatar avatar_square"><img src="assets/avatar.jpg" alt=""></div>
       </div>
     </div>
@@ -2890,7 +2898,7 @@
     </div>
   </div>
   <table class="table">
-    <tr data-grid="no-gutter">
+    <tr data-grid="has-no-gutter">
       <td data-col="4"><strong>{side}</strong></td>
       <td data-col="8">
         <ul class="is-unstyled">
@@ -3043,17 +3051,17 @@
     <span class="is-h6">{state}-{property}-{sides}-{size}</span>
   </div>
   <table class="table">
-    <tr data-grid="no-gutter">
+    <tr data-grid="has-no-gutter">
       <td data-col="4"><strong>{state}</strong></td>
       <td data-col="8"><span class="code">has</span> or <span class="code">no</span></td>
     </tr>
-    <tr data-grid="no-gutter">
+    <tr data-grid="has-no-gutter">
       <td data-col="4"><strong>{property}</strong></td>
       <td data-col="8">either <span class="code">padding</span> or <span
             class="code">margin</span>
       </td>
     </tr>
-    <tr data-grid="no-gutter">
+    <tr data-grid="has-no-gutter">
       <td data-col="4"><strong>{sides}</strong></td>
       <td data-col="8">
         <ul class="is-unstyled">
@@ -3065,7 +3073,7 @@
         </ul>
       </td>
     </tr>
-    <tr data-grid="no-gutter">
+    <tr data-grid="has-no-gutter">
       <td data-col="4"><strong>{size}</strong></td>
       <td data-col="8">
         <ul class="is-unstyled">
@@ -3095,7 +3103,7 @@
     min-height of an element relative to its parent or to the viewport.
   </p>
   <table class="table">
-    <tr data-grid="no-gutter">
+    <tr data-grid="has-no-gutter">
       <td data-col="4"><strong>{relation}</strong></td>
       <td data-col="8">
         <ul class="is-unstyled">
@@ -3104,7 +3112,7 @@
           <li><span class="code">vh</span> - relative to viewport height</li>
         </ul>
     </tr>
-    <tr data-grid="no-gutter">
+    <tr data-grid="has-no-gutter">
       <td data-col="4"><strong>{ratio}</strong></td>
       <td data-col="8">
         <ul class="is-unstyled">
@@ -3128,7 +3136,7 @@
   <p>the <span class="code">has-width</span> is an additional size modifier, that can be
     used instead of <span class="col">data-col</span>.</p>
   <table class="table">
-    <tr data-grid="no-gutter">
+    <tr data-grid="has-no-gutter">
       <td data-col="4"><strong>{relation}</strong></td>
       <td data-col="8">
         <ul class="is-unstyled">
@@ -3137,7 +3145,7 @@
           <li><span class="code">vh</span> - relative to viewport height</li>
         </ul>
     </tr>
-    <tr data-grid="no-gutter">
+    <tr data-grid="has-no-gutter">
       <td data-col="4"><strong>{ratio}</strong></td>
       <td data-col="8">
         <ul class="is-unstyled">
@@ -3174,7 +3182,7 @@
                   href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
   </div>
   <table class="table">
-    <tr data-grid="no-gutter">
+    <tr data-grid="has-no-gutter">
       <td data-col="4"><strong>{overflow}</strong></td>
       <td data-col="8">
         <ul class="is-unstyled">
@@ -3182,10 +3190,17 @@
           <li><span class="code">scrollable</span> - for overflow scroll</li>
         </ul>
     </tr>
-    <tr data-grid="no-gutter">
+    <tr data-grid="has-no-gutter">
       <td data-col="4"><strong>{axis}</strong></td>
       <td data-col="8">
         <em>empty</em> <span class="code">x</span> <span class="code">y</span>
+      </td>
+    </tr>
+    <tr data-grid="has-no-gutter">
+      <td data-col="4"><strong>special</strong></td>
+      <td data-col="8">
+        <span class="code">x-contain</span> <span class="code">y-contain</span><br>
+        elements with this class, only scroll inside itself
       </td>
     </tr>
   </table>
@@ -3222,7 +3237,7 @@
     <span class="is-h6">is-layer-{layer}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
   </div>
   <table class="table">
-    <tr data-grid="no-gutter">
+    <tr data-grid="has-no-gutter">
       <td data-col="4"><strong>{layer}</strong></td>
       <td data-col="8">
         <ul class="is-unstyled">
@@ -3274,7 +3289,7 @@
   </h3>
 
   <div class="well">
-    <div data-grid="small" data-flex="center center-items">
+    <div data-grid="is-small" data-flex="is-center is-center-items">
       <div data-col="3">
         <div class="form-group">
           <label for="anaimationType">animation</label>
@@ -3324,7 +3339,7 @@
 
 <section class="is-theme_dark" id="ec-icon">
   <div data-container>
-    <div data-grid="center">
+    <div data-grid="is-center">
       <div data-col="6-md">
         <div class="has-padding-big">
           <div class="align-center">
@@ -3343,9 +3358,9 @@
   </div>
   <div class="spacer"></div>
   <div class="has-padding">
-    <div data-grid="center">
+    <div data-grid="is-center">
       <div data-col="12 10-md 8-xxl">
-        <ul data-grid="small">
+        <ul data-grid="is-small">
           <li v-for="icon in iconset" data-col="6-xs 3-sm"
               :class="{'is-hidden': icon.indexOf(query) === -1}">
             <span class="ec-icon" :class="icon"></span><span

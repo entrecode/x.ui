@@ -2,8 +2,8 @@
   font-family: monospace;
   background-color: rgba(black, .06);
   color: setContrast(rgba(black, .06), getColor(link));
-  font-size: rem(12);
-  line-height: inherit;
+  font-size: 12px;
+  line-height: $base-line-height * $base-font-size + px;
   padding: 0 rem(8);
   display: inline-block;
   font-weight: normal;

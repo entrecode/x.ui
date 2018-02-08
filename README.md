@@ -1,4 +1,4 @@
-![x.ui](docs/assets/xui-logo-small.svg?raw=true "x.ui")
+![x.ui](https://raw.githubusercontent.com/entrecode/x.ui/develop/docs/assets/xui-logo-small.svg?raw=true "x.ui")
 # x.ui 8.0.0-beta.1 - gooseberry
 **x.ui** is a framework based on the atomic design methodology. this workflow is inspired by nature and physics and has a pretty serious focus on modularity and structure. its structure begins with the smallest part and builds up to complex structure. as a result, there is very little redundancy with a remarkable flexibility.
 
