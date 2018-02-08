@@ -16,10 +16,10 @@
   @include container();
 }
 
-[data-container*='left'] {
-  margin: 0 0 0 auto;
+[data-container*='is-left'] {
+  margin: 0 auto 0 0;
 }
 
-[data-container*='right'] {
-  margin: 0 auto 0 0;
+[data-container*='is-right'] {
+  margin: 0 0 0 auto;
 }
