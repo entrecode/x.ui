@@ -53,7 +53,7 @@
   .xui-toggle__switch {
     @extend %toggle;
     margin-right: rem(8);
-    margin-top: (($base-font-size * $base-line-height - $root-size) / 2)
+    margin-top: rem(($base-font-size * $base-line-height - $root-size) / 2);
   }
 
   label {

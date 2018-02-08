@@ -6,7 +6,7 @@
 @mixin container() {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: $grid-container-width;
+  max-width: $grid-container-width + px;
   padding-left: ($grid-gutter / 2) + px;
   padding-right: ($grid-gutter / 2) + px;
   width: 100%;

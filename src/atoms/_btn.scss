@@ -161,14 +161,14 @@
 
   /// buttons with a minimum width
   &.btn_wide {
-    min-width: $btn-wide;
+    min-width: rem($btn-wide);
 
     &.btn_small {
-      min-width: $btn-small-wide;
+      min-width: rem($btn-small-wide);
     }
 
     &.btn_big {
-      min-width: $btn-big-wide;
+      min-width: rem($btn-big-wide);
     }
   }
 
