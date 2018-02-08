@@ -1,7 +1,13 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.2
 /// @access public
 /// @group modifier
+
+.is-static {
+  @include set-breakpoints {
+    position: static;
+  }
+}
 
 .is-relative {
   @include set-breakpoints {
@@ -18,5 +24,12 @@
 .is-fixed {
   @include set-breakpoints {
     position: fixed;
+  }
+}
+
+.is-sticky {
+  @include set-breakpoints {
+    position: -webkit-sticky;
+    position: sticky;
   }
 }
