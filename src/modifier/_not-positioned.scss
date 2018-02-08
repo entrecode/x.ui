@@ -1,0 +1,14 @@
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.2
+/// @access public
+/// @group modifier
+
+.not-positioned {
+  @include set-breakpoints {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: initial;
+  }
+}
