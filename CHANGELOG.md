@@ -1,15 +1,15 @@
 ## 8.0.0-beta.2
 ### breaking changes
 - changed data-container values to `is-left` and `is-right`
-- changed data-grid values to `is-small`, `is-default`, `has-no-gutter`, `is-center`, 'is-start' and 'is-end'
+- changed data-grid values to `is-small`, `is-default`, `no-gutter`, `is-center`, 'is-start' and 'is-end'
 - changed data-flex direction values to 'is-column', 'is-column-reverse', 'is-row', 'is-row-reverse'
 - changed data-flex wrap values to 'is-wrap', 'is-nowrap', 'is-wrap-reverse'
 - changed data-flex justify values to 'is-around', 'is-between', 'is-center', 'is-start', 'is-end'
 - changed data-flex items values to 'is-end-items', 'is-start-items', 'is-center-items', 'is-baseline-items', 'is-stretch-items'
 - changed data-flex content values to 'is-end-content', 'is-start-content', 'is-center-content', 'is-stretch-content', 'is-between-content', 'is-around-content'
-- changed data-flex-item size values to 'grows', 'grows-even', 'fits-self'
+- changed data-flex-item size values to 'grow', 'grow-even', 'fit-self'
 - changed data-flex-item align values to 'is-auto', 'is-baseline', 'is-stretch', 'is-center', 'is-start', 'is-end'
-- changed data-col value to `has-no-gutter`
+- changed data-col value to `no-gutter`
 - changed data-flex-order value to `is-first` and `is-last`
 - removed data-flex="center-all"
 - removed all units from default config, only using numbers
@@ -17,7 +17,9 @@
 ### changes
 - fixed `.xui-select` click bug
 - fixed `.xui-dropdown` click bug
+- added shadow color config for `.is-raised` and `.is-lifted`
 - additional overflow modifier classes `is-scrollable-y-contain` and `is-scrollable-x-contain`
+- fixed `.input_round` styles
 
 ## 8.0.0-beta.1
 ### breaking changes

@@ -1,0 +1,26 @@
+.demo-sidebar {
+  border-right: 1px solid getColor(divider);
+
+  a {
+    color: getColor(text);
+
+    &:hover {
+      color: getColor(link);
+    }
+  }
+
+  h3 {
+    margin: rem(16) 0 0 0;
+  }
+
+  ul {
+    li {
+      padding: rem(4) 0;
+
+      ul {
+        margin-top: rem(4);
+        margin-left: rem(16);
+      }
+    }
+  }
+}
