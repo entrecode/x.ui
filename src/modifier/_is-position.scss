@@ -3,12 +3,6 @@
 /// @access public
 /// @group modifier
 
-.is-static {
-  @include set-breakpoints {
-    position: static;
-  }
-}
-
 .is-relative {
   @include set-breakpoints {
     position: relative;
@@ -31,5 +25,11 @@
   @include set-breakpoints {
     position: -webkit-sticky;
     position: sticky;
+  }
+}
+
+.is-static {
+  @include set-breakpoints {
+    position: static;
   }
 }
