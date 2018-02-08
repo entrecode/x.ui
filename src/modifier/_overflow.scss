@@ -28,17 +28,29 @@
   }
 
   &-x {
+    &-contain {
+      @include set-breakpoints {
+        overflow-x: scroll;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
     @include set-breakpoints {
       overflow-x: scroll;
-      overscroll-behavior-x: contain;
       -webkit-overflow-scrolling: touch;
     }
   }
 
   &-y {
+    &-contain {
+      @include set-breakpoints {
+        overflow-y: scroll;
+        overscroll-behavior-y: contain;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
     @include set-breakpoints {
       overflow-y: scroll;
-      overscroll-behavior-y: contain;
       -webkit-overflow-scrolling: touch;
     }
   }
