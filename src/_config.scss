@@ -717,6 +717,16 @@ $is-rounded-min-radius: 2 !default;
 $is-rounded-radius: 4 !default;
 $is-rounded-max-radius: 8 !default;
 
+/// is-lifted
+/// ------------------------------------------------------
+/// @param {color} $is-lifted-shade [rgba(black, .1)]
+$is-lifted-shade: rgba(black, .1)!default;
+
+/// is-raised
+/// ------------------------------------------------------
+/// @param {color} $is-raised-shade [rgba(black, .1)]
+$is-raised-shade: rgba(black, .1)!default;
+
 /// fab
 /// ------------------------------------------------------
 
