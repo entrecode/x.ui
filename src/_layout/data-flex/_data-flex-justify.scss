@@ -3,7 +3,7 @@
 /// @author Bernhard Ruoff
 /// @access public
 
-$values: 'around', 'between', 'center', 'start', 'end';
+$values: 'is-around', 'is-between', 'is-center', 'is-start', 'is-end';
 $css: 'space-around', 'space-between', 'center', 'flex-start', 'flex-end';
 
 @each $value in $values {
