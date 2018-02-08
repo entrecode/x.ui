@@ -50,7 +50,7 @@
   }
 }
 
-@include set-data-breakpoints('grid', 'has-no-gutter') {
+@include set-data-breakpoints('grid', 'no-gutter') {
   margin-left: 0 !important;
   margin-right: 0 !important;
 
