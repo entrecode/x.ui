@@ -1,15 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Knewave');
-
-.special-font,
 .demo-header {
-  font-family: 'Knewave', sans-serif;
-  color: getColor(text);
-  -webkit-text-fill-color: transparent;
-  background: -webkit-linear-gradient(transparent, transparent),
-  url('assets/text-pattern.png') repeat;
-  background: -o-linear-gradient(transparent, transparent);
-  -webkit-background-clip: text;
-  background-size: 160px auto;
   text-transform: uppercase;
   text-align: center;
 }
