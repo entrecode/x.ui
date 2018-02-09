@@ -16,10 +16,10 @@
   @include container();
 }
 
-[data-container*='is-left'] {
+@include set-data-breakpoints('container', 'is-left') {
   margin: 0 auto 0 0;
 }
 
-[data-container*='is-right'] {
+@include set-data-breakpoints('container', 'is-right') {
   margin: 0 0 0 auto;
 }
