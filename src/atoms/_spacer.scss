@@ -12,12 +12,14 @@
   @include set-breakpoints {
     height: rem($base-padding*2);
     flex-shrink: 0;
+    width: 100%;
   }
 
   &-small {
     @include set-breakpoints {
       height: rem($base-padding);
       flex-shrink: 0;
+      width: 100%;
     }
   }
 
@@ -25,6 +27,7 @@
     @include set-breakpoints {
       height: rem($base-padding*3);
       flex-shrink: 0;
+      width: 100%;
     }
   }
 }
