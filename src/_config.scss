@@ -109,10 +109,10 @@ $breakpoints: (
         'xs': 0, // smartphone
         'sm': 480, // smartphone landscape
         'md': 720, // tablet
+        'nav': 1024, // breakpoint for mobile navigation
         'lg': 1024, // tablet landscape
         'xl': 1280, // desktop
-        'xxl': 1920, // large
-        'nav': 720 // breakpoint for mobile navigation
+        'xxl': 1920 // large
 ) !default;
 
 ///
@@ -721,12 +721,12 @@ $is-rounded-max-radius: 8 !default;
 /// is-lifted
 /// ------------------------------------------------------
 /// @param {color} $is-lifted-shade [rgba(black, .1)]
-$is-lifted-shade: rgba(black, .1)!default;
+$is-lifted-shade: rgba(black, .1) !default;
 
 /// is-raised
 /// ------------------------------------------------------
 /// @param {color} $is-raised-shade [rgba(black, .1)]
-$is-raised-shade: rgba(black, .1)!default;
+$is-raised-shade: rgba(black, .1) !default;
 
 /// fab
 /// ------------------------------------------------------
