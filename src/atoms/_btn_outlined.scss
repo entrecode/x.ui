@@ -52,13 +52,13 @@
     }
 
     &.btn_minor {
-      color: getColor(link);
+      color: setContrast(getColor(minor), getColor(minor));
       border-color: getColor(minor);
 
       &.is-active,
       &:hover,
       &:focus {
-        color: getColor(link);
+        color: setContrast(getColor(minor), getColor(minor));
         border-color: setHover($minor);
       }
     }
