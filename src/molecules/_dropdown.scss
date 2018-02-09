@@ -1,5 +1,5 @@
-/// @author Bernhard Ruoff, Michael Locher
-/// @since 7.0.0
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.2
 /// @access public
 /// @group molecules
 ///
@@ -8,81 +8,47 @@
 /// @param {color} $dropdown-background
 /// @param {value} $dropdown-shadow
 
-@keyframes rollDownDropdown {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 nav.dropdown {
   outline: none;
   position: relative;
   outline: none;
   cursor: pointer;
 
-  &:focus {
-    > .dropdown-options {
-      display: initial;
-    }
-  }
-
-  .dropdown-options {
-    &:hover {
-      display: initial;
-    }
-  }
-
-  &.on-hover {
-    &:hover {
-      ul.dropdown-options {
-        display: initial;
-      }
-    }
-  }
-
   ul.dropdown-options {
-    position: absolute;
-    top: 100%;
-    max-height: 320px;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
-    display: none;
-    z-index: 10;
+    @extend .is-dropdown;
+    @extend .is-scrollable-y-contain;
     list-style: none;
     margin: 0;
-    animation: rollDownDropdown .4s forwards;
-    @extend .is-dropdown;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+    max-height: rem(320);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility .5s, opacity .2s;
 
-    li {
+    .dropdown-option {
       display: block;
 
-      &.dropdown-option {
+      > a:not(.btn) {
+        @extend %btn, .btn.btn_block !optional;
 
-        > a:not(.btn) {
-          @extend %btn, .btn.btn_block !optional;
-          margin: 0;
-
-          &:hover {
-            background-color: getColor(state, hover);
-          }
-        }
-
-        > .btn {
-          @extend .btn.btn_block !optional;
-          margin: 0;
+        &:hover {
+          background-color: getColor(state, hover);
         }
       }
 
-      &.dropdown_divider {
-        margin: rem(4) 0;
-        padding: 0;
-        background-color: getColor(divider);
-        height: 1px;
+      > .btn {
+        @extend .btn.btn_block !optional;
       }
+    }
+
+    .dropdown_divider {
+      margin: rem(4) 0;
+      padding: 0;
+      background-color: getColor(divider);
+      height: 1px;
     }
   }
 
@@ -112,11 +78,42 @@ nav.dropdown {
     }
   }
 
+  &:focus {
+    > .dropdown-options {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &.on-hover {
+    &:hover {
+      ul.dropdown-options {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
   &.dropdown_above {
     ul.dropdown-options {
       top: initial;
       bottom: 100%;
     }
+
+    &:focus {
+      > .dropdown-options {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    &.on-hover {
+      &:hover {
+        ul.dropdown-options {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
   }
 }
-

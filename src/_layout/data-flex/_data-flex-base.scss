@@ -12,8 +12,3 @@
     margin: 0;
   }
 }
-
-@include set-data-breakpoints('flex', 'center-all') {
-  justify-content: center;
-  align-items: center;
-}

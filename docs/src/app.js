@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     delimiters: ['${', '}'],
     el: '#app',
     data: {
-      menuActive: true,
+      menuActive: false,
       hamburgerActive: false,
       render: true,
       selectedAnimation: 'ambulance',

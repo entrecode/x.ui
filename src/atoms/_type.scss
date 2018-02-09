@@ -15,7 +15,7 @@
 body {
   font-family: $body-font;
   color: getColor(text);
-  font-size: $base-font-size;
+  font-size: rem($base-font-size);
   line-height: $base-line-height;
 }
 
@@ -47,7 +47,7 @@ a {
 p {
   @include get-font-size(p);
   margin: 0;
-  margin-bottom: $vertical-rhythm;
+  margin-bottom: rem($vertical-rhythm);
 
   strong,
   small {

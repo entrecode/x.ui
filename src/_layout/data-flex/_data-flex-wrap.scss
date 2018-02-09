@@ -1,9 +1,9 @@
-/// @since 7.0.0
-/// @group flex-grid
 /// @author Bernhard Ruoff
+/// @since 8.0.0-beta.2
+/// @group flex-grid
 /// @access public
 
-$values: 'wrap', 'nowrap', 'wrap-reverse';
+$values: 'is-wrap', 'is-nowrap', 'is-wrap-reverse';
 $css: 'wrap', 'nowrap', 'wrap-reverse';
 
 @each $value in $values {

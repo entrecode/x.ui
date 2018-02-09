@@ -6,9 +6,9 @@
 $body-font: sans-serif !default;
 $headings-font: sans-serif !default;
 
-/// @param {number} $is-light - font-weight value for .is-light
-/// @param {number} $is-normal - font-weight value for .is-normal
-/// @param {number} $is-bold - font-weight value for .is-bold
+/// @param {value} $is-light [lighter] - font-weight value for .is-light
+/// @param {value} $is-normal [normal] - font-weight value for .is-normal
+/// @param {value} $is-bold [bold] - font-weight value for .is-bold
 $is-light: lighter !default;
 $is-normal: normal !default;
 $is-bold: bold !default;
@@ -45,10 +45,14 @@ $background-lightest: null;
 $text-invert: $background !default;
 
 /// text shading variables
+/// @param {color} $text-light [rgba($text, .6)]
+/// @param {color} $text-lighter [rgba($text, .4)]
+/// @param {color} $text-lightest [rgba($text, .2)]
 $text-light: rgba($text, .6);
 $text-lighter: rgba($text, .4);
 $text-lightest: rgba($text, .2);
 
+/// @param {color} $backdrop [rgba(black, .8)]
 $backdrop: rgba(black, .8);
 
 /// @param {number} $hover-shading [-4] - amount by which colors are darkened or lightened on hover
@@ -79,13 +83,13 @@ $ec-icon-support: true !default;
 /// GRID & LAYOUT Settings
 /// ------------------------------------------------------
 
-/// @param {number} $root-size [16] - default size used for global size calculations
+/// @param {px} $root-size [16] - default size used for global size calculations
 $root-size: 16 !default;
 
-/// @prop {number} $grid-container-width [1200px] - max-width of container
-$grid-container-width: 1200px !default;
+/// @prop {px} $grid-container-width [1200] - max-width of container
+$grid-container-width: 1200 !default;
 
-/// @prop {number} $grid-gutter [32] - gutter size in pixels without unit
+/// @prop {px} $grid-gutter [32] - gutter size in pixels without unit
 $grid-gutter: 32 !default;
 
 /// @prop {value} $outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
@@ -94,10 +98,10 @@ $outer-gutter: true !default;
 /// @prop {number} $grid-num-columns [12] - number of columns in a row
 $grid-num-columns: 12 !default;
 
-/// @prop {number} $base-padding [16] - small padding value for padding helper
+/// @prop {px} $base-padding [16] - small padding value for padding helper
 $base-padding: 16 !default;
 
-/// @prop {number} $base-margin [16] - small padding value for padding helper
+/// @prop {px} $base-margin [16] - small padding value for padding helper
 $base-spacing: 16 !default;
 
 /// @param {map} $breakpoints
@@ -105,6 +109,7 @@ $breakpoints: (
         'xs': 0, // smartphone
         'sm': 480, // smartphone landscape
         'md': 720, // tablet
+        'nav': 1024, // breakpoint for mobile navigation
         'lg': 1024, // tablet landscape
         'xl': 1280, // desktop
         'xxl': 1920 // large
@@ -114,14 +119,14 @@ $breakpoints: (
 /// TYPO
 /// ------------------------------------------------------
 
-/// @param {number} $base-font-size [16px]
-$base-font-size: 16px !default;
+/// @param {px} $base-font-size [16]
+$base-font-size: 16 !default;
 
-/// @param {number} $base-line-height [1.4]
+/// @param {em} $base-line-height [1.4]
 $base-line-height: 1.4 !default;
 
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
-$vertical-rhythm: $base-line-height * $base-font-size !default;
+$vertical-rhythm: round($base-line-height * $base-font-size) !default;
 
 /// @param {value} $bp-type-scale-small - breakpoint modular scale for small devices
 $bp-type-scale-small: 0 !default;
@@ -274,19 +279,19 @@ $btn-big-weight: $btn-weight !default;
 $btn-round: false !default;
 
 /// radius of buttons - if $btn-round === false
-/// @param {number} $btn-radius [4]
-/// @param {number} $btn-small-radius [4]
-/// @param {number} $btn-big-radius [4]
+/// @param {rem} $btn-radius [4]
+/// @param {rem} $btn-small-radius [4]
+/// @param {rem} $btn-big-radius [4]
 $btn-radius: 4 !default;
 $btn-small-radius: 4 !default;
 $btn-big-radius: 4 !default;
 
-/// @param {number} $btn-wide -  min width for .btn_wide button
-/// @param {number} $btn-small-wide - min width for .btn_wide.btn_small button
-/// @param {number} $btn-big-wide - min width for .btn_wide.btn_big button
-$btn-wide: 240px !default;
-$btn-small-wide: 160px !default;
-$btn-big-wide: 240px !default;
+/// @param {rem} $btn-wide -  min width for .btn_wide button
+/// @param {rem} $btn-small-wide - min width for .btn_wide.btn_small button
+/// @param {rem} $btn-big-wide - min width for .btn_wide.btn_big button
+$btn-wide: 240 !default;
+$btn-small-wide: 160 !default;
+$btn-big-wide: 240 !default;
 
 /// @param {rem} $btn-outline - sets border-width for btn_outlined
 $btn-outline: 2 !default;
@@ -305,10 +310,10 @@ $btn-group-divider: true !default;
 /// DROPDOWN
 /// ------------------------------------------------------
 
-/// @param {px} $dropdown-radius [4]
+/// @param {rem} $dropdown-radius [4]
 $dropdown-radius: 4 !default;
 
-/// @param {number} $dropdown-padding [4]
+/// @param {rem} $dropdown-padding [4]
 $dropdown-padding: 4 !default;
 
 /// @param {color} $dropdown-background
@@ -321,9 +326,9 @@ $dropdown-shadow: 0 8px 16px -4px rgba(black, .16), 0 4px 24px 0px rgba(black, 0
 /// INPUT
 /// ------------------------------------------------------
 
-/// @param {number} $input-font-size [16]
-/// @param {number} $input-line-height [24]
-/// @param {number} $input-min-height [32]
+/// @param {em} $input-font-size [16]
+/// @param {em} $input-line-height [24]
+/// @param {em} $input-min-height [32]
 $input-font-size: 16 !default;
 $input-line-height: 20 !default;
 $input-min-height: 32 !default;
@@ -333,9 +338,9 @@ $input-min-height: 32 !default;
   /// put styles here...
 }
 
-/// @param {number} $input-small-font-size [14]
-/// @param {number} $input-small-line-height [18]
-/// @param {number} $input-small-min-height [28]
+/// @param {em} $input-small-font-size [14]
+/// @param {em} $input-small-line-height [18]
+/// @param {em} $input-small-min-height [28]
 $input-small-font-size: 14 !default;
 $input-small-line-height: 18 !default;
 $input-small-min-height: 28 !default;
@@ -345,9 +350,9 @@ $input-small-min-height: 28 !default;
   /// put styles here...
 }
 
-/// @param {number} $input-big-font-size [18]
-/// @param {number} $input-big-line-height [24]
-/// @param {number} $input-big-min-height [40]
+/// @param {em} $input-big-font-size [18]
+/// @param {em} $input-big-line-height [24]
+/// @param {em} $input-big-min-height [40]
 $input-big-font-size: 18 !default;
 $input-big-line-height: 22 !default;
 $input-big-min-height: 40 !default;
@@ -361,14 +366,14 @@ $input-big-min-height: 40 !default;
 $input-round: false !default;
 
 /// radius of input - if $input-round === false
-/// @param {number} $input-radius [4]
-/// @param {number} $input-small-radius [4]
-/// @param {number} $input-big-radius [4]
+/// @param {rem} $input-radius [4]
+/// @param {rem} $input-small-radius [4]
+/// @param {rem} $input-big-radius [4]
 $input-radius: 4 !default;
 $input-small-radius: 4 !default;
 $input-big-radius: 4 !default;
 
-/// @param {number} $input-border [1]
+/// @param {px} $input-border [1]
 $input-border: 1 !default;
 
 /// @param {color} $input-border-color [ mix($text, $background, 25%)]
@@ -381,10 +386,10 @@ $input-raised-shadow: rgba(black, .1) !default;
 /// XUI-CHECKBOX
 /// ------------------------------------------------------
 
-/// @param {number} $checkbox-font-size [16]
-/// @param {number} $checkbox-line-height [20]
-/// @param {number} $checkbox-min-height [32]
-/// @param {number} $checkbox-radius [6]
+/// @param {rem} $checkbox-font-size [14]
+/// @param {rem} $checkbox-line-height [24]
+/// @param {rem} $checkbox-min-height [20]
+/// @param {rem} $checkbox-radius [6]
 $checkbox-font-size: 14 !default;
 $checkbox-line-height: 24 !default;
 $checkbox-height: 20 !default;
@@ -399,10 +404,9 @@ $checkbox-radius: 6 !default;
 /// XUI-RADIO
 /// ------------------------------------------------------
 
-/// @param {number} $radio-font-size [16]
-/// @param {number} $radio-line-height [20]
-/// @param {number} $radio-min-height [32]
-/// @param {number} $radio-radius [6]
+/// @param {rem} $radio-font-size [10]
+/// @param {rem} $radio-line-height [20]
+/// @param {rem} $radio-min-height [20]
 $radio-font-size: 10 !default;
 $radio-line-height: 20 !default;
 $radio-height: 20 !default;
@@ -416,9 +420,9 @@ $radio-height: 20 !default;
 /// SELECT
 /// ------------------------------------------------------
 
-/// @param {number} $select-font-size [16]
-/// @param {number} $select-line-height [20]
-/// @param {number} $select-min-height [32]
+/// @param {em} $select-font-size [16]
+/// @param {em} $select-line-height [20]
+/// @param {em} $select-min-height [32]
 $select-font-size: 16 !default;
 $select-line-height: 20 !default;
 $select-min-height: 32 !default;
@@ -432,10 +436,10 @@ $select-min-height: 32 !default;
 $select-round: false !default;
 
 /// radius of input - if $select-round === false
-/// @param {number} $select-radius [4]
+/// @param {rem} $select-radius [4]
 $select-radius: 4 !default;
 
-/// @param {number} $select-border [1]
+/// @param {px} $select-border [1]
 $select-border: 1 !default;
 
 /// @param {color} $select-border-color [ mix($text, $background, 25%)]
@@ -450,7 +454,7 @@ $select-raised-shadow: rgba(black, .1) !default;
 /// @param {number} $alert-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 $alert-padding-ratio: 2 !default;
 
-/// @param {number} $alert-padding [$base-padding]
+/// @param {rem} $alert-padding [$base-padding]
 $alert-padding: $base-padding !default;
 
 /// @param {value} $alert-weight [normal]
@@ -461,10 +465,10 @@ $alert-weight: normal !default;
   /// put styles here...
 }
 
-/// @param {number} $alert-radius [4]
+/// @param {rem} $alert-radius [4]
 $alert-radius: 4 !default;
 
-/// @param {boolean} $alert-outlined - sets border-width for .alert_outlined
+/// @param {rem} $alert-outlined - sets border-width for .alert_outlined
 $alert-outlined: 2 !default;
 
 /// Bubbles
@@ -473,9 +477,9 @@ $alert-outlined: 2 !default;
 /// @param {number} $bubble-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
 $bubble-padding-ratio: 1 !default;
 
-/// @param {number} $bubble-font-size [10]
-/// @param {number} $bubble-line-height [12]
-/// @param {number} $bubble-min-height [24]
+/// @param {em} $bubble-font-size [14]
+/// @param {em} $bubble-line-height [16]
+/// @param {em} $bubble-min-height [28]
 /// @param {value} $bubble-weight [bold]
 $bubble-font-size: 14 !default;
 $bubble-line-height: 16 !default;
@@ -487,9 +491,9 @@ $bubble-weight: bold !default;
   /// put styles here...
 }
 
-/// @param {number} $bubble-small-font-size [10]
-/// @param {number} $bubble-small-line-height [12]
-/// @param {number} $bubble-small-min-height [24]
+/// @param {em} $bubble-small-font-size [10]
+/// @param {em} $bubble-small-line-height [12]
+/// @param {em} $bubble-small-min-height [24]
 /// @param {value} $bubble-small-weight [$bubble-weight]
 $bubble-small-font-size: 10 !default;
 $bubble-small-line-height: 12 !default;
@@ -501,9 +505,9 @@ $bubble-small-weight: $bubble-weight !default;
   /// put styles here...
 }
 
-/// @param {number} $bubble-big-font-size [12]
-/// @param {number} $bubble-big-line-height [16]
-/// @param {number} $bubble-big-min-height [32]
+/// @param {em} $bubble-big-font-size [16]
+/// @param {em} $bubble-big-line-height [20]
+/// @param {em} $bubble-big-min-height [32]
 /// @param {value} $bubble-big-weight [$bubble-weight]
 $bubble-big-font-size: 16 !default;
 $bubble-big-line-height: 20 !default;
@@ -519,9 +523,9 @@ $bubble-big-weight: $bubble-weight !default;
 $bubble-round: true !default;
 
 /// radius of buttons - if $bubble-round === false
-/// @param {number} $bubble-radius [4]
-/// @param {number} $bubble-small-radius [4]
-/// @param {number} $bubble-big-radius [4]
+/// @param {rem} $bubble-radius [4]
+/// @param {rem} $bubble-small-radius [4]
+/// @param {rem} $bubble-big-radius [4]
 $bubble-radius: 4 !default;
 $bubble-small-radius: 4 !default;
 $bubble-big-radius: 4 !default;
@@ -532,9 +536,9 @@ $bubble-big-radius: 4 !default;
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 $tag-padding-ratio: 2 !default;
 
-/// @param {number} $tag-font-size [14]
-/// @param {number} $tag-line-height [16]
-/// @param {number} $tag-min-height [28]
+/// @param {em} $tag-font-size [14]
+/// @param {em} $tag-line-height [16]
+/// @param {em} $tag-min-height [28]
 /// @param {value} $tag-weight [bold]
 $tag-font-size: 14 !default;
 $tag-line-height: 16 !default;
@@ -546,13 +550,13 @@ $tag-weight: bold !default;
   /// put styles here...
 }
 
-/// @param {number} $tag-small-font-size [12]
-/// @param {number} $tag-small-line-height [14]
-/// @param {number} $tag-small-min-height [24]
+/// @param {em} $tag-small-font-size [12]
+/// @param {em} $tag-small-line-height [14]
+/// @param {em} $tag-small-min-height [24]
 /// @param {value} $tag-small-weight [$tag-weight]
-$tag-small-font-size: 10 !default;
-$tag-small-line-height: 12 !default;
-$tag-small-min-height: 20 !default;
+$tag-small-font-size: 12 !default;
+$tag-small-line-height: 14 !default;
+$tag-small-min-height: 24 !default;
 $tag-small-weight: $tag-weight !default;
 
 /// additional styles for .tag.small
@@ -560,9 +564,9 @@ $tag-small-weight: $tag-weight !default;
   /// put styles here...
 }
 
-/// @param {number} $tag-big-font-size [16]
-/// @param {number} $tag-big-line-height [18]
-/// @param {number} $tag-big-min-height [32]
+/// @param {em} $tag-big-font-size [16]
+/// @param {em} $tag-big-line-height [18]
+/// @param {em} $tag-big-min-height [32]
 /// @param {value} $tag-big-weight [$tag-weight]
 $tag-big-font-size: 16 !default;
 $tag-big-line-height: 18 !default;
@@ -574,16 +578,16 @@ $tag-big-weight: $tag-weight !default;
   /// put styles here...
 }
 
-/// @param {boolean} $tag-outlined - sets border-width for .tag_outlined
+/// @param {rem} $tag-outlined - sets border-width for .tag_outlined
 $tag-outlined: 2 !default;
 
 /// @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
 $tag-round: false !default;
 
 /// radius of buttons - if $tag-round === false
-/// @param {number} $tag-radius [2]
-/// @param {number} $tag-small-radius [2]
-/// @param {number} $tag-big-radius [2]
+/// @param {rem} $tag-radius [2]
+/// @param {rem} $tag-small-radius [2]
+/// @param {rem} $tag-big-radius [2]
 $tag-radius: 2 !default;
 $tag-small-radius: 2 !default;
 $tag-big-radius: 2 !default;
@@ -594,9 +598,9 @@ $tag-big-radius: 2 !default;
 /// @param {number} $tooltip-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 $tooltip-padding-ratio: 2 !default;
 
-/// @param {number} $tooltip-font-size [12]
-/// @param {number} $tooltip-line-height [14]
-/// @param {number} $tooltip-min-height [24]
+/// @param {em} $tooltip-font-size [12]
+/// @param {em} $tooltip-line-height [14]
+/// @param {em} $tooltip-min-height [20]
 /// @param {value} $tooltip-weight [normal]
 $tooltip-font-size: 12 !default;
 $tooltip-line-height: 14 !default;
@@ -612,9 +616,9 @@ $tooltip-weight: normal !default;
 $tooltip-round: false !default;
 
 /// radius of buttons - if $tooltip-round === false
-/// @param {number} $tooltip-radius [2]
-/// @param {number} $tooltip-small-radius [2]
-/// @param {number} $tooltip-big-radius [2]
+/// @param {rem} $tooltip-radius [2]
+/// @param {rem} $tooltip-small-radius [2]
+/// @param {rem} $tooltip-big-radius [2]
 $tooltip-radius: 2 !default;
 $tooltip-small-radius: 2 !default;
 $tooltip-big-radius: 2 !default;
@@ -625,7 +629,7 @@ $tooltip-big-radius: 2 !default;
 /// @param {number} $well-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 $well-padding-ratio: 2 !default;
 
-/// @param {number} $well-padding [$base-padding]
+/// @param {rem} $well-padding [$base-padding]
 $well-padding: $base-padding !default;
 
 /// @param {value} $well-weight [normal]
@@ -646,33 +650,33 @@ $well-weight: normal !default;
   /// put styles here...
 }
 
-/// @param {number} $well-radius [4]
+/// @param {rem} $well-radius [4]
 $well-radius: 4 !default;
 
-/// @param {boolean} $well-outlined - sets border-width for .alert_outlined
+/// @param {rem} $well-outlined - sets border-width for .alert_outlined
 $well-outlined: 2 !default;
 
 /// drawer button
 /// ------------------------------------------------------
 
-/// @param {number} $hamburger-btn-width [16] - width of hamburger menu
+/// @param {rem} $hamburger-btn-width [16] - width of hamburger menu
 $hamburger-btn-width: 16 !default;
 
-/// @param {number} $hamburger-btn-height [2] - height of hamburger menu bars
+/// @param {rem} $hamburger-btn-height [2] - height of hamburger menu bars
 $hamburger-btn-height: 2 !default;
 
-/// @param {number} $hamburger-btn-spacing [4] - spacing of hamburger menu bars
+/// @param {rem} $hamburger-btn-spacing [4] - spacing of hamburger menu bars
 $hamburger-btn-spacing: 4 !default;
 
 /// toolbar
 /// ------------------------------------------------------
 
-/// @param {number} $toolbar-padding [$base-padding]
+/// @param {rem} $toolbar-padding [$base-padding]
 $toolbar-padding: $base-padding !default;
 
 /// @param {em} $toolbar-title-size [20] - font-size of .toolbar__title
-/// @param {px} $toolbar-title-img-height [32] - height of .toolbar__title > img
-/// @param {px} $toolbar-min-height [64] - min-height
+/// @param {rem} $toolbar-title-img-height [32] - height of .toolbar__title > img
+/// @param {rem} $toolbar-min-height [64] - min-height
 $toolbar-title-size: 20 !default;
 $toolbar-title-img-height: 32 !default;
 $toolbar-min-height: 64 !default;
@@ -683,8 +687,8 @@ $toolbar-min-height: 64 !default;
 }
 
 /// @param {em} $toolbar-small-title-size [20] - font-size of .toolbar-dense__title
-/// @param {px} $toolbar-small-title-img-height [32] - height of .toolbar-dense__title > img
-/// @param {px} $toolbar-small-min-height [64] - min-height
+/// @param {rem} $toolbar-small-title-img-height [32] - height of .toolbar-dense__title > img
+/// @param {rem} $toolbar-small-min-height [48] - min-height
 $toolbar-small-title-size: 20 !default;
 $toolbar-small-title-img-height: 32 !default;
 $toolbar-small-min-height: 48 !default;
@@ -697,7 +701,7 @@ $toolbar-small-min-height: 48 !default;
 /// card
 /// ------------------------------------------------------
 
-/// @param {number} $card-radius [4]
+/// @param {rem} $card-radius [4]
 $card-radius: 4 !default;
 
 ///
@@ -707,33 +711,43 @@ $card-radius: 4 !default;
 /// is-rounded
 /// ------------------------------------------------------
 
-/// @param {number} $is-rounded-min-radius [2]
-/// @param {number} $is-rounded-radius [4]
-/// @param {number} $is-rounded-max-radius [8]
+/// @param {rem} $is-rounded-min-radius [2]
+/// @param {rem} $is-rounded-radius [4]
+/// @param {rem} $is-rounded-max-radius [8]
 $is-rounded-min-radius: 2 !default;
 $is-rounded-radius: 4 !default;
 $is-rounded-max-radius: 8 !default;
 
+/// is-lifted
+/// ------------------------------------------------------
+/// @param {color} $is-lifted-shade [rgba(black, .1)]
+$is-lifted-shade: rgba(black, .1) !default;
+
+/// is-raised
+/// ------------------------------------------------------
+/// @param {color} $is-raised-shade [rgba(black, .1)]
+$is-raised-shade: rgba(black, .1) !default;
+
 /// fab
 /// ------------------------------------------------------
 
-/// @param {number} $fab-spacing [16]
+/// @param {rem} $fab-spacing [16]
 $fab-spacing: 16 !default;
 
 /// list
 /// ------------------------------------------------------
 
-/// @param {number} $list-item-radius [4]
+/// @param {rem} $list-item-radius [4]
 $list-item-radius: 4 !default;
 
 ///
 /// OVERLAY
 /// ------------------------------------------------------
 
-/// @param {px} $overlay-radius [4]
+/// @param {rem} $overlay-radius [4]
 $overlay-radius: 4 !default;
 
-/// @param {number} $overlay-padding [4]
+/// @param {rem} $overlay-padding [4]
 $overlay-padding: 4 !default;
 
 /// @param {color} $overlay-background

@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>x.ui docs</title>
+  <title>x.ui atomic design css framework</title>
+  <meta property="og:image" content="og-image.jpg">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="x.ui.css">
   <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-5.0.0.min.css"/>
@@ -16,32 +17,26 @@
   <script src="app.js"></script>
   <meta name="theme-color" content="#ffffff">
 </head>
-<body class="is-theme">
-<div id="app" class="xui-demo">
+<body>
+<div id="app" class="xui-demo" data-grid="no-gutter is-end">
   {% include '_header.njk' %}
   {% include '_aside.njk' %}
-
-  <div class="xui-demo-body has-transition" :data-col="menuActive ? '+2-xl 10-xl' : ''">
-    {% include '_hero.njk' %}
-
-    <div class="spacer-big"></div>
-    <div data-container="">
-      <div data-grid="center">
+  <div class="xui-demo-body has-transition is-scrollable-y"
+       :data-col="menuActive ? '8-sm' : '12 9-nav 10-xl'">
+    <div data-container="is-left-nav">
+      <div data-grid="is-default is-default is-center">
         <div data-col="8-md">
+          {% include '_hero.njk' %}
           {% include 'parts/intro.njk' %}
           {% include 'parts/getstarted.njk' %}
           {% include 'parts/bem.njk' %}
           {% include 'parts/structure.njk' %}
         </div>
-      </div>
-    </div>
 
-    {% include 'parts/periodic-table.njk' %}
+        {% include 'parts/periodic-table.njk' %}
 
-    <div data-container>
-      <div data-grid="center">
-        <div data-col="8-md">
-          <h2 class="is-giga align-center is-uppercase" id="the-grid">
+        <div data-col="+1-md 8-md">
+          <h2 class="is-giga align-center is-uppercase special-font" id="the-grid">
             <small class="is-ink-link">layout</small>
             <br>the grid
           </h2>
@@ -49,15 +44,13 @@
             and a ui-design necessity are not part of the atomic structure but belongs to its core
             fabric.</p>
         </div>
-      </div>
 
-      <div class="spacer"></div>
+        <div class="spacer"></div>
 
-      {% include 'parts/grid/grid-sample.njk' %}
+        {% include 'parts/grid/grid-sample.njk' %}
 
-      <div class="spacer"></div>
+        <div class="spacer"></div>
 
-      <div data-grid="center">
         <div data-col="8-md">
           <p class="is-h2 is-uppercase" style="line-height: 1em">
             mobile<span class="is-ink-link">first</span>
@@ -66,7 +59,8 @@
             tablet<span class="is-ink-light">landscape</span><span class="is-ink-link">1024</span>
             desktop<span class="is-ink-link">1280</span>
             widescreen<span class="is-ink-link">1920</span></p>
-          <p>The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of classes.
+          <p>The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of
+            classes.
             you can choose between a float or a flex based 12 column grid.</p>
           <div data-grid>
             <div data-col="6-sm">
@@ -95,27 +89,27 @@
           <div class="spacer"></div>
           {% include 'parts/grid/grid.njk' %}
           {% include 'parts/grid/breakpoints.njk' %}
-          <h2 class="xui-header" id="typeface">typeface</h2>
+          <h2 class="demo-header" id="typeface">typeface</h2>
           {% for typeface in structure.typeface %}
             {% include 'parts/typeface/' + typeface %}
           {% endfor %}
           <div class="bumper-big"></div>
-          <h2 class="xui-header" id="media">media</h2>
+          <h2 class="demo-header" id="media">media</h2>
           {% for media in structure.media %}
             {% include 'parts/media/' + media %}
           {% endfor %}
           <div class="bumper-big"></div>
-          <h2 class="xui-header" id="form">form</h2>
+          <h2 class="demo-header" id="form">form</h2>
           {% for form in structure.form %}
             {% include 'parts/form/' + form %}
           {% endfor %}
           <div class="bumper-big"></div>
-          <h2 class="xui-header" id="ui">ui</h2>
+          <h2 class="demo-header" id="ui">ui</h2>
           {% for ui in structure.ui %}
             {% include 'parts/ui/' + ui %}
           {% endfor %}
           <div class="bumper-big"></div>
-          <h2 class="xui-header" id="layout">layout</h2>
+          <h2 class="demo-header" id="layout">layout</h2>
           {% for layout in structure.layout %}
             {% include 'parts/layout/' + layout %}
           {% endfor %}
@@ -125,9 +119,9 @@
       </div>
     </div>
 
-    {% include 'parts/ec-icon.njk' %}
-    {% include '_footer.njk' %}
   </div>
-
+  {% include 'parts/ec-icon.njk' %}
+  {% include '_footer.njk' %}
+</div>
 </body>
 </html>

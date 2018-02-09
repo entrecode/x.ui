@@ -1,3 +1,8 @@
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.2
+/// @group flex-grid
+/// @access public
+
 [data-grid] {
   display: flex;
   flex-wrap: wrap;
@@ -21,7 +26,19 @@
   }
 }
 
-@include set-data-breakpoints('grid', 'small') {
+@include set-data-breakpoints('grid', 'is-default') {
+  @if $outer-gutter {
+    margin-left: ($grid-gutter / -2) + px !important;
+    margin-right: ($grid-gutter / -2) + px !important;
+  }
+
+  > [data-col] {
+    padding-left: ($grid-gutter / 2) + px !important;
+    padding-right: ($grid-gutter / 2) + px !important;
+  }
+}
+
+@include set-data-breakpoints('grid', 'is-small') {
   @if $outer-gutter {
     margin-left: ($grid-gutter / -4) + px !important;
     margin-right: ($grid-gutter / -4) + px !important;
@@ -43,6 +60,14 @@
   }
 }
 
-@include set-data-breakpoints('grid', 'center') {
+@include set-data-breakpoints('grid', 'is-center') {
   justify-content: center;
+}
+
+@include set-data-breakpoints('grid', 'is-start') {
+  justify-content: flex-start;
+}
+
+@include set-data-breakpoints('grid', 'is-end') {
+  justify-content: flex-end;
 }

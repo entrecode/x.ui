@@ -2,11 +2,11 @@
   <h3 class="is-kilo" id="btn">button</h3>
   <p>there are three basic button styles which should be used to to emphasis or weaken
     functions. Throughout <strong>x.ui</strong> there are three steps of importance. The
-    default style always reached with the default class <span class="code">btn</span>, the
-    minor style by an additional modifier class <span class="code">btn_minor</span>and the
-    superior style by the additional modifier <span class="code">btn_super</span></p>
+    default style always reached with the default class <span class="code">.btn</span>, the
+    minor style by an additional modifier class <span class="code">.btn_minor</span> and the
+    superior style by the additional modifier <span class="code">.btn_super</span></p>
   <div class="well">
-    <ul data-grid="small">
+    <ul data-grid="is-small">
       <li v-for="(value, key) in atoms.btn.styles" data-col="4">
         <a class="btn btn_block" :class="value">${key}</a>
       </li>
@@ -21,7 +21,7 @@
   <div class="spacer"></div>
   <h4 class="is-h6">button style modifier</h4>
   <div class="well">
-    <ul data-grid="small center">
+    <ul data-grid="is-small is-center">
       <li v-for="(value, key) in atoms.btn.modifiers" class="align-center"
           data-col="4-sm 2-md">
         <a class="btn btn_block" :class="value">${key}</a>
@@ -33,7 +33,7 @@
   <div class="spacer"></div>
   <h4 class="is-h6">button size modifier</h4>
   <div class="well">
-    <ul data-grid="small center">
+    <ul data-grid="is-small is-center">
       <li v-for="(value, key) in atoms.btn.sizes" data-col="6 4-sm" class="align-center">
         <a class="btn" :class="value">${ key }</a><br>
         <span class="code" style="margin-top: 8px;">btn_${key}</span>
@@ -43,7 +43,7 @@
   <div class="spacer"></div>
   <h4 class="is-h6">button width modifier</h4>
   <div class="well">
-    <ul data-grid="small center">
+    <ul data-grid="is-small is-center">
       <li v-for="(value, key) in atoms.btn.width" data-col="6-sm" class="align-center">
         <a class="btn" :class="[value]">${key}</a><br v-if="value !== 'btn_block'">
         <span class="code" style="margin-top: 8px;">btn_${key}</span>
@@ -59,7 +59,7 @@
   <h3 id="btn-glow" class="is-kilo">btn_glow</h3>
   <p>modifier to simulate a 3D glowing effect.</p>
   <div class="well">
-    <div data-grid data-flex="center">
+    <div data-grid data-flex="is-center">
       <div data-col="6 3-sm">
         <a href="" class="btn btn_block btn_big btn_glow">Button</a>
       </div>

@@ -1,9 +1,9 @@
-/// @since 7.0.0
-/// @group flex-grid
 /// @author Bernhard Ruoff
+/// @since 8.0.0-beta.2
+/// @group flex-grid
 /// @access public
 
-$values: 'column', 'column-reverse', 'row', 'row-reverse';
+$values: 'is-column', 'is-column-reverse', 'is-row', 'is-row-reverse';
 $css: 'column', 'column-reverse', 'row', 'row-reverse';
 
 @each $value in $values {

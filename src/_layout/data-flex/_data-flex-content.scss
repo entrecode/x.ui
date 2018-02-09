@@ -1,9 +1,9 @@
-/// @since 7.0.0
-/// @group flex-grid
 /// @author Bernhard Ruoff
+/// @since 8.0.0-beta.2
+/// @group flex-grid
 /// @access public
 
-$values: 'end-content', 'start-content', 'center-content', 'stretch-content', 'between-content', 'around-content';
+$values: 'is-end-content', 'is-start-content', 'is-center-content', 'is-stretch-content', 'is-between-content', 'is-around-content';
 $css: 'flex-end', 'flex-start', 'center', 'stretch', 'space-between', 'space-around';
 
 @each $value in $values {

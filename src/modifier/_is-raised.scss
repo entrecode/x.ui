@@ -1,34 +1,37 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.2
 /// @access public
 /// @group modifier
+///
+/// @param {color} $is-raised-shade [rgba(black, .1)]
 
 .is-raised {
   @include set-breakpoints {
-    box-shadow: 0 2px 4px rgba(black, .1), 0 2px 8px rgba(black, .1);
+    box-shadow: 0 2px 4px $is-raised-shade, 0 2px 8px $is-raised-shade;
   }
 
   &-small {
     @include set-breakpoints {
-      box-shadow: 0 1px 2px rgba(black, .1), 0 1px 4px rgba(black, .1);
+      box-shadow: 0 1px 2px $is-raised-shade, 0 1px 4px $is-raised-shade;
     }
   }
 
   &-big {
     @include set-breakpoints {
-      box-shadow: 0 4px 8px rgba(black, .1), 0 4px 16px rgba(black, .1);
+      box-shadow: 0 4px 8px $is-raised-shade, 0 4px 16px $is-raised-shade;
     }
   }
 }
 
 a,
 .input,
+.input_clear,
 .btn {
   &.is-raised {
     @include set-breakpoints {
       &:focus,
       &:hover {
-        box-shadow: 0 1px 2px $btn-raised-shadow, 0 1px 4px $btn-raised-shadow;
+        box-shadow: 0 1px 2px $is-raised-shade, 0 1px 4px $is-raised-shade;
       }
     }
 
@@ -36,7 +39,7 @@ a,
       @include set-breakpoints {
         &:focus,
         &:hover {
-          box-shadow: 0 1px 1px rgba(black, .1), 0 1px 2px rgba(black, .1);
+          box-shadow: 0 1px 1px $is-raised-shade, 0 1px 2px $is-raised-shade;
         }
       }
     }
@@ -45,7 +48,7 @@ a,
       @include set-breakpoints {
         &:focus,
         &:hover {
-          box-shadow: 0 2px 4px rgba(black, .1), 0 2px 8px rgba(black, .1);
+          box-shadow: 0 2px 4px $is-raised-shade, 0 2px 8px $is-raised-shade;
         }
       }
     }

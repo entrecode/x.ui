@@ -23,6 +23,47 @@ $has-width-options: (
 
     &-#{$key} {
       @include set-breakpoints {
+        width: $value * 1%;
+      }
+    }
+  }
+
+  &-vh {
+    @each $key in $keys {
+      $i: index($keys, $key);
+      $value: map-get($has-height-options, $key);
+
+      &-#{$key} {
+        @include set-breakpoints {
+          width: $value * 1vh;
+        }
+      }
+    }
+  }
+
+  &-vw {
+    @each $key in $keys {
+      $i: index($keys, $key);
+      $value: map-get($has-height-options, $key);
+
+      &-#{$key} {
+        @include set-breakpoints {
+          width: $value * 1vw;
+        }
+      }
+    }
+  }
+}
+
+.has-min-width {
+  $keys: map-keys($has-height-options);
+
+  @each $key in $keys {
+    $i: index($keys, $key);
+    $value: map-get($has-height-options, $key);
+
+    &-#{$key} {
+      @include set-breakpoints {
         min-width: $value * 1%;
       }
     }

@@ -1,12 +1,12 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.2
 /// @access public
 /// @group grid
 
 @mixin container() {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: $grid-container-width;
+  max-width: $grid-container-width + px;
   padding-left: ($grid-gutter / 2) + px;
   padding-right: ($grid-gutter / 2) + px;
   width: 100%;
@@ -16,10 +16,10 @@
   @include container();
 }
 
-[data-container*='left'] {
-  margin: 0 0 0 auto;
+@include set-data-breakpoints('container', 'is-left') {
+  margin: 0 auto 0 0;
 }
 
-[data-container*='right'] {
-  margin: 0 auto 0 0;
+@include set-data-breakpoints('container', 'is-right') {
+  margin: 0 0 0 auto;
 }

@@ -7,4 +7,10 @@
   @include set-breakpoints($area: true) {
     display: none !important;
   }
+
+  &-from {
+    @include set-breakpoints($hasRoot: false) {
+      display: none !important;
+    }
+  }
 }

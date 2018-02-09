@@ -1,0 +1,35 @@
+.demo-sidebar {
+  display: none;
+
+  &.is-active {
+    display: flex;
+  }
+
+  @media (min-width: getBreakpoint(nav)) {
+    display: inherit;
+  }
+
+  a {
+    color: getColor(text);
+
+    &:hover {
+      color: getColor(link);
+    }
+  }
+
+  h3 {
+    margin: rem(16) 0 0 0;
+    background-color: rgba(getColor(background), .6);
+  }
+
+  ul {
+    li {
+      padding: rem(4) 0;
+
+      ul {
+        margin-top: rem(4);
+        margin-left: rem(16);
+      }
+    }
+  }
+}

@@ -10,11 +10,11 @@
 .input_round {
   border-radius: rem($input-min-height / 2);
 
-  &.small {
+  &.input_small {
     border-radius: rem($input-small-min-height / 2);
   }
 
-  &.big {
+  &.input_big {
     border-radius: rem($input-big-min-height / 2);
   }
 }
