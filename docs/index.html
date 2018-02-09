@@ -24,10 +24,10 @@
   <div class="toolbar toolbar_small">
     <div data-col="2">
       <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive"
-              class="hamburger-btn is-visible-nav"></button>
+              class="hamburger-btn is-hidden-from-nav"></button>
     </div>
     <div data-col="8">
-      <div :data-container="menuActive ? 'is-left-nav' : ''">
+      <div data-container="is-left-nav">
         <div data-grid="is-default is-center">
           <div data-col="8-md" class="is-relative">
             <div class="toolbar__title toolbar__title_center">
@@ -43,7 +43,7 @@
       <nav class="nav">
         <ul class="nav__items">
           <li class="nav__item" style="padding-right: 16px;">
-            <small class="is-ink-lighter">v. 8.0.0-beta.2</small>
+            <small class="is-ink-lighter is-nowrap">v. 8.0.0-beta.2</small>
           </li>
           <li class="nav__divider"></li>
           <li class="nav__item">
@@ -55,7 +55,7 @@
     </div>
   </div>
 </header>
-<aside v-if="menuActive" data-col="8-xs 6-sm 4-md 2-nav" data-flex="is-column" style="height: 100vh;" class="demo-sidebar is-scrollable-y is-fixed is-positioned-nw is-layer-10 is-theme" data-animate="slideRight 4">
+<aside :class="menuActive ? 'is-active' : '' " data-col="6-xs 4-sm 3-nav 2-xl" data-flex="is-column" style="height: 100vh;" class="demo-sidebar is-scrollable-y is-fixed is-positioned-nw is-layer-10 is-theme" data-animate="slideRight 4">
   <div class="has-padding-big is-scrollable-y" data-flex="is-column">
     <ul class="is-unstyled" style="width: 100%;">
       <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
@@ -160,20 +160,17 @@
       <li><div class="spacer-big"></div></li>
     </ul>
   </div>
-</aside>  <div class="xui-demo-body has-transition is-scrollable-y" :data-col="menuActive ? '10-nav' : '12'">
-    <div :data-container="menuActive ? 'is-left-nav' : ''">
+</aside>  <div class="xui-demo-body has-transition is-scrollable-y"
+       :data-col="menuActive ? '8-sm' : '12 9-nav 10-xl'">
+    <div data-container="is-left-nav">
       <div data-grid="is-default is-default is-center">
         <div data-col="8-md">
 <div class="hero has-margin has-height-vh-golden" data-flex="is-center is-end-items">
   <div style="margin-bottom: 10vh;">
     <a href="#xui-get-started" class="btn btn_big is-lifted-big">get started</a>
     <div class="spacer-small"></div>
-    <p class="align-center is-ink-invert">
-      <small>v. 8.0.0-beta.2</small>
-    </p>
   </div>
 </div>
-          <div class="spacer-big"></div>
 <section class="has-margin-middle-big">
   <h1 class="align-center special-font is-uppercase">welcome to <br>the atomsphere.</h1>
   <p class="lead is-hyphen-block"><strong>x.ui</strong> is a framework based on the atomic
@@ -826,7 +823,7 @@
           </div>
           <div class="spacer"></div>
 <div class="well align-center">
-  <div class="is-kilo">data-container="{option}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</div>
+  <div class="is-kilo">data-container="{option}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }"</div>
 </div>
 <p>wraps everything in a repsonsive container with a maximum with of
   <strong>1200px</strong>. Per default it is centered horizontally. for full-width
@@ -849,7 +846,7 @@
 </table>
 <div class="spacer"></div>
 <div class="well align-center">
-  <div class="is-kilo">data-grid="{option}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</div>
+  <div class="is-kilo">data-grid="{option}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }"</div>
 </div>
 <p>this is part of the flex-based grid. it is a more modern and flexible approach for a
   grid-model which is not prone to floating errors. it can be combined with additional
@@ -884,7 +881,7 @@
 </table>
 <div class="spacer"></div>
 <div class="well align-center">
-  <div class="is-kilo">data-col="{size | offset}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"
+  <div class="is-kilo">data-col="{ size | offset }{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }"
   </div>
 </div>
 <table class="table">
@@ -903,8 +900,7 @@
 </table>
 <div class="bumper"></div>
 <div class="well align-center">
-  <div class="is-kilo">data-flex="{option}-{<a
-        href="#xui-breakpoint-shortcodes">breakpoint</a>}"
+  <div class="is-kilo">data-flex="{option}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }"
   </div>
 </div>
 <h6 class="align-center">flex-direction</h6>
@@ -1042,7 +1038,7 @@
 </table>
 <div class="spacer"></div>
 <div class="well align-center">
-  <span class="is-kilo">data-flex-item="{options}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</span>
+  <span class="is-kilo">data-flex-item="{options}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }"</span>
 </div>
 <h6 class="align-center">size</h6>
 <table class="table">
@@ -1092,7 +1088,7 @@
 </table>
 <div class="spacer"></div>
 <div class="well align-center">
-  <span class="is-kilo">data-flex-order="{order}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</span>
+  <span class="is-kilo">data-flex-order="{order}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }"</span>
 </div>
 <p>By default, flex items are laid out in the source order. However, the order property
   controls the order in which they appear in the flex container. the order-value can be
@@ -1760,25 +1756,14 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="hamburger-btn" class="is-kilo">hamburger-btn <span
-        class="tag tag_small tag_error">in progress</span>
+  <h3 id="hamburger-btn" class="is-kilo">hamburger-btn
+    <span class="tag tag_small tag_error">in progress</span>
   </h3>
-  <div class="align-right">
-    <div class="xui-toggle">
-      <input type="checkbox" id="hamburgerActive" v-model="hamburgerActive">
-      <label for="hamburgerActive">
-        <span class="xui-toggle__switch"></span>
-        is-active
-      </label>
-    </div>
+  <div class="well align-center">
+    <button class="hamburger-btn" :class="{'is-active' : hamburgerActive}" @click="hamburgerActive = !hamburgerActive"></button>
   </div>
-  <div class="alert">
-    <button class="hamburger-btn" :class="{'is-active' : hamburgerActive}"></button>
-  </div>
-  <pre><code class="html"><button
-          class="hamburger-btn${hamburgerActive ?' is-active' : ''}"></button></code></pre>
+  <pre><code class="html"><button class="hamburger-btn${hamburgerActive ?' is-active' : ''}"></button></code></pre>
 </section>
-
 <div class="bumper"></div><section>
   <h3 id="bubble" class="is-kilo">bubble</h3>
   <div class="well">
@@ -2919,9 +2904,7 @@
 <div class="bumper"></div><section>
   <h3 class="is-kilo" id="is-rounded">is-rounded</h3>
   <div class="well align-center">
-    <div class="is-h6">is-rounded-{min|max|<em>empty</em>}-{side}-{<a
-          href="#xui-breakpoint-shortcodes">breakpoint</a>}
-    </div>
+    <div class="is-h6">is-rounded-{ min | max | <em>empty</em> }-{side}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
   </div>
   <table class="table">
     <tr data-grid="no-gutter">
@@ -2950,9 +2933,7 @@
 <div class="bumper"></div><section>
   <h3 class="is-kilo" id="is-raised">is-raised</h3>
   <div class="well align-center">
-    <div class="is-h6">is-raised-{small|big|<em>empty</em>}-{<a
-          href="#xui-breakpoint-shortcodes">breakpoint</a>}
-    </div>
+    <div class="is-h6">is-raised-{ small | big | <em>empty</em> }{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
   </div>
   <div class="well is-theme-link">
     <div data-grid="">
@@ -2972,9 +2953,7 @@
 <div class="bumper"></div><section>
   <h3 class="is-kilo" id="is-lifted">is-lifted</h3>
   <div class="well align-center">
-    <div class="is-h6">is-lifted-{small|big|<em>empty</em>}-{<a
-          href="#xui-breakpoint-shortcodes">breakpoint</a>}
-    </div>
+    <div class="is-h6">is-lifted-{small|big|<em>empty</em>}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
   </div>
   <div class="well is-theme-link">
     <div data-grid="">
@@ -2997,8 +2976,7 @@
     of 16px. Use with <span class="code">.is-absolute</span> or
     <span class="code">.is-fixed</span>. the syntax is
     <span class="code">.is-fab-{direction}</span></p>
-  <div class="well align-center"><span class="is-h6">is-fab-{direction}-{<a
-          href="#xui-breakpoint-shortcodes">breakpoint</a>}</span></div>
+  <div class="well align-center"><span class="is-h6">is-fab-{direction}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span></div>
   <div class="well is-relative" style="height: 160px;">
     <strong class="code is-fab-n is-absolute">n</strong>
     <strong class="code is-fab-ne is-absolute">ne</strong>
@@ -3074,7 +3052,7 @@
 </section><section>
   <h4 id="spacing" class="is-kilo">spacing</h4>
   <div class="well align-center">
-    <span class="is-h6">{state}-{property}-{sides}-{size}</span>
+    <span class="is-h6">{state}-{property}-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
   <table class="table">
     <tr data-grid="no-gutter">
@@ -3122,8 +3100,8 @@
 <div class="bumper"></div><section>
   <h3 id="has-height" class="is-kilo">has-height</h3>
   <div class="well align-center">
-    <span class="is-h6">has-height-{relation}-{ratio}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
-    <span class="is-h6">has-min-height-{relation}-{ratio}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
+    <div class="is-h6">has-height-{relation}-{ratio}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
+    <div class="is-h6">has-min-height-{relation}-{ratio}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
   </div>
   <p>the <span class="code">has-height</span> modifier is the vertical layout equivalent for
     columns. size modifier set the height of an element relative to its parent or to the viewport.
@@ -3157,8 +3135,8 @@
 <div class="bumper"></div><section>
   <h3 id="has-width" class="is-kilo">has-width</h3>
   <div class="well align-center">
-    <span class="is-h6">has-width-{relation}-{ratio}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
-    <span class="is-h6">has-min-width-{relation}-{ratio}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
+    <div class="is-h6">has-width-{relation}-{ratio}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
+    <div class="is-h6">has-min-width-{relation}-{ratio}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
   </div>
   <p>the <span class="code">has-width</span> is an additional size modifier, that can be
     used instead of <span class="col">data-col</span>.</p>
@@ -3190,23 +3168,15 @@
 
 <div class="bumper"></div><section>
   <h3 id="pull" class="is-kilo">pull</h3>
-  <div class="pull-right">pull-right</div>
-  <div class="pull-right-xs">pull-right-xs</div>
-  <div class="pull-right-sm">pull-right-sm</div>
-  <div class="pull-right-md">pull-right-md</div>
-  <div class="pull-right-lg">pull-right-lg</div>
-  <div class="pull-right-xl">pull-right-xl</div>
-  <div class="pull-right-xxl">pull-right-xxl</div>
   <div class="well align-center">
-    <span class="is-h6">pull-{left|right}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
+    <div class="is-h6">pull-{ left | right }{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
   </div>
 </section>
 
 <div class="bumper"></div><section>
   <h3 id="is-overflow" class="is-kilo">is-overflow</h3>
   <div class="well align-center">
-            <span class="is-h6">is-{overflow}-{axis}-{<a
-                  href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
+            <span class="is-h6">is-{overflow}-{axis}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
   <table class="table">
     <tr data-grid="no-gutter">
@@ -3236,14 +3206,14 @@
 <div class="bumper"></div><section>
   <h3 id="is-position" class="is-kilo">is-position</h3>
   <div class="well align-center">
-    <span class="is-h6">is-{static|relative|absolute|fixed|sticky}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
+    <span class="is-h6">is-{static|relative|absolute|fixed|sticky}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
 
   <div class="spacer"></div>
 
   <h3 id="is-positioned" class="is-kilo">is-positioned</h3>
   <div class="well align-center">
-    <span class="is-h6">is-positioned-{direction}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
+    <span class="is-h6">is-positioned-{direction}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
   <div class="well is-relative" style="height: 160px;">
     <strong class="code is-positioned-n is-absolute">n</strong>
@@ -3261,7 +3231,7 @@
 <div class="bumper"></div><section>
   <h3 id="is-layer" class="is-kilo">is-layer</h3>
   <div class="well align-center">
-    <span class="is-h6">is-layer-{layer}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
+    <span class="is-h6">is-layer-{layer}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
   <table class="table">
     <tr data-grid="no-gutter">
@@ -3287,9 +3257,19 @@
     <span class="is-mega is-hidden-xl" data-animate="popIn 4">is-hidden-xl </span>
     <span class="is-mega is-hidden-xxl" data-animate="popIn 4">is-hidden-xxl </span>
   </div>
+  <p><span class="code">.is-hidden{-breakpoint}</span> hides an element in a specific
+    breakpoint-area using <span class="code">@media (min-width:...) and (max-width:...)</span></p>
   <div class="well align-center">
-            <span class="is-h6">is-hidden-{<a
-                  href="#xui-breakpoint-shortcodes">breakpoint-area</a>}</span>
+    <span class="is-h6">
+      is-hidden-{ <a href="#xui-breakpoint-shortcodes">-breakpoint</a> | <span class="is-ink-light">null</span> }
+    </span>
+  </div>
+  <p><span class="code">.is-hidden-from-{breakpoint}</span> hides an element up from a specific
+    breakpoint.</p>
+  <div class="well align-center">
+    <span class="is-h6">
+      is-hidden-from-<a href="#xui-breakpoint-shortcodes">breakpoint</a>
+    </span>
   </div>
 </section>
 
@@ -3303,8 +3283,15 @@
     <span class="is-mega is-visible-xl" data-animate="popIn 4">is-visible-xl</span>
     <span class="is-mega is-visible-xxl" data-animate="popIn 4">is-visible-xxl</span>
   </div>
+  <p><span class="code">.is-visible{-breakpoint}</span> makes an element in a specific
+    breakpoint-area visible using <span class="code">@media (min-width:...) and (max-width:...)</span></p>
   <div class="well align-center">
-    <span class="is-h6">is-visible-{<a href="#xui-breakpoint-shortcodes">breakpoint-area</a>}</span>
+    <span class="is-h6">is-visible{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+  </div>
+  <p><span class="code">.is-visible-from-{breakpoint}</span> makes an element visible up from a
+    specific breakpoint.</p>
+  <div class="well align-center">
+    <span class="is-h6">is-visible-from{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
 </section>
 
@@ -3389,7 +3376,7 @@
     <div data-grid="is-center">
       <div data-col="12 10-md 8-xxl">
         <ul data-grid="is-small">
-          <li v-for="icon in iconset" data-col="6-xs 3-sm"
+          <li v-for="icon in iconset" data-col="6-xs 4-sm 3-lg"
               :class="{'is-hidden': icon.indexOf(query) === -1}">
             <span class="ec-icon" :class="icon"></span><span
                 class="quickselect">${ icon }</span>

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     delimiters: ['${', '}'],
     el: '#app',
     data: {
-      menuActive: true,
+      menuActive: false,
       hamburgerActive: false,
       render: true,
       selectedAnimation: 'ambulance',

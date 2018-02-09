@@ -3,10 +3,10 @@
   <div class="toolbar toolbar_small">
     <div data-col="2">
       <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive"
-              class="hamburger-btn is-visible-nav"></button>
+              class="hamburger-btn is-hidden-from-nav"></button>
     </div>
     <div data-col="8">
-      <div :data-container="menuActive ? 'is-left-nav' : ''">
+      <div data-container="is-left-nav">
         <div data-grid="is-default is-center">
           <div data-col="8-md" class="is-relative">
             <div class="toolbar__title toolbar__title_center">
@@ -22,7 +22,7 @@
       <nav class="nav">
         <ul class="nav__items">
           <li class="nav__item" style="padding-right: 16px;">
-            <small class="is-ink-lighter">v. {{ version }}</small>
+            <small class="is-ink-lighter is-nowrap">v. {{ version }}</small>
           </li>
           <li class="nav__divider"></li>
           <li class="nav__item">

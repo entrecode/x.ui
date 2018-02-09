@@ -25,6 +25,8 @@
 - added an additional breakpoint-shortcode `nav` for mobile nav behavoir
 - added breakpoints for `data-container` values
 - optimized `.spacer` and `.bumper`
+- added `.is-hidden-from` modifier
+- added `.is-visible-from` modifier
 
 ## 8.0.0-beta.1
 ### breaking changes

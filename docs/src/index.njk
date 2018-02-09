@@ -21,12 +21,12 @@
 <div id="app" class="xui-demo" data-grid="no-gutter is-end">
   {% include '_header.njk' %}
   {% include '_aside.njk' %}
-  <div class="xui-demo-body has-transition is-scrollable-y" :data-col="menuActive ? '10-nav' : '12'">
-    <div :data-container="menuActive ? 'is-left-nav' : ''">
+  <div class="xui-demo-body has-transition is-scrollable-y"
+       :data-col="menuActive ? '8-sm' : '12 9-nav 10-xl'">
+    <div data-container="is-left-nav">
       <div data-grid="is-default is-default is-center">
         <div data-col="8-md">
           {% include '_hero.njk' %}
-          <div class="spacer-big"></div>
           {% include 'parts/intro.njk' %}
           {% include 'parts/getstarted.njk' %}
           {% include 'parts/bem.njk' %}

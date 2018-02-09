@@ -1,4 +1,14 @@
 .demo-sidebar {
+  display: none;
+
+  &.is-active {
+    display: flex;
+  }
+
+  @media (min-width: getBreakpoint(nav)) {
+    display: inherit;
+  }
+
   a {
     color: getColor(text);
 
@@ -9,7 +19,7 @@
 
   h3 {
     margin: rem(16) 0 0 0;
-    background-color: rgba(getColor(background),.6);
+    background-color: rgba(getColor(background), .6);
   }
 
   ul {
