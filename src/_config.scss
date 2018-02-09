@@ -111,7 +111,8 @@ $breakpoints: (
         'md': 720, // tablet
         'lg': 1024, // tablet landscape
         'xl': 1280, // desktop
-        'xxl': 1920 // large
+        'xxl': 1920, // large
+        'nav': 720 // breakpoint for mobile navigation
 ) !default;
 
 ///
