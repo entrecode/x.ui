@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>x.ui docs</title>
+  <title>x.ui atomic design css framework</title>
+  <meta property="og:image" content="og-image.jpg">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="x.ui.css">
   <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-5.0.0.min.css"/>
@@ -16,24 +17,48 @@
   <script src="app.js"></script>
   <meta name="theme-color" content="#ffffff">
 </head>
-<body class="is-theme">
-<div id="app" class="xui-demo">
-<header class="is-fixed is-positioned-ne has-padding is-layer-10 is-layer-100-xs has-transition" :data-col="menuActive ? '+2-xl 10-xl' : '12'">
-  <div class="toolbar">
-    <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive" class="hamburger-btn"></button>
-    <div class="toolbar__title toolbar__title_center">
-      <a href="#top">
-        <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
-      </a>
+<body>
+<div id="app" class="xui-demo" data-grid="no-gutter is-end">
+<header class="demo-navbar is-fixed is-positioned-nw is-layer-10 is-layer-100-xs has-transition"
+        data-col="12">
+  <div class="toolbar toolbar_small">
+    <div data-col="2">
+      <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive"
+              class="hamburger-btn is-visible-nav"></button>
+    </div>
+    <div data-col="8">
+      <div :data-container="menuActive ? 'is-left-nav' : ''">
+        <div data-grid="is-default is-center">
+          <div data-col="8-md" class="is-relative">
+            <div class="toolbar__title toolbar__title_center">
+              <a href="#top">
+                <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-col="2">
+      <nav class="nav">
+        <ul class="nav__items">
+          <li class="nav__item" style="padding-right: 16px;">
+            <small class="is-ink-lighter">v. 8.0.0-beta.2</small>
+          </li>
+          <li class="nav__divider"></li>
+          <li class="nav__item">
+            <a href="https://github.com/entrecode/x.ui" class="btn btn_clear btn_minor"><span
+                  class="ec-icon github"></span></a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </header>
-<aside v-if="menuActive" data-col="8-xs 6-sm 4-md 2-xl" data-flex="is-column" style="height:100vh;" class="is-theme is-fixed is-positioned-nw demo-sidebar is-layer-10" data-animate="slideRight 4">
+<aside v-if="menuActive" data-col="8-xs 6-sm 4-md 2-nav" data-flex="is-column" style="height: 100vh;" class="demo-sidebar is-scrollable-y is-fixed is-positioned-nw is-layer-10 is-theme" data-animate="slideRight 4">
   <div class="has-padding-big is-scrollable-y" data-flex="is-column">
-    <div class="spacer-big is-visible-xs is-visible-sm"></div>
-    <div class="has-padding"><a href="#"><img src="assets/xui-logo-small.svg" style="width:160px;"></a></div>
     <ul class="is-unstyled" style="width: 100%;">
-      <li><h3 class="is-h5"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#get-started">atomic design</a></li>
           <li><a href="#bem">naming conventions</a></li>
@@ -41,9 +66,9 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5"><a href="#the-grid"><span class="ec-icon border-none">the grid</span></a></h3></li>
+      <li><h3 class="is-h5 has-padding-middle"><a href="#the-grid"><span class="ec-icon border-none">the grid</span></a></h3></li>
 
-      <li><h3 class="is-h5"><a href="#typeface"><span class="ec-icon smaller-text">typeface</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#typeface"><span class="ec-icon smaller-text">typeface</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#headings">headings</a></li>
           <li><a href="#type">type</a></li>
@@ -55,14 +80,14 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5"><a href="#media"><span class="ec-icon img">media</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#media"><span class="ec-icon img">media</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#img">img</a></li>
           <li><a href="#img-crop">img-crop</a></li>
         </ul>
       </li>
 
-      <li><h3 class="is-h5"><a href="#form"><span class="ec-icon text-input">form</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#form"><span class="ec-icon text-input">form</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#input">input</a></li>
           <li><a href="#input-group">input-group</a></li>
@@ -74,7 +99,7 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5"><a href="#ui"><span class="ec-icon list-bullets">ui</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#ui"><span class="ec-icon list-bullets">ui</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#btn">btn</a></li>
           <li><a href="#hamburger-btn">hamburger-btn</a></li>
@@ -103,7 +128,7 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5"><a href="#layout"><span class="ec-icon article">layout</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#layout"><span class="ec-icon article">layout</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#bumper">bumper</a></li>
           <li><a href="#spacer">spacer</a></li>
@@ -124,37 +149,33 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5"><div class="ec-icon cursor-arrow">interaction</div></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><div class="ec-icon cursor-arrow">interaction</div></h3>
         <ul class="is-unstyled">
           <li><a href="#data-animate">data-animate</a></li>
         </ul>
       </li>
 
-      <li><h3 class="is-h5"><a href="#ec-icon"><span class="ec-icon skull">ec-icon</span></a></h3></li>
+      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#ec-icon"><span class="ec-icon skull">ec-icon</span></a></h3></li>
 
       <li><div class="spacer-big"></div></li>
     </ul>
   </div>
-</aside>
-  <div class="xui-demo-body has-transition" :data-col="menuActive ? '+2-xl 10-xl' : ''">
-<div class="hero has-margin has-height-vh-golden" data-flex="is-center is-center-items">
-  <div class="align-center">
-    <img src="assets/xui-logo.svg" alt="x.ui - atomic css framwork" width="240px">
-    <div class="spacer-small"></div>
-    <a href="#xui-get-started" class="btn btn_outlined btn_invert">get started</a>
+</aside>  <div class="xui-demo-body has-transition is-scrollable-y" :data-col="menuActive ? '10-nav' : '12'">
+    <div :data-container="menuActive ? 'is-left-nav' : ''">
+      <div data-grid="is-default is-default is-center">
+        <div data-col="8-md">
+<div class="hero has-margin has-height-vh-golden" data-flex="is-center is-end-items">
+  <div style="margin-bottom: 10vh;">
+    <a href="#xui-get-started" class="btn btn_big is-lifted-big">get started</a>
     <div class="spacer-small"></div>
     <p class="align-center is-ink-invert">
-      <small>v. 8.0.0-beta.1</small>
+      <small>v. 8.0.0-beta.2</small>
     </p>
   </div>
 </div>
-
-    <div class="spacer-big"></div>
-    <div data-container>
-      <div data-grid="is-center">
-        <div data-col="8-md">
+          <div class="spacer-big"></div>
 <section class="has-margin-middle-big">
-  <h1 class="is-h2 align-center is-uppercase">welcome to the atomsphere.</h1>
+  <h1 class="align-center special-font is-uppercase">welcome to <br>the atomsphere.</h1>
   <p class="lead is-hyphen-block"><strong>x.ui</strong> is a framework based on the atomic
     design methodology. this workflow is inspired by nature and physics and has a pretty
     serious focus on modularity and structure. it structure begins with the smallest part
@@ -168,7 +189,7 @@
 </section>
 <div class="bumper-big"></div>
 <section class="has-margin-middle-big">
-  <h2 class="is-mega align-center ink-link is-uppercase" id="get-started">get started</h2>
+  <h2 class="is-mega align-center ink-link is-uppercase special-font" id="get-started">get started</h2>
   <div data-grid="is-small" data-flex="is-center-content">
     <div data-col="4-sm">
       <h6 class="align-center">1. install</h6>
@@ -191,7 +212,7 @@
   </div>
 </section>
 <div class="bumper-big"></div><section class="has-margin-middle-big">
-  <h2 class="is-mega align-center is-uppercase">BEM</h2>
+  <h2 class="is-mega align-center is-uppercase special-font">BEM</h2>
   <div class="well align-center">
     <div class="is-kilo">{block-name}__{elem-name}_{mod-name}_{mod-val}</div>
   </div>
@@ -222,7 +243,7 @@
   </p>
 </section>
 <div class="bumper-big"></div><section>
-  <h2 class="is-mega align-center is-uppercase" id="xui-structure">structure</h2>
+  <h2 class="is-mega align-center is-uppercase special-font" id="xui-structure">structure</h2>
   <div data-grid>
     <div data-col="4-sm">
       <div class="align-center">
@@ -274,8 +295,6 @@
     </div>
   </div>
 </section>        </div>
-      </div>
-    </div>
 
 <section>
   <ul data-grid="no-gutter" class="periodic-table">
@@ -605,10 +624,8 @@
     </li>
   </ul>
 </section>
-    <div data-container>
-      <div data-grid="is-center">
-        <div data-col="8-md">
-          <h2 class="is-giga align-center is-uppercase" id="the-grid">
+        <div data-col="+1-md 8-md">
+          <h2 class="is-giga align-center is-uppercase special-font" id="the-grid">
             <small class="is-ink-link">layout</small>
             <br>the grid
           </h2>
@@ -616,162 +633,162 @@
             and a ui-design necessity are not part of the atomic structure but belongs to its core
             fabric.</p>
         </div>
-      </div>
 
-      <div class="spacer"></div>
+        <div class="spacer"></div>
 
-<div data-grid>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+<div data-flex-item="grow">
+  <div data-grid>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
   </div>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-  </div>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-  </div>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-  </div>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-  </div>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-  </div>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-  </div>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-  </div>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-  </div>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-  </div>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-  </div>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-  </div>
-</div>
 
-<div data-grid>
-  <div data-col="2">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
+  <div data-grid>
+    <div data-col="2">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
+    </div>
+    <div data-col="2">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
+    </div>
+    <div data-col="2">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
+    </div>
+    <div data-col="2">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
+    </div>
+    <div data-col="2">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
+    </div>
+    <div data-col="2">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
+    </div>
   </div>
-  <div data-col="2">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-  </div>
-  <div data-col="2">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-  </div>
-  <div data-col="2">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-  </div>
-  <div data-col="2">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-  </div>
-  <div data-col="2">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-  </div>
-</div>
 
-<div data-grid>
-  <div data-col="3">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
+  <div data-grid>
+    <div data-col="3">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
+    </div>
+    <div data-col="3">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
+    </div>
+    <div data-col="3">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
+    </div>
+    <div data-col="3">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
+    </div>
   </div>
-  <div data-col="3">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
-  </div>
-  <div data-col="3">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
-  </div>
-  <div data-col="3">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
-  </div>
-</div>
 
-<div data-grid>
-  <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">4</div>
+  <div data-grid>
+    <div data-col="4">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">4</div>
+    </div>
+    <div data-col="4">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">4</div>
+    </div>
+    <div data-col="4">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">4</div>
+    </div>
   </div>
-  <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">4</div>
-  </div>
-  <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">4</div>
-  </div>
-</div>
 
-<div data-grid>
-  <div data-col="5">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">5</div>
+  <div data-grid>
+    <div data-col="5">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">5</div>
+    </div>
+    <div data-col="7">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">7</div>
+    </div>
   </div>
-  <div data-col="7">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">7</div>
-  </div>
-</div>
 
-<div data-grid>
-  <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+  <div data-grid>
+    <div data-col="6">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    </div>
+    <div data-col="6">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    </div>
   </div>
-  <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+  <div data-grid>
+    <div data-col="5">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">5</div>
+    </div>
+    <div data-col="7">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">7</div>
+    </div>
+  </div>
+  <div data-grid>
+    <div data-col="8">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">8</div>
+    </div>
+    <div data-col="4">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">4</div>
+    </div>
+  </div>
+  <div data-grid>
+    <div data-col="3">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
+    </div>
+    <div data-col="9">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">9</div>
+    </div>
+  </div>
+  <div data-grid>
+    <div data-col="10">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">10</div>
+    </div>
+    <div data-col="2">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
+    </div>
+  </div>
+  <div data-grid>
+    <div data-col="1">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
+    </div>
+    <div data-col="11">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">11</div>
+    </div>
+  </div>
+  <div data-grid>
+    <div data-col="12">
+      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">12</div>
+    </div>
   </div>
 </div>
-<div data-grid>
-  <div data-col="5">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">5</div>
-  </div>
-  <div data-col="7">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">7</div>
-  </div>
-</div>
-<div data-grid>
-  <div data-col="8">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">8</div>
-  </div>
-  <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">4</div>
-  </div>
-</div>
-<div data-grid>
-  <div data-col="3">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
-  </div>
-  <div data-col="9">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">9</div>
-  </div>
-</div>
-<div data-grid>
-  <div data-col="10">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">10</div>
-  </div>
-  <div data-col="2">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-  </div>
-</div>
-<div data-grid>
-  <div data-col="1">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-  </div>
-  <div data-col="11">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">11</div>
-  </div>
-</div>
-<div data-grid>
-  <div data-col="12">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">12</div>
-  </div>
-</div>
-      <div class="spacer"></div>
+        <div class="spacer"></div>
 
-      <div data-grid="is-center">
         <div data-col="8-md">
           <p class="is-h2 is-uppercase" style="line-height: 1em">
             mobile<span class="is-ink-link">first</span>
@@ -780,7 +797,8 @@
             tablet<span class="is-ink-light">landscape</span><span class="is-ink-link">1024</span>
             desktop<span class="is-ink-link">1280</span>
             widescreen<span class="is-ink-link">1920</span></p>
-          <p>The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of classes.
+          <p>The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of
+            classes.
             you can choose between a float or a flex based 12 column grid.</p>
           <div data-grid>
             <div data-col="6-sm">
@@ -808,7 +826,7 @@
           </div>
           <div class="spacer"></div>
 <div class="well align-center">
-  <div class="is-kilo">data-container="{option}"</div>
+  <div class="is-kilo">data-container="{option}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}"</div>
 </div>
 <p>wraps everything in a repsonsive container with a maximum with of
   <strong>1200px</strong>. Per default it is centered horizontally. for full-width
@@ -1094,23 +1112,26 @@
 </p>
 <div class="bumper"></div><h3 class="is-mega align-center" id="xui-breakpoint-shortcodes">breakpoint shortcodes</h3>
 <div data-grid>
-  <div data-col="2">
+  <div data-flex-item="grow-even">
     <div class="is-h1 align-center ink-link">xs</div>
   </div>
-  <div data-col="2">
+  <div data-flex-item="grow-even">
     <div class="is-h1 align-center">sm</div>
   </div>
-  <div data-col="2">
+  <div data-flex-item="grow-even">
     <div class="is-h1 align-center">md</div>
   </div>
-  <div data-col="2">
+  <div data-flex-item="grow-even">
     <div class="is-h1 align-center">lg</div>
   </div>
-  <div data-col="2">
+  <div data-flex-item="grow-even">
     <div class="is-h1 align-center">xl</div>
   </div>
-  <div data-col="2">
+  <div data-flex-item="grow-even">
     <div class="is-h1 align-center">xxl</div>
+  </div>
+  <div data-flex-item="grow-even">
+    <div class="is-h1 align-center">nav</div>
   </div>
 </div>
 <div class="spacer"></div>
@@ -1145,6 +1166,10 @@
   <tr>
     <td><span class="code">xxl</span></td>
     <td>widescreen: <em>[1920px]</em> up.</td>
+  </tr>
+  <tr>
+    <td><span class="code">nav</span></td>
+    <td>for layout-behavior when using e.g. a hamburger-menu <em>[720px]</em>.</td>
   </tr>
 </table>
 
@@ -1315,7 +1340,7 @@
             class="tag tag_error tag_small">hyphen</a></td>
     </tr>
     <tr>
-      <td><span class="code">i.s-ellipsis</span></td>
+      <td><span class="code">.is-ellipsis</span></td>
       <td>automatic text cut off with ...</td>
     </tr>
     </tbody>
@@ -3098,10 +3123,10 @@
   <h3 id="has-height" class="is-kilo">has-height</h3>
   <div class="well align-center">
     <span class="is-h6">has-height-{relation}-{ratio}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
+    <span class="is-h6">has-min-height-{relation}-{ratio}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
   </div>
   <p>the <span class="code">has-height</span> modifier is the vertical layout equivalent for
-    columns. size modifier set the
-    min-height of an element relative to its parent or to the viewport.
+    columns. size modifier set the height of an element relative to its parent or to the viewport.
   </p>
   <table class="table">
     <tr data-grid="no-gutter">
@@ -3133,6 +3158,7 @@
   <h3 id="has-width" class="is-kilo">has-width</h3>
   <div class="well align-center">
     <span class="is-h6">has-width-{relation}-{ratio}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
+    <span class="is-h6">has-min-width-{relation}-{ratio}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
   </div>
   <p>the <span class="code">has-width</span> is an additional size modifier, that can be
     used instead of <span class="col">data-col</span>.</p>
@@ -3210,7 +3236,7 @@
 <div class="bumper"></div><section>
   <h3 id="is-position" class="is-kilo">is-position</h3>
   <div class="well align-center">
-    <span class="is-h6">is-{relative|absolute|fixed}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
+    <span class="is-h6">is-{static|relative|absolute|fixed|sticky}-{<a href="#xui-breakpoint-shortcodes">breakpoint</a>}</span>
   </div>
 
   <div class="spacer"></div>
@@ -3321,7 +3347,7 @@
   </div>
 
   <div class="animation-demo">
-    <div v-if="render" class="is-uppercase is-h1"
+    <div v-if="render" class="is-uppercase is-h1 special-font"
          :data-animate="selectedAnimation + ' ' + animationDuration + ' +' + animationDelay">
       demo
     </div>
@@ -3338,14 +3364,15 @@
       </div>
     </div>
 
-<section class="is-theme_dark" id="ec-icon">
+  </div>
+<section class="is-theme_dark is-relative-xl is-layer-20-xl" id="ec-icon" data-col="12">
   <div data-container>
     <div data-grid="is-center">
       <div data-col="6-md">
         <div class="has-padding-big">
           <div class="align-center">
             <span class="is-giga ec-icon skull"></span>
-            <h2 class="is-mega">ec-icons</h2>
+            <h2 class="is-mega special-font">ec-icons</h2>
           </div>
           <div class="input-group">
             <span class="ec-icon find input-group__icon"></span>
@@ -3372,7 +3399,7 @@
       </div>
     </div>
   </div>
-</section><footer class="is-theme_dark">
+</section><footer class="is-theme_dark is-relative-xl is-layer-20-xl" data-col="12">
   <div class="has-padding">
     <p class="align-center is-ink-light">
       <small>
@@ -3391,7 +3418,6 @@
       </small>
     </p>
   </div>
-</footer>  </div>
-
+</footer></div>
 </body>
 </html>

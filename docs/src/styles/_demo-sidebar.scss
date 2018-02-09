@@ -1,6 +1,4 @@
 .demo-sidebar {
-  border-right: 1px solid getColor(divider);
-
   a {
     color: getColor(text);
 
@@ -11,6 +9,7 @@
 
   h3 {
     margin: rem(16) 0 0 0;
+    background-color: rgba(getColor(background),.6);
   }
 
   ul {

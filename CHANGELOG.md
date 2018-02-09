@@ -20,6 +20,11 @@
 - added shadow color config for `.is-raised` and `.is-lifted`
 - additional overflow modifier classes `is-scrollable-y-contain` and `is-scrollable-x-contain`
 - fixed `.input_round` styles
+- added is-position classes `is-static` and `is-sticky`
+- added `is-positioned` reset class `not-positioned`
+- added an additional breakpoint-shortcode `nav` for mobile nav behavoir
+- added breakpoints for `data-container` values
+- optimized `.spacer` and `.bumper`
 
 ## 8.0.0-beta.1
 ### breaking changes
