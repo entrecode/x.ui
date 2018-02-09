@@ -6,7 +6,8 @@
 @import 'has-height';
 @import 'has-width';
 @import 'pull';
-@import 'overflow';
+@import 'is-scrollable';
+@import 'is-clipped';
 @import 'is-position';
 @import 'is-positioned';
 @import 'not-positioned';
@@ -28,7 +29,7 @@
 @import 'data-animate_duration';
 @import 'has-transition';
 /// ui
-@import 'tooltip';
+@import 'data-tooltip';
 @import 'is-raised';
 @import 'is-lifted';
 @import 'is-rounded';

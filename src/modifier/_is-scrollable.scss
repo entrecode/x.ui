@@ -1,25 +1,7 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.2
 /// @access public
 /// @group modifier
-
-.is-clipped {
-  @include set-breakpoints {
-    overflow: hidden;
-  }
-
-  &-x {
-    @include set-breakpoints {
-      overflow-x: hidden;
-    }
-  }
-
-  &-y {
-    @include set-breakpoints {
-      overflow-y: hidden;
-    }
-  }
-}
 
 .is-scrollable {
   @include set-breakpoints {
