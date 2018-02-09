@@ -25,9 +25,8 @@ nav.dropdown {
     z-index: 10;
     max-height: rem(320);
     opacity: 0;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 0, 0% 0%);
     visibility: hidden;
-    transition: visibility .5s, clip-path .2s, opacity .2s;
+    transition: visibility .5s, opacity .2s;
 
     .dropdown-option {
       display: block;
@@ -82,7 +81,6 @@ nav.dropdown {
   &:focus {
     > .dropdown-options {
       visibility: visible;
-      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
       opacity: 1;
     }
   }
@@ -91,7 +89,6 @@ nav.dropdown {
     &:hover {
       ul.dropdown-options {
         visibility: visible;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         opacity: 1;
       }
     }
@@ -99,7 +96,6 @@ nav.dropdown {
 
   &.dropdown_above {
     ul.dropdown-options {
-      clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
       top: initial;
       bottom: 100%;
     }
@@ -107,7 +103,6 @@ nav.dropdown {
     &:focus {
       > .dropdown-options {
         visibility: visible;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         opacity: 1;
       }
     }
@@ -116,7 +111,6 @@ nav.dropdown {
       &:hover {
         ul.dropdown-options {
           visibility: visible;
-          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
           opacity: 1;
         }
       }
