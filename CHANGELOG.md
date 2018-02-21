@@ -1,3 +1,7 @@
+## 8.0.0-beta.3
+### changes
+- new config variables `$giga-margin`, `$mega-margin` and `$kilo-margin` for headings margin-bottom
+
 ## 8.0.0-beta.2
 ### breaking changes
 - changed data-container values to `is-left` and `is-right`

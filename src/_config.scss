@@ -33,13 +33,13 @@ $highlight: #9de263 !default;
 $background-invert: $text !default;
 
 /// @param {color} $background-light [null] - set value too overwrite generated color
-$background-light: null;
+$background-light: null !default;
 
 /// @param {color} $background-lighter [null] - set value too overwrite generated color
-$background-lighter: null;
+$background-lighter: null !default;
 
 /// @param {color} $background-lightest [null] - set value too overwrite generated color
-$background-lightest: null;
+$background-lightest: null !default;
 
 /// @param {color} $text-invert [$background] - inverted color for text
 $text-invert: $background !default;
@@ -48,12 +48,12 @@ $text-invert: $background !default;
 /// @param {color} $text-light [rgba($text, .6)]
 /// @param {color} $text-lighter [rgba($text, .4)]
 /// @param {color} $text-lightest [rgba($text, .2)]
-$text-light: rgba($text, .6);
-$text-lighter: rgba($text, .4);
-$text-lightest: rgba($text, .2);
+$text-light: rgba($text, .6) !default;
+$text-lighter: rgba($text, .4) !default;
+$text-lightest: rgba($text, .2) !default;
 
 /// @param {color} $backdrop [rgba(black, .8)]
-$backdrop: rgba(black, .8);
+$backdrop: rgba(black, .8) !default;
 
 /// @param {number} $hover-shading [-4] - amount by which colors are darkened or lightened on hover
 $hover-shading: -4 !default;
@@ -127,6 +127,15 @@ $base-line-height: 1.4 !default;
 
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
 $vertical-rhythm: round($base-line-height * $base-font-size) !default;
+
+/// @param {number} $giga-margin [$vertical-rhythm * 2] - set margin-bottom for h1
+$giga-margin: $vertical-rhythm * 2;
+
+/// @param {number} $mega-margin [$vertical-rhythm] - set margin-bottom for h2, h3, h4
+$mega-margin: $vertical-rhythm;
+
+/// @param {number} $kilo-margin [$vertical-rhythm / 2] - set margin-bottom for h5, h6
+$kilo-margin: $vertical-rhythm / 2;
 
 /// @param {value} $bp-type-scale-small - breakpoint modular scale for small devices
 $bp-type-scale-small: 0 !default;
