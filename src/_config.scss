@@ -125,17 +125,20 @@ $base-font-size: 16 !default;
 /// @param {em} $base-line-height [1.4]
 $base-line-height: 1.4 !default;
 
+/// @param {em} $headings-line-height [$base-line-height]
+$headings-line-height: $base-line-height !default;
+
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
 $vertical-rhythm: round($base-line-height * $base-font-size) !default;
 
 /// @param {number} $giga-margin [$vertical-rhythm * 2] - set margin-bottom for h1
-$giga-margin: $vertical-rhythm * 2;
+$giga-margin: $vertical-rhythm * 2 !default;
 
 /// @param {number} $mega-margin [$vertical-rhythm] - set margin-bottom for h2, h3, h4
-$mega-margin: $vertical-rhythm;
+$mega-margin: $vertical-rhythm !default;
 
 /// @param {number} $kilo-margin [$vertical-rhythm / 2] - set margin-bottom for h5, h6
-$kilo-margin: $vertical-rhythm / 2;
+$kilo-margin: $vertical-rhythm / 2 !default;
 
 /// @param {value} $bp-type-scale-small - breakpoint modular scale for small devices
 $bp-type-scale-small: 0 !default;
@@ -239,15 +242,15 @@ $avatar-square-radius: 4 !default;
 /// @param {variable} $btn-font-family [$body-font]
 $btn-font-family: $body-font !default;
 
-/// @param {number} $btn-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$btn-padding-ratio: 2 !default;
+/// @param {number} $btn-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
+$btn-padding-ratio: 1.5 !default;
 
-/// @param {number} $btn-font-size [16]
-/// @param {number} $btn-line-height [20]
+/// @param {number} $btn-font-size [$base-font-size]
+/// @param {number} $btn-line-height [$btn-font-size * $base-line-height]
 /// @param {number} $btn-min-height [40]
 /// @param {value} $btn-weight [bold]
-$btn-font-size: 16 !default;
-$btn-line-height: 20 !default;
+$btn-font-size: $base-font-size !default;
+$btn-line-height: $btn-font-size * $base-line-height !default;
 $btn-min-height: 40 !default;
 $btn-weight: bold !default;
 
@@ -256,12 +259,12 @@ $btn-weight: bold !default;
   /// put styles here...
 }
 
-/// @param {number} $btn-small-font-size [14]
-/// @param {number} $btn-small-line-height [18]
+/// @param {number} $btn-small-font-size [$base-font-size * .875]
+/// @param {number} $btn-small-line-height [$btn-small-font-size * $base-line-height]
 /// @param {number} $btn-small-min-height [32]
 /// @param {value} $btn-small-weight [$btn-weight]
-$btn-small-font-size: 14 !default;
-$btn-small-line-height: 18 !default;
+$btn-small-font-size: $base-font-size * .875 !default;
+$btn-small-line-height: $btn-small-font-size * $base-line-height !default;
 $btn-small-min-height: 32 !default;
 $btn-small-weight: $btn-weight !default;
 
@@ -270,12 +273,12 @@ $btn-small-weight: $btn-weight !default;
   /// put styles here...
 }
 
-/// @param {number} $btn-big-font-size [18]
-/// @param {number} $btn-big-line-height [24]
+/// @param {number} $btn-big-font-size [$base-font-size * 1.125]
+/// @param {number} $btn-big-line-height [$btn-big-font-size * $base-line-height]
 /// @param {number} $btn-big-min-height [48]
 /// @param {value} $btn-big-weight [$btn-weight]
-$btn-big-font-size: 18 !default;
-$btn-big-line-height: 24 !default;
+$btn-big-font-size: $base-font-size * 1.125 !default;
+$btn-big-line-height: $btn-big-font-size * $base-line-height !default;
 $btn-big-min-height: 48 !default;
 $btn-big-weight: $btn-weight !default;
 
@@ -338,8 +341,8 @@ $dropdown-shadow: 0 8px 16px -4px rgba(black, .16), 0 4px 24px 0px rgba(black, 0
 /// @param {em} $input-font-size [16]
 /// @param {em} $input-line-height [24]
 /// @param {em} $input-min-height [32]
-$input-font-size: 16 !default;
-$input-line-height: 20 !default;
+$input-font-size: $base-font-size !default;
+$input-line-height: $input-font-size * $base-line-height !default;
 $input-min-height: 32 !default;
 
 /// additional styles for .input
@@ -350,8 +353,8 @@ $input-min-height: 32 !default;
 /// @param {em} $input-small-font-size [14]
 /// @param {em} $input-small-line-height [18]
 /// @param {em} $input-small-min-height [28]
-$input-small-font-size: 14 !default;
-$input-small-line-height: 18 !default;
+$input-small-font-size: $input-font-size * .875 !default;
+$input-small-line-height: $input-small-font-size * $base-line-height !default;
 $input-small-min-height: 28 !default;
 
 /// additional styles for .input.small
@@ -362,8 +365,8 @@ $input-small-min-height: 28 !default;
 /// @param {em} $input-big-font-size [18]
 /// @param {em} $input-big-line-height [24]
 /// @param {em} $input-big-min-height [40]
-$input-big-font-size: 18 !default;
-$input-big-line-height: 22 !default;
+$input-big-font-size: $input-font-size * 1.125 !default;
+$input-big-line-height: $input-big-font-size * $base-line-height !default;
 $input-big-min-height: 40 !default;
 
 /// additional styles for .input.big
@@ -545,12 +548,12 @@ $bubble-big-radius: 4 !default;
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 $tag-padding-ratio: 2 !default;
 
-/// @param {em} $tag-font-size [14]
-/// @param {em} $tag-line-height [16]
+/// @param {em} $tag-font-size [$base-font-size]
+/// @param {em} $tag-line-height [$tag-font-size * $base-line-height]
 /// @param {em} $tag-min-height [28]
 /// @param {value} $tag-weight [bold]
-$tag-font-size: 14 !default;
-$tag-line-height: 16 !default;
+$tag-font-size: $base-font-size !default;
+$tag-line-height: $tag-font-size * $base-line-height !default;
 $tag-min-height: 28 !default;
 $tag-weight: bold !default;
 
@@ -559,12 +562,12 @@ $tag-weight: bold !default;
   /// put styles here...
 }
 
-/// @param {em} $tag-small-font-size [12]
-/// @param {em} $tag-small-line-height [14]
+/// @param {em} $tag-small-font-size [$tag-font-size * .875]
+/// @param {em} $tag-small-line-height [$tag-small-font-size * $base-line]
 /// @param {em} $tag-small-min-height [24]
 /// @param {value} $tag-small-weight [$tag-weight]
-$tag-small-font-size: 12 !default;
-$tag-small-line-height: 14 !default;
+$tag-small-font-size: $tag-font-size * .875 !default;
+$tag-small-line-height: $tag-small-font-size * $base-line-height !default;
 $tag-small-min-height: 24 !default;
 $tag-small-weight: $tag-weight !default;
 
@@ -573,12 +576,12 @@ $tag-small-weight: $tag-weight !default;
   /// put styles here...
 }
 
-/// @param {em} $tag-big-font-size [16]
-/// @param {em} $tag-big-line-height [18]
+/// @param {em} $tag-big-font-size [$tag-font-size * 1.125]
+/// @param {em} $tag-big-line-height [$tag-big-font-size * $base-line-height]
 /// @param {em} $tag-big-min-height [32]
 /// @param {value} $tag-big-weight [$tag-weight]
-$tag-big-font-size: 16 !default;
-$tag-big-line-height: 18 !default;
+$tag-big-font-size: $tag-font-size * 1.125 !default;
+$tag-big-line-height: $tag-big-font-size * $base-line-height !default;
 $tag-big-min-height: 32 !default;
 $tag-big-weight: $tag-weight !default;
 
@@ -677,6 +680,14 @@ $hamburger-btn-height: 2 !default;
 /// @param {rem} $hamburger-btn-spacing [4] - spacing of hamburger menu bars
 $hamburger-btn-spacing: 4 !default;
 
+/// @param {color} $hamburger-btn-color [$link] - spacing of hamburger menu bars
+$hamburger-btn-color: $link !default;
+
+/// additional styles for .hamburger-btn
+%hamburger-btn-style {
+  /// put styles here...
+}
+
 /// toolbar
 /// ------------------------------------------------------
 
@@ -726,6 +737,16 @@ $card-radius: 4 !default;
 $is-rounded-min-radius: 2 !default;
 $is-rounded-radius: 4 !default;
 $is-rounded-max-radius: 8 !default;
+
+/// is-bordered
+/// ------------------------------------------------------
+/// @param {rem} $is-bordered-width [1]
+/// @param {color} $is-bordered-color [rgba(text, .1)]
+/// @param {value} $is-bordered-style [solid]
+
+$is-bordered-width: 1;
+$is-bordered-color: rgba($text, .1);
+$is-bordered-style: solid;
 
 /// is-lifted
 /// ------------------------------------------------------
