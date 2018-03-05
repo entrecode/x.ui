@@ -1,6 +1,6 @@
 {
   "name": "x.ui",
-  "version": "8.0.0-beta.2",
+  "version": "8.0.0-beta.3",
   "description": "x.ui is a framework based on the atomic design methodology",
   "author": "entrecode GmbH",
   "main": "src/x.ui.scss",
@@ -65,6 +65,7 @@
       "is-ink.njk",
       "is-theme.njk",
       "is-rounded.njk",
+      "is-bordered.njk",
       "is-raised.njk",
       "is-lifted.njk",
       "is-fab.njk"
