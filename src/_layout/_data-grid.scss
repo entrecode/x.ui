@@ -6,7 +6,6 @@
 [data-grid] {
   display: flex;
   flex-wrap: wrap;
-  flex: 0 1 auto;
 
   @at-root ul[data-grid] {
     list-style: none;

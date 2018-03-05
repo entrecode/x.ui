@@ -1,6 +1,18 @@
 ## 8.0.0-beta.3
 ### changes
 - new config variables `$giga-margin`, `$mega-margin` and `$kilo-margin` for headings margin-bottom
+- changed default values for .btn config variables - new based on $base-font-size
+- changed default values for .tag config variables - new based on $base-font-size
+- changed default values for .input config variables - new based on $base-font-size
+- fixed em function for $base-font-size usage
+- moved `$hamburger-btn-color` to config
+- removed `:invalid` styles of `.input`
+- flex fix for `xui-checkbox` and `xui-radio`
+- added `$headings-line-height` variable
+
+###added
+- `.is-bordered` modifier class
+
 
 ## 8.0.0-beta.2
 ### breaking changes
