@@ -13,6 +13,7 @@ h1, h2, h3, h4, h5, h6,
 .is-giga, .is-mega, .is-kilo {
   font-family: $headings-font;
   font-weight: $headings-weight;
+  line-height: $headings-line-height;
   margin-top: 0;
 
   @extend %heading-style !optional;
