@@ -73,10 +73,6 @@
     border-color: getColor(background, light);
   }
 
-  &:invalid {
-    border-color: getColor(state, error);
-  }
-
   @at-root select.input {
     height: em($input-min-height, $input-font-size);
 
