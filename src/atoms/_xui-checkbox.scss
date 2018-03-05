@@ -20,6 +20,8 @@
         font-family: initial;
         background-color: getColor(background);
         display: flex;
+        flex-shrink: 0;
+        flex-grow: 0;
         justify-content: center;
         margin-right: rem(8);
         text-align: center;
@@ -31,6 +33,7 @@
         border-radius: rem($checkbox-radius);
         font-size: rem($checkbox-font-size);
         line-height: rem($checkbox-line-height * 2);
+
         @extend %checkbox-style;
       }
 
