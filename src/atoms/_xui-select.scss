@@ -4,13 +4,10 @@
 /// @group atoms
 
 %select {
+  @extend .input;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-color: $select-border-color;
-  background-color: getColor(background);
-  @include macro-metrics($select-font-size, $select-line-height, $select-min-height, $select-border);
-  border-radius: rem($select-radius);
   cursor: pointer;
   outline: none;
   position: relative;
