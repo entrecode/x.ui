@@ -1,14 +1,12 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.3
 /// @access public
 /// @group atoms
 ///
 /// @param {number} $hamburger-btn-width [16] - width of hamburger menu
 /// @param {number} $hamburger-btn-height [2] - height of hamburger menu bars
 /// @param {number} $hamburger-btn-spacing [4] - spacing of hamburger menu bars
-
-/// @param {color} $hamburger-btn-color [getColor(link)]
-$hamburger-btn-color: getColor(link);
+/// @param {color} $hamburger-btn-color [$link]
 
 .hamburger-btn {
   @extend %btn;
@@ -78,5 +76,7 @@ $hamburger-btn-color: getColor(link);
       }
     }
   }
+
+  @extend %hamburger-btn-style !optional;
 }
 

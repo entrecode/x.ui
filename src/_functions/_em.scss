@@ -14,6 +14,6 @@
 ///
 /// @return {number} Value in em
 
-@function em($value, $base: $root-size) {
+@function em($value, $base: $base-font-size) {
   @return ($value / $base) + em;
 }

@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.3
 /// @access public
 /// @group atoms
 ///
@@ -13,6 +13,7 @@ h1, h2, h3, h4, h5, h6,
 .is-giga, .is-mega, .is-kilo {
   font-family: $headings-font;
   font-weight: $headings-weight;
+  line-height: $headings-line-height;
   margin-top: 0;
 
   @extend %heading-style !optional;
@@ -24,15 +25,15 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1 {
-  margin-bottom: rem($vertical-rhythm * 2);
+  margin-bottom: rem($giga-margin);
 }
 
 h2, h3, h4 {
-  margin-bottom: rem($vertical-rhythm);
+  margin-bottom: rem($mega-margin);
 }
 
 h5, h6 {
-  margin-bottom: rem($vertical-rhythm / 2);
+  margin-bottom: rem($kilo-margin);
 }
 
 h1,

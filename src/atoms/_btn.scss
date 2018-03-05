@@ -57,6 +57,7 @@
 
   /// ec-icon styles for default btn
   .ec-icon {
+    font-size: 1em;
 
     @if $flex-support == false {
       display: inline;
@@ -241,7 +242,7 @@
     }
 
     &.btn_minor {
-      color: setContrast(getColor(minor), getColor(minor));
+      color: setContrast(getColor(background), getColor(minor));
     }
 
     &.btn_super {
