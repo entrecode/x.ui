@@ -1,15 +1,14 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 8.0.0-beta.4
 /// @group flex-grid
 /// @access public
 
-$values: 'is-around', 'is-between', 'is-center', 'is-start', 'is-end';
-$css: 'space-around', 'space-between', 'center', 'flex-start', 'flex-end';
+$justifyContent: (
+        'is-around': 'space-around',
+        'is-between': 'space-between',
+        'is-center': 'center',
+        'is-start': 'flex-start',
+        'is-end': 'flex-end'
+);
 
-@each $value in $values {
-  $i: index($values, $value);
-  $c: nth($css, $i);
-  @include set-data-breakpoints('flex', #{$value}) {
-    justify-content: #{$c};
-  }
-}
+@include set-map-breakpoints(flex, justify-content, $justifyContent);

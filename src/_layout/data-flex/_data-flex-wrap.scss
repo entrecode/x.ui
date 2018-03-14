@@ -1,15 +1,12 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 8.0.0-beta.4
 /// @group flex-grid
 /// @access public
 
-$values: 'is-wrap', 'is-nowrap', 'is-wrap-reverse';
-$css: 'wrap', 'nowrap', 'wrap-reverse';
+$flexWrap: (
+        'is-wrap': 'wrap',
+        'is-nowrap': 'nowrap',
+        'is-wrap-reverse': 'wrap-reverse'
+);
 
-@each $value in $values {
-  $i: index($values, $value);
-  $c: nth($css, $i);
-  @include set-data-breakpoints('flex', #{$value}) {
-    flex-wrap: #{$c};
-  }
-}
+@include set-map-breakpoints(flex, flex-wrap, $flexWrap);

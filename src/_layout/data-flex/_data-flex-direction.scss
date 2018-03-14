@@ -1,15 +1,13 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 8.0.0-beta.4
 /// @group flex-grid
 /// @access public
 
-$values: 'is-column', 'is-column-reverse', 'is-row', 'is-row-reverse';
-$css: 'column', 'column-reverse', 'row', 'row-reverse';
+$flexDirection: (
+        'is-column': 'column',
+        'is-column-reverse': 'column-reverse',
+        'is-row': 'row',
+        'is-row-reverse': 'row-reverse'
+);
 
-@each $value in $values {
-  $i: index($values, $value);
-  $c: nth($css, $i);
-  @include set-data-breakpoints('flex', #{$value}) {
-    flex-direction: #{$c};
-  }
-}
+@include set-map-breakpoints(flex, flex-direction, $flexDirection);

@@ -1,15 +1,15 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 8.0.0-beta.4
 /// @group flex-grid
 /// @access public
 
-$values: 'is-end-content', 'is-start-content', 'is-center-content', 'is-stretch-content', 'is-between-content', 'is-around-content';
-$css: 'flex-end', 'flex-start', 'center', 'stretch', 'space-between', 'space-around';
+$alignContent: (
+        'is-end-content': 'flex-end',
+        'is-start-content': 'flex-start',
+        'is-center-content': 'center',
+        'is-stretch-content': 'stretch',
+        'is-between-content': 'space-between',
+        'is-around-content': 'space-around'
+);
 
-@each $value in $values {
-  $i: index($values, $value);
-  $c: nth($css, $i);
-  @include set-data-breakpoints('flex', #{$value}) {
-    align-content: #{$c};
-  }
-}
+@include set-map-breakpoints(flex, align-content, $alignContent);

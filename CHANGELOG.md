@@ -1,5 +1,13 @@
 ## 8.0.0-beta.3
 ### changes
+- fixed nesting bug in `.title`
+- added modifier `.xui-select_top`
+
+### added
+- added new mixin `set-map-breakpoints`
+
+## 8.0.0-beta.3
+### changes
 - new config variables `$giga-margin`, `$mega-margin` and `$kilo-margin` for headings margin-bottom
 - changed default values for .btn config variables - new based on $base-font-size
 - changed default values for .tag config variables - new based on $base-font-size

@@ -1,15 +1,15 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 8.0.0-beta.4
 /// @group data-flex-item
 /// @access public
 
-$values: 'is-auto', 'is-baseline', 'is-stretch', 'is-center', 'is-start', 'is-end';
-$css: 'auto', 'baseline', 'stretch', 'center', 'flex-start', 'flex-end';
+$alignSelf: (
+        'is-auto': 'auto',
+        'is-baseline': 'baseline',
+        'is-stretch': 'stretch',
+        'is-center': 'center',
+        'is-start': 'flex-start',
+        'is-end': 'flex-end'
+);
 
-@each $value in $values {
-  $i: index($values, $value);
-  $c: nth($css, $i);
-  @include set-data-breakpoints('flex-item', #{$value}) {
-    align-self: #{$c};
-  }
-}
+@include set-map-breakpoints(flex-item, align-self, $alignSelf);
