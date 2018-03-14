@@ -102,6 +102,13 @@ nav.xui-select {
   .xui-select__placeholder {
     @extend %selectPlaceholder;
   }
+
+  &.xui-select_top {
+    .xui-select-options {
+      top: auto;
+      bottom: 100%;
+    }
+  }
 }
 
 ul.xui-select-options {
