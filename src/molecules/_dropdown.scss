@@ -16,7 +16,9 @@ nav.dropdown {
 
   ul.dropdown-options {
     @extend .is-dropdown;
-    @extend .is-scrollable-y-contain;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
     list-style: none;
     margin: 0;
     padding: 0;
