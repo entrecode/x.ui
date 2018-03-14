@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.4
 /// @access public
 /// @group organism
 
@@ -18,29 +18,9 @@
     margin: 0;
   }
 
-  nav {
-    &:only-child {
-      display: flex;
-      justify-content: flex-end;
-      width: 100%;
-    }
-
-    ul {
-      display: flex;
-      justify-content: flex-end;
-    }
-  }
 
   &.title_stacked {
     flex-direction: column;
     align-items: flex-start;
-
-    nav {
-      margin-right: 0;
-
-      ul {
-        justify-content: flex-start;
-      }
-    }
   }
 }
