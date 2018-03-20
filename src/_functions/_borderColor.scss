@@ -21,7 +21,7 @@
     $lightnessborder: ($lightness1 - $lightness2);
   }
 
-  @if ($lightnessborder > 75) {
+  @if (stripUnit($lightnessborder) > 75) {
     @return lighten($color1, $lightnessborder / 3);
   } @else if ($lightnessborder > 75) {
     @return lighten($color1, $lightnessborder / 2);

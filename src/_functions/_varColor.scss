@@ -15,11 +15,11 @@
 
 @function varColor($source, $amount) {
   /// @prop {value} $hue: hue value of source color
-  $hue: hue($source);
+  $hue: stripUnit(hue($source));
   /// @prop {value} $lightness: lightness value of source color
-  $lightness: lightness($source);
+  $lightness: stripUnit(lightness($source));
   /// @prop {value} $sat: saturation value of source color
-  $sat: saturation($source);
+  $sat: stripUnit(saturation($source));
   /// @prop {number} $hueRatio: ratio for increasing or decreasing hue based on $amount
   $hueRatio: .15;
   /// @prop {number} $satRatio: ratio for increasing or decreasing saturation based on $amount
@@ -27,7 +27,7 @@
   /// @prop {value} $target: target color value
   $target: null;
   /// @prop {value} $alpha: alpha color value
-  $alpha: alpha($source);
+  $alpha: stripUnit(alpha($source));
 
   @if ($alpha < .2 and $amount < 20 and $amount > -20) {
     $target: rgba($source, $alpha);
