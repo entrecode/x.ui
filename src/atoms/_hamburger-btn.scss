@@ -19,6 +19,7 @@
     position: absolute;
     height: rem($hamburger-btn-height);
     width: rem($hamburger-btn-width);
+    border-radius: rem($hamburger-btn-height / 2);
     background-color: $hamburger-btn-color;
     left: rem((($btn-min-height - $hamburger-btn-width)/2));
     top: 50%;
@@ -32,6 +33,7 @@
     position: absolute;
     height: rem($hamburger-btn-height);
     width: rem($hamburger-btn-width);
+    border-radius: rem($hamburger-btn-height / 2);
     background-color: $hamburger-btn-color;
     left: rem((($btn-min-height - $hamburger-btn-width)/2));
     top: 50%;
@@ -45,6 +47,7 @@
       position: absolute;
       height: rem($hamburger-btn-height);
       width: rem($hamburger-btn-width);
+      border-radius: rem($hamburger-btn-height / 2);
       background-color: $hamburger-btn-color;
       left: rem((($btn-min-height - $hamburger-btn-width)/2));
       top: 50%;

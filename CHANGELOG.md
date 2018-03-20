@@ -1,4 +1,8 @@
-## 8.0.0-beta.3
+## 8.0.0-beta.5
+### added
+- function `stripUnit`
+
+## 8.0.0-beta.4
 ### changes
 - fixed nesting bug in `.title`
 - added modifier `.xui-select_top`
