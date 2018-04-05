@@ -124,8 +124,15 @@
     $aa: 4.5;
   }
 
-  $lighter-fallback: white !default;
-  $darker-fallback: black !default;
+  @if ($lighter-fallback == false) and ($darker-fallback == false) {
+    @if getBrightness($text) > getBrightness($background) {
+      $lighter-fallback: $text !global;
+      $darker-fallback: $background !global;
+    } @else {
+      $lighter-fallback: $background !global;
+      $darker-fallback: $text !global;
+    }
+  }
 
   $list: 10 20 30 40 50 60 70 80 90 100;
   $last: nth($list, length($list));

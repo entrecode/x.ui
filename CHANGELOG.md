@@ -2,6 +2,11 @@
 ### added
 - function `stripUnit`
 
+### changes
+- fixed 'darkmode bug' in `setContrast` function
+- `.ec-icon` within elements using the `macro-metrics` mixins now have the line-height of parent as font-size
+- optimized `setHover` function - now lightens dark colors and darkens light colors
+
 ## 8.0.0-beta.4
 ### changes
 - fixed nesting bug in `.title`
