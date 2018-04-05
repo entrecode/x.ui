@@ -12,14 +12,17 @@
 
 @mixin macro-metrics($font-size, $line-height, $min-height, $border: null , $padding-ratio: 2) {
   $padding: ($min-height - $line-height) / 2;
+
   @if $border {
     $padding: ($padding - $border);
   }
+
   font-size: em($font-size);
   line-height: em($line-height, $font-size);
   min-height: em($min-height, $font-size);
   min-width: em($min-height, $font-size);
   padding: em($padding, $font-size) em(($padding * $padding-ratio), $font-size);
+
   @if $border {
     border-width: rem($border);
     border-style: solid;
@@ -42,6 +45,7 @@
   }
 
   .ec-icon {
+    font-size: em($line-height, $font-size);
     padding-right: rem($padding);
 
     &.ec-icon_right {

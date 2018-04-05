@@ -57,7 +57,6 @@
 
   /// ec-icon styles for default btn
   .ec-icon {
-    font-size: 1em;
 
     @if $flex-support == false {
       display: inline;
