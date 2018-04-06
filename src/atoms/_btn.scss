@@ -87,13 +87,6 @@
     border-radius: rem($btn-big-radius);
     @include macro-metrics($btn-big-font-size, $btn-big-line-height, $btn-big-min-height, $padding-ratio: $btn-padding-ratio) {
     }
-
-    .ec-icon {
-      &:before {
-        font-size: rem(16);
-        line-height: inherit;
-      }
-    }
   }
 }
 

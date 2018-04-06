@@ -1,35 +1,62 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.5
 /// @access public
 /// @group atoms
 
 .input-group {
+  display: flex;
   position: relative;
+  align-items: stretch;
 
-  .input-group__icon {
-    position: absolute;
-    display: block;
-    min-width: rem(24);
-    text-align: center;
+  .input-group__addon {
+    @extend %input;
+    width: auto;
+    flex-shrink: 0;
+    flex-grow: 0;
     color: getColor(text, light);
-    left: rem(4);
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    & + .input {
-      padding-left: rem(32);
+    .ec-icon {
+      font-size: 1em;
     }
   }
 
-  a.input-group__icon {
+  a.input-group__addon {
     color: getColor(link);
   }
 
-  .input {
-    & + .input-group__icon {
-      left: auto;
-      right: rem(4);
+  .input-group__addon,
+  > .btn,
+  > .input {
+    &:not(:only-child) {
+      &:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: none;
+      }
+
+      &:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: none;
+      }
     }
+
+    &:not(:last-child) {
+      &:not(:first-child) {
+        border-radius: 0;
+        border-right: none;
+        border-left: none;
+      }
+    }
+  }
+
+  > .btn {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    flex-grow: 0;
   }
 }

@@ -1,11 +1,13 @@
 ## 8.0.0-beta.5
 ### added
 - function `stripUnit`
+- `%input` placeholder
 
 ### changes
 - fixed 'darkmode bug' in `setContrast` function
 - `.ec-icon` within elements using the `macro-metrics` mixins now have the line-height of parent as font-size
 - optimized `setHover` function - now lightens dark colors and darkens light colors
+- changed markup for `.input-group`
 
 ## 8.0.0-beta.4
 ### changes
