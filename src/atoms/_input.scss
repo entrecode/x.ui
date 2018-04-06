@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.5
 /// @access public
 /// @group atoms
 ///
@@ -23,7 +23,7 @@
 /// @param {number} $input-small-radius [4]
 /// @param {number} $input-big-radius [4]
 
-.input {
+%input {
   display: block;
   outline: none;
   border-style: solid;
@@ -42,6 +42,10 @@
   @include placeholder {
     color: getColor(text, light);
   }
+}
+
+.input {
+  @extend %input;
 
   ///
   /// states
@@ -53,8 +57,8 @@
 
   &:focus,
   &:hover {
-    border-color: darken($input-border-color, 20);
-    box-shadow: 0 0 0 2px getColor(state, hover);
+    box-shadow: inset 0 0 0 2px getColor(state, hover);
+
     @include placeholder {
       color: getColor(text);
     }
