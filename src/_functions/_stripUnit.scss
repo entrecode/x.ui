@@ -1,0 +1,12 @@
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.5
+/// @access public
+/// @group unit-functions
+
+@function stripUnit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}

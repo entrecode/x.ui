@@ -68,10 +68,10 @@ $state-error: red !default;
 $state-success: green !default;
 $state-warning: gold !default;
 
-/// @param {color} $lighter-fallback [$background] - light fallback color for setContrast
-/// @param {color} $darker-fallback [$text] - darker fallback color for setContrast
-$lighter-fallback: $background !default;
-$darker-fallback: $text !default;
+/// @param {color | false} $lighter-fallback [false] - light fallback color for setContrast
+/// @param {color | false} $darker-fallback [false] - darker fallback color for setContrast
+$lighter-fallback: false !default;
+$darker-fallback: false !default;
 
 /// @param {boolean} $flex-support [true]
 $flex-support: true !default;

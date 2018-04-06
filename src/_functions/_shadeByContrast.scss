@@ -11,7 +11,7 @@
 @function shadeByContrast($color, $amount) {
   $lightness: lightness($color);
 
-  @if $lightness > 50 {
+  @if stripUnit($lightness) > 50 {
     @return varColor($color, $amount * -1);
   } @else {
     @return varColor($color, $amount);
