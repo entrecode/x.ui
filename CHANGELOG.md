@@ -1,3 +1,7 @@
+## 8.0.0-beta.6
+### changes
+- fixed .ec-icon size bug in `macro-metrics` mixin
+
 ## 8.0.0-beta.5
 ### added
 - function `stripUnit`

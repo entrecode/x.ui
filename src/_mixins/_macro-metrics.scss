@@ -45,8 +45,11 @@
   }
 
   .ec-icon {
-    font-size: em($line-height, $font-size);
     padding-right: rem($padding);
+
+    &:before {
+      font-size: em($line-height, $font-size);
+    }
 
     &.ec-icon_right {
       padding-right: 0;
