@@ -1,0 +1,20 @@
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.7
+/// @access public
+/// @group molecules
+///
+/// @param {rem} $card-radius [4]
+/// @param {color} $card-background [$background]
+/// @param {string | array} $card-padding [8 16] - array or string of numbers
+
+%card {
+  border-radius: rem($card-radius);
+  background-color: $card-background;
+  color: setContrast($card-background);
+  padding: remArray($card-padding);
+  z-index: 1;
+}
+
+.card {
+  @extend %card;
+}

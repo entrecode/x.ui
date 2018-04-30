@@ -2,8 +2,11 @@
 
 ### changes
 - `.input-group` style improvements
-- added variable `$tag-bg` for defaul background-color of `.tag`
+- added config variables for `.form-group` - `$form-group-margin`, `$form-group-label-margin`, `$form-group-label-font-size`
+- added config variables for `.input` - `$input-background`, `$input-color`, `$input-placeholder`
+- added variable `$tag-bg` for default background-color of `.tag`
 - added `remArray()` function
+- added `.card` molecule
 
 ## 8.0.0-beta.6
 ### changes

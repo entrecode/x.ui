@@ -56,6 +56,7 @@
       "xui-tabs.njk",
       "xui-list.njk",
       "xui-accordion.njk",
+      "card.njk",
       "overlay.njk",
       "well.njk",
       "alert.njk",
