@@ -1,0 +1,47 @@
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.7
+/// @access public
+/// @group molecules
+///
+/// @param {boolean} $flex-support [true]
+/// @param {number} $form-boolean-margin [0 0 8 0]
+/// @param {em} $form-boolean-label-font-size [$base-font-size]
+/// @param {number} $form-boolean-label-margin [0 0 4 0]
+
+.form-boolean {
+  margin: remArray($form-boolean-margin);
+
+  @extend %form-boolean-style !optional;
+
+  @if $flex-support == true {
+    display: flex;
+    flex-direction: row;
+
+    label {
+      order: 1;
+    }
+  }
+
+  label {
+    font-size: em($form-boolean-label-font-size);
+    margin: remArray($form-boolean-label-margin);
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: rem(8);
+  }
+
+  &.is-disabled,
+  &[disabled] {
+    cursor: not-allowed;
+
+    &:not(.is-active) {
+      opacity: .4;
+
+      &:hover {
+        opacity: .2;
+      }
+    }
+  }
+}

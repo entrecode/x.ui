@@ -19,12 +19,12 @@
   }
 
   label {
-    display: block;
     font-size: em($form-group-label-font-size);
     margin: remArray($form-group-label-margin);
   }
 
-  &.is-disabled {
+  &.is-disabled,
+  &[disabled] {
     cursor: not-allowed;
 
     &:not(.is-active) {
@@ -33,22 +33,6 @@
       &:hover {
         opacity: .2;
       }
-    }
-  }
-
-  &.form-group_boolean {
-
-    @if $flex-support == true {
-      flex-direction: row;
-
-      label {
-        order: 1;
-      }
-    }
-
-    input[type="radio"],
-    input[type="checkbox"] {
-      margin-right: rem(8);
     }
   }
 }

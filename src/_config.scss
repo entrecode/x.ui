@@ -353,6 +353,24 @@ $form-group-label-font-size: $base-font-size !default;
 }
 
 ///
+/// FORM-BOOLEAN
+/// ------------------------------------------------------
+
+/// @param {number} $form-boolean-margin [0 0 8 0]
+$form-boolean-margin: 0 0 8 0 !default;
+
+/// @param {number} $form-boolean-label-margin [0 0 4 0]
+$form-boolean-label-margin: 0 0 4 0 !default;
+
+/// @param {em} $form-boolean-label-font-size [$base-font-size]
+$form-boolean-label-font-size: $base-font-size !default;
+
+/// additional styles for .from-group
+%form-boolean-style {
+  /// put styles here...
+}
+
+///
 /// INPUT
 /// ------------------------------------------------------
 
