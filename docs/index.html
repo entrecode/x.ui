@@ -1751,6 +1751,19 @@
   <label for="...">Label</label>
   <input type="text" id="..." placeholder="input..." class="input">
 </div></code></pre>
+      <div class="form-group" data-grid>
+        <label for="textID" data-col="2">Label</label>
+        <div data-col="10">
+          <input type="text" id="textID" placeholder="input..." class="input">
+        </div>
+      </div>
+      <pre><code class="html">
+<div class="form-group" data-grid>
+  <label for="..." data-col="2">Label</label>
+  <div data-col="10">
+    <input type="text" id="..." placeholder="input..." class="input">
+  </div>
+</div></code></pre>
     </div>
     <div data-col="6-sm">
       <h3 id="form-boolean" class="is-kilo">form-boolean</h3>
@@ -1758,15 +1771,16 @@
         <label for="radioID">Label</label>
         <input type="radio" id="radioID">
       </div>
+      <pre><code class="html">
+<div class="form-boolean">
+  <label for="...">Label</label>
+  <input type="radio" id="...">
+</div></code></pre>
       <div class="form-boolean">
         <label for="checkboxID">Label</label>
         <input type="checkbox" id="checkboxID">
       </div>
       <pre><code class="html">
-<div class="form-boolean">
-  <label for="...">Label</label>
-  <input type="radio" id="...">
-</div>
 <div class="form-boolean">
   <label for="...">Label</label>
   <input type="checkbox" id="...">

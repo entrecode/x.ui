@@ -16,9 +16,7 @@
 - added variable `$tag-bg` for default background-color of `.tag`
 - added `remArray()` function
 - added `.card` molecule
-
-### added
--
+- added `data-grid` support for `.form-group`
 
 ## 8.0.0-beta.6
 ### changes

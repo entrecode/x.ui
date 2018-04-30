@@ -10,15 +10,10 @@
 
 .form-group {
   margin: remArray($form-group-margin);
-
   @extend %form-group-style !optional;
 
-  @if $flex-support == true {
-    display: flex;
-    flex-direction: column;
-  }
-
   label {
+    display: block;
     font-size: em($form-group-label-font-size);
     margin: remArray($form-group-label-margin);
   }
@@ -33,6 +28,13 @@
       &:hover {
         opacity: .2;
       }
+    }
+  }
+
+  &[data-grid] {
+    label {
+      align-self: center;
+      margin: 0;
     }
   }
 }
