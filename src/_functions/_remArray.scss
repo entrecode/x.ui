@@ -1,0 +1,23 @@
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.7
+/// @access public
+/// @group size-functions
+///
+/// Converts an array or string of numbers into a a string of rem values;
+/// @example
+/// padding: remArray(8 16); // returns rem(8) rem(16)
+///
+/// @param {string | array} $array - array or string of numbers
+/// @require {function} rem()
+///
+/// @return {rem} string of values in rem
+
+@function remArray($array) {
+  $output: null;
+
+  @for $i from 1 through length($array) {
+    $output: append($output, rem(nth($array, $i)));
+  }
+
+  @return $output;
+}

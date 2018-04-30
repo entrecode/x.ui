@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.5
+/// @since 8.0.0-beta.7
 /// @access public
 /// @group atoms
 
@@ -17,10 +17,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    .ec-icon {
-      font-size: 1em;
-    }
   }
 
   a.input-group__addon {
@@ -56,7 +52,57 @@
   > .btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-shrink: 0;
     flex-grow: 0;
+
+    &:active {
+      transform: initial;
+    }
+
+    &:first-child {
+      &.btn_outlined {
+        border-right-width: rem($btn-outline);
+        border-right-style: solid;
+      }
+    }
+
+    &.btn_clear {
+      &+ .input,
+      &+ .input-group__addon {
+        margin-left: rem(4);
+        border-top-left-radius: rem($btn-radius);
+        border-bottom-left-radius: rem($btn-radius);
+        border-left: rem($input-border) solid $input-border-color;
+      }
+    }
+  }
+
+  .input,
+  .input-group__addon {
+    &+ .btn {
+      &.btn_clear {
+        margin-left: rem($btn-radius + 4);
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: rem(($btn-radius + 4) * -1);
+          top: 0;
+          height: 100%;
+          width: rem($btn-radius);
+          border-width: rem($input-border);
+          border-style: solid;
+          border-color: $input-border-color;
+          border-left: 0;
+          border-radius: 0 rem($btn-radius) rem($btn-radius) 0;
+        }
+      }
+
+      &.btn_outlined {
+        border-left-width: rem($btn-outline);
+        border-left-style: solid;
+      }
+    }
   }
 }

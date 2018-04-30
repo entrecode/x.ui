@@ -43,7 +43,7 @@
       <nav class="nav">
         <ul class="nav__items">
           <li class="nav__item" style="padding-right: 16px;">
-            <small class="is-ink-lighter is-nowrap">v. 8.0.0-beta.6</small>
+            <small class="is-ink-lighter is-nowrap">v. 8.0.0-beta.7</small>
           </li>
           <li class="nav__divider"></li>
           <li class="nav__item">
@@ -96,6 +96,7 @@
           <li><a href="#xui-radio">xui-radio</a></li>
           <li><a href="#xui-toggle">xui-toggle</a></li>
           <li><a href="#form-group">form-group</a></li>
+          <li><a href="#form-boolean">form-boolean</a></li>
         </ul>
       </li>
 
@@ -113,6 +114,7 @@
           <li><a href="#xui-tabs">xui-tabs</a></li>
           <li><a href="#xui-list">xui-list</a></li>
           <li><a href="#xui-accordion">xui-accordion</a></li>
+          <li><a href="#card">card</a></li>
           <li><a href="#overlay">overlay</a></li>
           <li><a href="#well">well</a></li>
           <li><a href="#alert">alert</a></li>
@@ -168,7 +170,7 @@
         <div data-col="8-md">
 <div class="hero has-margin has-height-vh-golden" data-flex="is-center is-end-items">
   <div style="margin-bottom: 10vh;">
-    <a href="#xui-get-started" class="btn btn_big is-lifted-big">get started</a>
+    <a href="#get-started" class="btn btn_big is-lifted-big">get started</a>
     <div class="spacer-small"></div>
   </div>
 </div>
@@ -409,6 +411,11 @@
         <li data-col="6 4-md">
           <a href="#form-group" class="periodic-group-form">
             <span class="is-h5">F</span> form-group
+          </a>
+        </li>
+        <li data-col="6 4-md">
+          <a href="#form-boolean" class="periodic-group-form">
+            <span class="is-h5">F</span> form-boolean
           </a>
         </li>
         <li data-col="6 4-md">
@@ -1548,7 +1555,7 @@
           <div class="input-group__addon">
             <small>addon</small>
           </div>
-          <a href="" class="btn">save</a>
+          <a href="" class="btn btn_clear"><span class="ec-icon save"></span></a>
         </div>
       </div>
     </div>
@@ -1732,9 +1739,9 @@
 </div></code></pre>
 </section>
 <div class="bumper"></div><section>
-  <h3 id="form-group" class="is-kilo">form-group</h3>
   <div data-grid>
     <div data-col="6-sm">
+      <h3 id="form-group" class="is-kilo">form-group</h3>
       <div class="form-group">
         <label for="textID">Label</label>
         <input type="text" id="textID" placeholder="input..." class="input">
@@ -1744,16 +1751,39 @@
   <label for="...">Label</label>
   <input type="text" id="..." placeholder="input..." class="input">
 </div></code></pre>
+      <div class="form-group" data-grid>
+        <label for="textID" data-col="2">Label</label>
+        <div data-col="10">
+          <input type="text" id="textID" placeholder="input..." class="input">
+        </div>
+      </div>
+      <pre><code class="html">
+<div class="form-group" data-grid>
+  <label for="..." data-col="2">Label</label>
+  <div data-col="10">
+    <input type="text" id="..." placeholder="input..." class="input">
+  </div>
+</div></code></pre>
     </div>
     <div data-col="6-sm">
-      <div class="form-group form-group_boolean">
+      <h3 id="form-boolean" class="is-kilo">form-boolean</h3>
+      <div class="form-boolean">
         <label for="radioID">Label</label>
         <input type="radio" id="radioID">
       </div>
       <pre><code class="html">
-<div class="form-group form-group_boolean">
+<div class="form-boolean">
   <label for="...">Label</label>
   <input type="radio" id="...">
+</div></code></pre>
+      <div class="form-boolean">
+        <label for="checkboxID">Label</label>
+        <input type="checkbox" id="checkboxID">
+      </div>
+      <pre><code class="html">
+<div class="form-boolean">
+  <label for="...">Label</label>
+  <input type="checkbox" id="...">
 </div></code></pre>
     </div>
   </div>
@@ -2371,7 +2401,9 @@
     </div>
     <div class="input-group">
       <input type="text" class="input" placeholder="Search...">
-      <span class="ec-icon find input-group__icon"></span>
+      <div class="input-group__addon">
+        <span class="ec-icon find"></span>
+      </div>
     </div>
     <nav class="nav">
       <ul class="nav__items">
@@ -2663,6 +2695,48 @@
 </section>
 
 <div class="bumper"></div><section>
+  <h4 id="card" class="is-kilo">card</h4>
+  <div data-grid="">
+    <div data-col="4">
+      <div class="card is-lifted-small">
+        <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
+          ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
+          sprach weiter und weiter.</p>
+      </div>
+
+      <pre><code class="html">
+<div class="card is-lifted-small">
+  ...
+</div></code></pre>
+    </div>
+    <div data-col="4">
+      <div class="card is-lifted">
+        <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
+          ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
+          sprach weiter und weiter.</p>
+      </div>
+
+      <pre><code class="html">
+<div class="card is-lifted">
+  ...
+</div></code></pre>
+    </div>
+    <div data-col="4">
+      <div class="card is-lifted-big">
+        <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
+          ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
+          sprach weiter und weiter.</p>
+      </div>
+
+      <pre><code class="html">
+<div class="card is-lifted-big">
+  ...
+</div></code></pre>
+    </div>
+  </div>
+</section>
+
+<div class="bumper"></div><section>
   <h4 id="overlay" class="is-kilo">overlay
     <a href="https://caniuse.com/#search=%3Atarget"
        target="_blank" rel="noopener"
@@ -2713,7 +2787,7 @@
   <table class="table">
     <tbody>
     <tr>
-      <td><strong>size modifier</strong></td>
+      <td><strong>sizes</strong></td>
       <td>
         <span class="code" v-for="size in molecules.well.sizeModifiers">${ '.' + size}</span>
       </td>
@@ -2776,7 +2850,7 @@
     <span class="tag tag_small tag_super">css only</span>
     <span class="tag tag_small tag_error">in progress</span>
   </h3>
-  <div class="alert alert_small">the tooltip only works with single line tooltips</div>
+  <div class="alert-small">the tooltip only works with single line tooltips</div>
   <div class="well">
     <div data-grid>
       <div data-col="6-xs 3-sm">
@@ -2890,7 +2964,7 @@
   <h3 class="is-kilo" id="is-ink">is-ink</h3>
   <p>the is-ink modifiers only affect the css color attribute. it can be uses on all
     elements.</p>
-  <div class="well well_small">
+  <div class="well-small">
     <div data-grid>
       <div v-for="mod in modifiers.type.colorModifiers" data-col="6-xs 2-sm">
         <strong :class="mod">${mod}</strong>
@@ -3462,9 +3536,11 @@
             <h2 class="is-mega special-font">ec-icons</h2>
           </div>
           <div class="input-group">
-            <span class="ec-icon find input-group__icon"></span>
+            <div class="input-group__addon">
+              <span class="ec-icon find"></span>
+            </div>
             <input type="text" v-model="query"
-                   class="input input_clear input_big is-lifted input_round"
+                   class="input input_big"
                    placeholder="search for icon class...">
           </div>
         </div>

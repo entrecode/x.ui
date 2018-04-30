@@ -3,6 +3,10 @@
 /// @access public
 /// @group atoms
 ///
+/// @param {color} $input-background [$background] - background-color of input
+/// @param {color} $input-color [$text] - text color of input
+/// @param {color} $input-placeholder [$text-light] - text color of input placeholder
+///
 /// @param {number} $input-font-size [16]
 /// @param {number} $input-line-height [24]
 /// @param {number} $input-min-height [32]
@@ -28,7 +32,8 @@
   outline: none;
   border-style: solid;
   border-color: $input-border-color;
-  background-color: getColor(background);
+  background-color: $input-background;
+  color: $input-color;
   width: 100%;
   margin: 0;
   text-align: left;
@@ -40,7 +45,7 @@
   @extend %input-style !optional;
 
   @include placeholder {
-    color: getColor(text, light);
+    color: $input-placeholder;
   }
 }
 
@@ -60,21 +65,20 @@
     box-shadow: inset 0 0 0 2px getColor(state, hover);
 
     @include placeholder {
-      color: getColor(text);
+      color: $input-color;
     }
   }
 
   &:focus:hover {
     @include placeholder {
-      color: getColor(text, lightest);
+      color: $input-placeholder;
     }
   }
 
   &.is-disabled,
   &[disabled] {
     cursor: not-allowed;
-    background-color: getColor(background, lightest);
-    border-color: getColor(background, light);
+    opacity: .4;
   }
 
   @at-root select.input {

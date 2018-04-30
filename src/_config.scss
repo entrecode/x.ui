@@ -86,22 +86,22 @@ $ec-icon-support: true !default;
 /// @param {px} $root-size [16] - default size used for global size calculations
 $root-size: 16 !default;
 
-/// @prop {px} $grid-container-width [1200] - max-width of container
+/// @param {px} $grid-container-width [1200] - max-width of container
 $grid-container-width: 1200 !default;
 
-/// @prop {px} $grid-gutter [32] - gutter size in pixels without unit
+/// @param {px} $grid-gutter [32] - gutter size in pixels without unit
 $grid-gutter: 32 !default;
 
-/// @prop {value} $outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
+/// @param {value} $outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
 $outer-gutter: true !default;
 
-/// @prop {number} $grid-num-columns [12] - number of columns in a row
+/// @param {number} $grid-num-columns [12] - number of columns in a row
 $grid-num-columns: 12 !default;
 
-/// @prop {px} $base-padding [16] - small padding value for padding helper
+/// @param {px} $base-padding [16] - small padding value for padding helper
 $base-padding: 16 !default;
 
-/// @prop {px} $base-margin [16] - small padding value for padding helper
+/// @param {px} $base-margin [16] - small padding value for padding helper
 $base-spacing: 16 !default;
 
 /// @param {map} $breakpoints
@@ -188,8 +188,8 @@ $type-scale-large: (
         p: 1.125em
 ) !default;
 
-/// @param {value} $headings-weight [bold]
-$headings-weight: bold !default;
+/// @param {value} $headings-weight [$is-bold]
+$headings-weight: $is-bold !default;
 
 /// @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
 $heading-inline-small: .5 !default;
@@ -207,8 +207,8 @@ $heading-inline-small: .5 !default;
 /// @param {number} $paragraph-lead-size [1.125] - font-size of `.lead`
 $paragraph-lead-size: 1.125 !default;
 
-/// @param {value} $paragraph-lead-weight [light]
-$paragraph-lead-weight: light !default;
+/// @param {value} $paragraph-lead-weight [$is-light]
+$paragraph-lead-weight: $is-light !default;
 
 /// additional styles for paragraphs
 %paragraph-styles {
@@ -248,11 +248,11 @@ $btn-padding-ratio: 1.5 !default;
 /// @param {number} $btn-font-size [$base-font-size]
 /// @param {number} $btn-line-height [$btn-font-size * $base-line-height]
 /// @param {number} $btn-min-height [40]
-/// @param {value} $btn-weight [bold]
+/// @param {value} $btn-weight [$is-bold]
 $btn-font-size: $base-font-size !default;
 $btn-line-height: $btn-font-size * $base-line-height !default;
 $btn-min-height: 40 !default;
-$btn-weight: bold !default;
+$btn-weight: $is-bold !default;
 
 /// additional styles for .btn
 %btn-style {
@@ -335,8 +335,53 @@ $dropdown-background: $background !default;
 $dropdown-shadow: 0 8px 16px -4px rgba(black, .16), 0 4px 24px 0px rgba(black, 0.1) !default;
 
 ///
+/// FORM-GROUP
+/// ------------------------------------------------------
+
+/// @param {number} $form-group-margin [0 0 8 0]
+$form-group-margin: 0 0 8 0 !default;
+
+/// @param {number} $form-group-label-margin [0 0 4 0]
+$form-group-label-margin: 0 0 4 0 !default;
+
+/// @param {em} $form-group-label-font-size [$base-font-size]
+$form-group-label-font-size: $base-font-size !default;
+
+/// additional styles for .from-group
+%form-group-style {
+  /// put styles here...
+}
+
+///
+/// FORM-BOOLEAN
+/// ------------------------------------------------------
+
+/// @param {number} $form-boolean-margin [0 0 8 0]
+$form-boolean-margin: 0 0 8 0 !default;
+
+/// @param {number} $form-boolean-label-margin [0 0 4 0]
+$form-boolean-label-margin: 0 0 4 0 !default;
+
+/// @param {em} $form-boolean-label-font-size [$base-font-size]
+$form-boolean-label-font-size: $base-font-size !default;
+
+/// additional styles for .from-group
+%form-boolean-style {
+  /// put styles here...
+}
+
+///
 /// INPUT
 /// ------------------------------------------------------
+
+/// @param {color} $input-background [$background] - background-color of input
+$input-background: $background !default;
+
+/// @param {color} $input-color [$text] - text color of input
+$input-color: $text !default;
+
+/// @param {color} $input-placeholder [$text-light] - text color of input placeholder
+$input-placeholder: $text-light !default;
 
 /// @param {em} $input-font-size [16]
 /// @param {em} $input-line-height [24]
@@ -463,25 +508,54 @@ $select-raised-shadow: rgba(black, .1) !default;
 /// Alerts
 /// ------------------------------------------------------
 
-/// @param {number} $alert-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$alert-padding-ratio: 2 !default;
+/// @param {color} $alert-background [$background-lightest]
+$alert-background: $background-lightest !default;
 
-/// @param {rem} $alert-padding [$base-padding]
-$alert-padding: $base-padding !default;
-
-/// @param {value} $alert-weight [normal]
-$alert-weight: normal !default;
-
-/// additional styles for .alert
-%alert-style {
-  /// put styles here...
-}
+/// @param {value} $alert-weight [$is-normal]
+$alert-weight: $is-normal !default;
 
 /// @param {rem} $alert-radius [4]
 $alert-radius: 4 !default;
 
 /// @param {rem} $alert-outlined - sets border-width for .alert_outlined
 $alert-outlined: 2 !default;
+
+/// @param {em} $alert-small-font-size [$base-font-size * .875]
+/// @param {rem} $alert-small-padding [8 12]
+/// @param {rem} $alert-small-margin [0 0 16 0]
+$alert-small-font-size: $base-font-size * .875 !default;
+$alert-small-padding: 8 12 !default;
+$alert-small-margin: 0 0 16 0 !default;
+
+/// @param {em} $alert-font-size [$base-font-size]
+/// @param {rem} $alert-padding [16 24]
+/// @param {rem} $alert-margin [0 0 16 0]
+$alert-font-size: $base-font-size !default;
+$alert-padding: 16 24 !default;
+$alert-margin: 0 0 16 0 !default;
+
+/// @param {em} $alert-big-font-size [$base-font-size * 1.125]
+/// @param {rem} $alert-big-padding [24 28]
+/// @param {rem} $alert-big-margin [0 0 16 0]
+$alert-big-font-size: $base-font-size * 1.125 !default;
+$alert-big-padding: 24 28 !default;
+$alert-big-margin: 0 0 16 0 !default;
+
+
+/// additional styles for .alert
+%alert-style {
+  /// put styles here...
+}
+
+/// additional styles for .alert-small
+%alert-small-style {
+  /// put styles here...
+}
+
+/// additional styles for .alert-big
+%alert-big-style {
+  /// put styles here...
+}
 
 /// Bubbles
 /// ------------------------------------------------------
@@ -492,11 +566,11 @@ $bubble-padding-ratio: 1 !default;
 /// @param {em} $bubble-font-size [14]
 /// @param {em} $bubble-line-height [16]
 /// @param {em} $bubble-min-height [28]
-/// @param {value} $bubble-weight [bold]
+/// @param {value} $bubble-weight [$is-bold]
 $bubble-font-size: 14 !default;
 $bubble-line-height: 16 !default;
 $bubble-min-height: 28 !default;
-$bubble-weight: bold !default;
+$bubble-weight: $is-bold !default;
 
 /// additional styles for .bubble
 %bubble-style {
@@ -545,28 +619,31 @@ $bubble-big-radius: 4 !default;
 /// Tags
 /// ------------------------------------------------------
 
+/// @param {color} $tag-background [$minor] - default background-color of tags
+$tag-background: $minor !default;
+
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 $tag-padding-ratio: 2 !default;
 
-/// @param {em} $tag-font-size [$base-font-size]
+/// @param {em} $tag-font-size [$base-font-size * .875]
 /// @param {em} $tag-line-height [$tag-font-size * $base-line-height]
 /// @param {em} $tag-min-height [28]
-/// @param {value} $tag-weight [bold]
-$tag-font-size: $base-font-size !default;
+/// @param {value} $tag-weight [$is-bold]
+$tag-font-size: $base-font-size * .875 !default;
 $tag-line-height: $tag-font-size * $base-line-height !default;
 $tag-min-height: 28 !default;
-$tag-weight: bold !default;
+$tag-weight: $is-bold !default;
 
 /// additional styles for .tag
 %tag-style {
   /// put styles here...
 }
 
-/// @param {em} $tag-small-font-size [$tag-font-size * .875]
+/// @param {em} $tag-small-font-size [$base-font-size * .75]
 /// @param {em} $tag-small-line-height [$tag-small-font-size * $base-line]
 /// @param {em} $tag-small-min-height [24]
 /// @param {value} $tag-small-weight [$tag-weight]
-$tag-small-font-size: $tag-font-size * .875 !default;
+$tag-small-font-size: $base-font-size * .75 !default;
 $tag-small-line-height: $tag-small-font-size * $base-line-height !default;
 $tag-small-min-height: 24 !default;
 $tag-small-weight: $tag-weight !default;
@@ -576,11 +653,11 @@ $tag-small-weight: $tag-weight !default;
   /// put styles here...
 }
 
-/// @param {em} $tag-big-font-size [$tag-font-size * 1.125]
+/// @param {em} $tag-big-font-size [$base-font-size]
 /// @param {em} $tag-big-line-height [$tag-big-font-size * $base-line-height]
 /// @param {em} $tag-big-min-height [32]
 /// @param {value} $tag-big-weight [$tag-weight]
-$tag-big-font-size: $tag-font-size * 1.125 !default;
+$tag-big-font-size: $base-font-size !default;
 $tag-big-line-height: $tag-big-font-size * $base-line-height !default;
 $tag-big-min-height: 32 !default;
 $tag-big-weight: $tag-weight !default;
@@ -613,11 +690,11 @@ $tooltip-padding-ratio: 2 !default;
 /// @param {em} $tooltip-font-size [12]
 /// @param {em} $tooltip-line-height [14]
 /// @param {em} $tooltip-min-height [20]
-/// @param {value} $tooltip-weight [normal]
+/// @param {value} $tooltip-weight [$is-normal]
 $tooltip-font-size: 12 !default;
 $tooltip-line-height: 14 !default;
 $tooltip-min-height: 20 !default;
-$tooltip-weight: normal !default;
+$tooltip-weight: $is-normal !default;
 
 /// additional styles for .tooltip
 %tooltip-style {
@@ -638,14 +715,30 @@ $tooltip-big-radius: 2 !default;
 /// Wells
 /// ------------------------------------------------------
 
-/// @param {number} $well-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$well-padding-ratio: 2 !default;
+/// @param {color} $well-background [$background-lightest]
+$well-background: $background-lightest !default;
 
-/// @param {rem} $well-padding [$base-padding]
-$well-padding: $base-padding !default;
+/// @param {value} $well-weight [$is-normal]
+$well-weight: $is-normal !default;
 
-/// @param {value} $well-weight [normal]
-$well-weight: normal !default;
+/// @param {rem} $well-radius [4]
+$well-radius: 4 !default;
+
+/// @param {rem} $well-small-padding [8 12]
+/// @param {rem} $well-small-margin [0 0 16 0]
+$well-small-padding: 8 12 !default;
+$well-small-margin: 0 0 16 0 !default;
+
+/// @param {rem} $well-padding [16 24]
+/// @param {rem} $well-margin [0 0 16 0]
+$well-padding: 16 24 !default;
+$well-margin: 0 0 16 0 !default;
+
+/// @param {rem} $well-big-padding [24 28]
+/// @param {rem} $well-big-margin [0 0 16 0]
+$well-big-padding: 24 28 !default;
+$well-big-margin: 0 0 16 0 !default;
+
 
 /// additional styles for .well
 %well-style {
@@ -661,9 +754,6 @@ $well-weight: normal !default;
 %well-big-style {
   /// put styles here...
 }
-
-/// @param {rem} $well-radius [4]
-$well-radius: 4 !default;
 
 /// @param {rem} $well-outlined - sets border-width for .alert_outlined
 $well-outlined: 2 !default;
@@ -723,6 +813,12 @@ $toolbar-small-min-height: 48 !default;
 
 /// @param {rem} $card-radius [4]
 $card-radius: 4 !default;
+
+/// @param {color} $card-background [$background]
+$card-background: $background !default;
+
+/// @param {string | array} $card-padding [8 16] - array or string of numbers
+$card-padding: 8 16 !default;
 
 ///
 /// Modifier

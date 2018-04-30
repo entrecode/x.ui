@@ -1,3 +1,23 @@
+## 8.0.0-beta.7
+
+### breaking changes
+- changed `.well_small` and `.well_big` to `.well-small` and `.well-big`
+- changed `.alert_small` and `.alert_big` to `.alert-small` and `.alert-big`
+- changed `.form-group_boolean` to `.form-boolean`
+
+### changes
+- updated `.well` inline element styles
+- `.input-group` style improvements
+- added config variables for `.form-group` - `$form-group-margin`, `$form-group-label-margin`, `$form-group-label-font-size`
+- added config variables for `.form-boolean` - `$form-boolean-margin`, `$form-boolean-label-margin`, `$form-boolean-label-font-size`
+- added config variables for `.input` - `$input-background`, `$input-color`, `$input-placeholder`
+- added config variables for `.well` - `$well-background`, `$well-small-padding`, `$well-small-margin`, `$well-padding`, `$well-margin`, `$well-big-padding`, `$well-big-margin`
+- added config variables for `.alert` - `$alert-background`, `$alert-small-padding`, `$alert-small-margin`, `$alert-padding`, `$alert-margin`, `$alert-big-padding`, `$alert-big-margin`, `$alert-small-font-size`, `$alert-font-size` , `$alert-big-font-size`
+- added variable `$tag-bg` for default background-color of `.tag`
+- added `remArray()` function
+- added `.card` molecule
+- added `data-grid` support for `.form-group`
+
 ## 8.0.0-beta.6
 ### changes
 - fixed .ec-icon size bug in `macro-metrics` mixin
