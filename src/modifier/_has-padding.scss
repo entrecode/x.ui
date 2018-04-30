@@ -3,7 +3,7 @@
 /// @access public
 /// @group modifier
 ///
-/// @prop {number} $base-spacing [16] - small padding value for padding helper
+/// @param {number} $base-spacing [16] - small padding value for padding helper
 
 .has-padding {
   @include set-breakpoints {
