@@ -335,6 +335,13 @@ $dropdown-background: $background !default;
 $dropdown-shadow: 0 8px 16px -4px rgba(black, .16), 0 4px 24px 0px rgba(black, 0.1) !default;
 
 ///
+/// FORM-GROUP
+/// ------------------------------------------------------
+
+/// @prop {number} $form-group-margin [8] - margin-bottom of .form-group
+$form-group-margin: 8;
+ 
+///
 /// INPUT
 /// ------------------------------------------------------
 

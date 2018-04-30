@@ -1,13 +1,13 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.7
 /// @access public
 /// @group molecules
 ///
 /// @param {boolean} $flex-support [true]
-/// @prop {number} $base-padding [16] - small padding value for padding helper
+/// @prop {number} $form-group-margin [8] - margin-bottom of .form-group
 
 .form-group {
-  margin: 0 0 rem($base-padding) 0;
+  margin: 0 0 rem($form-group-margin) 0;
 
   @if $flex-support == true {
     display: flex;
