@@ -1,37 +1,62 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.7
 /// @access public
 /// @group molecules
 ///
-/// @param {number} $well-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-/// @param {number} $well-padding [$base-padding]
-///
+/// @param {color} $well-background [$background-lightest]
 /// @param {value} $well-weight [$normal]
-///
 /// @param {number} $well-radius [4]
+///
+/// @param {rem} $well-small-padding [8 12]
+/// @param {rem} $well-small-margin [0 0 16 0]
+///
+/// @param {rem} $well-padding [16 24]
+/// @param {rem} $well-margin [0 0 16 0]
+///
+/// @param {rem} $well-big-padding [24 28]
+/// @param {rem} $well-big-margin [0 0 16 0]
+
+%well {
+  border-radius: rem($well-radius);
+  font-weight: $well-weight;
+
+  @if $well-background {
+    @include set-theme-colors($well-background);
+  } @else {
+    @include set-theme-colors(getColor(background, lightest));
+  }
+
+  p {
+    &:last-child,
+    &:only-child {
+      margin: 0;
+    }
+  }
+}
 
 .well {
-  background-color: getColor(background, lightest);
-  border-radius: rem($well-radius);
-  margin: rem($base-padding) 0;
-  padding: rem($well-padding) rem($well-padding * $well-padding-ratio);
-  font-weight: $well-weight;
-  font-size: 100%;
+  @extend %well;
+  margin: remArray($well-margin);
+  padding: remArray($well-padding);
 
   /// additional styles via config
   @extend %well-style !optional;
+}
 
-  &.well_small {
-    padding: rem($well-padding / 2) rem($well-padding / 2 * $well-padding-ratio);
+.well-small {
+  @extend %well;
+  padding: remArray($well-small-padding);
+  margin: remArray($well-small-margin);
 
-    /// additional styles via config
-    @extend %well-small-style !optional;
-  }
+  /// additional styles via config
+  @extend %well-small-style !optional;
+}
 
-  &.well_big {
-    padding: rem($well-padding * 2) rem($well-padding * 2 * $well-padding-ratio);
+.well-big {
+  @extend %well;
+  padding: remArray($well-big-padding);
+  margin: remArray($well-big-margin);
 
-    /// additional styles via config
-    @extend %well-big-style !optional;
-  }
+  /// additional styles via config
+  @extend %well-big-style !optional;
 }

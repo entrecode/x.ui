@@ -572,8 +572,8 @@ $bubble-big-radius: 4 !default;
 /// Tags
 /// ------------------------------------------------------
 
-/// @param {color} $tag-bg [$minor] - default background-color of tags
-$tag-bg: $minor !default;
+/// @param {color} $tag-background [$minor] - default background-color of tags
+$tag-background: $minor !default;
 
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 $tag-padding-ratio: 2 !default;
@@ -668,14 +668,30 @@ $tooltip-big-radius: 2 !default;
 /// Wells
 /// ------------------------------------------------------
 
-/// @param {number} $well-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$well-padding-ratio: 2 !default;
-
-/// @param {rem} $well-padding [$base-padding]
-$well-padding: $base-padding !default;
+/// @param {color} $well-background [$background-lightest]
+$well-background: $background-lightest !default;
 
 /// @param {value} $well-weight [normal]
 $well-weight: normal !default;
+
+/// @param {rem} $well-radius [4]
+$well-radius: 4 !default;
+
+/// @param {rem} $well-small-padding [8 12]
+/// @param {rem} $well-small-margin [0 0 16 0]
+$well-small-padding: 8 12 !default;
+$well-small-margin: 0 0 16 0 !default;
+
+/// @param {rem} $well-padding [16 24]
+/// @param {rem} $well-margin [0 0 16 0]
+$well-padding: 16 24 !default;
+$well-margin: 0 0 16 0 !default;
+
+/// @param {rem} $well-big-padding [24 28]
+/// @param {rem} $well-big-margin [0 0 16 0]
+$well-big-padding: 24 28 !default;
+$well-big-margin: 0 0 16 0 !default;
+
 
 /// additional styles for .well
 %well-style {
@@ -691,9 +707,6 @@ $well-weight: normal !default;
 %well-big-style {
   /// put styles here...
 }
-
-/// @param {rem} $well-radius [4]
-$well-radius: 4 !default;
 
 /// @param {rem} $well-outlined - sets border-width for .alert_outlined
 $well-outlined: 2 !default;
