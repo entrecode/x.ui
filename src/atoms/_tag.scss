@@ -5,19 +5,19 @@
 ///
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 ///
-/// @param {number} $tag-font-size [12]
-/// @param {number} $tag-line-height [14]
-/// @param {number} $tag-min-height [24]
-/// @param {value} $tag-weight [$bold]
+/// @param {em} $tag-font-size [$base-font-size * .875]
+/// @param {em} $tag-line-height [$tag-font-size * $base-line-height]
+/// @param {em} $tag-min-height [28]
+/// @param {value} $tag-weight [bold]
 ///
-/// @param {number} $tag-small-font-size [10]
-/// @param {number} $tag-small-line-height [12]
-/// @param {number} $tag-small-min-height [20]
+/// @param {em} $tag-small-font-size [$base-font-size * .75]
+/// @param {em} $tag-small-line-height [$tag-small-font-size * $base-line]
+/// @param {em} $tag-small-min-height [24]
 /// @param {value} $tag-small-weight [$tag-weight]
 ///
-/// @param {number} $tag-big-font-size [12]
-/// @param {number} $tag-big-line-height [16]
-/// @param {number} $tag-big-min-height [32]
+/// @param {em} $tag-big-font-size [$base-font-size]
+/// @param {em} $tag-big-line-height [$tag-big-font-size * $base-line-height]
+/// @param {em} $tag-big-min-height [32]
 /// @param {value} $tag-big-weight [$tag-weight]
 ///
 /// @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
@@ -32,7 +32,7 @@
   font-weight: $tag-weight;
   @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
   border-radius: rem($tag-radius);
-  @include set-theme-colors(getColor(background, lightest));
+  @include set-theme-colors($tag-bg);
 
   a {
     color: getColor(text, lighter);
