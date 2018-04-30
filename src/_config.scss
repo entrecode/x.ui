@@ -490,25 +490,54 @@ $select-raised-shadow: rgba(black, .1) !default;
 /// Alerts
 /// ------------------------------------------------------
 
-/// @param {number} $alert-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$alert-padding-ratio: 2 !default;
-
-/// @param {rem} $alert-padding [$base-padding]
-$alert-padding: $base-padding !default;
+/// @param {color} $alert-background [$background-lightest]
+$alert-background: $background-lightest !default;
 
 /// @param {value} $alert-weight [normal]
 $alert-weight: normal !default;
-
-/// additional styles for .alert
-%alert-style {
-  /// put styles here...
-}
 
 /// @param {rem} $alert-radius [4]
 $alert-radius: 4 !default;
 
 /// @param {rem} $alert-outlined - sets border-width for .alert_outlined
 $alert-outlined: 2 !default;
+
+/// @param {em} $alert-small-font-size [$base-font-size * .875]
+/// @param {rem} $alert-small-padding [8 12]
+/// @param {rem} $alert-small-margin [0 0 16 0]
+$alert-small-font-size: $base-font-size * .875 !default;
+$alert-small-padding: 8 12 !default;
+$alert-small-margin: 0 0 16 0 !default;
+
+/// @param {em} $alert-font-size [$base-font-size]
+/// @param {rem} $alert-padding [16 24]
+/// @param {rem} $alert-margin [0 0 16 0]
+$alert-font-size: $base-font-size !default;
+$alert-padding: 16 24 !default;
+$alert-margin: 0 0 16 0 !default;
+
+/// @param {em} $alert-big-font-size [$base-font-size * 1.125]
+/// @param {rem} $alert-big-padding [24 28]
+/// @param {rem} $alert-big-margin [0 0 16 0]
+$alert-big-font-size: $base-font-size * 1.125 !default;
+$alert-big-padding: 24 28 !default;
+$alert-big-margin: 0 0 16 0 !default;
+
+
+/// additional styles for .alert
+%alert-style {
+  /// put styles here...
+}
+
+/// additional styles for .alert-small
+%alert-small-style {
+  /// put styles here...
+}
+
+/// additional styles for .alert-big
+%alert-big-style {
+  /// put styles here...
+}
 
 /// Bubbles
 /// ------------------------------------------------------
