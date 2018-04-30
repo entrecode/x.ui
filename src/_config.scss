@@ -188,8 +188,8 @@ $type-scale-large: (
         p: 1.125em
 ) !default;
 
-/// @param {value} $headings-weight [bold]
-$headings-weight: bold !default;
+/// @param {value} $headings-weight [$is-bold]
+$headings-weight: $is-bold !default;
 
 /// @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
 $heading-inline-small: .5 !default;
@@ -207,8 +207,8 @@ $heading-inline-small: .5 !default;
 /// @param {number} $paragraph-lead-size [1.125] - font-size of `.lead`
 $paragraph-lead-size: 1.125 !default;
 
-/// @param {value} $paragraph-lead-weight [light]
-$paragraph-lead-weight: light !default;
+/// @param {value} $paragraph-lead-weight [$is-light]
+$paragraph-lead-weight: $is-light !default;
 
 /// additional styles for paragraphs
 %paragraph-styles {
@@ -248,11 +248,11 @@ $btn-padding-ratio: 1.5 !default;
 /// @param {number} $btn-font-size [$base-font-size]
 /// @param {number} $btn-line-height [$btn-font-size * $base-line-height]
 /// @param {number} $btn-min-height [40]
-/// @param {value} $btn-weight [bold]
+/// @param {value} $btn-weight [$is-bold]
 $btn-font-size: $base-font-size !default;
 $btn-line-height: $btn-font-size * $base-line-height !default;
 $btn-min-height: 40 !default;
-$btn-weight: bold !default;
+$btn-weight: $is-bold !default;
 
 /// additional styles for .btn
 %btn-style {
@@ -493,8 +493,8 @@ $select-raised-shadow: rgba(black, .1) !default;
 /// @param {color} $alert-background [$background-lightest]
 $alert-background: $background-lightest !default;
 
-/// @param {value} $alert-weight [normal]
-$alert-weight: normal !default;
+/// @param {value} $alert-weight [$is-normal]
+$alert-weight: $is-normal !default;
 
 /// @param {rem} $alert-radius [4]
 $alert-radius: 4 !default;
@@ -548,11 +548,11 @@ $bubble-padding-ratio: 1 !default;
 /// @param {em} $bubble-font-size [14]
 /// @param {em} $bubble-line-height [16]
 /// @param {em} $bubble-min-height [28]
-/// @param {value} $bubble-weight [bold]
+/// @param {value} $bubble-weight [$is-bold]
 $bubble-font-size: 14 !default;
 $bubble-line-height: 16 !default;
 $bubble-min-height: 28 !default;
-$bubble-weight: bold !default;
+$bubble-weight: $is-bold !default;
 
 /// additional styles for .bubble
 %bubble-style {
@@ -610,11 +610,11 @@ $tag-padding-ratio: 2 !default;
 /// @param {em} $tag-font-size [$base-font-size * .875]
 /// @param {em} $tag-line-height [$tag-font-size * $base-line-height]
 /// @param {em} $tag-min-height [28]
-/// @param {value} $tag-weight [bold]
+/// @param {value} $tag-weight [$is-bold]
 $tag-font-size: $base-font-size * .875 !default;
 $tag-line-height: $tag-font-size * $base-line-height !default;
 $tag-min-height: 28 !default;
-$tag-weight: bold !default;
+$tag-weight: $is-bold !default;
 
 /// additional styles for .tag
 %tag-style {
@@ -672,11 +672,11 @@ $tooltip-padding-ratio: 2 !default;
 /// @param {em} $tooltip-font-size [12]
 /// @param {em} $tooltip-line-height [14]
 /// @param {em} $tooltip-min-height [20]
-/// @param {value} $tooltip-weight [normal]
+/// @param {value} $tooltip-weight [$is-normal]
 $tooltip-font-size: 12 !default;
 $tooltip-line-height: 14 !default;
 $tooltip-min-height: 20 !default;
-$tooltip-weight: normal !default;
+$tooltip-weight: $is-normal !default;
 
 /// additional styles for .tooltip
 %tooltip-style {
@@ -700,8 +700,8 @@ $tooltip-big-radius: 2 !default;
 /// @param {color} $well-background [$background-lightest]
 $well-background: $background-lightest !default;
 
-/// @param {value} $well-weight [normal]
-$well-weight: normal !default;
+/// @param {value} $well-weight [$is-normal]
+$well-weight: $is-normal !default;
 
 /// @param {rem} $well-radius [4]
 $well-radius: 4 !default;

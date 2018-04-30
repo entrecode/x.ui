@@ -3,7 +3,7 @@
 /// @access public
 /// @group atoms
 ///
-/// @param {variable} $headings-weight [$bold]
+/// @param {variable} $headings-weight [$is-bold]
 /// @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
 /// @require {mixin} get-font-size
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
