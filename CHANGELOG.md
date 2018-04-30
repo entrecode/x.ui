@@ -1,6 +1,7 @@
 ## 8.0.0-beta.7
 ### changes
 - `.input-group` style improvements
+- added variable `$tag-bg` for defaul background-color of `.tag`
 
 ## 8.0.0-beta.6
 ### changes

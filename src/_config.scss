@@ -339,8 +339,8 @@ $dropdown-shadow: 0 8px 16px -4px rgba(black, .16), 0 4px 24px 0px rgba(black, 0
 /// ------------------------------------------------------
 
 /// @prop {number} $form-group-margin [8] - margin-bottom of .form-group
-$form-group-margin: 8;
- 
+$form-group-margin: 8 !default;
+
 ///
 /// INPUT
 /// ------------------------------------------------------
@@ -553,7 +553,7 @@ $bubble-big-radius: 4 !default;
 /// ------------------------------------------------------
 
 /// @param {color} $tag-bg [$minor] - default background-color of tags
-$tag-bg: $minor;
+$tag-bg: $minor !default;
 
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 $tag-padding-ratio: 2 !default;
