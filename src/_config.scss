@@ -86,22 +86,22 @@ $ec-icon-support: true !default;
 /// @param {px} $root-size [16] - default size used for global size calculations
 $root-size: 16 !default;
 
-/// @prop {px} $grid-container-width [1200] - max-width of container
+/// @param {px} $grid-container-width [1200] - max-width of container
 $grid-container-width: 1200 !default;
 
-/// @prop {px} $grid-gutter [32] - gutter size in pixels without unit
+/// @param {px} $grid-gutter [32] - gutter size in pixels without unit
 $grid-gutter: 32 !default;
 
-/// @prop {value} $outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
+/// @param {value} $outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
 $outer-gutter: true !default;
 
-/// @prop {number} $grid-num-columns [12] - number of columns in a row
+/// @param {number} $grid-num-columns [12] - number of columns in a row
 $grid-num-columns: 12 !default;
 
-/// @prop {px} $base-padding [16] - small padding value for padding helper
+/// @param {px} $base-padding [16] - small padding value for padding helper
 $base-padding: 16 !default;
 
-/// @prop {px} $base-margin [16] - small padding value for padding helper
+/// @param {px} $base-margin [16] - small padding value for padding helper
 $base-spacing: 16 !default;
 
 /// @param {map} $breakpoints
@@ -338,12 +338,32 @@ $dropdown-shadow: 0 8px 16px -4px rgba(black, .16), 0 4px 24px 0px rgba(black, 0
 /// FORM-GROUP
 /// ------------------------------------------------------
 
-/// @prop {number} $form-group-margin [8] - margin-bottom of .form-group
-$form-group-margin: 8 !default;
+/// @param {number} $form-group-margin [0 0 8 0]
+$form-group-margin: 0 0 8 0 !default;
+
+/// @param {number} $form-group-label-margin [0 0 4 0]
+$form-group-label-margin: 0 0 4 0 !default;
+
+/// @param {em} $form-group-label-font-size [$base-font-size]
+$form-group-label-font-size: $base-font-size !default;
+
+/// additional styles for .from-group
+%form-group-style {
+  /// put styles here...
+}
 
 ///
 /// INPUT
 /// ------------------------------------------------------
+
+/// @param {color} $input-background [$background] - background-color of input
+$input-background: $background !default;
+
+/// @param {color} $input-color [$text] - text color of input
+$input-color: $text !default;
+
+/// @param {color} $input-placeholder [$text-light] - text color of input placeholder
+$input-placeholder: $text-light !default;
 
 /// @param {em} $input-font-size [16]
 /// @param {em} $input-line-height [24]
@@ -733,6 +753,12 @@ $toolbar-small-min-height: 48 !default;
 
 /// @param {rem} $card-radius [4]
 $card-radius: 4 !default;
+
+/// @param {color} $card-background [$background]
+$card-background: $background !default;
+
+/// @param {string | array} $card-padding [8 16] - array or string of numbers
+$card-padding: 8 16 !default;
 
 ///
 /// Modifier

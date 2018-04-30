@@ -4,10 +4,14 @@
 /// @group molecules
 ///
 /// @param {boolean} $flex-support [true]
-/// @prop {number} $form-group-margin [8] - margin-bottom of .form-group
+/// @param {number} $form-group-margin [0 0 8 0]
+/// @param {em} $form-group-label-font-size [$base-font-size]
+/// @param {number} $form-group-label-margin [0 0 4 0]
 
 .form-group {
-  margin: 0 0 rem($form-group-margin) 0;
+  margin: remArray($form-group-margin);
+
+  @extend %form-group-style !optional;
 
   @if $flex-support == true {
     display: flex;
@@ -16,7 +20,8 @@
 
   label {
     display: block;
-    margin: 0 0 rem(8) 0;
+    font-size: em($form-group-label-font-size);
+    margin: remArray($form-group-label-margin);
   }
 
   &.is-disabled {
@@ -39,10 +44,6 @@
       label {
         order: 1;
       }
-    }
-
-    label {
-      margin-bottom: rem(4);
     }
 
     input[type="radio"],
