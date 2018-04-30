@@ -12,6 +12,7 @@
   background-color: $card-background;
   color: setContrast($card-background);
   padding: remArray($card-padding);
+  position: relative;
   z-index: 1;
 }
 
