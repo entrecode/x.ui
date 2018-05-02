@@ -4,7 +4,7 @@
 /// @deprecated since 7.0.0
 
 [data-row] {
-  @if $outer-gutter {
+  @if $grid-outer-gutter {
     margin-left: ($grid-gutter / -2) + px;
     margin-right: ($grid-gutter / -2) + px;
   }
@@ -38,7 +38,7 @@
 }
 
 [data-row~="small-grid"] {
-  @if $outer-gutter {
+  @if $grid-outer-gutter {
     margin-left: ($grid-gutter / -4) + px !important;
     margin-right: ($grid-gutter / -4) + px !important;
   }

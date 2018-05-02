@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.7
+/// @since 9.0.0-beta.1
 /// @access public
 /// @group molecules
 ///
@@ -29,8 +29,8 @@
 
 .well {
   @extend %well;
-  margin: remArray($well-margin);
-  padding: remArray($well-padding);
+  margin: unitArray($well-margin);
+  padding: unitArray($well-padding);
 
   /// additional styles via config
   @extend %well-style !optional;
@@ -38,8 +38,8 @@
 
 .well-small {
   @extend %well;
-  padding: remArray($well-small-padding);
-  margin: remArray($well-small-margin);
+  padding: unitArray($well-small-padding);
+  margin: unitArray($well-small-margin);
 
   /// additional styles via config
   @extend %well-small-style !optional;
@@ -47,8 +47,8 @@
 
 .well-big {
   @extend %well;
-  padding: remArray($well-big-padding);
-  margin: remArray($well-big-margin);
+  padding: unitArray($well-big-padding);
+  margin: unitArray($well-big-margin);
 
   /// additional styles via config
   @extend %well-big-style !optional;

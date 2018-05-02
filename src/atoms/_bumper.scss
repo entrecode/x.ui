@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.0-beta.1
 /// @access public
 /// @group atoms
 ///
@@ -28,7 +28,7 @@
 .bumper {
   @include set-breakpoints {
     @include bumper;
-    margin: rem($base-padding*2) 0;
+    margin: getSpace(5) 0;
     flex-shrink: 0;
     width: 100%;
   }
@@ -43,7 +43,7 @@
   &-small {
     @include set-breakpoints {
       @include bumper;
-      margin: rem($base-padding) 0;
+      margin: getSpace(3) 0;
       flex-shrink: 0;
       width: 100%;
     }
@@ -52,7 +52,7 @@
   &-big {
     @include set-breakpoints {
       @include bumper;
-      margin: rem($base-padding*3) 0;
+      margin: getSpace(6) 0;
       flex-shrink: 0;
       width: 100%;
     }

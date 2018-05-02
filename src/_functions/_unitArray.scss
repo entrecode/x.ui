@@ -1,0 +1,32 @@
+/// @author Bernhard Ruoff
+/// @since 9.0.0-beta.1
+/// @access public
+/// @group size-functions
+///
+/// Converts an array or string of numbers into a a string of rem values;
+/// @example
+/// padding: unitArray(8 16); // returns rem(8) rem(16)
+///
+/// @param {string | array} $array - array or string of numbers
+/// @param {'rem' | 'px' | 'em' | '%' | 'pt'} $unit - array or string of numbers
+/// @require {function} rem()
+///
+/// @return {rem} string of values in rem
+
+@function unitArray($array, $unit: 'rem') {
+  $output: null;
+  $value: null;
+
+  @for $i from 1 through length($array) {
+    @if ($unit == 'rem') {
+      $value: rem(nth($array, $i));
+    } @else if ($unit == 'em') {
+      $value: em(nth($array, $i));
+    } @else {
+      $value: nth($array, $i) * 1#{$unit};
+    }
+    $output: append($output, $value);
+  }
+
+  @return $output;
+}

@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.0-beta.1
 /// @access public
 /// @group atoms
 ///
@@ -10,14 +10,14 @@
 
 .spacer {
   @include set-breakpoints {
-    height: rem($base-padding*2);
+    height: getSpace(5);
     flex-shrink: 0;
     width: 100%;
   }
 
   &-small {
     @include set-breakpoints {
-      height: rem($base-padding);
+      height: getSpace(3);
       flex-shrink: 0;
       width: 100%;
     }
@@ -25,7 +25,7 @@
 
   &-big {
     @include set-breakpoints {
-      height: rem($base-padding*3);
+      height: getSpace(6);
       flex-shrink: 0;
       width: 100%;
     }

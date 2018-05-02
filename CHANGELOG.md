@@ -1,5 +1,17 @@
-## 8.0.0-beta.7
+## 9.0.0-beta.1
+### breaking changes
+- changes import order in `x.ui.scss`
+- renamed `remArray()` function to `unitArray()`
+- removed `$base-padding`
 
+### changes
+- `unitArray()` function now support different units
+
+### added
+- `$spacings` maps
+
+
+## 8.0.0-beta.7
 ### breaking changes
 - changed `.well_small` and `.well_big` to `.well-small` and `.well-big`
 - changed `.alert_small` and `.alert_big` to `.alert-small` and `.alert-big`
