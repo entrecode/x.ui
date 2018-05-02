@@ -24,8 +24,9 @@ body {
 /// --------
 
 a {
-  color: getColor(link);
-  transition: color .2s;
+  color: $link-color;
+  text-decoration: $link-decoration;
+  font-weight: $link-weight;
   cursor: pointer;
   outline: none;
 
@@ -34,7 +35,9 @@ a {
   }
 
   &:hover {
-    color: setHover($link);
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    font-weight: $link-hover-weight;
   }
 
   @extend %link-styles !optional;

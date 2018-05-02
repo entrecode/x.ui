@@ -150,7 +150,9 @@ $base-line-height: 1.4 !default;
 $vertical-rhythm: round($base-line-height * $base-font-size) !default; // outputs: 22.4
 
 // @param {em} $headings-line-height [$base-line-height]
+// @param {*} $headings-spacing-unit ['rem']
 $headings-line-height: $base-line-height !default;
+$headings-spacing-unit: rem !default;
 
 // @param {number} $giga-margin [$vertical-rhythm * 2] - set margin-bottom for h1
 $giga-margin: $vertical-rhythm * 2 !default;
@@ -163,7 +165,7 @@ $kilo-margin: $vertical-rhythm / 2 !default;
 
 
 // @param {unit} $type-scale-unit [em] - unit for font-size
-$type-scale-unit: 'em';
+$type-scale-unit: em;
 
 // @param {value} $bp-type-scale-small - breakpoint modular scale for small devices
 $bp-type-scale-small: 0 !default;
@@ -224,13 +226,18 @@ $heading-inline-small: .5 !default;
   // put styles here...
 }
 
-// additional styles for link
+// styles for links
+$link-color: $link;
+$link-decoration: none;
+$link-weight: $is-normal;
+$link-hover-color: setHover($link);
+$link-hover-decoration: none;
+$link-hover-weight: $is-normal;
+
 %link-styles {
-  // put styles here...
+  transition: color .2s;
 }
 
-// @param {number} $paragraph-lead-size [1.125] - font-size of `.lead`
-$paragraph-lead-size: 1.125 !default;
 
 // @param {value} $paragraph-lead-weight [$is-light]
 $paragraph-lead-weight: $is-light !default;

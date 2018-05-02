@@ -9,6 +9,7 @@
 
 ### added
 - `$spacings` maps
+- config variables for links
 
 
 ## 8.0.0-beta.7
