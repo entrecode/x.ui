@@ -8,19 +8,20 @@
 /// padding: unitArray(8 16); // returns rem(8) rem(16)
 ///
 /// @param {string | array} $array - array or string of numbers
-/// @param {'rem' | 'px' | 'em' | '%' | 'pt'} $unit - array or string of numbers
+/// @param {'xrem' | 'xem' | 'rem' | 'px' | 'em' | '%' | 'pt'} $unit - array or string of numbers
 /// @require {function} rem()
+/// @require {function} em()
 ///
 /// @return {rem} string of values in rem
 
-@function unitArray($array, $unit: 'rem') {
+@function unitArray($array, $unit: 'xrem') {
   $output: null;
   $value: null;
 
   @for $i from 1 through length($array) {
-    @if ($unit == 'rem') {
+    @if ($unit == 'xrem') {
       $value: rem(nth($array, $i));
-    } @else if ($unit == 'em') {
+    } @else if ($unit == 'xem') {
       $value: em(nth($array, $i));
     } @else {
       $value: nth($array, $i) * 1#{$unit};

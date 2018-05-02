@@ -1,27 +1,23 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.0-beta.1
 /// @access public
 /// @group typeface mixins
 ///
-/// @param {value} $bp-type-scale-small - breakpoint modular scale for small devices
-/// @param {map} $type-scale-small - modular scale for small devices
-/// @param {value} $bp-type-scale-normal - breakpoint modular scale for normal devices
-/// @param {map} $type-scale-normal - modular scale for normal devices
-/// @param {value} $bp-type-scale-large - breakpoint modular scale for large devices
-/// @param {map} $type-scale-large - modular scale for large devices
+/// @param {map} $type-scale - modular scale for typeface
+/// @param {map} $type-scale-bp - breakpoints for modular scale
+/// @param {unit} $type-scale-unit [em] - unit for modular scale
 ///
 /// @returns font-size
 
-@mixin get-font-size($level) {
-  @media (min-width: $bp-type-scale-small) {
-    font-size: map-get($type-scale-small, $level);
-  }
+@mixin get-font-size($level, $map: $type-scale, $bp: $type-scale-bp, $unit: $type-scale-unit) {
 
-  @media (min-width: $bp-type-scale-normal) {
-    font-size: map-get($type-scale-normal, $level);
-  }
+  @for $i from 1 through length($bp) {
+    $key: nth(map-keys($bp), $i);
+    $size: map-get($map, $level);
 
-  @media (min-width: $bp-type-scale-large) {
-    font-size: map-get($type-scale-large, $level);
+    @media (min-width: getBreakpoint($key)) {
+      $scale: map-get($bp, $key);
+      font-size: unitArray($size, $unit);
+    }
   }
 }

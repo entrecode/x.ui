@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.3
+/// @since 9.0.0-beta.1
 /// @access public
 /// @group atoms
 ///
@@ -14,7 +14,6 @@ h1, h2, h3, h4, h5, h6,
   font-family: $headings-font;
   font-weight: $headings-weight;
   line-height: $headings-line-height;
-  margin-top: 0;
 
   @extend %heading-style !optional;
 
@@ -24,16 +23,40 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-h1 {
-  margin-bottom: rem($giga-margin);
+.is-giga {
+  margin: unitArray($giga-spacing, $headings-spacing-unit);
 }
 
-h2, h3, h4 {
-  margin-bottom: rem($mega-margin);
+.is-mega {
+  margin: unitArray($mega-spacing, $headings-spacing-unit);
 }
 
-h5, h6 {
-  margin-bottom: rem($kilo-margin);
+.is-kilo {
+  margin: unitArray($kilo-spacing, $headings-spacing-unit);
+}
+
+h1, .is-h1 {
+  margin: unitArray($h1-spacing, $headings-spacing-unit);
+}
+
+h2, .is-h2 {
+  margin: unitArray($h2-spacing, $headings-spacing-unit);
+}
+
+h3, .is-h3 {
+  margin: unitArray($h3-spacing, $headings-spacing-unit);
+}
+
+h4, .is-h4 {
+  margin: unitArray($h4-spacing, $headings-spacing-unit);
+}
+
+h5, .is-h5 {
+  margin: unitArray($h5-spacing, $headings-spacing-unit);
+}
+
+h6, .is-h6 {
+  margin: unitArray($h6-spacing, $headings-spacing-unit);
 }
 
 h1,

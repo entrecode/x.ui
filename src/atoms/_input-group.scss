@@ -68,8 +68,8 @@
     }
 
     &.btn_clear {
-      &+ .input,
-      &+ .input-group__addon {
+      & + .input,
+      & + .input-group__addon {
         margin-left: rem(4);
         border-top-left-radius: rem($btn-radius);
         border-bottom-left-radius: rem($btn-radius);
@@ -80,7 +80,7 @@
 
   .input,
   .input-group__addon {
-    &+ .btn {
+    & + .btn {
       &.btn_clear {
         margin-left: rem($btn-radius + 4);
 

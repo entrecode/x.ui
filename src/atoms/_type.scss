@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.0-beta.1
 /// @access public
 /// @group atoms
 ///
@@ -7,16 +7,22 @@
 /// @param {value} $headings-font
 /// @param {number} $base-font-size [16]
 /// @param {number} $base-line-height [1.4]
+/// @param {value} $base-weight [$is-normal]
 ///
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
-/// @param {number} $inline-small-size [.875] - font-size of `<small>`
-/// @param {value} $paragraph-lead-weight [$light]
+/// @param {number} $inline-small-scale [.875] - font-size of `<small>`
+///
+/// @param {value} $is-lead-weight [$is-light]
+/// @param {number} $is-lead-line-height [$base-line-height]
+/// @param {array} $is-lead-spacing [$paragraph-spacing]
+/// @param {value} $is-lead-spacing-unit [$base-spacing-unit]
 
 body {
   font-family: $body-font;
   color: getColor(text);
   font-size: rem($base-font-size);
   line-height: $base-line-height;
+  font-weight: $base-weight;
 }
 
 ///
@@ -49,8 +55,8 @@ a {
 
 p {
   @include get-font-size(p);
-  margin: 0;
-  margin-bottom: rem($vertical-rhythm);
+  line-height: $paragraph-line-height;
+  margin: unitArray($paragraph-spacing, $paragraph-spacing-unit);
 
   strong,
   small {
@@ -59,14 +65,11 @@ p {
 
   @extend %paragraph-styles !optional;
 
-  &.small {
-    vertical-align: baseline;
-    font-size: ($inline-small-size*1em);
-  }
-
-  &.lead {
+  &.is-lead {
     @include get-font-size(lead);
-    font-weight: $paragraph-lead-weight;
+    line-height: $base-line-height;
+    font-weight: $is-lead-weight;
+    margin: unitArray($is-lead-spacing, $is-lead-spacing-unit);
   }
 }
 
@@ -85,7 +88,7 @@ strong {
 }
 
 small {
-  font-size: ($inline-small-size * 1em);
+  font-size: unitArray($inline-small-scale, $inline-small-unit);
   vertical-align: baseline;
 }
 

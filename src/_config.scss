@@ -39,8 +39,6 @@ $super: #14a656 !default;
 $minor: rgba($link, .2) !default;
 $highlight: #9de263 !default;
 
-// color config
-
 // background shading variables
 // @param {color} $background-invert [$text] - inverted color for background
 // @param {color} $background-light [null] - set value too overwrite generated color
@@ -83,14 +81,16 @@ $lighter-fallback: false !default;
 $darker-fallback: false !default;
 
 //
-// GRID & LAYOUT Settings
-// ------------------------------------------------------
+// ROOT
+// -------------------------------------------------------------------------------------------------
 
 // @param {px} $root-size [16] - default size used for global size calculations
 $root-size: 16 !default;
 
-// Grid Settings
 //
+// GRID
+// -------------------------------------------------------------------------------------------------
+
 // @param {px} $grid-container-width [1200] - max-width of container
 // @param {px} $grid-gutter [32] - gutter size in pixels without unit
 // @param {value} $grid-outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
@@ -100,15 +100,15 @@ $grid-gutter: 32 !default;
 $grid-outer-gutter: true !default;
 $grid-num-columns: 12 !default;
 
-// @param {px} $base-padding [16] - small padding value for padding helper
-$base-padding: 16 !default;
-
-// Spacing config
 //
-// @param {px} $base-spacing [16] - small padding value for padding helper
+// SPACING
+// -------------------------------------------------------------------------------------------------
+
+// @param {px} $base-spacing [16]
+// @param {*} $base-spacing-unit [xrem]
 // @param {map} $spacings
 $base-spacing: 16 !default;
-$base-spacing-unit: 'rem' !default;
+$base-spacing-unit: xrem !default;
 
 $spacings: (
         0 : 0,
@@ -121,8 +121,8 @@ $spacings: (
 ) !default;
 
 //
-// RESPONSIVE Settings
-// ------------------------------------------------------
+// RESPONSIVE BREAKPOINTS
+// -------------------------------------------------------------------------------------------------
 
 // @param {map} $breakpoints
 $breakpoints: (
@@ -135,101 +135,130 @@ $breakpoints: (
         'xxl': 1920 // large
 ) !default;
 
-
 //
-// TYPO
-// ------------------------------------------------------
+// TYPEFACE
+// -------------------------------------------------------------------------------------------------
 
 // @param {px} $base-font-size [16]
-$base-font-size: 16 !default;
-
 // @param {em} $base-line-height [1.4]
+// @param {value} $base-weight [$is-normal]
+// @param {value} $base-scale-unit [em]
+$base-font-size: 16 !default;
 $base-line-height: 1.4 !default;
+$base-weight: $is-normal !default;
+$base-scale-unit: em !default;
 
-// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
-$vertical-rhythm: round($base-line-height * $base-font-size) !default; // outputs: 22.4
+//
+// HEADINGS
+// ---------------------------------------------
 
 // @param {em} $headings-line-height [$base-line-height]
-// @param {*} $headings-spacing-unit ['rem']
-$headings-line-height: $base-line-height !default;
-$headings-spacing-unit: rem !default;
-
-// @param {number} $giga-margin [$vertical-rhythm * 2] - set margin-bottom for h1
-$giga-margin: $vertical-rhythm * 2 !default;
-
-// @param {number} $mega-margin [$vertical-rhythm] - set margin-bottom for h2, h3, h4
-$mega-margin: $vertical-rhythm !default;
-
-// @param {number} $kilo-margin [$vertical-rhythm / 2] - set margin-bottom for h5, h6
-$kilo-margin: $vertical-rhythm / 2 !default;
-
-
-// @param {unit} $type-scale-unit [em] - unit for font-size
-$type-scale-unit: em;
-
-// @param {value} $bp-type-scale-small - breakpoint modular scale for small devices
-$bp-type-scale-small: 0 !default;
-
-// @param {map} $type-scale-small - modular scale for small devices
-// @link http://www.modularscale.com/?0.875&rem&1.25
-$type-scale-small: (
-        h1: 2.67em,
-        h2: 2.136em,
-        h3: 1.709em,
-        h4: 1.367em,
-        h5: 1.094em,
-        h6: .875em,
-        lead: 1.094em,
-        p: .875em
-) !default;
-
-// @param {value} $bp-type-scale-normal - breakpoint modular scale for normal devices
-$bp-type-scale-normal: getBreakpoint(md) !default;
-
-// @param {map} $type-scale-normal - modular scale for normal devices
-// @link http://www.modularscale.com/?1&em&1.25
-$type-scale-normal: (
-        h1: 3.052em,
-        h2: 2.441em,
-        h3: 1.953em,
-        h4: 1.563em,
-        h5: 1.25em,
-        h6: 1em,
-        lead: 1.25em,
-        p: 1em
-) !default;
-
-// @param {value} $bp-type-scale-large - breakpoint modular scale for large devices
-$bp-type-scale-large: getBreakpoint(xxl) !default;
-
-// @param {map} $type-scale-large - modular scale for large devices
-// @link http://www.modularscale.com/?1.125&em&1.25
-$type-scale-large: (
-        h1: 3.433em,
-        h2: 2.747em,
-        h3: 2.197em,
-        h4: 1.758em,
-        h5: 1.406em,
-        h6: 1.125em,
-        lead: 1.406em,
-        p: 1.125em
-) !default;
-
 // @param {value} $headings-weight [$is-bold]
-$headings-weight: $is-bold !default;
-
 // @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
+$headings-line-height: $base-line-height !default;
+$headings-weight: $is-bold !default;
 $heading-inline-small: .5 !default;
 
-// additional styles for headings
 %heading-style {
-  // put styles here...
+  // put additional styles here...
 }
 
-// styles for links
+//
+// TYPEFACE SPACING
+// ---------------------------------------------
+
+// @param {number} $vertical-rhythm [$base-line-height * $base-font-size]
+// set margin-bottom a smooth typeface
+$vertical-rhythm: round($base-line-height * $base-font-size) !default; // equals 22.4px
+
+// @param {*} $headings-spacing-unit [$base-spacing-unit]
+$headings-spacing-unit: $base-spacing-unit !default;
+
+// @param {array} $h1-spacing [0 0 ($vertical-rhythm * 2) 0]
+// @param {array} $h2-spacing [0 0 $vertical-rhythm 0]
+// @param {array} $h3-spacing [$h2-spacing]
+// @param {array} $h4-spacing [$h3-spacing]
+// @param {array} $h5-spacing [0 0 ($vertical-rhythm / 2) 0]
+// @param {array} $h6-spacing [$h5-spacing]
+$h1-spacing: 0 0 ($vertical-rhythm * 2) 0 !default;
+$h2-spacing: 0 0 $vertical-rhythm 0 !default;
+$h3-spacing: $h2-spacing !default;
+$h4-spacing: $h3-spacing !default;
+$h5-spacing: 0 0 ($vertical-rhythm / 2) 0 !default;
+$h6-spacing: $h5-spacing !default;
+
+// @param {array} $giga-spacing [0]
+// @param {array} $mega-spacing [0]
+// @param {array} $kilo-spacing [0]
+$giga-spacing: 0 !default;
+$mega-spacing: 0 !default;
+$kilo-spacing: 0 !default;
+
+//
+// TYPEFACE SCALE
+// ---------------------------------------------
+
+// @param {map} $type-scale - modular scale for typeface
+// @link http://www.modularscale.com/?1&em&1.25
+$type-scale: (
+        h1: 3.052,
+        h2: 2.441,
+        h3: 1.953,
+        h4: 1.563,
+        h5: 1.25,
+        h6: 1,
+        lead: 1.25,
+        p: 1,
+) !default;
+
+// @param {unit} $type-scale-unit [$base-scale-unit] - unit for modular scale
+$type-scale-unit: $base-scale-unit !default;
+
+// @param {map} $type-scale-bp - breakpoints for modular scale
+$type-scale-bp: (
+        xs: .875,
+        md: 1,
+        xxl: 1.25
+) !default;
+
+//
+// PARAGRAPH STYLES
+// ---------------------------------------------
+
+// @param {value} $paragraph-weight [$is-light]
+// @param {number} $paragraph-line-height [$base-line-height]
+// @param {array} $paragraph-spacing [0 0 $vertical-rhythm 0]
+// @param {value} $paragraph-spacing-unit [$base-spacing-unit]
+$paragraph-weight: $is-normal !default;
+$paragraph-line-height: $base-line-height !default;
+$paragraph-spacing: 0 0 $vertical-rhythm 0 !default;
+$paragraph-spacing-unit: $base-spacing-unit !default;
+
+%paragraph-styles {
+  // put additional styles here...
+}
+
+// @param {value} $is-lead-weight [$is-light]
+// @param {number} $is-lead-line-height [$base-line-height]
+// @param {array} $is-lead-spacing [$paragraph-spacing]
+// @param {value} $is-lead-spacing-unit [$base-spacing-unit]
+$is-lead-weight: $is-light !default;
+$is-lead-line-height: $base-line-height !default;
+$is-lead-spacing: $paragraph-spacing !default;
+$is-lead-spacing-unit: $base-spacing-unit !default;
+
+%is-lead-styles {
+  // put additional styles here...
+}
+
+//
+// LINK STYLES
+// ---------------------------------------------
+
 $link-color: $link;
 $link-decoration: none;
 $link-weight: $is-normal;
+
 $link-hover-color: setHover($link);
 $link-hover-decoration: none;
 $link-hover-weight: $is-normal;
@@ -238,21 +267,23 @@ $link-hover-weight: $is-normal;
   transition: color .2s;
 }
 
+//
+// SMALL STYLES
+// ---------------------------------------------
 
-// @param {value} $paragraph-lead-weight [$is-light]
-$paragraph-lead-weight: $is-light !default;
+// @param {number} $inline-small-scale [.875] - font-size of `<small>`
+// @param {value} $inline-small-unit [$base-scale-unit]
+$inline-small-scale: .875 !default;
+$inline-small-unit: $base-scale-unit !default;
 
-// additional styles for paragraphs
-%paragraph-styles {
-  // put styles here...
-}
 
-// @param {number} $inline-small-size [.875] - font-size of `<small>`
-$inline-small-size: .875 !default;
+//
+// ATOMS
+// -------------------------------------------------------------------------------------------------
 
 //
 // Avatars
-// ------------------------------------------------------
+// ---------------------------------------------
 
 // @param {number} $avatar-size [48]
 // @param {number} $avatar-small-size-size [32]
@@ -286,9 +317,8 @@ $btn-line-height: $btn-font-size * $base-line-height !default;
 $btn-min-height: 40 !default;
 $btn-weight: $is-bold !default;
 
-// additional styles for .btn
 %btn-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {number} $btn-small-font-size [$base-font-size * .875]
@@ -300,9 +330,8 @@ $btn-small-line-height: $btn-small-font-size * $base-line-height !default;
 $btn-small-min-height: 32 !default;
 $btn-small-weight: $btn-weight !default;
 
-// additional styles for .btn_small
 %btn-small-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {number} $btn-big-font-size [$base-font-size * 1.125]
@@ -314,9 +343,8 @@ $btn-big-line-height: $btn-big-font-size * $base-line-height !default;
 $btn-big-min-height: 48 !default;
 $btn-big-weight: $btn-weight !default;
 
-// additional styles for .btn_big
 %btn-big-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {boolean} $btn-round [false] - sets border-radius to 50% of button height
@@ -379,9 +407,8 @@ $form-group-label-margin: 0 0 4 0 !default;
 // @param {em} $form-group-label-font-size [$base-font-size]
 $form-group-label-font-size: $base-font-size !default;
 
-// additional styles for .from-group
 %form-group-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 //
@@ -397,9 +424,8 @@ $form-boolean-label-margin: 0 0 4 0 !default;
 // @param {em} $form-boolean-label-font-size [$base-font-size]
 $form-boolean-label-font-size: $base-font-size !default;
 
-// additional styles for .from-group
 %form-boolean-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 //
@@ -422,9 +448,8 @@ $input-font-size: $base-font-size !default;
 $input-line-height: $input-font-size * $base-line-height !default;
 $input-min-height: 32 !default;
 
-// additional styles for .input
 %input-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {em} $input-small-font-size [14]
@@ -434,9 +459,8 @@ $input-small-font-size: $input-font-size * .875 !default;
 $input-small-line-height: $input-small-font-size * $base-line-height !default;
 $input-small-min-height: 28 !default;
 
-// additional styles for .input.small
 %input-small-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {em} $input-big-font-size [18]
@@ -446,9 +470,8 @@ $input-big-font-size: $input-font-size * 1.125 !default;
 $input-big-line-height: $input-big-font-size * $base-line-height !default;
 $input-big-min-height: 40 !default;
 
-// additional styles for .input.big
 %input-big-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {boolean} $input-round [false] - sets border-radius to 50% of input height
@@ -516,9 +539,8 @@ $select-font-size: 16 !default;
 $select-line-height: 20 !default;
 $select-min-height: 32 !default;
 
-// additional styles for .input
 %select-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {boolean} $select-round [false] - sets border-radius to 50% of input height
@@ -573,20 +595,16 @@ $alert-big-font-size: $base-font-size * 1.125 !default;
 $alert-big-padding: 24 28 !default;
 $alert-big-margin: 0 0 16 0 !default;
 
-
-// additional styles for .alert
 %alert-style {
-  // put styles here...
+  // put additional styles here...
 }
 
-// additional styles for .alert-small
 %alert-small-style {
-  // put styles here...
+  // put additional styles here...
 }
 
-// additional styles for .alert-big
 %alert-big-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // Bubbles
@@ -604,9 +622,8 @@ $bubble-line-height: 16 !default;
 $bubble-min-height: 28 !default;
 $bubble-weight: $is-bold !default;
 
-// additional styles for .bubble
 %bubble-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {em} $bubble-small-font-size [10]
@@ -618,9 +635,8 @@ $bubble-small-line-height: 12 !default;
 $bubble-small-min-height: 24 !default;
 $bubble-small-weight: $bubble-weight !default;
 
-// additional styles for .bubble.small
 %bubble-small-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {em} $bubble-big-font-size [16]
@@ -632,9 +648,8 @@ $bubble-big-line-height: 20 !default;
 $bubble-big-min-height: 32 !default;
 $bubble-big-weight: $bubble-weight !default;
 
-// additional styles for .bubble.big
 %bubble-big-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {boolean} $bubble-round [false] - sets border-radius to 50% of bubble height
@@ -666,9 +681,8 @@ $tag-line-height: $tag-font-size * $base-line-height !default;
 $tag-min-height: 28 !default;
 $tag-weight: $is-bold !default;
 
-// additional styles for .tag
 %tag-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {em} $tag-small-font-size [$base-font-size * .75]
@@ -680,9 +694,8 @@ $tag-small-line-height: $tag-small-font-size * $base-line-height !default;
 $tag-small-min-height: 24 !default;
 $tag-small-weight: $tag-weight !default;
 
-// additional styles for .tag.small
 %tag-small-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {em} $tag-big-font-size [$base-font-size]
@@ -694,9 +707,8 @@ $tag-big-line-height: $tag-big-font-size * $base-line-height !default;
 $tag-big-min-height: 32 !default;
 $tag-big-weight: $tag-weight !default;
 
-// additional styles for .tag.big
 %tag-big-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {rem} $tag-outlined - sets border-width for .tag_outlined
@@ -728,9 +740,8 @@ $tooltip-line-height: 14 !default;
 $tooltip-min-height: 20 !default;
 $tooltip-weight: $is-normal !default;
 
-// additional styles for .tooltip
 %tooltip-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
@@ -771,20 +782,16 @@ $well-margin: 0 0 16 0 !default;
 $well-big-padding: 24 28 !default;
 $well-big-margin: 0 0 16 0 !default;
 
-
-// additional styles for .well
 %well-style {
-  // put styles here...
+  // put additional styles here...
 }
 
-// additional styles for .well
 %well-small-style {
-  // put styles here...
+  // put additional styles here...
 }
 
-// additional styles for .well
 %well-big-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {rem} $well-outlined - sets border-width for .alert_outlined
@@ -805,16 +812,15 @@ $hamburger-btn-spacing: 4 !default;
 // @param {color} $hamburger-btn-color [$link] - spacing of hamburger menu bars
 $hamburger-btn-color: $link !default;
 
-// additional styles for .hamburger-btn
 %hamburger-btn-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // toolbar
 // ------------------------------------------------------
 
-// @param {rem} $toolbar-padding [$base-padding]
-$toolbar-padding: $base-padding !default;
+// @param {rem} $toolbar-padding [$base-spacing]
+$toolbar-padding: $base-spacing !default;
 
 // @param {em} $toolbar-title-size [20] - font-size of .toolbar__title
 // @param {rem} $toolbar-title-img-height [32] - height of .toolbar__title > img
@@ -823,9 +829,8 @@ $toolbar-title-size: 20 !default;
 $toolbar-title-img-height: 32 !default;
 $toolbar-min-height: 64 !default;
 
-// additional styles for .well
 %toolbar-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // @param {em} $toolbar-small-title-size [20] - font-size of .toolbar-dense__title
@@ -835,9 +840,8 @@ $toolbar-small-title-size: 20 !default;
 $toolbar-small-title-img-height: 32 !default;
 $toolbar-small-min-height: 48 !default;
 
-// additional styles for .well
 %toolbar-small-style {
-  // put styles here...
+  // put additional styles here...
 }
 
 // card

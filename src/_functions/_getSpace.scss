@@ -7,4 +7,6 @@
 
 @function getSpace($space) {
   @return unitArray(map-get($spacings, $space), $base-spacing-unit);
-};
+}
+
+;

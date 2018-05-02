@@ -3,6 +3,8 @@
 - changes import order in `x.ui.scss`
 - renamed `remArray()` function to `unitArray()`
 - removed `$base-padding`
+- refactored typeface config
+- refactored `get-font-size()` mixin
 
 ### changes
 - `unitArray()` function now support different units
