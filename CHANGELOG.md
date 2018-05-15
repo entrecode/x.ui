@@ -1,5 +1,19 @@
-## 8.0.0-beta.7
+## 8.0.0-beta.8
+### breaking changes
+- changes import order in `x.ui.scss`
+- renamed `remArray()` function to `arrayMagic()`
+- removed `$base-padding`
+- refactored typeface config
+- refactored `get-font-size()` mixin
 
+### changes
+- `unitArray()` function now support different units
+
+### added
+- `$spacings` maps
+- config variables for links
+
+## 8.0.0-beta.7
 ### breaking changes
 - changed `.well_small` and `.well_big` to `.well-small` and `.well-big`
 - changed `.alert_small` and `.alert_big` to `.alert-small` and `.alert-big`

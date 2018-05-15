@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.7
+/// @since 8.0.0-beta.8
 /// @access public
 /// @group molecules
 ///
@@ -37,8 +37,8 @@
 .alert {
   @extend %alert;
   font-size: em($alert-font-size);
-  padding: remArray($alert-padding);
-  margin: remArray($alert-margin);
+  padding: arrayMagic($alert-padding);
+  margin: arrayMagic($alert-margin);
 
   /// additional styles via config
   @extend %alert-style !optional;
@@ -47,8 +47,8 @@
 .alert-small {
   @extend %alert;
   font-size: em($alert-small-font-size);
-  padding: remArray($alert-small-padding);
-  margin: remArray($alert-small-margin);
+  padding: arrayMagic($alert-small-padding);
+  margin: arrayMagic($alert-small-margin);
 
   /// additional styles via config
   @extend %alert-small-style !optional;
@@ -57,8 +57,8 @@
 .alert-big {
   @extend %alert;
   font-size: em($alert-big-font-size);
-  padding: remArray($alert-big-padding);
-  margin: remArray($alert-big-margin);
+  padding: arrayMagic($alert-big-padding);
+  margin: arrayMagic($alert-big-margin);
 
   /// additional styles via config
   @extend %alert-big-style !optional;

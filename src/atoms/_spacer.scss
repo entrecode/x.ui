@@ -1,23 +1,21 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.8
 /// @access public
 /// @group atoms
-///
-/// @param {number} $base-padding [16] - small padding value for padding helper
 ///
 /// @example
 ///   <div class='spacer'></div>
 
 .spacer {
   @include set-breakpoints {
-    height: rem($base-padding*2);
+    height: getSpace(5);
     flex-shrink: 0;
     width: 100%;
   }
 
   &-small {
     @include set-breakpoints {
-      height: rem($base-padding);
+      height: getSpace(3);
       flex-shrink: 0;
       width: 100%;
     }
@@ -25,7 +23,7 @@
 
   &-big {
     @include set-breakpoints {
-      height: rem($base-padding*3);
+      height: getSpace(6);
       flex-shrink: 0;
       width: 100%;
     }

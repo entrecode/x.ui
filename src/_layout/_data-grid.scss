@@ -13,7 +13,7 @@
     margin: 0;
   }
 
-  @if $outer-gutter {
+  @if $grid-outer-gutter {
     margin-left: ($grid-gutter / -2) + px !important;
     margin-right: ($grid-gutter / -2) + px !important;
   }
@@ -26,7 +26,7 @@
 }
 
 @include set-data-breakpoints('grid', 'is-default') {
-  @if $outer-gutter {
+  @if $grid-outer-gutter {
     margin-left: ($grid-gutter / -2) + px !important;
     margin-right: ($grid-gutter / -2) + px !important;
   }
@@ -38,7 +38,7 @@
 }
 
 @include set-data-breakpoints('grid', 'is-small') {
-  @if $outer-gutter {
+  @if $grid-outer-gutter {
     margin-left: ($grid-gutter / -4) + px !important;
     margin-right: ($grid-gutter / -4) + px !important;
   }

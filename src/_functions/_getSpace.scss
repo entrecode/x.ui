@@ -1,0 +1,12 @@
+/// @author Bernhard Ruoff
+/// @since 0.0.0-beta.1
+/// @access public
+/// @group layout
+///
+/// @returns spacing-map value
+
+@function getSpace($space) {
+  @return arrayMagic(map-get($spacings, $space), $base-spacing-unit);
+}
+
+;

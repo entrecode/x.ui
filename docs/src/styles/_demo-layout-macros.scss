@@ -2,7 +2,7 @@ $demo-macro: rgba(getColor(link), .1);
 
 .demo-layout-macros {
   background-color: $demo-macro;
-  margin: 0 0 rem($base-padding) 0;
+  margin: 0 0 rem($base-spacing) 0;
   background-image: url('assets/space-top.svg'), url('assets/space-bottom.svg');
   background-repeat: no-repeat, no-repeat;
   background-position: center top 2px, center bottom 2px;

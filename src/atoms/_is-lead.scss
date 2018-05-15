@@ -1,0 +1,8 @@
+.is-lead {
+  @include get-font-size(lead);
+  line-height: $base-line-height;
+  font-weight: $is-lead-weight;
+  margin: arrayMagic($is-lead-spacing, $is-lead-spacing-unit);
+
+  @extend %is-lead-styles !optional;
+}

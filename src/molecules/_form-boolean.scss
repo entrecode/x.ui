@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.7
+/// @since 8.0.0-beta.8
 /// @access public
 /// @group molecules
 ///
@@ -9,7 +9,7 @@
 /// @param {number} $form-boolean-label-margin [0 0 4 0]
 
 .form-boolean {
-  margin: remArray($form-boolean-margin);
+  margin: arrayMagic($form-boolean-margin);
 
   @extend %form-boolean-style !optional;
 
@@ -24,7 +24,7 @@
 
   label {
     font-size: em($form-boolean-label-font-size);
-    margin: remArray($form-boolean-label-margin);
+    margin: arrayMagic($form-boolean-label-margin);
   }
 
   input[type="radio"],

@@ -1,0 +1,38 @@
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.8
+/// @access public
+/// @group size-functions
+///
+/// Converts an array or string of numbers into a a string of rem values;
+/// @example
+/// padding: arrayMagic(8 16); // returns rem(8) rem(16)
+///
+/// @param {string | array} $array - array or string of numbers
+/// @param {'xrem' | 'xem' | 'rem' | 'px' | 'em' | '%' | 'pt'} $unit - array or string of numbers
+/// @require {function} rem()
+/// @require {function} em()
+///
+/// @return {rem} string of values in rem
+
+@function arrayMagic($array, $unit: 'xrem') {
+  $output: null;
+  $value: null;
+
+  @for $i from 1 through length($array) {
+    $entry: nth($array, $i);
+    @if type-of($entry) == 'number' {
+      @if ($unit == 'xrem') {
+        $value: rem($entry);
+      } @else if ($unit == 'xem') {
+        $value: em($entry);
+      } @else {
+        $value: $entry * 1#{$unit};
+      }
+    } @else {
+      $value: #{$entry};
+    }
+    $output: append($output, $value);
+  }
+
+  @return $output;
+}

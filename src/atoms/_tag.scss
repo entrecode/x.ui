@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.7
+/// @since 8.0.0-beta.8
 /// @access public
 /// @group atoms
 ///
@@ -28,18 +28,13 @@
 /// @param {number} $tag-big-radius [4]
 
 .tag {
+  @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
+  @include set-theme-colors($tag-background);
   white-space: nowrap;
   display: inline-block;
   text-align: center;
   font-weight: $tag-weight;
-  @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
   border-radius: rem($tag-radius);
-
-  @if $tag-background {
-    @include set-theme-colors($tag-background);
-  } @else {
-    @include set-theme-colors(getColor(background, lightest));
-  }
 
   a {
     color: getColor(text, lighter);
