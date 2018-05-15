@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0-beta.1
+/// @since 8.0.0-beta.8
 /// @access public
 /// @group atoms
 ///
@@ -30,7 +30,7 @@ body {
 /// --------
 
 a {
-  color: $link-color;
+  color: getColor(link);
   text-decoration: $link-decoration;
   font-weight: $link-weight;
   cursor: pointer;
@@ -41,9 +41,7 @@ a {
   }
 
   &:hover {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
-    font-weight: $link-hover-weight;
+    color: setHover(getColor(link));
   }
 
   @extend %link-styles !optional;
@@ -56,7 +54,7 @@ a {
 p {
   @include get-font-size(p);
   line-height: $paragraph-line-height;
-  margin: unitArray($paragraph-spacing, $paragraph-spacing-unit);
+  margin: arrayMagic($paragraph-spacing, $paragraph-spacing-unit);
 
   strong,
   small {
@@ -64,13 +62,6 @@ p {
   }
 
   @extend %paragraph-styles !optional;
-
-  &.is-lead {
-    @include get-font-size(lead);
-    line-height: $base-line-height;
-    font-weight: $is-lead-weight;
-    margin: unitArray($is-lead-spacing, $is-lead-spacing-unit);
-  }
 }
 
 //
@@ -88,7 +79,7 @@ strong {
 }
 
 small {
-  font-size: unitArray($inline-small-scale, $inline-small-unit);
+  font-size: arrayMagic($inline-small-scale, $inline-small-unit);
   vertical-align: baseline;
 }
 

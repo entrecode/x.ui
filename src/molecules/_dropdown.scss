@@ -1,7 +1,9 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 8.0.0-beta.8
 /// @access public
 /// @group molecules
+///
+/// @param {boolean} $dropdown-in-hover [false]
 ///
 /// @param {px} $dropdown-radius [4]
 /// @param {number} $dropdown-padding [4]
@@ -11,7 +13,6 @@
 nav.dropdown {
   outline: none;
   position: relative;
-  outline: none;
   cursor: pointer;
 
   ul.dropdown-options {
@@ -19,13 +20,9 @@ nav.dropdown {
     overflow-y: auto;
     overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
-    list-style: none;
-    margin: 0;
-    padding: 0;
     position: absolute;
     top: 100%;
     z-index: 10;
-    max-height: rem(320);
     opacity: 0;
     visibility: hidden;
     transition: visibility .5s, opacity .2s;
@@ -80,14 +77,21 @@ nav.dropdown {
     }
   }
 
-  &:focus {
-    > .dropdown-options {
-      visibility: visible;
-      opacity: 1;
+  &.dropdown_above {
+    ul.dropdown-options {
+      top: initial;
+      bottom: 100%;
     }
   }
 
-  &.on-hover {
+  @if $dropdown-on-hover == false {
+    &:focus {
+      > .dropdown-options {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  } @else {
     &:hover {
       ul.dropdown-options {
         visibility: visible;
@@ -96,25 +100,11 @@ nav.dropdown {
     }
   }
 
-  &.dropdown_above {
-    ul.dropdown-options {
-      top: initial;
-      bottom: 100%;
-    }
-
-    &:focus {
-      > .dropdown-options {
+  &.on-hover {
+    &:hover {
+      ul.dropdown-options {
         visibility: visible;
         opacity: 1;
-      }
-    }
-
-    &.on-hover {
-      &:hover {
-        ul.dropdown-options {
-          visibility: visible;
-          opacity: 1;
-        }
       }
     }
   }

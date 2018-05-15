@@ -1,17 +1,21 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.8
 /// @access public
 /// @group modifier
 ///
 /// @param {number} $dropdown-radius [8]
 /// @param {number} $dropdown-padding [4]
+// @param {rem | null} $dropdown-max-height [null]
 /// @param {color} $dropdown-background
 /// @param {value} $dropdown-shadow
 
 .is-dropdown {
-  padding: rem($dropdown-padding);
-  box-shadow: $dropdown-shadow;
+  padding: arrayMagic($dropdown-padding);
+  box-shadow: arrayMagic($dropdown-shadow);
   border-radius: rem($dropdown-radius);
   background-color: $dropdown-background;
-  color: setContrast($dropdown-background)
+  color: setContrast($dropdown-background);
+  list-style: none;
+  margin: 0;
+  max-height: rem($dropdown-max-height);
 }

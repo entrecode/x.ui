@@ -1,7 +1,7 @@
-## 9.0.0-beta.1
+## 8.0.0-beta.8
 ### breaking changes
 - changes import order in `x.ui.scss`
-- renamed `remArray()` function to `unitArray()`
+- renamed `remArray()` function to `arrayMagic()`
 - removed `$base-padding`
 - refactored typeface config
 - refactored `get-font-size()` mixin
@@ -12,7 +12,6 @@
 ### added
 - `$spacings` maps
 - config variables for links
-
 
 ## 8.0.0-beta.7
 ### breaking changes

@@ -6,7 +6,7 @@
 /// @returns spacing-map value
 
 @function getSpace($space) {
-  @return unitArray(map-get($spacings, $space), $base-spacing-unit);
+  @return arrayMagic(map-get($spacings, $space), $base-spacing-unit);
 }
 
 ;

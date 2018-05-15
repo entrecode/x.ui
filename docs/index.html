@@ -43,7 +43,7 @@
       <nav class="nav">
         <ul class="nav__items">
           <li class="nav__item" style="padding-right: 16px;">
-            <small class="is-ink-lighter is-nowrap">v. 8.0.0-beta.7</small>
+            <small class="is-ink-lighter is-nowrap">v. 8.0.0-beta.8</small>
           </li>
           <li class="nav__divider"></li>
           <li class="nav__item">
@@ -2180,14 +2180,18 @@
       <div class="well" data-flex="is-center">
         <div class="btn-group">
           <a href="" class="btn">button</a>
+          <div class="btn-group__divider"></div>
           <a href="" class="btn">button</a>
+          <div class="btn-group__divider"></div>
           <a href="" class="btn btn_mono"><span class="ec-icon trash"></span></a>
         </div>
       </div>
       <pre><code class="html">
 <div class="btn-group">
   <a href="" class="btn">button</a>
+  <div class="btn-group__divider"></div>
   <a href="" class="btn">button</a>
+  <div class="btn-group__divider"></div>
   <a href="" class="btn btn_mono"><span class="ec-icon trash"></span></a>
 </div></code></pre>
     </div>
@@ -2210,6 +2214,7 @@
               </li>
             </ul>
           </nav>
+          <div class="btn-group__divider"></div>
           <nav class="dropdown dropdown_right dropdown_above" tabindex="0">
                         <span class="btn btn_round"><span
                               class="ec-icon more-vertical"></span></span>
@@ -2236,6 +2241,7 @@
       ...
     </ul>
   </nav>
+  <div class="btn-group__divider"></div>
   <nav class="dropdown dropdown_right dropdown_above" tabindex="0">
     <span class="btn btn_round"><span class="ec-icon more-vertical"></span></span>
     <ul class="dropdown-options">
@@ -2759,7 +2765,7 @@
   <div class="well" data-flex="is-center">
     <a href="#overlayDemo" class="btn btn_glow">open overlay</a>
     <div class="xui-overlay-wrapper is-targeted has-backdrop" id="overlayDemo">
-      <div class="xui-overlay is-fixed is-positioned-0" data-col="8-xs 4-sm">
+      <div class="xui-overlay is-absolute is-positioned-0" data-col="8-xs 4-sm">
         <a href="#overlayDemoClose" class="xui-overlay__dismiss">&times;</a>
         <div class="has-padding">
           <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab

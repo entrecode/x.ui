@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0-beta.1
+/// @since 8.0.0-beta.8
 /// @access public
 /// @group typeface mixins
 ///
@@ -17,7 +17,7 @@
 
     @media (min-width: getBreakpoint($key)) {
       $scale: map-get($bp, $key);
-      font-size: unitArray($size, $unit);
+      font-size: arrayMagic($size, $unit);
     }
   }
 }

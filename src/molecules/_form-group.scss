@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0-beta.1
+/// @since 8.0.0-beta.8
 /// @access public
 /// @group molecules
 ///
@@ -9,13 +9,13 @@
 /// @param {number} $form-group-label-margin [0 0 4 0]
 
 .form-group {
-  margin: unitArray($form-group-margin);
+  margin: arrayMagic($form-group-margin);
   @extend %form-group-style !optional;
 
   label {
     display: block;
     font-size: em($form-group-label-font-size);
-    margin: unitArray($form-group-label-margin);
+    margin: arrayMagic($form-group-label-margin);
   }
 
   &.is-disabled,

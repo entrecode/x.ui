@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0
+/// @since 8.0.0-beta.8
 /// @access public
 /// @group molecules
 ///
@@ -9,8 +9,8 @@
 /// @param {value} $overlay-shadow
 
 .xui-overlay {
-  padding: rem($overlay-padding);
-  box-shadow: $overlay-shadow;
+  padding: arrayMagic($overlay-padding);
+  box-shadow: arrayMagic($overlay-shadow);
   border-radius: rem($overlay-radius);
   background-color: $overlay-background;
   color: setContrast($overlay-background);

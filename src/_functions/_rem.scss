@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.8
 /// @access public
 /// @group size-functions
 ///
@@ -14,5 +14,13 @@
 /// @return {rem} value in rem
 
 @function rem($value, $base: $root-size) {
-  @return ($value / $base) + rem;
+  @if type_of($value) == 'number'{
+    @if ($value == 0) {
+      @return $value;
+    } @else {
+      @return ($value / $base) + rem;
+    }
+  } @else {
+    @return $value;
+  }
 }

@@ -13,8 +13,6 @@
 /// @param {number} $btn-radius - radius for default button
 /// @param {number} $btn-small-radius - radius for small button
 /// @param {number} $btn-big-radius - radius for big button
-///
-/// @param {boolean} $btn-group-divider [true] - if btn-group items are divided by a thin border
 
 .btn-group {
 
@@ -25,18 +23,6 @@
     margin: 0;
     border-radius: 0;
     position: relative;
-
-    @if $btn-group-divider == true {
-      &:after {
-        content: '';
-        width: rem(1);
-        height: 100%;
-        background-color: getColor(divider);
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-    }
 
     @if $flex-support == false {
       float: left;
@@ -63,10 +49,6 @@
 
       @if $btn-round == true {
         border-radius: 0 rem($btn-min-height / 2) rem($btn-min-height / 2) 0;
-      }
-
-      &:after {
-        content: initial;
       }
     }
 
@@ -129,10 +111,6 @@
     &.btn_outlined {
       border-left-width: 0;
 
-      &:after {
-        content: initial;
-      }
-
       &:first-child {
         border-left-width: rem($btn-outline);
       }
@@ -152,24 +130,8 @@
       position: relative;
       border-radius: 0;
 
-      @if $btn-group-divider == true {
-        &:after {
-          content: '';
-          width: rem(1);
-          height: 100%;
-          background-color: getColor(divider);
-          position: absolute;
-          right: 0;
-          top: 0;
-        }
-      }
-
       &.btn_outlined {
         border-left-width: 0;
-
-        &:after {
-          content: initial;
-        }
       }
     }
 
@@ -227,10 +189,6 @@
           border-radius: 0 rem($btn-min-height / 2) rem($btn-min-height / 2) 0;
         }
 
-        &:after {
-          content: initial;
-        }
-
         &.btn_small {
           border-radius: 0 rem($btn-small-radius) rem($btn-small-radius) 0;
 
@@ -261,4 +219,13 @@
   @if $flex-support == true {
     display: flex;
   }
+
+  &__divider {
+    width: 1px;
+    background-color: getColor(divider);
+    margin-left: -1px;
+    z-index: 1;
+  }
+
+  @extend %btn-group-style !optional;
 }
