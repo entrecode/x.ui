@@ -103,8 +103,8 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "node-sass": "^4.7.2",
+    "babel-preset-env": "^1.7.0",
+    "node-sass": "^4.9.0",
     "nunjucks-cli": "^0.5.1"
   }
 }
