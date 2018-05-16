@@ -45,7 +45,7 @@
   text-decoration: none;
   position: relative;
   height: auto;
-  border: none;
+  border: 0;
 
   /// button typo style
   font-family: $btn-font-family;
@@ -62,16 +62,14 @@
       display: inline;
     }
 
-    &:before {
+    &::before {
       line-height: inherit;
       padding-right: rem(8);
       vertical-align: top;
     }
 
-    &:empty {
-      &:before {
-        padding-right: 0;
-      }
+    &:empty::before {
+      padding-right: 0;
     }
   }
 
@@ -230,7 +228,7 @@
     }
 
     &.btn_mono {
-      color: getColor(text)
+      color: getColor(text);
     }
 
     &.btn_minor {

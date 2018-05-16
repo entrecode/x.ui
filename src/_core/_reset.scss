@@ -9,10 +9,11 @@
   -ms-overflow-style: -ms-autohiding-scrollbar;
   overflow-y: scroll;
   text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   font-size: $root-size + px;
+  box-sizing: border-box;
+  cursor: default;
+  vertical-align: top;
 }
 
 audio:not([controls]) {
@@ -61,19 +62,12 @@ template,
 }
 
 [unselectable] {
-  user-select: none
+  user-select: none;
 }
 
 //
 // Universal Inheritance
 // ---------------------
-
-// Specify default styles in the document
-:root {
-  box-sizing: border-box;
-  cursor: default;
-  vertical-align: top;
-}
 
 *,
 ::after,
@@ -157,5 +151,5 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  border: none;
+  border: 0;
 }

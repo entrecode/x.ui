@@ -3,6 +3,7 @@
 /// @access public
 /// @group atoms
 
+// scss-lint:disable NestingDepth
 .xui-radio {
 
   label {
@@ -11,10 +12,10 @@
   }
 
   input[type="radio"] {
-    @extend .is-hidden-input;
+    @extend %is-hidden-input;
 
     + label {
-      &:before {
+      &::before {
         font-family: initial;
         content: '\2B24';
         display: flex;
@@ -36,7 +37,7 @@
       }
 
       &:hover {
-        &:before {
+        &::before {
           color: getColor(text, lightest);
           font-size: rem($radio-font-size);
         }
@@ -45,7 +46,7 @@
 
     &:checked {
       + label {
-        &:before {
+        &::before {
           color: getColor(link);
           font-size: rem(10);
         }

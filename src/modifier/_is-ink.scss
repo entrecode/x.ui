@@ -9,6 +9,7 @@
 ///
 /// @return modifier class with a color values
 
+// scss-lint:disable ImportantRule
 $prefix: 'is-ink-';
 $name-array: default, light, lighter, lightest, minor, link, super, highlight, invert, info, disabled, error, success, warning;
 $color-array: getColor(text), getColor(text, light), getColor(text, lighter), getColor(text, lightest), getColor(minor), getColor(link), getColor(super), getColor(highlight), getColor(text, invert), getColor(state, info), getColor(state, disabled), getColor(state, error), getColor(state, success), getColor(state, warning);

@@ -19,44 +19,42 @@
 ///
 /// @param {boolean} $tag-outlined - sets border-width for .tag_outlined
 
-.tag {
-  &.tag_outlined {
-    background-color: transparent;
-    border-style: solid;
-    border-color: getColor(background, lightest);
-    @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
+.tag_outlined {
+  background-color: transparent;
+  border-style: solid;
+  border-color: getColor(background, lightest);
+  @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
 
-    &.tag_small {
-      @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
-    }
+  &.tag_small {
+    @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
+  }
 
-    &.tag_big {
-      @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
-    }
+  &.tag_big {
+    @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
+  }
+}
 
-    /// @param {value} $prefix ['tag_']
-    /// @param {array} $name-array - postfix names appending $prefix
-    /// @param {array} $color-array - theme colors
+/// @param {value} $prefix ['tag_']
+/// @param {array} $name-array - postfix names appending $prefix
+/// @param {array} $color-array - theme colors
 
-    $prefix: 'tag_';
-    $name-array: minor, link, super, highlight, invert, info, error, success, warning;
-    $color-array: getColor(minor), getColor(link), getColor(super), getColor(highlight), getColor(text, invert), getColor(state, info), getColor(state, error), getColor(state, success), getColor(state, warning);
+$prefix: 'tag_';
+$name-array: minor, link, super, highlight, invert, info, error, success, warning;
+$color-array: getColor(minor), getColor(link), getColor(super), getColor(highlight), getColor(text, invert), getColor(state, info), getColor(state, error), getColor(state, success), getColor(state, warning);
 
-    @for $i from 1 through length($color-array) {
-      $color: nth($color-array, $i);
-      $name: nth($name-array, $i);
+@for $i from 1 through length($color-array) {
+  $color: nth($color-array, $i);
+  $name: nth($name-array, $i);
 
-      &.#{$prefix}#{$name} {
-        border-color: $color;
+  &.#{$prefix}#{$name} {
+    border-color: $color;
+    color: setContrast(getColor(background), $color);
+
+    @at-root a.tag_outlined.#{$prefix}#{$name} {
+      &:hover {
+        background-color: transparent;
+        border-color: varColor($color, -4);
         color: setContrast(getColor(background), $color);
-
-        @at-root a.tag_outlined.#{$prefix}#{$name} {
-          &:hover {
-            background-color: transparent;
-            border-color: varColor($color, -4);
-            color: setContrast(getColor(background), $color);
-          }
-        }
       }
     }
   }

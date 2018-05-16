@@ -23,7 +23,6 @@
 
 .is-sticky {
   @include set-breakpoints {
-    position: -webkit-sticky;
     position: sticky;
   }
 }

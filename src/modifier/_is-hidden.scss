@@ -3,6 +3,7 @@
 /// @access public
 /// @group modifier
 
+// scss-lint:disable ImportantRule
 .is-hidden {
   @include set-breakpoints($area: true) {
     display: none !important;

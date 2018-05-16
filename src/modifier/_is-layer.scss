@@ -1,6 +1,6 @@
 .is-layer {
   @for $i from 0 through 9 {
-    $index: $i*10;
+    $index: $i * 10;
 
     &-#{$index} {
       @include set-breakpoints {
@@ -10,7 +10,7 @@
   }
 
   @for $i from 1 through 10 {
-    $index: $i*100;
+    $index: $i * 100;
 
     &-#{$index} {
       @include set-breakpoints {

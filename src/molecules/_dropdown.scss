@@ -10,13 +10,16 @@
 /// @param {color} $dropdown-background
 /// @param {value} $dropdown-shadow
 
+
+// scss-lint:disable PropertySpelling, NestingDepth
+
 nav.dropdown {
   outline: none;
   position: relative;
   cursor: pointer;
 
   ul.dropdown-options {
-    @extend .is-dropdown;
+    @extend %is-dropdown;
     overflow-y: auto;
     overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
@@ -31,7 +34,9 @@ nav.dropdown {
       display: block;
 
       > a:not(.btn) {
-        @extend %btn, .btn.btn_block !optional;
+        @extend %btn !optional;
+        width: 100%;
+        display: block;
 
         &:hover {
           background-color: getColor(state, hover);
@@ -39,7 +44,8 @@ nav.dropdown {
       }
 
       > .btn {
-        @extend .btn.btn_block !optional;
+        width: 100%;
+        display: block;
       }
     }
 

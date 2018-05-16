@@ -30,6 +30,7 @@
 
 .btn {
   &.btn_outlined {
+    // scss-lint:disable ImportantRule
     background-color: transparent !important;
     color: getColor(link);
     border-color: getColor(link);

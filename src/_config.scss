@@ -60,8 +60,8 @@ $text-light: rgba($text, .6) !default;
 $text-lighter: rgba($text, .4) !default;
 $text-lightest: rgba($text, .2) !default;
 
-// @param {color} $backdrop [rgba(black, .8)]
-$backdrop: rgba(black, .8) !default;
+// @param {color} $backdrop [rgba(#000, .8)]
+$backdrop: rgba(#000, .8) !default;
 
 // @param {number} $hover-shading [-4] - amount by which colors are darkened or lightened on hover
 $hover-shading: -4 !default;
@@ -71,10 +71,10 @@ $divider-color: rgba($text, .1) !default;
 
 // used for theme coloring, colors are used in the x-ui-colormap an adapted to fit to theme colors
 $state-hover: rgba($link, .1) !default;
-$state-info: cyan !default;
-$state-error: red !default;
-$state-success: green !default;
-$state-warning: gold !default;
+$state-info: #0ff !default;
+$state-error: #f00 !default;
+$state-success: #008000 !default;
+$state-warning: #ffd700 !default;
 
 // @param {color | false} $lighter-fallback [false] - light fallback color for setContrast
 // @param {color | false} $darker-fallback [false] - darker fallback color for setContrast
@@ -500,7 +500,7 @@ $dropdown-radius: 4 !default;
 $dropdown-padding: 4 !default;
 $dropdown-max-height: null !default;
 $dropdown-background: $background !default;
-$dropdown-shadow: 0 8 16 -4 rgba(black, .16) ',' 0 4 24 0 rgba(black, 0.1) !default;
+$dropdown-shadow: 0 8 16 -4 rgba(#000, .16) ',' 0 4 24 0 rgba(#000, .1) !default;
 
 //
 // BUTTON GROUP
@@ -594,7 +594,7 @@ $card-padding: 8 16 !default;
 $overlay-radius: 4 !default;
 $overlay-padding: 4 !default;
 $overlay-background: $background !default;
-$overlay-shadow: 0 8 16 -4 rgba(black, .16) ',' 0 4 24 0 rgba(black, 0.1) !default;
+$overlay-shadow: 0 8 16 -4 rgba(#000, .16) ',' 0 4 24 0 rgba(#000, .1) !default;
 
 //
 // WELL
@@ -682,6 +682,44 @@ $alert-big-margin: 0 0 16 0 !default;
 %alert-big-style {
   // put additional styles here...
 }
+
+//
+// TOOLTIP
+// ------------------------------------------------------
+
+// @param {number} $tooltip-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+$tooltip-padding-ratio: 2 !default;
+
+// @param {em} $tooltip-font-size [12]
+// @param {em} $tooltip-line-height [14]
+// @param {em} $tooltip-min-height [20]
+// @param {value} $tooltip-weight [$is-normal]
+$tooltip-font-size: 12 !default;
+$tooltip-line-height: 14 !default;
+$tooltip-min-height: 20 !default;
+$tooltip-weight: $is-normal !default;
+
+%tooltip-style {
+  // put additional styles here...
+}
+
+// @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
+$tooltip-round: false !default;
+
+// radius of buttons - if $tooltip-round === false
+// @param {rem} $tooltip-radius [2]
+$tooltip-radius: 2 !default;
+
+//
+// TABLE
+// ------------------------------------------------------
+
+// @param {array} $table-spacing [0 0 16 0]
+// @param {array} $table-border [1 solid getColor(divider)]
+// @param {array} $table-cell-padding [8]
+$table-spacing: 0 0 16 0 !default;
+$table-border: 1 solid $divider-color;
+$table-cell-padding: 8;
 
 
 
@@ -798,7 +836,7 @@ $input-border: 1 !default;
 $input-border-color: mix($text, $background, 25%) !default;
 
 // param {color} $input-raised-shadow
-$input-raised-shadow: rgba(black, .1) !default;
+$input-raised-shadow: rgba(#000, .1) !default;
 
 //
 // XUI-CHECKBOX
@@ -815,7 +853,7 @@ $checkbox-radius: 6 !default;
 
 // additional styles for .xui-checkbox
 %checkbox-style {
-  box-shadow: inset 0 1px 2px 1px rgba(black, .2);
+  box-shadow: inset 0 1px 2px 1px rgba(#000, .2);
 }
 
 //
@@ -831,7 +869,7 @@ $radio-height: 20 !default;
 
 // additional styles for .xui-radio
 %radio-style {
-  box-shadow: inset 0 1px 2px 1px rgba(black, .2);
+  box-shadow: inset 0 1px 2px 1px rgba(#000, .2);
 }
 
 //
@@ -863,37 +901,7 @@ $select-border: 1 !default;
 $select-border-color: mix($text, $background, 25%) !default;
 
 // param {color} $select-raised-shadow
-$select-raised-shadow: rgba(black, .1) !default;
-
-// Tooltip
-// ------------------------------------------------------
-
-// @param {number} $tooltip-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$tooltip-padding-ratio: 2 !default;
-
-// @param {em} $tooltip-font-size [12]
-// @param {em} $tooltip-line-height [14]
-// @param {em} $tooltip-min-height [20]
-// @param {value} $tooltip-weight [$is-normal]
-$tooltip-font-size: 12 !default;
-$tooltip-line-height: 14 !default;
-$tooltip-min-height: 20 !default;
-$tooltip-weight: $is-normal !default;
-
-%tooltip-style {
-  // put additional styles here...
-}
-
-// @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
-$tooltip-round: false !default;
-
-// radius of buttons - if $tooltip-round === false
-// @param {rem} $tooltip-radius [2]
-// @param {rem} $tooltip-small-radius [2]
-// @param {rem} $tooltip-big-radius [2]
-$tooltip-radius: 2 !default;
-$tooltip-small-radius: 2 !default;
-$tooltip-big-radius: 2 !default;
+$select-raised-shadow: rgba(#000, .1) !default;
 
 //
 // Modifier
@@ -921,13 +929,13 @@ $is-bordered-style: solid;
 
 // is-lifted
 // ------------------------------------------------------
-// @param {color} $is-lifted-shade [rgba(black, .1)]
-$is-lifted-shade: rgba(black, .1) !default;
+// @param {color} $is-lifted-shade [rgba(#000, .1)]
+$is-lifted-shade: rgba(#000, .1) !default;
 
 // is-raised
 // ------------------------------------------------------
-// @param {color} $is-raised-shade [rgba(black, .1)]
-$is-raised-shade: rgba(black, .1) !default;
+// @param {color} $is-raised-shade [rgba(#000, .1)]
+$is-raised-shade: rgba(#000, .1) !default;
 
 // fab
 // ------------------------------------------------------

@@ -11,7 +11,7 @@
   height: rem(4);
   text-align: center;
 
-  &:before {
+  &::before {
     position: absolute;
     content: '';
     width: rem(4);
@@ -32,7 +32,7 @@
   }
 
   &_invert {
-    &:before {
+    &::before {
       background-color: rgba(getColor(background), .2);
       box-shadow: rem(8) 0 0 rgba(getColor(background), .2), rem(16) 0 0 rgba(getColor(background), .2);
     }

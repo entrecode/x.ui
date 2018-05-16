@@ -5,11 +5,11 @@
 ///
 /// @param {number} $dropdown-radius [8]
 /// @param {number} $dropdown-padding [4]
-// @param {rem | null} $dropdown-max-height [null]
+/// @param {rem | null} $dropdown-max-height [null]
 /// @param {color} $dropdown-background
 /// @param {value} $dropdown-shadow
 
-.is-dropdown {
+%is-dropdown {
   padding: arrayMagic($dropdown-padding);
   box-shadow: arrayMagic($dropdown-shadow);
   border-radius: rem($dropdown-radius);

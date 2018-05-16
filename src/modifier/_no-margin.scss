@@ -3,6 +3,7 @@
 /// @access public
 /// @group modifier
 
+// scss-lint:disable ImportantRule
 .no-margin {
   @include set-breakpoints {
     margin: 0 !important;

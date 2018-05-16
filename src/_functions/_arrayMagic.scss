@@ -26,7 +26,7 @@
       } @else if ($unit == 'xem') {
         $value: em($entry);
       } @else {
-        $value: $entry * 1#{$unit};
+        $value: unquote('#{$entry * 1}#{$unit}');
       }
     } @else {
       $value: #{$entry};

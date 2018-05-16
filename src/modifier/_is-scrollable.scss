@@ -3,6 +3,7 @@
 /// @access public
 /// @group modifier
 
+// scss-lint:disable PropertySpelling
 .is-scrollable {
   @include set-breakpoints {
     overflow: scroll;
@@ -17,6 +18,7 @@
         -webkit-overflow-scrolling: touch;
       }
     }
+
     @include set-breakpoints {
       overflow-x: scroll;
       -webkit-overflow-scrolling: touch;
@@ -31,6 +33,7 @@
         -webkit-overflow-scrolling: touch;
       }
     }
+
     @include set-breakpoints {
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;

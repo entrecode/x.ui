@@ -12,13 +12,13 @@
 
   &-small {
     @include set-breakpoints {
-      margin: rem($base-spacing/2);
+      margin: rem($base-spacing / 2);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin: rem($base-spacing*2);
+      margin: rem($base-spacing * 2);
     }
   }
 }
@@ -31,15 +31,15 @@
 
   &-small {
     @include set-breakpoints {
-      margin-top: rem($base-spacing/2);
-      margin-bottom: rem($base-spacing/2);
+      margin-top: rem($base-spacing / 2);
+      margin-bottom: rem($base-spacing / 2);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-top: rem($base-spacing*2);
-      margin-bottom: rem($base-spacing*2);
+      margin-top: rem($base-spacing * 2);
+      margin-bottom: rem($base-spacing * 2);
     }
   }
 }
@@ -51,13 +51,13 @@
 
   &-small {
     @include set-breakpoints {
-      margin-top: rem($base-spacing/2);
+      margin-top: rem($base-spacing / 2);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-top: rem($base-spacing*2);
+      margin-top: rem($base-spacing * 2);
     }
   }
 }
@@ -69,13 +69,13 @@
 
   &-small {
     @include set-breakpoints {
-      margin-bottom: rem($base-spacing/2);
+      margin-bottom: rem($base-spacing / 2);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-bottom: rem($base-spacing*2);
+      margin-bottom: rem($base-spacing * 2);
     }
   }
 }
@@ -88,15 +88,15 @@
 
   &-small {
     @include set-breakpoints {
-      margin-left: rem($base-spacing/2);
-      margin-right: rem($base-spacing/2);
+      margin-left: rem($base-spacing / 2);
+      margin-right: rem($base-spacing / 2);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-left: rem($base-spacing*2);
-      margin-right: rem($base-spacing*2);
+      margin-left: rem($base-spacing * 2);
+      margin-right: rem($base-spacing * 2);
     }
   }
 
@@ -115,13 +115,13 @@
 
   &-small {
     @include set-breakpoints {
-      margin-left: rem($base-spacing/2);
+      margin-left: rem($base-spacing / 2);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-left: rem($base-spacing*2);
+      margin-left: rem($base-spacing * 2);
     }
   }
 
@@ -139,13 +139,13 @@
 
   &-small {
     @include set-breakpoints {
-      margin-right: rem($base-spacing/2);
+      margin-right: rem($base-spacing / 2);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-right: rem($base-spacing*2);
+      margin-right: rem($base-spacing * 2);
     }
   }
 

@@ -3,6 +3,7 @@
 /// @group grid
 /// @deprecated since 7.0.0
 
+// scss-lint:disable ImportantRule
 [data-row] {
   @if $grid-outer-gutter {
     margin-left: ($grid-gutter / -2) + px;
@@ -16,13 +17,13 @@
     position: relative;
   }
 
-  &:before,
-  &:after {
-    content: "";
+  &::before,
+  &::after {
+    content: '';
     display: table;
   }
 
-  &:after {
+  &::after {
     clear: both;
   }
 }

@@ -3,6 +3,7 @@
 /// @access public
 /// @group atoms
 
+// scss-lint:disable NestingDepth
 .xui-checkbox {
 
   label {
@@ -12,10 +13,10 @@
   }
 
   input[type="checkbox"] {
-    @extend .is-hidden-input;
+    @extend %is-hidden-input;
 
     + label {
-      &:before {
+      &::before {
         content: '\2714';
         font-family: sans-serif;
         background-color: getColor(background);
@@ -38,7 +39,7 @@
       }
 
       &:hover {
-        &:before {
+        &::before {
           color: getColor(text, lightest);
           line-height: rem($checkbox-line-height);
         }
@@ -47,7 +48,7 @@
 
     &:checked {
       + label {
-        &:before {
+        &::before {
           color: getColor(link);
           line-height: rem($checkbox-line-height);
         }

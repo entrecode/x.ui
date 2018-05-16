@@ -47,11 +47,11 @@
   .ec-icon {
     padding-right: rem($padding);
 
-    &:before {
+    &::before {
       font-size: em($line-height, $font-size);
     }
 
-    &.ec-icon_right {
+    &_right {
       padding-right: 0;
       padding-left: rem($padding);
     }
@@ -62,7 +62,7 @@
       margin-left: rem($padding * -$padding-ratio);
       margin-right: rem($padding * -$padding-ratio);
 
-      &:before {
+      &::before {
         margin-left: 0;
         margin-right: 0;
       }

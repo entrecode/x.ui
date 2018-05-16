@@ -1,5 +1,26 @@
 # CHANGELOG
 
+## 8.0.0-beta.11
+
+### added
+
+- scss-lint
+
+### changes
+
+- fixed `.has-padding-left-smallest`
+- changed `%selectPlaceholder` to `%select-placeholder`
+- changed `%tabsNav` to `%tabs-nav`
+- `.is-hidden-input` uses `@mixin is-hidden-input`
+- changed `%tabsNavItem` to `%tabs-nav-item`
+- changed `%tabsNavSelected` to `%tabs-nav-selected`
+- improved `.nav` styles
+- improved `data-tooltip` styles
+
+### removed
+
+- `.table_small` and `.tabel_big`
+
 ## 8.0.0-beta.10
 
 - added imprint and privacy information to documentation

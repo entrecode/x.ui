@@ -98,6 +98,7 @@
     resize: vertical;
   }
 
+  // scss-lint:disable ImportantRule
   &_clear {
     border: none !important;
     border-width: 0 !important;
@@ -125,7 +126,7 @@
     }
 
     &_clear {
-      border: none !important;
+      border: 0 !important;
       border-width: 0 !important;
       @include macro-metrics($input-small-font-size, $input-small-line-height, $input-small-min-height);
     }
@@ -143,7 +144,7 @@
     }
 
     &_clear {
-      border: none !important;
+      border: 0 !important;
       border-width: 0 !important;
       @include macro-metrics($input-big-font-size, $input-big-line-height, $input-big-min-height);
     }
@@ -212,7 +213,7 @@ input[type='radio'] {
   padding: 0;
   vertical-align: middle;
 
-  & + small {
+  + small {
     display: inline-block;
     cursor: pointer;
   }

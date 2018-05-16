@@ -1,10 +1,12 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 8.0.0-beta.11
 /// @access public
 /// @group atoms
 
+// scss-lint:disable PropertySpelling
+
 %select {
-  @extend .input;
+  @extend %input;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,7 +14,7 @@
   outline: none;
   position: relative;
 
-  &:after {
+  &::after {
     content: '';
     flex-grow: 0;
     flex-shrink: 0;
@@ -27,7 +29,7 @@
     border-color: darken($input-border-color, 20);
     box-shadow: 0 0 0 2px getColor(state, hover);
 
-    &:after {
+    &::after {
       border-top-color: rgba(getColor(text), .4);
     }
 
@@ -40,7 +42,7 @@
 /// select-placeholder
 /// -----------------------------------
 
-%selectPlaceholder {
+%select-placeholder {
   color: getColor(text, lighter);
   flex-grow: 1;
   flex-shrink: 0;
@@ -51,7 +53,7 @@
 /// -----------------------------------
 
 %select-options {
-  @extend .is-dropdown;
+  @extend %is-dropdown;
   position: absolute;
   left: 0;
   top: 100%;
@@ -85,7 +87,7 @@ nav.xui-select {
   @extend %select;
 
   &:focus {
-    &:after {
+    &::after {
       z-index: 11;
       transform: rotate(180deg);
       margin-top: 0;
@@ -100,7 +102,7 @@ nav.xui-select {
   }
 
   .xui-select__placeholder {
-    @extend %selectPlaceholder;
+    @extend %select-placeholder;
   }
 
   &.xui-select_top {
@@ -113,7 +115,9 @@ nav.xui-select {
 
 ul.xui-select-options {
   @extend %select-options;
-  @extend .is-scrollable-y-contain;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
   max-height: rem(240);
   opacity: 0;
   visibility: hidden;

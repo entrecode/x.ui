@@ -14,49 +14,49 @@
   background-color: transparent;
   position: relative;
 
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     height: rem($hamburger-btn-height);
     width: rem($hamburger-btn-width);
     border-radius: rem($hamburger-btn-height / 2);
     background-color: $hamburger-btn-color;
-    left: rem((($btn-min-height - $hamburger-btn-width)/2));
+    left: rem((($btn-min-height - $hamburger-btn-width) / 2));
     top: 50%;
-    margin-top: rem(-$hamburger-btn-height/2);
-    box-shadow: 0 rem(($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color, 0 rem(-($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color;
+    margin-top: rem(-$hamburger-btn-height / 2);
+    box-shadow: 0 rem(($hamburger-btn-height + $hamburger-btn-spacing)) 0 0 $hamburger-btn-color, 0 rem(-($hamburger-btn-height + $hamburger-btn-spacing)) 0 0 $hamburger-btn-color;
     transition: all .4s;
   }
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     height: rem($hamburger-btn-height);
     width: rem($hamburger-btn-width);
     border-radius: rem($hamburger-btn-height / 2);
     background-color: $hamburger-btn-color;
-    left: rem((($btn-min-height - $hamburger-btn-width)/2));
+    left: rem((($btn-min-height - $hamburger-btn-width) / 2));
     top: 50%;
-    margin-top: rem(-$hamburger-btn-height/2);
+    margin-top: rem(-$hamburger-btn-height / 2);
     transition: all .4s;
   }
 
   &.is-active {
-    &:after {
+    &::after {
       content: '';
       position: absolute;
       height: rem($hamburger-btn-height);
       width: rem($hamburger-btn-width);
       border-radius: rem($hamburger-btn-height / 2);
       background-color: $hamburger-btn-color;
-      left: rem((($btn-min-height - $hamburger-btn-width)/2));
+      left: rem((($btn-min-height - $hamburger-btn-width) / 2));
       top: 50%;
-      margin-top: rem(-$hamburger-btn-height/2);
+      margin-top: rem(-$hamburger-btn-height / 2);
       box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
       transform: rotate(45deg);
     }
 
-    &:before {
+    &::before {
       transform: rotate(-45deg);
     }
   }
@@ -64,17 +64,17 @@
   &.hamburger-btn_invert {
     $hamburger-btn-color: setContrast(getColor(background, invert), getColor(link));
 
-    &:after {
+    &::after {
       background-color: $hamburger-btn-color;
-      box-shadow: 0 rem(($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color, 0 rem(-($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color;
+      box-shadow: 0 rem(($hamburger-btn-height + $hamburger-btn-spacing)) 0 0 $hamburger-btn-color, 0 rem(-($hamburger-btn-height + $hamburger-btn-spacing)) 0 0 $hamburger-btn-color;
     }
 
-    &:before {
+    &::before {
       background-color: $hamburger-btn-color;
     }
 
     &.is-active {
-      &:after {
+      &::after {
         box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
       }
     }

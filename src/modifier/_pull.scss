@@ -3,6 +3,7 @@
 /// @access public
 /// @group layout modifier
 
+// scss-lint:disable ImportantRule
 .pull {
   &-right {
     @include set-breakpoints {

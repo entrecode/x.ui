@@ -3,6 +3,7 @@
 /// @access public
 /// @group modifier
 
+// scss-lint:disable ImportantRule
 .no-padding {
   @include set-breakpoints {
     padding: 0 !important;
