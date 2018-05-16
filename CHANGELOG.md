@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 8.0.0-beta.10
+
+- added imprint and privacy information to documentation
+
 ## 8.0.0-beta.9
 
 - added imprint and privacy information to `README.md`
