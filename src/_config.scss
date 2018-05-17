@@ -753,7 +753,7 @@ $is-rounded-min-radius: 2 !default;
 $is-rounded-radius: 4 !default;
 $is-rounded-max-radius: 8 !default;
 
-
+//
 // IS-BORDERED
 // ------------------------------------------------------
 // @param {rem} $is-bordered-width [1]
@@ -765,6 +765,28 @@ $is-bordered-width: 1 !default;
 $is-bordered-style: solid !default;
 $is-bordered-color: rgba($text, .1) !default;
 $is-bordered: $is-bordered-width $is-bordered-style $is-bordered-color !default;
+
+//
+// IS-RAISED
+// ------------------------------------------------------
+// @param {color} $is-raised-shade [rgba(#000, .1)]
+// @param {array} $is-raised
+// @param {array} $is-raised-small
+// @param {array} $is-raised-big
+$is-raised-shade: rgba(#000, .1) !default;
+$is-raised: 0 2 4 $is-raised-shade ',' 0 2 8 $is-raised-shade !default;
+$is-raised-small: 0 1 2 $is-raised-shade ',' 0 1 4 $is-raised-shade !default;
+$is-raised-big: 0 4 8 $is-raised-shade ',' 0 4 16 $is-raised-shade !default;
+
+// @param {color} $is-raised-hover-shade [$is-raised-shade)]
+// @param {array} $is-raised-hover
+// @param {array} $is-raised-hover-small
+// @param {array} $is-raised-hover-big
+$is-raised-hover-shade: $is-raised-shade !default;
+$is-raised-hover: 0 1 4 $is-raised-hover-shade;
+$is-raised-hover-small: 0 1 1 $is-raised-hover-shade ',' 0 1 2 $is-raised-hover-shade !default;
+$is-raised-hover-big: 0 2 4 $is-raised-hover-shade ',' 0 2 8 $is-raised-hover-shade !default;
+
 
 
 // TODO continue here
@@ -938,11 +960,6 @@ $select-raised-shadow: rgba(#000, .1) !default;
 // ------------------------------------------------------
 // @param {color} $is-lifted-shade [rgba(#000, .1)]
 $is-lifted-shade: rgba(#000, .1) !default;
-
-// is-raised
-// ------------------------------------------------------
-// @param {color} $is-raised-shade [rgba(#000, .1)]
-$is-raised-shade: rgba(#000, .1) !default;
 
 // fab
 // ------------------------------------------------------
