@@ -5,17 +5,21 @@
 ///
 /// @example
 ///   <div class='spacer'></div>
+///
+/// @param {number} $spacer-size [getSpace(5)]
+/// @param {number} $spacer-small-size [getSpace(3)]
+/// @param {number} $spacer-big-size [getSpace(6)]
 
 .spacer {
   @include set-breakpoints {
-    height: getSpace(5);
+    height: $spacer-size;
     flex-shrink: 0;
     width: 100%;
   }
 
   &-small {
     @include set-breakpoints {
-      height: getSpace(3);
+      height: $spacer-small-size;
       flex-shrink: 0;
       width: 100%;
     }
@@ -23,7 +27,7 @@
 
   &-big {
     @include set-breakpoints {
-      height: getSpace(6);
+      height: $spacer-big-size;
       flex-shrink: 0;
       width: 100%;
     }

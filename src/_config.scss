@@ -819,6 +819,16 @@ $bumper-spacing: getSpace(5) 0; // equals 32 0
 $bumper-small-spacing: getSpace(3) 0; // equals 16 0
 $bumper-big-spacing: getSpace(6) 0; // equals 48 0
 
+//
+// SPACER
+// ------------------------------------------------------
+// @param {number} $spacer-size [getSpace(5)]
+// @param {number} $spacer-small-size [getSpace(3)]
+// @param {number} $spacer-big-size [getSpace(6)]
+$spacer-size: getSpace(5); // equals 32
+$spacer-small-size: getSpace(3); // equals 16
+$spacer-big-size: getSpace(6); // equals 48
+
 // TODO continue here
 
 //

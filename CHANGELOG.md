@@ -21,6 +21,7 @@
 - improved `.is-lifted`config and styles
 - improved `.is-fab`config and styles
 - improved `.bumper`config and styles
+- improved `.spacer`config and styles
 - improved `arrayMagic` mixin
 - changed `.is-rounded-min`to `.is-rounded-small`
 - changed `.is-rounded-max`to `.is-rounded-big`
