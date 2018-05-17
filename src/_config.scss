@@ -799,7 +799,25 @@ $is-lifted-hover-big: 0 12 8 -8 $is-lifted-hover-shade !default;
 // @param {rem} $is-fab-spacing [16]
 $is-fab-spacing: 16 !default;
 
+//
+// LAYOUT
+// -------------------------------------------------------------------------------------------------
 
+//
+// BUMPER
+// ------------------------------------------------------
+// @param {rem} $bumper-size [4]
+// @param {color} $bumper-color [$divider-color]
+// @param {color} $bumper-invert-color [rgba($background, .2)]
+// @param {array} $bumper-spacing [getSpace(5) 0]
+// @param {array} $bumper-small-spacing [getSpace(3) 0]
+// @param {array} $bumper-big-spacing [getSpace(6) 0]
+$bumper-size: 4;
+$bumper-color: $divider-color;
+$bumper-invert-color: rgba($background, .2);
+$bumper-spacing: getSpace(5) 0; // equals 32 0
+$bumper-small-spacing: getSpace(3) 0; // equals 16 0
+$bumper-big-spacing: getSpace(6) 0; // equals 48 0
 
 // TODO continue here
 

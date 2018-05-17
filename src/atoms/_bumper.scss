@@ -1,58 +1,65 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.8
+/// @since 8.0.0-beta.11
 /// @access public
 /// @group atoms
 ///
 /// @example
 ///   <div class='bumper'></div>
+///
+/// @param {rem} $bumper-size [4]
+/// @param {color} $bumper-color [$divider-color]
+/// @param {color} $bumper-invert-color [rgba($background, .2)]
+/// @param {array} $bumper-spacing [getSpace(5) 0]
+/// @param {array} $bumper-small-spacing [getSpace(3) 0]
+/// @param {array} $bumper-big-spacing [getSpace(6) 0]
 
 @mixin bumper {
   position: relative;
-  height: rem(4);
+  height: rem($bumper-size);
   text-align: center;
 
   &::before {
-    position: absolute;
     content: '';
-    width: rem(4);
-    height: rem(4);
-    margin-left: rem(-10);
+    position: absolute;
+    width: rem($bumper-size);
+    height: rem($bumper-size);
+    margin-left: rem($bumper-size * 5 / -2);
     border-radius: 50%;
-    background-color: getColor(divider);
-    box-shadow: rem(8) 0 0 getColor(divider), rem(16) 0 0 getColor(divider);
+    background-color: $bumper-color;
+    box-shadow: rem($bumper-size * 2) 0 0 $bumper-color, rem($bumper-size * 4) 0 0 $bumper-color;
   }
 }
 
 .bumper {
   @include set-breakpoints {
     @include bumper;
-    margin: getSpace(5) 0;
+    margin: arrayMagic($bumper-spacing);
     flex-shrink: 0;
     width: 100%;
   }
 
   &_invert {
     &::before {
-      background-color: rgba(getColor(background), .2);
-      box-shadow: rem(8) 0 0 rgba(getColor(background), .2), rem(16) 0 0 rgba(getColor(background), .2);
+      background-color: $bumper-invert-color;
+      box-shadow: rem($bumper-size * 2) 0 0 $bumper-invert-color, rem($bumper-size * 4) 0 0 $bumper-invert-color;
     }
   }
+}
 
-  &-small {
-    @include set-breakpoints {
-      @include bumper;
-      margin: getSpace(3) 0;
-      flex-shrink: 0;
-      width: 100%;
-    }
+.bumper-small {
+  @include set-breakpoints {
+    @include bumper;
+    margin: arrayMagic($bumper-small-spacing);
+    flex-shrink: 0;
+    width: 100%;
   }
+}
 
-  &-big {
-    @include set-breakpoints {
-      @include bumper;
-      margin: getSpace(6) 0;
-      flex-shrink: 0;
-      width: 100%;
-    }
+.bumper-big {
+  @include set-breakpoints {
+    @include bumper;
+    margin: arrayMagic($bumper-big-spacing);
+    flex-shrink: 0;
+    width: 100%;
   }
 }
