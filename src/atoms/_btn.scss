@@ -90,7 +90,7 @@
 
 .btn {
   @extend %btn !optional;
-  transition: all .2s;
+  transition: $btn-transition;
   border-radius: rem($btn-radius);
   @include set-theme-colors(getColor(link));
 

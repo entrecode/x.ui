@@ -285,7 +285,9 @@ $inline-small-unit: $base-scale-unit !default;
 // ------------------------------------------------------
 
 // @param {variable} $btn-font-family [$body-font]
+// @param {value} $btn-transition [background-color .2s, box-shadow .1s]
 $btn-font-family: $body-font !default;
+$btn-transition: background-color .2s, box-shadow .1s !default;
 
 // @param {number} $btn-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
 $btn-padding-ratio: 1.5 !default;
