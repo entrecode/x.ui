@@ -1,19 +1,108 @@
 <section>
-  <h4 id="spacing" class="is-h5">spacing</h4>
+  <h4 id="has-margin" class="is-h5">has-margin</h4>
   <div class="well align-center">
-    <span class="is-h6">{state}-{property}-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+    <span class="is-h6">has-margin-{sides}-{size}{ -
+      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
+      <span class="is-ink-light">null</span> }</span>
   </div>
   <table class="table">
     <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{state}</strong></td>
-      <td data-col="8"><span class="code">has</span> or <span class="code">no</span></td>
-    </tr>
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{property}</strong></td>
-      <td data-col="8">either <span class="code">padding</span> or <span
-            class="code">margin</span>
+      <td data-col="4">
+        <strong>{sides}</strong>
+      </td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li>
+            <em>no value</em> - adds margin or padding to all sides</li>
+          <li>
+            <span class="code">middle</span> - top and bottom</li>
+          <li>
+            <span class="code">center</span> - left and right</li>
+          <li>
+            <span class="code">top</span>
+            <span class="code">right</span>
+            <span class="code">bottom</span>
+            <span class="code">left</span>
+          </li>
+        </ul>
       </td>
     </tr>
+    <tr data-grid="no-gutter">
+      <td data-col="4">
+        <strong>{size}</strong>
+      </td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li>
+            <em>no value</em> - default size
+            <span class="code">equals 16px</span>
+          </li>
+          <li>
+            <span class="code">smallest</span> -
+            <span class="code">equals 4px</span>
+          </li>
+          <li>
+            <span class="code">small</span> -
+            <span class="code">equals 8px</span>
+          </li>
+          <li>
+            <span class="code">big</span> -
+            <span class="code">equals 32px</span>
+          </li>
+          <li>
+            <span class="code">auto</span> - only with
+            <span class="code">margin-l</span>
+            <span class="code">margin-r</span>
+            <span class="code">margin-center</span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<div class="spacer"></div>
+
+<section>
+  <h4 id="no-margin" class="is-h5">no-margin</h4>
+  <div class="well align-center">
+    <span class="is-h6">no-margin-{sides}-{size}{ -
+      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
+      <span class="is-ink-light">null</span> }</span>
+  </div>
+  <table class="table">
+    <tr data-grid="no-gutter">
+      <td data-col="4">
+        <strong>{sides}</strong>
+      </td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li>
+            <em>no value</em> - adds margin or padding to all sides</li>
+          <li>
+            <span class="code">middle</span> - top and bottom</li>
+          <li>
+            <span class="code">center</span> - left and right</li>
+          <li>
+            <span class="code">top</span>
+            <span class="code">right</span>
+            <span class="code">bottom</span>
+            <span class="code">left</span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<div class="spacer"></div>
+
+<section>
+  <h4 id="has-padding" class="is-h5">has-padding</h4>
+  <div class="well align-center">
+    <span class="is-h6">has-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+  </div>
+  <table class="table">
     <tr data-grid="no-gutter">
       <td data-col="4"><strong>{sides}</strong></td>
       <td data-col="8">
@@ -30,11 +119,13 @@
       <td data-col="4"><strong>{size}</strong></td>
       <td data-col="8">
         <ul class="is-unstyled">
-          <li><em>no value</em> - default size <span class="code">$base-spacing</span>
+          <li><em>no value</em> - default size <span class="code">equals 16px</span>
           </li>
+          <li><span class="code">smallest</span> - <span
+                class="code">equals 4px</span></li>
           <li><span class="code">small</span> - <span
-                class="code">$base-spacing / 2</span></li>
-          <li><span class="code">big</span> - <span class="code">$base-spacing * 2</span>
+                class="code">equals 8px</span></li>
+          <li><span class="code">big</span> - <span class="code">equals 32px</span>
           </li>
           <li><span class="code">auto</span> - only with <span
                 class="code">margin-l</span> <span class="code">margin-r</span> <span
@@ -43,7 +134,29 @@
       </td>
     </tr>
   </table>
+</section>
 
+<div class="spacer"></div>
+
+<section>
+  <h4 id="no-padding" class="is-h5">no-padding</h4>
+  <div class="well align-center">
+    <span class="is-h6">no-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+  </div>
+  <table class="table">
+    <tr data-grid="no-gutter">
+      <td data-col="4"><strong>{sides}</strong></td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li><em>no value</em> - adds margin or padding to all sides</li>
+          <li><span class="code">middle</span> - top and bottom</li>
+          <li><span class="code">center</span> - left and right</li>
+          <li><span class="code">top</span> <span class="code">right</span> <span
+                class="code">bottom</span> <span class="code">left</span></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
 </section>
 
 <div class="bumper"></div>

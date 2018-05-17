@@ -136,10 +136,10 @@
           <li><a href="#bumper">bumper</a></li>
           <li><a href="#spacer">spacer</a></li>
           <li><a href="#flex-spacer">flex-spacer</a></li>
-          <li><a href="#spacing">has-margin</a></li>
-          <li><a href="#spacing">no-margin</a></li>
-          <li><a href="#spacing">has-padding</a></li>
-          <li><a href="#spacing">no-padding</a></li>
+          <li><a href="#has-margin">has-margin</a></li>
+          <li><a href="#no-margin">no-margin</a></li>
+          <li><a href="#has-padding">has-padding</a></li>
+          <li><a href="#no-padding">no-padding</a></li>
           <li><a href="#has-height">has-height</a></li>
           <li><a href="#has-width">has-width</a></li>
           <li><a href="#is-position">is-position</a></li>
@@ -560,22 +560,22 @@
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#spacing" class="periodic-group-layout">
+          <a href="#has-margin" class="periodic-group-layout">
             <span class="is-h5">L</span> has-margin
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#spacing" class="periodic-group-layout">
+          <a href="#no-margin" class="periodic-group-layout">
             <span class="is-h5">L</span> no-margin
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#spacing" class="periodic-group-layout">
+          <a href="#has-padding" class="periodic-group-layout">
             <span class="is-h5">L</span> has-padding
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#spacing" class="periodic-group-layout">
+          <a href="#no-padding" class="periodic-group-layout">
             <span class="is-h5">L</span> no-padding
           </a>
         </li>
@@ -3384,8 +3384,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <strong class="code is-fab-0 is-absolute">0</strong>
   </div>
 </section>
-
-<div class="bumper"></div>          <div class="bumper-big"></div>
+          <div class="bumper-big"></div>
           <h2 class="demo-header" id="layout">layout</h2>
 <section>
   <h3 id="bumper" class="is-h5">bumper</h3>
@@ -3452,22 +3451,113 @@ data-tooltip-left="This is a tooltip"</code></pre>
   ...
 </div></code></pre>
 
-</section><section>
-  <h4 id="spacing" class="is-h5">spacing</h4>
+</section>
+<div class="spacer"></div>
+<section>
+  <h4 id="has-margin" class="is-h5">has-margin</h4>
   <div class="well align-center">
-    <span class="is-h6">{state}-{property}-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+    <span class="is-h6">has-margin-{sides}-{size}{ -
+      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
+      <span class="is-ink-light">null</span> }</span>
   </div>
   <table class="table">
     <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{state}</strong></td>
-      <td data-col="8"><span class="code">has</span> or <span class="code">no</span></td>
-    </tr>
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{property}</strong></td>
-      <td data-col="8">either <span class="code">padding</span> or <span
-            class="code">margin</span>
+      <td data-col="4">
+        <strong>{sides}</strong>
+      </td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li>
+            <em>no value</em> - adds margin or padding to all sides</li>
+          <li>
+            <span class="code">middle</span> - top and bottom</li>
+          <li>
+            <span class="code">center</span> - left and right</li>
+          <li>
+            <span class="code">top</span>
+            <span class="code">right</span>
+            <span class="code">bottom</span>
+            <span class="code">left</span>
+          </li>
+        </ul>
       </td>
     </tr>
+    <tr data-grid="no-gutter">
+      <td data-col="4">
+        <strong>{size}</strong>
+      </td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li>
+            <em>no value</em> - default size
+            <span class="code">equals 16px</span>
+          </li>
+          <li>
+            <span class="code">smallest</span> -
+            <span class="code">equals 4px</span>
+          </li>
+          <li>
+            <span class="code">small</span> -
+            <span class="code">equals 8px</span>
+          </li>
+          <li>
+            <span class="code">big</span> -
+            <span class="code">equals 32px</span>
+          </li>
+          <li>
+            <span class="code">auto</span> - only with
+            <span class="code">margin-l</span>
+            <span class="code">margin-r</span>
+            <span class="code">margin-center</span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<div class="spacer"></div>
+
+<section>
+  <h4 id="no-margin" class="is-h5">no-margin</h4>
+  <div class="well align-center">
+    <span class="is-h6">no-margin-{sides}-{size}{ -
+      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
+      <span class="is-ink-light">null</span> }</span>
+  </div>
+  <table class="table">
+    <tr data-grid="no-gutter">
+      <td data-col="4">
+        <strong>{sides}</strong>
+      </td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li>
+            <em>no value</em> - adds margin or padding to all sides</li>
+          <li>
+            <span class="code">middle</span> - top and bottom</li>
+          <li>
+            <span class="code">center</span> - left and right</li>
+          <li>
+            <span class="code">top</span>
+            <span class="code">right</span>
+            <span class="code">bottom</span>
+            <span class="code">left</span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<div class="spacer"></div>
+
+<section>
+  <h4 id="has-padding" class="is-h5">has-padding</h4>
+  <div class="well align-center">
+    <span class="is-h6">has-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+  </div>
+  <table class="table">
     <tr data-grid="no-gutter">
       <td data-col="4"><strong>{sides}</strong></td>
       <td data-col="8">
@@ -3484,11 +3574,13 @@ data-tooltip-left="This is a tooltip"</code></pre>
       <td data-col="4"><strong>{size}</strong></td>
       <td data-col="8">
         <ul class="is-unstyled">
-          <li><em>no value</em> - default size <span class="code">$base-spacing</span>
+          <li><em>no value</em> - default size <span class="code">equals 16px</span>
           </li>
+          <li><span class="code">smallest</span> - <span
+                class="code">equals 4px</span></li>
           <li><span class="code">small</span> - <span
-                class="code">$base-spacing / 2</span></li>
-          <li><span class="code">big</span> - <span class="code">$base-spacing * 2</span>
+                class="code">equals 8px</span></li>
+          <li><span class="code">big</span> - <span class="code">equals 32px</span>
           </li>
           <li><span class="code">auto</span> - only with <span
                 class="code">margin-l</span> <span class="code">margin-r</span> <span
@@ -3497,7 +3589,29 @@ data-tooltip-left="This is a tooltip"</code></pre>
       </td>
     </tr>
   </table>
+</section>
 
+<div class="spacer"></div>
+
+<section>
+  <h4 id="no-padding" class="is-h5">no-padding</h4>
+  <div class="well align-center">
+    <span class="is-h6">no-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+  </div>
+  <table class="table">
+    <tr data-grid="no-gutter">
+      <td data-col="4"><strong>{sides}</strong></td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li><em>no value</em> - adds margin or padding to all sides</li>
+          <li><span class="code">middle</span> - top and bottom</li>
+          <li><span class="code">center</span> - left and right</li>
+          <li><span class="code">top</span> <span class="code">right</span> <span
+                class="code">bottom</span> <span class="code">left</span></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
 </section>
 
 <div class="bumper"></div><section>
