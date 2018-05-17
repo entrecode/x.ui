@@ -721,26 +721,42 @@ $table-spacing: 0 0 16 0 !default;
 $table-border: 1 solid $divider-color;
 $table-cell-padding: 8;
 
-
-
-// TODO continue here
-
-
 //
-// Avatars
+// AVATAR
 // ------------------------------------------------------
 
 // @param {number} $avatar-size [48]
 // @param {number} $avatar-small-size-size [32]
 // @param {number} $avatar-big-size-size [48]
-// @param {number} $avatar-border [0]
+// @param {array} $avatar-border [0]
 $avatar-size: 40 !default;
 $avatar-small-size: 32 !default;
 $avatar-big-size: 48 !default;
 $avatar-border: 0 !default;
 
+// @param {boolean} $avatar-round [true]
 // @param {number} $avatar-square-radius [4]
+$avatar-round: true;
 $avatar-square-radius: 4 !default;
+
+%avatar-style {
+  // put additional styles here...
+}
+
+//
+// IS-ROUNDED
+// ------------------------------------------------------
+
+// @param {rem} $is-rounded-min-radius [2]
+// @param {rem} $is-rounded-radius [4]
+// @param {rem} $is-rounded-max-radius [8]
+$is-rounded-min-radius: 2 !default;
+$is-rounded-radius: 4 !default;
+$is-rounded-max-radius: 8 !default;
+
+
+
+// TODO continue here
 
 //
 // FORM-GROUP
@@ -906,16 +922,6 @@ $select-raised-shadow: rgba(#000, .1) !default;
 //
 // Modifier
 // ------------------------------------------------------
-
-// is-rounded
-// ------------------------------------------------------
-
-// @param {rem} $is-rounded-min-radius [2]
-// @param {rem} $is-rounded-radius [4]
-// @param {rem} $is-rounded-max-radius [8]
-$is-rounded-min-radius: 2 !default;
-$is-rounded-radius: 4 !default;
-$is-rounded-max-radius: 8 !default;
 
 // is-bordered
 // ------------------------------------------------------
