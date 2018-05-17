@@ -746,7 +746,6 @@ $avatar-square-radius: 4 !default;
 //
 // IS-ROUNDED
 // ------------------------------------------------------
-
 // @param {rem} $is-rounded-min-radius [2]
 // @param {rem} $is-rounded-radius [4]
 // @param {rem} $is-rounded-max-radius [8]
@@ -754,6 +753,18 @@ $is-rounded-min-radius: 2 !default;
 $is-rounded-radius: 4 !default;
 $is-rounded-max-radius: 8 !default;
 
+
+// IS-BORDERED
+// ------------------------------------------------------
+// @param {rem} $is-bordered-width [1]
+// @param {value} $is-bordered-style [solid]
+// @param {color} $is-bordered-color [rgba(text, .1)]
+// @param {array} $is-bordered
+
+$is-bordered-width: 1 !default;
+$is-bordered-style: solid !default;
+$is-bordered-color: rgba($text, .1) !default;
+$is-bordered: $is-bordered-width $is-bordered-style $is-bordered-color !default;
 
 
 // TODO continue here
@@ -922,16 +933,6 @@ $select-raised-shadow: rgba(#000, .1) !default;
 //
 // Modifier
 // ------------------------------------------------------
-
-// is-bordered
-// ------------------------------------------------------
-// @param {rem} $is-bordered-width [1]
-// @param {color} $is-bordered-color [rgba(text, .1)]
-// @param {value} $is-bordered-style [solid]
-
-$is-bordered-width: 1;
-$is-bordered-color: rgba($text, .1);
-$is-bordered-style: solid;
 
 // is-lifted
 // ------------------------------------------------------

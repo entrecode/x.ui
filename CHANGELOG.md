@@ -16,6 +16,7 @@
 - changed `%tabsNavSelected` to `%tabs-nav-selected`
 - improved `.nav` styles
 - improved `data-tooltip` styles
+- improved `.is-bordered`config
 - changed `.is-rounded-min`to `.is-rounded-small`
 - changed `.is-rounded-max`to `.is-rounded-big`
 

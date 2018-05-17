@@ -1,38 +1,53 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 8.0.0-beta.11
 /// @access public
 /// @group modifier
 ///
 /// @param {rem} $is-bordered-width [1]
 /// @param {color} $is-bordered-color [rgba(text, .1)]
 /// @param {value} $is-bordered-style [solid]
+/// @param {array} $is-bordered
 
 .is-bordered {
   @include set-breakpoints {
-    border: rem($is-bordered-width) $is-bordered-style $is-bordered-color;
+    border: arrayMagic($is-bordered);
   }
 
   &-top {
     @include set-breakpoints {
-      border-top: rem($is-bordered-width) $is-bordered-style $is-bordered-color;
+      border-top: arrayMagic($is-bordered);
     }
   }
 
   &-right {
     @include set-breakpoints {
-      border-right: rem($is-bordered-width) $is-bordered-style $is-bordered-color;
+      border-right: arrayMagic($is-bordered);
     }
   }
 
   &-bottom {
     @include set-breakpoints {
-      border-bottom: rem($is-bordered-width) $is-bordered-style $is-bordered-color;
+      border-bottom: arrayMagic($is-bordered);
     }
   }
 
   &-left {
     @include set-breakpoints {
-      border-left: rem($is-bordered-width) $is-bordered-style $is-bordered-color;
+      border-left: arrayMagic($is-bordered);
+    }
+  }
+
+  &-middle {
+    @include set-breakpoints {
+      border-top: arrayMagic($is-bordered);
+      border-bottom: arrayMagic($is-bordered);
+    }
+  }
+
+  &-center {
+    @include set-breakpoints {
+      border-right: arrayMagic($is-bordered);
+      border-left: arrayMagic($is-bordered);
     }
   }
 }
