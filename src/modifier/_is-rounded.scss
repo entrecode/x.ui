@@ -78,11 +78,11 @@
 .is-rounded {
   @include rounded(rem($is-rounded-radius));
 
-  &-min {
+  &-small {
     @include rounded(rem($is-rounded-min-radius));
   }
 
-  &-max {
+  &-big {
     @include rounded(rem($is-rounded-max-radius));
   }
 }
