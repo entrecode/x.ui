@@ -2,6 +2,10 @@
 /// @since 8.0.0-beta.11
 /// @access public
 /// @group templates
+///
+/// @param {array} $table-spacing [0 0 16 0]
+/// @param {array} $table-border [1 solid getColor(divider)]
+/// @param {array} $table-cell-padding [8]
 
 table {
   border-collapse: collapse;
@@ -46,7 +50,7 @@ table {
   tbody {
     tr:first-child {
       td {
-        border-top: arrayMagic($table-border);
+        border-top: 0;
       }
     }
   }
