@@ -783,9 +783,30 @@ $is-raised-big: 0 4 8 $is-raised-shade ',' 0 4 16 $is-raised-shade !default;
 // @param {array} $is-raised-hover-small
 // @param {array} $is-raised-hover-big
 $is-raised-hover-shade: $is-raised-shade !default;
-$is-raised-hover: 0 1 4 $is-raised-hover-shade;
+$is-raised-hover: 0 1 4 $is-raised-hover-shade !default;
 $is-raised-hover-small: 0 1 1 $is-raised-hover-shade ',' 0 1 2 $is-raised-hover-shade !default;
 $is-raised-hover-big: 0 2 4 $is-raised-hover-shade ',' 0 2 8 $is-raised-hover-shade !default;
+
+//
+// IS-LIFTED
+// ------------------------------------------------------
+// @param {color} $is-lifted-shade [rgba(#000, .1)]
+// @param {array} $is-lifted
+// @param {array} $is-lifted-small
+// @param {array} $is-lifted-big
+$is-lifted-shade: rgba(#000, .1) !default;
+$is-lifted: 0 16 16 -4 opacify($is-lifted-shade, .1) ',' 0 16 24 $is-lifted-shade !default;
+$is-lifted-small: 0 12 8 -8 $is-lifted-shade !default;
+$is-lifted-big:  0 24 28 0 opacify($is-lifted-shade, .1) ',' 0 24 40 $is-lifted-shade !default;
+
+// @param {color} $is-lifted-hover-shade [$is-lifted-shade)]
+// @param {array} $is-lifted-hover
+// @param {array} $is-lifted-hover-small
+// @param {array} $is-lifted-hover-big
+$is-lifted-hover-shade: $is-lifted-shade !default;
+$is-lifted-hover: 0 12 8 -8 $is-lifted-hover-shade !default;
+$is-lifted-hover-small: 0 6 4 -2 $is-lifted-hover-shade !default;
+$is-lifted-hover-big: 0 12 8 -8 $is-lifted-hover-shade !default;
 
 
 
@@ -955,11 +976,6 @@ $select-raised-shadow: rgba(#000, .1) !default;
 //
 // Modifier
 // ------------------------------------------------------
-
-// is-lifted
-// ------------------------------------------------------
-// @param {color} $is-lifted-shade [rgba(#000, .1)]
-$is-lifted-shade: rgba(#000, .1) !default;
 
 // fab
 // ------------------------------------------------------
