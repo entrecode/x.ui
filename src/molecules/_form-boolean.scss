@@ -8,6 +8,7 @@
 /// @param {em} $form-boolean-label-font-size [$base-font-size]
 /// @param {number} $form-boolean-label-margin [0 0 4 0]
 
+// scss-lint:disable NestingDepth
 .form-boolean {
   margin: arrayMagic($form-boolean-margin);
 

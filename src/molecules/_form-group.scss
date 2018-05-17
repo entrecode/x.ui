@@ -8,6 +8,7 @@
 /// @param {em} $form-group-label-font-size [$base-font-size]
 /// @param {number} $form-group-label-margin [0 0 4 0]
 
+// scss-lint:disable NestingDepth
 .form-group {
   margin: arrayMagic($form-group-margin);
   @extend %form-group-style !optional;

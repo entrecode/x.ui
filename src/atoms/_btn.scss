@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.11
 /// @access public
 /// @group atoms
 ///
@@ -52,12 +52,15 @@
   font-weight: $btn-weight;
   margin: 0;
 
-  @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio) {
-  }
+  @include macro-metrics(
+    $btn-font-size,
+    $btn-line-height,
+    $btn-min-height,
+    $padding-ratio: $btn-padding-ratio
+  );
 
   /// ec-icon styles for default btn
   .ec-icon {
-
     @if $flex-support == false {
       display: inline;
     }
@@ -76,15 +79,23 @@
   &%small {
     font-weight: $btn-small-weight;
     border-radius: rem($btn-small-radius);
-    @include macro-metrics($btn-small-font-size, $btn-small-line-height, $btn-small-min-height, $padding-ratio: $btn-padding-ratio) {
-    }
+    @include macro-metrics(
+      $btn-small-font-size,
+      $btn-small-line-height,
+      $btn-small-min-height,
+      $padding-ratio: $btn-padding-ratio
+    );
   }
 
   &%big {
     font-weight: $btn-big-weight;
     border-radius: rem($btn-big-radius);
-    @include macro-metrics($btn-big-font-size, $btn-big-line-height, $btn-big-min-height, $padding-ratio: $btn-padding-ratio) {
-    }
+    @include macro-metrics(
+      $btn-big-font-size,
+      $btn-big-line-height,
+      $btn-big-min-height,
+      $padding-ratio: $btn-padding-ratio
+    );
   }
 }
 
@@ -120,7 +131,7 @@
   /// disabled state style for buttons
   &.is-disabled,
   &[disabled] {
-    opacity: .6;
+    opacity: 0.6;
     cursor: not-allowed;
     box-shadow: none;
   }
@@ -168,91 +179,96 @@
     width: 100%;
     display: block;
   }
+}
 
-  ///
-  /// Styles
-  /// ------------------------------------------------------
+///
+/// Styles
+/// ------------------------------------------------------
 
-  /// minor button style, for secondary or minor interactions
-  &.btn_minor {
-    @include set-theme-colors(getColor(minor));
+/// minor button style, for secondary or minor interactions
+.btn_minor {
+  @include set-theme-colors(getColor(minor));
 
-    &.is-active,
-    &:hover,
-    &:focus {
-      @include set-theme-colors(setHover($minor));
-    }
+  &.is-active,
+  &:hover,
+  &:focus {
+    @include set-theme-colors(setHover($minor));
   }
+}
 
-  /// super button style, for call to action
-  &.btn_super {
-    @include set-theme-colors(getColor(super));
+/// super button style, for call to action
+.btn_super {
+  @include set-theme-colors(getColor(super));
 
-    &.is-active,
-    &:hover,
-    &:focus {
-      @include set-theme-colors(setHover($super));
-    }
+  &.is-active,
+  &:hover,
+  &:focus {
+    @include set-theme-colors(setHover($super));
+  }
+}
+
+.btn_mono {
+  @include set-theme-colors(getColor(background, invert));
+
+  &.is-active,
+  &:hover,
+  &:focus {
+    @include set-theme-colors(setHover(getColor(background, invert)), getColor(link));
+  }
+}
+
+/// invert button style
+.btn_invert {
+  @include set-theme-colors(getColor(background), getColor(link));
+
+  &.is-active,
+  &:hover,
+  &:focus {
+    @include set-theme-colors(getColor(background), getColor(link));
   }
 
   &.btn_mono {
-    @include set-theme-colors(getColor(background, invert));
+    @include set-theme-colors(getColor(background));
+  }
+}
+
+/// clear button style, for link-alike buttons
+.btn_clear {
+  background-color: transparent;
+  color: getColor(link);
+
+  &.is-active,
+  &:hover,
+  &:focus {
+    background-color: getColor(state, hover);
+    color: setHover($link);
   }
 
-  /// invert button style
+  &.btn_mono {
+    color: getColor(text);
+  }
+
+  &.btn_minor {
+    color: setContrast(getColor(background), getColor(minor));
+  }
+
+  &.btn_super {
+    color: setContrast(getColor(super), getColor(super));
+  }
+
   &.btn_invert {
-    color: getColor(link);
-    background-color: getColor(background);
+    color: setContrast(getColor(background, invert), getColor(link));
 
     &.is-active,
     &:hover,
     &:focus {
-      color: setHover($link);
-    }
-
-    &.btn_mono {
-      @include set-theme-colors(getColor(background));
-    }
-  }
-
-  /// clear button style, for link-alike buttons
-  &.btn_clear {
-    background-color: transparent;
-    color: getColor(link);
-
-    &.is-active,
-    &:hover,
-    &:focus {
-      background-color: getColor(state, hover);
-      color: setHover($link);
-    }
-
-    &.btn_mono {
-      color: getColor(text);
-    }
-
-    &.btn_minor {
-      color: setContrast(getColor(background), getColor(minor));
-    }
-
-    &.btn_super {
-      color: setContrast(getColor(super), getColor(super));
-    }
-
-    &.btn_invert {
+      background-color: invert(getColor(state, hover));
       color: setContrast(getColor(background, invert), getColor(link));
+    }
 
-      &.is-active,
-      &:hover,
-      &:focus {
-        background-color: invert(getColor(state, hover));
-        color: setContrast(getColor(background, invert), getColor(link));
-      }
-
-      &.btn_mono {
-        color: getColor(text, invert);
-        background-color: transparent;
-      }
+    &.btn_mono {
+      color: getColor(text, invert);
+      background-color: transparent;
     }
   }
 }

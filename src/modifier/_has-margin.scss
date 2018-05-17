@@ -7,7 +7,6 @@
 /// @param {number} $spacing-small-size [getSpace(2)]
 /// @param {number} $spacing-size [getSpace(3)]
 /// @param {number} $spacing-big-size [getSpace(5)]
-
 .has-margin {
   @include set-breakpoints {
     margin: arrayMagic($spacing-size);
@@ -18,7 +17,7 @@
       margin: arrayMagic($spacing-smallest-size);
     }
   }
- 
+
   &-small {
     @include set-breakpoints {
       margin: arrayMagic($spacing-small-size);

@@ -16,17 +16,17 @@
   @include set-breakpoints {
     box-shadow: arrayMagic($is-raised, px);
   }
+}
 
-  &-small {
-    @include set-breakpoints {
-      box-shadow: arrayMagic($is-raised-small, px);
-    }
+.is-raised-small {
+  @include set-breakpoints {
+    box-shadow: arrayMagic($is-raised-small, px);
   }
+}
 
-  &-big {
-    @include set-breakpoints {
-      box-shadow: arrayMagic($is-raised-big, px);
-    }
+.is-raised-big {
+  @include set-breakpoints {
+    box-shadow: arrayMagic($is-raised-big, px);
   }
 }
 
@@ -41,22 +41,22 @@ a,
         box-shadow: arrayMagic($is-raised-hover, px);
       }
     }
+  }
 
-    &-small {
-      @include set-breakpoints {
-        &:focus,
-        &:hover {
-          box-shadow: arrayMagic($is-raised-hover-small, px);
-        }
+  &.is-raised-small {
+    @include set-breakpoints {
+      &:focus,
+      &:hover {
+        box-shadow: arrayMagic($is-raised-hover-small, px);
       }
     }
+  }
 
-    &-big {
-      @include set-breakpoints {
-        &:focus,
-        &:hover {
-          box-shadow: arrayMagic($is-raised-hover-big, px);
-        }
+  &.is-raised-big {
+    @include set-breakpoints {
+      &:focus,
+      &:hover {
+        box-shadow: arrayMagic($is-raised-hover-big, px);
       }
     }
   }

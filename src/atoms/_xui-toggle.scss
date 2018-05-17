@@ -3,13 +3,14 @@
 /// @access public
 /// @group atoms
 
+// scss-lint:disable NestingDepth
 %toggle {
   background-color: flattenColor(getColor(minor));
   height: rem($root-size);
   width: rem($root-size * 1.75);
   border-radius: rem($root-size / 2);
   cursor: pointer;
-  transition: background-color .2s;
+  transition: background-color 0.2s;
   direction: ltr;
   display: inline-block;
 
@@ -20,7 +21,7 @@
     width: rem($root-size);
     height: rem($root-size);
     background-color: getColor(background);
-    box-shadow: 0 2px 8px 1px rgba(#000, .2);
+    box-shadow: 0 2px 8px 1px rgba(#000, 0.2);
   }
 
   &%is-active {
@@ -38,8 +39,8 @@
     }
   }
 
-  input[type="radio"],
-  input[type="checkbox"] {
+  input[type='radio'],
+  input[type='checkbox'] {
     @extend %is-hidden-input;
 
     &:checked {

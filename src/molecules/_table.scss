@@ -7,6 +7,8 @@
 /// @param {array} $table-border [1 solid getColor(divider)]
 /// @param {array} $table-cell-padding [8]
 
+// scss-lint:disable SelectorDepth, NestingDepth
+
 table {
   border-collapse: collapse;
   border-spacing: 0;

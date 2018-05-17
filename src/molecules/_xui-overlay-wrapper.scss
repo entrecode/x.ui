@@ -1,3 +1,4 @@
+// scss-lint:disable NestingDepth
 @keyframes showOverlayWrapper {
   0% {
     opacity: 0;
@@ -34,14 +35,14 @@
     .xui-overlay {
       opacity: 0;
       display: none;
-      animation: showOverlay .4s forwards ease-out;
-      animation-delay: .4s;
+      animation: showOverlay 0.4s forwards ease-out;
+      animation-delay: 0.4s;
     }
 
     &:target {
       display: initial;
       opacity: 1;
-      animation: showOverlayWrapper .4s forwards ease-in-out;
+      animation: showOverlayWrapper 0.4s forwards ease-in-out;
 
       .xui-overlay {
         display: initial;

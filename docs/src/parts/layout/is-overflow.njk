@@ -1,28 +1,58 @@
 <section>
-  <h3 id="is-overflow" class="is-h5">is-overflow</h3>
+  <h3 id="is-clipped" class="is-h5">is-clipped</h3>
+  <p>use for
+    <span class="code">overflow: hidden;</span>
+  </p>
   <div class="well align-center">
-            <span class="is-h6">is-{overflow}-{axis}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+    <span class="is-h6">is-clipped-{axis}{ -
+      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
+      <span class="is-ink-light">null</span> }</span>
   </div>
   <table class="table">
     <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{overflow}</strong></td>
+      <td data-col="4">
+        <strong>{axis}</strong>
+      </td>
       <td data-col="8">
-        <ul class="is-unstyled">
-          <li><span class="code">clipped</span> - for overflow hidden</li>
-          <li><span class="code">scrollable</span> - for overflow scroll</li>
-        </ul>
+        <em>empty</em>
+        <span class="code">x</span>
+        <span class="code">y</span>
+      </td>
     </tr>
+  </table>
+</section>
+
+<div class="bumper"></div>
+
+<section>
+  <h3 id="is-clipped" class="is-h5">is-scrollable</h3>
+  <p>use for
+    <span class="code">overflow: scroll;</span>
+  </p>
+  <div class="well align-center">
+    <span class="is-h6">is-scrollable-{axis}{ -
+      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
+      <span class="is-ink-light">null</span> }</span>
+  </div>
+  <table class="table">
     <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{axis}</strong></td>
+      <td data-col="4">
+        <strong>{axis}</strong>
+      </td>
       <td data-col="8">
-        <em>empty</em> <span class="code">x</span> <span class="code">y</span>
+        <em>empty</em>
+        <span class="code">x</span>
+        <span class="code">y</span>
       </td>
     </tr>
     <tr data-grid="no-gutter">
-      <td data-col="4"><strong>special</strong></td>
+      <td data-col="4">
+        <strong>special</strong>
+      </td>
       <td data-col="8">
-        <span class="code">x-contain</span> <span class="code">y-contain</span><br>
-        elements with this class, only scroll inside itself
+        <span class="code">x-contain</span>
+        <span class="code">y-contain</span>
+        <br> elements with this class, only scroll inside itself
       </td>
     </tr>
   </table>

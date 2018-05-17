@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.8
+/// @since 8.0.0-beta.11
 /// @access public
 /// @group molecules
 ///
@@ -10,55 +10,15 @@
 /// @param {color} $dropdown-background
 /// @param {value} $dropdown-shadow
 
-
 // scss-lint:disable PropertySpelling, NestingDepth
 
-nav.dropdown {
+.dropdown {
   outline: none;
   position: relative;
   cursor: pointer;
 
-  ul.dropdown-options {
-    @extend %is-dropdown;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
-    -webkit-overflow-scrolling: touch;
-    position: absolute;
-    top: 100%;
-    z-index: 10;
-    opacity: 0;
-    visibility: hidden;
-    transition: visibility .5s, opacity .2s;
-
-    .dropdown-option {
-      display: block;
-
-      > a:not(.btn) {
-        @extend %btn !optional;
-        width: 100%;
-        display: block;
-
-        &:hover {
-          background-color: getColor(state, hover);
-        }
-      }
-
-      > .btn {
-        width: 100%;
-        display: block;
-      }
-    }
-
-    .dropdown_divider {
-      margin: rem(4) 0;
-      padding: 0;
-      background-color: getColor(divider);
-      height: 1px;
-    }
-  }
-
   &.dropdown_center {
-    ul.dropdown-options {
+    .dropdown-options {
       left: 50%;
       transform: translateX(-50%);
     }
@@ -71,20 +31,20 @@ nav.dropdown {
   }
 
   &.dropdown_left {
-    ul.dropdown-options {
+    .dropdown-options {
       left: 0;
     }
   }
 
   &.dropdown_full {
-    ul.dropdown-options {
+    .dropdown-options {
       left: 0;
       width: 100%;
     }
   }
 
   &.dropdown_above {
-    ul.dropdown-options {
+    .dropdown-options {
       top: initial;
       bottom: 100%;
     }
@@ -99,7 +59,7 @@ nav.dropdown {
     }
   } @else {
     &:hover {
-      ul.dropdown-options {
+      .dropdown-options {
         visibility: visible;
         opacity: 1;
       }
@@ -108,10 +68,49 @@ nav.dropdown {
 
   &.on-hover {
     &:hover {
-      ul.dropdown-options {
+      .dropdown-options {
         visibility: visible;
         opacity: 1;
       }
     }
+  }
+}
+
+.dropdown-options {
+  @extend %is-dropdown;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  position: absolute;
+  top: 100%;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.5s, opacity 0.2s;
+
+  .dropdown-option {
+    display: block;
+
+    > a:not(.btn) {
+      @extend %btn !optional;
+      width: 100%;
+      display: block;
+
+      &:hover {
+        background-color: getColor(state, hover);
+      }
+    }
+
+    > .btn {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .dropdown_divider {
+    margin: rem(4) 0;
+    padding: 0;
+    background-color: getColor(divider);
+    height: 1px;
   }
 }

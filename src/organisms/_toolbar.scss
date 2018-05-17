@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.11
 /// @access public
 /// @group organism
 ///
@@ -34,39 +34,6 @@
     }
   }
 
-  .toolbar__title {
-    flex-grow: 1;
-
-    @include headings {
-      margin: 0;
-      font-size: em($toolbar-title-size);
-      line-height: 1em;
-    }
-
-    img {
-      height: rem($toolbar-title-img-height);
-      width: auto;
-    }
-
-    &.toolbar__title_center {
-      @include headings {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateY(-50%) translateX(-50%);
-        -webkit-font-smoothing: antialiased;
-        margin: 0;
-      }
-
-      img {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateY(-50%) translateX(-50%);
-      }
-    }
-  }
-
   .nav {
     flex-grow: 0;
     padding: 0;
@@ -91,24 +58,56 @@
       justify-content: flex-end;
     }
   }
+}
 
-  &.toolbar_small {
-    padding: rem($toolbar-padding / 4) rem($toolbar-padding);
-    font-size: 87.5%;
-    min-height: rem($toolbar-small-min-height);
+.toolbar__title {
+  flex-grow: 1;
 
-    /// additional styles via config
-    @extend %toolbar-small-style !optional;
+  @include headings {
+    margin: 0;
+    font-size: em($toolbar-title-size);
+    line-height: 1em;
+  }
 
-    .toolbar__title {
+  img {
+    height: rem($toolbar-title-img-height);
+    width: auto;
+  }
 
-      @include headings {
-        font-size: em($toolbar-small-title-size);
-      }
+  &.toolbar__title_center {
+    @include headings {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+    }
 
-      img {
-        height: rem($toolbar-small-title-img-height);
-      }
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+  }
+}
+
+.toolbar_small {
+  padding: rem($toolbar-padding / 4) rem($toolbar-padding);
+  font-size: 87.5%;
+  min-height: rem($toolbar-small-min-height);
+
+  /// additional styles via config
+  @extend %toolbar-small-style !optional;
+
+  .toolbar__title {
+    @include headings {
+      font-size: em($toolbar-small-title-size);
+    }
+
+    img {
+      height: rem($toolbar-small-title-img-height);
     }
   }
 }
