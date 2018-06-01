@@ -1,27 +1,10 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.8
+/// @since 9.0.0
 /// @access public
-
-// FONTFACE
-// -------------------------------------------------------------------------------------------------
-// use @import to use custom font-families
-
-// @param {value} $body-font
-// @param {value} $headings-font
-$body-font: sans-serif !default;
-$headings-font: sans-serif !default;
-
-// @param {value} $is-light [lighter] - font-weight value for .is-light
-// @param {value} $is-normal [normal] - font-weight value for .is-normal
-// @param {value} $is-bold [bold] - font-weight value for .is-bold
-$is-light: lighter !default;
-$is-normal: normal !default;
-$is-bold: bold !default;
 
 //
 // FEATURE - SUPPORT
 // -------------------------------------------------------------------------------------------------
-
 // @param {boolean} $flex-support [true]
 // @param {boolean} $ec-icon-support [true] - set ec-icon support
 $flex-support: true !default;
@@ -37,7 +20,7 @@ $background: #fff !default;
 $text: #2a3d54 !default;
 $link: #2fce6f !default;
 $super: #14a656 !default;
-$minor: rgba($link, .2) !default;
+$minor: rgba($link, 0.2) !default;
 $highlight: #9de263 !default;
 
 // background shading variables
@@ -46,9 +29,12 @@ $highlight: #9de263 !default;
 // @param {color} $background-lighter [null] - set value too overwrite generated color
 // @param {color} $background-lightest [null] - set value too overwrite generated color
 $background-invert: $text !default;
-$background-light: null !default;
-$background-lighter: null !default;
-$background-lightest: null !default;
+$background-light: shadeByContrast($background, 12) !default;
+$background-lighter: shadeByContrast($background, 8) !default;
+$background-lightest: shadeByContrast($background, 3) !default;
+
+// @param {color} $base-background [$background]
+$base-background: $background !default;
 
 // text shading variables
 // @param {color} $text-invert [$background] - inverted color for text
@@ -56,42 +42,41 @@ $background-lightest: null !default;
 // @param {color} $text-lighter [rgba($text, .4)]
 // @param {color} $text-lightest [rgba($text, .2)]
 $text-invert: $background !default;
-$text-light: rgba($text, .6) !default;
-$text-lighter: rgba($text, .4) !default;
-$text-lightest: rgba($text, .2) !default;
+$text-light: rgba($text, 0.6) !default;
+$text-lighter: rgba($text, 0.4) !default;
+$text-lightest: rgba($text, 0.2) !default;
 
-// @param {color} $backdrop [rgba(black, .8)]
-$backdrop: rgba(black, .8) !default;
+// @param {color} $backdrop [rgba(#000, .8)]
+$backdrop: rgba(#000, 0.8) !default;
 
 // @param {number} $hover-shading [-4] - amount by which colors are darkened or lightened on hover
 $hover-shading: -4 !default;
 
 // @param {color} $divider-color [rgba($text,.1)] -  color if divider used by e.b. .bumper
-$divider-color: rgba($text, .1) !default;
+$divider-color: rgba($text, 0.1) !default;
 
 // used for theme coloring, colors are used in the x-ui-colormap an adapted to fit to theme colors
-$state-hover: rgba($link, .1) !default;
-$state-info: cyan !default;
-$state-error: red !default;
-$state-success: green !default;
-$state-warning: gold !default;
+$state-disabled: rgba($text, 0.2) !default;
+$state-hover: rgba($link, 0.1) !default;
+$state-info: systemColor(#0ff) !default;
+$state-error: systemColor(#f00) !default;
+$state-success: systemColor(#008000) !default;
+$state-warning: systemColor(#ffd700) !default;
 
-// @param {color | false} $lighter-fallback [false] - light fallback color for setContrast
-// @param {color | false} $darker-fallback [false] - darker fallback color for setContrast
+// @param {color | false} $lighter-fallback [false] - overwrite light fallback color for setContrast
+// @param {color | false} $darker-fallback [false] - overwrite darker fallback color for setContrast
 $lighter-fallback: false !default;
 $darker-fallback: false !default;
 
 //
 // ROOT
 // -------------------------------------------------------------------------------------------------
-
 // @param {px} $root-size [16] - default size used for global size calculations
 $root-size: 16 !default;
 
 //
 // GRID
 // -------------------------------------------------------------------------------------------------
-
 // @param {px} $grid-container-width [1200] - max-width of container
 // @param {px} $grid-gutter [32] - gutter size in pixels without unit
 // @param {value} $grid-outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
@@ -104,7 +89,6 @@ $grid-num-columns: 12 !default;
 //
 // SPACING
 // -------------------------------------------------------------------------------------------------
-
 // @param {px} $base-spacing [16]
 // @param {*} $base-spacing-unit [xrem]
 // @param {map} $spacings
@@ -112,34 +96,55 @@ $base-spacing: 16 !default;
 $base-spacing-unit: xrem !default;
 
 $spacings: (
-        0 : 0,
-        1 : ($base-spacing * .25), // equals 4
-        2 : ($base-spacing * .5), // equals 8
-        3 : $base-spacing, // equals 16
-        4 : ($base-spacing * 1.5), // equals 24
-        5 : ($base-spacing * 2), // equals 32
-        6 : ($base-spacing * 3) // equals 48
+  0: 0,
+  1: ($base-spacing * 0.25) /* equals 4*/,
+  2: ($base-spacing * 0.5) /* equals 8*/,
+  3: $base-spacing /* equals 16*/,
+  4: ($base-spacing * 1.5) /* equals 24*/,
+  5: ($base-spacing * 2) /* equals 32*/,
+  6: ($base-spacing * 3) /* equals 48*/
 ) !default;
 
 //
 // RESPONSIVE BREAKPOINTS
 // -------------------------------------------------------------------------------------------------
-
 // @param {map} $breakpoints
 $breakpoints: (
-        'xs': 0, // smartphone
-        'sm': 480, // smartphone landscape
-        'md': 720, // tablet
-        'nav': 1024, // breakpoint for mobile navigation
-        'lg': 1024, // tablet landscape
-        'xl': 1280, // desktop
-        'xxl': 1920 // large
+  'xs': 0 /* smartphone*/,
+  'sm': 480 /* smartphone landscape*/,
+  'md': 720 /* tablet*/,
+  'nav': 1024 /* breakpoint for mobile navigation*/,
+  'lg': 1024 /* tablet landscape*/,
+  'xl': 1280 /* desktop*/,
+  'xxl': 1920 /* large*/
 ) !default;
 
 //
 // TYPEFACE
 // -------------------------------------------------------------------------------------------------
 
+//
+// FONTFACE
+// ---------------------------------------------
+// use @import to use custom font-families
+// @param {value} $body-font
+// @param {value} $headings-font
+$body-font: sans-serif !default;
+$headings-font: sans-serif !default;
+
+//
+// FONT-WEIGHT
+// ---------------------------------------------
+// @param {value} $is-light [lighter] - font-weight value for .is-light
+// @param {value} $is-normal [normal] - font-weight value for .is-normal
+// @param {value} $is-bold [bold] - font-weight value for .is-bold
+$is-light: lighter !default;
+$is-normal: normal !default;
+$is-bold: bold !default;
+
+//
+// FONT-SIZE
+// ---------------------------------------------
 // @param {px} $base-font-size [16]
 // @param {em} $base-line-height [1.4]
 // @param {value} $base-weight [$is-normal]
@@ -152,13 +157,12 @@ $base-scale-unit: em !default;
 //
 // HEADINGS
 // ---------------------------------------------
-
 // @param {em} $headings-line-height [$base-line-height]
 // @param {value} $headings-weight [$is-bold]
 // @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
 $headings-line-height: $base-line-height !default;
 $headings-weight: $is-bold !default;
-$heading-inline-small: .5 !default;
+$heading-inline-small: 0.5 !default;
 
 %heading-style {
   // put additional styles here...
@@ -167,7 +171,6 @@ $heading-inline-small: .5 !default;
 //
 // TYPEFACE SPACING
 // ---------------------------------------------
-
 // @param {number} $vertical-rhythm [$base-line-height * $base-font-size]
 // set margin-bottom a smooth typeface
 $vertical-rhythm: round($base-line-height * $base-font-size) !default; // equals 22.4px
@@ -198,18 +201,17 @@ $kilo-spacing: 0 !default;
 //
 // TYPEFACE SCALE
 // ---------------------------------------------
-
 // @param {map} $type-scale - modular scale for typeface
 // @link http://www.modularscale.com/?1&em&1.25
 $type-scale: (
-        h1: 3.052,
-        h2: 2.441,
-        h3: 1.953,
-        h4: 1.563,
-        h5: 1.25,
-        h6: 1,
-        lead: 1.25,
-        p: 1,
+  h1: 3.052,
+  h2: 2.441,
+  h3: 1.953,
+  h4: 1.563,
+  h5: 1.25,
+  h6: 1,
+  lead: 1.25,
+  p: 1
 ) !default;
 
 // @param {unit} $type-scale-unit [$base-scale-unit] - unit for modular scale
@@ -217,15 +219,14 @@ $type-scale-unit: $base-scale-unit !default;
 
 // @param {map} $type-scale-bp - breakpoints for modular scale
 $type-scale-bp: (
-        xs: .875,
-        md: 1,
-        xxl: 1.25
+  xs: 0.875,
+  md: 1,
+  xxl: 1.25
 ) !default;
 
 //
 // PARAGRAPH STYLES
 // ---------------------------------------------
-
 // @param {value} $paragraph-weight [$is-light]
 // @param {number} $paragraph-line-height [$base-line-height]
 // @param {array} $paragraph-spacing [0 0 $vertical-rhythm 0]
@@ -242,7 +243,6 @@ $paragraph-spacing-unit: $base-spacing-unit !default;
 //
 // LEAD PARAGRAPH STYLES
 // ---------------------------------------------
-
 // @param {value} $is-lead-weight [$is-light]
 // @param {number} $is-lead-line-height [$base-line-height]
 // @param {array} $is-lead-spacing [$paragraph-spacing]
@@ -259,21 +259,21 @@ $is-lead-spacing-unit: $base-spacing-unit !default;
 //
 // LINK STYLES
 // ---------------------------------------------
-
+// @param {value} $link-decoration [none]
+// @param {value} $link-weight [$is-normal]
 $link-decoration: none !default;
 $link-weight: $is-normal !default;
 
 %link-styles {
-  transition: color .2s;
+  transition: color 0.2s;
 }
 
 //
 // SMALL STYLES
 // ---------------------------------------------
-
 // @param {number} $inline-small-scale [.875] - font-size of `<small>`
 // @param {value} $inline-small-unit [$base-scale-unit]
-$inline-small-scale: .875 !default;
+$inline-small-scale: 0.875 !default;
 $inline-small-unit: $base-scale-unit !default;
 
 //
@@ -283,9 +283,10 @@ $inline-small-unit: $base-scale-unit !default;
 //
 // BTN
 // ------------------------------------------------------
-
 // @param {variable} $btn-font-family [$body-font]
+// @param {value} $btn-transition [background-color .2s, box-shadow .1s]
 $btn-font-family: $body-font !default;
+$btn-transition: background-color 0.2s, box-shadow 0.1s !default;
 
 // @param {number} $btn-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
 $btn-padding-ratio: 1.5 !default;
@@ -307,7 +308,7 @@ $btn-weight: $is-bold !default;
 // @param {number} $btn-small-line-height [$btn-small-font-size * $base-line-height]
 // @param {number} $btn-small-min-height [32]
 // @param {value} $btn-small-weight [$btn-weight]
-$btn-small-font-size: $base-font-size * .875 !default;
+$btn-small-font-size: $base-font-size * 0.875 !default;
 $btn-small-line-height: $btn-small-font-size * $base-line-height !default;
 $btn-small-min-height: 32 !default;
 $btn-small-weight: $btn-weight !default;
@@ -350,22 +351,25 @@ $btn-big-wide: 240 !default;
 // @param {rem} $btn-outline - sets border-width for btn_outlined
 $btn-outline: 2 !default;
 
+//
 // HAMBURGER BUTTON
 // ------------------------------------------------------
-
 // @param {rem} $hamburger-btn-width [16] - width of hamburger menu
 // @param {rem} $hamburger-btn-height [2] - height of hamburger menu bars
-// @param {rem} $hamburger-btn-spacing [4] - spacing of hamburger menu bars
-// @param {color} $hamburger-btn-color [$link] - spacing of hamburger menu bars
+// @param {array} $hamburger-btn-spacing [0]
+// @param {color} $hamburger-btn-color [$link]
+// @param {color} $hamburger-btn-background [transparent]
 $hamburger-btn-width: 16 !default;
 $hamburger-btn-height: 2 !default;
-$hamburger-btn-spacing: 4 !default;
+$hamburger-btn-spacing: 0 !default;
 $hamburger-btn-color: $link !default;
+$hamburger-btn-background: transparent !default;
 
 %hamburger-btn-style {
   // put additional styles here...
 }
 
+//
 // BUBBLE
 // ------------------------------------------------------
 // @param {color} $bubble-background [$minor] - default background-color of bubble
@@ -424,6 +428,7 @@ $bubble-radius: 4 !default;
 $bubble-small-radius: 4 !default;
 $bubble-big-radius: 4 !default;
 
+//
 // TAG
 // ------------------------------------------------------
 // @param {color} $tag-background [$minor]
@@ -436,7 +441,7 @@ $tag-padding-ratio: 2 !default;
 // @param {em} $tag-line-height [$tag-font-size * $base-line-height]
 // @param {em} $tag-min-height [28]
 // @param {value} $tag-weight [$is-bold]
-$tag-font-size: $base-font-size * .875 !default;
+$tag-font-size: $base-font-size * 0.875 !default;
 $tag-line-height: $tag-font-size * $base-line-height !default;
 $tag-min-height: 28 !default;
 $tag-weight: $is-bold !default;
@@ -449,7 +454,7 @@ $tag-weight: $is-bold !default;
 // @param {em} $tag-small-line-height [$tag-small-font-size * $base-line]
 // @param {em} $tag-small-min-height [24]
 // @param {value} $tag-small-weight [$tag-weight]
-$tag-small-font-size: $base-font-size * .75 !default;
+$tag-small-font-size: $base-font-size * 0.75 !default;
 $tag-small-line-height: $tag-small-font-size * $base-line-height !default;
 $tag-small-min-height: 24 !default;
 $tag-small-weight: $tag-weight !default;
@@ -500,7 +505,7 @@ $dropdown-radius: 4 !default;
 $dropdown-padding: 4 !default;
 $dropdown-max-height: null !default;
 $dropdown-background: $background !default;
-$dropdown-shadow: 0 8 16 -4 rgba(black, .16) ',' 0 4 24 0 rgba(black, 0.1) !default;
+$dropdown-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
 
 //
 // BUTTON GROUP
@@ -513,30 +518,27 @@ $dropdown-shadow: 0 8 16 -4 rgba(black, .16) ',' 0 4 24 0 rgba(black, 0.1) !defa
 //
 // NAV
 // ------------------------------------------------------
+// @param {color} $nav-divider-color [$divider]
+$nav-divider-color: $divider-color !default;
 
-// TODO add config
 
 //
 // TITLE
 // ------------------------------------------------------
-
-// TODO add config
+// @param {array} $title-spacing [0]
+$title-spacing: 0 !default;
 
 //
 // TOOLBAR
 // ------------------------------------------------------
-
-// TODO refactore config
-
-// @param {rem} $toolbar-padding [$base-spacing]
-$toolbar-padding: $base-spacing !default;
-
 // @param {em} $toolbar-title-size [20] - font-size of .toolbar__title
 // @param {rem} $toolbar-title-img-height [32] - height of .toolbar__title > img
 // @param {rem} $toolbar-min-height [64] - min-height
+// @param {array} $toolbar-padding [$base-spacing / 2, $base-spacing]
 $toolbar-title-size: 20 !default;
 $toolbar-title-img-height: 32 !default;
 $toolbar-min-height: 64 !default;
+$toolbar-padding: $base-spacing / 2, $base-spacing !default;
 
 %toolbar-style {
   // put additional styles here...
@@ -545,9 +547,11 @@ $toolbar-min-height: 64 !default;
 // @param {em} $toolbar-small-title-size [20] - font-size of .toolbar-dense__title
 // @param {rem} $toolbar-small-title-img-height [32] - height of .toolbar-dense__title > img
 // @param {rem} $toolbar-small-min-height [48] - min-height
+// @param {array} $toolbar-padding [$base-spacing / 2, $base-spacing]
 $toolbar-small-title-size: 20 !default;
 $toolbar-small-title-img-height: 32 !default;
 $toolbar-small-min-height: 48 !default;
+$toolbar-small-padding: $base-spacing / 4, $base-spacing / 2 !default;
 
 %toolbar-small-style {
   // put additional styles here...
@@ -556,22 +560,20 @@ $toolbar-small-min-height: 48 !default;
 //
 // XUI-TABS
 // ------------------------------------------------------
+// @param {array} $toolbar-padding [0 0 $base-spacing 0]
+$xui-tabs-spacing: 0 0 $base-spacing 0;
 
-// TODO add config
 
 //
-// XUI-TABS
+// XUI-List
 // ------------------------------------------------------
-
 // @param {rem} $list-item-radius [4]
 $list-item-radius: 4 !default;
 
-// TODO add config
 
 //
 // XUI-ACCORDION
 // ------------------------------------------------------
-
 // TODO add config
 
 //
@@ -594,7 +596,7 @@ $card-padding: 8 16 !default;
 $overlay-radius: 4 !default;
 $overlay-padding: 4 !default;
 $overlay-background: $background !default;
-$overlay-shadow: 0 8 16 -4 rgba(black, .16) ',' 0 4 24 0 rgba(black, 0.1) !default;
+$overlay-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
 
 //
 // WELL
@@ -639,7 +641,6 @@ $well-outlined: 2 !default;
 //
 // ALERT
 // ------------------------------------------------------
-
 // @param {color} $alert-background [$background-lightest]
 // @param {value} $alert-weight [$is-normal]
 // @param {rem} $alert-radius [4]
@@ -653,7 +654,7 @@ $alert-outlined: 2 !default;
 // @param {em} $alert-small-font-size [$base-font-size * .875]
 // @param {rem} $alert-small-padding [8 12]
 // @param {rem} $alert-small-margin [0 0 16 0]
-$alert-small-font-size: $base-font-size * .875 !default;
+$alert-small-font-size: $base-font-size * 0.875 !default;
 $alert-small-padding: 8 12 !default;
 $alert-small-margin: 0 0 16 0 !default;
 
@@ -683,63 +684,185 @@ $alert-big-margin: 0 0 16 0 !default;
   // put additional styles here...
 }
 
+//
+// TOOLTIP
+// ------------------------------------------------------
+// @param {number} $tooltip-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+$tooltip-padding-ratio: 2 !default;
 
+// @param {em} $tooltip-font-size [12]
+// @param {em} $tooltip-line-height [14]
+// @param {em} $tooltip-min-height [20]
+// @param {value} $tooltip-weight [$is-normal]
+$tooltip-font-size: 12 !default;
+$tooltip-line-height: 14 !default;
+$tooltip-min-height: 20 !default;
+$tooltip-weight: $is-normal !default;
 
-// TODO continue here
+%tooltip-style {
+  // put additional styles here...
+}
 
+// @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
+$tooltip-round: false !default;
+
+// radius of buttons - if $tooltip-round === false
+// @param {rem} $tooltip-radius [2]
+$tooltip-radius: 2 !default;
 
 //
-// Avatars
+// TABLE
 // ------------------------------------------------------
+// @param {array} $table-spacing [0 0 16 0]
+// @param {array} $table-border [1 solid getColor(divider)]
+// @param {array} $table-cell-padding [8]
+$table-spacing: 0 0 16 0 !default;
+$table-border: 1 solid $divider-color;
+$table-cell-padding: 8;
 
+//
+// AVATAR
+// ------------------------------------------------------
 // @param {number} $avatar-size [48]
 // @param {number} $avatar-small-size-size [32]
 // @param {number} $avatar-big-size-size [48]
-// @param {number} $avatar-border [0]
+// @param {array} $avatar-border [0]
 $avatar-size: 40 !default;
 $avatar-small-size: 32 !default;
 $avatar-big-size: 48 !default;
 $avatar-border: 0 !default;
 
+// @param {boolean} $avatar-round [true]
 // @param {number} $avatar-square-radius [4]
+$avatar-round: true;
 $avatar-square-radius: 4 !default;
 
-//
-// FORM-GROUP
-// ------------------------------------------------------
-
-// @param {number} $form-group-margin [0 0 8 0]
-$form-group-margin: 0 0 8 0 !default;
-
-// @param {number} $form-group-label-margin [0 0 4 0]
-// @param {em} $form-group-label-font-size [$base-font-size]
-$form-group-label-margin: 0 0 4 0 !default;
-$form-group-label-font-size: $base-font-size !default;
-
-%form-group-style {
+%avatar-style {
   // put additional styles here...
 }
 
 //
-// FORM-BOOLEAN
+// IS-ROUNDED
 // ------------------------------------------------------
+// @param {rem} $is-rounded-min-radius [2]
+// @param {rem} $is-rounded-radius [4]
+// @param {rem} $is-rounded-max-radius [8]
+$is-rounded-min-radius: 2 !default;
+$is-rounded-radius: 4 !default;
+$is-rounded-max-radius: 8 !default;
 
-// @param {number} $form-boolean-margin [0 0 8 0]
-$form-boolean-margin: 0 0 8 0 !default;
+//
+// IS-BORDERED
+// ------------------------------------------------------
+// @param {rem} $is-bordered-width [1]
+// @param {value} $is-bordered-style [solid]
+// @param {color} $is-bordered-color [rgba(text, .1)]
+// @param {array} $is-bordered
+$is-bordered-width: 1 !default;
+$is-bordered-style: solid !default;
+$is-bordered-color: rgba($text, 0.1) !default;
+$is-bordered: $is-bordered-width $is-bordered-style $is-bordered-color !default;
 
-// @param {number} $form-boolean-label-margin [0 0 4 0]
-// @param {em} $form-boolean-label-font-size [$base-font-size]
-$form-boolean-label-margin: 0 0 4 0 !default;
-$form-boolean-label-font-size: $base-font-size !default;
+//
+// IS-RAISED
+// ------------------------------------------------------
+// @param {color} $is-raised-shade [rgba(#000, .1)]
+// @param {array} $is-raised
+// @param {array} $is-raised-small
+// @param {array} $is-raised-big
+$is-raised-shade: rgba(#000, 0.1) !default;
+$is-raised: 0 2 4 $is-raised-shade ',' 0 2 8 $is-raised-shade !default;
+$is-raised-small: 0 1 2 $is-raised-shade ',' 0 1 4 $is-raised-shade !default;
+$is-raised-big: 0 4 8 $is-raised-shade ',' 0 4 16 $is-raised-shade !default;
 
-%form-boolean-style {
-  // put additional styles here...
-}
+// @param {color} $is-raised-hover-shade [$is-raised-shade)]
+// @param {array} $is-raised-hover
+// @param {array} $is-raised-hover-small
+// @param {array} $is-raised-hover-big
+$is-raised-hover-shade: $is-raised-shade !default;
+$is-raised-hover: 0 1 4 $is-raised-hover-shade !default;
+$is-raised-hover-small: 0 1 1 $is-raised-hover-shade ',' 0 1 2
+  $is-raised-hover-shade !default;
+$is-raised-hover-big: 0 2 4 $is-raised-hover-shade ',' 0 2 8
+  $is-raised-hover-shade !default;
+
+//
+// IS-LIFTED
+// ------------------------------------------------------
+// @param {color} $is-lifted-shade [rgba(#000, .1)]
+// @param {array} $is-lifted
+// @param {array} $is-lifted-small
+// @param {array} $is-lifted-big
+$is-lifted-shade: rgba(#000, 0.1) !default;
+$is-lifted: 0 16 16 -4 opacify($is-lifted-shade, 0.1) ',' 0 16 24 $is-lifted-shade !default;
+$is-lifted-small: 0 12 8 -8 $is-lifted-shade !default;
+$is-lifted-big: 0 24 28 0 opacify($is-lifted-shade, 0.1) ',' 0 24 40
+  $is-lifted-shade !default;
+
+// @param {color} $is-lifted-hover-shade [$is-lifted-shade)]
+// @param {array} $is-lifted-hover
+// @param {array} $is-lifted-hover-small
+// @param {array} $is-lifted-hover-big
+$is-lifted-hover-shade: $is-lifted-shade !default;
+$is-lifted-hover: 0 12 8 -8 $is-lifted-hover-shade !default;
+$is-lifted-hover-small: 0 6 4 -2 $is-lifted-hover-shade !default;
+$is-lifted-hover-big: 0 12 8 -8 $is-lifted-hover-shade !default;
+
+//
+// IS-FAB
+// ------------------------------------------------------
+// @param {rem} $is-fab-spacing [16]
+$is-fab-spacing: 16 !default;
+
+//
+// LAYOUT
+// -------------------------------------------------------------------------------------------------
+
+//
+// BUMPER
+// ------------------------------------------------------
+// @param {rem} $bumper-size [4]
+// @param {color} $bumper-color [$divider-color]
+// @param {color} $bumper-invert-color [rgba($background, .2)]
+// @param {array} $bumper-spacing [getSpace(5) 0]
+// @param {array} $bumper-small-spacing [getSpace(3) 0]
+// @param {array} $bumper-big-spacing [getSpace(6) 0]
+$bumper-size: 4;
+$bumper-color: $divider-color;
+$bumper-invert-color: rgba($background, 0.2);
+$bumper-spacing: getSpace(5) 0; // equals 32 0
+$bumper-small-spacing: getSpace(3) 0; // equals 16 0
+$bumper-big-spacing: getSpace(6) 0; // equals 48 0
+
+//
+// SPACER
+// ------------------------------------------------------
+// @param {number} $spacer-size [getSpace(5)]
+// @param {number} $spacer-small-size [getSpace(3)]
+// @param {number} $spacer-big-size [getSpace(6)]
+$spacer-size: getSpace(5); // equals 32
+$spacer-small-size: getSpace(3); // equals 16
+$spacer-big-size: getSpace(6); // equals 48
+
+//
+// SPACING
+// ------------------------------------------------------
+// @param {number} $spacing-smallest-size [getSpace(1)]
+// @param {number} $spacing-small-size [getSpace(2)]
+// @param {number} $spacing-size [getSpace(3)]
+// @param {number} $spacing-big-size [getSpace(5)]
+$spacing-size: getSpace(3); // equals 16
+$spacing-smallest-size: getSpace(1); // equals 4
+$spacing-small-size: getSpace(2); // equals 8
+$spacing-big-size: getSpace(5); // equals 32
+
+//
+// FORM
+// -------------------------------------------------------------------------------------------------
 
 //
 // INPUT
 // ------------------------------------------------------
-
 // @param {color} $input-background [$background] - background-color of input
 // @param {color} $input-color [$text] - text color of input
 // @param {em} $input-font-size [16]
@@ -761,7 +884,7 @@ $input-placeholder: $text-light !default;
 // @param {em} $input-small-font-size [14]
 // @param {em} $input-small-line-height [18]
 // @param {em} $input-small-min-height [28]
-$input-small-font-size: $input-font-size * .875 !default;
+$input-small-font-size: $input-font-size * 0.875 !default;
 $input-small-line-height: $input-small-font-size * $base-line-height !default;
 $input-small-min-height: 28 !default;
 
@@ -791,19 +914,15 @@ $input-radius: 4 !default;
 $input-small-radius: 4 !default;
 $input-big-radius: 4 !default;
 
-// @param {px} $input-border [1]
-$input-border: 1 !default;
-
 // @param {color} $input-border-color [ mix($text, $background, 25%)]
 $input-border-color: mix($text, $background, 25%) !default;
 
-// param {color} $input-raised-shadow
-$input-raised-shadow: rgba(black, .1) !default;
+// @param {array} $input-border [1]
+$input-border: 1 !default;
 
 //
 // XUI-CHECKBOX
 // ------------------------------------------------------
-
 // @param {rem} $checkbox-font-size [14]
 // @param {rem} $checkbox-line-height [24]
 // @param {rem} $checkbox-min-height [20]
@@ -815,13 +934,12 @@ $checkbox-radius: 6 !default;
 
 // additional styles for .xui-checkbox
 %checkbox-style {
-  box-shadow: inset 0 1px 2px 1px rgba(black, .2);
+  box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2);
 }
 
 //
 // XUI-RADIO
 // ------------------------------------------------------
-
 // @param {rem} $radio-font-size [10]
 // @param {rem} $radio-line-height [20]
 // @param {rem} $radio-min-height [20]
@@ -831,106 +949,35 @@ $radio-height: 20 !default;
 
 // additional styles for .xui-radio
 %radio-style {
-  box-shadow: inset 0 1px 2px 1px rgba(black, .2);
+  box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2);
 }
 
 //
-// SELECT
+// FORM-GROUP
 // ------------------------------------------------------
+// @param {array} $form-group-margin [0 0 8 0]
+$form-group-margin: 0 0 8 0 !default;
 
-// @param {em} $select-font-size [16]
-// @param {em} $select-line-height [20]
-// @param {em} $select-min-height [32]
-$select-font-size: 16 !default;
-$select-line-height: 20 !default;
-$select-min-height: 32 !default;
+// @param {array} $form-group-label-margin [0 0 4 0]
+// @param {em} $form-group-label-font-size [$base-font-size]
+$form-group-label-margin: 0 0 4 0 !default;
+$form-group-label-font-size: $base-font-size !default;
 
-%select-style {
+%form-group-style {
   // put additional styles here...
 }
-
-// @param {boolean} $select-round [false] - sets border-radius to 50% of input height
-$select-round: false !default;
-
-// radius of input - if $select-round === false
-// @param {rem} $select-radius [4]
-$select-radius: 4 !default;
-
-// @param {px} $select-border [1]
-$select-border: 1 !default;
-
-// @param {color} $select-border-color [ mix($text, $background, 25%)]
-$select-border-color: mix($text, $background, 25%) !default;
-
-// param {color} $select-raised-shadow
-$select-raised-shadow: rgba(black, .1) !default;
-
-// Tooltip
-// ------------------------------------------------------
-
-// @param {number} $tooltip-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$tooltip-padding-ratio: 2 !default;
-
-// @param {em} $tooltip-font-size [12]
-// @param {em} $tooltip-line-height [14]
-// @param {em} $tooltip-min-height [20]
-// @param {value} $tooltip-weight [$is-normal]
-$tooltip-font-size: 12 !default;
-$tooltip-line-height: 14 !default;
-$tooltip-min-height: 20 !default;
-$tooltip-weight: $is-normal !default;
-
-%tooltip-style {
-  // put additional styles here...
-}
-
-// @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
-$tooltip-round: false !default;
-
-// radius of buttons - if $tooltip-round === false
-// @param {rem} $tooltip-radius [2]
-// @param {rem} $tooltip-small-radius [2]
-// @param {rem} $tooltip-big-radius [2]
-$tooltip-radius: 2 !default;
-$tooltip-small-radius: 2 !default;
-$tooltip-big-radius: 2 !default;
 
 //
-// Modifier
+// FORM-BOOLEAN
 // ------------------------------------------------------
+// @param {array} $form-boolean-margin [$form-group-margin]
+$form-boolean-margin: $form-group-margin !default;
 
-// is-rounded
-// ------------------------------------------------------
+// @param {number} $form-boolean-label-margin [$form-group-label-margin]
+// @param {em} $form-boolean-label-font-size [$base-font-size]
+$form-boolean-label-margin: $form-group-label-margin !default;
+$form-boolean-label-font-size: $base-font-size !default;
 
-// @param {rem} $is-rounded-min-radius [2]
-// @param {rem} $is-rounded-radius [4]
-// @param {rem} $is-rounded-max-radius [8]
-$is-rounded-min-radius: 2 !default;
-$is-rounded-radius: 4 !default;
-$is-rounded-max-radius: 8 !default;
-
-// is-bordered
-// ------------------------------------------------------
-// @param {rem} $is-bordered-width [1]
-// @param {color} $is-bordered-color [rgba(text, .1)]
-// @param {value} $is-bordered-style [solid]
-
-$is-bordered-width: 1;
-$is-bordered-color: rgba($text, .1);
-$is-bordered-style: solid;
-
-// is-lifted
-// ------------------------------------------------------
-// @param {color} $is-lifted-shade [rgba(black, .1)]
-$is-lifted-shade: rgba(black, .1) !default;
-
-// is-raised
-// ------------------------------------------------------
-// @param {color} $is-raised-shade [rgba(black, .1)]
-$is-raised-shade: rgba(black, .1) !default;
-
-// fab
-// ------------------------------------------------------
-
-// @param {rem} $fab-spacing [16]
-$fab-spacing: 16 !default;
+%form-boolean-style {
+  // put additional styles here...
+}

@@ -20,7 +20,7 @@
 ///
 /// @return {px} value of breakpoint-key, if $max == true it returns the value - 1 of the next value
 
-@function getBreakpoint($breakpoint, $max: null ) {
+@function getBreakpoint($breakpoint, $max: null) {
   @if map-has-key($breakpoints, $breakpoint) {
     @if $max == max {
       $breakpoint-max: nextBreakpoint($breakpoint);

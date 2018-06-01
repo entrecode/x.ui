@@ -1,72 +1,77 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.8
+/// @since 9.0.0
 /// @access public
 /// @group templates
+///
+/// @param {array} $table-spacing [0 0 16 0]
+/// @param {array} $table-border [1 solid getColor(divider)]
+/// @param {array} $table-cell-padding [8]
+
+// scss-lint:disable SelectorDepth, NestingDepth
 
 table {
-  width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
+  width: 100%;
 }
 
 .table {
-  margin: 0 0 getSpace(3) 0;
+  margin: arrayMagic($table-spacing);
 
   thead {
-    border-top: 1px solid getColor(divider);
+    border-top: arrayMagic($table-border);
   }
 
   td {
-    border-bottom: 1px solid getColor(divider);
+    border-bottom: arrayMagic($table-border);
   }
 
-  td, th {
-    padding: getSpace(2);
+  td,
+  th {
+    padding: arrayMagic($table-cell-padding);
   }
 
   tbody {
-    tr {
-      &:first-child {
-        td {
-          border-top: 1px solid getColor(divider);
-        }
+    tr:first-child {
+      td {
+        border-top: arrayMagic($table-border);
       }
     }
   }
+}
 
-  &.table_small {
-    font-size: 87.5%;
-
-    td, th {
-      padding: getSpace(1);
-    }
+.table_clear {
+  thead {
+    border-top: 0;
   }
 
-  &.table_big {
-    font-size: 112.5%;
-
-    td, th {
-      padding: getSpace(3);
-    }
+  td {
+    border-bottom: 0;
   }
 
-  &.table_bordered {
-
-    td, th {
-      border-right: 1px solid getColor(divider);
-
-      &:first-child {
-        border-left: 1px solid getColor(divider);
+  tbody {
+    tr:first-child {
+      td {
+        border-top: 0;
       }
     }
+  }
+}
 
-    tbody {
-      tr {
-        &:first-child {
-          td {
-            border-top: 1px solid getColor(divider);
-          }
-        }
+.table_bordered {
+  td,
+  th {
+    border-right: arrayMagic($table-border);
+
+    &:first-child {
+      border-left: arrayMagic($table-border);
+    }
+  }
+
+  tbody {
+    tr:first-child {
+      td {
+        border-top: arrayMagic($table-border);
       }
     }
   }

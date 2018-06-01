@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 0.0.0-beta.1
+/// @since 8.0.0-beta.9
 /// @access public
 /// @group layout
 ///
@@ -7,6 +7,4 @@
 
 @function getSpace($space) {
   @return arrayMagic(map-get($spacings, $space), $base-spacing-unit);
-}
-
-;
+};

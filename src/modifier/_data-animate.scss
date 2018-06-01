@@ -165,7 +165,7 @@
   animation-name: ambulance;
   position: relative;
 
-  &:before {
+  &::before {
     content: '\1F691';
     display: inline-block;
     animation-name: ambulanceBefore;

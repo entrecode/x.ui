@@ -1,22 +1,16 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.4
+/// @since 9.0.0
 /// @access public
 /// @group organism
+///
+/// @param {array} $title-spacing [0]
 
 .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0;
-  margin: 0;
-
-  @include headings {
-    margin: 0;
-  }
-
-  p {
-    margin: 0;
-  }
+  margin: arrayMagic($title-spacing);
 
   &.title_stacked {
     flex-direction: column;

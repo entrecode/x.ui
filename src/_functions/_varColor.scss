@@ -52,7 +52,7 @@
 
         /// if next to green hue is transformed towards green (120)
         @if ($hue < 120 and $hue >= 60) {
-          $source: adjust-hue($source, $hueTransform *-1);
+          $source: adjust-hue($source, $hueTransform * -1);
         }
 
         /// if next to green hue is transformed towards green (120)
@@ -62,7 +62,7 @@
 
         /// if next to blue hue is transformed towards blue (240)
         @if ($hue < 240 and $hue >= 180) {
-          $source: adjust-hue($source, $hueTransform *-1);
+          $source: adjust-hue($source, $hueTransform * -1);
         }
 
         /// if next to blue hue is transformed towards blue (240)
@@ -72,7 +72,7 @@
 
         /// if next to red hue is transformed towards red (360)
         @if ($hue <= 360 and $hue >= 300) {
-          $source: adjust-hue($source, $hueTransform *-1);
+          $source: adjust-hue($source, $hueTransform * -1);
         }
       }
 
@@ -95,7 +95,7 @@
       } @else {
         /// if next to red hue is transformed towards red (0)
         @if ($hue < 60 and $hue >= 0) {
-          $source: adjust-hue($source, $hueTransform *-1);
+          $source: adjust-hue($source, $hueTransform * -1);
         }
 
         /// if next to green hue is transformed towards green (120)
@@ -105,7 +105,7 @@
 
         /// if next to green hue is transformed towards green (120)
         @if ($hue < 180 and $hue >= 120) {
-          $source: adjust-hue($source, $hueTransform *-1);
+          $source: adjust-hue($source, $hueTransform * -1);
         }
 
         /// if next to blue hue is transformed towards blue (120)
@@ -115,7 +115,7 @@
 
         /// if next to blue hue is transformed towards blue (120)
         @if ($hue < 300 and $hue >= 240) {
-          $source: adjust-hue($source, $hueTransform *-1);
+          $source: adjust-hue($source, $hueTransform * -1);
         }
 
         /// if next to red hue is transformed towards red (360)

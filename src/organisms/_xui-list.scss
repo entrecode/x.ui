@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0
+/// @since 8.0.0.beta.11
 /// @access public
 /// @group organism
 
@@ -10,13 +10,8 @@
 .xui-list {
   margin-top: 0;
   margin-bottom: rem(16);
-
-  @at-root ul, ol {
-    &.xui-list {
-      list-style: none;
-      padding: 0;
-    }
-  }
+  list-style: none;
+  padding: 0;
 }
 
 .xui-list-item {

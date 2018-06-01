@@ -11,7 +11,7 @@
 /// @return {decimal} This algorithm is taken from a formula for converting RGB values to YIQ values. This brightness value gives a perceived brightness for a color.
 
 @function getBrightness($color) {
-  @return ((red($color) * 299)+(green($color)*587)+(blue($color)*587))/1000;
+  @return ((red($color) * 299) + (green($color) * 587) + (blue($color) * 587)) / 1000;
 }
 
 /// @param {color} $color1
@@ -25,7 +25,7 @@
 /// @param {color} $color2
 /// @return {number} - color difference
 @function colorDifference($color1, $color2) {
-  @return max(red($color1), red($color2)) - min(red($color1), red($color2)) + max(green($color1), green($color2)) - min(green($color1), green($color2))  + max(blue($color1), blue($color2)) - min(blue($color1), blue($color2));
+  @return max(red($color1), red($color2)) - min(red($color1), red($color2)) + max(green($color1), green($color2)) - min(green($color1), green($color2)) + max(blue($color1), blue($color2)) - min(blue($color1), blue($color2));
 }
 
 /// @require {function} brightnessDifference
@@ -83,7 +83,7 @@
 @function contrastRatio($color1, $color2) {
   $luma1: luma($color1);
   $luma2: luma($color2);
-  @return round((max($luma1, $luma2) + .05)/(min($luma1, $luma2) + .05)*100)/100;
+  @return round((max($luma1, $luma2) + .05) / (min($luma1, $luma2) + .05) * 100) / 100;
 }
 
 /// @link https://www.w3.org/TR/WCAG/#contrast-ratiodef

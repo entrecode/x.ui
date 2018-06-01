@@ -4,12 +4,13 @@
 /// @group layout mixins
 
 @mixin clearfix() {
-  &:before,
-  &:after {
-    content: "";
+  &::before,
+  &::after {
+    content: '';
     display: table;
   }
-  &:after {
+
+  &::after {
     clear: both;
   }
 }

@@ -7,23 +7,6 @@
 /// @param {variable} $colors [$colors] - set a custom variable for each project
 /// @require custom variable for $colors
 
-@if $background-light {
-  $background-light: $background-light;
-} @else {
-  $background-light: shadeByContrast($background, 12);
-}
-
-@if $background-lighter {
-  $background-lighter: $background-lighter;
-} @else {
-  $background-lighter: shadeByContrast($background, 8);
-}
-
-@if $background-lightest {
-  $background-lightest: $background-lightest;
-} @else {
-  $background-lightest: shadeByContrast($background, 3);
-}
 
 /// colormap
 $xui-colors: (
@@ -51,10 +34,10 @@ $xui-colors: (
         ),
         state: (
                 'hover': $state-hover,
-                'disabled': rgba($text, .2),
-                'info': systemColor($state-info),
-                'error': systemColor($state-error),
-                'success': systemColor($state-success),
-                'warning': systemColor($state-warning),
+                'disabled': $state-disabled,
+                'info': $state-info,
+                'error': $state-error,
+                'success': $state-success,
+                'warning': $state-warning,
         )
 ) !default;

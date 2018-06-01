@@ -1,17 +1,23 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.0
 /// @access public
 /// @group organism
 ///
 /// @param {em} $toolbar-title-size [20] - font-size of .toolbar__title
-/// @param {px} $toolbar-title-img-height [32] - height of .toolbar__title > img
-/// @param {px} $toolbar-min-height [64] - min-height
+/// @param {rem} $toolbar-title-img-height [32] - height of .toolbar__title > img
+/// @param {rem} $toolbar-min-height [64] - min-height
+/// @param {array} $toolbar-padding [$base-spacing / 2, $base-spacing]
+///
+/// @param {em} $toolbar-small-title-size [20] - font-size of .toolbar-dense__title
+/// @param {rem} $toolbar-small-title-img-height [32] - height of .toolbar-dense__title > img
+/// @param {rem} $toolbar-small-min-height [48] - min-height
+/// @param {array} $toolbar-padding [$base-spacing / 2, $base-spacing]
 
 .toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: rem($toolbar-padding / 2) rem($toolbar-padding);
+  padding: arrayMagic($toolbar-padding);
   min-height: rem($toolbar-min-height);
   position: relative;
 
@@ -31,39 +37,6 @@
 
     &:only-child {
       margin: 0;
-    }
-  }
-
-  .toolbar__title {
-    flex-grow: 1;
-
-    @include headings {
-      margin: 0;
-      font-size: em($toolbar-title-size);
-      line-height: 1em;
-    }
-
-    img {
-      height: rem($toolbar-title-img-height);
-      width: auto;
-    }
-
-    &.toolbar__title_center {
-      @include headings {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateY(-50%) translateX(-50%);
-        -webkit-font-smoothing: antialiased;
-        margin: 0;
-      }
-
-      img {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateY(-50%) translateX(-50%);
-      }
     }
   }
 
@@ -91,24 +64,55 @@
       justify-content: flex-end;
     }
   }
+}
 
-  &.toolbar_small {
-    padding: rem($toolbar-padding / 4) rem($toolbar-padding);
-    font-size: 87.5%;
-    min-height: rem($toolbar-small-min-height);
+.toolbar__title {
+  flex-grow: 1;
 
-    /// additional styles via config
-    @extend %toolbar-small-style !optional;
+  @include headings {
+    margin: 0;
+    font-size: em($toolbar-title-size);
+    line-height: 1em;
+  }
 
-    .toolbar__title {
+  img {
+    height: rem($toolbar-title-img-height);
+    width: auto;
+  }
 
-      @include headings {
-        font-size: em($toolbar-small-title-size);
-      }
+  &.toolbar__title_center {
+    @include headings {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+    }
 
-      img {
-        height: rem($toolbar-small-title-img-height);
-      }
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+  }
+}
+
+.toolbar_small {
+  padding: arrayMagic($toolbar-small-padding);
+  font-size: 87.5%;
+  min-height: rem($toolbar-small-min-height);
+
+  @extend %toolbar-small-style !optional;
+
+  .toolbar__title {
+    @include headings {
+      font-size: em($toolbar-small-title-size);
+    }
+
+    img {
+      height: rem($toolbar-small-title-img-height);
     }
   }
 }

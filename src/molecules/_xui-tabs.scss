@@ -1,5 +1,13 @@
-%tabsNav {
-  margin-bottom: rem(16);
+/// @author Bernhard Ruoff
+/// @since 9.0.0
+/// @access public
+/// @group molecules
+///
+/// @param {array} $toolbar-padding [0 0 $base-spacing 0]
+/// scss-lint:disable NestingDepth, SelectorDepth
+
+%tabs-nav {
+  margin: arrayMagic($xui-tabs-spacing);
 
   > ul {
     list-style: none;
@@ -9,12 +17,12 @@
     justify-content: center;
     margin: 0;
 
-    li {
+    > li {
       padding: getSpace(1) getSpace(2);
       text-align: center;
       position: relative;
 
-      &:after {
+      &::after {
         content: '';
         width: 20%;
         height: rem(4);
@@ -27,7 +35,7 @@
       }
 
       &:hover {
-        &:after {
+        &::after {
           background-color: getColor(minor);
           width: 40%;
         }
@@ -36,14 +44,14 @@
   }
 }
 
-%tabsNavSelected {
-  &:after {
+%tabs-nav-selected {
+  &::after {
     background-color: getColor(link);
     width: 40%;
   }
 }
 
-%tabsNavItem {
+%tabs-nav-item {
   display: block;
   text-align: center;
   padding: getSpace(2);
@@ -52,10 +60,10 @@
 }
 
 .xui-tabs-nav {
-  @extend %tabsNav;
+  @extend %tabs-nav;
 
   label {
-    @extend %tabsNavItem;
+    @extend %tabs-nav-item;
 
     &:target {
       color: getColor(link);
@@ -71,7 +79,7 @@ $tabCount: 10 !default;
 
 .xui-tabs {
   input[type="radio"] {
-    @extend .is-hidden-input;
+    @extend %is-hidden-input;
 
     @for $i from 1 through $tabCount {
       &:nth-of-type(#{$i}) {
@@ -80,7 +88,7 @@ $tabCount: 10 !default;
             ul {
               li {
                 &:nth-child(#{$i}) {
-                  @extend %tabsNavSelected;
+                  @extend %tabs-nav-selected;
 
                   label {
                     color: getColor(link);

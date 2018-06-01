@@ -1,15 +1,15 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.0
 /// @access public
 /// @group modifier
 ///
-/// @param {number} $fab-spacing [16]
+/// @param {number} $is-fab-spacing [16]
 
 .is-fab {
 
   &-n {
     @include set-breakpoints {
-      top: rem($fab-spacing);
+      top: rem($is-fab-spacing);
       left: 50%;
       transform: translateX(-50%);
     }
@@ -17,14 +17,14 @@
 
   &-ne {
     @include set-breakpoints {
-      top: rem($fab-spacing);
-      right: rem($fab-spacing);
+      top: rem($is-fab-spacing);
+      right: rem($is-fab-spacing);
     }
   }
 
   &-e {
     @include set-breakpoints {
-      right: rem($fab-spacing);
+      right: rem($is-fab-spacing);
       top: 50%;
       transform: translateY(-50%);
     }
@@ -32,14 +32,14 @@
 
   &-se {
     @include set-breakpoints {
-      right: rem($fab-spacing);
-      bottom: rem($fab-spacing);
+      right: rem($is-fab-spacing);
+      bottom: rem($is-fab-spacing);
     }
   }
 
   &-s {
     @include set-breakpoints {
-      bottom: rem($fab-spacing);
+      bottom: rem($is-fab-spacing);
       left: 50%;
       transform: translateX(-50%);
     }
@@ -47,14 +47,14 @@
 
   &-sw {
     @include set-breakpoints {
-      bottom: rem($fab-spacing);
-      left: rem($fab-spacing);
+      bottom: rem($is-fab-spacing);
+      left: rem($is-fab-spacing);
     }
   }
 
   &-w {
     @include set-breakpoints {
-      left: rem($fab-spacing);
+      left: rem($is-fab-spacing);
       top: 50%;
       transform: translateY(-50%);
     }
@@ -62,8 +62,8 @@
 
   &-nw {
     @include set-breakpoints {
-      left: rem($fab-spacing);
-      top: rem($fab-spacing);
+      left: rem($is-fab-spacing);
+      top: rem($is-fab-spacing);
     }
   }
 
@@ -78,4 +78,5 @@
 
 [class*="is-fab-"] {
   z-index: 10;
+  position: fixed;
 }

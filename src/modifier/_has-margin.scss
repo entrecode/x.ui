@@ -1,102 +1,137 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.0
 /// @access public
 /// @group modifier
 ///
-/// @param {number} $base-spacing [16] - small padding value for padding helper
+/// @param {number} $spacing-smallest-size [getSpace(1)]
+/// @param {number} $spacing-small-size [getSpace(2)]
+/// @param {number} $spacing-size [getSpace(3)]
+/// @param {number} $spacing-big-size [getSpace(5)]
 
 .has-margin {
   @include set-breakpoints {
-    margin: rem($base-spacing);
+    margin: arrayMagic($spacing-size);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      margin: arrayMagic($spacing-smallest-size);
+    }
   }
 
   &-small {
     @include set-breakpoints {
-      margin: rem($base-spacing/2);
+      margin: arrayMagic($spacing-small-size);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin: rem($base-spacing*2);
+      margin: arrayMagic($spacing-big-size);
     }
   }
 }
 
 .has-margin-middle {
   @include set-breakpoints {
-    margin-top: rem($base-spacing);
-    margin-bottom: rem($base-spacing);
+    margin-top: arrayMagic($spacing-size);
+    margin-bottom: arrayMagic($spacing-size);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      margin-top: arrayMagic($spacing-smallest-size);
+      margin-bottom: arrayMagic($spacing-smallest-size);
+    }
   }
 
   &-small {
     @include set-breakpoints {
-      margin-top: rem($base-spacing/2);
-      margin-bottom: rem($base-spacing/2);
+      margin-top: arrayMagic($spacing-small-size);
+      margin-bottom: arrayMagic($spacing-small-size);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-top: rem($base-spacing*2);
-      margin-bottom: rem($base-spacing*2);
+      margin-top: arrayMagic($spacing-big-size);
+      margin-bottom: arrayMagic($spacing-big-size);
     }
   }
 }
 
 .has-margin-top {
   @include set-breakpoints {
-    margin-top: rem($base-spacing);
+    margin-top: arrayMagic($spacing-size);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      margin-top: arrayMagic($spacing-smallest-size);
+    }
   }
 
   &-small {
     @include set-breakpoints {
-      margin-top: rem($base-spacing/2);
+      margin-top: arrayMagic($spacing-small-size);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-top: rem($base-spacing*2);
+      margin-top: arrayMagic($spacing-big-size);
     }
   }
 }
 
 .has-margin-bottom {
   @include set-breakpoints {
-    margin-bottom: rem($base-spacing);
+    margin-bottom: arrayMagic($spacing-size);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      margin-bottom: arrayMagic($spacing-smallest-size);
+    }
   }
 
   &-small {
     @include set-breakpoints {
-      margin-bottom: rem($base-spacing/2);
+      margin-bottom: arrayMagic($spacing-small-size);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-bottom: rem($base-spacing*2);
+      margin-bottom: arrayMagic($spacing-big-size);
     }
   }
 }
 
 .has-margin-center {
   @include set-breakpoints {
-    margin-left: rem($base-spacing);
-    margin-right: rem($base-spacing);
+    margin-left: arrayMagic($spacing-size);
+    margin-right: arrayMagic($spacing-size);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      margin-left: arrayMagic($spacing-smallest-size);
+      margin-right: arrayMagic($spacing-smallest-size);
+    }
   }
 
   &-small {
     @include set-breakpoints {
-      margin-left: rem($base-spacing/2);
-      margin-right: rem($base-spacing/2);
+      margin-left: arrayMagic($spacing-small-size);
+      margin-right: arrayMagic($spacing-small-size);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-left: rem($base-spacing*2);
-      margin-right: rem($base-spacing*2);
+      margin-left: arrayMagic($spacing-big-size);
+      margin-right: arrayMagic($spacing-big-size);
     }
   }
 
@@ -110,18 +145,24 @@
 
 .has-margin-left {
   @include set-breakpoints {
-    margin-left: rem($base-spacing);
+    margin-left: arrayMagic($spacing-size);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      margin-left: arrayMagic($spacing-smallest-size);
+    }
   }
 
   &-small {
     @include set-breakpoints {
-      margin-left: rem($base-spacing/2);
+      margin-left: arrayMagic($spacing-small-size);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-left: rem($base-spacing*2);
+      margin-left: arrayMagic($spacing-big-size);
     }
   }
 
@@ -134,18 +175,24 @@
 
 .has-margin-right {
   @include set-breakpoints {
-    margin-right: rem($base-spacing);
+    margin-right: arrayMagic($spacing-size);
+  }
+
+  &-smallest {
+    @include set-breakpoints {
+      margin-right: arrayMagic($spacing-smallest-size);
+    }
   }
 
   &-small {
     @include set-breakpoints {
-      margin-right: rem($base-spacing/2);
+      margin-right: arrayMagic($spacing-small-size);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-right: rem($base-spacing*2);
+      margin-right: arrayMagic($spacing-big-size);
     }
   }
 

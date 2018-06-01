@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.8
+/// @since 9.0.0
 /// @access public
 /// @group atoms
 ///
@@ -8,9 +8,21 @@
 /// @require {mixin} get-font-size
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
 
-h1, h2, h3, h4, h5, h6,
-.is-h1, .is-h2, .is-h3, .is-h4, .is-h5, .is-h6,
-.is-giga, .is-mega, .is-kilo {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.is-h1,
+.is-h2,
+.is-h3,
+.is-h4,
+.is-h5,
+.is-h6,
+.is-giga,
+.is-mega,
+.is-kilo {
   font-family: $headings-font;
   font-weight: $headings-weight;
   line-height: $headings-line-height;
@@ -18,7 +30,7 @@ h1, h2, h3, h4, h5, h6,
   @extend %heading-style !optional;
 
   small {
-    font-size: ($heading-inline-small*1em);
+    font-size: ($heading-inline-small * 1em);
     vertical-align: baseline;
   }
 }
@@ -35,27 +47,36 @@ h1, h2, h3, h4, h5, h6,
   margin: arrayMagic($kilo-spacing, $headings-spacing-unit);
 }
 
-h1, .is-h1 {
+h1,
+.is-h1 {
   margin: arrayMagic($h1-spacing, $headings-spacing-unit);
 }
 
-h2, .is-h2 {
+h2,
+.is-h2 {
+  @include get-font-size(h2);
   margin: arrayMagic($h2-spacing, $headings-spacing-unit);
 }
 
-h3, .is-h3 {
+h3,
+.is-h3 {
   margin: arrayMagic($h3-spacing, $headings-spacing-unit);
 }
 
-h4, .is-h4 {
+h4,
+.is-h4 {
+  @include get-font-size(h4);
   margin: arrayMagic($h4-spacing, $headings-spacing-unit);
 }
 
-h5, .is-h5 {
+h5,
+.is-h5 {
   margin: arrayMagic($h5-spacing, $headings-spacing-unit);
 }
 
-h6, .is-h6 {
+h6,
+.is-h6 {
+  @include get-font-size(h6);
   margin: arrayMagic($h6-spacing, $headings-spacing-unit);
 }
 
@@ -65,29 +86,14 @@ h1,
   @include get-font-size(h1);
 }
 
-h2,
-.is-h2 {
-  @include get-font-size(h2);
-}
-
 h3,
 .is-h3,
 .is-mega {
   @include get-font-size(h3);
 }
 
-h4,
-.is-h4 {
-  @include get-font-size(h4);
-}
-
 h5,
 .is-h5,
 .is-kilo {
   @include get-font-size(h5);
-}
-
-h6,
-.is-h6 {
-  @include get-font-size(h6);
 }

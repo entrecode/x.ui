@@ -1,5 +1,40 @@
 # CHANGELOG
 
+## 9.0.0
+
+### added
+
+- scss-lint
+- mixin `is-scrollable()` - use instead of `@extend .is-scrollable`
+- flex-support to `.btn` styles
+- config variables for `.nav`
+- config variables for `.title`
+
+### changes
+
+- fixed `.has-padding-left-smallest`
+- changed `%selectPlaceholder` to `%select-placeholder`
+- changed `%tabsNav` to `%tabs-nav`
+- `.is-hidden-input` uses `@mixin is-hidden-input`
+- changed `%tabsNavItem` to `%tabs-nav-item`
+- changed `%tabsNavSelected` to `%tabs-nav-selected`
+- improved `.nav` styles
+- improved `data-tooltip` styles
+- improved `.is-bordered`config and styles
+- improved `.is-raised`config and styles
+- improved `.is-lifted`config and styles
+- improved `.is-fab`config and styles
+- improved `.bumper`config and styles
+- improved `.spacer`config and styles
+- improved `.has-margin` and `.has-padding` config and styles
+- improved `arrayMagic` mixin
+- changed `.is-rounded-min`to `.is-rounded-small`
+- changed `.is-rounded-max`to `.is-rounded-big`
+
+### removed
+
+- `.table_small` and `.tabel_big`
+
 ## 8.0.0-beta.10
 
 - added imprint and privacy information to documentation

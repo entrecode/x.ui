@@ -43,7 +43,7 @@
       <nav class="nav">
         <ul class="nav__items">
           <li class="nav__item" style="padding-right: 16px;">
-            <small class="is-ink-lighter is-nowrap">v. 8.0.0-beta.10</small>
+            <small class="is-ink-lighter is-nowrap">v. 9.0.0</small>
           </li>
           <li class="nav__divider"></li>
           <li class="nav__item">
@@ -136,10 +136,10 @@
           <li><a href="#bumper">bumper</a></li>
           <li><a href="#spacer">spacer</a></li>
           <li><a href="#flex-spacer">flex-spacer</a></li>
-          <li><a href="#spacing">has-margin</a></li>
-          <li><a href="#spacing">no-margin</a></li>
-          <li><a href="#spacing">has-padding</a></li>
-          <li><a href="#spacing">no-padding</a></li>
+          <li><a href="#has-margin">has-margin</a></li>
+          <li><a href="#no-margin">no-margin</a></li>
+          <li><a href="#has-padding">has-padding</a></li>
+          <li><a href="#no-padding">no-padding</a></li>
           <li><a href="#has-height">has-height</a></li>
           <li><a href="#has-width">has-width</a></li>
           <li><a href="#is-position">is-position</a></li>
@@ -560,22 +560,22 @@
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#spacing" class="periodic-group-layout">
+          <a href="#has-margin" class="periodic-group-layout">
             <span class="is-h5">L</span> has-margin
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#spacing" class="periodic-group-layout">
+          <a href="#no-margin" class="periodic-group-layout">
             <span class="is-h5">L</span> no-margin
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#spacing" class="periodic-group-layout">
+          <a href="#has-padding" class="periodic-group-layout">
             <span class="is-h5">L</span> has-padding
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#spacing" class="periodic-group-layout">
+          <a href="#no-padding" class="periodic-group-layout">
             <span class="is-h5">L</span> no-padding
           </a>
         </li>
@@ -2748,7 +2748,7 @@
        target="_blank" rel="noopener"
        class="tag tag_error tag_small">target</a>
     <span class="tag tag_small tag_super">css only</span>
-    <span class="tag tag_small tag_info">in progress</span>
+    <span class="tag tag_small tag_error">in progress</span>
   </h4>
   <div class="well" data-flex="is-center">
     <div class="xui-overlay" data-col="4-sm">
@@ -2882,14 +2882,13 @@
     </div>
   </div>
   <pre><code class="html">
-<... data-tooltip-top="This is a tooltip" ... >
+data-tooltip-top="This is a tooltip"
 ...
-<... data-tooltip-right="This is a tooltip" ... >
+data-tooltip-right="This is a tooltip"
 ...
-<... data-tooltip-bottom="This is a tooltip" ... >
+data-tooltip-bottom="This is a tooltip"
 ...
-<... data-tooltip-left="This is a tooltip" ... >
-</code></pre>
+data-tooltip-left="This is a tooltip"</code></pre>
 </section>
 
 <div class="bumper"></div><section>
@@ -2913,6 +2912,9 @@
     </tr>
     </tbody>
   </table>
+  <pre><code class="html"><table class="table"></table></code></pre>
+  
+  <div class="spacer"></div>
   <table class="table table_bordered">
     <thead>
     <tr>
@@ -2931,9 +2933,33 @@
     </tr>
     </tbody>
   </table>
+  <pre><code class="html"><table class="table table_bordered"></table></code></pre>
+  
+  <div class="spacer"></div>
+  <table class="table table_clear">
+    <thead>
+    <tr>
+      <th>title</th>
+      <th>description</th>
+      <th>date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>title</td>
+      <td>Gewiß. Aber was steht nicht alles - von Kinderfreund gar nicht zu reden - in
+        Bibel und Katechismus, und die Leute wissen es doch nicht. Ich zum Beispiel.
+      </td>
+      <td>17-11-20</td>
+    </tr>
+    </tbody>
+  </table>
+  <pre><code class="html"><table class="table table_clear"></table></code></pre>
+
 </section>
 
-<div class="bumper"></div><section>
+<div class="bumper"></div>
+<section>
   <h3 id="avatar" class="is-h5">avatar
     <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
        class="tag tag_error tag_small">object-fit</a></h3>
@@ -2958,7 +2984,7 @@
 <table class="table">
   <tr>
     <td><strong>style modifier</strong></td>
-    <td><span class="code">.avatar_square</span></td>
+    <td><span class="code">.avatar_square</span> <span class="code">.avatar_round</span></td>
   </tr>
   <tr>
     <td><strong>size modifier</strong></td>
@@ -2994,7 +3020,7 @@
         <div class="is-theme_lightest">is-theme_lightest</div>
         <div class="is-theme_lighter">is-theme_lighter</div>
         <div class="is-theme_light">is-theme_light</div>
-        <div class="is-theme">theme</div>
+        <div class="is-theme">is-theme</div>
         <div class="is-theme_dark">is-theme_dark</div>
         <div class="is-theme_darker">is-theme_darker</div>
         <div class="is-theme_darkest">is-theme_darkest</div>
@@ -3062,27 +3088,142 @@
 <div class="bumper"></div><section>
   <h3 class="is-h5" id="is-rounded">is-rounded</h3>
   <div class="well align-center">
-    <div class="is-h6">is-rounded-{ min | max | <em>empty</em> }-{side}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
+    <div class="is-h6">is-rounded-{ small | big |
+      <em>empty</em> }-{side}{ -
+      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
+      <span class="is-ink-light">null</span> }</div>
   </div>
+  <div class="well is-theme-invert">
+    <div data-grid="is-center">
+      <div data-col="4">
+        <div class="is-raised is-rounded-small is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-small</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-raised is-rounded-small-top is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-small-top</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-raised is-rounded-small-right is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-small-right</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-raised is-rounded-small-bottom is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-small-bottom</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-raised is-rounded-small-left is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-small-left</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="well is-theme-invert">
+    <div data-grid="is-center">
+      <div data-col="4">
+        <div class="is-raised is-rounded is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-raised is-rounded-top is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-top</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-raised is-rounded-right is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-right</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-raised is-rounded-bottom is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-bottom</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-raised is-rounded-left is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-left</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="well is-theme-invert">
+    <div data-grid="is-center">
+      <div data-col="4">
+        <div class="is-raised is-rounded-big is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-big</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-raised is-rounded-big-top is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-big-top</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-raised is-rounded-big-right is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-big-right</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-raised is-rounded-big-bottom is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-big-bottom</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-raised is-rounded-big-left is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-rounded-big-left</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <table class="table">
     <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{side}</strong></td>
+      <td data-col="4">
+        <strong>{scale}</strong>
+      </td>
       <td data-col="8">
         <ul class="is-unstyled">
-          <li><em>empty</em> - all sides</li>
-          <li><span class="code">top</span> - radius top-left and top-right</li>
-          <li><span class="code">right</span> - radius bottom-right and top-right</li>
-          <li><span class="code">bottom</span> - radius bottom-right and bottom-left</li>
-          <li><span class="code">left</span> - radius bottom-left and top-left</li>
+          <li><em>empty</em> - 4px</li>
+          <li><span class="code">small</span> - 2px</li>
+          <li><span class="code">big</span> - 8px</li>
+        </ul>
+    </tr>
+    <tr data-grid="no-gutter">
+      <td data-col="4">
+        <strong>{side}</strong>
+      </td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li>
+            <em>empty</em> - all sides</li>
+          <li>
+            <span class="code">top</span> - radius top-left and top-right</li>
+          <li>
+            <span class="code">right</span> - radius bottom-right and top-right</li>
+          <li>
+            <span class="code">bottom</span> - radius bottom-right and bottom-left</li>
+          <li>
+            <span class="code">left</span> - radius bottom-left and top-left</li>
           <li>
             <div class="code">-0</div>
             - no radius on all sides
           </li>
-          <li><span class="code">top-0</span> - no radius top-left and top-right</li>
-          <li><span class="code">right-0</span> - no radius bottom-right and top-right</li>
-          <li><span class="code">bottom-0</span> - no radius bottom-right and bottom-left
+          <li>
+            <span class="code">top-0</span> - no radius top-left and top-right</li>
+          <li>
+            <span class="code">right-0</span> - no radius bottom-right and top-right</li>
+          <li>
+            <span class="code">bottom-0</span> - no radius bottom-right and bottom-left
           </li>
-          <li><span class="code">left-0</span> - no radius bottom-left and top-left</li>
+          <li>
+            <span class="code">left-0</span> - no radius bottom-left and top-left</li>
         </ul>
     </tr>
   </table>
@@ -3092,6 +3233,45 @@
   <h3 class="is-h5" id="is-rounded">is-bordered</h3>
   <div class="well align-center">
     <div class="is-h6">is-bordered-{side}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
+  </div>
+  <div class="well is-theme">
+    <div data-grid="is-center">
+      <div data-col="4">
+        <div class="is-bordered is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-bordered</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-bordered-top is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-bordered-top</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-bordered-right is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-bordered-right</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-bordered-bottom is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-bordered-bottom</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-bordered-left is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-bordered-left</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-bordered-middle is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-bordered-middle</div>
+        </div>
+      </div>
+      <div data-col="4">
+        <div class="is-bordered-center is-theme has-padding-small align-center has-margin-bottom">
+          <div class="code">.is-bordered-center</div>
+        </div>
+      </div>
+    </div>
   </div>
   <table class="table">
     <tr data-grid="no-gutter">
@@ -3128,12 +3308,29 @@
       </div>
     </div>
   </div>
+  <p><span class="code">.is-raised</span> also can be used with <span class="code">.btn</span>, <span class="code">.input</span> and <span class="code">a</span>.</p>
+  <div class="well">
+    <div data-grid="">
+      <div data-col="4" class="align-center">
+        <a class="btn is-raised-small">Button</a>
+      </div>
+      <div data-col="4" class="align-center">
+        <div class="btn is-raised">Button</div>
+      </div>
+      <div data-col="4" class="align-center">
+        <div class="btn is-raised-big">Button</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <div class="bumper"></div><section>
   <h3 class="is-h5" id="is-lifted">is-lifted</h3>
   <div class="well align-center">
-    <div class="is-h6">is-lifted-{small|big|<em>empty</em>}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
+    <div class="is-h6">is-lifted-{ small | big |
+      <em>empty</em>}{ -
+      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
+      <span class="is-ink-light">null</span> }</div>
   </div>
   <div class="well is-theme-link">
     <div data-grid="">
@@ -3145,6 +3342,24 @@
       </div>
       <div data-col="4" class="align-center">
         <div class="tag tag_invert is-lifted-big tag_big">atomic</div>
+      </div>
+    </div>
+  </div>
+  <p>
+    <span class="code">.is-lifted</span> also can be used with
+    <span class="code">.btn</span>,
+    <span class="code">.input</span> and
+    <span class="code">a</span>.</p>
+  <div class="well">
+    <div data-grid="">
+      <div data-col="4" class="align-center">
+        <a class="btn is-lifted-small">Button</a>
+      </div>
+      <div data-col="4" class="align-center">
+        <a class="btn is-lifted">Button</a>
+      </div>
+      <div data-col="4" class="align-center">
+        <a class="btn is-lifted-big">Button</a>
       </div>
     </div>
   </div>
@@ -3169,8 +3384,7 @@
     <strong class="code is-fab-0 is-absolute">0</strong>
   </div>
 </section>
-
-<div class="bumper"></div>          <div class="bumper-big"></div>
+          <div class="bumper-big"></div>
           <h2 class="demo-header" id="layout">layout</h2>
 <section>
   <h3 id="bumper" class="is-h5">bumper</h3>
@@ -3180,20 +3394,28 @@
   <pre><code class="html"><div class="bumper"></div></code></pre>
   <table class="table">
     <tbody>
-    <tr>
-      <td>
-        <strong>additional sizes</strong>
-      </td>
-      <td><span class="code">.bumper-small</span><span class="code">.bumper-big</span></td>
-    </tr>
-    <tr>
-      <td>
-        <strong>style modifier</strong>
-      </td>
-      <td><span class="code">bumper-invert</span></td>
-    </tr>
+      <tr>
+        <td>
+          <strong>additional sizes</strong>
+        </td>
+        <td>
+          <span class="code">.bumper-small</span>
+          <span class="code">.bumper-big</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>style modifier</strong>
+        </td>
+        <td>
+          <span class="code">bumper-invert</span>
+        </td>
+      </tr>
     </tbody>
   </table>
+  <div class="is-theme-invert" style="overflow: hidden;">
+    <div class="bumper bumper_invert"></div>
+  </div>
 </section>
 
 <div class="spacer"></div><section>
@@ -3229,22 +3451,113 @@
   ...
 </div></code></pre>
 
-</section><section>
-  <h4 id="spacing" class="is-h5">spacing</h4>
+</section>
+<div class="spacer"></div>
+<section>
+  <h4 id="has-margin" class="is-h5">has-margin</h4>
   <div class="well align-center">
-    <span class="is-h6">{state}-{property}-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+    <span class="is-h6">has-margin-{sides}-{size}{ -
+      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
+      <span class="is-ink-light">null</span> }</span>
   </div>
   <table class="table">
     <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{state}</strong></td>
-      <td data-col="8"><span class="code">has</span> or <span class="code">no</span></td>
-    </tr>
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{property}</strong></td>
-      <td data-col="8">either <span class="code">padding</span> or <span
-            class="code">margin</span>
+      <td data-col="4">
+        <strong>{sides}</strong>
+      </td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li>
+            <em>no value</em> - adds margin or padding to all sides</li>
+          <li>
+            <span class="code">middle</span> - top and bottom</li>
+          <li>
+            <span class="code">center</span> - left and right</li>
+          <li>
+            <span class="code">top</span>
+            <span class="code">right</span>
+            <span class="code">bottom</span>
+            <span class="code">left</span>
+          </li>
+        </ul>
       </td>
     </tr>
+    <tr data-grid="no-gutter">
+      <td data-col="4">
+        <strong>{size}</strong>
+      </td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li>
+            <em>no value</em> - default size
+            <span class="code">equals 16px</span>
+          </li>
+          <li>
+            <span class="code">smallest</span> -
+            <span class="code">equals 4px</span>
+          </li>
+          <li>
+            <span class="code">small</span> -
+            <span class="code">equals 8px</span>
+          </li>
+          <li>
+            <span class="code">big</span> -
+            <span class="code">equals 32px</span>
+          </li>
+          <li>
+            <span class="code">auto</span> - only with
+            <span class="code">margin-l</span>
+            <span class="code">margin-r</span>
+            <span class="code">margin-center</span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<div class="spacer"></div>
+
+<section>
+  <h4 id="no-margin" class="is-h5">no-margin</h4>
+  <div class="well align-center">
+    <span class="is-h6">no-margin-{sides}-{size}{ -
+      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
+      <span class="is-ink-light">null</span> }</span>
+  </div>
+  <table class="table">
+    <tr data-grid="no-gutter">
+      <td data-col="4">
+        <strong>{sides}</strong>
+      </td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li>
+            <em>no value</em> - adds margin or padding to all sides</li>
+          <li>
+            <span class="code">middle</span> - top and bottom</li>
+          <li>
+            <span class="code">center</span> - left and right</li>
+          <li>
+            <span class="code">top</span>
+            <span class="code">right</span>
+            <span class="code">bottom</span>
+            <span class="code">left</span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<div class="spacer"></div>
+
+<section>
+  <h4 id="has-padding" class="is-h5">has-padding</h4>
+  <div class="well align-center">
+    <span class="is-h6">has-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+  </div>
+  <table class="table">
     <tr data-grid="no-gutter">
       <td data-col="4"><strong>{sides}</strong></td>
       <td data-col="8">
@@ -3261,11 +3574,13 @@
       <td data-col="4"><strong>{size}</strong></td>
       <td data-col="8">
         <ul class="is-unstyled">
-          <li><em>no value</em> - default size <span class="code">$base-spacing</span>
+          <li><em>no value</em> - default size <span class="code">equals 16px</span>
           </li>
+          <li><span class="code">smallest</span> - <span
+                class="code">equals 4px</span></li>
           <li><span class="code">small</span> - <span
-                class="code">$base-spacing / 2</span></li>
-          <li><span class="code">big</span> - <span class="code">$base-spacing * 2</span>
+                class="code">equals 8px</span></li>
+          <li><span class="code">big</span> - <span class="code">equals 32px</span>
           </li>
           <li><span class="code">auto</span> - only with <span
                 class="code">margin-l</span> <span class="code">margin-r</span> <span
@@ -3274,7 +3589,29 @@
       </td>
     </tr>
   </table>
+</section>
 
+<div class="spacer"></div>
+
+<section>
+  <h4 id="no-padding" class="is-h5">no-padding</h4>
+  <div class="well align-center">
+    <span class="is-h6">no-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+  </div>
+  <table class="table">
+    <tr data-grid="no-gutter">
+      <td data-col="4"><strong>{sides}</strong></td>
+      <td data-col="8">
+        <ul class="is-unstyled">
+          <li><em>no value</em> - adds margin or padding to all sides</li>
+          <li><span class="code">middle</span> - top and bottom</li>
+          <li><span class="code">center</span> - left and right</li>
+          <li><span class="code">top</span> <span class="code">right</span> <span
+                class="code">bottom</span> <span class="code">left</span></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
 </section>
 
 <div class="bumper"></div><section>
@@ -3354,30 +3691,60 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="is-overflow" class="is-h5">is-overflow</h3>
+  <h3 id="is-clipped" class="is-h5">is-clipped</h3>
+  <p>use for
+    <span class="code">overflow: hidden;</span>
+  </p>
   <div class="well align-center">
-            <span class="is-h6">is-{overflow}-{axis}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+    <span class="is-h6">is-clipped-{axis}{ -
+      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
+      <span class="is-ink-light">null</span> }</span>
   </div>
   <table class="table">
     <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{overflow}</strong></td>
+      <td data-col="4">
+        <strong>{axis}</strong>
+      </td>
       <td data-col="8">
-        <ul class="is-unstyled">
-          <li><span class="code">clipped</span> - for overflow hidden</li>
-          <li><span class="code">scrollable</span> - for overflow scroll</li>
-        </ul>
+        <em>empty</em>
+        <span class="code">x</span>
+        <span class="code">y</span>
+      </td>
     </tr>
+  </table>
+</section>
+
+<div class="bumper"></div>
+
+<section>
+  <h3 id="is-clipped" class="is-h5">is-scrollable</h3>
+  <p>use for
+    <span class="code">overflow: scroll;</span>
+  </p>
+  <div class="well align-center">
+    <span class="is-h6">is-scrollable-{axis}{ -
+      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
+      <span class="is-ink-light">null</span> }</span>
+  </div>
+  <table class="table">
     <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{axis}</strong></td>
+      <td data-col="4">
+        <strong>{axis}</strong>
+      </td>
       <td data-col="8">
-        <em>empty</em> <span class="code">x</span> <span class="code">y</span>
+        <em>empty</em>
+        <span class="code">x</span>
+        <span class="code">y</span>
       </td>
     </tr>
     <tr data-grid="no-gutter">
-      <td data-col="4"><strong>special</strong></td>
+      <td data-col="4">
+        <strong>special</strong>
+      </td>
       <td data-col="8">
-        <span class="code">x-contain</span> <span class="code">y-contain</span><br>
-        elements with this class, only scroll inside itself
+        <span class="code">x-contain</span>
+        <span class="code">y-contain</span>
+        <br> elements with this class, only scroll inside itself
       </td>
     </tr>
   </table>

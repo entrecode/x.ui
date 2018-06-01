@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.0
 /// @access public
 /// @group modifier
 ///
@@ -12,8 +12,6 @@
 ///
 /// @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
 /// @param {number} $tooltip-radius [4]
-/// @param {number} $tooltip-small-radius [4]
-/// @param {number} $tooltip-big-radius [4]
 
 @keyframes tooltipBottom {
   0% {
@@ -69,9 +67,8 @@
 
   @extend %tooltip-style !optional;
 
-  &:after {
+  &::after {
     @include macro-metrics($tooltip-font-size, $tooltip-line-height, $tooltip-min-height, $padding-ratio: $tooltip-padding-ratio);
-    border-radius: rem($tooltip-radius);
     text-transform: initial;
     letter-spacing: 0;
     background-color: getColor(background, backdrop);
@@ -84,10 +81,16 @@
     white-space: nowrap;
     z-index: 100;
     pointer-events: none;
+
+    @if $tooltip-round == true {
+      border-radius: rem($tooltip-min-height / 2);
+    } @else {
+      border-radius: rem($tooltip-radius);
+    }
   }
 
   &:hover {
-    &:after {
+    &::after {
       display: block;
       opacity: 1;
     }
@@ -97,7 +100,7 @@
 [data-tooltip-bottom] {
   @extend %tooltip;
 
-  &:after {
+  &::after {
     content: attr(data-tooltip-bottom);
     animation: tooltipBottom .2s forwards;
     top: 100%;
@@ -107,7 +110,7 @@
 
   &:hover {
 
-    &:after {
+    &::after {
       margin-top: rem(4);
     }
   }
@@ -116,7 +119,7 @@
 [data-tooltip-left] {
   @extend %tooltip;
 
-  &:after {
+  &::after {
     content: attr(data-tooltip-left);
     top: 50%;
     right: 100%;
@@ -126,7 +129,7 @@
 
   &:hover {
 
-    &:after {
+    &::after {
       margin-right: rem(4);
     }
   }
@@ -135,7 +138,7 @@
 [data-tooltip-right] {
   @extend %tooltip;
 
-  &:after {
+  &::after {
     content: attr(data-tooltip-right);
     top: 50%;
     left: 100%;
@@ -145,7 +148,7 @@
 
   &:hover {
 
-    &:after {
+    &::after {
       margin-right: rem(4);
     }
   }
@@ -154,7 +157,7 @@
 [data-tooltip-top] {
   @extend %tooltip;
 
-  &:after {
+  &::after {
     content: attr(data-tooltip-top);
     bottom: 100%;
     left: 50%;
@@ -164,7 +167,7 @@
 
   &:hover {
 
-    &:after {
+    &::after {
       margin-top: rem(4);
     }
   }

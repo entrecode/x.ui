@@ -1,11 +1,12 @@
 {
   "name": "x.ui",
-  "version": "8.0.0-beta.10",
+  "version": "9.0.0",
   "description": "x.ui is a framework based on the atomic design methodology",
   "author": "entrecode GmbH",
   "main": "src/x.ui.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "scss-lint src/",
     "build": "npm run build:nunjucks & npm run build:sass & npm run build:js",
     "build:nunjucks": "nunjucks index.njk package.json --path docs/src --out docs --unsafe",
     "build:sass": "node-sass --recursive --output-style compressed docs/src/styles/styles.scss docs/x.ui.css",

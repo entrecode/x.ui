@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 9.0.0
 /// @access public
 /// @group modifier
 ///
@@ -7,19 +7,19 @@
 
 .is-lifted {
   @include set-breakpoints {
-    box-shadow: 0 16px 16px -4px opacify($is-lifted-shade, .1), 0 16px 24px $is-lifted-shade;
+    box-shadow: arrayMagic($is-lifted, px);
   }
+}
 
-  &-small {
-    @include set-breakpoints {
-      box-shadow: 0 12px 8px -8px $is-lifted-shade;
-    }
+.is-lifted-small {
+  @include set-breakpoints {
+    box-shadow: arrayMagic($is-lifted-small, px);
   }
+}
 
-  &-big {
-    @include set-breakpoints {
-      box-shadow: 0 24px 28px 0 opacify($is-lifted-shade, .1), 0 24px 40px $is-lifted-shade;
-    }
+.is-lifted-big {
+  @include set-breakpoints {
+    box-shadow: arrayMagic($is-lifted-big, px);
   }
 }
 
@@ -30,19 +30,25 @@ a,
     @include set-breakpoints {
       &:hover,
       &:focus {
-        box-shadow: 0 12px 8px -8px $is-lifted-shade;
+        box-shadow: arrayMagic($is-lifted-hover, px);
       }
     }
+  }
 
-    &-small {
-      @include set-breakpoints {
-        box-shadow: 0 6px 4px -2px $is-lifted-shade;
+  &.is-lifted-small {
+    @include set-breakpoints {
+      &:hover,
+      &:focus {
+        box-shadow: arrayMagic($is-lifted-hover-small, px);
       }
     }
+  }
 
-    &-big {
-      @include set-breakpoints {
-        box-shadow: 0 12px 8px -8px $is-lifted-shade;
+  &-big {
+    @include set-breakpoints {
+      &:hover,
+      &:focus {
+        box-shadow: arrayMagic($is-lifted-hover-big, px);
       }
     }
   }

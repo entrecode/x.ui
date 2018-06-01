@@ -3,6 +3,7 @@
 /// @access public
 /// @group atoms
 
+// scss-lint:disable NestingDepth
 .input-group {
   display: flex;
   position: relative;
@@ -30,21 +31,21 @@
       &:first-child {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
-        border-right: none;
+        border-right: 0;
       }
 
       &:last-child {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
-        border-left: none;
+        border-left: 0;
       }
     }
 
     &:not(:last-child) {
       &:not(:first-child) {
         border-radius: 0;
-        border-right: none;
-        border-left: none;
+        border-right: 0;
+        border-left: 0;
       }
     }
   }
@@ -68,8 +69,8 @@
     }
 
     &.btn_clear {
-      & + .input,
-      & + .input-group__addon {
+      + .input,
+      + .input-group__addon {
         margin-left: rem(4);
         border-top-left-radius: rem($btn-radius);
         border-bottom-left-radius: rem($btn-radius);
@@ -80,11 +81,11 @@
 
   .input,
   .input-group__addon {
-    & + .btn {
+    + .btn {
       &.btn_clear {
         margin-left: rem($btn-radius + 4);
 
-        &:before {
+        &::before {
           content: '';
           position: absolute;
           left: rem(($btn-radius + 4) * -1);

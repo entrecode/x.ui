@@ -3,6 +3,8 @@
 /// @access public
 /// @group molecules
 
+// scss-lint:disable NestingDepth
+
 ul.xui-accordion {
   list-style: none;
   margin: 0 rem(-8);
@@ -32,21 +34,21 @@ ul.xui-accordion {
       color: setHover(getColor(link));
       background-color: getColor(state, hover);
 
-      &:after {
+      &::after {
         color: setHover(getColor(link));
       }
     }
 
-    &:after {
+    &::after {
       color: getColor(text, light);
       margin: 0 rem(8);
       transition: all .4s;
 
       @if $ec-icon-support {
         @extend %ec-icon;
-        content: "\e01b";
+        content: '\e01b';
       } @else {
-        content: "+";
+        content: '+';
       }
     }
   }
@@ -63,19 +65,19 @@ ul.xui-accordion {
 
   > input[type="radio"],
   > input[type="checkbox"] {
-    @extend .is-hidden-input;
+    @extend %is-hidden-input;
 
     &:checked {
       + .xui-accordion-item__summary {
         color: setHover(getColor(link));
 
-        &:after {
+        &::after {
           color: setHover(getColor(link));
 
           @if $ec-icon-support {
-            content: "\e098";
+            content: '\e098';
           } @else {
-            content: "-";
+            content: '-';
           }
         }
 

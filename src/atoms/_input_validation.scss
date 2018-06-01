@@ -10,10 +10,8 @@
       color: setContrast(getColor(background), getColor(state, error));
     }
 
-    &.ng-pending {
-    }
+    // &.ng-pending {}
 
-    &.ng-submitted {
-    }
+    // &.ng-submitted {}
   }
 }

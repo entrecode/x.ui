@@ -1,3 +1,12 @@
+/// ui
+@import 'data-tooltip';
+@import 'is-raised';
+@import 'is-lifted';
+@import 'is-rounded';
+@import 'is-bordered';
+@import 'is-fab';
+@import 'is-dropdown';
+@import 'has-scroll-shadow';
 /// layout
 @import 'has-margin';
 @import 'has-padding';
@@ -28,12 +37,3 @@
 @import 'data-animate_delay';
 @import 'data-animate_duration';
 @import 'has-transition';
-/// ui
-@import 'data-tooltip';
-@import 'is-raised';
-@import 'is-lifted';
-@import 'is-rounded';
-@import 'is-bordered';
-@import 'is-fab';
-@import 'is-dropdown';
-@import 'has-scroll-shadow';

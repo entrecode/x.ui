@@ -1,85 +1,93 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.3
+/// @since 9.0.0
 /// @access public
 /// @group atoms
 ///
 /// @param {number} $hamburger-btn-width [16] - width of hamburger menu
 /// @param {number} $hamburger-btn-height [2] - height of hamburger menu bars
-/// @param {number} $hamburger-btn-spacing [4] - spacing of hamburger menu bars
+/// @param {array} $hamburger-btn-spacing [0] - margin hamburger menu bars
 /// @param {color} $hamburger-btn-color [$link]
 
 .hamburger-btn {
   @extend %btn;
-  margin: rem(4);
-  background-color: transparent;
+  margin: arrayMagix($hamburger-btn-spacing);
+  background-color: $hamburger-btn-background;
   position: relative;
 
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     height: rem($hamburger-btn-height);
     width: rem($hamburger-btn-width);
     border-radius: rem($hamburger-btn-height / 2);
     background-color: $hamburger-btn-color;
-    left: rem((($btn-min-height - $hamburger-btn-width)/2));
+    left: rem((($btn-min-height - $hamburger-btn-width) / 2));
     top: 50%;
-    margin-top: rem(-$hamburger-btn-height/2);
-    box-shadow: 0 rem(($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color, 0 rem(-($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color;
-    transition: all .4s;
+    margin-top: rem(-$hamburger-btn-height / 2);
+    box-shadow: 0 rem(($hamburger-btn-height + $hamburger-btn-spacing)) 0 0
+        $hamburger-btn-color,
+      0 rem(-($hamburger-btn-height + $hamburger-btn-spacing)) 0 0
+        $hamburger-btn-color;
+    transition: all 0.4s;
   }
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     height: rem($hamburger-btn-height);
     width: rem($hamburger-btn-width);
     border-radius: rem($hamburger-btn-height / 2);
     background-color: $hamburger-btn-color;
-    left: rem((($btn-min-height - $hamburger-btn-width)/2));
+    left: rem((($btn-min-height - $hamburger-btn-width) / 2));
     top: 50%;
-    margin-top: rem(-$hamburger-btn-height/2);
-    transition: all .4s;
+    margin-top: rem(-$hamburger-btn-height / 2);
+    transition: all 0.4s;
   }
 
   &.is-active {
-    &:after {
+    &::after {
       content: '';
       position: absolute;
       height: rem($hamburger-btn-height);
       width: rem($hamburger-btn-width);
       border-radius: rem($hamburger-btn-height / 2);
       background-color: $hamburger-btn-color;
-      left: rem((($btn-min-height - $hamburger-btn-width)/2));
+      left: rem((($btn-min-height - $hamburger-btn-width) / 2));
       top: 50%;
-      margin-top: rem(-$hamburger-btn-height/2);
+      margin-top: rem(-$hamburger-btn-height / 2);
       box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
       transform: rotate(45deg);
     }
 
-    &:before {
+    &::before {
       transform: rotate(-45deg);
-    }
-  }
-
-  &.hamburger-btn_invert {
-    $hamburger-btn-color: setContrast(getColor(background, invert), getColor(link));
-
-    &:after {
-      background-color: $hamburger-btn-color;
-      box-shadow: 0 rem(($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color, 0 rem(-($hamburger-btn-height+$hamburger-btn-spacing)) 0 0 $hamburger-btn-color;
-    }
-
-    &:before {
-      background-color: $hamburger-btn-color;
-    }
-
-    &.is-active {
-      &:after {
-        box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
-      }
     }
   }
 
   @extend %hamburger-btn-style !optional;
 }
 
+.hamburger-btn_invert {
+  $hamburger-btn-color: setContrast(
+    getColor(background, invert),
+    getColor(link)
+  );
+
+  &::after {
+    background-color: $hamburger-btn-color;
+    box-shadow: 0 rem(($hamburger-btn-height + $hamburger-btn-spacing)) 0 0
+        $hamburger-btn-color,
+      0 rem(-($hamburger-btn-height + $hamburger-btn-spacing)) 0 0
+        $hamburger-btn-color;
+  }
+
+  &::before {
+    background-color: $hamburger-btn-color;
+  }
+
+  &.is-active {
+    &::after {
+      box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+    }
+  }
+}

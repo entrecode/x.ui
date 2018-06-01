@@ -14,7 +14,7 @@
 /// @return {rem} value in rem
 
 @function rem($value, $base: $root-size) {
-  @if type_of($value) == 'number'{
+  @if type_of($value) == 'number' {
     @if ($value == 0) {
       @return $value;
     } @else {

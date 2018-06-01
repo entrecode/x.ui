@@ -6,27 +6,37 @@
 /// @param {px} $avatar-size [48]
 /// @param {px} $avatar-small-size-size [32]
 /// @param {px} $avatar-big-size-size [48]
-/// @param {px} $avatar-border [2]
+/// @param {array} $avatar-border [0]
 
 .avatar {
-  @include set-breakpoints {
-    width: rem($avatar-size);
-    height: rem($avatar-size);
-    display: block;
-    overflow: hidden;
-    border-radius: 50%;
-    border: rem($avatar-border) solid getColor(background);
+  display: block;
+  overflow: hidden;
+  border: arrayMagic($avatar-border);
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
+  @if $avatar-round == true {
+    border-radius: 50%;
+  } @else {
+    border-radius: rem($avatar-square-radius);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   &_square {
     border-radius: rem($avatar-square-radius);
+  }
+
+  &_round {
+    border-radius: 50%;
+  }
+
+  @include set-breakpoints {
+    width: rem($avatar-size);
+    height: rem($avatar-size);
   }
 
   &_small {
