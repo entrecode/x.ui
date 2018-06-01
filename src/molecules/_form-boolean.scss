@@ -1,12 +1,12 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.8
+/// @since 8.0.0-beta.11
 /// @access public
 /// @group molecules
 ///
 /// @param {boolean} $flex-support [true]
-/// @param {number} $form-boolean-margin [0 0 8 0]
+/// @param {array} $form-boolean-margin [$form-group-margin]
 /// @param {em} $form-boolean-label-font-size [$base-font-size]
-/// @param {number} $form-boolean-label-margin [0 0 4 0]
+/// @param {number} $form-boolean-label-margin [$form-group-label-margin]
 
 // scss-lint:disable NestingDepth
 .form-boolean {

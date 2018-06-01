@@ -2,21 +2,6 @@
 /// @since 8.0.0-beta.11
 /// @access public
 
-// FONTFACE
-// -------------------------------------------------------------------------------------------------
-// use @import to use custom font-families
-// @param {value} $body-font
-// @param {value} $headings-font
-$body-font: sans-serif !default;
-$headings-font: sans-serif !default;
-
-// @param {value} $is-light [lighter] - font-weight value for .is-light
-// @param {value} $is-normal [normal] - font-weight value for .is-normal
-// @param {value} $is-bold [bold] - font-weight value for .is-bold
-$is-light: lighter !default;
-$is-normal: normal !default;
-$is-bold: bold !default;
-
 //
 // FEATURE - SUPPORT
 // -------------------------------------------------------------------------------------------------
@@ -137,6 +122,29 @@ $breakpoints: (
 //
 // TYPEFACE
 // -------------------------------------------------------------------------------------------------
+
+//
+// FONTFACE
+// ---------------------------------------------
+// use @import to use custom font-families
+// @param {value} $body-font
+// @param {value} $headings-font
+$body-font: sans-serif !default;
+$headings-font: sans-serif !default;
+
+//
+// FONT-WEIGHT
+// ---------------------------------------------
+// @param {value} $is-light [lighter] - font-weight value for .is-light
+// @param {value} $is-normal [normal] - font-weight value for .is-normal
+// @param {value} $is-bold [bold] - font-weight value for .is-bold
+$is-light: lighter !default;
+$is-normal: normal !default;
+$is-bold: bold !default;
+
+//
+// FONT-SIZE
+// ---------------------------------------------
 // @param {px} $base-font-size [16]
 // @param {em} $base-line-height [1.4]
 // @param {value} $base-weight [$is-normal]
@@ -165,9 +173,7 @@ $heading-inline-small: 0.5 !default;
 // ---------------------------------------------
 // @param {number} $vertical-rhythm [$base-line-height * $base-font-size]
 // set margin-bottom a smooth typeface
-$vertical-rhythm: round(
-  $base-line-height * $base-font-size
-) !default; // equals 22.4px
+$vertical-rhythm: round($base-line-height * $base-font-size) !default; // equals 22.4px
 
 // @param {*} $headings-spacing-unit [$base-spacing-unit]
 $headings-spacing-unit: $base-spacing-unit !default;
@@ -350,12 +356,14 @@ $btn-outline: 2 !default;
 // ------------------------------------------------------
 // @param {rem} $hamburger-btn-width [16] - width of hamburger menu
 // @param {rem} $hamburger-btn-height [2] - height of hamburger menu bars
-// @param {rem} $hamburger-btn-spacing [4] - spacing of hamburger menu bars
-// @param {color} $hamburger-btn-color [$link] - spacing of hamburger menu bars
+// @param {array} $hamburger-btn-spacing [0]
+// @param {color} $hamburger-btn-color [$link]
+// @param {color} $hamburger-btn-background [transparent]
 $hamburger-btn-width: 16 !default;
 $hamburger-btn-height: 2 !default;
-$hamburger-btn-spacing: 4 !default;
+$hamburger-btn-spacing: 0 !default;
 $hamburger-btn-color: $link !default;
+$hamburger-btn-background: transparent !default;
 
 %hamburger-btn-style {
   // put additional styles here...
@@ -856,7 +864,6 @@ $spacing-big-size: getSpace(5); // equals 32
 //
 // INPUT
 // ------------------------------------------------------
-
 // @param {color} $input-background [$background] - background-color of input
 // @param {color} $input-color [$text] - text color of input
 // @param {em} $input-font-size [16]
@@ -914,44 +921,9 @@ $input-border-color: mix($text, $background, 25%) !default;
 // @param {array} $input-border [1]
 $input-border: 1 !default;
 
-// TODO continue here
-
-//
-// FORM-GROUP
-// ------------------------------------------------------
-
-// @param {number} $form-group-margin [0 0 8 0]
-$form-group-margin: 0 0 8 0 !default;
-
-// @param {number} $form-group-label-margin [0 0 4 0]
-// @param {em} $form-group-label-font-size [$base-font-size]
-$form-group-label-margin: 0 0 4 0 !default;
-$form-group-label-font-size: $base-font-size !default;
-
-%form-group-style {
-  // put additional styles here...
-}
-
-//
-// FORM-BOOLEAN
-// ------------------------------------------------------
-
-// @param {number} $form-boolean-margin [0 0 8 0]
-$form-boolean-margin: 0 0 8 0 !default;
-
-// @param {number} $form-boolean-label-margin [0 0 4 0]
-// @param {em} $form-boolean-label-font-size [$base-font-size]
-$form-boolean-label-margin: 0 0 4 0 !default;
-$form-boolean-label-font-size: $base-font-size !default;
-
-%form-boolean-style {
-  // put additional styles here...
-}
-
 //
 // XUI-CHECKBOX
 // ------------------------------------------------------
-
 // @param {rem} $checkbox-font-size [14]
 // @param {rem} $checkbox-line-height [24]
 // @param {rem} $checkbox-min-height [20]
@@ -969,7 +941,6 @@ $checkbox-radius: 6 !default;
 //
 // XUI-RADIO
 // ------------------------------------------------------
-
 // @param {rem} $radio-font-size [10]
 // @param {rem} $radio-line-height [20]
 // @param {rem} $radio-min-height [20]
@@ -983,36 +954,31 @@ $radio-height: 20 !default;
 }
 
 //
-// SELECT
+// FORM-GROUP
 // ------------------------------------------------------
+// @param {array} $form-group-margin [0 0 8 0]
+$form-group-margin: 0 0 8 0 !default;
 
-// @param {em} $select-font-size [16]
-// @param {em} $select-line-height [20]
-// @param {em} $select-min-height [32]
-$select-font-size: 16 !default;
-$select-line-height: 20 !default;
-$select-min-height: 32 !default;
+// @param {array} $form-group-label-margin [0 0 4 0]
+// @param {em} $form-group-label-font-size [$base-font-size]
+$form-group-label-margin: 0 0 4 0 !default;
+$form-group-label-font-size: $base-font-size !default;
 
-%select-style {
+%form-group-style {
   // put additional styles here...
 }
 
-// @param {boolean} $select-round [false] - sets border-radius to 50% of input height
-$select-round: false !default;
-
-// radius of input - if $select-round === false
-// @param {rem} $select-radius [4]
-$select-radius: 4 !default;
-
-// @param {px} $select-border [1]
-$select-border: 1 !default;
-
-// @param {color} $select-border-color [ mix($text, $background, 25%)]
-$select-border-color: mix($text, $background, 25%) !default;
-
-// param {color} $select-raised-shadow
-$select-raised-shadow: rgba(#000, 0.1) !default;
-
 //
-// Modifier
+// FORM-BOOLEAN
 // ------------------------------------------------------
+// @param {array} $form-boolean-margin [$form-group-margin]
+$form-boolean-margin: $form-group-margin !default;
+
+// @param {number} $form-boolean-label-margin [$form-group-label-margin]
+// @param {em} $form-boolean-label-font-size [$base-font-size]
+$form-boolean-label-margin: $form-group-label-margin !default;
+$form-boolean-label-font-size: $base-font-size !default;
+
+%form-boolean-style {
+  // put additional styles here...
+}

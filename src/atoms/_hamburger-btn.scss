@@ -5,13 +5,13 @@
 ///
 /// @param {number} $hamburger-btn-width [16] - width of hamburger menu
 /// @param {number} $hamburger-btn-height [2] - height of hamburger menu bars
-/// @param {number} $hamburger-btn-spacing [4] - spacing of hamburger menu bars
+/// @param {array} $hamburger-btn-spacing [0] - margin hamburger menu bars
 /// @param {color} $hamburger-btn-color [$link]
 
 .hamburger-btn {
   @extend %btn;
-  margin: rem(4);
-  background-color: transparent;
+  margin: arrayMagix($hamburger-btn-spacing);
+  background-color: $hamburger-btn-background;
   position: relative;
 
   &::after {
