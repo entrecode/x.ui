@@ -1,6 +1,6 @@
 <p align="center"><img src="readme.png" alt="x.ui"></p>
 
-# x.ui 8.0.0-beta.10
+# x.ui 9.0.0
 
 **x.ui** is a framework based on the atomic design methodology. this workflow is inspired by nature and physics and has a pretty serious focus on modularity and structure. its structure begins with the smallest part and builds up to complex structure. as a result, there is very little redundancy with a remarkable flexibility.
 
@@ -21,7 +21,7 @@ using webpack:
 
 ```scss
 @import '_config';
-@import '~x.ui/src/x.ui-sandbox.scss';
+@import '~x.ui/src/x.ui';
 ...
 ```
 
@@ -29,7 +29,7 @@ using node-sass:
 
 ```scss
 @import '_config';
-@import '../node_modlues/src/x.ui-sandbox.scss';
+@import '../node_modlues/src/x.ui';
 ...
 ```
 
