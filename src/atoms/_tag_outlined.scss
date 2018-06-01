@@ -46,7 +46,7 @@ $color-array: getColor(minor), getColor(link), getColor(super), getColor(highlig
   $color: nth($color-array, $i);
   $name: nth($name-array, $i);
 
-  &.#{$prefix}#{$name} {
+  .tag_outlined.#{$prefix}#{$name} {
     border-color: $color;
     color: setContrast(getColor(background), $color);
 
