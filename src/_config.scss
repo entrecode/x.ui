@@ -44,9 +44,13 @@ $highlight: #9de263 !default;
 // @param {color} $background-lighter [null] - set value too overwrite generated color
 // @param {color} $background-lightest [null] - set value too overwrite generated color
 $background-invert: $text !default;
-$background-light: null !default;
-$background-lighter: null !default;
-$background-lightest: null !default;
+$background-light: shadeByContrast($background, 12) !default;
+$background-lighter: shadeByContrast($background, 8) !default;
+$background-lightest: shadeByContrast($background, 3) !default;
+
+
+// @param {color} $base-background [$background]
+$base-background: $background !default;
 
 // text shading variables
 // @param {color} $text-invert [$background] - inverted color for text
@@ -68,14 +72,15 @@ $hover-shading: -4 !default;
 $divider-color: rgba($text, .1) !default;
 
 // used for theme coloring, colors are used in the x-ui-colormap an adapted to fit to theme colors
+$state-disabled: rgba($text, .2) !default;
 $state-hover: rgba($link, .1) !default;
-$state-info: #0ff !default;
-$state-error: #f00 !default;
-$state-success: #008000 !default;
-$state-warning: #ffd700 !default;
+$state-info: systemColor(#0ff) !default;
+$state-error: systemColor(#f00) !default;
+$state-success: systemColor(#008000) !default;
+$state-warning: systemColor(#ffd700) !default;
 
-// @param {color | false} $lighter-fallback [false] - light fallback color for setContrast
-// @param {color | false} $darker-fallback [false] - darker fallback color for setContrast
+// @param {color | false} $lighter-fallback [false] - overwrite light fallback color for setContrast
+// @param {color | false} $darker-fallback [false] - overwrite darker fallback color for setContrast
 $lighter-fallback: false !default;
 $darker-fallback: false !default;
 
