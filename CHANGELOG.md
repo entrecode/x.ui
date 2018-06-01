@@ -1,12 +1,14 @@
 # CHANGELOG
 
-## 8.0.0-beta.11
+## 9.0.0
 
 ### added
 
 - scss-lint
 - mixin `is-scrollable()` - use instead of `@extend .is-scrollable`
 - flex-support to `.btn` styles
+- config variables for `.nav`
+- config variables for `.title`
 
 ### changes
 

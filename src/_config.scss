@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.11
+/// @since 9.0.0
 /// @access public
 
 //
@@ -531,18 +531,14 @@ $title-spacing: 0 !default;
 //
 // TOOLBAR
 // ------------------------------------------------------
-
-// TODO refactore config
-
-// @param {rem} $toolbar-padding [$base-spacing]
-$toolbar-padding: $base-spacing !default;
-
 // @param {em} $toolbar-title-size [20] - font-size of .toolbar__title
 // @param {rem} $toolbar-title-img-height [32] - height of .toolbar__title > img
 // @param {rem} $toolbar-min-height [64] - min-height
+// @param {array} $toolbar-padding [$base-spacing / 2, $base-spacing]
 $toolbar-title-size: 20 !default;
 $toolbar-title-img-height: 32 !default;
 $toolbar-min-height: 64 !default;
+$toolbar-padding: $base-spacing / 2, $base-spacing !default;
 
 %toolbar-style {
   // put additional styles here...
@@ -551,9 +547,11 @@ $toolbar-min-height: 64 !default;
 // @param {em} $toolbar-small-title-size [20] - font-size of .toolbar-dense__title
 // @param {rem} $toolbar-small-title-img-height [32] - height of .toolbar-dense__title > img
 // @param {rem} $toolbar-small-min-height [48] - min-height
+// @param {array} $toolbar-padding [$base-spacing / 2, $base-spacing]
 $toolbar-small-title-size: 20 !default;
 $toolbar-small-title-img-height: 32 !default;
 $toolbar-small-min-height: 48 !default;
+$toolbar-small-padding: $base-spacing / 4, $base-spacing / 2 !default;
 
 %toolbar-small-style {
   // put additional styles here...
@@ -562,16 +560,16 @@ $toolbar-small-min-height: 48 !default;
 //
 // XUI-TABS
 // ------------------------------------------------------
+// @param {array} $toolbar-padding [0 0 $base-spacing 0]
+$xui-tabs-spacing: 0 0 $base-spacing 0;
 
-// TODO add config
 
 //
-// XUI-TABS
+// XUI-List
 // ------------------------------------------------------
 // @param {rem} $list-item-radius [4]
 $list-item-radius: 4 !default;
 
-// TODO add config
 
 //
 // XUI-ACCORDION

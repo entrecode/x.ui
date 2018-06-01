@@ -1,7 +1,13 @@
-// scss-lint:disable NestingDepth, SelectorDepth
+/// @author Bernhard Ruoff
+/// @since 9.0.0
+/// @access public
+/// @group molecules
+///
+/// @param {array} $toolbar-padding [0 0 $base-spacing 0]
+/// scss-lint:disable NestingDepth, SelectorDepth
 
 %tabs-nav {
-  margin-bottom: rem(16);
+  margin: arrayMagic($xui-tabs-spacing);
 
   > ul {
     list-style: none;
