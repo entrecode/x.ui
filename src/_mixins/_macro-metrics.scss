@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 8.0.0-beta.11
 /// @access public
 /// @group macro mixins
 ///
@@ -10,7 +10,13 @@
 /// @param {number} $border [null] - size of element border
 /// @param {number} $padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 
-@mixin macro-metrics($font-size, $line-height, $min-height, $border: null , $padding-ratio: 2) {
+@mixin macro-metrics(
+  $font-size,
+  $line-height,
+  $min-height,
+  $border: null,
+  $padding-ratio: 2
+) {
   $padding: ($min-height - $line-height) / 2;
 
   @if $border {
@@ -30,14 +36,18 @@
 
   @content;
 
+  .bubble,
   .tag {
-    &:only-child {
-      margin-left: rem($padding * -$padding-ratio);
-      margin-right: rem($padding * -$padding-ratio);
+    &:first-child {
+      margin-left: rem($padding * -1);
+      margin-right: rem($padding);
     }
-  }
 
-  .bubble {
+    &:last-child {
+      margin-right: rem($padding * -1);
+      margin-left: rem($padding);
+    }
+
     &:only-child {
       margin-left: rem($padding * -$padding-ratio);
       margin-right: rem($padding * -$padding-ratio);
