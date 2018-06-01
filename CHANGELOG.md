@@ -6,6 +6,7 @@
 
 - scss-lint
 - mixin `is-scrollable()` - use instead of `@extend .is-scrollable`
+- flex-support to `.btn` styles
 
 ### changes
 

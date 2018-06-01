@@ -35,7 +35,7 @@ $background: #fff !default;
 $text: #2a3d54 !default;
 $link: #2fce6f !default;
 $super: #14a656 !default;
-$minor: rgba($link, .2) !default;
+$minor: rgba($link, 0.2) !default;
 $highlight: #9de263 !default;
 
 // background shading variables
@@ -48,7 +48,6 @@ $background-light: shadeByContrast($background, 12) !default;
 $background-lighter: shadeByContrast($background, 8) !default;
 $background-lightest: shadeByContrast($background, 3) !default;
 
-
 // @param {color} $base-background [$background]
 $base-background: $background !default;
 
@@ -58,22 +57,22 @@ $base-background: $background !default;
 // @param {color} $text-lighter [rgba($text, .4)]
 // @param {color} $text-lightest [rgba($text, .2)]
 $text-invert: $background !default;
-$text-light: rgba($text, .6) !default;
-$text-lighter: rgba($text, .4) !default;
-$text-lightest: rgba($text, .2) !default;
+$text-light: rgba($text, 0.6) !default;
+$text-lighter: rgba($text, 0.4) !default;
+$text-lightest: rgba($text, 0.2) !default;
 
 // @param {color} $backdrop [rgba(#000, .8)]
-$backdrop: rgba(#000, .8) !default;
+$backdrop: rgba(#000, 0.8) !default;
 
 // @param {number} $hover-shading [-4] - amount by which colors are darkened or lightened on hover
 $hover-shading: -4 !default;
 
 // @param {color} $divider-color [rgba($text,.1)] -  color if divider used by e.b. .bumper
-$divider-color: rgba($text, .1) !default;
+$divider-color: rgba($text, 0.1) !default;
 
 // used for theme coloring, colors are used in the x-ui-colormap an adapted to fit to theme colors
-$state-disabled: rgba($text, .2) !default;
-$state-hover: rgba($link, .1) !default;
+$state-disabled: rgba($text, 0.2) !default;
+$state-hover: rgba($link, 0.1) !default;
 $state-info: systemColor(#0ff) !default;
 $state-error: systemColor(#f00) !default;
 $state-success: systemColor(#008000) !default;
@@ -112,13 +111,13 @@ $base-spacing: 16 !default;
 $base-spacing-unit: xrem !default;
 
 $spacings: (
-        0 : 0,
-        1 : ($base-spacing * .25), // equals 4
-        2 : ($base-spacing * .5), // equals 8
-        3 : $base-spacing, // equals 16
-        4 : ($base-spacing * 1.5), // equals 24
-        5 : ($base-spacing * 2), // equals 32
-        6 : ($base-spacing * 3) // equals 48
+  0: 0,
+  1: ($base-spacing * 0.25) /* equals 4*/,
+  2: ($base-spacing * 0.5) /* equals 8*/,
+  3: $base-spacing /* equals 16*/,
+  4: ($base-spacing * 1.5) /* equals 24*/,
+  5: ($base-spacing * 2) /* equals 32*/,
+  6: ($base-spacing * 3) /* equals 48*/
 ) !default;
 
 //
@@ -126,13 +125,13 @@ $spacings: (
 // -------------------------------------------------------------------------------------------------
 // @param {map} $breakpoints
 $breakpoints: (
-        'xs': 0, // smartphone
-        'sm': 480, // smartphone landscape
-        'md': 720, // tablet
-        'nav': 1024, // breakpoint for mobile navigation
-        'lg': 1024, // tablet landscape
-        'xl': 1280, // desktop
-        'xxl': 1920 // large
+  'xs': 0 /* smartphone*/,
+  'sm': 480 /* smartphone landscape*/,
+  'md': 720 /* tablet*/,
+  'nav': 1024 /* breakpoint for mobile navigation*/,
+  'lg': 1024 /* tablet landscape*/,
+  'xl': 1280 /* desktop*/,
+  'xxl': 1920 /* large*/
 ) !default;
 
 //
@@ -155,7 +154,7 @@ $base-scale-unit: em !default;
 // @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
 $headings-line-height: $base-line-height !default;
 $headings-weight: $is-bold !default;
-$heading-inline-small: .5 !default;
+$heading-inline-small: 0.5 !default;
 
 %heading-style {
   // put additional styles here...
@@ -166,7 +165,9 @@ $heading-inline-small: .5 !default;
 // ---------------------------------------------
 // @param {number} $vertical-rhythm [$base-line-height * $base-font-size]
 // set margin-bottom a smooth typeface
-$vertical-rhythm: round($base-line-height * $base-font-size) !default; // equals 22.4px
+$vertical-rhythm: round(
+  $base-line-height * $base-font-size
+) !default; // equals 22.4px
 
 // @param {*} $headings-spacing-unit [$base-spacing-unit]
 $headings-spacing-unit: $base-spacing-unit !default;
@@ -197,14 +198,14 @@ $kilo-spacing: 0 !default;
 // @param {map} $type-scale - modular scale for typeface
 // @link http://www.modularscale.com/?1&em&1.25
 $type-scale: (
-        h1: 3.052,
-        h2: 2.441,
-        h3: 1.953,
-        h4: 1.563,
-        h5: 1.25,
-        h6: 1,
-        lead: 1.25,
-        p: 1,
+  h1: 3.052,
+  h2: 2.441,
+  h3: 1.953,
+  h4: 1.563,
+  h5: 1.25,
+  h6: 1,
+  lead: 1.25,
+  p: 1
 ) !default;
 
 // @param {unit} $type-scale-unit [$base-scale-unit] - unit for modular scale
@@ -212,9 +213,9 @@ $type-scale-unit: $base-scale-unit !default;
 
 // @param {map} $type-scale-bp - breakpoints for modular scale
 $type-scale-bp: (
-        xs: .875,
-        md: 1,
-        xxl: 1.25
+  xs: 0.875,
+  md: 1,
+  xxl: 1.25
 ) !default;
 
 //
@@ -258,7 +259,7 @@ $link-decoration: none !default;
 $link-weight: $is-normal !default;
 
 %link-styles {
-  transition: color .2s;
+  transition: color 0.2s;
 }
 
 //
@@ -266,7 +267,7 @@ $link-weight: $is-normal !default;
 // ---------------------------------------------
 // @param {number} $inline-small-scale [.875] - font-size of `<small>`
 // @param {value} $inline-small-unit [$base-scale-unit]
-$inline-small-scale: .875 !default;
+$inline-small-scale: 0.875 !default;
 $inline-small-unit: $base-scale-unit !default;
 
 //
@@ -279,7 +280,7 @@ $inline-small-unit: $base-scale-unit !default;
 // @param {variable} $btn-font-family [$body-font]
 // @param {value} $btn-transition [background-color .2s, box-shadow .1s]
 $btn-font-family: $body-font !default;
-$btn-transition: background-color .2s, box-shadow .1s !default;
+$btn-transition: background-color 0.2s, box-shadow 0.1s !default;
 
 // @param {number} $btn-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
 $btn-padding-ratio: 1.5 !default;
@@ -301,7 +302,7 @@ $btn-weight: $is-bold !default;
 // @param {number} $btn-small-line-height [$btn-small-font-size * $base-line-height]
 // @param {number} $btn-small-min-height [32]
 // @param {value} $btn-small-weight [$btn-weight]
-$btn-small-font-size: $base-font-size * .875 !default;
+$btn-small-font-size: $base-font-size * 0.875 !default;
 $btn-small-line-height: $btn-small-font-size * $base-line-height !default;
 $btn-small-min-height: 32 !default;
 $btn-small-weight: $btn-weight !default;
@@ -432,7 +433,7 @@ $tag-padding-ratio: 2 !default;
 // @param {em} $tag-line-height [$tag-font-size * $base-line-height]
 // @param {em} $tag-min-height [28]
 // @param {value} $tag-weight [$is-bold]
-$tag-font-size: $base-font-size * .875 !default;
+$tag-font-size: $base-font-size * 0.875 !default;
 $tag-line-height: $tag-font-size * $base-line-height !default;
 $tag-min-height: 28 !default;
 $tag-weight: $is-bold !default;
@@ -445,7 +446,7 @@ $tag-weight: $is-bold !default;
 // @param {em} $tag-small-line-height [$tag-small-font-size * $base-line]
 // @param {em} $tag-small-min-height [24]
 // @param {value} $tag-small-weight [$tag-weight]
-$tag-small-font-size: $base-font-size * .75 !default;
+$tag-small-font-size: $base-font-size * 0.75 !default;
 $tag-small-line-height: $tag-small-font-size * $base-line-height !default;
 $tag-small-min-height: 24 !default;
 $tag-small-weight: $tag-weight !default;
@@ -496,7 +497,7 @@ $dropdown-radius: 4 !default;
 $dropdown-padding: 4 !default;
 $dropdown-max-height: null !default;
 $dropdown-background: $background !default;
-$dropdown-shadow: 0 8 16 -4 rgba(#000, .16) ',' 0 4 24 0 rgba(#000, .1) !default;
+$dropdown-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
 
 //
 // BUTTON GROUP
@@ -588,7 +589,7 @@ $card-padding: 8 16 !default;
 $overlay-radius: 4 !default;
 $overlay-padding: 4 !default;
 $overlay-background: $background !default;
-$overlay-shadow: 0 8 16 -4 rgba(#000, .16) ',' 0 4 24 0 rgba(#000, .1) !default;
+$overlay-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
 
 //
 // WELL
@@ -646,7 +647,7 @@ $alert-outlined: 2 !default;
 // @param {em} $alert-small-font-size [$base-font-size * .875]
 // @param {rem} $alert-small-padding [8 12]
 // @param {rem} $alert-small-margin [0 0 16 0]
-$alert-small-font-size: $base-font-size * .875 !default;
+$alert-small-font-size: $base-font-size * 0.875 !default;
 $alert-small-padding: 8 12 !default;
 $alert-small-margin: 0 0 16 0 !default;
 
@@ -752,7 +753,7 @@ $is-rounded-max-radius: 8 !default;
 // @param {array} $is-bordered
 $is-bordered-width: 1 !default;
 $is-bordered-style: solid !default;
-$is-bordered-color: rgba($text, .1) !default;
+$is-bordered-color: rgba($text, 0.1) !default;
 $is-bordered: $is-bordered-width $is-bordered-style $is-bordered-color !default;
 
 //
@@ -762,7 +763,7 @@ $is-bordered: $is-bordered-width $is-bordered-style $is-bordered-color !default;
 // @param {array} $is-raised
 // @param {array} $is-raised-small
 // @param {array} $is-raised-big
-$is-raised-shade: rgba(#000, .1) !default;
+$is-raised-shade: rgba(#000, 0.1) !default;
 $is-raised: 0 2 4 $is-raised-shade ',' 0 2 8 $is-raised-shade !default;
 $is-raised-small: 0 1 2 $is-raised-shade ',' 0 1 4 $is-raised-shade !default;
 $is-raised-big: 0 4 8 $is-raised-shade ',' 0 4 16 $is-raised-shade !default;
@@ -773,8 +774,10 @@ $is-raised-big: 0 4 8 $is-raised-shade ',' 0 4 16 $is-raised-shade !default;
 // @param {array} $is-raised-hover-big
 $is-raised-hover-shade: $is-raised-shade !default;
 $is-raised-hover: 0 1 4 $is-raised-hover-shade !default;
-$is-raised-hover-small: 0 1 1 $is-raised-hover-shade ',' 0 1 2 $is-raised-hover-shade !default;
-$is-raised-hover-big: 0 2 4 $is-raised-hover-shade ',' 0 2 8 $is-raised-hover-shade !default;
+$is-raised-hover-small: 0 1 1 $is-raised-hover-shade ',' 0 1 2
+  $is-raised-hover-shade !default;
+$is-raised-hover-big: 0 2 4 $is-raised-hover-shade ',' 0 2 8
+  $is-raised-hover-shade !default;
 
 //
 // IS-LIFTED
@@ -783,10 +786,11 @@ $is-raised-hover-big: 0 2 4 $is-raised-hover-shade ',' 0 2 8 $is-raised-hover-sh
 // @param {array} $is-lifted
 // @param {array} $is-lifted-small
 // @param {array} $is-lifted-big
-$is-lifted-shade: rgba(#000, .1) !default;
-$is-lifted: 0 16 16 -4 opacify($is-lifted-shade, .1) ',' 0 16 24 $is-lifted-shade !default;
+$is-lifted-shade: rgba(#000, 0.1) !default;
+$is-lifted: 0 16 16 -4 opacify($is-lifted-shade, 0.1) ',' 0 16 24 $is-lifted-shade !default;
 $is-lifted-small: 0 12 8 -8 $is-lifted-shade !default;
-$is-lifted-big:  0 24 28 0 opacify($is-lifted-shade, .1) ',' 0 24 40 $is-lifted-shade !default;
+$is-lifted-big: 0 24 28 0 opacify($is-lifted-shade, 0.1) ',' 0 24 40
+  $is-lifted-shade !default;
 
 // @param {color} $is-lifted-hover-shade [$is-lifted-shade)]
 // @param {array} $is-lifted-hover
@@ -803,7 +807,6 @@ $is-lifted-hover-big: 0 12 8 -8 $is-lifted-hover-shade !default;
 // @param {rem} $is-fab-spacing [16]
 $is-fab-spacing: 16 !default;
 
-
 //
 // LAYOUT
 // -------------------------------------------------------------------------------------------------
@@ -819,7 +822,7 @@ $is-fab-spacing: 16 !default;
 // @param {array} $bumper-big-spacing [getSpace(6) 0]
 $bumper-size: 4;
 $bumper-color: $divider-color;
-$bumper-invert-color: rgba($background, .2);
+$bumper-invert-color: rgba($background, 0.2);
 $bumper-spacing: getSpace(5) 0; // equals 32 0
 $bumper-small-spacing: getSpace(3) 0; // equals 16 0
 $bumper-big-spacing: getSpace(6) 0; // equals 48 0
@@ -835,7 +838,7 @@ $spacer-small-size: getSpace(3); // equals 16
 $spacer-big-size: getSpace(6); // equals 48
 
 //
-// spacing
+// SPACING
 // ------------------------------------------------------
 // @param {number} $spacing-smallest-size [getSpace(1)]
 // @param {number} $spacing-small-size [getSpace(2)]
@@ -845,6 +848,71 @@ $spacing-size: getSpace(3); // equals 16
 $spacing-smallest-size: getSpace(1); // equals 4
 $spacing-small-size: getSpace(2); // equals 8
 $spacing-big-size: getSpace(5); // equals 32
+
+//
+// FORM
+// -------------------------------------------------------------------------------------------------
+
+//
+// INPUT
+// ------------------------------------------------------
+
+// @param {color} $input-background [$background] - background-color of input
+// @param {color} $input-color [$text] - text color of input
+// @param {em} $input-font-size [16]
+// @param {em} $input-line-height [24]
+// @param {em} $input-min-height [32]
+$input-background: $background !default;
+$input-color: $text !default;
+$input-font-size: $base-font-size !default;
+$input-line-height: $input-font-size * $base-line-height !default;
+$input-min-height: 32 !default;
+
+// @param {color} $input-placeholder [$text-light] - text color of input placeholder
+$input-placeholder: $text-light !default;
+
+%input-style {
+  // put additional styles here...
+}
+
+// @param {em} $input-small-font-size [14]
+// @param {em} $input-small-line-height [18]
+// @param {em} $input-small-min-height [28]
+$input-small-font-size: $input-font-size * 0.875 !default;
+$input-small-line-height: $input-small-font-size * $base-line-height !default;
+$input-small-min-height: 28 !default;
+
+%input-small-style {
+  // put additional styles here...
+}
+
+// @param {em} $input-big-font-size [18]
+// @param {em} $input-big-line-height [24]
+// @param {em} $input-big-min-height [40]
+$input-big-font-size: $input-font-size * 1.125 !default;
+$input-big-line-height: $input-big-font-size * $base-line-height !default;
+$input-big-min-height: 40 !default;
+
+%input-big-style {
+  // put additional styles here...
+}
+
+// @param {boolean} $input-round [false] - sets border-radius to 50% of input height
+$input-round: false !default;
+
+// radius of input - if $input-round === false
+// @param {rem} $input-radius [4]
+// @param {rem} $input-small-radius [4]
+// @param {rem} $input-big-radius [4]
+$input-radius: 4 !default;
+$input-small-radius: 4 !default;
+$input-big-radius: 4 !default;
+
+// @param {color} $input-border-color [ mix($text, $background, 25%)]
+$input-border-color: mix($text, $background, 25%) !default;
+
+// @param {array} $input-border [1]
+$input-border: 1 !default;
 
 // TODO continue here
 
@@ -881,70 +949,6 @@ $form-boolean-label-font-size: $base-font-size !default;
 }
 
 //
-// INPUT
-// ------------------------------------------------------
-
-// @param {color} $input-background [$background] - background-color of input
-// @param {color} $input-color [$text] - text color of input
-// @param {em} $input-font-size [16]
-// @param {em} $input-line-height [24]
-// @param {em} $input-min-height [32]
-$input-background: $background !default;
-$input-color: $text !default;
-$input-font-size: $base-font-size !default;
-$input-line-height: $input-font-size * $base-line-height !default;
-$input-min-height: 32 !default;
-
-// @param {color} $input-placeholder [$text-light] - text color of input placeholder
-$input-placeholder: $text-light !default;
-
-%input-style {
-  // put additional styles here...
-}
-
-// @param {em} $input-small-font-size [14]
-// @param {em} $input-small-line-height [18]
-// @param {em} $input-small-min-height [28]
-$input-small-font-size: $input-font-size * .875 !default;
-$input-small-line-height: $input-small-font-size * $base-line-height !default;
-$input-small-min-height: 28 !default;
-
-%input-small-style {
-  // put additional styles here...
-}
-
-// @param {em} $input-big-font-size [18]
-// @param {em} $input-big-line-height [24]
-// @param {em} $input-big-min-height [40]
-$input-big-font-size: $input-font-size * 1.125 !default;
-$input-big-line-height: $input-big-font-size * $base-line-height !default;
-$input-big-min-height: 40 !default;
-
-%input-big-style {
-  // put additional styles here...
-}
-
-// @param {boolean} $input-round [false] - sets border-radius to 50% of input height
-$input-round: false !default;
-
-// radius of input - if $input-round === false
-// @param {rem} $input-radius [4]
-// @param {rem} $input-small-radius [4]
-// @param {rem} $input-big-radius [4]
-$input-radius: 4 !default;
-$input-small-radius: 4 !default;
-$input-big-radius: 4 !default;
-
-// @param {px} $input-border [1]
-$input-border: 1 !default;
-
-// @param {color} $input-border-color [ mix($text, $background, 25%)]
-$input-border-color: mix($text, $background, 25%) !default;
-
-// param {color} $input-raised-shadow
-$input-raised-shadow: rgba(#000, .1) !default;
-
-//
 // XUI-CHECKBOX
 // ------------------------------------------------------
 
@@ -959,7 +963,7 @@ $checkbox-radius: 6 !default;
 
 // additional styles for .xui-checkbox
 %checkbox-style {
-  box-shadow: inset 0 1px 2px 1px rgba(#000, .2);
+  box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2);
 }
 
 //
@@ -975,7 +979,7 @@ $radio-height: 20 !default;
 
 // additional styles for .xui-radio
 %radio-style {
-  box-shadow: inset 0 1px 2px 1px rgba(#000, .2);
+  box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2);
 }
 
 //
@@ -1007,7 +1011,7 @@ $select-border: 1 !default;
 $select-border-color: mix($text, $background, 25%) !default;
 
 // param {color} $select-raised-shadow
-$select-raised-shadow: rgba(#000, .1) !default;
+$select-raised-shadow: rgba(#000, 0.1) !default;
 
 //
 // Modifier

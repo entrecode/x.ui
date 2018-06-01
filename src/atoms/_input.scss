@@ -39,7 +39,12 @@
   text-align: left;
   flex-grow: 1;
   border-radius: rem($input-radius);
-  @include macro-metrics($input-font-size, $input-line-height, $input-min-height, $input-border);
+  @include macro-metrics(
+    $input-font-size,
+    $input-line-height,
+    $input-min-height,
+    $input-border
+  );
 
   /// additional styles via config
   @extend %input-style !optional;
@@ -78,7 +83,7 @@
   &.is-disabled,
   &[disabled] {
     cursor: not-allowed;
-    opacity: .4;
+    opacity: 0.4;
   }
 
   @at-root select.input {
@@ -102,7 +107,11 @@
   &_clear {
     border: none !important;
     border-width: 0 !important;
-    @include macro-metrics($input-font-size, $input-line-height, $input-min-height);
+    @include macro-metrics(
+      $input-font-size,
+      $input-line-height,
+      $input-min-height
+    );
 
     &:focus,
     &:hover {
@@ -116,7 +125,12 @@
 
   &_small {
     border-radius: rem($input-small-radius);
-    @include macro-metrics($input-small-font-size, $input-small-line-height, $input-small-min-height, $input-border);
+    @include macro-metrics(
+      $input-small-font-size,
+      $input-small-line-height,
+      $input-small-min-height,
+      $input-border
+    );
 
     /// additional styles via config
     @extend %input-small-style !optional;
@@ -128,13 +142,22 @@
     &_clear {
       border: 0 !important;
       border-width: 0 !important;
-      @include macro-metrics($input-small-font-size, $input-small-line-height, $input-small-min-height);
+      @include macro-metrics(
+        $input-small-font-size,
+        $input-small-line-height,
+        $input-small-min-height
+      );
     }
   }
 
   &_big {
     border-radius: rem($input-big-radius);
-    @include macro-metrics($input-big-font-size, $input-big-line-height, $input-big-min-height, $input-border);
+    @include macro-metrics(
+      $input-big-font-size,
+      $input-big-line-height,
+      $input-big-min-height,
+      $input-border
+    );
 
     /// additional styles via config
     @extend %input-big-style !optional;
@@ -146,7 +169,11 @@
     &_clear {
       border: 0 !important;
       border-width: 0 !important;
-      @include macro-metrics($input-big-font-size, $input-big-line-height, $input-big-min-height);
+      @include macro-metrics(
+        $input-big-font-size,
+        $input-big-line-height,
+        $input-big-min-height
+      );
     }
   }
 
@@ -166,7 +193,7 @@
     color: getColor(text, invert);
 
     @include placeholder {
-      color: rgba(getColor(text, invert), .6);
+      color: rgba(getColor(text, invert), 0.6);
     }
 
     &:focus,
@@ -178,7 +205,6 @@
       }
     }
   }
-
 }
 
 /// for fluffy round inputs
