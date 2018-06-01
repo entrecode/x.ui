@@ -518,14 +518,15 @@ $dropdown-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !defau
 //
 // NAV
 // ------------------------------------------------------
+// @param {color} $nav-divider-color [$divider]
+$nav-divider-color: $divider-color !default;
 
-// TODO add config
 
 //
 // TITLE
 // ------------------------------------------------------
-
-// TODO add config
+// @param {array} $title-spacing [0]
+$title-spacing: 0 !default;
 
 //
 // TOOLBAR

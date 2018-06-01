@@ -30,7 +30,7 @@
   }
 
   .nav__divider {
-    background-color: getColor(divider);
+    background-color: $nav-divider-color;
     height: 100%;
     width: rem(1);
     margin: 0 rem(4);
