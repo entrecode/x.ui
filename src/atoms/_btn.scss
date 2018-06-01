@@ -39,13 +39,20 @@
   outline: none;
   cursor: pointer;
   touch-action: manipulation;
-  display: inline-block;
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
   position: relative;
   height: auto;
   border: 0;
+
+  @if $flex-support == false {
+    display: inline-block;
+  } @else {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   /// button typo style
   font-family: $btn-font-family;
@@ -177,7 +184,12 @@
   /// full-width buttons
   &.btn_block {
     width: 100%;
-    display: block;
+
+    @if $flex-support == false {
+      display: block;
+    } @else {
+      display: flex;
+    }
   }
 }
 
@@ -213,7 +225,10 @@
   &.is-active,
   &:hover,
   &:focus {
-    @include set-theme-colors(setHover(getColor(background, invert)), getColor(link));
+    @include set-theme-colors(
+      setHover(getColor(background, invert)),
+      getColor(link)
+    );
   }
 }
 

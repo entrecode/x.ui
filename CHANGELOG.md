@@ -5,6 +5,7 @@
 ### added
 
 - scss-lint
+- mixin `is-scrollable()` - use instead of `@extend .is-scrollable`
 
 ### changes
 
