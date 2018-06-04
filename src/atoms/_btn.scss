@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.1
 /// @access public
 /// @group atoms
 ///
@@ -21,6 +21,7 @@
 /// @param {number} $btn-big-min-height - min-height of big btn
 ///
 /// @param {number} $btn-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+/// @param {array} $btn-spacing [0]
 /// @param {boolean} $btn-round - sets buttons to rounded buttons
 /// @param {number} $btn-radius - radius for default button
 /// @param {number} $btn-small-radius - radius for small button
@@ -45,6 +46,7 @@
   position: relative;
   height: auto;
   border: 0;
+  margin: arrayMagic($btn-spacing);
 
   @if $flex-support == false {
     display: inline-block;

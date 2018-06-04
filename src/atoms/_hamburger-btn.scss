@@ -1,12 +1,14 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.1
 /// @access public
 /// @group atoms
 ///
-/// @param {number} $hamburger-btn-width [16] - width of hamburger menu
-/// @param {number} $hamburger-btn-height [2] - height of hamburger menu bars
-/// @param {array} $hamburger-btn-spacing [0] - margin hamburger menu bars
-/// @param {color} $hamburger-btn-color [$link]
+// @param {array} $hamburger-btn-spacing [$btn-spacing]
+// @param {rem} $hamburger-btn-width [16] - width of hamburger menu
+// @param {color} $hamburger-btn-background [transparent]
+// @param {rem} $hamburger-btn-line-weight [2] - height of hamburger menu bars
+// @param {number} $hamburger-btn-line-spacing [4]
+// @param {color} $hamburger-btn-line-color [$link]
 
 .hamburger-btn {
   @extend %btn;
@@ -17,30 +19,31 @@
   &::after {
     content: '';
     position: absolute;
-    height: rem($hamburger-btn-height);
-    width: rem($hamburger-btn-width);
-    border-radius: rem($hamburger-btn-height / 2);
-    background-color: $hamburger-btn-color;
-    left: rem((($btn-min-height - $hamburger-btn-width) / 2));
+    height: rem($hamburger-btn-line-weight);
+    width: rem($hamburger-btn-line-width);
+    border-radius: rem($hamburger-btn-line-weight / 2);
+    background-color: $hamburger-btn-line-color;
+    left: rem((($btn-min-height - $hamburger-btn-line-width) / 2));
     top: 50%;
-    margin-top: rem(-$hamburger-btn-height / 2);
-    box-shadow: 0 rem(($hamburger-btn-height + $hamburger-btn-spacing)) 0 0
-        $hamburger-btn-color,
-      0 rem(-($hamburger-btn-height + $hamburger-btn-spacing)) 0 0
-        $hamburger-btn-color;
+    margin-top: rem(-$hamburger-btn-line-weight / 2);
+    box-shadow: 0
+        rem(($hamburger-btn-line-weight + $hamburger-btn-line-spacing)) 0 0
+        $hamburger-btn-line-color,
+      0 rem(-($hamburger-btn-line-weight + $hamburger-btn-line-spacing)) 0 0
+        $hamburger-btn-line-color;
     transition: all 0.4s;
   }
 
   &::before {
     content: '';
     position: absolute;
-    height: rem($hamburger-btn-height);
-    width: rem($hamburger-btn-width);
-    border-radius: rem($hamburger-btn-height / 2);
-    background-color: $hamburger-btn-color;
-    left: rem((($btn-min-height - $hamburger-btn-width) / 2));
+    height: rem($hamburger-btn-line-weight);
+    width: rem($hamburger-btn-line-width);
+    border-radius: rem($hamburger-btn-line-weight / 2);
+    background-color: $hamburger-btn-line-color;
+    left: rem((($btn-min-height - $hamburger-btn-line-width) / 2));
     top: 50%;
-    margin-top: rem(-$hamburger-btn-height / 2);
+    margin-top: rem(-$hamburger-btn-line-weight / 2);
     transition: all 0.4s;
   }
 
@@ -48,13 +51,13 @@
     &::after {
       content: '';
       position: absolute;
-      height: rem($hamburger-btn-height);
-      width: rem($hamburger-btn-width);
-      border-radius: rem($hamburger-btn-height / 2);
-      background-color: $hamburger-btn-color;
-      left: rem((($btn-min-height - $hamburger-btn-width) / 2));
+      height: rem($hamburger-btn-line-weight);
+      width: rem($hamburger-btn-line-width);
+      border-radius: rem($hamburger-btn-line-weight / 2);
+      background-color: $hamburger-btn-line-color;
+      left: rem((($btn-min-height - $hamburger-btn-line-width) / 2));
       top: 50%;
-      margin-top: rem(-$hamburger-btn-height / 2);
+      margin-top: rem(-$hamburger-btn-line-weight / 2);
       box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
       transform: rotate(45deg);
     }
@@ -68,21 +71,22 @@
 }
 
 .hamburger-btn_invert {
-  $hamburger-btn-color: setContrast(
+  $hamburger-btn-line-color: setContrast(
     getColor(background, invert),
     getColor(link)
   );
 
   &::after {
-    background-color: $hamburger-btn-color;
-    box-shadow: 0 rem(($hamburger-btn-height + $hamburger-btn-spacing)) 0 0
-        $hamburger-btn-color,
-      0 rem(-($hamburger-btn-height + $hamburger-btn-spacing)) 0 0
-        $hamburger-btn-color;
+    background-color: $hamburger-btn-line-color;
+    box-shadow: 0
+        rem(($hamburger-btn-line-weight + $hamburger-btn-line-spacing)) 0 0
+        $hamburger-btn-line-color,
+      0 rem(-($hamburger-btn-line-weight + $hamburger-btn-line-spacing)) 0 0
+        $hamburger-btn-line-color;
   }
 
   &::before {
-    background-color: $hamburger-btn-color;
+    background-color: $hamburger-btn-line-color;
   }
 
   &.is-active {
