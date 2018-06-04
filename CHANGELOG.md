@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 9.0.1
+
+### fixed
+- `$hamburger-btn` bug
+
 ## 9.0.0
 
 ### added

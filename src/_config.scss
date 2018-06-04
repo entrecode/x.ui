@@ -289,7 +289,9 @@ $btn-font-family: $body-font !default;
 $btn-transition: background-color 0.2s, box-shadow 0.1s !default;
 
 // @param {number} $btn-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
+// @param {array} $btn-spacing [0]
 $btn-padding-ratio: 1.5 !default;
+$btn-spacing: 0 !default;
 
 // @param {number} $btn-font-size [$base-font-size]
 // @param {number} $btn-line-height [$btn-font-size * $base-line-height]
@@ -354,16 +356,18 @@ $btn-outline: 2 !default;
 //
 // HAMBURGER BUTTON
 // ------------------------------------------------------
+// @param {array} $hamburger-btn-spacing [$btn-spacing]
 // @param {rem} $hamburger-btn-width [16] - width of hamburger menu
-// @param {rem} $hamburger-btn-height [2] - height of hamburger menu bars
-// @param {array} $hamburger-btn-spacing [0]
-// @param {color} $hamburger-btn-color [$link]
 // @param {color} $hamburger-btn-background [transparent]
-$hamburger-btn-width: 16 !default;
-$hamburger-btn-height: 2 !default;
-$hamburger-btn-spacing: 0 !default;
-$hamburger-btn-color: $link !default;
+// @param {rem} $hamburger-btn-line-weight [2] - height of hamburger menu bars
+// @param {number} $hamburger-btn-line-spacing [4]
+// @param {color} $hamburger-btn-line-color [$link]
+$hamburger-btn-spacing: $btn-spacing !default;
 $hamburger-btn-background: transparent !default;
+$hamburger-btn-line-width: 16 !default;
+$hamburger-btn-line-weight: 2 !default;
+$hamburger-btn-line-spacing: 4 !default;
+$hamburger-btn-line-color: $link !default;
 
 %hamburger-btn-style {
   // put additional styles here...
