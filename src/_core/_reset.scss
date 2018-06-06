@@ -27,6 +27,7 @@ details {
 input {
   &[type="number"] {
     width: auto;
+    max-width: 100%;
   }
 
   &[type="search"] {

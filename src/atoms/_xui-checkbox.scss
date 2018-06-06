@@ -17,7 +17,7 @@
 
     + label {
       &::before {
-        content: '\2714';
+        content: '\2714\fe0e';
         font-family: sans-serif;
         background-color: getColor(background);
         display: flex;

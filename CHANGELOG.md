@@ -1,8 +1,15 @@
 # CHANGELOG
 
+## 9.0.2
+
+### fixed
+
+- `.xui-chackbox` bug in ios safari - adde a variantion selector `\fe0e`
+
 ## 9.0.1
 
 ### fixed
+
 - `$hamburger-btn` bug
 
 ## 9.0.0
