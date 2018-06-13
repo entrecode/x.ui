@@ -5,13 +5,12 @@
 
 // scss-lint:disable NestingDepth
 .xui-radio {
-
   label {
     display: flex;
     cursor: pointer;
   }
 
-  input[type="radio"] {
+  input[type='radio'] {
     @extend %is-hidden-input;
 
     + label {
@@ -31,15 +30,17 @@
         border-radius: rem($radio-height / 2);
         font-size: rem($radio-font-size / 4);
         line-height: rem($radio-line-height);
-        transition: all .2s;
+        transition: all 0.2s;
 
         @extend %radio-style;
       }
 
       &:hover {
-        &::before {
-          color: getColor(text, lightest);
-          font-size: rem($radio-font-size);
+        @media (hover: hover) {
+          &::before {
+            color: getColor(text, lightest);
+            font-size: rem($radio-font-size);
+          }
         }
       }
     }

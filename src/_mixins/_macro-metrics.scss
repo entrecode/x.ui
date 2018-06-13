@@ -69,8 +69,21 @@
     &:empty {
       padding-right: 0;
       padding-left: 0;
-      margin-left: rem($padding * -$padding-ratio);
-      margin-right: rem($padding * -$padding-ratio);
+
+      &:first-child {
+        margin-left: rem($padding * -0.5);
+        margin-right: rem($padding);
+      }
+
+      &:last-child {
+        margin-right: rem($padding * -0.5);
+        margin-left: rem($padding);
+      }
+
+      &:only-child {
+        margin-left: rem($padding * -$padding-ratio);
+        margin-right: rem($padding * -$padding-ratio);
+      }
 
       &::before {
         margin-left: 0;

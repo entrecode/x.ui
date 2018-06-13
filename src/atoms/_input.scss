@@ -6,6 +6,7 @@
 /// @param {color} $input-background [$background] - background-color of input
 /// @param {color} $input-color [$text] - text color of input
 /// @param {color} $input-placeholder [$text-light] - text color of input placeholder
+/// @param {array} $input-spacing [0]
 ///
 /// @param {number} $input-font-size [16]
 /// @param {number} $input-line-height [24]
@@ -35,7 +36,7 @@
   background-color: $input-background;
   color: $input-color;
   width: 100%;
-  margin: 0;
+  margin: arrayMagic($input-spacing);
   text-align: left;
   flex-grow: 1;
   border-radius: rem($input-radius);
