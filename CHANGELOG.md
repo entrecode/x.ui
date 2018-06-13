@@ -7,6 +7,10 @@
 - `$input-spacing` variable to config
 - added config variables for `.dropdown-option`
 
+### changes
+
+- updated input-validation styles
+
 ## 9.0.2
 
 ### fixed
