@@ -97,12 +97,12 @@ $base-spacing-unit: xrem !default;
 
 $spacings: (
   0: 0,
-  1: ($base-spacing * 0.25) /* equals 4*/,
-  2: ($base-spacing * 0.5) /* equals 8*/,
-  3: $base-spacing /* equals 16*/,
-  4: ($base-spacing * 1.5) /* equals 24*/,
-  5: ($base-spacing * 2) /* equals 32*/,
-  6: ($base-spacing * 3) /* equals 48*/
+  1: ($base-spacing * 0.25) /* equals 4 twin */,
+  2: ($base-spacing * 0.5) /* equals 8 sibling */,
+  3: $base-spacing /* equals 16 buddy */,
+  4: ($base-spacing * 1.5) /* equals 24 peer */,
+  5: ($base-spacing * 2) /* equals 32 relative */,
+  6: ($base-spacing * 3) /* equals 48 stranger */
 ) !default;
 
 //
