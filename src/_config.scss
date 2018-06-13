@@ -441,9 +441,9 @@ $tag-background: $minor !default;
 // @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 $tag-padding-ratio: 2 !default;
 
-// @param {px} $tag-font-size [$base-font-size * .875]
-// @param {px} $tag-line-height [$tag-font-size * $base-line-height]
-// @param {px} $tag-min-height [28]
+// @param {em} $tag-font-size [$base-font-size * .875]
+// @param {em} $tag-line-height [$tag-font-size * $base-line-height]
+// @param {em} $tag-min-height [28]
 // @param {value} $tag-weight [$is-bold]
 $tag-font-size: $base-font-size * 0.875 !default;
 $tag-line-height: $tag-font-size * $base-line-height !default;
@@ -454,9 +454,9 @@ $tag-weight: $is-bold !default;
   // put additional styles here...
 }
 
-// @param {px} $tag-small-font-size [$base-font-size * .75]
-// @param {px} $tag-small-line-height [$tag-small-font-size * $base-line]
-// @param {px} $tag-small-min-height [24]
+// @param {em} $tag-small-font-size [$base-font-size * .75]
+// @param {em} $tag-small-line-height [$tag-small-font-size * $base-line]
+// @param {em} $tag-small-min-height [24]
 // @param {value} $tag-small-weight [$tag-weight]
 $tag-small-font-size: $base-font-size * 0.75 !default;
 $tag-small-line-height: $tag-small-font-size * $base-line-height !default;
@@ -467,9 +467,9 @@ $tag-small-weight: $tag-weight !default;
   // put additional styles here...
 }
 
-// @param {px} $tag-big-font-size [$base-font-size]
-// @param {px} $tag-big-line-height [$tag-big-font-size * $base-line-height]
-// @param {px} $tag-big-min-height [32]
+// @param {em} $tag-big-font-size [$base-font-size]
+// @param {em} $tag-big-line-height [$tag-big-font-size * $base-line-height]
+// @param {em} $tag-big-min-height [32]
 // @param {value} $tag-big-weight [$tag-weight]
 $tag-big-font-size: $base-font-size !default;
 $tag-big-line-height: $tag-big-font-size * $base-line-height !default;
@@ -510,23 +510,6 @@ $dropdown-padding: 4 !default;
 $dropdown-max-height: null !default;
 $dropdown-background: $background !default;
 $dropdown-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
-
-
-// @param {number} $dropdown-option-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
-// @param {array} $dropdown-option-spacing [0]
-// @param {number} $dropdown-option-font-size [$base-font-size]
-// @param {number} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
-// @param {number} $dropdown-option-min-height [$btn-min-height]
-// @param {value} $dropdown-option-alignment [center]
-// @param {value} $dropdown-option-weight [$is-bold]
-$dropdown-option-padding-ratio: 1.5 !default;
-$dropdown-option-spacing: 0 !default;
-$dropdown-option-min-height: $btn-min-height !default;
-$dropdown-option-font-size: $base-font-size !default;
-$dropdown-option-line-height: $dropdown-option-font-size * $base-line-height !default;
-$dropdown-option-alignment: center !default;
-$dropdown-option-weight: $is-bold !default;
-$dropdown-option-color: $text !default;
 
 //
 // BUTTON GROUP
@@ -886,14 +869,11 @@ $spacing-big-size: getSpace(5); // equals 32
 // ------------------------------------------------------
 // @param {color} $input-background [$background] - background-color of input
 // @param {color} $input-color [$text] - text color of input
-// @param {array} $input-spacing [0]
-$input-background: $background !default;
-$input-color: $text !default;
-$input-spacing: 0 !default;
-
 // @param {em} $input-font-size [16]
 // @param {em} $input-line-height [24]
 // @param {em} $input-min-height [32]
+$input-background: $background !default;
+$input-color: $text !default;
 $input-font-size: $base-font-size !default;
 $input-line-height: $input-font-size * $base-line-height !default;
 $input-min-height: 32 !default;

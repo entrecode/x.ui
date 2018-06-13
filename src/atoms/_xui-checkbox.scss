@@ -5,18 +5,19 @@
 
 // scss-lint:disable NestingDepth
 .xui-checkbox {
+
   label {
     display: flex;
     cursor: pointer;
     align-items: center;
   }
 
-  input[type='checkbox'] {
+  input[type="checkbox"] {
     @extend %is-hidden-input;
 
     + label {
       &::before {
-        content: '\2714\fe0e';
+        content: '\2714';
         font-family: sans-serif;
         background-color: getColor(background);
         display: flex;
@@ -26,7 +27,7 @@
         margin-right: rem(8);
         text-align: center;
         color: transparent;
-        transition: all 0.2s;
+        transition: all .2s;
         overflow: hidden;
         width: rem($checkbox-height);
         height: rem($checkbox-height);
@@ -38,11 +39,9 @@
       }
 
       &:hover {
-        @media (hover: hover) {
-          &::before {
-            color: getColor(text, lightest);
-            line-height: rem($checkbox-line-height);
-          }
+        &::before {
+          color: getColor(text, lightest);
+          line-height: rem($checkbox-line-height);
         }
       }
     }

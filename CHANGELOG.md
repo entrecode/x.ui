@@ -1,23 +1,8 @@
 # CHANGELOG
 
-## 9.0.3
-
-### added
-
-- `$input-spacing` variable to config
-- added config variables for `.dropdown-option`
-
-## 9.0.2
-
-### fixed
-
-- `.xui-checkbox` bug in ios safari - adde a variantion selector `\fe0e`
-- `.ec-icon` bug within buttons if not :only but :empty - added :only condition
-
 ## 9.0.1
 
 ### fixed
-
 - `$hamburger-btn` bug
 
 ## 9.0.0
