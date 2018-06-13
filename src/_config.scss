@@ -519,6 +519,7 @@ $dropdown-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !defau
 // @param {number} $dropdown-option-min-height [$btn-min-height]
 // @param {value} $dropdown-option-alignment [center]
 // @param {value} $dropdown-option-weight [$is-bold]
+// @param {color} $dropdown-option-color [$text]
 $dropdown-option-padding-ratio: 1.5 !default;
 $dropdown-option-spacing: 0 !default;
 $dropdown-option-min-height: $btn-min-height !default;

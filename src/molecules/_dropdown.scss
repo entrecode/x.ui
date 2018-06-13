@@ -100,27 +100,29 @@
 // @param {array} $dropdown-option-spacing [0]
 // @param {number} $dropdown-option-font-size [$base-font-size]
 // @param {number} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
-// @param {number} $dropdown-option-min-height [40]
+// @param {number} $dropdown-option-min-height [$btn-min-height]
 // @param {value} $dropdown-option-alignment [center]
 // @param {value} $dropdown-option-weight [$is-bold]
+// @param {color} $dropdown-option-color [$text]
 
 .dropdown-option {
   display: block;
 
-  > a:not(.btn) {
+  > a:not([class]) {
     width: 100%;
     display: block;
     cursor: pointer;
     user-select: none;
     outline: none;
     touch-action: manipulation;
-    text-align: center;
     text-decoration: none;
     position: relative;
     height: auto;
     border: 0;
+    text-align: $dropdown-option-alignment;
     margin: arrayMagic($dropdown-option-spacing);
     font-weight: $dropdown-option-weight;
+    color: $dropdown-option-color;
 
     @include macro-metrics(
       $dropdown-option-font-size,
