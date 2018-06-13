@@ -7,10 +7,10 @@
 /// @param {array} $is-raised
 /// @param {array} $is-raised-small
 /// @param {array} $is-raised-big
-// @param {color} $is-raised-hover-shade [rgba(#000, .1)]
-// @param {array} $is-raised-hover
-// @param {array} $is-raised-hover-small
-// @param {array} $is-raised-hover-big
+/// @param {color} $is-raised-hover-shade [rgba(#000, .1)]
+/// @param {array} $is-raised-hover
+/// @param {array} $is-raised-hover-small
+/// @param {array} $is-raised-hover-big
 
 .is-raised {
   @include set-breakpoints {

@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.5
+/// @since 9.0.0-beta.2
 /// @access public
 /// @group color-functions
 ///
@@ -13,9 +13,13 @@
 @function setHover($color, $shade: $hover-shading) {
   $brightness: getBrightness($color);
 
+  @if (alpha($color) < 1) {
+    $color: flattenColor($color);
+  }
+
   @if $brightness > 180 {
     $shade: $shade * -1;
   }
 
-  @return varColor($color, $shade)
+  @return varColor($color, $shade);
 }

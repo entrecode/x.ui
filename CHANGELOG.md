@@ -9,6 +9,7 @@
 
 ### changes
 
+- optimized `setHover` for colors with opacity
 - updated input-validation styles
 
 ## 9.0.2
