@@ -1,13 +1,13 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.2
 /// @access public
 /// @group atoms modifier
 
 @mixin btn-glow($glow-color) {
-  box-shadow: 0 12px 24px -8px rgba($glow-color, .6);
+  box-shadow: 0 12px 24px -8px rgba($glow-color, 0.6);
 
   &:hover {
-    box-shadow: 0 8px 16px -8px rgba($glow-color, .6);
+    box-shadow: 0 8px 16px -8px rgba($glow-color, 0.6);
   }
 
   &.is-disabled,
