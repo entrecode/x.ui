@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.2
 /// @access public
 /// @group macro mixins
 ///
@@ -36,8 +36,8 @@
 
   @content;
 
-  .bubble,
-  .tag {
+  > .bubble,
+  > .tag {
     &:first-child {
       margin-left: rem($padding * -1);
       margin-right: rem($padding);
@@ -54,7 +54,7 @@
     }
   }
 
-  .ec-icon {
+  > .ec-icon {
     padding-right: rem($padding);
 
     &::before {

@@ -888,9 +888,11 @@ $spacing-big-size: getSpace(5); // equals 32
 // @param {color} $input-background [$background] - background-color of input
 // @param {color} $input-color [$text] - text color of input
 // @param {array} $input-spacing [0]
+// @param {number} $input-padding-ratio [2]
 $input-background: $background !default;
 $input-color: $text !default;
 $input-spacing: 0 !default;
+$input-padding-ratio: 2 !default;
 
 // @param {em} $input-font-size [16]
 // @param {em} $input-line-height [24]
@@ -932,18 +934,18 @@ $input-big-min-height: 40 !default;
 $input-round: false !default;
 
 // radius of input - if $input-round === false
-// @param {rem} $input-radius [4]
-// @param {rem} $input-small-radius [4]
-// @param {rem} $input-big-radius [4]
+// @param {array} $input-radius [4]
+// @param {array} $input-small-radius [$input-radius]
+// @param {array} $input-big-radius [$input-radius]
 $input-radius: 4 !default;
-$input-small-radius: 4 !default;
-$input-big-radius: 4 !default;
+$input-small-radius: $input-radius !default;
+$input-big-radius: $input-radius !default;
 
 // @param {color} $input-border-color [ mix($text, $background, 25%)]
 $input-border-color: mix($text, $background, 25%) !default;
 
-// @param {array} $input-border [1]
-$input-border: 1 !default;
+// @param {array} $input-border-width [1]
+$input-border-width: 1 !default;
 
 //
 // XUI-CHECKBOX

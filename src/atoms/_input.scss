@@ -20,13 +20,13 @@
 /// @param {number} $input-big-line-height [24]
 /// @param {number} $input-big-min-height [40]
 ///
-/// @param {number} $input-border [1]
+/// @param {number} $input-border-width [1]
 ///
 /// @param {boolean} $input-round [false] - sets border-radius to 50% of input height
 ///
-/// @param {number} $input-radius [4]
-/// @param {number} $input-small-radius [4]
-/// @param {number} $input-big-radius [4]
+/// @param {array} $input-radius [4]
+/// @param {array} $input-small-radius [$input-radius]
+/// @param {array} $input-big-radius [$input-radius]
 
 %input {
   display: block;
@@ -39,12 +39,13 @@
   margin: arrayMagic($input-spacing);
   text-align: left;
   flex-grow: 1;
-  border-radius: rem($input-radius);
+  border-radius: arrayMagic($input-radius);
   @include macro-metrics(
     $input-font-size,
     $input-line-height,
     $input-min-height,
-    $input-border
+    $input-border-width,
+    $input-padding-ratio
   );
 
   /// additional styles via config
@@ -125,12 +126,12 @@
   /// ------------------------------------------------------
 
   &_small {
-    border-radius: rem($input-small-radius);
+    border-radius: arrayMagic($input-small-radius);
     @include macro-metrics(
       $input-small-font-size,
       $input-small-line-height,
       $input-small-min-height,
-      $input-border
+      $input-border-width
     );
 
     /// additional styles via config
@@ -152,12 +153,12 @@
   }
 
   &_big {
-    border-radius: rem($input-big-radius);
+    border-radius: arrayMagic($input-big-radius);
     @include macro-metrics(
       $input-big-font-size,
       $input-big-line-height,
       $input-big-min-height,
-      $input-border
+      $input-border-width
     );
 
     /// additional styles via config

@@ -9,6 +9,8 @@
 
 ### changes
 
+- changed `$input-border` to `$input-border-width`
+- optimized `marco-metrics` functions for child elements
 - optimized `setHover` for colors with opacity
 - updated input-validation styles
 
