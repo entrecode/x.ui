@@ -13,6 +13,7 @@
 - optimized `marco-metrics` functions for child elements
 - optimized `setHover` for colors with opacity
 - updated input-validation styles
+- removed `flex-basis` from `data-col`
 
 ## 9.0.2
 
