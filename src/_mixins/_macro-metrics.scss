@@ -9,13 +9,15 @@
 /// @param {number} $min-height - min-height of element
 /// @param {number} $border [null] - size of element border
 /// @param {number} $padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+/// @param {boolean} $inline-styles [true] - to return styles for .bubble, .tag and .ec-icon
 
 @mixin macro-metrics(
   $font-size,
   $line-height,
   $min-height,
   $border: null,
-  $padding-ratio: 2
+  $padding-ratio: 2,
+  $inline-styles: true
 ) {
   $padding: ($min-height - $line-height) / 2;
 
@@ -36,47 +38,16 @@
 
   @content;
 
-  > .bubble,
-  > .tag {
-    &:first-child {
-      margin-left: rem($padding * -1);
-      margin-right: rem($padding);
-    }
-
-    &:last-child {
-      margin-right: rem($padding * -1);
-      margin-left: rem($padding);
-    }
-
-    &:only-child {
-      margin-left: rem($padding * -$padding-ratio);
-      margin-right: rem($padding * -$padding-ratio);
-    }
-  }
-
-  > .ec-icon {
-    padding-right: rem($padding);
-
-    &::before {
-      font-size: em($line-height, $font-size);
-    }
-
-    &_right {
-      padding-right: 0;
-      padding-left: rem($padding);
-    }
-
-    &:empty {
-      padding-right: 0;
-      padding-left: 0;
-
+  @if $inline-styles {
+    .bubble,
+    .tag {
       &:first-child {
-        margin-left: rem($padding * -0.5);
+        margin-left: rem($padding * -1);
         margin-right: rem($padding);
       }
 
       &:last-child {
-        margin-right: rem($padding * -0.5);
+        margin-right: rem($padding * -1);
         margin-left: rem($padding);
       }
 
@@ -84,10 +55,43 @@
         margin-left: rem($padding * -$padding-ratio);
         margin-right: rem($padding * -$padding-ratio);
       }
+    }
+
+    .ec-icon {
+      padding-right: rem($padding);
 
       &::before {
-        margin-left: 0;
-        margin-right: 0;
+        font-size: em($line-height, $font-size);
+      }
+
+      &_right {
+        padding-right: 0;
+        padding-left: rem($padding);
+      }
+
+      &:empty {
+        padding-right: 0;
+        padding-left: 0;
+
+        &:first-child {
+          margin-left: rem($padding * -0.5);
+          margin-right: rem($padding);
+        }
+
+        &:last-child {
+          margin-right: rem($padding * -0.5);
+          margin-left: rem($padding);
+        }
+
+        &:only-child {
+          margin-left: rem($padding * -$padding-ratio);
+          margin-right: rem($padding * -$padding-ratio);
+        }
+
+        &::before {
+          margin-left: 0;
+          margin-right: 0;
+        }
       }
     }
   }

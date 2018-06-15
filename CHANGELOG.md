@@ -5,6 +5,7 @@
 ### added
 
 - `$input-spacing` variable to config
+- `$inline-styles` variable to `macro-metrics`
 - added config variables for `.dropdown-option`
 
 ### changes

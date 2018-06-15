@@ -30,7 +30,13 @@
   display: inline-block;
   font-weight: $bubble-weight;
   text-align: center;
-  @include macro-metrics($bubble-font-size, $bubble-line-height, $bubble-min-height, $padding-ratio: $bubble-padding-ratio);
+  @include macro-metrics(
+    $bubble-font-size,
+    $bubble-line-height,
+    $bubble-min-height,
+    $padding-ratio: $bubble-padding-ratio,
+    $inline-styles: false
+  );
   border-radius: rem($bubble-radius);
   @include set-theme-colors(getColor(background, lightest));
 
@@ -38,7 +44,13 @@
   @extend %bubble-style !optional;
 
   &.bubble_small {
-    @include macro-metrics($bubble-small-font-size, $bubble-small-line-height, $bubble-small-min-height, $padding-ratio: $bubble-padding-ratio);
+    @include macro-metrics(
+      $bubble-small-font-size,
+      $bubble-small-line-height,
+      $bubble-small-min-height,
+      $padding-ratio: $bubble-padding-ratio,
+      $inline-styles: false
+    );
     border-radius: rem($bubble-small-radius);
     font-weight: $bubble-small-weight;
 
@@ -47,7 +59,13 @@
   }
 
   &.bubble_big {
-    @include macro-metrics($bubble-big-font-size, $bubble-big-line-height, $bubble-big-min-height, $padding-ratio: $bubble-padding-ratio);
+    @include macro-metrics(
+      $bubble-big-font-size,
+      $bubble-big-line-height,
+      $bubble-big-min-height,
+      $padding-ratio: $bubble-padding-ratio,
+      $inline-styles: false
+    );
     border-radius: rem($bubble-big-radius);
     font-weight: $bubble-big-weight;
 
