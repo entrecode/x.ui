@@ -27,7 +27,7 @@
         color: transparent;
         height: rem($radio-height);
         width: rem($radio-height);
-        border-radius: rem($radio-height / 2);
+        border-radius: arrayMagic($radio-height / 2);
         font-size: rem($radio-font-size / 4);
         line-height: rem($radio-line-height);
         transition: all 0.2s;

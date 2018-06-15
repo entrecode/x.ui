@@ -21,7 +21,7 @@
     position: absolute;
     height: rem($hamburger-btn-line-weight);
     width: rem($hamburger-btn-line-width);
-    border-radius: rem($hamburger-btn-line-weight / 2);
+    border-radius: arrayMagic($hamburger-btn-line-weight / 2);
     background-color: $hamburger-btn-line-color;
     left: rem((($btn-min-height - $hamburger-btn-line-width) / 2));
     top: 50%;
@@ -39,7 +39,7 @@
     position: absolute;
     height: rem($hamburger-btn-line-weight);
     width: rem($hamburger-btn-line-width);
-    border-radius: rem($hamburger-btn-line-weight / 2);
+    border-radius: arrayMagic($hamburger-btn-line-weight / 2);
     background-color: $hamburger-btn-line-color;
     left: rem((($btn-min-height - $hamburger-btn-line-width) / 2));
     top: 50%;
@@ -53,7 +53,7 @@
       position: absolute;
       height: rem($hamburger-btn-line-weight);
       width: rem($hamburger-btn-line-width);
-      border-radius: rem($hamburger-btn-line-weight / 2);
+      border-radius: arrayMagic($hamburger-btn-line-weight / 2);
       background-color: $hamburger-btn-line-color;
       left: rem((($btn-min-height - $hamburger-btn-line-width) / 2));
       top: 50%;

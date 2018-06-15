@@ -30,7 +30,7 @@
         overflow: hidden;
         width: rem($checkbox-height);
         height: rem($checkbox-height);
-        border-radius: rem($checkbox-radius);
+        border-radius: arrayMagic($checkbox-radius);
         font-size: rem($checkbox-font-size);
         line-height: rem($checkbox-line-height * 2);
 

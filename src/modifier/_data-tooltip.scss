@@ -83,9 +83,9 @@
     pointer-events: none;
 
     @if $tooltip-round == true {
-      border-radius: rem($tooltip-min-height / 2);
+      border-radius: arrayMagic($tooltip-min-height / 2);
     } @else {
-      border-radius: rem($tooltip-radius);
+      border-radius: arrayMagic($tooltip-radius);
     }
   }
 

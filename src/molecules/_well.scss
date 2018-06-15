@@ -17,7 +17,7 @@
 /// @param {rem} $well-big-margin [0 0 16 0]
 
 %well {
-  border-radius: rem($well-radius);
+  border-radius: arrayMagic($well-radius);
   font-weight: $well-weight;
 
   @if $well-background {

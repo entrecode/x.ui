@@ -22,7 +22,7 @@ ul.xui-accordion {
     font-weight: $is-bold;
     color: getColor(link);
     padding: rem(8);
-    border-radius: rem(4);
+    border-radius: arrayMagic(4);
     cursor: pointer;
     transition: all .4s;
 

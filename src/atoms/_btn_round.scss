@@ -9,14 +9,14 @@
 
 .btn {
   &.btn_round {
-    border-radius: rem($btn-min-height / 2);
+    border-radius: arrayMagic($btn-min-height / 2);
 
     &.btn_small {
-      border-radius: rem($btn-small-min-height / 2);
+      border-radius: arrayMagic($btn-small-min-height / 2);
     }
 
     &.btn_big {
-      border-radius: rem($btn-big-min-height / 2);
+      border-radius: arrayMagic($btn-big-min-height / 2);
     }
   }
 }

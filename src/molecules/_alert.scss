@@ -25,7 +25,7 @@
 %alert {
   text-align: center;
   font-weight: $alert-weight;
-  border-radius: rem($alert-radius);
+  border-radius: arrayMagic($alert-radius);
 
   @if $alert-background {
     @include set-theme-colors($alert-background);

@@ -212,14 +212,14 @@
 /// for fluffy round inputs
 @if $input-round == true {
   .input {
-    border-radius: rem($input-min-height / 2);
+    border-radius: arrayMagic($input-min-height / 2);
 
     &_small {
-      border-radius: rem($input-small-min-height / 2);
+      border-radius: arrayMagic($input-small-min-height / 2);
     }
 
     &_big {
-      border-radius: rem($input-big-min-height / 2);
+      border-radius: arrayMagic($input-big-min-height / 2);
     }
   }
 }

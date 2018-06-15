@@ -37,7 +37,7 @@
     $padding-ratio: $bubble-padding-ratio,
     $inline-styles: false
   );
-  border-radius: rem($bubble-radius);
+  border-radius: arrayMagic($bubble-radius);
   @include set-theme-colors(getColor(background, lightest));
 
   /// additional styles via config
@@ -51,7 +51,7 @@
       $padding-ratio: $bubble-padding-ratio,
       $inline-styles: false
     );
-    border-radius: rem($bubble-small-radius);
+    border-radius: arrayMagic($bubble-small-radius);
     font-weight: $bubble-small-weight;
 
     /// additional styles via config
@@ -66,7 +66,7 @@
       $padding-ratio: $bubble-padding-ratio,
       $inline-styles: false
     );
-    border-radius: rem($bubble-big-radius);
+    border-radius: arrayMagic($bubble-big-radius);
     font-weight: $bubble-big-weight;
 
     /// additional styles via config
@@ -96,14 +96,14 @@
 
 @if $bubble-round == true {
   .bubble {
-    border-radius: rem($bubble-min-height / 2);
+    border-radius: arrayMagic($bubble-min-height / 2);
 
     &.bubble_small {
-      border-radius: rem($bubble-small-min-height / 2);
+      border-radius: arrayMagic($bubble-small-min-height / 2);
     }
 
     &.bubble_big {
-      border-radius: rem($bubble-big-min-height / 2);
+      border-radius: arrayMagic($bubble-big-min-height / 2);
     }
   }
 }

@@ -39,7 +39,7 @@
   display: inline-block;
   text-align: center;
   font-weight: $tag-weight;
-  border-radius: rem($tag-radius);
+  border-radius: arrayMagic($tag-radius);
 
   a {
     color: getColor(text, lighter);
@@ -55,7 +55,7 @@
       $tag-small-min-height,
       $padding-ratio: $tag-padding-ratio
     );
-    border-radius: rem($tag-small-radius);
+    border-radius: arrayMagic($tag-small-radius);
     font-weight: $tag-small-weight;
 
     /// additional styles via config
@@ -69,7 +69,7 @@
       $tag-big-min-height,
       $padding-ratio: $tag-padding-ratio
     );
-    border-radius: rem($tag-big-radius);
+    border-radius: arrayMagic($tag-big-radius);
     font-weight: $tag-big-weight;
 
     /// additional styles via config
@@ -119,14 +119,14 @@ $color-array: getColor(minor), getColor(link), getColor(super),
 
 @if $tag-round == true {
   .tag {
-    border-radius: rem($tag-min-height / 2);
+    border-radius: arrayMagic($tag-min-height / 2);
 
     &.tag_small {
-      border-radius: rem($tag-small-min-height / 2);
+      border-radius: arrayMagic($tag-small-min-height / 2);
     }
 
     &.tag_big {
-      border-radius: rem($tag-big-min-height / 2);
+      border-radius: arrayMagic($tag-big-min-height / 2);
     }
   }
 }
