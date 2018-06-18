@@ -8,7 +8,7 @@
 /// @param {string | array} $card-padding [8 16] - array or string of numbers
 
 %card {
-  border-radius: rem($card-radius);
+  border-radius: arrayMagic($card-radius);
   background-color: $card-background;
   color: setContrast($card-background);
   padding: arrayMagic($card-padding);

@@ -59,7 +59,6 @@
   /// button typo style
   font-family: $btn-font-family;
   font-weight: $btn-weight;
-  margin: 0;
 
   @include macro-metrics(
     $btn-font-size,
@@ -87,7 +86,7 @@
 
   &%small {
     font-weight: $btn-small-weight;
-    border-radius: rem($btn-small-radius);
+    border-radius: arrayMagic($btn-small-radius);
     @include macro-metrics(
       $btn-small-font-size,
       $btn-small-line-height,
@@ -98,7 +97,7 @@
 
   &%big {
     font-weight: $btn-big-weight;
-    border-radius: rem($btn-big-radius);
+    border-radius: arrayMagic($btn-big-radius);
     @include macro-metrics(
       $btn-big-font-size,
       $btn-big-line-height,
@@ -111,7 +110,7 @@
 .btn {
   @extend %btn !optional;
   transition: $btn-transition;
-  border-radius: rem($btn-radius);
+  border-radius: arrayMagic($btn-radius);
   @include set-theme-colors(getColor(link));
 
   /// additional styles via config
@@ -295,14 +294,14 @@
 
 @if $btn-round == true {
   .btn {
-    border-radius: rem($btn-min-height / 2);
+    border-radius: arrayMagic($btn-min-height / 2);
 
     &.btn_small {
-      border-radius: rem($btn-small-min-height / 2);
+      border-radius: arrayMagic($btn-small-min-height / 2);
     }
 
     &.btn_big {
-      border-radius: rem($btn-big-min-height / 2);
+      border-radius: arrayMagic($btn-big-min-height / 2);
     }
   }
 }

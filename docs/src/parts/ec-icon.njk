@@ -1,20 +1,20 @@
 <section class="is-theme_dark is-relative-xl is-layer-20-xl" id="ec-icon" data-col="12">
   <div data-container>
+
+    <div class="align-center">
+      <span class="is-giga ec-icon skull"></span>
+      <h2 class="is-h3 special-font">ec-icons
+        <span class="tag">6.0.0</span>
+      </h2>
+    </div>
+
     <div data-grid="is-center">
-      <div data-col="6-md">
-        <div class="has-padding-big">
-          <div class="align-center">
-            <span class="is-giga ec-icon skull"></span>
-            <h2 class="is-h3 special-font">ec-icons</h2>
+      <div data-col="6-sm 4-md">
+        <div class="input-group">
+          <div class="input-group__addon">
+            <span class="ec-icon find"></span>
           </div>
-          <div class="input-group">
-            <div class="input-group__addon">
-              <span class="ec-icon find"></span>
-            </div>
-            <input type="text" v-model="query"
-                   class="input input_big"
-                   placeholder="search for icon class...">
-          </div>
+          <input type="text" v-model="query" class="input" placeholder="search for icon class...">
         </div>
       </div>
     </div>
@@ -24,10 +24,9 @@
     <div data-grid="is-center">
       <div data-col="12 10-md 8-xxl">
         <ul data-grid="is-small">
-          <li v-for="icon in iconset" data-col="6-xs 4-sm 3-lg"
-              :class="{'is-hidden': icon.indexOf(query) === -1}">
-            <span class="ec-icon" :class="icon"></span><span
-                class="quickselect">${ icon }</span>
+          <li v-for="icon in iconset" data-col="6-xs 4-sm 3-lg" :class="{'is-hidden': icon.indexOf(query) === -1}">
+            <span class="ec-icon" :class="icon"></span>
+            <span class="quickselect">${ icon }</span>
           </li>
         </ul>
         <div class="spacer-big"></div>

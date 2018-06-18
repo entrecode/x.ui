@@ -88,29 +88,56 @@
   visibility: hidden;
   transition: visibility 0.5s, opacity 0.2s;
 
-  .dropdown-option {
-    display: block;
-
-    > a:not(.btn) {
-      @extend %btn !optional;
-      width: 100%;
-      display: block;
-
-      &:hover {
-        background-color: getColor(state, hover);
-      }
-    }
-
-    > .btn {
-      width: 100%;
-      display: block;
-    }
-  }
-
   .dropdown_divider {
     margin: rem(4) 0;
     padding: 0;
     background-color: getColor(divider);
     height: 1px;
+  }
+}
+
+// @param {number} $dropdown-option-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
+// @param {array} $dropdown-option-spacing [0]
+// @param {number} $dropdown-option-font-size [$base-font-size]
+// @param {number} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
+// @param {number} $dropdown-option-min-height [$btn-min-height]
+// @param {value} $dropdown-option-alignment [center]
+// @param {value} $dropdown-option-weight [$is-bold]
+// @param {color} $dropdown-option-color [$text]
+
+.dropdown-option {
+  display: block;
+
+  > a:not([class]) {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    touch-action: manipulation;
+    text-decoration: none;
+    position: relative;
+    height: auto;
+    border: 0;
+    text-align: $dropdown-option-alignment;
+    margin: arrayMagic($dropdown-option-spacing);
+    font-weight: $dropdown-option-weight;
+    color: $dropdown-option-color;
+
+    @include macro-metrics(
+      $dropdown-option-font-size,
+      $dropdown-option-line-height,
+      $dropdown-option-min-height,
+      $padding-ratio: $dropdown-option-padding-ratio
+    );
+
+    &:hover {
+      background-color: getColor(state, hover);
+    }
+  }
+
+  > .btn {
+    width: 100%;
+    display: block;
   }
 }

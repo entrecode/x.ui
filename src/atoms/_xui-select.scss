@@ -61,7 +61,7 @@
   list-style: none;
   width: 100%;
   margin: 0;
-  margin-top: rem($input-border);
+  margin-top: rem($input-border-width);
 }
 
 %select-option {
@@ -79,7 +79,7 @@
     @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio) {
     }
     transition: background-color .4s, color .4s;
-    border-radius: rem($btn-radius);
+    border-radius: arrayMagic($btn-radius);
   }
 }
 

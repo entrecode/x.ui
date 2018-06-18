@@ -16,7 +16,7 @@
   @if $avatar-round == true {
     border-radius: 50%;
   } @else {
-    border-radius: rem($avatar-square-radius);
+    border-radius: arrayMagic($avatar-square-radius);
   }
 
   img {
@@ -27,7 +27,7 @@
   }
 
   &_square {
-    border-radius: rem($avatar-square-radius);
+    border-radius: arrayMagic($avatar-square-radius);
   }
 
   &_round {

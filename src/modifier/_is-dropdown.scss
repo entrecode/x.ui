@@ -12,7 +12,7 @@
 %is-dropdown {
   padding: arrayMagic($dropdown-padding);
   box-shadow: arrayMagic($dropdown-shadow);
-  border-radius: rem($dropdown-radius);
+  border-radius: arrayMagic($dropdown-radius);
   background-color: $dropdown-background;
   color: setContrast($dropdown-background);
   list-style: none;

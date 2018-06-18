@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 9.0.0-beta.2
 /// @access public
 /// @group grid-columns
 
@@ -10,7 +10,6 @@
 
 @for $i from 1 through $grid-num-columns {
   [data-col~="#{$i}"] {
-    flex-basis: ($i / $grid-num-columns) * 100%;
     max-width: ($i / $grid-num-columns) * 100%;
   }
 }
@@ -19,7 +18,6 @@
   @for $i from 1 through $grid-num-columns {
     [data-col~="#{$i}-#{$key}"] {
       @media (min-width: getBreakpoint(#{$key})) {
-        flex-basis: ($i / $grid-num-columns) * 100%;
         max-width: ($i / $grid-num-columns) * 100%;
       }
     }

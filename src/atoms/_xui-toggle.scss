@@ -8,7 +8,7 @@
   background-color: flattenColor(getColor(minor));
   height: rem($root-size);
   width: rem($root-size * 1.75);
-  border-radius: rem($root-size / 2);
+  border-radius: arrayMagic($root-size / 2);
   cursor: pointer;
   transition: background-color 0.2s;
   direction: ltr;

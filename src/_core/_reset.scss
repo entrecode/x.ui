@@ -27,6 +27,7 @@ details {
 input {
   &[type="number"] {
     width: auto;
+    max-width: 100%;
   }
 
   &[type="search"] {
@@ -82,7 +83,7 @@ template,
 }
 
 * {
-  //cursor: initial;
+  outline: none;
   box-sizing: border-box;
 }
 

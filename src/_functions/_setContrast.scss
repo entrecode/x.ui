@@ -6,26 +6,30 @@
 /// sets a contrast color based on the Web Content Accessibility Guidelines (WCAG)
 /// @link https://www.w3.org/TR/AERT#color-contrast
 /// @link http://contrastchecker.com/
-
 /// @param {color} $color
 /// @return {decimal} This algorithm is taken from a formula for converting RGB values to YIQ values. This brightness value gives a perceived brightness for a color.
 
 @function getBrightness($color) {
-  @return ((red($color) * 299) + (green($color) * 587) + (blue($color) * 587)) / 1000;
+  @return ((red($color) * 299) + (green($color) * 587) + (blue($color) * 587)) /
+    1000;
 }
 
 /// @param {color} $color1
 /// @param {color} $color2
 /// @return {number} - an absolute number for the perceived brightness difference of two colors.
+
 @function brightnessDifference($color1, $color2) {
-  @return abs(getBrightness($color1) - getBrightness($color2))
+  @return abs(getBrightness($color1) - getBrightness($color2));
 }
 
 /// @param {color} $color1
 /// @param {color} $color2
 /// @return {number} - color difference
+
 @function colorDifference($color1, $color2) {
-  @return max(red($color1), red($color2)) - min(red($color1), red($color2)) + max(green($color1), green($color2)) - min(green($color1), green($color2)) + max(blue($color1), blue($color2)) - min(blue($color1), blue($color2));
+  @return max(red($color1), red($color2)) - min(red($color1), red($color2)) +
+    max(green($color1), green($color2)) - min(green($color1), green($color2)) +
+    max(blue($color1), blue($color2)) - min(blue($color1), blue($color2));
 }
 
 /// @require {function} brightnessDifference
@@ -36,11 +40,21 @@
 /// @param {number} $color-threshold [500] - The range for color difference is 500
 /// @return {boolean} - if a color passes both thresholds compared to the reference color
 
-@function colorPass($base, $color, $brightness-threshold: 125, $color-threshold: 500) {
+@function colorPass(
+  $base,
+  $color,
+  $brightness-threshold: 125,
+  $color-threshold: 500
+) {
   $brightness-difference: brightnessDifference($base, $color);
   $color-difference: colorDifference($base, $color);
 
-  @return if($brightness-difference >= $brightness-threshold and $color-difference >= $color-threshold, true, false);
+  @return if(
+    $brightness-difference >= $brightness-threshold and $color-difference >=
+      $color-threshold,
+    true,
+    false
+  );
 }
 
 /// @require {function} brightnessDifference
@@ -51,11 +65,21 @@
 /// @param {number} $color-threshold [500] - The range for color difference is 500
 /// @return {boolean} - if a color passes at least on threshold compared to the reference color
 
-@function colorMargin($base, $color, $brightness-threshold: 125, $color-threshold: 500) {
+@function colorMargin(
+  $base,
+  $color,
+  $brightness-threshold: 125,
+  $color-threshold: 500
+) {
   $brightness-difference: brightnessDifference($base, $color);
   $color-difference: colorDifference($base, $color);
 
-  @return if($brightness-difference >= $brightness-threshold or $color-difference >= $color-threshold, true, false);
+  @return if(
+    $brightness-difference >= $brightness-threshold or $color-difference >=
+      $color-threshold,
+    true,
+    false
+  );
 }
 
 /// @require {function} pow
@@ -67,9 +91,13 @@
   $green: green($color) / 255;
   $blue: blue($color) / 255;
 
-  $red: if($red < .03928, $red / 12.92, pow(($red + .055) / 1.055, 2.4));
-  $green: if($green < .03928, $green / 12.92, pow(($green + .055) / 1.055, 2.4));
-  $blue: if($blue < .03928, $blue / 12.92, pow(($blue + .055) / 1.055, 2.4));
+  $red: if($red < 0.03928, $red / 12.92, pow(($red + 0.055) / 1.055, 2.4));
+  $green: if(
+    $green < 0.03928,
+    $green / 12.92,
+    pow(($green + 0.055) / 1.055, 2.4)
+  );
+  $blue: if($blue < 0.03928, $blue / 12.92, pow(($blue + 0.055) / 1.055, 2.4));
 
   $luma: (0.2126 * $red + 0.7152 * $green + 0.0722 * $blue);
   @return $luma;
@@ -83,7 +111,9 @@
 @function contrastRatio($color1, $color2) {
   $luma1: luma($color1);
   $luma2: luma($color2);
-  @return round((max($luma1, $luma2) + .05) / (min($luma1, $luma2) + .05) * 100) / 100;
+  @return round(
+      (max($luma1, $luma2) + 0.05) / (min($luma1, $luma2) + 0.05) * 100
+    ) / 100;
 }
 
 /// @link https://www.w3.org/TR/WCAG/#contrast-ratiodef
@@ -93,6 +123,7 @@
 /// @param {decimal} $aaa
 /// @param {decimal} $aa
 /// @return {color | false} - checks if a color meets the WCAG
+
 @function checkCompliance($base, $color, $aaa, $aa) {
   $contrast-ratio: contrastRatio($base, $color);
 
@@ -115,6 +146,7 @@
 /// @param {color} $hue - changes the output towards a specific hue
 /// @param {large | small} $compliance - switches between compliance guidelines for contrast-ratio
 /// @return {color} contrast color, that meets the WCAG
+
 @function setContrast($color, $hue: $color, $compliance: 'large') {
   $aaa: 4.5;
   $aa: 3;
@@ -158,13 +190,14 @@
     $lighter-contrast: contrastRatio($color, $lighter);
 
     @if ($hue != $color) {
-      @if $lighter-contrast > $darker-contrast or $darker-pass == false and $lighter-margin {
+      @if ($lighter-contrast > $darker-contrast) or
+        ($darker-pass == false and $lighter-margin) {
         @if $lighter-pass {
           @return checkCompliance($color, $lighter, $aaa, $aa);
         } @else if $percent == $last {
           @if $lighter-margin {
             @if (checkCompliance($color, $lighter, $aaa, $aa)) {
-              @return checkCompliance($color, $lighter, $aaa, $aa)
+              @return checkCompliance($color, $lighter, $aaa, $aa);
             } @else {
               @return $lighter-fallback;
             }
@@ -178,7 +211,7 @@
         } @else if $percent == $last {
           @if $darker-margin {
             @if (checkCompliance($color, $darker, $aaa, $aa)) {
-              @return checkCompliance($color, $darker, $aaa, $aa)
+              @return checkCompliance($color, $darker, $aaa, $aa);
             } @else {
               @return $darker-fallback;
             }
@@ -188,7 +221,8 @@
         }
       }
     } @else {
-      @if $lighter-contrast > $darker-contrast or $darker-pass == false and $lighter-margin {
+      @if ($lighter-contrast > $darker-contrast) or
+        ($darker-pass == false and $lighter-margin) {
         @if $lighter-pass {
           @return $lighter-fallback;
         } @else if $percent == $last and $lighter-margin {
