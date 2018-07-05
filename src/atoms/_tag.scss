@@ -28,6 +28,9 @@
 /// @param {number} $tag-big-radius [4]
 
 .tag {
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
   @include macro-metrics(
     $tag-font-size,
     $tag-line-height,
@@ -35,9 +38,6 @@
     $padding-ratio: $tag-padding-ratio
   );
   @include set-theme-colors($tag-background);
-  white-space: nowrap;
-  display: inline-block;
-  text-align: center;
   font-weight: $tag-weight;
   border-radius: arrayMagic($tag-radius);
 
