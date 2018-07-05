@@ -19,9 +19,9 @@
     flex-grow: 0;
     flex-shrink: 0;
     border: 4px solid transparent;
-    border-top-color: rgba(getColor(text), .2);
+    border-top-color: rgba(getColor(text), 0.2);
     margin-top: rem(4);
-    transition: border-top-color .2s;
+    transition: border-top-color 0.2s;
     z-index: 1;
   }
 
@@ -30,7 +30,7 @@
     box-shadow: 0 0 0 2px getColor(state, hover);
 
     &::after {
-      border-top-color: rgba(getColor(text), .4);
+      border-top-color: rgba(getColor(text), 0.4);
     }
 
     .xui-select__placeholder {
@@ -76,14 +76,19 @@
   a:not(.btn) {
     display: block;
     outline: none;
-    @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio) {
+    @include macro-metrics(
+      $btn-font-size,
+      $btn-line-height,
+      $btn-min-height,
+      $padding-ratio: $btn-padding-ratio
+    ) {
     }
-    transition: background-color .4s, color .4s;
+    transition: background-color 0.4s, color 0.4s;
     border-radius: arrayMagic($btn-radius);
   }
 }
 
-nav.xui-select {
+.xui-select {
   @extend %select;
 
   &:focus {
@@ -113,7 +118,7 @@ nav.xui-select {
   }
 }
 
-ul.xui-select-options {
+.xui-select-options {
   @extend %select-options;
   overflow-y: scroll;
   overscroll-behavior-y: contain;
@@ -121,7 +126,7 @@ ul.xui-select-options {
   max-height: rem(240);
   opacity: 0;
   visibility: hidden;
-  transition: visibility .5s, opacity .2s;
+  transition: visibility 0.5s, opacity 0.2s;
 
   .xui-select-option {
     @extend %select-option;
