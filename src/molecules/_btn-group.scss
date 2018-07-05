@@ -1,9 +1,7 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.4
 /// @access public
 /// @group molecules
-///
-/// @param {boolean} $flex-support [true]
 ///
 /// @param {boolean} $btn-round [false] - sets border-radius to 50% of button height
 /// @param {number} $btn-min-height - min-height of default btn
@@ -26,7 +24,7 @@
     border-radius: 0;
     position: relative;
 
-    @if $flex-support == false {
+    @supports  not (display: flex) {
       float: left;
     }
 
@@ -123,7 +121,7 @@
   // ------------------------------------------------------
 
   > .dropdown {
-    @if $flex-support == false {
+    @supports  not (display: flex) {
       float: left;
     }
 
@@ -218,7 +216,7 @@
     }
   }
 
-  @if $flex-support == true {
+  @supports (display: flex) {
     display: flex;
   }
 

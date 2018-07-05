@@ -1,9 +1,8 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.4
 /// @access public
 /// @group molecules
 ///
-/// @param {boolean} $flex-support [true]
 /// @param {array} $form-boolean-margin [$form-group-margin]
 /// @param {em} $form-boolean-label-font-size [$base-font-size]
 /// @param {number} $form-boolean-label-margin [$form-group-label-margin]
@@ -14,7 +13,7 @@
 
   @extend %form-boolean-style !optional;
 
-  @if $flex-support == true {
+  @supports (display: flex) {
     display: flex;
     flex-direction: row;
 
