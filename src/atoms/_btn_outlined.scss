@@ -1,9 +1,7 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.4
 /// @access public
 /// @group atoms modifier
-///
-/// @param {variable} $btn-font-family [$body-font]
 ///
 /// @param {number} $btn-font-size [16]
 /// @param {number} $btn-line-height [20]
@@ -29,9 +27,6 @@
 /// @param {boolean} $btn-outline - sets border-width for btn.outlined
 
 .btn_outlined {
-  background-color: transparent;
-  color: getColor(link);
-  border-color: getColor(link);
   @include macro-metrics(
     $btn-font-size,
     $btn-line-height,
@@ -60,57 +55,67 @@
     );
   }
 
+  // @param {color} $btn-outline-color [$link]
+  // @param {color} $btn-outline-hover-color [setHover($link)]
+  background-color: transparent;
+  color: $btn-outline-color;
+  border-color: $btn-outline-color;
+
+  @extend %btn-outline-style !optional;
+
   &.is-active,
   &:hover,
   &:focus {
-    color: setHover($link);
     background-color: transparent;
-    border-color: setHover($link);
+    color: $btn-outline-hover-color;
+    border-color: $btn-outline-hover-color;
   }
 
+  // @param {color} $btn-outline-minor-color [$minor]
+  // @param {color} $btn-outline-minor-hover-color [setHover($minor)]
   &.btn_minor {
-    color: setContrast(getColor(minor), getColor(minor));
-    border-color: getColor(minor);
+    color: setContrast($background, $btn-outline-minor-color);
+    border-color: $btn-outline-minor-color;
+
+    @extend %btn-outline-minor-style !optional;
 
     &.is-active,
     &:hover,
     &:focus {
-      color: setContrast(getColor(minor), getColor(minor));
-      border-color: setHover($minor);
+      color: setContrast($background, $btn-outline-minor-hover-color);
+      border-color: $btn-outline-minor-hover-color;
     }
   }
 
+  // @param {color} $btn-outline-super-color [$super]
+  // @param {color} $btn-outline-super-hover-color [setHover($super)]
   &.btn_super {
-    color: getColor(super);
-    border-color: getColor(super);
+    color: $btn-outline-super-color;
+    border-color: $btn-outline-super-color;
+
+    @extend %btn-outline-super-style !optional;
 
     &.is-active,
     &:hover,
     &:focus {
-      color: setHover($super);
-      border-color: setHover($super);
+      color: $btn-outline-super-hover-color;
+      border-color: $btn-outline-super-hover-color;
     }
   }
 
-  &.btn_mono {
-    color: getColor(text);
-    border-color: getColor(text);
-  }
-
+  // @param {color} $btn-outline-invert-color [setContrast($background-invert, $link)]
+  // @param {color} $btn-outline-invert-hover-color [$btn-outline-invert-hover-color]
   &.btn_invert {
-    color: setContrast(getColor(background, invert), getColor(link));
-    border-color: setContrast(getColor(background, invert), getColor(link));
+    color: $btn-outline-invert-color;
+    border-color: $btn-outline-invert-color;
+
+    @extend %btn-outline-invert-style !optional;
 
     &.is-active,
     &:hover,
     &:focus {
-      color: setContrast(getColor(background, invert), getColor(link));
-      border-color: setContrast(getColor(background, invert), getColor(link));
-    }
-
-    &.btn_mono {
-      color: getColor(text, invert);
-      border-color: getColor(text, invert);
+      color: $btn-outline-invert-hover-color;
+      border-color: $btn-outline-invert-hover-color;
     }
   }
 }
