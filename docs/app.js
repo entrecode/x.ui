@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
             outlined: 'btn_outlined',
             clear: 'btn_clear',
             invert: 'btn_invert',
-            mono: 'btn_mono',
             round: 'btn_round'
           },
           sizes: {

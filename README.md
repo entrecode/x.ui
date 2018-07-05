@@ -12,15 +12,15 @@ To install x.ui, run
 npm i x.ui --save
 ```
 
-add a custom `_config.scss` to your project root style folder.
-see all available config options [_config.scss](https://github.com/entrecode/x.ui/blob/master/src/_config.scss)
+add a custom `_your-config.scss` to your project root style folder.
+see all available config options [\_config.scss](https://github.com/entrecode/x.ui/blob/master/src/_config.scss)
 
 set up your style.scss in your project
 
 using webpack:
 
 ```scss
-@import '_config';
+@import 'your-config';
 @import '~x.ui/src/x.ui';
 ...
 ```
@@ -28,8 +28,8 @@ using webpack:
 using node-sass:
 
 ```scss
-@import '_config';
-@import '../node_modlues/src/x.ui';
+@import 'your-config';
+@import '../node_modules/x.ui/src/x.ui';
 ...
 ```
 
@@ -37,6 +37,6 @@ using node-sass:
 
 [Bernhard Ruoff](https://github.com/bernester)
 
-***
+---
 
 [imprint & privacy](https://entrecode.de/datenschutz)

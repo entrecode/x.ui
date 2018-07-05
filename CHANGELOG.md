@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## 9.0.4
+
+### added
+
+- color config for btn styles
+- new mixin `btn-core`
+
+### changes
+
+- changed `%btn%small` to `%btn-small`
+- changed `%btn%big` to `%btn-big`
+- removed `btn_mono` modifier
+- removed nested classes for `btn_clear` modifier - use `is-ink-#` instead
+
 ## 9.0.3
 
 ### added
