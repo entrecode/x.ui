@@ -1,13 +1,13 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.4
 /// @access public
 /// @group modifier
 
 /// no text wrapping
 .is-nowrap {
   @include set-breakpoints {
-    white-space: nowrap;
     vertical-align: baseline;
+    white-space: nowrap;
   }
 }
 
@@ -21,8 +21,8 @@
 /// use automatic hyphenation with justification
 .is-hyphen-block {
   @include set-breakpoints {
-    text-align: justify;
     @include word-wrap;
+    text-align: justify;
   }
 }
 

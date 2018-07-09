@@ -16,7 +16,7 @@
 /// @param {number} $alert-big-line-height [24]
 /// @param {number} $alert-big-min-height [48]
 
-@mixin btnInlineComponents($parent, $child) {
+@mixin _btn-inline-components($parent, $child) {
   $margin: $parent - $child;
   margin-top: rem($margin / 2);
   margin-bottom: rem($margin / 2);
@@ -25,63 +25,69 @@
 .btn {
   .tag,
   .bubble {
-    margin-top: 0;
     margin-bottom: 0;
+    margin-top: 0;
   }
 
   .tag {
-    @include btnInlineComponents($btn-line-height, $tag-min-height);
+    @include _btn-inline-components(
+      $btn-line-height,
+      $tag-min-height
+    );
 
     &.tag_small {
-      @include btnInlineComponents($btn-line-height, $tag-small-min-height);
+      @include _btn-inline-components(
+        $btn-line-height,
+        $tag-small-min-height
+      );
     }
 
     &.tag_big {
-      @include btnInlineComponents($btn-line-height, $tag-big-min-height);
+      @include _btn-inline-components($btn-line-height, $tag-big-min-height);
     }
   }
 
   .bubble {
-    @include btnInlineComponents($btn-line-height, $bubble-min-height);
+    @include _btn-inline-components($btn-line-height, $bubble-min-height);
 
     &.bubble_small {
-      @include btnInlineComponents($btn-line-height, $bubble-small-min-height);
+      @include _btn-inline-components($btn-line-height, $bubble-small-min-height);
     }
 
     &.bubble_big {
-      @include btnInlineComponents($btn-line-height, $bubble-big-min-height);
+      @include _btn-inline-components($btn-line-height, $bubble-big-min-height);
     }
   }
 }
 
 .btn_small {
   .tag {
-    @include btnInlineComponents($btn-small-line-height, $tag-min-height);
+    @include _btn-inline-components($btn-small-line-height, $tag-min-height);
 
     &.tag_small {
-      @include btnInlineComponents(
+      @include _btn-inline-components(
         $btn-small-line-height,
         $tag-small-min-height
       );
     }
 
     &.tag_big {
-      @include btnInlineComponents($btn-small-line-height, $tag-big-min-height);
+      @include _btn-inline-components($btn-small-line-height, $tag-big-min-height);
     }
   }
 
   .bubble {
-    @include btnInlineComponents($btn-small-line-height, $bubble-min-height);
+    @include _btn-inline-components($btn-small-line-height, $bubble-min-height);
 
     &.bubble_small {
-      @include btnInlineComponents(
+      @include _btn-inline-components(
         $btn-small-line-height,
         $bubble-small-min-height
       );
     }
 
     &.bubble_big {
-      @include btnInlineComponents(
+      @include _btn-inline-components(
         $btn-small-line-height,
         $bubble-big-min-height
       );
@@ -91,29 +97,29 @@
 
 .btn_big {
   .tag {
-    @include btnInlineComponents($btn-big-line-height, $tag-min-height);
+    @include _btn-inline-components($btn-big-line-height, $tag-min-height);
 
     &.tag_small {
-      @include btnInlineComponents($btn-big-line-height, $tag-small-min-height);
+      @include _btn-inline-components($btn-big-line-height, $tag-small-min-height);
     }
 
     &.tag_big {
-      @include btnInlineComponents($btn-big-line-height, $tag-big-min-height);
+      @include _btn-inline-components($btn-big-line-height, $tag-big-min-height);
     }
   }
 
   .bubble {
-    @include btnInlineComponents($btn-big-line-height, $bubble-min-height);
+    @include _btn-inline-components($btn-big-line-height, $bubble-min-height);
 
     &.bubble_small {
-      @include btnInlineComponents(
+      @include _btn-inline-components(
         $btn-big-line-height,
         $bubble-small-min-height
       );
     }
 
     &.bubble_big {
-      @include btnInlineComponents(
+      @include _btn-inline-components(
         $btn-big-line-height,
         $bubble-big-min-height
       );

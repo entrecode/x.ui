@@ -1,0 +1,117 @@
+linters:
+
+  BangFormat:
+    enabled: true
+    space_before_bang: true
+    space_after_bang: false
+
+  BemDepth:
+    enabled: true
+
+  BorderZero:
+    enabled: true
+
+  ColorVariable:
+    enabled: false
+
+  DeclarationOrder:
+    enabled: true
+
+  ElsePlacement:
+    enabled: true
+    style: same_line
+
+  EmptyLineBetweenBlocks:
+    enabled: true
+    ignore_single_line_blocks: true
+
+  EmptyRule:
+    enabled: true
+
+  ExtendDirective:
+    enabled: false
+
+  LeadingZero:
+    enabled: false
+
+  NameFormat:
+    enabled: true
+    function_convention: camel_case
+
+  NestingDepth:
+    enabled: true
+
+  PlaceholderInExtend:
+    enabled: true
+
+  PropertySortOrder:
+    enabled: true
+
+  PropertySpelling:
+    enabled: true
+    extra_properties: []
+
+  PseudoElement:
+    enabled: true
+
+  QualifyingElement:
+    enabled: true
+    allow_element_with_attribute: false
+    allow_element_with_class: false
+    allow_element_with_id: false
+
+  SelectorDepth:
+    enabled: true
+    max_depth: 3
+
+  SelectorFormat:
+    enabled: true
+    convention: strict_BEM
+    class_convention: '^(?:(?:is|not|has)-)?\D[^\d\s_-]+(?:-[^\d\s_-]+)?(?:__[^\d\s_-]+(?:-[^\d\s_-]+)?)?(?:_[^\d\s_-]+(?:-[^\d\s_-]+)?){0,2}(?:-(?:xs|sm|lg|md|xl|xxl))?'
+
+  SingleLinePerProperty:
+    enabled: true
+    allow_single_line_rule_sets: false
+
+  SingleLinePerSelector:
+    enabled: true
+
+
+  SpaceBeforeBrace:
+    enabled: true
+    style: space
+    allow_single_line_padding: true
+
+  StringQuotes:
+    enabled: true
+    style: single_quotes
+
+  TrailingZero:
+    enabled: true
+
+  TransitionAll:
+    enabled: false
+
+  UnnecessaryMantissa:
+    enabled: true
+
+  UnnecessaryParentReference:
+    enabled: true
+
+  UrlFormat:
+    enabled: false
+
+  UrlQuotes:
+    enabled: true
+
+  VariableForProperty:
+    enabled: false
+
+  VendorPrefixes:
+    enabled: true
+    identifier_list: base
+    include: []
+    exclude: []
+
+  ZeroUnit:
+    enabled: true

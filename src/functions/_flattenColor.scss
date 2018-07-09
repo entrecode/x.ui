@@ -1,0 +1,23 @@
+/// @author Bernhard Ruoff
+/// @since 9.0.4
+/// @access public
+/// @group color-functions
+///
+/// Mixes a color with another color, considering its opacity
+/// @example
+/// color: flattenColor(rgba(black, .2);
+///
+/// @param {color} $c - color to be flattened
+/// @param {color} $b [$background] - background-color
+///
+/// @return {color} $flatColor - flattened color without opacity
+
+@function flattenColor($c, $b: $background) {
+  $_alpha: alpha($c) * 100%;
+  $_foreground: rgba($c, 1);
+  @if alpha($b) < 1 {
+    @warn 'no opacity allowed for second value!';
+  }
+  $_flat-color: mix($c, $b, $_alpha);
+  @return $_flat-color;
+}

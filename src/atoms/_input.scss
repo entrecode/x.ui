@@ -28,18 +28,10 @@
 /// @param {array} $input-small-radius [$input-radius]
 /// @param {array} $input-big-radius [$input-radius]
 
+// scss-lint:disable QualifyingElement
+
 %input {
-  display: block;
-  outline: none;
-  border-style: solid;
-  border-color: $input-border-color;
-  background-color: $input-background;
-  color: $input-color;
-  width: 100%;
-  margin: arrayMagic($input-spacing);
-  text-align: left;
-  flex-grow: 1;
-  border-radius: arrayMagic($input-radius);
+  @extend %input-style !optional;
   @include macro-metrics(
     $input-font-size,
     $input-line-height,
@@ -47,9 +39,17 @@
     $input-border-width,
     $input-padding-ratio
   );
-
-  /// additional styles via config
-  @extend %input-style !optional;
+  background-color: $input-background;
+  border-color: $input-border-color;
+  border-radius: arrayMagic($input-radius);
+  border-style: solid;
+  color: $input-color;
+  display: block;
+  flex-grow: 1;
+  margin: arrayMagic($input-spacing);
+  outline: none;
+  text-align: left;
+  width: 100%;
 
   @include placeholder {
     color: $input-placeholder;
@@ -105,77 +105,17 @@
     resize: vertical;
   }
 
-  // scss-lint:disable ImportantRule
   &_clear {
-    border: none !important;
-    border-width: 0 !important;
     @include macro-metrics(
       $input-font-size,
       $input-line-height,
       $input-min-height
     );
+    border: 0;
 
     &:focus,
     &:hover {
       box-shadow: none;
-    }
-  }
-
-  ///
-  /// size modifier
-  /// ------------------------------------------------------
-
-  &_small {
-    border-radius: arrayMagic($input-small-radius);
-    @include macro-metrics(
-      $input-small-font-size,
-      $input-small-line-height,
-      $input-small-min-height,
-      $input-border-width
-    );
-
-    /// additional styles via config
-    @extend %input-small-style !optional;
-
-    @at-root select.input_small {
-      height: em($input-small-min-height, $input-small-font-size);
-    }
-
-    &_clear {
-      border: 0 !important;
-      border-width: 0 !important;
-      @include macro-metrics(
-        $input-small-font-size,
-        $input-small-line-height,
-        $input-small-min-height
-      );
-    }
-  }
-
-  &_big {
-    border-radius: arrayMagic($input-big-radius);
-    @include macro-metrics(
-      $input-big-font-size,
-      $input-big-line-height,
-      $input-big-min-height,
-      $input-border-width
-    );
-
-    /// additional styles via config
-    @extend %input-big-style !optional;
-
-    @at-root select.input_small {
-      height: em($input-big-min-height, $input-big-font-size);
-    }
-
-    &_clear {
-      border: 0 !important;
-      border-width: 0 !important;
-      @include macro-metrics(
-        $input-big-font-size,
-        $input-big-line-height,
-        $input-big-min-height
-      );
     }
   }
 
@@ -184,9 +124,9 @@
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 0s;
     color: getColor(text);
     -webkit-text-fill-color: getColor(text);
+    transition: background-color 5000s ease-in-out 0s;
   }
 
   &_invert {
@@ -206,6 +146,58 @@
         color: getColor(text, invert);
       }
     }
+  }
+}
+
+///
+/// size modifier
+/// ------------------------------------------------------
+
+.input_small {
+  @extend %input-small-style !optional;
+  @include macro-metrics(
+    $input-small-font-size,
+    $input-small-line-height,
+    $input-small-min-height,
+    $input-border-width
+  );
+  border-radius: arrayMagic($input-small-radius);
+
+  @at-root select.input_small {
+    height: em($input-small-min-height, $input-small-font-size);
+  }
+
+  &.input_clear {
+    @include macro-metrics(
+      $input-small-font-size,
+      $input-small-line-height,
+      $input-small-min-height
+    );
+    border: 0;
+  }
+}
+
+.input_big {
+  @extend %input-big-style !optional;
+  @include macro-metrics(
+    $input-big-font-size,
+    $input-big-line-height,
+    $input-big-min-height,
+    $input-border-width
+  );
+  border-radius: arrayMagic($input-big-radius);
+
+  @at-root select.input_small {
+    height: em($input-big-min-height, $input-big-font-size);
+  }
+
+  &.input_clear {
+    @include macro-metrics(
+      $input-big-font-size,
+      $input-big-line-height,
+      $input-big-min-height
+    );
+    border: 0;
   }
 }
 
@@ -229,9 +221,9 @@ input[type='checkbox'],
 input[type='file'],
 input[type='image'],
 input[type='radio'] {
+  display: inline-block;
   height: auto;
   width: auto;
-  display: inline-block;
 }
 
 /// Checkbox & radio
@@ -242,7 +234,7 @@ input[type='radio'] {
   vertical-align: middle;
 
   + small {
-    display: inline-block;
     cursor: pointer;
+    display: inline-block;
   }
 }

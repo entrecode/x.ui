@@ -4,10 +4,10 @@
 /// @group atoms modifier
 
 @mixin btn-glow($glow-color) {
-  box-shadow: 0 12px 24px -8px rgba($glow-color, 0.6);
+  box-shadow: 0 12px 24px -8px rgba($glow-color, .6);
 
   &:hover {
-    box-shadow: 0 8px 16px -8px rgba($glow-color, 0.6);
+    box-shadow: 0 8px 16px -8px rgba($glow-color, .6);
   }
 
   &.is-disabled,

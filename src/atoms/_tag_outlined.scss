@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.0
 /// @access public
 /// @group atoms modifier
 ///
@@ -20,41 +20,62 @@
 /// @param {boolean} $tag-outlined - sets border-width for .tag_outlined
 
 .tag_outlined {
+  @include macro-metrics(
+    $tag-font-size,
+    $tag-line-height,
+    $tag-min-height,
+    $tag-outlined,
+    $padding-ratio: $tag-padding-ratio
+  );
   background-color: transparent;
-  border-style: solid;
   border-color: getColor(background, lightest);
-  @include macro-metrics($tag-font-size, $tag-line-height, $tag-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
+  border-style: solid;
 
   &.tag_small {
-    @include macro-metrics($tag-small-font-size, $tag-small-line-height, $tag-small-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
+    @include macro-metrics(
+      $tag-small-font-size,
+      $tag-small-line-height,
+      $tag-small-min-height,
+      $tag-outlined,
+      $padding-ratio: $tag-padding-ratio
+    );
   }
 
   &.tag_big {
-    @include macro-metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height, $tag-outlined, $padding-ratio: $tag-padding-ratio);
+    @include macro-metrics(
+      $tag-big-font-size,
+      $tag-big-line-height,
+      $tag-big-min-height,
+      $tag-outlined,
+      $padding-ratio: $tag-padding-ratio
+    );
   }
 }
 
-/// @param {value} $prefix ['tag_']
-/// @param {array} $name-array - postfix names appending $prefix
-/// @param {array} $color-array - theme colors
+/// @param {value} $_prefix ['tag_']
+/// @param {array} $_name-array - postfix names appending $prefix
+/// @param {array} $_color-array - theme colors
 
-$prefix: 'tag_';
-$name-array: minor, link, super, highlight, invert, info, error, success, warning;
-$color-array: getColor(minor), getColor(link), getColor(super), getColor(highlight), getColor(text, invert), getColor(state, info), getColor(state, error), getColor(state, success), getColor(state, warning);
+$_prefix: 'tag_';
+$_name-array: minor, link, super, highlight, invert, info, error, success,
+  warning;
+$_color-array: getColor(minor), getColor(link), getColor(super),
+  getColor(highlight), getColor(text, invert), getColor(state, info),
+  getColor(state, error), getColor(state, success), getColor(state, warning);
 
-@for $i from 1 through length($color-array) {
-  $color: nth($color-array, $i);
-  $name: nth($name-array, $i);
+@for $i from 1 through length($_color-array) {
+  $_c: nth($_color-array, $i);
+  $_n: nth($_name-array, $i);
 
-  .tag_outlined.#{$prefix}#{$name} {
-    border-color: $color;
-    color: setContrast(getColor(background), $color);
+  .tag_outlined.#{$_prefix}#{$_n} {
+    border-color: $_c;
+    color: setContrast(getColor(background), $_c);
 
-    @at-root a.tag_outlined.#{$prefix}#{$name} {
+    @at-root a.tag_outlined.#{$_prefix}#{$_n} {
       &:hover {
         background-color: transparent;
-        border-color: varColor($color, -4);
-        color: setContrast(getColor(background), $color);
+        border-color: varColor($_c, -4);
+        color: setContrast(getColor(background), $_c);
       }
     }
   }

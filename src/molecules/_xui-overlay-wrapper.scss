@@ -1,13 +1,13 @@
 // scss-lint:disable NestingDepth
 @keyframes showOverlayWrapper {
   0% {
-    opacity: 0;
     clip-path: circle(0% at 50% 50%);
+    opacity: 0;
   }
 
   100% {
-    opacity: 1;
     clip-path: circle(100% at 50% 50%);
+    opacity: 1;
   }
 }
 
@@ -22,27 +22,27 @@
 }
 
 .xui-overlay-wrapper {
+  display: none;
+  height: 100%;
+  left: 0;
+  opacity: 0;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
   z-index: 100;
-  display: none;
-  opacity: 0;
 
   &.is-targeted {
     .xui-overlay {
-      opacity: 0;
+      animation: showOverlay .4s forwards ease-out;
+      animation-delay: .4s;
       display: none;
-      animation: showOverlay 0.4s forwards ease-out;
-      animation-delay: 0.4s;
+      opacity: 0;
     }
 
     &:target {
+      animation: showOverlayWrapper .4s forwards ease-in-out;
       display: initial;
       opacity: 1;
-      animation: showOverlayWrapper 0.4s forwards ease-in-out;
 
       .xui-overlay {
         display: initial;

@@ -1,3 +1,5 @@
+// scss-lint:disable SelectorDepth NestingDepth
+
 .demo-sidebar {
   display: none;
 
@@ -18,8 +20,8 @@
   }
 
   h3 {
-    margin: rem(16) 0 0 0;
-    background-color: rgba(getColor(background), .6);
+    margin: rem(16) 0 0;
+    background-color: rgba(getColor(background), 0.6);
   }
 
   ul {

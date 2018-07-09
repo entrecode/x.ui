@@ -1,37 +1,39 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.4
 /// @access public
 /// @group molecules
 ///
-/// @param {array} $toolbar-padding [0 0 $base-spacing 0]
-/// scss-lint:disable NestingDepth, SelectorDepth
+/// @param {bumber} $xui-tab-count [10]
+/// @param {array} $xui-tabs-spacing [0 0 $base-spacing 0]
+
+// scss-lint:disable NestingDepth, SelectorDepth
 
 %tabs-nav {
   margin: arrayMagic($xui-tabs-spacing);
 
   > ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
+    list-style: none;
     margin: 0;
+    padding: 0;
 
     > li {
       padding: getSpace(1) getSpace(2);
-      text-align: center;
       position: relative;
+      text-align: center;
 
       &::after {
-        content: '';
-        width: 20%;
-        height: rem(4);
         border-radius: arrayMagic(2);
-        position: absolute;
         bottom: 0;
+        content: '';
+        height: rem(4);
         left: 50%;
+        position: absolute;
         transform: translateX(-50%);
-        transition: all .4s;
+        transition: all 0.4s;
+        width: 20%;
       }
 
       &:hover {
@@ -52,11 +54,11 @@
 }
 
 %tabs-nav-item {
-  display: block;
-  text-align: center;
-  padding: getSpace(2);
-  font-weight: $is-bold;
   cursor: pointer;
+  display: block;
+  font-weight: $is-bold;
+  padding: getSpace(2);
+  text-align: center;
 }
 
 .xui-tabs-nav {
@@ -71,17 +73,15 @@
   }
 }
 
-$tabCount: 10 !default;
-
 .xui-tab {
   display: none;
 }
 
 .xui-tabs {
-  input[type="radio"] {
+  [type='radio'] {
     @extend %is-hidden-input;
 
-    @for $i from 1 through $tabCount {
+    @for $i from 1 through $xui-tab-count {
       &:nth-of-type(#{$i}) {
         &:checked {
           ~ .xui-tabs-nav {

@@ -1,0 +1,12 @@
+/// @author Bernhard Ruoff
+/// @since 9.0.4
+/// @group flex-grid
+/// @access public
+
+$_flex-wrap: (
+  'is-wrap': 'wrap',
+  'is-nowrap': 'nowrap',
+  'is-wrap-reverse': 'wrap-reverse'
+);
+
+@include set-map-breakpoints(flex, flex-wrap, $_flex-wrap);

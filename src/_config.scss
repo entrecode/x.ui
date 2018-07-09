@@ -18,7 +18,7 @@ $background: #fff !default;
 $text: #2a3d54 !default;
 $link: #2fce6f !default;
 $super: #14a656 !default;
-$minor: rgba($link, 0.2) !default;
+$minor: rgba($link, .2) !default;
 $highlight: #9de263 !default;
 
 // background shading variables
@@ -40,22 +40,22 @@ $base-background: $background !default;
 // @param {color} $text-lighter [rgba($text, .4)]
 // @param {color} $text-lightest [rgba($text, .2)]
 $text-invert: $background !default;
-$text-light: rgba($text, 0.6) !default;
-$text-lighter: rgba($text, 0.4) !default;
-$text-lightest: rgba($text, 0.2) !default;
+$text-light: rgba($text, .6) !default;
+$text-lighter: rgba($text, .4) !default;
+$text-lightest: rgba($text, .2) !default;
 
 // @param {color} $backdrop [rgba(#000, .8)]
-$backdrop: rgba(#000, 0.8) !default;
+$backdrop: rgba(#000, .8) !default;
 
 // @param {number} $hover-shading [-4] - amount by which colors are darkened or lightened on hover
 $hover-shading: -4 !default;
 
 // @param {color} $divider-color [rgba($text,.1)] -  color if divider used by e.b. .bumper
-$divider-color: rgba($text, 0.1) !default;
+$divider-color: rgba($text, .1) !default;
 
 // used for theme coloring, colors are used in the x-ui-colormap an adapted to fit to theme colors
-$state-disabled: rgba($text, 0.2) !default;
-$state-hover: rgba($link, 0.1) !default;
+$state-disabled: rgba($text, .2) !default;
+$state-hover: rgba($link, .1) !default;
 $state-info: systemColor(#0ff) !default;
 $state-error: systemColor(#f00) !default;
 $state-success: systemColor(#008000) !default;
@@ -95,8 +95,8 @@ $base-spacing-unit: xrem !default;
 
 $spacings: (
   0: 0,
-  1: $base-spacing * 0.25 /* equals 4 twin */,
-  2: $base-spacing * 0.5 /* equals 8 sibling */,
+  1: $base-spacing * .25 /* equals 4 twin */,
+  2: $base-spacing * .5 /* equals 8 sibling */,
   3: $base-spacing /* equals 16 buddy */,
   4: $base-spacing * 1.5 /* equals 24 peer */,
   5: $base-spacing * 2 /* equals 32 relative */,
@@ -166,7 +166,7 @@ $base-icon-size: 16 !default;
 // @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
 $headings-line-height: $base-line-height !default;
 $headings-weight: $is-bold !default;
-$heading-inline-small: 0.5 !default;
+$heading-inline-small: .5 !default;
 
 %heading-style {
   // put additional styles here...
@@ -177,7 +177,9 @@ $heading-inline-small: 0.5 !default;
 // ---------------------------------------------
 // @param {number} $vertical-rhythm [$base-line-height * $base-font-size]
 // set margin-bottom a smooth typeface
-$vertical-rhythm: round($base-line-height * $base-font-size) !default; // equals 22.4px
+$vertical-rhythm: round(
+  $base-line-height * $base-font-size
+) !default; // equals 22.4px
 
 // @param {*} $headings-spacing-unit [$base-spacing-unit]
 $headings-spacing-unit: $base-spacing-unit !default;
@@ -223,7 +225,7 @@ $type-scale-unit: $base-scale-unit !default;
 
 // @param {map} $type-scale-bp - breakpoints for modular scale
 $type-scale-bp: (
-  xs: 0.875,
+  xs: .875,
   md: 1,
   xxl: 1.25
 ) !default;
@@ -269,7 +271,7 @@ $link-decoration: none !default;
 $link-weight: $is-normal !default;
 
 %link-styles {
-  transition: color 0.2s;
+  transition: color .2s;
 }
 
 //
@@ -277,7 +279,7 @@ $link-weight: $is-normal !default;
 // ---------------------------------------------
 // @param {number} $inline-small-scale [.875] - font-size of `<small>`
 // @param {value} $inline-small-unit [$base-scale-unit]
-$inline-small-scale: 0.875 !default;
+$inline-small-scale: .875 !default;
 $inline-small-unit: $base-scale-unit !default;
 
 //
@@ -292,7 +294,7 @@ $inline-small-unit: $base-scale-unit !default;
 // @param {variable} $btn-font-family [$body-font]
 // @param {value} $btn-transition [background-color .2s, box-shadow .1s]
 $btn-font-family: $body-font !default;
-$btn-transition: background-color 0.2s, box-shadow 0.1s !default;
+$btn-transition: background-color .2s, box-shadow .1s !default;
 
 // @param {number} $btn-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
 // @param {array} $btn-spacing [0]
@@ -319,7 +321,7 @@ $btn-weight: $is-bold !default;
 // @param {number} $btn-small-icon-size [$btn-icon-size]
 // @param {number} $btn-small-min-height [32]
 // @param {value} $btn-small-weight [$btn-weight]
-$btn-small-font-size: $btn-font-size * 0.875 !default;
+$btn-small-font-size: $btn-font-size * .875 !default;
 $btn-small-line-height: $btn-small-font-size * $base-line-height !default;
 $btn-small-icon-size: $btn-icon-size !default;
 $btn-small-min-height: 32 !default;
@@ -556,7 +558,7 @@ $tag-padding-ratio: 2 !default;
 // @param {px} $tag-line-height [$tag-font-size * $base-line-height]
 // @param {px} $tag-min-height [28]
 // @param {value} $tag-weight [$is-bold]
-$tag-font-size: $base-font-size * 0.875 !default;
+$tag-font-size: $base-font-size * .875 !default;
 $tag-line-height: $tag-font-size * $base-line-height !default;
 $tag-min-height: 28 !default;
 $tag-weight: $is-bold !default;
@@ -569,7 +571,7 @@ $tag-weight: $is-bold !default;
 // @param {px} $tag-small-line-height [$tag-small-font-size * $base-line]
 // @param {px} $tag-small-min-height [24]
 // @param {value} $tag-small-weight [$tag-weight]
-$tag-small-font-size: $base-font-size * 0.75 !default;
+$tag-small-font-size: $base-font-size * .75 !default;
 $tag-small-line-height: $tag-small-font-size * $base-line-height !default;
 $tag-small-min-height: 24 !default;
 $tag-small-weight: $tag-weight !default;
@@ -620,7 +622,7 @@ $dropdown-radius: 4 !default;
 $dropdown-padding: 4 !default;
 $dropdown-max-height: null !default;
 $dropdown-background: $background !default;
-$dropdown-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
+$dropdown-shadow: 0 8 16 -4 rgba(#000, .16) ',' 0 4 24 0 rgba(#000, .1) !default;
 
 // @param {number} $dropdown-option-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
 // @param {array} $dropdown-option-spacing [0]
@@ -711,7 +713,9 @@ $toolbar-small-padding: $base-spacing / 4, $base-spacing / 2 !default;
 //
 // XUI-TABS
 // ------------------------------------------------------
-// @param {array} $toolbar-padding [0 0 $base-spacing 0]
+// @param {bumber} $xui-tab-count [10]
+// @param {array} $xui-tabs-spacing [0 0 $base-spacing 0]
+$xui-tab-count: 10 !default;
 $xui-tabs-spacing: 0 0 $base-spacing 0;
 
 //
@@ -745,7 +749,7 @@ $card-padding: 8 16 !default;
 $overlay-radius: 4 !default;
 $overlay-padding: 4 !default;
 $overlay-background: $background !default;
-$overlay-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
+$overlay-shadow: 0 8 16 -4 rgba(#000, .16) ',' 0 4 24 0 rgba(#000, .1) !default;
 
 //
 // WELL
@@ -803,7 +807,7 @@ $alert-outlined: 2 !default;
 // @param {em} $alert-small-font-size [$base-font-size * .875]
 // @param {rem} $alert-small-padding [8 12]
 // @param {rem} $alert-small-margin [0 0 16 0]
-$alert-small-font-size: $base-font-size * 0.875 !default;
+$alert-small-font-size: $base-font-size * .875 !default;
 $alert-small-padding: 8 12 !default;
 $alert-small-margin: 0 0 16 0 !default;
 
@@ -909,7 +913,7 @@ $is-rounded-max-radius: 8 !default;
 // @param {array} $is-bordered
 $is-bordered-width: 1 !default;
 $is-bordered-style: solid !default;
-$is-bordered-color: rgba($text, 0.1) !default;
+$is-bordered-color: rgba($text, .1) !default;
 $is-bordered: $is-bordered-width $is-bordered-style $is-bordered-color !default;
 
 //
@@ -919,7 +923,7 @@ $is-bordered: $is-bordered-width $is-bordered-style $is-bordered-color !default;
 // @param {array} $is-raised
 // @param {array} $is-raised-small
 // @param {array} $is-raised-big
-$is-raised-shade: rgba(#000, 0.1) !default;
+$is-raised-shade: rgba(#000, .1) !default;
 $is-raised: 0 2 4 $is-raised-shade ',' 0 2 8 $is-raised-shade !default;
 $is-raised-small: 0 1 2 $is-raised-shade ',' 0 1 4 $is-raised-shade !default;
 $is-raised-big: 0 4 8 $is-raised-shade ',' 0 4 16 $is-raised-shade !default;
@@ -942,10 +946,10 @@ $is-raised-hover-big: 0 2 4 $is-raised-hover-shade ',' 0 2 8
 // @param {array} $is-lifted
 // @param {array} $is-lifted-small
 // @param {array} $is-lifted-big
-$is-lifted-shade: rgba(#000, 0.1) !default;
-$is-lifted: 0 16 16 -4 opacify($is-lifted-shade, 0.1) ',' 0 16 24 $is-lifted-shade !default;
+$is-lifted-shade: rgba(#000, .1) !default;
+$is-lifted: 0 16 16 -4 opacify($is-lifted-shade, .1) ',' 0 16 24 $is-lifted-shade !default;
 $is-lifted-small: 0 12 8 -8 $is-lifted-shade !default;
-$is-lifted-big: 0 24 28 0 opacify($is-lifted-shade, 0.1) ',' 0 24 40
+$is-lifted-big: 0 24 28 0 opacify($is-lifted-shade, .1) ',' 0 24 40
   $is-lifted-shade !default;
 
 // @param {color} $is-lifted-hover-shade [$is-lifted-shade)]
@@ -978,7 +982,7 @@ $is-fab-spacing: 16 !default;
 // @param {array} $bumper-big-spacing [getSpace(6) 0]
 $bumper-size: 4;
 $bumper-color: $divider-color;
-$bumper-invert-color: rgba($background, 0.2);
+$bumper-invert-color: rgba($background, .2);
 $bumper-spacing: getSpace(5) 0; // equals 32 0
 $bumper-small-spacing: getSpace(3) 0; // equals 16 0
 $bumper-big-spacing: getSpace(6) 0; // equals 48 0
@@ -1038,7 +1042,7 @@ $input-placeholder: $text-light !default;
 // @param {em} $input-small-font-size [14]
 // @param {em} $input-small-line-height [18]
 // @param {em} $input-small-min-height [28]
-$input-small-font-size: $input-font-size * 0.875 !default;
+$input-small-font-size: $input-font-size * .875 !default;
 $input-small-line-height: $input-small-font-size * $base-line-height !default;
 $input-small-min-height: 28 !default;
 
@@ -1088,7 +1092,7 @@ $checkbox-radius: 6 !default;
 
 // additional styles for .xui-checkbox
 %checkbox-style {
-  box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2);
+  box-shadow: inset 0 1px 2px 1px rgba(#000, .2);
 }
 
 //
@@ -1103,22 +1107,22 @@ $radio-height: 20 !default;
 
 // additional styles for .xui-radio
 %radio-style {
-  box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2);
+  box-shadow: inset 0 1px 2px 1px rgba(#000, .2);
 }
 
 //
 // FORM-GROUP
 // ------------------------------------------------------
-// @param {array} $form-group-margin [0 0 8 0]
-$form-group-margin: 0 0 8 0 !default;
+// @param {array} $form-group-spacing [0 0 8 0]
+$form-group-spacing: 0 0 8 0 !default;
 
 %form-group-style {
   // put additional styles here...
 }
 
-// @param {array} $form-group-label-margin [0 0 4 0]
+// @param {array} $form-group-label-spacing [0 0 4 0]
 // @param {em} $form-group-label-font-size [$base-font-size]
-$form-group-label-margin: 0 0 4 0 !default;
+$form-group-label-spacing: 0 0 4 0 !default;
 $form-group-label-font-size: $base-font-size !default;
 
 %form-group-label-style {
@@ -1128,12 +1132,12 @@ $form-group-label-font-size: $base-font-size !default;
 //
 // FORM-BOOLEAN
 // ------------------------------------------------------
-// @param {array} $form-boolean-margin [$form-group-margin]
-$form-boolean-margin: $form-group-margin !default;
+// @param {array} $form-boolean-margin [$form-group-spacing]
+$form-boolean-spacing: $form-group-spacing !default;
 
 // @param {number} $form-boolean-label-margin [$form-group-label-margin]
 // @param {em} $form-boolean-label-font-size [$base-font-size]
-$form-boolean-label-margin: $form-group-label-margin !default;
+$form-boolean-label-spacing: $form-group-label-spacing !default;
 $form-boolean-label-font-size: $base-font-size !default;
 
 %form-boolean-style {

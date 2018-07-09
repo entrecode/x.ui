@@ -10,7 +10,7 @@
   background-image: url('assets/halftone-pattern-02.png');
   background-size: 240px auto;
   border-radius: 8px 4px / 4px 8px;
-  text-shadow: 0 1px 2px rgba(black, .2);
+  text-shadow: 0 1px 2px rgba(#000, 0.2);
 }
 
 %family {
@@ -20,7 +20,7 @@
   background-image: url('assets/halftone-pattern-02.png');
   background-size: 200px auto;
   border-radius: 8px 4px / 4px 8px;
-  text-shadow: 0 -1px 2px rgba(black, .2);
+  text-shadow: 0 -1px 2px rgba(#000, 0.2);
 }
 
 .periodic-family-atoms {
@@ -39,13 +39,13 @@
   @extend %family;
 }
 
-$group-type: #FFFA3F;
-$group-media: #B2FA68;
+$group-type: #fffa3f;
+$group-media: #b2fa68;
 $group-interaction: $super;
-$group-form: #25C6FC;
+$group-form: #25c6fc;
 $group-data: #e4c2f2;
-$group-layout: #B190FB;
-$group-response: #765EFA;
+$group-layout: #b190fb;
+$group-response: #765efa;
 $group-ui: $link;
 
 .periodic-group-type {
@@ -135,6 +135,8 @@ $group-ui: $link;
     color: setContrast($group-ui);
   }
 }
+
+// scss-lint:disable SelectorDepth NestingDepth
 
 .periodic-table {
   li {

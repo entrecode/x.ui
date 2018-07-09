@@ -12,7 +12,9 @@
 - changed `%btn%small` to `%btn-small`
 - changed `%btn%big` to `%btn-big`
 - removed `btn_mono` modifier
+- removed `hamburger-btn_invert` modifier
 - removed nested classes for `btn_clear` modifier - use `is-ink-#` instead
+- removed QualifyingElement
 
 ## 9.0.3
 

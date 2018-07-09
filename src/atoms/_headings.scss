@@ -4,9 +4,10 @@
 /// @group atoms
 ///
 /// @param {variable} $headings-weight [$is-bold]
+/// @param {value} $headings-font
 /// @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
-/// @require {mixin} get-font-size
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
+/// @require {mixin} get-font-size
 
 h1,
 h2,
@@ -23,11 +24,10 @@ h6,
 .is-giga,
 .is-mega,
 .is-kilo {
+  @extend %heading-style !optional;
   font-family: $headings-font;
   font-weight: $headings-weight;
   line-height: $headings-line-height;
-
-  @extend %heading-style !optional;
 
   small {
     font-size: ($heading-inline-small * 1em);

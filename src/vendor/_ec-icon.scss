@@ -1,20 +1,19 @@
 // scss-lint:disable ImportantRule
 %ec-icon {
-  font-family: "ec-icon" !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  font-style: normal;
-  text-transform: none !important;
-  text-rendering: optimizeLegibility;
-  speak: none;
-  display: inline-block;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
   direction: ltr;
+  display: inline-block;
+  font-family: "ec-icon" !important;
   font-size: inherit;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal !important;
+  font-weight: normal !important;
+  letter-spacing: normal;
   line-height: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none !important;
   vertical-align: text-bottom;
+  white-space: nowrap;
+  word-wrap: normal;
 }

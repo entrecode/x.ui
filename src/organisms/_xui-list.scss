@@ -8,17 +8,17 @@
 }
 
 .xui-list {
-  margin-top: 0;
-  margin-bottom: rem(16);
   list-style: none;
+  margin-bottom: rem(16);
+  margin-top: 0;
   padding: 0;
 }
 
 .xui-list-item {
-  display: flex;
   align-items: center;
-  padding: rem(8);
   border-radius: arrayMagic($list-item-radius);
+  display: flex;
+  padding: rem(8);
   transition: background-color .4s;
   transition-delay: .4s;
 
@@ -36,7 +36,7 @@
   }
 
   &__end {
-    margin-right: 0;
     margin-left: auto;
+    margin-right: 0;
   }
 }

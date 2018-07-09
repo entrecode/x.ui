@@ -34,28 +34,28 @@
 
 .has-margin-middle {
   @include set-breakpoints {
-    margin-top: arrayMagic($spacing-size);
     margin-bottom: arrayMagic($spacing-size);
+    margin-top: arrayMagic($spacing-size);
   }
 
   &-smallest {
     @include set-breakpoints {
-      margin-top: arrayMagic($spacing-smallest-size);
       margin-bottom: arrayMagic($spacing-smallest-size);
+      margin-top: arrayMagic($spacing-smallest-size);
     }
   }
 
   &-small {
     @include set-breakpoints {
-      margin-top: arrayMagic($spacing-small-size);
       margin-bottom: arrayMagic($spacing-small-size);
+      margin-top: arrayMagic($spacing-small-size);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      margin-top: arrayMagic($spacing-big-size);
       margin-bottom: arrayMagic($spacing-big-size);
+      margin-top: arrayMagic($spacing-big-size);
     }
   }
 }

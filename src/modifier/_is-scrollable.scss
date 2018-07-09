@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.4
 /// @access public
 /// @group modifier
 
@@ -29,26 +29,26 @@
   }
 
   &-x {
+    @include set-breakpoints {
+      @include is-scrollable(x);
+    }
+
     &-contain {
       @include set-breakpoints {
         @include is-scrollable(x, contain);
       }
     }
-
-    @include set-breakpoints {
-      @include is-scrollable(x);
-    }
   }
 
   &-y {
+    @include set-breakpoints {
+      @include is-scrollable(y);
+    }
+
     &-contain {
       @include set-breakpoints {
         @include is-scrollable(y, contain);
       }
-    }
-
-    @include set-breakpoints {
-      @include is-scrollable(y);
     }
   }
 }

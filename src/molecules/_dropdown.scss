@@ -13,9 +13,9 @@
 // scss-lint:disable PropertySpelling, NestingDepth
 
 .dropdown {
+  cursor: pointer;
   outline: none;
   position: relative;
-  cursor: pointer;
 
   &.dropdown_center {
     .dropdown-options {
@@ -45,23 +45,23 @@
 
   &.dropdown_above {
     .dropdown-options {
-      top: initial;
       bottom: 100%;
+      top: initial;
     }
   }
 
   @if $dropdown-on-hover == false {
     &:focus {
       > .dropdown-options {
-        visibility: visible;
         opacity: 1;
+        visibility: visible;
       }
     }
   } @else {
     &:hover {
       .dropdown-options {
-        visibility: visible;
         opacity: 1;
+        visibility: visible;
       }
     }
   }
@@ -69,8 +69,8 @@
   &.on-hover {
     &:hover {
       .dropdown-options {
-        visibility: visible;
         opacity: 1;
+        visibility: visible;
       }
     }
   }
@@ -78,21 +78,21 @@
 
 .dropdown-options {
   @extend %is-dropdown;
+  opacity: 0;
+  -webkit-overflow-scrolling: touch;
   overflow-y: auto;
   overscroll-behavior-y: contain;
-  -webkit-overflow-scrolling: touch;
   position: absolute;
   top: 100%;
-  z-index: 10;
-  opacity: 0;
-  visibility: hidden;
   transition: visibility 0.5s, opacity 0.2s;
+  visibility: hidden;
+  z-index: 10;
 
   .dropdown_divider {
-    margin: rem(4) 0;
-    padding: 0;
     background-color: getColor(divider);
     height: 1px;
+    margin: rem(4) 0;
+    padding: 0;
   }
 }
 
@@ -109,27 +109,26 @@
   display: block;
 
   > a:not([class]) {
-    width: 100%;
-    display: block;
-    cursor: pointer;
-    user-select: none;
-    outline: none;
-    touch-action: manipulation;
-    text-decoration: none;
-    position: relative;
-    height: auto;
-    border: 0;
-    text-align: $dropdown-option-alignment;
-    margin: arrayMagic($dropdown-option-spacing);
-    font-weight: $dropdown-option-weight;
-    color: $dropdown-option-color;
-
     @include macro-metrics(
       $dropdown-option-font-size,
       $dropdown-option-line-height,
       $dropdown-option-min-height,
       $padding-ratio: $dropdown-option-padding-ratio
     );
+    border: 0;
+    color: $dropdown-option-color;
+    cursor: pointer;
+    display: block;
+    font-weight: $dropdown-option-weight;
+    height: auto;
+    margin: arrayMagic($dropdown-option-spacing);
+    outline: none;
+    position: relative;
+    text-align: $dropdown-option-alignment;
+    text-decoration: none;
+    touch-action: manipulation;
+    user-select: none;
+    width: 100%;
 
     &:hover {
       background-color: getColor(state, hover);
@@ -137,7 +136,7 @@
   }
 
   > .btn {
-    width: 100%;
     display: block;
+    width: 100%;
   }
 }

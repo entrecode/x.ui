@@ -10,7 +10,7 @@
 
 .demo-grid {
   [data-col] {
-    &:before {
+    &::before {
       content: attr(data-col);
       font-size: rem(10);
       line-height: rem(20);
@@ -21,7 +21,7 @@
   }
 
   [data-flex-col] {
-    &:before {
+    &::before {
       content: attr(data-flex-col);
       font-size: rem(10);
       line-height: rem(20);

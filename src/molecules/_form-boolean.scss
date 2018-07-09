@@ -3,15 +3,14 @@
 /// @access public
 /// @group molecules
 ///
-/// @param {array} $form-boolean-margin [$form-group-margin]
+/// @param {array} $form-boolean-spacing [$form-group-spacing]
 /// @param {em} $form-boolean-label-font-size [$base-font-size]
-/// @param {number} $form-boolean-label-margin [$form-group-label-margin]
+/// @param {number} $form-boolean-label-spacing [$form-group-label-spacing]
 
 // scss-lint:disable NestingDepth
 .form-boolean {
-  margin: arrayMagic($form-boolean-margin);
-
   @extend %form-boolean-style !optional;
+  margin: arrayMagic($form-boolean-spacing);
 
   @supports (display: flex) {
     display: flex;
@@ -24,11 +23,11 @@
 
   label {
     font-size: em($form-boolean-label-font-size);
-    margin: arrayMagic($form-boolean-label-margin);
+    margin: arrayMagic($form-boolean-label-spacing);
   }
 
-  input[type="radio"],
-  input[type="checkbox"] {
+  [type='radio'],
+  [type='checkbox'] {
     margin-right: rem(8);
   }
 
@@ -37,10 +36,10 @@
     cursor: not-allowed;
 
     &:not(.is-active) {
-      opacity: .4;
+      opacity: 0.4;
 
       &:hover {
-        opacity: .2;
+        opacity: 0.2;
       }
     }
   }

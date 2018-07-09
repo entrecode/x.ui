@@ -19,12 +19,12 @@
     }
   }
 
-  @include set-breakpoints($area: true, $hasRoot: false) {
+  @include set-breakpoints($area: true, $has-root: false) {
     display: inherit !important;
   }
 
   &-from {
-    @include set-breakpoints($hasRoot: false) {
+    @include set-breakpoints($has-root: false) {
       display: inherit !important;
     }
   }

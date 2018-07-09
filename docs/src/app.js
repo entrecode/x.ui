@@ -497,6 +497,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'img-left',
         'smaller-text',
         'checkmark-2',
+        'json',
+        'required',
+        'validate',
+        'fingerprint',
       ],
     },
   });

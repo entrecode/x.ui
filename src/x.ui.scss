@@ -1,10 +1,10 @@
-@import '_functions/functions';
+@import 'functions/functions';
 @import 'config';
-@import '_mixins/mixins';
-@import '_core/core';
+@import 'mixins/mixins';
+@import 'core/core';
 @import 'atoms/atoms';
 @import 'molecules/molecules';
 @import 'organisms/organisms';
 @import 'vendor/vendor';
-@import '_layout/layout';
+@import 'layout/layout';
 @import 'modifier/modifier';

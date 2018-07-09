@@ -7,10 +7,9 @@
 /// @param {array} $nav-spacing [0]
 
 .nav {
-  padding: arrayMagic($nav-padding);
-  margin: arrayMagic($nav-spacing);
-
   @extend %nav-style !optional;
+  margin: arrayMagic($nav-spacing);
+  padding: arrayMagic($nav-padding);
 
   .nav__items {
     list-style: none;
@@ -37,11 +36,11 @@
   // @param {color} $nav-divider-color [$divider]
   // @param {px} $nav-divider-spacing [4]
   .nav__divider {
+    background-color: $nav-divider-color;
     display: block;
     height: 100%;
-    width: rem($nav-divider-size);
     margin: 0 rem($nav-divider-spacing);
-    background-color: $nav-divider-color;
+    width: rem($nav-divider-size);
   }
 }
 
@@ -49,7 +48,6 @@
   @extend %nav-stacked-style !optional;
 
   .nav__items {
-    
     @supports (display: flex) {
       display: flex;
       flex-direction: column;
@@ -58,17 +56,17 @@
   }
 
   .nav__divider {
-    width: 100%;
     height: rem($nav-divider-size);
     margin: rem($nav-divider-spacing) 0;
+    width: 100%;
   }
 
   .nav__item {
     display: block;
 
     .btn {
-      width: 100%;
       display: block;
+      width: 100%;
     }
   }
 }

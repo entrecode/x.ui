@@ -11,8 +11,8 @@
 .well {
   &.well_outlined {
     background-color: transparent;
-    border-style: solid;
     border-color: getColor(background, lightest);
+    border-style: solid;
     border-width: rem($well-outlined);
   }
 }

@@ -1,0 +1,26 @@
+/// @author Bernhard Ruoff
+/// @since 8.0.0-beta.8
+/// @access public
+/// @group size-functions
+///
+/// Converts a px value into a rem value
+/// @example
+/// width: rem(32); // returns 2rem
+///
+/// @param {number} $value - value in pixels
+/// @param {number} $base [$root-size]- 16 !default
+/// @require {variable} $root-size
+///
+/// @return {rem} value in rem
+
+@function rem($value, $base: $root-size) {
+  @if type-of($value) == 'number' {
+    @if ($value == 0) {
+      @return $value;
+    } @else {
+      @return ($value / $base) + rem;
+    }
+  } @else {
+    @return $value;
+  }
+}

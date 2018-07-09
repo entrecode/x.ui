@@ -11,8 +11,8 @@
 .alert {
   &.alert_outlined {
     background-color: transparent;
-    border-style: solid;
     border-color: getColor(background, lightest);
+    border-style: solid;
     border-width: rem($alert-outlined);
 
     /// @param {value} $prefix ['alert_']
@@ -28,8 +28,8 @@
       $name: nth($name-array, $i);
 
       &.#{$prefix}#{$name} {
-        border-color: $color;
         background-color: transparent;
+        border-color: $color;
         color: setContrast(getColor(background), $color);
       }
     }

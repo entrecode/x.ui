@@ -1,27 +1,27 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.0
+/// @since 9.0.4
 /// @access public
 /// @group atoms
 
 // scss-lint:disable NestingDepth
 %toggle {
   background-color: flattenColor(getColor(minor));
-  height: rem($root-size);
-  width: rem($root-size * 1.75);
   border-radius: arrayMagic($root-size / 2);
   cursor: pointer;
-  transition: background-color 0.2s;
   direction: ltr;
   display: inline-block;
+  height: rem($root-size);
+  transition: background-color 0.2s;
+  width: rem($root-size * 1.75);
 
   &::after {
+    background-color: getColor(background);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px 1px rgba(#000, 0.2);
     content: '';
     display: block;
-    border-radius: 50%;
-    width: rem($root-size);
     height: rem($root-size);
-    background-color: getColor(background);
-    box-shadow: 0 2px 8px 1px rgba(#000, 0.2);
+    width: rem($root-size);
   }
 
   &%is-active {
@@ -39,8 +39,8 @@
     }
   }
 
-  input[type='radio'],
-  input[type='checkbox'] {
+  [type='radio'],
+  [type='checkbox'] {
     @extend %is-hidden-input;
 
     &:checked {
@@ -57,8 +57,8 @@
   }
 
   label {
-    user-select: none;
     cursor: pointer;
     margin: 0;
+    user-select: none;
   }
 }

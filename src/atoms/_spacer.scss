@@ -12,23 +12,23 @@
 
 .spacer {
   @include set-breakpoints {
-    height: $spacer-size;
     flex-shrink: 0;
+    height: $spacer-size;
     width: 100%;
   }
 
   &-small {
     @include set-breakpoints {
-      height: $spacer-small-size;
       flex-shrink: 0;
+      height: $spacer-small-size;
       width: 100%;
     }
   }
 
   &-big {
     @include set-breakpoints {
-      height: $spacer-big-size;
       flex-shrink: 0;
+      height: $spacer-big-size;
       width: 100%;
     }
   }

@@ -19,22 +19,22 @@
   text-align: center;
 
   &::before {
+    background-color: $bumper-color;
+    border-radius: 50%;
+    box-shadow: rem($bumper-size * 2) 0 0 $bumper-color, rem($bumper-size * 4) 0 0 $bumper-color;
     content: '';
-    position: absolute;
-    width: rem($bumper-size);
     height: rem($bumper-size);
     margin-left: rem($bumper-size * 5 / -2);
-    border-radius: 50%;
-    background-color: $bumper-color;
-    box-shadow: rem($bumper-size * 2) 0 0 $bumper-color, rem($bumper-size * 4) 0 0 $bumper-color;
+    position: absolute;
+    width: rem($bumper-size);
   }
 }
 
 .bumper {
   @include set-breakpoints {
     @include bumper;
-    margin: arrayMagic($bumper-spacing);
     flex-shrink: 0;
+    margin: arrayMagic($bumper-spacing);
     width: 100%;
   }
 
@@ -49,8 +49,8 @@
 .bumper-small {
   @include set-breakpoints {
     @include bumper;
-    margin: arrayMagic($bumper-small-spacing);
     flex-shrink: 0;
+    margin: arrayMagic($bumper-small-spacing);
     width: 100%;
   }
 }
@@ -58,8 +58,8 @@
 .bumper-big {
   @include set-breakpoints {
     @include bumper;
-    margin: arrayMagic($bumper-big-spacing);
     flex-shrink: 0;
+    margin: arrayMagic($bumper-big-spacing);
     width: 100%;
   }
 }
