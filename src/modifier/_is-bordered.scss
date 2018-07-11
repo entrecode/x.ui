@@ -39,15 +39,15 @@
 
   &-middle {
     @include set-breakpoints {
-      border-top: arrayMagic($is-bordered);
       border-bottom: arrayMagic($is-bordered);
+      border-top: arrayMagic($is-bordered);
     }
   }
 
   &-center {
     @include set-breakpoints {
-      border-right: arrayMagic($is-bordered);
       border-left: arrayMagic($is-bordered);
+      border-right: arrayMagic($is-bordered);
     }
   }
 }

@@ -3,21 +3,21 @@
 /// @access public
 /// @group atoms
 
-// scss-lint:disable NestingDepth
+// scss-lint:disable NestingDepth QualifyingElement
 .input-group {
+  align-items: stretch;
   display: flex;
   position: relative;
-  align-items: stretch;
 
   .input-group__addon {
     @extend %input;
-    width: auto;
-    flex-shrink: 0;
-    flex-grow: 0;
+    align-items: center;
     color: getColor(text, light);
     display: flex;
-    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
     justify-content: center;
+    width: auto;
   }
 
   a.input-group__addon {
@@ -29,33 +29,33 @@
   > .input {
     &:not(:only-child) {
       &:first-child {
-        border-top-right-radius: 0;
         border-bottom-right-radius: 0;
         border-right: 0;
+        border-top-right-radius: 0;
       }
 
       &:last-child {
-        border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         border-left: 0;
+        border-top-left-radius: 0;
       }
     }
 
     &:not(:last-child) {
       &:not(:first-child) {
+        border-left: 0;
         border-radius: 0;
         border-right: 0;
-        border-left: 0;
       }
     }
   }
 
   > .btn {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    display: flex;
     flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
 
     &:active {
       transform: initial;
@@ -63,18 +63,18 @@
 
     &:first-child {
       &.btn_outlined {
-        border-right-width: rem($btn-outline);
         border-right-style: solid;
+        border-right-width: rem($btn-outline);
       }
     }
 
     &.btn_clear {
       + .input,
       + .input-group__addon {
-        margin-left: rem(4);
-        border-top-left-radius: rem($btn-radius);
         border-bottom-left-radius: rem($btn-radius);
         border-left: rem($input-border-width) solid $input-border-color;
+        border-top-left-radius: rem($btn-radius);
+        margin-left: rem(4);
       }
     }
   }
@@ -86,23 +86,23 @@
         margin-left: rem($btn-radius + 4);
 
         &::before {
-          content: '';
-          position: absolute;
-          left: rem(($btn-radius + 4) * -1);
-          top: 0;
-          height: 100%;
-          width: rem($btn-radius);
           border-width: rem($input-border-width);
           border-style: solid;
           border-color: $input-border-color;
           border-left: 0;
           border-radius: 0 rem($btn-radius) rem($btn-radius) 0;
+          content: '';
+          height: 100%;
+          left: rem(($btn-radius + 4) * -1);
+          position: absolute;
+          top: 0;
+          width: rem($btn-radius);
         }
       }
 
       &.btn_outlined {
-        border-left-width: rem($btn-outline);
         border-left-style: solid;
+        border-left-width: rem($btn-outline);
       }
     }
   }

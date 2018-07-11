@@ -1,6 +1,6 @@
 {
   "name": "x.ui",
-  "version": "9.0.3",
+  "version": "9.0.4",
   "description": "x.ui is a framework based on the atomic design methodology",
   "author": "entrecode GmbH",
   "main": "src/x.ui.scss",
@@ -10,10 +10,11 @@
     "build": "npm run build:nunjucks & npm run build:sass & npm run build:js",
     "build:nunjucks": "nunjucks index.njk package.json --path docs/src --out docs --unsafe",
     "build:sass": "node-sass --recursive --output-style compressed docs/src/styles/styles.scss docs/x.ui.css",
+    "postbuild:sass": "postcss docs/x.ui.css --use autoprefixer -d docs",
     "build:js": "babel docs/src/app.js --out-file docs/app.js",
     "dev": "npm run watch:nunjucks & npm run watch:sass & npm run watch:js",
     "watch:nunjucks": "nunjucks index.njk package.json --path docs/src --out docs --watch --unsafe",
-    "watch:sass": "node-sass --watch --recursive  --source-map-embed docs/src/styles/styles.scss docs/x.ui.css",
+    "watch:sass": "node-sass --watch --recursive --source-map-embed docs/src/styles/styles.scss docs/x.ui.css",
     "watch:js": "babel docs/src/app.js --out-file docs/app.js --watch"
   },
   "keywords": [
@@ -103,9 +104,11 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^8.1.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "node-sass": "^4.9.0",
-    "nunjucks-cli": "^0.5.1"
+    "node-sass": "^4.9.2",
+    "nunjucks-cli": "^0.5.1",
+    "postcss-cli": "^5.0.1"
   }
 }

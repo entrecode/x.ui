@@ -10,7 +10,7 @@
   }
 
   &-from {
-    @include set-breakpoints($hasRoot: false) {
+    @include set-breakpoints($has-root: false) {
       display: none !important;
     }
   }

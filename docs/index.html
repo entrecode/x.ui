@@ -8,7 +8,7 @@
   <meta property="og:image" content="og-image.jpg">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="x.ui.css">
-  <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.0.min.css"/>
+  <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.1.min.css"/>
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
   <script
@@ -43,7 +43,7 @@
       <nav class="nav">
         <ul class="nav__items">
           <li class="nav__item" style="padding-right: 16px;">
-            <small class="is-ink-lighter is-nowrap">v. 9.0.3</small>
+            <small class="is-ink-lighter is-nowrap">v. 9.0.4</small>
           </li>
           <li class="nav__divider"></li>
           <li class="nav__item">
@@ -1520,7 +1520,7 @@
             <span class="ec-icon lock-closed"></span>
           </div>
           <input type="text" class="input" placeholder="Placeholder...">
-          <a href="" class="btn">save</a>
+          <a class="btn">save</a>
         </div>
       </div>
     </div>
@@ -1555,7 +1555,7 @@
           <div class="input-group__addon">
             <small>addon</small>
           </div>
-          <a href="" class="btn btn_clear"><span class="ec-icon save"></span></a>
+          <a class="btn btn_clear"><span class="ec-icon save"></span></a>
         </div>
       </div>
     </div>
@@ -1568,13 +1568,13 @@
 
 <div class="input-group">
   <input type="text" class="input" placeholder="Placeholder...">
-  <a href="" class="btn">...</a>
+  <a class="btn">...</a>
 </div>
 
 <div class="input-group">
   <div class="input-group__addon"></div>
   <input type="text" class="input" placeholder="Placeholder...">
-  <a href="" class="btn">...</a>
+  <a class="btn">...</a>
 </div></code></pre>
 </section>
 
@@ -1623,7 +1623,7 @@
   <span class="xui-select__placeholder">...</span>
   <ul class="xui-select-options">
     <li class="xui-select-option is-selected" tabindex="0">
-      <a href="">...</a>
+      <a href>...</a>
     </li>
     ...
   </ul>
@@ -1635,16 +1635,16 @@
           <span class="xui-select__selected">Options 1</span>
           <ul class="xui-select-options">
             <li class="xui-select-option is-selected" tabindex="0">
-              <a href="">Options 1</a>
+              <a href>Options 1</a>
             </li>
             <li class="xui-select-option" tabindex="0">
-              <a href="">Options 2</a>
+              <a href>Options 2</a>
             </li>
             <li class="xui-select-option" tabindex="0">
-              <a href="">Options 3</a>
+              <a href>Options 3</a>
             </li>
             <li class="xui-select-option" tabindex="0">
-              <a href="">Options 4</a>
+              <a href>Options 4</a>
             </li>
           </ul>
         </nav>
@@ -1654,7 +1654,7 @@
   <span class="xui-select__selected">...</span>
   <ul class="xui-select-options">
     <li class="xui-select-option" tabindex="0">
-      <a href="">...</a>
+      <a href>...</a>
     </li>
     ...
   </ul>
@@ -1853,14 +1853,14 @@
   <div class="well">
     <div data-grid data-flex="is-center">
       <div data-col="6 3-sm">
-        <a href="" class="btn btn_block btn_big btn_glow">Button</a>
+        <a class="btn btn_block btn_big btn_glow">Button</a>
       </div>
       <div data-col="6 3-sm">
-        <a href="" class="btn btn_block btn_big btn_invert btn_glow">Button</a>
+        <a class="btn btn_block btn_big btn_invert btn_glow">Button</a>
       </div>
     </div>
   </div>
-  <pre><code class="html"><a href="" class="btn btn_glow">Button</a></code></pre>
+  <pre><code class="html"><a class="btn btn_glow">Button</a></code></pre>
 </section>
 
 <div class="bumper"></div><section>
@@ -2187,20 +2187,20 @@
     <div data-col="6-sm">
       <div class="well" data-flex="is-center">
         <div class="btn-group">
-          <a href="" class="btn">button</a>
+          <a class="btn">button</a>
           <div class="btn-group__divider"></div>
-          <a href="" class="btn">button</a>
+          <a class="btn">button</a>
           <div class="btn-group__divider"></div>
-          <a href="" class="btn btn_mono"><span class="ec-icon trash"></span></a>
+          <a class="btn"><span class="ec-icon trash"></span></a>
         </div>
       </div>
       <pre><code class="html">
 <div class="btn-group">
-  <a href="" class="btn">button</a>
+  <a class="btn">button</a>
   <div class="btn-group__divider"></div>
-  <a href="" class="btn">button</a>
+  <a class="btn">button</a>
   <div class="btn-group__divider"></div>
-  <a href="" class="btn btn_mono"><span class="ec-icon trash"></span></a>
+  <a class="btn"><span class="ec-icon trash"></span></a>
 </div></code></pre>
     </div>
 
@@ -2211,14 +2211,14 @@
             <span class="btn btn_round">Options</span>
             <ul class="dropdown-options">
               <li class="dropdown-option">
-                <a href="">Label</a>
+                <a href>Label</a>
               </li>
               <li class="dropdown-option">
-                <a href="">Label</a>
+                <a href>Label</a>
               </li>
               <li class="dropdown_divider"></li>
               <li class="dropdown-option">
-                <a href="">Label</a>
+                <a href>Label</a>
               </li>
             </ul>
           </nav>
@@ -2228,14 +2228,14 @@
                               class="ec-icon more-vertical"></span></span>
             <ul class="dropdown-options">
               <li class="dropdown-option">
-                <a href="">Label</a>
+                <a href>Label</a>
               </li>
               <li class="dropdown-option">
-                <a href="">Label</a>
+                <a href>Label</a>
               </li>
               <li class="dropdown_divider"></li>
               <li class="dropdown-option">
-                <a href="">Label</a>
+                <a href>Label</a>
               </li>
             </ul>
           </nav>
@@ -2267,14 +2267,14 @@
     <nav class="nav">
       <ul class="nav__items">
         <li class="nav__item">
-          <a href="" class="btn btn_clear">Nav Link</a>
+          <a class="btn btn_clear">Nav Link</a>
         </li>
         <li class="nav__item">
-          <a href="" class="btn btn_clear">Nav Link</a>
+          <a class="btn btn_clear">Nav Link</a>
         </li>
         <li class="nav__divider">&nbsp;</li>
         <li class="nav__item">
-          <a href="" class="btn btn_clear">Nav Link</a>
+          <a class="btn btn_clear">Nav Link</a>
         </li>
       </ul>
     </nav>
@@ -2283,14 +2283,14 @@
 <nav class="nav">
   <ul class="nav__items">
     <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
+      <a class="btn btn_clear">Nav Link</a>
     </li>
     <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
+      <a class="btn btn_clear">Nav Link</a>
     </li>
     <li class="nav__divider">&nbsp;</li>
     <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
+      <a class="btn btn_clear">Nav Link</a>
     </li>
   </ul>
 </nav></code></pre>
@@ -2301,14 +2301,14 @@
     <nav class="nav nav_stacked">
       <ul class="nav__items">
         <li class="nav__item">
-          <a href="" class="btn btn_clear">Nav Link</a>
+          <a class="btn btn_clear">Nav Link</a>
         </li>
         <li class="nav__item">
-          <a href="" class="btn btn_clear">Nav Link</a>
+          <a class="btn btn_clear">Nav Link</a>
         </li>
         <li class="nav__divider">&nbsp;</li>
         <li class="nav__item">
-          <a href="" class="btn btn_clear">Nav Link</a>
+          <a class="btn btn_clear">Nav Link</a>
         </li>
       </ul>
     </nav>
@@ -2317,14 +2317,14 @@
 <nav class="nav nav_stacked">
   <ul class="nav__items">
     <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
+      <a class="btn btn_clear">Nav Link</a>
     </li>
     <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
+      <a class="btn btn_clear">Nav Link</a>
     </li>
     <li class="nav__divider">&nbsp;</li>
     <li class="nav__item">
-      <a href="" class="btn btn_clear">Nav Link</a>
+      <a class="btn btn_clear">Nav Link</a>
     </li>
   </ul>
 </nav></code></pre>
@@ -2344,12 +2344,12 @@
     <nav class="nav">
       <ul class="nav__items">
         <li class="nav__item">
-          <a href="" class="btn btn_clear">
+          <a class="btn btn_clear">
             <span class="ec-icon more-vertical"></span>
           </a>
         </li>
         <li class="nav__item">
-          <a href="" class="btn">save</a>
+          <a class="btn">save</a>
         </li>
       </ul>
     </nav>
@@ -2379,10 +2379,10 @@
     <nav class="nav">
       <ul class="nav__items">
         <li class="nav__item">
-          <a href="" class="btn btn_clear btn_invert">Menu</a>
+          <a class="btn btn_clear btn_invert">Menu</a>
         </li>
         <li class="nav__item">
-          <a href="" class="hamburger-btn hamburger-btn_invert"></a>
+          <a class="hamburger-btn"></a>
         </li>
       </ul>
     </nav>
@@ -2397,10 +2397,10 @@
     <nav class="nav">
       <ul class="nav__items">
         <li class="nav__item">
-          <a href="" class="btn btn_clear btn_invert">Menu</a>
+          <a class="btn btn_clear btn_invert">Menu</a>
         </li>
         <li class="nav__item">
-          <a href="" class="hamburger-btn hamburger-btn_invert"></a>
+          <a class="hamburger-btn"></a>
         </li>
       </ul>
     </nav>
@@ -2409,7 +2409,7 @@
   <div class="spacer"></div>
 
   <div class="toolbar is-theme-invert">
-    <a href="" class="hamburger-btn hamburger-btn_invert"></a>
+    <a class="hamburger-btn"></a>
     <div class="toolbar__title">
       <h2>Title</h2>
     </div>
@@ -2422,10 +2422,10 @@
     <nav class="nav">
       <ul class="nav__items">
         <li class="nav__item">
-          <a href="" class="btn btn_clear btn_invert">Menu</a>
+          <a class="btn btn_clear btn_invert">Menu</a>
         </li>
         <li class="nav__item">
-          <a href="" class="btn">Profile</a>
+          <a class="btn">Profile</a>
         </li>
       </ul>
     </nav>
@@ -2434,17 +2434,17 @@
   <div class="spacer"></div>
 
   <div class="toolbar is-theme-invert">
-    <a href="" class="hamburger-btn hamburger-btn_invert"></a>
+    <a class="hamburger-btn"></a>
     <div class="toolbar__title toolbar__title_center">
       <h2>Title</h2>
     </div>
     <nav class="nav">
       <ul class="nav__items">
         <li class="nav__item">
-          <a href="" class="btn btn_clear btn_invert">Menu</a>
+          <a class="btn btn_clear btn_invert">Menu</a>
         </li>
         <li class="nav__item">
-          <a href="" class="btn">Profile</a>
+          <a class="btn">Profile</a>
         </li>
       </ul>
     </nav>
@@ -2850,7 +2850,7 @@
   <h4 class="is-h6">alert style modifier</h4>
   <div data-grid>
     <div data-col="6" v-for="style in molecules.alerts.styleModifiers">
-      <div class="alert" :class="[style]">
+      <div class="alert alert_success" :class="[style]">
         <p>Sie sprach weiter und weiter.</p>
       </div>
       <pre><code class="html">
@@ -2868,22 +2868,22 @@
   <div class="well">
     <div data-grid>
       <div data-col="6-xs 3-sm">
-        <a href="" data-tooltip-top="This is a tooltip"
+        <a data-tooltip-top="This is a tooltip"
            class="btn btn_invert is-raised btn_block has-margin-bottom">
           tooltip top</a>
       </div>
       <div data-col="6-xs 3-sm">
-        <a href="" data-tooltip-right="This is a tooltip"
+        <a data-tooltip-right="This is a tooltip"
            class="btn btn_invert is-raised btn_block has-margin-bottom">
           tooltip right</a>
       </div>
       <div data-col="6-xs 3-sm">
-        <a href="" data-tooltip-bottom="This is a tooltip"
+        <a data-tooltip-bottom="This is a tooltip"
            class="btn btn_invert is-raised btn_block">
           tooltip bottom</a>
       </div>
       <div data-col="6-xs 3-sm">
-        <a href="" data-tooltip-left="This is a tooltip"
+        <a data-tooltip-left="This is a tooltip"
            class="btn btn_invert is-raised btn_block">
           tooltip left</a>
       </div>
@@ -3913,7 +3913,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <div class="align-center">
       <span class="is-giga ec-icon skull"></span>
       <h2 class="is-h3 special-font">ec-icons
-        <span class="tag">6.0.0</span>
+        <span class="tag">6.0.1</span>
       </h2>
     </div>
 

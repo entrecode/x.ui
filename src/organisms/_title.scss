@@ -6,14 +6,14 @@
 /// @param {array} $title-spacing [0]
 
 .title {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0;
   margin: arrayMagic($title-spacing);
+  padding: 0;
 
   &.title_stacked {
-    flex-direction: column;
     align-items: flex-start;
+    flex-direction: column;
   }
 }

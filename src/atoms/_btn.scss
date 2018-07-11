@@ -1,44 +1,18 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.1
+/// @since 9.0.4
 /// @access public
 /// @group atoms
 ///
-/// @param {variable} $btn-font-family - can be set in config.scss
-///
-/// @param {number} $btn-font-size - normal button font-size
-/// @param {number} $btn-line-height - normal button line-height
-/// @param {variable} $btn-weight - normal button font-weight
-/// @param {number} $btn-min-height - min-height of default btn
-///
-/// @param {variable} $btn-small-font-size - small button font-size
-/// @param {variable} $btn-small-line-height - small button line-height
-/// @param {variable} $btn-small-weight - small button font-weight
-/// @param {number} $btn-small-min-height - min-height of small btn
-///
-/// @param {variable} $btn-big-font-size - big button font-size
-/// @param {variable} $btn-big-line-height - big button line-height
-/// @param {variable} $btn-big-weight - big button font-weight
-/// @param {number} $btn-big-min-height - min-height of big btn
-///
-/// @param {number} $btn-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+/// @param {variable} $btn-font-family
+/// @param {number} $btn-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
 /// @param {array} $btn-spacing [0]
-/// @param {boolean} $btn-round - sets buttons to rounded buttons
-/// @param {number} $btn-radius - radius for default button
-/// @param {number} $btn-small-radius - radius for small button
-/// @param {number} $btn-big-radius - radius for big button
-/// @param {number} $btn-wide -  min width for .btn_wide button
-/// @param {number} $btn-small-wide - min width for .btn_wide.btn_small button
-/// @param {number} $btn-big-wide - min width for .btn_wide.btn_big button
-///
-/// @param {boolean} $flex-support - sets buttons to display flex
 
-/// placeholder for button metrics
-%btn {
-  /// button core style
+// button core style mixin
+@mixin btn-core {
+  cursor: pointer;
   appearance: none;
   user-select: none;
   outline: none;
-  cursor: pointer;
   touch-action: manipulation;
   text-align: center;
   vertical-align: middle;
@@ -46,75 +20,91 @@
   position: relative;
   height: auto;
   border: 0;
-  margin: arrayMagic($btn-spacing);
+  display: inline-block;
 
-  @if $flex-support == false {
-    display: inline-block;
-  } @else {
+  @supports (display: inline-flex) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
 
-  /// button typo style
   font-family: $btn-font-family;
-  font-weight: $btn-weight;
+  margin: arrayMagic($btn-spacing);
+}
 
+// @param {number} $btn-font-size [$base-font-size]
+// @param {number} $btn-line-height [$btn-font-size * $base-line-height]
+// @param {number} $btn-icon-size [$base-icon-size]
+// @param {number} $btn-min-height [40]
+// @param {value} $btn-weight [$is-bold]
+// @param {rem} $btn-radius [4]
+
+%btn {
+  @include btn-core;
   @include macro-metrics(
     $btn-font-size,
     $btn-line-height,
     $btn-min-height,
-    $padding-ratio: $btn-padding-ratio
+    $padding-ratio: $btn-padding-ratio,
+    $icon-size: $btn-icon-size
   );
+  border-radius: arrayMagic($btn-radius);
+  font-weight: $btn-weight;
 
-  /// ec-icon styles for default btn
-  .ec-icon {
-    @if $flex-support == false {
-      display: inline;
-    }
-
-    &::before {
-      line-height: inherit;
-      padding-right: rem(8);
-      vertical-align: top;
-    }
-
-    &:empty::before {
-      padding-right: 0;
-    }
-  }
-
-  &%small {
-    font-weight: $btn-small-weight;
-    border-radius: arrayMagic($btn-small-radius);
-    @include macro-metrics(
-      $btn-small-font-size,
-      $btn-small-line-height,
-      $btn-small-min-height,
-      $padding-ratio: $btn-padding-ratio
-    );
-  }
-
-  &%big {
-    font-weight: $btn-big-weight;
-    border-radius: arrayMagic($btn-big-radius);
-    @include macro-metrics(
-      $btn-big-font-size,
-      $btn-big-line-height,
-      $btn-big-min-height,
-      $padding-ratio: $btn-padding-ratio
-    );
-  }
 }
 
+// @param {number} $btn-small-font-size [$btn-font-size * .875]
+// @param {number} $btn-small-line-height [$btn-small-font-size * $base-line-height]
+// @param {number} $btn-small-icon-size [$btn-icon-size]
+// @param {number} $btn-small-min-height [32]
+// @param {value} $btn-small-weight [$btn-weight]
+// @param {rem} $btn-small-radius [4]
+
+%btn-small {
+  @include btn-core;
+  @include macro-metrics(
+    $btn-small-font-size,
+    $btn-small-line-height,
+    $btn-small-min-height,
+    $padding-ratio: $btn-padding-ratio,
+    $icon-size: $btn-small-icon-size
+  );
+  border-radius: arrayMagic($btn-small-radius);
+  font-weight: $btn-small-weight;
+
+}
+
+// @param {number} $btn-big-font-size [$btn-font-size * 1.125]
+// @param {number} $btn-big-line-height [$btn-big-font-size * $base-line-height]
+// @param {number} $btn-big-icon-size [$btn-icon-size]
+// @param {number} $btn-big-min-height [48]
+// @param {value} $btn-big-weight [$btn-weight]
+// @param {rem} $btn-big-radius [4]
+
+%btn-big {
+  @include btn-core;
+  @include macro-metrics(
+    $btn-big-font-size,
+    $btn-big-line-height,
+    $btn-big-min-height,
+    $padding-ratio: $btn-padding-ratio,
+    $icon-size: $btn-big-icon-size
+  );
+  border-radius: arrayMagic($btn-big-radius);
+  font-weight: $btn-big-weight;
+
+}
+
+// @param {value} $btn-transition [background-color .2s, box-shadow .1s]
+// @param {color} $btn-bg [$link] - set `background` value
+// @param {color} $btn-color [setContrast($link)]
 .btn {
   @extend %btn !optional;
-  transition: $btn-transition;
-  border-radius: arrayMagic($btn-radius);
-  @include set-theme-colors(getColor(link));
-
-  /// additional styles via config
   @extend %btn-style !optional;
+  background: $btn-bg;
+  color: $btn-color;
+  transition: $btn-transition;
+
 
   * {
     cursor: pointer;
@@ -124,52 +114,53 @@
     vertical-align: baseline;
   }
 
-  ///
-  /// states
-  /// ------------------------------------------------------
+  //
+  // states
+  // ------------------------------------------------------
 
-  /// default :hover and .is-active state
+  // @param {color} $btn-hover-bg [setHover($link)] - set `background` value
+  // @param {color} $btn-hover-color [$btn-color]
   &.is-active,
   &:hover,
   &:focus {
-    @include set-theme-colors(setHover($link));
+    background: $btn-hover-bg;
+    color: $btn-hover-color;
     outline: none;
   }
 
-  /// disabled state style for buttons
+  // disabled state style for buttons
   &.is-disabled,
   &[disabled] {
-    opacity: 0.6;
-    cursor: not-allowed;
     box-shadow: none;
+    cursor: not-allowed;
+    opacity: .6;
   }
 
-  /// little transform animation onclick
+  // little transform animation onclick
   &:active {
     transform: translateY(2px);
   }
 
-  ///
-  /// sizes
-  /// ------------------------------------------------------
+  //
+  // sizes
+  // ------------------------------------------------------
 
-  /// small buttons
+  // small buttons
   &.btn_small {
-    @extend %btn%small;
-
-    /// additional styles via config
+    @extend %btn-small;
     @extend %btn-small-style !optional;
   }
 
-  /// big buttons
+  // big buttons
   &.btn_big {
-    @extend %btn%big;
-
-    /// additional styles via config
+    @extend %btn-big;
     @extend %btn-big-style !optional;
   }
 
-  /// buttons with a minimum width
+  // @param {rem} $btn-wide -  min width for .btn_wide button
+  // @param {rem} $btn-small-wide - min width for .btn_wide.btn_small button
+  // @param {rem} $btn-big-wide - min width for .btn_wide.btn_big button
+
   &.btn_wide {
     min-width: rem($btn-wide);
 
@@ -182,115 +173,91 @@
     }
   }
 
-  /// full-width buttons
+  // full-width buttons
   &.btn_block {
+    display: block;
     width: 100%;
 
-    @if $flex-support == false {
-      display: block;
-    } @else {
+    @supports (display: flex) {
       display: flex;
     }
   }
 }
 
-///
-/// Styles
-/// ------------------------------------------------------
+//
+// Styles
+// ------------------------------------------------------
 
-/// minor button style, for secondary or minor interactions
+// @param {color} $btn-minor-bg [$minor]
+// @param {color} $btn-minor-color [setContrast($minor)]
+// @param {color} $btn-minor-hover-bg [setHover($minor)] - set `background` value
+// @param {color} $btn-minor-hover-color [$btn-minor-color]
 .btn_minor {
-  @include set-theme-colors(getColor(minor));
+  @extend %btn-minor-style !optional;
+  background: $btn-minor-bg;
+  color: $btn-minor-color;
 
   &.is-active,
   &:hover,
   &:focus {
-    @include set-theme-colors(setHover($minor));
+    background: $btn-minor-hover-bg;
+    color: $btn-minor-hover-color;
   }
 }
 
-/// super button style, for call to action
+// @param {color} $btn-super-bg [$super]
+// @param {color} $btn-super-color [setContrast($super)]
+// @param {color} $btn-super-hover-bg [setHover($super)] - set `background` value
+// @param {color} $btn-super-hover-color [$btn-super-color]
 .btn_super {
-  @include set-theme-colors(getColor(super));
+  @extend %btn-super-style !optional;
+  background: $btn-super-bg;
+  color: $btn-super-color;
 
   &.is-active,
   &:hover,
   &:focus {
-    @include set-theme-colors(setHover($super));
+    background: $btn-super-hover-bg;
+    color: $btn-super-hover-color;
   }
 }
 
-.btn_mono {
-  @include set-theme-colors(getColor(background, invert));
-
-  &.is-active,
-  &:hover,
-  &:focus {
-    @include set-theme-colors(
-      setHover(getColor(background, invert)),
-      getColor(link)
-    );
-  }
-}
-
-/// invert button style
+// @param {color} $btn-invert-bg [$background]
+// @param {color} $btn-invert-color [$link]
+// @param {color} $btn-invert-hover-bg [setHover($background)] - set `background` value
+// @param {color} $btn-invert-hover-color [setHover($link)]
 .btn_invert {
-  @include set-theme-colors(getColor(background), getColor(link));
+  @extend %btn-invert-style !optional;
+  background: $btn-invert-bg;
+  color: $btn-invert-color;
 
   &.is-active,
   &:hover,
   &:focus {
-    @include set-theme-colors(getColor(background), getColor(link));
-  }
-
-  &.btn_mono {
-    @include set-theme-colors(getColor(background));
+    background: $btn-invert-hover-bg;
+    color: $btn-invert-hover-color;
   }
 }
 
-/// clear button style, for link-alike buttons
+// @param {color} $btn-clear-bg [transparent]
+// @param {color} $btn-clear-color [$link]
+// @param {color} $btn-clear-hover-bg [transparent] - set `background` value
+// @param {color} $btn-clear-hover-color [setHover($link)]
 .btn_clear {
-  background-color: transparent;
-  color: getColor(link);
+  @extend %btn-clear-style !optional;
+  background: $btn-clear-bg;
+  color: $btn-clear-color;
 
   &.is-active,
   &:hover,
   &:focus {
-    background-color: getColor(state, hover);
-    color: setHover($link);
-  }
-
-  &.btn_mono {
-    color: getColor(text);
-  }
-
-  &.btn_minor {
-    color: setContrast(getColor(background), getColor(minor));
-  }
-
-  &.btn_super {
-    color: setContrast(getColor(super), getColor(super));
-  }
-
-  &.btn_invert {
-    color: setContrast(getColor(background, invert), getColor(link));
-
-    &.is-active,
-    &:hover,
-    &:focus {
-      background-color: invert(getColor(state, hover));
-      color: setContrast(getColor(background, invert), getColor(link));
-    }
-
-    &.btn_mono {
-      color: getColor(text, invert);
-      background-color: transparent;
-    }
+    background: $btn-clear-hover-bg;
+    color: $btn-clear-hover-color;
   }
 }
 
-/// for fluffy round buttons
-/// @param {boolean} $btn-round - can be set in config.scss
+// for fluffy round buttons
+// @param {boolean} $btn-round
 
 @if $btn-round == true {
   .btn {

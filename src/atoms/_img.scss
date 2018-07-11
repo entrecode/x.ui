@@ -7,13 +7,13 @@
 
   // image grows up to its initial width
   &_responsive {
-    max-width: 100%;
     height: auto;
+    max-width: 100%;
   }
 
   // image grows up to its parents width
   &_full {
-    width: 100%;
     height: auto;
+    width: 100%;
   }
 }

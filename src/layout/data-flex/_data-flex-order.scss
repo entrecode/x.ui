@@ -1,0 +1,27 @@
+/// @author Bernhard Ruoff
+/// @since 9.0.4
+/// @group flex-grid
+/// @access public
+
+$order: (
+  'is-first': '1',
+  'is-last': '-1'
+);
+
+@include set-map-breakpoints(flex-order, order, $order);
+
+$_breakpoint-keys: map-keys($breakpoints);
+
+@for $i from 1 through $grid-num-columns {
+  [data-flex-order~='#{$i}'] {
+    order: #{$i};
+  }
+
+  @each $_breakpoint-key in $_breakpoint-keys {
+    @media (min-width: getBreakpoint(#{$_breakpoint-key})) {
+      [data-flex-order~='#{$i}'] {
+        order: #{$i};
+      }
+    }
+  }
+}

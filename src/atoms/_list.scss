@@ -1,20 +1,18 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.4
 /// @access public
 /// @group molecules
 
-ul.is-unstyled,
-ol.is-unstyled {
+.is-unstyled {
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
-ul.is-inline,
-ol.is-inline {
+.is-inline {
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
 
   > li {
     display: inline-block;

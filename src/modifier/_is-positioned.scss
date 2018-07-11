@@ -7,16 +7,16 @@
 
   &-n {
     @include set-breakpoints {
-      top: 0;
       left: 50%;
+      top: 0;
       transform: translateX(-50%);
     }
   }
 
   &-ne {
     @include set-breakpoints {
-      top: 0;
       right: 0;
+      top: 0;
     }
   }
 
@@ -30,8 +30,8 @@
 
   &-se {
     @include set-breakpoints {
-      right: 0;
       bottom: 0;
+      right: 0;
     }
   }
 

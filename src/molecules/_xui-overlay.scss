@@ -9,19 +9,19 @@
 /// @param {value} $overlay-shadow
 
 .xui-overlay {
-  padding: arrayMagic($overlay-padding);
-  box-shadow: arrayMagic($overlay-shadow);
-  border-radius: arrayMagic($overlay-radius);
   background-color: $overlay-background;
+  border-radius: arrayMagic($overlay-radius);
+  box-shadow: arrayMagic($overlay-shadow);
   color: setContrast($overlay-background);
+  padding: arrayMagic($overlay-padding);
   position: relative;
 
   &__dismiss {
     @extend %btn;
-    position: absolute;
-    top: 0;
-    right: 0;
     padding-left: 0;
     padding-right: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }

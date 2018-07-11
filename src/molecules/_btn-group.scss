@@ -1,9 +1,7 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.4
 /// @access public
 /// @group molecules
-///
-/// @param {boolean} $flex-support [true]
 ///
 /// @param {boolean} $btn-round [false] - sets border-radius to 50% of button height
 /// @param {number} $btn-min-height - min-height of default btn
@@ -17,16 +15,17 @@
 // scss-lint:disable NestingDepth
 
 .btn-group {
+  @extend %btn-group-style !optional;
 
   // inline styles for .btn
   // ------------------------------------------------------
 
   > .btn {
-    margin: 0;
     border-radius: 0;
+    margin: 0;
     position: relative;
 
-    @if $flex-support == false {
+    @supports not (display: flex) {
       float: left;
     }
 
@@ -61,11 +60,15 @@
         border-radius: rem($btn-small-radius) 0 0 rem($btn-small-radius);
 
         &.btn_round {
-          border-radius: rem($btn-small-min-height / 2) 0 0 rem($btn-small-min-height / 2);
+          border-radius: rem($btn-small-min-height / 2) 0 0
+            rem($btn-small-min-height / 2);
         }
 
         @if $btn-round == true {
-          border-radius: rem($btn-small-min-height / 2) 0 0 rem($btn-small-min-height / 2);
+          border-radius: rem($btn-small-min-height / 2)
+            0
+            0
+            rem($btn-small-min-height / 2);
         }
       }
 
@@ -73,11 +76,15 @@
         border-radius: 0 rem($btn-small-radius) rem($btn-small-radius) 0;
 
         &.btn_round {
-          border-radius: 0 rem($btn-small-min-height / 2) rem($btn-small-min-height / 2) 0;
+          border-radius: 0 rem($btn-small-min-height / 2)
+            rem($btn-small-min-height / 2) 0;
         }
 
         @if $btn-round == true {
-          border-radius: 0 rem($btn-small-min-height / 2) rem($btn-small-min-height / 2) 0;
+          border-radius: 0
+            rem($btn-small-min-height / 2)
+            rem($btn-small-min-height / 2)
+            0;
         }
       }
     }
@@ -89,11 +96,15 @@
         border-radius: rem($btn-big-radius) 0 0 rem($btn-big-radius);
 
         &.btn_round {
-          border-radius: rem($btn-big-min-height / 2) 0 0 rem($btn-big-min-height / 2);
+          border-radius: rem($btn-big-min-height / 2) 0 0
+            rem($btn-big-min-height / 2);
         }
 
         @if $btn-round == true {
-          border-radius: rem($btn-big-min-height / 2) 0 0 rem($btn-big-min-height / 2);
+          border-radius: rem($btn-big-min-height / 2)
+            0
+            0
+            rem($btn-big-min-height / 2);
         }
       }
 
@@ -101,11 +112,15 @@
         border-radius: 0 rem($btn-big-radius) rem($btn-big-radius) 0;
 
         &.btn_round {
-          border-radius: 0 rem($btn-big-min-height / 2) rem($btn-big-min-height / 2) 0;
+          border-radius: 0 rem($btn-big-min-height / 2)
+            rem($btn-big-min-height / 2) 0;
         }
 
         @if $btn-round == true {
-          border-radius: 0 rem($btn-big-min-height / 2) rem($btn-big-min-height / 2) 0;
+          border-radius: 0
+            rem($btn-big-min-height / 2)
+            rem($btn-big-min-height / 2)
+            0;
         }
       }
     }
@@ -123,14 +138,14 @@
   // ------------------------------------------------------
 
   > .dropdown {
-    @if $flex-support == false {
+    @supports not (display: flex) {
       float: left;
     }
 
     > .btn {
+      border-radius: 0;
       margin: 0;
       position: relative;
-      border-radius: 0;
 
       &.btn_outlined {
         border-left-width: 0;
@@ -153,11 +168,15 @@
           border-radius: rem($btn-small-radius) 0 0 rem($btn-small-radius);
 
           &.btn_round {
-            border-radius: rem($btn-small-min-height / 2) 0 0 rem($btn-small-min-height / 2);
+            border-radius: rem($btn-small-min-height / 2) 0 0
+              rem($btn-small-min-height / 2);
           }
 
           @if $btn-round == true {
-            border-radius: rem($btn-small-min-height / 2) 0 0 rem($btn-small-min-height / 2);
+            border-radius: rem($btn-small-min-height / 2)
+              0
+              0
+              rem($btn-small-min-height / 2);
           }
         }
 
@@ -165,11 +184,15 @@
           border-radius: rem($btn-big-radius) 0 0 rem($btn-big-radius);
 
           &.btn_round {
-            border-radius: rem($btn-big-min-height / 2) 0 0 rem($btn-big-min-height / 2);
+            border-radius: rem($btn-big-min-height / 2) 0 0
+              rem($btn-big-min-height / 2);
           }
 
           @if $btn-round == true {
-            border-radius: rem($btn-big-min-height / 2) 0 0 rem($btn-big-min-height / 2);
+            border-radius: rem($btn-big-min-height / 2)
+              0
+              0
+              rem($btn-big-min-height / 2);
           }
         }
 
@@ -195,11 +218,15 @@
           border-radius: 0 rem($btn-small-radius) rem($btn-small-radius) 0;
 
           &.btn_round {
-            border-radius: 0 rem($btn-small-min-height / 2) rem($btn-small-min-height / 2) 0;
+            border-radius: 0 rem($btn-small-min-height / 2)
+              rem($btn-small-min-height / 2) 0;
           }
 
           @if $btn-round == true {
-            border-radius: 0 rem($btn-small-min-height / 2) rem($btn-small-min-height / 2) 0;
+            border-radius: 0
+              rem($btn-small-min-height / 2)
+              rem($btn-small-min-height / 2)
+              0;
           }
         }
 
@@ -207,27 +234,29 @@
           border-radius: 0 rem($btn-big-radius) rem($btn-big-radius) 0;
 
           &.btn_round {
-            border-radius: 0 rem($btn-big-min-height / 2) rem($btn-big-min-height / 2) 0;
+            border-radius: 0 rem($btn-big-min-height / 2)
+              rem($btn-big-min-height / 2) 0;
           }
 
           @if $btn-round == true {
-            border-radius: 0 rem($btn-big-min-height / 2) rem($btn-big-min-height / 2) 0;
+            border-radius: 0
+              rem($btn-big-min-height / 2)
+              rem($btn-big-min-height / 2)
+              0;
           }
         }
       }
     }
   }
 
-  @if $flex-support == true {
+  @supports (display: flex) {
     display: flex;
   }
 
   &__divider {
-    width: 1px;
     background-color: getColor(divider);
     margin-left: -1px;
+    width: 1px;
     z-index: 1;
   }
-
-  @extend %btn-group-style !optional;
 }

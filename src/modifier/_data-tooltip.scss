@@ -62,25 +62,24 @@
 }
 
 %tooltip {
-  position: relative;
-  overflow: visible;
-
   @extend %tooltip-style !optional;
+  overflow: visible;
+  position: relative;
 
   &::after {
     @include macro-metrics($tooltip-font-size, $tooltip-line-height, $tooltip-min-height, $padding-ratio: $tooltip-padding-ratio);
-    text-transform: initial;
-    letter-spacing: 0;
     background-color: getColor(background, backdrop);
     color: setContrast(getColor(background, backdrop));
     display: none;
     font-weight: $tooltip-weight;
+    letter-spacing: 0;
+    pointer-events: none;
     position: absolute;
-    text-decoration: none;
     text-align: center;
+    text-decoration: none;
+    text-transform: initial;
     white-space: nowrap;
     z-index: 100;
-    pointer-events: none;
 
     @if $tooltip-round == true {
       border-radius: arrayMagic($tooltip-min-height / 2);
@@ -101,11 +100,11 @@
   @extend %tooltip;
 
   &::after {
-    content: attr(data-tooltip-bottom);
     animation: tooltipBottom .2s forwards;
-    top: 100%;
+    content: attr(data-tooltip-bottom);
     left: 50%;
     opacity: 0;
+    top: 100%;
   }
 
   &:hover {
@@ -120,11 +119,11 @@
   @extend %tooltip;
 
   &::after {
-    content: attr(data-tooltip-left);
-    top: 50%;
-    right: 100%;
     animation: tooltipLeft .2s forwards;
+    content: attr(data-tooltip-left);
     opacity: 0;
+    right: 100%;
+    top: 50%;
   }
 
   &:hover {
@@ -139,11 +138,11 @@
   @extend %tooltip;
 
   &::after {
-    content: attr(data-tooltip-right);
-    top: 50%;
-    left: 100%;
     animation: tooltipRight .2s forwards;
+    content: attr(data-tooltip-right);
+    left: 100%;
     opacity: 0;
+    top: 50%;
   }
 
   &:hover {
@@ -158,10 +157,10 @@
   @extend %tooltip;
 
   &::after {
-    content: attr(data-tooltip-top);
-    bottom: 100%;
-    left: 50%;
     animation: tooltipTop .2s forwards;
+    bottom: 100%;
+    content: attr(data-tooltip-top);
+    left: 50%;
     opacity: 0;
   }
 

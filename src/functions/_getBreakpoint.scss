@@ -1,0 +1,35 @@
+/// @author Bernhard Ruoff
+/// @since 7.0.0
+/// @access public
+/// @group grid-functions
+///
+/// @param {value} $breakpoint - name of breakpoint in map
+/// @param {map} $map [$breakpoints] - name of breakpoint map
+///
+/// @return {number} value of next breakpoint-key or null
+
+@function nextBreakpoint($breakpoint, $map: $breakpoints) {
+  $_keys: map-keys($map);
+  $_current: index($_keys, $breakpoint);
+
+  @return if($_current < length($map), map-get($map, nth($_keys, $_current + 1)), null);
+}
+
+/// @param {value} $breakpoint - name of breakpoint in map
+/// @param {value} $max null - can be set to max
+///
+/// @return {px} value of breakpoint-key, if $max == true it returns the value - 1 of the next value
+
+@function getBreakpoint($breakpoint, $max: null) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @if $max == max {
+      $_breakpoint-max: nextBreakpoint($breakpoint);
+      @return if($_breakpoint-max, $_breakpoint-max - 1 * 1px, map-get($breakpoints, $breakpoint) * 1px);
+    } @else {
+      @return map-get($breakpoints, $breakpoint) * 1px;
+    }
+  } @else {
+    @warn '#{$breakpoint} is not a key';
+    @return null;
+  }
+}

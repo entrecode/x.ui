@@ -1,38 +1,37 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.0
+/// @since 9.0.4
 /// @access public
 /// @group atoms
 
 // scss-lint:disable NestingDepth
 .xui-radio {
   label {
-    display: flex;
     cursor: pointer;
+    display: flex;
   }
 
-  input[type='radio'] {
+  [type='radio'] {
     @extend %is-hidden-input;
 
     + label {
       &::before {
-        font-family: initial;
+        @extend %radio-style;
+        background-color: getColor(background);
+        border-radius: arrayMagic($radio-height / 2);
+        color: transparent;
         content: '\2B24';
         display: flex;
-        flex-shrink: 0;
         flex-grow: 0;
+        flex-shrink: 0;
+        font-family: initial;
+        font-size: rem($radio-font-size / 4);
+        height: rem($radio-height);
         justify-content: center;
-        background-color: getColor(background);
+        line-height: rem($radio-line-height);
         margin-right: rem(8);
         text-align: center;
-        color: transparent;
-        height: rem($radio-height);
-        width: rem($radio-height);
-        border-radius: arrayMagic($radio-height / 2);
-        font-size: rem($radio-font-size / 4);
-        line-height: rem($radio-line-height);
         transition: all 0.2s;
-
-        @extend %radio-style;
+        width: rem($radio-height);
       }
 
       &:hover {

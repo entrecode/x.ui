@@ -1,13 +1,13 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.2
+/// @since 9.0.4
 /// @access public
 /// @group atoms modifier
 
 @mixin btn-glow($glow-color) {
-  box-shadow: 0 12px 24px -8px rgba($glow-color, 0.6);
+  box-shadow: 0 12px 24px -8px rgba($glow-color, .6);
 
   &:hover {
-    box-shadow: 0 8px 16px -8px rgba($glow-color, 0.6);
+    box-shadow: 0 8px 16px -8px rgba($glow-color, .6);
   }
 
   &.is-disabled,
@@ -16,16 +16,19 @@
   }
 }
 
+// @param {color} $btn-bg [$link]
+// @param {color} $btn-super-bg [$super]
+// @param {color} $btn-minor-bg [$minor]
 .btn_glow {
   &.btn {
-    @include btn-glow(getColor(link));
+    @include btn-glow($btn-bg);
 
     &.btn_super {
-      @include btn-glow(getColor(super));
+      @include btn-glow($btn-super-bg);
     }
 
     &.btn_minor {
-      @include btn-glow(getColor(minor));
+      @include btn-glow($btn-minor-bg);
     }
   }
 }

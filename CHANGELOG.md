@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## 9.0.4
+
+### added
+
+- color config for btn styles
+- new mixin `btn-core`
+- `.scss-lint.yml`
+- config for `xui-toggle`
+
+### changes
+
+- changed `%btn%small` to `%btn-small`
+- changed `%btn%big` to `%btn-big`
+- removed `btn_mono` modifier
+- removed `hamburger-btn_invert` modifier
+- removed nested classes for `btn_clear` modifier - use `is-ink-#` instead
+- removed QualifyingElement
+- removed `border-color()` function
+
 ## 9.0.3
 
 ### added

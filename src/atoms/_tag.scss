@@ -28,6 +28,7 @@
 /// @param {number} $tag-big-radius [4]
 
 .tag {
+  @extend %tag-style !optional;
   @include macro-metrics(
     $tag-font-size,
     $tag-line-height,
@@ -35,20 +36,18 @@
     $padding-ratio: $tag-padding-ratio
   );
   @include set-theme-colors($tag-background);
-  white-space: nowrap;
-  display: inline-block;
-  text-align: center;
-  font-weight: $tag-weight;
   border-radius: arrayMagic($tag-radius);
+  display: inline-block;
+  font-weight: $tag-weight;
+  text-align: center;
+  white-space: nowrap;
 
   a {
     color: getColor(text, lighter);
   }
 
-  /// additional styles via config
-  @extend %tag-style !optional;
-
   &.tag_small {
+    @extend %tag-small-style !optional;
     @include macro-metrics(
       $tag-small-font-size,
       $tag-small-line-height,
@@ -57,12 +56,10 @@
     );
     border-radius: arrayMagic($tag-small-radius);
     font-weight: $tag-small-weight;
-
-    /// additional styles via config
-    @extend %tag-small-style !optional;
   }
 
   &.tag_big {
+    @extend %tag-big-style !optional;
     @include macro-metrics(
       $tag-big-font-size,
       $tag-big-line-height,
@@ -71,9 +68,6 @@
     );
     border-radius: arrayMagic($tag-big-radius);
     font-weight: $tag-big-weight;
-
-    /// additional styles via config
-    @extend %tag-big-style !optional;
   }
 
   + .tag {
@@ -88,27 +82,27 @@
 /// @param {array} $name-array - postfix names appending $prefix
 /// @param {array} $color-array - theme colors
 
-$prefix: 'tag_';
-$name-array: minor, link, super, highlight, invert, info, error, success,
+$_prefix: 'tag_';
+$_name-array: minor, link, super, highlight, invert, info, error, success,
   warning;
-$color-array: getColor(minor), getColor(link), getColor(super),
+$_color-array: getColor(minor), getColor(link), getColor(super),
   getColor(highlight), getColor(text, invert), getColor(state, info),
   getColor(state, error), getColor(state, success), getColor(state, warning);
 
-@for $i from 1 through length($color-array) {
-  $color: nth($color-array, $i);
-  $name: nth($name-array, $i);
+@for $i from 1 through length($_color-array) {
+  $_c: nth($_color-array, $i);
+  $_n: nth($_name-array, $i);
 
-  .#{$prefix}#{$name} {
-    @include set-theme-colors($color);
+  .#{$_prefix}#{$_n} {
+    @include set-theme-colors($_c);
 
     a {
-      color: setContrast($color);
+      color: setContrast($_c);
     }
 
-    @at-root a.#{$prefix}#{$name} {
+    @at-root a.#{$_prefix}#{$_n} {
       &:hover {
-        background-color: varColor($color, -4);
+        background-color: varColor($_c, -4);
       }
     }
   }

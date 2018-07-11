@@ -33,28 +33,28 @@
 
 .has-padding-middle {
   @include set-breakpoints {
-    padding-top: arrayMagic($spacing-size);
     padding-bottom: arrayMagic($spacing-size);
+    padding-top: arrayMagic($spacing-size);
   }
 
   &-smallest {
     @include set-breakpoints {
-      padding-top: arrayMagic($spacing-smallest-size);
       padding-bottom: arrayMagic($spacing-smallest-size);
+      padding-top: arrayMagic($spacing-smallest-size);
     }
   }
 
   &-small {
     @include set-breakpoints {
-      padding-top: arrayMagic($spacing-small-size);
       padding-bottom: arrayMagic($spacing-small-size);
+      padding-top: arrayMagic($spacing-small-size);
     }
   }
 
   &-big {
     @include set-breakpoints {
-      padding-top: arrayMagic($spacing-big-size);
       padding-bottom: arrayMagic($spacing-big-size);
+      padding-top: arrayMagic($spacing-big-size);
     }
   }
 }

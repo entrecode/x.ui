@@ -14,15 +14,13 @@
 /// @param {array} $toolbar-padding [$base-spacing / 2, $base-spacing]
 
 .toolbar {
+  @extend %toolbar-style !optional;
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: arrayMagic($toolbar-padding);
   min-height: rem($toolbar-min-height);
+  padding: arrayMagic($toolbar-padding);
   position: relative;
-
-  /// additional styles via config
-  @extend %toolbar-style !optional;
 
   > .hamburger-btn {
     margin: 0;
@@ -42,8 +40,8 @@
 
   .nav {
     flex-grow: 0;
-    padding: 0;
     margin: 0;
+    padding: 0;
 
     &:first-child {
       margin-right: rem(16);
@@ -58,10 +56,10 @@
     }
 
     &:only-child {
-      width: 100%;
-      margin: 0;
       display: flex;
       justify-content: flex-end;
+      margin: 0;
+      width: 100%;
     }
   }
 }
@@ -70,9 +68,9 @@
   flex-grow: 1;
 
   @include headings {
-    margin: 0;
     font-size: em($toolbar-title-size);
     line-height: 1em;
+    margin: 0;
   }
 
   img {
@@ -82,17 +80,17 @@
 
   &.toolbar__title_center {
     @include headings {
-      position: absolute;
+      -webkit-font-smoothing: antialiased;
       left: 50%;
+      margin: 0;
+      position: absolute;
       top: 50%;
       transform: translateY(-50%) translateX(-50%);
-      -webkit-font-smoothing: antialiased;
-      margin: 0;
     }
 
     img {
-      position: absolute;
       left: 50%;
+      position: absolute;
       top: 50%;
       transform: translateY(-50%) translateX(-50%);
     }
@@ -100,11 +98,10 @@
 }
 
 .toolbar_small {
-  padding: arrayMagic($toolbar-small-padding);
+  @extend %toolbar-small-style !optional;
   font-size: 87.5%;
   min-height: rem($toolbar-small-min-height);
-
-  @extend %toolbar-small-style !optional;
+  padding: arrayMagic($toolbar-small-padding);
 
   .toolbar__title {
     @include headings {

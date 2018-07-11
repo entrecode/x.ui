@@ -9,16 +9,16 @@
 
   &-n {
     @include set-breakpoints {
-      top: rem($is-fab-spacing);
       left: 50%;
+      top: rem($is-fab-spacing);
       transform: translateX(-50%);
     }
   }
 
   &-ne {
     @include set-breakpoints {
-      top: rem($is-fab-spacing);
       right: rem($is-fab-spacing);
+      top: rem($is-fab-spacing);
     }
   }
 
@@ -32,8 +32,8 @@
 
   &-se {
     @include set-breakpoints {
-      right: rem($is-fab-spacing);
       bottom: rem($is-fab-spacing);
+      right: rem($is-fab-spacing);
     }
   }
 
@@ -77,6 +77,6 @@
 }
 
 [class*="is-fab-"] {
-  z-index: 10;
   position: fixed;
+  z-index: 10;
 }

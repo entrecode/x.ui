@@ -5,10 +5,10 @@
 
 .not-positioned {
   @include set-breakpoints {
-    top: auto;
-    right: auto;
     bottom: auto;
     left: auto;
+    right: auto;
+    top: auto;
     transform: initial;
   }
 }

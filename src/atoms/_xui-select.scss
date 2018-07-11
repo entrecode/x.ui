@@ -7,19 +7,19 @@
 
 %select {
   @extend %input;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
   outline: none;
   position: relative;
 
   &::after {
+    border: 4px solid transparent;
+    border-top-color: rgba(getColor(text), .2);
     content: '';
     flex-grow: 0;
     flex-shrink: 0;
-    border: 4px solid transparent;
-    border-top-color: rgba(getColor(text), .2);
     margin-top: rem(4);
     transition: border-top-color .2s;
     z-index: 1;
@@ -54,19 +54,19 @@
 
 %select-options {
   @extend %is-dropdown;
-  position: absolute;
   left: 0;
-  top: 100%;
-  z-index: 10;
   list-style: none;
-  width: 100%;
   margin: 0;
   margin-top: rem($input-border-width);
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 10;
 }
 
 %select-option {
-  padding: rem(2) 0;
   outline: none;
+  padding: rem(2) 0;
 
   &:hover,
   &.is-selected {
@@ -74,30 +74,34 @@
   }
 
   a:not(.btn) {
+    @include macro-metrics(
+      $btn-font-size,
+      $btn-line-height,
+      $btn-min-height,
+      $padding-ratio: $btn-padding-ratio
+    );
+    border-radius: arrayMagic($btn-radius);
     display: block;
     outline: none;
-    @include macro-metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio) {
-    }
     transition: background-color .4s, color .4s;
-    border-radius: arrayMagic($btn-radius);
   }
 }
 
-nav.xui-select {
+.xui-select {
   @extend %select;
 
   &:focus {
     &::after {
-      z-index: 11;
-      transform: rotate(180deg);
-      margin-top: 0;
       margin-bottom: rem(4);
+      margin-top: 0;
+      transform: rotate(180deg);
+      z-index: 11;
     }
 
     .xui-select-options {
-      visibility: visible;
       clip-path: initial;
       opacity: 1;
+      visibility: visible;
     }
   }
 
@@ -107,21 +111,21 @@ nav.xui-select {
 
   &.xui-select_top {
     .xui-select-options {
-      top: auto;
       bottom: 100%;
+      top: auto;
     }
   }
 }
 
-ul.xui-select-options {
+.xui-select-options {
   @extend %select-options;
-  overflow-y: scroll;
-  overscroll-behavior-y: contain;
-  -webkit-overflow-scrolling: touch;
   max-height: rem(240);
   opacity: 0;
-  visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
   transition: visibility .5s, opacity .2s;
+  visibility: hidden;
 
   .xui-select-option {
     @extend %select-option;
