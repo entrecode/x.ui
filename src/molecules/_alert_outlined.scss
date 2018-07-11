@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.4
 /// @access public
 /// @group molecules
 ///
@@ -15,22 +15,22 @@
     border-style: solid;
     border-width: rem($alert-outlined);
 
-    /// @param {value} $prefix ['alert_']
-    /// @param {array} $name-array - postfix names appending $prefix
-    /// @param {array} $color-array - theme colors
+    /// @param {value} $_prefix ['alert_']
+    /// @param {array} $_name-array - postfix names appending $prefix
+    /// @param {array} $_color-array - theme colors
 
-    $prefix: 'alert_';
-    $name-array: minor, link, super, highlight, invert, info, error, success, warning;
-    $color-array: getColor(minor), getColor(link), getColor(super), getColor(highlight), getColor(text, invert), getColor(state, info), getColor(state, error), getColor(state, success), getColor(state, warning);
+    $_prefix: 'alert_';
+    $_name-array: minor, link, super, highlight, invert, info, error, success, warning;
+    $_color-array: getColor(minor), getColor(link), getColor(super), getColor(highlight), getColor(text, invert), getColor(state, info), getColor(state, error), getColor(state, success), getColor(state, warning);
 
-    @for $i from 1 through length($color-array) {
-      $color: nth($color-array, $i);
-      $name: nth($name-array, $i);
+    @for $i from 1 through length($_color-array) {
+      $_c: nth($_color-array, $i);
+      $_n: nth($_name-array, $i);
 
-      &.#{$prefix}#{$name} {
+      &.#{$_prefix}#{$_n} {
         background-color: transparent;
-        border-color: $color;
-        color: setContrast(getColor(background), $color);
+        border-color: $_c;
+        color: setContrast($background, $_c);
       }
     }
   }
