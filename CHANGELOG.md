@@ -6,6 +6,8 @@
 
 - color config for btn styles
 - new mixin `btn-core`
+- `.scss-lint.yml`
+- config for `xui-toggle`
 
 ### changes
 
@@ -15,6 +17,7 @@
 - removed `hamburger-btn_invert` modifier
 - removed nested classes for `btn_clear` modifier - use `is-ink-#` instead
 - removed QualifyingElement
+- removed `border-color()` function
 
 ## 9.0.3
 

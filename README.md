@@ -1,6 +1,6 @@
 <p align="center"><img src="readme.png" alt="x.ui"></p>
 
-# x.ui 9.0.3
+# x.ui 9.0.4
 
 **x.ui** is a framework based on the atomic design methodology. this workflow is inspired by nature and physics and has a pretty serious focus on modularity and structure. its structure begins with the smallest part and builds up to complex structure. as a result, there is very little redundancy with a remarkable flexibility.
 
@@ -32,6 +32,10 @@ using node-sass:
 @import '../node_modules/x.ui/src/x.ui';
 ...
 ```
+
+## Crossbrowser compatibility
+
+x.ui has uses no prefix mixins, please use an autoprefixer in your project
 
 ## creators
 
