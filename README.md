@@ -6,7 +6,7 @@
 
 ## getting started
 
-To install x.ui, run
+To install x.ui run
 
 ```sh
 npm i x.ui --save
