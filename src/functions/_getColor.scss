@@ -9,12 +9,13 @@
 /// color: getColor(link);
 ///
 /// @param {string} $color - Name of the color
+/// @requires {variable} $color-map-id [$xui-colors] - can be changed use a different colormap
 ///
 /// @return {color} Value of the color
 
 @function getColor($color-string...) {
   $_string-length: length($color-string);
-  $_color-map: $xui-colors;
+  $_color-map: $color-map-id;
 
   @if $_string-length == 1 {
     $_color-value: nth($color-string, 1);

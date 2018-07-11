@@ -87,6 +87,46 @@ $_luma-background: luma($background);
 }
 
 //
+// COLORMAP
+// ---------------------------------------------
+// colormap used in `getColor()` function
+$xui-colors: (
+        base: (
+                'text': $text,
+                'background': $background,
+                'link': $link,
+                'minor': $minor,
+                'super': $super,
+                'highlight': $highlight,
+                'divider': $divider-color,
+        ),
+        text: (
+                'invert': $text-invert,
+                'light': $text-light,
+                'lighter': $text-lighter,
+                'lightest': $text-lightest,
+        ),
+        background: (
+                'invert': $background-invert,
+                'light': $background-light,
+                'lighter': $background-lighter,
+                'lightest': $background-lightest,
+                'backdrop': $backdrop,
+        ),
+        state: (
+                'hover': $state-hover,
+                'disabled': $state-disabled,
+                'info': $state-info,
+                'error': $state-error,
+                'success': $state-success,
+                'warning': $state-warning,
+        )
+) !default;
+
+// @param {variable} $color-map-id [$xui-colors] - can be changed use a different colormap
+$color-map-id: $xui-colors !default;
+
+//
 // ROOT
 // -------------------------------------------------------------------------------------------------
 // @param {px} $root-size [16] - default size used for global size calculations
