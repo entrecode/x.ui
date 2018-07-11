@@ -9,10 +9,10 @@
 /// @return {number} value of next breakpoint-key or null
 
 @function nextBreakpoint($breakpoint, $map: $breakpoints) {
-  $keys: map-keys($map);
-  $current: index($keys, $breakpoint);
+  $_keys: map-keys($map);
+  $_current: index($_keys, $breakpoint);
 
-  @return if($current < length($map), map-get($map, nth($keys, $current + 1)), null);
+  @return if($_current < length($map), map-get($map, nth($_keys, $_current + 1)), null);
 }
 
 /// @param {value} $breakpoint - name of breakpoint in map
@@ -23,8 +23,8 @@
 @function getBreakpoint($breakpoint, $max: null) {
   @if map-has-key($breakpoints, $breakpoint) {
     @if $max == max {
-      $breakpoint-max: nextBreakpoint($breakpoint);
-      @return if($breakpoint-max, $breakpoint-max - 1 * 1px, map-get($breakpoints, $breakpoint) * 1px);
+      $_breakpoint-max: nextBreakpoint($breakpoint);
+      @return if($_breakpoint-max, $_breakpoint-max - 1 * 1px, map-get($breakpoints, $breakpoint) * 1px);
     } @else {
       @return map-get($breakpoints, $breakpoint) * 1px;
     }

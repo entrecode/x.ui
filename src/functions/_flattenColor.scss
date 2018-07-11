@@ -7,17 +7,25 @@
 /// @example
 /// color: flattenColor(rgba(black, .2);
 ///
-/// @param {color} $c - color to be flattened
-/// @param {color} $b [$background] - background-color
+/// @param {color} $fg - forground-color to be flattened
+/// @param {color} $bg [$background] - background-color
 ///
-/// @return {color} $flatColor - flattened color without opacity
+/// @return {rgba}
 
-@function flattenColor($c, $b: $background) {
-  $_alpha: alpha($c) * 100%;
-  $_foreground: rgba($c, 1);
-  @if alpha($b) < 1 {
-    @warn 'no opacity allowed for second value!';
+@function flattenColor($fg, $bg: $background) {
+  $a1: alpha($bg);
+  $a2: alpha($fg);
+
+  @if ($a1 == 0) {
+    @if ($a2 == 0) {
+      @return $fg;
+    }
   }
-  $_flat-color: mix($c, $b, $_alpha);
-  @return $_flat-color;
+
+  $a: $a2 + (1 - $a2) * $a1;
+  $r: ($a2 * red($fg) + (1 - $a2) * $a1 * red($bg)) / $a;
+  $g: ($a2 * green($fg) + (1 - $a2) * $a1 * green($bg)) / $a;
+  $b: ($a2 * blue($fg) + (1 - $a2) * $a1 * blue($bg)) / $a;
+
+  @return rgba($r, $g, $b, $a);
 }

@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.4
 /// @access public
 /// @group color-functions
 ///
@@ -9,9 +9,9 @@
 /// @return {color} a shade of a color depending on it's lightness
 
 @function shadeByContrast($color, $amount) {
-  $lightness: lightness($color);
+  $_luma: luma($color);
 
-  @if stripUnit($lightness) > 50 {
+  @if $_luma > .5 {
     @return varColor($color, $amount * -1);
   } @else {
     @return varColor($color, $amount);

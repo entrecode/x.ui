@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.8
+/// @since 9.0.4
 /// @access public
 /// @group size-functions
 ///
@@ -15,29 +15,29 @@
 /// @return {rem} string of values in rem
 
 @function arrayMagic($array, $unit: 'xrem') {
-  $output: null;
-  $value: null;
+  $_output: null;
+  $_value: null;
 
   @for $i from 1 through length($array) {
-    $entry: nth($array, $i);
+    $_entry: nth($array, $i);
 
-    @if type-of($entry) == 'number' {
-      @if $entry == 0 {
-        $value: #{$entry};
+    @if type-of($_entry) == 'number' {
+      @if $_entry == 0 {
+        $_value: #{$_entry};
       } @else {
         @if ($unit == 'xrem') {
-          $value: rem($entry);
+          $_value: rem($_entry);
         } @else if($unit == 'xem') {
-          $value: em($entry);
+          $_value: em($_entry);
         } @else {
-          $value: unquote('#{$entry * 1}#{$unit}');
+          $_value: unquote('#{$_entry * 1}#{$unit}');
         }
       }
     } @else {
-      $value: #{$entry};
+      $_value: #{$_entry};
     }
-    $output: append($output, $value);
+    $_output: append($_output, $_value);
   }
 
-  @return $output;
+  @return $_output;
 }

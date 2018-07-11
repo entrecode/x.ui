@@ -86,11 +86,11 @@
         margin-left: rem($btn-radius + 4);
 
         &::before {
+          border-width: rem($input-border-width);
+          border-style: solid;
           border-color: $input-border-color;
           border-left: 0;
           border-radius: 0 rem($btn-radius) rem($btn-radius) 0;
-          border-style: solid;
-          border-width: rem($input-border-width);
           content: '';
           height: 100%;
           left: rem(($btn-radius + 4) * -1);

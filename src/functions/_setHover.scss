@@ -11,13 +11,13 @@
 /// @return new shade of color
 
 @function setHover($color, $shade: $hover-shading) {
-  $brightness: getBrightness($color);
+  $_brightness: getBrightness($color);
 
   @if (alpha($color) < 1) {
     $color: flattenColor($color);
   }
 
-  @if $brightness > 180 {
+  @if $_brightness < 180 {
     $shade: $shade * -1;
   }
 
