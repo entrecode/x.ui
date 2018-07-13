@@ -1,6 +1,7 @@
 {
   "name": "x.ui",
-  "version": "9.0.4",
+  "version": "9.0.5",
+  "license": "MIT",
   "description": "x.ui is a framework based on the atomic design methodology",
   "author": "entrecode GmbH",
   "main": "src/x.ui.scss",

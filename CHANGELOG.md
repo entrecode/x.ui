@@ -2,6 +2,10 @@
 
 ## 9.0.5
 
+### added
+
+- styles and config for `fieldset`
+
 ### changes
 
 - renamed all variables with `-margin` to `-spacing`
