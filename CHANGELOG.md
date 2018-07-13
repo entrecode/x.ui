@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 9.0.5
+
+### added
+
+- styles and config for `fieldset`
+
+### changes
+
+- renamed all variables with `-margin` to `-spacing`
+- renamed all variables with `-bg` to `-background`
+- bug fix in `is-scrollable()` mixin
+
 ## 9.0.4
 
 ### added

@@ -16,7 +16,7 @@
       overscroll-behavior-x: contain;
     }
   } @else if $axis == 'y' {
-    overflow-x: scroll;
+    overflow-y: scroll;
     @if $contain != false {
       overscroll-behavior-y: contain;
     }

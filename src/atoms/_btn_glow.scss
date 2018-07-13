@@ -16,19 +16,19 @@
   }
 }
 
-// @param {color} $btn-bg [$link]
-// @param {color} $btn-super-bg [$super]
-// @param {color} $btn-minor-bg [$minor]
+// @param {color} $btn-background [$link]
+// @param {color} $btn-super-background [$super]
+// @param {color} $btn-minor-background [$minor]
 .btn_glow {
   &.btn {
-    @include btn-glow($btn-bg);
+    @include btn-glow($btn-background);
 
     &.btn_super {
-      @include btn-glow($btn-super-bg);
+      @include btn-glow($btn-super-background);
     }
 
     &.btn_minor {
-      @include btn-glow($btn-minor-bg);
+      @include btn-glow($btn-minor-background);
     }
   }
 }
