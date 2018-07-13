@@ -1,24 +1,11 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.8
+/// @since 9.0.5
 /// @access public
 /// @group molecules
 ///
 /// @param {color} $alert-background [$background-lightest]
 /// @param {value} $alert-weight [$is-normal]
 /// @param {number} $alert-radius [4]
-///
-/// @param {em} $alert-small-font-size [$base-font-size * .875]
-/// @param {rem} $alert-small-padding [8 12]
-/// @param {rem} $alert-small-margin [0 0 16 0]
-///
-/// @param {em} $alert-font-size [$base-font-size]
-/// @param {rem} $alert-padding [16 24]
-/// @param {rem} $alert-margin [0 0 16 0]
-///
-/// @param {em} $alert-big-font-size [$base-font-size * 1.125]
-/// @param {rem} $alert-big-padding [24 28]
-/// @param {rem} $alert-big-margin [0 0 16 0]
-///
 /// @example
 ///   <p class='alert alert_error'>Error Message</p>
 
@@ -34,27 +21,36 @@
   }
 }
 
+// @param {em} $alert-font-size [$base-font-size]
+// @param {rem} $alert-padding [16 24]
+// @param {rem} $alert-spacing [0 0 16 0]
 .alert {
   @extend %alert;
   @extend %alert-style !optional;
   font-size: em($alert-font-size);
-  margin: arrayMagic($alert-margin);
+  margin: arrayMagic($alert-spacing);
   padding: arrayMagic($alert-padding);
 }
 
+// @param {em} $alert-small-font-size [$base-font-size * .875]
+// @param {rem} $alert-small-padding [8 12]
+// @param {rem} $alert-small-spacing [$alert-spacing]
 .alert-small {
   @extend %alert;
   @extend %alert-small-style !optional;
   font-size: em($alert-small-font-size);
-  margin: arrayMagic($alert-small-margin);
+  margin: arrayMagic($alert-small-spacing);
   padding: arrayMagic($alert-small-padding);
 }
 
+// @param {em} $alert-big-font-size [$base-font-size * 1.125]
+// @param {rem} $alert-big-padding [24 28]
+// @param {rem} $alert-big-spacing [$alert-spacing]
 .alert-big {
   @extend %alert;
   @extend %alert-big-style !optional;
   font-size: em($alert-big-font-size);
-  margin: arrayMagic($alert-big-margin);
+  margin: arrayMagic($alert-big-spacing);
   padding: arrayMagic($alert-big-padding);
 }
 

@@ -22,10 +22,10 @@
     }
   }
 
-  // @param {array} $nav-item-spacing [4]
+  // @param {array} $nav-item-padding [4]
   .nav__item {
     display: inline-block;
-    padding: arrayMagic($nav-item-spacing);
+    padding: arrayMagic($nav-item-padding);
 
     .btn {
       margin: 0;

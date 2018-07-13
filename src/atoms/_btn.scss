@@ -96,12 +96,12 @@
 }
 
 // @param {value} $btn-transition [background-color .2s, box-shadow .1s]
-// @param {color} $btn-bg [$link] - set `background` value
+// @param {color} $btn-background [$link] - set `background` value
 // @param {color} $btn-color [setContrast($link)]
 .btn {
   @extend %btn !optional;
   @extend %btn-style !optional;
-  background: $btn-bg;
+  background: $btn-background;
   color: $btn-color;
   transition: $btn-transition;
 
@@ -118,12 +118,12 @@
   // states
   // ------------------------------------------------------
 
-  // @param {color} $btn-hover-bg [setHover($link)] - set `background` value
+  // @param {color} $btn-hover-background [setHover($link)] - set `background` value
   // @param {color} $btn-hover-color [$btn-color]
   &.is-active,
   &:hover,
   &:focus {
-    background: $btn-hover-bg;
+    background: $btn-hover-background;
     color: $btn-hover-color;
     outline: none;
   }
@@ -188,70 +188,70 @@
 // Styles
 // ------------------------------------------------------
 
-// @param {color} $btn-minor-bg [$minor]
+// @param {color} $btn-minor-background [$minor]
 // @param {color} $btn-minor-color [setContrast($minor)]
-// @param {color} $btn-minor-hover-bg [setHover($minor)] - set `background` value
+// @param {color} $btn-minor-hover-background [setHover($minor)] - set `background` value
 // @param {color} $btn-minor-hover-color [$btn-minor-color]
 .btn_minor {
   @extend %btn-minor-style !optional;
-  background: $btn-minor-bg;
+  background: $btn-minor-background;
   color: $btn-minor-color;
 
   &.is-active,
   &:hover,
   &:focus {
-    background: $btn-minor-hover-bg;
+    background: $btn-minor-hover-background;
     color: $btn-minor-hover-color;
   }
 }
 
-// @param {color} $btn-super-bg [$super]
+// @param {color} $btn-super-background [$super]
 // @param {color} $btn-super-color [setContrast($super)]
-// @param {color} $btn-super-hover-bg [setHover($super)] - set `background` value
+// @param {color} $btn-super-hover-background [setHover($super)] - set `background` value
 // @param {color} $btn-super-hover-color [$btn-super-color]
 .btn_super {
   @extend %btn-super-style !optional;
-  background: $btn-super-bg;
+  background: $btn-super-background;
   color: $btn-super-color;
 
   &.is-active,
   &:hover,
   &:focus {
-    background: $btn-super-hover-bg;
+    background: $btn-super-hover-background;
     color: $btn-super-hover-color;
   }
 }
 
-// @param {color} $btn-invert-bg [$background]
+// @param {color} $btn-invert-background [$background]
 // @param {color} $btn-invert-color [$link]
-// @param {color} $btn-invert-hover-bg [setHover($background)] - set `background` value
+// @param {color} $btn-invert-hover-background [setHover($background)] - set `background` value
 // @param {color} $btn-invert-hover-color [setHover($link)]
 .btn_invert {
   @extend %btn-invert-style !optional;
-  background: $btn-invert-bg;
+  background: $btn-invert-background;
   color: $btn-invert-color;
 
   &.is-active,
   &:hover,
   &:focus {
-    background: $btn-invert-hover-bg;
+    background: $btn-invert-hover-background;
     color: $btn-invert-hover-color;
   }
 }
 
-// @param {color} $btn-clear-bg [transparent]
+// @param {color} $btn-clear-background [transparent]
 // @param {color} $btn-clear-color [$link]
-// @param {color} $btn-clear-hover-bg [transparent] - set `background` value
+// @param {color} $btn-clear-hover-background [transparent] - set `background` value
 // @param {color} $btn-clear-hover-color [setHover($link)]
 .btn_clear {
   @extend %btn-clear-style !optional;
-  background: $btn-clear-bg;
+  background: $btn-clear-background;
   color: $btn-clear-color;
 
   &.is-active,
   &:hover,
   &:focus {
-    background: $btn-clear-hover-bg;
+    background: $btn-clear-hover-background;
     color: $btn-clear-hover-color;
   }
 }

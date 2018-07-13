@@ -429,13 +429,13 @@ $btn-outline: 2 !default;
 
 // STYLES
 
-// @param {color} $btn-bg [$link] - set `background` value
+// @param {color} $btn-background [$link] - set `background` value
 // @param {color} $btn-color [setContrast($link)]
-// @param {color} $btn-hover-bg [setHover($link)] - set `background` value
+// @param {color} $btn-hover-background [setHover($link)] - set `background` value
 // @param {color} $btn-hover-color [$btn-color]
-$btn-bg: $link !default;
+$btn-background: $link !default;
 $btn-color: setContrast($link) !default;
-$btn-hover-bg: setHover($link) !default;
+$btn-hover-background: setHover($link) !default;
 $btn-hover-color: $btn-color !default;
 
 // @param {color} $btn-outline-color [$link]
@@ -447,13 +447,13 @@ $btn-outline-hover-color: setHover($link) !default;
   // put style here...
 }
 
-// @param {color} $btn-minor-bg [$minor]
+// @param {color} $btn-minor-background [$minor]
 // @param {color} $btn-minor-color [setContrast($minor)]
-// @param {color} $btn-minor-hover-bg [setHover($minor)] - set `background` value
+// @param {color} $btn-minor-hover-background [setHover($minor)] - set `background` value
 // @param {color} $btn-minor-hover-color [$btn-minor-color]
-$btn-minor-bg: $minor !default;
+$btn-minor-background: $minor !default;
 $btn-minor-color: setContrast($minor) !default;
-$btn-minor-hover-bg: setHover($minor) !default;
+$btn-minor-hover-background: setHover($minor) !default;
 $btn-minor-hover-color: $btn-minor-color !default;
 
 %btn-minor-style {
@@ -469,13 +469,13 @@ $btn-outline-minor-hover-color: setHover($minor) !default;
   // put style here...
 }
 
-// @param {color} $btn-super-bg [$super]
+// @param {color} $btn-super-background [$super]
 // @param {color} $btn-super-color [setContrast($super)]
-// @param {color} $btn-super-hover-bg [setHover($super)] - set `background` value
+// @param {color} $btn-super-hover-background [setHover($super)] - set `background` value
 // @param {color} $btn-super-hover-color [$btn-super-color]
-$btn-super-bg: $super !default;
+$btn-super-background: $super !default;
 $btn-super-color: setContrast($super) !default;
-$btn-super-hover-bg: setHover($super) !default;
+$btn-super-hover-background: setHover($super) !default;
 $btn-super-hover-color: $btn-super-color !default;
 
 %btn-super-style {
@@ -491,13 +491,13 @@ $btn-outline-super-hover-color: setHover($super) !default;
   // put style here...
 }
 
-// @param {color} $btn-invert-bg [$background]
+// @param {color} $btn-invert-background [$background]
 // @param {color} $btn-invert-color [$link]
-// @param {color} $btn-invert-hover-bg [setHover($background)] - set `background` value
+// @param {color} $btn-invert-hover-background [setHover($background)] - set `background` value
 // @param {color} $btn-invert-hover-color [setHover($link)]
-$btn-invert-bg: $background !default;
+$btn-invert-background: $background !default;
 $btn-invert-color: $link !default;
-$btn-invert-hover-bg: setHover($background) !default;
+$btn-invert-hover-background: setHover($background) !default;
 $btn-invert-hover-color: setHover($link) !default;
 
 %btn-invert-style {
@@ -513,13 +513,13 @@ $btn-outline-invert-hover-color: setHover($btn-outline-invert-color) !default;
   // put style here...
 }
 
-// @param {color} $btn-clear-bg [transparent]
+// @param {color} $btn-clear-background [transparent]
 // @param {color} $btn-clear-color [$link]
-// @param {color} $btn-clear-hover-bg [transparent] - set `background` value
+// @param {color} $btn-clear-hover-background [transparent] - set `background` value
 // @param {color} $btn-clear-hover-color [setHover($link)]
-$btn-clear-bg: transparent !default;
+$btn-clear-background: transparent !default;
 $btn-clear-color: $link !default;
-$btn-clear-hover-bg: transparent !default;
+$btn-clear-hover-background: transparent !default;
 $btn-clear-hover-color: setHover($link) !default;
 
 %btn-clear-style {
@@ -725,8 +725,8 @@ $nav-spacing: 0 !default;
   // styles here....
 }
 
-// @param {array} $nav-item-spacing [4]
-$nav-item-spacing: 4 !default;
+// @param {array} $nav-item-padding [4]
+$nav-item-padding: 4 !default;
 
 // @param {color} $nav-divider-color [$divider]
 // @param {px} $nav-divider-size [1]
@@ -821,20 +821,20 @@ $well-background: $background-lightest !default;
 $well-weight: $is-normal !default;
 $well-radius: 4 !default;
 
-// @param {rem} $well-small-padding [8 12]
-// @param {rem} $well-small-margin [0 0 16 0]
-$well-small-padding: 8 12 !default;
-$well-small-margin: 0 0 16 0 !default;
-
 // @param {rem} $well-padding [16 24]
-// @param {rem} $well-margin [0 0 16 0]
+// @param {rem} $well-spacing [0 0 16 0]
 $well-padding: 16 24 !default;
-$well-margin: 0 0 16 0 !default;
+$well-spacing: 0 0 16 0 !default;
+
+// @param {rem} $well-small-padding [8 12]
+// @param {rem} $well-small-spacing [$well-spacing]
+$well-small-padding: 8 12 !default;
+$well-small-spacing: $well-spacing !default;
 
 // @param {rem} $well-big-padding [24 28]
-// @param {rem} $well-big-margin [0 0 16 0]
+// @param {rem} $well-big-spacing [$well-spacing]
 $well-big-padding: 24 28 !default;
-$well-big-margin: 0 0 16 0 !default;
+$well-big-spacing: $well-spacing !default;
 
 %well-style {
   // put additional styles here...
@@ -864,26 +864,26 @@ $alert-radius: 4 !default;
 // @param {rem} $alert-outlined - sets border-width for .alert_outlined
 $alert-outlined: 2 !default;
 
-// @param {em} $alert-small-font-size [$base-font-size * .875]
-// @param {rem} $alert-small-padding [8 12]
-// @param {rem} $alert-small-margin [0 0 16 0]
-$alert-small-font-size: $base-font-size * 0.875 !default;
-$alert-small-padding: 8 12 !default;
-$alert-small-margin: 0 0 16 0 !default;
-
 // @param {em} $alert-font-size [$base-font-size]
 // @param {rem} $alert-padding [16 24]
-// @param {rem} $alert-margin [0 0 16 0]
+// @param {rem} $alert-spacing [0 0 16 0]
 $alert-font-size: $base-font-size !default;
 $alert-padding: 16 24 !default;
-$alert-margin: 0 0 16 0 !default;
+$alert-spacing: 0 0 16 0 !default;
+
+// @param {em} $alert-small-font-size [$base-font-size * .875]
+// @param {rem} $alert-small-padding [8 12]
+// @param {rem} $alert-small-spacing [$alert-spacing]
+$alert-small-font-size: $base-font-size * 0.875 !default;
+$alert-small-padding: 8 12 !default;
+$alert-small-spacing: $alert-spacing !default;
 
 // @param {em} $alert-big-font-size [$base-font-size * 1.125]
 // @param {rem} $alert-big-padding [24 28]
-// @param {rem} $alert-big-margin [0 0 16 0]
+// @param {rem} $alert-big-spacing [$alert-spacing]
 $alert-big-font-size: $base-font-size * 1.125 !default;
 $alert-big-padding: 24 28 !default;
-$alert-big-margin: 0 0 16 0 !default;
+$alert-big-spacing: $alert-spacing !default;
 
 %alert-style {
   // put additional styles here...
@@ -1074,6 +1074,22 @@ $spacing-big-size: getSpace(5) !default;
 // -------------------------------------------------------------------------------------------------
 
 //
+// FIELDSET
+// ------------------------------------------------------
+// @param {color} $fieldset-background [transparent]
+// @param {array} $fieldset-padding [0]
+// @param {array} $fieldset-spacing [0]
+// @param {array} $fieldset-border [0]
+$fieldset-background: $background !default;
+$fieldset-padding: 0 !default;
+$fieldset-spacing: 0 !default;
+$fieldset-border: 0 !default;
+
+%fieldset-style {
+  // put additional styles here...
+}
+
+//
 // INPUT
 // ------------------------------------------------------
 // @param {color} $input-background [$background] - background-color of input
@@ -1173,15 +1189,15 @@ $radio-height: 20 !default;
 //
 // XUI-TOGGLE
 // ------------------------------------------------------
-// @param {color} $input-toggle-bg [flattenColor(getColor(minor))]
-// @param {color} $input-toggle-bg [flattenColor(getColor(minor))]
-// @param {color} $input-toggle-bg [flattenColor(getColor(minor))]
+// @param {color} $input-toggle-background [flattenColor(getColor(minor))]
+// @param {color} $input-toggle-background [flattenColor(getColor(minor))]
+// @param {color} $input-toggle-background [flattenColor(getColor(minor))]
 // @param {color} $input-toggle-height [$root-size]
 // @param {color} $input-toggle-width [$xui-toggle-height * 1.75]
 // @param {color} $xui-toggle-radius [$xui-toggle-height / 2]
-$xui-toggle-bg: flattenColor($minor) !default;
-$xui-toggle-hover-bg: setHover($xui-toggle-bg) !default;
-$xui-toggle-active-bg: $link !default;
+$xui-toggle-background: flattenColor($minor) !default;
+$xui-toggle-hover-background: setHover($xui-toggle-background) !default;
+$xui-toggle-active-background: $link !default;
 $xui-toggle-height: $root-size !default;
 $xui-toggle-width: $xui-toggle-height * 1.75 !default;
 $xui-toggle-radius: $xui-toggle-height / 2 !default;
@@ -1192,11 +1208,11 @@ $xui-toggle-spacing: 0 0 8 !default;
 }
 
 
-// @param {color} $input-toggle-pin-bg [flattenColor(getColor(minor))]
+// @param {color} $input-toggle-pin-background [flattenColor(getColor(minor))]
 // @param {color} $input-toggle-pin-height [$root-size]
 // @param {color} $input-toggle-pin-width [$xui-toggle-height * 1.75]
 // @param {color} $xui-toggle-pin-radius [$xui-toggle-height / 2]
-$xui-toggle-pin-bg: $background !default;
+$xui-toggle-pin-background: $background !default;
 $xui-toggle-pin-height: $xui-toggle-height !default;
 $xui-toggle-pin-width: $xui-toggle-pin-height !default;
 $xui-toggle-pin-radius: $xui-toggle-pin-height / 2 !default;
@@ -1232,10 +1248,10 @@ $form-group-label-font-size: $base-font-size !default;
 //
 // FORM-BOOLEAN
 // ------------------------------------------------------
-// @param {array} $form-boolean-margin [$form-group-spacing]
+// @param {array} $form-boolean-spacing [$form-group-spacing]
 $form-boolean-spacing: $form-group-spacing !default;
 
-// @param {number} $form-boolean-label-margin [$form-group-label-margin]
+// @param {number} $form-boolean-label-spacing [$form-group-label-spacing]
 // @param {em} $form-boolean-label-font-size [$base-font-size]
 $form-boolean-label-spacing: $form-group-label-spacing !default;
 $form-boolean-label-font-size: $base-font-size !default;
