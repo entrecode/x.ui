@@ -1,110 +1,108 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group molecules
-///
-/// @param {bumber} $xui-tab-count [10]
-/// @param {array} $xui-tabs-spacing [0 0 $base-spacing 0]
 
 // scss-lint:disable NestingDepth, SelectorDepth
 
-%tabs-nav {
+// @param {color} $xui-tabs-background [none]
+// @param {array} $xui-tabs-spacing [0]
+// @param {array} $xui-tabs-padding [0]
+.xui-tabs {
+  @extend %xui-tabs-style !optional;
+  background: $xui-tabs-background;
   margin: arrayMagic($xui-tabs-spacing);
+  padding: arrayMagic($xui-tabs-padding);
+
+  [type='radio'] {
+    @extend %is-hidden-input;
+
+    // @param {number} $xui-tab-count [10]
+    @for $i from 1 through $xui-tab-count {
+      &:nth-of-type(#{$i}) {
+        &:checked {
+          ~ .xui-tab:nth-of-type(#{$i}) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+// @param {color} $xui-tabs-nav-background [none]
+// @param {array} $xui-tabs-nav-spacing [0]
+// @param {array} $xui-tabs-nav-padding [0]
+.xui-tabs-nav {
+  @extend %xui-tabs-nav-style !optional;
+  background: $xui-tabs-nav-background;
+  margin: arrayMagic($xui-tabs-nav-spacing);
+  padding: arrayMagic($xui-tabs-nav-padding);
 
   > ul {
-    align-items: center;
-    display: flex;
-    justify-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
 
-    > li {
-      padding: getSpace(1) getSpace(2);
-      position: relative;
-      text-align: center;
-
-      &::after {
-        border-radius: arrayMagic(2);
-        bottom: 0;
-        content: '';
-        height: rem(4);
-        left: 50%;
-        position: absolute;
-        transform: translateX(-50%);
-        transition: all 0.4s;
-        width: 20%;
-      }
-
-      &:hover {
-        &::after {
-          background-color: getColor(minor);
-          width: 40%;
-        }
-      }
+    @supports (display: flex) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
     }
   }
 }
 
-%tabs-nav-selected {
-  &::after {
-    background-color: getColor(link);
-    width: 40%;
-  }
-}
-
-%tabs-nav-item {
-  cursor: pointer;
-  display: block;
-  font-weight: $is-bold;
-  padding: getSpace(2);
+// @param {array} $xui-tabs-nav-item-gutter [0]
+.xui-tabs-nav-item {
+  padding: arrayMagic($xui-tabs-nav-item-gutter);
+  position: relative;
   text-align: center;
-}
 
-.xui-tabs-nav {
-  @extend %tabs-nav;
+  @supports not (display: flex) {
+    display: inline-block;
+  }
 
+  // @param {array} $xui-tabs-nav-item-padding [0]
+  // @param {value} $xui-tabs-nav-item-radius [0]
+  // @param {color} $xui-tabs-nav-item-background [none]
+  // @param {color} $xui-tabs-nav-item-color [$text]
+  // @param {value} $xui-tabs-nav-item-weight [$is-bold]
   label {
-    @extend %tabs-nav-item;
+    @extend %xui-tabs-nav-item-style !optional;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    border-radius: arrayMagic($xui-tabs-nav-item-radius);
+    background: $xui-tabs-nav-item-background;
+    color: $xui-tabs-nav-item-color;
+    font-weight: $xui-tabs-nav-item-weight;
+    padding: arrayMagic($xui-tabs-nav-item-padding);
 
+    // @param {color} $xui-tabs-nav-item-active-background [none]
+    // @param {color} $xui-tabs-nav-item-active-color [$link]
     &:target {
-      color: getColor(link);
+      @extend %xui-tabs-nav-item-active-style !optional;
+      background: $xui-tabs-nav-item-active-background;
+      color: $xui-tabs-nav-item-active-color;
+    }
+
+    // @param {color} $xui-tabs-nav-item-hover-background [none]
+    // @param {color} $xui-tabs-nav-item-hover-color [$link]
+    &:hover {
+      @extend %xui-tabs-nav-item-hover-style !optional;
+      background: $xui-tabs-nav-item-hover-background;
+      color: $xui-tabs-nav-item-hover-color;
     }
   }
 }
 
+// @param {color} $xui-tab-background [none]
+// @param {array} $xui-tab-spacing [0]
+// @param {array} $xui-tab-padding [0]
 .xui-tab {
+  @extend %xui-tab-style !optional;
+  background: $xui-tab-background;
+  margin: arrayMagic($xui-tab-spacing);
+  padding: arrayMagic($xui-tab-padding);
   display: none;
-}
-
-.xui-tabs {
-  [type='radio'] {
-    @extend %is-hidden-input;
-
-    @for $i from 1 through $xui-tab-count {
-      &:nth-of-type(#{$i}) {
-        &:checked {
-          ~ .xui-tabs-nav {
-            ul {
-              li {
-                &:nth-child(#{$i}) {
-                  @extend %tabs-nav-selected;
-
-                  label {
-                    color: getColor(link);
-                  }
-                }
-              }
-            }
-          }
-
-          ~ .xui-tab {
-            &:nth-of-type(#{$i}) {
-              display: block;
-            }
-          }
-        }
-      }
-    }
-  }
 }

@@ -91,36 +91,36 @@ $_luma-background: luma($background);
 // ---------------------------------------------
 // colormap used in `getColor()` function
 $xui-colors: (
-        base: (
-                'text': $text,
-                'background': $background,
-                'link': $link,
-                'minor': $minor,
-                'super': $super,
-                'highlight': $highlight,
-                'divider': $divider-color,
-        ),
-        text: (
-                'invert': $text-invert,
-                'light': $text-light,
-                'lighter': $text-lighter,
-                'lightest': $text-lightest,
-        ),
-        background: (
-                'invert': $background-invert,
-                'light': $background-light,
-                'lighter': $background-lighter,
-                'lightest': $background-lightest,
-                'backdrop': $backdrop,
-        ),
-        state: (
-                'hover': $state-hover,
-                'disabled': $state-disabled,
-                'info': $state-info,
-                'error': $state-error,
-                'success': $state-success,
-                'warning': $state-warning,
-        )
+  base: (
+    'text': $text,
+    'background': $background,
+    'link': $link,
+    'minor': $minor,
+    'super': $super,
+    'highlight': $highlight,
+    'divider': $divider-color
+  ),
+  text: (
+    'invert': $text-invert,
+    'light': $text-light,
+    'lighter': $text-lighter,
+    'lightest': $text-lightest
+  ),
+  background: (
+    'invert': $background-invert,
+    'light': $background-light,
+    'lighter': $background-lighter,
+    'lightest': $background-lightest,
+    'backdrop': $backdrop
+  ),
+  state: (
+    'hover': $state-hover,
+    'disabled': $state-disabled,
+    'info': $state-info,
+    'error': $state-error,
+    'success': $state-success,
+    'warning': $state-warning
+  )
 ) !default;
 
 // @param {variable} $color-map-id [$xui-colors] - can be changed use a different colormap
@@ -773,10 +773,77 @@ $toolbar-small-padding: $base-spacing / 4, $base-spacing / 2 !default;
 //
 // XUI-TABS
 // ------------------------------------------------------
-// @param {bumber} $xui-tab-count [10]
-// @param {array} $xui-tabs-spacing [0 0 $base-spacing 0]
+// @param {number} $xui-tab-count [10]
 $xui-tab-count: 10 !default;
-$xui-tabs-spacing: 0 0 $base-spacing 0 !default;
+
+// @param {color} $xui-tabs-background [none]
+// @param {array} $xui-tabs-spacing [0]
+// @param {array} $xui-tabs-padding [0]
+$xui-tabs-background: none !default;
+$xui-tabs-spacing: 0 !default;
+$xui-tabs-padding: 0 !default;
+
+%xui-tabs-style {
+  // put additional styles here...
+}
+
+// @param {color} $xui-tabs-nav-background [none]
+// @param {array} $xui-tabs-nav-spacing [0]
+// @param {array} $xui-tabs-nav-padding [0]
+$xui-tabs-nav-background: none !default;
+$xui-tabs-nav-spacing: 0 !default;
+$xui-tabs-nav-padding: 0 !default;
+
+%xui-tabs-nav-style {
+  // put additional styles here...
+}
+
+// @param {array} $xui-tabs-nav-item-gutter [0]
+// @param {array} $xui-tabs-nav-item-padding [0]
+// @param {value} $xui-tabs-nav-item-radius [0]
+$xui-tabs-nav-item-gutter: 0 !default;
+$xui-tabs-nav-item-padding: 4 8 !default;
+$xui-tabs-nav-item-radius: 0 !default;
+
+// @param {color} $xui-tabs-nav-item-background [none]
+// @param {color} $xui-tabs-nav-item-color [$text]
+// @param {value} $xui-tabs-nav-item-weight [$is-bold]
+$xui-tabs-nav-item-background: none !default;
+$xui-tabs-nav-item-color: $text !default;
+$xui-tabs-nav-item-weight: $is-bold !default;
+
+%xui-tabs-nav-item-style {
+  // put additional styles here...
+}
+
+// @param {color} $xui-tabs-nav-item-hover-background [none]
+// @param {color} $xui-tabs-nav-item-hover-color [$link]
+$xui-tabs-nav-item-hover-background: none !default;
+$xui-tabs-nav-item-hover-color: $link !default;
+
+%xui-tabs-nav-item-hover-style {
+  // put additional styles here...
+}
+
+// @param {color} $xui-tabs-nav-item-active-background [none]
+// @param {color} $xui-tabs-nav-item-active-color [$link]
+$xui-tabs-nav-item-active-background: none !default;
+$xui-tabs-nav-item-active-color: $link !default;
+
+%xui-tabs-nav-item-active-style {
+  // put additional styles here...
+}
+
+// @param {color} $xui-tab-background [none]
+// @param {array} $xui-tab-spacing [0]
+// @param {array} $xui-tab-padding [0]
+$xui-tab-background: none !default;
+$xui-tab-spacing: 0 !default;
+$xui-tab-padding: 0 !default;
+
+%xui-tab-style {
+  // put additional styles here...
+}
 
 //
 // XUI-List
@@ -1206,7 +1273,6 @@ $xui-toggle-spacing: 0 0 8 !default;
 %xui-toggle-style {
   // put additional styles here...
 }
-
 
 // @param {color} $input-toggle-pin-background [flattenColor(getColor(minor))]
 // @param {color} $input-toggle-pin-height [$root-size]

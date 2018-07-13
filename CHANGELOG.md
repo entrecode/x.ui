@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 9.0.6
+
+### changes
+
+- added config for `xui-tabs`
+
 ## 9.0.5
 
 ### added
