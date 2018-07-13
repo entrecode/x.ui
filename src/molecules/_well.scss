@@ -1,20 +1,11 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.5
 /// @access public
 /// @group molecules
 ///
 /// @param {color} $well-background [$background-lightest]
 /// @param {value} $well-weight [$is-normal]
 /// @param {number} $well-radius [4]
-///
-/// @param {rem} $well-small-padding [8 12]
-/// @param {rem} $well-small-margin [0 0 16 0]
-///
-/// @param {rem} $well-padding [16 24]
-/// @param {rem} $well-margin [0 0 16 0]
-///
-/// @param {rem} $well-big-padding [24 28]
-/// @param {rem} $well-big-margin [0 0 16 0]
 
 %well {
   border-radius: arrayMagic($well-radius);
@@ -27,23 +18,29 @@
   }
 }
 
+// @param {rem} $well-padding [16 24]
+// @param {rem} $well-spacing [0 0 16 0]
 .well {
   @extend %well;
   @extend %well-style !optional;
-  margin: arrayMagic($well-margin);
+  margin: arrayMagic($well-spacing);
   padding: arrayMagic($well-padding);
 }
 
+// @param {rem} $well-small-padding [8 12]
+// @param {rem} $well-small-spacing [$well-spacing]
 .well-small {
   @extend %well;
   @extend %well-small-style !optional;
-  margin: arrayMagic($well-small-margin);
+  margin: arrayMagic($well-small-spacing);
   padding: arrayMagic($well-small-padding);
 }
 
+// @param {rem} $well-big-padding [24 28]
+// @param {rem} $well-big-spacing [$well-spacing]
 .well-big {
   @extend %well;
   @extend %well-big-style !optional;
-  margin: arrayMagic($well-big-margin);
+  margin: arrayMagic($well-big-spacing);
   padding: arrayMagic($well-big-padding);
 }
