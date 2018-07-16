@@ -1,27 +1,7 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group modifier
-
-// scss-lint:disable PropertySpelling
-
-@mixin is-scrollable($axis: both, $contain: false) {
-  -webkit-overflow-scrolling: touch;
-
-  @if $axis == 'both' {
-    overflow: scroll;
-  } @else if $axis == 'x' {
-    overflow-x: scroll;
-    @if $contain != false {
-      overscroll-behavior-x: contain;
-    }
-  } @else if $axis == 'y' {
-    overflow-y: scroll;
-    @if $contain != false {
-      overscroll-behavior-y: contain;
-    }
-  }
-}
 
 .is-scrollable {
   @include set-breakpoints {
@@ -48,6 +28,32 @@
     &-contain {
       @include set-breakpoints {
         @include is-scrollable(y, contain);
+      }
+    }
+  }
+}
+
+.is-scrollable-auto {
+  &-x {
+    @include set-breakpoints {
+      @include is-scrollable(x, $behavior: auto);
+    }
+
+    &-contain {
+      @include set-breakpoints {
+        @include is-scrollable(x, contain, $behavior: auto);
+      }
+    }
+  }
+
+  &-y {
+    @include set-breakpoints {
+      @include is-scrollable(y, $behavior: auto);
+    }
+
+    &-contain {
+      @include set-breakpoints {
+        @include is-scrollable(y, contain, $behavior: auto);
       }
     }
   }
