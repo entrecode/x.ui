@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group atoms
 ///
@@ -32,12 +32,12 @@
   margin: arrayMagic($btn-spacing);
 }
 
-// @param {number} $btn-font-size [$base-font-size]
-// @param {number} $btn-line-height [$btn-font-size * $base-line-height]
-// @param {number} $btn-icon-size [$base-icon-size]
-// @param {number} $btn-min-height [40]
+// @param {px} $btn-font-size [$base-font-size]
+// @param {px} $btn-line-height [$btn-font-size * $base-line-height]
+// @param {px} $btn-icon-size [$base-icon-size]
+// @param {px} $btn-min-height [40]
 // @param {value} $btn-weight [$is-bold]
-// @param {rem} $btn-radius [4]
+// @param {px} $btn-radius [4]
 
 %btn {
   @include btn-core;
@@ -50,15 +50,14 @@
   );
   border-radius: arrayMagic($btn-radius);
   font-weight: $btn-weight;
-
 }
 
-// @param {number} $btn-small-font-size [$btn-font-size * .875]
-// @param {number} $btn-small-line-height [$btn-small-font-size * $base-line-height]
-// @param {number} $btn-small-icon-size [$btn-icon-size]
-// @param {number} $btn-small-min-height [32]
+// @param {px} $btn-small-font-size [$btn-font-size * .875]
+// @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
+// @param {px} $btn-small-icon-size [$btn-icon-size]
+// @param {px} $btn-small-min-height [32]
 // @param {value} $btn-small-weight [$btn-weight]
-// @param {rem} $btn-small-radius [4]
+// @param {px} $btn-small-radius [$btn-radius]
 
 %btn-small {
   @include btn-core;
@@ -71,15 +70,14 @@
   );
   border-radius: arrayMagic($btn-small-radius);
   font-weight: $btn-small-weight;
-
 }
 
-// @param {number} $btn-big-font-size [$btn-font-size * 1.125]
-// @param {number} $btn-big-line-height [$btn-big-font-size * $base-line-height]
-// @param {number} $btn-big-icon-size [$btn-icon-size]
-// @param {number} $btn-big-min-height [48]
+// @param {px} $btn-big-font-size [$btn-font-size * 1.125]
+// @param {px} $btn-big-line-height [$btn-big-font-size * $base-line-height]
+// @param {px} $btn-big-icon-size [$btn-icon-size]
+// @param {px} $btn-big-min-height [48]
 // @param {value} $btn-big-weight [$btn-weight]
-// @param {rem} $btn-big-radius [4]
+// @param {px} $btn-big-radius [$btn-radius]
 
 %btn-big {
   @include btn-core;
@@ -92,19 +90,18 @@
   );
   border-radius: arrayMagic($btn-big-radius);
   font-weight: $btn-big-weight;
-
 }
 
 // @param {value} $btn-transition [background-color .2s, box-shadow .1s]
-// @param {color} $btn-background [$link] - set `background` value
+// @param {color} $btn-background [$link]
 // @param {color} $btn-color [setContrast($link)]
+// @param {array} $btn-style
 .btn {
-  @extend %btn !optional;
-  @extend %btn-style !optional;
+  @extend %btn;
+  @include inject-style($btn-style);
   background: $btn-background;
   color: $btn-color;
   transition: $btn-transition;
-
 
   * {
     cursor: pointer;
@@ -118,48 +115,51 @@
   // states
   // ------------------------------------------------------
 
-  // @param {color} $btn-hover-background [setHover($link)] - set `background` value
+  // @param {color} $btn-hover-background [setHover($btn-background)]
   // @param {color} $btn-hover-color [$btn-color]
+  // @param {array} $btn-hover-style
   &.is-active,
   &:hover,
   &:focus {
+    @include inject-style($btn-hover-style);
     background: $btn-hover-background;
     color: $btn-hover-color;
     outline: none;
   }
 
   // disabled state style for buttons
+  // @param {array} $btn-disabled-style
   &.is-disabled,
   &[disabled] {
-    box-shadow: none;
+    @include inject-style($btn-disabled-style);
     cursor: not-allowed;
-    opacity: .6;
   }
 
   // little transform animation onclick
+  // @param {array} $btn-ative-style
   &:active {
-    transform: translateY(2px);
+    @include inject-style($btn-active-style);
   }
 
   //
   // sizes
   // ------------------------------------------------------
 
-  // small buttons
+  // @param {array} $btn-small-style
   &.btn_small {
     @extend %btn-small;
-    @extend %btn-small-style !optional;
+    @include inject-style($btn-small-style);
   }
 
-  // big buttons
+  // @param {array} $btn-big-style
   &.btn_big {
     @extend %btn-big;
-    @extend %btn-big-style !optional;
+    @include inject-style($btn-big-style);
   }
 
-  // @param {rem} $btn-wide -  min width for .btn_wide button
-  // @param {rem} $btn-small-wide - min width for .btn_wide.btn_small button
-  // @param {rem} $btn-big-wide - min width for .btn_wide.btn_big button
+  // @param {px} $btn-wide -  min width for .btn_wide button
+  // @param {px} $btn-small-wide - min width for .btn_wide.btn_small button
+  // @param {px} $btn-big-wide - min width for .btn_wide.btn_big button
 
   &.btn_wide {
     min-width: rem($btn-wide);
@@ -190,16 +190,19 @@
 
 // @param {color} $btn-minor-background [$minor]
 // @param {color} $btn-minor-color [setContrast($minor)]
-// @param {color} $btn-minor-hover-background [setHover($minor)] - set `background` value
-// @param {color} $btn-minor-hover-color [$btn-minor-color]
+// @param {array} $btn-minor-style
 .btn_minor {
-  @extend %btn-minor-style !optional;
+  @include inject-style($btn-minor-style);
   background: $btn-minor-background;
   color: $btn-minor-color;
 
+  // @param {color} $btn-minor-hover-background [setHover($btn-minor-background)]
+  // @param {color} $btn-minor-hover-color [$btn-minor-color]
+  // @param {array} $btn-minor-hover-style
   &.is-active,
   &:hover,
   &:focus {
+    @include inject-style($btn-minor-hover-style);
     background: $btn-minor-hover-background;
     color: $btn-minor-hover-color;
   }
@@ -207,16 +210,19 @@
 
 // @param {color} $btn-super-background [$super]
 // @param {color} $btn-super-color [setContrast($super)]
-// @param {color} $btn-super-hover-background [setHover($super)] - set `background` value
-// @param {color} $btn-super-hover-color [$btn-super-color]
+// @param {array} $btn-super-style
 .btn_super {
-  @extend %btn-super-style !optional;
+  @include inject-style($btn-super-style);
   background: $btn-super-background;
   color: $btn-super-color;
 
+  // @param {color} $btn-super-hover-background [setHover($btn-super-background)]
+  // @param {color} $btn-super-hover-color [$btn-super-color]
+  // @param {array} $btn-super-hover-style
   &.is-active,
   &:hover,
   &:focus {
+    @include inject-style($btn-super-hover-style);
     background: $btn-super-hover-background;
     color: $btn-super-hover-color;
   }
@@ -224,16 +230,19 @@
 
 // @param {color} $btn-invert-background [$background]
 // @param {color} $btn-invert-color [$link]
-// @param {color} $btn-invert-hover-background [setHover($background)] - set `background` value
-// @param {color} $btn-invert-hover-color [setHover($link)]
+// @param {array} $btn-invert-style
 .btn_invert {
-  @extend %btn-invert-style !optional;
+  @include inject-style($btn-invert-style);
   background: $btn-invert-background;
   color: $btn-invert-color;
 
+  // @param {color} $btn-invert-hover-background [setHover($btn-invert-background)]
+  // @param {color} $btn-invert-hover-color [setHover($btn-invert-color)]
+  // @param {array} $btn-invert-hover-style
   &.is-active,
   &:hover,
   &:focus {
+    @include inject-style($btn-invert-hover-style);
     background: $btn-invert-hover-background;
     color: $btn-invert-hover-color;
   }
@@ -241,16 +250,19 @@
 
 // @param {color} $btn-clear-background [transparent]
 // @param {color} $btn-clear-color [$link]
-// @param {color} $btn-clear-hover-background [transparent] - set `background` value
-// @param {color} $btn-clear-hover-color [setHover($link)]
+// @param {array} $btn-clear-style
 .btn_clear {
-  @extend %btn-clear-style !optional;
+  @include inject-style($btn-clear-style);
   background: $btn-clear-background;
   color: $btn-clear-color;
 
+  // @param {color} $btn-clear-hover-background [$btn-clear-background]
+  // @param {color} $btn-clear-hover-color [setHover($$btn-clear-color)]
+  // @param {array} $btn-clear-hover-style
   &.is-active,
   &:hover,
   &:focus {
+    @include inject-style($btn-clear-hover-style);
     background: $btn-clear-hover-background;
     color: $btn-clear-hover-color;
   }

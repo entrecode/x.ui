@@ -1,33 +1,20 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.6
 /// @access public
 /// @group atoms
 ///
-/// @param {number} $bubble-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
-///
-/// @param {number} $bubble-font-size [10]
-/// @param {number} $bubble-line-height [12]
-/// @param {number} $bubble-min-height [24]
-/// @param {value} $bubble-weight [$is-bold]
-///
-/// @param {number} $bubble-small-font-size [10]
-/// @param {number} $bubble-small-line-height [12]
-/// @param {number} $bubble-small-min-height [24]
-/// @param {value} $bubble-small-weight [$bubble-weight]
-///
-/// @param {number} $bubble-big-font-size [12]
-/// @param {number} $bubble-big-line-height [16]
-/// @param {number} $bubble-big-min-height [32]
-/// @param {value} $bubble-big-weight [$bubble-weight]
-///
-/// @param {boolean} $bubble-round [false] - sets border-radius to 50% of bubble height
-/// @param {number} $bubble-radius [4]
-/// @param {number} $bubble-small-radius [4]
-/// @param {number} $bubble-big-radius [4]
+/// @param {number} $bubble-padding-ratio [1]
 
+// @param {color} $bubble-background [$minor]
+// @param {px} $bubble-font-size [14]
+// @param {px} $bubble-line-height [16]
+// @param {px} $bubble-min-height [28]
+// @param {value} $bubble-weight [$is-bold]
+// @param {array} $bubble-style
+// @param {px} $bubble-radius [4]
 .bubble {
-  @extend %bubble-style !optional;
-  @include set-theme-colors(getColor(background, lightest));
+  @include inject-style($bubble-style);
+  @include set-theme-colors($bubble-background);
   @include macro-metrics(
     $bubble-font-size,
     $bubble-line-height,
@@ -36,13 +23,18 @@
     $inline-styles: false
   );
   border-radius: arrayMagic($bubble-radius);
-  display: inline-block;
   font-weight: $bubble-weight;
+  display: inline-block;
   text-align: center;
   white-space: nowrap;
 
+  // @param {px} $bubble-small-font-size [10]
+  // @param {px} $bubble-small-line-height [12]
+  // @param {px} $bubble-small-min-height [24]
+  // @param {px} $bubble-small-radius [$bubble-radius]
+  // @param {array} $bubble-small-style
   &.bubble_small {
-    @extend %bubble-small-style !optional;
+    @include inject-style($bubble-small-style);
     @include macro-metrics(
       $bubble-small-font-size,
       $bubble-small-line-height,
@@ -51,11 +43,15 @@
       $inline-styles: false
     );
     border-radius: arrayMagic($bubble-small-radius);
-    font-weight: $bubble-small-weight;
   }
 
+  // @param {px} $bubble-big-font-size [16]
+  // @param {px} $bubble-big-line-height [20]
+  // @param {px} $bubble-big-min-height [32]
+  // @param {px} $bubble-big-radius [$bubble-radius]
+  // @param {array} $bubble-big-style
   &.bubble_big {
-    @extend %bubble-big-style !optional;
+    @include inject-style($bubble-big-style);
     @include macro-metrics(
       $bubble-big-font-size,
       $bubble-big-line-height,
@@ -64,33 +60,22 @@
       $inline-styles: false
     );
     border-radius: arrayMagic($bubble-big-radius);
-    font-weight: $bubble-big-weight;
-  }
-
-  /// @param {value} $_prefix ['bubble_']
-  /// @param {array} $_name-array - postfix names appending $prefix
-  /// @param {array} $_color-array - theme colors
-
-  $_prefix: 'bubble_';
-  $_name-array: minor, link, super, highlight, invert, info, error, success,
-    warning;
-  $_color-array: getColor(minor), getColor(link), getColor(super),
-    getColor(highlight), getColor(text, invert), getColor(state, info),
-    getColor(state, error), getColor(state, success), getColor(state, warning);
-
-  @for $i from 1 through length($_color-array) {
-    $_color: nth($_color-array, $i);
-    $_name: nth($_name-array, $i);
-
-    &.#{$_prefix}#{$_name} {
-      @include set-theme-colors($_color);
-    }
   }
 }
 
-/// for fluffy round bubbles
-/// @param {boolean} $bubble-round - can be set in config.scss
+//
+// Styles
+// ------------------------------------------------------
+// @param {value} $_prefix ['bubble_']
+// @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
+$_prefix: 'bubble_';
+@each $_n, $_c in $theme-array {
+  .#{$_prefix}#{$_n} {
+    @include set-theme-colors($_c);
+  }
+}
 
+// @param {boolean} $bubble-round [false] - sets border-radius to 50% of bubble height
 @if $bubble-round == true {
   .bubble {
     border-radius: arrayMagic($bubble-min-height / 2);

@@ -1,36 +1,32 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.6
 /// @access public
 /// @group organism
-///
-/// @param {em} $toolbar-title-size [20] - font-size of .toolbar__title
-/// @param {rem} $toolbar-title-img-height [32] - height of .toolbar__title > img
-/// @param {rem} $toolbar-min-height [64] - min-height
-/// @param {array} $toolbar-padding [$base-spacing / 2, $base-spacing]
-///
-/// @param {em} $toolbar-small-title-size [20] - font-size of .toolbar-dense__title
-/// @param {rem} $toolbar-small-title-img-height [32] - height of .toolbar-dense__title > img
-/// @param {rem} $toolbar-small-min-height [48] - min-height
-/// @param {array} $toolbar-padding [$base-spacing / 2, $base-spacing]
 
+// @param {px} $toolbar-min-height [64] - min-height
+// @param {array} $toolbar-padding [$base-spacing / 2, $base-spacing]
+// @param {array} $toolbar-spacing [0]
+// @param {px} $toolbar-gutter [$base-spacing]
+// @param {array} $toolbar-style
 .toolbar {
-  @extend %toolbar-style !optional;
+  @include inject-style($toolbar-style);
+  min-height: rem($toolbar-min-height);
+  padding: arrayMagic($toolbar-padding);
+  margin: arrayMagic($toolbar-spacing);
   align-items: center;
   display: flex;
   justify-content: space-between;
-  min-height: rem($toolbar-min-height);
-  padding: arrayMagic($toolbar-padding);
   position: relative;
 
   > .hamburger-btn {
     margin: 0;
 
     &:first-child {
-      margin-right: rem(16);
+      margin-right: rem($toolbar-gutter);
     }
 
     &:last-child {
-      margin-left: rem(16);
+      margin-left: rem($toolbar-gutter);
     }
 
     &:only-child {
@@ -44,11 +40,11 @@
     padding: 0;
 
     &:first-child {
-      margin-right: rem(16);
+      margin-right: rem($toolbar-gutter);
     }
 
     &:last-child {
-      margin-left: rem(16);
+      margin-left: rem($toolbar-gutter);
     }
 
     .btn {
@@ -64,7 +60,11 @@
   }
 }
 
+// @param {px} $toolbar-title-size [20] - font-size of .toolbar__title
+// @param {px} $toolbar-title-img-height [32] - height of .toolbar__title > img
+// @param {array} $toolbar-title-style
 .toolbar__title {
+  @include inject-style($toolbar-title-style);
   flex-grow: 1;
 
   @include headings {
@@ -93,23 +93,6 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%) translateX(-50%);
-    }
-  }
-}
-
-.toolbar_small {
-  @extend %toolbar-small-style !optional;
-  font-size: 87.5%;
-  min-height: rem($toolbar-small-min-height);
-  padding: arrayMagic($toolbar-small-padding);
-
-  .toolbar__title {
-    @include headings {
-      font-size: em($toolbar-small-title-size);
-    }
-
-    img {
-      height: rem($toolbar-small-title-img-height);
     }
   }
 }

@@ -1,12 +1,12 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.6
 /// @access public
 /// @group atoms
 ///
 /// @example
 ///   <div class='bumper'></div>
 ///
-/// @param {rem} $bumper-size [4]
+/// @param {px} $bumper-size [4]
 /// @param {color} $bumper-color [$divider-color]
 /// @param {color} $bumper-invert-color [rgba($background, .2)]
 /// @param {array} $bumper-spacing [getSpace(5) 0]

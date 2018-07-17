@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## 9.0.6
+
+### added
+
+- new mixin `inject-style()` to replace style placholder in config
+
+### changes
+
+- optimized `is-scrolling()` mixin for behavior `auto`
+- added config for `.xui-tabs`
+- added config for `.xui-select`
+- added config for `.bubble`
+- refactored `_xui-config.scss`
+- renamed `_config.scss` to `_xui-config.scss`
+
+### removed
+
+- `.well_outlined` styles
+- `.is-dropdown` helper styles
+
 ## 9.0.5
 
 ### added

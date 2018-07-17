@@ -1,27 +1,38 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.7
+/// @since 9.0.6
 /// @access public
 /// @group atoms
 
 // scss-lint:disable NestingDepth QualifyingElement
+
 .input-group {
   align-items: stretch;
   display: flex;
   position: relative;
 
+  // @param {color} $input-group-addon-color [$text-light]
+  // @param {color} $input-group-addon-background [transparent]
+  // @param {color} $input-group-addon-border-color [$input-border-color]
+  // @param {color} $input-group-addon-border-width [$input-border-width]
+  // @param {array} $input-group-addon-border-width [$input-border-style]
+  // @param {array} $input-group-addon-padding [0 8]
+  // @param {array} $input-group-addon-style
   .input-group__addon {
-    @extend %input;
+    @include inject-style($input-group-addon-style);
+    color: $input-group-addon-color;
+    background: $input-group-addon-background;
+    border-width: rem($input-group-addon-border-width);
+    border-color: $input-group-addon-border-color;
+    border-style: $input-group-addon-border-style;
+    border-radius: rem($btn-radius);
+    padding: arrayMagic($input-group-addon-padding);
+    min-width: rem($input-min-height);
     align-items: center;
-    color: getColor(text, light);
     display: flex;
     flex-grow: 0;
     flex-shrink: 0;
     justify-content: center;
     width: auto;
-  }
-
-  a.input-group__addon {
-    color: getColor(link);
   }
 
   .input-group__addon,
@@ -64,7 +75,7 @@
     &:first-child {
       &.btn_outlined {
         border-right-style: solid;
-        border-right-width: rem($btn-outline);
+        border-right-width: rem($btn-outline-border-width);
       }
     }
 
@@ -79,6 +90,33 @@
     }
   }
 
+  // scss-lint:disable MergeableSelector
+  .input-group__addon {
+    + .btn {
+      &.btn_clear {
+        &::before {
+          border-width: rem($input-group-addon-border-width);
+          border-style: $input-group-addon-border-style;
+          border-color: $input-group-addon-border-color;
+          background: $input-group-addon-background;
+        }
+      }
+    }
+  }
+
+  .input {
+    + .btn {
+      &.btn_clear {
+        &::before {
+          border-width: rem($input-border-width);
+          border-style: $input-border-style;
+          border-color: $input-border-color;
+          background: $input-background;
+        }
+      }
+    }
+  }
+
   .input,
   .input-group__addon {
     + .btn {
@@ -86,23 +124,20 @@
         margin-left: rem($btn-radius + 4);
 
         &::before {
-          border-width: rem($input-border-width);
-          border-style: solid;
-          border-color: $input-border-color;
-          border-left: 0;
           border-radius: 0 rem($btn-radius) rem($btn-radius) 0;
+          left: rem(($btn-radius + 4) * -1);
+          width: rem($btn-radius);
+          border-left: 0;
           content: '';
           height: 100%;
-          left: rem(($btn-radius + 4) * -1);
           position: absolute;
           top: 0;
-          width: rem($btn-radius);
         }
       }
 
       &.btn_outlined {
         border-left-style: solid;
-        border-left-width: rem($btn-outline);
+        border-left-width: rem($btn-outline-border-width);
       }
     }
   }

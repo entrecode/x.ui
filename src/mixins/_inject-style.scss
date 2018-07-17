@@ -1,0 +1,15 @@
+/// @author Bernhard Ruoff
+/// @since 9.0.6
+/// @access public
+/// @group config mixins
+///
+/// @param {false | array} $style
+/// @returns `key: value` for style injection via config
+
+@mixin inject-style($style) {
+  @if $style {
+    @each $_key, $_value in $style {
+      #{$_key}: $_value;
+    }
+  }
+}

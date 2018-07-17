@@ -1,13 +1,14 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group organism
-///
-/// @param {array} $nav-paddding [0]
-/// @param {array} $nav-spacing [0]
 
+
+// @param {array} $nav-paddding [0]
+// @param {array} $nav-spacing [0]
+// @param {array} $nav-style
 .nav {
-  @extend %nav-style !optional;
+  @include inject-style($nav-style);
   margin: arrayMagic($nav-spacing);
   padding: arrayMagic($nav-padding);
 
@@ -44,8 +45,9 @@
   }
 }
 
+// @param {array} $nav-stacked-style
 .nav_stacked {
-  @extend %nav-stacked-style !optional;
+  @include inject-style($nav-stacked-style);
 
   .nav__items {
     @supports (display: flex) {

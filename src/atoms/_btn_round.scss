@@ -1,12 +1,11 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.6
 /// @access public
 /// @group atoms modifier
-///
-/// @param {number} $btn-min-height - min-height of default btn
-/// @param {number} $btn-small-min-height - min-height of small btn
-/// @param {number} $btn-big-min-height - min-height of big btn
 
+// @param {px} $btn-min-height [40]
+// @param {px} $btn-small-min-height [32]
+// @param {px} $btn-big-min-height [48]
 .btn {
   &.btn_round {
     border-radius: arrayMagic($btn-min-height / 2);

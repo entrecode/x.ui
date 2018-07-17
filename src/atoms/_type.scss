@@ -1,58 +1,65 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group atoms
-///
-/// @param {value} $body-font
-/// @param {number} $base-font-size [16]
-/// @param {number} $base-line-height [1.4]
-/// @param {value} $base-weight [$is-normal]
-///
-/// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
-/// @param {number} $inline-small-scale [.875] - font-size of `<small>`
-///
-/// @param {value} $is-lead-weight [$is-light]
-/// @param {number} $is-lead-line-height [$base-line-height]
-/// @param {array} $is-lead-spacing [$paragraph-spacing]
-/// @param {value} $is-lead-spacing-unit [$base-spacing-unit]
 
+// @param {value} $body-font
+// @param {px} $base-font-size [16]
+// @param {px} $base-line-height [1.4]
+// @param {value} $base-weight [$is-normal]
+// @param {color} $body-color [$text]
+// @param {color} $body-background [$background]
 body {
-  color: getColor(text);
+  color: $body-color;
+  background: $body-background;
   font-family: $body-font;
   font-size: rem($base-font-size);
   font-weight: $base-weight;
   line-height: $base-line-height;
 }
 
-///
-/// Link styles
-/// --------
-
+//
+// Link styles
+// --------
+// @param {color} $link-color [$link]
+// @param {value} $link-decoration [none]
+// @param {value} $link-weight [$is-normal]
+// @param {array} $link-style
 a {
-  @extend %link-styles !optional;
-  color: getColor(link);
+  @include inject-style($link-style);
   cursor: pointer;
+  color: $link-color;
   font-weight: $link-weight;
-  outline: none;
   text-decoration: $link-decoration;
+  outline: none;
 
   * {
     cursor: pointer;
   }
 
+  // @param {color} $link-hover-color [$link-color]
+  // @param {value} $link-hover-decoration [none]
+  // @param {array} $link-hover-style
   &:hover {
-    color: setHover(getColor(link));
+    @include inject-style($link-hover-style);
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
   }
 }
 
 ///
 /// Paragraph styles
 /// --------
-
+// @param {value} $paragraph-weight [$is-light]
+// @param {number} $paragraph-line-height [$base-line-height]
+// @param {array} $paragraph-spacing [0 0 $vertical-rhythm 0]
+// @param {value} $paragraph-spacing-unit [$base-spacing-unit]
+// @param {array} $paragraph-style
 p {
-  @extend %paragraph-styles !optional;
+  @include inject-style($paragraph-style);
   @include get-font-size(p);
   line-height: $paragraph-line-height;
+  font-weight: $paragraph-weight;
   margin: arrayMagic($paragraph-spacing, $paragraph-spacing-unit);
 
   strong,
@@ -66,6 +73,8 @@ strong {
   font-weight: $is-bold;
 }
 
+// @param {number} $inline-small-scale [.875] - font-size of `<small>`
+// @param {value} $inline-small-unit [$base-scale-unit]
 small {
   font-size: arrayMagic($inline-small-scale, $inline-small-unit);
   vertical-align: baseline;

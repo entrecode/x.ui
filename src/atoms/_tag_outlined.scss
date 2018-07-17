@@ -1,81 +1,78 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.6
 /// @access public
 /// @group atoms modifier
 ///
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-///
-/// @param {number} $tag-font-size [12]
-/// @param {number} $tag-line-height [14]
-/// @param {number} $tag-min-height [24]
-///
-/// @param {number} $tag-small-font-size [10]
-/// @param {number} $tag-small-line-height [12]
-/// @param {number} $tag-small-min-height [20]
-///
-/// @param {number} $tag-big-font-size [12]
-/// @param {number} $tag-big-line-height [16]
-/// @param {number} $tag-big-min-height [32]
-///
-/// @param {boolean} $tag-outlined - sets border-width for .tag_outlined
+/// @param {px} $tag-outlined-border-width [2]
+/// @param {value} $tag-outlined-border-style [solid]
 
+// @param {px} $tag-font-size [$base-font-size * .875]
+// @param {px} $tag-line-height [$tag-font-size * $base-line-height]
+// @param {px} $tag-min-height [28]
+// @param {color} $tag-outlined-color [setContrast($minor)]
+// @param {color} $tag-outlined-border-color [$minor]
 .tag_outlined {
   @include macro-metrics(
     $tag-font-size,
     $tag-line-height,
     $tag-min-height,
-    $tag-outlined,
+    $tag-outlined-border-width,
     $padding-ratio: $tag-padding-ratio
   );
-  background-color: transparent;
-  border-color: getColor(background, lightest);
-  border-style: solid;
+  background: none;
+  border-color: $tag-outlined-border-color;
+  border-style: $tag-outlined-border-style;
 
+  a:hover & {
+    border-color: setHover($tag-outlined-border-color);
+    color: setHover($tag-outlined-border-color);
+  }
+
+  // @param {px} $tag-small-font-size [$tag-font-size * 0.875]
+  // @param {px} $tag-small-line-height [$tag-small-font-size * $base-line]
+  // @param {px} $tag-small-min-height [24]
   &.tag_small {
     @include macro-metrics(
       $tag-small-font-size,
       $tag-small-line-height,
       $tag-small-min-height,
-      $tag-outlined,
+      $tag-outlined-border-width,
       $padding-ratio: $tag-padding-ratio
     );
   }
 
+  // @param {px} $tag-big-font-size [$tag-font-size * 1.125]
+  // @param {px} $tag-big-line-height [$tag-big-font-size * $base-line-height]
+  // @param {px} $tag-big-min-height [32]
   &.tag_big {
     @include macro-metrics(
       $tag-big-font-size,
       $tag-big-line-height,
       $tag-big-min-height,
-      $tag-outlined,
+      $tag-outlined-border-width,
       $padding-ratio: $tag-padding-ratio
     );
   }
 }
 
-/// @param {value} $_prefix ['tag_']
-/// @param {array} $_name-array - postfix names appending $prefix
-/// @param {array} $_color-array - theme colors
 
+//
+// Styles
+// ------------------------------------------------------
+// @param {value} $_prefix ['tag_']
+// @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
 $_prefix: 'tag_';
-$_name-array: minor, link, super, highlight, invert, info, error, success,
-  warning;
-$_color-array: getColor(minor), getColor(link), getColor(super),
-  getColor(highlight), getColor(text, invert), getColor(state, info),
-  getColor(state, error), getColor(state, success), getColor(state, warning);
-
-@for $i from 1 through length($_color-array) {
-  $_c: nth($_color-array, $i);
-  $_n: nth($_name-array, $i);
-
+@each $_n, $_c in $theme-array {
   .tag_outlined.#{$_prefix}#{$_n} {
     border-color: $_c;
-    color: setContrast(getColor(background), $_c);
+    color: $_c;
 
     @at-root a.tag_outlined.#{$_prefix}#{$_n} {
       &:hover {
-        background-color: transparent;
-        border-color: varColor($_c, -4);
-        color: setContrast(getColor(background), $_c);
+        background: none;
+        border-color: setHover($_c);
+        color: $_c;
       }
     }
   }

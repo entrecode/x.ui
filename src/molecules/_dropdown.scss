@@ -1,14 +1,9 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.6
 /// @access public
 /// @group molecules
 ///
 /// @param {boolean} $dropdown-in-hover [false]
-///
-/// @param {px} $dropdown-radius [4]
-/// @param {number} $dropdown-padding [4]
-/// @param {color} $dropdown-background
-/// @param {value} $dropdown-shadow
 
 // scss-lint:disable PropertySpelling, NestingDepth
 
@@ -76,35 +71,50 @@
   }
 }
 
+// @param {px} $dropdown-options-radius [4]
+// @param {array} $dropdown-options-padding [4]
+// @param {px | null} $dropdown-options-max-height [null]
+// @param {color} $dropdown-options-background
+// @param {value} $dropdown-options-shadow
+// @param {array} $dropdown-options-style
 .dropdown-options {
-  @extend %is-dropdown;
+  @include is-scrollable(y, contain, $behavior: auto);
+  @include inject-style($dropdown-options-style);
+  background: $dropdown-options-background;
+  border-radius: arrayMagic($dropdown-options-radius);
+  box-shadow: arrayMagic($dropdown-options-shadow);
+  color: setContrast($dropdown-options-background);
+  max-height: rem($dropdown-options-max-height);
+  padding: arrayMagic($dropdown-options-padding);
+  list-style: none;
+  margin: 0;
   opacity: 0;
-  -webkit-overflow-scrolling: touch;
-  overflow-y: auto;
-  overscroll-behavior-y: contain;
   position: absolute;
   top: 100%;
   transition: visibility 0.5s, opacity 0.2s;
   visibility: hidden;
   z-index: 10;
 
+  // @param {px} $dropdown-option-divider-size [1]
+  // @param {px} $dropdown-option-divider-spacing [4 0]
+  // @param {color} $dropdown-option-divider-color [$divider-color]
   .dropdown_divider {
-    background-color: getColor(divider);
-    height: 1px;
-    margin: rem(4) 0;
+    background-color: $dropdown-option-divider-color;
+    height: rem($dropdown-option-divider-size);
+    margin: arrayMagic($dropdown-option-divider-spacing);
     padding: 0;
   }
 }
 
-// @param {number} $dropdown-option-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
+// @param {number} $dropdown-option-padding-ratio [1.5]
 // @param {array} $dropdown-option-spacing [0]
-// @param {number} $dropdown-option-font-size [$base-font-size]
-// @param {number} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
-// @param {number} $dropdown-option-min-height [$btn-min-height]
+// @param {px} $dropdown-option-font-size [$base-font-size]
+// @param {px} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
+// @param {px} $dropdown-option-min-height [$btn-min-height]
 // @param {value} $dropdown-option-alignment [center]
 // @param {value} $dropdown-option-weight [$is-bold]
 // @param {color} $dropdown-option-color [$text]
-
+// @param {color} $dropdown-option-background [none]
 .dropdown-option {
   display: block;
 
@@ -115,23 +125,27 @@
       $dropdown-option-min-height,
       $padding-ratio: $dropdown-option-padding-ratio
     );
-    border: 0;
     color: $dropdown-option-color;
-    cursor: pointer;
-    display: block;
+    background: $dropdown-option-background;
     font-weight: $dropdown-option-weight;
-    height: auto;
     margin: arrayMagic($dropdown-option-spacing);
+    text-align: $dropdown-option-alignment;
+    cursor: pointer;
+    border: 0;
+    display: block;
+    height: auto;
     outline: none;
     position: relative;
-    text-align: $dropdown-option-alignment;
     text-decoration: none;
     touch-action: manipulation;
     user-select: none;
     width: 100%;
 
+    // @param {color} $dropdown-option-hover-color [$link]
+    // @param {color} $dropdown-option-hover-background [$state-hover]
     &:hover {
-      background-color: getColor(state, hover);
+      color: $dropdown-option-hover-color;
+      background: $dropdown-option-hover-background;
     }
   }
 

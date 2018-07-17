@@ -1,14 +1,14 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.8
+/// @since 9.0.6
 /// @access public
 /// @group atoms
 ///
 /// @example
 ///   <div class='spacer'></div>
 ///
-/// @param {number} $spacer-size [getSpace(5)]
-/// @param {number} $spacer-small-size [getSpace(3)]
-/// @param {number} $spacer-big-size [getSpace(6)]
+/// @param {px} $spacer-size [getSpace(5)]
+/// @param {px} $spacer-small-size [getSpace(3)]
+/// @param {px} $spacer-big-size [getSpace(6)]
 
 .spacer {
   @include set-breakpoints {

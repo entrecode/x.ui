@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group core
 
@@ -70,7 +70,12 @@ body {
   padding: 0;
 }
 
+// @param {color} $body-color [$text]
+// @param {color} $body-background [$background]
+// @param {array} $body-style
 body {
-  background-color: $base-background;
+  @include inject-style($body-style);
+  background: $body-background;
+  color: $body-color;
 }
 

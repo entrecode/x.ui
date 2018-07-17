@@ -1,3 +1,8 @@
+/// @author Bernhard Ruoff
+/// @since 9.0.6
+/// @access public
+/// @group molecules
+
 // scss-lint:disable NestingDepth
 @keyframes showOverlayWrapper {
   0% {
@@ -23,24 +28,24 @@
 
 .xui-overlay-wrapper {
   display: none;
-  height: 100%;
-  left: 0;
-  opacity: 0;
   position: fixed;
+  left: 0;
   top: 0;
+  height: 100%;
   width: 100%;
+  opacity: 0;
   z-index: 100;
 
   &.is-targeted {
     .xui-overlay {
-      animation: showOverlay .4s forwards ease-out;
-      animation-delay: .4s;
+      animation: showOverlay 0.4s forwards ease-out;
+      animation-delay: 0.4s;
       display: none;
       opacity: 0;
     }
 
     &:target {
-      animation: showOverlayWrapper .4s forwards ease-in-out;
+      animation: showOverlayWrapper 0.4s forwards ease-in-out;
       display: initial;
       opacity: 1;
 
@@ -50,7 +55,10 @@
     }
   }
 
+  // @param {color} $xui-overlay-backdrop-background [$backdrop]
+  // @param {array} $xui-overlay-backdrop-style
   &.has-backdrop {
-    background-color: getColor(background, backdrop);
+    @include inject-style($xui-overlay-backdrop-style);
+    background: $xui-overlay-backdrop-background;
   }
 }

@@ -1,21 +1,22 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group molecules
 ///
 /// @param {boolean} $btn-round [false] - sets border-radius to 50% of button height
-/// @param {number} $btn-min-height - min-height of default btn
-/// @param {number} $btn-small-min-height - min-height of small btn
-/// @param {number} $btn-big-min-height - min-height of big btn
+/// @param {px} $btn-min-height - min-height of default btn
+/// @param {px} $btn-small-min-height - min-height of small btn
+/// @param {px} $btn-big-min-height - min-height of big btn
 ///
-/// @param {number} $btn-radius - radius for default button
-/// @param {number} $btn-small-radius - radius for small button
-/// @param {number} $btn-big-radius - radius for big button
+/// @param {px} $btn-radius [4]
+/// @param {px} $btn-small-radius [$btn-radius]
+/// @param {px} $btn-big-radius [$btn-radius]
 
 // scss-lint:disable NestingDepth
 
+// @param {array} $btn-group-style
 .btn-group {
-  @extend %btn-group-style !optional;
+  @include inject-style($btn-group-style);
 
   // inline styles for .btn
   // ------------------------------------------------------
@@ -129,7 +130,7 @@
       border-left-width: 0;
 
       &:first-child {
-        border-left-width: rem($btn-outline);
+        border-left-width: rem($btn-outline-border-width);
       }
     }
   }
@@ -197,7 +198,7 @@
         }
 
         &.btn_outlined {
-          border-left-width: rem($btn-outline);
+          border-left-width: rem($btn-outline-border-width);
         }
       }
     }
@@ -253,10 +254,12 @@
     display: flex;
   }
 
+  // @param {px} $btn-group-divider-size [1]
+  // @param {color} $btn-group-divider-color [$divider-color]
   &__divider {
-    background-color: getColor(divider);
-    margin-left: -1px;
-    width: 1px;
+    background: $btn-group-divider-color;
+    width: rem($btn-group-divider-size);
+    margin-left: rem($btn-group-divider-size * -1);
     z-index: 1;
   }
 }

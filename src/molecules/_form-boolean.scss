@@ -1,16 +1,20 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group molecules
-///
-/// @param {array} $form-boolean-spacing [$form-group-spacing]
-/// @param {em} $form-boolean-label-font-size [$base-font-size]
-/// @param {number} $form-boolean-label-spacing [$form-group-label-spacing]
 
 // scss-lint:disable NestingDepth
+
+// @param {array} $form-boolean-spacing [$form-group-spacing]
+// @param {array} $form-boolean-padding [0]
+// @param {px} $form-boolean-gutter [8]
+// @param {color} $form-boolean-background [none]
+// @param {array} $form-boolean-style
 .form-boolean {
-  @extend %form-boolean-style !optional;
+  @include inject-style($form-boolean-style);
+  background: $form-boolean-background;
   margin: arrayMagic($form-boolean-spacing);
+  padding: arrayMagic($form-boolean-padding);
 
   @supports (display: flex) {
     display: flex;
@@ -21,14 +25,18 @@
     }
   }
 
+  // @param {array} $form-boolean-label-spacing [$form-group-label-spacing]
+  // @param {px} $form-boolean-label-font-size [$base-font-size]
+  // @param {array} $form-boolean-label-style
   label {
+    @include inject-style($form-boolean-label-style);
     font-size: em($form-boolean-label-font-size);
     margin: arrayMagic($form-boolean-label-spacing);
   }
 
   [type='radio'],
   [type='checkbox'] {
-    margin-right: rem(8);
+    margin-right: rem($form-boolean-gutter);
   }
 
   &.is-disabled,

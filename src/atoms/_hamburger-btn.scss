@@ -1,15 +1,15 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group atoms
 ///
 // @param {array} $hamburger-btn-spacing [$btn-spacing]
-// @param {rem} $hamburger-btn-width [16] - width of hamburger menu
+// @param {px} $hamburger-btn-width [16] - width of hamburger menu
 // @param {color} $hamburger-btn-background [transparent]
-// @param {rem} $hamburger-btn-line-weight [2] - height of hamburger menu bars
-// @param {number} $hamburger-btn-line-spacing [4]
+// @param {px} $hamburger-btn-line-weight [2] - height of hamburger menu bars
+// @param {px} $hamburger-btn-line-spacing [4]
 // @param {color} $hamburger-btn-line-color [$link]
-
+// @param {array} $hamburger-btn-style
 .hamburger-btn {
   $_h: $hamburger-btn-line-weight;
   $_w: $hamburger-btn-line-width;
@@ -17,7 +17,7 @@
   $_c: $hamburger-btn-line-color;
 
   @extend %btn;
-  @extend %hamburger-btn-style !optional;
+  @include inject-style($hamburger-btn-style);
   background-color: $hamburger-btn-background;
   margin: arrayMagix($hamburger-btn-spacing);
   position: relative;

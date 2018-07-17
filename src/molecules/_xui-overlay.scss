@@ -1,19 +1,20 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.8
+/// @since 9.0.6
 /// @access public
 /// @group molecules
-///
-/// @param {number} $overlay-radius [8]
-/// @param {number} $overlay-padding [4]
-/// @param {color} $overlay-background
-/// @param {value} $overlay-shadow
 
+// @param {px} $xui-overlay-radius [4]
+// @param {array} $xui-overlay-padding [4]
+// @param {color} $xui-overlay-background
+// @param {array} $xui-overlay-style
+// @param {value} $xui-overlay-shadow
 .xui-overlay {
-  background-color: $overlay-background;
-  border-radius: arrayMagic($overlay-radius);
-  box-shadow: arrayMagic($overlay-shadow);
-  color: setContrast($overlay-background);
-  padding: arrayMagic($overlay-padding);
+  @include inject-style($xui-overlay-style);
+  background-color: $xui-overlay-background;
+  border-radius: arrayMagic($xui-overlay-radius);
+  box-shadow: arrayMagic($xui-overlay-shadow);
+  color: setContrast($xui-overlay-background);
+  padding: arrayMagic($xui-overlay-padding);
   position: relative;
 
   &__dismiss {
