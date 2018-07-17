@@ -1,13 +1,41 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.6
 /// @access public
 /// @group atoms
 ///
-/// @param {variable} $headings-weight [$is-bold]
 /// @param {value} $headings-font
+/// @param {map} $type-scale - modular scale for typeface
+/// @param {unit} $type-scale-unit [$base-scale-unit] - unit for modular scale
+/// @param {map} $type-scale-bp - breakpoints for modular scale
+/// @param {em} $headings-line-height [$base-line-height]
+/// @param {value} $headings-weight [$is-bold]
 /// @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
 /// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
+/// @param {*} $headings-spacing-unit [$base-spacing-unit]
+///
+/// @param {array} $h1-spacing [0 0 ($vertical-rhythm * 2) 0]
+/// @param {array} $h2-spacing [0 0 $vertical-rhythm 0]
+/// @param {array} $h3-spacing [$h2-spacing]
+/// @param {array} $h4-spacing [$h3-spacing]
+/// @param {array} $h5-spacing [0 0 ($vertical-rhythm / 2) 0]
+/// @param {array} $h6-spacing [$h5-spacing]
+/// @param {array} $giga-spacing [0]
+/// @param {array} $mega-spacing [0]
+/// @param {array} $kilo-spacing [0]
+///
+/// @param {array} $heading-style
+/// @param {array} $h1-style
+/// @param {array} $h2-style
+/// @param {array} $h3-style
+/// @param {array} $h4-style
+/// @param {array} $h5-style
+/// @param {array} $h6-style
+/// @param {array} $giga-style
+/// @param {array} $mega-style
+/// @param {array} $kilo-style
+///
 /// @require {mixin} get-font-size
+/// @require {mixin} inject-style
 
 h1,
 h2,
@@ -24,59 +52,68 @@ h6,
 .is-giga,
 .is-mega,
 .is-kilo {
-  @extend %heading-style !optional;
+  @include inject-style($headings-style);
   font-family: $headings-font;
   font-weight: $headings-weight;
   line-height: $headings-line-height;
 
   small {
-    font-size: ($heading-inline-small * 1em);
+    font-size: ($headings-inline-small * 1em);
     vertical-align: baseline;
   }
 }
 
 .is-giga {
+  @include inject-style($giga-style);
   margin: arrayMagic($giga-spacing, $headings-spacing-unit);
 }
 
 .is-mega {
+  @include inject-style($mega-style);
   margin: arrayMagic($mega-spacing, $headings-spacing-unit);
 }
 
 .is-kilo {
+  @include inject-style($kilo-style);
   margin: arrayMagic($kilo-spacing, $headings-spacing-unit);
 }
 
 h1,
 .is-h1 {
+  @include inject-style($h1-style);
   margin: arrayMagic($h1-spacing, $headings-spacing-unit);
 }
 
 h2,
 .is-h2 {
   @include get-font-size(h2);
+  @include inject-style($h2-style);
   margin: arrayMagic($h2-spacing, $headings-spacing-unit);
 }
 
 h3,
 .is-h3 {
+  @include inject-style($h3-style);
   margin: arrayMagic($h3-spacing, $headings-spacing-unit);
 }
 
 h4,
 .is-h4 {
   @include get-font-size(h4);
+  @include inject-style($h4-style);
   margin: arrayMagic($h4-spacing, $headings-spacing-unit);
 }
 
 h5,
 .is-h5 {
+  @include inject-style($h5-style);
   margin: arrayMagic($h5-spacing, $headings-spacing-unit);
 }
 
 h6,
 .is-h6 {
   @include get-font-size(h6);
+  @include inject-style($h6-style);
   margin: arrayMagic($h6-spacing, $headings-spacing-unit);
 }
 

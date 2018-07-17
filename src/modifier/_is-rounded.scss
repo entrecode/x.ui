@@ -1,11 +1,11 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.0.6
 /// @access public
 /// @group modifier
-///
-/// @param {number} $is-rounded-min-radius [2]
-/// @param {number} $is-rounded-radius [4]
-/// @param {number} $is-rounded-max-radius [8]
+
+// @param {px} $is-rounded-min-radius [2]
+// @param {px} $is-rounded-radius [4]
+// @param {px} $is-rounded-max-radius [8]
 
 @mixin rounded($radius) {
   @include set-breakpoints {

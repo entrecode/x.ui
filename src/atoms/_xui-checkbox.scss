@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group atoms
 
@@ -14,43 +14,59 @@
   [type='checkbox'] {
     @extend %is-hidden-input;
 
+    // @param {px} $xui-checkbox-font-size [14]
+    // @param {px} $xui-checkbox-line-height [22]
+    // @param {array} $xui-checkbox-spacing [0 8 0 0]
+    // @param {px} $xui-checkbox-min-height [20]
+    // @param {px} $xui-checkbox-radius [6]
+    // @param {color} $xui-checkbox-background [$background]
+    // @param {color} $xui-checkbox-color [transparent]
+    // @param {array} $xui-checkbox-style
     + label {
       &::before {
-        @extend %checkbox-style;
-        background-color: getColor(background);
-        border-radius: arrayMagic($checkbox-radius);
-        color: transparent;
-        content: '\2714\fe0e';
+        @include inject-style($xui-checkbox-style);
+        border-radius: arrayMagic($xui-checkbox-radius);
+        font-size: rem($xui-checkbox-font-size);
+        height: rem($xui-checkbox-height);
+        line-height: rem($xui-checkbox-line-height * 2);
+        margin: arrayMagic($xui-checkbox-spacing);
+        width: rem($xui-checkbox-height);
+        background-color: $xui-checkbox-background;
+        color: $xui-checkbox-color;
         display: flex;
         flex-grow: 0;
         flex-shrink: 0;
-        font-family: sans-serif;
-        font-size: rem($checkbox-font-size);
-        height: rem($checkbox-height);
         justify-content: center;
-        line-height: rem($checkbox-line-height * 2);
-        margin-right: rem(8);
-        overflow: hidden;
         text-align: center;
+        overflow: hidden;
         transition: all 0.2s;
-        width: rem($checkbox-height);
       }
 
+      // @param {color} $xui-checkbox-hover-background [inherit]
+      // @param {color} $xui-checkbox-hover-color [$text-lightest]
+      // @param {array} $xui-checkbox-hover-style
       &:hover {
         @media (hover: hover) {
           &::before {
-            color: getColor(text, lightest);
-            line-height: rem($checkbox-line-height);
+            @include inject-style($xui-checkbox-hover-style);
+            background-color: $xui-checkbox-hover-background;
+            color: $xui-checkbox-hover-color;
+            line-height: rem($xui-checkbox-line-height);
           }
         }
       }
     }
 
+    // @param {color} $xui-checkbox-checked-background [inherit]
+    // @param {color} $xui-checkbox-checked-color [$link]
+    // @param {array} $xui-checkbox-checked-style
     &:checked {
       + label {
         &::before {
-          color: getColor(link);
-          line-height: rem($checkbox-line-height);
+          @include inject-style($xui-checkbox-checked-style);
+          background-color: $xui-checkbox-checked-background;
+          color: $xui-checkbox-checked-color;
+          line-height: rem($xui-checkbox-line-height);
         }
       }
     }

@@ -1,20 +1,19 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.6
 /// @access public
 /// @group atoms inline
 ///
-/// @param {number} $btn-line-height - normal button line-height
-/// @param {variable} $btn-small-line-height - small button line-height
-/// @param {variable} $btn-big-line-height - big button line-height
+/// @param {px} $btn-line-height [$btn-font-size * $base-line-height]
+/// @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
+/// @param {px} $btn-big-line-height [$btn-big-font-size * $base-line-height]
 ///
-/// @param {number} $alert-line-height [20]
-/// @param {number} $alert-min-height [40]
+/// @param {px} $tag-min-height [28]
+/// @param {px} $tag-small-min-height [24]
+/// @param {px} $tag-big-min-height [32]
 ///
-/// @param {number} $alert-small-line-height [18]
-/// @param {number} $alert-small-min-height [32]
-///
-/// @param {number} $alert-big-line-height [24]
-/// @param {number} $alert-big-min-height [48]
+/// @param {px} $bubble-min-height [28]
+/// @param {px} $bubble-small-min-height [24]
+/// @param {px} $bubble-big-min-height [32]
 
 @mixin _btn-inline-components($parent, $child) {
   $margin: $parent - $child;

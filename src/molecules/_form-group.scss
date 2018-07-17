@@ -1,22 +1,28 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group molecules
-///
-/// @param {number} $form-group-spacing [0 0 8 0]
-/// @param {em} $form-group-label-font-size [$base-font-size]
-/// @param {number} $form-group-label-spacing [0 0 4 0]
 
 // scss-lint:disable NestingDepth
-.form-group {
-  @extend %form-group-style !optional;
-  margin: arrayMagic($form-group-spacing);
 
+// @param {array} $form-group-spacing [0 0 8 0]
+// @param {array} $form-group-padding [0]
+// @param {color} $form-group-background [none]
+// @param {array} $form-group-style
+.form-group {
+  @include inject-style($form-group-style);
+  background: $form-group-background;
+  margin: arrayMagic($form-group-spacing);
+  padding: arrayMagic($form-group-padding);
+
+  // @param {array} $form-group-label-spacing [0 0 4 0]
+  // @param {px} $form-group-label-font-size [$base-font-size]
+  // @param {array} $form-group-label-style
   label {
-    @extend %form-group-label-style !optional;
-    display: block;
+    @include inject-style($form-group-label-style);
     font-size: em($form-group-label-font-size);
     margin: arrayMagic($form-group-label-spacing);
+    display: block;
   }
 
   &.is-disabled,

@@ -1,34 +1,19 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.6
 /// @access public
 /// @group atoms
 ///
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-///
-/// @param {color} $tag-background [$minor] - default background-color of tags
-///
-/// @param {em} $tag-font-size [$base-font-size * .875]
-/// @param {em} $tag-line-height [$tag-font-size * $base-line-height]
-/// @param {em} $tag-min-height [28]
 /// @param {value} $tag-weight [$is-bold]
-///
-/// @param {em} $tag-small-font-size [$base-font-size * .75]
-/// @param {em} $tag-small-line-height [$tag-small-font-size * $base-line]
-/// @param {em} $tag-small-min-height [24]
-/// @param {value} $tag-small-weight [$tag-weight]
-///
-/// @param {em} $tag-big-font-size [$base-font-size]
-/// @param {em} $tag-big-line-height [$tag-big-font-size * $base-line-height]
-/// @param {em} $tag-big-min-height [32]
-/// @param {value} $tag-big-weight [$tag-weight]
-///
-/// @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
-/// @param {number} $tag-radius [4]
-/// @param {number} $tag-small-radius [4]
-/// @param {number} $tag-big-radius [4]
 
+// @param {color} $tag-background [$minor]
+// @param {px} $tag-font-size [$base-font-size * .875]
+// @param {px} $tag-line-height [$tag-font-size * $base-line-height]
+// @param {px} $tag-min-height [28]
+// @param {px} $tag-radius [4]
+// @param {array} $tag-style
 .tag {
-  @extend %tag-style !optional;
+  @include inject-style($tag-style);
   @include macro-metrics(
     $tag-font-size,
     $tag-line-height,
@@ -37,17 +22,22 @@
   );
   @include set-theme-colors($tag-background);
   border-radius: arrayMagic($tag-radius);
-  display: inline-block;
   font-weight: $tag-weight;
+  display: inline-block;
   text-align: center;
   white-space: nowrap;
 
   a {
-    color: getColor(text, lighter);
+    color: setContrast($tag-background);
   }
 
+  // @param {px} $tag-small-font-size [$base-font-size * .75]
+  // @param {px} $tag-small-line-height [$tag-small-font-size * $base-line]
+  // @param {px} $tag-small-min-height [24]
+  // @param {px} $tag-small-radius [$tag-radius]
+  // @param {array} $tag-small-style
   &.tag_small {
-    @extend %tag-small-style !optional;
+    @include inject-style($tag-small-style);
     @include macro-metrics(
       $tag-small-font-size,
       $tag-small-line-height,
@@ -55,11 +45,15 @@
       $padding-ratio: $tag-padding-ratio
     );
     border-radius: arrayMagic($tag-small-radius);
-    font-weight: $tag-small-weight;
   }
 
+  // @param {px} $tag-big-font-size [$base-font-size]
+  // @param {px} $tag-big-line-height [$tag-big-font-size * $base-line-height]
+  // @param {px} $tag-big-min-height [32]
+  // @param {px} $tag-big-radius [$tag-radius]
+  // @param {array} $tag-big-style
   &.tag_big {
-    @extend %tag-big-style !optional;
+    @include inject-style($tag-big-style);
     @include macro-metrics(
       $tag-big-font-size,
       $tag-big-line-height,
@@ -67,7 +61,6 @@
       $padding-ratio: $tag-padding-ratio
     );
     border-radius: arrayMagic($tag-big-radius);
-    font-weight: $tag-big-weight;
   }
 
   + .tag {
@@ -75,23 +68,13 @@
   }
 }
 
-///
-/// Styles
-/// ------------------------------------------------------
-/// @param {value} $prefix ['tag_']
-/// @param {array} $name-array - postfix names appending $prefix
-/// @param {array} $color-array - theme colors
-
+//
+// Styles
+// ------------------------------------------------------
+// @param {value} $_prefix ['tag_']
+// @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
 $_prefix: 'tag_';
-$_name-array: minor, link, super, highlight, invert, info, error, success,
-  warning;
-$_color-array: getColor(minor), getColor(link), getColor(super),
-  getColor(highlight), getColor(text, invert), getColor(state, info),
-  getColor(state, error), getColor(state, success), getColor(state, warning);
-
-@for $i from 1 through length($_color-array) {
-  $_c: nth($_color-array, $i);
-  $_n: nth($_name-array, $i);
+@each $_n, $_c in $theme-array {
 
   .#{$_prefix}#{$_n} {
     @include set-theme-colors($_c);
@@ -102,14 +85,14 @@ $_color-array: getColor(minor), getColor(link), getColor(super),
 
     @at-root a.#{$_prefix}#{$_n} {
       &:hover {
-        background-color: varColor($_c, -4);
+        background: setHover($_c);
+        color: setContrast($_c);
       }
     }
   }
 }
 
-/// for fluffy round tags
-/// @param {boolean} $tag-round - can be set in config.scss
+/// @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
 
 @if $tag-round == true {
   .tag {

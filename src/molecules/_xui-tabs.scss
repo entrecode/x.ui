@@ -8,8 +8,9 @@
 // @param {color} $xui-tabs-background [none]
 // @param {array} $xui-tabs-spacing [0]
 // @param {array} $xui-tabs-padding [0]
+// @param {array} $xui-tabs-style
 .xui-tabs {
-  @extend %xui-tabs-style !optional;
+  @include inject-style($xui-tabs-style);
   background: $xui-tabs-background;
   margin: arrayMagic($xui-tabs-spacing);
   padding: arrayMagic($xui-tabs-padding);
@@ -33,8 +34,9 @@
 // @param {color} $xui-tabs-nav-background [none]
 // @param {array} $xui-tabs-nav-spacing [0]
 // @param {array} $xui-tabs-nav-padding [0]
+// @param {array} $xui-tabs-nav-style
 .xui-tabs-nav {
-  @extend %xui-tabs-nav-style !optional;
+  @include inject-style($xui-tabs-nav-style);
   background: $xui-tabs-nav-background;
   margin: arrayMagic($xui-tabs-nav-spacing);
   padding: arrayMagic($xui-tabs-nav-padding);
@@ -67,29 +69,32 @@
   // @param {color} $xui-tabs-nav-item-background [none]
   // @param {color} $xui-tabs-nav-item-color [$text]
   // @param {value} $xui-tabs-nav-item-weight [$is-bold]
+  // @param {array} $xui-tabs-nav-item-style
   label {
-    @extend %xui-tabs-nav-item-style !optional;
-    cursor: pointer;
-    display: block;
-    text-align: center;
+    @include inject-style($xui-tabs-nav-item-style);
     border-radius: arrayMagic($xui-tabs-nav-item-radius);
     background: $xui-tabs-nav-item-background;
     color: $xui-tabs-nav-item-color;
     font-weight: $xui-tabs-nav-item-weight;
     padding: arrayMagic($xui-tabs-nav-item-padding);
+    cursor: pointer;
+    display: block;
+    text-align: center;
 
     // @param {color} $xui-tabs-nav-item-active-background [none]
     // @param {color} $xui-tabs-nav-item-active-color [$link]
+    // @param {array} $xui-tabs-nav-item-active-style
     &:target {
-      @extend %xui-tabs-nav-item-active-style !optional;
+      @include inject-style($xui-tabs-nav-item-active-style);
       background: $xui-tabs-nav-item-active-background;
       color: $xui-tabs-nav-item-active-color;
     }
 
     // @param {color} $xui-tabs-nav-item-hover-background [none]
     // @param {color} $xui-tabs-nav-item-hover-color [$link]
+    // @param {array} $xui-tabs-nav-item-hover-style
     &:hover {
-      @extend %xui-tabs-nav-item-hover-style !optional;
+      @include inject-style($xui-tabs-nav-item-hover-style);
       background: $xui-tabs-nav-item-hover-background;
       color: $xui-tabs-nav-item-hover-color;
     }
@@ -99,8 +104,9 @@
 // @param {color} $xui-tab-background [none]
 // @param {array} $xui-tab-spacing [0]
 // @param {array} $xui-tab-padding [0]
+// @param {array} $xui-tab-style
 .xui-tab {
-  @extend %xui-tab-style !optional;
+  @include inject-style($xui-tab-style);
   background: $xui-tab-background;
   margin: arrayMagic($xui-tab-spacing);
   padding: arrayMagic($xui-tab-padding);

@@ -1,6 +1,6 @@
 {
   "name": "x.ui",
-  "version": "9.0.5",
+  "version": "9.0.6",
   "license": "MIT",
   "description": "x.ui is a framework based on the atomic design methodology",
   "author": "entrecode GmbH",
@@ -60,7 +60,7 @@
       "xui-list.njk",
       "xui-accordion.njk",
       "card.njk",
-      "overlay.njk",
+      "xui-overlay.njk",
       "well.njk",
       "alert.njk",
       "data-tooltip.njk",

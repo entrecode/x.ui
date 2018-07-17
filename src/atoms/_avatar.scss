@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group atoms
 ///
@@ -7,8 +7,12 @@
 /// @param {px} $avatar-small-size-size [32]
 /// @param {px} $avatar-big-size-size [48]
 /// @param {array} $avatar-border [0]
+/// @param {array} $avatar-style
+/// @param {boolean} $avatar-round [true]
+/// @param {px} $avatar-square-radius [4]
 
 .avatar {
+  @include inject-style($avatar-style);
   border: arrayMagic($avatar-border);
   display: block;
   overflow: hidden;

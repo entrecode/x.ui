@@ -1,5 +1,15 @@
+/// @author Bernhard Ruoff
+/// @since 9.0.6
+/// @access public
+/// @group atoms
+
+// @param {value} $is-lead-weight [$is-light]
+// @param {em} $is-lead-line-height [$base-line-height]
+// @param {array} $is-lead-spacing [$paragraph-spacing]
+// @param {value} $is-lead-spacing-unit [$base-spacing-unit]
+// @param {array} $is-lead-style
 .is-lead {
-  @extend %is-lead-styles !optional;
+  @include inject-style($is-lead-style);
   @include get-font-size(lead);
   font-weight: $is-lead-weight;
   line-height: $base-line-height;

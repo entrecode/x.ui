@@ -1,47 +1,50 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.0.6
 /// @access public
 /// @group atoms
 
 // scss-lint:disable NestingDepth
 // @param {color} $input-toggle-background [flattenColor(getColor(minor))]
-// @param {color} $input-toggle-height [$root-size]
+// @param {color} $input-toggle-hover-background [etHover($xui-toggle-background)]
+// @param {color} $input-toggle-active-background [$link)]
+// @param {px} $input-toggle-height [$root-size]
 // @param {color} $input-toggle-width [$xui-toggle-height * 1.75]
 // @param {color} $xui-toggle-radius [$xui-toggle-height / 2]
+// @param {array} $xui-toggle-style
 
 %toggle {
-  @extend %xui-toggle-style !optional;
-  cursor: pointer;
-  background-color: $xui-toggle-background;
+  @include inject-style($xui-toggle-style);
+  background: $xui-toggle-background;
   border-radius: arrayMagic($xui-toggle-radius);
-  direction: ltr;
-  display: inline-block;
   height: rem($xui-toggle-height);
   width: rem($xui-toggle-width);
   transition: background-color 0.2s;
+  cursor: pointer;
+  direction: ltr;
+  display: inline-block;
 
   // @param {color} $input-toggle-pin-background [flattenColor(getColor(minor))]
-  // @param {color} $input-toggle-pin-height [$root-size]
-  // @param {color} $input-toggle-pin-width [$xui-toggle-height * 1.75]
-  // @param {color} $xui-toggle-pin-radius [$xui-toggle-height / 2]™
-
+  // @param {px} $input-toggle-pin-height [$root-size]
+  // @param {px} $input-toggle-pin-width [$xui-toggle-height * 1.75]
+  // @param {px} $xui-toggle-pin-radius [$xui-toggle-height / 2]
+  // @param {array} $xui-toggle-pin-style
   $_pin-spacing-h: ($xui-toggle-height - $xui-toggle-pin-height) / 2;
   $_pin-spacing-v: (($xui-toggle-width / 2) - $xui-toggle-pin-width) / 2;
 
   &::after {
-    @extend %xui-toggle-pin-style !optional;
-    content: '';
-    display: block;
-    background-color: $xui-toggle-pin-background;
+    @include inject-style($xui-toggle-pin-style);
+    background: $xui-toggle-pin-background;
     border-radius: arrayMagic($xui-toggle-pin-width / 2);
     height: rem($xui-toggle-pin-height);
     width: rem($xui-toggle-pin-width);
     margin: arrayMagic($_pin-spacing-h $_pin-spacing-v);
+    content: '';
+    display: block;
   }
 }
 
 %toggle-is-active {
-  background-color: $xui-toggle-active-background;
+  background: $xui-toggle-active-background;
   direction: rtl;
 }
 
@@ -50,7 +53,7 @@
 
   &:hover {
     .xui-toggle__switch {
-      background-color: $xui-toggle-hover-background;
+      background: $xui-toggle-hover-background;
     }
   }
 
@@ -67,7 +70,6 @@
 
   // @param {px} $xui-toggle-label-size [base-font-size]
   // @param {px} $xui-toggle-line-height [$xui-toggle-label-size * $base-line-height]
-
   .xui-toggle__switch {
     @extend %toggle;
     margin: arrayMagic($xui-toggle-spacing);

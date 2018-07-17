@@ -1,12 +1,12 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 9.0.6
 /// @access public
 /// @group modifier
-///
-/// @param {number} $spacing-smallest-size [getSpace(1)]
-/// @param {number} $spacing-small-size [getSpace(2)]
-/// @param {number} $spacing-size [getSpace(3)]
-/// @param {number} $spacing-big-size [getSpace(5)]
+
+// @param {px} $spacing-smallest-size [getSpace(1)]
+// @param {px} $spacing-small-size [getSpace(2)]
+// @param {px} $spacing-size [getSpace(3)]
+// @param {px} $spacing-big-size [getSpace(5)]
 
 .has-margin {
   @include set-breakpoints {
