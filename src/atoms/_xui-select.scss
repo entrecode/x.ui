@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 9.0.7
 /// @access public
 /// @group atoms
 
@@ -11,7 +11,6 @@
 // @param {px} $xui-select-font-size [$input-font-size]
 // @param {px} $xui-select-line-height [$input-line-height]
 // @param {px} $xui-select-min-height [$input-min-height]
-// @param {array} $xui-select-style
 .xui-select {
   @include inject-style($xui-select-style);
   @include macro-metrics(
@@ -24,9 +23,18 @@
   background: $xui-select-background;
   border-color: $xui-select-border-color;
   color: $xui-select-color;
-  border-radius: arrayMagic($xui-select-radius);
   margin: arrayMagic($xui-select-spacing);
+
+  // @param {boolean} $xui-select-round [$input-round]
+  // @param {array} $xui-select-radius [$input-radius]
+  @if $xui-select-round {
+    border-radius: arrayMagic(xui-select-min-height / 2);
+  } @else {
+    border-radius: arrayMagic($xui-select-radius);
+  }
+
   cursor: pointer;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,7 +42,6 @@
   flex-grow: 1;
   outline: none;
   text-align: left;
-  width: 100%;
   position: relative;
 
   &::after {
@@ -58,7 +65,7 @@
     // @param {color} $xui-select-placeholder-hover-color [$input-placeholder-hover-color]
     // @param {array} $xui-select-placeholder-hover-style
     .xui-select__placeholder {
-      @include inject-style($xui-select-placeholder-style);
+      @include inject-style($xui-select-placeholder-hover-style);
       color: $xui-select-placeholder-hover-color;
     }
   }

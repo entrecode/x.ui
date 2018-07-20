@@ -1,10 +1,20 @@
 # CHANGELOG
 
+## 9.0.7
+
+### added
+
+- config variables for `.xui-overlay`
+
+### changes
+
+- optimized `inject-style()` to support nested styles and media queries
+
 ## 9.0.6
 
 ### added
 
-- new mixin `inject-style()` to replace style placholder in config
+- new mixin `inject-style()` to replace style placeholder in config
 
 ### changes
 

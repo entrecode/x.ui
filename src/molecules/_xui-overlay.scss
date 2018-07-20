@@ -13,7 +13,7 @@
   background-color: $xui-overlay-background;
   border-radius: arrayMagic($xui-overlay-radius);
   box-shadow: arrayMagic($xui-overlay-shadow);
-  color: setContrast($xui-overlay-background);
+  color: $xui-overlay-color;
   padding: arrayMagic($xui-overlay-padding);
   position: relative;
 
