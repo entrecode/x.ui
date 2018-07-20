@@ -1064,6 +1064,7 @@ $card-style: () !default;
 $xui-overlay-radius: 4 !default;
 $xui-overlay-padding: 4 !default;
 $xui-overlay-background: $background !default;
+$xui-overlay-color: $text !default;
 $xui-overlay-style: () !default;
 $xui-overlay-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
 
@@ -1462,6 +1463,7 @@ $input-group-addon-style: () !default;
 // @param {px} $xui-select-font-size [$input-font-size]
 // @param {px} $xui-select-line-height [$input-line-height]
 // @param {px} $xui-select-min-height [$input-min-height]
+// @param {boolean} $xui-select-round [$input-round]
 // @param {array} $xui-select-radius [$input-radius]
 $xui-select-background: $input-background !default;
 $xui-select-color: $input-color !default;
@@ -1470,6 +1472,7 @@ $xui-select-padding-ratio: $input-padding-ratio !default;
 $xui-select-font-size: $input-font-size !default;
 $xui-select-line-height: $input-line-height !default;
 $xui-select-min-height: $input-min-height !default;
+$xui-select-round: $input-round !default;
 $xui-select-radius: $input-radius !default;
 
 // @param {color} $xui-select-border-color [$input-border-color]

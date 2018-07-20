@@ -1,15 +1,52 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 9.0.7
 /// @access public
 /// @group config mixins
 ///
 /// @param {false | array} $style
 /// @returns `key: value` for style injection via config
+/// @example
+/// $example: (
+///   color: #ff0,
+///   '&:hover': (
+///     color: #ff0
+///   ),
+///   responsive: (
+///     800px: (
+///       display: none
+///     )
+///   )
+/// );
 
 @mixin inject-style($style) {
   @if $style {
     @each $_key, $_value in $style {
-      #{$_key}: $_value;
+      $_value-type: type-of($_value);
+
+      @if $_value-type == map {
+        $c-style: $_value;
+
+        @if $_key == responsive {
+          $r-style: $_value;
+
+          @each $_r-key, $_r-value in $r-style {
+            @media (min-with: #{$_r-key}) {
+              $rc-style: $_r-value;
+              @each $_rc-key, $_rc-value in $rc-style {
+                #{$_rc-key}: $_rc-value;
+              }
+            }
+          }
+        } @else {
+          #{$_key} {
+            @each $_c-key, $_c-value in $c-style {
+              #{$_c-key}: $_c-value;
+            }
+          }
+        }
+      } @else {
+        #{$_key}: $_value;
+      }
     }
   }
 }
