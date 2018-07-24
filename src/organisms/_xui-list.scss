@@ -9,12 +9,12 @@
 // @param {px} $xui-list-group-radius [0]
 // @param {array} $xui-list-group-style
 .xui-list-group {
+  width: 100%;
   @include inject-style($xui-list-group-style);
   border-radius: arrayMagic($xui-list-group-radius);
   padding: arrayMagic($xui-list-group-padding);
   margin: arrayMagic($xui-list-group-spacing);
   background: $xui-list-group-background;
-  width: 100%;
 
   // @param {color} $xui-list-group-header-background [none]
   // @param {color} $xui-list-group-header-color [inherit]
@@ -39,13 +39,13 @@
 // @param {px} $xui-list-radius [0]
 // @param {array} $xui-list-style
 .xui-list {
+  list-style: none;
   @include inject-style($xui-list-style);
   border-radius: arrayMagic($xui-list-radius);
   padding: arrayMagic($xui-list-padding);
   margin: arrayMagic($xui-list-spacing);
   background: $xui-list-background;
   color: $xui-list-color;
-  list-style: none;
 }
 
 // @param {color} $xui-list-item-background [none]
@@ -56,14 +56,14 @@
 // @param {px} $xui-list-item-radius [4]
 // @param {array} $xui-list-item-style
 .xui-list-item {
+  align-items: center;
+  display: flex;
   @include inject-style($xui-list-item-style);
   border-radius: arrayMagic($xui-list-item-radius);
   padding: arrayMagic($xui-list-item-padding);
   margin: arrayMagic($xui-list-item-spacing);
   background: $xui-list-item-background;
   color: $xui-list-item-color;
-  align-items: center;
-  display: flex;
 
   @include headings {
     margin: 0;

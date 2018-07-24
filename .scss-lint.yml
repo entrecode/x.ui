@@ -15,7 +15,7 @@ linters:
     enabled: false
 
   DeclarationOrder:
-    enabled: true
+    enabled: false
 
   ElsePlacement:
     enabled: true

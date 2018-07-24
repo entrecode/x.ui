@@ -18,11 +18,11 @@
   // @param {array} $form-group-label-spacing [0 0 4 0]
   // @param {px} $form-group-label-font-size [$base-font-size]
   // @param {array} $form-group-label-style
-  label {
+  > label {
+    display: block;
     @include inject-style($form-group-label-style);
     font-size: em($form-group-label-font-size);
     margin: arrayMagic($form-group-label-spacing);
-    display: block;
   }
 
   &.is-disabled,
@@ -39,7 +39,7 @@
   }
 
   &[data-grid] {
-    label {
+    > label {
       align-self: center;
       margin: 0;
     }

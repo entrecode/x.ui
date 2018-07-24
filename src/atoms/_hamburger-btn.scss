@@ -16,50 +16,50 @@
   $_s: $hamburger-btn-line-weight + $hamburger-btn-line-spacing;
   $_c: $hamburger-btn-line-color;
 
+  position: relative;
   @extend %btn;
   @include inject-style($hamburger-btn-style);
   background-color: $hamburger-btn-background;
   margin: arrayMagix($hamburger-btn-spacing);
-  position: relative;
 
   &::after {
-    background-color: $_c;
-    border-radius: arrayMagic($_h / 2);
-    box-shadow: 0 rem(($_s)) 0 0 $_c, 0 rem(-($_s)) 0 0 $_c;
     content: '';
-    height: rem($_h);
-    left: rem((($btn-min-height - $_w) / 2));
-    margin-top: rem(-$_h / 2);
     position: absolute;
     top: 50%;
     transition: all 0.4s;
+    background-color: $_c;
+    border-radius: arrayMagic($_h / 2);
+    box-shadow: 0 rem(($_s)) 0 0 $_c, 0 rem(-($_s)) 0 0 $_c;
+    height: rem($_h);
+    left: rem((($btn-min-height - $_w) / 2));
+    margin-top: rem(-$_h / 2);
     width: rem($_w);
   }
 
   &::before {
-    background-color: $_c;
-    border-radius: arrayMagic($_h / 2);
     content: '';
-    height: rem($_h);
-    left: rem((($btn-min-height - $_w) / 2));
-    margin-top: rem(-$_h / 2);
     position: absolute;
     top: 50%;
     transition: all 0.4s;
+    background-color: $_c;
+    border-radius: arrayMagic($_h / 2);
+    height: rem($_h);
+    left: rem((($btn-min-height - $_w) / 2));
+    margin-top: rem(-$_h / 2);
     width: rem($_w);
   }
 
   &.is-active {
     &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
       background-color: $_c;
       border-radius: arrayMagic($_h / 2);
-      box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
-      content: '';
       height: rem($_h);
       left: rem((($btn-min-height - $_w) / 2));
       margin-top: rem(-$_h / 2);
-      position: absolute;
-      top: 50%;
       transform: rotate(45deg);
       width: rem($_w);
     }

@@ -37,9 +37,9 @@
   // @param {color} $nav-divider-color [$divider]
   // @param {px} $nav-divider-spacing [4]
   .nav__divider {
-    background-color: $nav-divider-color;
     display: block;
     height: 100%;
+    background-color: $nav-divider-color;
     margin: 0 rem($nav-divider-spacing);
     width: rem($nav-divider-size);
   }
@@ -58,9 +58,9 @@
   }
 
   .nav__divider {
+    width: 100%;
     height: rem($nav-divider-size);
     margin: rem($nav-divider-spacing) 0;
-    width: 100%;
   }
 
   .nav__item {

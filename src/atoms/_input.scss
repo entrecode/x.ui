@@ -15,6 +15,11 @@
 // @param {array} $input-focus-style [$input-hover-style]
 // @param {array} $input-disabled-style [(opacity: 0.4)]
 %input {
+  display: block;
+  flex-grow: 1;
+  outline: none;
+  text-align: left;
+  width: 100%;
   @include inject-style($input-style);
   @include macro-metrics(
     $input-font-size,
@@ -29,11 +34,6 @@
   border-style: $input-border-style;
   margin: arrayMagic($input-spacing);
   color: $input-color;
-  display: block;
-  flex-grow: 1;
-  outline: none;
-  text-align: left;
-  width: 100%;
 
   // @param {color} $input-placeholder-color [$text-light]
   // @param {array} $input-placeholder-style
@@ -76,8 +76,8 @@
 
   &.is-disabled,
   &[disabled] {
-    @include inject-style($input-disabled-style);
     cursor: not-allowed;
+    @include inject-style($input-disabled-style);
   }
 
   @at-root select.input {
@@ -116,9 +116,9 @@
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
     color: $input-color;
     -webkit-text-fill-color: $input-color;
-    transition: background-color 5000s ease-in-out 0s;
   }
 }
 

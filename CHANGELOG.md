@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 9.0.8
+
+### changes
+
+- fixed `setHover()` behavior
+
 ## 9.0.7
 
 ### added

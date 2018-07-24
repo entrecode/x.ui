@@ -18,6 +18,12 @@
   // @param {array} $input-group-addon-padding [0 8]
   // @param {array} $input-group-addon-style
   .input-group__addon {
+    display: flex;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    width: auto;
     @include inject-style($input-group-addon-style);
     color: $input-group-addon-color;
     background: $input-group-addon-background;
@@ -27,12 +33,6 @@
     border-radius: rem($btn-radius);
     padding: arrayMagic($input-group-addon-padding);
     min-width: rem($input-min-height);
-    align-items: center;
-    display: flex;
-    flex-grow: 0;
-    flex-shrink: 0;
-    justify-content: center;
-    width: auto;
   }
 
   .input-group__addon,
@@ -124,14 +124,14 @@
         margin-left: rem($btn-radius + 4);
 
         &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          border-left: 0;
+          height: 100%;
           border-radius: 0 rem($btn-radius) rem($btn-radius) 0;
           left: rem(($btn-radius + 4) * -1);
           width: rem($btn-radius);
-          border-left: 0;
-          content: '';
-          height: 100%;
-          position: absolute;
-          top: 0;
         }
       }
 

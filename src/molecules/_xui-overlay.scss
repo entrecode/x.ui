@@ -9,13 +9,13 @@
 // @param {array} $xui-overlay-style
 // @param {value} $xui-overlay-shadow
 .xui-overlay {
+  position: relative;
   @include inject-style($xui-overlay-style);
   background-color: $xui-overlay-background;
   border-radius: arrayMagic($xui-overlay-radius);
   box-shadow: arrayMagic($xui-overlay-shadow);
   color: $xui-overlay-color;
   padding: arrayMagic($xui-overlay-padding);
-  position: relative;
 
   &__dismiss {
     @extend %btn;

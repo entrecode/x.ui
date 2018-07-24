@@ -13,6 +13,9 @@
 // @param {px} $tag-radius [4]
 // @param {array} $tag-style
 .tag {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
   @include inject-style($tag-style);
   @include macro-metrics(
     $tag-font-size,
@@ -23,9 +26,6 @@
   @include set-theme-colors($tag-background);
   border-radius: arrayMagic($tag-radius);
   font-weight: $tag-weight;
-  display: inline-block;
-  text-align: center;
-  white-space: nowrap;
 
   a {
     color: setContrast($tag-background);

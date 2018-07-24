@@ -78,14 +78,6 @@
 // @param {value} $dropdown-options-shadow
 // @param {array} $dropdown-options-style
 .dropdown-options {
-  @include is-scrollable(y, contain, $behavior: auto);
-  @include inject-style($dropdown-options-style);
-  background: $dropdown-options-background;
-  border-radius: arrayMagic($dropdown-options-radius);
-  box-shadow: arrayMagic($dropdown-options-shadow);
-  color: setContrast($dropdown-options-background);
-  max-height: rem($dropdown-options-max-height);
-  padding: arrayMagic($dropdown-options-padding);
   list-style: none;
   margin: 0;
   opacity: 0;
@@ -94,6 +86,14 @@
   transition: visibility 0.5s, opacity 0.2s;
   visibility: hidden;
   z-index: 10;
+  @include is-scrollable(y, contain, $behavior: auto);
+  @include inject-style($dropdown-options-style);
+  background: $dropdown-options-background;
+  border-radius: arrayMagic($dropdown-options-radius);
+  box-shadow: arrayMagic($dropdown-options-shadow);
+  color: setContrast($dropdown-options-background);
+  max-height: rem($dropdown-options-max-height);
+  padding: arrayMagic($dropdown-options-padding);
 
   // @param {px} $dropdown-option-divider-size [1]
   // @param {px} $dropdown-option-divider-spacing [4 0]
@@ -119,6 +119,16 @@
   display: block;
 
   > a:not([class]) {
+    cursor: pointer;
+    border: 0;
+    display: block;
+    height: auto;
+    outline: none;
+    position: relative;
+    text-decoration: none;
+    touch-action: manipulation;
+    user-select: none;
+    width: 100%;
     @include macro-metrics(
       $dropdown-option-font-size,
       $dropdown-option-line-height,
@@ -130,16 +140,6 @@
     font-weight: $dropdown-option-weight;
     margin: arrayMagic($dropdown-option-spacing);
     text-align: $dropdown-option-alignment;
-    cursor: pointer;
-    border: 0;
-    display: block;
-    height: auto;
-    outline: none;
-    position: relative;
-    text-decoration: none;
-    touch-action: manipulation;
-    user-select: none;
-    width: 100%;
 
     // @param {color} $dropdown-option-hover-color [$link]
     // @param {color} $dropdown-option-hover-background [$state-hover]
