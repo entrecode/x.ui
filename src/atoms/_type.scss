@@ -9,7 +9,9 @@
 // @param {value} $base-weight [$is-normal]
 // @param {color} $body-color [$text]
 // @param {color} $body-background [$background]
+// @param {array} $body-style
 body {
+  @include inject-style($body-style);
   color: $body-color;
   background: $body-background;
   font-family: $body-font;
@@ -26,12 +28,12 @@ body {
 // @param {value} $link-weight [$is-normal]
 // @param {array} $link-style
 a {
-  @include inject-style($link-style);
   cursor: pointer;
+  outline: none;
+  @include inject-style($link-style);
   color: $link-color;
   font-weight: $link-weight;
   text-decoration: $link-decoration;
-  outline: none;
 
   * {
     cursor: pointer;
@@ -76,6 +78,6 @@ strong {
 // @param {number} $inline-small-scale [.875] - font-size of `<small>`
 // @param {value} $inline-small-unit [$base-scale-unit]
 small {
-  font-size: arrayMagic($inline-small-scale, $inline-small-unit);
   vertical-align: baseline;
+  font-size: arrayMagic($inline-small-scale, $inline-small-unit);
 }

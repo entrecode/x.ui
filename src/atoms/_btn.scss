@@ -121,18 +121,18 @@
   &.is-active,
   &:hover,
   &:focus {
+    outline: none;
     @include inject-style($btn-hover-style);
     background: $btn-hover-background;
     color: $btn-hover-color;
-    outline: none;
   }
 
   // disabled state style for buttons
   // @param {array} $btn-disabled-style
   &.is-disabled,
   &[disabled] {
-    @include inject-style($btn-disabled-style);
     cursor: not-allowed;
+    @include inject-style($btn-disabled-style);
   }
 
   // little transform animation onclick
@@ -180,6 +180,7 @@
 
     @supports (display: flex) {
       display: flex;
+      width: auto;
     }
   }
 }

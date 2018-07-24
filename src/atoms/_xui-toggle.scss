@@ -13,15 +13,15 @@
 // @param {array} $xui-toggle-style
 
 %toggle {
+  cursor: pointer;
+  direction: ltr;
+  display: inline-block;
   @include inject-style($xui-toggle-style);
   background: $xui-toggle-background;
   border-radius: arrayMagic($xui-toggle-radius);
   height: rem($xui-toggle-height);
   width: rem($xui-toggle-width);
   transition: background-color 0.2s;
-  cursor: pointer;
-  direction: ltr;
-  display: inline-block;
 
   // @param {color} $input-toggle-pin-background [flattenColor(getColor(minor))]
   // @param {px} $input-toggle-pin-height [$root-size]
@@ -32,20 +32,20 @@
   $_pin-spacing-v: (($xui-toggle-width / 2) - $xui-toggle-pin-width) / 2;
 
   &::after {
+    content: '';
+    display: block;
     @include inject-style($xui-toggle-pin-style);
     background: $xui-toggle-pin-background;
     border-radius: arrayMagic($xui-toggle-pin-width / 2);
     height: rem($xui-toggle-pin-height);
     width: rem($xui-toggle-pin-width);
     margin: arrayMagic($_pin-spacing-h $_pin-spacing-v);
-    content: '';
-    display: block;
   }
 }
 
 %toggle-is-active {
-  background: $xui-toggle-active-background;
   direction: rtl;
+  background: $xui-toggle-active-background;
 }
 
 .xui-toggle {
@@ -79,8 +79,8 @@
   label {
     cursor: pointer;
     user-select: none;
+    margin: 0;
     font-size: em($xui-toggle-label-size);
     line-height: em($xui-toggle-line-height, $xui-toggle-label-size);
-    margin: 0;
   }
 }

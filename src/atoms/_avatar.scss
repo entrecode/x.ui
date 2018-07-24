@@ -12,10 +12,10 @@
 /// @param {px} $avatar-square-radius [4]
 
 .avatar {
-  @include inject-style($avatar-style);
-  border: arrayMagic($avatar-border);
   display: block;
   overflow: hidden;
+  @include inject-style($avatar-style);
+  border: arrayMagic($avatar-border);
 
   @if $avatar-round == true {
     border-radius: 50%;

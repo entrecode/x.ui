@@ -65,6 +65,15 @@
   // @param {px} $tooltip-radius [2]
   // @param {array} $tooltip-style
   &::after {
+    display: none;
+    letter-spacing: 0;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    text-transform: initial;
+    white-space: nowrap;
+    z-index: 100;
     @include inject-style($tooltip-style);
     @include macro-metrics(
       $tooltip-font-size,
@@ -76,15 +85,6 @@
     color: $tooltip-color;
     font-weight: $tooltip-weight;
     border-radius: rem($tooltip-radius);
-    display: none;
-    letter-spacing: 0;
-    pointer-events: none;
-    position: absolute;
-    text-align: center;
-    text-decoration: none;
-    text-transform: initial;
-    white-space: nowrap;
-    z-index: 100;
 
     // @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
     @if $tooltip-round == true {
@@ -106,8 +106,8 @@
   @extend %tooltip;
 
   &::after {
-    animation: tooltipBottom 0.2s forwards;
     content: attr(data-tooltip-bottom);
+    animation: tooltipBottom 0.2s forwards;
     left: 50%;
     opacity: 0;
     top: 100%;
@@ -124,8 +124,8 @@
   @extend %tooltip;
 
   &::after {
-    animation: tooltipLeft 0.2s forwards;
     content: attr(data-tooltip-left);
+    animation: tooltipLeft 0.2s forwards;
     opacity: 0;
     right: 100%;
     top: 50%;
@@ -142,8 +142,8 @@
   @extend %tooltip;
 
   &::after {
-    animation: tooltipRight 0.2s forwards;
     content: attr(data-tooltip-right);
+    animation: tooltipRight 0.2s forwards;
     left: 100%;
     opacity: 0;
     top: 50%;
@@ -160,9 +160,9 @@
   @extend %tooltip;
 
   &::after {
+    content: attr(data-tooltip-top);
     animation: tooltipTop 0.2s forwards;
     bottom: 100%;
-    content: attr(data-tooltip-top);
     left: 50%;
     opacity: 0;
   }

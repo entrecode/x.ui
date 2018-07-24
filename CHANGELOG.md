@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 9.0.8
+
+### changes
+
+- new ordering rules for declaration order
+- DeclarationOrder set to `false` in `.scss-lint.yml`
+- fixed `setHover()` behavior
+
 ## 9.0.7
 
 ### added

@@ -7,21 +7,21 @@
 // @param {array} $title-padding [0]
 // @param {array} $title-style
 .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   @include inject-style($title-style);
   margin: arrayMagic($title-spacing);
   padding: arrayMagic($title-padding);
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
 
   // @param {array} $title-stacked-spacing [0]
   // @param {array} $title-stacked-padding [0]
   // @param {array} $title-stacked-style
   &.title_stacked {
+    align-items: flex-start;
+    flex-direction: column;
     @include inject-style($title-stacked-style);
     margin: arrayMagic($title-stacked-spacing);
     padding: arrayMagic($title-stacked-padding);
-    align-items: flex-start;
-    flex-direction: column;
   }
 }

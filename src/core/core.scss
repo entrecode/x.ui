@@ -46,12 +46,12 @@ input {
 ::after,
 ::before {
   box-sizing: border-box;
-  color: inherit;
+  /* color: inherit;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
   text-decoration: inherit;
-  vertical-align: inherit;
+  vertical-align: inherit; */
 }
 
 * {
@@ -69,13 +69,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-// @param {color} $body-color [$text]
-// @param {color} $body-background [$background]
-// @param {array} $body-style
-body {
-  @include inject-style($body-style);
-  background: $body-background;
-  color: $body-color;
-}
-

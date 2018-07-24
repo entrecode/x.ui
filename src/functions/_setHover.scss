@@ -17,7 +17,8 @@
     $color: flattenColor($color);
   }
 
-  @if $_brightness < 180 {
+  // if color is brighter
+  @if $_brightness > 180 {
     $shade: $shade * -1;
   }
 

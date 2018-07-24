@@ -12,6 +12,16 @@
 // @param {px} $xui-select-line-height [$input-line-height]
 // @param {px} $xui-select-min-height [$input-min-height]
 .xui-select {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-style: solid;
+  flex-grow: 1;
+  outline: none;
+  text-align: left;
+  position: relative;
   @include inject-style($xui-select-style);
   @include macro-metrics(
     $xui-select-font-size,
@@ -33,21 +43,11 @@
     border-radius: arrayMagic($xui-select-radius);
   }
 
-  cursor: pointer;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-style: solid;
-  flex-grow: 1;
-  outline: none;
-  text-align: left;
-  position: relative;
-
+  
   &::after {
+    content: '';
     border: 4px solid transparent;
     border-top-color: rgba(getColor(text), 0.2);
-    content: '';
     flex-grow: 0;
     flex-shrink: 0;
     margin-top: rem(4);
@@ -88,11 +88,11 @@
   // @param {color} $xui-select-placeholder-color [$input-placeholder-color]
   // @param {array} $xui-select-placeholder-style
   .xui-select__placeholder {
-    @include inject-style($xui-select-placeholder-style);
-    color: $xui-select-placeholder-color;
     flex-grow: 1;
     flex-shrink: 0;
     user-select: none;
+    @include inject-style($xui-select-placeholder-style);
+    color: $xui-select-placeholder-color;
   }
 
   &.xui-select_top {
@@ -110,13 +110,6 @@
 // @param {value} $xui-select-options-shadow
 // @param {array} $xui-select-options-style
 .xui-select-options {
-  @include is-scrollable(y, contain, $behavior: auto);
-  @include inject-style($xui-select-options-style);
-  background: $xui-select-options-background;
-  border-radius: arrayMagic($xui-select-options-radius);
-  box-shadow: arrayMagic($xui-select-options-shadow);
-  max-height: rem($xui-select-options-max-height);
-  padding: arrayMagic($xui-select-options-padding);
   width: 100%;
   opacity: 0;
   list-style: none;
@@ -126,6 +119,13 @@
   transition: visibility 0.5s, opacity 0.2s;
   visibility: hidden;
   z-index: 10;
+  @include is-scrollable(y, contain, $behavior: auto);
+  @include inject-style($xui-select-options-style);
+  background: $xui-select-options-background;
+  border-radius: arrayMagic($xui-select-options-radius);
+  box-shadow: arrayMagic($xui-select-options-shadow);
+  max-height: rem($xui-select-options-max-height);
+  padding: arrayMagic($xui-select-options-padding);
 }
 
 // @param {array} $xui-select-option-spacing [2 0]
@@ -140,15 +140,15 @@
   // @param {color} $xui-select-option-color
   // @param {array} $xui-select-option-style
   a:not(.btn) {
+    display: block;
+    outline: none;
+    transition: background-color 0.4s, color 0.4s;
     @include inject-style($xui-select-option-style);
     background: $xui-select-option-background;
     color: $xui-select-option-color;
     border-radius: arrayMagic($xui-select-option-radius);
     padding: arrayMagic($xui-select-option-padding);
     font-size: em($xui-select-option-font-size, $xui-select-font-size);
-    display: block;
-    outline: none;
-    transition: background-color 0.4s, color 0.4s;
 
     // @param {color} $xui-select-option-hover-background
     // @param {color} $xui-select-option-hover-color

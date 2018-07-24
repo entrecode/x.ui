@@ -10,13 +10,13 @@
 /// @param {array} $card-style
 
 %card {
+  position: relative;
+  z-index: 1;
   @include inject-style($card-style);
   background: $card-background;
   color: $card-color;
   border-radius: arrayMagic($card-radius);
   padding: arrayMagic($card-padding);
-  position: relative;
-  z-index: 1;
 }
 
 .card {

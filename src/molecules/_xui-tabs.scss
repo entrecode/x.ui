@@ -56,9 +56,9 @@
 
 // @param {array} $xui-tabs-nav-item-gutter [0]
 .xui-tabs-nav-item {
-  padding: arrayMagic($xui-tabs-nav-item-gutter);
   position: relative;
   text-align: center;
+  padding: arrayMagic($xui-tabs-nav-item-gutter);
 
   @supports not (display: flex) {
     display: inline-block;
@@ -71,15 +71,15 @@
   // @param {value} $xui-tabs-nav-item-weight [$is-bold]
   // @param {array} $xui-tabs-nav-item-style
   label {
+    cursor: pointer;
+    display: block;
+    text-align: center;
     @include inject-style($xui-tabs-nav-item-style);
     border-radius: arrayMagic($xui-tabs-nav-item-radius);
     background: $xui-tabs-nav-item-background;
     color: $xui-tabs-nav-item-color;
     font-weight: $xui-tabs-nav-item-weight;
     padding: arrayMagic($xui-tabs-nav-item-padding);
-    cursor: pointer;
-    display: block;
-    text-align: center;
 
     // @param {color} $xui-tabs-nav-item-active-background [none]
     // @param {color} $xui-tabs-nav-item-active-color [$link]
@@ -106,9 +106,9 @@
 // @param {array} $xui-tab-padding [0]
 // @param {array} $xui-tab-style
 .xui-tab {
+  display: none;
   @include inject-style($xui-tab-style);
   background: $xui-tab-background;
   margin: arrayMagic($xui-tab-spacing);
   padding: arrayMagic($xui-tab-padding);
-  display: none;
 }

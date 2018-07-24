@@ -13,7 +13,7 @@ npm i x.ui --save
 ```
 
 add a custom `_your-config.scss` to your project root style folder.
-see all available config options [\_config.scss](https://github.com/entrecode/x.ui/blob/master/src/_config.scss)
+see all available config options [\_config.scss](https://github.com/entrecode/x.ui/blob/master/src/_xui-config.scss)
 
 set up your style.scss in your project
 
