@@ -1,6 +1,6 @@
 <p align="center"><img src="readme.png" alt="x.ui"></p>
 
-# x.ui 9.0.5
+# x.ui
 
 **x.ui** is a framework based on the atomic design methodology. this workflow is inspired by nature and physics and has a pretty serious focus on modularity and structure. its structure begins with the smallest part and builds up to complex structure. as a result, there is very little redundancy with a remarkable flexibility.
 
