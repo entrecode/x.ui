@@ -1,0 +1,77 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group molecules
+
+// @param {color} $deck-wrapper-background [$backdrop]
+// @param {number} $deck-z-index [100]
+// @param {array} $deck-style
+.deck-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  @include inject-style($deck-wrapper-style);
+  background: $deck-wrapper-background;
+  z-index: $deck-wrapper-z-index;
+
+  &.is-active {
+    display: flex;
+
+    > .deck {
+      display: flex;
+    }
+
+    > .opens-left {
+      align-self: flex-start;
+    }
+
+    > .opens-right {
+      align-self: flex-end;
+    }
+  }
+}
+
+// @param {color} $deck-background
+// @param {color} $deck-color
+// @param {px} $deck-min-width [240]
+// @param {array} $deck-padding [4]
+// @param {px} $deck-radius [4]
+// @param {number} $deck-z-index [100]
+// @param {array} $deck-style
+.deck {
+  height: 100%;
+  flex-direction: column;
+  @include inject-style($deck-style);
+  background: $deck-background;
+  padding: arrayMagic($deck-padding);
+  display: none;
+
+  // @param {value} $deck-opens-left-shadow
+  // @param {value} $deck-opens-right-shadow
+  &.opens-left {
+    box-shadow: arrayMagic($deck-opens-left-shadow);
+
+    &.is-active {
+      left: 0;
+    }
+  }
+
+  &.opens-right {
+    box-shadow: arrayMagic($deck-opens-right-shadow);
+
+    &.is-active {
+      right: 0;
+    }
+  }
+
+  &.is-active {
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: $deck-z-index;
+  }
+}

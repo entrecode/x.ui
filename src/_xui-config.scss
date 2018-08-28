@@ -44,8 +44,8 @@ $text-light: rgba($text, 0.6) !default;
 $text-lighter: rgba($text, 0.4) !default;
 $text-lightest: rgba($text, 0.2) !default;
 
-// @param {color} $backdrop [rgba(#000, .8)]
-$backdrop: rgba(#000, 0.8) !default;
+// @param {color} $backdrop [rgba(#000, .2)]
+$backdrop: rgba(#000, 0.2) !default;
 
 // @param {number} $hover-shading [4] - amount by which colors are darkened or lightened on hover
 $hover-shading: 4 !default;
@@ -1053,25 +1053,110 @@ $card-color: inherit !default;
 $card-padding: 8 16 !default;
 $card-style: () !default;
 
-//
-// XUI-OVERLAY
+// DIALOG
 // ------------------------------------------------------
-// @param {px} $xui-overlay-radius [4]
-// @param {array} $xui-overlay-padding [4]
-// @param {color} $xui-overlay-background
-// @param {array} $xui-overlay-style
-// @param {value} $xui-overlay-shadow
-$xui-overlay-radius: 4 !default;
-$xui-overlay-padding: 4 !default;
-$xui-overlay-background: $background !default;
-$xui-overlay-color: $text !default;
-$xui-overlay-style: () !default;
-$xui-overlay-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
+// @param {color} $dialog-wrapper-background [$backdrop]
+// @param {number} $dialog-z-index [100]
+// @param {array} $dialog-style
+$dialog-wrapper-background: $backdrop;
+$dialog-wrapper-z-index: 100 !default;
+$dialog-wrapper-style: () !default;
 
-// @param {color} $xui-overlay-backdrop-background [$backdrop]
-// @param {array} $xui-overlay-backdrop-style
-$xui-overlay-backdrop-background: $backdrop !default;
-$xui-overlay-backdrop-style: () !default;
+// @param {color} $dialog-background
+// @param {color} $dialog-color
+// @param {px} $dialog-min-width [240]
+// @param {array} $dialog-padding [4]
+// @param {px} $dialog-radius [4]
+// @param {value} $dialog-shadow
+// @param {number} $dialog-z-index [100]
+// @param {array} $dialog-style
+$dialog-background: $background !default;
+$dialog-color: $text !default;
+$dialog-min-width: 240 !default;
+$dialog-padding: 16 !default;
+$dialog-radius: 8 !default;
+$dialog-shadow: 0 4 16 -4 rgba(#000, 0.16) ',' 0 8 24 0 rgba(#000, 0.1) !default;
+$dialog-z-index: 100 !default;
+$dialog-style: () !default;
+
+// DECK
+// ------------------------------------------------------
+// @param {color} $deck-wrapper-background [$backdrop]
+// @param {number} $deck-z-index [100]
+// @param {array} $deck-style
+$deck-wrapper-background: $backdrop;
+$deck-wrapper-z-index: 100 !default;
+$deck-wrapper-style: () !default;
+
+// @param {color} $deck-background
+// @param {color} $deck-color
+// @param {array} $deck-padding [4]
+// @param {number} $deck-z-index [100]
+// @param {array} $deck-style
+$deck-background: $background !default;
+$deck-color: $text !default;
+$deck-padding: 16 !default;
+$deck-z-index: 100 !default;
+$deck-style: () !default;
+
+// @param {value} $deck-opens-left-shadow
+// @param {value} $deck-opens-right-shadow
+$deck-opens-left-shadow: 4 0 16 -4 rgba(#000, 0.16) ',' 8 0 24 0 rgba(#000, 0.1) !default;
+$deck-opens-right-shadow: -4 0 16 -4 rgba(#000, 0.16) ',' -8 0 24 0 rgba(#000, 0.1) !default;
+
+// TOAST
+// ------------------------------------------------------
+// @param {color} $toast-wrapper-background [$backdrop]
+// @param {number} $toast-z-index [100]
+// @param {array} $toast-style
+$toast-wrapper-background: $backdrop;
+$toast-wrapper-z-index: 100 !default;
+$toast-wrapper-style: () !default;
+
+// @param {color} $toast-background
+// @param {color} $toast-color
+// @param {array} $toast-padding [4]
+// @param {number} $toast-z-index [100]
+// @param {array} $toast-style
+$toast-background: $background !default;
+$toast-color: $text !default;
+$toast-padding: 16 !default;
+$toast-z-index: 100 !default;
+$toast-style: () !default;
+
+// @param {value} $toast-opens-top-shadow
+// @param {value} $toast-opens-bottom-shadow
+$toast-opens-top-shadow: 0 4 16 -4 rgba(#000, 0.16) ',' 0 8 24 0 rgba(#000, 0.1) !default;
+$toast-opens-bottom-shadow: 0 -4 16 -4 rgba(#000, 0.16) ',' 0 -8 24 0 rgba(#000, 0.1) !default;
+
+//
+// OVERLAY
+// ------------------------------------------------------]
+// @param {array} $overlay-padding [16]
+// @param {color} $overlay-background
+// @param {color} $overlay-color
+// @param {number} $overlay-z-index [100]
+// @param {array} $overlay-style
+$overlay-padding: 16 !default;
+$overlay-background: $background !default;
+$overlay-color: $text !default;
+$overlay-z-index: 100 !default;
+$overlay-style: () !default;
+
+//
+// POPOVER
+// ------------------------------------------------------
+// @param {px} $popover-radius [4]
+// @param {array} $popover-padding [4]
+// @param {color} $popover-background
+// @param {value} $popover-shadow
+// @param {array} $popover-style
+$popover-radius: 4 !default;
+$popover-padding: 4 !default;
+$popover-background: $background !default;
+$popover-color: $text !default;
+$popover-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
+$popover-style: () !default;
 
 //
 // WELL

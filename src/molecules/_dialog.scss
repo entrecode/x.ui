@@ -1,0 +1,61 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group molecules
+
+// @param {color} $dialog-wrapper-background [$backdrop]
+// @param {number} $dialog-z-index [100]
+// @param {array} $dialog-style
+.dialog-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  @include inject-style($dialog-wrapper-style);
+  background: $dialog-wrapper-background;
+  z-index: $dialog-wrapper-z-index;
+
+  &.is-active {
+    display: flex;
+
+    > .dialog {
+      display: flex;
+    }
+  }
+}
+
+// @param {color} $dialog-background
+// @param {color} $dialog-color
+// @param {px} $dialog-min-width [240]
+// @param {array} $dialog-padding [4]
+// @param {px} $dialog-radius [4]
+// @param {value} $dialog-shadow
+// @param {number} $dialog-z-index [100]
+// @param {array} $dialog-style
+.dialog {
+  max-height: 80%;
+  flex-direction: column;
+  @include inject-style($dialog-style);
+  background: $dialog-background;
+  padding: arrayMagic($dialog-padding);
+  border-radius: arrayMagic($dialog-radius);
+  box-shadow: arrayMagic($dialog-shadow);
+  display: none;
+
+  :not([data-col]) {
+    min-width: rem($dialog-min-width);
+  }
+
+  &.is-active {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: $dialog-z-index;
+  }
+}

@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 10.0.0
+
+### breaking changes
+
+- removed `.xui-overlay`
+
+### added
+
+- new molecule `.dialog` with config
+- new molecule `.deck` with config
+- new molecule `.toast` with config
+- new molecule `.overlay` with config
+
 ## 9.0.8
 
 ### changes

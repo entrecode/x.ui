@@ -1,0 +1,29 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group molecules
+
+// @param {color} $overlay-background
+// @param {color} $overlay-color
+// @param {array} $overlay-padding [4]
+// @param {number} $overlay-z-index [100]
+// @param {array} $overlay-style
+
+.overlay {
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  @include inject-style($dialog-style);
+  background: $dialog-background;
+  color: $dialog-color;
+  padding: arrayMagic($dialog-padding);
+  z-index: $dialog-z-index;
+  display: none;
+
+  &.is-active {
+    display: flex;
+  }
+}
