@@ -60,7 +60,6 @@
       "xui-list.njk",
       "xui-accordion.njk",
       "card.njk",
-      "xui-overlay.njk",
       "well.njk",
       "alert.njk",
       "data-tooltip.njk",
