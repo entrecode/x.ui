@@ -520,14 +520,14 @@ $btn-outline-hover-style: () !default;
 // @param {array} $btn-minor-style
 $btn-minor-background: $minor !default;
 $btn-minor-color: setContrast($minor) !default;
-$btn-minor-style: () default;
+$btn-minor-style: () !default;
 
 // @param {color} $btn-minor-hover-background [$btn-minor-background]
 // @param {color} $btn-minor-hover-color [$btn-minor-color]
 // @param {array} $btn-minor-hover-style
 $btn-minor-hover-background: $btn-minor-background !default;
 $btn-minor-hover-color: $btn-minor-color !default;
-$btn-minor-hover-style: () default;
+$btn-minor-hover-style: () !default;
 
 //
 // BTN OUTLINE MINOR STYLE
@@ -769,7 +769,7 @@ $tag-outlined-border-style: solid !default;
 $tag-round: false !default;
 
 // @param {px} $tags-gutter [4]
-$tags-gutter: 4;
+$tags-gutter: 4 !default;
 
 // radius of buttons - if $tag-round === false
 // @param {px} $tag-radius [2]
@@ -838,8 +838,8 @@ $dropdown-option-divider-style: () !default;
 // @param {px} $btn-group-divider-size [1]
 // @param {color} $btn-group-divider-color [$divider-color]
 $btn-group-style: () !default;
-$btn-group-divider-size: 1;
-$btn-group-divider-color: $divider-color;
+$btn-group-divider-size: 1 !default;
+$btn-group-divider-color: $divider-color !default;
 
 //
 // NAV
@@ -1059,19 +1059,20 @@ $card-style: () !default;
 // @param {color} $dialog-wrapper-background [$backdrop]
 // @param {number} $dialog-z-index [100]
 // @param {array} $dialog-style
-$dialog-wrapper-padding: 16;
-$dialog-wrapper-background: $backdrop;
+$dialog-wrapper-padding: 16 !default;
+$dialog-wrapper-background: $backdrop !default;
 $dialog-wrapper-z-index: 100 !default;
 $dialog-wrapper-style: () !default;
 
+// @param {px} $dialog-min-width [240]
 // @param {percentage | false } $dialog-max-width-relative [50]
 // @param {pixel | false } $dialog-max-width-relative [640]
-$dialog-max-width-relative: 50;
-$dialog-max-width-absolute: 640;
+$dialog-min-width: 240 !default;
+$dialog-max-width-relative: 50 !default;
+$dialog-max-width-absolute: 640 !default;
 
 // @param {color} $dialog-background
 // @param {color} $dialog-color
-// @param {px} $dialog-min-width [240]
 // @param {array} $dialog-padding [0]
 // @param {px} $dialog-radius [4]
 // @param {value} $dialog-shadow
@@ -1079,7 +1080,6 @@ $dialog-max-width-absolute: 640;
 // @param {array} $dialog-style
 $dialog-background: $background !default;
 $dialog-color: $text !default;
-$dialog-min-width: 240 !default;
 $dialog-padding: 0 !default;
 $dialog-radius: 8 !default;
 $dialog-shadow: 0 4 16 -4 rgba(#000, 0.16) ',' 0 8 24 0 rgba(#000, 0.1) !default;
@@ -1115,9 +1115,16 @@ $dialog-footer-style: () !default;
 // @param {color} $deck-wrapper-background [$backdrop]
 // @param {number} $deck-z-index [100]
 // @param {array} $deck-style
-$deck-wrapper-background: $backdrop;
+$deck-wrapper-background: $backdrop !default;
 $deck-wrapper-z-index: 100 !default;
 $deck-wrapper-style: () !default;
+
+// @param {px} $deck-min-width [240]
+// @param {percentage | false } $deck-max-width-relative [50]
+// @param {pixel | false } $deck-max-width-relative [640]
+$deck-min-width: 240 !default;
+$deck-max-width-relative: 50 !default;
+$deck-max-width-absolute: 640 !default;
 
 // @param {color} $deck-background
 // @param {color} $deck-color
@@ -1164,7 +1171,7 @@ $deck-footer-style: () !default;
 // @param {color} $toast-wrapper-background [$backdrop]
 // @param {number} $toast-z-index [100]
 // @param {array} $toast-style
-$toast-wrapper-background: $backdrop;
+$toast-wrapper-background: $backdrop !default;
 $toast-wrapper-z-index: 100 !default;
 $toast-wrapper-style: () !default;
 
@@ -1184,6 +1191,31 @@ $toast-style: () !default;
 $toast-opens-top-shadow: 0 4 16 -4 rgba(#000, 0.16) ',' 0 8 24 0 rgba(#000, 0.1) !default;
 $toast-opens-bottom-shadow: 0 -4 16 -4 rgba(#000, 0.16) ',' 0 -8 24 0 rgba(#000, 0.1) !default;
 
+// @param {array} $toast-dismiss-style
+$toast-dismiss-style: () !default;
+
+// @param {array} $toast-header-spacing [0]
+// @param {array} $toast-header-padding [8]
+// @param {array} $toast-header-style
+$toast-header-spacing: 0 !default;
+$toast-header-padding: 8 !default;
+$toast-header-style: () !default;
+
+// @param {array} $toast-body-spacing [0]
+// @param {array} $toast-body-padding [8]
+// @param {array} $toast-body-style
+$toast-body-spacing: 0 !default;
+$toast-body-padding: 8 !default;
+$toast-body-style: () !default;
+
+// @param {array} $toast-footer-spacing [0]
+// @param {array} $toast-footer-padding [8]
+// @param {array} $toast-footer-style
+$toast-footer-spacing: 0 !default;
+$toast-footer-padding: 8 !default;
+$toast-footer-style: () !default;
+
+
 //
 // OVERLAY
 // ------------------------------------------------------]
@@ -1197,6 +1229,31 @@ $overlay-background: $background !default;
 $overlay-color: $text !default;
 $overlay-z-index: 100 !default;
 $overlay-style: () !default;
+
+// @param {array} $overlay-dismiss-style
+$overlay-dismiss-style: () !default;
+
+// @param {array} $overlay-header-spacing [0]
+// @param {array} $overlay-header-padding [8]
+// @param {array} $overlay-header-style
+$overlay-header-spacing: 0 !default;
+$overlay-header-padding: 8 !default;
+$overlay-header-style: () !default;
+
+// @param {array} $overlay-body-spacing [0]
+// @param {array} $overlay-body-padding [8]
+// @param {array} $overlay-body-style
+$overlay-body-spacing: 0 !default;
+$overlay-body-padding: 8 !default;
+$overlay-body-style: () !default;
+
+// @param {array} $overlay-footer-spacing [0]
+// @param {array} $overlay-footer-padding [8]
+// @param {array} $overlay-footer-style
+$overlay-footer-spacing: 0 !default;
+$overlay-footer-padding: 8 !default;
+$overlay-footer-style: () !default;
+
 
 //
 // POPOVER
@@ -1308,8 +1365,8 @@ $tooltip-font-size: 12 !default;
 $tooltip-line-height: 14 !default;
 $tooltip-min-height: 20 !default;
 $tooltip-weight: $is-normal !default;
-$tooltip-background: $background-invert;
-$tooltip-color: $text-invert;
+$tooltip-background: $background-invert !default;
+$tooltip-color: $text-invert !default;
 $tooltip-style: () !default;
 
 // @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
@@ -1531,7 +1588,7 @@ $input-placeholder-focus-style: $input-placeholder-hover-style !default;
 $input-small-font-size: $input-font-size * 0.875 !default;
 $input-small-line-height: $input-small-font-size * $base-line-height !default;
 $input-small-min-height: 28 !default;
-$input-small-style: ();
+$input-small-style: () !default;
 
 // @param {px} $input-big-font-size [18]
 // @param {px} $input-big-line-height [24]
@@ -1540,7 +1597,7 @@ $input-small-style: ();
 $input-big-font-size: $input-font-size * 1.125 !default;
 $input-big-line-height: $input-big-font-size * $base-line-height !default;
 $input-big-min-height: 40 !default;
-$input-big-style: ();
+$input-big-style: () !default;
 
 // @param {boolean} $input-round [false] - sets border-radius to 50% of input height
 $input-round: false !default;

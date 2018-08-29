@@ -27,3 +27,68 @@
     display: flex;
   }
 }
+
+
+// @param {array} $overlay-dismiss-style
+.overlay-dismiss {
+  @extend %btn;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  opacity: .4;
+  transition: opacity .2s;
+  color: $overlay-color;
+  @include inject-style($overlay-dismiss-style);
+
+  &:only-child {
+    margin-left: auto;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// @param {array} $overlay-header-spacing [0]
+// @param {array} $overlay-header-padding [8]
+// @param {array} $overlay-header-style
+.overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  @include inject-style($overlay-header-style);
+  margin: arrayMagic($overlay-header-spacing);
+  padding: arrayMagic($overlay-header-padding);
+
+  .overlay-dismiss {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+}
+
+// @param {array} $overlay-body-spacing [0]
+// @param {array} $overlay-body-padding [8]
+// @param {array} $overlay-body-style
+.overlay-body {
+  flex-grow: 1;
+  @include is-scrollable(y, contain, $behavior: auto);
+  @include inject-style($overlay-body-style);
+  margin: arrayMagic($overlay-header-spacing);
+  padding: arrayMagic($overlay-header-padding);
+}
+
+// @param {array} $overlay-footer-spacing [0]
+// @param {array} $overlay-footer-padding [8]
+// @param {array} $overlay-footer-style
+.overlay-footer {
+  flex-shrink: 0;
+  flex-grow: 0;
+  @include inject-style($overlay-footer-style);
+  margin: arrayMagic($overlay-footer-spacing);
+  padding: arrayMagic($overlay-footer-padding);
+}
+

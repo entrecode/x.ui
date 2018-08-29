@@ -51,6 +51,26 @@
   padding: arrayMagic($deck-padding);
   display: none;
 
+  // @param {pixel | false } $deck-min-width [240]
+  &:not([data-col]) {
+    min-width: rem($deck-min-width);
+
+    // @param {percentage | false } $deck-max-width-relative [50]
+    // @param {pixel | false } $deck-max-width-relative [640]
+
+    @if $deck-max-width-absolute and $deck-max-width-relative {
+      @media (min-width: ($deck-max-width-absolute * 1px)) {
+        max-width: $deck-max-width-relative * 1%;
+
+        .deck-header,
+        .deck-body,
+        .deck-footer {
+          max-width: rem($deck-max-width-absolute);
+        }
+      }
+    }
+  }
+
   // @param {value} $deck-opens-left-shadow
   // @param {value} $deck-opens-right-shadow
   &.opens-left {
