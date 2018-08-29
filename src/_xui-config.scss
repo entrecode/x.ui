@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 
 //
@@ -1055,17 +1055,24 @@ $card-style: () !default;
 
 // DIALOG
 // ------------------------------------------------------
+// @param {array} $dialog-padding [16]
 // @param {color} $dialog-wrapper-background [$backdrop]
 // @param {number} $dialog-z-index [100]
 // @param {array} $dialog-style
+$dialog-wrapper-padding: 16;
 $dialog-wrapper-background: $backdrop;
 $dialog-wrapper-z-index: 100 !default;
 $dialog-wrapper-style: () !default;
 
+// @param {percentage | false } $dialog-max-width-relative [50]
+// @param {pixel | false } $dialog-max-width-relative [640]
+$dialog-max-width-relative: 50;
+$dialog-max-width-absolute: 640;
+
 // @param {color} $dialog-background
 // @param {color} $dialog-color
 // @param {px} $dialog-min-width [240]
-// @param {array} $dialog-padding [4]
+// @param {array} $dialog-padding [0]
 // @param {px} $dialog-radius [4]
 // @param {value} $dialog-shadow
 // @param {number} $dialog-z-index [100]
@@ -1073,11 +1080,35 @@ $dialog-wrapper-style: () !default;
 $dialog-background: $background !default;
 $dialog-color: $text !default;
 $dialog-min-width: 240 !default;
-$dialog-padding: 16 !default;
+$dialog-padding: 0 !default;
 $dialog-radius: 8 !default;
 $dialog-shadow: 0 4 16 -4 rgba(#000, 0.16) ',' 0 8 24 0 rgba(#000, 0.1) !default;
 $dialog-z-index: 100 !default;
 $dialog-style: () !default;
+
+// @param {array} $dialog-dismiss-style
+$dialog-dismiss-style: () !default;
+
+// @param {array} $dialog-header-spacing [0]
+// @param {array} $dialog-header-padding [8]
+// @param {array} $dialog-header-style
+$dialog-header-spacing: 0 !default;
+$dialog-header-padding: 8 !default;
+$dialog-header-style: () !default;
+
+// @param {array} $dialog-body-spacing [0]
+// @param {array} $dialog-body-padding [8]
+// @param {array} $dialog-body-style
+$dialog-body-spacing: 0 !default;
+$dialog-body-padding: 8 !default;
+$dialog-body-style: () !default;
+
+// @param {array} $dialog-footer-spacing [0]
+// @param {array} $dialog-footer-padding [8]
+// @param {array} $dialog-footer-style
+$dialog-footer-spacing: 0 !default;
+$dialog-footer-padding: 8 !default;
+$dialog-footer-style: () !default;
 
 // DECK
 // ------------------------------------------------------
@@ -1090,12 +1121,12 @@ $deck-wrapper-style: () !default;
 
 // @param {color} $deck-background
 // @param {color} $deck-color
-// @param {array} $deck-padding [4]
+// @param {array} $deck-padding [0]
 // @param {number} $deck-z-index [100]
 // @param {array} $deck-style
 $deck-background: $background !default;
 $deck-color: $text !default;
-$deck-padding: 16 !default;
+$deck-padding: 0 !default;
 $deck-z-index: 100 !default;
 $deck-style: () !default;
 
@@ -1103,6 +1134,30 @@ $deck-style: () !default;
 // @param {value} $deck-opens-right-shadow
 $deck-opens-left-shadow: 4 0 16 -4 rgba(#000, 0.16) ',' 8 0 24 0 rgba(#000, 0.1) !default;
 $deck-opens-right-shadow: -4 0 16 -4 rgba(#000, 0.16) ',' -8 0 24 0 rgba(#000, 0.1) !default;
+
+// @param {array} $deck-dismiss-style
+$deck-dismiss-style: () !default;
+
+// @param {array} $deck-header-spacing [0]
+// @param {array} $deck-header-padding [8]
+// @param {array} $deck-header-style
+$deck-header-spacing: 0 !default;
+$deck-header-padding: 8 !default;
+$deck-header-style: () !default;
+
+// @param {array} $deck-body-spacing [0]
+// @param {array} $deck-body-padding [8]
+// @param {array} $deck-body-style
+$deck-body-spacing: 0 !default;
+$deck-body-padding: 8 !default;
+$deck-body-style: () !default;
+
+// @param {array} $deck-footer-spacing [0]
+// @param {array} $deck-footer-padding [8]
+// @param {array} $deck-footer-style
+$deck-footer-spacing: 0 !default;
+$deck-footer-padding: 8 !default;
+$deck-footer-style: () !default;
 
 // TOAST
 // ------------------------------------------------------
@@ -1115,12 +1170,12 @@ $toast-wrapper-style: () !default;
 
 // @param {color} $toast-background
 // @param {color} $toast-color
-// @param {array} $toast-padding [4]
+// @param {array} $toast-padding [0]
 // @param {number} $toast-z-index [100]
 // @param {array} $toast-style
 $toast-background: $background !default;
 $toast-color: $text !default;
-$toast-padding: 16 !default;
+$toast-padding: 0 !default;
 $toast-z-index: 100 !default;
 $toast-style: () !default;
 

@@ -42,6 +42,7 @@
 // @param {number} $toast-z-index [100]
 // @param {array} $toast-style
 .toast {
+  position: relative;
   width: 100%;
   max-height: 100%;
   flex-direction: column;

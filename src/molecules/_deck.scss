@@ -43,6 +43,7 @@
 // @param {number} $deck-z-index [100]
 // @param {array} $deck-style
 .deck {
+  position: relative;
   height: 100%;
   flex-direction: column;
   @include inject-style($deck-style);
@@ -74,4 +75,68 @@
     top: 0;
     z-index: $deck-z-index;
   }
+}
+
+// @param {array} $deck-dismiss-style
+.deck-dismiss {
+  @extend %btn;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  opacity: .4;
+  transition: opacity .2s;
+  color: $deck-color;
+  @include inject-style($deck-dismiss-style);
+
+  &:only-child {
+    margin-left: auto;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
+// @param {array} $deck-header-spacing [0]
+// @param {array} $deck-header-padding [8]
+// @param {array} $deck-header-style
+.deck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  @include inject-style($deck-header-style);
+  margin: arrayMagic($deck-header-spacing);
+  padding: arrayMagic($deck-header-padding);
+
+  .deck-dismiss {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+}
+
+// @param {array} $deck-body-spacing [0]
+// @param {array} $deck-body-padding [8]
+// @param {array} $deck-body-style
+.deck-body {
+  flex-grow: 1;
+  @include is-scrollable(y, contain, $behavior: auto);
+  @include inject-style($deck-body-style);
+  margin: arrayMagic($deck-header-spacing);
+  padding: arrayMagic($deck-header-padding);
+}
+
+// @param {array} $deck-footer-spacing [0]
+// @param {array} $deck-footer-padding [8]
+// @param {array} $deck-footer-style
+.deck-footer {
+  flex-shrink: 0;
+  flex-grow: 0;
+  @include inject-style($deck-footer-style);
+  margin: arrayMagic($deck-footer-spacing);
+  padding: arrayMagic($deck-footer-padding);
 }
