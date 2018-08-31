@@ -1882,3 +1882,31 @@ $form-boolean-style: () !default;
 $form-boolean-label-spacing: $form-group-label-spacing !default;
 $form-boolean-label-font-size: $base-font-size !default;
 $form-boolean-label-style: () !default;
+
+//
+// Animation
+// -------------------------------------------------------------------------------------------------
+$linear-out-slow-in-timing-function: cubic-bezier(0, 0, 0.2, 0.1) !default;
+$fast-out-slow-in-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$fast-out-linear-in-timing-function: cubic-bezier(0.4, 0, 1, 1) !default;
+
+$data-animate-timing: $fast-out-slow-in-timing-function !default;
+
+//
+// MIXINS
+// -------------------------------------------------------------------------------------------------
+
+// The default duration value for elevation transitions.
+$elevation-transition-duration: 280ms !default;
+
+// The default easing value for elevation transitions.
+$elevation-transition-timing-function: $fast-out-slow-in-timing-function !default;
+
+// The default color for elevation shadows.
+$elevation-color: black !default;
+
+// The default opacity scaling value for elevation shadows.
+$elevation-opacity: 1 !default;
+
+// Prefix for elevation-related selectors.
+$elevation-prefix: 'is-elevated-';
