@@ -43,13 +43,13 @@
 // @param {number} $deck-z-index [100]
 // @param {array} $deck-style
 .deck {
+  display: none;
   position: relative;
   height: 100%;
   flex-direction: column;
   @include inject-style($deck-style);
   background: $deck-background;
   padding: arrayMagic($deck-padding);
-  display: none;
 
   // @param {pixel | false } $deck-min-width [240]
   &:not([data-col]) {
@@ -99,15 +99,15 @@
 
 // @param {array} $deck-dismiss-style
 .deck-dismiss {
-  @extend %btn;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 1;
   opacity: .4;
   transition: opacity .2s;
-  color: $deck-color;
+  @extend %btn;
   @include inject-style($deck-dismiss-style);
+  color: $deck-color;
 
   &:only-child {
     margin-left: auto;

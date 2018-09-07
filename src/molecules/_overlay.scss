@@ -10,6 +10,7 @@
 // @param {array} $overlay-style
 
 .overlay {
+  display: none;
   flex-direction: column;
   position: fixed;
   top: 0;
@@ -21,7 +22,6 @@
   color: $dialog-color;
   padding: arrayMagic($dialog-padding);
   z-index: $dialog-z-index;
-  display: none;
 
   &.is-active {
     display: flex;
@@ -38,8 +38,8 @@
   z-index: 1;
   opacity: .4;
   transition: opacity .2s;
-  color: $overlay-color;
   @include inject-style($overlay-dismiss-style);
+  color: $overlay-color;
 
   &:only-child {
     margin-left: auto;

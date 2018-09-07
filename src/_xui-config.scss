@@ -807,6 +807,7 @@ $dropdown-options-style: () !default;
 // @param {value} $dropdown-option-weight [$is-bold]
 // @param {color} $dropdown-option-color [$text]
 // @param {color} $dropdown-option-background [none]
+// @param {array} $dropdown-option-style
 $dropdown-option-padding-ratio: 1.5 !default;
 $dropdown-option-spacing: 0 !default;
 $dropdown-option-min-height: $btn-min-height !default;
@@ -816,6 +817,7 @@ $dropdown-option-alignment: center !default;
 $dropdown-option-weight: $is-bold !default;
 $dropdown-option-color: $text !default;
 $dropdown-option-background: none !default;
+$dropdown-option-style: () !default;
 
 // @param {color} $dropdown-option-hover-color [$link]
 // @param {color} $dropdown-option-hover-background [$state-hover]
@@ -1635,6 +1637,9 @@ $input-invalid-style: (
 //
 // INPUT-GROUP
 // ------------------------------------------------------
+// @param {array} $input-spacing [$input-spacing]
+$input-group-spacing: $input-spacing;
+
 // @param {color} $input-group-addon-color [$text-light]
 // @param {color} $input-group-addon-background [transparent]
 // @param {color} $input-group-addon-border-color [$input-border-color]

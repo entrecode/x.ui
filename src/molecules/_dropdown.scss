@@ -115,6 +115,7 @@
 // @param {value} $dropdown-option-weight [$is-bold]
 // @param {color} $dropdown-option-color [$text]
 // @param {color} $dropdown-option-background [none]
+// @param {array} $dropdown-option-style
 .dropdown-option {
   display: block;
 
@@ -129,6 +130,7 @@
     touch-action: manipulation;
     user-select: none;
     width: 100%;
+    @include inject-style($dropdown-option-style);
     @include macro-metrics(
       $dropdown-option-font-size,
       $dropdown-option-line-height,

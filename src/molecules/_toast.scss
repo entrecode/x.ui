@@ -42,6 +42,7 @@
 // @param {number} $toast-z-index [100]
 // @param {array} $toast-style
 .toast {
+  display: none;
   position: relative;
   width: 100%;
   max-height: 100%;
@@ -49,7 +50,6 @@
   @include inject-style($toast-style);
   background: $toast-background;
   padding: arrayMagic($toast-padding);
-  display: none;
 
   // @param {value} $toast-opens-top-shadow
   // @param {value} $toast-opens-bottom-shadow
@@ -87,8 +87,8 @@
   z-index: 1;
   opacity: 0.4;
   transition: opacity 0.2s;
-  color: $toast-color;
   @include inject-style($toast-dismiss-style);
+  color: $toast-color;
 
   &:only-child {
     margin-left: auto;

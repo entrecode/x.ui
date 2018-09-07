@@ -13,6 +13,9 @@
 // @param {array} $bubble-style
 // @param {px} $bubble-radius [4]
 .bubble {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
   @include inject-style($bubble-style);
   @include set-theme-colors($bubble-background);
   @include macro-metrics(
@@ -24,9 +27,6 @@
   );
   border-radius: arrayMagic($bubble-radius);
   font-weight: $bubble-weight;
-  display: inline-block;
-  text-align: center;
-  white-space: nowrap;
 
   // @param {px} $bubble-small-font-size [10]
   // @param {px} $bubble-small-line-height [12]
