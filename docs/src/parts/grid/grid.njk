@@ -35,12 +35,12 @@
   <div class="is-kilo">data-grid</div>
 </div>
 <p><span class="tag tag_small">default</span> activates flex-grid with a default gutter (32px)</p>
-<div data-grid>
+<div data-grid class="demo-grid">
   <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
   <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
 </div>
 <div class="spacer"></div>
@@ -48,56 +48,56 @@
   <div class="is-kilo">data-grid="<span class="is-ink-link">is-small</span>"</div>
 </div>
 <p>half sized gutter (16px) between columns.</p>
-<div data-grid="is-small">
+<div data-grid="is-small" class="demo-grid">
   <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
   <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
 </div>
 <div class="spacer"></div>
 <h4>data-grid="<span class="is-ink-link">no-gutter</span>"</h4>
 <p>removes the gutter between the inline columns.</p>
-<div data-grid="no-gutter">
+<div data-grid="no-gutter" class="demo-grid">
   <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
   <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
 </div>
 <div class="spacer"></div>
 <h4>data-grid="<span class="is-ink-link">is-start</span>"</h4>
 <p>aligns columns left</p>
-<div data-grid="is-start">
+<div data-grid="is-start" class="demo-grid">
   <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
   <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
 </div>
 <div class="spacer"></div>
 <h4>data-grid="<span class="is-ink-link">is-center</span>"</h4>
 <p>centers the columns</p>
-<div data-grid="is-center">
+<div data-grid="is-center" class="demo-grid">
   <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
   <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
 </div>
 <div class="spacer"></div>
 <h4>data-grid="<span class="is-ink-link">is-end</span>"</h4>
 <p>aligns columns right</p>
-<div data-grid="is-end">
+<div data-grid="is-end" class="demo-grid">
   <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
   <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
 </div>
 <div class="spacer-big"></div>
@@ -121,6 +121,11 @@
     </td>
   </tr>
 </table>
+<div data-grid class="demo-grid">
+  <div data-col="6 +2">
+    <div class="has-padding-smallest is-theme-minor align-center">6 +2</div>
+  </div>
+</div>
 <div class="bumper-big"></div>
 <h3>Additional flex attributes</h3>
 <p class="is-lead">Those additional attributes and values can be combined with data-grid / data-col to modify the

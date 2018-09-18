@@ -8,8 +8,26 @@
   }
 }
 
+$demo-grid-fraction: 100 / 12 * 1%;
+$demo-grid-color: $link;
+
 .demo-grid {
+  background-image: repeating-linear-gradient(
+    90deg,
+    $demo-grid-color,
+    $demo-grid-color 1px,
+    transparent 1px,
+    transparent $demo-grid-fraction
+  );
+  background-repeat: repeat-y;
+  border-right: 1px solid $demo-grid-color;
+  width: 100%;
+
   [data-col] {
+    background: rgba(yellow, 0.4);
+    mix-blend-mode: multiply;
+  }
+  /* [data-col] {
     &::before {
       content: attr(data-col);
       font-size: rem(10);
@@ -29,5 +47,5 @@
       font-weight: bold;
       white-space: nowrap;
     }
-  }
+  } */
 }
