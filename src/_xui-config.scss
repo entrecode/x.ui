@@ -1217,6 +1217,25 @@ $toast-footer-spacing: 0 !default;
 $toast-footer-padding: 8 !default;
 $toast-footer-style: () !default;
 
+//
+// XUI-OVERLAY
+// ------------------------------------------------------
+// @param {px} $xui-overlay-radius [4]
+// @param {array} $xui-overlay-padding [4]
+// @param {color} $xui-overlay-background
+// @param {array} $xui-overlay-style
+// @param {value} $xui-overlay-shadow
+$xui-overlay-radius: 4 !default;
+$xui-overlay-padding: 4 !default;
+$xui-overlay-background: $background !default;
+$xui-overlay-color: $text !default;
+$xui-overlay-style: () !default;
+$xui-overlay-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
+
+// @param {color} $xui-overlay-backdrop-background [$backdrop]
+// @param {array} $xui-overlay-backdrop-style
+$xui-overlay-backdrop-background: $backdrop !default;
+$xui-overlay-backdrop-style: () !default;
 
 //
 // OVERLAY
