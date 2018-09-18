@@ -27,6 +27,7 @@
   // @param {px} $input-toggle-pin-height [$root-size]
   // @param {px} $input-toggle-pin-width [$xui-toggle-height * 1.75]
   // @param {px} $xui-toggle-pin-radius [$xui-toggle-height / 2]
+  // @param {array} $xui-toggle-spacing [$form-group-spacing]
   // @param {array} $xui-toggle-pin-style
   $_pin-spacing-h: ($xui-toggle-height - $xui-toggle-pin-height) / 2;
   $_pin-spacing-v: (($xui-toggle-width / 2) - $xui-toggle-pin-width) / 2;
@@ -49,7 +50,7 @@
 }
 
 .xui-toggle {
-  margin: arrayMagic($form-group-spacing);
+  margin: arrayMagic($xui-toggle-spacing);
 
   &:hover {
     .xui-toggle__switch {
@@ -65,6 +66,10 @@
       + label .xui-toggle__switch {
         @extend %toggle-is-active;
       }
+
+      + label.xui-toggle__switch {
+        @extend %toggle-is-active;
+      }
     }
   }
 
@@ -72,15 +77,19 @@
   // @param {px} $xui-toggle-line-height [$xui-toggle-label-size * $base-line-height]
   .xui-toggle__switch {
     @extend %toggle;
-    margin: arrayMagic($xui-toggle-spacing);
     margin-top: rem(($xui-toggle-line-height - $xui-toggle-height) / 2);
   }
 
   label {
     cursor: pointer;
+    display: flex;
     user-select: none;
     margin: 0;
     font-size: em($xui-toggle-label-size);
     line-height: em($xui-toggle-line-height, $xui-toggle-label-size);
+
+    .xui-toggle__switch {
+      margin-right: rem(8);
+    }
   }
 }

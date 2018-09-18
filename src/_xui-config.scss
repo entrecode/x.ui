@@ -1559,6 +1559,46 @@ $fieldset-border: 0 !default;
 $fieldset-style: () !default;
 
 //
+// FORM-GROUP
+// ------------------------------------------------------
+// @param {array} $form-group-spacing [0 0 8]
+// @param {array} $form-group-padding [0]
+// @param {color} $form-group-background [none]
+// @param {array} $form-group-style
+$form-group-spacing: 0 0 8 !default;
+$form-group-padding: 0 !default;
+$form-group-background: none !default;
+$form-group-style: () !default;
+
+// @param {array} $form-group-label-spacing [0 0 4 0]
+// @param {px} $form-group-label-font-size [$base-font-size]
+// @param {array} $form-group-label-style
+$form-group-label-spacing: 0 0 4 0 !default;
+$form-group-label-font-size: $base-font-size !default;
+$form-group-label-style: () !default;
+
+//
+// FORM-BOOLEAN
+// ------------------------------------------------------
+// @param {array} $form-boolean-spacing [$form-group-spacing]
+// @param {array} $form-boolean-padding [0]
+// @param {px} $form-boolean-gutter [8]
+// @param {color} $form-boolean-background [none]
+// @param {array} $form-boolean-style
+$form-boolean-spacing: $form-group-spacing !default;
+$form-boolean-padding: 0 !default;
+$form-boolean-gutter: 8 !default;
+$form-boolean-background: none !default;
+$form-boolean-style: () !default;
+
+// @param {array} $form-boolean-label-spacing [$form-group-label-spacing]
+// @param {px} $form-boolean-label-font-size [$base-font-size]
+// @param {array} $form-boolean-label-style
+$form-boolean-label-spacing: $form-group-label-spacing !default;
+$form-boolean-label-font-size: $base-font-size !default;
+$form-boolean-label-style: () !default;
+
+//
 // INPUT
 // ------------------------------------------------------
 // @param {px} $input-font-size [16]
@@ -1864,6 +1904,7 @@ $xui-radio-checked-style: () !default;
 // @param {px} $input-toggle-height [$root-size]
 // @param {color} $input-toggle-width [$xui-toggle-height * 1.75]
 // @param {color} $xui-toggle-radius [$xui-toggle-height / 2]
+// @param {array} $xui-toggle-spacing [$form-group-spacing]
 // @param {array} $xui-toggle-style
 $xui-toggle-background: flattenColor($minor) !default;
 $xui-toggle-hover-background: setHover($xui-toggle-background) !default;
@@ -1871,7 +1912,7 @@ $xui-toggle-active-background: $link !default;
 $xui-toggle-height: $root-size !default;
 $xui-toggle-width: $xui-toggle-height * 1.75 !default;
 $xui-toggle-radius: $xui-toggle-height / 2 !default;
-$xui-toggle-spacing: 0 0 8 !default;
+$xui-toggle-spacing: $form-group-spacing !default;
 $xui-toggle-style: () !default;
 
 // @param {color} $input-toggle-pin-background [flattenColor(getColor(minor))]
@@ -1891,46 +1932,6 @@ $xui-toggle-pin-style: (
 // @param {px} $xui-toggle-line-height [$xui-toggle-label-size * $base-line-height]
 $xui-toggle-label-size: $base-font-size !default;
 $xui-toggle-line-height: $xui-toggle-label-size * $base-line-height !default;
-
-//
-// FORM-GROUP
-// ------------------------------------------------------
-// @param {array} $form-group-spacing [0 0 8 0]
-// @param {array} $form-group-padding [0]
-// @param {color} $form-group-background [none]
-// @param {array} $form-group-style
-$form-group-spacing: 0 0 8 0 !default;
-$form-group-padding: 0 !default;
-$form-group-background: none !default;
-$form-group-style: () !default;
-
-// @param {array} $form-group-label-spacing [0 0 4 0]
-// @param {px} $form-group-label-font-size [$base-font-size]
-// @param {array} $form-group-label-style
-$form-group-label-spacing: 0 0 4 0 !default;
-$form-group-label-font-size: $base-font-size !default;
-$form-group-label-style: () !default;
-
-//
-// FORM-BOOLEAN
-// ------------------------------------------------------
-// @param {array} $form-boolean-spacing [$form-group-spacing]
-// @param {array} $form-boolean-padding [0]
-// @param {px} $form-boolean-gutter [8]
-// @param {color} $form-boolean-background [none]
-// @param {array} $form-boolean-style
-$form-boolean-spacing: $form-group-spacing !default;
-$form-boolean-padding: 0 !default;
-$form-boolean-gutter: 8 !default;
-$form-boolean-background: none !default;
-$form-boolean-style: () !default;
-
-// @param {array} $form-boolean-label-spacing [$form-group-label-spacing]
-// @param {px} $form-boolean-label-font-size [$base-font-size]
-// @param {array} $form-boolean-label-style
-$form-boolean-label-spacing: $form-group-label-spacing !default;
-$form-boolean-label-font-size: $base-font-size !default;
-$form-boolean-label-style: () !default;
 
 //
 // Animation
