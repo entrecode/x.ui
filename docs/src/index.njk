@@ -72,27 +72,27 @@
           <div class="spacer"></div>
           {% include 'parts/grid/grid.njk' %}
           {% include 'parts/grid/breakpoints.njk' %}
-          <h2 class="demo-header" id="typeface">typeface</h2>
+          <h2 class="align-center is-uppercase" id="typeface">typeface</h2>
           {% for typeface in structure.typeface %}
             {% include 'parts/typeface/' + typeface %}
           {% endfor %}
           <div class="bumper-big"></div>
-          <h2 class="demo-header" id="media">media</h2>
+          <h2 class="align-center is-uppercase" id="media">media</h2>
           {% for media in structure.media %}
             {% include 'parts/media/' + media %}
           {% endfor %}
           <div class="bumper-big"></div>
-          <h2 class="demo-header" id="form">form</h2>
+          <h2 class="align-center is-uppercase" id="form">form</h2>
           {% for form in structure.form %}
             {% include 'parts/form/' + form %}
           {% endfor %}
           <div class="bumper-big"></div>
-          <h2 class="demo-header" id="ui">ui</h2>
+          <h2 class="align-center is-uppercase" id="ui">ui</h2>
           {% for ui in structure.ui %}
             {% include 'parts/ui/' + ui %}
           {% endfor %}
           <div class="bumper-big"></div>
-          <h2 class="demo-header" id="layout">layout</h2>
+          <h2 class="align-center is-uppercase" id="layout">layout</h2>
           {% for layout in structure.layout %}
             {% include 'parts/layout/' + layout %}
           {% endfor %}
