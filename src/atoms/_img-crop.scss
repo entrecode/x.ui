@@ -35,6 +35,22 @@
   }
 }
 
+.img-crop-3-4 {
+  padding-top: 100 / 3 * 4%;
+  position: relative;
+  width: 100%;
+
+  img {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
 .img-crop-16-9 {
   padding-top: 100 / 16 * 9%;
   position: relative;
