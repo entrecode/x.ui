@@ -103,7 +103,7 @@
 
       <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#ui"><span class="ec-icon list-bullets">ui</span></a></h3>
         <ul class="is-unstyled">
-          <li><a href="#btn">btn</a></li>
+          <li><a href="#btn">button</a></li>
           <li><a href="#hamburger-btn">hamburger-btn</a></li>
           <li><a href="#bubble">bubble</a></li>
           <li><a href="#tag">tag</a></li>
@@ -118,7 +118,7 @@
           <li><a href="#card">card</a></li>
           <li><a href="#well">well</a></li>
           <li><a href="#alert">alert</a></li>
-          <li><a href="#data-toolbar">data-tooltip</a></li>
+          <li><a href="#data-tooltip">data-tooltip</a></li>
           <li><a href="#table">table</a></li>
           <li><a href="#avatar">avatar</a></li>
           <li><a href="#is-ink">is-ink</a></li>
@@ -146,7 +146,8 @@
           <li><a href="#is-positioned">is-positioned</a></li>
           <li><a href="#is-layer">is-layer</a></li>
           <li><a href="#pull">pull</a></li>
-          <li><a href="#is-overflow">is-overflow</a></li>
+          <li><a href="#is-clipped">is-clipped</a></li>
+          <li><a href="#is-scrollable">is-scrollable</a></li>
           <li><a href="#is-hidden">is-hidden</a></li>
           <li><a href="#is-visible">is-visible</a></li>
         </ul>
@@ -212,7 +213,7 @@
   </div>
 </section>
 <div class="bumper-big"></div><section class="has-margin-middle-big">
-  <h2 class="align-center is-uppercase special-font">BEM</h2>
+  <h2 class="align-center is-uppercase special-font" id="bem">BEM</h2>
   <div class="well align-center">
     <div class="is-kilo">{block-name}__{elem-name}_{mod-name}_{mod-val}</div>
   </div>
@@ -243,7 +244,7 @@
   </p>
 </section>
 <div class="bumper-big"></div><section>
-  <h2 class="align-center is-uppercase special-font" id="xui-structure">structure</h2>
+  <h2 class="align-center is-uppercase special-font" id="structure">structure</h2>
   <div data-grid>
     <div data-col="4-sm">
       <div class="align-center">
@@ -313,8 +314,8 @@
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#type" class="periodic-group-type">
-            <span class="is-h5">T</span> type
+          <a href="#paragraph" class="periodic-group-type">
+            <span class="is-h5">T</span> paragraph
           </a>
         </li>
         <li data-col="6 4-md">
@@ -340,6 +341,11 @@
         <li data-col="6 4-md">
           <a href="#input" class="periodic-group-form">
             <span class="is-h5">F</span> input
+          </a>
+        </li>
+        <li data-col="6 4-md">
+          <a href="#file-upload" class="periodic-group-form">
+            <span class="is-h5">F</span> file-upload
           </a>
         </li>
         <li data-col="6 4-md">
@@ -406,7 +412,7 @@
             <path fill="#ffffff"
                   d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
           </svg>
-          <h3 class="is-h6">molecules</h3>
+          <h3>molecules</h3>
         </li>
         <li data-col="6 4-md">
           <a href="#form-group" class="periodic-group-form">
@@ -439,7 +445,7 @@
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#xui-well" class="periodic-group-ui">
+          <a href="#well" class="periodic-group-ui">
             <span class="is-h5">UI</span> well
           </a>
         </li>
@@ -472,7 +478,7 @@
             <path fill="#ffffff"
                   d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
           </svg>
-          <h3 class="is-h6">organisms</h3>
+          <h3>organisms</h3>
         </li>
         <li data-col="6 4-md">
           <a href="#xui-list" class="periodic-group-ui">
@@ -498,7 +504,7 @@
             <path fill="#ffffff"
                   d="M100,76H86.93l6.53-11.32a4,4,0,1,0-6.92-4L80,72,73.46,60.68a4,4,0,0,0-6.92,4L73.07,76H60a4,4,0,0,0,0,8H73.07L66.54,95.32a4,4,0,0,0,6.92,4L80,88l6.54,11.32a4,4,0,1,0,6.92-4L86.93,84H100a4,4,0,0,0,0-8Z"/>
           </svg>
-          <h3 class="is-h6">modifier</h3>
+          <h3>modifier</h3>
         </li>
         <li data-col="6 4-md">
           <a href="#align" class="periodic-group-type">
@@ -1207,7 +1213,8 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="paragraph">lead paragraph</h3>
+  <h3 id="paragraph">paragraph styles</h3>
+  <h4>lead paragraph</h4>
   <p>A lead paragraph can be used as a style for the first paragraph of an article. Per default its font-size is <strong>$base-font-size &times; 1.25 (20px)</strong>.</p>
   <pre><code><p class="is-lead">...</p></code></pre>
   <div class="demo-paragraph-metrics">
@@ -1220,7 +1227,7 @@
       hergekommen sei.</p>
   </div>
   <div class="spacer"></div>
-  <h3>normal paragraph</h3>
+  <h4>normal paragraph</h4>
   <pre><code><p>...</p></code></pre>
   <div class="demo-paragraph-metrics">
     <p>Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte;
@@ -1402,7 +1409,7 @@
     <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
        class="tag tag_error tag_small">object-fit</a></h3>
   <div data-grid>
-    <div data-col="4-sm">
+    <div data-col="6-sm">
                 <pre><code class="html">
 <div class="img-crop-1-1">
   <img src="">
@@ -1411,7 +1418,16 @@
         <img src="assets/placeholder.jpg">
       </div>
     </div>
-    <div data-col="4-sm">
+    <div data-col="6-sm">
+                <pre><code class="html">
+<div class="img-crop-3-4">
+  <img src="">
+</div></code></pre>
+      <div class="img-crop-3-4">
+        <img src="assets/placeholder.jpg">
+      </div>
+    </div>
+    <div data-col="6-sm">
                 <pre><code class="html">
 <div class="img-crop-4-3">
   <img src="">
@@ -1420,7 +1436,7 @@
         <img src="assets/placeholder.jpg">
       </div>
     </div>
-    <div data-col="4-sm">
+    <div data-col="6-sm">
                 <pre><code class="html">
 <div class="img-crop-16-9">
   <img src="">
@@ -1735,7 +1751,7 @@
     <div data-col="4">
       <div class="xui-checkbox">
         <input id="xuiCheckbox" type="checkbox">
-        <label for="xuiCheckbox">Label</label>
+        <label for="xuiCheckbox">very long label Mache ich meine Augen zu, so sind sie da</label>
       </div>
     </div>
     <div data-col="4">
@@ -1757,7 +1773,7 @@
     <div data-col="4">
       <div class="xui-radio">
         <input id="xuiRadio" type="radio">
-        <label for="xuiRadio">Label</label>
+        <label for="xuiRadio">very long label Mache ich meine Augen zu, so sind sie da</label>
       </div>
     </div>
     <div data-col="4">
@@ -1904,7 +1920,10 @@
 <div class="bumper"></div>
 
 <section>
-  <h3 id="btn-glow">btn_glow</h3>
+  <h3 id="btn-glow">
+    btn_glow
+    <span class="tag tag_small tag_error">deprecated</span>
+  </h3>
   <p>modifier to simulate a 3D glowing effect.</p>
   <div class="well">
     <div data-grid data-flex="is-center">
@@ -1920,9 +1939,7 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="hamburger-btn">hamburger-btn
-    <span class="tag tag_small tag_error">in progress</span>
-  </h3>
+  <h3 id="hamburger-btn">hamburger-btn</h3>
   <div class="well align-center">
     <button class="hamburger-btn" :class="{'is-active' : hamburgerActive}" @click="hamburgerActive = !hamburgerActive"></button>
   </div>
@@ -2830,6 +2847,41 @@
 </section>
 
 <div class="bumper"></div><section>
+  <h4 id="xui-overlay">xui-overlay
+    <a href="https://caniuse.com/#search=%3Atarget" target="_blank" rel="noopener" class="tag tag_error tag_small">target</a>
+    <span class="tag tag_small tag_super">css only</span>
+    <span class="tag tag_small tag_error">deprecated</span>
+  </h4>
+  <div class="well" data-flex="is-center">
+    <div class="xui-overlay" data-col="4-sm">
+      <a href="#" class="xui-overlay__dismiss">&times;</a>
+      <div class="has-padding">
+        <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
+          ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug.
+          Sie
+          sprach weiter und weiter.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="well" data-flex="is-center">
+    <a href="#overlayDemo" class="btn btn_glow">open overlay</a>
+    <div class="xui-overlay-wrapper is-targeted has-backdrop" id="overlayDemo">
+      <div class="xui-overlay is-absolute is-positioned-0" data-col="8-xs 4-sm">
+        <a href="#overlayDemoClose" class="xui-overlay__dismiss">&times;</a>
+        <div class="has-padding">
+          <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab
+            ich
+            ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug.
+            Sie
+            sprach weiter und weiter.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bumper"></div><section>
   <h3 id="alert">alert</h3>
   <div class="alert">
     <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr
@@ -3252,7 +3304,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="is-rounded">is-bordered</h3>
+  <h3 id="is-bordered">is-bordered</h3>
   <div class="well align-center">
     <div class="is-h6">is-bordered-{side}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
   </div>
@@ -3313,7 +3365,25 @@ data-tooltip-left="This is a tooltip"</code></pre>
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="is-raised">is-raised</h3>
+  <h3 id="is-elevated">is-elevated</h3>
+  <div class="well align-center">
+    <div class="is-h6">is-elevated-{1-24 }</div>
+  </div>
+  <div data-grid="">
+    <div data-col="3" v-for="n in 24">
+      <div class="has-padding-bottom-big">
+        <div class="is-rounded align-center has-padding" :class="['is-elevated-' + n]">
+          <span class="code">is-elevated-${n}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bumper"></div><section>
+  <h3 id="is-raised">is-raised
+    <span class="tag tag_small tag_error">deprecated</span>
+  </h3>
   <div class="well align-center">
     <div class="is-h6">is-raised-{ small | big | <em>empty</em> }{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
   </div>
@@ -3347,7 +3417,9 @@ data-tooltip-left="This is a tooltip"</code></pre>
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="is-lifted">is-lifted</h3>
+  <h3 id="is-lifted">is-lifted
+    <span class="tag tag_small tag_error">deprecated</span>
+  </h3>
   <div class="well align-center">
     <div class="is-h6">is-lifted-{ small | big |
       <em>empty</em>}{ -
@@ -3387,11 +3459,11 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper"></div><section>
+<div class="bumper"></div>
+<section>
   <h3 id="is-fab">is-fab</h3>
-  <p>FAB (Floating Action Buttons) is a modifier for positioning elements with a spacing
-    of 16px. Use with <span class="code">.is-absolute</span> or
-    <span class="code">.is-fixed</span>. the syntax is
+  <p>FAB (Floating Action Buttons) is a modifier for positioning action elements with a spacing
+    of 16px relative to its parent (e.g. viewport). Per default it is positioned fixed, so relative to the viewport, but the positioning can be overwritten with the modifier-class <span class="code">.is-absolute</span>. the syntax is
     <span class="code">.is-fab-{direction}</span></p>
   <div class="well align-center"><span class="is-h6">is-fab-{direction}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span></div>
   <div class="well is-relative" style="height: 160px;">
@@ -3405,6 +3477,19 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <strong class="code is-fab-nw is-absolute">nw</strong>
     <strong class="code is-fab-0 is-absolute">0</strong>
   </div>
+  <div class="spacer"></div>
+  <h4>example</h4>
+  <div class="well is-relative" style="height: 160px;">
+    <div class="is-fab-se is-absolute">
+      <a class="btn btn_round is-lifted">+</a>
+    </div>
+  </div>
+  <pre><code class="html">
+<div class="well is-relative" style="height: 160px;">
+  <div class="is-fab-se is-absolute">
+    <a class="btn btn_round is-lifted">+</a>
+  </div>
+</div></code></pre>
 </section>
           <div class="bumper-big"></div>
           <h2 class="demo-header" id="layout">layout</h2>
@@ -3739,7 +3824,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
 <div class="bumper"></div>
 
 <section>
-  <h3 id="is-clipped">is-scrollable</h3>
+  <h3 id="is-scrollable">is-scrollable</h3>
   <p>use for
     <span class="code">overflow: scroll;</span>
   </p>

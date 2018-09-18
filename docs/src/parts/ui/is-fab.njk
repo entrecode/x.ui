@@ -1,8 +1,7 @@
 <section>
   <h3 id="is-fab">is-fab</h3>
-  <p>FAB (Floating Action Buttons) is a modifier for positioning elements with a spacing
-    of 16px. Use with <span class="code">.is-absolute</span> or
-    <span class="code">.is-fixed</span>. the syntax is
+  <p>FAB (Floating Action Buttons) is a modifier for positioning action elements with a spacing
+    of 16px relative to its parent (e.g. viewport). Per default it is positioned fixed, so relative to the viewport, but the positioning can be overwritten with the modifier-class <span class="code">.is-absolute</span>. the syntax is
     <span class="code">.is-fab-{direction}</span></p>
   <div class="well align-center"><span class="is-h6">is-fab-{direction}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span></div>
   <div class="well is-relative" style="height: 160px;">
@@ -16,4 +15,17 @@
     <strong class="code is-fab-nw is-absolute">nw</strong>
     <strong class="code is-fab-0 is-absolute">0</strong>
   </div>
+  <div class="spacer"></div>
+  <h4>example</h4>
+  <div class="well is-relative" style="height: 160px;">
+    <div class="is-fab-se is-absolute">
+      <a class="btn btn_round is-lifted">+</a>
+    </div>
+  </div>
+  <pre><code class="html">
+<div class="well is-relative" style="height: 160px;">
+  <div class="is-fab-se is-absolute">
+    <a class="btn btn_round is-lifted">+</a>
+  </div>
+</div></code></pre>
 </section>

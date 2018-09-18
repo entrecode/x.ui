@@ -62,6 +62,7 @@
       "xui-accordion.njk",
       "card.njk",
       "well.njk",
+      "xui-overlay.njk",
       "alert.njk",
       "data-tooltip.njk",
       "table.njk",
@@ -70,6 +71,7 @@
       "is-theme.njk",
       "is-rounded.njk",
       "is-bordered.njk",
+      "is-elevated.njk",
       "is-raised.njk",
       "is-lifted.njk",
       "is-fab.njk"

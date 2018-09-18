@@ -13,6 +13,8 @@
 - new molecule `.deck` with config
 - new molecule `.toast` with config
 - new molecule `.overlay` with config
+- new atom `.img-crop-3-4`
+- new modifer `.is-elevated-[1-24]`
 
 ## 9.0.8
 
