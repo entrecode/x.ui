@@ -8,6 +8,7 @@
 
 ### added
 
+- new atom `.file-upload` with config
 - new molecule `.dialog` with config
 - new molecule `.deck` with config
 - new molecule `.toast` with config

@@ -90,6 +90,7 @@
       <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#form"><span class="ec-icon text-input">form</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#input">input</a></li>
+          <li><a href="#file-upload">file-upload</a></li>
           <li><a href="#input-group">input-group</a></li>
           <li><a href="#xui-select">xui-select</a></li>
           <li><a href="#xui-checkbox">xui-checkbox</a></li>
@@ -1461,12 +1462,12 @@
   <h4>input size modifier</h4>
   <div data-grid>
     <div data-col="6-sm">
-      <input type="text" class="input input_small" value="input_small">
+      <input type="text" class="input input_small" placeholder="input_small">
       <pre><code class="html">
 <input class="input input_small"></code></pre>
     </div>
     <div data-col="6-sm">
-      <input type="text" class="input input_big" value="input_big">
+      <input type="text" class="input input_big" placeholder="input_big">
       <pre><code class="html">
 <input class="input input_big"></code></pre>
     </div>
@@ -1477,12 +1478,12 @@
   <h4>input style modifier</h4>
   <div data-grid>
     <div data-col="6-sm">
-      <input type="text" class="input input_round" value="input_round">
+      <input type="text" class="input input_round" placeholder="input_round">
       <pre><code class="html">
 <input class="input input_round"></code></pre>
     </div>
     <div data-col="6-sm">
-      <input type="text" class="input input_clear" value="input_clear">
+      <input type="text" class="input input_clear" placeholder="input_clear">
       <pre><code class="html">
 <input class="input input_clear"></code></pre>
     </div>
@@ -1512,6 +1513,36 @@
 </section>
 <div class="bumper"></div>
 <section>
+  <h3 id="file-upload">file-upload</h3>
+  <div data-grid>
+    <div data-col='6-sm'>
+      <form class="file-upload">
+        <input type="file" multiple>
+        <div>drop files here or</div>
+        <button type="submit" class="btn btn_small">add files</button>
+      </form>
+      <pre><code class="html">
+<form class="file-upload">
+  <input type="file" multiple>
+  <div>drop files here or</div>
+  <button type="submit" class="btn btn_small">add files</button>
+</form></code></pre>
+    </div>
+    <div data-col='6-sm'>
+      <form class="file-upload">
+        <input type="file" multiple>
+        <div><strong>drop files here</strong> or <span class="is-ink-link">click here</span></div>
+      </form>
+      <pre><code class="html">
+<form class="file-upload">
+  <input type="file" multiple>
+  <div><strong>drop files here</strong> or <span class="is-ink-link">click here</span></div>
+</form></code></pre>
+    </div>
+  </div>
+</section>
+
+<div class="bumper"></div><section>
   <h3 id="input-group">input-group <span
         class="tag tag_small tag_error">in progress</span></h3>
   <div data-grid>

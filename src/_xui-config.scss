@@ -1142,7 +1142,8 @@ $deck-style: () !default;
 // @param {value} $deck-opens-left-shadow
 // @param {value} $deck-opens-right-shadow
 $deck-opens-left-shadow: 4 0 16 -4 rgba(#000, 0.16) ',' 8 0 24 0 rgba(#000, 0.1) !default;
-$deck-opens-right-shadow: -4 0 16 -4 rgba(#000, 0.16) ',' -8 0 24 0 rgba(#000, 0.1) !default;
+$deck-opens-right-shadow: -4 0 16 -4 rgba(#000, 0.16) ',' -8 0 24 0
+  rgba(#000, 0.1) !default;
 
 // @param {array} $deck-dismiss-style
 $deck-dismiss-style: () !default;
@@ -1275,7 +1276,6 @@ $overlay-footer-spacing: 0 !default;
 $overlay-footer-padding: 8 !default;
 $overlay-footer-style: () !default;
 
-
 //
 // POPOVER
 // ------------------------------------------------------
@@ -1316,7 +1316,6 @@ $well-style: () !default;
 $well-small-padding: 8 12 !default;
 $well-small-spacing: $well-spacing !default;
 $well-small-style: () !default;
-
 
 $well-big-padding: 24 28 !default;
 $well-big-spacing: $well-spacing !default;
@@ -1652,6 +1651,32 @@ $input-invalid-style: (
   border-color: $state-error,
   color: setContrast($input-background, $state-error)
 ) !default;
+
+//
+// FILE-UPLOAD
+// ------------------------------------------------------
+// @param {px} $file-upload-font-size [$base-font-size]
+// @param {color} $file-upload-color [$text]
+// @param {array} $file-upload-spacing [0 0 16]
+// @param {number} $file-upload-padding [8 16]
+// @param {color} $file-upload-background [none]
+// @param {color} $file-upload-border-radius [4]
+// @param {color} $input-border-color [$minor]
+// @param {px} $input-border-width [2]
+// @param {value} $input-border-style [dashed]
+// @param {array} $file-upload-style
+// @param {array} $file-upload-hover-style
+$file-upload-font-size: $base-font-size !default;
+$file-upload-color: $text !default;
+$file-upload-spacing: 0 0 16 !default;
+$file-upload-padding: 16 !default;
+$file-upload-background: none !default;
+$file-upload-border-radius: 4 !default;
+$file-upload-border-color: $minor !default;
+$file-upload-border-width: 2 !default;
+$file-upload-border-style: dashed !default;
+$file-upload-style: () !default;
+$file-upload-hover-style: () !default;
 
 //
 // INPUT-GROUP

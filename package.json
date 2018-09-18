@@ -39,6 +39,7 @@
     ],
     "form": [
       "input.njk",
+      "file-upload.njk",
       "input-group.njk",
       "xui-select.njk",
       "xui-checkbox.njk",
