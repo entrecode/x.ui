@@ -119,8 +119,8 @@
 .dropdown-option {
   display: block;
 
-  @supports (display: inline-flex) {
-    display: inline-flex;
+  @supports (display: flex) {
+    display: flex;
   }
 
   > a:not([class]) {
