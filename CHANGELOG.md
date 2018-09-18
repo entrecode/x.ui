@@ -4,7 +4,8 @@
 
 ### deprecated
 
-- removed `.xui-overlay`
+- `.xui-overlay`
+- `.well-small`, `.well-big`
 
 ### added
 

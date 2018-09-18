@@ -59,13 +59,9 @@
             tablet<span class="is-ink-light">landscape</span><span class="is-ink-link">1024</span>
             desktop<span class="is-ink-link">1280</span>
             widescreen<span class="is-ink-link">1920</span></p>
-          <p>The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of
-            classes.
-            you can choose between a float or a flex based 12 column grid.</p>
-          <div data-grid>
-            <div data-col="6-sm">
-              <h4 class="is-uppercase">flex-grid</h4>
-              <pre><code class="html">
+          <p class="is-lead">The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of
+            classes. Per default it is a 12 column grid with an 32px gutter.</p>
+          <pre><code class="html">
 <div data-container>
   <div data-grid>
     <div data-col="{size}">
@@ -73,19 +69,6 @@
     </div>
   </div>
 </div></code></pre>
-            </div>
-            <div data-col="6-sm">
-              <h4 class="is-uppercase">float-grid</h4>
-              <pre><code class="html">
-<div data-container>
-  <div data-row>
-    <div data-col="{size}">
-      ...
-    </div>
-  </div>
-</div></code></pre>
-            </div>
-          </div>
           <div class="spacer"></div>
           {% include 'parts/grid/grid.njk' %}
           {% include 'parts/grid/breakpoints.njk' %}
