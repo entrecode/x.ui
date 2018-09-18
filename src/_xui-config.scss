@@ -1952,10 +1952,10 @@ $elevation-transition-duration: 280ms !default;
 $elevation-transition-timing-function: $fast-out-slow-in-timing-function !default;
 
 // The default color for elevation shadows.
-$elevation-color: black !default;
+$elevation-color: #000 !default;
 
 // The default opacity scaling value for elevation shadows.
 $elevation-opacity: 1 !default;
 
-// Prefix for elevation-related selectors.
+// @param {string} $elevation-prefix [is-elevated-]
 $elevation-prefix: 'is-elevated-';
