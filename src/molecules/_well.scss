@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 9.0.9
 /// @access public
 /// @group molecules
 
@@ -27,7 +27,8 @@
 // @param {array} $well-small-padding [8 12]
 // @param {array} $well-small-spacing [$well-spacing]
 // @param {array} $well-small-style
-.well-small {
+.well-small,
+.well_small {
   @extend %well;
   @include inject-style($well-small-style);
   margin: arrayMagic($well-small-spacing);
@@ -37,7 +38,8 @@
 // @param {array} $well-big-padding [24 28]
 // @param {array} $well-big-spacing [$well-spacing]
 // @param {array} $well-big-style
-.well-big {
+.well-small,
+.well_big {
   @extend %well;
   @include inject-style($well-big-style);
   margin: arrayMagic($well-big-spacing);
