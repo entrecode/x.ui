@@ -1,8 +1,8 @@
 # CHANGELOG
 
-## 10.0.0
+## 9.0.9
 
-### breaking changes
+### deprecated
 
 - removed `.xui-overlay`
 

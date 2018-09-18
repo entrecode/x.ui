@@ -26,7 +26,7 @@
   "structure": {
     "typeface": [
       "headings.njk",
-      "type.njk",
+      "paragraph.njk",
       "list.njk",
       "align.njk",
       "font-weight.njk",
