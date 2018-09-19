@@ -62,6 +62,8 @@
       "xui-accordion.njk",
       "card.njk",
       "well.njk",
+      "dialog.njk",
+      "deck.njk",
       "xui-overlay.njk",
       "alert.njk",
       "data-tooltip.njk",

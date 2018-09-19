@@ -16,6 +16,7 @@
 - new molecule `.overlay` with config
 - new atom `.img-crop-3-4`
 - new modifer `.is-elevated-[1-24]`
+- new font-weight variable and modifier class `.is-medium`
 
 ## 9.0.8
 

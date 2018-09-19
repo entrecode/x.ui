@@ -1,0 +1,97 @@
+<section>
+  <h3 id="deck">deck</h3>
+
+
+  <div data-grid>
+    <div data-col='3'>
+      <div class="xui-toggle">
+        <input id="deckBackdrop" type="checkbox" v-model="deckBackdrop">
+        <label for="deckBackdrop">
+          <div class="xui-toggle__switch"></div>
+          has a backdrop
+        </label>
+      </div>
+      <div class="form-group">
+        <select name="deckOrientation" class="input" v-model="deckOrientation">
+          <option value="opens-left" selected>opens-left</option>
+          <option value="opens-right">opens-right</option>
+        </select>
+      </div>
+    </div>
+    <div data-col='3'>
+      <div class="xui-toggle">
+        <input id="deckSize" type="checkbox" v-model="deckCol">
+        <label for="deckSize">
+          <div class="xui-toggle__switch"></div>
+          uses data-col
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="input" :disabled="!deckCol" placeholder="e.g. 8-sm" v-model="deckColSize">
+      </div>
+    </div>
+    <div data-col='3'>
+      <div class="xui-toggle">
+        <input id="deckAnimate" type="checkbox" v-model="deckAnimate">
+        <label for="deckAnimate">
+          <div class="xui-toggle__switch"></div>
+          uses data-animate
+        </label>
+      </div>
+      <div class="form-group">
+        <select v-model="deckAnimation" :disabled="!deckAnimate" class="input">
+          <option :value="ani" v-for="(ani, index) in animation">
+            ${ani}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div data-col='3'>
+      <a href @click.prevent="deckOpen = !deckOpen" class="btn is-elevated-16">deck öffnen</a>
+    </div>
+  </div>
+
+  <div class="deck-wrapper" :class="{'is-active' : deckOpen}" v-if="deckBackdrop">
+    <div class="deck" :data-animate="deckAnimate ? deckAnimation + ' 4' : false" :class="deckOrientation" :data-col="deckCol ? deckColSize : false">
+      <div class="deck-dismiss" @click="deckOpen = !deckOpen">
+        <div class="ec-icon close-x-big"></div>
+      </div>
+      <div class="deck-body">
+        <p class="align-center">I am a simple deck</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="deck" :data-animate="deckAnimate ? deckAnimation + ' 4' : false" :class="[{'is-active' : deckOpen}, deckOrientation]"
+    :data-col="deckCol ? deckColSize : false" v-if="!deckBackdrop">
+    <div class="deck-dismiss" @click="deckOpen = !deckOpen">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="deck-body">
+      <p class="align-center">I am a simple deck</p>
+    </div>
+  </div>
+
+  <pre><code class="html" v-show="deckBackdrop">
+<div class="deck-wrapper">
+  <div class="deck opens-left">
+    <div class="deck-dismiss">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="deck-body">
+      ...
+    </div>
+  </div>
+</div></code></pre>
+  <pre><code class="html" v-show="!deckBackdrop">
+<div class="deck opens-left">
+  <div class="deck-dismiss">
+    <div class="ec-icon close-x-big"></div>
+  </div>
+  <div class="deck-body">
+    ...
+  </div>
+</div></code></pre>
+
+  <div class="bumper"></div>
+</section>
