@@ -64,6 +64,7 @@
       "well.njk",
       "dialog.njk",
       "deck.njk",
+      "toast.njk",
       "xui-overlay.njk",
       "alert.njk",
       "data-tooltip.njk",
