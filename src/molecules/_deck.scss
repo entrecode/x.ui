@@ -95,6 +95,10 @@
     top: 0;
     z-index: $deck-z-index;
   }
+
+  > .deck-dismiss + .deck-body {
+    margin-top: rem($btn-min-height);
+  }
 }
 
 // @param {array} $deck-dismiss-style
@@ -103,8 +107,8 @@
   right: 0;
   top: 0;
   z-index: 1;
-  opacity: .4;
-  transition: opacity .2s;
+  opacity: 0.4;
+  transition: opacity 0.2s;
   @extend %btn;
   @include inject-style($deck-dismiss-style);
   color: $deck-color;
@@ -117,7 +121,6 @@
     opacity: 1;
   }
 }
-
 
 // @param {array} $deck-header-spacing [0]
 // @param {array} $deck-header-padding [8]

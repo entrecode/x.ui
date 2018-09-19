@@ -76,6 +76,10 @@
     transform: translateX(-50%) translateY(-50%);
     z-index: $dialog-z-index;
   }
+
+  > .dialog-dismiss + .dialog-body {
+    margin-top: rem($btn-min-height);
+  }
 }
 
 // @param {array} $dialog-dismiss-style
