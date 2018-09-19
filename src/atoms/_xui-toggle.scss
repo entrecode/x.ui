@@ -50,7 +50,13 @@
 }
 
 .xui-toggle {
+  min-height: rem($input-min-height);
   margin: arrayMagic($xui-toggle-spacing);
+
+  @supports (display: flex) {
+    display: flex;
+    align-items: center;
+  }
 
   &:hover {
     .xui-toggle__switch {
