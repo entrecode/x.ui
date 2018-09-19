@@ -217,10 +217,12 @@ $headings-font: sans-serif !default;
 // ---------------------------------------------
 // @param {value} $is-light [lighter] - font-weight value for .is-light
 // @param {value} $is-normal [normal] - font-weight value for .is-normal
+// @param {value} $is-medium [bold] - font-weight value for .is-medium
 // @param {value} $is-bold [bold] - font-weight value for .is-bold
 $is-light: lighter !default;
 $is-normal: normal !default;
-$is-bold: bold !default;
+$is-medium: bold !default;
+$is-bold: bolder !default;
 
 //
 // FONT-SIZE
