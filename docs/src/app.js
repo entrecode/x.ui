@@ -3,6 +3,30 @@ document.addEventListener('DOMContentLoaded', () => {
     delimiters: ['${', '}'],
     el: '#app',
     data: {
+      breakpoints: {
+        xs: 'mobile',
+        sm: 'mobile landscape',
+        md: 'tablet',
+        lg: 'tablet landscape',
+        xl: 'desktop',
+        xxl: 'widescreen'
+      },
+      dataGridOptions: [
+        'is-default',
+        'is-small',
+        'no-gutter',
+        'is-start',
+        'is-center',
+        'is-end'
+      ],
+      dataContainer: true,
+      dataContainerAlign: '',
+      dataGridValue: 'is-default',
+      dataGridBreakpoint: 'xs',
+      dataColSize: 4,
+      dataColSizeBreakpoint: 'xs',
+      dataColOffsetBreakpoint: 'xs',
+      dataColOffset: 0,
       deckOrientation: 'opens-left',
       deckBackdrop: false,
       deckOpen: false,

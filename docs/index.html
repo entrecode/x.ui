@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,22 @@
   <meta property="og:image" content="og-image.jpg">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="x.ui.css">
-  <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.1.min.css"/>
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-  <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.1.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
   <script src="app.js"></script>
   <meta name="theme-color" content="#ffffff">
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
 </head>
+
 <body>
-<div id="app" class="xui-demo" data-grid="no-gutter is-end">
+  <!-- <div id="app" class="xui-demo" data-grid="no-gutter is-end"> -->
+  <div id="app" class="xui-demo">
 <header class="demo-navbar is-fixed is-positioned-nw is-layer-10 is-layer-100-xs has-transition"
         data-col="12">
   <div class="toolbar toolbar_small">
@@ -55,7 +61,7 @@
     </div>
   </div>
 </header>
-<aside :class="menuActive ? 'is-active' : '' " data-col="6-xs 4-sm 3-nav 2-xl" style="height: 100%;" class="demo-sidebar is-scrollable-y is-fixed is-positioned-nw is-layer-10 is-theme" data-animate="slideRight 4">
+    <!-- <aside :class="menuActive ? 'is-active' : '' " data-col="6-xs 4-sm 3-nav 2-xl" style="height: 100%;" class="demo-sidebar is-scrollable-y is-fixed is-positioned-nw is-layer-10 is-theme" data-animate="slideRight 4">
   <div class="has-padding-big">
     <ul class="is-unstyled" style="width: 100%;">
       <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
@@ -164,11 +170,13 @@
       <li><div class="spacer-big"></div></li>
     </ul>
   </div>
-</aside>  <div class="xui-demo-body has-transition is-scrollable-y"
-       :data-col="menuActive ? '8-sm' : '12 9-nav 10-xl'">
-    <div data-container="is-left-nav">
-      <div data-grid="is-default is-default is-center">
-        <div data-col="8-md">
+</aside> -->
+    <!-- <div class="xui-demo-body has-transition is-scrollable-y" :data-col="menuActive ? '8-sm' : '12 9-nav 10-xl'"> -->
+    <div class="xui-demo-body">
+      <!-- <div data-container="is-left-nav"> -->
+      <div data-container>
+        <div data-grid="is-center">
+          <div data-col="8-md">
 <div class="hero has-margin has-height-vh-golden" data-flex="is-center is-end-items">
   <div style="margin-bottom: 10vh;">
     <a href="#get-started" class="btn btn_big is-lifted-big">get started</a>
@@ -295,7 +303,9 @@
       </div>
     </div>
   </div>
-</section>        </div>
+</section>          </div>
+        </div>
+      </div>
 
 <section>
   <ul data-grid="no-gutter" class="periodic-table">
@@ -639,18 +649,21 @@
     </li>
   </ul>
 </section>
-        <div data-col="+1-md 8-md">
-          <h2 class="is-h1 align-center is-uppercase special-font" id="the-grid">
-            <small class="is-ink-link">layout</small>
-            <br>the grid
-          </h2>
-          <p class="is-lead">the grid system and additional layout modifier as an ordering structure
-            and a ui-design necessity are not part of the atomic structure but belongs to its core
-            fabric.</p>
-        </div>
+      <div data-container>
+        <div data-grid="is-center">
+          <div data-col="8-md">
+            <h2 class="is-h1 align-center is-uppercase special-font" id="the-grid">
+              <small class="is-ink-link">layout</small>
+              <br>the grid
+            </h2>
+            <p class="is-lead">the grid system and additional layout modifier as an ordering structure
+              and a ui-design necessity are not part of the atomic structure but belongs to its core
+              fabric.</p>
+          </div>
 
-        <div class="spacer"></div>
+          <div class="spacer"></div>
 
+          <div data-col='12'>
 <div data-grid class="demo-grid">
   <div data-col="1">
     <div class="has-padding-smallest is-theme-minor align-center">1</div>
@@ -690,8 +703,6 @@
   </div>
 </div>
 
-<div class="spacer-small"></div>
-
 <div data-grid class="demo-grid">
   <div data-col="2">
     <div class="has-padding-smallest is-theme-minor align-center">2</div>
@@ -713,8 +724,6 @@
   </div>
 </div>
 
-<div class="spacer-small"></div>
-
 <div data-grid class="demo-grid">
   <div data-col="3">
     <div class="has-padding-smallest is-theme-minor align-center">3</div>
@@ -729,8 +738,6 @@
     <div class="has-padding-smallest is-theme-minor align-center">3</div>
   </div>
 </div>
-
-<div class="spacer-small"></div>
 
 <div data-grid class="demo-grid">
   <div data-col="4">
@@ -743,8 +750,6 @@
     <div class="has-padding-smallest is-theme-minor align-center">4</div>
   </div>
 </div>
-
-<div class="spacer-small"></div>
 
 <div data-grid class="demo-grid">
   <div data-col="5">
@@ -755,8 +760,6 @@
   </div>
 </div>
 
-<div class="spacer-small"></div>
-
 <div data-grid class="demo-grid">
   <div data-col="6">
     <div class="has-padding-smallest is-theme-minor align-center">6</div>
@@ -765,8 +768,6 @@
     <div class="has-padding-smallest is-theme-minor align-center">6</div>
   </div>
 </div>
-
-<div class="spacer-small"></div>
 
 <div data-grid class="demo-grid">
   <div data-col="5">
@@ -776,8 +777,6 @@
     <div class="has-padding-smallest is-theme-minor align-center">7</div>
   </div>
 </div>
-
-<div class="spacer-small"></div>
 
 <div data-grid class="demo-grid">
   <div data-col="8">
@@ -788,8 +787,6 @@
   </div>
 </div>
 
-<div class="spacer-small"></div>
-
 <div data-grid class="demo-grid">
   <div data-col="3">
     <div class="has-padding-smallest is-theme-minor align-center">3</div>
@@ -798,8 +795,6 @@
     <div class="has-padding-smallest is-theme-minor align-center">9</div>
   </div>
 </div>
-
-<div class="spacer-small"></div>
 
 <div data-grid class="demo-grid">
   <div data-col="10">
@@ -810,8 +805,6 @@
   </div>
 </div>
 
-<div class="spacer-small"></div>
-
 <div data-grid class="demo-grid">
   <div data-col="1">
     <div class="has-padding-smallest is-theme-minor align-center">1</div>
@@ -821,164 +814,274 @@
   </div>
 </div>
 
-<div class="spacer-small"></div>
-
 <div data-grid class="demo-grid">
   <div data-col="12">
     <div class="has-padding-smallest is-theme-minor align-center">12</div>
   </div>
-</div>
-        <div class="spacer"></div>
+</div>          </div>
 
-        <div data-col="8-md">
-          <p class="is-h2 is-uppercase" style="line-height: 1em">
-            mobile<span class="is-ink-link">first</span>
-            mobile<span class="is-ink-light">landscape</span><span class="is-ink-link">480</span>
-            tablet<span class="is-ink-link">720</span>
-            tablet<span class="is-ink-light">landscape</span><span class="is-ink-link">1024</span>
-            desktop<span class="is-ink-link">1280</span>
-            widescreen<span class="is-ink-link">1920</span></p>
-          <p class="is-lead">The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of
-            classes. Per default it is a 12 column grid with an 32px gutter.</p>
-          <pre><code class="html">
-<div data-container>
-  <div data-grid>
-    <div data-col="{size}">
-      ...
-    </div>
+          <div class="spacer"></div>
+
+          <div data-col="8-md">
+            <p class="is-h2 is-uppercase" style="line-height: 1em">
+              mobile<span class="is-ink-link">first</span>
+              mobile<span class="is-ink-light">landscape</span><span class="is-ink-link">480</span>
+              tablet<span class="is-ink-link">720</span>
+              tablet<span class="is-ink-light">landscape</span><span class="is-ink-link">1024</span>
+              desktop<span class="is-ink-link">1280</span>
+              widescreen<span class="is-ink-link">1920</span></p>
+            <p class="is-lead">The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of
+              classes. Per default it is a 12 column grid with an 32px gutter.</p>
+            <pre><code class="html">
+<div data-grid>
+  <div data-col="{size}">
+    ...
   </div>
 </div></code></pre>
-          <div class="spacer"></div>
-<h3>data-container</h3>
-<div class="well align-center">
-  <div class="is-kilo">data-container="{option}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
-    }"</div>
+            <div class="spacer-big"></div>
+          </div>
+        </div>
+      </div>
+
+<div data-container>
+  <div data-grid="is-center">
+    <div data-col="8-md">
+      <h3>data-container</h3>
+      <p class="is-lead">wraps everything in a repsonsive container with a maximum with of
+        <strong>1200px</strong>. Per default it is centered horizontally. for full-width
+        designs just don't use this attribute.</p>
+    </div>
+  </div>
 </div>
-<p class="is-lead">wraps everything in a repsonsive container with a maximum with of
-  <strong>1200px</strong>. Per default it is centered horizontally. for full-width
-  designs just don't use this attribute.</p>
-<table class="table">
-  <tr data-flex>
-    <td data-col="4"><em>empty</em></td>
-    <td data-col="8">centered horizontally
-      <div class="tag tag_small">default</div>
-    </td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-left</span></td>
-    <td data-col="8">aligns the container left</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-right</span></td>
-    <td data-col="8">aligns the container right</td>
-  </tr>
-</table>
-<div class="spacer"></div>
+
+<div :data-container="dataContainer ? dataContainerAlign : false">
+  <div class="well" data-flex="is-column is-center-items">
+    <div class="xui-toggle no-margin-bottom">
+      <input id="dataContainer" type="checkbox" v-model="dataContainer">
+      <label for="dataContainer">
+        <div class="xui-toggle__switch"></div>
+        use container
+      </label>
+    </div>
+    <ul class="is-inline has-margin-bottom-small" v-show="dataContainer" data-animate="popIn 2">
+      <li>
+        <a href @click.prevent="dataContainerAlign = 'is-left'" data-tooltip-top="align left" class="btn btn_clear"
+          :disabled="!dataContainer" v-cloak>
+          <img src="assets/align-left.svg" :style="[dataContainerAlign !== 'is-left' ? {opacity: .4} : false ]">
+        </a>
+      </li>
+      <li>
+        <a href @click.prevent="dataContainerAlign = ''" data-tooltip-top="align center" class="btn btn_clear"
+          :disabled="!dataContainer" v-cloak>
+          <img src="assets/align-center.svg" :style="[dataContainerAlign !== '' ? {opacity: .4} : false ]">
+        </a>
+      </li>
+      <li>
+        <a href @click.prevent="dataContainerAlign = 'is-right'" data-tooltip-top="align center" class="btn btn_clear"
+          :disabled="!dataContainer" v-cloak>
+          <img src="assets/align-right.svg" :style="[dataContainerAlign !== 'is-right' ? {opacity: .4} : false ]">
+        </a>
+      </li>
+    </ul>
+    <span class="code" v-if="dataContainer" v-cloak>
+      data-container<span v-if="dataContainerAlign !== ''">="${dataContainerAlign}"</span>
+    </span>
+  </div>
+</div>
+
+<div data-container>
+  <div data-grid="is-center">
+    <div data-col="8-md">
+      <table class="table">
+        <thead>
+          <tr data-flex>
+            <th data-col="4" class="align-left">values</th>
+            <th data-col="8" class="align-left">description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-flex>
+            <td data-col="4"><em>empty</em></td>
+            <td data-col="8">centered horizontally
+              <div class="tag tag_small">default</div>
+            </td>
+          </tr>
+          <tr data-flex>
+            <td data-col="4"><span class="code">is-left</span></td>
+            <td data-col="8">aligns the container left</td>
+          </tr>
+          <tr data-flex>
+            <td data-col="4"><span class="code">is-right</span></td>
+            <td data-col="8">aligns the container right</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="spacer"></div>
+
+      <div class="title">
+        <h4 class="is-kilo">config variables</h4>
+        <a href="https://github.com/entrecode/x.ui/blob/master/src/_xui-config.scss" target="_blank" class="btn btn_clear">
+          <span class="ec-icon json"></span>
+        </a>
+      </div>
+      <pre><code class="scss">
+/* @param {px} $grid-container-width [1200] - max-width of container */
+$grid-container-width: 1200 !default;</code></pre>
+    </div>
+  </div>
+</div>
+
+<div class="spacer-big"></div>      
+      <div data-container>
+        <div data-grid="is-center">
+          <div data-col="8-md">
 <h3>data-grid</h3>
-<div class="well align-center">
-  <div class="is-kilo">data-grid="{option}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
-    }"</div>
-</div>
 <p class="is-lead">The flex-based grid is a more modern and more flexible approach for a
-  grid-model which is not prone to floating errors. it can be combined with additional
+  grid-model which is not prone to floating errors. all values can be combined e.g. <span class="code">data-grid="is-small
+    is-default-md"</span> it also can be combined with additional
   data-flex values to influence it's behavior.</p>
-<div class="well align-center">
-  <div class="is-kilo">data-grid</div>
+<div class="well">
+  <div data-grid="is-small is-center">
+    <div data-col='4'>
+      <div class="form-group">
+        <label for="dataGridValue">value</label>
+        <select v-model="dataGridValue" id="dataGridValue" class="input">
+          <option :value="v" v-for="v in dataGridOptions">${v === '' ? 'default' : v}</option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="form-group">
+        <label for="dataGridBreakpoint">breakpoints</label>
+        <select v-model="dataGridBreakpoint" id="dataGridBreakpoint" class="input" v-cloak>
+          <option :value="key" v-for="(value, key) in breakpoints">${value} (${key})</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <p class="align-center">
+    <span class="code" v-if="dataGridValue === 'is-default'" v-cloak>
+      data-grid<span v-if="dataGridBreakpoint !== 'xs'">="is-default-${dataGridBreakpoint}"</span>
+    </span>
+    <span class="code" v-if="dataGridValue !== 'is-default'" v-cloak>
+      data-grid="${dataGridValue}<span v-if="dataGridBreakpoint !== 'xs'">-${dataGridBreakpoint}</span>"
+    </span>
+  </p>
+  <p v-if="dataGridValue === 'is-default'" v-cloak class="align-center">
+    <small><span class="tag tag_small">default</span> activates flex-grid with a default gutter (32px)</small>
+  </p>
+  <p v-if="dataGridValue === 'is-small'" v-cloak class="align-center">
+    half sized gutter (16px) between columns.
+  </p>
+  <p v-if="dataGridValue === 'no-gutter'" v-cloak class="align-center">
+    removes the gutter between the inline columns.
+  </p>
+  <p v-if="dataGridValue === 'is-start'" v-cloak class="align-center">
+    <span class="tag tag_small">default</span> aligns columns left
+  </p>
+  <p v-if="dataGridValue === 'is-center'" v-cloak class="align-center">
+    centers the columns
+  </p>
+  <p v-if="dataGridValue === 'is-end'" v-cloak class="align-center">
+    aligns columns right
+  </p>
 </div>
-<p><span class="tag tag_small">default</span> activates flex-grid with a default gutter (32px)</p>
+
+<div :data-grid="dataGridValue + '-' + dataGridBreakpoint" class="demo-grid" v-cloak>
+  <div data-col="4">
+    <div class="has-padding is-theme-minor align-center">4</div>
+  </div>
+  <div data-col="4">
+    <div class="has-padding is-theme-minor align-center">4</div>
+  </div>
+</div>
+
+<div class="title">
+  <h4 class="is-kilo">config variables</h4>
+  <a href="https://github.com/entrecode/x.ui/blob/master/src/_xui-config.scss" target="_blank" class="btn btn_clear">
+    <span class="ec-icon json"></span>
+  </a>
+</div>
+<pre><code class="scss">
+/* @param {px} $grid-gutter [32] - gutter size in pixels without unit */
+/* @param {value} $grid-outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2) */
+/* @param {number} $grid-num-columns [12] - number of columns in a row */
+$grid-gutter: 32 !default;
+$grid-outer-gutter: true !default;
+$grid-num-columns: 12 !default;</code></pre>
+
+<div class="spacer-big"></div><h3>data-col</h3>
+<div class="well">
+  <div data-grid>
+    <div data-col='4'>
+      <strong>size</strong>
+      <strong class="is-ink-link" v-cloak>${dataColSize}-${dataColSizeBreakpoint}</strong>
+    </div>
+    <div data-col='4'>
+      <input type="range" min="1" max="12" value="4" v-model="dataColSize">
+    </div>
+    <div data-col='4'>
+      <div class="form-group">
+        <select v-model="dataColSizeBreakpoint" class="input" v-cloak>
+          <option :value="key" v-for="(value, key) in breakpoints">${value} (${key})</option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <strong>offset</strong>
+      <strong class="is-ink-link" v-cloak>+${dataColOffset}-${dataColOffsetBreakpoint}</strong>
+    </div>
+    <div data-col='4'>
+      <input type="range" min="0" max="11" value="4" v-model="dataColOffset">
+    </div>
+    <div data-col='4'>
+      <div class="form-group">
+        <select v-model="dataColOffsetBreakpoint" class="input" v-cloak>
+          <option :value="key" v-for="(value, key) in breakpoints">${value} (${key})</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div data-grid class="demo-grid">
-  <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center">6</div>
-  </div>
-  <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center">6</div>
-  </div>
-</div>
-<div class="spacer"></div>
-<div class="well align-center">
-  <div class="is-kilo">data-grid="<span class="is-ink-link">is-small</span>"</div>
-</div>
-<p>half sized gutter (16px) between columns.</p>
-<div data-grid="is-small" class="demo-grid">
-  <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center">6</div>
-  </div>
-  <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center">6</div>
+  <div :data-col="dataColSize + '-' + dataColSizeBreakpoint + ' +' + dataColOffset + '-' + dataColOffsetBreakpoint"
+    v-cloak>
+    <div class="has-padding is-theme-minor align-center">${dataColSize}-${dataColSizeBreakpoint}
+      +${dataColOffset}-${dataColOffsetBreakpoint}</div>
   </div>
 </div>
-<div class="spacer"></div>
-<h4>data-grid="<span class="is-ink-link">no-gutter</span>"</h4>
-<p>removes the gutter between the inline columns.</p>
-<div data-grid="no-gutter" class="demo-grid">
-  <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center">6</div>
-  </div>
-  <div data-col="6">
-    <div class="has-padding-smallest is-theme-minor align-center">6</div>
-  </div>
-</div>
-<div class="spacer"></div>
-<h4>data-grid="<span class="is-ink-link">is-start</span>"</h4>
-<p>aligns columns left</p>
-<div data-grid="is-start" class="demo-grid">
-  <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center">6</div>
-  </div>
-  <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center">6</div>
-  </div>
-</div>
-<div class="spacer"></div>
-<h4>data-grid="<span class="is-ink-link">is-center</span>"</h4>
-<p>centers the columns</p>
-<div data-grid="is-center" class="demo-grid">
-  <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center">6</div>
-  </div>
-  <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center">6</div>
-  </div>
-</div>
-<div class="spacer"></div>
-<h4>data-grid="<span class="is-ink-link">is-end</span>"</h4>
-<p>aligns columns right</p>
-<div data-grid="is-end" class="demo-grid">
-  <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center">6</div>
-  </div>
-  <div data-col="4">
-    <div class="has-padding-smallest is-theme-minor align-center">6</div>
-  </div>
-</div>
-<div class="spacer-big"></div>
-<h3>data-col</h3>
+
 <div class="well align-center">
   <div class="is-kilo">data-col="{ size | offset }{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
     }"
   </div>
 </div>
 <table class="table">
-  <tr data-flex>
-    <td data-col="4"><span class="code">[1-12]</span></td>
-    <td data-col="8">defines the grid-size of the column. can be multiple sizes for
-      different screen-sizes
-    </td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">+[0-11]</span></td>
-    <td data-col="8">defines an grid-based offset of an column. can be multiple offsets
-      for different screen-sizes
-    </td>
-  </tr>
+  <thead>
+    <tr data-flex>
+      <th data-col="4" class="align-left">values</th>
+      <th data-col="8" class="align-left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">[1-12]</span></td>
+      <td data-col="8">defines the grid-size of the column. can be multiple sizes for
+        different screen-sizes
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">+[0-11]</span></td>
+      <td data-col="8">defines an grid-based offset of an column. can be multiple offsets
+        for different screen-sizes
+      </td>
+    </tr>
+  </tbody>
 </table>
-<div data-grid class="demo-grid">
-  <div data-col="6 +2">
-    <div class="has-padding-smallest is-theme-minor align-center">6 +2</div>
-  </div>
-</div>
-<div class="bumper-big"></div>
-<h3>Additional flex attributes</h3>
+
+<div class="bumper-big"></div><h3>Additional flex attributes</h3>
 <p class="is-lead">Those additional attributes and values can be combined with data-grid / data-col to modify the
   layout.</p>
 <div class="well align-center">
@@ -1255,15 +1358,28 @@
   means that the style takes effect from the breakpoint up. A few styles just use a specific
   <strong>breakpoint area</strong> (e.g. from xs to xs-max).</p>
 
-<div class="bumper-big"></div>          <h2 class="align-center is-uppercase" id="typeface">typeface</h2>
+<div class="bumper-big"></div>            
+            <h2 class="align-center is-uppercase" id="typeface">typeface</h2>
 <section>
   <h3 id="headings">headings</h3>
-  <div class="demo-heading-metrics demo-heading-metrics_h1"><h1>Heading 1</h1></div>
-  <div class="demo-heading-metrics"><h2>Heading 2</h2></div>
-  <div class="demo-heading-metrics"><h3>Heading 3</h3></div>
-  <div class="demo-heading-metrics"><h4>Heading 4</h4></div>
-  <div class="demo-heading-metrics demo-heading-metrics_h5"><h5>Heading 5</h5></div>
-  <div class="demo-heading-metrics demo-heading-metrics_h6"><h6>Heading 6</h6></div>
+  <div class="demo-heading-metrics demo-heading-metrics_h1">
+    <h1>Heading 1</h1>
+  </div>
+  <div class="demo-heading-metrics">
+    <h2>Heading 2</h2>
+  </div>
+  <div class="demo-heading-metrics">
+    <h3>Heading 3</h3>
+  </div>
+  <div class="demo-heading-metrics">
+    <h4>Heading 4</h4>
+  </div>
+  <div class="demo-heading-metrics demo-heading-metrics_h5">
+    <h5>Heading 5</h5>
+  </div>
+  <div class="demo-heading-metrics demo-heading-metrics_h6">
+    <h6>Heading 6</h6>
+  </div>
   <div class="spacer"></div>
   <p>in addition there are heading helper classes <span class="code">.is-h1</span>,
     <span class="code">.is-h2</span>, <span class="code">.is-h3</span>,
@@ -1274,6 +1390,22 @@
     <span class="code">.is-giga</span>, <span class="code">.is-mega</span> and
     <span class="code">.is-kilo</span> to provide a cleaner typeface without losing the
     hierarchical structure of the markup.</p>
+
+  <div class="title">
+    <h4 class="is-kilo">config variables</h4>
+    <a href="https://github.com/entrecode/x.ui/blob/master/src/_xui-config.scss" target="_blank" class="btn btn_clear">
+      <span class="ec-icon json"></span>
+    </a>
+  </div>
+  <pre><code class="scss">
+// @param {em} $headings-line-height [$base-line-height]
+// @param {value} $headings-weight [$is-bold]
+// @param {number} $headings-inline-small [.875] - for inline small tags - has to be a em value
+// @param {array} $headings-style
+$headings-line-height: $base-line-height !default;
+$headings-weight: $is-bold !default;
+$headings-inline-small: 0.5 !default;
+$headings-style: () !default;</code></pre>
 </section>
 
 <div class="bumper"></div><section>
@@ -1450,8 +1582,8 @@
     </tbody>
   </table>
 </section>
-          <div class="bumper-big"></div>
-          <h2 class="align-center is-uppercase" id="media">media</h2>
+            <div class="bumper-big"></div>
+            <h2 class="align-center is-uppercase" id="media">media</h2>
 <section>
   <h3 id="img">img</h3>
   <div data-grid>
@@ -1515,8 +1647,8 @@
     </div>
   </div>
 </section>
-          <div class="bumper-big"></div>
-          <h2 class="align-center is-uppercase" id="form">form</h2>
+            <div class="bumper-big"></div>
+            <h2 class="align-center is-uppercase" id="form">form</h2>
 <section>
   <h3 id="input">input</h3>
   <div data-grid>
@@ -1938,8 +2070,8 @@
     </div>
   </div>
 </section>
-          <div class="bumper-big"></div>
-          <h2 class="align-center is-uppercase" id="ui">ui</h2>
+            <div class="bumper-big"></div>
+            <h2 class="align-center is-uppercase" id="ui">ui</h2>
 <section>
   <h3 id="btn">button</h3>
   <p>there are three basic button styles which should be used to to emphasis or weaken
@@ -3874,8 +4006,8 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </div></code></pre>
 </section>
-          <div class="bumper-big"></div>
-          <h2 class="align-center is-uppercase" id="layout">layout</h2>
+            <div class="bumper-big"></div>
+            <h2 class="align-center is-uppercase" id="layout">layout</h2>
 <section>
   <h3 id="bumper">bumper</h3>
   <div class="demo-layout-macros">
@@ -4332,7 +4464,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper-big"></div>          <div class="bumper-big"></div>
+<div class="bumper-big"></div>            <div class="bumper-big"></div>
 <section>
   <h3 id="data-animate">data-animate
     <span class="tag tag_small tag_super">css only</span>
@@ -4384,11 +4516,11 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper"></div>        </div>
+<div class="bumper"></div>          </div>
+        </div>
       </div>
-    </div>
 
-  </div>
+    </div>
 <section class="is-theme_dark is-relative-xl is-layer-20-xl" id="ec-icon" data-col="12">
   <div data-container>
 
@@ -4437,6 +4569,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     </p>
   </div>
 </footer>
-</div>
+  </div>
 </body>
+
 </html>

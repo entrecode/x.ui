@@ -11,10 +11,11 @@ $demo-grid-color: $link;
   );
   background-repeat: repeat-y;
   border-right: 1px solid $demo-grid-color;
-  width: 100%;
+  margin-bottom: rem(16);
 
   [data-col] {
     background: rgba(yellow, 0.4);
     mix-blend-mode: multiply;
+    transition: all .4s;
   }
 }
