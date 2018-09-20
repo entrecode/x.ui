@@ -354,6 +354,11 @@
           </a>
         </li>
         <li data-col="6 4-md">
+          <a href="#slider" class="periodic-group-form">
+            <span class="is-h5">F</span> slider
+          </a>
+        </li>
+        <li data-col="6 4-md">
           <a href="#file-upload" class="periodic-group-form">
             <span class="is-h5">F</span> file-upload
           </a>
@@ -1019,7 +1024,7 @@ $grid-num-columns: 12 !default;</code></pre>
       <strong class="is-ink-link" v-cloak>${dataColSize}-${dataColSizeBreakpoint}</strong>
     </div>
     <div data-col='4'>
-      <input type="range" min="1" max="12" value="4" v-model="dataColSize">
+      <input type="range" min="1" max="12" class="slider" value="4" v-model="dataColSize">
     </div>
     <div data-col='4'>
       <div class="form-group">
@@ -1033,7 +1038,7 @@ $grid-num-columns: 12 !default;</code></pre>
       <strong class="is-ink-link" v-cloak>+${dataColOffset}-${dataColOffsetBreakpoint}</strong>
     </div>
     <div data-col='4'>
-      <input type="range" min="0" max="11" value="4" v-model="dataColOffset">
+      <input type="range" min="0" max="11" class="slider" value="4" v-model="dataColOffset">
     </div>
     <div data-col='4'>
       <div class="form-group">
@@ -1400,7 +1405,7 @@ $grid-num-columns: 12 !default;</code></pre>
   <pre><code class="scss">
 // @param {em} $headings-line-height [$base-line-height]
 // @param {value} $headings-weight [$is-bold]
-// @param {number} $headings-inline-small [.875] - for inline small tags - has to be a em value
+// @param {em} $headings-inline-small [.875] - for inline small tags - has to be a em value
 // @param {array} $headings-style
 $headings-line-height: $base-line-height !default;
 $headings-weight: $is-bold !default;
@@ -1729,6 +1734,46 @@ $headings-style: () !default;</code></pre>
 </section>
 <div class="bumper"></div>
 <section>
+  <h3 id="file-upload">slider</h3>
+  <div class="well">
+    <input type="range" class="slider">
+  </div>
+</section>
+<pre><code class="html">
+<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+</code></pre>
+<div class="title">
+  <h4 class="is-kilo">config variables</h4>
+  <a href="https://github.com/entrecode/x.ui/blob/master/src/_xui-config.scss" target="_blank" class="btn btn_clear">
+    <span class="ec-icon json"></span>
+  </a>
+</div>
+<pre><code class="scss">
+/* @param {px} $slider-height [8] */
+/* @param {px} $slider-radius [4] */
+/* @param {color} $slider-background [rgba(#000, 0.1)] */
+/* @param {array} $slider-style */
+/* @param {array} $slider-hover-style */
+$slider-height: 8 !default;
+$slider-radius: 4 !default;
+$slider-background: rgba(#000, 0.1) !default;
+$slider-style: () !default;
+$slider-hover-style: () !default;
+
+/* @param {px} $slider-thumb-size [16] */
+/* @param {px} $slider-thumb-radius [8] */
+/* @param {color} $slider-thumb-background [#fff] */
+/* @param {array} $slider-thumb-style */
+/* @param {array} $slider-thumb-hover-style */
+$slider-thumb-background: #fff !default;
+$slider-thumb-size: 16 !default;
+$slider-thumb-radius: 8 !default;
+$slider-thumb-style: (
+box-shadow: 0 2px 4px rgba(#000, 0.2)
+) !default;
+$slider-thumb-hover-style: () !default;</code></pre>
+
+<div class="bumper"></div><section>
   <h3 id="file-upload">file-upload</h3>
   <div data-grid>
     <div data-col='6-sm'>

@@ -6,7 +6,7 @@
       <strong class="is-ink-link" v-cloak>${dataColSize}-${dataColSizeBreakpoint}</strong>
     </div>
     <div data-col='4'>
-      <input type="range" min="1" max="12" value="4" v-model="dataColSize">
+      <input type="range" min="1" max="12" class="slider" value="4" v-model="dataColSize">
     </div>
     <div data-col='4'>
       <div class="form-group">
@@ -20,7 +20,7 @@
       <strong class="is-ink-link" v-cloak>+${dataColOffset}-${dataColOffsetBreakpoint}</strong>
     </div>
     <div data-col='4'>
-      <input type="range" min="0" max="11" value="4" v-model="dataColOffset">
+      <input type="range" min="0" max="11" class="slider" value="4" v-model="dataColOffset">
     </div>
     <div data-col='4'>
       <div class="form-group">
