@@ -15,5 +15,9 @@
 /// @return {number} Value in em
 
 @function em($value, $base: $base-font-size) {
-  @return ($value / $base) + em;
+  @if type-of($value) == 'number' {
+    @return ($value / $base) * 1em;
+  } @else {
+    @return $value;
+  }
 }
