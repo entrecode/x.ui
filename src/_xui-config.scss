@@ -247,7 +247,7 @@ $base-icon-size: 16 !default;
 // ---------------------------------------------
 // @param {em} $headings-line-height [$base-line-height]
 // @param {value} $headings-weight [$is-bold]
-// @param {number} $headings-inline-small [.875] - for inline small tags - has to be a em value
+// @param {em} $headings-inline-small [.875] - for inline small tags - has to be a em value
 // @param {array} $headings-style
 $headings-line-height: $base-line-height !default;
 $headings-weight: $is-bold !default;
