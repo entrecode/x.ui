@@ -1695,6 +1695,33 @@ $input-invalid-style: (
 ) !default;
 
 //
+// INPUT
+// ------------------------------------------------------
+// @param {px} $slider-height [8]
+// @param {px} $slider-radius [4]
+// @param {color} $slider-background [rgba(#000, 0.1)]
+// @param {array} $slider-style
+// @param {array} $slider-hover-style
+$slider-height: 8 !default;
+$slider-radius: 4 !default;
+$slider-background: rgba(#000, 0.1) !default;
+$slider-style: () !default;
+$slider-hover-style: () !default;
+
+// @param {px} $slider-thumb-size [16]
+// @param {px} $slider-thumb-radius [8]
+// @param {color} $slider-thumb-background [#fff]
+// @param {array} $slider-thumb-style
+// @param {array} $slider-thumb-hover-style
+$slider-thumb-background: #fff !default;
+$slider-thumb-size: 16 !default;
+$slider-thumb-radius: 8 !default;
+$slider-thumb-style: (
+  box-shadow: 0 2px 4px rgba(#000, 0.2)
+) !default;
+$slider-thumb-hover-style: () !default;
+
+//
 // FILE-UPLOAD
 // ------------------------------------------------------
 // @param {px} $file-upload-font-size [$base-font-size]
