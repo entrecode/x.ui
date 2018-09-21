@@ -1,21 +1,13 @@
-<header class="demo-navbar is-fixed is-positioned-nw is-layer-10 is-layer-100-xs has-transition"
-        data-col="12">
+<header class="demo-navbar is-fixed is-positioned-nw is-layer-10 is-layer-100-xs has-transition" data-col="12">
   <div class="toolbar toolbar_small">
     <div data-col="2">
-      <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive"
-              class="hamburger-btn is-hidden-from-nav"></button>
+      <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive" class="hamburger-btn is-hidden-from-nav"></button>
     </div>
     <div data-col="8">
-      <div data-container="is-left-nav">
-        <div data-grid="is-default is-center">
-          <div data-col="8-md" class="is-relative">
-            <div class="toolbar__title toolbar__title_center">
-              <a href="#top">
-                <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
-              </a>
-            </div>
-          </div>
-        </div>
+      <div class="toolbar__title toolbar__title_center">
+        <a href="#top">
+          <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
+        </a>
       </div>
     </div>
     <div data-col="2">
@@ -26,8 +18,7 @@
           </li>
           <li class="nav__divider"></li>
           <li class="nav__item">
-            <a href="https://github.com/entrecode/x.ui" class="btn btn_clear btn_minor"><span
-                  class="ec-icon github"></span></a>
+            <a href="https://github.com/entrecode/x.ui" class="btn btn_clear btn_minor"><span class="ec-icon github"></span></a>
           </li>
         </ul>
       </nav>

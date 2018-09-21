@@ -25,24 +25,16 @@
 <body>
   <!-- <div id="app" class="xui-demo" data-grid="no-gutter is-end"> -->
   <div id="app" class="xui-demo">
-<header class="demo-navbar is-fixed is-positioned-nw is-layer-10 is-layer-100-xs has-transition"
-        data-col="12">
+<header class="demo-navbar is-fixed is-positioned-nw is-layer-10 is-layer-100-xs has-transition" data-col="12">
   <div class="toolbar toolbar_small">
     <div data-col="2">
-      <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive"
-              class="hamburger-btn is-hidden-from-nav"></button>
+      <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive" class="hamburger-btn is-hidden-from-nav"></button>
     </div>
     <div data-col="8">
-      <div data-container="is-left-nav">
-        <div data-grid="is-default is-center">
-          <div data-col="8-md" class="is-relative">
-            <div class="toolbar__title toolbar__title_center">
-              <a href="#top">
-                <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
-              </a>
-            </div>
-          </div>
-        </div>
+      <div class="toolbar__title toolbar__title_center">
+        <a href="#top">
+          <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
+        </a>
       </div>
     </div>
     <div data-col="2">
@@ -53,15 +45,13 @@
           </li>
           <li class="nav__divider"></li>
           <li class="nav__item">
-            <a href="https://github.com/entrecode/x.ui" class="btn btn_clear btn_minor"><span
-                  class="ec-icon github"></span></a>
+            <a href="https://github.com/entrecode/x.ui" class="btn btn_clear btn_minor"><span class="ec-icon github"></span></a>
           </li>
         </ul>
       </nav>
     </div>
   </div>
-</header>
-    <!-- <aside :class="menuActive ? 'is-active' : '' " data-col="6-xs 4-sm 3-nav 2-xl" style="height: 100%;" class="demo-sidebar is-scrollable-y is-fixed is-positioned-nw is-layer-10 is-theme" data-animate="slideRight 4">
+</header>    <!-- <aside :class="menuActive ? 'is-active' : '' " data-col="6-xs 4-sm 3-nav 2-xl" style="height: 100%;" class="demo-sidebar is-scrollable-y is-fixed is-positioned-nw is-layer-10 is-theme" data-animate="slideRight 4">
   <div class="has-padding-big">
     <ul class="is-unstyled" style="width: 100%;">
       <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
