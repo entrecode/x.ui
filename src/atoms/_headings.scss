@@ -61,6 +61,12 @@ h6,
     font-size: ($headings-inline-small * 1em);
     vertical-align: baseline;
   }
+
+  a {
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
 }
 
 .is-giga {
