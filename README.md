@@ -37,6 +37,13 @@ using node-sass:
 
 x.ui has uses no prefix mixins, please use an autoprefixer in your project
 
+## deprecated
+
+### since 9.0.9
+
+- `data-row`
+- `xui-overlay`
+
 ## creators
 
 [Bernhard Ruoff](https://github.com/bernester)

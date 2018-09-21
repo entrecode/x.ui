@@ -50,6 +50,7 @@
   flex-direction: column;
   @include inject-style($toast-style);
   background: $toast-background;
+  color: $toast-color;
   padding: arrayMagic($toast-padding);
 
   &.is-active {
@@ -71,6 +72,7 @@
     box-shadow: arrayMagic($toast-opens-bottom-shadow);
 
     &.is-active {
+      top: auto;
       bottom: 0;
     }
   }

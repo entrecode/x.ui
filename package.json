@@ -66,6 +66,7 @@
       "dialog.njk",
       "deck.njk",
       "toast.njk",
+      "snackbar.njk",
       "overlay.njk",
       "alert.njk",
       "loader.njk",

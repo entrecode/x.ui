@@ -38,7 +38,7 @@
         </div>
       </div>
       <div data-col='3'>
-        <a href @click.prevent="toastOpen = !toastOpen" class="btn is-elevated-16">toast öffnen</a>
+        <a href @click.prevent="toastOpen = !toastOpen" class="btn is-elevated-16">open</a>
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@
 
   <pre><code class="html" v-show="toastBackdrop">
 <div class="toast-wrapper">
-  <div class="toast opens-left">
+  <div class="toast opens-top">
     <div class="toast-dismiss">
       <div class="ec-icon close-x-big"></div>
     </div>
@@ -75,7 +75,7 @@
   </div>
 </div></code></pre>
   <pre><code class="html" v-show="!toastBackdrop">
-<div class="toast opens-left">
+<div class="toast opens-top">
   <div class="toast-dismiss">
     <div class="ec-icon close-x-big"></div>
   </div>
@@ -84,5 +84,5 @@
   </div>
 </div></code></pre>
 
-  <div class="bumper"></div>
+  <div class="bumper-big"></div>
 </section>

@@ -50,6 +50,7 @@
   flex-direction: column;
   @include inject-style($deck-style);
   background: $deck-background;
+  color: $deck-color;
   padding: arrayMagic($deck-padding);
 
   // @param {pixel | false } $deck-min-width [240]
@@ -90,6 +91,7 @@
     box-shadow: arrayMagic($deck-opens-right-shadow);
 
     &.is-active {
+      left: auto;
       right: 0;
     }
   }

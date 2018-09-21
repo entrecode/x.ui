@@ -1,0 +1,170 @@
+/// @author Bernhard Ruoff
+/// @since 9.0.9
+/// @access public
+/// @group molecules
+
+// @param {color} $snackbar-wrapper-background [$backdrop]
+// @param {number} $snackbar-z-index [100]
+// @param {array} $snackbar-style
+.snackbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  @include inject-style($snackbar-wrapper-style);
+  background: $snackbar-wrapper-background;
+  z-index: $snackbar-wrapper-z-index;
+
+  &.is-active {
+    display: flex;
+
+    > .snackbar {
+      display: flex;
+      align-self: flex-start;
+    }
+
+    > .opens-top {
+      align-self: flex-start;
+    }
+
+    > .opens-bottom {
+      align-self: flex-end;
+    }
+  }
+}
+
+// @param {color} $snackbar-background
+// @param {color} $snackbar-color
+// @param {px} $snackbar-min-width [240]
+// @param {array} $snackbar-padding [4]
+// @param {px} $snackbar-radius [4]
+// @param {number} $snackbar-z-index [100]
+// @param {array} $snackbar-style
+.snackbar {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-height: 100%;
+  flex-direction: column;
+  @include inject-style($snackbar-style);
+  background: $snackbar-background;
+  color: $snackbar-color;
+  padding: arrayMagic($snackbar-padding);
+  border-radius: arrayMagic($snackbar-radius);
+
+  &:not([data-col]) {
+    min-width: rem($snackbar-min-width);
+
+    // @param {percentage | false } $snackbar-max-width-relative [50]
+    // @param {pixel | false } $snackbar-max-width-relative [640]
+
+    @if $snackbar-max-width-absolute and $snackbar-max-width-relative {
+      @media (min-width: ($snackbar-max-width-absolute * 1px)) {
+        max-width: $snackbar-max-width-relative * 1%;
+
+        .dialog-header,
+        .dialog-body,
+        .dialog-footer {
+          max-width: rem($snackbar-max-width-absolute);
+        }
+      }
+    }
+  }
+
+  &.is-active {
+    top: 0;
+  }
+
+  // @param {value} $snackbar-opens-top-shadow
+  // @param {value} $snackbar-opens-bottom-shadow
+
+  &.opens-top {
+    box-shadow: arrayMagic($snackbar-opens-top-shadow);
+
+    &.is-active {
+      top: rem($base-spacing);
+    }
+  }
+
+  &.opens-bottom {
+    box-shadow: arrayMagic($snackbar-opens-bottom-shadow);
+
+    &.is-active {
+      top: auto;
+      bottom: rem($base-spacing);
+    }
+  }
+
+  &.is-active {
+    display: flex;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: $snackbar-z-index;
+  }
+}
+
+// @param {array} $snackbar-dismiss-style
+.snackbar-dismiss {
+  @extend %btn;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+  @include inject-style($snackbar-dismiss-style);
+  color: $snackbar-color;
+
+  &:only-child {
+    margin-left: auto;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// @param {array} $snackbar-header-spacing [0]
+// @param {array} $snackbar-header-padding [8]
+// @param {array} $snackbar-header-style
+.snackbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  @include inject-style($snackbar-header-style);
+  margin: arrayMagic($snackbar-header-spacing);
+  padding: arrayMagic($snackbar-header-padding);
+
+  .snackbar-dismiss {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+}
+
+// @param {array} $snackbar-body-spacing [0]
+// @param {array} $snackbar-body-padding [8]
+// @param {array} $snackbar-body-style
+.snackbar-body {
+  flex-grow: 1;
+  @include is-scrollable(y, contain, $behavior: auto);
+  @include inject-style($snackbar-body-style);
+  margin: arrayMagic($snackbar-header-spacing);
+  padding: arrayMagic($snackbar-header-padding);
+}
+
+// @param {array} $snackbar-footer-spacing [0]
+// @param {array} $snackbar-footer-padding [8]
+// @param {array} $snackbar-footer-style
+.snackbar-footer {
+  flex-shrink: 0;
+  flex-grow: 0;
+  @include inject-style($snackbar-footer-style);
+  margin: arrayMagic($snackbar-footer-spacing);
+  padding: arrayMagic($snackbar-footer-padding);
+}

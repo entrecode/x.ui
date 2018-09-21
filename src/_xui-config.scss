@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 10.0.0
+/// @since 9.0.9
 /// @access public
 
 //
@@ -1246,6 +1246,64 @@ $toast-body-style: () !default;
 $toast-footer-spacing: 0 !default;
 $toast-footer-padding: 8 !default;
 $toast-footer-style: () !default;
+
+// snackbar
+// ------------------------------------------------------
+// @param {color} $snackbar-wrapper-background [$backdrop]
+// @param {number} $snackbar-z-index [100]
+// @param {array} $snackbar-style
+$snackbar-wrapper-background: $backdrop !default;
+$snackbar-wrapper-z-index: 100 !default;
+$snackbar-wrapper-style: () !default;
+
+// @param {px} $snackbar-min-width [240]
+// @param {percentage | false } $snackbar-max-width-relative [50]
+// @param {pixel | false } $snackbar-max-width-relative [640]
+$snackbar-min-width: 240 !default;
+$snackbar-max-width-relative: 50 !default;
+$snackbar-max-width-absolute: 640 !default;
+
+// @param {color} $snackbar-background
+// @param {color} $snackbar-color
+// @param {array} $snackbar-padding [0]
+// @param {array} $snackbar-radius [4]
+// @param {number} $snackbar-z-index [100]
+// @param {array} $snackbar-style
+$snackbar-background: rgba($background-invert, .8) !default;
+$snackbar-color: $text-invert !default;
+$snackbar-padding: 0 !default;
+$snackbar-radius: 4 !default;
+$snackbar-z-index: 100 !default;
+$snackbar-style: () !default;
+
+// @param {value} $snackbar-opens-top-shadow
+// @param {value} $snackbar-opens-bottom-shadow
+$snackbar-opens-top-shadow: none !default;
+$snackbar-opens-bottom-shadow: none !default;
+
+// @param {array} $snackbar-dismiss-style
+$snackbar-dismiss-style: () !default;
+
+// @param {array} $snackbar-header-spacing [0]
+// @param {array} $snackbar-header-padding [8]
+// @param {array} $snackbar-header-style
+$snackbar-header-spacing: 0 !default;
+$snackbar-header-padding: 8 !default;
+$snackbar-header-style: () !default;
+
+// @param {array} $snackbar-body-spacing [0]
+// @param {array} $snackbar-body-padding [8]
+// @param {array} $snackbar-body-style
+$snackbar-body-spacing: 0 !default;
+$snackbar-body-padding: 8 !default;
+$snackbar-body-style: () !default;
+
+// @param {array} $snackbar-footer-spacing [0]
+// @param {array} $snackbar-footer-padding [8]
+// @param {array} $snackbar-footer-style
+$snackbar-footer-spacing: 0 !default;
+$snackbar-footer-padding: 8 !default;
+$snackbar-footer-style: () !default;
 
 //
 // XUI-OVERLAY

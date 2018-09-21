@@ -16,9 +16,14 @@
 - new molecule `.deck` with config
 - new molecule `.toast` with config
 - new molecule `.overlay` with config
+- new molecule `.snackbar` with config
 - new atom `.img-crop-3-4`
 - new modifer `.is-elevated-[1-24]`
 - new font-weight variable and modifier class `.is-medium`
+
+### updated
+
+- `arrayMagic` - can now be used with mixed arrays using different values like 2px 8 .1em 100%
 
 ## 9.0.8
 
