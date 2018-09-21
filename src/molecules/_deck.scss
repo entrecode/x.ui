@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 10.0.0
+/// @since 9.0.9
 /// @access public
 /// @group molecules
 
@@ -23,6 +23,7 @@
 
     > .deck {
       display: flex;
+      align-self: flex-start;
     }
 
     > .opens-left {
@@ -69,6 +70,10 @@
         }
       }
     }
+  }
+
+  &.is-active {
+    left: 0;
   }
 
   // @param {value} $deck-opens-left-shadow
