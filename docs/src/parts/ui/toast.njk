@@ -4,40 +4,42 @@
     <h3>toast</h3>
   </div>
 
-  <div data-grid>
-    <div data-col='3'>
-      <div class="xui-toggle">
-        <input id="toastBackdrop" type="checkbox" v-model="toastBackdrop">
-        <label for="toastBackdrop">
-          <div class="xui-toggle__switch"></div>
-          has a backdrop
-        </label>
+  <div class="well">
+    <div data-grid="is-center">
+      <div data-col='3'>
+        <div class="xui-toggle">
+          <input id="toastBackdrop" type="checkbox" v-model="toastBackdrop">
+          <label for="toastBackdrop">
+            <div class="xui-toggle__switch"></div>
+            has a backdrop
+          </label>
+        </div>
+        <div class="form-group">
+          <select name="toastOrientation" class="input" v-model="toastOrientation">
+            <option value="opens-top" selected>opens-top</option>
+            <option value="opens-bottom">opens-bottom</option>
+          </select>
+        </div>
       </div>
-      <div class="form-group">
-        <select name="toastOrientation" class="input" v-model="toastOrientation">
-          <option value="opens-top" selected>opens-top</option>
-          <option value="opens-bottom">opens-bottom</option>
-        </select>
+      <div data-col='3'>
+        <div class="xui-toggle">
+          <input id="toastAnimate" type="checkbox" v-model="toastAnimate">
+          <label for="toastAnimate">
+            <div class="xui-toggle__switch"></div>
+            uses data-animate
+          </label>
+        </div>
+        <div class="form-group">
+          <select v-model="toastAnimation" :disabled="!toastAnimate" class="input">
+            <option :value="ani" v-for="(ani, index) in animation">
+              ${ani}
+            </option>
+          </select>
+        </div>
       </div>
-    </div>
-    <div data-col='3'>
-      <div class="xui-toggle">
-        <input id="toastAnimate" type="checkbox" v-model="toastAnimate">
-        <label for="toastAnimate">
-          <div class="xui-toggle__switch"></div>
-          uses data-animate
-        </label>
+      <div data-col='3'>
+        <a href @click.prevent="toastOpen = !toastOpen" class="btn is-elevated-16">toast öffnen</a>
       </div>
-      <div class="form-group">
-        <select v-model="toastAnimation" :disabled="!toastAnimate" class="input">
-          <option :value="ani" v-for="(ani, index) in animation">
-            ${ani}
-          </option>
-        </select>
-      </div>
-    </div>
-    <div data-col='3'>
-      <a href @click.prevent="toastOpen = !toastOpen" class="btn is-elevated-16">toast öffnen</a>
     </div>
   </div>
 

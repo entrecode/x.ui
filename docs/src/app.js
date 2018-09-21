@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toastOpen: false,
       toastAnimate: false,
       toastAnimation: 'fadeIn',
+      overlayOpen: false,
       dialog1: false,
       dialog2: false,
       dialog3: false,
@@ -604,8 +605,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const codes = document.getElementsByTagName('code');
-  for (let i = 0; i < codes.length; i += 1) {
+  var codes = document.getElementsByTagName('code');
+  for (var i = 0; i < codes.length; i += 1) {
     codes[i].innerHTML = codes[i].innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/, '');
     hljs.highlightBlock(codes[i]);
   }

@@ -58,7 +58,7 @@
     height: 100%;
     @include inject-style($loader-is-local-style);
   }
-  
+
   // @param {array} $loader-is-global-style
   // @param {color} $loader-is-global-background [$backdrop]
   &.is-global {
@@ -73,10 +73,9 @@
   }
 }
 
-
 .btn {
   $_position: ($btn-min-height - $loader-size) / 2 * -1;
-  
+
   .loader:not(.is-local) {
     margin-top: rem($_position);
     margin-bottom: rem($_position);
@@ -85,7 +84,7 @@
 
 .btn_small {
   $_position: ($btn-small-min-height - $loader-size) / 2 * -1;
-  
+
   .loader:not(.is-local) {
     margin-top: rem($_position);
     margin-bottom: rem($_position);
@@ -94,7 +93,7 @@
 
 .btn_big {
   $_position: ($btn-big-min-height - $loader-size) / 2 * -1;
-  
+
   .loader:not(.is-local) {
     margin-top: rem($_position);
     margin-bottom: rem($_position);

@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
       toastOpen: false,
       toastAnimate: false,
       toastAnimation: 'fadeIn',
+      overlayOpen: false,
       dialog1: false,
       dialog2: false,
       dialog3: false,
