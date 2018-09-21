@@ -721,6 +721,33 @@ $bubble-big-radius: $bubble-radius !default;
 //
 // TAG
 // ------------------------------------------------------
+// @param {px} $loader-size [24]
+// @param {array} $loader-style
+// @param {px} $loader-track-width [4]
+// @param {color} $loader-track-color [rgba($text, 0.1)]
+// @param {color} $loader-racer-color [$link]
+// @param {string} $loader-racer-animation [loaderDefault]
+// @param {s | ms} $loader-racer-animation-speed [1s]
+// @param {value} $loader-racer-animation-behavior [infinite linear]
+$loader-size: 24 !default;
+$loader-style: () !default;
+$loader-track-width: 4 !default;
+$loader-track-color: rgba($text, 0.1) !default;
+$loader-racer-color: $link !default;
+$loader-racer-animation: loaderDefault !default;
+$loader-racer-animation-speed: 1s !default;
+$loader-racer-animation-behavior: infinite linear !default;
+
+// @param {array} $loader-is-local-style
+// @param {array} $loader-is-global-style
+// @param {color} $loader-is-global-background [$backdrop]
+$loader-is-local-style: () !default;
+$loader-is-global-style: () !default;
+$loader-is-global-background: $backdrop !default;
+
+//
+// TAG
+// ------------------------------------------------------
 // @param {color} $tag-background [$minor]
 $tag-background: $minor !default;
 

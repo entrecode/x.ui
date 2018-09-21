@@ -46,6 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
       dialog5: false,
       menuActive: false,
       hamburgerActive: false,
+      loader: false,
+      loaderLocal: false,
+      loaderGlobal: false,
       render: true,
       selectedAnimation: 'ambulance',
       animation: [

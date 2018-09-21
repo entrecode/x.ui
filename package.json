@@ -68,6 +68,7 @@
       "toast.njk",
       "xui-overlay.njk",
       "alert.njk",
+      "loader.njk",
       "data-tooltip.njk",
       "table.njk",
       "avatar.njk",
