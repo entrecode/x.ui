@@ -605,7 +605,14 @@ document.addEventListener('DOMContentLoaded', () => {
         'json',
         'required',
         'validate',
-        'fingerprint'
+        'fingerprint',
+        'high-heel',
+        'lift-off',
+        'mannequin',
+        'ring',
+        'sound-system',
+        'subscription',
+        'sneaker',
       ]
     }
   });
