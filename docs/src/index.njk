@@ -26,8 +26,8 @@
   <!-- <div id="app" class="xui-demo" data-grid="no-gutter is-end"> -->
   <div id="app" class="xui-demo">
     {% include '_header.njk' %}
-    <!-- {% include '_aside.njk' %} -->
-    <!-- <div class="xui-demo-body has-transition is-scrollable-y" :data-col="menuActive ? '8-sm' : '12 9-nav 10-xl'"> -->
+
+    {% include '_aside.njk' %}
     <div class="xui-demo-body">
       <!-- <div data-container="is-left-nav"> -->
       <div data-container>
@@ -46,7 +46,7 @@
 
       <div data-container>
         <div data-grid="is-center">
-          <div data-col="8-md">
+          <div data-col="8">
             <h2 class="is-h1 align-center is-uppercase special-font" id="the-grid">
               <small class="is-ink-link">layout</small>
               <br>the grid
@@ -86,7 +86,7 @@
       </div>
 
       {% include 'parts/grid/container.njk' %}
-      
+
       <div data-container>
         <div data-grid="is-center">
           <div data-col="8-md">
@@ -94,7 +94,7 @@
             {% include 'parts/grid/col.njk' %}
             {% include 'parts/grid/flex.njk' %}
             {% include 'parts/grid/breakpoints.njk' %}
-            
+
             <h2 class="align-center is-uppercase" id="typeface">typeface</h2>
             {% for typeface in structure.typeface %}
             {% include 'parts/typeface/' + typeface %}

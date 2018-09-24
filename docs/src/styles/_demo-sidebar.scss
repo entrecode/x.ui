@@ -1,15 +1,6 @@
 // scss-lint:disable SelectorDepth NestingDepth
 
 .demo-sidebar {
-  display: none;
-
-  &.is-active {
-    display: flex;
-  }
-
-  @media (min-width: getBreakpoint(nav)) {
-    display: inherit;
-  }
 
   a {
     color: getColor(text);

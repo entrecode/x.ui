@@ -25,10 +25,10 @@
 <body>
   <!-- <div id="app" class="xui-demo" data-grid="no-gutter is-end"> -->
   <div id="app" class="xui-demo">
-<header class="demo-navbar is-fixed is-positioned-nw is-layer-10 is-layer-100-xs has-transition" data-col="12">
+<header class="demo-navbar is-fixed is-positioned-nw is-layer-200 has-transition" data-col="12">
   <div class="toolbar toolbar_small">
     <div data-col="2">
-      <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive" class="hamburger-btn is-hidden-from-nav"></button>
+      <button :class="{ 'is-active': menuActive }" @click.prevent="menuActive = !menuActive" class="hamburger-btn"></button>
     </div>
     <div data-col="8">
       <div class="toolbar__title toolbar__title_center">
@@ -51,7 +51,8 @@
       </nav>
     </div>
   </div>
-</header>    <!-- <aside :class="menuActive ? 'is-active' : '' " data-col="6-xs 4-sm 3-nav 2-xl" style="height: 100%;" class="demo-sidebar is-scrollable-y is-fixed is-positioned-nw is-layer-10 is-theme" data-animate="slideRight 4">
+</header>
+<aside :class="{'is-active' : menuActive}" class="demo-sidebar deck opens-left is-scrollable-y-contain" data-animate="slideRight 4">
   <div class="has-padding-big">
     <ul class="is-unstyled" style="width: 100%;">
       <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
@@ -160,9 +161,7 @@
       <li><div class="spacer-big"></div></li>
     </ul>
   </div>
-</aside> -->
-    <!-- <div class="xui-demo-body has-transition is-scrollable-y" :data-col="menuActive ? '8-sm' : '12 9-nav 10-xl'"> -->
-    <div class="xui-demo-body">
+</aside>    <div class="xui-demo-body">
       <!-- <div data-container="is-left-nav"> -->
       <div data-container>
         <div data-grid="is-center">
@@ -663,7 +662,7 @@
 </section>
       <div data-container>
         <div data-grid="is-center">
-          <div data-col="8-md">
+          <div data-col="8">
             <h2 class="is-h1 align-center is-uppercase special-font" id="the-grid">
               <small class="is-ink-link">layout</small>
               <br>the grid
@@ -944,7 +943,7 @@ $grid-container-width: 1200 !default;</code></pre>
   </div>
 </div>
 
-<div class="spacer-big"></div>      
+<div class="spacer-big"></div>
       <div data-container>
         <div data-grid="is-center">
           <div data-col="8-md">
@@ -1357,7 +1356,7 @@ $grid-num-columns: 12 !default;</code></pre>
   means that the style takes effect from the breakpoint up. A few styles just use a specific
   <strong>breakpoint area</strong> (e.g. from xs to xs-max).</p>
 
-<div class="bumper-big"></div>            
+<div class="bumper-big"></div>
             <h2 class="align-center is-uppercase" id="typeface">typeface</h2>
 <section>
   <h3 id="headings">headings</h3>
