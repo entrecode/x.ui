@@ -209,8 +209,10 @@ $breakpoints: (
 // use @import to use custom font-families
 // @param {value} $body-font
 // @param {value} $headings-font
+// @param {value} $monospace-font
 $body-font: sans-serif !default;
 $headings-font: sans-serif !default;
+$monospace-font: monospace !default;
 
 //
 // FONT-WEIGHT
