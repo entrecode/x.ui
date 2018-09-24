@@ -1056,10 +1056,11 @@ $grid-num-columns: 12 !default;</code></pre>
   </div>
 </div>
 
+
 <div data-grid class="demo-grid">
   <div :data-col="dataColSize + '-' + dataColSizeBreakpoint + ' +' + dataColOffset + '-' + dataColOffsetBreakpoint"
     v-cloak>
-    <div class="has-padding is-theme-minor align-center">${dataColSize}-${dataColSizeBreakpoint}
+    <div class="has-padding align-center" :class="(parseInt(dataColSize) + parseInt(dataColOffset))  > 12 ? 'is-theme-super_light' : 'is-theme-minor'" v-cloak>${dataColSize}-${dataColSizeBreakpoint}
       +${dataColOffset}-${dataColOffsetBreakpoint}</div>
   </div>
 </div>
