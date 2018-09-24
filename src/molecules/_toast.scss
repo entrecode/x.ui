@@ -13,6 +13,8 @@
   width: 100%;
   height: 100%;
   display: none;
+  overflow: hidden;
+  overscroll-behavior: contain;
   @include inject-style($toast-wrapper-style);
   background: $toast-wrapper-background;
   z-index: $toast-wrapper-z-index;
