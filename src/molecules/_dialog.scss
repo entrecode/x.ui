@@ -16,6 +16,8 @@
   justify-content: center;
   align-items: center;
   display: none;
+  overflow: hidden;
+  overscroll-behavior: contain;
   @include inject-style($dialog-wrapper-style);
   padding: arrayMagic($dialog-wrapper-padding);
   background: $dialog-wrapper-background;
