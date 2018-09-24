@@ -53,9 +53,9 @@
   </div>
 </header>
 <aside :class="{'is-active' : menuActive}" class="demo-sidebar deck opens-left is-scrollable-y-contain" data-animate="slideRight 4">
-  <div class="has-padding-big">
+  <div class="has-padding-big" style="padding-left: 64px;">
     <ul class="is-unstyled" style="width: 100%;">
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#get-started">atomic design</a></li>
           <li><a href="#bem">naming conventions</a></li>
@@ -63,9 +63,9 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5 has-padding-middle"><a href="#the-grid"><span class="ec-icon border-none">the grid</span></a></h3></li>
+      <li><h3 class="is-h5 has-padding-middle-big"><a href="#the-grid"><span class="ec-icon border-none">the grid</span></a></h3></li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#typeface"><span class="ec-icon smaller-text">typeface</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#typeface"><span class="ec-icon smaller-text">typeface</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#headings">headings</a></li>
           <li><a href="#paragraph">paragraph</a></li>
@@ -77,16 +77,17 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#media"><span class="ec-icon img">media</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#media"><span class="ec-icon img">media</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#img">img</a></li>
           <li><a href="#img-crop">img-crop</a></li>
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#form"><span class="ec-icon text-input">form</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#form"><span class="ec-icon text-input">form</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#input">input</a></li>
+          <li><a href="#slider">slider</a></li>
           <li><a href="#file-upload">file-upload</a></li>
           <li><a href="#input-group">input-group</a></li>
           <li><a href="#xui-select">xui-select</a></li>
@@ -98,7 +99,7 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#ui"><span class="ec-icon list-bullets">ui</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#ui"><span class="ec-icon list-bullets">ui</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#btn">button</a></li>
           <li><a href="#hamburger-btn">hamburger-btn</a></li>
@@ -114,7 +115,13 @@
           <li><a href="#xui-accordion">xui-accordion</a></li>
           <li><a href="#card">card</a></li>
           <li><a href="#well">well</a></li>
+          <li><a href="#dialog">dialog</a></li>
+          <li><a href="#deck">deck</a></li>
+          <li><a href="#toast">toast</a></li>
+          <li><a href="#snackbar">snackbar</a></li>
+          <li><a href="#overlay">overlay</a></li>
           <li><a href="#alert">alert</a></li>
+          <li><a href="#loader">loader</a></li>
           <li><a href="#data-tooltip">data-tooltip</a></li>
           <li><a href="#table">table</a></li>
           <li><a href="#avatar">avatar</a></li>
@@ -122,15 +129,17 @@
           <li><a href="#is-theme">is-theme</a></li>
           <li><a href="#is-rounded">is-rounded</a></li>
           <li><a href="#is-bordered">is-bordered</a></li>
+          <li><a href="#is-elevated">is-elevated</a></li>
           <li><a href="#is-raised">is-raised</a></li>
           <li><a href="#is-lifted">is-lifted</a></li>
           <li><a href="#is-fab">is-fab</a></li>
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#layout"><span class="ec-icon article">layout</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#layout"><span class="ec-icon article">layout</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#bumper">bumper</a></li>
+          <li><a href="#divider">divider</a></li>
           <li><a href="#spacer">spacer</a></li>
           <li><a href="#flex-spacer">flex-spacer</a></li>
           <li><a href="#has-margin">has-margin</a></li>
@@ -150,13 +159,13 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><div class="ec-icon cursor-arrow">interaction</div></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><div class="ec-icon cursor-arrow">interaction</div></h3>
         <ul class="is-unstyled">
           <li><a href="#data-animate">data-animate</a></li>
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#ec-icon"><span class="ec-icon skull">ec-icon</span></a></h3></li>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#ec-icon"><span class="ec-icon skull">ec-icon</span></a></h3></li>
 
       <li><div class="spacer-big"></div></li>
     </ul>
@@ -196,9 +205,9 @@
     <div data-col="4-sm">
       <h6 class="align-center">2. download config</h6>
       <div class="well align-center">
-        <a href="https://github.com/entrecode/x.ui/blob/master/src/_xui-config.scss"
+        <a href="https://raw.githubusercontent.com/entrecode/x.ui/master/src/_xui-config.scss"
            title="config file for x.ui" target="_blank" rel="noopener"
-           class="btn btn_outlined">Download</a>
+           class="btn">Download</a>
       </div>
     </div>
     <div data-col="4-sm">
@@ -587,6 +596,11 @@
           </a>
         </li>
         <li data-col="6 4-md">
+          <a href="#data-flex" class="periodic-group-layout">
+            <span class="is-h5">L</span> data-flex
+          </a>
+        </li>
+        <li data-col="6 4-md">
           <a href="#has-margin" class="periodic-group-layout">
             <span class="is-h5">L</span> has-margin
           </a>
@@ -899,7 +913,7 @@
     </span>
   </div>
 </div>
-
+<div class="spacer-small"></div>
 <div data-container>
   <div data-grid="is-center">
     <div data-col="8-md">
@@ -1008,6 +1022,8 @@ $grid-container-width: 1200 !default;</code></pre>
   </div>
 </div>
 
+<div class="spacer"></div>
+
 <div class="title">
   <h4 class="is-kilo">config variables</h4>
   <a href="https://github.com/entrecode/x.ui/blob/master/src/_xui-config.scss" target="_blank" class="btn btn_clear">
@@ -1015,9 +1031,9 @@ $grid-container-width: 1200 !default;</code></pre>
   </a>
 </div>
 <pre><code class="scss">
-/* @param {px} $grid-gutter [32] - gutter size in pixels without unit */
-/* @param {value} $grid-outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2) */
-/* @param {number} $grid-num-columns [12] - number of columns in a row */
+// @param {px} $grid-gutter [32] - gutter size in pixels without unit
+// @param {value} $grid-outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
+// @param {number} $grid-num-columns [12] - number of columns in a row
 $grid-gutter: 32 !default;
 $grid-outer-gutter: true !default;
 $grid-num-columns: 12 !default;</code></pre>
@@ -1066,6 +1082,8 @@ $grid-num-columns: 12 !default;</code></pre>
   </div>
 </div>
 
+<div class="spacer"></div>
+
 <div class="well align-center">
   <div class="is-kilo">data-col="{ size | offset }{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
     }"
@@ -1094,203 +1112,6 @@ $grid-num-columns: 12 !default;</code></pre>
   </tbody>
 </table>
 
-<div class="bumper-big"></div><h3>Additional flex attributes</h3>
-<p class="is-lead">Those additional attributes and values can be combined with data-grid / data-col to modify the
-  layout.</p>
-<div class="well align-center">
-  <div class="is-kilo">data-flex="{option}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
-    }"
-  </div>
-</div>
-<h6 class="align-center">flex-direction</h6>
-<table class="table">
-  <tbody>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-row</span></td>
-      <td data-col="8">left to right in ltr | right to left in rtl <span class="tag tag_small">default</span></td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-row-reverse</span></td>
-      <td data-col="8">right to left in ltr | left to right in rtl</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-column</span></td>
-      <td data-col="8">same as row but top to bottom</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-column-reverse</span></td>
-      <td data-col="8">same as row-reverse but bottom to top</td>
-    </tr>
-  </tbody>
-</table>
-<h6 class="align-center">flex-wrap</h6>
-<table class="table">
-  <tbody>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-nowrap</span></td>
-      <td data-col="8">all flex items will be on one line <span class="tag tag_small">default</span>
-      </td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-wrap</span></td>
-      <td data-col="8">flex items will wrap onto multiple lines, from top to bottom</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-wrap-reverse</span></td>
-      <td data-col="8">flex items will wrap onto multiple lines from bottom to top</td>
-    </tr>
-  </tbody>
-</table>
-<h6 class="align-center">justify-content</h6>
-<table class="table">
-  <tbody>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-start</span></td>
-      <td data-col="8">items are packed toward the start line <span class="tag tag_small">default</span>
-      </td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-end</span></td>
-      <td data-col="8">items are packed toward to end line</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-center</span></td>
-      <td data-col="8">items are centered along the line</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-between</span></td>
-      <td data-col="8">items are evenly distributed in the line; first item is on the
-        start line, last item on the end line
-      </td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-around</span></td>
-      <td data-col="8">items are evenly distributed in the line with equal space around
-        them
-      </td>
-    </tr>
-  </tbody>
-</table>
-<h6 class="align-center">align-items</h6>
-<table class="table">
-  <tbody>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-start-items</span></td>
-      <td data-col="8">cross-start margin edge of the items is placed on the cross-start
-        line
-      </td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-end-items</span></td>
-      <td data-col="8">cross-end margin edge of the items is placed on the cross-end
-        line
-      </td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-center-items</span></td>
-      <td data-col="8">items are centered in the cross-axis</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-baseline-items</span></td>
-      <td data-col="8">items are aligned such as their baselines align</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-stretch-items</span></td>
-      <td data-col="8">stretch to fill the container <span class="tag tag_small">default</span></td>
-    </tr>
-  </tbody>
-</table>
-<h6 class="align-center">align-content</h6>
-<table class="table">
-  <tbody>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-start-content</span></td>
-      <td data-col="8">lines packed to the start of the container</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-end-content</span></td>
-      <td data-col="8">lines packed to the end of the container</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-center-content</span></td>
-      <td data-col="8">lines packed to the center of the container</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-space-content</span></td>
-      <td data-col="8">lines evenly distributed; the first line is at the start of the
-        container while the last one is at the end
-      </td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-arround-content</span></td>
-      <td data-col="8">lines evenly distributed with equal space around each line</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-stretch-content</span></td>
-      <td data-col="8">lines stretch to take up the remaining space <span class="tag tag_small">default</span></td>
-    </tr>
-  </tbody>
-</table>
-<div class="spacer"></div>
-<div class="well align-center">
-  <span class="is-kilo">data-flex-item="{options}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
-    }"</span>
-</div>
-<h6 class="align-center">size</h6>
-<table class="table">
-  <tbody>
-    <tr data-flex>
-      <td data-col="4"><span class="code">grow</span></td>
-      <td data-col="8">items grows to fill it's parent.</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">grow-even</span></td>
-      <td data-col="8">all children grow evenly an share the space.</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">fit-self</span></td>
-      <td data-col="8">element doesn't shrink and grows up to its content size.</td>
-    </tr>
-  </tbody>
-</table>
-<h6 class="align-center">align-self</h6>
-<table class="table">
-  <tbody>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-auto</span></td>
-      <td data-col="8">Default. The element inherits its parent container's align-items property, or "stretch" if it
-        has no parent container.</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-stretch</span></td>
-      <td data-col="8">The element is positioned to fit the container.</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-center</span></td>
-      <td data-col="8">The element is positioned at the center of the container.</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-start</span></td>
-      <td data-col="8">The element is positioned at the beginning of the container.</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-end</span></td>
-      <td data-col="8">The element is positioned at the end of the container.</td>
-    </tr>
-    <tr data-flex>
-      <td data-col="4"><span class="code">is-baseline</span></td>
-      <td data-col="8">The element is positioned at the baseline of the container.</td>
-    </tr>
-  </tbody>
-</table>
-<div class="spacer"></div>
-<div class="well align-center">
-  <span class="is-kilo">data-flex-order="{order}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
-    }"</span>
-</div>
-<p>By default, flex items are laid out in the source order. However, the order property
-  controls the order in which they appear in the flex container. the order-value can be
-  <span class="code">[1-12]</span>.</p>
 <div class="bumper-big"></div><h3 class="align-center" id="xui-breakpoint-shortcodes">breakpoint shortcodes</h3>
 <div data-grid>
   <div data-flex-item="grow-even">
@@ -1730,7 +1551,7 @@ $headings-style: () !default;</code></pre>
 <div class="bumper"></div>
 <section>
   <h3 id="file-upload">slider</h3>
-  <div class="well">
+  <div class="has-padding">
     <input type="range" class="slider">
   </div>
 </section>
@@ -2169,17 +1990,17 @@ $slider-thumb-hover-style: () !default;</code></pre>
   <h4>button state modifier</h4>
   <div class="well">
     <ul data-grid="is-small is-center">
-      <li data-col="6-sm" class="align-center">
+      <li data-col="4-sm" class="align-center">
         <a class="btn is-disabled">.is-disabled</a><br>
         <span class="code" style="margin-top: 8px;">.is-disabled</span>
         <div class="spacer is-visible-xs"></div>
       </li>
-      <li data-col="6-sm" class="align-center">
+      <li data-col="4-sm" class="align-center">
         <a class="btn" disabled>[disabled]</a><br>
         <span class="code" style="margin-top: 8px;">[disabled]</span>
         <div class="spacer is-visible-xs"></div>
       </li>
-      <li data-col="6-sm" class="align-center">
+      <li data-col="4-sm" class="align-center">
         <a class="btn is-active">.is-active</a><br>
         <span class="code" style="margin-top: 8px;">.is-active</span>
         <div class="spacer is-visible-xs"></div>
@@ -3560,10 +3381,10 @@ $slider-thumb-hover-style: () !default;</code></pre>
 
   <div class="title">
     <h4>inline loader</h4>
-    <div class="btn btn_small" @click="loader = !loader" v-cloak>
-      <span v-if="!loaderLocal">play</span>
-      <span v-if="loaderLocal">pause</span>
-    </div>
+    <a class="btn btn_small" @click.prevent="loader = !loader" v-cloak>
+      <span v-if="!loader">play</span>
+      <span v-if="loader">pause</span>
+    </a>
   </div>
   <p>inline loader give a state feedback for one specific element. in contrast to the local feedback it has no <span
       class="code">position</span> style.</p>
@@ -3812,7 +3633,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     elements.</p>
   <div class="well-small">
     <div data-grid>
-      <div v-for="mod in modifiers.type.colorModifiers" data-col="6-xs 2-sm">
+      <div v-for="mod in modifiers.type.colorModifiers" data-col="6-xs 3-sm">
         <strong :class="mod">${mod}</strong>
       </div>
     </div>
@@ -4357,6 +4178,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <h3 id="flex-spacer">flex-spacer</h3>
   <div data-flex>
     <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
+    <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
     <div class="flex-spacer demo-flex-spacer"></div>
     <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
   </div>
@@ -4368,9 +4190,31 @@ data-tooltip-left="This is a tooltip"</code></pre>
 </div></code></pre>
 
 </section>
+
 <div class="spacer"></div>
+
 <section>
-  <h4 id="has-margin">has-margin</h4>
+  <h4>combine spacer and flex-spacer</h4>
+  <div data-flex>
+    <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
+    <div class="spacer demo-flex-spacer"></div>
+    <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
+    <div class="flex-spacer demo-flex-spacer"></div>
+    <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
+  </div>
+  <pre><code class="html">
+<div data-flex>
+  ...
+  <div class="spacer"></div>
+  ...
+  <div class="flex-spacer"></div>
+  ...
+</div></code></pre>
+
+</section>
+
+<div class="spacer-big"></div><section>
+  <h3 id="has-margin">has-margin</h3>
   <div class="well align-center">
     <span class="is-h6">has-margin-{sides}-{size}{ -
       <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
@@ -4432,10 +4276,10 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="spacer"></div>
+<div class="spacer-big"></div>
 
 <section>
-  <h4 id="no-margin">no-margin</h4>
+  <h3 id="no-margin">no-margin</h3>
   <div class="well align-center">
     <span class="is-h6">no-margin-{sides}-{size}{ -
       <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
@@ -4466,10 +4310,10 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="spacer"></div>
+<div class="spacer-big"></div>
 
 <section>
-  <h4 id="has-padding">has-padding</h4>
+  <h3 id="has-padding">has-padding</h3>
   <div class="well align-center">
     <span class="is-h6">has-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
@@ -4507,10 +4351,10 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="spacer"></div>
+<div class="spacer-big"></div>
 
 <section>
-  <h4 id="no-padding">no-padding</h4>
+  <h3 id="no-padding">no-padding</h3>
   <div class="well align-center">
     <span class="is-h6">no-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
@@ -4530,7 +4374,204 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div><section>
+<div class="bumper-big"></div><h3 id="data-flex">Additional flex attributes</h3>
+<p class="is-lead">Those additional attributes and values can be combined with data-grid / data-col to modify the
+  layout.</p>
+<div class="well align-center">
+  <div class="is-kilo">data-flex="{option}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
+    }"
+  </div>
+</div>
+<h6 class="align-center">flex-direction</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-row</span></td>
+      <td data-col="8">left to right in ltr | right to left in rtl <span class="tag tag_small">default</span></td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-row-reverse</span></td>
+      <td data-col="8">right to left in ltr | left to right in rtl</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-column</span></td>
+      <td data-col="8">same as row but top to bottom</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-column-reverse</span></td>
+      <td data-col="8">same as row-reverse but bottom to top</td>
+    </tr>
+  </tbody>
+</table>
+<h6 class="align-center">flex-wrap</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-nowrap</span></td>
+      <td data-col="8">all flex items will be on one line <span class="tag tag_small">default</span>
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-wrap</span></td>
+      <td data-col="8">flex items will wrap onto multiple lines, from top to bottom</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-wrap-reverse</span></td>
+      <td data-col="8">flex items will wrap onto multiple lines from bottom to top</td>
+    </tr>
+  </tbody>
+</table>
+<h6 class="align-center">justify-content</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-start</span></td>
+      <td data-col="8">items are packed toward the start line <span class="tag tag_small">default</span>
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-end</span></td>
+      <td data-col="8">items are packed toward to end line</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-center</span></td>
+      <td data-col="8">items are centered along the line</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-between</span></td>
+      <td data-col="8">items are evenly distributed in the line; first item is on the
+        start line, last item on the end line
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-around</span></td>
+      <td data-col="8">items are evenly distributed in the line with equal space around
+        them
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h6 class="align-center">align-items</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-start-items</span></td>
+      <td data-col="8">cross-start margin edge of the items is placed on the cross-start
+        line
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-end-items</span></td>
+      <td data-col="8">cross-end margin edge of the items is placed on the cross-end
+        line
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-center-items</span></td>
+      <td data-col="8">items are centered in the cross-axis</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-baseline-items</span></td>
+      <td data-col="8">items are aligned such as their baselines align</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-stretch-items</span></td>
+      <td data-col="8">stretch to fill the container <span class="tag tag_small">default</span></td>
+    </tr>
+  </tbody>
+</table>
+<h6 class="align-center">align-content</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-start-content</span></td>
+      <td data-col="8">lines packed to the start of the container</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-end-content</span></td>
+      <td data-col="8">lines packed to the end of the container</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-center-content</span></td>
+      <td data-col="8">lines packed to the center of the container</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-space-content</span></td>
+      <td data-col="8">lines evenly distributed; the first line is at the start of the
+        container while the last one is at the end
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-arround-content</span></td>
+      <td data-col="8">lines evenly distributed with equal space around each line</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-stretch-content</span></td>
+      <td data-col="8">lines stretch to take up the remaining space <span class="tag tag_small">default</span></td>
+    </tr>
+  </tbody>
+</table>
+<div class="spacer"></div>
+<div class="well align-center">
+  <span class="is-kilo">data-flex-item="{options}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
+    }"</span>
+</div>
+<h6 class="align-center">size</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">grow</span></td>
+      <td data-col="8">items grows to fill it's parent.</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">grow-even</span></td>
+      <td data-col="8">all children grow evenly an share the space.</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">fit-self</span></td>
+      <td data-col="8">element doesn't shrink and grows up to its content size.</td>
+    </tr>
+  </tbody>
+</table>
+<h6 class="align-center">align-self</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-auto</span></td>
+      <td data-col="8">Default. The element inherits its parent container's align-items property, or "stretch" if it
+        has no parent container.</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-stretch</span></td>
+      <td data-col="8">The element is positioned to fit the container.</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-center</span></td>
+      <td data-col="8">The element is positioned at the center of the container.</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-start</span></td>
+      <td data-col="8">The element is positioned at the beginning of the container.</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-end</span></td>
+      <td data-col="8">The element is positioned at the end of the container.</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-baseline</span></td>
+      <td data-col="8">The element is positioned at the baseline of the container.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="spacer"></div>
+<div class="well align-center">
+  <span class="is-kilo">data-flex-order="{order}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
+    }"</span>
+</div>
+<p>By default, flex items are laid out in the source order. However, the order property
+  controls the order in which they appear in the flex container. the order-value can be
+  <span class="code">[1-12]</span>.</p>
+<div class="bumper-big"></div><section>
   <h3 id="has-height">has-height</h3>
   <div class="well align-center">
     <div class="is-h6">has-height-{relation}-{ratio}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
@@ -4599,14 +4640,14 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div><section>
+<div class="bumper-big"></div><section>
   <h3 id="pull">pull</h3>
   <div class="well align-center">
     <div class="is-h6">pull-{ left | right }{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
   </div>
 </section>
 
-<div class="bumper"></div><section>
+<div class="bumper-big"></div><section>
   <h3 id="is-clipped">is-clipped</h3>
   <p>use for
     <span class="code">overflow: hidden;</span>
@@ -4630,7 +4671,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div>
+<div class="bumper-big"></div>
 
 <section>
   <h3 id="is-scrollable">is-scrollable</h3>
@@ -4666,7 +4707,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div><section>
+<div class="bumper-big"></div><section>
   <h3 id="is-position">is-position</h3>
   <div class="well align-center">
     <span class="is-h6">is-{static|relative|absolute|fixed|sticky}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
@@ -4846,10 +4887,10 @@ data-tooltip-left="This is a tooltip"</code></pre>
             <div class="align-center">
               <a class="btn"><span class="ec-icon skull">button</span></a>
             </div>
-            <pre><code class="html">
-          <a class="btn">
-            <span class="ec-icon skull">button</span>
-          </a></code></pre>
+  <pre><code class="html">
+<a class="btn">
+  <span class="ec-icon skull">button</span>
+</a></code></pre>
           </div>
         </div>
       </div>

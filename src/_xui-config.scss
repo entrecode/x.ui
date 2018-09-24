@@ -182,7 +182,9 @@ $spacings: (
   3: $base-spacing /* equals 16 buddy */,
   4: $base-spacing * 1.5 /* equals 24 peer */,
   5: $base-spacing * 2 /* equals 32 relative */,
-  6: $base-spacing * 3 /* equals 48 stranger */
+  6: $base-spacing * 3 /* equals 48 stranger */,
+  7: $base-spacing * 4 /* equals 64 stranger */,
+  8: $base-spacing * 5 /* equals 80 stranger */
 ) !default;
 
 //
@@ -1802,25 +1804,25 @@ $input-invalid-style: (
 // ------------------------------------------------------
 // @param {px} $slider-height [8]
 // @param {px} $slider-radius [4]
-// @param {color} $slider-background [rgba(#000, 0.1)]
+// @param {color} $slider-background [rgba(#000, 0.04)]
 // @param {array} $slider-style
 // @param {array} $slider-hover-style
 $slider-height: 8 !default;
 $slider-radius: 4 !default;
-$slider-background: rgba(#000, 0.1) !default;
+$slider-background: rgba(#000, 0.04) !default;
 $slider-style: () !default;
 $slider-hover-style: () !default;
 
 // @param {px} $slider-thumb-size [16]
 // @param {px} $slider-thumb-radius [8]
-// @param {color} $slider-thumb-background [#fff]
+// @param {color} $slider-thumb-background [$link]
 // @param {array} $slider-thumb-style
 // @param {array} $slider-thumb-hover-style
-$slider-thumb-background: #fff !default;
+$slider-thumb-background: $link !default;
 $slider-thumb-size: 16 !default;
 $slider-thumb-radius: 8 !default;
 $slider-thumb-style: (
-  box-shadow: 0 2px 4px rgba(#000, 0.2)
+  box-shadow: 0 4px 8px 2px rgba(#000, 0.2)
 ) !default;
 $slider-thumb-hover-style: () !default;
 

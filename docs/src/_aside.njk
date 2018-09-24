@@ -1,7 +1,7 @@
 <aside :class="{'is-active' : menuActive}" class="demo-sidebar deck opens-left is-scrollable-y-contain" data-animate="slideRight 4">
-  <div class="has-padding-big">
+  <div class="has-padding-big" style="padding-left: 64px;">
     <ul class="is-unstyled" style="width: 100%;">
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#get-started">atomic design</a></li>
           <li><a href="#bem">naming conventions</a></li>
@@ -9,9 +9,9 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5 has-padding-middle"><a href="#the-grid"><span class="ec-icon border-none">the grid</span></a></h3></li>
+      <li><h3 class="is-h5 has-padding-middle-big"><a href="#the-grid"><span class="ec-icon border-none">the grid</span></a></h3></li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#typeface"><span class="ec-icon smaller-text">typeface</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#typeface"><span class="ec-icon smaller-text">typeface</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#headings">headings</a></li>
           <li><a href="#paragraph">paragraph</a></li>
@@ -23,16 +23,17 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#media"><span class="ec-icon img">media</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#media"><span class="ec-icon img">media</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#img">img</a></li>
           <li><a href="#img-crop">img-crop</a></li>
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#form"><span class="ec-icon text-input">form</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#form"><span class="ec-icon text-input">form</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#input">input</a></li>
+          <li><a href="#slider">slider</a></li>
           <li><a href="#file-upload">file-upload</a></li>
           <li><a href="#input-group">input-group</a></li>
           <li><a href="#xui-select">xui-select</a></li>
@@ -44,7 +45,7 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#ui"><span class="ec-icon list-bullets">ui</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#ui"><span class="ec-icon list-bullets">ui</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#btn">button</a></li>
           <li><a href="#hamburger-btn">hamburger-btn</a></li>
@@ -60,7 +61,13 @@
           <li><a href="#xui-accordion">xui-accordion</a></li>
           <li><a href="#card">card</a></li>
           <li><a href="#well">well</a></li>
+          <li><a href="#dialog">dialog</a></li>
+          <li><a href="#deck">deck</a></li>
+          <li><a href="#toast">toast</a></li>
+          <li><a href="#snackbar">snackbar</a></li>
+          <li><a href="#overlay">overlay</a></li>
           <li><a href="#alert">alert</a></li>
+          <li><a href="#loader">loader</a></li>
           <li><a href="#data-tooltip">data-tooltip</a></li>
           <li><a href="#table">table</a></li>
           <li><a href="#avatar">avatar</a></li>
@@ -68,15 +75,17 @@
           <li><a href="#is-theme">is-theme</a></li>
           <li><a href="#is-rounded">is-rounded</a></li>
           <li><a href="#is-bordered">is-bordered</a></li>
+          <li><a href="#is-elevated">is-elevated</a></li>
           <li><a href="#is-raised">is-raised</a></li>
           <li><a href="#is-lifted">is-lifted</a></li>
           <li><a href="#is-fab">is-fab</a></li>
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#layout"><span class="ec-icon article">layout</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#layout"><span class="ec-icon article">layout</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#bumper">bumper</a></li>
+          <li><a href="#divider">divider</a></li>
           <li><a href="#spacer">spacer</a></li>
           <li><a href="#flex-spacer">flex-spacer</a></li>
           <li><a href="#has-margin">has-margin</a></li>
@@ -96,13 +105,13 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><div class="ec-icon cursor-arrow">interaction</div></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><div class="ec-icon cursor-arrow">interaction</div></h3>
         <ul class="is-unstyled">
           <li><a href="#data-animate">data-animate</a></li>
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#ec-icon"><span class="ec-icon skull">ec-icon</span></a></h3></li>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#ec-icon"><span class="ec-icon skull">ec-icon</span></a></h3></li>
 
       <li><div class="spacer-big"></div></li>
     </ul>

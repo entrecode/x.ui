@@ -8,10 +8,10 @@
 
   <div class="title">
     <h4>inline loader</h4>
-    <div class="btn btn_small" @click="loader = !loader" v-cloak>
-      <span v-if="!loaderLocal">play</span>
-      <span v-if="loaderLocal">pause</span>
-    </div>
+    <a class="btn btn_small" @click.prevent="loader = !loader" v-cloak>
+      <span v-if="!loader">play</span>
+      <span v-if="loader">pause</span>
+    </a>
   </div>
   <p>inline loader give a state feedback for one specific element. in contrast to the local feedback it has no <span
       class="code">position</span> style.</p>

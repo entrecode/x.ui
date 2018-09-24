@@ -88,6 +88,7 @@
       "spacer.njk",
       "flex-spacer.njk",
       "spacing.njk",
+      "flex.njk",
       "has-height.njk",
       "has-width.njk",
       "pull.njk",

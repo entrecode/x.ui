@@ -12,24 +12,27 @@
 
 .spacer {
   @include set-breakpoints {
+    align-self: center;
     flex-shrink: 0;
     height: $spacer-size;
-    width: 100%;
+    min-width: $spacer-size;
   }
 
   &-small {
     @include set-breakpoints {
+      align-self: center;
       flex-shrink: 0;
       height: $spacer-small-size;
-      width: 100%;
+      min-width: $spacer-small-size;
     }
   }
 
   &-big {
     @include set-breakpoints {
+      align-self: center;
       flex-shrink: 0;
       height: $spacer-big-size;
-      width: 100%;
+      min-width: $spacer-big-size;
     }
   }
 }

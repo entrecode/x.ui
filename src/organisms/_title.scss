@@ -8,7 +8,7 @@
 // @param {array} $title-style
 .title {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   @include inject-style($title-style);
   margin: arrayMagic($title-spacing);
@@ -23,5 +23,10 @@
     @include inject-style($title-stacked-style);
     margin: arrayMagic($title-stacked-spacing);
     padding: arrayMagic($title-stacked-padding);
+  }
+
+  > .nav,
+  > .btn {
+    align-self: flex-start;
   }
 }
