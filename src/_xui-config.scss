@@ -1606,6 +1606,22 @@ $bumper-small-spacing: getSpace(3) 0 !default;
 $bumper-big-spacing: getSpace(6) 0 !default;
 
 //
+// DIVIDER
+// ------------------------------------------------------
+// @param {px} $divider-height [1]
+// @param {color} $divider-background [$divider-color]
+// @param {color} $divider-invert-background [rgba($background, .2)]
+// @param {array} $divider-spacing [getSpace(5) 0]
+// @param {array} $divider-small-spacing [getSpace(3) 0]
+// @param {array} $divider-big-spacing [getSpace(6) 0]
+$divider-height: 1 !default;
+$divider-background: $divider-color !default;
+$divider-invert-background: rgba($background, 0.2) !default;
+$divider-spacing: getSpace(5) 0 !default;
+$divider-small-spacing: getSpace(3) 0 !default;
+$divider-big-spacing: getSpace(6) 0 !default;
+
+//
 // SPACER
 // ------------------------------------------------------
 // @param {px} $spacer-size [getSpace(5)]
@@ -1977,14 +1993,12 @@ $xui-checkbox-checked-style: () !default;
 // XUI-RADIO
 // ------------------------------------------------------
 // @param {px} $xui-radio-font-size [10]
-// @param {px} $xui-radio-line-height [22]
 // @param {array} $xui-radio-spacing [0 8 0 0]
-// @param {px} $xui-radio-min-height [20]
+// @param {px} $xui-radio-height [20]
 // @param {color} $xui-radio-background [$background]
 // @param {color} $xui-radio-color [transparent]
 // @param {array} $xui-radio-style
 $xui-radio-font-size: 10 !default;
-$xui-radio-line-height: 22 !default;
 $xui-radio-spacing: 0 8 0 0 !default;
 $xui-radio-height: 20 !default;
 $xui-radio-background: $background !default;

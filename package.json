@@ -84,6 +84,7 @@
     ],
     "layout": [
       "bumper.njk",
+      "divider.njk",
       "spacer.njk",
       "flex-spacer.njk",
       "spacing.njk",

@@ -1,20 +1,33 @@
 <section>
   <h3 id="spacer">spacer</h3>
-  <div class="demo-layout-macros">
-    <div class="spacer"></div>
+  <div data-grid>
+    <div data-col='4'>
+      <div class="form-group">
+        <div class="xui-radio">
+          <input id="spacerSizeSmall" value="spacerSizeSmall" name="spacerSize" type="radio" v-model="spacerSize">
+          <label for="spacerSizeSmall">small</label>
+        </div>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="spacerSizeDefault" value="spacerSizeDefault" name="spacerSize" type="radio" v-model="spacerSize">
+        <label for="spacerSizeDefault">default</label>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="spacerSizeBig" value="spacerSizeBig" name="spacerSize" type="radio" v-model="spacerSize">
+        <label for="spacerSizeBig">big</label>
+      </div>
+    </div>
   </div>
-  <pre><code class="html"><div class="spacer"></div></code></pre>
-  <table class="table">
-    <tbody>
-    <tr>
-      <td>
-        <strong>additional sizes</strong>
-      </td>
-      <td><span class="code">.spacer-small</span><span class="code">.spacer-big</span>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="demo-layout-macros">
+    <div :class="{'spacer-small': spacerSize === 'spacerSizeSmall', 'spacer': spacerSize === 'spacerSizeDefault', 'spacer-big': spacerSize === 'spacerSizeBig'}"></div>
+  </div>
+  <pre v-show="spacerSize === 'spacerSizeSmall'"><code class="html"><div class="spacer-small"></div></code></pre>
+  <pre v-show="spacerSize === 'spacerSizeDefault'"><code class="html"><div class="spacer"></div></code></pre>
+  <pre v-show="spacerSize === 'spacerSizeBig'"><code class="html"><div class="spacer-big"></div></code></pre>
 </section>
 
-<div class="spacer"></div>
+<div class="spacer-big"></div>

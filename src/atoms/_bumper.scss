@@ -28,6 +28,13 @@
     position: absolute;
     width: rem($bumper-size);
   }
+
+  &.bumper_invert {
+    &::before {
+      background-color: $bumper-invert-color;
+      box-shadow: rem($bumper-size * 2) 0 0 $bumper-invert-color, rem($bumper-size * 4) 0 0 $bumper-invert-color;
+    }
+  }
 }
 
 .bumper {
@@ -36,13 +43,6 @@
     flex-shrink: 0;
     margin: arrayMagic($bumper-spacing);
     width: 100%;
-  }
-
-  &_invert {
-    &::before {
-      background-color: $bumper-invert-color;
-      box-shadow: rem($bumper-size * 2) 0 0 $bumper-invert-color, rem($bumper-size * 4) 0 0 $bumper-invert-color;
-    }
   }
 }
 

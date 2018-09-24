@@ -56,6 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
       loaderLocal: false,
       loaderGlobal: false,
       render: true,
+      bumperSize: 'bumperSizeDefault',
+      dividerSize: 'dividerSizeDefault',
+      spacerSize: 'spacerSizeDefault',
       selectedAnimation: 'ambulance',
       animation: [
         'fadeIn',
@@ -612,7 +615,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'ring',
         'sound-system',
         'subscription',
-        'sneaker',
+        'sneaker'
       ]
     }
   });

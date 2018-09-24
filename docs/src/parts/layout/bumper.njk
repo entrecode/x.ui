@@ -1,33 +1,45 @@
 <section>
   <h3 id="bumper">bumper</h3>
+  <div data-grid>
+    <div data-col='4'>
+      <div class="form-group">
+        <div class="xui-radio">
+          <input id="bumperSizeSmall" value="bumperSizeSmall" name="bumperSize" type="radio" v-model="bumperSize">
+          <label for="bumperSizeSmall">small</label>
+        </div>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="bumperSizeDefault" value="bumperSizeDefault" name="bumperSize" type="radio" v-model="bumperSize">
+        <label for="bumperSizeDefault">default</label>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="bumperSizeBig" value="bumperSizeBig" name="bumperSize" type="radio" v-model="bumperSize">
+        <label for="bumperSizeBig">big</label>
+      </div>
+    </div>
+  </div>
   <div class="demo-layout-macros">
-    <div class="bumper"></div>
+    <div :class="{'bumper-small': bumperSize === 'bumperSizeSmall', 'bumper': bumperSize === 'bumperSizeDefault', 'bumper-big': bumperSize === 'bumperSizeBig'}"></div>
   </div>
-  <pre><code class="html"><div class="bumper"></div></code></pre>
-  <table class="table">
-    <tbody>
-      <tr>
-        <td>
-          <strong>additional sizes</strong>
-        </td>
-        <td>
-          <span class="code">.bumper-small</span>
-          <span class="code">.bumper-big</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>style modifier</strong>
-        </td>
-        <td>
-          <span class="code">bumper-invert</span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <pre v-show="bumperSize === 'bumperSizeSmall'"><code class="html"><div class="bumper-small"></div></code></pre>
+  <pre v-show="bumperSize === 'bumperSizeDefault'"><code class="html"><div class="bumper"></div></code></pre>
+  <pre v-show="bumperSize === 'bumperSizeBig'"><code class="html"><div class="bumper-big"></div></code></pre>
+
+  <div class="spacer"></div>
+  <h4>modifier</h4>
   <div class="is-theme-invert" style="overflow: hidden;">
-    <div class="bumper bumper_invert"></div>
+    <div class="demo-layout-macros">
+      <div class="bumper_invert" :class="{'bumper-small': bumperSize === 'bumperSizeSmall', 'bumper': bumperSize === 'bumperSizeDefault', 'bumper-big':
+    bumperSize === 'bumperSizeBig'}"></div>
+    </div>
   </div>
+  <pre v-show="bumperSize === 'bumperSizeSmall'"><code class="html"><div class="bumper-small bumper_invert"></div></code></pre>
+  <pre v-show="bumperSize === 'bumperSizeDefault'"><code class="html"><div class="bumper bumper_invert"></div></code></pre>
+  <pre v-show="bumperSize === 'bumperSizeBig'"><code class="html"><div class="bumper-big bumper_invert"></div></code></pre>
 </section>
 
-<div class="spacer"></div>
+<div class="spacer-big"></div>

@@ -12,8 +12,13 @@
 /// @param {px} $avatar-square-radius [4]
 
 .avatar {
-  display: block;
+  display: inline-block;
   overflow: hidden;
+  
+  @supports (display: inline-flex) {
+    display: inline-flex;
+  }
+
   @include inject-style($avatar-style);
   border: arrayMagic($avatar-border);
 

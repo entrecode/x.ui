@@ -1060,7 +1060,8 @@ $grid-num-columns: 12 !default;</code></pre>
 <div data-grid class="demo-grid">
   <div :data-col="dataColSize + '-' + dataColSizeBreakpoint + ' +' + dataColOffset + '-' + dataColOffsetBreakpoint"
     v-cloak>
-    <div class="has-padding align-center" :class="(parseInt(dataColSize) + parseInt(dataColOffset))  > 12 ? 'is-theme-super_light' : 'is-theme-minor'" v-cloak>${dataColSize}-${dataColSizeBreakpoint}
+    <div class="has-padding align-center" :class="(parseInt(dataColSize) + parseInt(dataColOffset))  > 12 ? 'is-theme-super_light' : 'is-theme-minor'"
+      v-cloak>${dataColSize}-${dataColSizeBreakpoint}
       +${dataColOffset}-${dataColOffsetBreakpoint}</div>
   </div>
 </div>
@@ -3558,10 +3559,10 @@ $slider-thumb-hover-style: () !default;</code></pre>
   <div class="spacer"></div>
 
   <div class="title">
-    <h4 class="is-kilo">inline loader</h4>
+    <h4>inline loader</h4>
     <div class="btn btn_small" @click="loader = !loader" v-cloak>
-      <span v-if="!loader" class="ec-icon play"></span>
-      <span v-if="loader" class="ec-icon pause"></span>
+      <span v-if="!loaderLocal">play</span>
+      <span v-if="loaderLocal">pause</span>
     </div>
   </div>
   <p>inline loader give a state feedback for one specific element. in contrast to the local feedback it has no <span
@@ -3598,11 +3599,11 @@ $slider-thumb-hover-style: () !default;</code></pre>
   <div class="spacer"></div>
 
   <div class="title">
-    <h4 class="is-kilo">local loader</h4>
-    <div class="btn btn_small" @click="loaderLocal = !loaderLocal" v-cloak>
-      <span v-if="!loaderLocal" class="ec-icon play"></span>
-      <span v-if="loaderLocal" class="ec-icon pause"></span>
-    </div>
+    <h4>local loader</h4>
+    <a class="btn btn_small" @click.prevent="loaderLocal = !loaderLocal" v-cloak>
+      <span v-if="!loaderLocal">play</span>
+      <span v-if="loaderLocal">pause</span>
+    </a>
   </div>
   <p>a local loader is positioned after the first parent element with <span class="code">position</span>. You can apply
     a position value to alle elements by using <span class="code">.is-relative</span> or another <a href="#is-position">position
@@ -3620,9 +3621,9 @@ $slider-thumb-hover-style: () !default;</code></pre>
 </div></code></pre>
     </div>
   </div>
-  
+
   <div class="spacer"></div>
-  
+
   <h4 class="is-kilo">global loader</h4>
   <p></p>
   <div class="well well_small align-center">
@@ -3631,7 +3632,7 @@ $slider-thumb-hover-style: () !default;</code></pre>
     </div>
     <em v-if="loaderGlobal">click on loader to stop</em>
   </div>
-  
+
   <span v-if="loaderGlobal" @click="loaderGlobal = !loaderGlobal" class="loader is-global"></span>
   <pre><code class="html"><span class="loader is-global"></span></code></pre>
 </section>
@@ -3757,38 +3758,55 @@ data-tooltip-left="This is a tooltip"</code></pre>
 <div class="bumper"></div>
 <section>
   <h3 id="avatar">avatar
-    <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
-       class="tag tag_error tag_small">object-fit</a></h3>
+    <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener" class="tag tag_error tag_small">object-fit</a></h3>
   <p>avatar is mostly used for facial pictures such as profile pictures, because they
-    accentuate faces more than square ones. even thought the avatar atom uses <span
-        class="code">object-fit: cover</span> to scale/crop images down to a square
+    accentuate faces more than square ones. even thought the avatar atom uses <span class="code">object-fit: cover</span>
+    to scale/crop images down to a square
     thumbnail, you should use square assets with a matching size.</p>
-  <div class="well">
-    <div data-grid>
-      <div data-col="6" data-flex="is-center">
+  <div data-grid>
+    <div data-col="6">
+      <div class="align-center">
         <div class="avatar"><img src="assets/avatar.jpg" alt=""></div>
       </div>
-      <div data-col="6" data-flex="is-center">
+      <pre><code class="html">
+<div class="avatar">
+  <img src="" />
+</div></code></pre>
+    </div>
+    <div data-col="6">
+      <div class="align-center">
         <div class="avatar avatar_square"><img src="assets/avatar.jpg" alt=""></div>
       </div>
+      <pre><code class="html">
+<div class="avatar avatar_square">
+  <img src="" />
+</div></code></pre>
     </div>
   </div>
-  <pre><code class="html">
-<div class="avatar"><img src="assets/avatar.jpg" alt=""></div>
-<div class="avatar avatar_square"><img src="assets/avatar.jpg" alt=""></div></code></pre>
 </section>
-<table class="table">
-  <tr>
-    <td><strong>style modifier</strong></td>
-    <td><span class="code">.avatar_square</span> <span class="code">.avatar_round</span></td>
-  </tr>
-  <tr>
-    <td><strong>size modifier</strong></td>
-    <td><span class="code">.avatar_small</span> <span class="code">.avatar_big</span></td>
-  </tr>
-</table>
 
-<div class="bumper"></div><section>
+<div data-grid>
+  <div data-col="6">
+    <div class="align-center">
+      <div class="avatar avatar_small"><img src="assets/avatar.jpg" alt=""></div>
+    </div>
+    <pre><code class="html">
+<div class="avatar avatar_small">
+  <img src="" />
+</div></code></pre>
+  </div>
+  <div data-col="6">
+    <div class="align-center">
+      <div class="avatar avatar_big"><img src="assets/avatar.jpg" alt=""></div>
+    </div>
+    <pre><code class="html">
+<div class="avatar avatar_big">
+  <img src="" />
+</div></code></pre>
+  </div>
+</div>
+
+<div class="bumper-big"></div><section>
   <h3 id="is-ink">is-ink</h3>
   <p>the is-ink modifiers only affect the css color attribute. it can be uses on all
     elements.</p>
@@ -4217,56 +4235,125 @@ data-tooltip-left="This is a tooltip"</code></pre>
             <h2 class="align-center is-uppercase" id="layout">layout</h2>
 <section>
   <h3 id="bumper">bumper</h3>
-  <div class="demo-layout-macros">
-    <div class="bumper"></div>
+  <div data-grid>
+    <div data-col='4'>
+      <div class="form-group">
+        <div class="xui-radio">
+          <input id="bumperSizeSmall" value="bumperSizeSmall" name="bumperSize" type="radio" v-model="bumperSize">
+          <label for="bumperSizeSmall">small</label>
+        </div>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="bumperSizeDefault" value="bumperSizeDefault" name="bumperSize" type="radio" v-model="bumperSize">
+        <label for="bumperSizeDefault">default</label>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="bumperSizeBig" value="bumperSizeBig" name="bumperSize" type="radio" v-model="bumperSize">
+        <label for="bumperSizeBig">big</label>
+      </div>
+    </div>
   </div>
-  <pre><code class="html"><div class="bumper"></div></code></pre>
-  <table class="table">
-    <tbody>
-      <tr>
-        <td>
-          <strong>additional sizes</strong>
-        </td>
-        <td>
-          <span class="code">.bumper-small</span>
-          <span class="code">.bumper-big</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>style modifier</strong>
-        </td>
-        <td>
-          <span class="code">bumper-invert</span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="demo-layout-macros">
+    <div :class="{'bumper-small': bumperSize === 'bumperSizeSmall', 'bumper': bumperSize === 'bumperSizeDefault', 'bumper-big': bumperSize === 'bumperSizeBig'}"></div>
+  </div>
+  <pre v-show="bumperSize === 'bumperSizeSmall'"><code class="html"><div class="bumper-small"></div></code></pre>
+  <pre v-show="bumperSize === 'bumperSizeDefault'"><code class="html"><div class="bumper"></div></code></pre>
+  <pre v-show="bumperSize === 'bumperSizeBig'"><code class="html"><div class="bumper-big"></div></code></pre>
+
+  <div class="spacer"></div>
+  <h4>modifier</h4>
   <div class="is-theme-invert" style="overflow: hidden;">
-    <div class="bumper bumper_invert"></div>
+    <div class="demo-layout-macros">
+      <div class="bumper_invert" :class="{'bumper-small': bumperSize === 'bumperSizeSmall', 'bumper': bumperSize === 'bumperSizeDefault', 'bumper-big':
+    bumperSize === 'bumperSizeBig'}"></div>
+    </div>
   </div>
+  <pre v-show="bumperSize === 'bumperSizeSmall'"><code class="html"><div class="bumper-small bumper_invert"></div></code></pre>
+  <pre v-show="bumperSize === 'bumperSizeDefault'"><code class="html"><div class="bumper bumper_invert"></div></code></pre>
+  <pre v-show="bumperSize === 'bumperSizeBig'"><code class="html"><div class="bumper-big bumper_invert"></div></code></pre>
 </section>
 
-<div class="spacer"></div><section>
-  <h3 id="spacer">spacer</h3>
+<div class="spacer-big"></div><section>
+  <h3 id="divider">divider</h3>
+  <div data-grid>
+    <div data-col='4'>
+      <div class="form-group">
+        <div class="xui-radio">
+          <input id="dividerSizeSmall" value="dividerSizeSmall" name="dividerSize" type="radio" v-model="dividerSize">
+          <label for="dividerSizeSmall">small</label>
+        </div>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="dividerSizeDefault" value="dividerSizeDefault" name="dividerSize" type="radio" v-model="dividerSize">
+        <label for="dividerSizeDefault">default</label>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="dividerSizeBig" value="dividerSizeBig" name="dividerSize" type="radio" v-model="dividerSize">
+        <label for="dividerSizeBig">big</label>
+      </div>
+    </div>
+  </div>
   <div class="demo-layout-macros">
-    <div class="spacer"></div>
+    <hr :class="{'divider-small': dividerSize === 'dividerSizeSmall', 'divider': dividerSize === 'dividerSizeDefault', 'divider-big': dividerSize === 'dividerSizeBig'}">
   </div>
-  <pre><code class="html"><div class="spacer"></div></code></pre>
-  <table class="table">
-    <tbody>
-    <tr>
-      <td>
-        <strong>additional sizes</strong>
-      </td>
-      <td><span class="code">.spacer-small</span><span class="code">.spacer-big</span>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <pre v-show="dividerSize === 'dividerSizeSmall'"><code class="html"><hr class="divider-small"></code></pre>
+  <pre v-show="dividerSize === 'dividerSizeDefault'"><code class="html"><hr class="divider"></code></pre>
+  <pre v-show="dividerSize === 'dividerSizeBig'"><code class="html"><hr class="divider-big"></code></pre>
+
+  <div class="spacer"></div>
+  <h4>modifier</h4>
+  <div class="is-theme-invert" style="overflow: hidden;">
+    <div class="demo-layout-macros">
+      <hr class="divider_invert" :class="{'divider-small': dividerSize === 'dividerSizeSmall', 'divider': dividerSize === 'dividerSizeDefault', 'divider-big':
+    dividerSize === 'dividerSizeBig'}">
+    </div>
+  </div>
+  <pre v-show="dividerSize === 'dividerSizeSmall'"><code class="html"><hr class="divider-small divider_invert"></code></pre>
+  <pre v-show="dividerSize === 'dividerSizeDefault'"><code class="html"><hr class="divider divider_invert"></code></pre>
+  <pre v-show="dividerSize === 'dividerSizeBig'"><code class="html"><hr class="divider-big divider_invert"></code></pre>
 </section>
 
-<div class="spacer"></div><section>
+<div class="spacer-big"></div><section>
+  <h3 id="spacer">spacer</h3>
+  <div data-grid>
+    <div data-col='4'>
+      <div class="form-group">
+        <div class="xui-radio">
+          <input id="spacerSizeSmall" value="spacerSizeSmall" name="spacerSize" type="radio" v-model="spacerSize">
+          <label for="spacerSizeSmall">small</label>
+        </div>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="spacerSizeDefault" value="spacerSizeDefault" name="spacerSize" type="radio" v-model="spacerSize">
+        <label for="spacerSizeDefault">default</label>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="spacerSizeBig" value="spacerSizeBig" name="spacerSize" type="radio" v-model="spacerSize">
+        <label for="spacerSizeBig">big</label>
+      </div>
+    </div>
+  </div>
+  <div class="demo-layout-macros">
+    <div :class="{'spacer-small': spacerSize === 'spacerSizeSmall', 'spacer': spacerSize === 'spacerSizeDefault', 'spacer-big': spacerSize === 'spacerSizeBig'}"></div>
+  </div>
+  <pre v-show="spacerSize === 'spacerSizeSmall'"><code class="html"><div class="spacer-small"></div></code></pre>
+  <pre v-show="spacerSize === 'spacerSizeDefault'"><code class="html"><div class="spacer"></div></code></pre>
+  <pre v-show="spacerSize === 'spacerSizeBig'"><code class="html"><div class="spacer-big"></div></code></pre>
+</section>
+
+<div class="spacer-big"></div><section>
   <h3 id="flex-spacer">flex-spacer</h3>
   <div data-flex>
     <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
@@ -4742,31 +4829,32 @@ data-tooltip-left="This is a tooltip"</code></pre>
           <a href="https://linearicons.com/" target="_blank" rel="nofollow">linearicons</a>. it is currated and
           constantly upgraded.</p>
 
-          <h3 class="is-h6">use ec.icons in your project</h3>
-          <pre><code class="html"><link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.2.min.css" /></code></pre>
-          <pre><code class="scss">@import "https://icons.entrecode.de/ec-icons-6.0.2.min.css";</code></pre>
+        <h3 class="is-h6">use ec.icons in your project</h3>
+        <pre><code class="html"><link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.2.min.css" /></code></pre>
+        <pre><code class="scss">@import "https://icons.entrecode.de/ec-icons-6.0.2.min.css";</code></pre>
+
+        <div class="spacer"></div>
+
+        <div data-grid>
+          <div data-col='6'>
+            <div class="align-center">
+              <span class="ec-icon skull">inline</span>
+            </div>
+            <pre><code class="html"><span class="ec-icon skull">inline</span></code></pre>
+          </div>
+          <div data-col='6'>
+            <div class="align-center">
+              <a class="btn"><span class="ec-icon skull">button</span></a>
+            </div>
+            <pre><code class="html">
+          <a class="btn">
+            <span class="ec-icon skull">button</span>
+          </a></code></pre>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="spacer"></div>
-
-    <div data-grid>
-      <div data-col='6'>
-        <div class="align-center">
-          <span class="ec-icon skull">inline</span>
-        </div>
-        <pre><code class="html"><span class="ec-icon skull">inline</span></code></pre>
-      </div>
-      <div data-col='6'>
-        <div class="align-center">
-          <a class="btn"><span class="ec-icon skull">button</span></a>
-        </div>
-        <pre><code class="html">
-<a class="btn">
-  <span class="ec-icon skull">button</span>
-</a></code></pre>
-      </div>
-    </div>
 
     <div class="spacer-big"></div>
 

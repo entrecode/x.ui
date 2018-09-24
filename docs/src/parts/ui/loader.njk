@@ -7,10 +7,10 @@
   <div class="spacer"></div>
 
   <div class="title">
-    <h4 class="is-kilo">inline loader</h4>
+    <h4>inline loader</h4>
     <div class="btn btn_small" @click="loader = !loader" v-cloak>
-      <span v-if="!loader" class="ec-icon play"></span>
-      <span v-if="loader" class="ec-icon pause"></span>
+      <span v-if="!loaderLocal">play</span>
+      <span v-if="loaderLocal">pause</span>
     </div>
   </div>
   <p>inline loader give a state feedback for one specific element. in contrast to the local feedback it has no <span
@@ -47,11 +47,11 @@
   <div class="spacer"></div>
 
   <div class="title">
-    <h4 class="is-kilo">local loader</h4>
-    <div class="btn btn_small" @click="loaderLocal = !loaderLocal" v-cloak>
-      <span v-if="!loaderLocal" class="ec-icon play"></span>
-      <span v-if="loaderLocal" class="ec-icon pause"></span>
-    </div>
+    <h4>local loader</h4>
+    <a class="btn btn_small" @click.prevent="loaderLocal = !loaderLocal" v-cloak>
+      <span v-if="!loaderLocal">play</span>
+      <span v-if="loaderLocal">pause</span>
+    </a>
   </div>
   <p>a local loader is positioned after the first parent element with <span class="code">position</span>. You can apply
     a position value to alle elements by using <span class="code">.is-relative</span> or another <a href="#is-position">position
@@ -69,9 +69,9 @@
 </div></code></pre>
     </div>
   </div>
-  
+
   <div class="spacer"></div>
-  
+
   <h4 class="is-kilo">global loader</h4>
   <p></p>
   <div class="well well_small align-center">
@@ -80,7 +80,7 @@
     </div>
     <em v-if="loaderGlobal">click on loader to stop</em>
   </div>
-  
+
   <span v-if="loaderGlobal" @click="loaderGlobal = !loaderGlobal" class="loader is-global"></span>
   <pre><code class="html"><span class="loader is-global"></span></code></pre>
 </section>
