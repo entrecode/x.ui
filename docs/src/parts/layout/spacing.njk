@@ -1,162 +1,122 @@
 <section>
-  <h3 id="has-margin">has-margin</h3>
-  <div class="well align-center">
-    <span class="is-h6">has-margin-{sides}-{size}{ -
-      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
-      <span class="is-ink-light">null</span> }</span>
+  <h3 class="align-center is-uppercase" id="spacing">gaps & spacing</h3>
+  <p class="is-lead">gaps and spacing are one of the most important elements of an user interface. Following the gestalt psychology, more precisely the law of proximity, theay structures content, information and functions and illutstrate their relation to each other</p>
+  <p><strong>x.ui</strong> uses a simple system for all structural atoms and modifier. There are 9 different spacing units</p>
+
+  <div class="align-center">
+    <ul class="is-inline">
+      <li class="padding">
+        <small>0</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 4px; height: 4px;">
+        </div>
+        <small>1</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 8px; height: 8px;">
+        </div>
+        <small>2</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 16px; height: 16px;">
+        </div>
+        <small>3</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 24px; height: 24px;">
+        </div>
+        <small>4</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 32px; height: 32px;">
+        </div>
+        <small>5</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 48px; height: 48px;">
+        </div>
+        <small>6</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 64px; height: 64px;">
+        </div>
+        <small>7</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 80px; height: 80px;">
+        </div>
+        <small>8</small>
+      </li>
+    </ul>
   </div>
+
+
   <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4">
-        <strong>{sides}</strong>
-      </td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li>
-            <em>no value</em> - adds margin or padding to all sides</li>
-          <li>
-            <span class="code">middle</span> - top and bottom</li>
-          <li>
-            <span class="code">center</span> - left and right</li>
-          <li>
-            <span class="code">top</span>
-            <span class="code">right</span>
-            <span class="code">bottom</span>
-            <span class="code">left</span>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr data-grid="no-gutter">
-      <td data-col="4">
-        <strong>{size}</strong>
-      </td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li>
-            <em>no value</em> - default size
-            <span class="code">equals 16px</span>
-          </li>
-          <li>
-            <span class="code">smallest</span> -
-            <span class="code">equals 4px</span>
-          </li>
-          <li>
-            <span class="code">small</span> -
-            <span class="code">equals 8px</span>
-          </li>
-          <li>
-            <span class="code">big</span> -
-            <span class="code">equals 32px</span>
-          </li>
-          <li>
-            <span class="code">auto</span> - only with
-            <span class="code">margin-l</span>
-            <span class="code">margin-r</span>
-            <span class="code">margin-center</span>
-          </li>
-        </ul>
-      </td>
-    </tr>
+    <thead>
+      <tr>
+        <th>postfix</th>
+        <th>description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <span class="code">-0</span>
+        </td>
+        <td>no size, used to reset spacing for a specific media breakpoint.</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-1</span>
+        </td>
+        <td>[4px] - small gutter for atoms that belong together or elements within an atom.</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-2</span>
+        </td>
+        <td>[8px] - normal gutter for atoms that belong together or elements within an atom.</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-3</span>
+        </td>
+        <td>[16px] - small gutter for atoms within a molecule or organisms</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-4</span>
+        </td>
+        <td>[24px] - normal gutter for atoms within a molecule or organisms</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-5</span>
+        </td>
+        <td>[32px] - small gutter for molecule or organisms</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-6</span>
+        </td>
+        <td>[48px] - normal gutter for molecule or organisms</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-7</span>
+        </td>
+        <td>[64px] - small gutter for organisms, that have no relation</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-8</span>
+        </td>
+        <td>[80px] - very big gutter for organisms, that have no relation</td>
+      </tr>
+    </tbody>
   </table>
+  
+  <div class="spacer"></div>
+
 </section>
-
-<div class="spacer-big"></div>
-
-<section>
-  <h3 id="no-margin">no-margin</h3>
-  <div class="well align-center">
-    <span class="is-h6">no-margin-{sides}-{size}{ -
-      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
-      <span class="is-ink-light">null</span> }</span>
-  </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4">
-        <strong>{sides}</strong>
-      </td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li>
-            <em>no value</em> - adds margin or padding to all sides</li>
-          <li>
-            <span class="code">middle</span> - top and bottom</li>
-          <li>
-            <span class="code">center</span> - left and right</li>
-          <li>
-            <span class="code">top</span>
-            <span class="code">right</span>
-            <span class="code">bottom</span>
-            <span class="code">left</span>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</section>
-
-<div class="spacer-big"></div>
-
-<section>
-  <h3 id="has-padding">has-padding</h3>
-  <div class="well align-center">
-    <span class="is-h6">has-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
-  </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{sides}</strong></td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li><em>no value</em> - adds margin or padding to all sides</li>
-          <li><span class="code">middle</span> - top and bottom</li>
-          <li><span class="code">center</span> - left and right</li>
-          <li><span class="code">top</span> <span class="code">right</span> <span
-                class="code">bottom</span> <span class="code">left</span></li>
-        </ul>
-      </td>
-    </tr>
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{size}</strong></td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li><em>no value</em> - default size <span class="code">equals 16px</span>
-          </li>
-          <li><span class="code">smallest</span> - <span
-                class="code">equals 4px</span></li>
-          <li><span class="code">small</span> - <span
-                class="code">equals 8px</span></li>
-          <li><span class="code">big</span> - <span class="code">equals 32px</span>
-          </li>
-          <li><span class="code">auto</span> - only with <span
-                class="code">margin-l</span> <span class="code">margin-r</span> <span
-                class="code">margin-center</span></li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</section>
-
-<div class="spacer-big"></div>
-
-<section>
-  <h3 id="no-padding">no-padding</h3>
-  <div class="well align-center">
-    <span class="is-h6">no-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
-  </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{sides}</strong></td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li><em>no value</em> - adds margin or padding to all sides</li>
-          <li><span class="code">middle</span> - top and bottom</li>
-          <li><span class="code">center</span> - left and right</li>
-          <li><span class="code">top</span> <span class="code">right</span> <span
-                class="code">bottom</span> <span class="code">left</span></li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</section>
-
-<div class="bumper-big"></div>

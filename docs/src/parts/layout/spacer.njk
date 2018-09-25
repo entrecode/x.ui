@@ -1,7 +1,7 @@
 <section>
   <h3 id="spacer">spacer</h3>
   <div data-grid>
-    <div data-col='4'>
+    <div data-col='4' data-flex="is-center">
       <div class="form-group">
         <div class="xui-radio">
           <input id="spacerSizeSmall" value="spacerSizeSmall" name="spacerSize" type="radio" v-model="spacerSize">
@@ -9,13 +9,13 @@
         </div>
       </div>
     </div>
-    <div data-col='4'>
+    <div data-col='4' data-flex="is-center">
       <div class="xui-radio">
         <input id="spacerSizeDefault" value="spacerSizeDefault" name="spacerSize" type="radio" v-model="spacerSize">
         <label for="spacerSizeDefault">default</label>
       </div>
     </div>
-    <div data-col='4'>
+    <div data-col='4' data-flex="is-center">
       <div class="xui-radio">
         <input id="spacerSizeBig" value="spacerSizeBig" name="spacerSize" type="radio" v-model="spacerSize">
         <label for="spacerSizeBig">big</label>
@@ -23,11 +23,11 @@
     </div>
   </div>
   <div class="demo-layout-macros">
-    <div :class="{'spacer-small': spacerSize === 'spacerSizeSmall', 'spacer': spacerSize === 'spacerSizeDefault', 'spacer-big': spacerSize === 'spacerSizeBig'}"></div>
+    <div class="spacer" :class="{'spacer_small': spacerSize === 'spacerSizeSmall', 'spacer_big': spacerSize === 'spacerSizeBig'}"></div>
   </div>
-  <pre v-show="spacerSize === 'spacerSizeSmall'"><code class="html"><div class="spacer-small"></div></code></pre>
+  <pre v-show="spacerSize === 'spacerSizeSmall'"><code class="html"><div class="spacer spacer_small"></div></code></pre>
   <pre v-show="spacerSize === 'spacerSizeDefault'"><code class="html"><div class="spacer"></div></code></pre>
-  <pre v-show="spacerSize === 'spacerSizeBig'"><code class="html"><div class="spacer-big"></div></code></pre>
+  <pre v-show="spacerSize === 'spacerSizeBig'"><code class="html"><div class="spacer spacer_big"></div></code></pre>
 </section>
 
 <div class="spacer-big"></div>

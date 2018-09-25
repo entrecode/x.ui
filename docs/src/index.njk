@@ -27,6 +27,8 @@
   <div id="app" class="xui-demo">
     {% include '_header.njk' %}
 
+    {% include '_bp-monitor.njk' %}
+
     {% include '_aside.njk' %}
     <div class="xui-demo-body">
       <!-- <div data-container="is-left-nav"> -->
@@ -93,11 +95,18 @@
             {% include 'parts/grid/grid.njk' %}
             {% include 'parts/grid/col.njk' %}
             {% include 'parts/grid/breakpoints.njk' %}
+          </div>
+        </div>
+      </div>
 
-            <h2 class="align-center is-uppercase" id="typeface">typeface</h2>
-            {% for typeface in structure.typeface %}
-            {% include 'parts/typeface/' + typeface %}
-            {% endfor %}
+      {% for typeface in structure.typeface %}
+      {% include 'parts/typeface/' + typeface %}
+      <div class="spacer-6"></div>
+      {% endfor %}
+      
+      <div data-container>
+        <div data-grid="is-center">
+          <div data-col="8-md">
             <div class="bumper-big"></div>
             <h2 class="align-center is-uppercase" id="media">media</h2>
             {% for media in structure.media %}
@@ -117,6 +126,7 @@
             <h2 class="align-center is-uppercase" id="layout">layout</h2>
             {% for layout in structure.layout %}
             {% include 'parts/layout/' + layout %}
+            <div class="spacer-6"></div>
             {% endfor %}
             <div class="bumper-big"></div>
             {% include 'parts/interaction/data-animate.njk' %}

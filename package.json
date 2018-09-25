@@ -25,13 +25,11 @@
   ],
   "structure": {
     "typeface": [
+      "typeface.njk",
       "headings.njk",
       "paragraph.njk",
       "list.njk",
-      "align.njk",
-      "font-weight.njk",
-      "text-transform.njk",
-      "word-wrap.njk"
+      "modifier.njk"
     ],
     "media": [
       "img.njk",
@@ -86,8 +84,14 @@
       "bumper.njk",
       "divider.njk",
       "spacer.njk",
-      "flex-spacer.njk",
       "spacing.njk",
+      "x-space.njk",
+      "y-space.njk",
+      "flex-space.njk",
+      "has-margin.njk",
+      "has-padding.njk",
+      "no-margin.njk",
+      "no-padding.njk",
       "flex.njk",
       "has-height.njk",
       "has-width.njk",

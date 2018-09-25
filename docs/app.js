@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     delimiters: ['${', '}'],
     el: '#app',
     data: {
+      bpTabActive: 'xs',
       breakpoints: {
         xs: 'mobile',
         sm: 'mobile landscape',
@@ -27,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
       deckOpen: false,
       deckCol: false,
       deckColSize: '4-sm',
+      xSpaceSize: '4',
+      ySpaceSize: '4',
       deckAnimate: false,
       deckAnimation: 'fadeIn',
       toastOrientation: 'opens-top',

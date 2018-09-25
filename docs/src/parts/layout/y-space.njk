@@ -1,0 +1,16 @@
+<section>
+  <h3 id="x-spacer">y-space<span class="is-ink-link">${'-' + ySpaceSize}</span><span class="is-ink-lighter">-bp</span></h3>
+  <div data-grid="is-center">
+    <div data-col='8'>
+      <input type="range" min="0" max="8" class="slider" value="4" v-model="ySpaceSize">
+    </div>
+  </div>
+  <div class="spacer-small"></div>
+  <div class="demo-spacer" :class="'y-space-' + ySpaceSize"></div>
+  <pre><code class="html">
+  <div data-flex>
+    ...
+    <div class="x-space-2"></div>
+    ...
+  </div></code></pre>
+</section>

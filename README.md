@@ -41,8 +41,10 @@ x.ui has uses no prefix mixins, please use an autoprefixer in your project
 
 ### since 9.0.9
 
+- `spacer-small` and `spacer-big` use `spacer spacer_big` or `spacer spacer_small` instead
+- `flex-spacer` use `flex-space` instead
 - `data-row`
-- `xui-overlay`
+- `xui-overlay` use `.dialog` instead
 
 ## creators
 

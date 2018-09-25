@@ -1,6 +1,6 @@
 $_demo-macro: rgba(getColor(link), 0.1);
 
-.demo-flex-spacer {
+.demo-spacer {
   background-color: $_demo-macro;
   border: 1px dashed getColor(divider);
 }

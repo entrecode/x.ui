@@ -1,49 +1,38 @@
 <section>
-  <h3 id="headings">headings</h3>
-  <div class="demo-heading-metrics demo-heading-metrics_h1">
-    <h1>Heading 1</h1>
+  <div data-container>
+    <div data-grid="is-center">
+      <div data-col='8-sm'>
+        <h3 id="headings">headings</h3>
+        <div class="demo-heading-metrics demo-heading-metrics_h1">
+          <h1>Heading 1</h1>
+        </div>
+        <div class="demo-heading-metrics">
+          <h2>Heading 2</h2>
+        </div>
+        <div class="demo-heading-metrics">
+          <h3>Heading 3</h3>
+        </div>
+        <div class="demo-heading-metrics">
+          <h4>Heading 4</h4>
+        </div>
+        <div class="demo-heading-metrics demo-heading-metrics_h5">
+          <h5>Heading 5</h5>
+        </div>
+        <div class="demo-heading-metrics demo-heading-metrics_h6">
+          <h6>Heading 6</h6>
+        </div>
+        <div class="spacer"></div>
+        <h4>modifier</h4>
+        <p>you can style all elements using on of the <strong>heading helper classes</strong> <span class="code">.is-h1</span>,
+          <span class="code">.is-h2</span>, <span class="code">.is-h3</span>,
+          <span class="code">.is-h4</span>, <span class="code">.is-h5</span> and
+          <span class="code">.is-h6</span> to influence the appearance of headings</p>
+        <h4>special modifier</h4>
+        <p>for data-rich / admin interfaces there is a set of three heading styles
+          <span class="code">.is-giga</span>, <span class="code">.is-mega</span> and
+          <span class="code">.is-kilo</span> to provide a cleaner typeface without losing the
+          hierarchical structure of the markup.</p>
+      </div>
+    </div>
   </div>
-  <div class="demo-heading-metrics">
-    <h2>Heading 2</h2>
-  </div>
-  <div class="demo-heading-metrics">
-    <h3>Heading 3</h3>
-  </div>
-  <div class="demo-heading-metrics">
-    <h4>Heading 4</h4>
-  </div>
-  <div class="demo-heading-metrics demo-heading-metrics_h5">
-    <h5>Heading 5</h5>
-  </div>
-  <div class="demo-heading-metrics demo-heading-metrics_h6">
-    <h6>Heading 6</h6>
-  </div>
-  <div class="spacer"></div>
-  <p>in addition there are heading helper classes <span class="code">.is-h1</span>,
-    <span class="code">.is-h2</span>, <span class="code">.is-h3</span>,
-    <span class="code">.is-h4</span>, <span class="code">.is-h5</span> and
-    <span class="code">.is-h6</span> to influence the appearance of headings</p>
-  <h4>Special heading classes</h4>
-  <p>for data-rich / admin interfaces there is a set of three heading styles
-    <span class="code">.is-giga</span>, <span class="code">.is-mega</span> and
-    <span class="code">.is-kilo</span> to provide a cleaner typeface without losing the
-    hierarchical structure of the markup.</p>
-
-  <div class="title">
-    <h4 class="is-kilo">config variables</h4>
-    <a href="https://github.com/entrecode/x.ui/blob/master/src/_xui-config.scss" target="_blank" class="btn btn_clear">
-      <span class="ec-icon json"></span>
-    </a>
-  </div>
-  <pre><code class="scss">
-// @param {em} $headings-line-height [$base-line-height]
-// @param {value} $headings-weight [$is-bold]
-// @param {em} $headings-inline-small [.875] - for inline small tags - has to be a em value
-// @param {array} $headings-style
-$headings-line-height: $base-line-height !default;
-$headings-weight: $is-bold !default;
-$headings-inline-small: 0.5 !default;
-$headings-style: () !default;</code></pre>
 </section>
-
-<div class="bumper"></div>

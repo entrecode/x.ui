@@ -13,6 +13,8 @@
 - new atom `.slider` with config
 - new atom `.divider` with config
 - new atom `.loader` with config
+- new atom `.y-space-#` and `x-space-#` with config
+- new grid-col value `data-col="auto"`
 - new molecule `.dialog` with config
 - new molecule `.deck` with config
 - new molecule `.toast` with config
