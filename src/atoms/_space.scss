@@ -1,0 +1,37 @@
+/// @author Bernhard Ruoff
+/// @since 9.0.9
+/// @access public
+/// @group atoms
+///
+/// @example
+///   <div class='y-space-2 x-space-2-md'></div>
+///   <div class='x-space-2'></div>
+
+@each $_spacing, $_h in $spacings {
+  .y-space-#{$_spacing} {
+    width: auto;
+    height: getSpace($_spacing);
+    flex-shrink: 0;
+    
+    @include set-breakpoints($has-root: false) {
+      width: auto;
+      height: getSpace($_spacing);
+      flex-shrink: 0;
+    }
+  }
+}
+
+
+@each $_spacing, $_h in $spacings {
+  .x-space-#{$_spacing} {
+    height: auto;
+    width: getSpace($_spacing);
+    flex-shrink: 0;
+    
+    @include set-breakpoints($has-root: false) {
+      height: auto;
+      width: getSpace($_spacing);
+      flex-shrink: 0;
+    }
+  }
+}
