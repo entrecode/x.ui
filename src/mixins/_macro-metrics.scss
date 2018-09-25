@@ -34,12 +34,12 @@
     $padding: ($padding - $border);
   }
 
-  padding: em($padding, $font-size) em(($padding * $padding-ratio), $font-size);
+  padding: arrayMagic($padding ($padding * $padding-ratio));
 
-  font-size: em($font-size);
-  line-height: em($line-height, $font-size);
-  min-height: em($min-height, $font-size);
-  min-width: em($min-height, $font-size);
+  font-size: rem($font-size);
+  line-height: rem($line-height);
+  min-height: rem($min-height);
+  min-width: rem($min-height);
 
   @if $border {
     border-style: solid;
