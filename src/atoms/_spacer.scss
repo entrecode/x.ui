@@ -1,7 +1,8 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 9.0.9
 /// @access public
 /// @group atoms
+/// @deprecated since 9.0.9 `.spacer-small` and `.spacer-big` will be removed in future release
 ///
 /// @example
 ///   <div class='spacer'></div>
@@ -11,28 +12,25 @@
 /// @param {px} $spacer-big-size [getSpace(6)]
 
 .spacer {
+  align-self: center;
+  flex-shrink: 0;
+  width: 100%;
+
   @include set-breakpoints {
-    align-self: center;
-    flex-shrink: 0;
     height: $spacer-size;
-    min-width: $spacer-size;
   }
 
-  &-small {
+  &-small,
+  &_small {
     @include set-breakpoints {
-      align-self: center;
-      flex-shrink: 0;
       height: $spacer-small-size;
-      min-width: $spacer-small-size;
     }
   }
 
-  &-big {
+  &-big,
+  &_big {
     @include set-breakpoints {
-      align-self: center;
-      flex-shrink: 0;
       height: $spacer-big-size;
-      min-width: $spacer-big-size;
     }
   }
 }

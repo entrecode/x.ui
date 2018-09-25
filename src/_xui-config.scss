@@ -191,6 +191,7 @@ $spacings: (
 // RESPONSIVE BREAKPOINTS
 // -------------------------------------------------------------------------------------------------
 // @param {map} $breakpoints
+// @deprecated since 9.0.0 `nav` might be removed in future release
 $breakpoints: (
   'xs': 0 /* smartphone*/,
   'sm': 480 /* smartphone landscape*/,
