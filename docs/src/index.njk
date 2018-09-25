@@ -101,7 +101,7 @@
 
       {% for typeface in structure.typeface %}
       {% include 'parts/typeface/' + typeface %}
-      <div class="spacer-6"></div>
+      <div class="spacer-big"></div>
       {% endfor %}
       
       <div data-container>
@@ -126,15 +126,15 @@
             <h2 class="align-center is-uppercase" id="layout">layout</h2>
             {% for layout in structure.layout %}
             {% include 'parts/layout/' + layout %}
-            <div class="spacer-6"></div>
+            <div class="spacer-big"></div>
             {% endfor %}
-            <div class="bumper-big"></div>
             {% include 'parts/interaction/data-animate.njk' %}
           </div>
         </div>
       </div>
 
     </div>
+    <div class="bumper-big"></div>
     {% include 'parts/ec-icon.njk' %}
     {% include '_footer.njk' %}
   </div>

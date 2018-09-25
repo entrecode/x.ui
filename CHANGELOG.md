@@ -1,11 +1,15 @@
 # CHANGELOG
 
-## 9.0.9
+## 9.1.0
 
 ### deprecated
 
-- `.xui-overlay`
-- `.well-small`, `.well-big`
+- `no-margin-#` and `no-padding-#` use `has-padding-#-0` or `has-padding-#-0` instead
+- `spacer-small` and `spacer-big` use `spacer spacer_big` or `spacer spacer_small` instead
+- `well-small` and `well-big` use `well well_small` or `well well_big` instead
+- `flex-spacer` use `flex-space` instead
+- `data-row` use `data-grid` instead
+- `xui-overlay` use `.dialog` instead
 
 ### added
 

@@ -30,6 +30,14 @@
       padding: arrayMagic($spacing-big-size);
     }
   }
+
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding: getSpace($_spacing);
+      }
+    }
+  }
 }
 
 .has-padding-middle {
@@ -58,6 +66,15 @@
       padding-top: arrayMagic($spacing-big-size);
     }
   }
+
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding-bottom: getSpace($_spacing);
+        padding-top: getSpace($_spacing);
+      }
+    }
+  }
 }
 
 .has-padding-top {
@@ -82,12 +99,19 @@
       padding-top: arrayMagic($spacing-big-size);
     }
   }
+
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding-top: getSpace($_spacing);
+      }
+    }
+  }
 }
 
 .has-padding-bottom {
   @include set-breakpoints {
     padding-bottom: arrayMagic($spacing-size);
-
   }
 
   &-smallest {
@@ -105,6 +129,14 @@
   &-big {
     @include set-breakpoints {
       padding-bottom: arrayMagic($spacing-big-size);
+    }
+  }
+
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding-bottom: getSpace($_spacing);
+      }
     }
   }
 }
@@ -135,6 +167,15 @@
       padding-right: arrayMagic($spacing-big-size);
     }
   }
+
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding-left: getSpace($_spacing);
+        padding-right: getSpace($_spacing);
+      }
+    }
+  }
 }
 
 .has-padding-left {
@@ -159,6 +200,14 @@
       padding-left: arrayMagic($spacing-big-size);
     }
   }
+
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding-left: getSpace($_spacing);
+      }
+    }
+  }
 }
 
 .has-padding-right {
@@ -181,6 +230,14 @@
   &-big {
     @include set-breakpoints {
       padding-right: arrayMagic($spacing-big-size);
+    }
+  }
+
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding-right: getSpace($_spacing);
+      }
     }
   }
 }

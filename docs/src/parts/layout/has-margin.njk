@@ -1,64 +1,52 @@
 <section>
-  <h3 id="has-margin">has-margin</h3>
-  <div class="well align-center">
-    <span class="is-h6">has-margin-{sides}-{size}{ -
-      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
-      <span class="is-ink-light">null</span> }</span>
-  </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4">
-        <strong>{sides}</strong>
-      </td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li>
-            <em>no value</em> - adds margin or padding to all sides</li>
-          <li>
-            <span class="code">middle</span> - top and bottom</li>
-          <li>
-            <span class="code">center</span> - left and right</li>
-          <li>
-            <span class="code">top</span>
-            <span class="code">right</span>
-            <span class="code">bottom</span>
-            <span class="code">left</span>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr data-grid="no-gutter">
-      <td data-col="4">
-        <strong>{size}</strong>
-      </td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li>
-            <em>no value</em> - default size
-            <span class="code">equals 16px</span>
-          </li>
-          <li>
-            <span class="code">smallest</span> -
-            <span class="code">equals 4px</span>
-          </li>
-          <li>
-            <span class="code">small</span> -
-            <span class="code">equals 8px</span>
-          </li>
-          <li>
-            <span class="code">big</span> -
-            <span class="code">equals 32px</span>
-          </li>
-          <li>
-            <span class="code">auto</span> - only with
-            <span class="code">margin-l</span>
-            <span class="code">margin-r</span>
-            <span class="code">margin-center</span>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</section>
+  <h3 id="has-margin">has-margin<span class="is-ink-link">${hasMarginSide + hasMarginSize}</span><span class="is-ink-lighter">-bp</span></h3>
 
-<div class="spacer-big"></div>
+  <div class="demo-margin">
+    <div :class="'has-margin' + hasMarginSide + hasMarginSize">
+      <div data-grid="is-center is-small">
+        <div data-col='3'>
+          <div class="form-group">
+            <label for="hasMarginSide">side</label>
+            <select class="input" id="hasMarginSide" v-model="hasMarginSide">
+              <option value="" selected>default</option>
+              <option value="-middle">middle</option>
+              <option value="-center">center</option>
+              <option value="-top">top</option>
+              <option value="-right">right</option>
+              <option value="-bottom">bottom</option>
+              <option value="-left">left</option>
+            </select>
+          </div>
+        </div>
+        <div data-col='3'>
+          <div class="form-group">
+            <label for="hasMarginSize">size</label>
+            <select class="input" id="hasMarginSize" v-model="hasMarginSize">
+              <option value="-smallest">smallest (4px)</option>
+              <option value="-small">small (8px)</option>
+              <option value="" selected>default (16px)</option>
+              <option value="-big" selected>big (32px)</option>
+              <option value="-auto" selected>auto</option>
+              <option value="-0" selected>0</option>
+              <option value="-1" selected>1 (4px)</option>
+              <option value="-2" selected>2 (8px)</option>
+              <option value="-3" selected>3 (16px)</option>
+              <option value="-4" selected>4 (24px)</option>
+              <option value="-5" selected>5 (32px)</option>
+              <option value="-6" selected>6 (48px)</option>
+              <option value="-7" selected>7 (64px)</option>
+              <option value="-8" selected>8 (80px)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p v-show="hasMarginSize === '-auto'" class="align-center">
+    <span class="code">auto</span> - only with
+    <span class="code">margin-left</span>
+    <span class="code">margin-right</span>
+    <span class="code">margin-center</span>
+  </p>
+</section>

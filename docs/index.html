@@ -1207,7 +1207,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>      <div class="spacer-6"></div>
+</section>      <div class="spacer-big"></div>
 <section>
   <div data-container>
     <div data-grid="is-center">
@@ -1245,7 +1245,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>      <div class="spacer-6"></div>
+</section>      <div class="spacer-big"></div>
 <section>
   <div data-container>
     <div data-grid="is-center">
@@ -1278,7 +1278,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>      <div class="spacer-6"></div>
+</section>      <div class="spacer-big"></div>
 <section>
   <div data-container>
     <div data-grid="is-center">
@@ -1338,7 +1338,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>      <div class="spacer-6"></div>
+</section>      <div class="spacer-big"></div>
 <section>
   <div data-container>
     <div data-grid="is-center">
@@ -1370,7 +1370,7 @@ $breakpoints: (
         Halbgott!</p>
     </div>
   </div>
-</section>        <div class="spacer-6"></div>
+</section>        <div class="spacer-big"></div>
 <section>
   <h4 id="font-weight">font-weight</h4>
   <div class="well">
@@ -1393,7 +1393,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>        <div class="spacer-6"></div>
+</section>        <div class="spacer-big"></div>
 <section>
   <h4 id="text-transform">text-transform</h4>
   <div class="well">
@@ -1408,7 +1408,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>        <div class="spacer-6"></div>
+</section>        <div class="spacer-big"></div>
 <section>
   <h4 id="word-wrap">word-wrap</h4>
 
@@ -1447,7 +1447,7 @@ $breakpoints: (
 </section>      </div>
     </div>
   </div>
-</section>      <div class="spacer-6"></div>
+</section>      <div class="spacer-big"></div>
       
       <div data-container>
         <div data-grid="is-center">
@@ -3180,42 +3180,40 @@ $slider-thumb-hover-style: () !default;</code></pre>
     <h3>toast</h3>
   </div>
 
-  <div class="well">
-    <div data-grid="is-center">
-      <div data-col='3'>
-        <div class="xui-toggle">
-          <input id="toastBackdrop" type="checkbox" v-model="toastBackdrop">
-          <label for="toastBackdrop">
-            <div class="xui-toggle__switch"></div>
-            has a backdrop
-          </label>
-        </div>
-        <div class="form-group">
-          <select name="toastOrientation" class="input" v-model="toastOrientation">
-            <option value="opens-top" selected>opens-top</option>
-            <option value="opens-bottom">opens-bottom</option>
-          </select>
-        </div>
+  <div data-grid="is-center">
+    <div data-col='4'>
+      <div class="xui-toggle">
+        <input id="toastBackdrop" type="checkbox" v-model="toastBackdrop">
+        <label for="toastBackdrop">
+          <div class="xui-toggle__switch"></div>
+          has a backdrop
+        </label>
       </div>
-      <div data-col='3'>
-        <div class="xui-toggle">
-          <input id="toastAnimate" type="checkbox" v-model="toastAnimate">
-          <label for="toastAnimate">
-            <div class="xui-toggle__switch"></div>
-            uses data-animate
-          </label>
-        </div>
-        <div class="form-group">
-          <select v-model="toastAnimation" :disabled="!toastAnimate" class="input">
-            <option :value="ani" v-for="(ani, index) in animation">
-              ${ani}
-            </option>
-          </select>
-        </div>
+      <div class="form-group">
+        <select name="toastOrientation" class="input" v-model="toastOrientation">
+          <option value="opens-top" selected>opens-top</option>
+          <option value="opens-bottom">opens-bottom</option>
+        </select>
       </div>
-      <div data-col='3'>
-        <a href @click.prevent="toastOpen = !toastOpen" class="btn is-elevated-16">open</a>
+    </div>
+    <div data-col='4'>
+      <div class="xui-toggle">
+        <input id="toastAnimate" type="checkbox" v-model="toastAnimate">
+        <label for="toastAnimate">
+          <div class="xui-toggle__switch"></div>
+          uses data-animate
+        </label>
       </div>
+      <div class="form-group">
+        <select v-model="toastAnimation" :disabled="!toastAnimate" class="input">
+          <option :value="ani" v-for="(ani, index) in animation">
+            ${ani}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <a href @click.prevent="toastOpen = !toastOpen" class="btn is-elevated-16">open</a>
     </div>
   </div>
 
@@ -3230,7 +3228,8 @@ $slider-thumb-hover-style: () !default;</code></pre>
     </div>
   </div>
 
-  <div class="toast" :data-animate="toastAnimate ? toastAnimation + ' 4' : false" :class="[{'is-active' : toastOpen}, toastOrientation]" v-if="!toastBackdrop">
+  <div class="toast" :data-animate="toastAnimate ? toastAnimation + ' 4' : false" :class="[{'is-active' : toastOpen}, toastOrientation]"
+    v-if="!toastBackdrop">
     <div class="toast-dismiss" @click="toastOpen = !toastOpen">
       <div class="ec-icon close-x-big"></div>
     </div>
@@ -3267,42 +3266,40 @@ $slider-thumb-hover-style: () !default;</code></pre>
     <h3>snackbar</h3>
   </div>
 
-  <div class="well">
-    <div data-grid="is-center">
-      <div data-col='3'>
-        <div class="xui-toggle">
-          <input id="snackbarBackdrop" type="checkbox" v-model="snackbarBackdrop">
-          <label for="snackbarBackdrop">
-            <div class="xui-toggle__switch"></div>
-            has a backdrop
-          </label>
-        </div>
-        <div class="form-group">
-          <select name="snackbarOrientation" class="input" v-model="snackbarOrientation">
-            <option value="opens-top" selected>opens-top</option>
-            <option value="opens-bottom">opens-bottom</option>
-          </select>
-        </div>
+  <div data-grid="is-center">
+    <div data-col='4'>
+      <div class="xui-toggle">
+        <input id="snackbarBackdrop" type="checkbox" v-model="snackbarBackdrop">
+        <label for="snackbarBackdrop">
+          <div class="xui-toggle__switch"></div>
+          has a backdrop
+        </label>
       </div>
-      <div data-col='3'>
-        <div class="xui-toggle">
-          <input id="snackbarAnimate" type="checkbox" v-model="snackbarAnimate">
-          <label for="snackbarAnimate">
-            <div class="xui-toggle__switch"></div>
-            uses data-animate
-          </label>
-        </div>
-        <div class="form-group">
-          <select v-model="snackbarAnimation" :disabled="!snackbarAnimate" class="input">
-            <option :value="ani" v-for="(ani, index) in animation">
-              ${ani}
-            </option>
-          </select>
-        </div>
+      <div class="form-group">
+        <select name="snackbarOrientation" class="input" v-model="snackbarOrientation">
+          <option value="opens-top" selected>opens-top</option>
+          <option value="opens-bottom">opens-bottom</option>
+        </select>
       </div>
-      <div data-col='3'>
-        <a href @click.prevent="snackbarOpen = !snackbarOpen" class="btn is-elevated-16">open</a>
+    </div>
+    <div data-col='4'>
+      <div class="xui-toggle">
+        <input id="snackbarAnimate" type="checkbox" v-model="snackbarAnimate">
+        <label for="snackbarAnimate">
+          <div class="xui-toggle__switch"></div>
+          uses data-animate
+        </label>
       </div>
+      <div class="form-group">
+        <select v-model="snackbarAnimation" :disabled="!snackbarAnimate" class="input">
+          <option :value="ani" v-for="(ani, index) in animation">
+            ${ani}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <a href @click.prevent="snackbarOpen = !snackbarOpen" class="btn is-elevated-16">open</a>
     </div>
   </div>
 
@@ -3317,7 +3314,8 @@ $slider-thumb-hover-style: () !default;</code></pre>
     </div>
   </div>
 
-  <div class="snackbar" :data-animate="snackbarAnimate ? snackbarAnimation + ' 4' : false" :class="[{'is-active' : snackbarOpen}, snackbarOrientation]" v-if="!snackbarBackdrop">
+  <div class="snackbar" :data-animate="snackbarAnimate ? snackbarAnimation + ' 4' : false" :class="[{'is-active' : snackbarOpen}, snackbarOrientation]"
+    v-if="!snackbarBackdrop">
     <div class="snackbar-dismiss" @click="snackbarOpen = !snackbarOpen">
       <div class="ec-icon close-x-big"></div>
     </div>
@@ -4147,7 +4145,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <pre v-show="bumperSize === 'bumperSizeBig'"><code class="html"><div class="bumper-big bumper_invert"></div></code></pre>
 </section>
 
-<div class="spacer-big"></div>            <div class="spacer-6"></div>
+<div class="spacer-big"></div>            <div class="spacer-big"></div>
 <section>
   <h3 id="divider">divider</h3>
   <div data-grid>
@@ -4192,7 +4190,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <pre v-show="dividerSize === 'dividerSizeBig'"><code class="html"><hr class="divider-big divider_invert"></code></pre>
 </section>
 
-<div class="spacer-big"></div>            <div class="spacer-6"></div>
+<div class="spacer-big"></div>            <div class="spacer-big"></div>
 <section>
   <h3 id="spacer">spacer</h3>
   <div data-grid>
@@ -4225,7 +4223,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <pre v-show="spacerSize === 'spacerSizeBig'"><code class="html"><div class="spacer spacer_big"></div></code></pre>
 </section>
 
-<div class="spacer-big"></div>            <div class="spacer-6"></div>
+<div class="spacer-big"></div>            <div class="spacer-big"></div>
 <section>
   <h3 class="align-center is-uppercase" id="spacing">gaps & spacing</h3>
   <p class="is-lead">gaps and spacing are one of the most important elements of an user interface. Following the gestalt psychology, more precisely the law of proximity, theay structures content, information and functions and illutstrate their relation to each other</p>
@@ -4347,7 +4345,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   
   <div class="spacer"></div>
 
-</section>            <div class="spacer-6"></div>
+</section>            <div class="spacer-big"></div>
 <section>
   <h3 id="x-spacer">x-space<span class="is-ink-link">${'-' + xSpaceSize}</span><span class="is-ink-lighter">-bp</span></h3>
   <div data-grid="is-center">
@@ -4367,7 +4365,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <div class="x-space-2"></div>
     ...
   </div></code></pre>
-</section>            <div class="spacer-6"></div>
+</section>            <div class="spacer-big"></div>
 <section>
   <h3 id="x-spacer">y-space<span class="is-ink-link">${'-' + ySpaceSize}</span><span class="is-ink-lighter">-bp</span></h3>
   <div data-grid="is-center">
@@ -4383,7 +4381,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <div class="x-space-2"></div>
     ...
   </div></code></pre>
-</section>            <div class="spacer-6"></div>
+</section>            <div class="spacer-big"></div>
 <section>
   <h3 id="flex-spacer">flex-space</h3>
   <div data-flex>
@@ -4398,166 +4396,103 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <div class="flex-space"></div>
   ...
 </div></code></pre>
-</section>            <div class="spacer-6"></div>
+</section>            <div class="spacer-big"></div>
 <section>
-  <h3 id="has-margin">has-margin</h3>
-  <div class="well align-center">
-    <span class="is-h6">has-margin-{sides}-{size}{ -
-      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
-      <span class="is-ink-light">null</span> }</span>
-  </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4">
-        <strong>{sides}</strong>
-      </td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li>
-            <em>no value</em> - adds margin or padding to all sides</li>
-          <li>
-            <span class="code">middle</span> - top and bottom</li>
-          <li>
-            <span class="code">center</span> - left and right</li>
-          <li>
-            <span class="code">top</span>
-            <span class="code">right</span>
-            <span class="code">bottom</span>
-            <span class="code">left</span>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr data-grid="no-gutter">
-      <td data-col="4">
-        <strong>{size}</strong>
-      </td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li>
-            <em>no value</em> - default size
-            <span class="code">equals 16px</span>
-          </li>
-          <li>
-            <span class="code">smallest</span> -
-            <span class="code">equals 4px</span>
-          </li>
-          <li>
-            <span class="code">small</span> -
-            <span class="code">equals 8px</span>
-          </li>
-          <li>
-            <span class="code">big</span> -
-            <span class="code">equals 32px</span>
-          </li>
-          <li>
-            <span class="code">auto</span> - only with
-            <span class="code">margin-l</span>
-            <span class="code">margin-r</span>
-            <span class="code">margin-center</span>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</section>
+  <h3 id="has-margin">has-margin<span class="is-ink-link">${hasMarginSide + hasMarginSize}</span><span class="is-ink-lighter">-bp</span></h3>
 
-<div class="spacer-big"></div>            <div class="spacer-6"></div>
+  <div class="demo-margin">
+    <div :class="'has-margin' + hasMarginSide + hasMarginSize">
+      <div data-grid="is-center is-small">
+        <div data-col='3'>
+          <div class="form-group">
+            <label for="hasMarginSide">side</label>
+            <select class="input" id="hasMarginSide" v-model="hasMarginSide">
+              <option value="" selected>default</option>
+              <option value="-middle">middle</option>
+              <option value="-center">center</option>
+              <option value="-top">top</option>
+              <option value="-right">right</option>
+              <option value="-bottom">bottom</option>
+              <option value="-left">left</option>
+            </select>
+          </div>
+        </div>
+        <div data-col='3'>
+          <div class="form-group">
+            <label for="hasMarginSize">size</label>
+            <select class="input" id="hasMarginSize" v-model="hasMarginSize">
+              <option value="-smallest">smallest (4px)</option>
+              <option value="-small">small (8px)</option>
+              <option value="" selected>default (16px)</option>
+              <option value="-big" selected>big (32px)</option>
+              <option value="-auto" selected>auto</option>
+              <option value="-0" selected>0</option>
+              <option value="-1" selected>1 (4px)</option>
+              <option value="-2" selected>2 (8px)</option>
+              <option value="-3" selected>3 (16px)</option>
+              <option value="-4" selected>4 (24px)</option>
+              <option value="-5" selected>5 (32px)</option>
+              <option value="-6" selected>6 (48px)</option>
+              <option value="-7" selected>7 (64px)</option>
+              <option value="-8" selected>8 (80px)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p v-show="hasMarginSize === '-auto'" class="align-center">
+    <span class="code">auto</span> - only with
+    <span class="code">margin-left</span>
+    <span class="code">margin-right</span>
+    <span class="code">margin-center</span>
+  </p>
+</section>            <div class="spacer-big"></div>
 <section>
-  <h3 id="has-padding">has-padding</h3>
-  <div class="well align-center">
-    <span class="is-h6">has-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
-  </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{sides}</strong></td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li><em>no value</em> - adds margin or padding to all sides</li>
-          <li><span class="code">middle</span> - top and bottom</li>
-          <li><span class="code">center</span> - left and right</li>
-          <li><span class="code">top</span> <span class="code">right</span> <span
-                class="code">bottom</span> <span class="code">left</span></li>
-        </ul>
-      </td>
-    </tr>
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{size}</strong></td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li><em>no value</em> - default size <span class="code">equals 16px</span>
-          </li>
-          <li><span class="code">smallest</span> - <span
-                class="code">equals 4px</span></li>
-          <li><span class="code">small</span> - <span
-                class="code">equals 8px</span></li>
-          <li><span class="code">big</span> - <span class="code">equals 32px</span>
-          </li>
-          <li><span class="code">auto</span> - only with <span
-                class="code">margin-l</span> <span class="code">margin-r</span> <span
-                class="code">margin-center</span></li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</section>
+  <h3 id="has-padding">has-padding<span class="is-ink-link">${hasPaddingSide + hasPaddingSize}</span><span class="is-ink-lighter">-bp</span></h3>
 
-<div class="bumper-big"></div>            <div class="spacer-6"></div>
-<section>
-  <h3 id="no-margin">no-margin</h3>
-  <div class="well align-center">
-    <span class="is-h6">no-margin-{sides}-{size}{ -
-      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
-      <span class="is-ink-light">null</span> }</span>
+  <div class="demo-padding" :class="'has-padding' + hasPaddingSide + hasPaddingSize">
+    <div>
+      <div data-grid="is-center is-small">
+        <div data-col='3'>
+          <div class="form-group">
+            <label for="hasPaddingSide">side</label>
+            <select class="input" id="hasPaddingSide" v-model="hasPaddingSide">
+              <option value="" selected>default</option>
+              <option value="-middle">middle</option>
+              <option value="-center">center</option>
+              <option value="-top">top</option>
+              <option value="-right">right</option>
+              <option value="-bottom">bottom</option>
+              <option value="-left">left</option>
+            </select>
+          </div>
+        </div>
+        <div data-col='3'>
+          <div class="form-group">
+            <label for="hasPaddingSize">size</label>
+            <select class="input" id="hasPaddingSize" v-model="hasPaddingSize">
+              <option value="-smallest">smallest (4px)</option>
+              <option value="-small">small (8px)</option>
+              <option value="" selected>default (16px)</option>
+              <option value="-big" selected>big (32px)</option>
+              <option value="-0" selected>0</option>
+              <option value="-1" selected>1 (4px)</option>
+              <option value="-2" selected>2 (8px)</option>
+              <option value="-3" selected>3 (16px)</option>
+              <option value="-4" selected>4 (24px)</option>
+              <option value="-5" selected>5 (32px)</option>
+              <option value="-6" selected>6 (48px)</option>
+              <option value="-7" selected>7 (64px)</option>
+              <option value="-8" selected>8 (80px)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4">
-        <strong>{sides}</strong>
-      </td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li>
-            <em>no value</em> - adds margin or padding to all sides</li>
-          <li>
-            <span class="code">middle</span> - top and bottom</li>
-          <li>
-            <span class="code">center</span> - left and right</li>
-          <li>
-            <span class="code">top</span>
-            <span class="code">right</span>
-            <span class="code">bottom</span>
-            <span class="code">left</span>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</section>
-
-<div class="spacer-big"></div>            <div class="spacer-6"></div>
-<section>
-  <h3 id="no-padding">no-padding</h3>
-  <div class="well align-center">
-    <span class="is-h6">no-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
-  </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{sides}</strong></td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li><em>no value</em> - adds margin or padding to all sides</li>
-          <li><span class="code">middle</span> - top and bottom</li>
-          <li><span class="code">center</span> - left and right</li>
-          <li><span class="code">top</span> <span class="code">right</span> <span
-                class="code">bottom</span> <span class="code">left</span></li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</section>
-
-<div class="bumper-big"></div>            <div class="spacer-6"></div>
+</section>            <div class="spacer-big"></div>
 <h3 id="data-flex">Additional flex attributes</h3>
 <p class="is-lead">Those additional attributes and values can be combined with data-grid / data-col to modify the
   layout.</p>
@@ -4755,7 +4690,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
 <p>By default, flex items are laid out in the source order. However, the order property
   controls the order in which they appear in the flex container. the order-value can be
   <span class="code">[1-12]</span>.</p>
-<div class="bumper-big"></div>            <div class="spacer-6"></div>
+<div class="bumper-big"></div>            <div class="spacer-big"></div>
 <section>
   <h3 id="has-height">has-height</h3>
   <div class="well align-center">
@@ -4791,7 +4726,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div>            <div class="spacer-6"></div>
+<div class="bumper"></div>            <div class="spacer-big"></div>
 <section>
   <h3 id="has-width">has-width</h3>
   <div class="well align-center">
@@ -4826,7 +4761,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper-big"></div>            <div class="spacer-6"></div>
+<div class="bumper-big"></div>            <div class="spacer-big"></div>
 <section>
   <h3 id="pull">pull</h3>
   <div class="well align-center">
@@ -4834,7 +4769,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper-big"></div>            <div class="spacer-6"></div>
+<div class="bumper-big"></div>            <div class="spacer-big"></div>
 <section>
   <h3 id="is-clipped">is-clipped</h3>
   <p>use for
@@ -4895,7 +4830,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper-big"></div>            <div class="spacer-6"></div>
+<div class="bumper-big"></div>            <div class="spacer-big"></div>
 <section>
   <h3 id="is-position">is-position</h3>
   <div class="well align-center">
@@ -4921,7 +4856,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper"></div>            <div class="spacer-6"></div>
+<div class="bumper"></div>            <div class="spacer-big"></div>
 <section>
   <h3 id="is-layer">is-layer</h3>
   <div class="well align-center">
@@ -4941,7 +4876,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div>            <div class="spacer-6"></div>
+<div class="bumper"></div>            <div class="spacer-big"></div>
 <section>
   <h3 id="is-hidden">is-hidden</h3>
   <div class="well align-center is-ink-link">
@@ -4968,7 +4903,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper"></div>            <div class="spacer-6"></div>
+<div class="bumper"></div>            <div class="spacer-big"></div>
 <section>
   <h3 id="is-visible">is-visible</h3>
   <div class="well align-center is-ink-link">
@@ -4989,10 +4924,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <div class="well align-center">
     <span class="is-h6">is-visible-from{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
-</section>
-
-<div class="bumper-big"></div>            <div class="spacer-6"></div>
-            <div class="bumper-big"></div>
+</section>            <div class="spacer-big"></div>
 <section>
   <h3 id="data-animate">data-animate
     <span class="tag tag_small tag_super">css only</span>
@@ -5043,12 +4975,12 @@ data-tooltip-left="This is a tooltip"</code></pre>
     </div>
   </div>
 </section>
-
-<div class="bumper"></div>          </div>
+          </div>
         </div>
       </div>
 
     </div>
+    <div class="bumper-big"></div>
 <section id="ec-icon" data-col="12">
   <div data-container>
 

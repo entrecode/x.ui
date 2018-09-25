@@ -62,6 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
       bumperSize: 'bumperSizeDefault',
       dividerSize: 'dividerSizeDefault',
       spacerSize: 'spacerSizeDefault',
+      hasMarginSide: '',
+      hasMarginSize: '',
+      hasPaddingSide: '',
+      hasPaddingSize: '',
       selectedAnimation: 'ambulance',
       animation: [
         'fadeIn',

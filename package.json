@@ -90,8 +90,6 @@
       "flex-space.njk",
       "has-margin.njk",
       "has-padding.njk",
-      "no-margin.njk",
-      "no-padding.njk",
       "flex.njk",
       "has-height.njk",
       "has-width.njk",
