@@ -17,6 +17,10 @@ $is-outset-bp: 1200 !default;
   width: 100%;
   padding: arrayMagic($is-outset-spacing);
 
+  &:first-child {
+    padding-top: 0;
+  }
+
   &_left,
   &_right {
     &:not([data-col]) {
