@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.1.0
+/// @since 9.1.1
 /// @access public
 /// @group atoms
 ///
@@ -13,34 +13,30 @@
 /// @param {array} $divider-small-spacing [getSpace(3) 0]
 /// @param {array} $divider-big-spacing [getSpace(6) 0]
 
-@mixin divider {
+.divider {
   border: 0;
   width: 100%;
   height: rem($divider-height);
   background: $divider-background;
+  
+  @include set-breakpoints {
+    margin: arrayMagic($divider-spacing);
+  }
 
   &.divider_invert {
     background: $divider-invert-background;
   }
+  
 }
 
-.divider {
-  @include divider;
-  @include set-breakpoints {
-    margin: arrayMagic($divider-spacing);
-  }
-}
-
-.divider-small {
-  @include divider;
+.divider_small {
   @include set-breakpoints {
     margin: arrayMagic($divider-small-spacing);
   }
 }
 
-.divider-big {
-  @include divider;
+.divider_big {
   @include set-breakpoints {
-    margin: arrayMagic($divider-small-spacing);
+    margin: arrayMagic($divider-big-spacing);
   }
 }

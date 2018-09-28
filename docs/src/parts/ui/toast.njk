@@ -53,7 +53,7 @@
   </div>
 
   <div class="toast" :data-animate="toastAnimate ? toastAnimation + ' 4' : false" :class="[{'is-active' : toastOpen}, toastOrientation]"
-    v-if="!toastBackdrop">
+    v-if="!toastBackdrop" data-col="8">
     <div class="toast-dismiss" @click="toastOpen = !toastOpen">
       <div class="ec-icon close-x-big"></div>
     </div>

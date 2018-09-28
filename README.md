@@ -39,6 +39,10 @@ x.ui has uses no prefix mixins, please use an autoprefixer in your project
 
 ## deprecated
 
+### since 9.1.1
+
+- `bumper-small` and `bumper-big` use `bumper bumper_big` or `bumper bumper_small` instead
+
 ### since 9.1.0
 
 - `no-margin-#` and `no-padding-#` use `has-padding-#-0` or `has-padding-#-0` instead

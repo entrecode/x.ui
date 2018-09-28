@@ -25,10 +25,10 @@
 <body>
   <!-- <div id="app" class="xui-demo" data-grid="no-gutter is-end"> -->
   <div id="app" class="xui-demo">
-<header class="demo-navbar is-fixed is-positioned-nw is-layer-200 has-transition" data-col="12">
+<header class="demo-navbar is-fixed is-positioned-nw is-layer-10 has-transition" data-col="12">
   <div class="toolbar toolbar_small">
     <div data-col="2">
-      <button :class="{ 'is-active': menuActive }" @click.prevent="menuActive = !menuActive" class="hamburger-btn"></button>
+      <button :class="{ 'is-active': menuActive }" @click.prevent="menuActive = !menuActive" class="hamburger-btn is-layer-100"></button>
     </div>
     <div data-col="8">
       <div class="toolbar__title toolbar__title_center">
@@ -41,7 +41,7 @@
       <nav class="nav">
         <ul class="nav__items">
           <li class="nav__item" style="padding-right: 16px;">
-            <small class="is-ink-lighter is-nowrap">v. 9.1.0</small>
+            <small class="is-ink-lighter is-nowrap">v. 9.1.1</small>
           </li>
           <li class="nav__divider"></li>
           <li class="nav__item">
@@ -108,6 +108,7 @@
           <li><a href="#img_responsive">responsive</a></li>
           <li><a href="#img_responsive">full-width</a></li>
           <li><a href="#img-crop">img-crop</a></li>
+          <li><a href="#is-outset">is-outset</a></li>
         </ul>
       </li>
 
@@ -3375,7 +3376,7 @@ $slider-thumb-hover-style: () !default;</code></pre>
   </div>
 
   <div class="toast" :data-animate="toastAnimate ? toastAnimation + ' 4' : false" :class="[{'is-active' : toastOpen}, toastOrientation]"
-    v-if="!toastBackdrop">
+    v-if="!toastBackdrop" data-col="8">
     <div class="toast-dismiss" @click="toastOpen = !toastOpen">
       <div class="ec-icon close-x-big"></div>
     </div>
@@ -3620,7 +3621,7 @@ $slider-thumb-hover-style: () !default;</code></pre>
     </a>
   </div>
   <p>a local loader is positioned after the first parent element with <span class="code">position</span>. You can apply
-    a position value to alle elements by using <span class="code">.is-relative</span> or another <a href="#is-position">position
+    a position value to all elements by using <span class="code">.is-relative</span> or another <a href="#is-position">position
       helper class</a>.</p>
   <div data-grid>
     <div data-col='6'>
@@ -4295,7 +4296,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
 <section>
   <h3 id="divider">divider</h3>
   <div data-grid>
-    <div data-col='4'>
+    <div data-col='4' data-flex="is-center">
       <div class="form-group">
         <div class="xui-radio">
           <input id="dividerSizeSmall" value="dividerSizeSmall" name="dividerSize" type="radio" v-model="dividerSize">
@@ -4303,13 +4304,13 @@ data-tooltip-left="This is a tooltip"</code></pre>
         </div>
       </div>
     </div>
-    <div data-col='4'>
+    <div data-col='4' data-flex="is-center">
       <div class="xui-radio">
         <input id="dividerSizeDefault" value="dividerSizeDefault" name="dividerSize" type="radio" v-model="dividerSize">
         <label for="dividerSizeDefault">default</label>
       </div>
     </div>
-    <div data-col='4'>
+    <div data-col='4' data-flex="is-center">
       <div class="xui-radio">
         <input id="dividerSizeBig" value="dividerSizeBig" name="dividerSize" type="radio" v-model="dividerSize">
         <label for="dividerSizeBig">big</label>
@@ -4317,23 +4318,23 @@ data-tooltip-left="This is a tooltip"</code></pre>
     </div>
   </div>
   <div class="demo-layout-macros">
-    <hr :class="{'divider-small': dividerSize === 'dividerSizeSmall', 'divider': dividerSize === 'dividerSizeDefault', 'divider-big': dividerSize === 'dividerSizeBig'}">
+    <hr class="divider" :class="{'divider_small': dividerSize === 'dividerSizeSmall', 'divider_big': dividerSize === 'dividerSizeBig'}">
   </div>
-  <pre v-show="dividerSize === 'dividerSizeSmall'"><code class="html"><hr class="divider-small"></code></pre>
+  <pre v-show="dividerSize === 'dividerSizeSmall'"><code class="html"><hr class="divider divider_small"></code></pre>
   <pre v-show="dividerSize === 'dividerSizeDefault'"><code class="html"><hr class="divider"></code></pre>
-  <pre v-show="dividerSize === 'dividerSizeBig'"><code class="html"><hr class="divider-big"></code></pre>
+  <pre v-show="dividerSize === 'dividerSizeBig'"><code class="html"><hr class="divider divider_big"></code></pre>
 
   <div class="spacer"></div>
   <h4>modifier</h4>
   <div class="is-theme-invert" style="overflow: hidden;">
     <div class="demo-layout-macros">
-      <hr class="divider_invert" :class="{'divider-small': dividerSize === 'dividerSizeSmall', 'divider': dividerSize === 'dividerSizeDefault', 'divider-big':
+      <hr class="divider divider_invert" :class="{'divider_small': dividerSize === 'dividerSizeSmall', 'divider_big':
     dividerSize === 'dividerSizeBig'}">
     </div>
   </div>
-  <pre v-show="dividerSize === 'dividerSizeSmall'"><code class="html"><hr class="divider-small divider_invert"></code></pre>
+  <pre v-show="dividerSize === 'dividerSizeSmall'"><code class="html"><hr class="divider divider_small divider_invert"></code></pre>
   <pre v-show="dividerSize === 'dividerSizeDefault'"><code class="html"><hr class="divider divider_invert"></code></pre>
-  <pre v-show="dividerSize === 'dividerSizeBig'"><code class="html"><hr class="divider-big divider_invert"></code></pre>
+  <pre v-show="dividerSize === 'dividerSizeBig'"><code class="html"><hr class="divider divider_big divider_invert"></code></pre>
 </section>
 
 <div class="spacer spacer_big"></div>            <div class="spacer spacer_big"></div>
@@ -4372,8 +4373,11 @@ data-tooltip-left="This is a tooltip"</code></pre>
 <div class="spacer spacer_big"></div>            <div class="spacer spacer_big"></div>
 <section>
   <h3 class="align-center is-uppercase" id="spacing">gaps & spacing</h3>
-  <p class="is-lead">gaps and spacing are one of the most important elements of an user interface. Following the gestalt psychology, more precisely the law of proximity, theay structures content, information and functions and illutstrate their relation to each other</p>
-  <p><strong>x.ui</strong> uses a simple system for all structural atoms and modifier. There are 9 different spacing units</p>
+  <p class="is-lead">gaps and spacing are one of the most important elements of an user interface. Following the
+    gestalt psychology, more precisely the law of proximity, they give structure and illustrate the relation of
+    functions and informations to each other</p>
+  <p><strong>x.ui</strong> uses a simple system for all structural atoms and modifier. There are 9 different spacing
+    units</p>
 
   <div class="align-center">
     <ul class="is-inline">
@@ -4488,7 +4492,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
       </tr>
     </tbody>
   </table>
-  
+
   <div class="spacer"></div>
 
 </section>            <div class="spacer spacer_big"></div>

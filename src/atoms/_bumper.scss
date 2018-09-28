@@ -2,6 +2,7 @@
 /// @since 9.0.6
 /// @access public
 /// @group atoms
+/// @deprecated since 9.1.1 `.bumper-small` and `.bumper-big` will be removed in future release
 ///
 /// @example
 ///   <div class='bumper'></div>
@@ -12,6 +13,48 @@
 /// @param {array} $bumper-spacing [getSpace(5) 0]
 /// @param {array} $bumper-small-spacing [getSpace(3) 0]
 /// @param {array} $bumper-big-spacing [getSpace(6) 0]
+
+.bumper {
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  height: rem($bumper-size);
+  
+  @include set-breakpoints {
+    margin: arrayMagic($bumper-spacing);
+  }
+
+  &::before {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    background-color: $bumper-color;
+    box-shadow: rem($bumper-size * 2) 0 0 $bumper-color, rem($bumper-size * 4) 0 0 $bumper-color;
+    height: rem($bumper-size);
+    margin-left: rem($bumper-size * 5 / -2);
+    width: rem($bumper-size);
+  }
+
+  &.bumper_invert {
+    &::before {
+      background-color: $bumper-invert-color;
+      box-shadow: rem($bumper-size * 2) 0 0 $bumper-invert-color, rem($bumper-size * 4) 0 0 $bumper-invert-color;
+    }
+  }
+}
+
+.bumper_small {
+  @include set-breakpoints {
+    margin: arrayMagic($bumper-small-spacing);
+  }
+}
+
+.bumper_big {
+  @include set-breakpoints {
+    margin: arrayMagic($bumper-big-spacing);
+  }
+}
 
 @mixin bumper {
   position: relative;
@@ -34,15 +77,6 @@
       background-color: $bumper-invert-color;
       box-shadow: rem($bumper-size * 2) 0 0 $bumper-invert-color, rem($bumper-size * 4) 0 0 $bumper-invert-color;
     }
-  }
-}
-
-.bumper {
-  @include set-breakpoints {
-    @include bumper;
-    flex-shrink: 0;
-    margin: arrayMagic($bumper-spacing);
-    width: 100%;
   }
 }
 

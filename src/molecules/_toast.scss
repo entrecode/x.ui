@@ -86,6 +86,12 @@
     left: 0;
     z-index: $toast-z-index;
   }
+
+  @for $i from 1 through $grid-num-columns {
+    &[data-col~='#{$i}'] {
+      margin-left: (($grid-num-columns - $i) / $grid-num-columns) * 50%;
+    }
+  }
 }
 
 // @param {array} $toast-dismiss-style
