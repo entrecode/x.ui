@@ -54,6 +54,7 @@
   background: $deck-background;
   color: $deck-color;
   padding: arrayMagic($deck-padding);
+  box-shadow: arrayMagic($deck-opens-left-shadow);
 
   // @param {pixel | false } $deck-min-width [240]
   &:not([data-col]) {

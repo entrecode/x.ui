@@ -54,6 +54,7 @@
   background: $toast-background;
   color: $toast-color;
   padding: arrayMagic($toast-padding);
+  box-shadow: arrayMagic($toast-opens-top-shadow);
 
   &.is-active {
     top: 0;
