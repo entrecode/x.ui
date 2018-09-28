@@ -1,68 +1,23 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.1.0
 /// @access public
 /// @group atoms
 
-.img-crop-1-1 {
-  padding-top: 100%;
-  position: relative;
-  width: 100%;
-
-  img {
-    height: 100%;
-    left: 0;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
+@each $_postfix, $_array in $img-crop-ratio {
+  .img-crop-#{$_postfix} {
+    padding-top: 100% / nth($_array, 1) * nth($_array, 2);
+    position: relative;
     width: 100%;
-  }
-}
 
-.img-crop-4-3 {
-  padding-top: 100 / 4 * 3%;
-  position: relative;
-  width: 100%;
-
-  img {
-    height: 100%;
-    left: 0;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-}
-
-.img-crop-3-4 {
-  padding-top: 100 / 3 * 4%;
-  position: relative;
-  width: 100%;
-
-  img {
-    height: 100%;
-    left: 0;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-}
-
-.img-crop-16-9 {
-  padding-top: 100 / 16 * 9%;
-  position: relative;
-  width: 100%;
-
-  img {
-    height: 100%;
-    left: 0;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    img {
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      vertical-align: top;
+    }
   }
 }
