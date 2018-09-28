@@ -65,8 +65,8 @@
   // @param {color} $input-placeholder-focus-color [$input-placeholder-hover-color]
   // @param {array} $input-placeholder-focus-style [$input-placeholder-hover-style]
   &:focus {
-    @include inject-style($input-focus-style);
     outline: none;
+    @include inject-style($input-focus-style);
 
     @include placeholder {
       @include inject-style($input-placeholder-focus-style);

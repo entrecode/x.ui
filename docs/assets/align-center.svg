@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="32px" viewBox="0 0 56 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>align-center</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="align-center" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#2A3D54" stroke-width="4" x="2" y="2" width="52" height="28"></rect>
+        <rect id="Rectangle" stroke="#0FC678" stroke-width="4" x="14" y="2" width="28" height="28"></rect>
+        <rect id="Rectangle" fill="#FFFFFF" x="8" y="0" width="4" height="32"></rect>
+        <rect id="Rectangle" fill="#FFFFFF" x="44" y="0" width="4" height="32"></rect>
+    </g>
+</svg>

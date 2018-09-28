@@ -24,4 +24,9 @@
     margin: arrayMagic($title-stacked-spacing);
     padding: arrayMagic($title-stacked-padding);
   }
+
+  > .nav,
+  > .btn {
+    align-self: flex-start;
+  }
 }

@@ -1,0 +1,90 @@
+<h3>data-col</h3>
+<div class="well">
+  <div data-grid>
+    <div data-col='4'>
+      <strong>size</strong>
+      <strong class="is-ink-link" v-cloak>${dataColSize}-${dataColSizeBreakpoint}</strong>
+    </div>
+    <div data-col='4'>
+      <input type="range" min="1" max="12" class="slider" value="4" v-model="dataColSize">
+    </div>
+    <div data-col='4'>
+      <div class="form-group">
+        <select v-model="dataColSizeBreakpoint" class="input" v-cloak>
+          <option :value="key" v-for="(value, key) in breakpoints">${value} (${key})</option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <strong>offset</strong>
+      <strong class="is-ink-link" v-cloak>+${dataColOffset}-${dataColOffsetBreakpoint}</strong>
+    </div>
+    <div data-col='4'>
+      <input type="range" min="0" max="11" class="slider" value="4" v-model="dataColOffset">
+    </div>
+    <div data-col='4'>
+      <div class="form-group">
+        <select v-model="dataColOffsetBreakpoint" class="input" v-cloak>
+          <option :value="key" v-for="(value, key) in breakpoints">${value} (${key})</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div data-grid class="demo-grid">
+  <div :data-col="dataColSize + '-' + dataColSizeBreakpoint + ' +' + dataColOffset + '-' + dataColOffsetBreakpoint"
+    v-cloak>
+    <div class="has-padding align-center" :class="(parseInt(dataColSize) + parseInt(dataColOffset))  > 12 ? 'is-theme-super_light' : 'is-theme-minor'"
+      v-cloak>${dataColSize}-${dataColSizeBreakpoint}
+      +${dataColOffset}-${dataColOffsetBreakpoint}</div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="well align-center">
+  <div class="is-kilo">data-col="{ size | offset }{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
+    }"
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr data-flex>
+      <th data-col="4" class="align-left">values</th>
+      <th data-col="8" class="align-left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">[1-12 | auto]</span></td>
+      <td data-col="8">defines the grid-size of the column. can be multiple sizes for
+        different screen-sizes
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">+[0-11]</span></td>
+      <td data-col="8">defines an grid-based offset of an column. can be multiple offsets
+        for different screen-sizes
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="spacer"></div>
+
+<div data-grid>
+  <div data-col='6'>
+    <h4>do</h4>
+    <pre><code class="html">
+<div data-col="12">...</div></code></pre>
+  </div>
+  <div data-col='6'>
+    <h4 class="is-ink-error">don't</h4>
+    <pre><code class="html">
+<div data-col="12-xs">...</div></code></pre>
+  </div>
+</div>
+
+<div class="bumper-big"></div>

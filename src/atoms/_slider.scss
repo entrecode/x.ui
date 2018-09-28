@@ -1,0 +1,97 @@
+/// @author Bernhard Ruoff
+/// @since 9.1.0
+/// @access public
+/// @group atoms
+
+// @param {px} $slider-height [8]
+// @param {px} $slider-radius [4]
+// @param {color} $slider-background [rgba(#000, 0.04)]
+// @param {array} $slider-style
+// @param {array} $slider-hover-style
+
+[type='range'] {
+  &.slider {
+    appearance: none;
+    width: 100%;
+    outline: none;
+    margin: 0;
+    height: rem($slider-height);
+    background: $slider-background;
+    border: 0;
+    border-radius: arrayMagic($slider-radius);
+    @include inject-style($slider-style);
+
+    &:hover {
+      @include inject-style($slider-hover-style);
+    }
+  }
+
+  &.slider::-webkit-slider-runnable-track {
+    appearance: none;
+    width: 100%;
+    outline: none;
+    margin: 0;
+    height: rem($slider-height);
+    background: $slider-background;
+    border: 0;
+    border-radius: arrayMagic($slider-radius);
+    @include inject-style($slider-style);
+
+    &:hover {
+      @include inject-style($slider-hover-style);
+    }
+  }
+
+  &.slider::-moz-range-track {
+    appearance: none;
+    width: 100%;
+    outline: none;
+    margin: 0;
+    height: rem($slider-height);
+    background: $slider-background;
+    border: 0;
+    border-radius: arrayMagic($slider-radius);
+    @include inject-style($slider-style);
+
+    &:hover {
+      @include inject-style($slider-hover-style);
+    }
+  }
+
+  // @param {px} $slider-thumb-size [16]
+  // @param {px} $slider-thumb-radius [8]
+  // @param {color} $slider-thumb-background [$link]
+  // @param {array} $slider-thumb-style
+  // @param {array} $slider-thumb-hover-style
+
+  &.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    border: 0;
+    @include inject-style($slider-thumb-style);
+    width: rem($slider-thumb-size);
+    height: rem($slider-thumb-size);
+    background: $slider-thumb-background;
+    border-radius: arrayMagic($slider-thumb-radius);
+    margin-top: rem(($slider-height - $slider-thumb-size)/2);
+
+    &:hover {
+      @include inject-style($slider-thumb-style);
+    }
+  }
+
+  &.slider::-moz-range-thumb {
+    cursor: pointer;
+    border: 0;
+    @include inject-style($slider-thumb-style);
+    width: rem($slider-thumb-size);
+    height: rem($slider-thumb-size);
+    background: $slider-thumb-background;
+    border-radius: arrayMagic($slider-thumb-radius);
+
+    &:hover {
+      @include inject-style($slider-thumb-style);
+    }
+  }
+}

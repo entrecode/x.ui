@@ -61,25 +61,35 @@ h6,
     font-size: ($headings-inline-small * 1em);
     vertical-align: baseline;
   }
+
+  a {
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
 }
 
 .is-giga {
+  @include get-font-size(is-giga);
   @include inject-style($giga-style);
   margin: arrayMagic($giga-spacing, $headings-spacing-unit);
 }
 
 .is-mega {
+  @include get-font-size(is-mega);
   @include inject-style($mega-style);
   margin: arrayMagic($mega-spacing, $headings-spacing-unit);
 }
 
 .is-kilo {
+  @include get-font-size(is-kilo);
   @include inject-style($kilo-style);
   margin: arrayMagic($kilo-spacing, $headings-spacing-unit);
 }
 
 h1,
 .is-h1 {
+  @include get-font-size(h1);
   @include inject-style($h1-style);
   margin: arrayMagic($h1-spacing, $headings-spacing-unit);
 }
@@ -93,6 +103,7 @@ h2,
 
 h3,
 .is-h3 {
+  @include get-font-size(h3);
   @include inject-style($h3-style);
   margin: arrayMagic($h3-spacing, $headings-spacing-unit);
 }
@@ -106,6 +117,7 @@ h4,
 
 h5,
 .is-h5 {
+  @include get-font-size(h5);
   @include inject-style($h5-style);
   margin: arrayMagic($h5-spacing, $headings-spacing-unit);
 }
@@ -115,22 +127,4 @@ h6,
   @include get-font-size(h6);
   @include inject-style($h6-style);
   margin: arrayMagic($h6-spacing, $headings-spacing-unit);
-}
-
-h1,
-.is-h1,
-.is-giga {
-  @include get-font-size(h1);
-}
-
-h3,
-.is-h3,
-.is-mega {
-  @include get-font-size(h3);
-}
-
-h5,
-.is-h5,
-.is-kilo {
-  @include get-font-size(h5);
 }

@@ -6,9 +6,9 @@
 // scss-lint:disable NestingDepth
 .xui-checkbox {
   label {
-    align-items: center;
     cursor: pointer;
     display: flex;
+    align-items: flex-start;
   }
 
   [type='checkbox'] {

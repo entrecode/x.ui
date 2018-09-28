@@ -1,6 +1,6 @@
 {
   "name": "x.ui",
-  "version": "9.0.8",
+  "version": "9.1.0",
   "license": "MIT",
   "description": "x.ui is a framework based on the atomic design methodology",
   "author": "entrecode GmbH",
@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "scss-lint src/",
-    "build": "npm run build:nunjucks & npm run build:sass & npm run build:js",
+    "build": "npm run build:nunjucks & npm run build:sass & npm run postbuild:sass & npm run build:js",
     "build:nunjucks": "nunjucks index.njk package.json --path docs/src --out docs --unsafe",
     "build:sass": "node-sass --recursive --output-style compressed docs/src/styles/styles.scss docs/x.ui.css",
     "postbuild:sass": "postcss docs/x.ui.css --use autoprefixer -d docs",
@@ -25,20 +25,21 @@
   ],
   "structure": {
     "typeface": [
+      "typeface.njk",
       "headings.njk",
-      "type.njk",
+      "paragraph.njk",
       "list.njk",
-      "align.njk",
-      "font-weight.njk",
-      "text-transform.njk",
-      "word-wrap.njk"
+      "modifier.njk"
     ],
     "media": [
       "img.njk",
-      "img-crop.njk"
+      "img-crop.njk",
+      "is-outset.njk"
     ],
     "form": [
       "input.njk",
+      "slider.njk",
+      "file-upload.njk",
       "input-group.njk",
       "xui-select.njk",
       "xui-checkbox.njk",
@@ -60,9 +61,14 @@
       "xui-list.njk",
       "xui-accordion.njk",
       "card.njk",
-      "xui-overlay.njk",
       "well.njk",
+      "dialog.njk",
+      "deck.njk",
+      "toast.njk",
+      "snackbar.njk",
+      "overlay.njk",
       "alert.njk",
+      "loader.njk",
       "data-tooltip.njk",
       "table.njk",
       "avatar.njk",
@@ -70,15 +76,22 @@
       "is-theme.njk",
       "is-rounded.njk",
       "is-bordered.njk",
+      "is-elevated.njk",
       "is-raised.njk",
       "is-lifted.njk",
       "is-fab.njk"
     ],
     "layout": [
       "bumper.njk",
+      "divider.njk",
       "spacer.njk",
-      "flex-spacer.njk",
       "spacing.njk",
+      "x-space.njk",
+      "y-space.njk",
+      "flex-space.njk",
+      "has-margin.njk",
+      "has-padding.njk",
+      "flex.njk",
       "has-height.njk",
       "has-width.njk",
       "pull.njk",

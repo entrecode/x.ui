@@ -1,0 +1,51 @@
+.demo-margin {
+  $_c: rgba($link, 0.2);
+  $_c2: rgba($link, 0.4);
+
+  background-image: repeating-linear-gradient(
+    -45deg,
+    $_c 0,
+    $_c 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  overflow: hidden;
+  margin: 0 0 rem(16);
+
+  > * {
+    border: 1px dashed $_c2;
+    background: white;
+    text-align: center;
+  }
+
+  [class*='has-margin'] {
+    padding: rem(8);
+    transition: all 0.2s;
+  }
+
+  [class*='-auto'] {
+    min-width: rem(240);
+    max-width: rem(480);
+  }
+
+  @include headings {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  .is-mega,
+  .is-giga,
+  .is-kilo {
+    border: 1px dashed $_c2;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  img {
+    vertical-align: top;
+    border: 0;
+    text-align: initial;
+    background: initial;
+  }
+}

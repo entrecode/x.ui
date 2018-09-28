@@ -21,7 +21,7 @@
   @for $i from 1 through length($array) {
     $_entry: nth($array, $i);
 
-    @if type-of($_entry) == 'number' {
+    @if type-of($_entry) == 'number' and unitless($_entry) == true {
       @if $_entry == 0 {
         $_value: #{$_entry};
       } @else {

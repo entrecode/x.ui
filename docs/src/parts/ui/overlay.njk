@@ -1,0 +1,29 @@
+<section>
+  <div class="align-center" id="overlay">
+    <img src="assets/overlay.svg">
+    <h3>overlay</h3>
+  </div>
+
+  <div class="well align-center">
+    <a href class="btn" @click.prevent="overlayOpen = !overlayOpen">open overlay</a>
+  </div>
+
+  <div class="overlay" :class="{'is-active' : overlayOpen}">
+    <a class="overlay-dismiss" @click.prevent="overlayOpen = !overlayOpen">
+      <span class="ec-icon close-x-big"></span>
+    </a>
+    <div class="overlay-body">
+      <p class="align-center">I am a simple overlay</p>
+    </div>
+  </div>
+  <pre><code class="html">
+<div class="overlay">
+  <a class="overlay-dismiss">
+    <span class="ec-icon close-x-big"></span>
+  </a>
+  <div class="overlay-body">
+    ...
+  </div>
+</div></code></pre>
+  <div class="bumper-big"></div>
+</section>

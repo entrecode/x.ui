@@ -1,0 +1,56 @@
+/// @author Bernhard Ruoff
+/// @since 9.1.0
+/// @access public
+/// @group modifier
+///
+/// @param {px} $is-outset [48]
+/// @param {array} $is-outset-spacing [16 0]
+/// @param {px} $is-outset-gutter [32]
+/// @param {px} $is-outset-bp [1200]
+
+$is-outset: 48 !default;
+$is-outset-spacing: 16 0 !default;
+$is-outset-gutter: 32 !default;
+$is-outset-bp: 1200 !default;
+
+.is-outset {
+  width: 100%;
+  padding: arrayMagic($is-outset-spacing);
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &_left,
+  &_right {
+    &:not([data-col]) {
+      @media (min-width: rem($is-outset-bp)) {
+        max-width: 50%;
+      }
+    }
+  }
+
+  &_left {
+    @media (min-width: rem($is-outset-bp)) {
+      margin-left: rem($is-outset * -1);
+      float: left;
+      margin-right: rem($is-outset-gutter);
+    }
+  }
+
+  &_right {
+    @media (min-width: rem($is-outset-bp)) {
+      margin-right: rem($is-outset * -1);
+      float: right;
+      margin-left: rem($is-outset-gutter);
+    }
+  }
+
+  &_full {
+    @media (min-width: rem($is-outset-bp)) {
+      width: initial;
+      margin-right: rem($is-outset * -1);
+      margin-left: rem($is-outset * -1);
+    }
+  }
+}

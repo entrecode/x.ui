@@ -4,6 +4,7 @@
 @import 'type';
 @import 'is-lead';
 @import 'list';
+@import 'mark';
 /// media
 @import 'img';
 @import 'avatar';
@@ -11,6 +12,8 @@
 /// form
 @import 'fieldset';
 @import 'input';
+@import 'slider';
+@import 'file-upload';
 @import 'input-group';
 @import 'input_round';
 @import 'input_validation';
@@ -29,7 +32,10 @@
 @import 'tag_outlined';
 @import 'tag_round';
 @import 'bubble';
+@import 'loader';
 /// layout
 @import 'bumper';
+@import 'divider';
 @import 'spacer';
-@import 'flex-spacer';
+@import 'flex-space';
+@import 'space';

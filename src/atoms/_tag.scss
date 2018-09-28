@@ -16,6 +16,7 @@
   display: inline-block;
   text-align: center;
   white-space: nowrap;
+  vertical-align: text-bottom;
   @include inject-style($tag-style);
   @include macro-metrics(
     $tag-font-size,

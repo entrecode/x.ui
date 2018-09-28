@@ -4,14 +4,31 @@
 @import 'hljs';
 @import 'quickselect';
 @import 'periodic-group';
-@import 'demo-flex-spacer';
+@import 'demo-spacer';
 @import 'demo-grid';
-@import 'demo-header';
 @import 'demo-headings';
+@import 'demo-margin';
+@import 'demo-padding';
 @import 'demo-paragraph';
 @import 'demo-layout-macros';
 @import 'demo-theme';
 @import 'animation-demo';
 @import 'demo-sidebar';
 @import 'hero';
-@import 'demo-navbar';
+@import 'demo-icon';
+@import 'is-editable';
+@import 'bp-monitor';
+// @import 'demo-navbar';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, 
+div {
+  &[id] {
+    padding-top: rem(80);
+    margin-top: rem(-80);
+  }
+}

@@ -21,4 +21,5 @@
 
 .card {
   @extend %card;
+  @include elevation(4);
 }

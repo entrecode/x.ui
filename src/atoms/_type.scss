@@ -81,3 +81,7 @@ small {
   vertical-align: baseline;
   font-size: arrayMagic($inline-small-scale, $inline-small-unit);
 }
+
+code {
+  font-family: $monospace-font;
+}

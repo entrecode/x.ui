@@ -1,0 +1,72 @@
+.bp-monitor {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 200;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+  border-radius: arrayMagic(4 0 0 0);
+
+  li {
+    padding: rem(8);
+    background: getColor(background, light);
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    strong {
+      font-size: rem(16);
+      line-height: 1em;
+    }
+
+    small {
+      font-size: rem(10);
+      line-height: 1em;
+    }
+  }
+
+  .bp-monitor-xs {
+    background: getColor(link);
+    color: setContrast(getColor(link));
+  }
+
+  .bp-monitor-sm {
+    @media (min-width: getBreakpoint(sm)) {
+      background: getColor(link);
+      color: setContrast(getColor(link));
+    }
+  }
+
+  .bp-monitor-md {
+    @media (min-width: getBreakpoint(md)) {
+      background: getColor(link);
+      color: setContrast(getColor(link));
+    }
+  }
+
+  .bp-monitor-lg {
+    @media (min-width: getBreakpoint(lg)) {
+      background: getColor(link);
+      color: setContrast(getColor(link));
+    }
+  }
+
+  .bp-monitor-xl {
+    @media (min-width: getBreakpoint(xl)) {
+      background: getColor(link);
+      color: setContrast(getColor(link));
+    }
+  }
+
+  .bp-monitor-xxl {
+    @media (min-width: getBreakpoint(xxl)) {
+      background: getColor(link);
+      color: setContrast(getColor(link));
+    }
+  }
+}

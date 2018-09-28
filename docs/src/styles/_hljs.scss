@@ -4,7 +4,21 @@
   padding: rem(8) !important;
   border-radius: rem(4);
   font-family: monospace;
-  font-size: rem(14);
+  font-size: rem(12);
   line-height: rem(20);
   background-color: getColor(background, lightest) !important;
+
+  &.scss {
+    background-color: getColor(background, invert) !important;
+    color: getColor(text, invert);
+
+    .hljs-string,
+    .hljs-number {
+      color: yellow;
+    }
+    
+    .hljs-literal {
+      color: aquamarine;
+    }
+  }
 }

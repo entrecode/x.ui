@@ -8,24 +8,25 @@
   label {
     cursor: pointer;
     display: flex;
+    align-items: flex-start;
   }
 
   [type='radio'] {
     @extend %is-hidden-input;
 
     // @param {px} $xui-radio-font-size [10]
-    // @param {px} $xui-radio-line-height [22]
     // @param {array} $xui-radio-spacing [0 8 0 0]
-    // @param {px} $xui-radio-min-height [20]
+    // @param {px} $xui-radio-height [20]
     // @param {color} $xui-radio-background [$background]
     // @param {color} $xui-radio-color [transparent]
     // @param {array} $xui-radio-style
     + label {
       &::before {
-        display: flex;
+        display: inline-flex;
         flex-grow: 0;
         flex-shrink: 0;
         font-family: initial;
+        align-items: center;
         justify-content: center;
         text-align: center;
         transition: all 0.2s;
@@ -34,7 +35,7 @@
         background: $xui-radio-background;
         color: $xui-radio-color;
         font-size: rem($xui-radio-font-size / 4);
-        line-height: rem($xui-radio-line-height);
+        line-height: rem($xui-radio-height);
         height: rem($xui-radio-height);
         width: rem($xui-radio-height);
         margin: arrayMagic($xui-radio-spacing);

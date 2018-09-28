@@ -1,19 +1,85 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const codes = document.getElementsByTagName('code');
-  for (let i = 0; i < codes.length; i += 1) {
-    codes[i].innerHTML = codes[i].innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/, '');
-    hljs.highlightBlock(codes[i]);
-  }
-
   new Vue({
     delimiters: ['${', '}'],
     el: '#app',
     data: {
+      bpTabActive: 'xs',
+      breakpoints: {
+        xs: 'mobile',
+        sm: 'mobile landscape',
+        md: 'tablet',
+        lg: 'tablet landscape',
+        xl: 'desktop',
+        xxl: 'widescreen'
+      },
+      dataGridOptions: [
+        'is-default',
+        'is-small',
+        'no-gutter',
+        'is-start',
+        'is-center',
+        'is-end'
+      ],
+      dataContainer: true,
+      dataContainerAlign: '',
+      dataGridValue: 'is-default',
+      dataGridBreakpoint: 'xs',
+      dataColSize: 4,
+      dataColSizeBreakpoint: 'xs',
+      dataColOffsetBreakpoint: 'xs',
+      dataColOffset: 0,
+      imgCropRatio: '1-1',
+      isOutset: 'left',
+      deckOrientation: 'opens-left',
+      deckBackdrop: false,
+      deckOpen: false,
+      deckCol: false,
+      deckColSize: '4-sm',
+      xSpaceSize: '4',
+      ySpaceSize: '4',
+      deckAnimate: false,
+      deckAnimation: 'fadeIn',
+      toastOrientation: 'opens-top',
+      toastBackdrop: false,
+      toastOpen: false,
+      toastAnimate: false,
+      toastAnimation: 'fadeIn',
+      snackbarOrientation: 'opens-top',
+      snackbarBackdrop: false,
+      snackbarOpen: false,
+      snackbarAnimate: false,
+      snackbarAnimation: 'fadeIn',
+      overlayOpen: false,
+      dialog1: false,
+      dialog2: false,
+      dialog3: false,
+      dialog4: false,
+      dialog5: false,
       menuActive: false,
       hamburgerActive: false,
+      loader: false,
+      loaderLocal: false,
+      loaderGlobal: false,
       render: true,
+      bumperSize: 'bumperSizeDefault',
+      dividerSize: 'dividerSizeDefault',
+      spacerSize: 'spacerSizeDefault',
+      hasMarginSide: '',
+      hasMarginSize: '',
+      hasPaddingSide: '',
+      hasPaddingSize: '',
       selectedAnimation: 'ambulance',
-      animation: ['fadeIn', 'popIn', 'flipLeft', 'flipRight', 'slideLeft', 'slideRight', 'slideUp', 'slideDown', 'ambulance'],
+      animation: [
+        'fadeIn',
+        'popIn',
+        'flipLeft',
+        'flipRight',
+        'slideLeft',
+        'slideRight',
+        'slideUp',
+        'slideDown',
+        'ambulance'
+      ],
       animationDuration: 8,
       animationDelay: 0,
       query: '',
@@ -27,9 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
             link: '#E74A7A',
             super: '#FC6563',
             minor: '#D5DDE4',
-            highlight: '#A7FFEB',
-          },
-        },
+            highlight: '#A7FFEB'
+          }
+        }
       },
       grid: {
         gridNumColumns: 12,
@@ -39,72 +105,124 @@ document.addEventListener('DOMContentLoaded', () => {
           md: 720,
           lg: 1024,
           xl: 1280,
-          xxl: 1920,
-        },
+          xxl: 1920
+        }
       },
       atoms: {
         btn: {
           styles: {
             default: '',
             minor: 'btn_minor',
-            super: 'btn_super',
+            super: 'btn_super'
           },
           modifiers: {
             outlined: 'btn_outlined',
             clear: 'btn_clear',
             invert: 'btn_invert',
-            round: 'btn_round',
+            round: 'btn_round'
           },
           sizes: {
             small: 'btn_small',
-            big: 'btn_big',
+            big: 'btn_big'
           },
           width: {
             wide: 'btn_wide',
-            block: 'btn_block',
-          },
+            block: 'btn_block'
+          }
         },
         tags: {
-          themeModifiers: ['tag_minor', 'tag_link', 'tag_super', 'tag_highlight', 'tag_invert'],
-          stateModifiers: ['tag_info', 'tag_error', 'tag_success', 'tag_warning'],
+          themeModifiers: [
+            'tag_minor',
+            'tag_link',
+            'tag_super',
+            'tag_highlight',
+            'tag_invert'
+          ],
+          stateModifiers: [
+            'tag_info',
+            'tag_error',
+            'tag_success',
+            'tag_warning'
+          ],
           sizeModifiers: ['tag_small', 'tag_big'],
-          styleModifiers: ['tag_outlined', 'tag_round'],
+          styleModifiers: ['tag_outlined', 'tag_round']
         },
         bubbles: {
-          themeModifiers: ['bubble_minor', 'bubble_link', 'bubble_super', 'bubble_highlight', 'bubble_invert'],
-          stateModifiers: ['bubble_info', 'bubble_error', 'bubble_success', 'bubble_warning'],
-          sizeModifiers: ['bubble_small', 'bubble_big'],
+          themeModifiers: [
+            'bubble_minor',
+            'bubble_link',
+            'bubble_super',
+            'bubble_highlight',
+            'bubble_invert'
+          ],
+          stateModifiers: [
+            'bubble_info',
+            'bubble_error',
+            'bubble_success',
+            'bubble_warning'
+          ],
+          sizeModifiers: ['bubble_small', 'bubble_big']
         },
         input: {
           modifiers: {
             raised: 'input_raised',
-            round: 'input_round',
+            round: 'input_round'
           },
           sizes: {
             small: 'input_small',
-            big: 'input_big',
-          },
-        },
+            big: 'input_big'
+          }
+        }
       },
       molecules: {
         alerts: {
-          themeModifiers: ['alert_minor', 'alert_link', 'alert_super', 'alert_highlight', 'alert_invert'],
-          stateModifiers: ['alert_info', 'alert_error', 'alert_success', 'alert_warning'],
-          styleModifiers: ['alert_outlined'],
+          themeModifiers: [
+            'alert_minor',
+            'alert_link',
+            'alert_super',
+            'alert_highlight',
+            'alert_invert'
+          ],
+          stateModifiers: [
+            'alert_info',
+            'alert_error',
+            'alert_success',
+            'alert_warning'
+          ],
+          styleModifiers: ['alert_outlined']
         },
         dropdown: {
-          behaviorModifiers: ['dropdown_center', 'dropdown_right', 'dropdown_right', 'dropdown_full', 'dropdown_above'],
+          behaviorModifiers: [
+            'dropdown_center',
+            'dropdown_right',
+            'dropdown_right',
+            'dropdown_full',
+            'dropdown_above'
+          ]
         },
         well: {
           sizeModifiers: ['well-small', 'well-big']
-        },
+        }
       },
       modifiers: {
         type: {
-          colorModifiers: ['is-ink-default', 'is-ink-light', 'is-ink-lighter', 'is-ink-lightest', 'is-ink-minor', 'is-ink-link',
-            'is-ink-super', 'is-ink-highlight', 'is-ink-invert', 'is-ink-info', 'is-ink-disabled', 'is-ink-error',
-            'is-ink-success', 'is-ink-warning'],
-        },
+          colorModifiers: [
+            'is-ink-default',
+            'is-ink-light',
+            'is-ink-lighter',
+            'is-ink-lightest',
+            'is-ink-minor',
+            'is-ink-link',
+            'is-ink-super',
+            'is-ink-highlight',
+            'is-ink-invert',
+            'is-ink-info',
+            'is-ink-disabled',
+            'is-ink-error',
+            'is-ink-success',
+            'is-ink-warning'
+          ]
+        }
       }, // :before \{\n(.*)";\n}
       iconset: [
         'add',
@@ -500,7 +618,20 @@ document.addEventListener('DOMContentLoaded', () => {
         'required',
         'validate',
         'fingerprint',
-      ],
-    },
+        'high-heel',
+        'lift-off',
+        'mannequin',
+        'ring',
+        'sound-system',
+        'subscription',
+        'sneaker'
+      ]
+    }
   });
+
+  var codes = document.getElementsByTagName('code');
+  for (var i = 0; i < codes.length; i += 1) {
+    codes[i].innerHTML = codes[i].innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/, '');
+    hljs.highlightBlock(codes[i]);
+  }
 });

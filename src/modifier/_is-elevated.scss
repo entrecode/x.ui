@@ -1,0 +1,12 @@
+/// @author Bernhard Ruoff
+/// @since 9.1.0
+/// @access public
+/// @group modifier
+
+// @param {string} $elevation-prefix [is-elevated-]
+
+@for $i from 1 through 24 {
+  .#{$elevation-prefix}#{$i} {
+    @include elevation($i);
+  }
+}

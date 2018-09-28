@@ -20,7 +20,7 @@
   @extend %btn;
   @include inject-style($hamburger-btn-style);
   background-color: $hamburger-btn-background;
-  margin: arrayMagix($hamburger-btn-spacing);
+  margin: arrayMagic($hamburger-btn-spacing);
 
   &::after {
     content: '';

@@ -1,13 +1,52 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500');
+// @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500');
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700');
 
-$body-font: 'IBM Plex Sans', sans-serif;
-$headings-font: 'IBM Plex Sans', sans-serif;
+// $body-font: 'IBM Plex Sans', sans-serif;
+// $headings-font: 'IBM Plex Sans', sans-serif;
 
-$is-light: 400;
+$body-font: 'Rubik', sans-serif;
+$headings-font: 'Rubik', sans-serif;
+
+// $is-light: 400;
+// $is-normal: 400;
+// $is-bold: 500;
+
+$is-light: 300;
 $is-normal: 400;
-$is-bold: 500;
+$is-medium: 500;
+$is-bold: 700;
 
 $base-font-size: 14;
 
+$background: #fff !default;
+$text: #2a3d54 !default;
+$link: #2fce6f !default;
 $super: #ee1e47;
-$minor: #cfd8dc;
+$minor: rgba($text, 0.06);
+
+$btn-weight: $is-medium;
+$tag-weight: $is-medium;
+
+$base-line-height: 1.2;
+$paragraph-line-height: 1.5;
+
+$tag-min-height: 24;
+$tag-line-height: 16;
+$tag-font-size: 12;
+
+$tag-small-font-size: 10;
+$tag-small-min-height: 20;
+$tag-small-line-height: 14;
+
+$form-group-spacing: 0 0 16;
+
+$dropdown-options-style: (
+  font-size: 14px
+);
+
+$dropdown-option-min-height: initial;
+$dropdown-option-weight: $is-medium;
+$dropdown-option-alignment: left;
+$dropdown-option-style: (
+  white-space: nowrap
+);

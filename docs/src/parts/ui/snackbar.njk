@@ -1,0 +1,87 @@
+<section>
+  <div class="align-center" id="snackbar">
+    <img src="assets/snackbar.svg">
+    <h3>snackbar</h3>
+  </div>
+
+  <div data-grid="is-center">
+    <div data-col='4'>
+      <div class="xui-toggle">
+        <input id="snackbarBackdrop" type="checkbox" v-model="snackbarBackdrop">
+        <label for="snackbarBackdrop">
+          <div class="xui-toggle__switch"></div>
+          has a backdrop
+        </label>
+      </div>
+      <div class="form-group">
+        <select name="snackbarOrientation" class="input" v-model="snackbarOrientation">
+          <option value="opens-top" selected>opens-top</option>
+          <option value="opens-bottom">opens-bottom</option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-toggle">
+        <input id="snackbarAnimate" type="checkbox" v-model="snackbarAnimate">
+        <label for="snackbarAnimate">
+          <div class="xui-toggle__switch"></div>
+          uses data-animate
+        </label>
+      </div>
+      <div class="form-group">
+        <select v-model="snackbarAnimation" :disabled="!snackbarAnimate" class="input">
+          <option :value="ani" v-for="(ani, index) in animation">
+            ${ani}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <a href @click.prevent="snackbarOpen = !snackbarOpen" class="btn is-elevated-16">open</a>
+    </div>
+  </div>
+
+  <div class="snackbar-wrapper" :class="{'is-active' : snackbarOpen}" v-if="snackbarBackdrop">
+    <div class="snackbar" :data-animate="snackbarAnimate ? snackbarAnimation + ' 4' : false" :class="snackbarOrientation">
+      <div class="snackbar-dismiss" @click="snackbarOpen = !snackbarOpen">
+        <div class="ec-icon close-x-big"></div>
+      </div>
+      <div class="snackbar-body">
+        <p class="align-center">I am a simple snackbar</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="snackbar" :data-animate="snackbarAnimate ? snackbarAnimation + ' 4' : false" :class="[{'is-active' : snackbarOpen}, snackbarOrientation]"
+    v-if="!snackbarBackdrop">
+    <div class="snackbar-dismiss" @click="snackbarOpen = !snackbarOpen">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="snackbar-body">
+      <p class="align-center">I am a simple snackbar</p>
+    </div>
+  </div>
+
+  <pre><code class="html" v-show="snackbarBackdrop">
+<div class="snackbar-wrapper">
+  <div class="snackbar opens-top">
+    <div class="snackbar-dismiss">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="snackbar-body">
+      ...
+    </div>
+  </div>
+</div></code></pre>
+  <pre><code class="html" v-show="!snackbarBackdrop">
+<div class="snackbar opens-top">
+  <div class="snackbar-dismiss">
+    <div class="ec-icon close-x-big"></div>
+  </div>
+  <div class="snackbar-body">
+    ...
+  </div>
+</div></code></pre>
+
+  <div class="bumper-big"></div>
+</section>

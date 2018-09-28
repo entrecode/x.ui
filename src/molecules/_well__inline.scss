@@ -1,17 +1,10 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 9.1.0
 /// @access public
 /// @group molecules inline
 
 .well {
-  @include headings {
-    &:last-child,
-    &:only-child {
-      margin: 0;
-    }
-  }
-
-  p {
+  > p {
     &:last-child,
     &:only-child {
       margin: 0;

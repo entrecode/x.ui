@@ -21,17 +21,25 @@
   $inline-styles: true,
   $icon-size: $base-font-size
 ) {
-  $padding: ($min-height - $line-height) / 2;
+  $padding: false;
+
+  // check if $min-height is a number, some of the styles will not be rendered
+  @if type-of($min-height) == 'number' {
+    $padding: ($min-height - $line-height) / 2;
+  } @else {
+    $padding: ($line-height - $font-size) / 2;
+  }
 
   @if $border {
     $padding: ($padding - $border);
   }
 
-  font-size: em($font-size);
-  line-height: em($line-height, $font-size);
-  min-height: em($min-height, $font-size);
-  min-width: em($min-height, $font-size);
-  padding: em($padding, $font-size) em(($padding * $padding-ratio), $font-size);
+  padding: arrayMagic($padding ($padding * $padding-ratio));
+
+  font-size: rem($font-size);
+  line-height: rem($line-height);
+  min-height: rem($min-height);
+  min-width: rem($min-height);
 
   @if $border {
     border-style: solid;
@@ -40,7 +48,7 @@
 
   @content;
 
-  @if $inline-styles {
+  @if $inline-styles and $padding {
     .bubble,
     .tag {
       &:first-child {

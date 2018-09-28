@@ -1,0 +1,87 @@
+<section>
+  <div class="align-center" id="toast">
+    <img src="assets/toast.svg">
+    <h3>toast</h3>
+  </div>
+
+  <div data-grid="is-center">
+    <div data-col='4'>
+      <div class="xui-toggle">
+        <input id="toastBackdrop" type="checkbox" v-model="toastBackdrop">
+        <label for="toastBackdrop">
+          <div class="xui-toggle__switch"></div>
+          has a backdrop
+        </label>
+      </div>
+      <div class="form-group">
+        <select name="toastOrientation" class="input" v-model="toastOrientation">
+          <option value="opens-top" selected>opens-top</option>
+          <option value="opens-bottom">opens-bottom</option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-toggle">
+        <input id="toastAnimate" type="checkbox" v-model="toastAnimate">
+        <label for="toastAnimate">
+          <div class="xui-toggle__switch"></div>
+          uses data-animate
+        </label>
+      </div>
+      <div class="form-group">
+        <select v-model="toastAnimation" :disabled="!toastAnimate" class="input">
+          <option :value="ani" v-for="(ani, index) in animation">
+            ${ani}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <a href @click.prevent="toastOpen = !toastOpen" class="btn is-elevated-16">open</a>
+    </div>
+  </div>
+
+  <div class="toast-wrapper" :class="{'is-active' : toastOpen}" v-if="toastBackdrop">
+    <div class="toast" :data-animate="toastAnimate ? toastAnimation + ' 4' : false" :class="toastOrientation">
+      <div class="toast-dismiss" @click="toastOpen = !toastOpen">
+        <div class="ec-icon close-x-big"></div>
+      </div>
+      <div class="toast-body">
+        <p class="align-center">I am a simple toast</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" :data-animate="toastAnimate ? toastAnimation + ' 4' : false" :class="[{'is-active' : toastOpen}, toastOrientation]"
+    v-if="!toastBackdrop">
+    <div class="toast-dismiss" @click="toastOpen = !toastOpen">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="toast-body">
+      <p class="align-center">I am a simple toast</p>
+    </div>
+  </div>
+
+  <pre><code class="html" v-show="toastBackdrop">
+<div class="toast-wrapper">
+  <div class="toast opens-top">
+    <div class="toast-dismiss">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="toast-body">
+      ...
+    </div>
+  </div>
+</div></code></pre>
+  <pre><code class="html" v-show="!toastBackdrop">
+<div class="toast opens-top">
+  <div class="toast-dismiss">
+    <div class="ec-icon close-x-big"></div>
+  </div>
+  <div class="toast-body">
+    ...
+  </div>
+</div></code></pre>
+
+  <div class="bumper-big"></div>
+</section>

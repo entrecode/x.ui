@@ -1,6 +1,6 @@
 <p align="center"><img src="readme.png" alt="x.ui"></p>
 
-# x.ui 9.0.5
+# x.ui
 
 **x.ui** is a framework based on the atomic design methodology. this workflow is inspired by nature and physics and has a pretty serious focus on modularity and structure. its structure begins with the smallest part and builds up to complex structure. as a result, there is very little redundancy with a remarkable flexibility.
 
@@ -36,6 +36,21 @@ using node-sass:
 ## Crossbrowser compatibility
 
 x.ui has uses no prefix mixins, please use an autoprefixer in your project
+
+## deprecated
+
+### since 9.1.0
+
+- `no-margin-#` and `no-padding-#` use `has-padding-#-0` or `has-padding-#-0` instead
+- `spacer-small` and `spacer-big` use `spacer spacer_big` or `spacer spacer_small` instead
+- `well-small` and `well-big` use `well well_small` or `well well_big` instead
+- `flex-spacer` use `flex-space` instead
+- `xui-overlay` use `.dialog` instead
+
+### since 7.0.0
+
+- `data-col="pull-#"` and `data-col="push-#"` use `data-flex-order=""` instead
+- `data-row` use `data-grid` instead
 
 ## creators
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,57 +9,79 @@
   <meta property="og:image" content="og-image.jpg">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="x.ui.css">
-  <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.1.min.css"/>
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-  <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.2.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
   <script src="app.js"></script>
   <meta name="theme-color" content="#ffffff">
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
 </head>
+
 <body>
-<div id="app" class="xui-demo" data-grid="no-gutter is-end">
-<header class="demo-navbar is-fixed is-positioned-nw is-layer-10 is-layer-100-xs has-transition"
-        data-col="12">
+  <!-- <div id="app" class="xui-demo" data-grid="no-gutter is-end"> -->
+  <div id="app" class="xui-demo">
+<header class="demo-navbar is-fixed is-positioned-nw is-layer-200 has-transition" data-col="12">
   <div class="toolbar toolbar_small">
     <div data-col="2">
-      <button :class="{ 'is-active': menuActive }" v-on:click="menuActive = !menuActive"
-              class="hamburger-btn is-hidden-from-nav"></button>
+      <button :class="{ 'is-active': menuActive }" @click.prevent="menuActive = !menuActive" class="hamburger-btn"></button>
     </div>
     <div data-col="8">
-      <div data-container="is-left-nav">
-        <div data-grid="is-default is-center">
-          <div data-col="8-md" class="is-relative">
-            <div class="toolbar__title toolbar__title_center">
-              <a href="#top">
-                <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
-              </a>
-            </div>
-          </div>
-        </div>
+      <div class="toolbar__title toolbar__title_center">
+        <a href="#top">
+          <img src="assets/xui-logo-small.svg" alt="x.ui - atomic css framwork">
+        </a>
       </div>
     </div>
     <div data-col="2">
       <nav class="nav">
         <ul class="nav__items">
           <li class="nav__item" style="padding-right: 16px;">
-            <small class="is-ink-lighter is-nowrap">v. 9.0.8</small>
+            <small class="is-ink-lighter is-nowrap">v. 9.1.0</small>
           </li>
           <li class="nav__divider"></li>
           <li class="nav__item">
-            <a href="https://github.com/entrecode/x.ui" class="btn btn_clear btn_minor"><span
-                  class="ec-icon github"></span></a>
+            <a href="https://github.com/entrecode/x.ui" class="btn btn_clear btn_minor"><span class="ec-icon github"></span></a>
           </li>
         </ul>
       </nav>
     </div>
   </div>
 </header>
-<aside :class="menuActive ? 'is-active' : '' " data-col="6-xs 4-sm 3-nav 2-xl" style="height: 100%;" class="demo-sidebar is-scrollable-y is-fixed is-positioned-nw is-layer-10 is-theme" data-animate="slideRight 4">
-  <div class="has-padding-big">
+<ul class="bp-monitor">
+  <li class="bp-monitor-xs">
+    <strong>xs</strong>
+    <small>mobile</small>
+  </li>
+  <li class="bp-monitor-sm">
+    <strong>sm</strong>
+    <small>mobile ls</small>
+  </li>
+  <li class="bp-monitor-md">
+    <strong>md</strong>
+    <small>tablet</small>
+  </li>
+  <li class="bp-monitor-lg">
+    <strong>lg</strong>
+    <small>tablet ls</small>
+  </li>
+  <li class="bp-monitor-xl">
+    <strong>xl</strong>
+    <small>desktop</small>
+  </li>
+  <li class="bp-monitor-xxl">
+    <strong>xxl</strong>
+    <small>widescreen</small>
+  </li>
+</ul>
+<aside :class="{'is-active' : menuActive}" class="demo-sidebar deck opens-left is-scrollable-y-contain" data-animate="slideRight 4">
+  <div class="has-padding-big" style="padding-left: 64px;">
     <ul class="is-unstyled" style="width: 100%;">
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#get-started"><span class="ec-icon cursor-tap">get started</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#get-started">atomic design</a></li>
           <li><a href="#bem">naming conventions</a></li>
@@ -66,12 +89,12 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5 has-padding-middle"><a href="#the-grid"><span class="ec-icon border-none">the grid</span></a></h3></li>
+      <li><h3 class="is-h5 has-padding-middle-big"><a href="#the-grid"><span class="ec-icon border-none">the grid</span></a></h3></li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#typeface"><span class="ec-icon smaller-text">typeface</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#typeface"><span class="ec-icon smaller-text">typeface</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#headings">headings</a></li>
-          <li><a href="#type">type</a></li>
+          <li><a href="#paragraph">paragraph</a></li>
           <li><a href="#list">list</a></li>
           <li><a href="#align">align</a></li>
           <li><a href="#text-transform">text-transform</a></li>
@@ -80,16 +103,19 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#media"><span class="ec-icon img">media</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#media"><span class="ec-icon img">Image</span></a></h3>
         <ul class="is-unstyled">
-          <li><a href="#img">img</a></li>
+          <li><a href="#img_responsive">responsive</a></li>
+          <li><a href="#img_responsive">full-width</a></li>
           <li><a href="#img-crop">img-crop</a></li>
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#form"><span class="ec-icon text-input">form</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#form"><span class="ec-icon text-input">form</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#input">input</a></li>
+          <li><a href="#slider">slider</a></li>
+          <li><a href="#file-upload">file-upload</a></li>
           <li><a href="#input-group">input-group</a></li>
           <li><a href="#xui-select">xui-select</a></li>
           <li><a href="#xui-checkbox">xui-checkbox</a></li>
@@ -100,9 +126,9 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#ui"><span class="ec-icon list-bullets">ui</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#ui"><span class="ec-icon list-bullets">ui</span></a></h3>
         <ul class="is-unstyled">
-          <li><a href="#btn">btn</a></li>
+          <li><a href="#btn">button</a></li>
           <li><a href="#hamburger-btn">hamburger-btn</a></li>
           <li><a href="#bubble">bubble</a></li>
           <li><a href="#tag">tag</a></li>
@@ -115,25 +141,32 @@
           <li><a href="#xui-list">xui-list</a></li>
           <li><a href="#xui-accordion">xui-accordion</a></li>
           <li><a href="#card">card</a></li>
-          <li><a href="#xui-overlay">xui-overlay</a></li>
           <li><a href="#well">well</a></li>
+          <li><a href="#dialog">dialog</a></li>
+          <li><a href="#deck">deck</a></li>
+          <li><a href="#toast">toast</a></li>
+          <li><a href="#snackbar">snackbar</a></li>
+          <li><a href="#overlay">overlay</a></li>
           <li><a href="#alert">alert</a></li>
-          <li><a href="#data-toolbar">data-tooltip</a></li>
+          <li><a href="#loader">loader</a></li>
+          <li><a href="#data-tooltip">data-tooltip</a></li>
           <li><a href="#table">table</a></li>
           <li><a href="#avatar">avatar</a></li>
           <li><a href="#is-ink">is-ink</a></li>
           <li><a href="#is-theme">is-theme</a></li>
           <li><a href="#is-rounded">is-rounded</a></li>
           <li><a href="#is-bordered">is-bordered</a></li>
+          <li><a href="#is-elevated">is-elevated</a></li>
           <li><a href="#is-raised">is-raised</a></li>
           <li><a href="#is-lifted">is-lifted</a></li>
           <li><a href="#is-fab">is-fab</a></li>
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#layout"><span class="ec-icon article">layout</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#layout"><span class="ec-icon article">layout</span></a></h3>
         <ul class="is-unstyled">
           <li><a href="#bumper">bumper</a></li>
+          <li><a href="#divider">divider</a></li>
           <li><a href="#spacer">spacer</a></li>
           <li><a href="#flex-spacer">flex-spacer</a></li>
           <li><a href="#has-margin">has-margin</a></li>
@@ -146,32 +179,33 @@
           <li><a href="#is-positioned">is-positioned</a></li>
           <li><a href="#is-layer">is-layer</a></li>
           <li><a href="#pull">pull</a></li>
-          <li><a href="#is-overflow">is-overflow</a></li>
+          <li><a href="#is-clipped">is-clipped</a></li>
+          <li><a href="#is-scrollable">is-scrollable</a></li>
           <li><a href="#is-hidden">is-hidden</a></li>
           <li><a href="#is-visible">is-visible</a></li>
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><div class="ec-icon cursor-arrow">interaction</div></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><div class="ec-icon cursor-arrow">interaction</div></h3>
         <ul class="is-unstyled">
           <li><a href="#data-animate">data-animate</a></li>
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle" style="top:0;"><a href="#ec-icon"><span class="ec-icon skull">ec-icon</span></a></h3></li>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#ec-icon"><span class="ec-icon skull">ec-icon</span></a></h3></li>
 
-      <li><div class="spacer-big"></div></li>
+      <li><div class="spacer spacer_big"></div></li>
     </ul>
   </div>
-</aside>  <div class="xui-demo-body has-transition is-scrollable-y"
-       :data-col="menuActive ? '8-sm' : '12 9-nav 10-xl'">
-    <div data-container="is-left-nav">
-      <div data-grid="is-default is-default is-center">
-        <div data-col="8-md">
+</aside>    <div class="xui-demo-body">
+      <!-- <div data-container="is-left-nav"> -->
+      <div data-container>
+        <div data-grid="is-center">
+          <div data-col="8-md">
 <div class="hero has-margin has-height-vh-golden" data-flex="is-center is-end-items">
   <div style="margin-bottom: 10vh;">
     <a href="#get-started" class="btn btn_big is-lifted-big">get started</a>
-    <div class="spacer-small"></div>
+    <div class="spacer spacer_small"></div>
   </div>
 </div>
 <section class="has-margin-middle-big">
@@ -189,30 +223,30 @@
 </section>
 <div class="bumper-big"></div>
 <section class="has-margin-middle-big">
-  <h2 class="is-h3 align-center ink-link is-uppercase special-font" id="get-started">get started</h2>
+  <h2 class="align-center ink-link is-uppercase special-font" id="get-started">get started</h2>
   <div data-grid="is-small" data-flex="is-center-content">
     <div data-col="4-sm">
       <h6 class="align-center">1. install</h6>
-      <pre class="well"><code>npm i x.ui --save</code></pre>
+      <pre class="no-margin"><code>npm i x.ui --save</code></pre>
     </div>
     <div data-col="4-sm">
       <h6 class="align-center">2. download config</h6>
-      <div class="well align-center">
-        <a href="https://github.com/entrecode/x.ui/blob/master/src/_config.scss"
+      <div class="well align-center has-padding-small">
+        <a href="https://raw.githubusercontent.com/entrecode/x.ui/master/src/_xui-config.scss"
            title="config file for x.ui" target="_blank" rel="noopener"
-           class="btn btn_outlined">Download</a>
+           class="btn">Download</a>
       </div>
     </div>
     <div data-col="4-sm">
       <h6 class="align-center">3. setup root-scss</h6>
-      <pre class="well"><code class="css">
+      <pre class="no-margin"><code class="css">
 @import '_config';
 @import '~x.ui/src/x.ui.scss';</code></pre>
     </div>
   </div>
 </section>
 <div class="bumper-big"></div><section class="has-margin-middle-big">
-  <h2 class="is-h3 align-center is-uppercase special-font">BEM</h2>
+  <h2 class="align-center is-uppercase special-font" id="bem">BEM</h2>
   <div class="well align-center">
     <div class="is-kilo">{block-name}__{elem-name}_{mod-name}_{mod-val}</div>
   </div>
@@ -230,7 +264,7 @@
     <li>the modifier value is separated from the modifier name by a single underscore (_).
     </li>
   </ul>
-  <div class="spacer-small"></div>
+  <div class="spacer spacer_small"></div>
 
   <p class="align-center is-ink-light">
     <small>
@@ -243,7 +277,7 @@
   </p>
 </section>
 <div class="bumper-big"></div><section>
-  <h2 class="is-h3 align-center is-uppercase special-font" id="xui-structure">structure</h2>
+  <h2 class="align-center is-uppercase special-font" id="structure">structure</h2>
   <div data-grid>
     <div data-col="4-sm">
       <div class="align-center">
@@ -251,7 +285,7 @@
           <path fill="#2fce6f"
                 d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z"/>
         </svg>
-        <h3 class="is-h5"><a href="#xui-atoms">atoms</a></h3>
+        <h3><a href="#xui-atoms">atoms</a></h3>
       </div>
       <p class="is-hyphen-block">
         <small>Atoms are the smallest building blocks of <strong>x.ui</strong>. Atoms are
@@ -268,7 +302,7 @@
           <path fill="#2fce6f"
                 d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
         </svg>
-        <h3 class="is-h5"><a href="#xui-molecules">molecules</a></h3>
+        <h3><a href="#xui-molecules">molecules</a></h3>
       </div>
       <p class="is-hyphen-block">
         <small>Molecules are groups of atoms bonded together and are the smallest
@@ -284,7 +318,7 @@
           <path fill="#2fce6f"
                 d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
         </svg>
-        <h3 class="is-h5"><a href="#xui-organisms">organisms</a></h3>
+        <h3><a href="#xui-organisms">organisms</a></h3>
         <p class="is-hyphen-block">
           <small>organisms combine complex groups of molecules and molecules. they are the
             biggest parts of the atomsphere.
@@ -294,7 +328,9 @@
       </div>
     </div>
   </div>
-</section>        </div>
+</section>          </div>
+        </div>
+      </div>
 
 <section>
   <ul data-grid="no-gutter" class="periodic-table">
@@ -302,10 +338,9 @@
       <ul data-grid="no-gutter">
         <li class="periodic-family-atoms is-theme-invert_lightest" data-col="12">
           <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-            <path fill="#ffffff"
-                  d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z"/>
+            <path fill="#ffffff" d="M80,64A16,16,0,1,1,64,80,16,16,0,0,1,80,64m0-8a24,24,0,1,0,24,24A24,24,0,0,0,80,56Z" />
           </svg>
-          <h3 class="is-h6">atoms</h3>
+          <h3>atoms</h3>
         </li>
         <li data-col="6 4-md">
           <a href="#headings" class="periodic-group-type">
@@ -313,8 +348,8 @@
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#type" class="periodic-group-type">
-            <span class="is-h5">T</span> type
+          <a href="#paragraph" class="periodic-group-type">
+            <span class="is-h5">T</span> paragraph
           </a>
         </li>
         <li data-col="6 4-md">
@@ -340,6 +375,16 @@
         <li data-col="6 4-md">
           <a href="#input" class="periodic-group-form">
             <span class="is-h5">F</span> input
+          </a>
+        </li>
+        <li data-col="6 4-md">
+          <a href="#slider" class="periodic-group-form">
+            <span class="is-h5">F</span> slider
+          </a>
+        </li>
+        <li data-col="6 4-md">
+          <a href="#file-upload" class="periodic-group-form">
+            <span class="is-h5">F</span> file-upload
           </a>
         </li>
         <li data-col="6 4-md">
@@ -383,6 +428,11 @@
           </a>
         </li>
         <li data-col="6 4-md">
+          <a href="#loader" class="periodic-group-ui">
+            <span class="is-h5">UI</span> loader
+          </a>
+        </li>
+        <li data-col="6 4-md">
           <a href="#bumper" class="periodic-group-layout">
             <span class="is-h5">L</span> bumper
           </a>
@@ -403,10 +453,9 @@
       <ul data-grid="no-gutter">
         <li class="periodic-family-molecules is-theme-invert_lighter" data-col="12">
           <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-            <path fill="#ffffff"
-                  d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z"/>
+            <path fill="#ffffff" d="M100,56A24,24,0,0,0,80,66.74a24,24,0,1,0,0,26.52A24,24,0,1,0,100,56ZM60,96A16,16,0,1,1,76,80,16,16,0,0,1,60,96Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,96Z" />
           </svg>
-          <h3 class="is-h6">molecules</h3>
+          <h3>molecules</h3>
         </li>
         <li data-col="6 4-md">
           <a href="#form-group" class="periodic-group-form">
@@ -439,13 +488,28 @@
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#xui-well" class="periodic-group-ui">
+          <a href="#well" class="periodic-group-ui">
             <span class="is-h5">UI</span> well
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#xui-overlay" class="periodic-group-ui">
-            <span class="is-h5">UI</span> xui-overlay
+          <a href="#dialog" class="periodic-group-ui">
+            <span class="is-h5">UI</span> dialog
+          </a>
+        </li>
+        <li data-col="6 4-md">
+          <a href="#deck" class="periodic-group-ui">
+            <span class="is-h5">UI</span> deck
+          </a>
+        </li>
+        <li data-col="6 4-md">
+          <a href="#toast" class="periodic-group-ui">
+            <span class="is-h5">UI</span> toast
+          </a>
+        </li>
+        <li data-col="6 4-md">
+          <a href="#overlay" class="periodic-group-ui">
+            <span class="is-h5">UI</span> overlay
           </a>
         </li>
         <li data-col="6 4-md">
@@ -469,10 +533,9 @@
       <ul data-grid="no-gutter">
         <li class="periodic-family-organisms is-theme-invert_light" data-col="12">
           <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-            <path fill="#ffffff"
-                  d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z"/>
+            <path fill="#ffffff" d="M113.26,80A24,24,0,1,0,80,46.74,24,24,0,1,0,46.74,80,24,24,0,1,0,80,113.26,24,24,0,1,0,113.26,80ZM100,44A16,16,0,1,1,84,60,16,16,0,0,1,100,44ZM80,86.74A24,24,0,0,0,73.26,80,24,24,0,0,0,80,73.26,24,24,0,0,0,86.74,80,24,24,0,0,0,80,86.74ZM44,60A16,16,0,1,1,60,76,16,16,0,0,1,44,60Zm16,56a16,16,0,1,1,16-16A16,16,0,0,1,60,116Zm40,0a16,16,0,1,1,16-16A16,16,0,0,1,100,116Z" />
           </svg>
-          <h3 class="is-h6">organisms</h3>
+          <h3>organisms</h3>
         </li>
         <li data-col="6 4-md">
           <a href="#xui-list" class="periodic-group-ui">
@@ -495,10 +558,9 @@
       <ul data-grid="no-gutter">
         <li class="periodic-family-modifier is-theme-link" data-col="12">
           <svg width="64px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-            <path fill="#ffffff"
-                  d="M100,76H86.93l6.53-11.32a4,4,0,1,0-6.92-4L80,72,73.46,60.68a4,4,0,0,0-6.92,4L73.07,76H60a4,4,0,0,0,0,8H73.07L66.54,95.32a4,4,0,0,0,6.92,4L80,88l6.54,11.32a4,4,0,1,0,6.92-4L86.93,84H100a4,4,0,0,0,0-8Z"/>
+            <path fill="#ffffff" d="M100,76H86.93l6.53-11.32a4,4,0,1,0-6.92-4L80,72,73.46,60.68a4,4,0,0,0-6.92,4L73.07,76H60a4,4,0,0,0,0,8H73.07L66.54,95.32a4,4,0,0,0,6.92,4L80,88l6.54,11.32a4,4,0,1,0,6.92-4L86.93,84H100a4,4,0,0,0,0-8Z" />
           </svg>
-          <h3 class="is-h6">modifier</h3>
+          <h3>modifier</h3>
         </li>
         <li data-col="6 4-md">
           <a href="#align" class="periodic-group-type">
@@ -539,7 +601,8 @@
           <a href="#is-rounded" class="periodic-group-ui">
             <span class="is-h5">UI</span> is-rounded
           </a>
-        </li><li data-col="6 4-md">
+        </li>
+        <li data-col="6 4-md">
           <a href="#is-bordered" class="periodic-group-ui">
             <span class="is-h5">UI</span> is-bordered
           </a>
@@ -557,6 +620,11 @@
         <li data-col="6 4-md">
           <a href="#data-tooltip" class="periodic-group-ui">
             <span class="is-h5">UI</span> data-tooltip
+          </a>
+        </li>
+        <li data-col="6 4-md">
+          <a href="#data-flex" class="periodic-group-layout">
+            <span class="is-h5">L</span> data-flex
           </a>
         </li>
         <li data-col="6 4-md">
@@ -633,640 +701,749 @@
     </li>
   </ul>
 </section>
-        <div data-col="+1-md 8-md">
-          <h2 class="is-h1 align-center is-uppercase special-font" id="the-grid">
-            <small class="is-ink-link">layout</small>
-            <br>the grid
-          </h2>
-          <p class="is-lead">the grid system and additional layout modifier as an ordering structure
-            and a ui-design necessity are not part of the atomic structure but belongs to its core
-            fabric.</p>
-        </div>
-
-        <div class="spacer"></div>
-
-<div data-flex-item="grow">
-  <div data-grid>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-  </div>
-
-  <div data-grid>
-    <div data-col="2">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-    </div>
-    <div data-col="2">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-    </div>
-    <div data-col="2">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-    </div>
-    <div data-col="2">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-    </div>
-    <div data-col="2">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-    </div>
-    <div data-col="2">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-    </div>
-  </div>
-
-  <div data-grid>
-    <div data-col="3">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
-    </div>
-    <div data-col="3">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
-    </div>
-    <div data-col="3">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
-    </div>
-    <div data-col="3">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
-    </div>
-  </div>
-
-  <div data-grid>
-    <div data-col="4">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">4</div>
-    </div>
-    <div data-col="4">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">4</div>
-    </div>
-    <div data-col="4">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">4</div>
-    </div>
-  </div>
-
-  <div data-grid>
-    <div data-col="5">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">5</div>
-    </div>
-    <div data-col="7">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">7</div>
-    </div>
-  </div>
-
-  <div data-grid>
-    <div data-col="6">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
-    </div>
-    <div data-col="6">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">6</div>
-    </div>
-  </div>
-  <div data-grid>
-    <div data-col="5">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">5</div>
-    </div>
-    <div data-col="7">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">7</div>
-    </div>
-  </div>
-  <div data-grid>
-    <div data-col="8">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">8</div>
-    </div>
-    <div data-col="4">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">4</div>
-    </div>
-  </div>
-  <div data-grid>
-    <div data-col="3">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">3</div>
-    </div>
-    <div data-col="9">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">9</div>
-    </div>
-  </div>
-  <div data-grid>
-    <div data-col="10">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">10</div>
-    </div>
-    <div data-col="2">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">2</div>
-    </div>
-  </div>
-  <div data-grid>
-    <div data-col="1">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">1</div>
-    </div>
-    <div data-col="11">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">11</div>
-    </div>
-  </div>
-  <div data-grid>
-    <div data-col="12">
-      <div class="has-padding-smallest is-theme-minor align-center has-margin-bottom">12</div>
-    </div>
-  </div>
-</div>
-        <div class="spacer"></div>
-
-        <div data-col="8-md">
-          <p class="is-h2 is-uppercase" style="line-height: 1em">
-            mobile<span class="is-ink-link">first</span>
-            mobile<span class="is-ink-light">landscape</span><span class="is-ink-link">480</span>
-            tablet<span class="is-ink-link">720</span>
-            tablet<span class="is-ink-light">landscape</span><span class="is-ink-link">1024</span>
-            desktop<span class="is-ink-link">1280</span>
-            widescreen<span class="is-ink-link">1920</span></p>
-          <p>The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of
-            classes.
-            you can choose between a float or a flex based 12 column grid.</p>
-          <div data-grid>
-            <div data-col="6-sm">
-              <h4 class="is-h6 is-uppercase">flex-grid</h4>
-              <pre><code class="html">
-<div data-container>
-  <div data-grid>
-    <div data-col="{size}">
-      ...
-    </div>
-  </div>
-</div></code></pre>
-            </div>
-            <div data-col="6-sm">
-              <h4 class="is-h6 is-uppercase">float-grid</h4>
-              <pre><code class="html">
-<div data-container>
-  <div data-row>
-    <div data-col="{size}">
-      ...
-    </div>
-  </div>
-</div></code></pre>
-            </div>
+      <div data-container>
+        <div data-grid="is-center">
+          <div data-col="8">
+            <h2 class="is-h1 align-center is-uppercase special-font" id="the-grid">
+              <small class="is-ink-link">layout</small>
+              <br>the grid
+            </h2>
+            <p class="is-lead">the grid system and additional layout modifier as an ordering structure
+              and a ui-design necessity are not part of the atomic structure but belongs to its core
+              fabric.</p>
           </div>
+
           <div class="spacer"></div>
-<div class="well align-center">
-  <div class="is-kilo">data-container="{option}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }"</div>
-</div>
-<p>wraps everything in a repsonsive container with a maximum with of
-  <strong>1200px</strong>. Per default it is centered horizontally. for full-width
-  designs just don't use this attribute.</p>
-<table class="table">
-  <tr data-flex>
-    <td data-col="4"><em>empty</em></td>
-    <td data-col="8">centered horizontally
-      <div class="tag tag_small">default</div>
-    </td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-left</span></td>
-    <td data-col="8">aligns the container left</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-right</span></td>
-    <td data-col="8">aligns the container right</td>
-  </tr>
-</table>
-<div class="spacer"></div>
-<div class="well align-center">
-  <div class="is-kilo">data-grid="{option}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }"</div>
-</div>
-<p>this is part of the flex-based grid. it is a more modern and flexible approach for a
-  grid-model which is not prone to floating errors. it can be combined with additional
-  data-flex values to influence it's behavior.</p>
-<table class="table">
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-default</span> or <em>empty</em></td>
-    <td data-col="8">activates flex-grid
-      <div class="tag tag_small">default</div>
-    </td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">no-gutter</span></td>
-    <td data-col="8">removes the space between the inline columns</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-small</span></td>
-    <td data-col="8">half sized spaces between columns</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-start</span></td>
-    <td data-col="8">aligns columns left</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-center</span></td>
-    <td data-col="8">centers the columns</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-end</span></td>
-    <td data-col="8">aligns columns right</td>
-  </tr>
-</table>
-<div class="spacer"></div>
-<div class="well align-center">
-  <div class="is-kilo">data-col="{ size | offset }{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }"
+
+          <div data-col='12'>
+<div data-grid class="demo-grid">
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
+  </div>
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
+  </div>
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
+  </div>
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
+  </div>
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
+  </div>
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
+  </div>
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
+  </div>
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
+  </div>
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
+  </div>
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
+  </div>
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
+  </div>
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
   </div>
 </div>
-<table class="table">
-  <tr data-flex>
-    <td data-col="4"><span class="code">[1-12]</span></td>
-    <td data-col="8">defines the grid-size of the column. can be multiple sizes for
-      different screen-sizes
-    </td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">+[0-11]</span></td>
-    <td data-col="8">defines an grid-based offset of an column. can be multiple offsets
-      for different screen-sizes
-    </td>
-  </tr>
-</table>
-<div class="bumper"></div>
-<div class="well align-center">
-  <div class="is-kilo">data-flex="{option}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }"
+
+<div data-grid class="demo-grid">
+  <div data-col="2">
+    <div class="has-padding-smallest is-theme-minor align-center">2</div>
+  </div>
+  <div data-col="2">
+    <div class="has-padding-smallest is-theme-minor align-center">2</div>
+  </div>
+  <div data-col="2">
+    <div class="has-padding-smallest is-theme-minor align-center">2</div>
+  </div>
+  <div data-col="2">
+    <div class="has-padding-smallest is-theme-minor align-center">2</div>
+  </div>
+  <div data-col="2">
+    <div class="has-padding-smallest is-theme-minor align-center">2</div>
+  </div>
+  <div data-col="2">
+    <div class="has-padding-smallest is-theme-minor align-center">2</div>
   </div>
 </div>
-<h6 class="align-center">flex-direction</h6>
-<table class="table">
-  <tbody>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-row</span></td>
-    <td data-col="8">left to right in ltr | right to left in rtl <span
-          class="tag tag_small">default</span></td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-row-reverse</span></td>
-    <td data-col="8">right to left in ltr | left to right in rtl</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-column</span></td>
-    <td data-col="8">same as row but top to bottom</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-column-reverse</span></td>
-    <td data-col="8">same as row-reverse but bottom to top</td>
-  </tr>
-  </tbody>
-</table>
-<h6 class="align-center">flex-wrap</h6>
-<table class="table">
-  <tbody>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-nowrap</span></td>
-    <td data-col="8">all flex items will be on one line <span class="tag tag_small">default</span>
-    </td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-wrap</span></td>
-    <td data-col="8">flex items will wrap onto multiple lines, from top to bottom</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-wrap-reverse</span></td>
-    <td data-col="8">flex items will wrap onto multiple lines from bottom to top</td>
-  </tr>
-  </tbody>
-</table>
-<h6 class="align-center">justify-content</h6>
-<table class="table">
-  <tbody>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-start</span></td>
-    <td data-col="8">items are packed toward the start line <span
-          class="tag tag_small">default</span>
-    </td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-end</span></td>
-    <td data-col="8">items are packed toward to end line</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-center</span></td>
-    <td data-col="8">items are centered along the line</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-between</span></td>
-    <td data-col="8">items are evenly distributed in the line; first item is on the
-      start line, last item on the end line
-    </td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-around</span></td>
-    <td data-col="8">items are evenly distributed in the line with equal space around
-      them
-    </td>
-  </tr>
-  </tbody>
-</table>
-<h6 class="align-center">align-items</h6>
-<table class="table">
-  <tbody>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-start-items</span></td>
-    <td data-col="8">cross-start margin edge of the items is placed on the cross-start
-      line
-    </td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-end-items</span></td>
-    <td data-col="8">cross-end margin edge of the items is placed on the cross-end
-      line
-    </td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-center-items</span></td>
-    <td data-col="8">items are centered in the cross-axis</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-baseline-items</span></td>
-    <td data-col="8">items are aligned such as their baselines align</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-stretch-items</span></td>
-    <td data-col="8">stretch to fill the container <span
-          class="tag tag_small">default</span></td>
-  </tr>
-  </tbody>
-</table>
-<h6 class="align-center">align-content</h6>
-<table class="table">
-  <tbody>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-start-content</span></td>
-    <td data-col="8">lines packed to the start of the container</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-end-content</span></td>
-    <td data-col="8">lines packed to the end of the container</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-center-content</span></td>
-    <td data-col="8">lines packed to the center of the container</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-space-content</span></td>
-    <td data-col="8">lines evenly distributed; the first line is at the start of the
-      container while the last one is at the end
-    </td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-arround-content</span></td>
-    <td data-col="8">lines evenly distributed with equal space around each line</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-stretch-content</span></td>
-    <td data-col="8">lines stretch to take up the remaining space <span
-          class="tag tag_small">default</span></td>
-  </tr>
-  </tbody>
-</table>
-<div class="spacer"></div>
-<div class="well align-center">
-  <span class="is-kilo">data-flex-item="{options}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }"</span>
+
+<div data-grid class="demo-grid">
+  <div data-col="3">
+    <div class="has-padding-smallest is-theme-minor align-center">3</div>
+  </div>
+  <div data-col="3">
+    <div class="has-padding-smallest is-theme-minor align-center">3</div>
+  </div>
+  <div data-col="3">
+    <div class="has-padding-smallest is-theme-minor align-center">3</div>
+  </div>
+  <div data-col="3">
+    <div class="has-padding-smallest is-theme-minor align-center">3</div>
+  </div>
 </div>
-<h6 class="align-center">size</h6>
-<table class="table">
-  <tbody>
-  <tr data-flex>
-    <td data-col="4"><span class="code">grow</span></td>
-    <td data-col="8">items grows to fill it's parent.</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">grow-even</span></td>
-    <td data-col="8">all children grow evenly an share the space.</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">fit-self</span></td>
-    <td data-col="8">element doesn't shrink and grows up to its content size.</td>
-  </tr>
-  </tbody>
-</table>
-<h6 class="align-center">align-self</h6>
-<table class="table">
-  <tbody>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-auto</span></td>
-    <td data-col="8">Default. The element inherits its parent container's align-items property, or "stretch" if it has no parent container.</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-stretch</span></td>
-    <td data-col="8">The element is positioned to fit the container.</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-center</span></td>
-    <td data-col="8">The element is positioned at the center of the container.</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-start</span></td>
-    <td data-col="8">The element is positioned at the beginning of the container.</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-end</span></td>
-    <td data-col="8">The element is positioned at the end of the container.</td>
-  </tr>
-  <tr data-flex>
-    <td data-col="4"><span class="code">is-baseline</span></td>
-    <td data-col="8">The element is positioned at the baseline of the container.</td>
-  </tr>
-  </tbody>
-</table>
-<div class="spacer"></div>
-<div class="well align-center">
-  <span class="is-kilo">data-flex-order="{order}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }"</span>
+
+<div data-grid class="demo-grid">
+  <div data-col="4">
+    <div class="has-padding-smallest is-theme-minor align-center">4</div>
+  </div>
+  <div data-col="4">
+    <div class="has-padding-smallest is-theme-minor align-center">4</div>
+  </div>
+  <div data-col="4">
+    <div class="has-padding-smallest is-theme-minor align-center">4</div>
+  </div>
 </div>
-<p>By default, flex items are laid out in the source order. However, the order property
-  controls the order in which they appear in the flex container. the order-value can be
-  <span class="code">[1-12]</span>.</p>
-<div class="spacer"></div>
-<h4 class="is-h6">data-row
-  <div class="tag tag_small tag_error">deprecated</div>
-</h4>
-<p>
-  <small>is an element of the float grid system, which is the old standard for
-    grid-systems. to avoid floating-errors it should only contain grid-columns with a
-    maximum width of 12 columns. Per default <em>data-row</em> doesn't need a value.
-    Optional values are <span class="code">no-gutter</span> to remove the space between
-    the inline columns or <span class="code">small-grid</span> for half sized spaces
-    between columns.
-  </small>
-</p>
-<div class="bumper"></div><h3 class="is-h3 align-center" id="xui-breakpoint-shortcodes">breakpoint shortcodes</h3>
+
+<div data-grid class="demo-grid">
+  <div data-col="5">
+    <div class="has-padding-smallest is-theme-minor align-center">5</div>
+  </div>
+  <div data-col="7">
+    <div class="has-padding-smallest is-theme-minor align-center">7</div>
+  </div>
+</div>
+
+<div data-grid class="demo-grid">
+  <div data-col="6">
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
+  </div>
+  <div data-col="6">
+    <div class="has-padding-smallest is-theme-minor align-center">6</div>
+  </div>
+</div>
+
+<div data-grid class="demo-grid">
+  <div data-col="5">
+    <div class="has-padding-smallest is-theme-minor align-center">5</div>
+  </div>
+  <div data-col="7">
+    <div class="has-padding-smallest is-theme-minor align-center">7</div>
+  </div>
+</div>
+
+<div data-grid class="demo-grid">
+  <div data-col="8">
+    <div class="has-padding-smallest is-theme-minor align-center">8</div>
+  </div>
+  <div data-col="4">
+    <div class="has-padding-smallest is-theme-minor align-center">4</div>
+  </div>
+</div>
+
+<div data-grid class="demo-grid">
+  <div data-col="3">
+    <div class="has-padding-smallest is-theme-minor align-center">3</div>
+  </div>
+  <div data-col="9">
+    <div class="has-padding-smallest is-theme-minor align-center">9</div>
+  </div>
+</div>
+
+<div data-grid class="demo-grid">
+  <div data-col="10">
+    <div class="has-padding-smallest is-theme-minor align-center">10</div>
+  </div>
+  <div data-col="2">
+    <div class="has-padding-smallest is-theme-minor align-center">2</div>
+  </div>
+</div>
+
+<div data-grid class="demo-grid">
+  <div data-col="1">
+    <div class="has-padding-smallest is-theme-minor align-center">1</div>
+  </div>
+  <div data-col="11">
+    <div class="has-padding-smallest is-theme-minor align-center">11</div>
+  </div>
+</div>
+
+<div data-grid class="demo-grid">
+  <div data-col="12">
+    <div class="has-padding-smallest is-theme-minor align-center">12</div>
+  </div>
+</div>
+
+<div data-grid class="demo-grid">
+  <div data-col="auto">
+    <div class="has-padding-smallest is-theme-minor align-center">auto</div>
+  </div>
+  <div data-col="2">
+    <div class="has-padding-smallest is-theme-minor align-center">2</div>
+  </div>
+</div>          </div>
+
+          <div class="spacer"></div>
+
+          <div data-col="8-md">
+            <p class="is-h2 is-uppercase" style="line-height: 1em">
+              mobile<span class="is-ink-link">first</span>
+              mobile<span class="is-ink-light">landscape</span><span class="is-ink-link">480</span>
+              tablet<span class="is-ink-link">720</span>
+              tablet<span class="is-ink-light">landscape</span><span class="is-ink-link">1024</span>
+              desktop<span class="is-ink-link">1280</span>
+              widescreen<span class="is-ink-link">1920</span></p>
+            <p class="is-lead">The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of
+              classes. Per default it is a 12 column grid with an 32px gutter.</p>
+            <pre><code class="html">
 <div data-grid>
-  <div data-flex-item="grow-even">
-    <div class="is-h1 align-center ink-link">xs</div>
+  <div data-col="{size}">
+    ...
   </div>
-  <div data-flex-item="grow-even">
-    <div class="is-h1 align-center">sm</div>
-  </div>
-  <div data-flex-item="grow-even">
-    <div class="is-h1 align-center">md</div>
-  </div>
-  <div data-flex-item="grow-even">
-    <div class="is-h1 align-center">lg</div>
-  </div>
-  <div data-flex-item="grow-even">
-    <div class="is-h1 align-center">xl</div>
-  </div>
-  <div data-flex-item="grow-even">
-    <div class="is-h1 align-center">xxl</div>
-  </div>
-  <div data-flex-item="grow-even">
-    <div class="is-h1 align-center">nav</div>
+</div></code></pre>
+            <div class="spacer spacer_big"></div>
+          </div>
+        </div>
+      </div>
+
+<div data-container>
+  <div data-grid="is-center">
+    <div data-col="8-md">
+      <h3>data-container</h3>
+      <p class="is-lead">wraps everything in a repsonsive container with a maximum with of
+        <strong>1200px</strong>. Per default it is centered horizontally. for full-width
+        designs just don't use this attribute.</p>
+    </div>
   </div>
 </div>
+
+<div :data-container="dataContainer ? dataContainerAlign : false">
+  <div class="well" data-flex="is-column is-center-items">
+    <div class="xui-toggle no-margin-bottom">
+      <input id="dataContainer" type="checkbox" v-model="dataContainer">
+      <label for="dataContainer">
+        <div class="xui-toggle__switch"></div>
+        use container
+      </label>
+    </div>
+    <ul class="is-inline has-margin-bottom-small" v-show="dataContainer" data-animate="popIn 2">
+      <li>
+        <a href @click.prevent="dataContainerAlign = 'is-left'" data-tooltip-top="align left" class="btn btn_clear"
+          :disabled="!dataContainer" v-cloak>
+          <img src="assets/align-left.svg" :style="[dataContainerAlign !== 'is-left' ? {opacity: .4} : false ]">
+        </a>
+      </li>
+      <li>
+        <a href @click.prevent="dataContainerAlign = ''" data-tooltip-top="align center" class="btn btn_clear"
+          :disabled="!dataContainer" v-cloak>
+          <img src="assets/align-center.svg" :style="[dataContainerAlign !== '' ? {opacity: .4} : false ]">
+        </a>
+      </li>
+      <li>
+        <a href @click.prevent="dataContainerAlign = 'is-right'" data-tooltip-top="align center" class="btn btn_clear"
+          :disabled="!dataContainer" v-cloak>
+          <img src="assets/align-right.svg" :style="[dataContainerAlign !== 'is-right' ? {opacity: .4} : false ]">
+        </a>
+      </li>
+    </ul>
+    <span class="code" v-if="dataContainer" v-cloak>
+      data-container<span v-if="dataContainerAlign !== ''">="${dataContainerAlign}"</span>
+    </span>
+  </div>
+</div>
+<div class="spacer spacer_small"></div>
+<div data-container>
+  <div data-grid="is-center">
+    <div data-col="8-md">
+      <table class="table">
+        <thead>
+          <tr data-flex>
+            <th data-col="4" class="align-left">values</th>
+            <th data-col="8" class="align-left">description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-flex>
+            <td data-col="4"><em>empty</em></td>
+            <td data-col="8">centered horizontally
+              <div class="tag tag_small">default</div>
+            </td>
+          </tr>
+          <tr data-flex>
+            <td data-col="4"><span class="code">is-left</span></td>
+            <td data-col="8">aligns the container left</td>
+          </tr>
+          <tr data-flex>
+            <td data-col="4"><span class="code">is-right</span></td>
+            <td data-col="8">aligns the container right</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="spacer"></div>
+
+      <div data-grid>
+        <div data-col='6'>
+          <h4>DO</h4>
+          <pre><code class="html">
+<div data-container>
+  ...
+</div></code></pre>
+        </div>
+        <div data-col='6'>
+          <h4 class="is-ink-error">DON'T</h4>
+          <pre><code class="html">
+<div data-container>
+  <div data-container>...</div>
+</div></code></pre>
+        </div>
+      </div>
+
+      <div class="title">
+        <h4 class="is-kilo">config variables</h4>
+        <a href="https://github.com/entrecode/x.ui/blob/master/src/_xui-config.scss" target="_blank" class="btn btn_clear">
+          <span class="ec-icon json"></span>
+        </a>
+      </div>
+      <pre><code class="scss">
+/* @param {px} $grid-container-width [1200] - max-width of container */
+$grid-container-width: 1200 !default;</code></pre>
+    </div>
+  </div>
+</div>
+
+<div class="spacer spacer_big"></div>
+      <div data-container>
+        <div data-grid="is-center">
+          <div data-col="8-md">
+<h3>data-grid</h3>
+<p class="is-lead">The flex-based grid is a more modern and more flexible approach for a
+  grid-model which is not prone to floating errors. all values can be combined e.g. <span class="code">data-grid="is-small
+    is-default-md"</span> it also can be combined with additional
+  data-flex values to influence it's behavior.</p>
+<div class="well">
+  <div data-grid="is-small is-center">
+    <div data-col='4'>
+      <div class="form-group">
+        <label for="dataGridValue">value</label>
+        <select v-model="dataGridValue" id="dataGridValue" class="input">
+          <option :value="v" v-for="v in dataGridOptions">${v === '' ? 'default' : v}</option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="form-group">
+        <label for="dataGridBreakpoint">breakpoints</label>
+        <select v-model="dataGridBreakpoint" id="dataGridBreakpoint" class="input" v-cloak>
+          <option :value="key" v-for="(value, key) in breakpoints">${value} (${key})</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <p class="align-center">
+    <span class="code" v-if="dataGridValue === 'is-default'" v-cloak>
+      data-grid<span v-if="dataGridBreakpoint !== 'xs'">="is-default-${dataGridBreakpoint}"</span>
+    </span>
+    <span class="code" v-if="dataGridValue !== 'is-default'" v-cloak>
+      data-grid="${dataGridValue}<span v-if="dataGridBreakpoint !== 'xs'">-${dataGridBreakpoint}</span>"
+    </span>
+  </p>
+  <p v-if="dataGridValue === 'is-default'" v-cloak class="align-center">
+    <small><span class="tag tag_small">default</span> activates flex-grid with a default gutter (32px)</small>
+  </p>
+  <p v-if="dataGridValue === 'is-small'" v-cloak class="align-center">
+    half sized gutter (16px) between columns.
+  </p>
+  <p v-if="dataGridValue === 'no-gutter'" v-cloak class="align-center">
+    removes the gutter between the inline columns.
+  </p>
+  <p v-if="dataGridValue === 'is-start'" v-cloak class="align-center">
+    <span class="tag tag_small">default</span> aligns columns left
+  </p>
+  <p v-if="dataGridValue === 'is-center'" v-cloak class="align-center">
+    centers the columns
+  </p>
+  <p v-if="dataGridValue === 'is-end'" v-cloak class="align-center">
+    aligns columns right
+  </p>
+</div>
+
+<div :data-grid="dataGridValue + '-' + dataGridBreakpoint" class="demo-grid" v-cloak>
+  <div data-col="4">
+    <div class="has-padding is-theme-minor align-center">4</div>
+  </div>
+  <div data-col="4">
+    <div class="has-padding is-theme-minor align-center">4</div>
+  </div>
+</div>
+
 <div class="spacer"></div>
+
+<div class="title">
+  <h4 class="is-kilo">config variables</h4>
+  <a href="https://github.com/entrecode/x.ui/blob/master/src/_xui-config.scss" target="_blank" class="btn btn_clear">
+    <span class="ec-icon json"></span>
+  </a>
+</div>
+<pre><code class="scss">
+// @param {px} $grid-gutter [32] - gutter size in pixels without unit
+// @param {value} $grid-outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
+// @param {number} $grid-num-columns [12] - number of columns in a row
+$grid-gutter: 32 !default;
+$grid-outer-gutter: true !default;
+$grid-num-columns: 12 !default;</code></pre>
+
+<div class="spacer spacer_big"></div><h3>data-col</h3>
+<div class="well">
+  <div data-grid>
+    <div data-col='4'>
+      <strong>size</strong>
+      <strong class="is-ink-link" v-cloak>${dataColSize}-${dataColSizeBreakpoint}</strong>
+    </div>
+    <div data-col='4'>
+      <input type="range" min="1" max="12" class="slider" value="4" v-model="dataColSize">
+    </div>
+    <div data-col='4'>
+      <div class="form-group">
+        <select v-model="dataColSizeBreakpoint" class="input" v-cloak>
+          <option :value="key" v-for="(value, key) in breakpoints">${value} (${key})</option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <strong>offset</strong>
+      <strong class="is-ink-link" v-cloak>+${dataColOffset}-${dataColOffsetBreakpoint}</strong>
+    </div>
+    <div data-col='4'>
+      <input type="range" min="0" max="11" class="slider" value="4" v-model="dataColOffset">
+    </div>
+    <div data-col='4'>
+      <div class="form-group">
+        <select v-model="dataColOffsetBreakpoint" class="input" v-cloak>
+          <option :value="key" v-for="(value, key) in breakpoints">${value} (${key})</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div data-grid class="demo-grid">
+  <div :data-col="dataColSize + '-' + dataColSizeBreakpoint + ' +' + dataColOffset + '-' + dataColOffsetBreakpoint"
+    v-cloak>
+    <div class="has-padding align-center" :class="(parseInt(dataColSize) + parseInt(dataColOffset))  > 12 ? 'is-theme-super_light' : 'is-theme-minor'"
+      v-cloak>${dataColSize}-${dataColSizeBreakpoint}
+      +${dataColOffset}-${dataColOffsetBreakpoint}</div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="well align-center">
+  <div class="is-kilo">data-col="{ size | offset }{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
+    }"
+  </div>
+</div>
 <table class="table">
-  <tr>
-    <td><em>empty</em></td>
-    <td>for all sizes - should be used in <span class="code">data-col</span> instead of <em>xs</em>.
-    </td>
-  </tr>
-  <tr>
-    <td><span class="code">xs</span></td>
-    <td>mobile: <em>[0]</em> up or from <em>[0]</em> up to <em>[479px]</em></td>
-  </tr>
-  <tr>
-    <td><span class="code">sm</span></td>
-    <td>mobile landscape: <em>[480px]</em> up or from <em>[480px]</em> up to
-      <em>[719px]</em></td>
-  </tr>
-  <tr>
-    <td><span class="code">md</span></td>
-    <td>tablet: <em>[720px]</em> up or from <em>[720px]</em> up to <em>[1023px]</em></td>
-  </tr>
-  <tr>
-    <td><span class="code">lg</span></td>
-    <td>tablet landscape: <em>[1024px]</em> up or from <em>[1024px]</em> up to
-      <em>[1279px]</em></td>
-  </tr>
-  <tr>
-    <td><span class="code">xl</span></td>
-    <td>desktop: <em>[1280px]</em> up or from <em>[1280px]</em> up to <em>[1919]</em></td>
-  </tr>
-  <tr>
-    <td><span class="code">xxl</span></td>
-    <td>widescreen: <em>[1920px]</em> up.</td>
-  </tr>
-  <tr>
-    <td><span class="code">nav</span></td>
-    <td>for layout-behavior when using e.g. a hamburger-menu <em>[720px]</em>.</td>
-  </tr>
+  <thead>
+    <tr data-flex>
+      <th data-col="4" class="align-left">values</th>
+      <th data-col="8" class="align-left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">[1-12 | auto]</span></td>
+      <td data-col="8">defines the grid-size of the column. can be multiple sizes for
+        different screen-sizes
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">+[0-11]</span></td>
+      <td data-col="8">defines an grid-based offset of an column. can be multiple offsets
+        for different screen-sizes
+      </td>
+    </tr>
+  </tbody>
 </table>
 
-<p>breakpoint shortcodes can post-fixed to most of classes or attribute-values. normally it
+<div class="spacer"></div>
+
+<div data-grid>
+  <div data-col='6'>
+    <h4>do</h4>
+    <pre><code class="html">
+<div data-col="12">...</div></code></pre>
+  </div>
+  <div data-col='6'>
+    <h4 class="is-ink-error">don't</h4>
+    <pre><code class="html">
+<div data-col="12-xs">...</div></code></pre>
+  </div>
+</div>
+
+<div class="bumper-big"></div><h3 class="align-center" id="xui-breakpoint-shortcodes">breakpoints</h3>
+<div data-grid="is-small" data-flex="is-nowrap">
+  <div data-col="auto" class="align-center">
+    <div class="is-giga">xs</div>
+    <small>mobile</small><br>
+  </div>
+  <div data-col="auto" class="align-center">
+    <div class="is-giga">sm</div>
+    <small>mobile landscape</small><br>
+  </div>
+  <div data-col="auto" class="align-center">
+    <div class="is-giga">md</div>
+    <small>tablet</small><br>
+  </div>
+  <div data-col="auto" class="align-center">
+    <div class="is-giga">lg</div>
+    <small>tablet landscape</small><br>
+  </div>
+  <div data-col="auto" class="align-center">
+    <div class="is-giga">xl</div>
+    <small>desktop</small><br>
+  </div>
+  <div data-col="auto" class="align-center">
+    <div class="is-giga">xxl</div>
+    <small>widescreen</small><br>
+  </div>
+</div>
+<div class="spacer"></div>
+<p class="is-lead"><strong>x.ui</strong> is mobile first. So if you don't combine multiple breakpoints, the xs prefix
+  is not needed. breakpoint shortcodes can post-fixed to most of classes or attribute-values. normally it
   means that the style takes effect from the breakpoint up. A few styles just use a specific
   <strong>breakpoint area</strong> (e.g. from xs to xs-max).</p>
+  <p>the breakpoints are defined in the <span class="code">$breakpoints</span> map. So they can easily be overwritten with custom breakpoints and shortcodes.</p>
 
-<div class="bumper-big"></div>          <h2 class="demo-header" id="typeface">typeface</h2>
+<pre><code class="scss">
+$breakpoints: (
+  'xs': 0,
+  'sm': 480,
+  'md': 720,
+  'lg': 1024,
+  'xl': 1280,
+  'xxl': 1920,
+) !default;</code></pre>
+
+<div class="bumper-big"></div>          </div>
+        </div>
+      </div>
+
 <section>
-  <h3 id="headings" class="is-h5">headings</h3>
-  <div class="demo-heading-metrics demo-heading-metrics_h1"><h1>Heading 1</h1></div>
-  <div class="demo-heading-metrics"><h2>Heading 2</h2></div>
-  <div class="demo-heading-metrics"><h3>Heading 3</h3></div>
-  <div class="demo-heading-metrics"><h4>Heading 4</h4></div>
-  <div class="demo-heading-metrics demo-heading-metrics_h5"><h5>Heading 5</h5></div>
-  <div class="demo-heading-metrics demo-heading-metrics_h6"><h6>Heading 6</h6></div>
-  <div class="spacer"></div>
-  <p>in addition there are heading helper classes <span class="code">.is-h1</span>,
-    <span class="code">.is-h2</span>, <span class="code">.is-h3</span>,
-    <span class="code">.is-h4</span>, <span class="code">.is-h5</span> and
-    <span class="code">.is-h6</span> to influence the appearance of headings</p>
-  <h4 class="is-h6">Special heading classes</h4>
-  <p>for data-rich / admin interfaces there is a set of three heading styles
-    <span class="code">.is-giga</span>, <span class="code">.is-mega</span> and
-    <span class="code">.is-kilo</span> to provide a cleaner typeface without losing the
-    hierarchical structure of the markup.</p>
-</section>
+  <div data-container>
+    <div data-grid="is-center">
+      <div data-col='8-sm'>
+        <h2 class="align-center is-uppercase" id="typeface">typeface</h2>
+        <p class="is-lead">per default all typeface elements are styled after a <a href="http://www.modularscale.com/?1&em&1.25"
+            targte="_blank">modular scale</a> with a 1.25 ratio. The spacing (margin-bottom) uses a vertical rythm that
+          creates
+          smaller margins form h1 down to p.</p>
 
-<div class="bumper"></div><section>
-  <h3 class="is-h5" id="type">type</h3>
-  <div class="demo-paragraph-metrics">
-    <p class="is-lead">Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen,
-      genau kennte; daß dies wohl nur ein Irrtum sein würde, wegen dessen er sich zu
-      bedenken bitte, und daß man ihn, da seine Tagereise lang sei, nicht länger unnützer
-      Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das achtzehnte Mal nicht
-      durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und
-      daß er entweder den Paßschein noch hier lösen, oder zurückkehren müsse, wo er
-      hergekommen sei.</p>
-  </div>
-  <div class="demo-paragraph-metrics">
-    <p>Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte;
-      daß dies wohl nur ein Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und
-      daß man ihn, da seine Tagereise lang sei, nicht länger unnützer Weise hier aufhalten
-      möge. Doch der Vogt erwiderte, daß er das achtzehnte Mal nicht durchschlüpfen würde,
-      daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er entweder den
-      Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
-  </div>
-</section>
+        <div class="spacer"></div>
 
-<div class="bumper"></div><section>
-  <h3 class="is-h5" id="list">ul/ol</h3>
-  <div data-grid>
-    <div data-col="6-sm">
-      <div class="well" data-flex="is-center-items">
-        <ul class="is-unstyled">
-          <li>list item 01</li>
-          <li>list item 02</li>
-          <li>list item 03</li>
-        </ul>
+        <nav class="nav">
+          <ul class="nav__items" data-flex="is-center">
+            <li class="nav__item">
+              <a href="#headings" class="btn btn_minor btn_round">headings</a>
+            </li>
+            <li class="nav__item">
+              <a href="#paragraph" class="btn btn_minor btn_round">paragraphs</a>
+            </li>
+            <li class="nav__item">
+              <a href="#list" class="btn btn_minor btn_round">lists</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
-    <div data-col="6-sm"><pre class="no-margin-top"><code class="html">
-<ul class="is-unstyled">
-  <li>list item 01</li>
-  <li>list item 02</li>
-  <li>list item 03</li>
-</ul></code></pre>
-    </div>
-    <div data-col="6-sm">
-      <div class="well" data-flex="is-center-items">
-        <ul class="is-inline">
-          <li>list item 01</li>
-          <li>list item 02</li>
-          <li>list item 03</li>
-        </ul>
+</section>      <div class="spacer spacer_big"></div>
+<section v-cloak>
+  <div data-container>
+    <div data-grid="is-center">
+      <div data-col='8-sm'>
+        <h3 id="headings">headings</h3>
+        <p class="is-lead">first of all headings are structural and hierarchical elements. Their style really depends
+          on in what kind of interface they're used in. Editorial content often needs a deeper hierachy, that is
+          illustrated by a variation in font-size, spacing and style. Admin-interfaces or data-rich uis often don't
+          need a deep hierachie. <strong>x.ui</strong> is equiped for both</p>
+
+        <div class="spacer"></div>
+
+        <div data-grid>
+          <div data-col='6'>
+            <h4>editorial</h4>
+            <div class="demo-margin">
+              <h1>h1</h1>
+            </div>
+            <pre><code class="html">
+<h1>...</h1>
+<h2 class="is-h1">...</h2>
+<div class="is-h1">...</div></code></pre>
+            <div class="demo-margin">
+              <h2>h2</h2>
+            </div>
+            <pre><code class="html">
+<h2>...</h2>
+<h4 class="is-h2">...</h4>
+<div class="is-h2">...</div></code></pre>
+            <div class="demo-margin">
+              <h3>h3</h3>
+            </div>
+            <pre><code class="html">
+<h3>...</h3>
+<h4 class="is-h3">...</h4>
+<div class="is-h3">...</div></code></pre>
+            <div class="demo-margin">
+              <h4>h4</h4>
+            </div>
+            <pre><code class="html">
+<h4>...</h4>
+<h5 class="is-h4">...</h5>
+<div class="is-h4">...</div></code></pre>
+            <div class="demo-margin">
+              <h5>h5</h5>
+            </div>
+            <pre><code class="html">
+<h5>...</h5>
+<h2 class="is-h5">...</h2>
+<div class="is-h5">...</div></code></pre>
+            <div class="demo-margin">
+              <h6>h6</h6>
+            </div>
+            <pre><code class="html">
+<h6>...</h6>
+<h3 class="is-h6">...</h3>
+<div class="is-h6">...</div></code></pre>
+          </div>
+          <div data-col='6'>
+            <h4>data</h4>
+            <div class="demo-margin">
+              <h2 class="is-giga">.is-giga</h2>
+            </div>
+            <pre><code class="html">
+<h3 class="is-giga">...</h3>
+<div class="is-giga">...</div></code></pre>
+            <div class="demo-margin">
+              <h2 class="is-mega">.is-mega</h2>
+            </div>
+            <pre><code class="html">
+<h3 class="is-mega">...</h3>
+<div class="is-mega">...</div></code></pre>
+            <div class="demo-margin">
+              <h2 class="is-kilo">.is-kilo</h2>
+            </div>
+            <pre><code class="html">
+<h3 class="is-kilo">...</h3>
+<div class="is-kilo">...</div></code></pre>
+          </div>
+        </div>
       </div>
     </div>
-    <div data-col="6-sm"><pre class="no-margin-top"><code class="html">
+  </div>
+</section>      <div class="spacer spacer_big"></div>
+<section>
+  <div data-container>
+    <div data-grid="is-center">
+      <div data-col='8-sm'>
+        <h3 id="paragraph">paragraph styles</h3>
+        <h4>lead paragraph</h4>
+        <p>A lead paragraph can be used as a style for the first paragraph of an article. Per default its font-size is
+          <strong>$base-font-size &times; 1.25 (20px)</strong>.</p>
+        <pre><code><p class="is-lead">...</p></code></pre>
+        <div class="demo-paragraph-metrics">
+          <p class="is-lead">Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen,
+            genau kennte; daß dies wohl nur ein Irrtum sein würde, wegen dessen er sich zu
+            bedenken bitte, und daß man ihn, da seine Tagereise lang sei, nicht länger unnützer
+            Weise hier aufhalten möge. Doch der Vogt erwiderte, daß er das achtzehnte Mal nicht
+            durchschlüpfen würde, daß die Verordnung deshalb erst neuerlich erschienen wäre, und
+            daß er entweder den Paßschein noch hier lösen, oder zurückkehren müsse, wo er
+            hergekommen sei.</p>
+        </div>
+        <div class="spacer"></div>
+        <h4>normal paragraph</h4>
+        <pre><code><p>...</p></code></pre>
+        <div class="demo-paragraph-metrics">
+          <p>Daß er alle landesherrlichen Verfügungen, die sein Gewerbe angingen, genau kennte;
+            daß dies wohl nur ein Irrtum sein würde, wegen dessen er sich zu bedenken bitte, und
+            daß man ihn, da seine Tagereise lang sei, nicht länger unnützer Weise hier aufhalten
+            möge. Doch der Vogt erwiderte, daß er das achtzehnte Mal nicht durchschlüpfen würde,
+            daß die Verordnung deshalb erst neuerlich erschienen wäre, und daß er entweder den
+            Paßschein noch hier lösen, oder zurückkehren müsse, wo er hergekommen sei.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>      <div class="spacer spacer_big"></div>
+<section>
+  <div data-container>
+    <div data-grid="is-center">
+      <div data-col='8-sm'>
+        <h3 id="list">list</h3>
+        <p>lists are great elements to structure elements, that belong together. <span class="code">ul</span> and <span
+            class="code">ol</span>
+          also can be used with <span class="code">data-grid</span> and <span class="code">data-col</span> for layout
+          structure.</p>
+        <div data-grid>
+          <div data-col="6-sm">
+            <ul class="is-unstyled">
+              <li>list-item-01</li>
+              <li>list-item-02</li>
+              <li>list-item-03</li>
+            </ul>
+            <pre><code class="html">
+  <ul class="is-unstyled">
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+  </ul></code></pre>
+          </div>
+          <div data-col="6-sm">
+            <ul class="is-inline">
+              <li>list-item-01</li>
+              <li>list-item-02</li>
+              <li>list-item-03</li>
+            </ul>
+            <pre><code class="html">
 <ul class="is-inline">
-  <li>list item 01</li>
-  <li>list item 02</li>
-  <li>list item 03</li>
+  <li>...</li>
+  <li>...</li>
+  <li>...</li>
 </ul></code></pre>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <h4>list used with <span class="code">data-grid</span></h4>
+        <ul data-grid>
+          <li data-col="4">
+            <div class="well">list-item-01</div>
+          </li>
+          <li data-col="4">
+            <div class="well">list-item-02</div>
+          </li>
+          <li data-col="4">
+            <div class="well">list-item-03</div>
+          </li>
+        </ul>
+        <pre><code class="html">
+<ul data-grid>
+  <li data-col="4">...</li>
+  <li data-col="4">...</li>
+  <li data-col="4">...</li>
+</ul></code></pre>
+      </div>
     </div>
   </div>
-</section>
+</section>      <div class="spacer spacer_big"></div>
+<section>
+  <div data-container>
+    <div data-grid="is-center">
+      <div data-col='8-sm'>
+        <h3 class="align-center is-uppercase" id="typeface">
+          <small class="is-ink-link">typeface</small>
+          <div class="">modifier</div>
+        </h3>
 
-<div class="bumper"></div><section>
-  <h3 id="align" class="is-h5">align</h3>
+<section>
+  <h4 id="align">align</h4>
   <div data-grid>
     <div data-col="4-sm">
       <p class="align-left"><span class="code">.align-left</span><br>
@@ -1287,30 +1464,32 @@
         Halbgott!</p>
     </div>
   </div>
-</section>
-
-<div class="bumper"></div><section>
-  <h3 id="font-weight" class="is-h5">font-weight</h3>
+</section>        <div class="spacer spacer_big"></div>
+<section>
+  <h4 id="font-weight">font-weight</h4>
   <div class="well">
     <div data-grid>
-      <div data-col="4" class="align-center">
+      <div data-col="3" class="align-center">
         <div class="is-mega is-light">Atomic</div>
         <span class="code">.is-light</span>
       </div>
-      <div data-col="4" class="align-center">
+      <div data-col="3" class="align-center">
         <div class="is-mega is-normal">Atomic</div>
         <span class="code">.is-normal</span>
       </div>
-      <div data-col="4" class="align-center">
+      <div data-col="3" class="align-center">
+        <div class="is-mega is-medium">Atomic</div>
+        <span class="code">.is-medium</span>
+      </div>
+      <div data-col="3" class="align-center">
         <div class="is-mega is-bold">Atomic</div>
         <span class="code">.is-bold</span>
       </div>
     </div>
   </div>
-</section>
-
-<div class="bumper"></div><section>
-  <h3 id="text-transform" class="is-h5">text-transform</h3>
+</section>        <div class="spacer spacer_big"></div>
+<section>
+  <h4 id="text-transform">text-transform</h4>
   <div class="well">
     <div data-grid>
       <div data-col="6" class="align-center">
@@ -1323,104 +1502,178 @@
       </div>
     </div>
   </div>
-</section>
-
-<div class="bumper"></div><section>
-  <h3 id="word-wrap" class="is-h5">word-wrap</h3>
-  <table class="table">
-    <tbody>
-    <tr>
-      <td><span class="code">.is-nowrap</span></td>
-      <td>no whitespace wrapping</td>
-    </tr>
-    <tr>
-      <td><span class="code">.is-hyphen</span></td>
-      <td>use automatic hyphenation <a href="https://caniuse.com/#search=hyphen"
-                                       target="_blank"
-                                       rel="noopener"
-                                       class="tag tag_error tag_small">hyphen</a></td>
-    </tr>
-    <tr>
-      <td><span class="code">.is-hyphen-block</span></td>
-      <td>use automatic hyphenation with justification <a
-            href="https://caniuse.com/#search=hyphen"
-            target="_blank" rel="noopener"
-            class="tag tag_error tag_small">hyphen</a></td>
-    </tr>
-    <tr>
-      <td><span class="code">.is-ellipsis</span></td>
-      <td>automatic text cut off with ...</td>
-    </tr>
-    </tbody>
-  </table>
-</section>
-          <div class="bumper-big"></div>
-          <h2 class="demo-header" id="media">media</h2>
+</section>        <div class="spacer spacer_big"></div>
 <section>
-  <h3 id="img" class="is-h5">img</h3>
+  <h4 id="word-wrap">word-wrap</h4>
+
+  <div data-grid>
+    <div data-col='6-sm'>
+      <p><span class="code">.is-nowrap</span></p>
+      <p class="is-lead is-nowrap is-clipped">Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund
+        ruhen sie vor mir, in mir, füllen die Sinne meiner Stirn.</p>
+      <div class="spacer"></div>
+    </div>
+    <div data-col='6-sm'>
+      <p>
+        <span class="code">.is-hyphen</span>
+        <a href="https://caniuse.com/#search=hyphen" target="_blank" rel="noopener" class="tag tag_error tag_small">hyphen</a>
+      </p>
+      <p class="is-lead is-hyphen">Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie
+        vor mir, in mir, füllen die Sinne meiner Stirn.</p>
+      <div class="spacer"></div>
+    </div>
+    <div data-col='6-sm'>
+      <p>
+        <span class="code">.is-hyphen-block</span>
+        <a href="https://caniuse.com/#search=hyphen" target="_blank" rel="noopener" class="tag tag_error tag_small">hyphen</a>
+      </p>
+      <p class="is-lead is-hyphen-block">Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen
+        sie vor mir, in mir, füllen die Sinne meiner Stirn.</p>
+      <div class="spacer"></div>
+    </div>
+    <div data-col='6-sm'>
+      <p><span class="code">.is-ellipsis</span></p>
+      <p class="is-lead is-ellipsis">Mache ich meine Augen zu, so sind sie da; wie ein Meer, wie ein Abgrund ruhen sie
+        vor mir, in mir, füllen die Sinne meiner Stirn.</p>
+      <div class="spacer"></div>
+    </div>
+  </div>
+</section>      </div>
+    </div>
+  </div>
+</section>      <div class="spacer spacer_big"></div>
+      
+      <div data-container>
+        <div data-grid="is-center">
+          <div data-col="8-md">
+            <div class="bumper-big"></div>
+            <h2 class="align-center is-uppercase" id="media">media</h2>
+            <div class="spacer"></div>
+<section>
   <div data-grid>
     <div data-col="6-sm">
-                <pre><code class="html">
-<img src="" class="img_responsive"></code></pre>
+      <h4 id="img_responsive">responsive</h4>
       <p>add responsive behavior to images. image shrinks and grows up to it's original
         width.</p>
-      <img src="assets/placeholder.jpg" class="img_responsive">
+      <pre><code class="html">
+<img src="" class="img_responsive"></code></pre>
+      <div class="demo-margin">
+        <img src="assets/placeholder.jpg" class="img_responsive">
+      </div>
     </div>
     <div data-col="6-sm">
-                <pre><code class="html">
-<img src="" class="img_full"></code></pre>
+      <h4 id="img_full">full-width</h4>
       <p>add responsive behavior to images. image shrinks and grows independent of it's
         original width.</p>
+      <pre><code class="html">
+    <img src="" class="img_full"></code></pre>
       <img src="assets/placeholder.jpg" class="img_full">
     </div>
   </div>
-</section>
+</section>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="img-crop">img-crop
+    <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener" class="tag tag_error tag_small">object-fit</a></h3>
+  <div data-flex='is-center'>
+    <div class="btn-group">
+      <div class="btn btn_small" @click="imgCropRatio = '1-1'" :class="{'btn_minor' : imgCropRatio !== '1-1'}"><small>1:1</small></div>
+      <div class="btn btn_small" @click="imgCropRatio = '3-4'" :class="{'btn_minor' : imgCropRatio !== '3-4'}"><small>3:4</small></div>
+      <div class="btn btn_small" @click="imgCropRatio = '4-3'" :class="{'btn_minor' : imgCropRatio !== '4-3'}"><small>4:3</small></div>
+      <div class="btn btn_small" @click="imgCropRatio = '16-9'" :class="{'btn_minor' : imgCropRatio !== '16-9'}"><small>16:9</small></div>
+      <div class="btn btn_small" @click="imgCropRatio = 'golden'" :class="{'btn_minor' : imgCropRatio !== 'golden'}"><small>golden</small></div>
+      <div class="btn btn_small" @click="imgCropRatio = 'silver'" :class="{'btn_minor' : imgCropRatio !== 'silver'}"><small>silver</small></div>
+      <div class="btn btn_small" @click="imgCropRatio = 'ultrawide'" :class="{'btn_minor' : imgCropRatio !== 'ultrawide'}"><small>ultrawide</small></div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div data-grid="is-center">
+    <div :data-col="[imgCropRatio === '16-9' || imgCropRatio === 'golden' || imgCropRatio === 'silver' || imgCropRatio === 'ultrawide' ? '12' : '8']" style="transition: all .2s;">
+      <div class="demo-margin">
+        <div :class="'img-crop-' + imgCropRatio" v-cloak style="transition: all .2s;">
+          <img src="assets/placeholder-landscape.jpg">
+        </div>
+      </div>
+      <div class="spacer spacer_small"></div>
 
-<div class="spacer"></div><section>
-  <h3 id="img-crop" class="is-h5">img-crop
-    <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
-       class="tag tag_error tag_small">object-fit</a></h3>
-  <div data-grid>
-    <div data-col="4-sm">
-                <pre><code class="html">
+      <pre v-show="imgCropRatio === '1-1'" v-cloak><code class="html">
 <div class="img-crop-1-1">
   <img src="">
 </div></code></pre>
-      <div class="img-crop-1-1">
-        <img src="assets/placeholder.jpg">
-      </div>
-    </div>
-    <div data-col="4-sm">
-                <pre><code class="html">
-<div class="img-crop-4-3">
-  <img src="">
+
+      <pre v-show="imgCropRatio === '3-4'" v-cloak><code class="html">
+<div class="img-crop-3-4">
+<img src="">
 </div></code></pre>
-      <div class="img-crop-4-3">
-        <img src="assets/placeholder.jpg">
-      </div>
-    </div>
-    <div data-col="4-sm">
-                <pre><code class="html">
+
+      <pre v-show="imgCropRatio === '4-3'" v-cloak><code class="html">
+<div class="img-crop-4-3">
+<img src="">
+</div></code></pre>
+
+      <pre v-show="imgCropRatio === '16-9'" v-cloak><code class="html">
 <div class="img-crop-16-9">
   <img src="">
 </div></code></pre>
-      <div class="img-crop-16-9">
-        <img src="assets/placeholder.jpg">
-      </div>
+
+      <pre v-show="imgCropRatio === 'golden'" v-cloak><code class="html">
+<div class="img-crop-golden">
+  <img src="">
+</div></code></pre>
+
+      <pre v-show="imgCropRatio === 'silver'" v-cloak><code class="html">
+<div class="img-crop-silver">
+  <img src="">
+</div></code></pre>
+
+      <pre v-show="imgCropRatio === 'ultrawide'" v-cloak><code class="html">
+<div class="img-crop-ultrawide">
+  <img src="">
+</div></code></pre>
     </div>
   </div>
-</section>
-          <div class="bumper-big"></div>
-          <h2 class="demo-header" id="form">form</h2>
+</section>            <div class="spacer spacer_big"></div>
+<section v-cloak>
+  <h3 id="is-outset">is-outset</h3>
+  <div data-flex="is-center">
+    <div class="btn-group">
+      <div class="btn btn_small" @click="isOutset = 'left'" :class="{'btn_minor' : isOutset !== 'left'}"><small>left</small></div>
+      <div class="btn btn_small" @click="isOutset = 'full'" :class="{'btn_minor' : isOutset !== 'full'}"><small>full</small></div>
+      <div class="btn btn_small" @click="isOutset = 'right'" :class="{'btn_minor' : isOutset !== 'right'}"><small>right</small></div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div>
+    <div class="is-outset" :class="{'is-outset_left' : isOutset === 'left', 'is-outset_full' : isOutset === 'full', 'is-outset_right' : isOutset === 'right'}" style="transition: all .2s">
+      <div :class="isOutset === 'full' ? 'img-crop-silver' : 'img-crop-4-3'" style="transition: all .2s">
+        <img src="assets/placeholder-landscape.jpg">
+      </div>
+    </div>
+    <p class="is-lead">Das aber wünschten und bezweckten die staatsklugen Ritter eben, und statt, wie zuvor, mit
+      stillschweigendem Eingeständnis der Schuld, ihren Widerstand auf ein bloß gemildertes Rechtserkenntnis
+      einzuschränken, fingen sie jetzt an, in Wendungen arglistiger und rabulistischer Art, diese Schuld selbst
+      gänzlich zu leugnen. </p>
+    <p>Bald gaben sie vor, daß die Rappen des Kohlhaas, in Folge eines bloß eigenmächtigen Verfahrens des Schloßvogts
+      und Verwalters, von welchem der Junker nichts oder nur Unvollständiges gewußt, auf der Tronkenburg zurückgehalten
+      worden seien; bald versicherten sie, daß die Tiere schon, bei ihrer Ankunft daselbst, an einem heftigen und
+      gefährlichen Husten krank gewesen wären, und beriefen sich deshalb auf Zeugen, die sie herbeizuschaffen sich
+      anheischig machten; und als sie mit diesen Argumenten, nach weitläufigen Untersuchungen und Auseinandersetzungen,
+      aus dem Felde geschlagen waren, brachten sie gar ein kurfürstliches Edikt bei, worin, vor einem Zeitraum von
+      zwölf Jahren, einer Viehseuche wegen, die Einführung der Pferde aus dem Brandenburgischen ins Sächsische, in der
+      Tat verboten worden war: zum sonnenklaren Beleg nicht nur der Befugnis, sondern sogar der Verpflichtung des
+      Junkers, die von dem Kohlhaas über die Grenze gebrachten Pferde anzuhalten.</p>
+  </div>
+</section>            <div class="spacer spacer_big"></div>
+            <div class="bumper-big"></div>
+            <h2 class="align-center is-uppercase" id="form">form</h2>
 <section>
-  <h3 id="input" class="is-h5">input</h3>
+  <h3 id="input">input</h3>
   <div data-grid>
-    <div data-col="6">
+    <div data-col="4">
       <input type="text" class="input" placeholder="Placeholder...">
       <pre><code class="html">
 <input class="input"></code></pre>
     </div>
-    <div data-col="6">
+    <div data-col="4">
       <select class="input">
         <option selected value="volvo">Apple</option>
         <option value="saab">Blueberry</option>
@@ -1429,55 +1682,61 @@
       <pre><code class="html">
 <select class="input">...</select></code></pre>
     </div>
+    <div data-col='4'>
+      <textarea rows="2" class="input" placeholder="Placeholder"></textarea>
+      <pre><code class="html">
+<textarea class="input">...</textarea></code></pre>
+    </div>
   </div>
 
-  <div class="spacer-small"></div>
+  <div class="spacer spacer_small"></div>
 
-  <h5 class="is-h6">input size modifier</h5>
+  <h4>input size modifier</h4>
   <div data-grid>
     <div data-col="6-sm">
-      <input type="text" class="input input_small" value="input_small">
+      <input type="text" class="input input_small" placeholder="input_small">
       <pre><code class="html">
 <input class="input input_small"></code></pre>
     </div>
     <div data-col="6-sm">
-      <input type="text" class="input input_big" value="input_big">
+      <input type="text" class="input input_big" placeholder="input_big">
       <pre><code class="html">
 <input class="input input_big"></code></pre>
     </div>
   </div>
 
-  <div class="spacer-small"></div>
+  <div class="spacer spacer_small"></div>
 
-  <h4 class="is-h6">input style modifier</h4>
+  <h4>input style modifier</h4>
   <div data-grid>
     <div data-col="6-sm">
-      <input type="text" class="input input_round" value="input_round">
+      <input type="text" class="input input_round" placeholder="input_round">
       <pre><code class="html">
 <input class="input input_round"></code></pre>
     </div>
     <div data-col="6-sm">
-      <input type="text" class="input input_clear" value="input_clear">
+      <input type="text" class="input input_clear" placeholder="input_clear">
       <pre><code class="html">
 <input class="input input_clear"></code></pre>
     </div>
   </div>
 
-  <div class="spacer-small"></div>
-  <h4 class="is-h6">input validation modifier</h4>
+  <div class="spacer spacer_small"></div>
+  
+  <h4>input validation modifier</h4>
   <p>the validation modifier are classes generated by <strong>angular js</strong>.</p>
   <div data-grid>
     <div data-col="3-sm">
       <input type="text" class="input ng-touched ng-valid" value="ng-valid">
-      <span class="spacer-small is-visible-xs"></span>
+      <span class="spacer spacer_small is-visible-xs"></span>
     </div>
     <div data-col="3-sm">
       <input type="text" class="input ng-touched ng-invalid" value="ng-invalid">
-      <span class="spacer-small is-visible-xs"></span>
+      <span class="spacer spacer_small is-visible-xs"></span>
     </div>
     <div data-col="3-sm">
       <input type="text" class="input ng-touched ng-pending" value="ng-pending">
-      <span class="spacer-small is-visible-xs"></span>
+      <span class="spacer spacer_small is-visible-xs"></span>
     </div>
     <div data-col="3-sm">
       <input type="text" class="input ng-touched ng-submitted" value="ng-submitted">
@@ -1486,7 +1745,77 @@
 </section>
 <div class="bumper"></div>
 <section>
-  <h3 id="input-group" class="is-h5">input-group <span
+  <h3 id="file-upload">slider</h3>
+  <div class="has-padding">
+    <input type="range" class="slider">
+  </div>
+</section>
+<pre><code class="html">
+<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+</code></pre>
+<div class="title">
+  <h4 class="is-kilo">config variables</h4>
+  <a href="https://github.com/entrecode/x.ui/blob/master/src/_xui-config.scss" target="_blank" class="btn btn_clear">
+    <span class="ec-icon json"></span>
+  </a>
+</div>
+<pre><code class="scss">
+/* @param {px} $slider-height [8] */
+/* @param {px} $slider-radius [4] */
+/* @param {color} $slider-background [rgba(#000, 0.1)] */
+/* @param {array} $slider-style */
+/* @param {array} $slider-hover-style */
+$slider-height: 8 !default;
+$slider-radius: 4 !default;
+$slider-background: rgba(#000, 0.1) !default;
+$slider-style: () !default;
+$slider-hover-style: () !default;
+
+/* @param {px} $slider-thumb-size [16] */
+/* @param {px} $slider-thumb-radius [8] */
+/* @param {color} $slider-thumb-background [#fff] */
+/* @param {array} $slider-thumb-style */
+/* @param {array} $slider-thumb-hover-style */
+$slider-thumb-background: #fff !default;
+$slider-thumb-size: 16 !default;
+$slider-thumb-radius: 8 !default;
+$slider-thumb-style: (
+box-shadow: 0 2px 4px rgba(#000, 0.2)
+) !default;
+$slider-thumb-hover-style: () !default;</code></pre>
+
+<div class="bumper"></div><section>
+  <h3 id="file-upload">file-upload</h3>
+  <div data-grid>
+    <div data-col='6-sm'>
+      <form class="file-upload">
+        <input type="file" multiple>
+        <div>drop files here or</div>
+        <button type="submit" class="btn btn_small">add files</button>
+      </form>
+      <pre><code class="html">
+<form class="file-upload">
+  <input type="file" multiple>
+  <div>drop files here or</div>
+  <button type="submit" class="btn btn_small">add files</button>
+</form></code></pre>
+    </div>
+    <div data-col='6-sm'>
+      <form class="file-upload">
+        <input type="file" multiple>
+        <div><strong>drop files here</strong> or <span class="is-ink-link">click here</span></div>
+      </form>
+      <pre><code class="html">
+<form class="file-upload">
+  <input type="file" multiple>
+  <div><strong>drop files here</strong> or <span class="is-ink-link">click here</span></div>
+</form></code></pre>
+    </div>
+  </div>
+</section>
+
+<div class="bumper"></div><section>
+  <h3 id="input-group">input-group <span
         class="tag tag_small tag_error">in progress</span></h3>
   <div data-grid>
     <div data-col="6-sm">
@@ -1580,7 +1909,7 @@
 
 <div class="bumper"></div>
 <section>
-  <h3 id="xui-select" class="is-h5">xui-select <span
+  <h3 id="xui-select">xui-select <span
         class="tag tag_small tag_super">css only</span></h3>
   <div data-grid>
     <div data-col="6-sm">
@@ -1673,12 +2002,12 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="xui-checkbox" class="is-h5">xui-checkbox</h3>
+  <h3 id="xui-checkbox">xui-checkbox</h3>
   <div class="well" data-flex="is-center">
     <div data-col="4">
       <div class="xui-checkbox">
         <input id="xuiCheckbox" type="checkbox">
-        <label for="xuiCheckbox">Label</label>
+        <label for="xuiCheckbox">very long label Mache ich meine Augen zu, so sind sie da</label>
       </div>
     </div>
     <div data-col="4">
@@ -1695,12 +2024,12 @@
 </div></code></pre>
 </section>
 <div class="bumper"></div><section>
-  <h3 id="xui-radio" class="is-h5">xui-radio</h3>
+  <h3 id="xui-radio">xui-radio</h3>
   <div class="well" data-flex="is-center">
     <div data-col="4">
       <div class="xui-radio">
         <input id="xuiRadio" type="radio">
-        <label for="xuiRadio">Label</label>
+        <label for="xuiRadio">very long label Mache ich meine Augen zu, so sind sie da</label>
       </div>
     </div>
     <div data-col="4">
@@ -1718,14 +2047,24 @@
 </section>
 <div class="bumper"></div>
 <section>
-  <h3 id="xui-toggle" class="is-h5">xui-toggle</h3>
-  <div class="well" data-flex="is-center">
-    <div class="xui-toggle">
-      <input id="xuiToggle" type="checkbox">
-      <label for="xuiToggle">
-        <div class="xui-toggle__switch"></div>
-        Label
-      </label>
+  <h3 id="xui-toggle">xui-toggle</h3>
+  <div class="well">
+    <div data-grid>
+      <div data-col='6'>
+        <div class="xui-toggle">
+          <input id="xuiToggle" type="checkbox">
+          <label for="xuiToggle">
+            <div class="xui-toggle__switch"></div>
+            Label
+          </label>
+        </div>
+      </div>
+      <div data-col='6'>
+        <div class="xui-toggle">
+          <input id="xuiToggle2" type="checkbox">
+          <label for="xuiToggle2" class="xui-toggle__switch"></label>
+        </div>
+      </div>
     </div>
   </div>
   <pre><code class="html">
@@ -1787,10 +2126,10 @@
     </div>
   </div>
 </section>
-          <div class="bumper-big"></div>
-          <h2 class="demo-header" id="ui">ui</h2>
+            <div class="bumper-big"></div>
+            <h2 class="align-center is-uppercase" id="ui">ui</h2>
 <section>
-  <h3 class="is-h5" id="btn">button</h3>
+  <h3 id="btn">button</h3>
   <p>there are three basic button styles which should be used to to emphasis or weaken
     functions. Throughout <strong>x.ui</strong> there are three steps of importance. The
     default style always reached with the default class <span class="code">.btn</span>, the
@@ -1810,7 +2149,7 @@
 ...
 <a class="btn btn_super">...</a></code></pre>
   <div class="spacer"></div>
-  <h4 class="is-h6">button style modifier</h4>
+  <h4>button style modifier</h4>
   <div class="well">
     <ul data-grid="is-small is-center">
       <li v-for="(value, key) in atoms.btn.modifiers" class="align-center"
@@ -1822,7 +2161,7 @@
     </ul>
   </div>
   <div class="spacer"></div>
-  <h4 class="is-h6">button size modifier</h4>
+  <h4>button size modifier</h4>
   <div class="well">
     <ul data-grid="is-small is-center">
       <li v-for="(value, key) in atoms.btn.sizes" data-col="6 4-sm" class="align-center">
@@ -1832,7 +2171,7 @@
     </ul>
   </div>
   <div class="spacer"></div>
-  <h4 class="is-h6">button width modifier</h4>
+  <h4>button width modifier</h4>
   <div class="well">
     <ul data-grid="is-small is-center">
       <li v-for="(value, key) in atoms.btn.width" data-col="6-sm" class="align-center">
@@ -1842,12 +2181,37 @@
       </li>
     </ul>
   </div>
+  <div class="spacer"></div>
+  <h4>button state modifier</h4>
+  <div class="well">
+    <ul data-grid="is-small is-center">
+      <li data-col="4-sm" class="align-center">
+        <a class="btn is-disabled">.is-disabled</a><br>
+        <span class="code" style="margin-top: 8px;">.is-disabled</span>
+        <div class="spacer is-visible-xs"></div>
+      </li>
+      <li data-col="4-sm" class="align-center">
+        <a class="btn" disabled>[disabled]</a><br>
+        <span class="code" style="margin-top: 8px;">[disabled]</span>
+        <div class="spacer is-visible-xs"></div>
+      </li>
+      <li data-col="4-sm" class="align-center">
+        <a class="btn is-active">.is-active</a><br>
+        <span class="code" style="margin-top: 8px;">.is-active</span>
+        <div class="spacer is-visible-xs"></div>
+      </li>
+    </ul>
+  </div>
+  
 </section>
 
 <div class="bumper"></div>
 
 <section>
-  <h3 id="btn-glow" class="is-h5">btn_glow</h3>
+  <h3 id="btn-glow">
+    btn_glow
+    <span class="tag tag_small tag_error">deprecated</span>
+  </h3>
   <p>modifier to simulate a 3D glowing effect.</p>
   <div class="well">
     <div data-grid data-flex="is-center">
@@ -1863,16 +2227,14 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="hamburger-btn" class="is-h5">hamburger-btn
-    <span class="tag tag_small tag_error">in progress</span>
-  </h3>
+  <h3 id="hamburger-btn">hamburger-btn</h3>
   <div class="well align-center">
     <button class="hamburger-btn" :class="{'is-active' : hamburgerActive}" @click="hamburgerActive = !hamburgerActive"></button>
   </div>
   <pre><code class="html"><button class="hamburger-btn${hamburgerActive ?' is-active' : ''}"></button></code></pre>
 </section>
 <div class="bumper"></div><section>
-  <h3 id="bubble" class="is-h5">bubble</h3>
+  <h3 id="bubble">bubble</h3>
   <div class="well">
     <div data-grid>
       <div data-col="6 4-sm" data-flex="is-center-items is-center">
@@ -1928,7 +2290,7 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 class="is-h5" id="tag">tag</h3>
+  <h3 id="tag">tag</h3>
   <div class="well">
     <div data-grid="data-grid">
       <div data-col="6 4-sm" data-flex="is-center-items is-center">
@@ -1990,7 +2352,7 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="dropdown" class="is-h5">dropdown
+  <h3 id="dropdown">dropdown
     <span class="tag tag_small tag_super">css only</span>
     <span class="tag tag_small tag_error">in progress</span>
   </h3>
@@ -2177,7 +2539,7 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 class="is-h5" id="btn-group">btn-group</h3>
+  <h3 id="btn-group">btn-group</h3>
   <p><span class="code">.btn-group</span> supports <span class="code">.btn</span> and
     <span class="code">.dropdown</span>
     with all their modifier classes.</p>
@@ -2261,7 +2623,7 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="nav" class="is-h5">nav</h3>
+  <h3 id="nav">nav</h3>
   <div class="well">
     <nav class="nav">
       <ul class="nav__items">
@@ -2330,7 +2692,7 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="title" class="is-h5">title
+  <h3 id="title">title
     <a href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
        class="tag tag_small tag_error">flex</a>
   </h3>
@@ -2366,7 +2728,7 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="toolbar" class="is-h5">toolbar
+  <h3 id="toolbar">toolbar
     <a href="https://caniuse.com/#search=flex" target="_blank" rel="noopener"
        class="tag tag_small tag_error">flex</a>
   </h3>
@@ -2451,7 +2813,7 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h4 id="xui-tabs" class="is-h5">xui-tabs
+  <h4 id="xui-tabs">xui-tabs
     <a href="https://caniuse.com/#search=%3Atarget"
        target="_blank" rel="noopener"
        class="tag tag_error tag_small">target</a>
@@ -2520,7 +2882,7 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="xui-list" class="is-h5">xui-list</h3>
+  <h3 id="xui-list">xui-list</h3>
   <p>list can be used with <span class="code">ul</span>, <span class="code">ol</span>
     or<span class="code">div</span>. all atoms and molecules can be used within the
     list-items.</p>
@@ -2619,7 +2981,7 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="xui-accordion" class="is-h5">xui-accordion
+  <h3 id="xui-accordion">xui-accordion
     <a href="https://caniuse.com/#search=%3Atarget"
        target="_blank" rel="noopener"
        class="tag tag_error tag_small">target</a>
@@ -2708,41 +3070,41 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h4 id="card" class="is-h5">card</h4>
+  <h4 id="card">card</h4>
   <div data-grid="">
     <div data-col="4">
-      <div class="card is-lifted-small">
+      <div class="card is-elevated-8">
         <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
           ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
           sprach weiter und weiter.</p>
       </div>
 
       <pre><code class="html">
-<div class="card is-lifted-small">
+<div class="card is-elevated-8">
   ...
 </div></code></pre>
     </div>
     <div data-col="4">
-      <div class="card is-lifted">
+      <div class="card is-elevated-16">
         <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
           ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
           sprach weiter und weiter.</p>
       </div>
 
       <pre><code class="html">
-<div class="card is-lifted">
+<div class="card is-elevated-16">
   ...
 </div></code></pre>
     </div>
     <div data-col="4">
-      <div class="card is-lifted-big">
+      <div class="card is-elevated-24">
         <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
           ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
           sprach weiter und weiter.</p>
       </div>
 
       <pre><code class="html">
-<div class="card is-lifted-big">
+<div class="card is-elevated-24">
   ...
 </div></code></pre>
     </div>
@@ -2750,44 +3112,7 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h4 id="xui-overlay" class="is-h5">xui-overlay
-    <a href="https://caniuse.com/#search=%3Atarget"
-       target="_blank" rel="noopener"
-       class="tag tag_error tag_small">target</a>
-    <span class="tag tag_small tag_super">css only</span>
-    <span class="tag tag_small tag_error">in progress</span>
-  </h4>
-  <div class="well" data-flex="is-center">
-    <div class="xui-overlay" data-col="4-sm">
-      <a href="#" class="xui-overlay__dismiss">&times;</a>
-      <div class="has-padding">
-        <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
-          ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug.
-          Sie
-          sprach weiter und weiter.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="well" data-flex="is-center">
-    <a href="#overlayDemo" class="btn btn_glow">open overlay</a>
-    <div class="xui-overlay-wrapper is-targeted has-backdrop" id="overlayDemo">
-      <div class="xui-overlay is-absolute is-positioned-0" data-col="8-xs 4-sm">
-        <a href="#overlayDemoClose" class="xui-overlay__dismiss">&times;</a>
-        <div class="has-padding">
-          <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab
-            ich
-            ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug.
-            Sie
-            sprach weiter und weiter.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="bumper"></div><section>
-  <h4 id="well" class="is-h5">well</h4>
+  <h4 id="well">well</h4>
   <div class="well">
     <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich
       ihr einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
@@ -2797,20 +3122,406 @@
 <div class="well">
   ...
 </div></code></pre>
-  <table class="table">
-    <tbody>
-    <tr>
-      <td><strong>sizes</strong></td>
-      <td>
-        <span class="code" v-for="size in molecules.well.sizeModifiers">${ '.' + size}</span>
-      </td>
-    </tr>
-    </tbody>
-  </table>
 </section>
 
 <div class="bumper"></div><section>
-  <h3 class="is-h5" id="alert">alert</h3>
+  <div class="align-center" id="dialog">
+    <img src="assets/dialog.svg">
+    <h3>dialog</h3>
+  </div>
+
+  <div data-grid>
+    <div data-col='4'>
+      <h6>simple dialog</h6>
+      <div class="well align-center">
+        <a href class="btn" @click.prevent="dialog1 = !dialog1">open dialog</a>
+      </div>
+    </div>
+    <div data-col='4'>
+      <h6>dialog with backdrop</h6>
+      <div class="well align-center">
+        <a href class="btn" @click.prevent="dialog2 = !dialog2">open dialog</a>
+      </div>
+    </div>
+    <div data-col='4'>
+      <h6>dialog with <span class="code">data-col</span></h6>
+      <div class="well align-center">
+        <a href class="btn" @click.prevent="dialog3 = !dialog3">open dialog</a>
+      </div>
+    </div>
+    <div data-col='4'>
+      <h6>complex dialog</h6>
+      <div class="well align-center">
+        <a href class="btn" @click.prevent="dialog4 = !dialog4">open dialog</a>
+      </div>
+    </div>
+    <div data-col='4'>
+      <h6>dialog using <span class="code">data-animate</span></h6>
+      <div class="well align-center">
+        <a href class="btn" @click.prevent="dialog5 = !dialog5">open dialog</a>
+      </div>
+    </div>
+  </div>
+  <div class="dialog" :class="{'is-active' : dialog1}">
+    <div class="dialog-dismiss" @click="dialog1 = !dialog1">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="dialog-body">
+      <p class="align-center">I am a simple dialog</p>
+    </div>
+  </div>
+  <div class="dialog-wrapper" :class="{'is-active' : dialog2}">
+    <div class="dialog">
+      <div class="dialog-dismiss" @click="dialog2 = !dialog2">
+        <div class="ec-icon close-x-big"></div>
+      </div>
+      <div class="dialog-body">
+        <p class="align-center">I am a simple dialog width a backdrop</p>
+      </div>
+    </div>
+  </div>
+  <div class="dialog" data-col="8-sm" :class="{'is-active' : dialog3}">
+    <div class="dialog-dismiss" @click="dialog3 = !dialog3">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="dialog-body">
+      <p class="align-center">I am a simple dialog</p>
+    </div>
+  </div>
+  <div class="dialog" :class="{'is-active' : dialog4}">
+    <div class="dialog-header">
+      <h2 class="is-mega">Title</h2>
+      <div class="dialog-dismiss" @click="dialog4 = !dialog4">
+        <div class="ec-icon close-x-big"></div>
+      </div>
+    </div>
+    <div class="dialog-body">
+      <p class="align-center">I am more complex dialog</p>
+    </div>
+    <div class="dialog-footer">
+      <nav class="nav">
+        <ul class="nav__items" data-flex="is-center">
+          <li class="nav__item">
+            <a href class="btn" @click.prevent="dialog4 = !dialog4">Save</a>
+          </li>
+          <li class="nav__item">
+            <a href class="btn btn_minor" @click.prevent="dialog4 = !dialog4">Cancel</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="dialog-wrapper" :class="{'is-active' : dialog5}">
+    <div class="dialog" data-animate="popIn 4">
+      <div class="dialog-dismiss" @click="dialog5 = !dialog5">
+        <div class="ec-icon close-x-big"></div>
+      </div>
+      <div class="dialog-body">
+        <p class="align-center">I am a simple dialog</p>
+      </div>
+    </div>
+  </div>
+  <div class="bumper"></div>
+</section><section>
+  <div class="align-center" id="deck">
+    <img src="assets/deck.svg">
+    <h3>deck</h3>
+  </div>
+
+  <div data-grid>
+    <div data-col='3'>
+      <div class="xui-toggle">
+        <input id="deckBackdrop" type="checkbox" v-model="deckBackdrop">
+        <label for="deckBackdrop">
+          <div class="xui-toggle__switch"></div>
+          has a backdrop
+        </label>
+      </div>
+      <div class="form-group">
+        <select name="deckOrientation" class="input" v-model="deckOrientation">
+          <option value="opens-left" selected>opens-left</option>
+          <option value="opens-right">opens-right</option>
+        </select>
+      </div>
+    </div>
+    <div data-col='3'>
+      <div class="xui-toggle">
+        <input id="deckSize" type="checkbox" v-model="deckCol">
+        <label for="deckSize">
+          <div class="xui-toggle__switch"></div>
+          uses data-col
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="input" :disabled="!deckCol" placeholder="e.g. 8-sm" v-model="deckColSize">
+      </div>
+    </div>
+    <div data-col='3'>
+      <div class="xui-toggle">
+        <input id="deckAnimate" type="checkbox" v-model="deckAnimate">
+        <label for="deckAnimate">
+          <div class="xui-toggle__switch"></div>
+          uses data-animate
+        </label>
+      </div>
+      <div class="form-group">
+        <select v-model="deckAnimation" :disabled="!deckAnimate" class="input">
+          <option :value="ani" v-for="(ani, index) in animation">
+            ${ani}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div data-col='3'>
+      <a href @click.prevent="deckOpen = !deckOpen" class="btn is-elevated-16">open</a>
+    </div>
+  </div>
+
+  <div class="deck-wrapper" :class="{'is-active' : deckOpen}" v-if="deckBackdrop">
+    <div class="deck" :data-animate="deckAnimate ? deckAnimation + ' 4' : false" :class="deckOrientation" :data-col="deckCol ? deckColSize : false">
+      <div class="deck-dismiss" @click="deckOpen = !deckOpen">
+        <div class="ec-icon close-x-big"></div>
+      </div>
+      <div class="deck-body">
+        <p class="align-center">I am a simple deck</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="deck" :data-animate="deckAnimate ? deckAnimation + ' 4' : false" :class="[{'is-active' : deckOpen}, deckOrientation]"
+    :data-col="deckCol ? deckColSize : false" v-if="!deckBackdrop">
+    <div class="deck-dismiss" @click="deckOpen = !deckOpen">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="deck-body">
+      <p class="align-center">I am a simple deck</p>
+    </div>
+  </div>
+
+  <pre><code class="html" v-show="deckBackdrop">
+<div class="deck-wrapper">
+  <div class="deck opens-left">
+    <div class="deck-dismiss">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="deck-body">
+      ...
+    </div>
+  </div>
+</div></code></pre>
+  <pre><code class="html" v-show="!deckBackdrop">
+<div class="deck opens-left">
+  <div class="deck-dismiss">
+    <div class="ec-icon close-x-big"></div>
+  </div>
+  <div class="deck-body">
+    ...
+  </div>
+</div></code></pre>
+
+  <div class="bumper"></div>
+</section><section>
+  <div class="align-center" id="toast">
+    <img src="assets/toast.svg">
+    <h3>toast</h3>
+  </div>
+
+  <div data-grid="is-center">
+    <div data-col='4'>
+      <div class="xui-toggle">
+        <input id="toastBackdrop" type="checkbox" v-model="toastBackdrop">
+        <label for="toastBackdrop">
+          <div class="xui-toggle__switch"></div>
+          has a backdrop
+        </label>
+      </div>
+      <div class="form-group">
+        <select name="toastOrientation" class="input" v-model="toastOrientation">
+          <option value="opens-top" selected>opens-top</option>
+          <option value="opens-bottom">opens-bottom</option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-toggle">
+        <input id="toastAnimate" type="checkbox" v-model="toastAnimate">
+        <label for="toastAnimate">
+          <div class="xui-toggle__switch"></div>
+          uses data-animate
+        </label>
+      </div>
+      <div class="form-group">
+        <select v-model="toastAnimation" :disabled="!toastAnimate" class="input">
+          <option :value="ani" v-for="(ani, index) in animation">
+            ${ani}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <a href @click.prevent="toastOpen = !toastOpen" class="btn is-elevated-16">open</a>
+    </div>
+  </div>
+
+  <div class="toast-wrapper" :class="{'is-active' : toastOpen}" v-if="toastBackdrop">
+    <div class="toast" :data-animate="toastAnimate ? toastAnimation + ' 4' : false" :class="toastOrientation">
+      <div class="toast-dismiss" @click="toastOpen = !toastOpen">
+        <div class="ec-icon close-x-big"></div>
+      </div>
+      <div class="toast-body">
+        <p class="align-center">I am a simple toast</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" :data-animate="toastAnimate ? toastAnimation + ' 4' : false" :class="[{'is-active' : toastOpen}, toastOrientation]"
+    v-if="!toastBackdrop">
+    <div class="toast-dismiss" @click="toastOpen = !toastOpen">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="toast-body">
+      <p class="align-center">I am a simple toast</p>
+    </div>
+  </div>
+
+  <pre><code class="html" v-show="toastBackdrop">
+<div class="toast-wrapper">
+  <div class="toast opens-top">
+    <div class="toast-dismiss">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="toast-body">
+      ...
+    </div>
+  </div>
+</div></code></pre>
+  <pre><code class="html" v-show="!toastBackdrop">
+<div class="toast opens-top">
+  <div class="toast-dismiss">
+    <div class="ec-icon close-x-big"></div>
+  </div>
+  <div class="toast-body">
+    ...
+  </div>
+</div></code></pre>
+
+  <div class="bumper-big"></div>
+</section><section>
+  <div class="align-center" id="snackbar">
+    <img src="assets/snackbar.svg">
+    <h3>snackbar</h3>
+  </div>
+
+  <div data-grid="is-center">
+    <div data-col='4'>
+      <div class="xui-toggle">
+        <input id="snackbarBackdrop" type="checkbox" v-model="snackbarBackdrop">
+        <label for="snackbarBackdrop">
+          <div class="xui-toggle__switch"></div>
+          has a backdrop
+        </label>
+      </div>
+      <div class="form-group">
+        <select name="snackbarOrientation" class="input" v-model="snackbarOrientation">
+          <option value="opens-top" selected>opens-top</option>
+          <option value="opens-bottom">opens-bottom</option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-toggle">
+        <input id="snackbarAnimate" type="checkbox" v-model="snackbarAnimate">
+        <label for="snackbarAnimate">
+          <div class="xui-toggle__switch"></div>
+          uses data-animate
+        </label>
+      </div>
+      <div class="form-group">
+        <select v-model="snackbarAnimation" :disabled="!snackbarAnimate" class="input">
+          <option :value="ani" v-for="(ani, index) in animation">
+            ${ani}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div data-col='4'>
+      <a href @click.prevent="snackbarOpen = !snackbarOpen" class="btn is-elevated-16">open</a>
+    </div>
+  </div>
+
+  <div class="snackbar-wrapper" :class="{'is-active' : snackbarOpen}" v-if="snackbarBackdrop">
+    <div class="snackbar" :data-animate="snackbarAnimate ? snackbarAnimation + ' 4' : false" :class="snackbarOrientation">
+      <div class="snackbar-dismiss" @click="snackbarOpen = !snackbarOpen">
+        <div class="ec-icon close-x-big"></div>
+      </div>
+      <div class="snackbar-body">
+        <p class="align-center">I am a simple snackbar</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="snackbar" :data-animate="snackbarAnimate ? snackbarAnimation + ' 4' : false" :class="[{'is-active' : snackbarOpen}, snackbarOrientation]"
+    v-if="!snackbarBackdrop">
+    <div class="snackbar-dismiss" @click="snackbarOpen = !snackbarOpen">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="snackbar-body">
+      <p class="align-center">I am a simple snackbar</p>
+    </div>
+  </div>
+
+  <pre><code class="html" v-show="snackbarBackdrop">
+<div class="snackbar-wrapper">
+  <div class="snackbar opens-top">
+    <div class="snackbar-dismiss">
+      <div class="ec-icon close-x-big"></div>
+    </div>
+    <div class="snackbar-body">
+      ...
+    </div>
+  </div>
+</div></code></pre>
+  <pre><code class="html" v-show="!snackbarBackdrop">
+<div class="snackbar opens-top">
+  <div class="snackbar-dismiss">
+    <div class="ec-icon close-x-big"></div>
+  </div>
+  <div class="snackbar-body">
+    ...
+  </div>
+</div></code></pre>
+
+  <div class="bumper-big"></div>
+</section><section>
+  <div class="align-center" id="overlay">
+    <img src="assets/overlay.svg">
+    <h3>overlay</h3>
+  </div>
+
+  <div class="well align-center">
+    <a href class="btn" @click.prevent="overlayOpen = !overlayOpen">open overlay</a>
+  </div>
+
+  <div class="overlay" :class="{'is-active' : overlayOpen}">
+    <a class="overlay-dismiss" @click.prevent="overlayOpen = !overlayOpen">
+      <span class="ec-icon close-x-big"></span>
+    </a>
+    <div class="overlay-body">
+      <p class="align-center">I am a simple overlay</p>
+    </div>
+  </div>
+  <pre><code class="html">
+<div class="overlay">
+  <a class="overlay-dismiss">
+    <span class="ec-icon close-x-big"></span>
+  </a>
+  <div class="overlay-body">
+    ...
+  </div>
+</div></code></pre>
+  <div class="bumper-big"></div>
+</section><section>
+  <h3 id="alert">alert</h3>
   <div class="alert">
     <p>Auf die linke Wange legte ich ihr ein Schönheitspflästerchen, in die Hand gab ich ihr
       einen Reitstock, mit dem sie sich beim Lachen leicht an den Schenkel schlug. Sie
@@ -2819,7 +3530,7 @@
   <pre><code class="html">
 <div class="alert">...</div></code></pre>
   <div class="spacer"></div>
-  <h4 class="is-h6">alert theme modifier</h4>
+  <h4>alert theme modifier</h4>
   <div data-grid>
     <div data-col="6" v-for="mod in molecules.alerts.themeModifiers">
       <div class="alert" :class="mod">
@@ -2830,7 +3541,7 @@
     </div>
   </div>
   <div class="spacer"></div>
-  <h4 class="is-h6">alert state modifier</h4>
+  <h4>alert state modifier</h4>
   <div data-grid>
     <div data-col="6" v-for="mod in molecules.alerts.stateModifiers">
       <div class="alert" :class="mod">
@@ -2841,7 +3552,7 @@
     </div>
   </div>
   <div class="spacer"></div>
-  <h4 class="is-h6">alert style modifier</h4>
+  <h4>alert style modifier</h4>
   <div data-grid>
     <div data-col="6" v-for="style in molecules.alerts.styleModifiers">
       <div class="alert alert_success" :class="[style]">
@@ -2854,7 +3565,93 @@
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="data-tooltip" class="is-h5">data-tooltip
+  <h3 id="loader">loader</h3>
+  <p class="is-lead">loader are an importament feedback element in every UI. There are three posibilities how you can
+    use them. Inline loader within Alerts, Button etc. Local for example within forms or global for feedback relevant
+    to the whole view.</p>
+
+  <div class="spacer"></div>
+
+  <div class="title">
+    <h4>inline loader</h4>
+    <a class="btn btn_small" @click.prevent="loader = !loader" v-cloak>
+      <span v-if="!loader">play</span>
+      <span v-if="loader">pause</span>
+    </a>
+  </div>
+  <p>inline loader give a state feedback for one specific element. in contrast to the local feedback it has no <span
+      class="code">position</span> style.</p>
+  <div data-grid>
+    <div data-col='4'>
+      <div style="height: 40px;" data-flex="is-center-items is-center">
+        <span v-if="loader" class="loader"></span>
+      </div>
+      <pre><code class="html"><span class="loader"></span></code></pre>
+    </div>
+    <div data-col='4'>
+      <div class="btn btn_block">
+        <span v-if="!loader">button</span>
+        <span v-if="loader" class="loader"></span>
+      </div>
+      <pre><code class="html">
+<div class="btn btn_block">
+  <span>button</span>
+  <span class="loader"></span>
+</div></code></pre>
+    </div>
+    <div data-col='4'>
+      <div class="input-group">
+        <input type="text" class="input">
+        <div class="input-group__addon">
+          <span v-if="!loader" class="ec-icon skull"></span>
+          <span v-if="loader" class="loader"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="title">
+    <h4>local loader</h4>
+    <a class="btn btn_small" @click.prevent="loaderLocal = !loaderLocal" v-cloak>
+      <span v-if="!loaderLocal">play</span>
+      <span v-if="loaderLocal">pause</span>
+    </a>
+  </div>
+  <p>a local loader is positioned after the first parent element with <span class="code">position</span>. You can apply
+    a position value to alle elements by using <span class="code">.is-relative</span> or another <a href="#is-position">position
+      helper class</a>.</p>
+  <div data-grid>
+    <div data-col='6'>
+      <div class="btn btn_block">
+        button
+        <span v-if="loaderLocal" class="loader is-local"></span>
+      </div>
+      <pre><code class="html">
+<div class="btn btn_block">
+  <span>button</span>
+  <span class="loader is-local"></span>
+</div></code></pre>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <h4 class="is-kilo">global loader</h4>
+  <p></p>
+  <div class="well well_small align-center">
+    <div class="btn" @click="loaderGlobal = !loaderGlobal" v-if="!loaderGlobal" v-cloak>
+      <span class="ec-icon play"></span>
+    </div>
+    <em v-if="loaderGlobal">click on loader to stop</em>
+  </div>
+
+  <span v-if="loaderGlobal" @click="loaderGlobal = !loaderGlobal" class="loader is-global"></span>
+  <pre><code class="html"><span class="loader is-global"></span></code></pre>
+</section>
+<div class="bumper-big"></div><section>
+  <h3 id="data-tooltip">data-tooltip
     <span class="tag tag_small tag_super">css only</span>
     <span class="tag tag_small tag_error">in progress</span>
   </h3>
@@ -2894,7 +3691,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
 </section>
 
 <div class="bumper"></div><section>
-  <h4 class="is-h5" id="table">table
+  <h4 id="table">table
     <span class="tag tag_small tag_error">in progress</span></h4>
   <table class="table">
     <thead>
@@ -2914,7 +3711,19 @@ data-tooltip-left="This is a tooltip"</code></pre>
     </tr>
     </tbody>
   </table>
-  <pre><code class="html"><table class="table"></table></code></pre>
+  <pre><code class="html">
+<table class="table">
+  <thead>
+    <tr>
+      <th>...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table></code></pre>
   
   <div class="spacer"></div>
   <table class="table table_bordered">
@@ -2962,45 +3771,62 @@ data-tooltip-left="This is a tooltip"</code></pre>
 
 <div class="bumper"></div>
 <section>
-  <h3 id="avatar" class="is-h5">avatar
-    <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
-       class="tag tag_error tag_small">object-fit</a></h3>
+  <h3 id="avatar">avatar
+    <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener" class="tag tag_error tag_small">object-fit</a></h3>
   <p>avatar is mostly used for facial pictures such as profile pictures, because they
-    accentuate faces more than square ones. even thought the avatar atom uses <span
-        class="code">object-fit: cover</span> to scale/crop images down to a square
+    accentuate faces more than square ones. even thought the avatar atom uses <span class="code">object-fit: cover</span>
+    to scale/crop images down to a square
     thumbnail, you should use square assets with a matching size.</p>
-  <div class="well">
-    <div data-grid>
-      <div data-col="6" data-flex="is-center">
+  <div data-grid>
+    <div data-col="6">
+      <div class="align-center">
         <div class="avatar"><img src="assets/avatar.jpg" alt=""></div>
       </div>
-      <div data-col="6" data-flex="is-center">
+      <pre><code class="html">
+<div class="avatar">
+  <img src="" />
+</div></code></pre>
+    </div>
+    <div data-col="6">
+      <div class="align-center">
         <div class="avatar avatar_square"><img src="assets/avatar.jpg" alt=""></div>
       </div>
+      <pre><code class="html">
+<div class="avatar avatar_square">
+  <img src="" />
+</div></code></pre>
     </div>
   </div>
-  <pre><code class="html">
-<div class="avatar"><img src="assets/avatar.jpg" alt=""></div>
-<div class="avatar avatar_square"><img src="assets/avatar.jpg" alt=""></div></code></pre>
 </section>
-<table class="table">
-  <tr>
-    <td><strong>style modifier</strong></td>
-    <td><span class="code">.avatar_square</span> <span class="code">.avatar_round</span></td>
-  </tr>
-  <tr>
-    <td><strong>size modifier</strong></td>
-    <td><span class="code">.avatar_small</span> <span class="code">.avatar_big</span></td>
-  </tr>
-</table>
 
-<div class="bumper"></div><section>
-  <h3 class="is-h5" id="is-ink">is-ink</h3>
+<div data-grid>
+  <div data-col="6">
+    <div class="align-center">
+      <div class="avatar avatar_small"><img src="assets/avatar.jpg" alt=""></div>
+    </div>
+    <pre><code class="html">
+<div class="avatar avatar_small">
+  <img src="" />
+</div></code></pre>
+  </div>
+  <div data-col="6">
+    <div class="align-center">
+      <div class="avatar avatar_big"><img src="assets/avatar.jpg" alt=""></div>
+    </div>
+    <pre><code class="html">
+<div class="avatar avatar_big">
+  <img src="" />
+</div></code></pre>
+  </div>
+</div>
+
+<div class="bumper-big"></div><section>
+  <h3 id="is-ink">is-ink</h3>
   <p>the is-ink modifiers only affect the css color attribute. it can be uses on all
     elements.</p>
-  <div class="well-small">
+  <div class="well well_small">
     <div data-grid>
-      <div v-for="mod in modifiers.type.colorModifiers" data-col="6-xs 2-sm">
+      <div v-for="mod in modifiers.type.colorModifiers" data-col="6-xs 3-sm">
         <strong :class="mod">${mod}</strong>
       </div>
     </div>
@@ -3008,7 +3834,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="is-theme" class="is-h5">is-theme</h3>
+  <h3 id="is-theme">is-theme</h3>
   <p>the is-theme-modifier affect the color and background-color attribute. the color is
     calculated according to the
     <a href="https://www.w3.org/TR/AERT/#color-contrast" target="_blank" rel="noopener">Web
@@ -3018,7 +3844,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <div class="demo-theme">
     <div data-grid>
       <div data-col="6-xs 4-sm">
-        <h4 class="is-h6">default</h4>
+        <h4>default</h4>
         <div class="is-theme_lightest">is-theme_lightest</div>
         <div class="is-theme_lighter">is-theme_lighter</div>
         <div class="is-theme_light">is-theme_light</div>
@@ -3026,10 +3852,10 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="is-theme_dark">is-theme_dark</div>
         <div class="is-theme_darker">is-theme_darker</div>
         <div class="is-theme_darkest">is-theme_darkest</div>
-        <div class="spacer-small"></div>
+        <div class="spacer spacer_small"></div>
       </div>
       <div data-col="6-xs 4-sm">
-        <h4 class="is-h6">link</h4>
+        <h4>link</h4>
         <div class="is-theme-link_lightest">is-theme-link_lightest</div>
         <div class="is-theme-link_lighter">is-theme-link_lighter</div>
         <div class="is-theme-link_light">is-theme-link_light</div>
@@ -3037,10 +3863,10 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="is-theme-link_dark">is-theme-link_dark</div>
         <div class="is-theme-link_darker">is-theme-link_darker</div>
         <div class="is-theme-link_darkest">is-theme-link_darkest</div>
-        <div class="spacer-small"></div>
+        <div class="spacer spacer_small"></div>
       </div>
       <div data-col="6-xs 4-sm">
-        <h4 class="is-h6">super</h4>
+        <h4>super</h4>
         <div class="is-theme-super_lightest">is-theme-super_lightest</div>
         <div class="is-theme-super_lighter">is-theme-super_lighter</div>
         <div class="is-theme-super_light">is-theme-super_light</div>
@@ -3048,10 +3874,10 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="is-theme-super_dark">is-theme-super_dark</div>
         <div class="is-theme-super_darker">is-theme-super_darker</div>
         <div class="is-theme-super_darkest">is-theme-super_darkest</div>
-        <div class="spacer-small"></div>
+        <div class="spacer spacer_small"></div>
       </div>
       <div data-col="6-xs 4-sm">
-        <h4 class="is-h6">minor</h4>
+        <h4>minor</h4>
         <div class="is-theme-minor_lightest">is-theme-minor_lightest</div>
         <div class="is-theme-minor_lighter">is-theme-minor_lighter</div>
         <div class="is-theme-minor_light">is-theme-minor_light</div>
@@ -3059,10 +3885,10 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="is-theme-minor_dark">is-theme-minor_dark</div>
         <div class="is-theme-minor_darker">is-theme-minor_darker</div>
         <div class="is-theme-minor_darkest">is-theme-minor_darkest</div>
-        <div class="spacer-small"></div>
+        <div class="spacer spacer_small"></div>
       </div>
       <div data-col="6-xs 4-sm">
-        <h4 class="is-h6">highlight</h4>
+        <h4>highlight</h4>
         <div class="is-theme-highlight_lightest">is-theme-highlight_lightest</div>
         <div class="is-theme-highlight_lighter">is-theme-highlight_lighter</div>
         <div class="is-theme-highlight_light">is-theme-highlight_light</div>
@@ -3070,10 +3896,10 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="is-theme-highlight_dark">is-theme-highlight_dark</div>
         <div class="is-theme-highlight_darker">is-theme-highlight_darker</div>
         <div class="is-theme-highlight_darkest">is-theme-highlight_darkest</div>
-        <div class="spacer-small"></div>
+        <div class="spacer spacer_small"></div>
       </div>
       <div data-col="6-xs 4-sm">
-        <h4 class="is-h6">invert</h4>
+        <h4>invert</h4>
         <div class="is-theme-invert_lightest">is-theme-invert_lightest</div>
         <div class="is-theme-invert_lighter">is-theme-invert_lighter</div>
         <div class="is-theme-invert_light">is-theme-invert_light</div>
@@ -3081,14 +3907,14 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="is-theme-invert_dark">is-theme-invert_dark</div>
         <div class="is-theme-invert_darker">is-theme-invert_darker</div>
         <div class="is-theme-invert_darkest">is-theme-invert_darkest</div>
-        <div class="spacer-small"></div>
+        <div class="spacer spacer_small"></div>
       </div>
     </div>
   </div>
 </section>
 
 <div class="bumper"></div><section>
-  <h3 class="is-h5" id="is-rounded">is-rounded</h3>
+  <h3 id="is-rounded">is-rounded</h3>
   <div class="well align-center">
     <div class="is-h6">is-rounded-{ small | big |
       <em>empty</em> }-{side}{ -
@@ -3232,7 +4058,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
 </section>
 
 <div class="bumper"></div><section>
-  <h3 class="is-h5" id="is-rounded">is-bordered</h3>
+  <h3 id="is-bordered">is-bordered</h3>
   <div class="well align-center">
     <div class="is-h6">is-bordered-{side}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
   </div>
@@ -3293,7 +4119,25 @@ data-tooltip-left="This is a tooltip"</code></pre>
 </section>
 
 <div class="bumper"></div><section>
-  <h3 class="is-h5" id="is-raised">is-raised</h3>
+  <h3 id="is-elevated">is-elevated</h3>
+  <div class="well align-center">
+    <div class="is-h6">is-elevated-{1-24 }</div>
+  </div>
+  <div data-grid="">
+    <div data-col="3" v-for="n in 24">
+      <div class="has-padding-bottom-big">
+        <div class="is-rounded align-center has-padding" :class="['is-elevated-' + n]">
+          <span class="code">is-elevated-${n}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bumper"></div><section>
+  <h3 id="is-raised">is-raised
+    <span class="tag tag_small tag_error">deprecated</span>
+  </h3>
   <div class="well align-center">
     <div class="is-h6">is-raised-{ small | big | <em>empty</em> }{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
   </div>
@@ -3327,7 +4171,9 @@ data-tooltip-left="This is a tooltip"</code></pre>
 </section>
 
 <div class="bumper"></div><section>
-  <h3 class="is-h5" id="is-lifted">is-lifted</h3>
+  <h3 id="is-lifted">is-lifted
+    <span class="tag tag_small tag_error">deprecated</span>
+  </h3>
   <div class="well align-center">
     <div class="is-h6">is-lifted-{ small | big |
       <em>empty</em>}{ -
@@ -3367,11 +4213,11 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper"></div><section>
-  <h3 id="is-fab" class="is-h5">is-fab</h3>
-  <p>FAB (Floating Action Buttons) is a modifier for positioning elements with a spacing
-    of 16px. Use with <span class="code">.is-absolute</span> or
-    <span class="code">.is-fixed</span>. the syntax is
+<div class="bumper"></div>
+<section>
+  <h3 id="is-fab">is-fab</h3>
+  <p>FAB (Floating Action Buttons) is a modifier for positioning action elements with a spacing
+    of 16px relative to its parent (e.g. viewport). Per default it is positioned fixed, so relative to the viewport, but the positioning can be overwritten with the modifier-class <span class="code">.is-absolute</span>. the syntax is
     <span class="code">.is-fab-{direction}</span></p>
   <div class="well align-center"><span class="is-h6">is-fab-{direction}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span></div>
   <div class="well is-relative" style="height: 160px;">
@@ -3385,239 +4231,614 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <strong class="code is-fab-nw is-absolute">nw</strong>
     <strong class="code is-fab-0 is-absolute">0</strong>
   </div>
+  <div class="spacer"></div>
+  <h4>example</h4>
+  <div class="well is-relative" style="height: 160px;">
+    <div class="is-fab-se is-absolute">
+      <a class="btn btn_round is-elevated-16">+</a>
+    </div>
+  </div>
+  <pre><code class="html">
+<div class="well is-relative" style="height: 160px;">
+  <div class="is-fab-se is-absolute">
+    <a class="btn btn_round is-elevated-16">+</a>
+  </div>
+</div></code></pre>
 </section>
-          <div class="bumper-big"></div>
-          <h2 class="demo-header" id="layout">layout</h2>
+            <div class="bumper-big"></div>
+            <h2 class="align-center is-uppercase" id="layout">layout</h2>
 <section>
-  <h3 id="bumper" class="is-h5">bumper</h3>
-  <div class="demo-layout-macros">
-    <div class="bumper"></div>
+  <h4 id="bumper">bumper</h4>
+  <div data-grid>
+    <div data-col='4'>
+      <div class="form-group">
+        <div class="xui-radio">
+          <input id="bumperSizeSmall" value="bumperSizeSmall" name="bumperSize" type="radio" v-model="bumperSize">
+          <label for="bumperSizeSmall">small</label>
+        </div>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="bumperSizeDefault" value="bumperSizeDefault" name="bumperSize" type="radio" v-model="bumperSize">
+        <label for="bumperSizeDefault">default</label>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="bumperSizeBig" value="bumperSizeBig" name="bumperSize" type="radio" v-model="bumperSize">
+        <label for="bumperSizeBig">big</label>
+      </div>
+    </div>
   </div>
-  <pre><code class="html"><div class="bumper"></div></code></pre>
-  <table class="table">
-    <tbody>
-      <tr>
-        <td>
-          <strong>additional sizes</strong>
-        </td>
-        <td>
-          <span class="code">.bumper-small</span>
-          <span class="code">.bumper-big</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>style modifier</strong>
-        </td>
-        <td>
-          <span class="code">bumper-invert</span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="demo-layout-macros">
+    <div :class="{'bumper-small': bumperSize === 'bumperSizeSmall', 'bumper': bumperSize === 'bumperSizeDefault', 'bumper-big': bumperSize === 'bumperSizeBig'}"></div>
+  </div>
+  <pre v-show="bumperSize === 'bumperSizeSmall'"><code class="html"><div class="bumper-small"></div></code></pre>
+  <pre v-show="bumperSize === 'bumperSizeDefault'"><code class="html"><div class="bumper"></div></code></pre>
+  <pre v-show="bumperSize === 'bumperSizeBig'"><code class="html"><div class="bumper-big"></div></code></pre>
+
+  <div class="spacer"></div>
+  <h4>modifier</h4>
   <div class="is-theme-invert" style="overflow: hidden;">
-    <div class="bumper bumper_invert"></div>
+    <div class="demo-layout-macros">
+      <div class="bumper_invert" :class="{'bumper-small': bumperSize === 'bumperSizeSmall', 'bumper': bumperSize === 'bumperSizeDefault', 'bumper-big':
+    bumperSize === 'bumperSizeBig'}"></div>
+    </div>
   </div>
+  <pre v-show="bumperSize === 'bumperSizeSmall'"><code class="html"><div class="bumper-small bumper_invert"></div></code></pre>
+  <pre v-show="bumperSize === 'bumperSizeDefault'"><code class="html"><div class="bumper bumper_invert"></div></code></pre>
+  <pre v-show="bumperSize === 'bumperSizeBig'"><code class="html"><div class="bumper-big bumper_invert"></div></code></pre>
 </section>
 
-<div class="spacer"></div><section>
-  <h3 id="spacer" class="is-h5">spacer</h3>
-  <div class="demo-layout-macros">
-    <div class="spacer"></div>
+<div class="spacer spacer_big"></div>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="divider">divider</h3>
+  <div data-grid>
+    <div data-col='4'>
+      <div class="form-group">
+        <div class="xui-radio">
+          <input id="dividerSizeSmall" value="dividerSizeSmall" name="dividerSize" type="radio" v-model="dividerSize">
+          <label for="dividerSizeSmall">small</label>
+        </div>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="dividerSizeDefault" value="dividerSizeDefault" name="dividerSize" type="radio" v-model="dividerSize">
+        <label for="dividerSizeDefault">default</label>
+      </div>
+    </div>
+    <div data-col='4'>
+      <div class="xui-radio">
+        <input id="dividerSizeBig" value="dividerSizeBig" name="dividerSize" type="radio" v-model="dividerSize">
+        <label for="dividerSizeBig">big</label>
+      </div>
+    </div>
   </div>
-  <pre><code class="html"><div class="spacer"></div></code></pre>
+  <div class="demo-layout-macros">
+    <hr :class="{'divider-small': dividerSize === 'dividerSizeSmall', 'divider': dividerSize === 'dividerSizeDefault', 'divider-big': dividerSize === 'dividerSizeBig'}">
+  </div>
+  <pre v-show="dividerSize === 'dividerSizeSmall'"><code class="html"><hr class="divider-small"></code></pre>
+  <pre v-show="dividerSize === 'dividerSizeDefault'"><code class="html"><hr class="divider"></code></pre>
+  <pre v-show="dividerSize === 'dividerSizeBig'"><code class="html"><hr class="divider-big"></code></pre>
+
+  <div class="spacer"></div>
+  <h4>modifier</h4>
+  <div class="is-theme-invert" style="overflow: hidden;">
+    <div class="demo-layout-macros">
+      <hr class="divider_invert" :class="{'divider-small': dividerSize === 'dividerSizeSmall', 'divider': dividerSize === 'dividerSizeDefault', 'divider-big':
+    dividerSize === 'dividerSizeBig'}">
+    </div>
+  </div>
+  <pre v-show="dividerSize === 'dividerSizeSmall'"><code class="html"><hr class="divider-small divider_invert"></code></pre>
+  <pre v-show="dividerSize === 'dividerSizeDefault'"><code class="html"><hr class="divider divider_invert"></code></pre>
+  <pre v-show="dividerSize === 'dividerSizeBig'"><code class="html"><hr class="divider-big divider_invert"></code></pre>
+</section>
+
+<div class="spacer spacer_big"></div>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="spacer">spacer</h3>
+  <div data-grid>
+    <div data-col='4' data-flex="is-center">
+      <div class="form-group">
+        <div class="xui-radio">
+          <input id="spacerSizeSmall" value="spacerSizeSmall" name="spacerSize" type="radio" v-model="spacerSize">
+          <label for="spacerSizeSmall">small</label>
+        </div>
+      </div>
+    </div>
+    <div data-col='4' data-flex="is-center">
+      <div class="xui-radio">
+        <input id="spacerSizeDefault" value="spacerSizeDefault" name="spacerSize" type="radio" v-model="spacerSize">
+        <label for="spacerSizeDefault">default</label>
+      </div>
+    </div>
+    <div data-col='4' data-flex="is-center">
+      <div class="xui-radio">
+        <input id="spacerSizeBig" value="spacerSizeBig" name="spacerSize" type="radio" v-model="spacerSize">
+        <label for="spacerSizeBig">big</label>
+      </div>
+    </div>
+  </div>
+  <div class="demo-layout-macros">
+    <div class="spacer" :class="{'spacer_small': spacerSize === 'spacerSizeSmall', 'spacer_big': spacerSize === 'spacerSizeBig'}"></div>
+  </div>
+  <pre v-show="spacerSize === 'spacerSizeSmall'"><code class="html"><div class="spacer spacer_small"></div></code></pre>
+  <pre v-show="spacerSize === 'spacerSizeDefault'"><code class="html"><div class="spacer"></div></code></pre>
+  <pre v-show="spacerSize === 'spacerSizeBig'"><code class="html"><div class="spacer spacer_big"></div></code></pre>
+</section>
+
+<div class="spacer spacer_big"></div>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 class="align-center is-uppercase" id="spacing">gaps & spacing</h3>
+  <p class="is-lead">gaps and spacing are one of the most important elements of an user interface. Following the gestalt psychology, more precisely the law of proximity, theay structures content, information and functions and illutstrate their relation to each other</p>
+  <p><strong>x.ui</strong> uses a simple system for all structural atoms and modifier. There are 9 different spacing units</p>
+
+  <div class="align-center">
+    <ul class="is-inline">
+      <li class="padding">
+        <small>0</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 4px; height: 4px;">
+        </div>
+        <small>1</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 8px; height: 8px;">
+        </div>
+        <small>2</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 16px; height: 16px;">
+        </div>
+        <small>3</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 24px; height: 24px;">
+        </div>
+        <small>4</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 32px; height: 32px;">
+        </div>
+        <small>5</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 48px; height: 48px;">
+        </div>
+        <small>6</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 64px; height: 64px;">
+        </div>
+        <small>7</small>
+      </li>
+      <li class="has-padding">
+        <div class="demo-spacer" style="width: 80px; height: 80px;">
+        </div>
+        <small>8</small>
+      </li>
+    </ul>
+  </div>
+
+
   <table class="table">
+    <thead>
+      <tr>
+        <th>postfix</th>
+        <th>description</th>
+      </tr>
+    </thead>
     <tbody>
-    <tr>
-      <td>
-        <strong>additional sizes</strong>
-      </td>
-      <td><span class="code">.spacer-small</span><span class="code">.spacer-big</span>
-      </td>
-    </tr>
+      <tr>
+        <td>
+          <span class="code">-0</span>
+        </td>
+        <td>no size, used to reset spacing for a specific media breakpoint.</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-1</span>
+        </td>
+        <td>[4px] - small gutter for atoms that belong together or elements within an atom.</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-2</span>
+        </td>
+        <td>[8px] - normal gutter for atoms that belong together or elements within an atom.</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-3</span>
+        </td>
+        <td>[16px] - small gutter for atoms within a molecule or organisms</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-4</span>
+        </td>
+        <td>[24px] - normal gutter for atoms within a molecule or organisms</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-5</span>
+        </td>
+        <td>[32px] - small gutter for molecule or organisms</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-6</span>
+        </td>
+        <td>[48px] - normal gutter for molecule or organisms</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-7</span>
+        </td>
+        <td>[64px] - small gutter for organisms, that have no relation</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="code">-8</span>
+        </td>
+        <td>[80px] - very big gutter for organisms, that have no relation</td>
+      </tr>
     </tbody>
   </table>
-</section>
+  
+  <div class="spacer"></div>
 
-<div class="spacer"></div><section>
-  <h3 id="flex-spacer" class="is-h5">flex-spacer</h3>
+</section>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="x-spacer">x-space<span class="is-ink-link">${'-' + xSpaceSize}</span><span class="is-ink-lighter">-bp</span></h3>
+  <div data-grid="is-center">
+    <div data-col='8'>
+      <input type="range" min="0" max="8" class="slider" value="4" v-model="xSpaceSize">
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div data-flex="is-center">
+    <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
+    <div class="demo-spacer" :class="'x-space-' + xSpaceSize"></div>
+    <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
+  </div>
+  <pre><code class="html">
+  <div data-flex>
+    ...
+    <div class="x-space-2"></div>
+    ...
+  </div></code></pre>
+</section>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="x-spacer">y-space<span class="is-ink-link">${'-' + ySpaceSize}</span><span class="is-ink-lighter">-bp</span></h3>
+  <div data-grid="is-center">
+    <div data-col='8'>
+      <input type="range" min="0" max="8" class="slider" value="4" v-model="ySpaceSize">
+    </div>
+  </div>
+  <div class="spacer spacer_small"></div>
+  <div class="demo-spacer" :class="'y-space-' + ySpaceSize"></div>
+  <pre><code class="html">
+  <div data-flex>
+    ...
+    <div class="x-space-2"></div>
+    ...
+  </div></code></pre>
+</section>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="flex-spacer">flex-space</h3>
   <div data-flex>
     <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
-    <div class="flex-spacer demo-flex-spacer"></div>
+    <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
+    <div class="flex-space demo-spacer"></div>
     <a class="btn btn_clear"><span class="ec-icon skull"></span></a>
   </div>
   <pre><code class="html">
 <div data-flex>
   ...
-  <div class="flex-spacer"></div>
+  <div class="flex-space"></div>
   ...
 </div></code></pre>
-
-</section>
-<div class="spacer"></div>
+</section>            <div class="spacer spacer_big"></div>
 <section>
-  <h4 id="has-margin" class="is-h5">has-margin</h4>
-  <div class="well align-center">
-    <span class="is-h6">has-margin-{sides}-{size}{ -
-      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
-      <span class="is-ink-light">null</span> }</span>
+  <h3 id="has-margin">has-margin<span class="is-ink-link">${hasMarginSide + hasMarginSize}</span><span class="is-ink-lighter">-bp</span></h3>
+
+  <div class="demo-margin">
+    <div :class="'has-margin' + hasMarginSide + hasMarginSize">
+      <div data-grid="is-center is-small">
+        <div data-col='3'>
+          <div class="form-group">
+            <label for="hasMarginSide">side</label>
+            <select class="input" id="hasMarginSide" v-model="hasMarginSide">
+              <option value="" selected>default</option>
+              <option value="-middle">middle</option>
+              <option value="-center">center</option>
+              <option value="-top">top</option>
+              <option value="-right">right</option>
+              <option value="-bottom">bottom</option>
+              <option value="-left">left</option>
+            </select>
+          </div>
+        </div>
+        <div data-col='3'>
+          <div class="form-group">
+            <label for="hasMarginSize">size</label>
+            <select class="input" id="hasMarginSize" v-model="hasMarginSize">
+              <option value="-smallest">smallest (4px)</option>
+              <option value="-small">small (8px)</option>
+              <option value="" selected>default (16px)</option>
+              <option value="-big" selected>big (32px)</option>
+              <option value="-auto" selected>auto</option>
+              <option value="-0" selected>0</option>
+              <option value="-1" selected>1 (4px)</option>
+              <option value="-2" selected>2 (8px)</option>
+              <option value="-3" selected>3 (16px)</option>
+              <option value="-4" selected>4 (24px)</option>
+              <option value="-5" selected>5 (32px)</option>
+              <option value="-6" selected>6 (48px)</option>
+              <option value="-7" selected>7 (64px)</option>
+              <option value="-8" selected>8 (80px)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4">
-        <strong>{sides}</strong>
-      </td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li>
-            <em>no value</em> - adds margin or padding to all sides</li>
-          <li>
-            <span class="code">middle</span> - top and bottom</li>
-          <li>
-            <span class="code">center</span> - left and right</li>
-          <li>
-            <span class="code">top</span>
-            <span class="code">right</span>
-            <span class="code">bottom</span>
-            <span class="code">left</span>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr data-grid="no-gutter">
-      <td data-col="4">
-        <strong>{size}</strong>
-      </td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li>
-            <em>no value</em> - default size
-            <span class="code">equals 16px</span>
-          </li>
-          <li>
-            <span class="code">smallest</span> -
-            <span class="code">equals 4px</span>
-          </li>
-          <li>
-            <span class="code">small</span> -
-            <span class="code">equals 8px</span>
-          </li>
-          <li>
-            <span class="code">big</span> -
-            <span class="code">equals 32px</span>
-          </li>
-          <li>
-            <span class="code">auto</span> - only with
-            <span class="code">margin-l</span>
-            <span class="code">margin-r</span>
-            <span class="code">margin-center</span>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</section>
 
-<div class="spacer"></div>
-
+  <p v-show="hasMarginSize === '-auto'" class="align-center">
+    <span class="code">auto</span> - only with
+    <span class="code">margin-left</span>
+    <span class="code">margin-right</span>
+    <span class="code">margin-center</span>
+  </p>
+</section>            <div class="spacer spacer_big"></div>
 <section>
-  <h4 id="no-margin" class="is-h5">no-margin</h4>
-  <div class="well align-center">
-    <span class="is-h6">no-margin-{sides}-{size}{ -
-      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
-      <span class="is-ink-light">null</span> }</span>
+  <h3 id="has-padding">has-padding<span class="is-ink-link">${hasPaddingSide + hasPaddingSize}</span><span class="is-ink-lighter">-bp</span></h3>
+
+  <div class="demo-padding" :class="'has-padding' + hasPaddingSide + hasPaddingSize">
+    <div>
+      <div data-grid="is-center is-small">
+        <div data-col='3'>
+          <div class="form-group">
+            <label for="hasPaddingSide">side</label>
+            <select class="input" id="hasPaddingSide" v-model="hasPaddingSide">
+              <option value="" selected>default</option>
+              <option value="-middle">middle</option>
+              <option value="-center">center</option>
+              <option value="-top">top</option>
+              <option value="-right">right</option>
+              <option value="-bottom">bottom</option>
+              <option value="-left">left</option>
+            </select>
+          </div>
+        </div>
+        <div data-col='3'>
+          <div class="form-group">
+            <label for="hasPaddingSize">size</label>
+            <select class="input" id="hasPaddingSize" v-model="hasPaddingSize">
+              <option value="-smallest">smallest (4px)</option>
+              <option value="-small">small (8px)</option>
+              <option value="" selected>default (16px)</option>
+              <option value="-big" selected>big (32px)</option>
+              <option value="-0" selected>0</option>
+              <option value="-1" selected>1 (4px)</option>
+              <option value="-2" selected>2 (8px)</option>
+              <option value="-3" selected>3 (16px)</option>
+              <option value="-4" selected>4 (24px)</option>
+              <option value="-5" selected>5 (32px)</option>
+              <option value="-6" selected>6 (48px)</option>
+              <option value="-7" selected>7 (64px)</option>
+              <option value="-8" selected>8 (80px)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4">
-        <strong>{sides}</strong>
-      </td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li>
-            <em>no value</em> - adds margin or padding to all sides</li>
-          <li>
-            <span class="code">middle</span> - top and bottom</li>
-          <li>
-            <span class="code">center</span> - left and right</li>
-          <li>
-            <span class="code">top</span>
-            <span class="code">right</span>
-            <span class="code">bottom</span>
-            <span class="code">left</span>
-          </li>
-        </ul>
+</section>            <div class="spacer spacer_big"></div>
+<h3 id="data-flex">Additional flex attributes</h3>
+<p class="is-lead">Those additional attributes and values can be combined with data-grid / data-col to modify the
+  layout.</p>
+<div class="well align-center">
+  <div class="is-kilo">data-flex="{option}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
+    }"
+  </div>
+</div>
+<h6 class="align-center">flex-direction</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-row</span></td>
+      <td data-col="8">left to right in ltr | right to left in rtl <span class="tag tag_small">default</span></td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-row-reverse</span></td>
+      <td data-col="8">right to left in ltr | left to right in rtl</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-column</span></td>
+      <td data-col="8">same as row but top to bottom</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-column-reverse</span></td>
+      <td data-col="8">same as row-reverse but bottom to top</td>
+    </tr>
+  </tbody>
+</table>
+<h6 class="align-center">flex-wrap</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-nowrap</span></td>
+      <td data-col="8">all flex items will be on one line <span class="tag tag_small">default</span>
       </td>
     </tr>
-  </table>
-</section>
-
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-wrap</span></td>
+      <td data-col="8">flex items will wrap onto multiple lines, from top to bottom</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-wrap-reverse</span></td>
+      <td data-col="8">flex items will wrap onto multiple lines from bottom to top</td>
+    </tr>
+  </tbody>
+</table>
+<h6 class="align-center">justify-content</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-start</span></td>
+      <td data-col="8">items are packed toward the start line <span class="tag tag_small">default</span>
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-end</span></td>
+      <td data-col="8">items are packed toward to end line</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-center</span></td>
+      <td data-col="8">items are centered along the line</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-between</span></td>
+      <td data-col="8">items are evenly distributed in the line; first item is on the
+        start line, last item on the end line
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-around</span></td>
+      <td data-col="8">items are evenly distributed in the line with equal space around
+        them
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h6 class="align-center">align-items</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-start-items</span></td>
+      <td data-col="8">cross-start margin edge of the items is placed on the cross-start
+        line
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-end-items</span></td>
+      <td data-col="8">cross-end margin edge of the items is placed on the cross-end
+        line
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-center-items</span></td>
+      <td data-col="8">items are centered in the cross-axis</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-baseline-items</span></td>
+      <td data-col="8">items are aligned such as their baselines align</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-stretch-items</span></td>
+      <td data-col="8">stretch to fill the container <span class="tag tag_small">default</span></td>
+    </tr>
+  </tbody>
+</table>
+<h6 class="align-center">align-content</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-start-content</span></td>
+      <td data-col="8">lines packed to the start of the container</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-end-content</span></td>
+      <td data-col="8">lines packed to the end of the container</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-center-content</span></td>
+      <td data-col="8">lines packed to the center of the container</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-space-content</span></td>
+      <td data-col="8">lines evenly distributed; the first line is at the start of the
+        container while the last one is at the end
+      </td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-arround-content</span></td>
+      <td data-col="8">lines evenly distributed with equal space around each line</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-stretch-content</span></td>
+      <td data-col="8">lines stretch to take up the remaining space <span class="tag tag_small">default</span></td>
+    </tr>
+  </tbody>
+</table>
 <div class="spacer"></div>
-
-<section>
-  <h4 id="has-padding" class="is-h5">has-padding</h4>
-  <div class="well align-center">
-    <span class="is-h6">has-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
-  </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{sides}</strong></td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li><em>no value</em> - adds margin or padding to all sides</li>
-          <li><span class="code">middle</span> - top and bottom</li>
-          <li><span class="code">center</span> - left and right</li>
-          <li><span class="code">top</span> <span class="code">right</span> <span
-                class="code">bottom</span> <span class="code">left</span></li>
-        </ul>
-      </td>
+<div class="well align-center">
+  <span class="is-kilo">data-flex-item="{options}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
+    }"</span>
+</div>
+<h6 class="align-center">size</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">grow</span></td>
+      <td data-col="8">items grows to fill it's parent.</td>
     </tr>
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{size}</strong></td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li><em>no value</em> - default size <span class="code">equals 16px</span>
-          </li>
-          <li><span class="code">smallest</span> - <span
-                class="code">equals 4px</span></li>
-          <li><span class="code">small</span> - <span
-                class="code">equals 8px</span></li>
-          <li><span class="code">big</span> - <span class="code">equals 32px</span>
-          </li>
-          <li><span class="code">auto</span> - only with <span
-                class="code">margin-l</span> <span class="code">margin-r</span> <span
-                class="code">margin-center</span></li>
-        </ul>
-      </td>
+    <tr data-flex>
+      <td data-col="4"><span class="code">grow-even</span></td>
+      <td data-col="8">all children grow evenly an share the space.</td>
     </tr>
-  </table>
-</section>
-
+    <tr data-flex>
+      <td data-col="4"><span class="code">fit-self</span></td>
+      <td data-col="8">element doesn't shrink and grows up to its content size.</td>
+    </tr>
+  </tbody>
+</table>
+<h6 class="align-center">align-self</h6>
+<table class="table">
+  <tbody>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-auto</span></td>
+      <td data-col="8">Default. The element inherits its parent container's align-items property, or "stretch" if it
+        has no parent container.</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-stretch</span></td>
+      <td data-col="8">The element is positioned to fit the container.</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-center</span></td>
+      <td data-col="8">The element is positioned at the center of the container.</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-start</span></td>
+      <td data-col="8">The element is positioned at the beginning of the container.</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-end</span></td>
+      <td data-col="8">The element is positioned at the end of the container.</td>
+    </tr>
+    <tr data-flex>
+      <td data-col="4"><span class="code">is-baseline</span></td>
+      <td data-col="8">The element is positioned at the baseline of the container.</td>
+    </tr>
+  </tbody>
+</table>
 <div class="spacer"></div>
-
+<div class="well align-center">
+  <span class="is-kilo">data-flex-order="{order}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span>
+    }"</span>
+</div>
+<p>By default, flex items are laid out in the source order. However, the order property
+  controls the order in which they appear in the flex container. the order-value can be
+  <span class="code">[1-12]</span>.</p>
+<div class="bumper-big"></div>            <div class="spacer spacer_big"></div>
 <section>
-  <h4 id="no-padding" class="is-h5">no-padding</h4>
-  <div class="well align-center">
-    <span class="is-h6">no-padding-{sides}-{size}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
-  </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{sides}</strong></td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li><em>no value</em> - adds margin or padding to all sides</li>
-          <li><span class="code">middle</span> - top and bottom</li>
-          <li><span class="code">center</span> - left and right</li>
-          <li><span class="code">top</span> <span class="code">right</span> <span
-                class="code">bottom</span> <span class="code">left</span></li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</section>
-
-<div class="bumper"></div><section>
-  <h3 id="has-height" class="is-h5">has-height</h3>
+  <h3 id="has-height">has-height</h3>
   <div class="well align-center">
     <div class="is-h6">has-height-{relation}-{ratio}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
     <div class="is-h6">has-min-height-{relation}-{ratio}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
@@ -3651,8 +4872,9 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div><section>
-  <h3 id="has-width" class="is-h5">has-width</h3>
+<div class="bumper"></div>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="has-width">has-width</h3>
   <div class="well align-center">
     <div class="is-h6">has-width-{relation}-{ratio}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
     <div class="is-h6">has-min-width-{relation}-{ratio}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
@@ -3685,15 +4907,17 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div><section>
-  <h3 id="pull" class="is-h5">pull</h3>
+<div class="bumper-big"></div>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="pull">pull</h3>
   <div class="well align-center">
     <div class="is-h6">pull-{ left | right }{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</div>
   </div>
 </section>
 
-<div class="bumper"></div><section>
-  <h3 id="is-clipped" class="is-h5">is-clipped</h3>
+<div class="bumper-big"></div>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="is-clipped">is-clipped</h3>
   <p>use for
     <span class="code">overflow: hidden;</span>
   </p>
@@ -3716,10 +4940,10 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div>
+<div class="bumper-big"></div>
 
 <section>
-  <h3 id="is-clipped" class="is-h5">is-scrollable</h3>
+  <h3 id="is-scrollable">is-scrollable</h3>
   <p>use for
     <span class="code">overflow: scroll;</span>
   </p>
@@ -3752,15 +4976,16 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div><section>
-  <h3 id="is-position" class="is-h5">is-position</h3>
+<div class="bumper-big"></div>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="is-position">is-position</h3>
   <div class="well align-center">
     <span class="is-h6">is-{static|relative|absolute|fixed|sticky}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
 
   <div class="spacer"></div>
 
-  <h3 id="is-positioned" class="is-h5">is-positioned</h3>
+  <h3 id="is-positioned">is-positioned</h3>
   <div class="well align-center">
     <span class="is-h6">is-positioned-{direction}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
@@ -3777,8 +5002,9 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper"></div><section>
-  <h3 id="is-layer" class="is-h5">is-layer</h3>
+<div class="bumper"></div>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="is-layer">is-layer</h3>
   <div class="well align-center">
     <span class="is-h6">is-layer-{layer}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
@@ -3796,8 +5022,9 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div><section>
-  <h3 id="is-hidden" class="is-h5">is-hidden</h3>
+<div class="bumper"></div>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="is-hidden">is-hidden</h3>
   <div class="well align-center is-ink-link">
     <span class="is-mega is-hidden-xs" data-animate="popIn 4">is-hidden-xs </span>
     <span class="is-mega is-hidden-sm" data-animate="popIn 4">is-hidden-sm </span>
@@ -3822,8 +5049,9 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper"></div><section>
-  <h3 id="is-visible" class="is-h5">is-visible</h3>
+<div class="bumper"></div>            <div class="spacer spacer_big"></div>
+<section>
+  <h3 id="is-visible">is-visible</h3>
   <div class="well align-center is-ink-link">
     <span class="is-mega is-visible-xs" data-animate="popIn 4">is-visible-xs</span>
     <span class="is-mega is-visible-sm" data-animate="popIn 4">is-visible-sm</span>
@@ -3842,11 +5070,9 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <div class="well align-center">
     <span class="is-h6">is-visible-from{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
-</section>
-
-<div class="bumper-big"></div>          <div class="bumper-big"></div>
+</section>            <div class="spacer spacer_big"></div>
 <section>
-  <h3 id="data-animate" class="is-h5">data-animate
+  <h3 id="data-animate">data-animate
     <span class="tag tag_small tag_super">css only</span>
     <span class="tag tag_small tag_error">in progress</span>
   </h3>
@@ -3883,7 +5109,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 
   <div class="animation-demo">
-    <div v-if="render" class="is-uppercase is-h1 special-font"
+    <div v-if="render" class="is-uppercase is-giga special-font"
          :data-animate="selectedAnimation + ' ' + animationDuration + ' +' + animationDelay">
       demo
     </div>
@@ -3895,21 +5121,54 @@ data-tooltip-left="This is a tooltip"</code></pre>
     </div>
   </div>
 </section>
+          </div>
+        </div>
+      </div>
 
-<div class="bumper"></div>        </div>
+    </div>
+    <div class="bumper-big"></div>
+<section id="ec-icon" data-col="12">
+  <div data-container>
+
+    <div data-grid="is-center">
+      <div data-col='8'>
+        <div class="align-center">
+          <h2 class="special-font">ec-icons
+            <span class="tag">6.0.2</span>
+          </h2>
+        </div>
+        <p class="is-lead"><strong>x.ui</strong> is optimized for usage with ec.icons. ec.icons is based on the iconset
+          <a href="https://linearicons.com/" target="_blank" rel="nofollow">linearicons</a>. it is currated and
+          constantly upgraded.</p>
+
+        <h3 class="is-h6">use ec.icons in your project</h3>
+        <pre><code class="html"><link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.2.min.css" /></code></pre>
+        <pre><code class="scss">@import "https://icons.entrecode.de/ec-icons-6.0.2.min.css";</code></pre>
+
+        <div class="spacer"></div>
+
+        <div data-grid>
+          <div data-col='6'>
+            <div class="align-center">
+              <span class="ec-icon skull">inline</span>
+            </div>
+            <pre><code class="html"><span class="ec-icon skull">inline</span></code></pre>
+          </div>
+          <div data-col='6'>
+            <div class="align-center">
+              <a class="btn"><span class="ec-icon skull">button</span></a>
+            </div>
+  <pre><code class="html">
+<a class="btn">
+  <span class="ec-icon skull">button</span>
+</a></code></pre>
+          </div>
+        </div>
       </div>
     </div>
 
-  </div>
-<section class="is-theme_dark is-relative-xl is-layer-20-xl" id="ec-icon" data-col="12">
-  <div data-container>
 
-    <div class="align-center">
-      <span class="is-giga ec-icon skull"></span>
-      <h2 class="is-h3 special-font">ec-icons
-        <span class="tag">6.0.1</span>
-      </h2>
-    </div>
+    <div class="spacer spacer_big"></div>
 
     <div data-grid="is-center">
       <div data-col="6-sm 4-md">
@@ -3927,12 +5186,14 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <div data-grid="is-center">
       <div data-col="12 10-md 8-xxl">
         <ul data-grid="is-small">
-          <li v-for="icon in iconset" data-col="6-xs 4-sm 3-lg" :class="{'is-hidden': icon.indexOf(query) === -1}">
-            <span class="ec-icon" :class="icon"></span>
-            <span class="quickselect">${ icon }</span>
+          <li v-for="icon in iconset" data-col="6-xs 4-sm 3-lg 2-xxl" :class="{'is-hidden': icon.indexOf(query) === -1}">
+            <div class="demo-icon">
+              <span class="ec-icon" :class="icon"></span>
+              <span class="code quickselect">${ icon }</span>
+            </div>
           </li>
         </ul>
-        <div class="spacer-big"></div>
+        <div class="spacer spacer_big"></div>
       </div>
     </div>
   </div>
@@ -3940,15 +5201,15 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <div class="has-padding">
     <p class="align-center is-ink-light">
       <small>
-        Source placeholder text: <strong>Theodor Fontane - Die Verwandlung</strong> <a href="http://www.blindliteratur.de/" target="_blank" rel="noopener">http://www.blindliteratur.de/</a><br>
-        Photo img-placeholder by <a href="https://unsplash.com/photos/bh4LQHcOcxE" target="_blank" rel="noopener">Warren Wong on Unsplash</a> &bull; Photo avatar-placeholder by <a href="https://unsplash.com/photos/8NHL3OI5eWc" target="_blank" rel="noopener">Austin Chan on Unsplash</a>
+        placeholder text: <strong>Heinrich von Kleist - Michael Kohlhaas</strong> <a href="http://www.blindliteratur.de/" target="_blank" rel="noopener">http://www.blindliteratur.de/</a><br>
+        Photos: <a href="https://unsplash.com/photos/bh4LQHcOcxE" target="_blank" rel="noopener">Warren Wong on Unsplash</a> &bull; <a href="https://unsplash.com/photos/8NHL3OI5eWc" target="_blank" rel="noopener">Austin Chan on Unsplash</a> &bull; <a href="https://unsplash.com/photos/xdwQ_Eq2b-Y" target="_blank" rel="noopener">Erik Odiin on Unsplash</a>
       </small>
     </p>
     <p class="align-center">
       <small><a href="https://entrecode.de/datenschutz" rel="nofollow">imprint &amp; privacy</a></small>
     </p>
   </div>
-</footer>
-</div>
+</footer>  </div>
 </body>
+
 </html>

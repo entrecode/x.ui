@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 9.1.0
 /// @access public
 
 //
@@ -19,7 +19,7 @@ $text: #2a3d54 !default;
 $link: #2fce6f !default;
 $super: #14a656 !default;
 $minor: rgba($link, 0.2) !default;
-$highlight: #9de263 !default;
+$highlight: #fcff66 !default;
 
 // background shading variables
 // @param {color} $background-invert [$text] - inverted color for background
@@ -44,8 +44,8 @@ $text-light: rgba($text, 0.6) !default;
 $text-lighter: rgba($text, 0.4) !default;
 $text-lightest: rgba($text, 0.2) !default;
 
-// @param {color} $backdrop [rgba(#000, .8)]
-$backdrop: rgba(#000, 0.8) !default;
+// @param {color} $backdrop [rgba(#000, .2)]
+$backdrop: rgba(#000, 0.2) !default;
 
 // @param {number} $hover-shading [4] - amount by which colors are darkened or lightened on hover
 $hover-shading: 4 !default;
@@ -90,53 +90,61 @@ $_luma-background: luma($background);
 // COLORMAP
 // ---------------------------------------------
 // colormap used in `getColor()` function
-$xui-colors: (
-  base: (
-    'text': $text,
-    'background': $background,
-    'link': $link,
-    'minor': $minor,
-    'super': $super,
-    'highlight': $highlight,
-    'divider': $divider-color
+$xui-colors: () !default;
+$xui-colors: map-merge(
+  (
+    base: (
+      'text': $text,
+      'background': $background,
+      'link': $link,
+      'minor': $minor,
+      'super': $super,
+      'highlight': $highlight,
+      'divider': $divider-color
+    ),
+    text: (
+      'invert': $text-invert,
+      'light': $text-light,
+      'lighter': $text-lighter,
+      'lightest': $text-lightest
+    ),
+    background: (
+      'invert': $background-invert,
+      'light': $background-light,
+      'lighter': $background-lighter,
+      'lightest': $background-lightest
+    ),
+    state: (
+      'hover': $state-hover,
+      'disabled': $state-disabled,
+      'info': $state-info,
+      'error': $state-error,
+      'success': $state-success,
+      'warning': $state-warning
+    )
   ),
-  text: (
-    'invert': $text-invert,
-    'light': $text-light,
-    'lighter': $text-lighter,
-    'lightest': $text-lightest
-  ),
-  background: (
-    'invert': $background-invert,
-    'light': $background-light,
-    'lighter': $background-lighter,
-    'lightest': $background-lightest
-  ),
-  state: (
-    'hover': $state-hover,
-    'disabled': $state-disabled,
-    'info': $state-info,
-    'error': $state-error,
-    'success': $state-success,
-    'warning': $state-warning
-  )
-) !default;
+  $xui-colors
+);
 
 // @param {variable} $color-map-id [$xui-colors] - can be changed use a different colormap
 $color-map-id: $xui-colors !default;
 
 // @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
-$theme-array: (
-  minor: $minor,
-  link: $link,
-  super: $super,
-  highlight: $highlight,
-  invert: $text-invert,
-  info: $state-info,
-  error: $state-error,
-  success: $state-success,
-  warning: $state-warning
-) !default;
+$theme-array: () !default;
+$theme-array: map-merge(
+  (
+    minor: $minor,
+    link: $link,
+    super: $super,
+    highlight: $highlight,
+    invert: $text-invert,
+    info: $state-info,
+    error: $state-error,
+    success: $state-success,
+    warning: $state-warning
+  ),
+  $theme-array
+);
 
 //
 // ROOT
@@ -175,29 +183,40 @@ $grid-num-columns: 12 !default;
 $base-spacing: 16 !default;
 $base-spacing-unit: xrem !default;
 
-$spacings: (
-  0: 0,
-  1: $base-spacing * 0.25 /* equals 4 twin */,
-  2: $base-spacing * 0.5 /* equals 8 sibling */,
-  3: $base-spacing /* equals 16 buddy */,
-  4: $base-spacing * 1.5 /* equals 24 peer */,
-  5: $base-spacing * 2 /* equals 32 relative */,
-  6: $base-spacing * 3 /* equals 48 stranger */
-) !default;
+$spacings: () !default;
+$spacings: map-merge(
+  (
+    0: 0,
+    1: $base-spacing * 0.25 /* equals 4 twin */,
+    2: $base-spacing * 0.5 /* equals 8 sibling */,
+    3: $base-spacing /* equals 16 buddy */,
+    4: $base-spacing * 1.5 /* equals 24 peer */,
+    5: $base-spacing * 2 /* equals 32 relative */,
+    6: $base-spacing * 3 /* equals 48 stranger */,
+    7: $base-spacing * 4 /* equals 64 stranger */,
+    8: $base-spacing * 5 /* equals 80 stranger */
+  ),
+  $spacings
+);
 
 //
 // RESPONSIVE BREAKPOINTS
 // -------------------------------------------------------------------------------------------------
 // @param {map} $breakpoints
-$breakpoints: (
-  'xs': 0 /* smartphone*/,
-  'sm': 480 /* smartphone landscape*/,
-  'md': 720 /* tablet*/,
-  'nav': 1024 /* breakpoint for mobile navigation*/,
-  'lg': 1024 /* tablet landscape*/,
-  'xl': 1280 /* desktop*/,
-  'xxl': 1920 /* large*/
-) !default;
+// @deprecated since 9.0.0 `nav` might be removed in future release
+$breakpoints: () !default;
+$breakpoints: map-merge(
+  (
+    'xs': 0 /* smartphone*/,
+    'sm': 480 /* smartphone landscape*/,
+    'md': 720 /* tablet*/,
+    'nav': 1024 /* breakpoint for mobile navigation*/,
+    'lg': 1024 /* tablet landscape*/,
+    'xl': 1280 /* desktop*/,
+    'xxl': 1920 /* large*/
+  ),
+  $breakpoints
+);
 
 //
 // TYPEFACE
@@ -209,18 +228,22 @@ $breakpoints: (
 // use @import to use custom font-families
 // @param {value} $body-font
 // @param {value} $headings-font
+// @param {value} $monospace-font
 $body-font: sans-serif !default;
 $headings-font: sans-serif !default;
+$monospace-font: monospace !default;
 
 //
 // FONT-WEIGHT
 // ---------------------------------------------
 // @param {value} $is-light [lighter] - font-weight value for .is-light
 // @param {value} $is-normal [normal] - font-weight value for .is-normal
+// @param {value} $is-medium [bold] - font-weight value for .is-medium
 // @param {value} $is-bold [bold] - font-weight value for .is-bold
 $is-light: lighter !default;
 $is-normal: normal !default;
-$is-bold: bold !default;
+$is-medium: bold !default;
+$is-bold: bolder !default;
 
 //
 // FONT-SIZE
@@ -245,7 +268,7 @@ $base-icon-size: 16 !default;
 // ---------------------------------------------
 // @param {em} $headings-line-height [$base-line-height]
 // @param {value} $headings-weight [$is-bold]
-// @param {number} $headings-inline-small [.875] - for inline small tags - has to be a em value
+// @param {em} $headings-inline-small [.875] - for inline small tags - has to be a em value
 // @param {array} $headings-style
 $headings-line-height: $base-line-height !default;
 $headings-weight: $is-bold !default;
@@ -308,26 +331,37 @@ $kilo-spacing: 0 !default;
 // ---------------------------------------------
 // @param {map} $type-scale - modular scale for typeface
 // @link http://www.modularscale.com/?1&em&1.25
-$type-scale: (
-  h1: 3.052,
-  h2: 2.441,
-  h3: 1.953,
-  h4: 1.563,
-  h5: 1.25,
-  h6: 1,
-  lead: 1.25,
-  p: 1
-) !default;
+$type-scale: () !default;
+$type-scale: map-merge(
+  (
+    h1: 3.052,
+    h2: 2.441,
+    h3: 1.953,
+    h4: 1.563,
+    h5: 1.25,
+    h6: 1,
+    is-giga: 2,
+    is-mega: 1.5,
+    is-kilo: 1,
+    is-lead: 1.25,
+    p: 1
+  ),
+  $type-scale
+);
 
 // @param {unit} $type-scale-unit [$base-scale-unit] - unit for modular scale
 $type-scale-unit: $base-scale-unit !default;
 
 // @param {map} $type-scale-bp - breakpoints for modular scale
-$type-scale-bp: (
-  xs: 0.875,
-  md: 1,
-  xxl: 1.25
-) !default;
+$type-scale-bp: () !default;
+$type-scale-bp: map-merge(
+  (
+    xs: 0.875,
+    md: 1,
+    xxl: 1.25
+  ),
+  $type-scale-bp
+);
 
 //
 // PARAGRAPH STYLES
@@ -347,12 +381,13 @@ $paragraph-style: () !default;
 // LEAD PARAGRAPH STYLES
 // ---------------------------------------------
 // @param {value} $is-lead-weight [$is-light]
-// @param {em} $is-lead-line-height [$base-line-height]
+// @param {em} $is-lead-line-height [$paragraph-line-height]
 // @param {array} $is-lead-spacing [$paragraph-spacing]
 // @param {value} $is-lead-spacing-unit [$base-spacing-unit]
 // @param {array} $is-lead-style
 $is-lead-weight: $is-light !default;
-$is-lead-line-height: $base-line-height !default;
+$is-lead-line-height: $paragraph-line-height !default;
+$is-lead-line-height: $paragraph-line-height !default;
 $is-lead-spacing: $paragraph-spacing !default;
 $is-lead-spacing-unit: $base-spacing-unit !default;
 $is-lead-style: () !default;
@@ -367,9 +402,13 @@ $is-lead-style: () !default;
 $link-color: $link;
 $link-decoration: none !default;
 $link-weight: $is-normal !default;
-$link-style: (
-  transition: color 0.2s
-) !default;
+$link-style: () !default;
+$link-style: map-merge(
+  (
+    transition: color 0.2s
+  ),
+  $link-style
+);
 
 // @param {color} $link-hover-color [$link-color]
 // @param {value} $link-hover-decoration [none]
@@ -385,6 +424,42 @@ $link-hover-style: () !default;
 // @param {value} $inline-small-unit [$base-scale-unit]
 $inline-small-scale: 0.875 !default;
 $inline-small-unit: $base-scale-unit !default;
+
+//
+// MEDIA
+// -------------------------------------------------------------------------------------------------
+// @param {map} $img-crop-ratio - modular scale for img-crop classes
+$img-crop-ratio: () !default;
+$img-crop-ratio: map-merge((
+  '1-1': (
+    1,
+    1
+  ),
+  '3-4': (
+    3,
+    4
+  ),
+  '4-3': (
+    4,
+    3
+  ),
+  '16-9': (
+    16,
+    9
+  ),
+  'golden': (
+    1.618,
+    1
+  ),
+  'silver': (
+    2.414,
+    1
+  ),
+  'ultrawide': (
+    3.6,
+    1
+  )
+), $img-crop-ratio);
 
 //
 // UI
@@ -421,13 +496,21 @@ $btn-min-height: 40 !default;
 $btn-weight: $is-bold !default;
 $btn-style: () !default;
 $btn-hover-style: () !default;
-$btn-disabled-style: (
-  box-shadow: none,
-  opacity: 0.6
-) !default;
-$btn-active-style: (
-  transform: translateY(2px)
-) !default;
+$btn-disabled-style: () !default;
+$btn-disabled-style: map-merge(
+  (
+    box-shadow: none,
+    opacity: 0.6
+  ),
+  $btn-disabled-style
+);
+$btn-active-style: () !default;
+$btn-active-style: map-merge(
+  (
+    transform: translateY(2px)
+  ),
+  $btn-active-style
+);
 
 // @param {px} $btn-small-font-size [$btn-font-size * .875]
 // @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
@@ -520,14 +603,14 @@ $btn-outline-hover-style: () !default;
 // @param {array} $btn-minor-style
 $btn-minor-background: $minor !default;
 $btn-minor-color: setContrast($minor) !default;
-$btn-minor-style: () default;
+$btn-minor-style: () !default;
 
 // @param {color} $btn-minor-hover-background [$btn-minor-background]
 // @param {color} $btn-minor-hover-color [$btn-minor-color]
 // @param {array} $btn-minor-hover-style
 $btn-minor-hover-background: $btn-minor-background !default;
 $btn-minor-hover-color: $btn-minor-color !default;
-$btn-minor-hover-style: () default;
+$btn-minor-hover-style: () !default;
 
 //
 // BTN OUTLINE MINOR STYLE
@@ -719,6 +802,33 @@ $bubble-big-radius: $bubble-radius !default;
 //
 // TAG
 // ------------------------------------------------------
+// @param {px} $loader-size [24]
+// @param {array} $loader-style
+// @param {px} $loader-track-width [4]
+// @param {color} $loader-track-color [rgba($text, 0.1)]
+// @param {color} $loader-racer-color [$link]
+// @param {string} $loader-racer-animation [loaderDefault]
+// @param {s | ms} $loader-racer-animation-speed [1s]
+// @param {value} $loader-racer-animation-behavior [infinite linear]
+$loader-size: 24 !default;
+$loader-style: () !default;
+$loader-track-width: 4 !default;
+$loader-track-color: rgba($text, 0.1) !default;
+$loader-racer-color: $link !default;
+$loader-racer-animation: loaderDefault !default;
+$loader-racer-animation-speed: 1s !default;
+$loader-racer-animation-behavior: infinite linear !default;
+
+// @param {array} $loader-is-local-style
+// @param {array} $loader-is-global-style
+// @param {color} $loader-is-global-background [$backdrop]
+$loader-is-local-style: () !default;
+$loader-is-global-style: () !default;
+$loader-is-global-background: $backdrop !default;
+
+//
+// TAG
+// ------------------------------------------------------
 // @param {color} $tag-background [$minor]
 $tag-background: $minor !default;
 
@@ -769,7 +879,7 @@ $tag-outlined-border-style: solid !default;
 $tag-round: false !default;
 
 // @param {px} $tags-gutter [4]
-$tags-gutter: 4;
+$tags-gutter: 4 !default;
 
 // radius of buttons - if $tag-round === false
 // @param {px} $tag-radius [2]
@@ -807,6 +917,7 @@ $dropdown-options-style: () !default;
 // @param {value} $dropdown-option-weight [$is-bold]
 // @param {color} $dropdown-option-color [$text]
 // @param {color} $dropdown-option-background [none]
+// @param {array} $dropdown-option-style
 $dropdown-option-padding-ratio: 1.5 !default;
 $dropdown-option-spacing: 0 !default;
 $dropdown-option-min-height: $btn-min-height !default;
@@ -816,6 +927,7 @@ $dropdown-option-alignment: center !default;
 $dropdown-option-weight: $is-bold !default;
 $dropdown-option-color: $text !default;
 $dropdown-option-background: none !default;
+$dropdown-option-style: () !default;
 
 // @param {color} $dropdown-option-hover-color [$link]
 // @param {color} $dropdown-option-hover-background [$state-hover]
@@ -838,8 +950,8 @@ $dropdown-option-divider-style: () !default;
 // @param {px} $btn-group-divider-size [1]
 // @param {color} $btn-group-divider-color [$divider-color]
 $btn-group-style: () !default;
-$btn-group-divider-size: 1;
-$btn-group-divider-color: $divider-color;
+$btn-group-divider-size: 1 !default;
+$btn-group-divider-color: $divider-color !default;
 
 //
 // NAV
@@ -992,9 +1104,13 @@ $xui-list-item-gutter: $base-spacing !default;
 $xui-list-item-radius: 4 !default;
 $xui-list-item-background: none !default;
 $xui-list-item-color: inherit !default;
-$xui-list-item-style: (
-  transition: background-color 0.4s
-) !default;
+$xui-list-item-style: () !default;
+$xui-list-item-style: map-merge(
+  (
+    transition: background-color 0.4s
+  ),
+  $xui-list-item-style
+);
 
 // @param {color} $xui-list-item-hover-background [none]
 // @param {color} $xui-list-item-hover-color [inherit]
@@ -1053,6 +1169,227 @@ $card-color: inherit !default;
 $card-padding: 8 16 !default;
 $card-style: () !default;
 
+// DIALOG
+// ------------------------------------------------------
+// @param {array} $dialog-padding [16]
+// @param {color} $dialog-wrapper-background [$backdrop]
+// @param {number} $dialog-z-index [100]
+// @param {array} $dialog-style
+$dialog-wrapper-padding: 16 !default;
+$dialog-wrapper-background: $backdrop !default;
+$dialog-wrapper-z-index: 100 !default;
+$dialog-wrapper-style: () !default;
+
+// @param {px} $dialog-min-width [240]
+// @param {percentage | false } $dialog-max-width-relative [50]
+// @param {pixel | false } $dialog-max-width-relative [640]
+$dialog-min-width: 240 !default;
+$dialog-max-width-relative: 50 !default;
+$dialog-max-width-absolute: 640 !default;
+
+// @param {color} $dialog-background
+// @param {color} $dialog-color
+// @param {array} $dialog-padding [0]
+// @param {px} $dialog-radius [4]
+// @param {value} $dialog-shadow
+// @param {number} $dialog-z-index [100]
+// @param {array} $dialog-style
+$dialog-background: $background !default;
+$dialog-color: $text !default;
+$dialog-padding: 0 !default;
+$dialog-radius: 8 !default;
+$dialog-shadow: 0 4 16 -4 rgba(#000, 0.16) ',' 0 8 24 0 rgba(#000, 0.1) !default;
+$dialog-z-index: 100 !default;
+$dialog-style: () !default;
+
+// @param {array} $dialog-dismiss-style
+$dialog-dismiss-style: () !default;
+
+// @param {array} $dialog-header-spacing [0]
+// @param {array} $dialog-header-padding [8]
+// @param {array} $dialog-header-style
+$dialog-header-spacing: 0 !default;
+$dialog-header-padding: 8 !default;
+$dialog-header-style: () !default;
+
+// @param {array} $dialog-body-spacing [0]
+// @param {array} $dialog-body-padding [8]
+// @param {array} $dialog-body-style
+$dialog-body-spacing: 0 !default;
+$dialog-body-padding: 8 !default;
+$dialog-body-style: () !default;
+
+// @param {array} $dialog-footer-spacing [0]
+// @param {array} $dialog-footer-padding [8]
+// @param {array} $dialog-footer-style
+$dialog-footer-spacing: 0 !default;
+$dialog-footer-padding: 8 !default;
+$dialog-footer-style: () !default;
+
+// DECK
+// ------------------------------------------------------
+// @param {color} $deck-wrapper-background [$backdrop]
+// @param {number} $deck-z-index [100]
+// @param {array} $deck-style
+$deck-wrapper-background: $backdrop !default;
+$deck-wrapper-z-index: 100 !default;
+$deck-wrapper-style: () !default;
+
+// @param {px} $deck-min-width [240]
+// @param {percentage | false } $deck-max-width-relative [50]
+// @param {pixel | false } $deck-max-width-relative [640]
+$deck-min-width: 240 !default;
+$deck-max-width-relative: 50 !default;
+$deck-max-width-absolute: 640 !default;
+
+// @param {color} $deck-background
+// @param {color} $deck-color
+// @param {array} $deck-padding [0]
+// @param {number} $deck-z-index [100]
+// @param {array} $deck-style
+$deck-background: $background !default;
+$deck-color: $text !default;
+$deck-padding: 0 !default;
+$deck-z-index: 100 !default;
+$deck-style: () !default;
+
+// @param {value} $deck-opens-left-shadow
+// @param {value} $deck-opens-right-shadow
+$deck-opens-left-shadow: 4 0 16 -4 rgba(#000, 0.16) ',' 8 0 24 0 rgba(#000, 0.1) !default;
+$deck-opens-right-shadow: -4 0 16 -4 rgba(#000, 0.16) ',' -8 0 24 0
+  rgba(#000, 0.1) !default;
+
+// @param {array} $deck-dismiss-style
+$deck-dismiss-style: () !default;
+
+// @param {array} $deck-header-spacing [0]
+// @param {array} $deck-header-padding [8]
+// @param {array} $deck-header-style
+$deck-header-spacing: 0 !default;
+$deck-header-padding: 8 !default;
+$deck-header-style: () !default;
+
+// @param {array} $deck-body-spacing [0]
+// @param {array} $deck-body-padding [8]
+// @param {array} $deck-body-style
+$deck-body-spacing: 0 !default;
+$deck-body-padding: 8 !default;
+$deck-body-style: () !default;
+
+// @param {array} $deck-footer-spacing [0]
+// @param {array} $deck-footer-padding [8]
+// @param {array} $deck-footer-style
+$deck-footer-spacing: 0 !default;
+$deck-footer-padding: 8 !default;
+$deck-footer-style: () !default;
+
+// TOAST
+// ------------------------------------------------------
+// @param {color} $toast-wrapper-background [$backdrop]
+// @param {number} $toast-z-index [100]
+// @param {array} $toast-style
+$toast-wrapper-background: $backdrop !default;
+$toast-wrapper-z-index: 100 !default;
+$toast-wrapper-style: () !default;
+
+// @param {color} $toast-background
+// @param {color} $toast-color
+// @param {array} $toast-padding [0]
+// @param {number} $toast-z-index [100]
+// @param {array} $toast-style
+$toast-background: $background !default;
+$toast-color: $text !default;
+$toast-padding: 0 !default;
+$toast-z-index: 100 !default;
+$toast-style: () !default;
+
+// @param {value} $toast-opens-top-shadow
+// @param {value} $toast-opens-bottom-shadow
+$toast-opens-top-shadow: 0 4 16 -4 rgba(#000, 0.16) ',' 0 8 24 0 rgba(#000, 0.1) !default;
+$toast-opens-bottom-shadow: 0 -4 16 -4 rgba(#000, 0.16) ',' 0 -8 24 0 rgba(#000, 0.1) !default;
+
+// @param {array} $toast-dismiss-style
+$toast-dismiss-style: () !default;
+
+// @param {array} $toast-header-spacing [0]
+// @param {array} $toast-header-padding [8]
+// @param {array} $toast-header-style
+$toast-header-spacing: 0 !default;
+$toast-header-padding: 8 !default;
+$toast-header-style: () !default;
+
+// @param {array} $toast-body-spacing [0]
+// @param {array} $toast-body-padding [8]
+// @param {array} $toast-body-style
+$toast-body-spacing: 0 !default;
+$toast-body-padding: 8 !default;
+$toast-body-style: () !default;
+
+// @param {array} $toast-footer-spacing [0]
+// @param {array} $toast-footer-padding [8]
+// @param {array} $toast-footer-style
+$toast-footer-spacing: 0 !default;
+$toast-footer-padding: 8 !default;
+$toast-footer-style: () !default;
+
+// snackbar
+// ------------------------------------------------------
+// @param {color} $snackbar-wrapper-background [$backdrop]
+// @param {number} $snackbar-z-index [100]
+// @param {array} $snackbar-style
+$snackbar-wrapper-background: $backdrop !default;
+$snackbar-wrapper-z-index: 100 !default;
+$snackbar-wrapper-style: () !default;
+
+// @param {px} $snackbar-min-width [240]
+// @param {percentage | false } $snackbar-max-width-relative [50]
+// @param {pixel | false } $snackbar-max-width-relative [640]
+$snackbar-min-width: 240 !default;
+$snackbar-max-width-relative: 50 !default;
+$snackbar-max-width-absolute: 640 !default;
+
+// @param {color} $snackbar-background
+// @param {color} $snackbar-color
+// @param {array} $snackbar-padding [0]
+// @param {array} $snackbar-radius [4]
+// @param {number} $snackbar-z-index [100]
+// @param {array} $snackbar-style
+$snackbar-background: rgba($background-invert, 0.8) !default;
+$snackbar-color: $text-invert !default;
+$snackbar-padding: 0 !default;
+$snackbar-radius: 4 !default;
+$snackbar-z-index: 100 !default;
+$snackbar-style: () !default;
+
+// @param {value} $snackbar-opens-top-shadow
+// @param {value} $snackbar-opens-bottom-shadow
+$snackbar-opens-top-shadow: none !default;
+$snackbar-opens-bottom-shadow: none !default;
+
+// @param {array} $snackbar-dismiss-style
+$snackbar-dismiss-style: () !default;
+
+// @param {array} $snackbar-header-spacing [0]
+// @param {array} $snackbar-header-padding [8]
+// @param {array} $snackbar-header-style
+$snackbar-header-spacing: 0 !default;
+$snackbar-header-padding: 8 !default;
+$snackbar-header-style: () !default;
+
+// @param {array} $snackbar-body-spacing [0]
+// @param {array} $snackbar-body-padding [8]
+// @param {array} $snackbar-body-style
+$snackbar-body-spacing: 0 !default;
+$snackbar-body-padding: 8 !default;
+$snackbar-body-style: () !default;
+
+// @param {array} $snackbar-footer-spacing [0]
+// @param {array} $snackbar-footer-padding [8]
+// @param {array} $snackbar-footer-style
+$snackbar-footer-spacing: 0 !default;
+$snackbar-footer-padding: 8 !default;
+$snackbar-footer-style: () !default;
+
 //
 // XUI-OVERLAY
 // ------------------------------------------------------
@@ -1072,6 +1409,59 @@ $xui-overlay-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !de
 // @param {array} $xui-overlay-backdrop-style
 $xui-overlay-backdrop-background: $backdrop !default;
 $xui-overlay-backdrop-style: () !default;
+
+//
+// OVERLAY
+// ------------------------------------------------------]
+// @param {array} $overlay-padding [16]
+// @param {color} $overlay-background
+// @param {color} $overlay-color
+// @param {number} $overlay-z-index [100]
+// @param {array} $overlay-style
+$overlay-padding: 16 !default;
+$overlay-background: $background !default;
+$overlay-color: $text !default;
+$overlay-z-index: 100 !default;
+$overlay-style: () !default;
+
+// @param {array} $overlay-dismiss-style
+$overlay-dismiss-style: () !default;
+
+// @param {array} $overlay-header-spacing [0]
+// @param {array} $overlay-header-padding [8]
+// @param {array} $overlay-header-style
+$overlay-header-spacing: 0 !default;
+$overlay-header-padding: 8 !default;
+$overlay-header-style: () !default;
+
+// @param {array} $overlay-body-spacing [0]
+// @param {array} $overlay-body-padding [8]
+// @param {array} $overlay-body-style
+$overlay-body-spacing: 0 !default;
+$overlay-body-padding: 8 !default;
+$overlay-body-style: () !default;
+
+// @param {array} $overlay-footer-spacing [0]
+// @param {array} $overlay-footer-padding [8]
+// @param {array} $overlay-footer-style
+$overlay-footer-spacing: 0 !default;
+$overlay-footer-padding: 8 !default;
+$overlay-footer-style: () !default;
+
+//
+// POPOVER
+// ------------------------------------------------------
+// @param {px} $popover-radius [4]
+// @param {array} $popover-padding [4]
+// @param {color} $popover-background
+// @param {value} $popover-shadow
+// @param {array} $popover-style
+$popover-radius: 4 !default;
+$popover-padding: 4 !default;
+$popover-background: $background !default;
+$popover-color: $text !default;
+$popover-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
+$popover-style: () !default;
 
 //
 // WELL
@@ -1098,7 +1488,6 @@ $well-style: () !default;
 $well-small-padding: 8 12 !default;
 $well-small-spacing: $well-spacing !default;
 $well-small-style: () !default;
-
 
 $well-big-padding: 24 28 !default;
 $well-big-spacing: $well-spacing !default;
@@ -1168,8 +1557,8 @@ $tooltip-font-size: 12 !default;
 $tooltip-line-height: 14 !default;
 $tooltip-min-height: 20 !default;
 $tooltip-weight: $is-normal !default;
-$tooltip-background: $background-invert;
-$tooltip-color: $text-invert;
+$tooltip-background: $background-invert !default;
+$tooltip-color: $text-invert !default;
 $tooltip-style: () !default;
 
 // @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
@@ -1302,6 +1691,22 @@ $bumper-small-spacing: getSpace(3) 0 !default;
 $bumper-big-spacing: getSpace(6) 0 !default;
 
 //
+// DIVIDER
+// ------------------------------------------------------
+// @param {px} $divider-height [1]
+// @param {color} $divider-background [$divider-color]
+// @param {color} $divider-invert-background [rgba($background, .2)]
+// @param {array} $divider-spacing [getSpace(5) 0]
+// @param {array} $divider-small-spacing [getSpace(3) 0]
+// @param {array} $divider-big-spacing [getSpace(6) 0]
+$divider-height: 1 !default;
+$divider-background: $divider-color !default;
+$divider-invert-background: rgba($background, 0.2) !default;
+$divider-spacing: getSpace(5) 0 !default;
+$divider-small-spacing: getSpace(3) 0 !default;
+$divider-big-spacing: getSpace(6) 0 !default;
+
+//
 // SPACER
 // ------------------------------------------------------
 // @param {px} $spacer-size [getSpace(5)]
@@ -1342,6 +1747,46 @@ $fieldset-border: 0 !default;
 $fieldset-style: () !default;
 
 //
+// FORM-GROUP
+// ------------------------------------------------------
+// @param {array} $form-group-spacing [0 0 8]
+// @param {array} $form-group-padding [0]
+// @param {color} $form-group-background [none]
+// @param {array} $form-group-style
+$form-group-spacing: 0 0 8 !default;
+$form-group-padding: 0 !default;
+$form-group-background: none !default;
+$form-group-style: () !default;
+
+// @param {array} $form-group-label-spacing [0 0 4 0]
+// @param {px} $form-group-label-font-size [$base-font-size]
+// @param {array} $form-group-label-style
+$form-group-label-spacing: 0 0 4 0 !default;
+$form-group-label-font-size: $base-font-size !default;
+$form-group-label-style: () !default;
+
+//
+// FORM-BOOLEAN
+// ------------------------------------------------------
+// @param {array} $form-boolean-spacing [$form-group-spacing]
+// @param {array} $form-boolean-padding [0]
+// @param {px} $form-boolean-gutter [8]
+// @param {color} $form-boolean-background [none]
+// @param {array} $form-boolean-style
+$form-boolean-spacing: $form-group-spacing !default;
+$form-boolean-padding: 0 !default;
+$form-boolean-gutter: 8 !default;
+$form-boolean-background: none !default;
+$form-boolean-style: () !default;
+
+// @param {array} $form-boolean-label-spacing [$form-group-label-spacing]
+// @param {px} $form-boolean-label-font-size [$base-font-size]
+// @param {array} $form-boolean-label-style
+$form-boolean-label-spacing: $form-group-label-spacing !default;
+$form-boolean-label-font-size: $base-font-size !default;
+$form-boolean-label-style: () !default;
+
+//
 // INPUT
 // ------------------------------------------------------
 // @param {px} $input-font-size [16]
@@ -1363,13 +1808,21 @@ $input-padding-ratio: 2 !default;
 $input-background: $background !default;
 $input-color: $text !default;
 $input-style: () !default;
-$input-hover-style: (
-  box-shadow: inset 0 0 0 2px $state-hover
-) !default;
+$input-hover-style: () !default;
+$input-hover-style: map-merge(
+  (
+    box-shadow: inset 0 0 0 2px $state-hover
+  ),
+  $input-hover-style
+);
 $input-focus-style: $input-hover-style;
-$input-disabled-style: (
-  opacity: 0.4
-) !default;
+$input-disabled-style: () !default;
+$input-disabled-style: map-merge(
+  (
+    opacity: 0.4
+  ),
+  $input-disabled-style
+);
 
 // @param {color} $input-placeholder-color [$text-light]
 // @param {array} $input-placeholder-style
@@ -1391,7 +1844,7 @@ $input-placeholder-focus-style: $input-placeholder-hover-style !default;
 $input-small-font-size: $input-font-size * 0.875 !default;
 $input-small-line-height: $input-small-font-size * $base-line-height !default;
 $input-small-min-height: 28 !default;
-$input-small-style: ();
+$input-small-style: () !default;
 
 // @param {px} $input-big-font-size [18]
 // @param {px} $input-big-line-height [24]
@@ -1400,7 +1853,7 @@ $input-small-style: ();
 $input-big-font-size: $input-font-size * 1.125 !default;
 $input-big-line-height: $input-big-font-size * $base-line-height !default;
 $input-big-min-height: 40 !default;
-$input-big-style: ();
+$input-big-style: () !default;
 
 // @param {boolean} $input-round [false] - sets border-radius to 50% of input height
 $input-round: false !default;
@@ -1424,20 +1877,88 @@ $input-border-style: solid !default;
 // INPUT VALIDATION
 // ------------------------------------------------------
 // @param {array} $input-valid-style
-$input-valid-style: (
-  border-color: $state-success,
-  color: setContrast($input-background, $state-success)
-) !default;
+$input-valid-style: () !default;
+$input-valid-style: map-merge(
+  (
+    border-color: $state-success,
+    color: setContrast($input-background, $state-success)
+  ),
+  $input-valid-style
+);
 
 // @param {array} $input-invalid-style
-$input-invalid-style: (
-  border-color: $state-error,
-  color: setContrast($input-background, $state-error)
-) !default;
+$input-invalid-style: () !default;
+$input-invalid-style: map-merge(
+  (
+    border-color: $state-error,
+    color: setContrast($input-background, $state-error)
+  ),
+  $input-invalid-style
+);
+
+//
+// INPUT
+// ------------------------------------------------------
+// @param {px} $slider-height [8]
+// @param {px} $slider-radius [4]
+// @param {color} $slider-background [rgba(#000, 0.04)]
+// @param {array} $slider-style
+// @param {array} $slider-hover-style
+$slider-height: 8 !default;
+$slider-radius: 4 !default;
+$slider-background: rgba(#000, 0.04) !default;
+$slider-style: () !default;
+$slider-hover-style: () !default;
+
+// @param {px} $slider-thumb-size [16]
+// @param {px} $slider-thumb-radius [8]
+// @param {color} $slider-thumb-background [$link]
+// @param {array} $slider-thumb-style
+// @param {array} $slider-thumb-hover-style
+$slider-thumb-background: $link !default;
+$slider-thumb-size: 16 !default;
+$slider-thumb-radius: 8 !default;
+$slider-thumb-style: () !default;
+$slider-thumb-style: map-merge(
+  (
+    box-shadow: 0 4px 8px 2px rgba(#000, 0.2)
+  ),
+  $slider-thumb-style
+);
+$slider-thumb-hover-style: () !default;
+
+//
+// FILE-UPLOAD
+// ------------------------------------------------------
+// @param {px} $file-upload-font-size [$base-font-size]
+// @param {color} $file-upload-color [$text]
+// @param {array} $file-upload-spacing [0 0 16]
+// @param {number} $file-upload-padding [8 16]
+// @param {color} $file-upload-background [none]
+// @param {color} $file-upload-border-radius [4]
+// @param {color} $input-border-color [$minor]
+// @param {px} $input-border-width [2]
+// @param {value} $input-border-style [dashed]
+// @param {array} $file-upload-style
+// @param {array} $file-upload-hover-style
+$file-upload-font-size: $base-font-size !default;
+$file-upload-color: $text !default;
+$file-upload-spacing: 0 0 16 !default;
+$file-upload-padding: 16 !default;
+$file-upload-background: none !default;
+$file-upload-border-radius: 4 !default;
+$file-upload-border-color: $minor !default;
+$file-upload-border-width: 2 !default;
+$file-upload-border-style: dashed !default;
+$file-upload-style: () !default;
+$file-upload-hover-style: () !default;
 
 //
 // INPUT-GROUP
 // ------------------------------------------------------
+// @param {array} $input-spacing [$input-spacing]
+$input-group-spacing: $input-spacing;
+
 // @param {color} $input-group-addon-color [$text-light]
 // @param {color} $input-group-addon-background [transparent]
 // @param {color} $input-group-addon-border-color [$input-border-color]
@@ -1553,11 +2074,15 @@ $xui-checkbox-height: 20 !default;
 $xui-checkbox-radius: 6 !default;
 $xui-checkbox-background: $background !default;
 $xui-checkbox-color: transparent !default;
-$xui-checkbox-style: (
-  box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2),
-  content: '\2714\fe0e',
-  font-family: sans-serif
-) !default;
+$xui-checkbox-style: () !default;
+$xui-checkbox-style: map-merge(
+  (
+    box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2),
+    content: '\2714\fe0e',
+    font-family: sans-serif
+  ),
+  $xui-checkbox-style
+);
 
 // @param {color} $xui-checkbox-hover-background [inherit]
 // @param {color} $xui-checkbox-hover-color [$text-lightest]
@@ -1577,23 +2102,25 @@ $xui-checkbox-checked-style: () !default;
 // XUI-RADIO
 // ------------------------------------------------------
 // @param {px} $xui-radio-font-size [10]
-// @param {px} $xui-radio-line-height [22]
 // @param {array} $xui-radio-spacing [0 8 0 0]
-// @param {px} $xui-radio-min-height [20]
+// @param {px} $xui-radio-height [20]
 // @param {color} $xui-radio-background [$background]
 // @param {color} $xui-radio-color [transparent]
 // @param {array} $xui-radio-style
 $xui-radio-font-size: 10 !default;
-$xui-radio-line-height: 22 !default;
 $xui-radio-spacing: 0 8 0 0 !default;
 $xui-radio-height: 20 !default;
 $xui-radio-background: $background !default;
 $xui-radio-color: transparent !default;
-$xui-radio-style: (
-  box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2),
-  content: '\2B24',
-  font-family: sans-serif
-) !default;
+$xui-radio-style: () !default;
+$xui-radio-style: map-merge(
+  (
+    box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2),
+    content: '\2B24',
+    font-family: sans-serif
+  ),
+  $xui-radio-style
+);
 
 // @param {color} $xui-checkbox-hover-background [inherit]
 // @param {color} $xui-checkbox-hover-color [$text-lightest]
@@ -1618,6 +2145,7 @@ $xui-radio-checked-style: () !default;
 // @param {px} $input-toggle-height [$root-size]
 // @param {color} $input-toggle-width [$xui-toggle-height * 1.75]
 // @param {color} $xui-toggle-radius [$xui-toggle-height / 2]
+// @param {array} $xui-toggle-spacing [$form-group-spacing]
 // @param {array} $xui-toggle-style
 $xui-toggle-background: flattenColor($minor) !default;
 $xui-toggle-hover-background: setHover($xui-toggle-background) !default;
@@ -1625,7 +2153,7 @@ $xui-toggle-active-background: $link !default;
 $xui-toggle-height: $root-size !default;
 $xui-toggle-width: $xui-toggle-height * 1.75 !default;
 $xui-toggle-radius: $xui-toggle-height / 2 !default;
-$xui-toggle-spacing: 0 0 8 !default;
+$xui-toggle-spacing: $form-group-spacing !default;
 $xui-toggle-style: () !default;
 
 // @param {color} $input-toggle-pin-background [flattenColor(getColor(minor))]
@@ -1637,9 +2165,13 @@ $xui-toggle-pin-background: $background !default;
 $xui-toggle-pin-height: $xui-toggle-height !default;
 $xui-toggle-pin-width: $xui-toggle-pin-height !default;
 $xui-toggle-pin-radius: $xui-toggle-pin-height / 2 !default;
-$xui-toggle-pin-style: (
-  box-shadow: 0 2px 8px 1px rgba(#000, 0.2)
-) !default;
+$xui-toggle-pin-style: () !default;
+$xui-toggle-pin-style: map-merge(
+  (
+    box-shadow: 0 2px 8px 1px rgba(#000, 0.2)
+  ),
+  $xui-toggle-pin-style
+);
 
 // @param {px} $xui-toggle-label-size [base-font-size]
 // @param {px} $xui-toggle-line-height [$xui-toggle-label-size * $base-line-height]
@@ -1647,41 +2179,29 @@ $xui-toggle-label-size: $base-font-size !default;
 $xui-toggle-line-height: $xui-toggle-label-size * $base-line-height !default;
 
 //
-// FORM-GROUP
-// ------------------------------------------------------
-// @param {array} $form-group-spacing [0 0 8 0]
-// @param {array} $form-group-padding [0]
-// @param {color} $form-group-background [none]
-// @param {array} $form-group-style
-$form-group-spacing: 0 0 8 0 !default;
-$form-group-padding: 0 !default;
-$form-group-background: none !default;
-$form-group-style: () !default;
+// Animation
+// -------------------------------------------------------------------------------------------------
+$linear-out-slow-in-timing-function: cubic-bezier(0, 0, 0.2, 0.1) !default;
+$fast-out-slow-in-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$fast-out-linear-in-timing-function: cubic-bezier(0.4, 0, 1, 1) !default;
 
-// @param {array} $form-group-label-spacing [0 0 4 0]
-// @param {px} $form-group-label-font-size [$base-font-size]
-// @param {array} $form-group-label-style
-$form-group-label-spacing: 0 0 4 0 !default;
-$form-group-label-font-size: $base-font-size !default;
-$form-group-label-style: () !default;
+$data-animate-timing: $fast-out-slow-in-timing-function !default;
 
 //
-// FORM-BOOLEAN
-// ------------------------------------------------------
-// @param {array} $form-boolean-spacing [$form-group-spacing]
-// @param {array} $form-boolean-padding [0]
-// @param {px} $form-boolean-gutter [8]
-// @param {color} $form-boolean-background [none]
-// @param {array} $form-boolean-style
-$form-boolean-spacing: $form-group-spacing !default;
-$form-boolean-padding: 0 !default;
-$form-boolean-gutter: 8 !default;
-$form-boolean-background: none !default;
-$form-boolean-style: () !default;
+// MIXINS
+// -------------------------------------------------------------------------------------------------
 
-// @param {array} $form-boolean-label-spacing [$form-group-label-spacing]
-// @param {px} $form-boolean-label-font-size [$base-font-size]
-// @param {array} $form-boolean-label-style
-$form-boolean-label-spacing: $form-group-label-spacing !default;
-$form-boolean-label-font-size: $base-font-size !default;
-$form-boolean-label-style: () !default;
+// The default duration value for elevation transitions.
+$elevation-transition-duration: 280ms !default;
+
+// The default easing value for elevation transitions.
+$elevation-transition-timing-function: $fast-out-slow-in-timing-function !default;
+
+// @param {color} $elevation-color [#000]- The default color for elevation shadows.
+$elevation-color: #000 !default;
+
+// @param {value} $elevation-opacity [1] The default opacity scaling value for elevation shadows.
+$elevation-opacity: 1 !default;
+
+// @param {string} $elevation-prefix [is-elevated-]
+$elevation-prefix: 'is-elevated-';

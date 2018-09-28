@@ -2,6 +2,7 @@
   animation-fill-mode: forwards;
   backface-visibility: hidden;
   opacity: 0;
+  animation-timing-function: $data-animate-timing;
 }
 
 @keyframes fadeIn {

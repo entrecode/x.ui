@@ -1,0 +1,156 @@
+/// @since 9.1.0
+/// @access public
+/// @group style mixin
+///
+/// @link	https://material.io/design/environment/elevation.html
+/// @link	https://github.com/angular/material2/blob/8050f633b56b6c048fc72dad2ab79304afdfad19/src/lib/core/style/_elevation.scss
+
+
+
+@function _get-umbra-map($color, $opacity) {
+  @return (
+    0: '0px 0px 0px 0px #{rgba($color, $opacity * 0.1)}',
+    1: '0px 2px 1px -1px #{rgba($color, $opacity * 0.1)}',
+    2: '0px 3px 1px -2px #{rgba($color, $opacity * 0.1)}',
+    3: '0px 3px 3px -2px #{rgba($color, $opacity * 0.1)}',
+    4: '0px 2px 4px -1px #{rgba($color, $opacity * 0.1)}',
+    5: '0px 3px 5px -1px #{rgba($color, $opacity * 0.1)}',
+    6: '0px 3px 5px -1px #{rgba($color, $opacity * 0.1)}',
+    7: '0px 4px 5px -2px #{rgba($color, $opacity * 0.1)}',
+    8: '0px 5px 5px -3px #{rgba($color, $opacity * 0.1)}',
+    9: '0px 5px 6px -3px #{rgba($color, $opacity * 0.1)}',
+    10: '0px 6px 6px -3px #{rgba($color, $opacity * 0.1)}',
+    11: '0px 6px 7px -4px #{rgba($color, $opacity * 0.1)}',
+    12: '0px 7px 8px -4px #{rgba($color, $opacity * 0.1)}',
+    13: '0px 7px 8px -4px #{rgba($color, $opacity * 0.1)}',
+    14: '0px 7px 9px -4px #{rgba($color, $opacity * 0.1)}',
+    15: '0px 8px 9px -5px #{rgba($color, $opacity * 0.1)}',
+    16: '0px 8px 10px -5px #{rgba($color, $opacity * 0.1)}',
+    17: '0px 8px 11px -5px #{rgba($color, $opacity * 0.1)}',
+    18: '0px 9px 11px -5px #{rgba($color, $opacity * 0.1)}',
+    19: '0px 9px 12px -6px #{rgba($color, $opacity * 0.1)}',
+    20: '0px 10px 13px -6px #{rgba($color, $opacity * 0.1)}',
+    21: '0px 10px 13px -6px #{rgba($color, $opacity * 0.1)}',
+    22: '0px 10px 14px -6px #{rgba($color, $opacity * 0.1)}',
+    23: '0px 11px 14px -7px #{rgba($color, $opacity * 0.1)}',
+    24: '0px 11px 15px -7px #{rgba($color, $opacity * 0.1)}'
+  );
+}
+
+@function _get-penumbra-map($color, $opacity) {
+  @return (
+    0: '0px 0px 0px 0px #{rgba($color, $opacity * 0.08)}',
+    1: '0px 1px 1px 0px #{rgba($color, $opacity * 0.08)}',
+    2: '0px 2px 2px 0px #{rgba($color, $opacity * 0.08)}',
+    3: '0px 3px 4px 0px #{rgba($color, $opacity * 0.08)}',
+    4: '0px 4px 5px 0px #{rgba($color, $opacity * 0.08)}',
+    5: '0px 5px 8px 0px #{rgba($color, $opacity * 0.08)}',
+    6: '0px 6px 10px 0px #{rgba($color, $opacity * 0.08)}',
+    7: '0px 7px 10px 1px #{rgba($color, $opacity * 0.08)}',
+    8: '0px 8px 10px 1px #{rgba($color, $opacity * 0.08)}',
+    9: '0px 9px 12px 1px #{rgba($color, $opacity * 0.08)}',
+    10: '0px 10px 14px 1px #{rgba($color, $opacity * 0.08)}',
+    11: '0px 11px 15px 1px #{rgba($color, $opacity * 0.08)}',
+    12: '0px 12px 17px 2px #{rgba($color, $opacity * 0.08)}',
+    13: '0px 13px 19px 2px #{rgba($color, $opacity * 0.08)}',
+    14: '0px 14px 21px 2px #{rgba($color, $opacity * 0.08)}',
+    15: '0px 15px 22px 2px #{rgba($color, $opacity * 0.08)}',
+    16: '0px 16px 24px 2px #{rgba($color, $opacity * 0.08)}',
+    17: '0px 17px 26px 2px #{rgba($color, $opacity * 0.08)}',
+    18: '0px 18px 28px 2px #{rgba($color, $opacity * 0.08)}',
+    19: '0px 19px 29px 2px #{rgba($color, $opacity * 0.08)}',
+    20: '0px 20px 31px 3px #{rgba($color, $opacity * 0.08)}',
+    21: '0px 21px 33px 3px #{rgba($color, $opacity * 0.08)}',
+    22: '0px 22px 35px 3px #{rgba($color, $opacity * 0.08)}',
+    23: '0px 23px 36px 3px #{rgba($color, $opacity * 0.08)}',
+    24: '0px 24px 38px 3px #{rgba($color, $opacity * 0.08)}'
+  );
+}
+
+@function _get-ambient-map($color, $opacity) {
+  @return (
+    0: '0px 0px 0px 0px #{rgba($color, $opacity * 0.06)}',
+    1: '0px 1px 3px 0px #{rgba($color, $opacity * 0.06)}',
+    2: '0px 1px 5px 0px #{rgba($color, $opacity * 0.06)}',
+    3: '0px 1px 8px 0px #{rgba($color, $opacity * 0.06)}',
+    4: '0px 1px 10px 0px #{rgba($color, $opacity * 0.06)}',
+    5: '0px 1px 14px 0px #{rgba($color, $opacity * 0.06)}',
+    6: '0px 1px 18px 0px #{rgba($color, $opacity * 0.06)}',
+    7: '0px 2px 16px 1px #{rgba($color, $opacity * 0.06)}',
+    8: '0px 3px 14px 2px #{rgba($color, $opacity * 0.06)}',
+    9: '0px 3px 16px 2px #{rgba($color, $opacity * 0.06)}',
+    10: '0px 4px 18px 3px #{rgba($color, $opacity * 0.06)}',
+    11: '0px 4px 20px 3px #{rgba($color, $opacity * 0.06)}',
+    12: '0px 5px 22px 4px #{rgba($color, $opacity * 0.06)}',
+    13: '0px 5px 24px 4px #{rgba($color, $opacity * 0.06)}',
+    14: '0px 5px 26px 4px #{rgba($color, $opacity * 0.06)}',
+    15: '0px 6px 28px 5px #{rgba($color, $opacity * 0.06)}',
+    16: '0px 6px 30px 5px #{rgba($color, $opacity * 0.06)}',
+    17: '0px 6px 32px 5px #{rgba($color, $opacity * 0.06)}',
+    18: '0px 7px 34px 6px #{rgba($color, $opacity * 0.06)}',
+    19: '0px 7px 36px 6px #{rgba($color, $opacity * 0.06)}',
+    20: '0px 8px 38px 7px #{rgba($color, $opacity * 0.06)}',
+    21: '0px 8px 40px 7px #{rgba($color, $opacity * 0.06)}',
+    22: '0px 8px 42px 7px #{rgba($color, $opacity * 0.06)}',
+    23: '0px 9px 44px 8px #{rgba($color, $opacity * 0.06)}',
+    24: '0px 9px 46px 8px #{rgba($color, $opacity * 0.06)}'
+  );
+}
+
+// Applies the correct css rules to an element to give it the elevation specified by $zValue.
+// The $zValue must be between 0 and 24.
+@mixin elevation(
+  $zValue,
+  $color: $elevation-color,
+  $opacity: $elevation-opacity
+) {
+  @if type-of($zValue) != number or not unitless($zValue) {
+    @error '$zValue must be a unitless number';
+  }
+  @if $zValue < 0 or $zValue > 24 {
+    @error '$zValue must be between 0 and 24';
+  }
+
+  box-shadow: #{map-get(_get-umbra-map($color, $opacity), $zValue)},
+    #{map-get(_get-penumbra-map($color, $opacity), $zValue)},
+    #{map-get(_get-ambient-map($color, $opacity), $zValue)};
+}
+
+// Applies the elevation to an element in a manner that allows
+// consumers to override it via the Material elevation classes.
+@mixin overridable-elevation(
+  $zValue,
+  $color: $elevation-color,
+  $opacity: $elevation-opacity
+) {
+  &:not([class*='#{$elevation-prefix}']) {
+    @include elevation($zValue, $color, $opacity);
+  }
+}
+
+// Returns a string that can be used as the value for a transition property for elevation.
+// Calling this function directly is useful in situations where a component needs to transition
+// more than one property.
+//
+// .foo {
+//   transition: elevation-transition-property-value(), opacity 100ms ease;
+// }
+@function elevation-transition-property-value(
+  $duration: $elevation-transition-duration,
+  $easing: $elevation-transition-timing-function
+) {
+  @return box-shadow #{$duration} #{$easing};
+}
+
+// Applies the correct css rules needed to have an element transition between elevations.
+// This mixin should be applied to elements whose elevation values will change depending on their
+// context (e.g. when active or disabled).
+//
+// NOTE(traviskaufman): Both this mixin and the above function use default parameters so they can
+// be used in the same way by clients.
+@mixin elevation-transition(
+  $duration: $elevation-transition-duration,
+  $easing: $elevation-transition-timing-function
+) {
+  transition: elevation-transition-property-value($duration, $easing);
+}

@@ -4,11 +4,12 @@
 /// @group atoms
 
 // scss-lint:disable NestingDepth QualifyingElement
-
+// @param {array} $input-spacing [0]
 .input-group {
   align-items: stretch;
   display: flex;
   position: relative;
+  margin: arrayMagic($input-group-spacing);
 
   // @param {color} $input-group-addon-color [$text-light]
   // @param {color} $input-group-addon-background [transparent]
@@ -105,6 +106,8 @@
   }
 
   .input {
+    margin: 0;
+
     + .btn {
       &.btn_clear {
         &::before {
