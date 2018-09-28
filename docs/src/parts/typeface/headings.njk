@@ -1,37 +1,83 @@
-<section>
+<section v-cloak>
   <div data-container>
     <div data-grid="is-center">
       <div data-col='8-sm'>
         <h3 id="headings">headings</h3>
-        <div class="demo-heading-metrics demo-heading-metrics_h1">
-          <h1>Heading 1</h1>
-        </div>
-        <div class="demo-heading-metrics">
-          <h2>Heading 2</h2>
-        </div>
-        <div class="demo-heading-metrics">
-          <h3>Heading 3</h3>
-        </div>
-        <div class="demo-heading-metrics">
-          <h4>Heading 4</h4>
-        </div>
-        <div class="demo-heading-metrics demo-heading-metrics_h5">
-          <h5>Heading 5</h5>
-        </div>
-        <div class="demo-heading-metrics demo-heading-metrics_h6">
-          <h6>Heading 6</h6>
-        </div>
+        <p class="is-lead">first of all headings are structural and hierarchical elements. Their style really depends
+          on in what kind of interface they're used in. Editorial content often needs a deeper hierachy, that is
+          illustrated by a variation in font-size, spacing and style. Admin-interfaces or data-rich uis often don't
+          need a deep hierachie. <strong>x.ui</strong> is equiped for both</p>
+
         <div class="spacer"></div>
-        <h4>modifier</h4>
-        <p>you can style all elements using on of the <strong>heading helper classes</strong> <span class="code">.is-h1</span>,
-          <span class="code">.is-h2</span>, <span class="code">.is-h3</span>,
-          <span class="code">.is-h4</span>, <span class="code">.is-h5</span> and
-          <span class="code">.is-h6</span> to influence the appearance of headings</p>
-        <h4>special modifier</h4>
-        <p>for data-rich / admin interfaces there is a set of three heading styles
-          <span class="code">.is-giga</span>, <span class="code">.is-mega</span> and
-          <span class="code">.is-kilo</span> to provide a cleaner typeface without losing the
-          hierarchical structure of the markup.</p>
+
+        <div data-grid>
+          <div data-col='6'>
+            <h4>editorial</h4>
+            <div class="demo-margin">
+              <h1>h1</h1>
+            </div>
+            <pre><code class="html">
+<h1>...</h1>
+<h2 class="is-h1">...</h2>
+<div class="is-h1">...</div></code></pre>
+            <div class="demo-margin">
+              <h2>h2</h2>
+            </div>
+            <pre><code class="html">
+<h2>...</h2>
+<h4 class="is-h2">...</h4>
+<div class="is-h2">...</div></code></pre>
+            <div class="demo-margin">
+              <h3>h3</h3>
+            </div>
+            <pre><code class="html">
+<h3>...</h3>
+<h4 class="is-h3">...</h4>
+<div class="is-h3">...</div></code></pre>
+            <div class="demo-margin">
+              <h4>h4</h4>
+            </div>
+            <pre><code class="html">
+<h4>...</h4>
+<h5 class="is-h4">...</h5>
+<div class="is-h4">...</div></code></pre>
+            <div class="demo-margin">
+              <h5>h5</h5>
+            </div>
+            <pre><code class="html">
+<h5>...</h5>
+<h2 class="is-h5">...</h2>
+<div class="is-h5">...</div></code></pre>
+            <div class="demo-margin">
+              <h6>h6</h6>
+            </div>
+            <pre><code class="html">
+<h6>...</h6>
+<h3 class="is-h6">...</h3>
+<div class="is-h6">...</div></code></pre>
+          </div>
+          <div data-col='6'>
+            <h4>data</h4>
+            <div class="demo-margin">
+              <h2 class="is-giga">.is-giga</h2>
+            </div>
+            <pre><code class="html">
+<h3 class="is-giga">...</h3>
+<div class="is-giga">...</div></code></pre>
+            <div class="demo-margin">
+              <h2 class="is-mega">.is-mega</h2>
+            </div>
+            <pre><code class="html">
+<h3 class="is-mega">...</h3>
+<div class="is-mega">...</div></code></pre>
+            <div class="demo-margin">
+              <h2 class="is-kilo">.is-kilo</h2>
+            </div>
+            <pre><code class="html">
+<h3 class="is-kilo">...</h3>
+<div class="is-kilo">...</div></code></pre>
+          </div>
+        </div>
       </div>
     </div>
   </div>

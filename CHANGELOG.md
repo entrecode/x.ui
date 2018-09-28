@@ -12,12 +12,13 @@
 - `xui-overlay` use `.dialog` instead
 
 ### added
-
+- config for `.kilo`, `.mega` and `.giga`
 - new atom `.file-upload` with config
 - new atom `.slider` with config
 - new atom `.divider` with config
 - new atom `.loader` with config
 - new atom `.y-space-#` and `x-space-#` with config
+- new atom `mark` and `::highlight`
 - new grid-col value `data-col="auto"`
 - new molecule `.dialog` with config
 - new molecule `.deck` with config
@@ -26,10 +27,11 @@
 - new molecule `.snackbar` with config
 - new atom `.img-crop-3-4`
 - new modifer `.is-elevated-[1-24]`
+- new modifer `.is-outset`, `.is-outset_left`, `.is-outset_right` and `.is-outset_full`
 - new font-weight variable and modifier class `.is-medium`
 
 ### updated
-
+- `.img-crop-#` - uses now a map to generate classes. can be extended via custom config
 - `arrayMagic` - can now be used with mixed arrays using different values like 2px 8 .1em 100%
 
 ## 9.0.8

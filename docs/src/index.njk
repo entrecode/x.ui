@@ -82,7 +82,7 @@
     ...
   </div>
 </div></code></pre>
-            <div class="spacer-big"></div>
+            <div class="spacer spacer_big"></div>
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@
 
       {% for typeface in structure.typeface %}
       {% include 'parts/typeface/' + typeface %}
-      <div class="spacer-big"></div>
+      <div class="spacer spacer_big"></div>
       {% endfor %}
       
       <div data-container>
@@ -109,8 +109,10 @@
           <div data-col="8-md">
             <div class="bumper-big"></div>
             <h2 class="align-center is-uppercase" id="media">media</h2>
+            <div class="spacer"></div>
             {% for media in structure.media %}
             {% include 'parts/media/' + media %}
+            <div class="spacer spacer_big"></div>
             {% endfor %}
             <div class="bumper-big"></div>
             <h2 class="align-center is-uppercase" id="form">form</h2>
@@ -126,7 +128,7 @@
             <h2 class="align-center is-uppercase" id="layout">layout</h2>
             {% for layout in structure.layout %}
             {% include 'parts/layout/' + layout %}
-            <div class="spacer-big"></div>
+            <div class="spacer spacer_big"></div>
             {% endfor %}
             {% include 'parts/interaction/data-animate.njk' %}
           </div>

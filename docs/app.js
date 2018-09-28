@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
       dataColSizeBreakpoint: 'xs',
       dataColOffsetBreakpoint: 'xs',
       dataColOffset: 0,
+      imgCropRatio: '1-1',
+      isOutset: 'left',
       deckOrientation: 'opens-left',
       deckBackdrop: false,
       deckOpen: false,

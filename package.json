@@ -33,7 +33,8 @@
     ],
     "media": [
       "img.njk",
-      "img-crop.njk"
+      "img-crop.njk",
+      "is-outset.njk"
     ],
     "form": [
       "input.njk",

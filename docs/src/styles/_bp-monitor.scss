@@ -7,6 +7,8 @@
   margin: 0;
   padding: 0;
   display: flex;
+  overflow: hidden;
+  border-radius: arrayMagic(4 0 0 0);
 
   li {
     padding: rem(8);

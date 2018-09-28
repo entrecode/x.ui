@@ -1,0 +1,31 @@
+<section v-cloak>
+  <h3 id="is-outset">is-outset</h3>
+  <div data-flex="is-center">
+    <div class="btn-group">
+      <div class="btn btn_small" @click="isOutset = 'left'" :class="{'btn_minor' : isOutset !== 'left'}"><small>left</small></div>
+      <div class="btn btn_small" @click="isOutset = 'full'" :class="{'btn_minor' : isOutset !== 'full'}"><small>full</small></div>
+      <div class="btn btn_small" @click="isOutset = 'right'" :class="{'btn_minor' : isOutset !== 'right'}"><small>right</small></div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div>
+    <div class="is-outset" :class="{'is-outset_left' : isOutset === 'left', 'is-outset_full' : isOutset === 'full', 'is-outset_right' : isOutset === 'right'}" style="transition: all .2s">
+      <div :class="isOutset === 'full' ? 'img-crop-silver' : 'img-crop-4-3'" style="transition: all .2s">
+        <img src="assets/placeholder-landscape.jpg">
+      </div>
+    </div>
+    <p class="is-lead">Das aber wünschten und bezweckten die staatsklugen Ritter eben, und statt, wie zuvor, mit
+      stillschweigendem Eingeständnis der Schuld, ihren Widerstand auf ein bloß gemildertes Rechtserkenntnis
+      einzuschränken, fingen sie jetzt an, in Wendungen arglistiger und rabulistischer Art, diese Schuld selbst
+      gänzlich zu leugnen. </p>
+    <p>Bald gaben sie vor, daß die Rappen des Kohlhaas, in Folge eines bloß eigenmächtigen Verfahrens des Schloßvogts
+      und Verwalters, von welchem der Junker nichts oder nur Unvollständiges gewußt, auf der Tronkenburg zurückgehalten
+      worden seien; bald versicherten sie, daß die Tiere schon, bei ihrer Ankunft daselbst, an einem heftigen und
+      gefährlichen Husten krank gewesen wären, und beriefen sich deshalb auf Zeugen, die sie herbeizuschaffen sich
+      anheischig machten; und als sie mit diesen Argumenten, nach weitläufigen Untersuchungen und Auseinandersetzungen,
+      aus dem Felde geschlagen waren, brachten sie gar ein kurfürstliches Edikt bei, worin, vor einem Zeitraum von
+      zwölf Jahren, einer Viehseuche wegen, die Einführung der Pferde aus dem Brandenburgischen ins Sächsische, in der
+      Tat verboten worden war: zum sonnenklaren Beleg nicht nur der Befugnis, sondern sogar der Verpflichtung des
+      Junkers, die von dem Kohlhaas über die Grenze gebrachten Pferde anzuhalten.</p>
+  </div>
+</section>

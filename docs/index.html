@@ -103,9 +103,10 @@
         </ul>
       </li>
 
-      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#media"><span class="ec-icon img">media</span></a></h3>
+      <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#media"><span class="ec-icon img">Image</span></a></h3>
         <ul class="is-unstyled">
-          <li><a href="#img">img</a></li>
+          <li><a href="#img_responsive">responsive</a></li>
+          <li><a href="#img_responsive">full-width</a></li>
           <li><a href="#img-crop">img-crop</a></li>
         </ul>
       </li>
@@ -193,7 +194,7 @@
 
       <li><h3 class="is-h5 is-sticky has-padding-middle-big" style="top:0;"><a href="#ec-icon"><span class="ec-icon skull">ec-icon</span></a></h3></li>
 
-      <li><div class="spacer-big"></div></li>
+      <li><div class="spacer spacer_big"></div></li>
     </ul>
   </div>
 </aside>    <div class="xui-demo-body">
@@ -204,7 +205,7 @@
 <div class="hero has-margin has-height-vh-golden" data-flex="is-center is-end-items">
   <div style="margin-bottom: 10vh;">
     <a href="#get-started" class="btn btn_big is-lifted-big">get started</a>
-    <div class="spacer-small"></div>
+    <div class="spacer spacer_small"></div>
   </div>
 </div>
 <section class="has-margin-middle-big">
@@ -263,7 +264,7 @@
     <li>the modifier value is separated from the modifier name by a single underscore (_).
     </li>
   </ul>
-  <div class="spacer-small"></div>
+  <div class="spacer spacer_small"></div>
 
   <p class="align-center is-ink-light">
     <small>
@@ -898,7 +899,7 @@
     ...
   </div>
 </div></code></pre>
-            <div class="spacer-big"></div>
+            <div class="spacer spacer_big"></div>
           </div>
         </div>
       </div>
@@ -948,7 +949,7 @@
     </span>
   </div>
 </div>
-<div class="spacer-small"></div>
+<div class="spacer spacer_small"></div>
 <div data-container>
   <div data-grid="is-center">
     <div data-col="8-md">
@@ -979,6 +980,23 @@
 
       <div class="spacer"></div>
 
+      <div data-grid>
+        <div data-col='6'>
+          <h4>DO</h4>
+          <pre><code class="html">
+<div data-container>
+  ...
+</div></code></pre>
+        </div>
+        <div data-col='6'>
+          <h4 class="is-ink-error">DON'T</h4>
+          <pre><code class="html">
+<div data-container>
+  <div data-container>...</div>
+</div></code></pre>
+        </div>
+      </div>
+
       <div class="title">
         <h4 class="is-kilo">config variables</h4>
         <a href="https://github.com/entrecode/x.ui/blob/master/src/_xui-config.scss" target="_blank" class="btn btn_clear">
@@ -992,7 +1010,7 @@ $grid-container-width: 1200 !default;</code></pre>
   </div>
 </div>
 
-<div class="spacer-big"></div>
+<div class="spacer spacer_big"></div>
       <div data-container>
         <div data-grid="is-center">
           <div data-col="8-md">
@@ -1073,7 +1091,7 @@ $grid-gutter: 32 !default;
 $grid-outer-gutter: true !default;
 $grid-num-columns: 12 !default;</code></pre>
 
-<div class="spacer-big"></div><h3>data-col</h3>
+<div class="spacer spacer_big"></div><h3>data-col</h3>
 <div class="well">
   <div data-grid>
     <div data-col='4'>
@@ -1204,48 +1222,109 @@ $breakpoints: (
             targte="_blank">modular scale</a> with a 1.25 ratio. The spacing (margin-bottom) uses a vertical rythm that
           creates
           smaller margins form h1 down to p.</p>
+
+        <div class="spacer"></div>
+
+        <nav class="nav">
+          <ul class="nav__items" data-flex="is-center">
+            <li class="nav__item">
+              <a href="#headings" class="btn btn_minor btn_round">headings</a>
+            </li>
+            <li class="nav__item">
+              <a href="#paragraph" class="btn btn_minor btn_round">paragraphs</a>
+            </li>
+            <li class="nav__item">
+              <a href="#list" class="btn btn_minor btn_round">lists</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
-  </div>
-</section>      <div class="spacer-big"></div>
-<section>
+</section>      <div class="spacer spacer_big"></div>
+<section v-cloak>
   <div data-container>
     <div data-grid="is-center">
       <div data-col='8-sm'>
         <h3 id="headings">headings</h3>
-        <div class="demo-heading-metrics demo-heading-metrics_h1">
-          <h1>Heading 1</h1>
-        </div>
-        <div class="demo-heading-metrics">
-          <h2>Heading 2</h2>
-        </div>
-        <div class="demo-heading-metrics">
-          <h3>Heading 3</h3>
-        </div>
-        <div class="demo-heading-metrics">
-          <h4>Heading 4</h4>
-        </div>
-        <div class="demo-heading-metrics demo-heading-metrics_h5">
-          <h5>Heading 5</h5>
-        </div>
-        <div class="demo-heading-metrics demo-heading-metrics_h6">
-          <h6>Heading 6</h6>
-        </div>
+        <p class="is-lead">first of all headings are structural and hierarchical elements. Their style really depends
+          on in what kind of interface they're used in. Editorial content often needs a deeper hierachy, that is
+          illustrated by a variation in font-size, spacing and style. Admin-interfaces or data-rich uis often don't
+          need a deep hierachie. <strong>x.ui</strong> is equiped for both</p>
+
         <div class="spacer"></div>
-        <h4>modifier</h4>
-        <p>you can style all elements using on of the <strong>heading helper classes</strong> <span class="code">.is-h1</span>,
-          <span class="code">.is-h2</span>, <span class="code">.is-h3</span>,
-          <span class="code">.is-h4</span>, <span class="code">.is-h5</span> and
-          <span class="code">.is-h6</span> to influence the appearance of headings</p>
-        <h4>special modifier</h4>
-        <p>for data-rich / admin interfaces there is a set of three heading styles
-          <span class="code">.is-giga</span>, <span class="code">.is-mega</span> and
-          <span class="code">.is-kilo</span> to provide a cleaner typeface without losing the
-          hierarchical structure of the markup.</p>
+
+        <div data-grid>
+          <div data-col='6'>
+            <h4>editorial</h4>
+            <div class="demo-margin">
+              <h1>h1</h1>
+            </div>
+            <pre><code class="html">
+<h1>...</h1>
+<h2 class="is-h1">...</h2>
+<div class="is-h1">...</div></code></pre>
+            <div class="demo-margin">
+              <h2>h2</h2>
+            </div>
+            <pre><code class="html">
+<h2>...</h2>
+<h4 class="is-h2">...</h4>
+<div class="is-h2">...</div></code></pre>
+            <div class="demo-margin">
+              <h3>h3</h3>
+            </div>
+            <pre><code class="html">
+<h3>...</h3>
+<h4 class="is-h3">...</h4>
+<div class="is-h3">...</div></code></pre>
+            <div class="demo-margin">
+              <h4>h4</h4>
+            </div>
+            <pre><code class="html">
+<h4>...</h4>
+<h5 class="is-h4">...</h5>
+<div class="is-h4">...</div></code></pre>
+            <div class="demo-margin">
+              <h5>h5</h5>
+            </div>
+            <pre><code class="html">
+<h5>...</h5>
+<h2 class="is-h5">...</h2>
+<div class="is-h5">...</div></code></pre>
+            <div class="demo-margin">
+              <h6>h6</h6>
+            </div>
+            <pre><code class="html">
+<h6>...</h6>
+<h3 class="is-h6">...</h3>
+<div class="is-h6">...</div></code></pre>
+          </div>
+          <div data-col='6'>
+            <h4>data</h4>
+            <div class="demo-margin">
+              <h2 class="is-giga">.is-giga</h2>
+            </div>
+            <pre><code class="html">
+<h3 class="is-giga">...</h3>
+<div class="is-giga">...</div></code></pre>
+            <div class="demo-margin">
+              <h2 class="is-mega">.is-mega</h2>
+            </div>
+            <pre><code class="html">
+<h3 class="is-mega">...</h3>
+<div class="is-mega">...</div></code></pre>
+            <div class="demo-margin">
+              <h2 class="is-kilo">.is-kilo</h2>
+            </div>
+            <pre><code class="html">
+<h3 class="is-kilo">...</h3>
+<div class="is-kilo">...</div></code></pre>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>      <div class="spacer-big"></div>
+</section>      <div class="spacer spacer_big"></div>
 <section>
   <div data-container>
     <div data-grid="is-center">
@@ -1278,7 +1357,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>      <div class="spacer-big"></div>
+</section>      <div class="spacer spacer_big"></div>
 <section>
   <div data-container>
     <div data-grid="is-center">
@@ -1338,7 +1417,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>      <div class="spacer-big"></div>
+</section>      <div class="spacer spacer_big"></div>
 <section>
   <div data-container>
     <div data-grid="is-center">
@@ -1370,7 +1449,7 @@ $breakpoints: (
         Halbgott!</p>
     </div>
   </div>
-</section>        <div class="spacer-big"></div>
+</section>        <div class="spacer spacer_big"></div>
 <section>
   <h4 id="font-weight">font-weight</h4>
   <div class="well">
@@ -1393,7 +1472,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>        <div class="spacer-big"></div>
+</section>        <div class="spacer spacer_big"></div>
 <section>
   <h4 id="text-transform">text-transform</h4>
   <div class="well">
@@ -1408,7 +1487,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>        <div class="spacer-big"></div>
+</section>        <div class="spacer spacer_big"></div>
 <section>
   <h4 id="word-wrap">word-wrap</h4>
 
@@ -1447,76 +1526,128 @@ $breakpoints: (
 </section>      </div>
     </div>
   </div>
-</section>      <div class="spacer-big"></div>
+</section>      <div class="spacer spacer_big"></div>
       
       <div data-container>
         <div data-grid="is-center">
           <div data-col="8-md">
             <div class="bumper-big"></div>
             <h2 class="align-center is-uppercase" id="media">media</h2>
+            <div class="spacer"></div>
 <section>
-  <h3 id="img">img</h3>
   <div data-grid>
     <div data-col="6-sm">
-                <pre><code class="html">
-<img src="" class="img_responsive"></code></pre>
+      <h4 id="img_responsive">responsive</h4>
       <p>add responsive behavior to images. image shrinks and grows up to it's original
         width.</p>
-      <img src="assets/placeholder.jpg" class="img_responsive">
+      <pre><code class="html">
+<img src="" class="img_responsive"></code></pre>
+      <div class="demo-margin">
+        <img src="assets/placeholder.jpg" class="img_responsive">
+      </div>
     </div>
     <div data-col="6-sm">
-                <pre><code class="html">
-<img src="" class="img_full"></code></pre>
+      <h4 id="img_full">full-width</h4>
       <p>add responsive behavior to images. image shrinks and grows independent of it's
         original width.</p>
+      <pre><code class="html">
+    <img src="" class="img_full"></code></pre>
       <img src="assets/placeholder.jpg" class="img_full">
     </div>
   </div>
-</section>
-
-<div class="spacer"></div><section>
+</section>            <div class="spacer spacer_big"></div>
+<section>
   <h3 id="img-crop">img-crop
-    <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener"
-       class="tag tag_error tag_small">object-fit</a></h3>
-  <div data-grid>
-    <div data-col="6-sm">
-                <pre><code class="html">
+    <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener" class="tag tag_error tag_small">object-fit</a></h3>
+  <div data-flex='is-center'>
+    <div class="btn-group">
+      <div class="btn btn_small" @click="imgCropRatio = '1-1'" :class="{'btn_minor' : imgCropRatio !== '1-1'}"><small>1:1</small></div>
+      <div class="btn btn_small" @click="imgCropRatio = '3-4'" :class="{'btn_minor' : imgCropRatio !== '3-4'}"><small>3:4</small></div>
+      <div class="btn btn_small" @click="imgCropRatio = '4-3'" :class="{'btn_minor' : imgCropRatio !== '4-3'}"><small>4:3</small></div>
+      <div class="btn btn_small" @click="imgCropRatio = '16-9'" :class="{'btn_minor' : imgCropRatio !== '16-9'}"><small>16:9</small></div>
+      <div class="btn btn_small" @click="imgCropRatio = 'golden'" :class="{'btn_minor' : imgCropRatio !== 'golden'}"><small>golden</small></div>
+      <div class="btn btn_small" @click="imgCropRatio = 'silver'" :class="{'btn_minor' : imgCropRatio !== 'silver'}"><small>silver</small></div>
+      <div class="btn btn_small" @click="imgCropRatio = 'ultrawide'" :class="{'btn_minor' : imgCropRatio !== 'ultrawide'}"><small>ultrawide</small></div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div data-grid="is-center">
+    <div :data-col="[imgCropRatio === '16-9' || imgCropRatio === 'golden' || imgCropRatio === 'silver' || imgCropRatio === 'ultrawide' ? '12' : '8']" style="transition: all .2s;">
+      <div class="demo-margin">
+        <div :class="'img-crop-' + imgCropRatio" v-cloak style="transition: all .2s;">
+          <img src="assets/placeholder-landscape.jpg">
+        </div>
+      </div>
+      <div class="spacer spacer_small"></div>
+
+      <pre v-show="imgCropRatio === '1-1'" v-cloak><code class="html">
 <div class="img-crop-1-1">
   <img src="">
 </div></code></pre>
-      <div class="img-crop-1-1">
-        <img src="assets/placeholder.jpg">
-      </div>
-    </div>
-    <div data-col="6-sm">
-                <pre><code class="html">
+
+      <pre v-show="imgCropRatio === '3-4'" v-cloak><code class="html">
 <div class="img-crop-3-4">
-  <img src="">
+<img src="">
 </div></code></pre>
-      <div class="img-crop-3-4">
-        <img src="assets/placeholder.jpg">
-      </div>
-    </div>
-    <div data-col="6-sm">
-                <pre><code class="html">
+
+      <pre v-show="imgCropRatio === '4-3'" v-cloak><code class="html">
 <div class="img-crop-4-3">
-  <img src="">
+<img src="">
 </div></code></pre>
-      <div class="img-crop-4-3">
-        <img src="assets/placeholder.jpg">
-      </div>
-    </div>
-    <div data-col="6-sm">
-                <pre><code class="html">
+
+      <pre v-show="imgCropRatio === '16-9'" v-cloak><code class="html">
 <div class="img-crop-16-9">
   <img src="">
 </div></code></pre>
-      <div class="img-crop-16-9">
-        <img src="assets/placeholder.jpg">
-      </div>
+
+      <pre v-show="imgCropRatio === 'golden'" v-cloak><code class="html">
+<div class="img-crop-golden">
+  <img src="">
+</div></code></pre>
+
+      <pre v-show="imgCropRatio === 'silver'" v-cloak><code class="html">
+<div class="img-crop-silver">
+  <img src="">
+</div></code></pre>
+
+      <pre v-show="imgCropRatio === 'ultrawide'" v-cloak><code class="html">
+<div class="img-crop-ultrawide">
+  <img src="">
+</div></code></pre>
     </div>
   </div>
-</section>
+</section>            <div class="spacer spacer_big"></div>
+<section v-cloak>
+  <h3 id="is-outset">is-outset</h3>
+  <div data-flex="is-center">
+    <div class="btn-group">
+      <div class="btn btn_small" @click="isOutset = 'left'" :class="{'btn_minor' : isOutset !== 'left'}"><small>left</small></div>
+      <div class="btn btn_small" @click="isOutset = 'full'" :class="{'btn_minor' : isOutset !== 'full'}"><small>full</small></div>
+      <div class="btn btn_small" @click="isOutset = 'right'" :class="{'btn_minor' : isOutset !== 'right'}"><small>right</small></div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div>
+    <div class="is-outset" :class="{'is-outset_left' : isOutset === 'left', 'is-outset_full' : isOutset === 'full', 'is-outset_right' : isOutset === 'right'}" style="transition: all .2s">
+      <div :class="isOutset === 'full' ? 'img-crop-silver' : 'img-crop-4-3'" style="transition: all .2s">
+        <img src="assets/placeholder-landscape.jpg">
+      </div>
+    </div>
+    <p class="is-lead">Das aber wünschten und bezweckten die staatsklugen Ritter eben, und statt, wie zuvor, mit
+      stillschweigendem Eingeständnis der Schuld, ihren Widerstand auf ein bloß gemildertes Rechtserkenntnis
+      einzuschränken, fingen sie jetzt an, in Wendungen arglistiger und rabulistischer Art, diese Schuld selbst
+      gänzlich zu leugnen. </p>
+    <p>Bald gaben sie vor, daß die Rappen des Kohlhaas, in Folge eines bloß eigenmächtigen Verfahrens des Schloßvogts
+      und Verwalters, von welchem der Junker nichts oder nur Unvollständiges gewußt, auf der Tronkenburg zurückgehalten
+      worden seien; bald versicherten sie, daß die Tiere schon, bei ihrer Ankunft daselbst, an einem heftigen und
+      gefährlichen Husten krank gewesen wären, und beriefen sich deshalb auf Zeugen, die sie herbeizuschaffen sich
+      anheischig machten; und als sie mit diesen Argumenten, nach weitläufigen Untersuchungen und Auseinandersetzungen,
+      aus dem Felde geschlagen waren, brachten sie gar ein kurfürstliches Edikt bei, worin, vor einem Zeitraum von
+      zwölf Jahren, einer Viehseuche wegen, die Einführung der Pferde aus dem Brandenburgischen ins Sächsische, in der
+      Tat verboten worden war: zum sonnenklaren Beleg nicht nur der Befugnis, sondern sogar der Verpflichtung des
+      Junkers, die von dem Kohlhaas über die Grenze gebrachten Pferde anzuhalten.</p>
+  </div>
+</section>            <div class="spacer spacer_big"></div>
             <div class="bumper-big"></div>
             <h2 class="align-center is-uppercase" id="form">form</h2>
 <section>
@@ -1543,7 +1674,7 @@ $breakpoints: (
     </div>
   </div>
 
-  <div class="spacer-small"></div>
+  <div class="spacer spacer_small"></div>
 
   <h4>input size modifier</h4>
   <div data-grid>
@@ -1559,7 +1690,7 @@ $breakpoints: (
     </div>
   </div>
 
-  <div class="spacer-small"></div>
+  <div class="spacer spacer_small"></div>
 
   <h4>input style modifier</h4>
   <div data-grid>
@@ -1575,22 +1706,22 @@ $breakpoints: (
     </div>
   </div>
 
-  <div class="spacer-small"></div>
+  <div class="spacer spacer_small"></div>
   
   <h4>input validation modifier</h4>
   <p>the validation modifier are classes generated by <strong>angular js</strong>.</p>
   <div data-grid>
     <div data-col="3-sm">
       <input type="text" class="input ng-touched ng-valid" value="ng-valid">
-      <span class="spacer-small is-visible-xs"></span>
+      <span class="spacer spacer_small is-visible-xs"></span>
     </div>
     <div data-col="3-sm">
       <input type="text" class="input ng-touched ng-invalid" value="ng-invalid">
-      <span class="spacer-small is-visible-xs"></span>
+      <span class="spacer spacer_small is-visible-xs"></span>
     </div>
     <div data-col="3-sm">
       <input type="text" class="input ng-touched ng-pending" value="ng-pending">
-      <span class="spacer-small is-visible-xs"></span>
+      <span class="spacer spacer_small is-visible-xs"></span>
     </div>
     <div data-col="3-sm">
       <input type="text" class="input ng-touched ng-submitted" value="ng-submitted">
@@ -3678,7 +3809,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <h3 id="is-ink">is-ink</h3>
   <p>the is-ink modifiers only affect the css color attribute. it can be uses on all
     elements.</p>
-  <div class="well-small">
+  <div class="well well_small">
     <div data-grid>
       <div v-for="mod in modifiers.type.colorModifiers" data-col="6-xs 3-sm">
         <strong :class="mod">${mod}</strong>
@@ -3706,7 +3837,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="is-theme_dark">is-theme_dark</div>
         <div class="is-theme_darker">is-theme_darker</div>
         <div class="is-theme_darkest">is-theme_darkest</div>
-        <div class="spacer-small"></div>
+        <div class="spacer spacer_small"></div>
       </div>
       <div data-col="6-xs 4-sm">
         <h4>link</h4>
@@ -3717,7 +3848,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="is-theme-link_dark">is-theme-link_dark</div>
         <div class="is-theme-link_darker">is-theme-link_darker</div>
         <div class="is-theme-link_darkest">is-theme-link_darkest</div>
-        <div class="spacer-small"></div>
+        <div class="spacer spacer_small"></div>
       </div>
       <div data-col="6-xs 4-sm">
         <h4>super</h4>
@@ -3728,7 +3859,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="is-theme-super_dark">is-theme-super_dark</div>
         <div class="is-theme-super_darker">is-theme-super_darker</div>
         <div class="is-theme-super_darkest">is-theme-super_darkest</div>
-        <div class="spacer-small"></div>
+        <div class="spacer spacer_small"></div>
       </div>
       <div data-col="6-xs 4-sm">
         <h4>minor</h4>
@@ -3739,7 +3870,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="is-theme-minor_dark">is-theme-minor_dark</div>
         <div class="is-theme-minor_darker">is-theme-minor_darker</div>
         <div class="is-theme-minor_darkest">is-theme-minor_darkest</div>
-        <div class="spacer-small"></div>
+        <div class="spacer spacer_small"></div>
       </div>
       <div data-col="6-xs 4-sm">
         <h4>highlight</h4>
@@ -3750,7 +3881,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="is-theme-highlight_dark">is-theme-highlight_dark</div>
         <div class="is-theme-highlight_darker">is-theme-highlight_darker</div>
         <div class="is-theme-highlight_darkest">is-theme-highlight_darkest</div>
-        <div class="spacer-small"></div>
+        <div class="spacer spacer_small"></div>
       </div>
       <div data-col="6-xs 4-sm">
         <h4>invert</h4>
@@ -3761,7 +3892,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="is-theme-invert_dark">is-theme-invert_dark</div>
         <div class="is-theme-invert_darker">is-theme-invert_darker</div>
         <div class="is-theme-invert_darkest">is-theme-invert_darkest</div>
-        <div class="spacer-small"></div>
+        <div class="spacer spacer_small"></div>
       </div>
     </div>
   </div>
@@ -4145,7 +4276,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <pre v-show="bumperSize === 'bumperSizeBig'"><code class="html"><div class="bumper-big bumper_invert"></div></code></pre>
 </section>
 
-<div class="spacer-big"></div>            <div class="spacer-big"></div>
+<div class="spacer spacer_big"></div>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="divider">divider</h3>
   <div data-grid>
@@ -4190,7 +4321,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <pre v-show="dividerSize === 'dividerSizeBig'"><code class="html"><hr class="divider-big divider_invert"></code></pre>
 </section>
 
-<div class="spacer-big"></div>            <div class="spacer-big"></div>
+<div class="spacer spacer_big"></div>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="spacer">spacer</h3>
   <div data-grid>
@@ -4223,7 +4354,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <pre v-show="spacerSize === 'spacerSizeBig'"><code class="html"><div class="spacer spacer_big"></div></code></pre>
 </section>
 
-<div class="spacer-big"></div>            <div class="spacer-big"></div>
+<div class="spacer spacer_big"></div>            <div class="spacer spacer_big"></div>
 <section>
   <h3 class="align-center is-uppercase" id="spacing">gaps & spacing</h3>
   <p class="is-lead">gaps and spacing are one of the most important elements of an user interface. Following the gestalt psychology, more precisely the law of proximity, theay structures content, information and functions and illutstrate their relation to each other</p>
@@ -4345,7 +4476,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   
   <div class="spacer"></div>
 
-</section>            <div class="spacer-big"></div>
+</section>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="x-spacer">x-space<span class="is-ink-link">${'-' + xSpaceSize}</span><span class="is-ink-lighter">-bp</span></h3>
   <div data-grid="is-center">
@@ -4365,7 +4496,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <div class="x-space-2"></div>
     ...
   </div></code></pre>
-</section>            <div class="spacer-big"></div>
+</section>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="x-spacer">y-space<span class="is-ink-link">${'-' + ySpaceSize}</span><span class="is-ink-lighter">-bp</span></h3>
   <div data-grid="is-center">
@@ -4373,7 +4504,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
       <input type="range" min="0" max="8" class="slider" value="4" v-model="ySpaceSize">
     </div>
   </div>
-  <div class="spacer-small"></div>
+  <div class="spacer spacer_small"></div>
   <div class="demo-spacer" :class="'y-space-' + ySpaceSize"></div>
   <pre><code class="html">
   <div data-flex>
@@ -4381,7 +4512,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <div class="x-space-2"></div>
     ...
   </div></code></pre>
-</section>            <div class="spacer-big"></div>
+</section>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="flex-spacer">flex-space</h3>
   <div data-flex>
@@ -4396,7 +4527,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <div class="flex-space"></div>
   ...
 </div></code></pre>
-</section>            <div class="spacer-big"></div>
+</section>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="has-margin">has-margin<span class="is-ink-link">${hasMarginSide + hasMarginSize}</span><span class="is-ink-lighter">-bp</span></h3>
 
@@ -4448,7 +4579,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <span class="code">margin-right</span>
     <span class="code">margin-center</span>
   </p>
-</section>            <div class="spacer-big"></div>
+</section>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="has-padding">has-padding<span class="is-ink-link">${hasPaddingSide + hasPaddingSize}</span><span class="is-ink-lighter">-bp</span></h3>
 
@@ -4492,7 +4623,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
       </div>
     </div>
   </div>
-</section>            <div class="spacer-big"></div>
+</section>            <div class="spacer spacer_big"></div>
 <h3 id="data-flex">Additional flex attributes</h3>
 <p class="is-lead">Those additional attributes and values can be combined with data-grid / data-col to modify the
   layout.</p>
@@ -4690,7 +4821,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
 <p>By default, flex items are laid out in the source order. However, the order property
   controls the order in which they appear in the flex container. the order-value can be
   <span class="code">[1-12]</span>.</p>
-<div class="bumper-big"></div>            <div class="spacer-big"></div>
+<div class="bumper-big"></div>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="has-height">has-height</h3>
   <div class="well align-center">
@@ -4726,7 +4857,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div>            <div class="spacer-big"></div>
+<div class="bumper"></div>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="has-width">has-width</h3>
   <div class="well align-center">
@@ -4761,7 +4892,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper-big"></div>            <div class="spacer-big"></div>
+<div class="bumper-big"></div>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="pull">pull</h3>
   <div class="well align-center">
@@ -4769,7 +4900,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper-big"></div>            <div class="spacer-big"></div>
+<div class="bumper-big"></div>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="is-clipped">is-clipped</h3>
   <p>use for
@@ -4830,7 +4961,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper-big"></div>            <div class="spacer-big"></div>
+<div class="bumper-big"></div>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="is-position">is-position</h3>
   <div class="well align-center">
@@ -4856,7 +4987,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper"></div>            <div class="spacer-big"></div>
+<div class="bumper"></div>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="is-layer">is-layer</h3>
   <div class="well align-center">
@@ -4876,7 +5007,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div>            <div class="spacer-big"></div>
+<div class="bumper"></div>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="is-hidden">is-hidden</h3>
   <div class="well align-center is-ink-link">
@@ -4903,7 +5034,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper"></div>            <div class="spacer-big"></div>
+<div class="bumper"></div>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="is-visible">is-visible</h3>
   <div class="well align-center is-ink-link">
@@ -4924,7 +5055,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <div class="well align-center">
     <span class="is-h6">is-visible-from{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
-</section>            <div class="spacer-big"></div>
+</section>            <div class="spacer spacer_big"></div>
 <section>
   <h3 id="data-animate">data-animate
     <span class="tag tag_small tag_super">css only</span>
@@ -5022,7 +5153,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     </div>
 
 
-    <div class="spacer-big"></div>
+    <div class="spacer spacer_big"></div>
 
     <div data-grid="is-center">
       <div data-col="6-sm 4-md">
@@ -5047,7 +5178,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
             </div>
           </li>
         </ul>
-        <div class="spacer-big"></div>
+        <div class="spacer spacer_big"></div>
       </div>
     </div>
   </div>
@@ -5055,16 +5186,15 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <div class="has-padding">
     <p class="align-center is-ink-light">
       <small>
-        Source placeholder text: <strong>Theodor Fontane - Die Verwandlung</strong> <a href="http://www.blindliteratur.de/" target="_blank" rel="noopener">http://www.blindliteratur.de/</a><br>
-        Photo img-placeholder by <a href="https://unsplash.com/photos/bh4LQHcOcxE" target="_blank" rel="noopener">Warren Wong on Unsplash</a> &bull; Photo avatar-placeholder by <a href="https://unsplash.com/photos/8NHL3OI5eWc" target="_blank" rel="noopener">Austin Chan on Unsplash</a>
+        placeholder text: <strong>Heinrich von Kleist - Michael Kohlhaas</strong> <a href="http://www.blindliteratur.de/" target="_blank" rel="noopener">http://www.blindliteratur.de/</a><br>
+        Photos: <a href="https://unsplash.com/photos/bh4LQHcOcxE" target="_blank" rel="noopener">Warren Wong on Unsplash</a> &bull; <a href="https://unsplash.com/photos/8NHL3OI5eWc" target="_blank" rel="noopener">Austin Chan on Unsplash</a> &bull; <a href="https://unsplash.com/photos/xdwQ_Eq2b-Y" target="_blank" rel="noopener">Erik Odiin on Unsplash</a>
       </small>
     </p>
     <p class="align-center">
       <small><a href="https://entrecode.de/datenschutz" rel="nofollow">imprint &amp; privacy</a></small>
     </p>
   </div>
-</footer>
-  </div>
+</footer>  </div>
 </body>
 
 </html>
