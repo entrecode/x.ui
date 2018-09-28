@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 9.1.1
+
+### deprecated
+
+- `bumper-small` and `bumper-big` use `bumper bumper_big` or `bumper bumper_small` instead
+
+### added
+
+- added `data-col` support for `.toast`
+
 ## 9.1.0
 
 ### deprecated
