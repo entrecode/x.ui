@@ -9,7 +9,7 @@
 // @param {number} $overlay-z-index [100]
 // @param {array} $overlay-style
 
-.overlay-wrappe {
+.overlay-wrapper {
   &.is-active {
     .overlay {
       display: flex;
