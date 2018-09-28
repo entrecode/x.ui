@@ -459,13 +459,21 @@ $btn-min-height: 40 !default;
 $btn-weight: $is-bold !default;
 $btn-style: () !default;
 $btn-hover-style: () !default;
-$btn-disabled-style: (
-  box-shadow: none,
-  opacity: 0.6
-) !default;
-$btn-active-style: (
-  transform: translateY(2px)
-) !default;
+$btn-disabled-style: () !default;
+$btn-disabled-style: map-merge(
+  (
+    box-shadow: none,
+    opacity: 0.6
+  ),
+  $btn-disabled-style
+);
+$btn-active-style: () !default;
+$btn-active-style: map-merge(
+  (
+    transform: translateY(2px)
+  ),
+  $btn-active-style
+);
 
 // @param {px} $btn-small-font-size [$btn-font-size * .875]
 // @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
@@ -1059,9 +1067,13 @@ $xui-list-item-gutter: $base-spacing !default;
 $xui-list-item-radius: 4 !default;
 $xui-list-item-background: none !default;
 $xui-list-item-color: inherit !default;
-$xui-list-item-style: (
-  transition: background-color 0.4s
-) !default;
+$xui-list-item-style: () !default;
+$xui-list-item-style: map-merge(
+  (
+    transition: background-color 0.4s
+  ),
+  $xui-list-item-style
+);
 
 // @param {color} $xui-list-item-hover-background [none]
 // @param {color} $xui-list-item-hover-color [inherit]
@@ -1759,13 +1771,21 @@ $input-padding-ratio: 2 !default;
 $input-background: $background !default;
 $input-color: $text !default;
 $input-style: () !default;
-$input-hover-style: (
-  box-shadow: inset 0 0 0 2px $state-hover
-) !default;
+$input-hover-style: () !default;
+$input-hover-style: map-merge(
+  (
+    box-shadow: inset 0 0 0 2px $state-hover
+  ),
+  $input-hover-style
+);
 $input-focus-style: $input-hover-style;
-$input-disabled-style: (
-  opacity: 0.4
-) !default;
+$input-disabled-style: () !default;
+$input-disabled-style: map-merge(
+  (
+    opacity: 0.4
+  ),
+  $input-disabled-style
+);
 
 // @param {color} $input-placeholder-color [$text-light]
 // @param {array} $input-placeholder-style
@@ -1820,16 +1840,24 @@ $input-border-style: solid !default;
 // INPUT VALIDATION
 // ------------------------------------------------------
 // @param {array} $input-valid-style
-$input-valid-style: (
-  border-color: $state-success,
-  color: setContrast($input-background, $state-success)
-) !default;
+$input-valid-style: () !default;
+$input-valid-style: map-merge(
+  (
+    border-color: $state-success,
+    color: setContrast($input-background, $state-success)
+  ),
+  $input-valid-style
+);
 
 // @param {array} $input-invalid-style
-$input-invalid-style: (
-  border-color: $state-error,
-  color: setContrast($input-background, $state-error)
-) !default;
+$input-invalid-style: () !default;
+$input-invalid-style: map-merge(
+  (
+    border-color: $state-error,
+    color: setContrast($input-background, $state-error)
+  ),
+  $input-invalid-style
+);
 
 //
 // INPUT
@@ -1853,9 +1881,13 @@ $slider-hover-style: () !default;
 $slider-thumb-background: $link !default;
 $slider-thumb-size: 16 !default;
 $slider-thumb-radius: 8 !default;
-$slider-thumb-style: (
-  box-shadow: 0 4px 8px 2px rgba(#000, 0.2)
-) !default;
+$slider-thumb-style: () !default;
+$slider-thumb-style: map-merge(
+  (
+    box-shadow: 0 4px 8px 2px rgba(#000, 0.2)
+  ),
+  $slider-thumb-style
+);
 $slider-thumb-hover-style: () !default;
 
 //
@@ -2005,11 +2037,15 @@ $xui-checkbox-height: 20 !default;
 $xui-checkbox-radius: 6 !default;
 $xui-checkbox-background: $background !default;
 $xui-checkbox-color: transparent !default;
-$xui-checkbox-style: (
-  box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2),
-  content: '\2714\fe0e',
-  font-family: sans-serif
-) !default;
+$xui-checkbox-style: () !default;
+$xui-checkbox-style: map-merge(
+  (
+    box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2),
+    content: '\2714\fe0e',
+    font-family: sans-serif
+  ),
+  $xui-checkbox-style
+);
 
 // @param {color} $xui-checkbox-hover-background [inherit]
 // @param {color} $xui-checkbox-hover-color [$text-lightest]
@@ -2039,11 +2075,15 @@ $xui-radio-spacing: 0 8 0 0 !default;
 $xui-radio-height: 20 !default;
 $xui-radio-background: $background !default;
 $xui-radio-color: transparent !default;
-$xui-radio-style: (
-  box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2),
-  content: '\2B24',
-  font-family: sans-serif
-) !default;
+$xui-radio-style: () !default;
+$xui-radio-style: map-merge(
+  (
+    box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2),
+    content: '\2B24',
+    font-family: sans-serif
+  ),
+  $xui-radio-style
+);
 
 // @param {color} $xui-checkbox-hover-background [inherit]
 // @param {color} $xui-checkbox-hover-color [$text-lightest]
@@ -2088,9 +2128,13 @@ $xui-toggle-pin-background: $background !default;
 $xui-toggle-pin-height: $xui-toggle-height !default;
 $xui-toggle-pin-width: $xui-toggle-pin-height !default;
 $xui-toggle-pin-radius: $xui-toggle-pin-height / 2 !default;
-$xui-toggle-pin-style: (
-  box-shadow: 0 2px 8px 1px rgba(#000, 0.2)
-) !default;
+$xui-toggle-pin-style: () !default;
+$xui-toggle-pin-style: map-merge(
+  (
+    box-shadow: 0 2px 8px 1px rgba(#000, 0.2)
+  ),
+  $xui-toggle-pin-style
+);
 
 // @param {px} $xui-toggle-label-size [base-font-size]
 // @param {px} $xui-toggle-line-height [$xui-toggle-label-size * $base-line-height]
