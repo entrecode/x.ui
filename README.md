@@ -45,8 +45,12 @@ x.ui has uses no prefix mixins, please use an autoprefixer in your project
 - `spacer-small` and `spacer-big` use `spacer spacer_big` or `spacer spacer_small` instead
 - `well-small` and `well-big` use `well well_small` or `well well_big` instead
 - `flex-spacer` use `flex-space` instead
-- `data-row`
 - `xui-overlay` use `.dialog` instead
+
+### since 7.0.0
+
+- `data-col="pull-#"` and `data-col="push-#"` use `data-flex-order=""` instead
+- `data-row` use `data-grid` instead
 
 ## creators
 
