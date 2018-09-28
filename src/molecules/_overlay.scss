@@ -9,6 +9,14 @@
 // @param {number} $overlay-z-index [100]
 // @param {array} $overlay-style
 
+.overlay-wrappe {
+  &.is-active {
+    .overlay {
+      display: flex;
+    }
+  }
+}
+
 .overlay {
   display: none;
   flex-direction: column;
