@@ -896,13 +896,13 @@ $dropdown-on-hover: false !default;
 
 // @param {px} $dropdown-options-radius [4]
 // @param {array} $dropdown-options-padding [4]
-// @param {px | null} $dropdown-options-max-height [null]
+// @param {px | null} $dropdown-options-max-height [320]
 // @param {color} $dropdown-options-background
 // @param {value} $dropdown-options-shadow
 // @param {array} $dropdown-options-style
 $dropdown-options-radius: 4 !default;
 $dropdown-options-padding: 4 !default;
-$dropdown-options-max-height: null !default;
+$dropdown-options-max-height: 320 !default;
 $dropdown-options-background: $background !default;
 $dropdown-options-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
 $dropdown-options-style: () !default;
