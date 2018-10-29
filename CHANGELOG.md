@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 9.1.2
+
+### changes
+
+- changed config for `$dropdown-options-max-height`
+
 ## 9.1.1
 
 ### deprecated
