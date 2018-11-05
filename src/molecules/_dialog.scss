@@ -95,7 +95,6 @@
   opacity: 0.4;
   transition: opacity 0.2s;
   @include inject-style($dialog-dismiss-style);
-  color: $dialog-color;
 
   &:only-child {
     margin-left: auto;
