@@ -17,6 +17,7 @@
   
   @supports (display: inline-flex) {
     display: inline-flex;
+    flex-shrink: 0;
   }
 
   @include inject-style($avatar-style);
