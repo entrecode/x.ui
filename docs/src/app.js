@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hasMarginSize: '',
       hasPaddingSide: '',
       hasPaddingSize: '',
-      selectedAnimation: 'ambulance',
+      selectedAnimation: 'fadeIn',
       animation: [
         'fadeIn',
         'popIn',
@@ -77,10 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'slideLeft',
         'slideRight',
         'slideUp',
-        'slideDown',
-        'ambulance'
+        'slideDown'
       ],
-      animationDuration: 8,
+      animationDuration: 2,
       animationDelay: 0,
       query: '',
       config: {

@@ -15,14 +15,14 @@
   }
 }
 
-[data-animate~="fadeIn"] {
+[data-animate~='fadeIn'] {
   animation-name: fadeIn;
 }
 
 @keyframes popIn {
   0% {
     opacity: 0;
-    transform: scale(.6);
+    transform: scale(0.6);
   }
 
   80% {
@@ -35,7 +35,7 @@
   }
 }
 
-[data-animate~="popIn"] {
+[data-animate~='popIn'] {
   animation-name: popIn;
 }
 
@@ -51,7 +51,7 @@
   }
 }
 
-[data-animate~="flipLeft"] {
+[data-animate~='flipLeft'] {
   animation-name: flipLeft;
 }
 
@@ -67,7 +67,7 @@
   }
 }
 
-[data-animate~="flipRight"] {
+[data-animate~='flipRight'] {
   animation-name: flipRight;
 }
 
@@ -83,7 +83,7 @@
   }
 }
 
-[data-animate~="slideRight"] {
+[data-animate~='slideRight'] {
   animation-name: slideRight;
 }
 
@@ -99,7 +99,7 @@
   }
 }
 
-[data-animate~="slideLeft"] {
+[data-animate~='slideLeft'] {
   animation-name: slideLeft;
 }
 
@@ -115,7 +115,7 @@
   }
 }
 
-[data-animate~="slideUp"] {
+[data-animate~='slideUp'] {
   animation-name: slideUp;
 }
 
@@ -131,47 +131,6 @@
   }
 }
 
-[data-animate~="slideDown"] {
+[data-animate~='slideDown'] {
   animation-name: slideDown;
-}
-
-@keyframes ambulance {
-  0% {
-    filter: blur(2px);
-    opacity: 0;
-    transform: translateX(200%) skewX(-16deg);
-  }
-
-  100% {
-    filter: initial;
-    opacity: 1;
-    transform: initial;
-  }
-}
-
-@keyframes ambulanceBefore {
-  0% {
-    filter: initial;
-    transform: initial;
-  }
-
-  100% {
-    filter: blur(2px);
-    opacity: 0;
-    transform: translateX(-400%) skewX(-16deg);
-  }
-}
-
-[data-animate~="ambulance"] {
-  animation-name: ambulance;
-  position: relative;
-
-  &::before {
-    animation-delay: 1s;
-    animation-duration: .8s;
-    animation-fill-mode: forwards;
-    animation-name: ambulanceBefore;
-    content: '\1F691';
-    display: inline-block;
-  }
 }
