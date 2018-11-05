@@ -47,6 +47,7 @@
     animation: $loader-racer-animation $loader-racer-animation-speed
       $loader-racer-animation-behavior;
     width: em($loader-size);
+    flex-grow: 0;
   }
 
   // @param {array} $loader-is-local-style
