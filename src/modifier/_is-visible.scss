@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 9.1.2
 /// @access public
 /// @group modifier
 
@@ -10,12 +10,12 @@
   @each $key in $keys {
     &-from {
       &-#{$key} {
-        display: none;
+        display: none !important;
       }
     }
 
     &-#{$key} {
-      display: none;
+      display: none !important;
     }
   }
 
