@@ -9,15 +9,19 @@
 ///
 /// @returns font-size
 
-@mixin get-font-size($level, $map: $type-scale, $bp: $type-scale-bp, $unit: $type-scale-unit) {
-
+@mixin get-font-size(
+  $level,
+  $map: $type-scale,
+  $bp: $type-scale-bp,
+  $unit: $type-scale-unit
+) {
   @for $i from 1 through length($bp) {
     $key: nth(map-keys($bp), $i);
     $size: map-get($map, $level);
 
     @media (min-width: getBreakpoint($key)) {
       $scale: map-get($bp, $key);
-      font-size: arrayMagic($size, $unit);
+      font-size: arrayMagic($size * $scale, $unit);
     }
   }
 }
