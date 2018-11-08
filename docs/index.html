@@ -5087,8 +5087,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
         <div class="form-group">
           <label for="anaimationType">animation</label>
           <select v-model="selectedAnimation" id="anaimationType" class="input">
-            <option :value="ani" v-for="(ani, index) in animation"
-                    :selected="index === '0'">
+            <option :value="ani" v-for="(ani, index) in animation" :selected="index === '0'">
               ${ani}
             </option>
           </select>
@@ -5097,15 +5096,26 @@ data-tooltip-left="This is a tooltip"</code></pre>
       <div data-col="3">
         <div class="form-group">
           <label for="animationDuration">duration</label>
-          <input type="number" max="400" v-model="animationDuration" id="animationDuration"
-                 class="input">
+          <select name="animationDuration" v-model="animationDuration" id="animationDuration" class="input">
+            <option value="1">very fast (100ms)</option>
+            <option value="2">fast (200ms)</option>
+            <option value="3">normal (300ms)</option>
+            <option value="4">slow (400ms)</option>
+            <option value="5">very slow (500ms)</option>
+          </select>
         </div>
       </div>
       <div data-col="3">
         <div class="form-group">
           <label for="animationDelay">delay</label>
-          <input type="number" max="400" v-model="animationDelay" id="animationDelay"
-                 class="input">
+          <select name="animationDelay" v-model="animationDelay" id="animationDelay" class="input">
+            <option value="0">no delay</option>
+            <option value="1">very fast (100ms)</option>
+            <option value="2">fast (200ms)</option>
+            <option value="3">normal (300ms)</option>
+            <option value="4">slow (400ms)</option>
+            <option value="5">very slow (500ms)</option>
+          </select>
         </div>
       </div>
       <button @mousedown="render = false" @mouseup="render = true" class="btn">Play</button>
@@ -5113,19 +5123,17 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 
   <div class="animation-demo">
-    <div v-if="render" class="is-uppercase is-giga special-font"
-         :data-animate="selectedAnimation + ' ' + animationDuration + ' +' + animationDelay">
+    <div v-if="render" class="is-uppercase is-giga special-font" :data-animate="selectedAnimation + ' ' + animationDuration + ' +' + animationDelay">
       demo
     </div>
   </div>
 
   <div class="well align-center">
     <div class="is-h6">
-      data-animate="<span class="is-ink-link">${selectedAnimation} ${animationDuration } +${animationDelay}</span>"
+      data-animate="<span class="is-ink-link">${selectedAnimation} ${animationDuration }${(animationDelay !== '0') ? ' +' + animationDelay : ''}</span>"
     </div>
   </div>
-</section>
-          </div>
+</section>          </div>
         </div>
       </div>
 
