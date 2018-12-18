@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 9.1.2
+
+### changes
+
+- changed config for `$dropdown-options-max-height`
+- added `!important` tag to `.is-visible`
+- optimized `data-animate` - removed uneccesary values
+
 ## 9.1.1
 
 ### deprecated

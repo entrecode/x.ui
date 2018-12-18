@@ -1,5 +1,5 @@
-@for $i from 1 through 400 {
-  [data-animate~="+#{$i}"] {
-    animation-delay: $i / 10 * 1s;
+@for $i from 1 through 5 {
+  [data-animate~='+#{$i}'] {
+    animation-delay: $i * 0.1s;
   }
 }

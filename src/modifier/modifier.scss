@@ -22,17 +22,20 @@
 @import 'is-positioned';
 @import 'not-positioned';
 @import 'is-layer';
+@import 'is-visible';
 @import 'is-hidden';
 @import 'is-hidden-input';
-@import 'is-visible';
+
 /// typeface
 @import 'align';
 @import 'text-transform';
 @import 'font-weight';
 @import 'word-wrap';
+
 /// theme
 @import 'is-ink';
 @import 'is-theme';
+
 /// interaction
 @import 'data-animate';
 @import 'data-animate_delay';

@@ -16,6 +16,11 @@ $is-outset-bp: 1200 !default;
 .is-outset {
   width: 100%;
   padding: arrayMagic($is-outset-spacing);
+  margin: 0;
+
+  img {
+    width: 100%;
+  }
 
   &:first-child {
     padding-top: 0;

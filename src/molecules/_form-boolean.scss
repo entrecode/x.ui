@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 9.1.2
 /// @access public
 /// @group molecules
 
@@ -36,6 +36,7 @@
 
   [type='radio'],
   [type='checkbox'] {
+    flex-shrink: 0;
     margin-right: rem($form-boolean-gutter);
   }
 

@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 9.1.2
 /// @access public
 /// @group atoms
 
@@ -37,7 +37,7 @@
     display: block;
     @include inject-style($xui-toggle-pin-style);
     background: $xui-toggle-pin-background;
-    border-radius: arrayMagic($xui-toggle-pin-width / 2);
+    border-radius: arrayMagic($xui-toggle-pin-radius);
     height: rem($xui-toggle-pin-height);
     width: rem($xui-toggle-pin-width);
     margin: arrayMagic($_pin-spacing-h $_pin-spacing-v);
