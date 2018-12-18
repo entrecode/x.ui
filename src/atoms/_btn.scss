@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 9.1.2
 /// @access public
 /// @group atoms
 ///
@@ -172,15 +172,16 @@
       min-width: rem($btn-big-wide);
     }
   }
+}
 
-  // full-width buttons
-  &.btn_block {
-    display: block;
-    width: 100%;
+// full-width buttons
+.btn_block {
+  display: block;
+  width: 100%;
 
-    @supports (display: flex) {
-      display: flex;
-    }
+  @supports (display: flex) {
+    display: flex;
+    width: initial;
   }
 }
 
