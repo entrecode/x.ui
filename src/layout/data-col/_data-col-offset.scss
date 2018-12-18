@@ -6,14 +6,14 @@
 $offset: $grid-num-columns - 1;
 
 @for $i from 0 through $offset {
-  [data-col~="+#{$i}"] {
+  [data-col~='+#{$i}'] {
     margin-left: (($i / $grid-num-columns) * 100%);
   }
 }
 
 @each $key in map-keys($breakpoints) {
   @for $i from 0 through $offset {
-    [data-col~="+#{$i}-#{$key}"] {
+    [data-col~='+#{$i}-#{$key}'] {
       @media (min-width: getBreakpoint(#{$key})) {
         margin-left: (($i / $grid-num-columns) * 100%);
       }
