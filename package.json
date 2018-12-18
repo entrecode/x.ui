@@ -1,6 +1,6 @@
 {
   "name": "x.ui",
-  "version": "9.1.1",
+  "version": "9.1.2",
   "license": "MIT",
   "description": "x.ui is a framework based on the atomic design methodology",
   "author": "entrecode GmbH",
@@ -17,6 +17,10 @@
     "watch:nunjucks": "nunjucks index.njk package.json --path docs/src --out docs --watch --unsafe",
     "watch:sass": "node-sass --watch --recursive --source-map-embed docs/src/styles/styles.scss docs/x.ui.css",
     "watch:js": "babel docs/src/app.js --out-file docs/app.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:entrecode/x.ui.git"
   },
   "keywords": [
     "x.ui",
