@@ -2,17 +2,6 @@
 /// @since 8.0.0
 /// @access public
 /// @group modifier
-///
-/// @param {map} $has-width-options - available width options
-
-$has-width-options: (
-        full: 100,
-        '1-4': 25,
-        half: 50,
-        '3-4': 75,
-        '16-9': 56.25,
-        golden: 61.803
-);
 
 .has-width {
   $keys: map-keys($has-height-options);

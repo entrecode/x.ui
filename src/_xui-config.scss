@@ -2183,6 +2183,23 @@ $has-height-options: map-merge(
 );
 
 //
+// HAS-WIDTH
+// -------------------------------------------------------------------------------------------------
+/// @param {map} $has-width-options - available width options
+$has-width-options: () !default;
+$has-width-options: map-merge(
+  (
+    full: 100,
+    '1-4': 25,
+    half: 50,
+    '3-4': 75,
+    '16-9': 56.25,
+    golden: 61.803,
+  ),
+  $has-width-options
+);
+
+//
 // MIXINS
 // -------------------------------------------------------------------------------------------------
 
