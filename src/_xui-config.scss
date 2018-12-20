@@ -1584,16 +1584,10 @@ $is-rounded-radius: 4 !default;
 $is-rounded-max-radius: 8 !default;
 
 //
-// IS-BORDERED
+// has-border
 // ------------------------------------------------------
-// @param {px} $is-bordered-width [1]
-// @param {string} $is-bordered-style [solid]
-// @param {color} $is-bordered-color [rgba(text, .1)]
-// @param {array} $is-bordered
-$is-bordered-width: 1 !default;
-$is-bordered-style: solid !default;
-$is-bordered-color: rgba($text, 0.1) !default;
-$is-bordered: $is-bordered-width $is-bordered-style $is-bordered-color !default;
+// @param {array} $has-border
+$has-border: 1 solid rgba($text, 0.1) !default;
 
 //
 // IS-RAISED

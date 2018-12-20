@@ -1,0 +1,37 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {array} $has-border
+
+.has-border {
+  border: arrayMagic($has-border);
+
+  &-top {
+    border-top: arrayMagic($has-border);
+  }
+
+  &-right {
+    border-right: arrayMagic($has-border);
+  }
+
+  &-bottom {
+    border-bottom: arrayMagic($has-border);
+  }
+
+  &-left {
+    border-left: arrayMagic($has-border);
+  }
+
+  &-middle {
+    border-bottom: arrayMagic($has-border);
+    border-top: arrayMagic($has-border);
+  }
+
+  &-center {
+    border-left: arrayMagic($has-border);
+    border-right: arrayMagic($has-border);
+  }
+}
+

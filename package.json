@@ -79,7 +79,7 @@
       "is-ink.njk",
       "is-theme.njk",
       "is-rounded.njk",
-      "is-bordered.njk",
+      "has-border.njk",
       "is-elevated.njk",
       "is-raised.njk",
       "is-lifted.njk",
