@@ -1,19 +1,16 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 10.0.0
 /// @access public
 /// @group atoms modifier
 
-.img {
+// image grows up to its initial width
+.img-responsive {
+  height: auto;
+  max-width: 100%;
+}
 
-  // image grows up to its initial width
-  &_responsive {
-    height: auto;
-    max-width: 100%;
-  }
-
-  // image grows up to its parents width
-  &_full {
-    height: auto;
-    width: 100%;
-  }
+// image grows up to its parents width
+.img--full {
+  height: auto;
+  width: 100%;
 }
