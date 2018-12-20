@@ -11,16 +11,20 @@
 /// @return new shade of color
 
 @function setHover($color, $shade: $hover-shading) {
-  $_brightness: getBrightness($color);
+  @if type-of($color) == 'color' {
+    $_brightness: getBrightness($color);
 
-  @if (alpha($color) < 1) {
-    $color: flattenColor($color);
+    @if (alpha($color) < 1) {
+      $color: flattenColor($color);
+    }
+
+    // if color is brighter
+    @if $_brightness > 180 {
+      $shade: $shade * -1;
+    }
+
+    @return varColor($color, $shade);
+  } @else {
+    @return $color;
   }
-
-  // if color is brighter
-  @if $_brightness > 180 {
-    $shade: $shade * -1;
-  }
-
-  @return varColor($color, $shade);
 }
