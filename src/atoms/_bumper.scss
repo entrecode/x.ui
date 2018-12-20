@@ -1,8 +1,7 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group atoms
-/// @deprecated since 9.1.1 `.bumper-small` and `.bumper-big` will be removed in future release
 ///
 /// @example
 ///   <div class='bumper'></div>
@@ -20,10 +19,7 @@
   position: relative;
   text-align: center;
   height: rem($bumper-size);
-  
-  @include set-breakpoints {
-    margin: arrayMagic($bumper-spacing);
-  }
+  margin: arrayMagic($bumper-spacing);
 
   &::before {
     content: '';
@@ -45,15 +41,11 @@
 }
 
 .bumper_small {
-  @include set-breakpoints {
-    margin: arrayMagic($bumper-small-spacing);
-  }
+  margin: arrayMagic($bumper-small-spacing);
 }
 
 .bumper_big {
-  @include set-breakpoints {
-    margin: arrayMagic($bumper-big-spacing);
-  }
+  margin: arrayMagic($bumper-big-spacing);
 }
 
 @mixin bumper {
@@ -77,23 +69,5 @@
       background-color: $bumper-invert-color;
       box-shadow: rem($bumper-size * 2) 0 0 $bumper-invert-color, rem($bumper-size * 4) 0 0 $bumper-invert-color;
     }
-  }
-}
-
-.bumper-small {
-  @include set-breakpoints {
-    @include bumper;
-    flex-shrink: 0;
-    margin: arrayMagic($bumper-small-spacing);
-    width: 100%;
-  }
-}
-
-.bumper-big {
-  @include set-breakpoints {
-    @include bumper;
-    flex-shrink: 0;
-    margin: arrayMagic($bumper-big-spacing);
-    width: 100%;
   }
 }

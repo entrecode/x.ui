@@ -2,7 +2,8 @@
 @import '../../../src/x.ui';
 @import 'code';
 @import 'hljs';
-@import 'quickselect';
+
+/* @import 'quickselect';
 @import 'periodic-group';
 @import 'demo-spacer';
 @import 'demo-grid';
@@ -18,17 +19,4 @@
 @import 'demo-icon';
 @import 'is-editable';
 @import 'bp-monitor';
-// @import 'demo-navbar';
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6, 
-div {
-  &[id] {
-    padding-top: rem(80);
-    margin-top: rem(-80);
-  }
-}
+ */
