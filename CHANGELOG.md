@@ -17,6 +17,7 @@
 
 - updated headings styles
 - refactored `.avatar`
+- refactored `.file-upload`
 
 ## 9.1.2
 

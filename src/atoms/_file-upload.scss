@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.1.0
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 
@@ -8,10 +8,7 @@
 // @param {array} $file-upload-spacing [0 0 16]
 // @param {number} $file-upload-padding [8 16]
 // @param {color} $file-upload-background [none]
-// @param {color} $file-upload-border-radius [4]
-// @param {color} $input-border-color [$minor]
-// @param {px} $input-border-width [2]
-// @param {value} $input-border-style [dashed]
+// @param {array} $file-upload-border [2px dashed $minor]
 // @param {array} $file-upload-style
 // @param {array} $file-upload-hover-style
 
@@ -34,9 +31,7 @@
   padding: arrayMagic($file-upload-padding);
   margin: arrayMagic($file-upload-spacing);
   border-radius: arrayMagic($file-upload-border-radius);
-  border-width: rem($file-upload-border-width);
-  border-color: $file-upload-border-color;
-  border-style: $file-upload-border-style;
+  border: arrayMagic($file-upload-border);
 
   &:hover {
     @include inject-style($file-upload-hover-style);

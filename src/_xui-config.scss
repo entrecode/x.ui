@@ -1907,10 +1907,7 @@ $slider-thumb-hover-style: () !default;
 // @param {array} $file-upload-spacing [0 0 16]
 // @param {number} $file-upload-padding [8 16]
 // @param {color} $file-upload-background [none]
-// @param {color} $file-upload-border-radius [4]
-// @param {color} $input-border-color [$minor]
-// @param {px} $input-border-width [2]
-// @param {value} $input-border-style [dashed]
+// @param {array} $file-upload-border [2px dashed $minor]
 // @param {array} $file-upload-style
 // @param {array} $file-upload-hover-style
 $file-upload-font-size: $base-font-size !default;
@@ -1919,9 +1916,7 @@ $file-upload-spacing: 0 0 16 !default;
 $file-upload-padding: 16 !default;
 $file-upload-background: none !default;
 $file-upload-border-radius: 4 !default;
-$file-upload-border-color: $minor !default;
-$file-upload-border-width: 2 !default;
-$file-upload-border-style: dashed !default;
+$file-upload-border: 2px dashed $minor !default;
 $file-upload-style: () !default;
 $file-upload-hover-style: () !default;
 
