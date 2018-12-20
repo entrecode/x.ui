@@ -16,6 +16,7 @@
 - removed breakpoint styles for `align-`
 - removed `.has-margin..`, `.has-margin..-smalles`, `.has-margin..-small`, `.has-margin..-big`
 - removed `.has-padding..`, `.has-padding..-smalles`, `.has-padding..-small`, `.has-padding..-big`
+- removed breakpoints from `.is-bordered`
 
 ### changes
 
