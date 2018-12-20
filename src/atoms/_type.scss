@@ -75,11 +75,9 @@ strong {
   font-weight: $is-bold;
 }
 
-// @param {number} $inline-small-scale [.875] - font-size of `<small>`
-// @param {value} $inline-small-unit [$base-scale-unit]
+// @param {array} $inline-small-style
 small {
-  vertical-align: baseline;
-  font-size: arrayMagic($inline-small-scale, $inline-small-unit);
+  @include inject-style($inline-small-style);
 }
 
 code {

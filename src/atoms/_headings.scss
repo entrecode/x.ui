@@ -1,42 +1,16 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 ///
-/// @param {value} $headings-font
-/// @param {map} $type-scale - modular scale for typeface
-/// @param {unit} $type-scale-unit [$base-scale-unit] - unit for modular scale
-/// @param {map} $type-scale-bp - breakpoints for modular scale
-/// @param {em} $headings-line-height [$base-line-height]
-/// @param {value} $headings-weight [$is-bold]
-/// @param {number} $heading-inline-small [.875] - for inline small tags - has to be a em value
-/// @param {number} $vertical-rhythm [$base-line-height * $base-font-size] - set margin-bottom a smooth typeface
-/// @param {*} $headings-spacing-unit [$base-spacing-unit]
-///
-/// @param {array} $h1-spacing [0 0 ($vertical-rhythm * 2) 0]
-/// @param {array} $h2-spacing [0 0 $vertical-rhythm 0]
-/// @param {array} $h3-spacing [$h2-spacing]
-/// @param {array} $h4-spacing [$h3-spacing]
-/// @param {array} $h5-spacing [0 0 ($vertical-rhythm / 2) 0]
-/// @param {array} $h6-spacing [$h5-spacing]
-/// @param {array} $giga-spacing [0]
-/// @param {array} $mega-spacing [0]
-/// @param {array} $kilo-spacing [0]
-///
-/// @param {array} $heading-style
-/// @param {array} $h1-style
-/// @param {array} $h2-style
-/// @param {array} $h3-style
-/// @param {array} $h4-style
-/// @param {array} $h5-style
-/// @param {array} $h6-style
-/// @param {array} $giga-style
-/// @param {array} $mega-style
-/// @param {array} $kilo-style
-///
 /// @require {mixin} get-font-size
 /// @require {mixin} inject-style
+/// @require {funtion} arrayMagic
 
+// @param {array} $headings-style
+// @param {string} $headings-font
+// @param {string} $headings-weight [$is-bold]
+// @param {em} $headings-line-height [$base-line-height]
 h1,
 h2,
 h3,
@@ -58,8 +32,7 @@ h6,
   line-height: $headings-line-height;
 
   small {
-    font-size: ($headings-inline-small * 1em);
-    vertical-align: baseline;
+    @include inject-style($headings-inline-small-style);
   }
 
   a {
@@ -69,24 +42,33 @@ h6,
   }
 }
 
+// @param {*} $headings-spacing-unit [$base-spacing-unit]
+// @param {array} $giga-style
+// @param {array} $giga-spacing [0]
 .is-giga {
   @include get-font-size(is-giga);
   @include inject-style($giga-style);
   margin: arrayMagic($giga-spacing, $headings-spacing-unit);
 }
 
+// @param {array} $mega-style
+// @param {array} $mega-spacing [0]
 .is-mega {
   @include get-font-size(is-mega);
   @include inject-style($mega-style);
   margin: arrayMagic($mega-spacing, $headings-spacing-unit);
 }
 
+// @param {array} $kilo-style
+// @param {array} $kilo-spacing [0]
 .is-kilo {
   @include get-font-size(is-kilo);
   @include inject-style($kilo-style);
   margin: arrayMagic($kilo-spacing, $headings-spacing-unit);
 }
 
+// @param {array} $h1-style
+// @param {array} $h1-spacing [0 0 ($vertical-rhythm * 2) 0]
 h1,
 .is-h1 {
   @include get-font-size(h1);
@@ -94,6 +76,8 @@ h1,
   margin: arrayMagic($h1-spacing, $headings-spacing-unit);
 }
 
+// @param {array} $h2-style
+// @param {array} $h2-spacing [0 0 $vertical-rhythm 0]
 h2,
 .is-h2 {
   @include get-font-size(h2);
@@ -101,6 +85,8 @@ h2,
   margin: arrayMagic($h2-spacing, $headings-spacing-unit);
 }
 
+// @param {array} $h3-style
+// @param {array} $h3-spacing [$h2-spacing]
 h3,
 .is-h3 {
   @include get-font-size(h3);
@@ -108,6 +94,8 @@ h3,
   margin: arrayMagic($h3-spacing, $headings-spacing-unit);
 }
 
+// @param {array} $h4-style
+// @param {array} $h4-spacing [$h3-spacing]
 h4,
 .is-h4 {
   @include get-font-size(h4);
@@ -115,6 +103,8 @@ h4,
   margin: arrayMagic($h4-spacing, $headings-spacing-unit);
 }
 
+// @param {array} $h5-style
+// @param {array} $h5-spacing [0 0 ($vertical-rhythm / 2) 0]
 h5,
 .is-h5 {
   @include get-font-size(h5);
@@ -122,6 +112,8 @@ h5,
   margin: arrayMagic($h5-spacing, $headings-spacing-unit);
 }
 
+// @param {array} $h6-style
+// @param {array} $h6-spacing [$h5-spacing]
 h6,
 .is-h6 {
   @include get-font-size(h6);

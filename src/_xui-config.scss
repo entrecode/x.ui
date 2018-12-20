@@ -100,19 +100,19 @@ $xui-colors: map-merge(
       'minor': $minor,
       'super': $super,
       'highlight': $highlight,
-      'divider': $divider-color
+      'divider': $divider-color,
     ),
     text: (
       'invert': $text-invert,
       'light': $text-light,
       'lighter': $text-lighter,
-      'lightest': $text-lightest
+      'lightest': $text-lightest,
     ),
     background: (
       'invert': $background-invert,
       'light': $background-light,
       'lighter': $background-lighter,
-      'lightest': $background-lightest
+      'lightest': $background-lightest,
     ),
     state: (
       'hover': $state-hover,
@@ -120,8 +120,8 @@ $xui-colors: map-merge(
       'info': $state-info,
       'error': $state-error,
       'success': $state-success,
-      'warning': $state-warning
-    )
+      'warning': $state-warning,
+    ),
   ),
   $xui-colors
 );
@@ -141,7 +141,7 @@ $theme-array: map-merge(
     info: $state-info,
     error: $state-error,
     success: $state-success,
-    warning: $state-warning
+    warning: $state-warning,
   ),
   $theme-array
 );
@@ -194,7 +194,7 @@ $spacings: map-merge(
     5: $base-spacing * 2 /* equals 32 relative */,
     6: $base-spacing * 3 /* equals 48 stranger */,
     7: $base-spacing * 4 /* equals 64 stranger */,
-    8: $base-spacing * 5 /* equals 80 stranger */
+    8: $base-spacing * 5 /* equals 80 stranger */,
   ),
   $spacings
 );
@@ -213,7 +213,7 @@ $breakpoints: map-merge(
     'nav': 1024 /* breakpoint for mobile navigation*/,
     'lg': 1024 /* tablet landscape*/,
     'xl': 1280 /* desktop*/,
-    'xxl': 1920 /* large*/
+    'xxl': 1920 /* large*/,
   ),
   $breakpoints
 );
@@ -268,12 +268,13 @@ $base-icon-size: 16 !default;
 // ---------------------------------------------
 // @param {em} $headings-line-height [$base-line-height]
 // @param {value} $headings-weight [$is-bold]
-// @param {em} $headings-inline-small [.875] - for inline small tags - has to be a em value
 // @param {array} $headings-style
 $headings-line-height: $base-line-height !default;
 $headings-weight: $is-bold !default;
-$headings-inline-small: 0.5 !default;
 $headings-style: () !default;
+
+// @param {array} $headings-inline-small-style
+$headings-inline-small-style: () !default;
 
 // @param {array} $h1-style
 // @param {array} $h2-style
@@ -299,9 +300,7 @@ $kilo-style: () !default;
 // ---------------------------------------------
 // @param {number} $vertical-rhythm [$base-line-height * $base-font-size]
 // set margin-bottom a smooth typeface
-$vertical-rhythm: round(
-  $base-line-height * $base-font-size
-) !default; // equals 22.4px
+$vertical-rhythm: round($base-line-height * $base-font-size) !default; // equals 22.4px
 
 // @param {*} $headings-spacing-unit [$base-spacing-unit]
 $headings-spacing-unit: $base-spacing-unit !default;
@@ -344,7 +343,7 @@ $type-scale: map-merge(
     is-mega: 1.5,
     is-kilo: 1,
     is-lead: 1.25,
-    p: 1
+    p: 1,
   ),
   $type-scale
 );
@@ -358,7 +357,7 @@ $type-scale-bp: map-merge(
   (
     xs: 0.875,
     md: 1,
-    xxl: 1.25
+    xxl: 1.25,
   ),
   $type-scale-bp
 );
@@ -404,7 +403,7 @@ $link-weight: $is-normal !default;
 $link-style: () !default;
 $link-style: map-merge(
   (
-    transition: color 0.2s
+    transition: color 0.2s,
   ),
   $link-style
 );
@@ -419,46 +418,47 @@ $link-hover-style: () !default;
 //
 // SMALL STYLES
 // ---------------------------------------------
-// @param {number} $inline-small-scale [.875] - font-size of `<small>`
-// @param {value} $inline-small-unit [$base-scale-unit]
-$inline-small-scale: 0.875 !default;
-$inline-small-unit: $base-scale-unit !default;
+// @param {array} $inline-small-style
+$inline-small-style: () !default;
 
 //
 // MEDIA
 // -------------------------------------------------------------------------------------------------
 // @param {map} $img-crop-ratio - modular scale for img-crop classes
 $img-crop-ratio: () !default;
-$img-crop-ratio: map-merge((
-  '1-1': (
-    1,
-    1
+$img-crop-ratio: map-merge(
+  (
+    '1-1': (
+      1,
+      1,
+    ),
+    '3-4': (
+      3,
+      4,
+    ),
+    '4-3': (
+      4,
+      3,
+    ),
+    '16-9': (
+      16,
+      9,
+    ),
+    'golden': (
+      1.618,
+      1,
+    ),
+    'silver': (
+      2.414,
+      1,
+    ),
+    'ultrawide': (
+      3.6,
+      1,
+    ),
   ),
-  '3-4': (
-    3,
-    4
-  ),
-  '4-3': (
-    4,
-    3
-  ),
-  '16-9': (
-    16,
-    9
-  ),
-  'golden': (
-    1.618,
-    1
-  ),
-  'silver': (
-    2.414,
-    1
-  ),
-  'ultrawide': (
-    3.6,
-    1
-  )
-), $img-crop-ratio);
+  $img-crop-ratio
+);
 
 //
 // UI
@@ -499,14 +499,14 @@ $btn-disabled-style: () !default;
 $btn-disabled-style: map-merge(
   (
     box-shadow: none,
-    opacity: 0.6
+    opacity: 0.6,
   ),
   $btn-disabled-style
 );
 $btn-active-style: () !default;
 $btn-active-style: map-merge(
   (
-    transform: translateY(2px)
+    transform: translateY(2px),
   ),
   $btn-active-style
 );
@@ -627,9 +627,7 @@ $btn-outline-minor-style: () !default;
 // @param {color} $btn-outline-minor-hover-background [$btn-outline-minor-background ]
 // @param {color} $btn-outline-minor-hover-color [setHover($btn-outline-minor-color)]
 // @param {array} $btn-outline-minor-hover-style
-$btn-outline-minor-hover-border-color: setHover(
-  $btn-outline-minor-border-color
-) !default;
+$btn-outline-minor-hover-border-color: setHover($btn-outline-minor-border-color) !default;
 $btn-outline-minor-hover-background: $btn-outline-minor-background !default;
 $btn-outline-minor-hover-color: setHover($btn-outline-minor-color) !default;
 $btn-outline-minor-hover-style: () !default;
@@ -667,9 +665,7 @@ $btn-outline-super-style: () !default;
 // @param {color} $btn-outline-super-hover-background [$btn-outline-super-background ]
 // @param {color} $btn-outline-super-hover-color [setHover($btn-outline-super-color)]
 // @param {array} $btn-outline-super-hover-style
-$btn-outline-super-hover-border-color: setHover(
-  $btn-outline-super-border-color
-) !default;
+$btn-outline-super-hover-border-color: setHover($btn-outline-super-border-color) !default;
 $btn-outline-super-hover-background: $btn-outline-super-background !default;
 $btn-outline-super-hover-color: setHover($btn-outline-super-color) !default;
 $btn-outline-super-hover-style: () !default;
@@ -707,9 +703,7 @@ $btn-outline-invert-style: () !default;
 // @param {color} $btn-outline-invert-hover-background [$btn-outline-invert-background ]
 // @param {color} $btn-outline-invert-hover-color [setHover($btn-outline-invert-color)]
 // @param {array} $btn-outline-invert-hover-style
-$btn-outline-invert-hover-border-color: setHover(
-  $btn-outline-invert-border-color
-) !default;
+$btn-outline-invert-hover-border-color: setHover($btn-outline-invert-border-color) !default;
 $btn-outline-invert-hover-background: $btn-outline-invert-background !default;
 $btn-outline-invert-hover-color: setHover($btn-outline-invert-color) !default;
 $btn-outline-invert-hover-style: () !default;
@@ -1106,7 +1100,7 @@ $xui-list-item-color: inherit !default;
 $xui-list-item-style: () !default;
 $xui-list-item-style: map-merge(
   (
-    transition: background-color 0.4s
+    transition: background-color 0.4s,
   ),
   $xui-list-item-style
 );
@@ -1255,8 +1249,7 @@ $deck-style: () !default;
 // @param {value} $deck-opens-left-shadow
 // @param {value} $deck-opens-right-shadow
 $deck-opens-left-shadow: 4 0 16 -4 rgba(#000, 0.16) ',' 8 0 24 0 rgba(#000, 0.1) !default;
-$deck-opens-right-shadow: -4 0 16 -4 rgba(#000, 0.16) ',' -8 0 24 0
-  rgba(#000, 0.1) !default;
+$deck-opens-right-shadow: -4 0 16 -4 rgba(#000, 0.16) ',' -8 0 24 0 rgba(#000, 0.1) !default;
 
 // @param {array} $deck-dismiss-style
 $deck-dismiss-style: () !default;
@@ -1622,10 +1615,8 @@ $is-raised-big: 0 4 8 $is-raised-shade ',' 0 4 16 $is-raised-shade !default;
 // @param {array} $is-raised-hover-big
 $is-raised-hover-shade: $is-raised-shade !default;
 $is-raised-hover: 0 1 4 $is-raised-hover-shade !default;
-$is-raised-hover-small: 0 1 1 $is-raised-hover-shade ',' 0 1 2
-  $is-raised-hover-shade !default;
-$is-raised-hover-big: 0 2 4 $is-raised-hover-shade ',' 0 2 8
-  $is-raised-hover-shade !default;
+$is-raised-hover-small: 0 1 1 $is-raised-hover-shade ',' 0 1 2 $is-raised-hover-shade !default;
+$is-raised-hover-big: 0 2 4 $is-raised-hover-shade ',' 0 2 8 $is-raised-hover-shade !default;
 
 //
 // IS-LIFTED
@@ -1637,8 +1628,7 @@ $is-raised-hover-big: 0 2 4 $is-raised-hover-shade ',' 0 2 8
 $is-lifted-shade: rgba(#000, 0.1) !default;
 $is-lifted: 0 16 16 -4 opacify($is-lifted-shade, 0.1) ',' 0 16 24 $is-lifted-shade !default;
 $is-lifted-small: 0 12 8 -8 $is-lifted-shade !default;
-$is-lifted-big: 0 24 28 0 opacify($is-lifted-shade, 0.1) ',' 0 24 40
-  $is-lifted-shade !default;
+$is-lifted-big: 0 24 28 0 opacify($is-lifted-shade, 0.1) ',' 0 24 40 $is-lifted-shade !default;
 
 // @param {color} $is-lifted-hover-shade [$is-lifted-shade)]
 // @param {array} $is-lifted-hover
@@ -1796,7 +1786,7 @@ $input-style: () !default;
 $input-hover-style: () !default;
 $input-hover-style: map-merge(
   (
-    box-shadow: inset 0 0 0 2px $state-hover
+    box-shadow: inset 0 0 0 2px $state-hover,
   ),
   $input-hover-style
 );
@@ -1804,7 +1794,7 @@ $input-focus-style: $input-hover-style;
 $input-disabled-style: () !default;
 $input-disabled-style: map-merge(
   (
-    opacity: 0.4
+    opacity: 0.4,
   ),
   $input-disabled-style
 );
@@ -1866,7 +1856,7 @@ $input-valid-style: () !default;
 $input-valid-style: map-merge(
   (
     border-color: $state-success,
-    color: setContrast($input-background, $state-success)
+    color: setContrast($input-background, $state-success),
   ),
   $input-valid-style
 );
@@ -1876,7 +1866,7 @@ $input-invalid-style: () !default;
 $input-invalid-style: map-merge(
   (
     border-color: $state-error,
-    color: setContrast($input-background, $state-error)
+    color: setContrast($input-background, $state-error),
   ),
   $input-invalid-style
 );
@@ -1906,7 +1896,7 @@ $slider-thumb-radius: 8 !default;
 $slider-thumb-style: () !default;
 $slider-thumb-style: map-merge(
   (
-    box-shadow: 0 4px 8px 2px rgba(#000, 0.2)
+    box-shadow: 0 4px 8px 2px rgba(#000, 0.2),
   ),
   $slider-thumb-style
 );
@@ -2064,7 +2054,7 @@ $xui-checkbox-style: map-merge(
   (
     box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2),
     content: '\2714\fe0e',
-    font-family: sans-serif
+    font-family: sans-serif,
   ),
   $xui-checkbox-style
 );
@@ -2102,7 +2092,7 @@ $xui-radio-style: map-merge(
   (
     box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2),
     content: '\2B24',
-    font-family: sans-serif
+    font-family: sans-serif,
   ),
   $xui-radio-style
 );
@@ -2153,7 +2143,7 @@ $xui-toggle-pin-radius: $xui-toggle-pin-height / 2 !default;
 $xui-toggle-pin-style: () !default;
 $xui-toggle-pin-style: map-merge(
   (
-    box-shadow: 0 2px 8px 1px rgba(#000, 0.2)
+    box-shadow: 0 2px 8px 1px rgba(#000, 0.2),
   ),
   $xui-toggle-pin-style
 );
