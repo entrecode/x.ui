@@ -825,8 +825,8 @@ $loader-is-global-background: $backdrop !default;
 // @param {color} $tag-background [$minor]
 $tag-background: $minor !default;
 
-// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-$tag-padding-ratio: 2 !default;
+// @param {number} $tag-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
+$tag-padding-ratio: 1.5 !default;
 
 // @param {px} $tag-font-size [$base-font-size * .875]
 // @param {px} $tag-line-height [$tag-font-size * $base-line-height]
