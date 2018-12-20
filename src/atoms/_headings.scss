@@ -40,6 +40,11 @@ h6,
     font-weight: inherit;
     line-height: inherit;
   }
+
+  .tag,
+  .bubble {
+    vertical-align: middle;
+  }
 }
 
 // @param {*} $headings-spacing-unit [$base-spacing-unit]
