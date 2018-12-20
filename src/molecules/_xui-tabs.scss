@@ -65,10 +65,10 @@
   }
 
   // @param {array} $xui-tabs-nav-item-padding [0]
-  // @param {value} $xui-tabs-nav-item-radius [0]
+  // @param {string} $xui-tabs-nav-item-radius [0]
   // @param {color} $xui-tabs-nav-item-background [none]
   // @param {color} $xui-tabs-nav-item-color [$text]
-  // @param {value} $xui-tabs-nav-item-weight [$is-bold]
+  // @param {string} $xui-tabs-nav-item-weight [$is-bold]
   // @param {array} $xui-tabs-nav-item-style
   label {
     cursor: pointer;

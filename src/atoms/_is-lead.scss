@@ -3,10 +3,10 @@
 /// @access public
 /// @group atoms
 
-// @param {value} $is-lead-weight [$is-light]
+// @param {string} $is-lead-weight [$is-light]
 // @param {em} $is-lead-line-height [$base-line-height]
 // @param {array} $is-lead-spacing [$paragraph-spacing]
-// @param {value} $is-lead-spacing-unit [$base-spacing-unit]
+// @param {string} $is-lead-spacing-unit [$base-spacing-unit]
 // @param {array} $is-lead-style
 .is-lead {
   @include inject-style($is-lead-style);

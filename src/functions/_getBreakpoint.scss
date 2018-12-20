@@ -3,7 +3,7 @@
 /// @access public
 /// @group grid-functions
 ///
-/// @param {value} $breakpoint - name of breakpoint in map
+/// @param {string} $breakpoint - name of breakpoint in map
 /// @param {map} $map [$breakpoints] - name of breakpoint map
 ///
 /// @return {number} value of next breakpoint-key or null
@@ -15,8 +15,8 @@
   @return if($_current < length($map), map-get($map, nth($_keys, $_current + 1)), null);
 }
 
-/// @param {value} $breakpoint - name of breakpoint in map
-/// @param {value} $max null - can be set to max
+/// @param {string} $breakpoint - name of breakpoint in map
+/// @param {string} $max null - can be set to max
 ///
 /// @return {px} value of breakpoint-key, if $max == true it returns the value - 1 of the next value
 

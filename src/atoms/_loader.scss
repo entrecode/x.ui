@@ -10,7 +10,7 @@
 // @param {color} $loader-racer-color [$link]
 // @param {string} $loader-racer-animation [loaderDefault]
 // @param {s | ms} $loader-racer-animation-speed [1s]
-// @param {value} $loader-racer-animation-behavior [infinite linear]
+// @param {string} $loader-racer-animation-behavior [infinite linear]
 
 @keyframes loaderDefault {
   0% {

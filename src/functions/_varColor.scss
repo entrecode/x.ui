@@ -14,13 +14,13 @@
 /// @return {color} color variation
 
 @function varColor($source, $amount) {
-  // @param {value} $_h: hue value of source color
-  // @param {value} $_l - lightness value of source color
-  // @param {value} $_s - saturation value of source color
+  // @param {string} $_h: hue value of source color
+  // @param {string} $_l - lightness value of source color
+  // @param {string} $_s - saturation value of source color
   // @param {number} $_h-ratio - ratio for increasing or decreasing hue based on $amount
   // @param {number} $_s-ratio -  ratio for increasing or decreasing saturation based on $amount
-  // @param {value} $_target - target color value
-  // @param {value} $_a - alpha color value
+  // @param {string} $_target - target color value
+  // @param {string} $_a - alpha color value
   $_h: stripUnit(hue($source));
   $_l: stripUnit(lightness($source));
   $_s: stripUnit(saturation($source));
@@ -37,8 +37,8 @@
       // color transformation to lighter and less saturated.
       // also the hue is transformed depending on its value
       //
-      // @param {value} $_h-transform -  value for hue adjustment
-      // @param {value} $_s-transform - value for desaturation
+      // @param {string} $_h-transform -  value for hue adjustment
+      // @param {string} $_s-transform - value for desaturation
       $_h-transform: $amount * $_h-ratio;
       $_s-transform: $amount * $_s-ratio;
 
@@ -82,8 +82,8 @@
       // also the hue is transformed depending on its value
       // make value of $amount positive for transformation
       //
-      // @param {value} $_h-transform - value for hue adjustment
-      // @param {value} $_s-transform - value for desaturation
+      // @param {string} $_h-transform - value for hue adjustment
+      // @param {string} $_s-transform - value for desaturation
       $amount: $amount * -1;
       $_h-transform: $amount * $_h-ratio;
       $_s-transform: $amount * $_s-ratio;

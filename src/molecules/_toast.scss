@@ -60,8 +60,8 @@
     top: 0;
   }
 
-  // @param {value} $toast-opens-top-shadow
-  // @param {value} $toast-opens-bottom-shadow
+  // @param {string} $toast-opens-top-shadow
+  // @param {string} $toast-opens-bottom-shadow
 
   &.opens-top {
     box-shadow: arrayMagic($toast-opens-top-shadow);

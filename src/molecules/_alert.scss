@@ -7,7 +7,7 @@
 ///   <p class='alert alert_error'>Error Message</p>
 
 // @param {color} $alert-background [$background-lightest]
-// @param {value} $alert-weight [$is-normal]
+// @param {string} $alert-weight [$is-normal]
 // @param {px} $alert-radius [4]
 %alert {
   @include set-theme-colors($alert-background);
@@ -55,7 +55,7 @@
 //
 // Styles
 // ------------------------------------------------------
-// @param {value} $_prefix ['alert_']
+// @param {string} $_prefix ['alert_']
 // @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
 $_prefix: 'alert_';
 @each $_n, $_c in $theme-array {

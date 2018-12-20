@@ -75,7 +75,7 @@
 // @param {array} $dropdown-options-padding [4]
 // @param {px | null} $dropdown-options-max-height [320]
 // @param {color} $dropdown-options-background
-// @param {value} $dropdown-options-shadow
+// @param {string} $dropdown-options-shadow
 // @param {array} $dropdown-options-style
 .dropdown-options {
   list-style: none;
@@ -111,8 +111,8 @@
 // @param {px} $dropdown-option-font-size [$base-font-size]
 // @param {px} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
 // @param {px} $dropdown-option-min-height [$btn-min-height]
-// @param {value} $dropdown-option-alignment [center]
-// @param {value} $dropdown-option-weight [$is-bold]
+// @param {string} $dropdown-option-alignment [center]
+// @param {string} $dropdown-option-weight [$is-bold]
 // @param {color} $dropdown-option-color [$text]
 // @param {color} $dropdown-option-background [none]
 // @param {array} $dropdown-option-style

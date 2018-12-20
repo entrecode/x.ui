@@ -80,8 +80,8 @@
     left: 0;
   }
 
-  // @param {value} $deck-opens-left-shadow
-  // @param {value} $deck-opens-right-shadow
+  // @param {string} $deck-opens-left-shadow
+  // @param {string} $deck-opens-right-shadow
   &.opens-left {
     box-shadow: arrayMagic($deck-opens-left-shadow);
 

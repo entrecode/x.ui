@@ -36,7 +36,7 @@
 // @param {px} $btn-line-height [$btn-font-size * $base-line-height]
 // @param {px} $btn-icon-size [$base-icon-size]
 // @param {px} $btn-min-height [40]
-// @param {value} $btn-weight [$is-bold]
+// @param {string} $btn-weight [$is-bold]
 // @param {px} $btn-radius [4]
 
 %btn {
@@ -56,7 +56,7 @@
 // @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
 // @param {px} $btn-small-icon-size [$btn-icon-size]
 // @param {px} $btn-small-min-height [32]
-// @param {value} $btn-small-weight [$btn-weight]
+// @param {string} $btn-small-weight [$btn-weight]
 // @param {px} $btn-small-radius [$btn-radius]
 
 %btn-small {
@@ -76,7 +76,7 @@
 // @param {px} $btn-big-line-height [$btn-big-font-size * $base-line-height]
 // @param {px} $btn-big-icon-size [$btn-icon-size]
 // @param {px} $btn-big-min-height [48]
-// @param {value} $btn-big-weight [$btn-weight]
+// @param {string} $btn-big-weight [$btn-weight]
 // @param {px} $btn-big-radius [$btn-radius]
 
 %btn-big {
@@ -92,7 +92,7 @@
   font-weight: $btn-big-weight;
 }
 
-// @param {value} $btn-transition [background-color .2s, box-shadow .1s]
+// @param {string} $btn-transition [background-color .2s, box-shadow .1s]
 // @param {color} $btn-background [$link]
 // @param {color} $btn-color [setContrast($link)]
 // @param {array} $btn-style

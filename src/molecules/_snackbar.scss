@@ -81,8 +81,8 @@
     top: 0;
   }
 
-  // @param {value} $snackbar-opens-top-shadow
-  // @param {value} $snackbar-opens-bottom-shadow
+  // @param {string} $snackbar-opens-top-shadow
+  // @param {string} $snackbar-opens-bottom-shadow
 
   &.opens-top {
     box-shadow: arrayMagic($snackbar-opens-top-shadow);

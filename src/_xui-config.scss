@@ -167,7 +167,7 @@ $body-style: () !default;
 // -------------------------------------------------------------------------------------------------
 // @param {px} $grid-container-width [1200] - max-width of container
 // @param {px} $grid-gutter [32] - gutter size in pixels without unit
-// @param {value} $grid-outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
+// @param {string} $grid-outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
 // @param {number} $grid-num-columns [12] - number of columns in a row
 $grid-container-width: 1200 !default;
 $grid-gutter: 32 !default;
@@ -226,9 +226,9 @@ $breakpoints: map-merge(
 // FONTFACE
 // ---------------------------------------------
 // use @import to use custom font-families
-// @param {value} $body-font
-// @param {value} $headings-font
-// @param {value} $monospace-font
+// @param {string} $body-font
+// @param {string} $headings-font
+// @param {string} $monospace-font
 $body-font: sans-serif !default;
 $headings-font: sans-serif !default;
 $monospace-font: monospace !default;
@@ -236,10 +236,10 @@ $monospace-font: monospace !default;
 //
 // FONT-WEIGHT
 // ---------------------------------------------
-// @param {value} $is-light [lighter] - font-weight value for .is-light
-// @param {value} $is-normal [normal] - font-weight value for .is-normal
-// @param {value} $is-medium [bold] - font-weight value for .is-medium
-// @param {value} $is-bold [bold] - font-weight value for .is-bold
+// @param {string} $is-light [lighter] - font-weight value for .is-light
+// @param {string} $is-normal [normal] - font-weight value for .is-normal
+// @param {string} $is-medium [bold] - font-weight value for .is-medium
+// @param {string} $is-bold [bold] - font-weight value for .is-bold
 $is-light: lighter !default;
 $is-normal: normal !default;
 $is-medium: bold !default;
@@ -250,8 +250,8 @@ $is-bold: bolder !default;
 // ---------------------------------------------
 // @param {px} $base-font-size [16]
 // @param {em} $base-line-height [1.4]
-// @param {value} $base-weight [$is-normal]
-// @param {value} $base-scale-unit [em]
+// @param {string} $base-weight [$is-normal]
+// @param {string} $base-scale-unit [em]
 $base-font-size: 16 !default;
 $base-line-height: 1.4 !default;
 $base-weight: $is-normal !default;
@@ -267,7 +267,7 @@ $base-icon-size: 16 !default;
 // HEADINGS
 // ---------------------------------------------
 // @param {em} $headings-line-height [$base-line-height]
-// @param {value} $headings-weight [$is-bold]
+// @param {string} $headings-weight [$is-bold]
 // @param {array} $headings-style
 $headings-line-height: $base-line-height !default;
 $headings-weight: $is-bold !default;
@@ -365,10 +365,10 @@ $type-scale-bp: map-merge(
 //
 // PARAGRAPH STYLES
 // ---------------------------------------------
-// @param {value} $paragraph-weight [$is-light]
+// @param {string} $paragraph-weight [$is-light]
 // @param {em} $paragraph-line-height [$base-line-height]
 // @param {array} $paragraph-spacing [0 0 $vertical-rhythm 0]
-// @param {value} $paragraph-spacing-unit [$base-spacing-unit]
+// @param {string} $paragraph-spacing-unit [$base-spacing-unit]
 // @param {array} $paragraph-style
 $paragraph-weight: $is-normal !default;
 $paragraph-line-height: $base-line-height !default;
@@ -379,10 +379,10 @@ $paragraph-style: () !default;
 //
 // LEAD PARAGRAPH STYLES
 // ---------------------------------------------
-// @param {value} $is-lead-weight [$is-light]
+// @param {string} $is-lead-weight [$is-light]
 // @param {em} $is-lead-line-height [$paragraph-line-height]
 // @param {array} $is-lead-spacing [$paragraph-spacing]
-// @param {value} $is-lead-spacing-unit [$base-spacing-unit]
+// @param {string} $is-lead-spacing-unit [$base-spacing-unit]
 // @param {array} $is-lead-style
 $is-lead-weight: $is-light !default;
 $is-lead-line-height: $paragraph-line-height !default;
@@ -394,8 +394,8 @@ $is-lead-style: () !default;
 // LINK STYLES
 // ---------------------------------------------
 // @param {color} $link-color [$link]
-// @param {value} $link-decoration [none]
-// @param {value} $link-weight [$is-normal]
+// @param {string} $link-decoration [none]
+// @param {string} $link-weight [$is-normal]
 // @param {array} $link-style
 $link-color: $link;
 $link-decoration: none !default;
@@ -409,7 +409,7 @@ $link-style: map-merge(
 );
 
 // @param {color} $link-hover-color [$link-color]
-// @param {value} $link-hover-decoration [none]
+// @param {string} $link-hover-decoration [none]
 // @param {array} $link-hover-style
 $link-hover-color: setHover($link-color);
 $link-hover-decoration: $link-decoration !default;
@@ -470,7 +470,7 @@ $img-crop-ratio: map-merge(
 
 // METRICS
 // @param {variable} $btn-font-family [$body-font]
-// @param {value} $btn-transition [background-color .2s, box-shadow .1s]
+// @param {string} $btn-transition [background-color .2s, box-shadow .1s]
 $btn-font-family: $body-font !default;
 $btn-transition: background-color 0.2s, box-shadow 0.1s !default;
 
@@ -483,7 +483,7 @@ $btn-spacing: 0 !default;
 // @param {px} $btn-line-height [$btn-font-size * $base-line-height]
 // @param {px} $btn-icon-size [$base-icon-size]
 // @param {px} $btn-min-height [40]
-// @param {value} $btn-weight [$is-bold]
+// @param {string} $btn-weight [$is-bold]
 // @param {array} $btn-style
 // @param {array} $btn-hover-style
 // @param {array} $btn-disabled-style
@@ -515,7 +515,7 @@ $btn-active-style: map-merge(
 // @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
 // @param {px} $btn-small-icon-size [$btn-icon-size]
 // @param {px} $btn-small-min-height [32]
-// @param {value} $btn-small-weight [$btn-weight]
+// @param {string} $btn-small-weight [$btn-weight]
 // @param {array} $btn-small-style
 $btn-small-font-size: $btn-font-size * 0.875 !default;
 $btn-small-line-height: $btn-small-font-size * $base-line-height !default;
@@ -528,7 +528,7 @@ $btn-small-style: () !default;
 // @param {px} $btn-big-line-height [$btn-big-font-size * $base-line-height]
 // @param {px} $btn-big-icon-size [$btn-icon-size]
 // @param {px} $btn-big-min-height [48]
-// @param {value} $btn-big-weight [$btn-weight]
+// @param {string} $btn-big-weight [$btn-weight]
 // @param {array} $btn-big-style
 $btn-big-font-size: $btn-font-size * 1.125 !default;
 $btn-big-line-height: $btn-big-font-size * $base-line-height !default;
@@ -755,7 +755,7 @@ $bubble-padding-ratio: 1 !default;
 // @param {px} $bubble-font-size [14]
 // @param {px} $bubble-line-height [16]
 // @param {px} $bubble-min-height [28]
-// @param {value} $bubble-weight [$is-bold]
+// @param {string} $bubble-weight [$is-bold]
 // @param {array} $bubble-style
 $bubble-font-size: 14 !default;
 $bubble-line-height: 16 !default;
@@ -802,7 +802,7 @@ $bubble-big-radius: $bubble-radius !default;
 // @param {color} $loader-racer-color [$link]
 // @param {string} $loader-racer-animation [loaderDefault]
 // @param {s | ms} $loader-racer-animation-speed [1s]
-// @param {value} $loader-racer-animation-behavior [infinite linear]
+// @param {string} $loader-racer-animation-behavior [infinite linear]
 $loader-size: 24 !default;
 $loader-style: () !default;
 $loader-track-width: 4 !default;
@@ -831,7 +831,7 @@ $tag-padding-ratio: 1.5 !default;
 // @param {px} $tag-font-size [$base-font-size * .875]
 // @param {px} $tag-line-height [$tag-font-size * $base-line-height]
 // @param {px} $tag-min-height [28]
-// @param {value} $tag-weight [$is-bold]
+// @param {string} $tag-weight [$is-bold]
 // @param {array} $tag-style
 $tag-font-size: $base-font-size * 0.875 !default;
 $tag-line-height: $tag-font-size * $base-line-height !default;
@@ -851,7 +851,7 @@ $tag-small-style: () !default;
 // @param {px} $tag-big-font-size [$tag-font-size * 1.125]
 // @param {px} $tag-big-line-height [$tag-big-font-size * $base-line-height]
 // @param {px} $tag-big-min-height [32]
-// @param {value} $tag-big-weight [$tag-weight]
+// @param {string} $tag-big-weight [$tag-weight]
 // @param {array} $tag-big-style
 $tag-big-font-size: $tag-font-size * 1.125 !default;
 $tag-big-line-height: $tag-big-font-size * $base-line-height !default;
@@ -862,7 +862,7 @@ $tag-big-style: () !default;
 // @param {color} $tag-outlined-color [setContrast($minor)]
 // @param {color} $tag-outlined-border-color [$minor]
 // @param {px} $tag-outlined-border-width [2]
-// @param {value} $tag-outlined-border-style [solid]
+// @param {string} $tag-outlined-border-style [solid]
 $tag-outlined-color: setContrast($minor) !default;
 $tag-outlined-border-color: $minor !default;
 $tag-outlined-border-width: 2 !default;
@@ -892,7 +892,7 @@ $dropdown-on-hover: false !default;
 // @param {array} $dropdown-options-padding [4]
 // @param {px | null} $dropdown-options-max-height [320]
 // @param {color} $dropdown-options-background
-// @param {value} $dropdown-options-shadow
+// @param {string} $dropdown-options-shadow
 // @param {array} $dropdown-options-style
 $dropdown-options-radius: 4 !default;
 $dropdown-options-padding: 4 !default;
@@ -906,8 +906,8 @@ $dropdown-options-style: () !default;
 // @param {px} $dropdown-option-font-size [$base-font-size]
 // @param {px} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
 // @param {px} $dropdown-option-min-height [$btn-min-height]
-// @param {value} $dropdown-option-alignment [center]
-// @param {value} $dropdown-option-weight [$is-bold]
+// @param {string} $dropdown-option-alignment [center]
+// @param {string} $dropdown-option-weight [$is-bold]
 // @param {color} $dropdown-option-color [$text]
 // @param {color} $dropdown-option-background [none]
 // @param {array} $dropdown-option-style
@@ -1032,10 +1032,10 @@ $xui-tabs-nav-style: () !default;
 
 // @param {array} $xui-tabs-nav-item-gutter [0]
 // @param {array} $xui-tabs-nav-item-padding [0]
-// @param {value} $xui-tabs-nav-item-radius [0]
+// @param {string} $xui-tabs-nav-item-radius [0]
 // @param {color} $xui-tabs-nav-item-background [none]
 // @param {color} $xui-tabs-nav-item-color [$text]
-// @param {value} $xui-tabs-nav-item-weight [$is-bold]
+// @param {string} $xui-tabs-nav-item-weight [$is-bold]
 // @param {array} $xui-tabs-nav-item-style
 $xui-tabs-nav-item-gutter: 0 !default;
 $xui-tabs-nav-item-padding: 4 8 !default;
@@ -1184,7 +1184,7 @@ $dialog-max-width-absolute: 640 !default;
 // @param {color} $dialog-color
 // @param {array} $dialog-padding [0]
 // @param {px} $dialog-radius [4]
-// @param {value} $dialog-shadow
+// @param {string} $dialog-shadow
 // @param {number} $dialog-z-index [100]
 // @param {array} $dialog-style
 $dialog-background: $background !default;
@@ -1246,8 +1246,8 @@ $deck-padding: 0 !default;
 $deck-z-index: 100 !default;
 $deck-style: () !default;
 
-// @param {value} $deck-opens-left-shadow
-// @param {value} $deck-opens-right-shadow
+// @param {string} $deck-opens-left-shadow
+// @param {string} $deck-opens-right-shadow
 $deck-opens-left-shadow: 4 0 16 -4 rgba(#000, 0.16) ',' 8 0 24 0 rgba(#000, 0.1) !default;
 $deck-opens-right-shadow: -4 0 16 -4 rgba(#000, 0.16) ',' -8 0 24 0 rgba(#000, 0.1) !default;
 
@@ -1295,8 +1295,8 @@ $toast-padding: 0 !default;
 $toast-z-index: 100 !default;
 $toast-style: () !default;
 
-// @param {value} $toast-opens-top-shadow
-// @param {value} $toast-opens-bottom-shadow
+// @param {string} $toast-opens-top-shadow
+// @param {string} $toast-opens-bottom-shadow
 $toast-opens-top-shadow: 0 4 16 -4 rgba(#000, 0.16) ',' 0 8 24 0 rgba(#000, 0.1) !default;
 $toast-opens-bottom-shadow: 0 -4 16 -4 rgba(#000, 0.16) ',' 0 -8 24 0 rgba(#000, 0.1) !default;
 
@@ -1353,8 +1353,8 @@ $snackbar-radius: 4 !default;
 $snackbar-z-index: 100 !default;
 $snackbar-style: () !default;
 
-// @param {value} $snackbar-opens-top-shadow
-// @param {value} $snackbar-opens-bottom-shadow
+// @param {string} $snackbar-opens-top-shadow
+// @param {string} $snackbar-opens-bottom-shadow
 $snackbar-opens-top-shadow: none !default;
 $snackbar-opens-bottom-shadow: none !default;
 
@@ -1389,7 +1389,7 @@ $snackbar-footer-style: () !default;
 // @param {array} $xui-overlay-padding [4]
 // @param {color} $xui-overlay-background
 // @param {array} $xui-overlay-style
-// @param {value} $xui-overlay-shadow
+// @param {string} $xui-overlay-shadow
 $xui-overlay-radius: 4 !default;
 $xui-overlay-padding: 4 !default;
 $xui-overlay-background: $background !default;
@@ -1446,7 +1446,7 @@ $overlay-footer-style: () !default;
 // @param {px} $popover-radius [4]
 // @param {array} $popover-padding [4]
 // @param {color} $popover-background
-// @param {value} $popover-shadow
+// @param {string} $popover-shadow
 // @param {array} $popover-style
 $popover-radius: 4 !default;
 $popover-padding: 4 !default;
@@ -1475,7 +1475,7 @@ $well-style: () !default;
 // ALERT
 // ------------------------------------------------------
 // @param {color} $alert-background [$background-lightest]
-// @param {value} $alert-weight [$is-normal]
+// @param {string} $alert-weight [$is-normal]
 // @param {px} $alert-radius [4]
 $alert-background: $background-lightest !default;
 $alert-weight: $is-normal !default;
@@ -1511,7 +1511,7 @@ $alert-big-style: () !default;
 // @param {color} $alert-outlined-background [none]
 // @param {color} $alert-outlined-border-color [$alert-background]
 // @param {px} $alert-outlined-border-style [2]
-// @param {value} $alert-outlined-border-style [solid]
+// @param {string} $alert-outlined-border-style [solid]
 // @param {array} $alert-outlined-style
 $alert-outlined-background: none !default;
 $alert-outlined-border-color: $alert-background !default;
@@ -1526,7 +1526,7 @@ $alert-outlined-style: () !default;
 // @param {px} $tooltip-font-size [12]
 // @param {px} $tooltip-line-height [14]
 // @param {px} $tooltip-min-height [20]
-// @param {value} $tooltip-weight [$is-normal]
+// @param {string} $tooltip-weight [$is-normal]
 // @param {color} $tooltip-background [$background-invert]
 // @param {color} $tooltip-color [$text-invert]
 // @param {array} $tooltip-style
@@ -1586,7 +1586,7 @@ $is-rounded-max-radius: 8 !default;
 // IS-BORDERED
 // ------------------------------------------------------
 // @param {px} $is-bordered-width [1]
-// @param {value} $is-bordered-style [solid]
+// @param {string} $is-bordered-style [solid]
 // @param {color} $is-bordered-color [rgba(text, .1)]
 // @param {array} $is-bordered
 $is-bordered-width: 1 !default;
@@ -1840,7 +1840,7 @@ $input-big-radius: $input-radius !default;
 
 // @param {color} $input-border-color [ mix($text, $background, 25%)]
 // @param {px} $input-border-width [1]
-// @param {value} $input-border-style [solid]
+// @param {string} $input-border-style [solid]
 $input-border-color: mix($text, $background, 25%) !default;
 $input-border-width: 1 !default;
 $input-border-style: solid !default;
@@ -1965,7 +1965,7 @@ $xui-select-radius: $input-radius !default;
 
 // @param {color} $xui-select-border-color [$input-border-color]
 // @param {px} $xui-select-border-width [$input-border-width]
-// @param {value} $xui-select-border-style [$input-border-style]
+// @param {string} $xui-select-border-style [$input-border-style]
 // @param {array} $xui-select-style
 $xui-select-border-color: $input-border-color !default;
 $xui-select-border-width: $input-border-width !default;
@@ -1985,7 +1985,7 @@ $xui-select-placeholder-hover-style: () !default;
 // @param {array} $xui-select-options-padding [4]
 // @param {px | null} $xui-select-options-max-height [240]
 // @param {color} $xui-select-options-background
-// @param {value} $xui-select-options-shadow
+// @param {string} $xui-select-options-shadow
 // @param {array} $xui-select-options-style
 $xui-select-options-radius: 4 !default;
 $xui-select-options-padding: 4 !default;
@@ -2146,6 +2146,17 @@ $xui-toggle-label-size: $base-font-size !default;
 $xui-toggle-line-height: $xui-toggle-label-size * $base-line-height !default;
 
 //
+// MARK
+// -------------------------------------------------------------------------------------------------
+/// @param {color} $mark-color [$text]
+/// @param {color} $mark-background [$highlight]
+/// @param {array} $mark-style
+$mark-color: setContrast($highlight) !default;
+$mark-background: $highlight !default;
+$mark-style: () !default;
+
+
+//
 // Animation
 // -------------------------------------------------------------------------------------------------
 $linear-out-slow-in-timing-function: cubic-bezier(0, 0, 0.2, 0.1) !default;
@@ -2167,7 +2178,7 @@ $elevation-transition-timing-function: $fast-out-slow-in-timing-function !defaul
 // @param {color} $elevation-color [#000]- The default color for elevation shadows.
 $elevation-color: #000 !default;
 
-// @param {value} $elevation-opacity [1] The default opacity scaling value for elevation shadows.
+// @param {string} $elevation-opacity [1] The default opacity scaling value for elevation shadows.
 $elevation-opacity: 1 !default;
 
 // @param {string} $elevation-prefix [is-elevated-]

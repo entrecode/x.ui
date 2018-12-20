@@ -5,7 +5,7 @@
 ///
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 /// @param {px} $tag-outlined-border-width [2]
-/// @param {value} $tag-outlined-border-style [solid]
+/// @param {string} $tag-outlined-border-style [solid]
 
 // @param {px} $tag-font-size [$base-font-size * .875]
 // @param {px} $tag-line-height [$tag-font-size * $base-line-height]
@@ -60,7 +60,7 @@
 //
 // Styles
 // ------------------------------------------------------
-// @param {value} $_prefix ['tag_']
+// @param {string} $_prefix ['tag_']
 // @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
 $_prefix: 'tag_';
 @each $_n, $_c in $theme-array {

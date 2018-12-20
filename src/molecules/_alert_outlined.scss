@@ -9,7 +9,7 @@
 // @param {color} $alert-outlined-background [none]
 // @param {color} $alert-outlined-border-color [$alert-background]
 // @param {px} $alert-outlined-border-style [2]
-// @param {value} $alert-outlined-border-style [solid]
+// @param {string} $alert-outlined-border-style [solid]
 // @param {array} $alert-outlined-style
 .alert {
   &.alert_outlined {
@@ -22,7 +22,7 @@
     //
     // Styles
     // ------------------------------------------------------
-    // @param {value} $_prefix ['alert_']
+    // @param {string} $_prefix ['alert_']
     // @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
     $_prefix: 'alert_';
     @each $_n, $_c in $theme-array {

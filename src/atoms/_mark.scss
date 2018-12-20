@@ -2,14 +2,6 @@
 /// @since 9.1.0
 /// @access public
 /// @group atoms
-///
-/// @param {color} $mark-color [$text]
-/// @param {color} $mark-background [$highlight]
-/// @param {array} $mark-style
-
-$mark-color: setContrast($highlight) !default;
-$mark-background: $highlight !default;
-$mark-style: () !default;
 
 mark {
   @include inject-style($mark-style);
