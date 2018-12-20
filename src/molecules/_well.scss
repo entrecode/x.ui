@@ -1,59 +1,19 @@
 /// @author Bernhard Ruoff
-/// @since 9.1.0
+/// @since 10.0.0
 /// @access public
 /// @group molecules
-///
-/// @deprecated since 9.1.0 `.well-small` and `.well-big` will be removed in future release
 
+// @param {array} $well-style
 // @param {color} $well-background [$background-lightest]
 // @param {color} $well-color [inherit]
-// @param {value} $well-weight [$is-normal]
 // @param {px} $well-radius [4]
-%well {
-  border-radius: arrayMagic($well-radius);
-  font-weight: $well-weight;
-  background: $well-background;
-  color: $well-color;
-}
-
 // @param {array} $well-padding [16 24]
 // @param {array} $well-spacing [0 0 16 0]
-// @param {array} $well-style
 .well {
-  @extend %well;
   @include inject-style($well-style);
+  background: $well-background;
+  color: $well-color;
+  border-radius: arrayMagic($well-radius);
   margin: arrayMagic($well-spacing);
   padding: arrayMagic($well-padding);
-
-  // @param {array} $well-small-padding [8 12]
-  // @param {array} $well-small-spacing [$well-spacing]
-  // @param {array} $well-small-style
-  &_small {
-    @include inject-style($well-small-style);
-    margin: arrayMagic($well-small-spacing);
-    padding: arrayMagic($well-small-padding);
-  }
-
-  // @param {array} $well-big-padding [24 28]
-  // @param {array} $well-big-spacing [$well-spacing]
-  // @param {array} $well-big-style
-  &_big {
-    @include inject-style($well-big-style);
-    margin: arrayMagic($well-big-spacing);
-    padding: arrayMagic($well-big-padding);
-  }
-}
-
-.well-small {
-  @extend %well;
-  @include inject-style($well-small-style);
-  margin: arrayMagic($well-small-spacing);
-  padding: arrayMagic($well-small-padding);
-}
-
-.well-big {
-  @extend %well;
-  @include inject-style($well-big-style);
-  margin: arrayMagic($well-big-spacing);
-  padding: arrayMagic($well-big-padding);
 }

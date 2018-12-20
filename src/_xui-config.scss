@@ -1467,30 +1467,16 @@ $popover-style: () !default;
 // ------------------------------------------------------
 // @param {color} $well-background [$background-lightest]
 // @param {color} $well-color [inherit]
-// @param {value} $well-weight [$is-normal]
 // @param {px} $well-radius [4]
-$well-background: $background-lightest !default;
-$well-color: inherit !default;
-$well-weight: $is-normal !default;
-$well-radius: 4 !default;
-
 // @param {array} $well-padding [16 24]
 // @param {array} $well-spacing [0 0 16 0]
 // @param {array} $well-style
+$well-background: $background-lightest !default;
+$well-color: inherit !default;
+$well-radius: 4 !default;
 $well-padding: 16 24 !default;
 $well-spacing: 0 0 16 0 !default;
 $well-style: () !default;
-
-// @param {array} $well-small-padding [8 12]
-// @param {array} $well-small-spacing [$well-spacing]
-// @param {array} $well-small-style
-$well-small-padding: 8 12 !default;
-$well-small-spacing: $well-spacing !default;
-$well-small-style: () !default;
-
-$well-big-padding: 24 28 !default;
-$well-big-spacing: $well-spacing !default;
-$well-big-style: () !default;
 
 //
 // ALERT
