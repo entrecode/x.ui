@@ -14,6 +14,7 @@
 - removed `.xui-overlay`
 - removed float grid styles `data-row`
 - removed breakpoint styles for `align-`
+- removed `.has-margin..`, `.has-margin..-smalles`, `.has-margin..-small`, `.has-margin..-big`
 
 ### changes
 
