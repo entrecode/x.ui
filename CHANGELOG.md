@@ -13,6 +13,7 @@
 - removed `.no-padding` use `.has-padding-0` instead
 - removed `.xui-overlay`
 - removed float grid styles `data-row`
+- removed breakpoint styles for `align-`
 
 ### changes
 

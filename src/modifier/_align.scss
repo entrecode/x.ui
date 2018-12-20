@@ -1,24 +1,18 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 10.0.0
 /// @access public
 /// @group modifier
 
 .align {
   &-center {
-    @include set-breakpoints {
-      text-align: center;
-    }
+    text-align: center;
   }
 
   &-right {
-    @include set-breakpoints {
-      text-align: right;
-    }
+    text-align: right;
   }
 
   &-left {
-    @include set-breakpoints {
-      text-align: left;
-    }
+    text-align: left;
   }
 }
