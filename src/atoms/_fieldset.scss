@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 ///
@@ -9,7 +9,7 @@
 /// @param {array} $fieldset-border [0]
 /// @param {array} $fieldset-style
 
-fieldset {
+.fieldset {
   @include inject-style($fieldset-style);
   padding: arrayMagic($fieldset-padding);
   margin: arrayMagic($fieldset-spacing);
