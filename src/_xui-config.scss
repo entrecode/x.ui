@@ -2156,7 +2156,6 @@ $mark-color: setContrast($highlight) !default;
 $mark-background: $highlight !default;
 $mark-style: () !default;
 
-
 //
 // Animation
 // -------------------------------------------------------------------------------------------------
@@ -2165,6 +2164,23 @@ $fast-out-slow-in-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !default;
 $fast-out-linear-in-timing-function: cubic-bezier(0.4, 0, 1, 1) !default;
 
 $data-animate-timing: $fast-out-slow-in-timing-function !default;
+
+//
+// HAS-HEIGHT
+// -------------------------------------------------------------------------------------------------
+/// @param {map} $has-height-options
+$has-height-options: () !default;
+$has-height-options: map-merge(
+  (
+    full: 100,
+    '1-4': 25,
+    half: 50,
+    '3-4': 75,
+    '16-9': 56.25,
+    golden: 61.803,
+  ),
+  $has-height-options
+);
 
 //
 // MIXINS
