@@ -1,20 +1,19 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 ///
-/// @param {px} $avatar-size [48]
-/// @param {px} $avatar-small-size-size [32]
-/// @param {px} $avatar-big-size-size [48]
+/// @param {px} $avatar-size [40]
+/// @param {px} $avatar-small-size [32]
+/// @param {px} $avatar-big-size [48]
 /// @param {array} $avatar-border [0]
 /// @param {array} $avatar-style
-/// @param {boolean} $avatar-round [true]
 /// @param {px} $avatar-square-radius [4]
 
 .avatar {
   display: inline-block;
   overflow: hidden;
-  
+
   @supports (display: inline-flex) {
     display: inline-flex;
     flex-shrink: 0;
@@ -22,17 +21,9 @@
 
   @include inject-style($avatar-style);
   border: arrayMagic($avatar-border);
-
-  @if $avatar-round == true {
-    border-radius: 50%;
-  } @else {
-    border-radius: arrayMagic($avatar-square-radius);
-  }
-
-  @include set-breakpoints {
-    height: rem($avatar-size);
-    width: rem($avatar-size);
-  }
+  height: rem($avatar-size);
+  width: rem($avatar-size);
+  border-radius: rem($avatar-size / 2);
 
   img {
     height: 100%;
@@ -45,21 +36,13 @@
     border-radius: arrayMagic($avatar-square-radius);
   }
 
-  &_round {
-    border-radius: 50%;
-  }
-
   &_small {
-    @include set-breakpoints {
-      height: rem($avatar-small-size);
-      width: rem($avatar-small-size);
-    }
+    height: rem($avatar-small-size);
+    width: rem($avatar-small-size);
   }
 
   &_big {
-    @include set-breakpoints {
-      height: rem($avatar-big-size);
-      width: rem($avatar-big-size);
-    }
+    height: rem($avatar-big-size);
+    width: rem($avatar-big-size);
   }
 }

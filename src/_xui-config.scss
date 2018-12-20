@@ -1559,20 +1559,17 @@ $table-cell-padding: 8 !default;
 //
 // AVATAR
 // ------------------------------------------------------
-// @param {px} $avatar-size [48]
+// @param {px} $avatar-size [40]
 // @param {px} $avatar-small-size-size [32]
 // @param {px} $avatar-big-size-size [48]
 // @param {array} $avatar-border [0]
 // @param {array} $avatar-style
+// @param {px} $avatar-square-radius [4]
 $avatar-size: 40 !default;
 $avatar-small-size: 32 !default;
 $avatar-big-size: 48 !default;
 $avatar-border: 0 !default;
 $avatar-style: () !default;
-
-// @param {boolean} $avatar-round [true]
-// @param {px} $avatar-square-radius [4]
-$avatar-round: true !default;
 $avatar-square-radius: 4 !default;
 
 //
