@@ -8,6 +8,7 @@
 - removed deprecated classes `.bumper-small` and `.bumper-big` use  `.bumper.bumper_small` or `.bumper.bumper_big` instead
 - removed deprecated classes `.spacer-small` and `.spacer-big` use  `.spacer.spacer_small` or `.spacer.spacer_big` instead
 - removed deprecated classes `.well-small` and `.well-big`
+- removed `.img_responsive` and `.img_full` use  `.img-responsive` or `.img-full` instead
 - removed `.no-margin` use `.has-margin-0` instead
 - removed `.no-padding` use `.has-padding-0` instead
 - removed `.xui-overlay`
