@@ -1,36 +1,13 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group modifier
-
-// @param {px} $spacing-smallest-size [getSpace(1)]
-// @param {px} $spacing-small-size [getSpace(2)]
-// @param {px} $spacing-size [getSpace(3)]
-// @param {px} $spacing-big-size [getSpace(5)]
+///
+/// @require {mixin} set-breakpoints
+/// @require {function} getSpace
+/// @param {map} $spacings
 
 .has-padding {
-  @include set-breakpoints {
-    padding: arrayMagic($spacing-size);
-  }
-
-  &-smallest {
-    @include set-breakpoints {
-      padding: arrayMagic($spacing-smallest-size);
-    }
-  }
-
-  &-small {
-    @include set-breakpoints {
-      padding: arrayMagic($spacing-small-size);
-    }
-  }
-
-  &-big {
-    @include set-breakpoints {
-      padding: arrayMagic($spacing-big-size);
-    }
-  }
-
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
@@ -41,32 +18,6 @@
 }
 
 .has-padding-middle {
-  @include set-breakpoints {
-    padding-bottom: arrayMagic($spacing-size);
-    padding-top: arrayMagic($spacing-size);
-  }
-
-  &-smallest {
-    @include set-breakpoints {
-      padding-bottom: arrayMagic($spacing-smallest-size);
-      padding-top: arrayMagic($spacing-smallest-size);
-    }
-  }
-
-  &-small {
-    @include set-breakpoints {
-      padding-bottom: arrayMagic($spacing-small-size);
-      padding-top: arrayMagic($spacing-small-size);
-    }
-  }
-
-  &-big {
-    @include set-breakpoints {
-      padding-bottom: arrayMagic($spacing-big-size);
-      padding-top: arrayMagic($spacing-big-size);
-    }
-  }
-
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
@@ -78,28 +29,6 @@
 }
 
 .has-padding-top {
-  @include set-breakpoints {
-    padding-top: arrayMagic($spacing-size);
-  }
-
-  &-smallest {
-    @include set-breakpoints {
-      padding-top: arrayMagic($spacing-smallest-size);
-    }
-  }
-
-  &-small {
-    @include set-breakpoints {
-      padding-top: arrayMagic($spacing-small-size);
-    }
-  }
-
-  &-big {
-    @include set-breakpoints {
-      padding-top: arrayMagic($spacing-big-size);
-    }
-  }
-
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
@@ -110,28 +39,6 @@
 }
 
 .has-padding-bottom {
-  @include set-breakpoints {
-    padding-bottom: arrayMagic($spacing-size);
-  }
-
-  &-smallest {
-    @include set-breakpoints {
-      padding-bottom: arrayMagic($spacing-smallest-size);
-    }
-  }
-
-  &-small {
-    @include set-breakpoints {
-      padding-bottom: arrayMagic($spacing-small-size);
-    }
-  }
-
-  &-big {
-    @include set-breakpoints {
-      padding-bottom: arrayMagic($spacing-big-size);
-    }
-  }
-
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
@@ -142,32 +49,6 @@
 }
 
 .has-padding-center {
-  @include set-breakpoints {
-    padding-left: arrayMagic($spacing-size);
-    padding-right: arrayMagic($spacing-size);
-  }
-
-  &-smallest {
-    @include set-breakpoints {
-      padding-left: arrayMagic($spacing-smallest-size);
-      padding-right: arrayMagic($spacing-smallest-size);
-    }
-  }
-
-  &-small {
-    @include set-breakpoints {
-      padding-left: arrayMagic($spacing-small-size);
-      padding-right: arrayMagic($spacing-small-size);
-    }
-  }
-
-  &-big {
-    @include set-breakpoints {
-      padding-left: arrayMagic($spacing-big-size);
-      padding-right: arrayMagic($spacing-big-size);
-    }
-  }
-
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
@@ -179,28 +60,6 @@
 }
 
 .has-padding-left {
-  @include set-breakpoints {
-    padding-left: arrayMagic($spacing-size);
-  }
-
-  &-smallest {
-    @include set-breakpoints {
-      padding-left: arrayMagic($spacing-smallest-size);
-    }
-  }
-
-  &-small {
-    @include set-breakpoints {
-      padding-left: arrayMagic($spacing-small-size);
-    }
-  }
-
-  &-big {
-    @include set-breakpoints {
-      padding-left: arrayMagic($spacing-big-size);
-    }
-  }
-
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
@@ -211,28 +70,6 @@
 }
 
 .has-padding-right {
-  @include set-breakpoints {
-    padding-right: arrayMagic($spacing-size);
-  }
-
-  &-smallest {
-    @include set-breakpoints {
-      padding-right: arrayMagic($spacing-smallest-size);
-    }
-  }
-
-  &-small {
-    @include set-breakpoints {
-      padding-right: arrayMagic($spacing-small-size);
-    }
-  }
-
-  &-big {
-    @include set-breakpoints {
-      padding-right: arrayMagic($spacing-big-size);
-    }
-  }
-
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
