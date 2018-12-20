@@ -37,7 +37,7 @@
   // @param {px} $tag-small-min-height [24]
   // @param {px} $tag-small-radius [$tag-radius]
   // @param {array} $tag-small-style
-  &.tag_small {
+  &_small {
     @include inject-style($tag-small-style);
     @include macro-metrics(
       $tag-small-font-size,
@@ -53,7 +53,7 @@
   // @param {px} $tag-big-min-height [32]
   // @param {px} $tag-big-radius [$tag-radius]
   // @param {array} $tag-big-style
-  &.tag_big {
+  &_big {
     @include inject-style($tag-big-style);
     @include macro-metrics(
       $tag-big-font-size,
@@ -64,8 +64,12 @@
     border-radius: arrayMagic($tag-big-radius);
   }
 
-  + .tag {
-    margin-left: rem(4);
+  @if $experimental {
+    + .tag {
+      margin-left: rem(4);
+      margin-bottom: rem(2);    
+      margin-top: rem(2);
+    }
   }
 }
 
