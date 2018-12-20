@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 10.0.0
+
+### breaking changes
+
+- removed deprecated class `.flex-spacer` use `.flex-space` instead
+- removed deprecated classes `.bumper-small` and `.bumper-big` use  `.bumper.bumper_small` or `.bumper.bumper_big` instead
+- removed deprecated classes `.spacer-small` and `.spacer-big` use  `.spacer.spacer_small` or `.spacer.spacer_big` instead
+- removed deprecated classes `.well-small` and `.well-big`
+- removed `.no-margin` use `.has-margin-0` instead
+- removed `.no-padding` use `.has-padding-0` instead
+- removed `.xui-overlay`
+- removed float grid styles `data-row`
+
 ## 9.1.2
 
 ### changes
