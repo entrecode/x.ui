@@ -13,6 +13,11 @@
 - removed `.xui-overlay`
 - removed float grid styles `data-row`
 
+### changes
+
+- updated headings styles
+- refactored `.avatar`
+
 ## 9.1.2
 
 ### changes
