@@ -81,8 +81,6 @@
       "is-rounded.njk",
       "has-border.njk",
       "is-elevated.njk",
-      "is-raised.njk",
-      "is-lifted.njk",
       "is-fab.njk"
     ],
     "layout": [
