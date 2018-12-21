@@ -1574,16 +1574,6 @@ $avatar-style: () !default;
 $avatar-square-radius: 4 !default;
 
 //
-// IS-ROUNDED
-// ------------------------------------------------------
-// @param {px} $is-rounded-min-radius [2]
-// @param {px} $is-rounded-radius [4]
-// @param {px} $is-rounded-max-radius [8]
-$is-rounded-min-radius: 2 !default;
-$is-rounded-radius: 4 !default;
-$is-rounded-max-radius: 8 !default;
-
-//
 // has-border
 // ------------------------------------------------------
 // @param {array} $has-border
@@ -2141,9 +2131,9 @@ $xui-toggle-line-height: $xui-toggle-label-size * $base-line-height !default;
 //
 // MARK
 // -------------------------------------------------------------------------------------------------
-/// @param {color} $mark-color [$text]
-/// @param {color} $mark-background [$highlight]
-/// @param {array} $mark-style
+// @param {color} $mark-color [$text]
+// @param {color} $mark-background [$highlight]
+// @param {array} $mark-style
 $mark-color: setContrast($highlight) !default;
 $mark-background: $highlight !default;
 $mark-style: () !default;
@@ -2151,19 +2141,32 @@ $mark-style: () !default;
 //
 // IS-OUTSET
 // -------------------------------------------------------------------------------------------------
-/// @param {px} $is-outset [48]
-/// @param {array} $is-outset-spacing [16 0]
-/// @param {px} $is-outset-gutter [32]
-/// @param {px} $is-outset-bp [1200]
+// @param {px} $is-outset [48]
+// @param {array} $is-outset-spacing [16 0]
+// @param {px} $is-outset-gutter [32]
+// @param {px} $is-outset-bp [1200]
 $is-outset: 48 !default;
 $is-outset-spacing: 16 0 !default;
 $is-outset-gutter: 32 !default;
 $is-outset-bp: 1200 !default;
 
 //
+// HAS-RADIUS
+// -------------------------------------------------------------------------------------------------
+// @param {map} $has-radius-options
+$has-radius-options: () !default;
+$has-radius-options: map-merge(
+  (
+    '': 4
+  ),
+  $has-radius-options
+);
+
+
+//
 // HAS-HEIGHT
 // -------------------------------------------------------------------------------------------------
-/// @param {map} $has-height-options
+// @param {map} $has-height-options
 $has-height-options: () !default;
 $has-height-options: map-merge(
   (
@@ -2180,7 +2183,7 @@ $has-height-options: map-merge(
 //
 // HAS-WIDTH
 // -------------------------------------------------------------------------------------------------
-/// @param {map} $has-width-options - available width options
+// @param {map} $has-width-options - available width options
 $has-width-options: () !default;
 $has-width-options: map-merge(
   (
@@ -2208,7 +2211,7 @@ $is-display-states: map-merge(
 );
 
 //
-// IS-{DISPLAY}
+// IS-{POSITION}
 // -------------------------------------------------------------------------------------------------
 $is-position-states: () !default;
 $is-position-states: map-merge(

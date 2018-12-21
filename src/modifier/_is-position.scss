@@ -9,14 +9,14 @@
 
 .is {
   $_states: map-keys($is-position-states);
-  $_values: map-keys($is-position-states);
+  $_values: map-values($is-position-states);
 
   @each $_state in $_states {
     $_i: index($_states, $_state);
     $_v: nth($_values, $_i);
 
     &-#{$_state} {
-      position: $_v !important;
+      position: #{$_v} !important;
     }
   }
 
@@ -27,7 +27,7 @@
         $_v: nth($_values, $_i);
 
         &-#{$_state}-#{$_bp} {
-          position: $_v !important;
+          position: #{$_v} !important;
         }
       }
     }

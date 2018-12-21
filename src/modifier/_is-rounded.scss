@@ -1,88 +1,49 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group modifier
+///
+/// @param {map} $has-radius-options
 
-// @param {px} $is-rounded-min-radius [2]
-// @param {px} $is-rounded-radius [4]
-// @param {px} $is-rounded-max-radius [8]
-
-@mixin rounded($radius) {
-  @include set-breakpoints {
-    border-radius: $radius;
-  }
-
-  &-0 {
-    @include set-breakpoints {
-      border-radius: 0;
-    }
-  }
+@mixin _has-radius($radius) {
+  border-radius: $radius;
 
   &-top {
-    @include set-breakpoints {
-      border-top-left-radius: $radius;
-      border-top-right-radius: $radius;
-    }
-
-    &-0 {
-      @include set-breakpoints {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-      }
-    }
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
   }
 
   &-right {
-    @include set-breakpoints {
-      border-bottom-right-radius: $radius;
-      border-top-right-radius: $radius;
-    }
-
-    &-0 {
-      @include set-breakpoints {
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-      }
-    }
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
   }
 
   &-bottom {
-    @include set-breakpoints {
-      border-bottom-left-radius: $radius;
-      border-bottom-right-radius: $radius;
-    }
-
-    &-0 {
-      @include set-breakpoints {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-    }
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
   }
 
   &-left {
-    @include set-breakpoints {
-      border-bottom-left-radius: $radius;
-      border-top-left-radius: $radius;
-    }
-
-    &-0 {
-      @include set-breakpoints {
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-      }
-    }
+    border-bottom-left-radius: $radius;
+    border-top-left-radius: $radius;
   }
 }
 
-.is-rounded {
-  @include rounded(rem($is-rounded-radius));
+.has-radius {
+  $_states: map-keys($has-radius-options);
+  $_values: map-values($has-radius-options);
 
-  &-small {
-    @include rounded(rem($is-rounded-min-radius));
-  }
-
-  &-big {
-    @include rounded(rem($is-rounded-max-radius));
+  @each $_state in $_states {
+    $_i: index($_states, $_state);
+    $_v: nth($_values, $_i);
+    $_c: '-';
+    
+    @if $_state == '' {
+      $_c: '';
+    }
+    
+    &#{$_c}#{$_state} {
+      @include _has-radius(rem(#{$_v}));
+    }
   }
 }

@@ -78,7 +78,7 @@
       "avatar.njk",
       "is-ink.njk",
       "is-theme.njk",
-      "is-rounded.njk",
+      "has-radius.njk",
       "has-border.njk",
       "is-elevated.njk",
       "is-fab.njk"

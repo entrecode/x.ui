@@ -11,6 +11,7 @@
 - removed deprecated `.is-visible#` use `is-block#` or `is-flex#` instead
 - removed deprecated `.is-raises#` use `is-elevated#` instead
 - removed deprecated `.is-lifted#` use `is-elevated#` instead
+- removed deprecated `.is-rounded#` use `has-radius#` instead
 - removed deprecated `.is-hidden-from#`
 - removed deprecated `.btn_glow`
 - removed `.img_responsive` and `.img_full` use  `.img-responsive` or `.img-full` instead

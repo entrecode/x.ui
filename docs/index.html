@@ -155,7 +155,7 @@
           <li><a href="#avatar">avatar</a></li>
           <li><a href="#is-ink">is-ink</a></li>
           <li><a href="#is-theme">is-theme</a></li>
-          <li><a href="#is-rounded">is-rounded</a></li>
+          <li><a href="#has-radius">has-radius</a></li>
           <li><a href="#has-border">has-border</a></li>
           <li><a href="#is-elevated">is-elevated</a></li>
           <li><a href="#is-raised">is-raised</a></li>
@@ -599,8 +599,8 @@
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#is-rounded" class="periodic-group-ui">
-            <span class="is-h5">UI</span> is-rounded
+          <a href="#has-radius" class="periodic-group-ui">
+            <span class="is-h5">UI</span> has-radius
           </a>
         </li>
         <li data-col="6 4-md">
@@ -3897,115 +3897,11 @@ data-tooltip-left="This is a tooltip"</code></pre>
 </section>
 
 <div class="bumper"></div><section>
-  <h3 id="is-rounded">is-rounded</h3>
+  <h3 id="has-radius">has-radius</h3>
   <div class="well align-center">
-    <div class="is-h6">is-rounded-{ small | big |
-      <em>empty</em> }-{side}{ -
-      <a href="#xui-breakpoint-shortcodes">breakpoint</a> |
-      <span class="is-ink-light">null</span> }</div>
+    <div class="is-h6">has-radius-{<em>config</em>}-{side}</div>
   </div>
-  <div class="well is-theme-invert">
-    <div data-grid="is-center">
-      <div data-col="4">
-        <div class="is-raised is-rounded-small is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-small</div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded-small-top is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-small-top</div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded-small-right is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-small-right</div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded-small-bottom is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-small-bottom</div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded-small-left is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-small-left</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="well is-theme-invert">
-    <div data-grid="is-center">
-      <div data-col="4">
-        <div class="is-raised is-rounded is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded</div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded-top is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-top</div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded-right is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-right</div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded-bottom is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-bottom</div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded-left is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-left</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="well is-theme-invert">
-    <div data-grid="is-center">
-      <div data-col="4">
-        <div class="is-raised is-rounded-big is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-big</div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded-big-top is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-big-top</div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded-big-right is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-big-right</div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded-big-bottom is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-big-bottom</div>
-        </div>
-      </div>
-      <div data-col="4">
-        <div class="is-raised is-rounded-big-left is-theme has-padding-2 align-center has-margin-bottom-3">
-          <div class="code">.is-rounded-big-left</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4">
-        <strong>{scale}</strong>
-      </td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li><em>empty</em> - 4px</li>
-          <li><span class="code">small</span> - 2px</li>
-          <li><span class="code">big</span> - 8px</li>
-        </ul>
-    </tr>
     <tr data-grid="no-gutter">
       <td data-col="4">
         <strong>{side}</strong>
@@ -4013,29 +3909,22 @@ data-tooltip-left="This is a tooltip"</code></pre>
       <td data-col="8">
         <ul class="is-unstyled">
           <li>
-            <em>empty</em> - all sides</li>
+            <em>empty</em>
+            - all sides</li>
           <li>
-            <span class="code">top</span> - radius top-left and top-right</li>
+            <span class="code">top</span>
+            - radius top-left and top-right</li>
           <li>
-            <span class="code">right</span> - radius bottom-right and top-right</li>
+            <span class="code">right</span>
+            - radius bottom-right and top-right</li>
           <li>
-            <span class="code">bottom</span> - radius bottom-right and bottom-left</li>
+            <span class="code">bottom</span>
+            - radius bottom-right and bottom-left</li>
           <li>
-            <span class="code">left</span> - radius bottom-left and top-left</li>
-          <li>
-            <div class="code">-0</div>
-            - no radius on all sides
-          </li>
-          <li>
-            <span class="code">top-0</span> - no radius top-left and top-right</li>
-          <li>
-            <span class="code">right-0</span> - no radius bottom-right and top-right</li>
-          <li>
-            <span class="code">bottom-0</span> - no radius bottom-right and bottom-left
-          </li>
-          <li>
-            <span class="code">left-0</span> - no radius bottom-left and top-left</li>
+            <span class="code">left</span>
+            - radius bottom-left and top-left</li>
         </ul>
+      </td>
     </tr>
   </table>
 </section>
@@ -4125,7 +4014,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <div data-grid="">
     <div data-col="3" v-for="n in 24">
       <div class="has-padding-bottom-5">
-        <div class="is-rounded align-center has-padding-3" :class="['is-elevated-' + n]">
+        <div class="has-radius align-center has-padding-3" :class="['is-elevated-' + n]">
           <span class="code">is-elevated-${n}</small>
         </div>
       </div>
