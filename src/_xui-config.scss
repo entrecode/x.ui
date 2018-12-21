@@ -2148,7 +2148,6 @@ $mark-color: setContrast($highlight) !default;
 $mark-background: $highlight !default;
 $mark-style: () !default;
 
-
 //
 // IS-OUTSET
 // -------------------------------------------------------------------------------------------------
@@ -2198,14 +2197,28 @@ $has-width-options: map-merge(
 //
 // IS-{DISPLAY}
 // -------------------------------------------------------------------------------------------------
-$displayStates: () !default;
-$displayStates: map-merge(
+$is-display-states: () !default;
+$is-display-states: map-merge(
   (
     'none': 'none',
     'block': 'block',
     'flex': 'flex',
   ),
-  $displayStates
+  $is-display-states
+);
+
+//
+// IS-{DISPLAY}
+// -------------------------------------------------------------------------------------------------
+$is-position-states: () !default;
+$is-position-states: map-merge(
+  (
+    'relative': 'relative',
+    'absolute': 'absolute',
+    'fixed': 'fixed',
+    'sticky': 'sticky',
+  ),
+  $is-position-states
 );
 
 //

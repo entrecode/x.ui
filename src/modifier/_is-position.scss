@@ -1,34 +1,35 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 10.0.0
 /// @access public
 /// @group modifier
+///
+/// @param {map} $is-position-states
+/// @param {map} $breakpoints
+/// @requires {function} getBreakpoint
 
-.is-relative {
-  @include set-breakpoints {
-    position: relative;
+.is {
+  $_states: map-keys($is-position-states);
+  $_values: map-keys($is-position-states);
+
+  @each $_state in $_states {
+    $_i: index($_states, $_state);
+    $_v: nth($_values, $_i);
+
+    &-#{$_state} {
+      position: $_v !important;
+    }
   }
-}
 
-.is-absolute {
-  @include set-breakpoints {
-    position: absolute;
-  }
-}
+  @each $_bp in map-keys($breakpoints) {
+    @media (min-width: getBreakpoint(#{$_bp})) {
+      @each $_state in $_states {
+        $_i: index($_states, $_state);
+        $_v: nth($_values, $_i);
 
-.is-fixed {
-  @include set-breakpoints {
-    position: fixed;
-  }
-}
-
-.is-sticky {
-  @include set-breakpoints {
-    position: sticky;
-  }
-}
-
-.is-static {
-  @include set-breakpoints {
-    position: static;
+        &-#{$_state}-#{$_bp} {
+          position: $_v !important;
+        }
+      }
+    }
   }
 }

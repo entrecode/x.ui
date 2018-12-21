@@ -31,6 +31,7 @@
 - refactored `.avatar`
 - refactored `.file-upload`
 - refactored `.is-layer-#`
+- refactored `.is-position-#`
 
 ## 9.1.4
 
