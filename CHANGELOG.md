@@ -14,6 +14,7 @@
 - removed deprecated `.is-rounded#` use `has-radius#` instead
 - removed deprecated `.is-hidden-from#`
 - removed deprecated `.btn_glow`
+- refactored and combined `is-positioned` and `is-fab`
 - removed `.img_responsive` and `.img_full` use  `.img-responsive` or `.img-full` instead
 - removed `.no-margin` use `.has-margin-0` instead
 - removed `.no-padding` use `.has-padding-0` instead

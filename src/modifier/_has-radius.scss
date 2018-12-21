@@ -1,0 +1,49 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {map} $has-radius-options
+
+@mixin _has-radius($radius) {
+  border-radius: $radius;
+
+  &-top {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+  }
+
+  &-right {
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
+  }
+
+  &-bottom {
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+  }
+
+  &-left {
+    border-bottom-left-radius: $radius;
+    border-top-left-radius: $radius;
+  }
+}
+
+.has-radius {
+  $_states: map-keys($has-radius-options);
+  $_values: map-values($has-radius-options);
+
+  @each $_state in $_states {
+    $_i: index($_states, $_state);
+    $_v: nth($_values, $_i);
+    $_c: '-';
+    
+    @if $_state == '' {
+      $_c: '';
+    }
+    
+    &#{$_c}#{$_state} {
+      @include _has-radius(rem(#{$_v}));
+    }
+  }
+}

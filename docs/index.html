@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>x.ui atomic design css framework</title>
-  <meta property="og:image" content="og-image.jpg">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="x.ui.css">
-  <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.2.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
-  <script src="app.js"></script>
-  <meta name="theme-color" content="#ffffff">
-  <style>
-    [v-cloak] {
-      display: none;
-    }
-  </style>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>x.ui atomic design css framework</title>
+    <meta property="og:image" content="og-image.jpg">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="x.ui.css">
+    <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.2.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <script src="app.js"></script>
+    <meta name="theme-color" content="#ffffff">
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
 
-<body>
-  <!-- <div id="app" class="xui-demo" data-grid="no-gutter is-end"> -->
-  <div id="app" class="xui-demo">
-<header class="demo-navbar is-fixed is-positioned-nw is-layer-10 has-transition" data-col="12">
+  <body>
+    <!-- <div id="app" class="xui-demo" data-grid="no-gutter is-end"> -->
+    <div id="app" class="xui-demo">
+<header class="demo-navbar is-fixed is-nw is-layer-10 has-transition" data-col="12">
   <div class="toolbar toolbar_small">
     <div data-col="2">
       <button :class="{ 'is-active': menuActive }" @click.prevent="menuActive = !menuActive" class="hamburger-btn is-layer-100"></button>
@@ -177,7 +177,7 @@
           <li><a href="#has-height">has-height</a></li>
           <li><a href="#has-width">has-width</a></li>
           <li><a href="#is-position">is-position</a></li>
-          <li><a href="#is-positioned">is-positioned</a></li>
+          <li><a href="#is-placed">is-placed</a></li>
           <li><a href="#is-layer">is-layer</a></li>
           <li><a href="#pull">pull</a></li>
           <li><a href="#is-clipped">is-clipped</a></li>
@@ -198,11 +198,11 @@
       <li><div class="spacer spacer_big"></div></li>
     </ul>
   </div>
-</aside>    <div class="xui-demo-body">
-      <!-- <div data-container="is-left-nav"> -->
-      <div data-container>
-        <div data-grid="is-center">
-          <div data-col="8-md">
+</aside>      <div class="xui-demo-body">
+        <!-- <div data-container="is-left-nav"> -->
+        <div data-container="data-container">
+          <div data-grid="is-center">
+            <div data-col="8-md">
 <div class="hero has-margin-3 has-height-vh-golden" data-flex="is-center is-end-items">
   <div style="margin-bottom: 10vh;">
     <a href="#get-started" class="btn btn_big is-lifted-big">get started</a>
@@ -329,9 +329,9 @@
       </div>
     </div>
   </div>
-</section>          </div>
+</section>            </div>
+          </div>
         </div>
-      </div>
 
 <section>
   <ul data-grid="no-gutter" class="periodic-table">
@@ -664,8 +664,8 @@
           </a>
         </li>
         <li data-col="6 4-md">
-          <a href="#is-positioned" class="periodic-group-layout">
-            <span class="is-h5">L</span> is-positioned
+          <a href="#is-placed" class="periodic-group-layout">
+            <span class="is-h5">L</span> is-{placed}
           </a>
         </li>
         <li data-col="6 4-md">
@@ -702,21 +702,19 @@
     </li>
   </ul>
 </section>
-      <div data-container>
-        <div data-grid="is-center">
-          <div data-col="8">
-            <h2 class="is-h1 align-center is-uppercase special-font" id="the-grid">
-              <small class="is-ink-link">layout</small>
-              <br>the grid
-            </h2>
-            <p class="is-lead">the grid system and additional layout modifier as an ordering structure
-              and a ui-design necessity are not part of the atomic structure but belongs to its core
-              fabric.</p>
-          </div>
+        <div data-container="data-container">
+          <div data-grid="is-center">
+            <div data-col="8">
+              <h2 class="is-h1 align-center is-uppercase special-font" id="the-grid">
+                <small class="is-ink-link">layout</small>
+                <br>the grid
+              </h2>
+              <p class="is-lead">the grid system and additional layout modifier as an ordering structure and a ui-design necessity are not part of the atomic structure but belongs to its core fabric.</p>
+            </div>
 
-          <div class="spacer"></div>
+            <div class="spacer"></div>
 
-          <div data-col='12'>
+            <div data-col='12'>
 <div data-grid class="demo-grid">
   <div data-col="1">
     <div class="has-padding-1 is-theme-minor align-center">1</div>
@@ -880,30 +878,33 @@
   <div data-col="2">
     <div class="has-padding-1 is-theme-minor align-center">2</div>
   </div>
-</div>          </div>
+</div>            </div>
 
-          <div class="spacer"></div>
+            <div class="spacer"></div>
 
-          <div data-col="8-md">
-            <p class="is-h2 is-uppercase" style="line-height: 1em">
-              mobile<span class="is-ink-link">first</span>
-              mobile<span class="is-ink-light">landscape</span><span class="is-ink-link">480</span>
-              tablet<span class="is-ink-link">720</span>
-              tablet<span class="is-ink-light">landscape</span><span class="is-ink-link">1024</span>
-              desktop<span class="is-ink-link">1280</span>
-              widescreen<span class="is-ink-link">1920</span></p>
-            <p class="is-lead">The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of
-              classes. Per default it is a 12 column grid with an 32px gutter.</p>
-            <pre><code class="html">
+            <div data-col="8-md">
+              <p class="is-h2 is-uppercase" style="line-height: 1em">
+                mobile<span class="is-ink-link">first</span>
+                mobile<span class="is-ink-light">landscape</span><span class="is-ink-link">480</span>
+                tablet<span class="is-ink-link">720</span>
+                tablet<span class="is-ink-light">landscape</span><span class="is-ink-link">1024</span>
+                desktop<span class="is-ink-link">1280</span>
+                widescreen<span class="is-ink-link">1920</span></p>
+              <p class="is-lead">The
+                <strong>x.ui</strong>
+                grid system uses
+                <em>data-attributes</em>
+                instead of classes. Per default it is a 12 column grid with an 32px gutter.</p>
+              <pre><code class="html">
 <div data-grid>
   <div data-col="{size}">
     ...
   </div>
 </div></code></pre>
-            <div class="spacer spacer_big"></div>
+              <div class="spacer spacer_big"></div>
+            </div>
           </div>
         </div>
-      </div>
 
 <div data-container>
   <div data-grid="is-center">
@@ -1012,9 +1013,9 @@ $grid-container-width: 1200 !default;</code></pre>
 </div>
 
 <div class="spacer spacer_big"></div>
-      <div data-container>
-        <div data-grid="is-center">
-          <div data-col="8-md">
+        <div data-container="data-container">
+          <div data-grid="is-center">
+            <div data-col="8-md">
 <h3>data-grid</h3>
 <p class="is-lead">The flex-based grid is a more modern and more flexible approach for a grid-model which is not prone to floating errors. all values can be combined e.g.
   <span class="code">data-grid="is-small is-default-md"</span>
@@ -1227,9 +1228,9 @@ $breakpoints: (
   'xxl': 1920,
 ) !default;</code></pre>
 
-<div class="bumper-big"></div>          </div>
+<div class="bumper-big"></div>            </div>
+          </div>
         </div>
-      </div>
 
 <section>
   <div data-container>
@@ -1258,7 +1259,7 @@ $breakpoints: (
         </nav>
       </div>
     </div>
-</section>      <div class="spacer spacer_big"></div>
+</section>          <div class="spacer spacer_big"></div>
 <section v-cloak>
   <div data-container>
     <div data-grid="is-center">
@@ -1342,7 +1343,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>      <div class="spacer spacer_big"></div>
+</section>          <div class="spacer spacer_big"></div>
 <section>
   <div data-container>
     <div data-grid="is-center">
@@ -1375,7 +1376,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>      <div class="spacer spacer_big"></div>
+</section>          <div class="spacer spacer_big"></div>
 <section>
   <div data-container>
     <div data-grid="is-center">
@@ -1435,7 +1436,7 @@ $breakpoints: (
       </div>
     </div>
   </div>
-</section>      <div class="spacer spacer_big"></div>
+</section>          <div class="spacer spacer_big"></div>
 <section>
   <div data-container>
     <div data-grid="is-center">
@@ -1544,14 +1545,14 @@ $breakpoints: (
 </section>      </div>
     </div>
   </div>
-</section>      <div class="spacer spacer_big"></div>
-      
-      <div data-container>
-        <div data-grid="is-center">
-          <div data-col="8-md">
-            <div class="bumper-big"></div>
-            <h2 class="align-center is-uppercase" id="media">media</h2>
-            <div class="spacer"></div>
+</section>          <div class="spacer spacer_big"></div>
+
+        <div data-container="data-container">
+          <div data-grid="is-center">
+            <div data-col="8-md">
+              <div class="bumper-big"></div>
+              <h2 class="align-center is-uppercase" id="media">media</h2>
+              <div class="spacer"></div>
 <section>
   <div data-grid>
     <div data-col="6-sm">
@@ -1573,7 +1574,7 @@ $breakpoints: (
       <img src="assets/placeholder.jpg" class="img_full">
     </div>
   </div>
-</section>            <div class="spacer spacer_big"></div>
+</section>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="img-crop">img-crop
     <a href="https://caniuse.com/#search=object-fit" target="_blank" rel="noopener" class="tag tag_error tag_small">object-fit</a></h3>
@@ -1634,7 +1635,7 @@ $breakpoints: (
 </div></code></pre>
     </div>
   </div>
-</section>            <div class="spacer spacer_big"></div>
+</section>                <div class="spacer spacer_big"></div>
 <section v-cloak>
   <h3 id="is-outset">is-outset</h3>
   <div data-flex="is-center">
@@ -1665,9 +1666,9 @@ $breakpoints: (
       Tat verboten worden war: zum sonnenklaren Beleg nicht nur der Befugnis, sondern sogar der Verpflichtung des
       Junkers, die von dem Kohlhaas über die Grenze gebrachten Pferde anzuhalten.</p>
   </div>
-</section>            <div class="spacer spacer_big"></div>
-            <div class="bumper-big"></div>
-            <h2 class="align-center is-uppercase" id="form">form</h2>
+</section>                <div class="spacer spacer_big"></div>
+              <div class="bumper-big"></div>
+              <h2 class="align-center is-uppercase" id="form">form</h2>
 <section>
   <h3 id="input">input</h3>
   <div data-grid>
@@ -2129,8 +2130,8 @@ $slider-thumb-hover-style: () !default;</code></pre>
     </div>
   </div>
 </section>
-            <div class="bumper-big"></div>
-            <h2 class="align-center is-uppercase" id="ui">ui</h2>
+              <div class="bumper-big"></div>
+              <h2 class="align-center is-uppercase" id="ui">ui</h2>
 <section>
   <h3 id="btn">button</h3>
   <p>there are three basic button styles which should be used to to emphasis or weaken
@@ -4053,8 +4054,8 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </div></code></pre>
 </section>
-            <div class="bumper-big"></div>
-            <h2 class="align-center is-uppercase" id="layout">layout</h2>
+              <div class="bumper-big"></div>
+              <h2 class="align-center is-uppercase" id="layout">layout</h2>
 <section>
   <h4 id="bumper">bumper</h4>
   <div data-grid>
@@ -4099,7 +4100,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <pre v-show="bumperSize === 'bumperSizeBig'"><code class="html"><div class="bumper-big bumper_invert"></div></code></pre>
 </section>
 
-<div class="spacer spacer_big"></div>            <div class="spacer spacer_big"></div>
+<div class="spacer spacer_big"></div>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="divider">divider</h3>
   <div data-grid>
@@ -4144,7 +4145,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <pre v-show="dividerSize === 'dividerSizeBig'"><code class="html"><hr class="divider divider_big divider_invert"></code></pre>
 </section>
 
-<div class="spacer spacer_big"></div>            <div class="spacer spacer_big"></div>
+<div class="spacer spacer_big"></div>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="spacer">spacer</h3>
   <div data-grid>
@@ -4177,7 +4178,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <pre v-show="spacerSize === 'spacerSizeBig'"><code class="html"><div class="spacer spacer_big"></div></code></pre>
 </section>
 
-<div class="spacer spacer_big"></div>            <div class="spacer spacer_big"></div>
+<div class="spacer spacer_big"></div>                <div class="spacer spacer_big"></div>
 <section>
   <h3 class="align-center is-uppercase" id="spacing">gaps & spacing</h3>
   <p class="is-lead">gaps and spacing are one of the most important elements of an user interface. Following the
@@ -4302,7 +4303,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
 
   <div class="spacer"></div>
 
-</section>            <div class="spacer spacer_big"></div>
+</section>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="x-spacer">x-space<span class="is-ink-link">${'-' + xSpaceSize}</span><span class="is-ink-lighter">-bp</span></h3>
   <div data-grid="is-center">
@@ -4322,7 +4323,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <div class="x-space-2"></div>
     ...
   </div></code></pre>
-</section>            <div class="spacer spacer_big"></div>
+</section>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="x-spacer">y-space<span class="is-ink-link">${'-' + ySpaceSize}</span><span class="is-ink-lighter">-bp</span></h3>
   <div data-grid="is-center">
@@ -4338,7 +4339,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <div class="x-space-2"></div>
     ...
   </div></code></pre>
-</section>            <div class="spacer spacer_big"></div>
+</section>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="flex-spacer">flex-space</h3>
   <div data-flex>
@@ -4353,7 +4354,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <div class="flex-space"></div>
   ...
 </div></code></pre>
-</section>            <div class="spacer spacer_big"></div>
+</section>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="has-margin-3">has-margin<span class="is-ink-link">${hasMarginSide + hasMarginSize}</span><span class="is-ink-lighter">-bp</span></h3>
 
@@ -4400,7 +4401,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
     <span class="code">margin-right</span>
     <span class="code">margin-center</span>
   </p>
-</section>            <div class="spacer spacer_big"></div>
+</section>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="has-padding-3">has-padding<span class="is-ink-link">${hasPaddingSide + hasPaddingSize}</span><span class="is-ink-lighter">-bp</span></h3>
 
@@ -4440,7 +4441,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
       </div>
     </div>
   </div>
-</section>            <div class="spacer spacer_big"></div>
+</section>                <div class="spacer spacer_big"></div>
 <h3 id="data-flex">Additional flex attributes</h3>
 <p class="is-lead">Those additional attributes and values can be combined with data-grid / data-col to modify the
   layout.</p>
@@ -4638,7 +4639,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
 <p>By default, flex items are laid out in the source order. However, the order property
   controls the order in which they appear in the flex container. the order-value can be
   <span class="code">[1-12]</span>.</p>
-<div class="bumper-big"></div>            <div class="spacer spacer_big"></div>
+<div class="bumper-big"></div>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="has-height">has-height</h3>
   <div class="well align-center">
@@ -4674,7 +4675,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper"></div>            <div class="spacer spacer_big"></div>
+<div class="bumper"></div>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="has-width">has-width</h3>
   <div class="well align-center">
@@ -4709,7 +4710,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper-big"></div>            <div class="spacer spacer_big"></div>
+<div class="bumper-big"></div>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="pull">pull</h3>
   <div class="well align-center">
@@ -4717,7 +4718,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </div>
 </section>
 
-<div class="bumper-big"></div>            <div class="spacer spacer_big"></div>
+<div class="bumper-big"></div>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="is-clipped">is-clipped</h3>
   <p>use for
@@ -4774,7 +4775,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   </table>
 </section>
 
-<div class="bumper-big"></div>            <div class="spacer spacer_big"></div>
+<div class="bumper-big"></div>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="is-position">is-position</h3>
   <div class="well align-center">
@@ -4783,24 +4784,24 @@ data-tooltip-left="This is a tooltip"</code></pre>
 
   <div class="spacer"></div>
 
-  <h3 id="is-positioned">is-positioned</h3>
+  <h3 id="is-placed">is-{placed}</h3>
   <div class="well align-center">
-    <span class="is-h6">is-positioned-{direction}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+    <span class="is-h6">is{-placed}-direction}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
   </div>
   <div class="well is-relative" style="height: 160px;">
-    <strong class="code is-positioned-n is-absolute">n</strong>
-    <strong class="code is-positioned-ne is-absolute">ne</strong>
-    <strong class="code is-positioned-e is-absolute">e</strong>
-    <strong class="code is-positioned-se is-absolute">se</strong>
-    <strong class="code is-positioned-s is-absolute">s</strong>
-    <strong class="code is-positioned-sw is-absolute">sw</strong>
-    <strong class="code is-positioned-w is-absolute">w</strong>
-    <strong class="code is-positioned-nw is-absolute">nw</strong>
-    <strong class="code is-positioned-0 is-absolute">0</strong>
+    <strong class="code is-n is-absolute">n</strong>
+    <strong class="code is-ne is-absolute">ne</strong>
+    <strong class="code is-e is-absolute">e</strong>
+    <strong class="code is-se is-absolute">se</strong>
+    <strong class="code is-s is-absolute">s</strong>
+    <strong class="code is-sw is-absolute">sw</strong>
+    <strong class="code is-w is-absolute">w</strong>
+    <strong class="code is-nw is-absolute">nw</strong>
+    <strong class="code is-0 is-absolute">0</strong>
   </div>
 </section>
 
-<div class="bumper"></div>            <div class="spacer spacer_big"></div>
+<div class="bumper"></div>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="is-layer">is-layer</h3>
   <div class="well align-center">
@@ -4809,7 +4810,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
   <pre><code class="css">@param {map} $is-layer [1, 10, 100, 9999]</code></pre>
 </section>
 
-<div class="bumper"></div>            <div class="spacer spacer_big"></div>
+<div class="bumper"></div>                <div class="spacer spacer_big"></div>
 <section>
   <h3 id="data-animate">data-animate
     <span class="tag tag_small tag_super">css only</span>
@@ -4868,83 +4869,11 @@ data-tooltip-left="This is a tooltip"</code></pre>
       data-animate="<span class="is-ink-link">${selectedAnimation} ${animationDuration }${(animationDelay !== '0') ? ' +' + animationDelay : ''}</span>"
     </div>
   </div>
-</section>          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="bumper-big"></div>
-<section id="ec-icon" data-col="12">
-  <div data-container>
-
-    <div data-grid="is-center">
-      <div data-col='8'>
-        <div class="align-center">
-          <h2 class="special-font">ec-icons
-            <span class="tag">6.0.2</span>
-          </h2>
-        </div>
-        <p class="is-lead"><strong>x.ui</strong> is optimized for usage with ec.icons. ec.icons is based on the iconset
-          <a href="https://linearicons.com/" target="_blank" rel="nofollow">linearicons</a>. it is currated and
-          constantly upgraded.</p>
-
-        <h3 class="is-h6">use ec.icons in your project</h3>
-        <pre><code class="html"><link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.2.min.css" /></code></pre>
-        <pre><code class="scss">@import "https://icons.entrecode.de/ec-icons-6.0.2.min.css";</code></pre>
-
-        <div class="spacer"></div>
-
-        <div data-grid>
-          <div data-col='6'>
-            <div class="align-center">
-              <span class="ec-icon skull">inline</span>
-            </div>
-            <pre><code class="html"><span class="ec-icon skull">inline</span></code></pre>
-          </div>
-          <div data-col='6'>
-            <div class="align-center">
-              <a class="btn"><span class="ec-icon skull">button</span></a>
-            </div>
-  <pre><code class="html">
-<a class="btn">
-  <span class="ec-icon skull">button</span>
-</a></code></pre>
+</section>            </div>
           </div>
         </div>
       </div>
-    </div>
-
-
-    <div class="spacer spacer_big"></div>
-
-    <div data-grid="is-center">
-      <div data-col="6-sm 4-md">
-        <div class="input-group">
-          <div class="input-group__addon">
-            <span class="ec-icon find"></span>
-          </div>
-          <input type="text" v-model="query" class="input" placeholder="search for icon class...">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="spacer"></div>
-  <div class="has-padding-3">
-    <div data-grid="is-center">
-      <div data-col="12 10-md 8-xxl">
-        <ul data-grid="is-small">
-          <li v-for="icon in iconset" data-col="6-xs 4-sm 3-lg 2-xxl" :class="{'is-hidden': icon.indexOf(query) === -1}">
-            <div class="demo-icon">
-              <span class="ec-icon" :class="icon"></span>
-              <span class="code quickselect">${ icon }</span>
-            </div>
-          </li>
-        </ul>
-        <div class="spacer spacer_big"></div>
-      </div>
-    </div>
-  </div>
-</section><footer class="is-theme_dark is-relative-xl is-layer-10" data-col="12">
+<footer class="is-theme_dark is-relative-xl is-layer-10" data-col="12">
   <div class="has-padding-3">
     <p class="align-center is-ink-light">
       <small>
@@ -4956,7 +4885,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
       <small><a href="https://entrecode.de/datenschutz" rel="nofollow">imprint &amp; privacy</a></small>
     </p>
   </div>
-</footer>  </div>
-</body>
+</footer>    </div>
+  </body>
 
 </html>

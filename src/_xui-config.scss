@@ -2200,6 +2200,7 @@ $has-width-options: map-merge(
 //
 // IS-{DISPLAY}
 // -------------------------------------------------------------------------------------------------
+// @param {map} $has-display-states
 $is-display-states: () !default;
 $is-display-states: map-merge(
   (
@@ -2213,6 +2214,7 @@ $is-display-states: map-merge(
 //
 // IS-{POSITION}
 // -------------------------------------------------------------------------------------------------
+// @param {map} $is-position-states
 $is-position-states: () !default;
 $is-position-states: map-merge(
   (
@@ -2223,6 +2225,20 @@ $is-position-states: map-merge(
   ),
   $is-position-states
 );
+
+//
+// IS-PLACED
+// -------------------------------------------------------------------------------------------------
+// @param {map} $is-placed-states
+$is-placed-states: () !default;
+$is-placed-states: map-merge(
+  (
+    '': 0,
+    'fab': 16,
+  ),
+  $is-placed-states
+);
+
 
 //
 // IS-LAYER

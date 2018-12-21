@@ -1,0 +1,98 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {map} $is-placed-states
+/// @param {map} $breakpoints
+/// @requires {function} getBreakpoint
+
+
+@mixin _is-placed($p) {
+  &-n {
+    left: 50%;
+    top: rem($p);
+    transform: translateX(-50%);
+  }
+
+  &-ne {
+    right: rem($p);
+    top: rem($p);
+  }
+
+  &-e {
+    right: rem($p);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-se {
+    bottom: rem($p);
+    right: rem($p);
+  }
+
+  &-s {
+    bottom: rem($p);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-sw {
+    bottom: rem($p);
+    left: rem($p);
+  }
+
+  &-w {
+    left: rem($p);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-nw {
+    left: rem($p);
+    top: rem($p);
+  }
+
+  &-0 {
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+.is {
+  $_states: map-keys($is-placed-states);
+  $_values: map-values($is-placed-states);
+
+  @each $_state in $_states {
+    $_i: index($_states, $_state);
+    $_v: nth($_values, $_i);
+    $_c: '-';
+
+    @if $_state == '' {
+      $_c: '';
+    }
+
+    &#{$_c}#{$_state} {
+      @include _is-placed($_v);
+    }
+  }
+
+  @each $_bp in map-keys($breakpoints) {
+    @media (min-width: getBreakpoint(#{$_bp})) {
+      @each $_state in $_states {
+        $_i: index($_states, $_state);
+        $_v: nth($_values, $_i);
+        $_c: '-';
+
+        @if $_state == '' {
+          $_c: '';
+        }
+
+        &#{$_c}#{$_state}-#{$_bp} {
+          @include _is-placed($_v);
+        }
+      }
+    }
+  }
+}

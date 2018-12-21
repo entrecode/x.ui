@@ -1,145 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>x.ui atomic design css framework</title>
-  <meta property="og:image" content="og-image.jpg">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="x.ui.css">
-  <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.2.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
-  <script src="app.js"></script>
-  <meta name="theme-color" content="#ffffff">
-  <style>
-    [v-cloak] {
-      display: none;
-    }
-  </style>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>x.ui atomic design css framework</title>
+    <meta property="og:image" content="og-image.jpg">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="x.ui.css">
+    <link rel="stylesheet" href="https://icons.entrecode.de/ec-icons-6.0.2.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <script src="app.js"></script>
+    <meta name="theme-color" content="#ffffff">
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
 
-<body>
-  <!-- <div id="app" class="xui-demo" data-grid="no-gutter is-end"> -->
-  <div id="app" class="xui-demo">
-    {% include '_header.njk' %}
+  <body>
+    <!-- <div id="app" class="xui-demo" data-grid="no-gutter is-end"> -->
+    <div id="app" class="xui-demo">
+      {% include '_header.njk' %}
 
-    {% include '_bp-monitor.njk' %}
+      {% include '_bp-monitor.njk' %}
 
-    {% include '_aside.njk' %}
-    <div class="xui-demo-body">
-      <!-- <div data-container="is-left-nav"> -->
-      <div data-container>
-        <div data-grid="is-center">
-          <div data-col="8-md">
-            {% include '_hero.njk' %}
-            {% include 'parts/intro.njk' %}
-            {% include 'parts/getstarted.njk' %}
-            {% include 'parts/bem.njk' %}
-            {% include 'parts/structure.njk' %}
+      {% include '_aside.njk' %}
+      <div class="xui-demo-body">
+        <!-- <div data-container="is-left-nav"> -->
+        <div data-container="data-container">
+          <div data-grid="is-center">
+            <div data-col="8-md">
+              {% include '_hero.njk' %}
+              {% include 'parts/intro.njk' %}
+              {% include 'parts/getstarted.njk' %}
+              {% include 'parts/bem.njk' %}
+              {% include 'parts/structure.njk' %}
+            </div>
           </div>
         </div>
-      </div>
 
-      {% include 'parts/periodic-table.njk' %}
+        {% include 'parts/periodic-table.njk' %}
 
-      <div data-container>
-        <div data-grid="is-center">
-          <div data-col="8">
-            <h2 class="is-h1 align-center is-uppercase special-font" id="the-grid">
-              <small class="is-ink-link">layout</small>
-              <br>the grid
-            </h2>
-            <p class="is-lead">the grid system and additional layout modifier as an ordering structure
-              and a ui-design necessity are not part of the atomic structure but belongs to its core
-              fabric.</p>
-          </div>
+        <div data-container="data-container">
+          <div data-grid="is-center">
+            <div data-col="8">
+              <h2 class="is-h1 align-center is-uppercase special-font" id="the-grid">
+                <small class="is-ink-link">layout</small>
+                <br>the grid
+              </h2>
+              <p class="is-lead">the grid system and additional layout modifier as an ordering structure and a ui-design necessity are not part of the atomic structure but belongs to its core fabric.</p>
+            </div>
 
-          <div class="spacer"></div>
+            <div class="spacer"></div>
 
-          <div data-col='12'>
-            {% include 'parts/grid/grid-sample.njk' %}
-          </div>
+            <div data-col='12'>
+              {% include 'parts/grid/grid-sample.njk' %}
+            </div>
 
-          <div class="spacer"></div>
+            <div class="spacer"></div>
 
-          <div data-col="8-md">
-            <p class="is-h2 is-uppercase" style="line-height: 1em">
-              mobile<span class="is-ink-link">first</span>
-              mobile<span class="is-ink-light">landscape</span><span class="is-ink-link">480</span>
-              tablet<span class="is-ink-link">720</span>
-              tablet<span class="is-ink-light">landscape</span><span class="is-ink-link">1024</span>
-              desktop<span class="is-ink-link">1280</span>
-              widescreen<span class="is-ink-link">1920</span></p>
-            <p class="is-lead">The <strong>x.ui</strong> grid system uses <em>data-attributes</em> instead of
-              classes. Per default it is a 12 column grid with an 32px gutter.</p>
-            <pre><code class="html">
+            <div data-col="8-md">
+              <p class="is-h2 is-uppercase" style="line-height: 1em">
+                mobile<span class="is-ink-link">first</span>
+                mobile<span class="is-ink-light">landscape</span><span class="is-ink-link">480</span>
+                tablet<span class="is-ink-link">720</span>
+                tablet<span class="is-ink-light">landscape</span><span class="is-ink-link">1024</span>
+                desktop<span class="is-ink-link">1280</span>
+                widescreen<span class="is-ink-link">1920</span></p>
+              <p class="is-lead">The
+                <strong>x.ui</strong>
+                grid system uses
+                <em>data-attributes</em>
+                instead of classes. Per default it is a 12 column grid with an 32px gutter.</p>
+              <pre><code class="html">
 <div data-grid>
   <div data-col="{size}">
     ...
   </div>
 </div></code></pre>
-            <div class="spacer spacer_big"></div>
+              <div class="spacer spacer_big"></div>
+            </div>
+          </div>
+        </div>
+
+        {% include 'parts/grid/container.njk' %}
+
+        <div data-container="data-container">
+          <div data-grid="is-center">
+            <div data-col="8-md">
+              {% include 'parts/grid/grid.njk' %}
+              {% include 'parts/grid/col.njk' %}
+              {% include 'parts/grid/breakpoints.njk' %}
+            </div>
+          </div>
+        </div>
+
+        {% for typeface in structure.typeface %}
+          {% include 'parts/typeface/' + typeface %}
+          <div class="spacer spacer_big"></div>
+        {% endfor %}
+
+        <div data-container="data-container">
+          <div data-grid="is-center">
+            <div data-col="8-md">
+              <div class="bumper-big"></div>
+              <h2 class="align-center is-uppercase" id="media">media</h2>
+              <div class="spacer"></div>
+              {% for media in structure.media %}
+                {% include 'parts/media/' + media %}
+                <div class="spacer spacer_big"></div>
+              {% endfor %}
+              <div class="bumper-big"></div>
+              <h2 class="align-center is-uppercase" id="form">form</h2>
+              {% for form in structure.form %}
+                {% include 'parts/form/' + form %}
+              {% endfor %}
+              <div class="bumper-big"></div>
+              <h2 class="align-center is-uppercase" id="ui">ui</h2>
+              {% for ui in structure.ui %}
+                {% include 'parts/ui/' + ui %}
+              {% endfor %}
+              <div class="bumper-big"></div>
+              <h2 class="align-center is-uppercase" id="layout">layout</h2>
+              {% for layout in structure.layout %}
+                {% include 'parts/layout/' + layout %}
+                <div class="spacer spacer_big"></div>
+              {% endfor %}
+              {% include 'parts/interaction/data-animate.njk' %}
+            </div>
           </div>
         </div>
       </div>
-
-      {% include 'parts/grid/container.njk' %}
-
-      <div data-container>
-        <div data-grid="is-center">
-          <div data-col="8-md">
-            {% include 'parts/grid/grid.njk' %}
-            {% include 'parts/grid/col.njk' %}
-            {% include 'parts/grid/breakpoints.njk' %}
-          </div>
-        </div>
-      </div>
-
-      {% for typeface in structure.typeface %}
-      {% include 'parts/typeface/' + typeface %}
-      <div class="spacer spacer_big"></div>
-      {% endfor %}
-      
-      <div data-container>
-        <div data-grid="is-center">
-          <div data-col="8-md">
-            <div class="bumper-big"></div>
-            <h2 class="align-center is-uppercase" id="media">media</h2>
-            <div class="spacer"></div>
-            {% for media in structure.media %}
-            {% include 'parts/media/' + media %}
-            <div class="spacer spacer_big"></div>
-            {% endfor %}
-            <div class="bumper-big"></div>
-            <h2 class="align-center is-uppercase" id="form">form</h2>
-            {% for form in structure.form %}
-            {% include 'parts/form/' + form %}
-            {% endfor %}
-            <div class="bumper-big"></div>
-            <h2 class="align-center is-uppercase" id="ui">ui</h2>
-            {% for ui in structure.ui %}
-            {% include 'parts/ui/' + ui %}
-            {% endfor %}
-            <div class="bumper-big"></div>
-            <h2 class="align-center is-uppercase" id="layout">layout</h2>
-            {% for layout in structure.layout %}
-            {% include 'parts/layout/' + layout %}
-            <div class="spacer spacer_big"></div>
-            {% endfor %}
-            {% include 'parts/interaction/data-animate.njk' %}
-          </div>
-        </div>
-      </div>
-
+      {% include '_footer.njk' %}
     </div>
-    <div class="bumper-big"></div>
-    {% include 'parts/ec-icon.njk' %}
-    {% include '_footer.njk' %}
-  </div>
-</body>
+  </body>
 
 </html>
