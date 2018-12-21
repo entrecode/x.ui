@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 9.1.4
+
+### deprecated
+
+- `is-hidden#` and `is-visible#` might be removed in 10.0.0
+
 ## 9.1.3
 
 ### changes

@@ -1,4 +1,4 @@
-/// ui
+// ui
 @import 'data-tooltip';
 @import 'is-raised';
 @import 'is-lifted';
@@ -7,7 +7,8 @@
 @import 'is-bordered';
 @import 'is-fab';
 @import 'has-scroll-shadow';
-/// layout
+
+// layout
 @import 'is-outset';
 @import 'has-margin';
 @import 'has-padding';
@@ -22,22 +23,24 @@
 @import 'is-positioned';
 @import 'not-positioned';
 @import 'is-layer';
-@import 'is-visible';
-@import 'is-hidden';
 @import 'is-hidden-input';
 
-/// typeface
+// typeface
 @import 'align';
 @import 'text-transform';
 @import 'font-weight';
 @import 'word-wrap';
 
-/// theme
+// theme
 @import 'is-ink';
 @import 'is-theme';
 
-/// interaction
+// interaction
 @import 'data-animate';
 @import 'data-animate_delay';
 @import 'data-animate_duration';
 @import 'has-transition';
+
+// visibility
+@import 'is-visible';
+@import 'is-hidden';

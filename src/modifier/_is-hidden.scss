@@ -3,7 +3,9 @@
 /// @access public
 /// @group modifier
 
+// @deprecated since 9.1.4 `is-hidden` might be removed in future release
 // scss-lint:disable ImportantRule
+// allow for style to work
 .is-hidden {
   @include set-breakpoints($area: true) {
     display: none !important;
