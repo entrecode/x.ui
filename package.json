@@ -101,9 +101,7 @@
       "pull.njk",
       "is-clipped.njk",
       "is-position.njk",
-      "is-layer.njk",
-      "is-hidden.njk",
-      "is-visible.njk"
+      "is-layer.njk"
     ]
   },
   "babel": {
