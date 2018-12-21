@@ -2148,14 +2148,18 @@ $mark-color: setContrast($highlight) !default;
 $mark-background: $highlight !default;
 $mark-style: () !default;
 
-//
-// Animation
-// -------------------------------------------------------------------------------------------------
-$linear-out-slow-in-timing-function: cubic-bezier(0, 0, 0.2, 0.1) !default;
-$fast-out-slow-in-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !default;
-$fast-out-linear-in-timing-function: cubic-bezier(0.4, 0, 1, 1) !default;
 
-$data-animate-timing: $fast-out-slow-in-timing-function !default;
+//
+// IS-OUTSET
+// -------------------------------------------------------------------------------------------------
+/// @param {px} $is-outset [48]
+/// @param {array} $is-outset-spacing [16 0]
+/// @param {px} $is-outset-gutter [32]
+/// @param {px} $is-outset-bp [1200]
+$is-outset: 48 !default;
+$is-outset-spacing: 16 0 !default;
+$is-outset-gutter: 32 !default;
+$is-outset-bp: 1200 !default;
 
 //
 // HAS-HEIGHT
@@ -2208,6 +2212,15 @@ $displayStates: map-merge(
 // IS-LAYER
 // -------------------------------------------------------------------------------------------------
 $is-layer: 1, 10, 100, 9999;
+
+//
+// Animation
+// -------------------------------------------------------------------------------------------------
+$linear-out-slow-in-timing-function: cubic-bezier(0, 0, 0.2, 0.1) !default;
+$fast-out-slow-in-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$fast-out-linear-in-timing-function: cubic-bezier(0.4, 0, 1, 1) !default;
+
+$data-animate-timing: $fast-out-slow-in-timing-function !default;
 
 //
 // MIXINS
