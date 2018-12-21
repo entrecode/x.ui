@@ -29,6 +29,7 @@
 - updated headings styles
 - refactored `.avatar`
 - refactored `.file-upload`
+- refactored `.is-layer-#`
 
 ## 9.1.4
 

@@ -1,33 +1,14 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+/// 
+/// @param {map} $is-layer [1, 10, 100, 9999]
+
 .is-layer {
-  @for $i from 0 through 9 {
-    $index: $i * 10;
-
-    &-#{$index} {
-      @include set-breakpoints {
-        z-index: #{$index};
-      }
-    }
-  }
-
-  @for $i from 1 through 10 {
-    $index: $i * 100;
-
-    &-#{$index} {
-      @include set-breakpoints {
-        z-index: #{$index};
-      }
-    }
-  }
-
-  &-behind {
-    @include set-breakpoints {
-      z-index: -1;
-    }
-  }
-
-  &-max {
-    @include set-breakpoints {
-      z-index: 99999;
+  @each $l in $is-layer {
+    &-#{$l} {
+      z-index: $l;
     }
   }
 }

@@ -4935,20 +4935,9 @@ data-tooltip-left="This is a tooltip"</code></pre>
 <section>
   <h3 id="is-layer">is-layer</h3>
   <div class="well align-center">
-    <span class="is-h6">is-layer-{layer}{ -<a href="#xui-breakpoint-shortcodes">breakpoint</a> | <span class="is-ink-light">null</span> }</span>
+    <span class="is-h6">is-layer-{layer}</span>
   </div>
-  <table class="table">
-    <tr data-grid="no-gutter">
-      <td data-col="4"><strong>{layer}</strong></td>
-      <td data-col="8">
-        <ul class="is-unstyled">
-          <li><span class="code">[0-90]</span> - in tens steps</li>
-          <li><span class="code">[100-1000]</span> - in hundred steps</li>
-          <li><span class="code">behind</span> - for z-index: -1</li>
-          <li><span class="code">max</span> - for z-index: -99999</li>
-        </ul>
-    </tr>
-  </table>
+  <pre><code class="css">@param {map} $is-layer [1, 10, 100, 9999]</code></pre>
 </section>
 
 <div class="bumper"></div>            <div class="spacer spacer_big"></div>
@@ -5086,7 +5075,7 @@ data-tooltip-left="This is a tooltip"</code></pre>
       </div>
     </div>
   </div>
-</section><footer class="is-theme_dark is-relative-xl is-layer-20-xl" data-col="12">
+</section><footer class="is-theme_dark is-relative-xl is-layer-10" data-col="12">
   <div class="has-padding-3">
     <p class="align-center is-ink-light">
       <small>
