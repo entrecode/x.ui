@@ -1,5 +1,5 @@
 <section>
-  <h3 id="has-margin">has-margin<span class="is-ink-link">${hasMarginSide + hasMarginSize}</span><span class="is-ink-lighter">-bp</span></h3>
+  <h3 id="has-margin-3">has-margin<span class="is-ink-link">${hasMarginSide + hasMarginSize}</span><span class="is-ink-lighter">-bp</span></h3>
 
   <div class="demo-margin">
     <div :class="'has-margin' + hasMarginSide + hasMarginSize">
@@ -22,11 +22,6 @@
           <div class="form-group">
             <label for="hasMarginSize">size</label>
             <select class="input" id="hasMarginSize" v-model="hasMarginSize">
-              <option value="-smallest">smallest (4px)</option>
-              <option value="-small">small (8px)</option>
-              <option value="" selected>default (16px)</option>
-              <option value="-big" selected>big (32px)</option>
-              <option value="-auto" selected>auto</option>
               <option value="-0" selected>0</option>
               <option value="-1" selected>1 (4px)</option>
               <option value="-2" selected>2 (8px)</option>
