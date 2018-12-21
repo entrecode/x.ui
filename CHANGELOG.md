@@ -4,20 +4,21 @@
 
 ### breaking changes
 
-- removed deprecated class `.flex-spacer` use `.flex-space` instead
-- removed deprecated classes `.bumper-small` and `.bumper-big` use  `.bumper.bumper_small` or `.bumper.bumper_big` instead
-- removed deprecated classes `.spacer-small` and `.spacer-big` use  `.spacer.spacer_small` or `.spacer.spacer_big` instead
-- removed deprecated classes `.well-small` and `.well-big`
+- removed deprecated `.flex-spacer` use `.flex-space` instead
+- removed deprecated `.bumper-small` and `.bumper-big` use  `.bumper.bumper_small` or `.bumper.bumper_big` instead
+- removed deprecated `.spacer-small` and `.spacer-big` use  `.spacer.spacer_small` or `.spacer.spacer_big` instead
+- removed deprecated `.well-small` and `.well-big`
 - removed `.img_responsive` and `.img_full` use  `.img-responsive` or `.img-full` instead
 - removed `.no-margin` use `.has-margin-0` instead
 - removed `.no-padding` use `.has-padding-0` instead
 - removed `.xui-overlay`
 - removed float grid styles `data-row`
-- removed breakpoint styles for `align-`
-- removed `.has-margin..`, `.has-margin..-smalles`, `.has-margin..-small`, `.has-margin..-big`
-- removed `.has-padding..`, `.has-padding..-smalles`, `.has-padding..-small`, `.has-padding..-big`
-- removed breakpoints from `.is-bordered`
+- removed `.has-margin#`, `.has-margin#-smalles`, `.has-margin#-small`, `.has-margin#-big`
+- removed `.has-padding#`, `.has-padding#-smalles`, `.has-padding#-small`, `.has-padding#-big`
 - renamed `.is-bordered` to `.has-border`
+- removed breakpoints for `align-`
+- removed breakpoints for `is-clipped#`
+- removed breakpoints for `.is-bordered`
 
 ### changes
 

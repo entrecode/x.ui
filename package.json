@@ -99,7 +99,7 @@
       "has-height.njk",
       "has-width.njk",
       "pull.njk",
-      "is-overflow.njk",
+      "is-clipped.njk",
       "is-position.njk",
       "is-layer.njk",
       "is-hidden.njk",

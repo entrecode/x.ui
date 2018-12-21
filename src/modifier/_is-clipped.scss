@@ -1,22 +1,16 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 10.0.0
 /// @access public
 /// @group modifier
 
 .is-clipped {
-  @include set-breakpoints {
-    overflow: hidden;
-  }
+  overflow: hidden;
 
   &-x {
-    @include set-breakpoints {
-      overflow-x: hidden;
-    }
+    overflow-x: hidden;
   }
 
   &-y {
-    @include set-breakpoints {
-      overflow-y: hidden;
-    }
+    overflow-y: hidden;
   }
 }
