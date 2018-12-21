@@ -1848,7 +1848,6 @@ $input-valid-style: () !default;
 $input-valid-style: map-merge(
   (
     border-color: $state-success,
-    color: setContrast($input-background, $state-success),
   ),
   $input-valid-style
 );
@@ -1858,7 +1857,6 @@ $input-invalid-style: () !default;
 $input-invalid-style: map-merge(
   (
     border-color: $state-error,
-    color: setContrast($input-background, $state-error),
   ),
   $input-invalid-style
 );

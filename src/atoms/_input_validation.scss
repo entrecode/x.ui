@@ -1,10 +1,10 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 9.1.4
 /// @access public
 /// @group atom modifier
 
 .input {
-  &.ng-touched {
+  .ng-touched.ng-dirty {
     // @param {array} $input-valid-style
     &.ng-valid {
       @include inject-style($input-valid-style);

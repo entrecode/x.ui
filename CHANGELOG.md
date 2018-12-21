@@ -26,6 +26,18 @@
 - refactored `.avatar`
 - refactored `.file-upload`
 
+## 9.1.4
+
+### deprecated
+
+- `is-hidden#` and `is-visible#` might be removed in 10.0.0
+
+## 9.1.3
+
+### changes
+
+- changed `<fieldset>` to `.fieldset`
+
 ## 9.1.2
 
 ### changes
