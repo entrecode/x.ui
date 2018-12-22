@@ -27,6 +27,7 @@
 - removed breakpoints for `is-clipped#`
 - removed breakpoints for `.is-bordered`
 - removed breakpoints for `.is-scrollable`
+- renamed `getBreakpoints()` to `bp(`
 
 ### changes
 

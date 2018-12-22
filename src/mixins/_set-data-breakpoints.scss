@@ -22,7 +22,7 @@
   @if $area == true {
     @each $key in $keys {
       [data-#{$data}~='#{$data-value}-#{$key}'] {
-        @media (min-width: getBreakpoint(#{$key})) and (max-width: getBreakpoint(#{$key}, max)) {
+        @media (min-width: bp(#{$key})) and (max-width: bp(#{$key}, max)) {
           @content;
         }
       }
@@ -30,7 +30,7 @@
   } @else {
     @each $key in $keys {
       [data-#{$data}~='#{$data-value}-#{$key}'] {
-        @media (min-width: getBreakpoint(#{$key})) {
+        @media (min-width: bp(#{$key})) {
           @content;
         }
       }

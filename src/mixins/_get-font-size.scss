@@ -19,7 +19,7 @@
     $key: nth(map-keys($bp), $i);
     $size: map-get($map, $level);
 
-    @media (min-width: getBreakpoint($key)) {
+    @media (min-width: bp($key)) {
       $scale: map-get($bp, $key);
       font-size: arrayMagic($size * $scale, $unit);
     }

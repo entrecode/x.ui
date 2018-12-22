@@ -22,7 +22,7 @@
 @each $key in map-keys($breakpoints) {
   @for $i from 1 through $grid-num-columns {
     [data-col~='#{$i}-#{$key}'] {
-      @media (min-width: getBreakpoint(#{$key})) {
+      @media (min-width: bp(#{$key})) {
         max-width: ($i / $grid-num-columns) * 100%;
       }
     }
@@ -31,7 +31,7 @@
 
 @each $key in map-keys($breakpoints) {
   [data-col~='auto-#{$key}'] {
-    @media (min-width: getBreakpoint(#{$key})) {
+    @media (min-width: bp(#{$key})) {
       width: auto;
       flex-grow: 1;
     }

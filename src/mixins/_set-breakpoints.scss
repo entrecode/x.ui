@@ -20,13 +20,13 @@
     @each $key in $keys {
       @if index($keys, $key) == $length {
         &-#{$key} {
-          @media (min-width: getBreakpoint(#{$key})) {
+          @media (min-width: bp(#{$key})) {
             @content;
           }
         }
       } @else {
         &-#{$key} {
-          @media (min-width: getBreakpoint(#{$key})) and (max-width: getBreakpoint(#{$key}, max)) {
+          @media (min-width: bp(#{$key})) and (max-width: bp(#{$key}, max)) {
             @content;
           }
         }
@@ -35,7 +35,7 @@
   } @else {
     @each $key in $keys {
       &-#{$key} {
-        @media (min-width: getBreakpoint(#{$key})) {
+        @media (min-width: bp(#{$key})) {
           @content;
         }
       }

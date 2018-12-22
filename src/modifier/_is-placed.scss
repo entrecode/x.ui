@@ -5,7 +5,7 @@
 ///
 /// @param {map} $is-placed-states
 /// @param {map} $breakpoints
-/// @requires {function} getBreakpoint
+/// @requires {function} bp
 
 
 @mixin _is-placed($p) {
@@ -79,7 +79,7 @@
   }
 
   @each $_bp in map-keys($breakpoints) {
-    @media (min-width: getBreakpoint(#{$_bp})) {
+    @media (min-width: bp(#{$_bp})) {
       @each $_state in $_states {
         $_i: index($_states, $_state);
         $_v: nth($_values, $_i);

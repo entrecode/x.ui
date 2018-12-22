@@ -37,7 +37,7 @@
         $v: map-get($attr-map, $_attr-key);
 
         [data-#{$attr-name}~='#{$_attr-key}'] {
-          @media (min-width: getBreakpoint(#{$_bp-key})) and (max-width: getBreakpoint(#{$_bp-key}, max)) {
+          @media (min-width: bp(#{$_bp-key})) and (max-width: bp(#{$_bp-key}, max)) {
             #{$css-attr}: #{$v};
           }
         }
@@ -49,7 +49,7 @@
         $v: map-get($attr-map, $_attr-key);
 
         [data-#{$attr-name}~='#{$_attr-key}'] {
-          @media (min-width: getBreakpoint(#{$_bp-key})) {
+          @media (min-width: bp(#{$_bp-key})) {
             #{$css-attr}: #{$v};
           }
         }

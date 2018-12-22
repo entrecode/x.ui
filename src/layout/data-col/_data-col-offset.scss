@@ -14,7 +14,7 @@ $offset: $grid-num-columns - 1;
 @each $key in map-keys($breakpoints) {
   @for $i from 0 through $offset {
     [data-col~='+#{$i}-#{$key}'] {
-      @media (min-width: getBreakpoint(#{$key})) {
+      @media (min-width: bp(#{$key})) {
         margin-left: (($i / $grid-num-columns) * 100%);
       }
     }

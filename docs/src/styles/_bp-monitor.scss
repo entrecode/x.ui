@@ -36,35 +36,35 @@
   }
 
   .bp-monitor-sm {
-    @media (min-width: getBreakpoint(sm)) {
+    @media (min-width: bp(sm)) {
       background: getColor(link);
       color: setContrast(getColor(link));
     }
   }
 
   .bp-monitor-md {
-    @media (min-width: getBreakpoint(md)) {
+    @media (min-width: bp(md)) {
       background: getColor(link);
       color: setContrast(getColor(link));
     }
   }
 
   .bp-monitor-lg {
-    @media (min-width: getBreakpoint(lg)) {
+    @media (min-width: bp(lg)) {
       background: getColor(link);
       color: setContrast(getColor(link));
     }
   }
 
   .bp-monitor-xl {
-    @media (min-width: getBreakpoint(xl)) {
+    @media (min-width: bp(xl)) {
       background: getColor(link);
       color: setContrast(getColor(link));
     }
   }
 
   .bp-monitor-xxl {
-    @media (min-width: getBreakpoint(xxl)) {
+    @media (min-width: bp(xxl)) {
       background: getColor(link);
       color: setContrast(getColor(link));
     }
