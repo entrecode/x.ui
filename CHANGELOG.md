@@ -36,6 +36,7 @@
 - refactored `.file-upload`
 - refactored `.is-layer-#`
 - refactored `.is-position-#`
+- refactored `.is-theme-#`
 
 ## 9.1.4
 

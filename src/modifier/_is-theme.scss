@@ -1,63 +1,31 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 10.0.0
 /// @access public
 /// @group modifier
 ///
-/// @param {array} $name-array - postfix names appending `.theme-`
-/// @param {array} $color-array - theme colors
-/// @param {array} $postfix-array - shade postfix names
-/// @param {array} $shade-array - shading values
-///
+/// @param {map} $is-theme
 /// @return modifier class with background-color and color values
 
-$name-array: default, minor, link, super, highlight, invert;
-$color-array: $background, $minor, $link, $super, $highlight, $text;
-$postfix-array: darkest, darker, dark, light, lighter, lightest;
-$shade-array: -10, -8, -4, 4, 8, 12;
+.is-theme {
+  $_keys: map_keys($is-theme);
+  $_values: map_values($is-theme);
+  $_c: '-';
 
-@for $i from 1 through length($color-array) {
-  $color: nth($color-array, $i);
-  $name: nth($name-array, $i);
+  @each $_key in $_keys {
+    $_i: index($_keys, $_key);
+    $_value: nth($_values, $_i);
 
-  @if alpha($color) {
-    $color: flattenColor($color);
-  }
+    @if length($_value) == 3 {
+      &#{$_c}#{$_key} {
+        background: nth($_value, 1);
+        color: nth($_value, 2);
 
-  @if $name == 'default' {
-    .is-theme {
-      background-color: $color;
-
-      @for $n from 1 through length($postfix-array) {
-        $postfix: nth($postfix-array, $n);
-        $shade: nth($shade-array, $n);
-
-        &_#{$postfix} {
-          background-color: varColor($color, $shade);
+        a:not(.btn):not(.tag) {
+          color: nth($_value, 3);
         }
       }
-    }
-  } @else {
-    .is-theme-#{$name} {
-      background-color: $color;
-      color: setContrast($color);
-
-      a:not(.btn):not(.tag) {
-        color: setContrast($color, $link);
-      }
-
-      @for $n from 1 through length($postfix-array) {
-        $postfix: nth($postfix-array, $n);
-        $shade: nth($shade-array, $n);
-
-        &_#{$postfix} {
-          background-color: varColor($color, $shade);
-          color: setContrast(varColor($color, $shade));
-
-          a:not(.btn) {
-            color: setContrast(varColor($color, $shade), $link);
-          }
-        }
-      }
+    } @else {
+      @warn 'is-theme: arguments missing';
     }
   }
 }
