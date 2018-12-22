@@ -1,60 +1,44 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group modifier
+///
+/// @require (mixin) is-scrollable
 
 .is-scrollable {
-  @include set-breakpoints {
-    @include is-scrollable();
-  }
+  @include is-scrollable();
 
   &-x {
-    @include set-breakpoints {
-      @include is-scrollable(x);
-    }
+    @include is-scrollable(x);
 
     &-contain {
-      @include set-breakpoints {
-        @include is-scrollable(x, contain);
-      }
+      @include is-scrollable(x, contain);
     }
   }
 
   &-y {
-    @include set-breakpoints {
-      @include is-scrollable(y);
-    }
+    @include is-scrollable(y);
 
     &-contain {
-      @include set-breakpoints {
-        @include is-scrollable(y, contain);
-      }
+      @include is-scrollable(y, contain);
     }
   }
 }
 
 .is-scrollable-auto {
   &-x {
-    @include set-breakpoints {
-      @include is-scrollable(x, $behavior: auto);
-    }
+    @include is-scrollable(x, $behavior: auto);
 
     &-contain {
-      @include set-breakpoints {
-        @include is-scrollable(x, contain, $behavior: auto);
-      }
+      @include is-scrollable(x, contain, $behavior: auto);
     }
   }
 
   &-y {
-    @include set-breakpoints {
-      @include is-scrollable(y, $behavior: auto);
-    }
+    @include is-scrollable(y, $behavior: auto);
 
     &-contain {
-      @include set-breakpoints {
-        @include is-scrollable(y, contain, $behavior: auto);
-      }
+      @include is-scrollable(y, contain, $behavior: auto);
     }
   }
 }
