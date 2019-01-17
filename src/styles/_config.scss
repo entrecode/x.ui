@@ -1,0 +1,57 @@
+$experimental: true;
+
+@import url('https://fonts.googleapis.com/css?family=Geo|Rubik:300,400,500,700');
+
+$body-font: 'Rubik', sans-serif;
+$headings-font: 'Geo', sans-serif;
+
+$is-light: 300;
+$is-normal: 400;
+$is-medium: 500;
+$is-bold: 700;
+
+$base-font-size: 14;
+
+$background: #fff;
+$text: #2a3d54;
+$link: #2fce6f;
+$super: #ee1e47;
+$minor: #f3f3f3;
+
+$btn-weight: $is-medium;
+$tag-weight: $is-medium;
+
+$headings-line-height: 1;
+$paragraph-line-height: 1.5;
+
+$tag-min-height: 24;
+$tag-line-height: 16;
+$tag-font-size: 12;
+
+$tag-small-font-size: 10;
+$tag-small-min-height: 20;
+$tag-small-line-height: 14;
+
+$btn-font-family: $headings-font;
+
+$form-group-spacing: 0 0 16;
+
+$dropdown-options-style: (
+  font-size: 14px,
+);
+
+$dropdown-option-min-height: initial;
+$dropdown-option-weight: $is-medium;
+$dropdown-option-alignment: left;
+$dropdown-option-style: (
+  white-space: nowrap,
+);
+
+$input-border-width: 0;
+$input-background: $minor;
+
+$input-hover-style: (
+  box-shadow: none,
+);
+
+$title-spacing: 0 0 16;

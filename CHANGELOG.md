@@ -40,14 +40,6 @@
 
 ## 9.1.4
 
-### added
-
-- added styles for `.ixo`
-
-### changes
-
-- update unput validation styles
-
 ### deprecated
 
 - `is-hidden#` and `is-visible#` might be removed in 10.0.0

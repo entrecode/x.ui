@@ -1,0 +1,23 @@
+@import 'config';
+@import '../../scss/x.ui';
+@import 'hljs';
+
+.headings-font {
+  font-family: $headings-font;
+}
+
+.code {
+  font-family: monospace;
+  background-color: $text;
+  color: $text-invert;
+  font-size: 12px;
+  line-height: $base-line-height * $base-font-size + px;
+  padding: 0 rem(8);
+  display: inline-block;
+  font-weight: normal;
+  vertical-align: text-bottom;
+  border-radius: rem(2);
+  white-space: nowrap;
+  user-select: all;
+  margin: 0 rem(2);
+}
