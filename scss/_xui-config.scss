@@ -237,10 +237,10 @@ $monospace-font: monospace !default;
 //
 // FONT-WEIGHT
 // ---------------------------------------------
-// @param {string} $is-light [lighter] - font-weight value for .is-light
-// @param {string} $is-normal [normal] - font-weight value for .is-normal
-// @param {string} $is-medium [bold] - font-weight value for .is-medium
-// @param {string} $is-bold [bold] - font-weight value for .is-bold
+// @param {string} $is-light [lighter]
+// @param {string} $is-normal [normal]
+// @param {string} $is-medium [bold]
+// @param {string} $is-bold [bold]
 $is-light: lighter !default;
 $is-normal: normal !default;
 $is-medium: bold !default;
@@ -1670,42 +1670,49 @@ $fieldset-border: 0 !default;
 $fieldset-style: () !default;
 
 //
-// FORM-GROUP
+// FIELD-GROUP
 // ------------------------------------------------------
-// @param {array} $form-group-spacing [0 0 8]
-// @param {array} $form-group-padding [0]
-// @param {color} $form-group-background [none]
-// @param {array} $form-group-style
-$form-group-spacing: 0 0 8 !default;
-$form-group-padding: 0 !default;
-$form-group-background: none !default;
-$form-group-style: () !default;
+// @param {array} $field-group-spacing [0 0 8]
+// @param {array} $field-group-padding [0]
+// @param {color} $field-group-background [none]
+// @param {array} $field-group-style
+$field-group-spacing: 0 0 8 !default;
+$field-group-padding: 0 !default;
+$field-group-background: none !default;
+$field-group-style: () !default;
 
-// @param {array} $form-group-label-spacing [0 0 4 0]
-// @param {px} $form-group-label-font-size [$base-font-size]
-// @param {array} $form-group-label-style
-$form-group-label-spacing: 0 0 4 0 !default;
-$form-group-label-font-size: $base-font-size !default;
-$form-group-label-style: () !default;
+// @param {array} $field-group-label-spacing [0 0 4 0]
+// @param {px} $field-group-label-font-size [$base-font-size]
+// @param {array} $field-group-label-style
+$field-group-label-spacing: 0 0 4 0 !default;
+$field-group-label-font-size: $base-font-size !default;
+$field-group-label-style: () !default;
+
+// @param {array} $field-group-info-spacing [8 0 8 0]
+// @param {px} $field-group-info-font-size [$base-font-size]
+// @param {array} $field-group-info-style
+$field-group-info-spacing: 8 0 8 0 !default;
+$field-group-info-font-size: $base-font-size !default;
+$field-group-info-style: () !default;
 
 //
 // FORM-BOOLEAN
 // ------------------------------------------------------
-// @param {array} $form-boolean-spacing [$form-group-spacing]
+// @param {array} $form-boolean-spacing [$field-group-spacing]
 // @param {array} $form-boolean-padding [0]
 // @param {px} $form-boolean-gutter [8]
 // @param {color} $form-boolean-background [none]
 // @param {array} $form-boolean-style
-$form-boolean-spacing: $form-group-spacing !default;
+$form-boolean-spacing: $field-group-spacing !default;
 $form-boolean-padding: 0 !default;
 $form-boolean-gutter: 8 !default;
 $form-boolean-background: none !default;
 $form-boolean-style: () !default;
 
-// @param {array} $form-boolean-label-spacing [$form-group-label-spacing]
+// @param {array} $form-boolean-label-spacing [$field-group-label-spacing]
 // @param {px} $form-boolean-label-font-size [$base-font-size]
 // @param {array} $form-boolean-label-style
-$form-boolean-label-spacing: $form-group-label-spacing !default;
+$form-boolean-label-spacing: $field-group-label-spacing !default;
 $form-boolean-label-font-size: $base-font-size !default;
 $form-boolean-label-style: () !default;
 
@@ -2061,7 +2068,7 @@ $xui-radio-checked-style: () !default;
 // @param {px} $input-toggle-height [$root-size]
 // @param {color} $input-toggle-width [$xui-toggle-height * 1.75]
 // @param {color} $xui-toggle-radius [$xui-toggle-height / 2]
-// @param {array} $xui-toggle-spacing [$form-group-spacing]
+// @param {array} $xui-toggle-spacing [$field-group-spacing]
 // @param {array} $xui-toggle-style
 $xui-toggle-background: flattenColor($minor) !default;
 $xui-toggle-hover-background: setHover($xui-toggle-background) !default;
@@ -2069,7 +2076,7 @@ $xui-toggle-active-background: $link !default;
 $xui-toggle-height: $root-size !default;
 $xui-toggle-width: $xui-toggle-height * 1.75 !default;
 $xui-toggle-radius: $xui-toggle-height / 2 !default;
-$xui-toggle-spacing: $form-group-spacing !default;
+$xui-toggle-spacing: $field-group-spacing !default;
 $xui-toggle-style: () !default;
 
 // @param {color} $input-toggle-pin-background [flattenColor(getColor(minor))]

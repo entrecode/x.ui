@@ -27,7 +27,7 @@
   // @param {px} $input-toggle-pin-height [$root-size]
   // @param {px} $input-toggle-pin-width [$xui-toggle-height * 1.75]
   // @param {px} $xui-toggle-pin-radius [$xui-toggle-height / 2]
-  // @param {array} $xui-toggle-spacing [$form-group-spacing]
+  // @param {array} $xui-toggle-spacing [$field-group-spacing]
   // @param {array} $xui-toggle-pin-style
   $_pin-spacing-h: ($xui-toggle-height - $xui-toggle-pin-height) / 2;
   $_pin-spacing-v: (($xui-toggle-width / 2) - $xui-toggle-pin-width) / 2;

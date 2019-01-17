@@ -5,7 +5,7 @@
 
 // scss-lint:disable NestingDepth
 
-// @param {array} $form-boolean-spacing [$form-group-spacing]
+// @param {array} $form-boolean-spacing [$field-group-spacing]
 // @param {array} $form-boolean-padding [0]
 // @param {px} $form-boolean-gutter [8]
 // @param {color} $form-boolean-background [none]
@@ -25,7 +25,7 @@
   padding: arrayMagic($form-boolean-padding);
 
 
-  // @param {array} $form-boolean-label-spacing [$form-group-label-spacing]
+  // @param {array} $form-boolean-label-spacing [$field-group-label-spacing]
   // @param {px} $form-boolean-label-font-size [$base-font-size]
   // @param {array} $form-boolean-label-style
   label {
