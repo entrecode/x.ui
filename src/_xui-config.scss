@@ -1876,14 +1876,14 @@ $file-upload-hover-style: () !default;
 $input-group-spacing: $input-spacing;
 
 // @param {color} $input-group-addon-color [$text-light]
-// @param {color} $input-group-addon-background [transparent]
+// @param {color} $input-group-addon-background [$input-background]
 // @param {color} $input-group-addon-border-color [$input-border-color]
 // @param {color} $input-group-addon-border-width [$input-border-width]
 // @param {array} $input-group-addon-border-width [$input-border-style]
 // @param {array} $input-group-addon-padding [0 4]
 // @param {array} $input-group-addon-style
 $input-group-addon-color: $text-light !default;
-$input-group-addon-background: $background-lightest !default;
+$input-group-addon-background: $input-background !default;
 $input-group-addon-border-color: $input-border-color !default;
 $input-group-addon-border-width: $input-border-width !default;
 $input-group-addon-border-style: $input-border-style !default;
@@ -2000,17 +2000,17 @@ $xui-checkbox-style: map-merge(
   $xui-checkbox-style
 );
 
-// @param {color} $xui-checkbox-hover-background [inherit]
+// @param {color} $xui-checkbox-hover-background [$xui-checkbox-background]
 // @param {color} $xui-checkbox-hover-color [$text-lightest]
 // @param {array} $xui-checkbox-hover-style
-$xui-checkbox-hover-background: inherit !default;
+$xui-checkbox-hover-background: $xui-checkbox-background !default;
 $xui-checkbox-hover-color: $text-lightest !default;
 $xui-checkbox-hover-style: () !default;
 
-// @param {color} $xui-checkbox-checked-background [inherit]
+// @param {color} $xui-checkbox-checked-background [$xui-checkbox-background]
 // @param {color} $xui-checkbox-checked-color [$link]
 // @param {array} $xui-checkbox-checked-style
-$xui-checkbox-checked-background: inherit !default;
+$xui-checkbox-checked-background: $xui-checkbox-background !default;
 $xui-checkbox-checked-color: $link !default;
 $xui-checkbox-checked-style: () !default;
 
