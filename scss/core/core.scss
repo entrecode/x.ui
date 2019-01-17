@@ -15,11 +15,6 @@
 }
 
 input {
-  &[type='number'] {
-    max-width: 100%;
-    width: auto;
-  }
-
   &[type='search'] {
     -webkit-appearance: textfield;
 

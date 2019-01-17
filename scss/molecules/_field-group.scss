@@ -1,0 +1,48 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group molecules
+
+// @param {array} $field-group-spacing [0 0 8 0]
+// @param {array} $field-group-padding [0]
+// @param {color} $field-group-background [none]
+// @param {array} $field-group-style
+.field-group {
+  @include inject-style($field-group-style);
+  background: $field-group-background;
+  margin: arrayMagic($field-group-spacing);
+  padding: arrayMagic($field-group-padding);
+
+  &.is-disabled,
+  &[disabled] {
+    cursor: not-allowed;
+
+    &:not(.is-active) {
+      opacity: 0.4;
+
+      &:hover {
+        opacity: 0.2;
+      }
+    }
+  }
+}
+
+// @param {array} $field-group-label-spacing [0 0 4 0]
+// @param {px} $field-group-label-font-size [$base-font-size]
+// @param {array} $field-group-label-style
+.field-group__label {
+  display: block;
+  @include inject-style($field-group-label-style);
+  font-size: em($field-group-label-font-size);
+  margin: arrayMagic($field-group-label-spacing);
+}
+
+// @param {array} $field-group-info-spacing [8 0 8 0]
+// @param {px} $field-group-info-font-size [$base-font-size]
+// @param {array} $field-group-info-style
+.field-group__info {
+  display: block;
+  @include inject-style($field-group-info-style);
+  font-size: em($field-group-info-font-size);
+  margin: arrayMagic($field-group-info-spacing);
+}

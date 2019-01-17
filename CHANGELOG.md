@@ -28,6 +28,7 @@
 - removed breakpoints for `.is-bordered`
 - removed breakpoints for `.is-scrollable`
 - renamed `getBreakpoints()` to `bp(`
+- removed `.form-group` use `.field-group` instead
 
 ### changes
 

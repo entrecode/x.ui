@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 
@@ -14,7 +14,8 @@
 // @param {array} $input-hover-style [box-shadow: inset 0 0 0 2px $state-hover]
 // @param {array} $input-focus-style [$input-hover-style]
 // @param {array} $input-disabled-style [(opacity: 0.4)]
-%input {
+
+.input {
   display: block;
   flex-grow: 1;
   outline: none;
@@ -34,19 +35,13 @@
   border-style: $input-border-style;
   margin: arrayMagic($input-spacing);
   color: $input-color;
-
+  
   // @param {color} $input-placeholder-color [$text-light]
   // @param {array} $input-placeholder-style
   @include placeholder {
     @include inject-style($input-placeholder-style);
     color: $input-placeholder-color;
   }
-}
-
-// scss-lint:disable QualifyingElement
-
-.input {
-  @extend %input;
 
   //
   // states
