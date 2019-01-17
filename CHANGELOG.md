@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 9.1.3
+
+### added
+
+- added styles for `.ixo`
+
 ## 9.1.2
 
 ### changes
