@@ -1,9 +1,8 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.2
+/// @since 10.0.0
 /// @group flex-grid
 /// @access public
 
-// scss-lint:disable ImportantRule QualifyingElement
 [data-grid] {
   display: flex;
   flex-wrap: wrap;
@@ -15,48 +14,47 @@
   }
 
   @if $grid-outer-gutter {
-    margin-left: ($grid-gutter / -2) + px !important;
-    margin-right: ($grid-gutter / -2) + px !important;
+    margin-left: ($grid-gutter / -2) + px;
+    margin-right: ($grid-gutter / -2) + px;
   }
 
   > [data-col] {
-    float: initial;
-    padding-left: ($grid-gutter / 2) + px !important;
-    padding-right: ($grid-gutter / 2) + px !important;
+    padding-left: ($grid-gutter / 2) + px;
+    padding-right: ($grid-gutter / 2) + px;
   }
 }
 
 @include set-data-breakpoints('grid', 'is-default') {
   @if $grid-outer-gutter {
-    margin-left: ($grid-gutter / -2) + px !important;
-    margin-right: ($grid-gutter / -2) + px !important;
+    margin-left: ($grid-gutter / -2) + px;
+    margin-right: ($grid-gutter / -2) + px;
   }
 
   > [data-col] {
-    padding-left: ($grid-gutter / 2) + px !important;
-    padding-right: ($grid-gutter / 2) + px !important;
+    padding-left: ($grid-gutter / 2) + px;
+    padding-right: ($grid-gutter / 2) + px;
   }
 }
 
 @include set-data-breakpoints('grid', 'is-small') {
   @if $grid-outer-gutter {
-    margin-left: ($grid-gutter / -4) + px !important;
-    margin-right: ($grid-gutter / -4) + px !important;
+    margin-left: ($grid-gutter / -4) + px;
+    margin-right: ($grid-gutter / -4) + px;
   }
 
   > [data-col] {
-    padding-left: ($grid-gutter / 4) + px !important;
-    padding-right: ($grid-gutter / 4) + px !important;
+    padding-left: ($grid-gutter / 4) + px;
+    padding-right: ($grid-gutter / 4) + px;
   }
 }
 
 @include set-data-breakpoints('grid', 'no-gutter') {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-left: 0;
+  margin-right: 0;
 
   > [data-col] {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
