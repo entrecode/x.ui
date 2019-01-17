@@ -13,10 +13,10 @@ $is-bold: 700;
 $base-font-size: 14;
 
 $background: #fff;
-$text: #2a3d54;
+$text: #252a57;
 $link: #2fce6f;
 $super: #ee1e47;
-$minor: #f3f3f3;
+$minor: #f4f5f6;
 
 $btn-weight: $is-medium;
 $tag-weight: $is-medium;
@@ -34,7 +34,7 @@ $tag-small-line-height: 14;
 
 $btn-font-family: $headings-font;
 
-$form-group-spacing: 0 0 16;
+$field-group-spacing: 0 0 16;
 
 $dropdown-options-style: (
   font-size: 14px,
@@ -48,7 +48,7 @@ $dropdown-option-style: (
 );
 
 $input-border-width: 0;
-$input-background: $minor;
+$input-background: #f4f5f6;
 
 $input-hover-style: (
   box-shadow: none,

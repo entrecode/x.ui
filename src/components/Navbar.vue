@@ -79,7 +79,7 @@ export default {
           'xui-checkbox',
           'xui-radio',
           'xui-toggle',
-          'form-group',
+          'field-group',
         ],
         ui: [
           'btn',

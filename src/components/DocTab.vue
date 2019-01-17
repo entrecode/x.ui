@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="title">
+
       <slot name="title"></slot>
+      
       <nav class="nav">
         <ul class="nav__items">
           <li class="nav__item">
@@ -15,22 +17,11 @@
               </svg>
             </div>
           </li>
-          <li class="nav__item" v-if="hasMarkup">
+          <li class="nav__item" v-if="hasConfig">
             <div
               class="btn"
               :class="showTab === 2 ? 'btn_minor' : 'btn_clear'"
               @click="showTab = 2"
-            >
-              <svg class="ixo">
-                <use xlink:href="#code"></use>
-              </svg>
-            </div>
-          </li>
-          <li class="nav__item" v-if="hasConfig">
-            <div
-              class="btn"
-              :class="showTab === 3 ? 'btn_minor' : 'btn_clear'"
-              @click="showTab = 3"
             >
               <svg class="ixo">
                 <use xlink:href="#json"></use>
@@ -41,12 +32,18 @@
       </nav>
     </div>
     <div v-show="showTab === 1">
-      <slot name="preview"></slot>
+
+      <div data-grid>
+        <div :data-col="hasMarkup ? '6' : '12'">
+          <slot name="preview"></slot>
+        </div>
+        <div data-col="6" v-if="hasMarkup">
+          <slot name="markup"></slot>
+        </div>
+      </div>
+
     </div>
     <div v-show="showTab === 2">
-      <slot name="markup"></slot>
-    </div>
-    <div v-show="showTab === 3">
       <slot name="config"></slot>
     </div>
   </div>

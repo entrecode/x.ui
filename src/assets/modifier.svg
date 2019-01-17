@@ -1,9 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
-    <title>modifier</title>
-    <desc>Created with Sketch.</desc>
-    <g id="modifier" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon id="Path" fill="#2FCE6F" fill-rule="nonzero" points="54.6578179 41.3695969 41.1945066 55.3112639 46.5366887 73.941667 65.3421821 78.6304031 78.8054934 64.6887361 73.4633113 46.058333"></polygon>
-    </g>
+    <polygon fill="#2fce6f" points="54.6578179 41.3695969 41.1945066 55.3112639 46.5366887 73.941667 65.3421821 78.6304031 78.8054934 64.6887361 73.4633113 46.058333"></polygon>
 </svg>

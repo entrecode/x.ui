@@ -27,7 +27,7 @@
           <pre v-highlightjs><code class="shell">npm i x.ui --save</code></pre>
         </div>
         <div data-col="4-sm">
-          <h3>2. customize your config</h3>
+          <h3>2. config</h3>
           <p>
             download the default
             <a
@@ -39,9 +39,9 @@
           </p>
         </div>
         <div data-col="4-sm">
-          <h3>3. setup root-scss</h3>
+          <h3>3. import</h3>
           <pre v-highlightjs><code class="scss">@import '_config';
-@import '~x.ui/src/x.ui.scss';</code></pre>
+@import '~x.ui/src/x.ui';</code></pre>
         </div>
       </div>
 
@@ -97,47 +97,11 @@
       </div>
       <div class="y-space-8"></div>
 
-      <DocTab>
-        <div slot="title">
-          <h3>font-weight</h3>
-        </div>
-        <div slot="preview">
-          <div class="well">
-            <div data-grid>
-              <div data-col="3" class="align-center">
-                <div class="is-mega is-light">Atomic</div>
-                <span class="code">.is-light</span>
-              </div>
-              <div data-col="3" class="align-center">
-                <div class="is-mega is-normal">Atomic</div>
-                <span class="code">.is-normal</span>
-              </div>
-              <div data-col="3" class="align-center">
-                <div class="is-mega is-medium">Atomic</div>
-                <span class="code">.is-medium</span>
-              </div>
-              <div data-col="3" class="align-center">
-                <div class="is-mega is-bold">Atomic</div>
-                <span class="code">.is-bold</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <Form/>
 
-        <div slot="config">
-          <pre v-highlightjs><code class="scss">// @param {string} $is-light [lighter] - font-weight value for .is-light
-$is-light: lighter !default;
-
-// @param {string} $is-normal [normal] - font-weight value for .is-normal
-$is-normal: normal !default;
-
-// @param {string} $is-medium [bold] - font-weight value for .is-medium
-$is-medium: bold !default;
-
-// @param {string} $is-bold [bold] - font-weight value for .is-bold
-$is-bold: bolder !default;</code></pre>
-        </div>
-      </DocTab>
+      <div class="y-space-8"></div>
+      
+      <FontWeight/>
 
       <div class="y-space-8"></div>
     </div>
@@ -149,6 +113,8 @@ import Vue from 'vue';
 import VueHighlightJS from 'vue-highlightjs';
 import Navbar from './components/Navbar.vue';
 import DocTab from './components/DocTab.vue';
+import Form from './components/Form/Form.vue';
+import FontWeight from './components/Typeface/FontWeight.vue';
 
 Vue.use(VueHighlightJS);
 
@@ -157,10 +123,21 @@ export default {
   components: {
     Navbar,
     DocTab,
+    Form,
+    FontWeight,
   },
 };
 </script>
 
 <style lang="scss">
 @import './src/styles/app';
+
+.select-all {
+  user-select: all;
+}
+
+pre {
+  margin: 0;
+}
+
 </style>
