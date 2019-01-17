@@ -1,9 +1,12 @@
 /// @author Bernhard Ruoff
-/// @since 9.1.2
+/// @since 10.0.0
 /// @access public
 /// @group modifier
 
+
+// @deprecated since 9.1.4 `is-visible` might be removed in future release
 // scss-lint:disable ImportantRule
+// allow for style to work
 .is-visible {
   $keys: map-keys($breakpoints);
 
@@ -19,7 +22,7 @@
     }
   }
 
-  @include set-breakpoints($area: true, $has-root: false) {
+  @include set-breakpoints($area: true) {
     display: inherit !important;
   }
 
