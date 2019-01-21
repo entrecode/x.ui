@@ -1,0 +1,20 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {string} $body-font
+/// @param {string} $headings-font
+/// @param {string} $monospace-font
+
+.is-body-font {
+  font-family: $body-font;
+}
+
+.is-headings-font {
+  font-family: $headings-font;
+}
+
+.is-monospace-font {
+  font-family: $monospace-font;
+}
