@@ -95,12 +95,19 @@
           </p>
         </div>
       </div>
+    </div>
+
+    <Grid/>
+   
+    <div data-container style="max-width: 800px;">
       <div class="y-space-8"></div>
+
+      <h2>Form</h2>
 
       <Form/>
 
       <div class="y-space-8"></div>
-      
+
       <FontWeight/>
 
       <div class="y-space-8"></div>
@@ -109,14 +116,11 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import VueHighlightJS from 'vue-highlightjs';
 import Navbar from './components/Navbar.vue';
 import DocTab from './components/DocTab.vue';
 import Form from './components/Form/Form.vue';
+import Grid from './components/Grid/Grid.vue';
 import FontWeight from './components/Typeface/FontWeight.vue';
-
-Vue.use(VueHighlightJS);
 
 export default {
   name: 'app',
@@ -124,6 +128,7 @@ export default {
     Navbar,
     DocTab,
     Form,
+    Grid,
     FontWeight,
   },
 };
@@ -139,5 +144,4 @@ export default {
 pre {
   margin: 0;
 }
-
 </style>

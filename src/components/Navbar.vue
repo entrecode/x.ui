@@ -1,7 +1,7 @@
 <template>
   <div class="is-sticky has-padding-2 is-layer-10" style="top:0;">
     <div class="has-padding-center-4" data-flex="is-center-items">
-      <img src="./../assets/xui-logo.svg" alt="x.ui - atomic css framwork" style="height:24px;">
+      <svg class="ixo is-ink-link" style="font-size: 40px;"><use xlink:href="#logo"></use></svg>
       <div class="x-space-3"></div>
       <div class="flex-space"></div>
       <div class="is-relative" style="flex-grow: 1; max-width: 480px;">

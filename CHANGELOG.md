@@ -5,8 +5,8 @@
 ### breaking changes
 
 - removed deprecated `.flex-spacer` use `.flex-space` instead
-- removed deprecated `.bumper-small` and `.bumper-big` use  `.bumper.bumper_small` or `.bumper.bumper_big` instead
-- removed deprecated `.spacer-small` and `.spacer-big` use  `.spacer.spacer_small` or `.spacer.spacer_big` instead
+- removed deprecated `.bumper-small` and `.bumper-big` use `.bumper.bumper_small` or `.bumper.bumper_big` instead
+- removed deprecated `.spacer-small` and `.spacer-big` use `.spacer.spacer_small` or `.spacer.spacer_big` instead
 - removed deprecated `.well-small` and `.well-big`
 - removed deprecated `.is-visible#` use `is-block#` or `is-flex#` instead
 - removed deprecated `.is-raises#` use `is-elevated#` instead
@@ -15,7 +15,7 @@
 - removed deprecated `.is-hidden-from#`
 - removed deprecated `.btn_glow`
 - refactored and combined `is-positioned` and `is-fab`
-- removed `.img_responsive` and `.img_full` use  `.img-responsive` or `.img-full` instead
+- removed `.img_responsive` and `.img_full` use `.img-responsive` or `.img-full` instead
 - removed `.no-margin` use `.has-margin-0` instead
 - removed `.no-padding` use `.has-padding-0` instead
 - removed `.xui-overlay`
@@ -29,6 +29,7 @@
 - removed breakpoints for `.is-scrollable`
 - renamed `getBreakpoints()` to `bp(`
 - removed `.form-group` use `.field-group` instead
+- removed input validation styles
 
 ### changes
 
@@ -38,6 +39,14 @@
 - refactored `.is-layer-#`
 - refactored `.is-position-#`
 - refactored `.is-theme-#`
+
+### added
+
+- added `.is-font` for `font-family` styles
+
+### deprecated
+
+- changed `macro-metrics` to `atom-metric`
 
 ## 9.1.4
 
@@ -81,6 +90,7 @@
 - `xui-overlay` use `.dialog` instead
 
 ### added
+
 - config for `.kilo`, `.mega` and `.giga`
 - new atom `.file-upload` with config
 - new atom `.slider` with config
@@ -100,6 +110,7 @@
 - new font-weight variable and modifier class `.is-medium`
 
 ### updated
+
 - `.img-crop-#` - uses now a map to generate classes. can be extended via custom config
 - `arrayMagic` - can now be used with mixed arrays using different values like 2px 8 .1em 100%
 
@@ -321,10 +332,10 @@
 ### changes
 
 - new config variables `$giga-margin`, `$mega-margin` and `$kilo-margin` for headings margin-bottom
-- changed default values for .btn config variables - new based on $base-font-size
-- changed default values for .tag config variables - new based on $base-font-size
-- changed default values for .input config variables - new based on $base-font-size
-- fixed em function for $base-font-size usage
+- changed default values for .btn config variables - new based on \$base-font-size
+- changed default values for .tag config variables - new based on \$base-font-size
+- changed default values for .input config variables - new based on \$base-font-size
+- fixed em function for \$base-font-size usage
 - moved `$hamburger-btn-color` to config
 - removed `:invalid` styles of `.input`
 - flex fix for `xui-checkbox` and `xui-radio`
@@ -632,7 +643,7 @@ version bump
 
 ### added
 
-- added color `base, shadow` to $colors map
+- added color `base, shadow` to \$colors map
 - added modifier for `.btn` `.btn_delete` and `.btn_abort`
 
 ### changes

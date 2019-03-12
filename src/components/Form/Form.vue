@@ -52,11 +52,7 @@ $field-group-info-style: () !default;</code></pre>
 </template>
 
 <script>
-import Vue from 'vue';
-import VueHighlightJS from 'vue-highlightjs';
 import DocTab from './../DocTab.vue';
-
-Vue.use(VueHighlightJS);
 
 export default {
   name: 'Form',
