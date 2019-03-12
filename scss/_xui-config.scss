@@ -358,7 +358,6 @@ $type-scale-bp: map-merge(
   (
     xs: 0.875,
     md: 1,
-    xxl: 1.25,
   ),
   $type-scale-bp
 );
@@ -1586,12 +1585,19 @@ $has-border: 1 solid rgba($text, 0.1) !default;
 $is-theme: () !default;
 $is-theme: map-merge(
   (
-    '': ( $background, $text, $link),
-    'invert': ( $background-invert, $text-invert, $link)
+    '': (
+      $background,
+      $text,
+      $link,
+    ),
+    'invert': (
+      $background-invert,
+      $text-invert,
+      $link,
+    ),
   ),
   $is-theme
 );
-
 
 //
 // LAYOUT
@@ -1739,13 +1745,7 @@ $input-background: $background !default;
 $input-color: $text !default;
 $input-style: () !default;
 $input-hover-style: () !default;
-$input-hover-style: map-merge(
-  (
-    box-shadow: inset 0 0 0 2px $state-hover,
-  ),
-  $input-hover-style
-);
-$input-focus-style: $input-hover-style;
+$input-focus-style: () !default;
 $input-disabled-style: () !default;
 $input-disabled-style: map-merge(
   (
@@ -1802,27 +1802,6 @@ $input-big-radius: $input-radius !default;
 $input-border-color: mix($text, $background, 25%) !default;
 $input-border-width: 1 !default;
 $input-border-style: solid !default;
-
-//
-// INPUT VALIDATION
-// ------------------------------------------------------
-// @param {array} $input-valid-style
-$input-valid-style: () !default;
-$input-valid-style: map-merge(
-  (
-    border-color: $state-success,
-  ),
-  $input-valid-style
-);
-
-// @param {array} $input-invalid-style
-$input-invalid-style: () !default;
-$input-invalid-style: map-merge(
-  (
-    border-color: $state-error,
-  ),
-  $input-invalid-style
-);
 
 //
 // INPUT
@@ -2130,11 +2109,10 @@ $is-outset-bp: 1200 !default;
 $has-radius-options: () !default;
 $has-radius-options: map-merge(
   (
-    '': 4
+    '': 4,
   ),
   $has-radius-options
 );
-
 
 //
 // HAS-HEIGHT
@@ -2211,7 +2189,6 @@ $is-placed-states: map-merge(
   ),
   $is-placed-states
 );
-
 
 //
 // IS-LAYER
