@@ -97,6 +97,7 @@
 // @param {array} $toast-dismiss-style
 .toast-dismiss {
   @extend %btn;
+  background: transparent;
   position: absolute;
   right: 0;
   top: 0;
