@@ -1684,7 +1684,7 @@ $fieldset-style: () !default;
 // @param {array} $field-group-padding [0]
 // @param {color} $field-group-background [none]
 // @param {array} $field-group-style
-$field-group-spacing: 0 0 8 !default;
+$field-group-spacing: 0 0 16 !default;
 $field-group-padding: 0 !default;
 $field-group-background: none !default;
 $field-group-style: () !default;
@@ -1692,15 +1692,15 @@ $field-group-style: () !default;
 // @param {array} $field-group-label-spacing [0 0 4 0]
 // @param {px} $field-group-label-font-size [$base-font-size]
 // @param {array} $field-group-label-style
-$field-group-label-spacing: 0 0 4 0 !default;
+$field-group-label-spacing: 0 0 8 0 !default;
 $field-group-label-font-size: $base-font-size !default;
 $field-group-label-style: () !default;
 
 // @param {array} $field-group-info-spacing [8 0 8 0]
-// @param {px} $field-group-info-font-size [$base-font-size]
+// @param {px} $field-group-info-font-size [$base-font-size * 0.75]
 // @param {array} $field-group-info-style
 $field-group-info-spacing: 8 0 8 0 !default;
-$field-group-info-font-size: $base-font-size !default;
+$field-group-info-font-size: $base-font-size * 0.75 !default;
 $field-group-info-style: () !default;
 
 //
