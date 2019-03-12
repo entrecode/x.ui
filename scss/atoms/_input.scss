@@ -22,7 +22,7 @@
   text-align: left;
   width: 100%;
   @include inject-style($input-style);
-  @include macro-metrics(
+  @include atom-metrics(
     $input-font-size,
     $input-line-height,
     $input-min-height,
@@ -93,7 +93,7 @@
   }
 
   &_clear {
-    @include macro-metrics(
+    @include atom-metrics(
       $input-font-size,
       $input-line-height,
       $input-min-height
@@ -128,7 +128,7 @@
 // @param {array} $input-small-style]
 .input_small {
   @include inject-style($input-small-style);
-  @include macro-metrics(
+  @include atom-metrics(
     $input-small-font-size,
     $input-small-line-height,
     $input-small-min-height,
@@ -141,7 +141,7 @@
   }
 
   &.input_clear {
-    @include macro-metrics(
+    @include atom-metrics(
       $input-small-font-size,
       $input-small-line-height,
       $input-small-min-height
@@ -157,7 +157,7 @@
 // @param {array} $input-big-style
 .input_big {
   @include inject-style($input-big-style);
-  @include macro-metrics(
+  @include atom-metrics(
     $input-big-font-size,
     $input-big-line-height,
     $input-big-min-height,
@@ -170,7 +170,7 @@
   }
 
   &.input_clear {
-    @include macro-metrics(
+    @include atom-metrics(
       $input-big-font-size,
       $input-big-line-height,
       $input-big-min-height

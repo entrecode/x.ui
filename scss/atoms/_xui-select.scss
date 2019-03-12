@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.7
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 
@@ -23,7 +23,7 @@
   text-align: left;
   position: relative;
   @include inject-style($xui-select-style);
-  @include macro-metrics(
+  @include atom-metrics(
     $xui-select-font-size,
     $xui-select-line-height,
     $xui-select-min-height,

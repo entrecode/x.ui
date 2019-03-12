@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group atoms modifier
 ///
@@ -16,7 +16,7 @@
 // @param {array} $btn-outline-style
 .btn_outlined {
   @include inject-style($btn-outline-style);
-  @include macro-metrics(
+  @include atom-metrics(
     $btn-font-size,
     $btn-line-height,
     $btn-min-height,
@@ -32,7 +32,7 @@
   // @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
   // @param {px} $btn-small-min-height [32]
   &.btn_small {
-    @include macro-metrics(
+    @include atom-metrics(
       $btn-small-font-size,
       $btn-small-line-height,
       $btn-small-min-height,
@@ -45,7 +45,7 @@
   // @param {px} $btn-big-line-height [$btn-big-font-size * $base-line-height]
   // @param {px} $btn-big-min-height [48]
   &.btn_big {
-    @include macro-metrics(
+    @include atom-metrics(
       $btn-big-font-size,
       $btn-big-line-height,
       $btn-big-min-height,

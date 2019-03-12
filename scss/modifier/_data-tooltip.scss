@@ -75,7 +75,7 @@
     white-space: nowrap;
     z-index: 100;
     @include inject-style($tooltip-style);
-    @include macro-metrics(
+    @include atom-metrics(
       $tooltip-font-size,
       $tooltip-line-height,
       $tooltip-min-height,

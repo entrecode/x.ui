@@ -42,12 +42,11 @@
 
 %btn {
   @include btn-core;
-  @include macro-metrics(
+  @include atom-metrics(
     $btn-font-size,
     $btn-line-height,
     $btn-min-height,
     $padding-ratio: $btn-padding-ratio,
-    $icon-size: $btn-icon-size
   );
   border-radius: arrayMagic($btn-radius);
   font-weight: $btn-weight;
@@ -62,12 +61,11 @@
 
 %btn-small {
   @include btn-core;
-  @include macro-metrics(
+  @include atom-metrics(
     $btn-small-font-size,
     $btn-small-line-height,
     $btn-small-min-height,
     $padding-ratio: $btn-padding-ratio,
-    $icon-size: $btn-small-icon-size
   );
   border-radius: arrayMagic($btn-small-radius);
   font-weight: $btn-small-weight;
@@ -82,12 +80,11 @@
 
 %btn-big {
   @include btn-core;
-  @include macro-metrics(
+  @include atom-metrics(
     $btn-big-font-size,
     $btn-big-line-height,
     $btn-big-min-height,
     $padding-ratio: $btn-padding-ratio,
-    $icon-size: $btn-big-icon-size
   );
   border-radius: arrayMagic($btn-big-radius);
   font-weight: $btn-big-weight;

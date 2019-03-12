@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group molecules
 ///
@@ -135,7 +135,7 @@
     user-select: none;
     width: 100%;
     @include inject-style($dropdown-option-style);
-    @include macro-metrics(
+    @include atom-metrics(
       $dropdown-option-font-size,
       $dropdown-option-line-height,
       $dropdown-option-min-height,

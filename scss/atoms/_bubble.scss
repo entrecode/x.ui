@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 ///
@@ -18,12 +18,11 @@
   white-space: nowrap;
   @include inject-style($bubble-style);
   @include set-theme-colors($bubble-background);
-  @include macro-metrics(
+  @include atom-metrics(
     $bubble-font-size,
     $bubble-line-height,
     $bubble-min-height,
     $padding-ratio: $bubble-padding-ratio,
-    $inline-styles: false
   );
   border-radius: arrayMagic($bubble-radius);
   font-weight: $bubble-weight;
@@ -35,12 +34,11 @@
   // @param {array} $bubble-small-style
   &.bubble_small {
     @include inject-style($bubble-small-style);
-    @include macro-metrics(
+    @include atom-metrics(
       $bubble-small-font-size,
       $bubble-small-line-height,
       $bubble-small-min-height,
       $padding-ratio: $bubble-padding-ratio,
-      $inline-styles: false
     );
     border-radius: arrayMagic($bubble-small-radius);
   }
@@ -52,12 +50,11 @@
   // @param {array} $bubble-big-style
   &.bubble_big {
     @include inject-style($bubble-big-style);
-    @include macro-metrics(
+    @include atom-metrics(
       $bubble-big-font-size,
       $bubble-big-line-height,
       $bubble-big-min-height,
       $padding-ratio: $bubble-padding-ratio,
-      $inline-styles: false
     );
     border-radius: arrayMagic($bubble-big-radius);
   }

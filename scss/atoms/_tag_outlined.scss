@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group atoms modifier
 ///
@@ -13,7 +13,7 @@
 // @param {color} $tag-outlined-color [setContrast($minor)]
 // @param {color} $tag-outlined-border-color [$minor]
 .tag_outlined {
-  @include macro-metrics(
+  @include atom-metrics(
     $tag-font-size,
     $tag-line-height,
     $tag-min-height,
@@ -33,7 +33,7 @@
   // @param {px} $tag-small-line-height [$tag-small-font-size * $base-line]
   // @param {px} $tag-small-min-height [24]
   &.tag_small {
-    @include macro-metrics(
+    @include atom-metrics(
       $tag-small-font-size,
       $tag-small-line-height,
       $tag-small-min-height,
@@ -46,7 +46,7 @@
   // @param {px} $tag-big-line-height [$tag-big-font-size * $base-line-height]
   // @param {px} $tag-big-min-height [32]
   &.tag_big {
-    @include macro-metrics(
+    @include atom-metrics(
       $tag-big-font-size,
       $tag-big-line-height,
       $tag-big-min-height,
