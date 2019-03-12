@@ -1,0 +1,142 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms inline
+///
+/// @param {px} $btn-line-height [$btn-font-size * $base-line-height]
+/// @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
+/// @param {px} $btn-big-line-height [$btn-big-font-size * $base-line-height]
+///
+/// @param {px} $tag-min-height [28]
+/// @param {px} $tag-small-min-height [24]
+/// @param {px} $tag-big-min-height [32]
+///
+/// @param {px} $bubble-min-height [28]
+/// @param {px} $bubble-small-min-height [24]
+/// @param {px} $bubble-big-min-height [32]
+
+@mixin _btn-inline-elements($parent, $child) {
+  $margin: $parent - $child;
+  margin-top: rem($margin / 2);
+  margin-bottom: rem($margin / 2);
+}
+
+.btn {
+  .tag,
+  .bubble {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .tag {
+    @include _btn-inline-elements(
+      $btn-line-height,
+      $tag-min-height
+    );
+
+    &.tag_small {
+      @include _btn-inline-elements(
+        $btn-line-height,
+        $tag-small-min-height
+      );
+    }
+
+    &.tag_big {
+      @include _btn-inline-elements($btn-line-height, $tag-big-min-height);
+    }
+  }
+
+  .bubble {
+    @include _btn-inline-elements($btn-line-height, $bubble-min-height);
+
+    &.bubble_small {
+      @include _btn-inline-elements($btn-line-height, $bubble-small-min-height);
+    }
+
+    &.bubble_big {
+      @include _btn-inline-elements($btn-line-height, $bubble-big-min-height);
+    }
+  }
+
+  .ixo {
+    font-size: em($btn-icon-size, $btn-font-size);
+    @include _btn-inline-elements($btn-line-height, $btn-icon-size);
+  }
+}
+
+.btn_small {
+  .tag {
+    @include _btn-inline-elements($btn-small-line-height, $tag-min-height);
+
+    &.tag_small {
+      @include _btn-inline-elements(
+        $btn-small-line-height,
+        $tag-small-min-height
+      );
+    }
+
+    &.tag_big {
+      @include _btn-inline-elements($btn-small-line-height, $tag-big-min-height);
+    }
+  }
+
+  .bubble {
+    @include _btn-inline-elements($btn-small-line-height, $bubble-min-height);
+
+    &.bubble_small {
+      @include _btn-inline-elements(
+        $btn-small-line-height,
+        $bubble-small-min-height
+      );
+    }
+
+    &.bubble_big {
+      @include _btn-inline-elements(
+        $btn-small-line-height,
+        $bubble-big-min-height
+      );
+    }
+  }
+
+  .ixo {
+    font-size: em($btn-small-icon-size, $btn-small-font-size);
+    @include _btn-inline-elements($btn-small-line-height, $btn-small-icon-size);
+  }
+}
+
+.btn_big {
+  .tag {
+    @include _btn-inline-elements($btn-big-line-height, $tag-min-height);
+
+    &.tag_small {
+      @include _btn-inline-elements($btn-big-line-height, $tag-small-min-height);
+    }
+
+    &.tag_big {
+      @include _btn-inline-elements($btn-big-line-height, $tag-big-min-height);
+    }
+  }
+
+  .bubble {
+    @include _btn-inline-elements($btn-big-line-height, $bubble-min-height);
+
+    &.bubble_small {
+      @include _btn-inline-elements(
+        $btn-big-line-height,
+        $bubble-small-min-height
+      );
+    }
+
+    &.bubble_big {
+      @include _btn-inline-elements(
+        $btn-big-line-height,
+        $bubble-big-min-height
+      );
+    }
+  }
+
+  .ixo {
+    font-size: em($btn-big-icon-size, $btn-big-font-size);
+    @include _btn-inline-elements($btn-big-line-height, $btn-big-icon-size);
+  }
+}
