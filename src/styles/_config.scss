@@ -50,8 +50,12 @@ $dropdown-option-style: (
 $input-border-width: 0;
 $input-background: #f4f5f6;
 
-$input-hover-style: (
-  box-shadow: none,
-);
-
 $title-spacing: 0 0 16;
+
+$is-theme: (
+  'grid': (
+    #fafafa,
+    $text,
+    $link,
+  ),
+);
