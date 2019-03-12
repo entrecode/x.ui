@@ -29,16 +29,10 @@
   }
 
   .tag {
-    @include _btn-inline-elements(
-      $btn-line-height,
-      $tag-min-height
-    );
+    @include _btn-inline-elements($btn-line-height, $tag-min-height);
 
     &.tag_small {
-      @include _btn-inline-elements(
-        $btn-line-height,
-        $tag-small-min-height
-      );
+      @include _btn-inline-elements($btn-line-height, $tag-small-min-height);
     }
 
     &.tag_big {
@@ -69,10 +63,7 @@
     @include _btn-inline-elements($btn-small-line-height, $tag-min-height);
 
     &.tag_small {
-      @include _btn-inline-elements(
-        $btn-small-line-height,
-        $tag-small-min-height
-      );
+      @include _btn-inline-elements($btn-small-line-height, $tag-small-min-height);
     }
 
     &.tag_big {
@@ -84,17 +75,11 @@
     @include _btn-inline-elements($btn-small-line-height, $bubble-min-height);
 
     &.bubble_small {
-      @include _btn-inline-elements(
-        $btn-small-line-height,
-        $bubble-small-min-height
-      );
+      @include _btn-inline-elements($btn-small-line-height, $bubble-small-min-height);
     }
 
     &.bubble_big {
-      @include _btn-inline-elements(
-        $btn-small-line-height,
-        $bubble-big-min-height
-      );
+      @include _btn-inline-elements($btn-small-line-height, $bubble-big-min-height);
     }
   }
 
@@ -121,17 +106,11 @@
     @include _btn-inline-elements($btn-big-line-height, $bubble-min-height);
 
     &.bubble_small {
-      @include _btn-inline-elements(
-        $btn-big-line-height,
-        $bubble-small-min-height
-      );
+      @include _btn-inline-elements($btn-big-line-height, $bubble-small-min-height);
     }
 
     &.bubble_big {
-      @include _btn-inline-elements(
-        $btn-big-line-height,
-        $bubble-big-min-height
-      );
+      @include _btn-inline-elements($btn-big-line-height, $bubble-big-min-height);
     }
   }
 
