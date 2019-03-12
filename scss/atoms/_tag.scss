@@ -14,16 +14,18 @@
 // @param {array} $tag-style
 .tag {
   display: inline-block;
+
+  @supports (display: inline-flex) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   text-align: center;
   white-space: nowrap;
   vertical-align: text-bottom;
   @include inject-style($tag-style);
-  @include atom-metrics(
-    $tag-font-size,
-    $tag-line-height,
-    $tag-min-height,
-    $padding-ratio: $tag-padding-ratio
-  );
+  @include atom-metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
   @include set-theme-colors($tag-background);
   border-radius: arrayMagic($tag-radius);
   font-weight: $tag-weight;
@@ -67,7 +69,7 @@
   @if $experimental {
     + .tag {
       margin-left: rem(4);
-      margin-bottom: rem(2);    
+      margin-bottom: rem(2);
       margin-top: rem(2);
     }
   }
@@ -80,7 +82,6 @@
 // @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
 $_prefix: 'tag_';
 @each $_n, $_c in $theme-array {
-
   .#{$_prefix}#{$_n} {
     @include set-theme-colors($_c);
 
