@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.1.2
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 
@@ -16,6 +16,7 @@
   cursor: pointer;
   direction: ltr;
   display: inline-block;
+  flex-shrink: 0;
   @include inject-style($xui-toggle-style);
   background: $xui-toggle-background;
   border-radius: arrayMagic($xui-toggle-radius);
