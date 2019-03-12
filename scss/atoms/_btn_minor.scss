@@ -1,0 +1,24 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {color} $btn-minor-background [$minor]
+/// @param {color} $btn-minor-color [setContrast($minor)]
+/// @param {array} $btn-minor-style
+.btn_minor {
+  @include inject-style($btn-minor-style);
+  background: $btn-minor-background;
+  color: $btn-minor-color;
+
+  // @param {color} $btn-minor-hover-background [setHover($btn-minor-background)]
+  // @param {color} $btn-minor-hover-color [$btn-minor-color]
+  // @param {array} $btn-minor-hover-style
+  &.is-active,
+  &:hover,
+  &:focus {
+    @include inject-style($btn-minor-hover-style);
+    background: $btn-minor-hover-background;
+    color: $btn-minor-hover-color;
+  }
+}

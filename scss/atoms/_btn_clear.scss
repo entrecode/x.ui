@@ -1,0 +1,25 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {color} $btn-clear-background [transparent]
+/// @param {color} $btn-clear-color [$link]
+/// @param {array} $btn-clear-style
+
+.btn_clear {
+  @include inject-style($btn-clear-style);
+  background: $btn-clear-background;
+  color: $btn-clear-color;
+
+  // @param {color} $btn-clear-hover-background [$btn-clear-background]
+  // @param {color} $btn-clear-hover-color [setHover($$btn-clear-color)]
+  // @param {array} $btn-clear-hover-style
+  &.is-active,
+  &:hover,
+  &:focus {
+    @include inject-style($btn-clear-hover-style);
+    background: $btn-clear-hover-background;
+    color: $btn-clear-hover-color;
+  }
+}

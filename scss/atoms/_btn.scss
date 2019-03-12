@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.1.2
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 ///
@@ -20,6 +20,7 @@
   position: relative;
   height: auto;
   border: 0;
+  background: none;
   display: inline-block;
 
   @supports (display: inline-flex) {
@@ -185,93 +186,7 @@
   }
 }
 
-//
-// Styles
-// ------------------------------------------------------
-
-// @param {color} $btn-minor-background [$minor]
-// @param {color} $btn-minor-color [setContrast($minor)]
-// @param {array} $btn-minor-style
-.btn_minor {
-  @include inject-style($btn-minor-style);
-  background: $btn-minor-background;
-  color: $btn-minor-color;
-
-  // @param {color} $btn-minor-hover-background [setHover($btn-minor-background)]
-  // @param {color} $btn-minor-hover-color [$btn-minor-color]
-  // @param {array} $btn-minor-hover-style
-  &.is-active,
-  &:hover,
-  &:focus {
-    @include inject-style($btn-minor-hover-style);
-    background: $btn-minor-hover-background;
-    color: $btn-minor-hover-color;
-  }
-}
-
-// @param {color} $btn-super-background [$super]
-// @param {color} $btn-super-color [setContrast($super)]
-// @param {array} $btn-super-style
-.btn_super {
-  @include inject-style($btn-super-style);
-  background: $btn-super-background;
-  color: $btn-super-color;
-
-  // @param {color} $btn-super-hover-background [setHover($btn-super-background)]
-  // @param {color} $btn-super-hover-color [$btn-super-color]
-  // @param {array} $btn-super-hover-style
-  &.is-active,
-  &:hover,
-  &:focus {
-    @include inject-style($btn-super-hover-style);
-    background: $btn-super-hover-background;
-    color: $btn-super-hover-color;
-  }
-}
-
-// @param {color} $btn-invert-background [$background]
-// @param {color} $btn-invert-color [$link]
-// @param {array} $btn-invert-style
-.btn_invert {
-  @include inject-style($btn-invert-style);
-  background: $btn-invert-background;
-  color: $btn-invert-color;
-
-  // @param {color} $btn-invert-hover-background [setHover($btn-invert-background)]
-  // @param {color} $btn-invert-hover-color [setHover($btn-invert-color)]
-  // @param {array} $btn-invert-hover-style
-  &.is-active,
-  &:hover,
-  &:focus {
-    @include inject-style($btn-invert-hover-style);
-    background: $btn-invert-hover-background;
-    color: $btn-invert-hover-color;
-  }
-}
-
-// @param {color} $btn-clear-background [transparent]
-// @param {color} $btn-clear-color [$link]
-// @param {array} $btn-clear-style
-.btn_clear {
-  @include inject-style($btn-clear-style);
-  background: $btn-clear-background;
-  color: $btn-clear-color;
-
-  // @param {color} $btn-clear-hover-background [$btn-clear-background]
-  // @param {color} $btn-clear-hover-color [setHover($$btn-clear-color)]
-  // @param {array} $btn-clear-hover-style
-  &.is-active,
-  &:hover,
-  &:focus {
-    @include inject-style($btn-clear-hover-style);
-    background: $btn-clear-hover-background;
-    color: $btn-clear-hover-color;
-  }
-}
-
-// for fluffy round buttons
 // @param {boolean} $btn-round
-
 @if $btn-round == true {
   .btn {
     border-radius: arrayMagic($btn-min-height / 2);

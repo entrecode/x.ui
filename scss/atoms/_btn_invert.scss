@@ -1,0 +1,24 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {color} $btn-invert-background [$background]
+/// @param {color} $btn-invert-color [$link]
+/// @param {array} $btn-invert-style
+.btn_invert {
+  @include inject-style($btn-invert-style);
+  background: $btn-invert-background;
+  color: $btn-invert-color;
+
+  // @param {color} $btn-invert-hover-background [setHover($btn-invert-background)]
+  // @param {color} $btn-invert-hover-color [setHover($btn-invert-color)]
+  // @param {array} $btn-invert-hover-style
+  &.is-active,
+  &:hover,
+  &:focus {
+    @include inject-style($btn-invert-hover-style);
+    background: $btn-invert-hover-background;
+    color: $btn-invert-hover-color;
+  }
+}
