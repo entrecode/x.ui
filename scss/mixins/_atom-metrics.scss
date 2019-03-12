@@ -1,0 +1,41 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group mixin
+///
+/// mixin for precise atom element sizing
+/// @param {number} $font-size - font-size of element
+/// @param {number} $line-height - line-height of element
+/// @param {number} $min-height - min-height of element
+/// @param {number} $border [null] - size of element border
+/// @param {number} $padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+
+@mixin atom-metrics($font-size, $line-height, $min-height, $border: null, $padding-ratio: 2) {
+  $padding: false;
+
+  // check if $min-height is a number, some of the styles will not be rendered
+  @if type-of($min-height) == 'number' {
+    $padding: ($min-height - $line-height) / 2;
+  } @else {
+    $padding: ($line-height - $font-size) / 2;
+  }
+
+  // remove border from padding
+  @if $border {
+    $padding: ($padding - $border);
+  }
+
+  padding: arrayMagic($padding ($padding * $padding-ratio));
+
+  font-size: rem($font-size);
+  line-height: rem($line-height);
+  min-height: rem($min-height);
+  min-width: rem($min-height);
+
+  @if $border {
+    border-style: solid;
+    border-width: rem($border);
+  }
+
+  @content;
+}
