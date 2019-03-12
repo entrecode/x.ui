@@ -1,0 +1,321 @@
+
+.nav.nav_stacked {
+  .btn {
+    width: initial;
+    display: flex;
+  }
+}
+
+[class*='x-space'] {
+  display: inline-flex;
+}
+
+.ec-form-group_boolean {
+  display: flex;
+  flex-direction: row;
+
+  > label {
+    font-size: $base-font-size;
+    color: $text;
+    order: 1;
+  }
+}
+
+.xui-toggle {
+  margin: 0;
+}
+
+a.avatar {
+  img {
+    transition: opacity 0.2s;
+  }
+
+  &:hover {
+    background-color: rgba(#fff, 0.1);
+
+    img {
+      opacity: 0.8;
+    }
+  }
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ec-entry-pop .toast-header,
+.ec-entry-pop .toast-body,
+.ec-entry-pop .toast-footer {
+  max-width: initial;
+}
+
+.form-group__info {
+  margin: 8px;
+  display: block;
+  font-size: rem(10);
+}
+
+.overlay-dismiss {
+  background: none;
+}
+
+.input-group_color {
+  .input-group__addon {
+    position: relative;
+    background-size: cover;
+
+    > .ixo {
+      mix-blend-mode: difference;
+      color: #fff;
+    }
+  }
+}
+
+.input-group {
+  flex-grow: 1;
+
+  .input {
+    + .input {
+      margin-left: 1px;
+      border-top-left-radius: 0;
+      -webkit-border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      -webkit-border-bottom-left-radius: 0;
+    }
+  }
+}
+
+.xui-checkbox {
+  label {
+    align-items: center;
+
+    &::before {
+      align-self: flex-start;
+    }
+  }
+}
+
+.input.ng-touched.ng-valid,
+.input.ng-touched.ng-invalid {
+  border-color: none;
+  color: $input-color;
+}
+
+.input-group__addon {
+  .dropdown {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+}
+
+input[type='date' i],
+input[type='datetime-local' i],
+input[type='month' i],
+input[type='time' i],
+input[type='week' i] {
+  font-family: $body-font;
+}
+
+.input-group {
+  .ec-select {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  ec-entry-select {
+    width: 100%;
+  }
+}
+
+.xui-select {
+  background: $input-background;
+  color: setContrast($input-background);
+
+  .xui-select__placeholder {
+    color: lighten($input-background, 40%);
+  }
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.display-contents {
+  display: contents;
+}
+
+.xui-toggle {
+  color: getColor(text, lighter);
+
+  label {
+    align-items: center;
+  }
+
+  .xui-toggle__switch {
+    margin: 0 16px 0 8px !important;
+    align-self: flex-start;
+  }
+
+  &:hover {
+    color: getColor(text);
+  }
+
+  [type='radio'],
+  [type='checkbox'] {
+    @extend %is-hidden-input;
+
+    &:checked {
+      + label {
+        color: getColor(text);
+      }
+    }
+  }
+}
+
+.code {
+  background: getColor(background, light);
+  color: getColor(text, lighter);
+  padding: 0 rem(4);
+  border-radius: rem(2);
+  margin: 0;
+  vertical-align: baseline;
+}
+
+.field-length-check {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+.form-group {
+  > label {
+    display: flex;
+  }
+}
+
+.from-group__label {
+  @include inject-style($form-group-label-style);
+  font-size: em($form-group-label-font-size);
+  margin: arrayMagic($form-group-label-spacing);
+}
+
+.xui-select-options {
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.xui-select-option {
+  a:not([class]) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.xui-select-segment-title {
+  font-size: rem(10);
+  text-transform: uppercase;
+  color: getColor(text, lighter);
+  letter-spacing: 0.2px;
+  padding: rem(12);
+}
+
+.has-caret {
+  &::after {
+    content: '';
+    border: 4px solid transparent;
+    border-top-color: rgba(getColor(minor), 0.6);
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-top: rem(4);
+    margin-left: rem(8);
+    transition: border-top-color 0.2s;
+    z-index: 1;
+  }
+}
+
+.xui-toggle__switch {
+  flex-shrink: 0;
+}
+
+.tooltip {
+  font-size: 10px;
+}
+
+.xui-radio {
+  label {
+    font-size: rem(12);
+    color: getColor(text, lighter);
+    align-items: center;
+
+    &:hover {
+      color: getColor(text);
+    }
+
+    &::before {
+      box-shadow: inset 0 0 0 2px lighten($input-background, 4%) !important;
+      font-size: 8px !important;
+    }
+  }
+
+  [type='radio'],
+  [type='checkbox'] {
+    &:checked {
+      + label {
+        color: getColor(text);
+      }
+    }
+  }
+}
+
+.btn_dm {
+  background: $dm;
+  color: setContrast($dm);
+
+  &:active,
+  &:focus,
+  &:hover {
+    background: setHover($dm);
+  }
+}
+
+.btn_am {
+  background: $am;
+  color: setContrast($am);
+
+  &:active,
+  &:focus,
+  &:hover {
+    background: setHover($am);
+  }
+}
+
+.btn_ua {
+  background: $ua;
+  color: setContrast($ua);
+
+  &:active,
+  &:focus,
+  &:hover {
+    background: setHover($ua);
+  }
+}
+
+[data-grid*='is-nowrap'] {
+  flex-wrap: nowrap;
+}
+
+.title {
+  .is-mega,
+  .is-giga,
+  .is-giga {
+    word-break: break-all;
+  }
+}
+
+.toast-dismiss {
+  background: transparent;
+}

@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.1.0
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 ///
@@ -9,6 +9,7 @@
 
 @each $_spacing, $_h in $spacings {
   .y-space-#{$_spacing} {
+    display: inline-flex;
     width: auto;
     height: getSpace($_spacing);
     flex-shrink: 0;
@@ -24,6 +25,7 @@
 
 @each $_spacing, $_h in $spacings {
   .x-space-#{$_spacing} {
+    display: inline-flex;
     height: auto;
     width: getSpace($_spacing);
     flex-shrink: 0;
