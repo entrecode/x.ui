@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 
@@ -8,7 +8,7 @@
   label {
     cursor: pointer;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
   }
 
   [type='checkbox'] {
@@ -25,6 +25,7 @@
     + label {
       &::before {
         display: flex;
+        align-self: flex-start;
         flex-grow: 0;
         flex-shrink: 0;
         justify-content: center;
