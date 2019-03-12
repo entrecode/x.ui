@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group molecules
 ///
@@ -9,20 +9,16 @@
 // @param {color} $alert-background [$background-lightest]
 // @param {string} $alert-weight [$is-normal]
 // @param {px} $alert-radius [4]
-%alert {
-  @include set-theme-colors($alert-background);
-  border-radius: arrayMagic($alert-radius);
-  font-weight: $alert-weight;
-  text-align: center;
-}
-
 // @param {px} $alert-font-size [$base-font-size]
 // @param {array} $alert-padding [16 24]
 // @param {array} $alert-spacing [0 0 16 0]
 // @param {array} $alert-style
 .alert {
-  @extend %alert;
+  text-align: center;
+  @include set-theme-colors($alert-background);
   @include inject-style($alert-style);
+  border-radius: arrayMagic($alert-radius);
+  font-weight: $alert-weight;
   font-size: em($alert-font-size);
   margin: arrayMagic($alert-spacing);
   padding: arrayMagic($alert-padding);
@@ -32,8 +28,7 @@
 // @param {array} $alert-small-padding [8 12]
 // @param {array} $alert-small-spacing [$alert-spacing]
 // @param {array} $alert-small-style
-.alert-small {
-  @extend %alert;
+.alert_small {
   @include inject-style($alert-small-style);
   font-size: em($alert-small-font-size);
   margin: arrayMagic($alert-small-spacing);
@@ -44,8 +39,7 @@
 // @param {array} $alert-big-padding [24 28]
 // @param {array} $alert-big-spacing [$alert-spacing]
 // @param {array} $alert-big-style
-.alert-big {
-  @extend %alert;
+.alert_big {
   @include inject-style($alert-big-style);
   font-size: em($alert-big-font-size);
   margin: arrayMagic($alert-big-spacing);

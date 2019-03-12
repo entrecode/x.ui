@@ -7,6 +7,7 @@
 - removed deprecated `.flex-spacer` use `.flex-space` instead
 - removed deprecated `.bumper-small` and `.bumper-big` use `.bumper.bumper_small` or `.bumper.bumper_big` instead
 - removed deprecated `.spacer-small` and `.spacer-big` use `.spacer.spacer_small` or `.spacer.spacer_big` instead
+- removed deprecated `.alert-small` and `.alert-big` use `.alert.alert_small` or `.alert.alert_big` instead
 - removed deprecated `.well-small` and `.well-big`
 - removed deprecated `.is-visible#` use `is-block#` or `is-flex#` instead
 - removed deprecated `.is-raises#` use `is-elevated#` instead
