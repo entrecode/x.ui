@@ -1563,14 +1563,16 @@ $table-cell-padding: 8 !default;
 // @param {px} $avatar-small-size-size [32]
 // @param {px} $avatar-big-size-size [48]
 // @param {array} $avatar-border [0]
-// @param {array} $avatar-style
+// @param {array} $avatar-background [transparent]
 // @param {px} $avatar-square-radius [4]
+// @param {array} $avatar-style
 $avatar-size: 40 !default;
 $avatar-small-size: 32 !default;
 $avatar-big-size: 48 !default;
 $avatar-border: 0 !default;
-$avatar-style: () !default;
+$avatar-background: transparent !default;
 $avatar-square-radius: 4 !default;
+$avatar-style: () !default;
 
 //
 // has-border

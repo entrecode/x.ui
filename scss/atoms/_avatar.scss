@@ -7,6 +7,7 @@
 /// @param {px} $avatar-small-size [32]
 /// @param {px} $avatar-big-size [48]
 /// @param {array} $avatar-border [0]
+/// @param {array} $avatar-background [transparent]
 /// @param {array} $avatar-style
 /// @param {px} $avatar-square-radius [4]
 
@@ -20,6 +21,7 @@
   }
 
   @include inject-style($avatar-style);
+  background: $avatar-background;
   border: arrayMagic($avatar-border);
   height: rem($avatar-size);
   width: rem($avatar-size);
