@@ -14,6 +14,7 @@
 // @param {color} $btn-outline-color [$link]
 // @param {array} $btn-outline-style
 .btn_outlined {
+  background: transparent;
   @include inject-style($btn-outline-style);
   @include atom-metrics(
     $btn-font-size,
@@ -58,6 +59,7 @@
   &.is-active,
   &:hover,
   &:focus {
+    background: transparent;
     @include inject-style($btn-outline-hover-style);
     border-color: $btn-outline-hover-border-color;
     color: $btn-outline-hover-color;
