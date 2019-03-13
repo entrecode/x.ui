@@ -40,6 +40,8 @@
 - refactored `.is-layer-#`
 - refactored `.is-position-#`
 - refactored `.is-theme-#`
+- removed background variables from `.btn_outline`
+- changed `@extend %btn;` to `@include _btn-reset;`
 
 ### added
 

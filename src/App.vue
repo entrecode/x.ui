@@ -47,6 +47,9 @@
 
       <div class="y-space-8"></div>
 
+    </div>
+
+    <div data-container>
       <div data-grid>
         <div data-col="3-sm">
           <div class="align-center">
@@ -101,9 +104,17 @@
    
     <div data-container style="max-width: 800px;">
       <div class="y-space-8"></div>
+      <Button/>
+      <div class="y-space-5"></div>
+      <ButtonSmall/>
+      <div class="y-space-5"></div>
+      <ButtonBig/>
+      <div class="y-space-5"></div>
+      <ButtonStyles/>
+      
+      <div class="y-space-8"></div>
 
       <h2>Form</h2>
-
       <Form/>
 
       <div class="y-space-8"></div>
@@ -111,6 +122,20 @@
       <FontWeight/>
 
       <div class="y-space-8"></div>
+
+      <h2>Functions</h2>
+
+
+      <section id="scroll-to-setContrast">
+        <h3>setContrast()</h3>
+      </section>
+
+      <div class="y-space-8"></div>
+
+      <section id="scroll-to-setHover">
+        <h3>setHover()</h3>
+      </section>
+
     </div>
   </div>
 </template>
@@ -118,6 +143,10 @@
 <script>
 import Navbar from './components/Navbar.vue';
 import DocTab from './components/DocTab.vue';
+import Button from './components/UI/Button.vue';
+import ButtonSmall from './components/UI/ButtonSmall.vue';
+import ButtonBig from './components/UI/ButtonBig.vue';
+import ButtonStyles from './components/UI/ButtonStyles.vue';
 import Form from './components/Form/Form.vue';
 import Grid from './components/Grid/Grid.vue';
 import FontWeight from './components/Typeface/FontWeight.vue';
@@ -127,6 +156,10 @@ export default {
   components: {
     Navbar,
     DocTab,
+    Button,
+    ButtonSmall,
+    ButtonBig,
+    ButtonStyles,
     Form,
     Grid,
     FontWeight,

@@ -45,6 +45,8 @@
       margin: 0 rem(8);
       transition: all 0.4s;
 
+      // TODO remove icon
+
       @if $ec-icon-support {
         @extend %ec-icon;
         content: '\e01b';

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="has-margin-bottom-7">
     <div class="title">
 
       <slot name="title"></slot>

@@ -5,6 +5,7 @@
   background: $text;
   color: white;
   font-size: rem(12);
+  line-height: rem(20);
   border-radius: rem(4);
 }
 
@@ -83,9 +84,9 @@
 
 .hljs a {
   color: inherit;
-  &:focus,
+  border-bottom: 1px dotted white;
+
   &:hover {
-    color: inherit;
-    text-decoration: underline;
+    text-decoration: none;
   }
 }

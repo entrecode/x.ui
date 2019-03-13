@@ -6,45 +6,6 @@
   }
 }
 
-[class*='x-space'] {
-  display: inline-flex;
-}
-
-.ec-form-group_boolean {
-  display: flex;
-  flex-direction: row;
-
-  > label {
-    font-size: $base-font-size;
-    color: $text;
-    order: 1;
-  }
-}
-
-.xui-toggle {
-  margin: 0;
-}
-
-a.avatar {
-  img {
-    transition: opacity 0.2s;
-  }
-
-  &:hover {
-    background-color: rgba(#fff, 0.1);
-
-    img {
-      opacity: 0.8;
-    }
-  }
-}
-
-.tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .ec-entry-pop .toast-header,
 .ec-entry-pop .toast-body,
 .ec-entry-pop .toast-footer {
@@ -74,7 +35,6 @@ a.avatar {
 }
 
 .input-group {
-  flex-grow: 1;
 
   .input {
     + .input {
@@ -85,22 +45,6 @@ a.avatar {
       -webkit-border-bottom-left-radius: 0;
     }
   }
-}
-
-.xui-checkbox {
-  label {
-    align-items: center;
-
-    &::before {
-      align-self: flex-start;
-    }
-  }
-}
-
-.input.ng-touched.ng-valid,
-.input.ng-touched.ng-invalid {
-  border-color: none;
-  color: $input-color;
 }
 
 .input-group__addon {
@@ -187,18 +131,6 @@ input[type='week' i] {
   display: inline-block;
   margin-left: auto;
   margin-right: 8px;
-}
-
-.form-group {
-  > label {
-    display: flex;
-  }
-}
-
-.from-group__label {
-  @include inject-style($form-group-label-style);
-  font-size: em($form-group-label-font-size);
-  margin: arrayMagic($form-group-label-spacing);
 }
 
 .xui-select-options {
