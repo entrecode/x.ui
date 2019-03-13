@@ -17,7 +17,7 @@
   $_c: $hamburger-btn-line-color;
 
   position: relative;
-  @extend %btn;
+  @include _btn-reset;
   @include inject-style($hamburger-btn-style);
   background-color: $hamburger-btn-background;
   margin: arrayMagic($hamburger-btn-spacing);
