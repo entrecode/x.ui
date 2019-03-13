@@ -119,7 +119,8 @@
   z-index: 1;
   opacity: 0.4;
   transition: opacity 0.2s;
-  @extend %btn;
+  background: none;
+  @include _btn-reset;
   @include inject-style($deck-dismiss-style);
   color: $deck-color;
 

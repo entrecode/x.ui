@@ -39,13 +39,14 @@
 
 // @param {array} $overlay-dismiss-style
 .overlay-dismiss {
-  @extend %btn;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 1;
   opacity: .4;
   transition: opacity .2s;
+  background: none;
+  @include _btn-reset;
   @include inject-style($overlay-dismiss-style);
   color: $overlay-color;
 

@@ -87,13 +87,14 @@
 
 // @param {array} $dialog-dismiss-style
 .dialog-dismiss {
-  @extend %btn;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 1;
   opacity: 0.4;
   transition: opacity 0.2s;
+  background: none;
+  @include _btn-reset;
   @include inject-style($dialog-dismiss-style);
 
   &:only-child {
