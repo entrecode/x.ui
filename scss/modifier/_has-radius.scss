@@ -43,7 +43,7 @@
     }
     
     &#{$_c}#{$_state} {
-      @include _has-radius(rem(#{$_v}));
+      @include _has-radius(rem($_v));
     }
   }
 }
