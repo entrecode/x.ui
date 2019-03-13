@@ -11,7 +11,6 @@
 // @param {px} $btn-line-height [$btn-font-size * $base-line-height]
 // @param {px} $btn-min-height [40]
 // @param {color} $btn-outline-border-color [$link]
-// @param {color} $btn-outline-background [none]
 // @param {color} $btn-outline-color [$link]
 // @param {array} $btn-outline-style
 .btn_outlined {
@@ -26,7 +25,6 @@
   border-style: $btn-outline-border-style;
   border-color: $btn-outline-border-color;
   color: $btn-outline-color;
-  background: $btn-outline-background;
 
   // @param {px} $btn-small-font-size [$btn-font-size * .875]
   // @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
@@ -55,7 +53,6 @@
   }
 
   // @param {color} $btn-outline-hover-border-color [setHover($btn-outline-border-color)]
-  // @param {color} $btn-outline-hover-background [$btn-outline-background]
   // @param {color} $btn-outline-hover-color [setHover($btn-outline-color)]
   // @param {array} $btn-outline-hover-style
   &.is-active,
@@ -64,21 +61,17 @@
     @include inject-style($btn-outline-hover-style);
     border-color: $btn-outline-hover-border-color;
     color: $btn-outline-hover-color;
-    background: $btn-outline-hover-background;
   }
 
   // @param {color} $btn-outline-minor-border-color [$minor]
-  // @param {color} $btn-outline-minor-background [none]
   // @param {color} $btn-outline-minor-color [setContrast($minor)]
   // @param {array} $btn-outline-minor-style
   &.btn_minor {
     @include inject-style($btn-outline-minor-style);
     border-color: $btn-outline-minor-border-color;
     color: $btn-outline-minor-hover-color;
-    background: $btn-outline-minor-hover-background;
 
     // @param {color} $btn-outline-minor-hover-border-color [setHover($btn-outline-minor-border-color)]
-    // @param {color} $btn-outline-minor-hover-background [$btn-outline-minor-background ]
     // @param {color} $btn-outline-minor-hover-color [setHover($btn-outline-minor-color)]
     // @param {array} $btn-outline-minor-hover-style
     &.is-active,
@@ -87,22 +80,18 @@
       @include inject-style($btn-outline-minor-hover-style);
       border-color: $btn-outline-minor-hover-border-color;
       color: $btn-outline-minor-hover-color;
-      background: $btn-outline-minor-hover-background;
     }
   }
 
   // @param {color} $btn-outline-super-border-color [$super]
-  // @param {color} $btn-outline-super-background [none]
   // @param {color} $btn-outline-super-color [setContrast($super)]
   // @param {array} $btn-outline-super-style
   &.btn_super {
     @include inject-style($btn-outline-super-style);
     border-color: $btn-outline-super-border-color;
     color: $btn-outline-super-hover-color;
-    background: $btn-outline-super-hover-background;
 
     // @param {color} $btn-outline-super-hover-border-color [setHover($btn-outline-super-border-color)]
-    // @param {color} $btn-outline-super-hover-background [$btn-outline-super-background ]
     // @param {color} $btn-outline-super-hover-color [setHover($btn-outline-super-color)]
     // @param {array} $btn-outline-super-hover-style
     &.is-active,
@@ -111,22 +100,18 @@
       @include inject-style($btn-outline-super-hover-style);
       border-color: $btn-outline-super-hover-border-color;
       color: $btn-outline-super-hover-color;
-      background: $btn-outline-super-hover-background;
     }
   }
 
   // @param {color} $btn-outline-invert-border-color [$text-invert]
-  // @param {color} $btn-outline-invert-background [none]
   // @param {color} $btn-outline-invert-color [setContrast($text-invert)]
   // @param {array} $btn-outline-invert-style
   &.btn_invert {
     @include inject-style($btn-outline-invert-style);
     border-color: $btn-outline-invert-border-color;
     color: $btn-outline-invert-hover-color;
-    background: $btn-outline-invert-hover-background;
 
     // @param {color} $btn-outline-invert-hover-border-color [setHover($btn-outline-invert-border-color)]
-    // @param {color} $btn-outline-invert-hover-background [$btn-outline-invert-background ]
     // @param {color} $btn-outline-invert-hover-color [setHover($btn-outline-invert-color)]
     // @param {array} $btn-outline-invert-hover-style
     &.is-active,
@@ -135,7 +120,6 @@
       @include inject-style($btn-outline-invert-hover-style);
       border-color: $btn-outline-invert-hover-border-color;
       color: $btn-outline-invert-hover-color;
-      background: $btn-outline-invert-hover-background;
     }
   }
 }
