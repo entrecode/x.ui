@@ -14,6 +14,11 @@
 // @param {px} $bubble-radius [4]
 .bubble {
   display: inline-block;
+  @supports (display: inline-flex) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
   text-align: center;
   white-space: nowrap;
   @include inject-style($bubble-style);
@@ -22,7 +27,7 @@
     $bubble-font-size,
     $bubble-line-height,
     $bubble-min-height,
-    $padding-ratio: $bubble-padding-ratio,
+    $padding-ratio: $bubble-padding-ratio
   );
   border-radius: arrayMagic($bubble-radius);
   font-weight: $bubble-weight;
@@ -38,7 +43,7 @@
       $bubble-small-font-size,
       $bubble-small-line-height,
       $bubble-small-min-height,
-      $padding-ratio: $bubble-padding-ratio,
+      $padding-ratio: $bubble-padding-ratio
     );
     border-radius: arrayMagic($bubble-small-radius);
   }
@@ -54,7 +59,7 @@
       $bubble-big-font-size,
       $bubble-big-line-height,
       $bubble-big-min-height,
-      $padding-ratio: $bubble-padding-ratio,
+      $padding-ratio: $bubble-padding-ratio
     );
     border-radius: arrayMagic($bubble-big-radius);
   }
