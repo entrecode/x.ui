@@ -22,8 +22,7 @@
 }
 
 .btn {
-  .tag,
-  .bubble {
+  .tag {
     margin-bottom: 0;
     margin-top: 0;
   }
@@ -37,18 +36,6 @@
 
     &.tag_big {
       @include _btn-inline-elements($btn-line-height, $tag-big-min-height);
-    }
-  }
-
-  .bubble {
-    @include _btn-inline-elements($btn-line-height, $bubble-min-height);
-
-    &.bubble_small {
-      @include _btn-inline-elements($btn-line-height, $bubble-small-min-height);
-    }
-
-    &.bubble_big {
-      @include _btn-inline-elements($btn-line-height, $bubble-big-min-height);
     }
   }
 
@@ -71,18 +58,6 @@
     }
   }
 
-  .bubble {
-    @include _btn-inline-elements($btn-small-line-height, $bubble-min-height);
-
-    &.bubble_small {
-      @include _btn-inline-elements($btn-small-line-height, $bubble-small-min-height);
-    }
-
-    &.bubble_big {
-      @include _btn-inline-elements($btn-small-line-height, $bubble-big-min-height);
-    }
-  }
-
   .ixo {
     font-size: em($btn-small-icon-size, $btn-small-font-size);
     @include _btn-inline-elements($btn-small-line-height, $btn-small-icon-size);
@@ -99,18 +74,6 @@
 
     &.tag_big {
       @include _btn-inline-elements($btn-big-line-height, $tag-big-min-height);
-    }
-  }
-
-  .bubble {
-    @include _btn-inline-elements($btn-big-line-height, $bubble-min-height);
-
-    &.bubble_small {
-      @include _btn-inline-elements($btn-big-line-height, $bubble-small-min-height);
-    }
-
-    &.bubble_big {
-      @include _btn-inline-elements($btn-big-line-height, $bubble-big-min-height);
     }
   }
 

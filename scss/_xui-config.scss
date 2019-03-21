@@ -732,7 +732,9 @@ $hamburger-btn-style: () !default;
 //
 // BUBBLE
 // ------------------------------------------------------
+// @param {variable} $bubble-font-family [$body-font]
 // @param {color} $bubble-background [$minor]
+$bubble-font-family: $body-font !default;
 $bubble-background: $minor !default;
 
 // @param {number} $bubble-padding-ratio [1]

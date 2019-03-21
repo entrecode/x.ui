@@ -10,7 +10,7 @@
 /// @param {number} $min-height - min-height of element
 /// @param {number} $border [null] - size of element border
 /// @param {number} $padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-/// @param {boolean} $inline-styles [true] - to return styles for .bubble, .tag and .ec-icon
+/// @param {boolean} $inline-styles [true] - to return styles for .tag and .ec-icon
 /// @param {number} $icon-size [$base-font-size] - font-size of inline .ec-icon
 
 @mixin macro-metrics(
@@ -50,7 +50,6 @@
   @content;
 
   @if $inline-styles and $padding {
-    .bubble,
     .tag {
       &:first-child {
         margin-left: rem($padding * -1);
