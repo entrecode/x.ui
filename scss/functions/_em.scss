@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 10.0.0
 /// @access public
 /// @group size-functions
 ///
@@ -15,7 +15,7 @@
 /// @return {number} Value in em
 
 @function em($value, $base: $base-font-size) {
-  @if type-of($value) == 'number' {
+  @if type-of($value) == 'number' and unitless($value) {
     @return ($value / $base) * 1em;
   } @else {
     @return $value;
