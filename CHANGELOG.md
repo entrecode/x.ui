@@ -32,6 +32,7 @@
 - removed `.form-group` use `.field-group` instead
 - removed input validation styles
 - removed `.bubble` use `.tag` instead
+- changed `data-col="auto"` to `data-col="is-auto"`
 
 ### changes
 
@@ -49,6 +50,7 @@
 - added `.is-font` for `font-family` styles
 - added addional config for `.nav_stacked`
 - added color-modifier `.hover:is-ink-#`
+- added `data-col="is-fit"`
 
 ### deprecated
 
