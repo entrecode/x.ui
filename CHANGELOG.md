@@ -47,6 +47,7 @@
 
 - added `.is-font` for `font-family` styles
 - added addional config for `.nav_stacked`
+- added color-modifier `.hover:is-ink-#`
 
 ### deprecated
 
