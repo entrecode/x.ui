@@ -166,13 +166,17 @@ $body-style: () !default;
 // GRID
 // -------------------------------------------------------------------------------------------------
 // @param {px} $grid-container-width [1200] - max-width of container
-// @param {px} $grid-gutter [32] - gutter size in pixels without unit
-// @param {string} $grid-outer-gutter [true] - sets an outer gutter of ($grid-gutter / 2)
-// @param {number} $grid-num-columns [12] - number of columns in a row
+// @param {string} $grid-container-gutter [16]
 $grid-container-width: 1200 !default;
-$grid-gutter: 32 !default;
-$grid-outer-gutter: true !default;
+$grid-container-gutter: 16 !default;
+
+// @param {number} $grid-num-columns [12] - number of columns in a row
 $grid-num-columns: 12 !default;
+
+// @param {px} $grid-gutter [32] - default gutter size
+// @param {px} $grid-small-gutter [16] - default gutter size
+$grid-gutter: 32 !default;
+$grid-small-gutter: 16 !default;
 
 //
 // SPACING
@@ -203,14 +207,12 @@ $spacings: map-merge(
 // RESPONSIVE BREAKPOINTS
 // -------------------------------------------------------------------------------------------------
 // @param {map} $breakpoints
-// @deprecated since 9.0.0 `nav` might be removed in future release
 $breakpoints: () !default;
 $breakpoints: map-merge(
   (
     'xs': 0 /* smartphone*/,
     'sm': 480 /* smartphone landscape*/,
     'md': 720 /* tablet*/,
-    'nav': 1024 /* breakpoint for mobile navigation*/,
     'lg': 1024 /* tablet landscape*/,
     'xl': 1280 /* desktop*/,
     'xxl': 1920 /* large*/,

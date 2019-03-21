@@ -51,6 +51,7 @@
 - added addional config for `.nav_stacked`
 - added color-modifier `.hover:is-ink-#`
 - added `data-col="is-fit"`
+- added grid config `$grid-small-gutter`
 
 ### deprecated
 
