@@ -17,7 +17,7 @@
             </div>
             <div
               slot="preview"
-              :class="item.darkPreview ? 'is-theme-invert' :  'is-theme-lightest'"
+              :class="item.previewStyle || 'is-theme-lightest'"
               class="has-padding-2 align-center has-radius"
               v-html="item.preview"
             ></div>
@@ -32,10 +32,10 @@
         </div>
       </div>
       <div data-col="2">
-        <nav class="nav nav_stacked is-sticky" style="top: 80px;">
+        <nav class="nav nav_stacked is-sticky" style="top: 120px;">
           <ul class="nav__items">
             <li class="nav__item" v-for="(item, index) in sectionGroups" :key="index">
-              <a :href="'#scroll-to-' + item.id" class="is-ink-light hover:is-ink-link">{{item.navTitle}}</a>
+              <a :href="'#scroll-to-' + item.id" class="is-kilo is-ink-light hover:is-ink-link">{{item.navTitle}}</a>
             </li>
           </ul>
         </nav>
@@ -207,7 +207,7 @@ $btn-invert-style: ();
 $btn-invert-hover-background: setHover($btn-invert-background);
 $btn-invert-hover-color: setHover($btn-invert-color);
 $btn-invert-hover-style: ();`,
-              darkPreview: true,
+              previewStyle: 'is-theme-invert',
             },
             {
               name: 'Clear Button',
@@ -267,6 +267,7 @@ $btn-outline-minor-style: ();
 $btn-outline-minor-hover-border-color: setHover($btn-outline-minor-border-color);
 $btn-outline-minor-hover-color: setHover($btn-outline-minor-color);
 $btn-outline-minor-hover-style: ();`,
+              previewStyle: 'is-theme',
             },
             {
               name: 'Outlined Invert Button',
@@ -279,7 +280,7 @@ $btn-outline-invert-style: ();
 $btn-outline-invert-hover-border-color: setHover($btn-outline-invert-border-color);
 $btn-outline-invert-hover-color: setHover($btn-outline-invert-color);
 $btn-outline-invert-hover-style: ();`,
-              darkPreview: true,
+              previewStyle: 'is-theme-invert',
             },
           ],
         },
