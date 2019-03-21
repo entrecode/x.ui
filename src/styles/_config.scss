@@ -1,5 +1,3 @@
-$experimental: true;
-
 @import url('https://fonts.googleapis.com/css?family=Geo|Rubik:300,400,500,700');
 
 $body-font: 'Rubik', sans-serif;
@@ -26,16 +24,10 @@ $tag-weight: $is-medium;
 $headings-line-height: 1;
 $paragraph-line-height: 1.5;
 
-$tag-min-height: 24;
-$tag-line-height: 16;
-$tag-font-size: 12;
-
-$tag-small-font-size: 10;
-$tag-small-min-height: 20;
-$tag-small-line-height: 14;
-
 $btn-font-family: $headings-font;
 $btn-icon-size: 20;
+$tag-font-family: $headings-font;
+
 
 $nav-stacked-item-padding: 8;
 

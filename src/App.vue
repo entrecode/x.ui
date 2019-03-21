@@ -104,7 +104,7 @@
     <div class="divider divider_big"></div>
     <buttons/>
     <div class="divider divider_big"></div>
-    <bubble/>
+    <tag/>
     <div class="divider divider_big"></div>
    
     <div data-container style="max-width: 800px;">  
@@ -138,7 +138,7 @@
 import Navbar from './components/Navbar.vue';
 import DocTab from './components/DocTab.vue';
 import Buttons from './components/UI/Buttons.vue';
-import Bubble from './components/UI/Bubble.vue';
+import Tag from './components/UI/Tag.vue';
 import Form from './components/Form/Form.vue';
 import Grid from './components/Grid/Grid.vue';
 import FontWeight from './components/Typeface/FontWeight.vue';
@@ -149,7 +149,7 @@ export default {
     Navbar,
     DocTab,
     Buttons,
-    Bubble,
+    Tag,
     Form,
     Grid,
     FontWeight,

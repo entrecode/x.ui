@@ -84,7 +84,6 @@ export default {
         ui: [
           'btn',
           'hamburger-btn',
-          'bubble',
           'tag',
           'dropdown',
           'btn-group',
