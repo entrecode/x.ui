@@ -3,14 +3,14 @@
 /// @access public
 /// @group atoms
 ///
-/// @param {number} $tag-padding-ratio [1.5]
+/// @param {variable} $tag-font-family [$body-font]
+/// @param {number} $tag-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
 /// @param {string} $tag-weight [$is-bold]
+/// @param {color} $tag-background [$minor]
 
-// @param {color} $tag-background [$minor]
-// @param {px} $tag-font-size [$base-font-size * .875]
-// @param {px} $tag-line-height [$tag-font-size * $base-line-height]
-// @param {px} $tag-min-height [28]
-// @param {px} $tag-radius [4]
+// @param {px} $tag-font-size [14]
+// @param {px} $tag-line-height [14]
+// @param {px} $tag-min-height [20]
 // @param {array} $tag-style
 .tag {
   display: inline-block;
@@ -28,16 +28,16 @@
   @include atom-metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
   @include set-theme-colors($tag-background);
   border-radius: arrayMagic($tag-radius);
+  font-family: $tag-font-family;
   font-weight: $tag-weight;
 
   a {
     color: setContrast($tag-background);
   }
 
-  // @param {px} $tag-small-font-size [$base-font-size * .75]
-  // @param {px} $tag-small-line-height [$tag-small-font-size * $base-line]
-  // @param {px} $tag-small-min-height [24]
-  // @param {px} $tag-small-radius [$tag-radius]
+  // @param {px} $tag-small-font-size [12]
+  // @param {px} $tag-small-line-height [12]
+  // @param {px} $tag-small-min-height [16]
   // @param {array} $tag-small-style
   &_small {
     @include inject-style($tag-small-style);
@@ -50,10 +50,9 @@
     border-radius: arrayMagic($tag-small-radius);
   }
 
-  // @param {px} $tag-big-font-size [$base-font-size]
-  // @param {px} $tag-big-line-height [$tag-big-font-size * $base-line-height]
-  // @param {px} $tag-big-min-height [32]
-  // @param {px} $tag-big-radius [$tag-radius]
+  // @param {px} $tag-big-font-size [14]
+  // @param {px} $tag-big-line-height [14]
+  // @param {px} $tag-big-min-height [28]
   // @param {array} $tag-big-style
   &_big {
     @include inject-style($tag-big-style);
@@ -64,14 +63,6 @@
       $padding-ratio: $tag-padding-ratio
     );
     border-radius: arrayMagic($tag-big-radius);
-  }
-
-  @if $experimental {
-    + .tag {
-      margin-left: rem(4);
-      margin-bottom: rem(2);
-      margin-top: rem(2);
-    }
   }
 }
 
@@ -98,8 +89,10 @@ $_prefix: 'tag_';
   }
 }
 
-/// @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
-
+// @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
+// @param {px} $tag-radius [2]
+// @param {px} $tag-small-radius [$tag-radius]
+// @param {px} $tag-big-radius [$tag-radius]
 @if $tag-round == true {
   .tag {
     border-radius: arrayMagic($tag-min-height / 2);
