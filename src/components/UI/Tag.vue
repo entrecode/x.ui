@@ -15,12 +15,7 @@
             <div slot="title">
               <h3 class="is-h4" v-text="item.name"></h3>
             </div>
-            <div
-              slot="preview"
-              :class="item.previewStyle || 'is-theme-lightest'"
-              class="has-padding-2 has-radius"
-              v-html="item.preview"
-            ></div>
+            <div slot="preview" :class="item.previewStyle" class="has-radius" v-html="item.preview"></div>
 
             <div slot="markup">
               <pre v-highlightjs="item.markup"><code class="html"></code></pre>
@@ -81,25 +76,78 @@ $tag-font-size: 14;
 $tag-line-height: 14;
 $tag-min-height: 20;
 $tag-style: ();`,
-              previewStyle: 'is-theme',
             },
             {
-              name: 'Outlined Tag',
+              name: 'Small Tag',
+              preview: `<span class="tag tag_small">1</span>&emsp;&emsp;<a href class="btn">Button&emsp;<span class="tag tag_small">1</span></a>`,
+              markup: `<span class="tag tag_small">1</span>
+<a href class="btn">Button&emsp;<span class="tag tag_small">1</span></a>`,
+              config: `$tag-small-font-size: 12;
+$tag-small-line-height: 12;
+$tag-small-min-height: 16;
+$tag-small-style: ()`,
+            },
+            {
+              name: 'Big Tag',
+              preview: `<span class="tag tag_big">1</span>&emsp;&emsp;<a href class="btn">Button&emsp;<span class="tag tag_big">1</span></a>`,
+              markup: `<span class="tag tag_big">1</span>
+<a href class="btn">Button&emsp;<span class="tag tag_big">1</span></a>`,
+              config: `$tag-big-font-size: 14;
+$tag-big-line-height: 14;
+$tag-big-min-height: 28;
+$tag-big-style: ();`,
+            },
+            {
+              name: 'Rounded Tag',
+              preview: `<span class="tag tag_round">1</span>&emsp;&emsp;<a href class="btn">Button&emsp;<span class="tag tag_round">1</span></a>`,
+              markup: `<span class="tag tag_round">1</span>
+<a href class="btn">Button&emsp;<span class="tag tag_round">1</span></a>`,
+              config: `$tag-radius: 2;
+$tag-small-radius: $tag-radius;
+$tag-big-radius: $tag-radius;`,
+            },
+          ],
+        },
+        {
+          title: 'Tag Styles',
+          id: 'tag_styles',
+          navTitle: 'Tag Styles',
+          groupItems: [
+            {
+              name: 'Tag Styles',
               preview: `<ul data-grid="is-small">
-  <li data-col="is-fit" class="has-padding-bottom-3"><span class="tag">tag</span></li>
-  <li data-col="is-fit" class="has-padding-bottom-3"><span class="tag tag_minor">tag</span></li>
-  <li data-col="is-fit" class="has-padding-bottom-3"><span class="tag tag_link">tag</span></li>
-  <li data-col="is-fit" class="has-padding-bottom-3"><span class="tag tag_super">tag</span></li>
-  <li data-col="is-fit" class="has-padding-bottom-3"><span class="tag tag_highlight">tag</span></li>
-  <li data-col="is-fit" class="has-padding-bottom-3"><span class="tag tag_invert">tag</span></li>
-  <li data-col="is-fit" class="has-padding-bottom-3"><span class="tag tag_info">tag</span></li>
-  <li data-col="is-fit" class="has-padding-bottom-3"><span class="tag tag_error">tag</span></li>
-  <li data-col="is-fit" class="has-padding-bottom-3"><span class="tag tag_success">tag</span></li>
-  <li data-col="is-fit" class="has-padding-bottom-3"><span class="tag tag_warning">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_minor">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_link">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_super">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_highlight">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_invert">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_info">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_error">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_success">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_warning">tag</span></li>
 </ul>`,
-              markup: ``,
-              config: ``,
-              previewStyle: 'is-theme',
+              markup: `<span class="tag">tag</span>
+<span class="tag tag_minor">tag</span>
+<span class="tag tag_link">tag</span>
+<span class="tag tag_super">tag</span>
+<span class="tag tag_highlight">tag</span>
+<span class="tag tag_invert">tag</span>
+<span class="tag tag_info">tag</span>
+<span class="tag tag_error">tag</span>
+<span class="tag tag_success">tag</span>
+<span class="tag tag_warning">tag</span>`,
+              config: `$theme-array:(
+  minor: $minor,
+  link: $link,
+  super: $super,
+  highlight: $highlight,
+  invert: $text-invert,
+  info: $state-info,
+  error: $state-error,
+  success: $state-success,
+  warning: $state-warning,
+);`,
             },
           ],
         },
@@ -110,10 +158,32 @@ $tag-style: ();`,
           groupItems: [
             {
               name: 'Outlined Tag',
-              preview: `<span class="tag tag_outlined">tag</span>&emsp;<span class="tag tag_minor tag_outlined">tag</span>&emsp;<span class="tag tag_link tag_outlined">tag</span>&emsp;<span class="tag tag_super tag_outlined">tag</span>&emsp;<span class="tag tag_highlight tag_outlined">tag</span>&emsp;<span class="tag tag_invert tag_outlined">tag</span>&emsp;<span class="tag tag_info tag_outlined">tag</span>&emsp;<span class="tag tag_error tag_outlined">tag</span>&emsp;<span class="tag tag_success tag_outlined">tag</span>&emsp;<span class="tag tag_warning tag_outlined">tag</span>`,
-              markup: ``,
-              config: ``,
-              previewStyle: 'is-theme-invert',
+              preview: `<ul data-grid="is-small">
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_outlined">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_outlined tag_minor">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_outlined tag_link">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_outlined tag_super">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_outlined tag_highlight">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_outlined tag_invert">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_outlined tag_info">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_outlined tag_error">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_outlined tag_success">tag</span></li>
+  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_outlined tag_warning">tag</span></li>
+</ul>`,
+              markup: `<span class="tag tag_outlined">tag</span>
+<span class="tag tag_outlined tag_minor">tag</span>
+<span class="tag tag_outlined tag_link">tag</span>
+<span class="tag tag_outlined tag_super">tag</span>
+<span class="tag tag_outlined tag_highlight">tag</span>
+<span class="tag tag_outlined tag_invert">tag</span>
+<span class="tag tag_outlined tag_info">tag</span>
+<span class="tag tag_outlined tag_error">tag</span>
+<span class="tag tag_outlined tag_success">tag</span>
+<span class="tag tag_outlined tag_warning">tag</span>`,
+              config: `$tag-outlined-color: setContrast($minor);
+$tag-outlined-border-color: $minor;
+$tag-outlined-border-width: 1;
+$tag-outlined-border-style: solid;`,
             },
           ],
         },

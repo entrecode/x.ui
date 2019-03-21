@@ -7,7 +7,7 @@
         <ul class="nav__items">
           <li class="nav__item">
             <div
-              class="btn"
+              class="btn btn_small"
               :class="showTab === 1 ? 'btn_minor' : 'btn_clear'"
               @click="showTab = 1"
             >
@@ -16,7 +16,7 @@
           </li>
           <li class="nav__item" v-if="hasConfig">
             <div
-              class="btn"
+              class="btn btn_small"
               :class="showTab === 2 ? 'btn_minor' : 'btn_clear'"
               @click="showTab = 2"
             >

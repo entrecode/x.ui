@@ -776,7 +776,7 @@ $tag-round: false !default;
 // @param {px} $tag-min-height [20]
 // @param {array} $tag-style
 $tag-font-size: 14 !default;
-$tag-line-height: 14 !default;
+$tag-line-height: 16 !default;
 $tag-min-height: 20 !default;
 $tag-style: () !default;
 
@@ -789,13 +789,13 @@ $tag-small-line-height: 12 !default;
 $tag-small-min-height: 16 !default;
 $tag-small-style: () !default;
 
-// @param {px} $tag-big-font-size [14]
-// @param {px} $tag-big-line-height [14]
-// @param {px} $tag-big-min-height [28]
+// @param {px} $tag-big-font-size [16]
+// @param {px} $tag-big-line-height [20]
+// @param {px} $tag-big-min-height [24]
 // @param {array} $tag-big-style
-$tag-big-font-size: 14 !default;
-$tag-big-line-height: 14 !default;
-$tag-big-min-height: 28 !default;
+$tag-big-font-size: 16 !default;
+$tag-big-line-height: 20 !default;
+$tag-big-min-height: 24 !default;
 $tag-big-style: () !default;
 
 // @param {color} $tag-outlined-color [setContrast($minor)]
