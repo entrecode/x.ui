@@ -749,6 +749,17 @@ $bubble-min-height: 28 !default;
 $bubble-weight: $is-bold !default;
 $bubble-style: () !default;
 
+// @param {boolean} $bubble-round [false] - sets border-radius to 50% of bubble height
+$bubble-round: true !default;
+
+// radius of buttons - if $bubble-round === false
+// @param {px} $bubble-radius [4]
+// @param {px} $bubble-small-radius [$bubble-radius]
+// @param {px} $bubble-big-radius [$bubble-radius]
+$bubble-radius: 4 !default;
+$bubble-small-radius: $bubble-radius !default;
+$bubble-big-radius: $bubble-radius !default;
+
 // @param {px} $bubble-small-font-size [10]
 // @param {px} $bubble-small-line-height [12]
 // @param {px} $bubble-small-min-height [24]
@@ -767,16 +778,6 @@ $bubble-big-line-height: 20 !default;
 $bubble-big-min-height: 32 !default;
 $bubble-big-style: () !default;
 
-// @param {boolean} $bubble-round [false] - sets border-radius to 50% of bubble height
-$bubble-round: true !default;
-
-// radius of buttons - if $bubble-round === false
-// @param {px} $bubble-radius [4]
-// @param {px} $bubble-small-radius [$bubble-radius]
-// @param {px} $bubble-big-radius [$bubble-radius]
-$bubble-radius: 4 !default;
-$bubble-small-radius: $bubble-radius !default;
-$bubble-big-radius: $bubble-radius !default;
 
 //
 // TAG

@@ -101,8 +101,11 @@
     </div>
 
     <grid/>
-    
+    <div class="divider divider_big"></div>
     <buttons/>
+    <div class="divider divider_big"></div>
+    <bubble/>
+    <div class="divider divider_big"></div>
    
     <div data-container style="max-width: 800px;">  
 
@@ -127,7 +130,6 @@
       <section id="scroll-to-setHover">
         <h3>setHover()</h3>
       </section>
-
     </div>
   </div>
 </template>
@@ -136,6 +138,7 @@
 import Navbar from './components/Navbar.vue';
 import DocTab from './components/DocTab.vue';
 import Buttons from './components/UI/Buttons.vue';
+import Bubble from './components/UI/Bubble.vue';
 import Form from './components/Form/Form.vue';
 import Grid from './components/Grid/Grid.vue';
 import FontWeight from './components/Typeface/FontWeight.vue';
@@ -146,6 +149,7 @@ export default {
     Navbar,
     DocTab,
     Buttons,
+    Bubble,
     Form,
     Grid,
     FontWeight,

@@ -41,6 +41,7 @@
         </nav>
       </div>
     </div>
+    <div class="y-space-8"></div>
   </section>
 </template>
 
@@ -48,7 +49,7 @@
 import DocTab from './../DocTab.vue';
 
 export default {
-  name: 'ButtonStyles',
+  name: 'Button',
   components: {
     DocTab,
   },
