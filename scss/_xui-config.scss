@@ -7,7 +7,6 @@
 // -------------------------------------------------------------------------------------------------
 // @param {boolean} $ec-icon-support [true] - set ec-icon support
 $ec-icon-support: true !default;
-$experimental: false !default;
 
 //
 // COLORS
@@ -730,59 +729,7 @@ $hamburger-btn-line-color: $link !default;
 $hamburger-btn-style: () !default;
 
 //
-// BUBBLE
-// ------------------------------------------------------
-// @param {variable} $bubble-font-family [$body-font]
-// @param {color} $bubble-background [$minor]
-$bubble-font-family: $body-font !default;
-$bubble-background: $minor !default;
-
-// @param {number} $bubble-padding-ratio [1]
-$bubble-padding-ratio: 1 !default;
-
-// @param {px} $bubble-font-size [14]
-// @param {px} $bubble-line-height [16]
-// @param {px} $bubble-min-height [28]
-// @param {string} $bubble-weight [$is-bold]
-// @param {array} $bubble-style
-$bubble-font-size: 14 !default;
-$bubble-line-height: 16 !default;
-$bubble-min-height: 28 !default;
-$bubble-weight: $is-bold !default;
-$bubble-style: () !default;
-
-// @param {boolean} $bubble-round [false] - sets border-radius to 50% of bubble height
-$bubble-round: true !default;
-
-// radius of buttons - if $bubble-round === false
-// @param {px} $bubble-radius [4]
-// @param {px} $bubble-small-radius [$bubble-radius]
-// @param {px} $bubble-big-radius [$bubble-radius]
-$bubble-radius: 4 !default;
-$bubble-small-radius: $bubble-radius !default;
-$bubble-big-radius: $bubble-radius !default;
-
-// @param {px} $bubble-small-font-size [10]
-// @param {px} $bubble-small-line-height [12]
-// @param {px} $bubble-small-min-height [24]
-// @param {array} $bubble-style
-$bubble-small-font-size: 10 !default;
-$bubble-small-line-height: 12 !default;
-$bubble-small-min-height: 24 !default;
-$bubble-small-style: () !default;
-
-// @param {px} $bubble-big-font-size [16]
-// @param {px} $bubble-big-line-height [20]
-// @param {px} $bubble-big-min-height [32]
-// @param {array} $bubble-big-style
-$bubble-big-font-size: 16 !default;
-$bubble-big-line-height: 20 !default;
-$bubble-big-min-height: 32 !default;
-$bubble-big-style: () !default;
-
-
-//
-// TAG
+// LOADER
 // ------------------------------------------------------
 // @param {px} $loader-size [24]
 // @param {array} $loader-style
@@ -811,41 +758,42 @@ $loader-is-global-background: $backdrop !default;
 //
 // TAG
 // ------------------------------------------------------
-// @param {color} $tag-background [$minor]
-$tag-background: $minor !default;
-
-// @param {number} $tag-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
-$tag-padding-ratio: 1.5 !default;
-
-// @param {px} $tag-font-size [$base-font-size * .875]
-// @param {px} $tag-line-height [$tag-font-size * $base-line-height]
-// @param {px} $tag-min-height [28]
+// @param {variable} $tag-font-family [$body-font]
+// @param {number} $tag-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
 // @param {string} $tag-weight [$is-bold]
-// @param {array} $tag-style
-$tag-font-size: $base-font-size * 0.875 !default;
-$tag-line-height: $tag-font-size * $base-line-height !default;
-$tag-min-height: 28 !default;
+// @param {color} $tag-background [$minor]
+// @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
+$tag-font-family: $body-font !default;
 $tag-weight: $is-bold !default;
+$tag-padding-ratio: 2 !default;
+$tag-background: $minor !default;
+$tag-round: false !default;
+
+// @param {px} $tag-font-size [14]
+// @param {px} $tag-line-height [14]
+// @param {px} $tag-min-height [20]
+// @param {array} $tag-style
+$tag-font-size: 14 !default;
+$tag-line-height: 14 !default;
+$tag-min-height: 20 !default;
 $tag-style: () !default;
 
-// @param {px} $tag-small-font-size [$tag-font-size * 0.875]
-// @param {px} $tag-small-line-height [$tag-small-font-size * $base-line]
-// @param {px} $tag-small-min-height [24]
+// @param {px} $tag-small-font-size [12]
+// @param {px} $tag-small-line-height [12]
+// @param {px} $tag-small-min-height [16]
 // @param {array} $tag-small-style
-$tag-small-font-size: $tag-font-size * 0.875 !default;
-$tag-small-line-height: $tag-small-font-size * $base-line-height !default;
-$tag-small-min-height: 24 !default;
+$tag-small-font-size: 12 !default;
+$tag-small-line-height: 12 !default;
+$tag-small-min-height: 16 !default;
 $tag-small-style: () !default;
 
-// @param {px} $tag-big-font-size [$tag-font-size * 1.125]
-// @param {px} $tag-big-line-height [$tag-big-font-size * $base-line-height]
-// @param {px} $tag-big-min-height [32]
-// @param {string} $tag-big-weight [$tag-weight]
+// @param {px} $tag-big-font-size [14]
+// @param {px} $tag-big-line-height [14]
+// @param {px} $tag-big-min-height [28]
 // @param {array} $tag-big-style
-$tag-big-font-size: $tag-font-size * 1.125 !default;
-$tag-big-line-height: $tag-big-font-size * $base-line-height !default;
-$tag-big-min-height: 32 !default;
-$tag-big-weight: $tag-weight !default;
+$tag-big-font-size: 14 !default;
+$tag-big-line-height: 14 !default;
+$tag-big-min-height: 28 !default;
 $tag-big-style: () !default;
 
 // @param {color} $tag-outlined-color [setContrast($minor)]
@@ -854,14 +802,8 @@ $tag-big-style: () !default;
 // @param {string} $tag-outlined-border-style [solid]
 $tag-outlined-color: setContrast($minor) !default;
 $tag-outlined-border-color: $minor !default;
-$tag-outlined-border-width: 2 !default;
+$tag-outlined-border-width: 1 !default;
 $tag-outlined-border-style: solid !default;
-
-// @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
-$tag-round: false !default;
-
-// @param {px} $tags-gutter [4]
-$tags-gutter: 4 !default;
 
 // radius of buttons - if $tag-round === false
 // @param {px} $tag-radius [2]

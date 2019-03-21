@@ -10,10 +10,6 @@
 /// @param {px} $tag-min-height [28]
 /// @param {px} $tag-small-min-height [24]
 /// @param {px} $tag-big-min-height [32]
-///
-/// @param {px} $bubble-min-height [28]
-/// @param {px} $bubble-small-min-height [24]
-/// @param {px} $bubble-big-min-height [32]
 
 @mixin _btn-inline-elements($parent, $child) {
   $margin: $parent - $child;
