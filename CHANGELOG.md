@@ -46,6 +46,7 @@
 ### added
 
 - added `.is-font` for `font-family` styles
+- added addional config for `.nav_stacked`
 
 ### deprecated
 

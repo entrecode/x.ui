@@ -938,14 +938,22 @@ $btn-group-divider-color: $divider-color !default;
 // @param {array} $nav-paddding [0]
 // @param {array} $nav-spacing [0]
 // @param {array} $nav-style
-// @param {array} $nav-stacked-style
 $nav-padding: 0 !default;
 $nav-spacing: 0 !default;
 $nav-style: () !default;
-$nav-stacked-style: () !default;
 
 // @param {array} $nav-item-padding [4]
 $nav-item-padding: 4 !default;
+
+// @param {array} $nav-stacked-paddding [0]
+// @param {array} $nav-stacked-spacing [0]
+// @param {array} $nav-stacked-style
+$nav-stacked-padding: 0 !default;
+$nav-stacked-spacing: 0 !default;
+$nav-stacked-style: () !default;
+
+// @param {array} $nav-stacked-item-padding [$nav-item-padding]
+$nav-stacked-item-padding: $nav-item-padding !default;
 
 // @param {color} $nav-divider-color [$divider]
 // @param {px} $nav-divider-size [1]

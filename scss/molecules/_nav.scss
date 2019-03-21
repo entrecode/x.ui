@@ -44,16 +44,22 @@
   width: rem($nav-divider-size);
 }
 
+// @param {array} $nav-stacked-paddding [0]
+// @param {array} $nav-stacked-spacing [0]
 // @param {array} $nav-stacked-style
 .nav_stacked {
   @include inject-style($nav-stacked-style);
+  margin: arrayMagic($nav-stacked-spacing);
+  padding: arrayMagic($nav-stacked-padding);
 
+  // @param {array} $nav-stacked-item-padding [$nav-item-padding]
   .nav__items {
     @supports (display: flex) {
       display: flex;
       flex-direction: column;
       align-items: stretch;
     }
+    padding: arrayMagic($nav-stacked-item-padding);
   }
 
   .nav__divider {
