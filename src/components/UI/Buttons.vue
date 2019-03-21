@@ -12,7 +12,7 @@
           slot="preview"
           :class="style.darkPreview ? 'is-theme-invert' :  'is-theme-lightest'"
           class="has-padding-2 align-center has-radius"
-          v-html="style.markup"
+          v-html="style.preview"
         ></div>
 
         <div slot="markup">
@@ -42,7 +42,107 @@ export default {
           summary: '',
           styles: [
             {
+              name: 'Default Button',
+              preview: `<a href class="btn">Default</a>&ensp;
+        <a href class="btn">
+          <svg class="ixo"><use xlink:href="#fire"></use></svg>
+          Default
+        </a>&ensp;
+        <a href class="btn">
+          Default
+          <svg class="ixo"><use xlink:href="#fire"></use></svg>
+        </a>&ensp;
+        <a href class="btn">
+          <svg class="ixo"><use xlink:href="#fire"></use></svg>
+        </a>`,
+              markup: '<a href="" class="btn">Default</a>',
+              config: `$btn-font-family: $body-font;
+$btn-transition: background-color 0.2s, box-shadow 0.1s;
+
+// automatically calculates padding-x and padding-y
+$btn-padding-ratio: 1.5;
+$btn-spacing: 0;
+
+// if true generates round buttons
+$btn-round: false;
+
+// radius of buttons - if $btn-round === false
+$btn-radius: 4;
+$btn-small-radius: $btn-radius;
+$btn-big-radius: $btn-radius;
+
+$btn-font-size: $base-font-size;
+$btn-line-height: $btn-font-size * $base-line-height;
+$btn-icon-size: $base-icon-size;
+$btn-min-height: 40;
+$btn-weight: $is-bold;
+
+// disabled styles
+$btn-disabled-style: ();
+$btn-disabled-style: map-merge(
+  (
+    box-shadow: none,
+    opacity: 0.6,
+  ),
+  $btn-disabled-style
+);
+
+// active styles
+$btn-active-style: ();
+$btn-active-style: map-merge(
+  (
+    transform: translateY(2px),
+  ),
+  $btn-active-style
+);`,
+            },
+            {
+              name: 'Small Button',
+              preview: `<a href class="btn btn_small">Small</a>&ensp;
+        <a href class="btn btn_small">
+          <svg class="ixo"><use xlink:href="#fire"></use></svg>
+          Small
+        </a>&ensp;
+        <a href class="btn btn_small">
+          Small
+          <svg class="ixo"><use xlink:href="#fire"></use></svg>
+        </a>&ensp;
+        <a href class="btn btn_small">
+          <svg class="ixo"><use xlink:href="#fire"></use></svg>
+        </a>`,
+              markup: '<a href="" class="btn btn_small">Small</a>',
+              config: `$btn-small-font-size: $btn-font-size * 0.875;
+$btn-small-line-height: $btn-small-font-size * $base-line-height;
+$btn-small-icon-size: $btn-icon-size;
+$btn-small-min-height: 32;
+$btn-small-weight: $btn-weight;
+$btn-small-style: ();`,
+            },
+            {
+              name: 'Big Button',
+              preview: `<a href class="btn btn_big">Big</a>&ensp;
+        <a href class="btn btn_big">
+          <svg class="ixo"><use xlink:href="#fire"></use></svg>
+          Big
+        </a>&ensp;
+        <a href class="btn btn_big">
+          Big
+          <svg class="ixo"><use xlink:href="#fire"></use></svg>
+        </a>&ensp;
+        <a href class="btn btn_big">
+          <svg class="ixo"><use xlink:href="#fire"></use></svg>
+        </a>`,
+              markup: '<a href="" class="btn btn_big">Big</a>',
+              config: `$btn-big-font-size: $btn-font-size * 1.125;
+$btn-big-line-height: $btn-big-font-size * $base-line-height;
+$btn-big-icon-size: $btn-icon-size;
+$btn-big-min-height: 48;
+$btn-big-weight: $btn-weight;
+$btn-big-style: ();`,
+            },
+            {
               name: 'Button',
+              preview: '<a href="" class="btn">Default</a>',
               markup: '<a href="" class="btn">Default</a>',
               config: `$btn-background: $link;
 $btn-color: setContrast($link);
@@ -54,6 +154,7 @@ $btn-hover-style: ();`,
             },
             {
               name: 'Super Button',
+              preview: '<a href="" class="btn btn_super">Super</a>',
               markup: '<a href="" class="btn btn_super">Super</a>',
               config: `$btn-super-background: $super;
 $btn-super-color: setContrast($super);
@@ -65,6 +166,7 @@ $btn-super-hover-style: ();`,
             },
             {
               name: 'Minor Button',
+              preview: '<a href="" class="btn btn_minor">Minor</a>',
               markup: '<a href="" class="btn btn_minor">Minor</a>',
               config: `$btn-minor-background: $minor;
 $btn-minor-color: setContrast($minor);
@@ -76,6 +178,7 @@ $btn-minor-hover-style: ();`,
             },
             {
               name: 'Inverted Button',
+              preview: '<a href="" class="btn btn_invert">Inverted</a>',
               markup: '<a href="" class="btn btn_invert">Inverted</a>',
               config: `$btn-invert-background: $background;
 $btn-invert-color: $link;
@@ -88,6 +191,7 @@ $btn-invert-hover-style: ();`,
             },
             {
               name: 'Clear Button',
+              preview: '<a href="" class="btn btn_clear">Clear</a>',
               markup: '<a href="" class="btn btn_clear">Clear</a>',
               config: `$btn-clear-background: transparent;
 $btn-clear-color: $link;
@@ -105,6 +209,7 @@ $btn-clear-hover-style: ();`,
           styles: [
             {
               name: 'Outlined Button',
+              preview: '<a href="" class="btn btn_outlined">Outlined</a>',
               markup: '<a href="" class="btn btn_outlined">Outlined</a>',
               config: `$btn-outline-border-width: 1;
 $btn-outline-border-style: solid;
@@ -119,6 +224,7 @@ $btn-outline-hover-style: ();`,
             },
             {
               name: 'Outlined Super Button',
+              preview: '<a href="" class="btn btn_outlined btn_super">Outlined Super</a>',
               markup: '<a href="" class="btn btn_outlined btn_super">Outlined Super</a>',
               config: `$btn-outline-super-border-color: $super;
 $btn-outline-super-color: $super;
@@ -130,6 +236,7 @@ $btn-outline-super-hover-style: ();`,
             },
             {
               name: 'Outlined Minor Button',
+              preview: '<a href="" class="btn btn_outlined btn_minor">Outlined Minor</a>',
               markup: '<a href="" class="btn btn_outlined btn_minor">Outlined Minor</a>',
               config: `$btn-outline-minor-border-color: $minor;
 $btn-outline-minor-color: $text-light;
@@ -141,6 +248,7 @@ $btn-outline-minor-hover-style: ();`,
             },
             {
               name: 'Outlined Invert Button',
+              preview: '<a href="" class="btn btn_outlined btn_invert">Outlined Invert</a>',
               markup: '<a href="" class="btn btn_outlined btn_invert">Outlined Invert</a>',
               config: `$btn-outline-invert-border-color: $text-invert;
 $btn-outline-invert-color: $text-invert;
@@ -159,6 +267,7 @@ $btn-outline-invert-hover-style: ();`,
           styles: [
             {
               name: 'Wide Button',
+              preview: '<a href="" class="btn btn_wide">wide</a>',
               markup: '<a href="" class="btn btn_wide">wide</a>',
               config: `// @param {px} $btn-wide -  min width for .btn_wide button
 // @param {px} $btn-small-wide - min width for .btn_wide.btn_small button
@@ -169,6 +278,7 @@ $btn-big-wide: 240 !default;`,
             },
             {
               name: 'Block Button',
+              preview: '<a href="" class="btn btn_block">block</a>',
               markup: '<a href="" class="btn btn_block">block</a>',
               config: null,
             },
@@ -180,6 +290,7 @@ $btn-big-wide: 240 !default;`,
           styles: [
             {
               name: 'Rounded Button',
+              preview: '<a href="" class="btn btn_round">wide</a>',
               markup: '<a href="" class="btn btn_round">wide</a>',
               config: null,
             },

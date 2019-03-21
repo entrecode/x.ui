@@ -1,17 +1,13 @@
 <template>
   <div class="doc-navbar is-sticky has-padding-2 is-layer-10" style="top:0;">
     <div class="has-padding-center-4" data-flex="is-center-items">
-      <svg class="ixo is-ink-link" style="font-size: 40px;">
-        <use xlink:href="#logo"></use>
-      </svg>
+      <img src="./../assets/x-logo.png" style="height: 32px; width: auto;">
       <div class="x-space-3"></div>
       <div class="flex-space"></div>
       <div class="is-relative" style="flex-grow: 1; max-width: 480px;">
         <div class="input-group">
           <div class="input-group__addon">
-            <svg class="ixo">
-              <use xlink:href="#search"></use>
-            </svg>
+            <ixo name="search"></ixo>
           </div>
           <input
             id="js-search"
@@ -50,9 +46,7 @@
         rel="nofollow"
         target="_blank"
       >
-        <svg class="ixo">
-          <use xlink:href="#github"></use>
-        </svg>
+        <ixo name="github"></ixo>
       </a>
       <div class="x-space-3"></div>
       <small class="is-ink-lighter is-nowrap">v.{{ version }}</small>
@@ -61,8 +55,12 @@
 </template>
 
 <script>
+import Ixo from './Ixo.vue';
 export default {
   name: 'Navbar',
+  components: {
+    Ixo,
+  },
   data: () => {
     return {
       version: '10.0.0',

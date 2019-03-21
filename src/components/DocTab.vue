@@ -1,9 +1,8 @@
 <template>
   <div class="has-margin-bottom-7">
     <div class="title">
-
       <slot name="title"></slot>
-      
+
       <nav class="nav">
         <ul class="nav__items">
           <li class="nav__item">
@@ -12,9 +11,7 @@
               :class="showTab === 1 ? 'btn_minor' : 'btn_clear'"
               @click="showTab = 1"
             >
-              <svg class="ixo">
-                <use xlink:href="#eye-open"></use>
-              </svg>
+              <ixo name="eye-open"></ixo>
             </div>
           </li>
           <li class="nav__item" v-if="hasConfig">
@@ -23,16 +20,13 @@
               :class="showTab === 2 ? 'btn_minor' : 'btn_clear'"
               @click="showTab = 2"
             >
-              <svg class="ixo">
-                <use xlink:href="#json"></use>
-              </svg>
+              <ixo name="json"></ixo>
             </div>
           </li>
         </ul>
       </nav>
     </div>
     <div v-show="showTab === 1">
-
       <div data-grid>
         <div :data-col="hasMarkup ? '6' : '12'">
           <slot name="preview"></slot>
@@ -41,7 +35,6 @@
           <slot name="markup"></slot>
         </div>
       </div>
-
     </div>
     <div v-show="showTab === 2">
       <slot name="config"></slot>
@@ -50,8 +43,12 @@
 </template>
 
 <script>
+import Ixo from './Ixo.vue';
 export default {
   name: 'Doctab',
+  components: {
+    Ixo,
+  },
   data: () => {
     return {
       showTab: 1,

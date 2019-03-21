@@ -24,28 +24,18 @@
         <pre v-highlightjs="inputMarkup"><code class="html"></code></pre>
       </div>
       <div slot="config">
-        <pre v-highlightjs><code class="scss">// @param {array} $field-group-spacing [0 0 8]
-// @param {array} $field-group-padding [0]
-// @param {color} $field-group-background [none]
-// @param {array} $field-group-style
-$field-group-spacing: 0 0 8 !default;
-$field-group-padding: 0 !default;
-$field-group-background: none !default;
-$field-group-style: () !default;
+        <pre v-highlightjs><code class="scss">$field-group-spacing: 0 0 16;
+$field-group-padding: 0;
+$field-group-background: none;
+$field-group-style: ();
 
-// @param {array} $field-group-label-spacing [0 0 4 0]
-// @param {px} $field-group-label-font-size [$base-font-size]
-// @param {array} $field-group-label-style
-$field-group-label-spacing: 0 0 4 0 !default;
-$field-group-label-font-size: $base-font-size !default;
-$field-group-label-style: () !default;
+$field-group-label-spacing: 0 0 4 0;
+$field-group-label-font-size: $base-font-size;
+$field-group-label-style: ();
 
-// @param {array} $field-group-info-spacing [8 0 8 0]
-// @param {px} $field-group-info-font-size [$base-font-size]
-// @param {array} $field-group-info-style
-$field-group-info-spacing: 8 0 8 0 !default;
-$field-group-info-font-size: $base-font-size !default;
-$field-group-info-style: () !default;</code></pre>
+$field-group-info-spacing: 8 0 8 0;
+$field-group-info-font-size: $base-font-size;
+$field-group-info-style: ();</code></pre>
       </div>
     </DocTab>
   </section>

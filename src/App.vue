@@ -104,15 +104,9 @@
    
     <div data-container style="max-width: 800px;">
       <div class="y-space-8"></div>
-      <Button/>
-      <div class="y-space-5"></div>
-      <ButtonSmall/>
-      <div class="y-space-5"></div>
-      <ButtonBig/>
-      <div class="y-space-5"></div>
-      <ButtonStyles/>
-      
+      <buttons/>
       <div class="y-space-8"></div>
+      
 
       <h2>Form</h2>
       <Form/>
@@ -143,10 +137,7 @@
 <script>
 import Navbar from './components/Navbar.vue';
 import DocTab from './components/DocTab.vue';
-import Button from './components/UI/Button.vue';
-import ButtonSmall from './components/UI/ButtonSmall.vue';
-import ButtonBig from './components/UI/ButtonBig.vue';
-import ButtonStyles from './components/UI/ButtonStyles.vue';
+import Buttons from './components/UI/Buttons.vue';
 import Form from './components/Form/Form.vue';
 import Grid from './components/Grid/Grid.vue';
 import FontWeight from './components/Typeface/FontWeight.vue';
@@ -156,10 +147,7 @@ export default {
   components: {
     Navbar,
     DocTab,
-    Button,
-    ButtonSmall,
-    ButtonBig,
-    ButtonStyles,
+    Buttons,
     Form,
     Grid,
     FontWeight,

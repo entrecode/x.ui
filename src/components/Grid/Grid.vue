@@ -1,7 +1,7 @@
 <template>
   <section id="scroll-to-grid">
     <h2 class="align-center">Grid</h2>
-    <a href @click.prevent="addCol"><svg class="ixo"><use xlink:href="#add"></use></svg></a>
+    <a href @click.prevent="addCol">+</a>
 
     <div :data-grid="[gridAlign + ' ' + gridGutterSize]" class>
       <div data-col="4" v-for="(col, index) in cols" :key="index">

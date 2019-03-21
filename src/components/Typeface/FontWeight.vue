@@ -24,14 +24,10 @@
         </div>
 
         <div slot="config">
-          <pre v-highlightjs><code class="scss">// @param {string} $is-light [lighter]
-// @param {string} $is-normal [normal]
-// @param {string} $is-medium [bold]
-// @param {string} $is-bold [bold]
-$is-light: lighter !default;
-$is-normal: normal !default;
-$is-medium: bold !default;
-$is-bold: bolder !default;</code></pre>
+          <pre v-highlightjs><code class="scss">$is-light: lighter;
+$is-normal: normal;
+$is-medium: bold;
+$is-bold: bolder;</code></pre>
         </div>
       </DocTab>
   </section>
