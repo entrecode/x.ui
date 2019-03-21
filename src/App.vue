@@ -100,13 +100,11 @@
       </div>
     </div>
 
-    <Grid/>
+    <grid/>
+    
+    <buttons/>
    
-    <div data-container style="max-width: 800px;">
-      <div class="y-space-8"></div>
-      <buttons/>
-      <div class="y-space-8"></div>
-      
+    <div data-container style="max-width: 800px;">  
 
       <h2>Form</h2>
       <Form/>

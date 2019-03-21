@@ -1,27 +1,45 @@
 <template>
-  <section id="scroll-to-button">
-    <div class="has-margin-bottom-5" v-for="(group, index) in styleGroups" :key="index">
-      <h2 v-text="group.title"></h2>
-      <p v-text="group.markup"></p>
-      <div class="spacer"></div>
-      <DocTab v-for="(style, index) in group.styles" :key="index">
-        <div slot="title">
-          <h3 class="is-h4" v-text="style.name"></h3>
-        </div>
+  <section data-container>
+    <div data-grid="is-end">
+      <div data-col="8">
         <div
-          slot="preview"
-          :class="style.darkPreview ? 'is-theme-invert' :  'is-theme-lightest'"
-          class="has-padding-2 align-center has-radius"
-          v-html="style.preview"
-        ></div>
+          class="has-margin-bottom-5"
+          v-for="(group, index) in sectionGroups"
+          :key="index"
+          :id="'#scroll-to-' + group.id"
+        >
+          <h2 v-text="group.title"></h2>
+          <p v-text="group.markup"></p>
+          <div class="spacer"></div>
+          <DocTab v-for="(item, index) in group.groupItems" :key="index">
+            <div slot="title">
+              <h3 class="is-h4" v-text="item.name"></h3>
+            </div>
+            <div
+              slot="preview"
+              :class="item.darkPreview ? 'is-theme-invert' :  'is-theme-lightest'"
+              class="has-padding-2 align-center has-radius"
+              v-html="item.preview"
+            ></div>
 
-        <div slot="markup">
-          <pre v-highlightjs="style.markup"><code class="html"></code></pre>
+            <div slot="markup">
+              <pre v-highlightjs="item.markup"><code class="html"></code></pre>
+            </div>
+            <div slot="config" v-if="item.config">
+              <pre v-highlightjs="item.config"><code class="scss"></code></pre>
+            </div>
+          </DocTab>
         </div>
-        <div slot="config" v-if="style.config">
-          <pre v-highlightjs="style.config"><code class="scss"></code></pre>
-        </div>
-      </DocTab>
+      </div>
+      <div data-col="2">
+        <nav class="nav nav_stacked is-sticky" style="top: 80px;">
+          <ul class="nav__items">
+            <li class="nav__item" v-for="(item, index) in sectionGroups" :key="index">
+              <a :href="'#scroll-to-' + item.id" class="is-ink-light hover:is-ink-link">{{item.navTitle}}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </section>
 </template>
@@ -36,11 +54,13 @@ export default {
   },
   data: () => {
     return {
-      styleGroups: [
+      sectionGroups: [
         {
           title: 'Buttons',
+          id: 'btn',
+          navTitle: 'Buttons',
           summary: '',
-          styles: [
+          groupItems: [
             {
               name: 'Default Button',
               preview: `<a href class="btn">Default</a>&ensp;
@@ -205,8 +225,10 @@ $btn-clear-hover-style: ();`,
         },
         {
           title: 'Outlined Buttons',
+          id: 'btn-outlined',
+          navTitle: 'Outlined Buttons',
           summary: '',
-          styles: [
+          groupItems: [
             {
               name: 'Outlined Button',
               preview: '<a href="" class="btn btn_outlined">Outlined</a>',
@@ -263,8 +285,10 @@ $btn-outline-invert-hover-style: ();`,
         },
         {
           title: 'Additional Button Sizes',
+          id: 'btn-sizes',
+          navTitle: 'Button Sizes',
           summary: '',
-          styles: [
+          groupItems: [
             {
               name: 'Wide Button',
               preview: '<a href="" class="btn btn_wide">wide</a>',
@@ -286,8 +310,10 @@ $btn-big-wide: 240 !default;`,
         },
         {
           title: 'Additional Button Modifier',
+          id: 'btn-modifier',
+          navTitle: 'Button Modifier',
           summary: '',
-          styles: [
+          groupItems: [
             {
               name: 'Rounded Button',
               preview: '<a href="" class="btn btn_round">wide</a>',
