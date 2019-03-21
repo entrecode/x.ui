@@ -8,9 +8,9 @@
           :key="index"
           :id="'#scroll-to-' + group.id"
         >
-          <h2 v-text="group.title"></h2>
-          <p v-text="group.markup"></p>
-          <div class="spacer"></div>
+          <h2 v-text="group.title" v-if="group.title"></h2>
+          <p v-text="group.markup" v-if="group.markup"></p>
+          <div class="spacer" v-if="group.title || group.markup"></div>
           <DocTab v-for="(item, index) in group.groupItems" :key="index">
             <div slot="title">
               <h3 class="is-h4" v-text="item.name"></h3>

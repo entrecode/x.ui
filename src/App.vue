@@ -104,6 +104,8 @@
     <div class="divider divider_big"></div>
     <buttons/>
     <div class="divider divider_big"></div>
+    <button-group/>
+    <div class="divider divider_big"></div>
     <tag/>
     <div class="divider divider_big"></div>
    
@@ -138,6 +140,7 @@
 import Navbar from './components/Navbar.vue';
 import DocTab from './components/DocTab.vue';
 import Buttons from './components/UI/Buttons.vue';
+import ButtonGroup from './components/UI/ButtonGroup.vue';
 import Tag from './components/UI/Tag.vue';
 import Form from './components/Form/Form.vue';
 import Grid from './components/Grid/Grid.vue';
@@ -149,6 +152,7 @@ export default {
     Navbar,
     DocTab,
     Buttons,
+    ButtonGroup,
     Tag,
     Form,
     Grid,
