@@ -17,6 +17,7 @@
 - removed deprecated `.btn_glow`
 - refactored and combined `is-positioned` and `is-fab`
 - removed `.img_responsive` and `.img_full` use `.img-responsive` or `.img-full` instead
+- removed `.title` and `.toolbar` use `.titlebar` instead
 - removed `.no-margin` use `.has-margin-0` instead
 - removed `.no-padding` use `.has-padding-0` instead
 - removed `.xui-overlay`

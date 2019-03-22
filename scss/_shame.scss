@@ -239,15 +239,6 @@ input[type='week' i] {
 [data-grid*='is-nowrap'] {
   flex-wrap: nowrap;
 }
-
-.title {
-  .is-mega,
-  .is-giga,
-  .is-giga {
-    word-break: break-all;
-  }
-}
-
 .toast-dismiss {
   background: transparent;
 }

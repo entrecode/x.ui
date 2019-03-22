@@ -1,0 +1,21 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group organism
+
+// @param {array} $titlebar-spacing [0]
+// @param {array} $titlebar-padding [0]
+// @param {array} $titlebar-style
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include inject-style($titlebar-style);
+  margin: arrayMagic($titlebar-spacing);
+  padding: arrayMagic($titlebar-padding);
+
+  > .nav,
+  > .btn {
+    align-self: flex-start;
+  }
+}

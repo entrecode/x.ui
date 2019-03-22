@@ -811,7 +811,7 @@ $tag-outlined-border-style: solid !default;
 // @param {px} $tag-radius [2]
 // @param {px} $tag-small-radius [$tag-radius]
 // @param {px} $tag-big-radius [$tag-radius]
-$tag-radius: 2 !default;
+$tag-radius: 4 !default;
 $tag-small-radius: $tag-radius !default;
 $tag-big-radius: $tag-radius !default;
 
@@ -912,40 +912,12 @@ $nav-divider-spacing: 4 !default;
 //
 // TITLE
 // ------------------------------------------------------
-// @param {array} $title-spacing [0]
-// @param {array} $title-padding [0]
-// @param {array} $title-style
-$title-spacing: 0 !default;
-$title-padding: 0 !default;
-$title-style: () !default;
-
-// @param {array} $title-stacked-spacing [0]
-// @param {array} $title-stacked-padding [0]
-// @param {array} $title-stacked-style
-$title-stacked-spacing: 0 !default;
-$title-stacked-padding: 0 !default;
-$title-stacked-style: () !default;
-
-//
-// TOOLBAR
-// ------------------------------------------------------
-// @param {px} $toolbar-min-height [64] - min-height
-// @param {array} $toolbar-padding [$base-spacing / 2, $base-spacing]
-// @param {array} $toolbar-spacing [0]
-// @param {px} $toolbar-gutter [$base-spacing]
-// @param {array} $toolbar-style
-$toolbar-min-height: 64 !default;
-$toolbar-padding: $base-spacing / 2, $base-spacing !default;
-$toolbar-spacing: 0 !default;
-$toolbar-gutter: $base-spacing !default;
-$toolbar-style: () !default;
-
-// @param {px} $toolbar-title-size [20] - font-size of .toolbar__title
-// @param {px} $toolbar-title-img-height [32] - height of .toolbar__title > img
-// @param {array} $toolbar-title-style
-$toolbar-title-size: 20 !default;
-$toolbar-title-img-height: 32 !default;
-$toolbar-title-style: () !default;
+// @param {array} $titlebar-spacing [0]
+// @param {array} $titlebar-padding [0]
+// @param {array} $titlebar-style
+$titlebar-spacing: 0 !default;
+$titlebar-padding: 0 !default;
+$titlebar-style: () !default;
 
 //
 // XUI-TABS
