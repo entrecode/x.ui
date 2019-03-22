@@ -1,63 +1,20 @@
 <template>
-  <section data-container>
-    <div data-grid="is-end">
-      <div data-col="8">
-        <div
-          class="has-margin-bottom-5"
-          v-for="(group, index) in sectionGroups"
-          :key="index"
-          :id="'#scroll-to-' + group.id"
-        >
-          <h2 v-text="group.title" v-if="group.title"></h2>
-          <p v-text="group.markup" v-if="group.markup"></p>
-          <div class="spacer" v-if="group.title || group.markup"></div>
-          <DocTab v-for="(item, index) in group.groupItems" :key="index">
-            <div slot="title">
-              <h3 class="is-h4" v-text="item.name"></h3>
-            </div>
-            <div
-              slot="preview"
-              :class="item.previewStyle || 'is-theme-lightest'"
-              class="has-padding-2 align-center has-radius"
-              v-html="item.preview"
-            ></div>
-
-            <div slot="markup">
-              <pre v-highlightjs="item.markup"><code class="html"></code></pre>
-            </div>
-            <div slot="config" v-if="item.config">
-              <pre v-highlightjs="item.config"><code class="scss"></code></pre>
-            </div>
-          </DocTab>
-        </div>
-      </div>
-      <div data-col="2">
-        <nav class="nav nav_stacked is-sticky" style="top: 120px;">
-          <ul class="nav__items">
-            <li class="nav__item" v-for="(item, index) in sectionGroups" :key="index">
-              <a :href="'#scroll-to-' + item.id" class="is-kilo is-ink-light hover:is-ink-link">{{item.navTitle}}</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    <div class="y-space-8"></div>
-  </section>
+  <group-section :groups="sectionGroups" section-title="Button"></group-section>
 </template>
 
 <script>
-import DocTab from './../DocTab.vue';
+import GroupSection from './../GroupSection.vue';
 
 export default {
   name: 'Button',
   components: {
-    DocTab,
+    GroupSection,
   },
   data: () => {
     return {
       sectionGroups: [
         {
-          title: 'Buttons',
+          title: '',
           id: 'btn',
           navTitle: 'Buttons',
           summary: '',
@@ -138,6 +95,7 @@ $btn-small-icon-size: $btn-icon-size;
 $btn-small-min-height: 32;
 $btn-small-weight: $btn-weight;
 $btn-small-style: ();`,
+              previewStyle: 'well',
             },
             {
               name: 'Big Button',
@@ -160,6 +118,7 @@ $btn-big-icon-size: $btn-icon-size;
 $btn-big-min-height: 48;
 $btn-big-weight: $btn-weight;
 $btn-big-style: ();`,
+              previewStyle: 'well',
             },
             {
               name: 'Button',
@@ -172,6 +131,7 @@ $btn-style: ();
 $btn-hover-background: setHover($btn-background);
 $btn-hover-color: $btn-color;
 $btn-hover-style: ();`,
+              previewStyle: 'well',
             },
             {
               name: 'Super Button',
@@ -184,6 +144,7 @@ $btn-super-style: ();
 $btn-super-hover-background: setHover($btn-super-background);
 $btn-super-hover-color: $btn-super-color;
 $btn-super-hover-style: ();`,
+              previewStyle: 'well',
             },
             {
               name: 'Minor Button',
@@ -196,6 +157,7 @@ $btn-minor-style: ();
 $btn-minor-hover-background: setHover($btn-minor-background);
 $btn-minor-hover-color: $btn-minor-color;
 $btn-minor-hover-style: ();`,
+              previewStyle: 'well',
             },
             {
               name: 'Inverted Button',
@@ -208,7 +170,7 @@ $btn-invert-style: ();
 $btn-invert-hover-background: setHover($btn-invert-background);
 $btn-invert-hover-color: setHover($btn-invert-color);
 $btn-invert-hover-style: ();`,
-              previewStyle: 'is-theme-invert',
+              previewStyle: 'well is-theme-invert',
             },
             {
               name: 'Clear Button',
@@ -221,6 +183,7 @@ $btn-clear-style: ();
 $btn-clear-hover-background: $btn-clear-background;
 $btn-clear-hover-color: setHover($btn-clear-color);
 $btn-clear-hover-style: ();`,
+              previewStyle: 'well',
             },
           ],
         },
@@ -244,6 +207,7 @@ $btn-outline-style: ();
 $btn-outline-hover-border-color: setHover($btn-outline-border-color);
 $btn-outline-hover-color: setHover($btn-outline-color);
 $btn-outline-hover-style: ();`,
+              previewStyle: 'well',
             },
             {
               name: 'Outlined Super Button',
@@ -256,6 +220,7 @@ $btn-outline-super-style: ();
 $btn-outline-super-hover-border-color: setHover($btn-outline-super-border-color);
 $btn-outline-super-hover-color: setHover($btn-outline-super-color);
 $btn-outline-super-hover-style: ();`,
+              previewStyle: 'well',
             },
             {
               name: 'Outlined Minor Button',
@@ -269,6 +234,7 @@ $btn-outline-minor-hover-border-color: setHover($btn-outline-minor-border-color)
 $btn-outline-minor-hover-color: setHover($btn-outline-minor-color);
 $btn-outline-minor-hover-style: ();`,
               previewStyle: 'is-theme',
+              previewStyle: 'well',
             },
             {
               name: 'Outlined Invert Button',
@@ -281,7 +247,7 @@ $btn-outline-invert-style: ();
 $btn-outline-invert-hover-border-color: setHover($btn-outline-invert-border-color);
 $btn-outline-invert-hover-color: setHover($btn-outline-invert-color);
 $btn-outline-invert-hover-style: ();`,
-              previewStyle: 'is-theme-invert',
+              previewStyle: 'well is-theme-invert',
             },
           ],
         },
@@ -301,12 +267,14 @@ $btn-outline-invert-hover-style: ();`,
 $btn-wide: 240 !default;
 $btn-small-wide: 160 !default;
 $btn-big-wide: 240 !default;`,
+              previewStyle: 'well',
             },
             {
               name: 'Block Button',
               preview: '<a href="" class="btn btn_block">block</a>',
               markup: '<a href="" class="btn btn_block">block</a>',
               config: null,
+              previewStyle: 'well',
             },
           ],
         },
@@ -321,6 +289,7 @@ $btn-big-wide: 240 !default;`,
               preview: '<a href="" class="btn btn_round">wide</a>',
               markup: '<a href="" class="btn btn_round">wide</a>',
               config: null,
+              previewStyle: 'well',
             },
           ],
         },

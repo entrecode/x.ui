@@ -9,7 +9,7 @@
 /// @param {array} $card-padding [8 16]
 /// @param {array} $card-style
 
-%card {
+.card {
   position: relative;
   z-index: 1;
   @include inject-style($card-style);
@@ -17,9 +17,5 @@
   color: $card-color;
   border-radius: arrayMagic($card-radius);
   padding: arrayMagic($card-padding);
-}
-
-.card {
-  @extend %card;
   @include elevation(4);
 }

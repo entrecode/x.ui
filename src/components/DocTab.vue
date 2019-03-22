@@ -1,6 +1,6 @@
 <template>
   <div class="has-margin-bottom-7">
-    <div class="title">
+    <div class="titlebar">
       <slot name="title"></slot>
 
       <nav class="nav">

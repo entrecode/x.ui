@@ -88,7 +88,7 @@ export default {
           'dropdown',
           'btn-group',
           'nav',
-          'title',
+          'titlebar',
           'toolbar',
           'xui-tabs',
           'xui-list',

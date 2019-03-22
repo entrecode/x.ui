@@ -20,16 +20,15 @@ $link: #2fce6f;
 $super: #0079ff;
 $minor: #f4f5f6;
 
-$btn-weight: $is-medium;
-$tag-weight: $is-medium;
-
 $headings-line-height: 1;
 $paragraph-line-height: 1.5;
 
+$btn-weight: $is-medium;
 $btn-font-family: $headings-font;
 $btn-icon-size: 20;
-$tag-font-family: $headings-font;
 
+$tag-font-family: $headings-font;
+$tag-weight: $is-medium;
 
 $nav-stacked-item-padding: 8;
 
@@ -47,7 +46,7 @@ $dropdown-option-style: (
 $input-border-width: 0;
 $input-background: #f4f5f6;
 
-$title-spacing: 0 0 16;
+$titlebar-spacing: 0 0 16;
 
 $is-theme: (
   'grid': (
