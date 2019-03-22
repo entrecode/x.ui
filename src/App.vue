@@ -108,6 +108,8 @@
     <div class="divider divider_big"></div>
     <tag/>
     <div class="divider divider_big"></div>
+    <card/>
+    <div class="divider divider_big"></div>
 
     <div data-container style="max-width: 800px;">  
 
@@ -142,6 +144,7 @@ import DocTab from './components/DocTab.vue';
 import Buttons from './components/UI/Buttons.vue';
 import ButtonGroup from './components/UI/ButtonGroup.vue';
 import Tag from './components/UI/Tag.vue';
+import Card from './components/UI/Card.vue';
 import Form from './components/Form/Form.vue';
 import Grid from './components/Grid/Grid.vue';
 import FontWeight from './components/Typeface/FontWeight.vue';
@@ -154,6 +157,7 @@ export default {
     Buttons,
     ButtonGroup,
     Tag,
+    Card,
     Form,
     Grid,
     FontWeight,

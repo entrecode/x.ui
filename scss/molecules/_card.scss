@@ -1,21 +1,26 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group molecules
 ///
 /// @param {px} $card-radius [4]
 /// @param {color} $card-background [$background]
-/// @param {color} $card-color [inherit]
-/// @param {array} $card-padding [8 16]
+/// @param {color} $card-color [$text]
+/// @param {array} $card-padding [24]
+/// @param {array} $card-spacing [0]
+/// @param {[1-24] | false} $card-elevated [4]
 /// @param {array} $card-style
 
 .card {
   position: relative;
   z-index: 1;
+  @if $card-elevated {
+    @include elevation($card-elevated);
+  }
   @include inject-style($card-style);
   background: $card-background;
   color: $card-color;
   border-radius: arrayMagic($card-radius);
   padding: arrayMagic($card-padding);
-  @include elevation(4);
+  margin: arrayMagic($card-spacing);
 }
