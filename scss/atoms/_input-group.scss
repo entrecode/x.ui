@@ -12,57 +12,6 @@
   flex-grow: 1;
   margin: arrayMagic($input-group-spacing);
 
-  // @param {color} $input-group-addon-color [$text-light]
-  // @param {color} $input-group-addon-background [transparent]
-  // @param {color} $input-group-addon-border-color [$input-border-color]
-  // @param {color} $input-group-addon-border-width [$input-border-width]
-  // @param {array} $input-group-addon-border-width [$input-border-style]
-  // @param {array} $input-group-addon-padding [0 8]
-  // @param {array} $input-group-addon-style
-  .input-group__addon {
-    display: flex;
-    align-items: center;
-    flex-grow: 0;
-    flex-shrink: 0;
-    justify-content: center;
-    width: auto;
-    @include inject-style($input-group-addon-style);
-    color: $input-group-addon-color;
-    background: $input-group-addon-background;
-    border-width: rem($input-group-addon-border-width);
-    border-color: $input-group-addon-border-color;
-    border-style: $input-group-addon-border-style;
-    border-radius: rem($input-radius);
-    padding: arrayMagic($input-group-addon-padding);
-    min-width: rem($input-min-height);
-  }
-
-  .input-group__addon,
-  > .btn,
-  > .input {
-    &:not(:only-child) {
-      &:first-child {
-        border-bottom-right-radius: 0;
-        border-right: 0;
-        border-top-right-radius: 0;
-      }
-
-      &:last-child {
-        border-bottom-left-radius: 0;
-        border-left: 0;
-        border-top-left-radius: 0;
-      }
-    }
-
-    &:not(:last-child) {
-      &:not(:first-child) {
-        border-left: 0;
-        border-radius: 0;
-        border-right: 0;
-      }
-    }
-  }
-
   > .btn {
     align-items: center;
     display: flex;
@@ -93,6 +42,57 @@
         border-left-style: solid;
         border-left-width: rem($btn-outline-border-width);
       }
+    }
+  }
+}
+
+// @param {color} $input-group-addon-color [$text-light]
+// @param {color} $input-group-addon-background [transparent]
+// @param {color} $input-group-addon-border-color [$input-border-color]
+// @param {color} $input-group-addon-border-width [$input-border-width]
+// @param {array} $input-group-addon-border-width [$input-border-style]
+// @param {array} $input-group-addon-padding [0 8]
+// @param {array} $input-group-addon-style
+.input-group__addon {
+  display: flex;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+  width: auto;
+  @include inject-style($input-group-addon-style);
+  color: $input-group-addon-color;
+  background: $input-group-addon-background;
+  border-width: rem($input-group-addon-border-width);
+  border-color: $input-group-addon-border-color;
+  border-style: $input-group-addon-border-style;
+  border-radius: rem($input-radius);
+  padding: arrayMagic($input-group-addon-padding);
+  min-width: rem($input-min-height);
+}
+
+.input-group__addon,
+> .btn,
+> .input {
+  &:not(:only-child) {
+    &:first-child {
+      border-bottom-right-radius: 0;
+      border-right: 0;
+      border-top-right-radius: 0;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 0;
+      border-left: 0;
+      border-top-left-radius: 0;
+    }
+  }
+
+  &:not(:last-child) {
+    &:not(:first-child) {
+      border-left: 0;
+      border-radius: 0;
+      border-right: 0;
     }
   }
 }

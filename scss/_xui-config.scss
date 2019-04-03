@@ -12,7 +12,6 @@ $ec-icon-support: true !default;
 // COLORS
 // -------------------------------------------------------------------------------------------------
 // these variables are used in `_core/_colors.scss`
-
 // Base theme colors
 $background: #fff !default;
 $text: #2a3d54 !default;
@@ -811,7 +810,7 @@ $tag-outlined-border-style: solid !default;
 // @param {px} $tag-radius [2]
 // @param {px} $tag-small-radius [$tag-radius]
 // @param {px} $tag-big-radius [$tag-radius]
-$tag-radius: 4 !default;
+$tag-radius: 2 !default;
 $tag-small-radius: $tag-radius !default;
 $tag-big-radius: $tag-radius !default;
 
@@ -1590,12 +1589,12 @@ $spacing-big-size: getSpace(5) !default;
 // ------------------------------------------------------
 // @param {color} $fieldset-background [transparent]
 // @param {array} $fieldset-padding [0]
-// @param {array} $fieldset-spacing [0]
+// @param {array} $fieldset-spacing [0 0 16]
 // @param {array} $fieldset-border [0]
 // @param {array} $fieldset-style
-$fieldset-background: $background !default;
+$fieldset-background: transparent !default;
 $fieldset-padding: 0 !default;
-$fieldset-spacing: 0 !default;
+$fieldset-spacing: 0 0 16 !default;
 $fieldset-border: 0 !default;
 $fieldset-style: () !default;
 
@@ -1652,51 +1651,47 @@ $form-boolean-label-style: () !default;
 // @param {px} $input-font-size [16]
 // @param {px} $input-line-height [24]
 // @param {px} $input-min-height [32]
+// @param {number} $input-padding-ratio [1]
 // @param {array} $input-spacing [0]
-// @param {number} $input-padding-ratio [2]
-// @param {color} $input-background [$background] - background-color of input
-// @param {color} $input-color [$text] - text color of input
+// @param {color} $input-border-color [transparent]
+// @param {px} $input-border-width [0]
+// @param {string} $input-border-style [solid]
+// @param {color} $input-background [$background-lighter]
+// @param {color} $input-color [$text]
 // @param {array} $input-style
-// @param {array} $input-hover-style [box-shadow: inset 0 0 0 2px $state-hover]
-// @param {array} $input-focus-style [$input-hover-style]
-// @param {array} $input-disabled-style [(opacity: 0.4)]
+// @param {array} $input-hover-style
+// @param {array} $input-focus-style
+// @param {array} $input-disabled-style
 $input-font-size: $base-font-size !default;
-$input-line-height: $input-font-size * $base-line-height !default;
+$input-line-height: $input-font-size * 1.125 !default;
 $input-min-height: 32 !default;
+$input-padding-ratio: 1 !default;
 $input-spacing: 0 !default;
-$input-padding-ratio: 2 !default;
-$input-background: $background !default;
+$input-border-color: transparent !default;
+$input-border-width: 0 !default;
+$input-border-style: solid !default;
+$input-background: $background-lighter !default;
 $input-color: $text !default;
 $input-style: () !default;
 $input-hover-style: () !default;
 $input-focus-style: () !default;
 $input-disabled-style: () !default;
-$input-disabled-style: map-merge(
-  (
-    opacity: 0.4,
-  ),
-  $input-disabled-style
-);
 
-// @param {color} $input-placeholder-color [$text-light]
+// @param {color} $input-placeholder-color [$text-lighter]
 // @param {array} $input-placeholder-style
-// @param {color} $input-placeholder-hover-color [$text]
 // @param {array} $input-placeholder-hover-style
-// @param {color} $input-placeholder-focus-color [$input-placeholder-hover-color]
-// @param {array} $input-placeholder-focus-style [$input-placeholder-hover-style]
-$input-placeholder-color: $text-light !default;
+// @param {array} $input-placeholder-focus-style
+$input-placeholder-color: $text-lighter !default;
 $input-placeholder-style: () !default;
-$input-placeholder-hover-color: $text !default;
 $input-placeholder-hover-style: () !default;
-$input-placeholder-focus-color: $input-placeholder-hover-color !default;
-$input-placeholder-focus-style: $input-placeholder-hover-style !default;
+$input-placeholder-focus-style: () !default;
 
 // @param {px} $input-small-font-size [14]
 // @param {px} $input-small-line-height [18]
 // @param {px} $input-small-min-height [28]
 // @param {array} $input-small-style
 $input-small-font-size: $input-font-size * 0.875 !default;
-$input-small-line-height: $input-small-font-size * $base-line-height !default;
+$input-small-line-height: $input-small-font-size * 1.125 !default;
 $input-small-min-height: 28 !default;
 $input-small-style: () !default;
 
@@ -1705,27 +1700,14 @@ $input-small-style: () !default;
 // @param {px} $input-big-min-height [40]
 // @param {array} $input-big-style
 $input-big-font-size: $input-font-size * 1.125 !default;
-$input-big-line-height: $input-big-font-size * $base-line-height !default;
+$input-big-line-height: $input-big-font-size * 1.125 !default;
 $input-big-min-height: 40 !default;
 $input-big-style: () !default;
 
 // @param {boolean} $input-round [false] - sets border-radius to 50% of input height
+// @param {px} $input-radius [4] - if $input-round === false
 $input-round: false !default;
-
-// radius of input - if $input-round === false
-// @param {px} $input-radius [4]
-// @param {px} $input-small-radius [$input-radius]
-// @param {px} $input-big-radius [$input-radius]
 $input-radius: 4 !default;
-$input-small-radius: $input-radius !default;
-$input-big-radius: $input-radius !default;
-
-// @param {color} $input-border-color [ mix($text, $background, 25%)]
-// @param {px} $input-border-width [1]
-// @param {string} $input-border-style [solid]
-$input-border-color: mix($text, $background, 25%) !default;
-$input-border-width: 1 !default;
-$input-border-style: solid !default;
 
 //
 // INPUT
@@ -1833,11 +1815,9 @@ $xui-select-style: () !default;
 
 // @param {color} $xui-select-placeholder-color [$input-placeholder-color]
 // @param {array} $xui-select-placeholder-style
-// @param {color} $xui-select-placeholder-hover-color [$input-placeholder-hover-color]
 // @param {array} $xui-select-placeholder-hover-style
 $xui-select-placeholder-color: $input-placeholder-color !default;
 $xui-select-placeholder-style: () !default;
-$xui-select-placeholder-hover-color: $input-placeholder-hover-color !default;
 $xui-select-placeholder-hover-style: () !default;
 
 // @param {px} $xui-select-options-radius [4]

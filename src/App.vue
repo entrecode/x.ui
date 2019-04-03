@@ -110,11 +110,10 @@
     <div class="divider divider_big"></div>
     <card/>
     <div class="divider divider_big"></div>
+    <Form/>
 
     <div data-container style="max-width: 800px;">  
 
-      <h2>Form</h2>
-      <Form/>
 
       <div class="y-space-8"></div>
 

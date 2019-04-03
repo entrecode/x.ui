@@ -62,11 +62,9 @@
       border-top-color: rgba(getColor(text), 0.4);
     }
 
-    // @param {color} $xui-select-placeholder-hover-color [$input-placeholder-hover-color]
-    // @param {array} $xui-select-placeholder-hover-style
+    // @param {color} $xui-select-placeholder-hover-color
     .xui-select__placeholder {
       @include inject-style($xui-select-placeholder-hover-style);
-      color: $xui-select-placeholder-hover-color;
     }
   }
 

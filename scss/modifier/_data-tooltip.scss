@@ -84,7 +84,6 @@
     background: $tooltip-background;
     color: $tooltip-color;
     font-weight: $tooltip-weight;
-    border-radius: rem($tooltip-radius);
 
     // @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
     @if $tooltip-round == true {
