@@ -34,6 +34,8 @@
 - removed input validation styles
 - removed `.bubble` use `.tag` instead
 - changed `data-col="auto"` to `data-col="is-auto"`
+- changed `$xui-checkbox-` config variables
+- changed `$xui-radio-` config variables
 
 ### changes
 

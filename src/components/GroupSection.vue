@@ -1,6 +1,6 @@
 <template>
   <section data-container>
-    <div data-grid="is-end">
+    <div data-grid="is-center">
       <div data-col="8">
         <div
           class="has-margin-bottom-8"

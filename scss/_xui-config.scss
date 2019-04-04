@@ -1865,81 +1865,59 @@ $xui-select-option-selected-style: $xui-select-option-hover-style !default;
 //
 // XUI-CHECKBOX
 // ------------------------------------------------------
-// @param {px} $xui-checkbox-font-size [14]
-// @param {px} $xui-checkbox-line-height [22]
 // @param {array} $xui-checkbox-spacing [0 8 0 0]
 // @param {px} $xui-checkbox-min-height [20]
 // @param {px} $xui-checkbox-radius [6]
-// @param {color} $xui-checkbox-background [$background]
-// @param {color} $xui-checkbox-color [transparent]
+// @param {color} $xui-checkbox-background [$background-lighter]
 // @param {array} $xui-checkbox-style
-$xui-checkbox-font-size: 14 !default;
-$xui-checkbox-line-height: 22 !default;
 $xui-checkbox-spacing: 0 8 0 0 !default;
 $xui-checkbox-height: 20 !default;
 $xui-checkbox-radius: 6 !default;
-$xui-checkbox-background: $background !default;
-$xui-checkbox-color: transparent !default;
+$xui-checkbox-background: $background-lighter !default;
 $xui-checkbox-style: () !default;
-$xui-checkbox-style: map-merge(
-  (
-    box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2),
-    content: '\2714\fe0e',
-    font-family: sans-serif,
-  ),
-  $xui-checkbox-style
-);
 
-// @param {color} $xui-checkbox-hover-background [$xui-checkbox-background]
-// @param {color} $xui-checkbox-hover-color [$text-lightest]
 // @param {array} $xui-checkbox-hover-style
-$xui-checkbox-hover-background: $xui-checkbox-background !default;
-$xui-checkbox-hover-color: $text-lightest !default;
 $xui-checkbox-hover-style: () !default;
 
-// @param {color} $xui-checkbox-checked-background [$xui-checkbox-background]
-// @param {color} $xui-checkbox-checked-color [$link]
 // @param {array} $xui-checkbox-checked-style
-$xui-checkbox-checked-background: $xui-checkbox-background !default;
-$xui-checkbox-checked-color: $link !default;
 $xui-checkbox-checked-style: () !default;
+
+// @param {px} $xui-checkbox-check-size [14]
+// @param {color} $xui-checkbox-check-color [transparent]
+$xui-checkbox-check-size: 14 !default;
+$xui-checkbox-check-color: transparent !default;
+
+// @param {color} $xui-checkbox-check-hover-color [$text-lightest]
+$xui-checkbox-check-hover-color: $text-lightest !default;
+
+// @param {color} $xui-checkbox-check-checked-color [$link]
+$xui-checkbox-check-checked-color: $link !default;
 
 //
 // XUI-RADIO
 // ------------------------------------------------------
-// @param {px} $xui-radio-font-size [10]
 // @param {array} $xui-radio-spacing [0 8 0 0]
 // @param {px} $xui-radio-height [20]
-// @param {color} $xui-radio-background [$background]
-// @param {color} $xui-radio-color [transparent]
+// @param {color} $xui-radio-background [$$background-lighter]
 // @param {array} $xui-radio-style
-$xui-radio-font-size: 10 !default;
 $xui-radio-spacing: 0 8 0 0 !default;
 $xui-radio-height: 20 !default;
-$xui-radio-background: $background !default;
-$xui-radio-color: transparent !default;
+$xui-radio-background: $background-lighter !default;
 $xui-radio-style: () !default;
-$xui-radio-style: map-merge(
-  (
-    box-shadow: inset 0 1px 2px 1px rgba(#000, 0.2),
-    content: '\2B24',
-    font-family: sans-serif,
-  ),
-  $xui-radio-style
-);
 
-// @param {color} $xui-checkbox-hover-background [inherit]
-// @param {color} $xui-checkbox-hover-color [$text-lightest]
+// @param {px} $xui-radio-dot-size [8]
+// @param {color} $xui-radio-dot-color [transparent]
+$xui-radio-dot-size: 8 !default;
+$xui-radio-dot-color: transparent !default;
+
+// @param {color} $xui-radio-dot-hover-color [$text-lightest]
 // @param {array} $xui-checkbox-hover-style
-$xui-radio-hover-background: inherit !default;
-$xui-radio-hover-color: $text-lightest !default;
+$xui-radio-dot-hover-color: $text-lightest !default;
 $xui-radio-hover-style: () !default;
 
-// @param {color} $xui-checkbox-checked-background [inherit]
-// @param {color} $xui-checkbox-checked-color [$link]
+// @param {color} $xui-radio-dot-checked-color [$link]
 // @param {array} $xui-checkbox-checked-style
-$xui-radio-checked-background: inherit !default;
-$xui-radio-checked-color: $link !default;
+$xui-radio-dot-checked-color: $link !default;
 $xui-radio-checked-style: () !default;
 
 //

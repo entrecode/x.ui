@@ -47,8 +47,8 @@ $input-spacing: 0;
 $input-border-color: transparent;
 $input-border-width: 0;
 $input-border-style: solid;
-$input-background: var(--inputBackground);
-$input-color: var(--inputColor);
+$input-background: $background-lighter;
+$input-color: $text;
 $input-style: ();
 $input-hover-style: ();
 $input-focus-style: ();
@@ -81,6 +81,58 @@ $input-big-style: ();`,
               config: ``,
             },
           ],
+        },{
+          id: 'checkbox',
+          navTitle: 'checkbox',
+          groupItems: [
+            {
+              name: 'checkbox',
+              preview: `<div data-grid>
+<div data-col='6'>
+<div class="xui-checkbox">
+  <input type="checkbox" id="boollean-1">
+  <label for="boollean-1">checkbox</label>
+</div>
+</div>
+<div data-col='6'>
+<div class="xui-checkbox">
+  <input type="checkbox" checked id="boollean-2">
+  <label for="boollean-2">checkbox</label>
+</div>
+</div>
+</div>`,
+              markup: `<div class="xui-checkbox">
+  <input type="checkbox" id="">
+  <label for="">checkbox</label>
+</div>`,
+            },
+          ]
+        },{
+          id: 'radio',
+          navTitle: 'radio',
+          groupItems: [
+            {
+              name: 'radio',
+              preview: `<div data-grid>
+<div data-col='6'>
+<div class="xui-radio">
+  <input type="radio" id="radio-1">
+  <label for="radio-1">radio</label>
+</div>
+</div>
+<div data-col='6'>
+<div class="xui-radio">
+  <input type="radio" checked id="radio-2">
+  <label for="radio-2">radio</label>
+</div>
+</div>
+</div>`,
+              markup: `<div class="xui-radio">
+  <input type="radio" id="">
+  <label for="">radio</label>
+</div>`,
+            },
+          ]
         },
       ],
     };
