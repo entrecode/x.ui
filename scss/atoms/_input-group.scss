@@ -74,7 +74,8 @@
 .input-group {
   .input-group__addon,
   > .btn,
-  > .input {
+  > .input,
+  > .xui-select {
     &:not(:only-child) {
       &:first-child {
         border-bottom-right-radius: 0;

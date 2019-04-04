@@ -43,7 +43,6 @@
     border-radius: arrayMagic($xui-select-radius);
   }
 
-  
   &::after {
     content: '';
     border: 4px solid transparent;
@@ -56,8 +55,6 @@
   }
 
   &:hover {
-    box-shadow: 0 0 0 2px getColor(state, hover);
-
     &::after {
       border-top-color: rgba(getColor(text), 0.4);
     }
@@ -83,22 +80,22 @@
     }
   }
 
-  // @param {color} $xui-select-placeholder-color [$input-placeholder-color]
-  // @param {array} $xui-select-placeholder-style
-  .xui-select__placeholder {
-    flex-grow: 1;
-    flex-shrink: 0;
-    user-select: none;
-    @include inject-style($xui-select-placeholder-style);
-    color: $xui-select-placeholder-color;
-  }
-
   &.xui-select_top {
     .xui-select-options {
       bottom: 100%;
       top: auto;
     }
   }
+}
+
+// @param {color} $xui-select-placeholder-color [$input-placeholder-color]
+// @param {array} $xui-select-placeholder-style
+.xui-select__placeholder {
+  flex-grow: 1;
+  flex-shrink: 0;
+  user-select: none;
+  @include inject-style($xui-select-placeholder-style);
+  color: $xui-select-placeholder-color;
 }
 
 // @param {px} $xui-select-options-radius [4]

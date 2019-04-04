@@ -9,7 +9,6 @@
 
 @each $_spacing, $_h in $spacings {
   .y-space-#{$_spacing} {
-    display: inline-flex;
     width: auto;
     height: getSpace($_spacing);
     flex-shrink: 0;
@@ -25,7 +24,6 @@
 
 @each $_spacing, $_h in $spacings {
   .x-space-#{$_spacing} {
-    display: inline-flex;
     height: auto;
     width: getSpace($_spacing);
     flex-shrink: 0;

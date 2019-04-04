@@ -93,13 +93,8 @@
   }
 
   &_clear {
-    @include atom-metrics($input-font-size, $input-line-height, $input-min-height);
-    border: 0;
-
-    &:focus,
-    &:hover {
-      box-shadow: none;
-    }
+    border-color: transparent;
+    background: none;
   }
 
   /// reset for webkit-autofill background
