@@ -1865,12 +1865,12 @@ $xui-select-option-selected-style: $xui-select-option-hover-style !default;
 //
 // XUI-CHECKBOX
 // ------------------------------------------------------
-// @param {array} $xui-checkbox-spacing [0 8 0 0]
+// @param {array} $xui-checkbox-spacing [0 12 0 0]
 // @param {px} $xui-checkbox-min-height [20]
 // @param {px} $xui-checkbox-radius [6]
 // @param {color} $xui-checkbox-background [$background-lighter]
 // @param {array} $xui-checkbox-style
-$xui-checkbox-spacing: 0 8 0 0 !default;
+$xui-checkbox-spacing: 0 12 0 0 !default;
 $xui-checkbox-height: 20 !default;
 $xui-checkbox-radius: 6 !default;
 $xui-checkbox-background: $background-lighter !default;
@@ -1896,14 +1896,20 @@ $xui-checkbox-check-checked-color: $link !default;
 //
 // XUI-RADIO
 // ------------------------------------------------------
-// @param {array} $xui-radio-spacing [0 8 0 0]
+// @param {array} $xui-radio-spacing [0 12 0 0]
 // @param {px} $xui-radio-height [20]
 // @param {color} $xui-radio-background [$$background-lighter]
 // @param {array} $xui-radio-style
-$xui-radio-spacing: 0 8 0 0 !default;
+$xui-radio-spacing: 0 12 0 0 !default;
 $xui-radio-height: 20 !default;
 $xui-radio-background: $background-lighter !default;
 $xui-radio-style: () !default;
+
+// @param {array} $xui-checkbox-hover-style
+$xui-radio-hover-style: () !default;
+
+// @param {array} $xui-checkbox-checked-style
+$xui-radio-checked-style: () !default;
 
 // @param {px} $xui-radio-dot-size [8]
 // @param {color} $xui-radio-dot-color [transparent]
@@ -1911,51 +1917,41 @@ $xui-radio-dot-size: 8 !default;
 $xui-radio-dot-color: transparent !default;
 
 // @param {color} $xui-radio-dot-hover-color [$text-lightest]
-// @param {array} $xui-checkbox-hover-style
 $xui-radio-dot-hover-color: $text-lightest !default;
-$xui-radio-hover-style: () !default;
 
 // @param {color} $xui-radio-dot-checked-color [$link]
-// @param {array} $xui-checkbox-checked-style
 $xui-radio-dot-checked-color: $link !default;
-$xui-radio-checked-style: () !default;
 
 //
 // XUI-TOGGLE
 // ------------------------------------------------------
-// @param {color} $input-toggle-background [flattenColor(getColor(minor))]
-// @param {color} $input-toggle-hover-background [etHover($xui-toggle-background)]
-// @param {color} $input-toggle-active-background [$link)]
-// @param {px} $input-toggle-height [$root-size]
-// @param {color} $input-toggle-width [$xui-toggle-height * 1.75]
+// @param {color} $xui-toggle-background [$background-lighter]
+// @param {color} $xui-toggle-hover-background [etHover($xui-toggle-background)]
+// @param {color} $xui-toggle-active-background [$link)]
+// @param {px} $xui-toggle-height [20]
+// @param {color} $xui-toggle-width [$xui-toggle-height * 1.75]
 // @param {color} $xui-toggle-radius [$xui-toggle-height / 2]
-// @param {array} $xui-toggle-spacing [$field-group-spacing]
+// @param {array} $xui-toggle-spacing [0]
 // @param {array} $xui-toggle-style
-$xui-toggle-background: flattenColor($minor) !default;
+$xui-toggle-background: $background-lighter !default;
 $xui-toggle-hover-background: setHover($xui-toggle-background) !default;
 $xui-toggle-active-background: $link !default;
-$xui-toggle-height: $root-size !default;
+$xui-toggle-height: 20 !default;
 $xui-toggle-width: $xui-toggle-height * 1.75 !default;
 $xui-toggle-radius: $xui-toggle-height / 2 !default;
-$xui-toggle-spacing: $field-group-spacing !default;
+$xui-toggle-spacing: 0 8 0 0 !default;
 $xui-toggle-style: () !default;
 
-// @param {color} $input-toggle-pin-background [flattenColor(getColor(minor))]
-// @param {px} $input-toggle-pin-height [$root-size]
-// @param {px} $input-toggle-pin-width [$xui-toggle-height * 1.75]
-// @param {px} $xui-toggle-pin-radius [$xui-toggle-height / 2]
+// @param {color} $xui-toggle-pin-background [$background]
+// @param {px} $xui-toggle-pin-height[$xui-toggle-height - 8]
+// @param {px} $xui-toggle-pin-width [$xui-toggle-pin-height]
+// @param {px} $xui-toggle-pin-radius [$xui-toggle-pin-height / 2]
 // @param {array} $xui-toggle-pin-style
 $xui-toggle-pin-background: $background !default;
-$xui-toggle-pin-height: $xui-toggle-height !default;
+$xui-toggle-pin-height: $xui-toggle-height - 8 !default;
 $xui-toggle-pin-width: $xui-toggle-pin-height !default;
 $xui-toggle-pin-radius: $xui-toggle-pin-height / 2 !default;
 $xui-toggle-pin-style: () !default;
-$xui-toggle-pin-style: map-merge(
-  (
-    box-shadow: 0 2px 8px 1px rgba(#000, 0.2),
-  ),
-  $xui-toggle-pin-style
-);
 
 // @param {px} $xui-toggle-label-size [base-font-size]
 // @param {px} $xui-toggle-line-height [$xui-toggle-label-size * $base-line-height]

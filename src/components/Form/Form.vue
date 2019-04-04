@@ -105,6 +105,19 @@ $input-big-style: ();`,
   <input type="checkbox" id="">
   <label for="">checkbox</label>
 </div>`,
+              config: `$xui-checkbox-spacing: 0 12 0 0;
+$xui-checkbox-height: 20;
+$xui-checkbox-radius: 6;
+$xui-checkbox-background: $background-lighter;
+$xui-checkbox-style: ();
+
+$xui-checkbox-hover-style: ();
+$xui-checkbox-checked-style: ();
+
+$xui-checkbox-check-size: 14;
+$xui-checkbox-check-color: transparent;
+$xui-checkbox-check-hover-color: $text-lightest;
+$xui-checkbox-check-checked-color: $link;`,
             },
           ]
         },{
@@ -117,7 +130,7 @@ $input-big-style: ();`,
 <div data-col='6'>
 <div class="xui-radio">
   <input type="radio" id="radio-1">
-  <label for="radio-1">radio</label>
+  <label for="radio-1">radio boolean with longer label</label>
 </div>
 </div>
 <div data-col='6'>
@@ -131,6 +144,70 @@ $input-big-style: ();`,
   <input type="radio" id="">
   <label for="">radio</label>
 </div>`,
+              config: `$xui-radio-spacing: 0 12 0 0;
+$xui-radio-height: 20;
+$xui-radio-background: $background-lighter;
+$xui-radio-style: ();
+
+$xui-radio-hover-style: ();
+$xui-radio-checked-style: ();
+
+$xui-radio-dot-size: 8;
+$xui-radio-dot-color: transparent;
+$xui-radio-dot-hover-color: $text-lightest;
+$xui-radio-dot-checked-color: $link;`,
+            },
+          ]
+        },{
+          id: 'toggle',
+          navTitle: 'toggle',
+          groupItems: [
+            {
+              name: 'toggle',
+              preview: `<div data-grid>
+<div data-col='6'>
+<div class="xui-toggle">
+  <input id="toggle-1" type="checkbox">
+  <label for="toggle-1">
+    <div class="xui-toggle__switch"></div>
+    toggle with a longer label
+  </label>
+</div>
+</div>
+<div data-col='6'>
+<div class="xui-toggle">
+  <input id="toggle-2" type="checkbox" checked>
+  <label for="toggle-2">
+    <div class="xui-toggle__switch"></div>
+    toggle
+  </label>
+</div>
+</div>
+</div>`,
+              markup: `<div class="xui-toggle">
+  <input id="" type="checkbox">
+  <label for="">
+    <div class="xui-toggle__switch"></div>
+    toggle with a longer label
+  </label>
+</div>`,
+              config: `$xui-toggle-background: $background-lighter;
+$xui-toggle-hover-background: setHover($xui-toggle-background);
+$xui-toggle-active-background: $link;
+$xui-toggle-height: 20;
+$xui-toggle-width: $xui-toggle-height * 1.75;
+$xui-toggle-radius: $xui-toggle-height / 2;
+$xui-toggle-spacing: 0 8 0 0;
+$xui-toggle-style: ();
+
+$xui-toggle-pin-background: $background;
+$xui-toggle-pin-height: $xui-toggle-height - 8;
+$xui-toggle-pin-width: $xui-toggle-pin-height;
+$xui-toggle-pin-radius: $xui-toggle-pin-height / 2;
+$xui-toggle-pin-style: ();
+
+$xui-toggle-label-size: $base-font-size;
+$xui-toggle-line-height: $xui-toggle-label-size * $base-line-height;`,
             },
           ]
         },

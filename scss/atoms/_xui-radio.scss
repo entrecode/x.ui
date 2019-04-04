@@ -2,6 +2,13 @@
 /// @since 10.0.0
 /// @access public
 /// @group atoms
+///
+/// @param {array} $xui-radio-spacing [0 8 0 0]
+/// @param {px} $xui-radio-height [20]
+/// @param {color} $xui-radio-background [$$background-lighter]
+/// @param {array} $xui-radio-style
+/// @param {px} $xui-radio-dot-size [8]
+/// @param {color} $xui-radio-dot-color [transparent]
 
 // scss-lint:disable NestingDepth
 .xui-radio {
@@ -9,47 +16,40 @@
     cursor: pointer;
     display: flex;
     align-items: flex-start;
-  }
 
-  [type='radio'] {
-    @extend %is-hidden-input;
+    &::before {
+      content: '';
+      display: inline-flex;
+      flex-grow: 0;
+      flex-shrink: 0;
+      transition: all 0.2s;
+      border-style: solid;
+      @include inject-style($xui-radio-style);
+      border-width: rem($xui-radio-height / 2);
+      border-radius: arrayMagic($xui-radio-height / 2);
+      border-color: $xui-radio-background;
+      background-color: $xui-radio-dot-color;
+      height: rem($xui-radio-height);
+      width: rem($xui-radio-height);
+      margin: arrayMagic($xui-radio-spacing);
+    }
 
-    // @param {array} $xui-radio-spacing [0 8 0 0]
-    // @param {px} $xui-radio-height [20]
-    // @param {color} $xui-radio-background [$$background-lighter]
-    // @param {array} $xui-radio-style
-    // @param {px} $xui-radio-dot-size [8]
-    // @param {color} $xui-radio-dot-color [transparent]
-    + label {
-      &::before {
-        content: '';
-        display: inline-flex;
-        flex-grow: 0;
-        flex-shrink: 0;
-        transition: all 0.2s;
-        border-style: solid;
-        @include inject-style($xui-radio-style);
-        border-width: rem($xui-radio-height / 2);
-        border-radius: arrayMagic($xui-radio-height / 2);
-        border-color: $xui-radio-background;
-        background-color: $xui-radio-dot-color ;
-        height: rem($xui-radio-height);
-        width: rem($xui-radio-height);
-        margin: arrayMagic($xui-radio-spacing);
-      }
-
-      // @param {color} $xui-radio-dot-hover-color [$text-lightest]
-      // @param {array} $xui-checkbox-hover-style
-      &:hover {
-        @media (hover: hover) {
-          &::before {
-            @include inject-style($xui-radio-hover-style);
-            background-color: $xui-radio-dot-hover-color;
-            border-width: rem(($xui-radio-height - $xui-radio-dot-size) / 2);
-          }
+    // @param {color} $xui-radio-dot-hover-color [$text-lightest]
+    // @param {array} $xui-checkbox-hover-style
+    &:hover {
+      @media (hover: hover) {
+        &::before {
+          @include inject-style($xui-radio-hover-style);
+          background-color: $xui-radio-dot-hover-color;
+          border-width: rem(($xui-radio-height - $xui-radio-dot-size) / 2);
         }
       }
     }
+  }
+
+  [type='radio'],
+  [type='checkbox'] {
+    @extend %is-hidden-input;
 
     // @param {color} $xui-radio-dot-checked-color [$link]
     // @param {array} $xui-checkbox-checked-style

@@ -4,14 +4,14 @@
 /// @group atoms
 
 // scss-lint:disable NestingDepth
-// @param {color} $input-toggle-background [flattenColor(getColor(minor))]
-// @param {color} $input-toggle-hover-background [etHover($xui-toggle-background)]
-// @param {color} $input-toggle-active-background [$link)]
-// @param {px} $input-toggle-height [$root-size]
-// @param {color} $input-toggle-width [$xui-toggle-height * 1.75]
+// @param {color} $xui-toggle-background [$background-lighter]
+// @param {color} $xui-toggle-hover-background [etHover($xui-toggle-background)]
+// @param {color} $xui-toggle-active-background [$link)]
+// @param {px} $xui-toggle-height [20]
+// @param {color} $xui-toggle-width [$xui-toggle-height * 1.75]
 // @param {color} $xui-toggle-radius [$xui-toggle-height / 2]
+// @param {array} $xui-toggle-spacing [0]
 // @param {array} $xui-toggle-style
-
 %toggle {
   cursor: pointer;
   direction: ltr;
@@ -24,15 +24,11 @@
   width: rem($xui-toggle-width);
   transition: background-color 0.2s;
 
-  // @param {color} $input-toggle-pin-background [flattenColor(getColor(minor))]
-  // @param {px} $input-toggle-pin-height [$root-size]
-  // @param {px} $input-toggle-pin-width [$xui-toggle-height * 1.75]
-  // @param {px} $xui-toggle-pin-radius [$xui-toggle-height / 2]
-  // @param {array} $xui-toggle-spacing [$field-group-spacing]
+  // @param {color} $xui-toggle-pin-background [$background]
+  // @param {px} $xui-toggle-pin-height[$xui-toggle-height - 8]
+  // @param {px} $xui-toggle-pin-width [$xui-toggle-pin-height]
+  // @param {px} $xui-toggle-pin-radius [$xui-toggle-pin-height / 2]
   // @param {array} $xui-toggle-pin-style
-  $_pin-spacing-h: ($xui-toggle-height - $xui-toggle-pin-height) / 2;
-  $_pin-spacing-v: (($xui-toggle-width / 2) - $xui-toggle-pin-width) / 2;
-
   &::after {
     content: '';
     display: block;
@@ -41,7 +37,7 @@
     border-radius: arrayMagic($xui-toggle-pin-radius);
     height: rem($xui-toggle-pin-height);
     width: rem($xui-toggle-pin-width);
-    margin: arrayMagic($_pin-spacing-h $_pin-spacing-v);
+    margin: rem(($xui-toggle-height - $xui-toggle-pin-height) / 2);
   }
 }
 
@@ -51,9 +47,6 @@
 }
 
 .xui-toggle {
-  min-height: rem($input-min-height);
-  margin: arrayMagic($xui-toggle-spacing);
-
   @supports (display: flex) {
     display: flex;
     align-items: center;
@@ -96,7 +89,7 @@
     line-height: em($xui-toggle-line-height, $xui-toggle-label-size);
 
     .xui-toggle__switch {
-      margin-right: rem(8);
+      margin: arrayMagic($xui-toggle-spacing);
     }
   }
 }
