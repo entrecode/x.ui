@@ -19,7 +19,7 @@ export default {
           navTitle: 'Tag',
           groupItems: [
             {
-              name: 'Default Tag',
+              title: 'Default Tag',
               preview: `<span class="tag">1</span>&emsp;&emsp;<a href class="btn">Button&emsp;<span class="tag">1</span></a>`,
               markup: `<span class="tag">1</span>
 <a href class="btn">Button&emsp;<span class="tag">1</span></a>`,
@@ -37,7 +37,7 @@ $tag-min-height: 20;
 $tag-style: ();`,
             },
             {
-              name: 'Small Tag',
+              title: 'Small Tag',
               preview: `<span class="tag tag_small">1</span>&emsp;&emsp;<a href class="btn">Button&emsp;<span class="tag tag_small">1</span></a>`,
               markup: `<span class="tag tag_small">1</span>
 <a href class="btn">Button&emsp;<span class="tag tag_small">1</span></a>`,
@@ -47,7 +47,7 @@ $tag-small-min-height: 16;
 $tag-small-style: ()`,
             },
             {
-              name: 'Big Tag',
+              title: 'Big Tag',
               preview: `<span class="tag tag_big">1</span>&emsp;&emsp;<a href class="btn">Button&emsp;<span class="tag tag_big">1</span></a>`,
               markup: `<span class="tag tag_big">1</span>
 <a href class="btn">Button&emsp;<span class="tag tag_big">1</span></a>`,
@@ -57,7 +57,7 @@ $tag-big-min-height: 28;
 $tag-big-style: ();`,
             },
             {
-              name: 'Rounded Tag',
+              title: 'Rounded Tag',
               preview: `<span class="tag tag_round">1</span>&emsp;&emsp;<a href class="btn">Button&emsp;<span class="tag tag_round">1</span></a>`,
               markup: `<span class="tag tag_round">1</span>
 <a href class="btn">Button&emsp;<span class="tag tag_round">1</span></a>`,
@@ -73,7 +73,7 @@ $tag-big-radius: $tag-radius;`,
           navTitle: 'Tag Styles',
           groupItems: [
             {
-              name: 'Tag Styles',
+              title: 'Tag Styles',
               preview: `<ul data-grid="is-small">
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big">tag</span></li>
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_minor">tag</span></li>
@@ -116,7 +116,7 @@ $tag-big-radius: $tag-radius;`,
           navTitle: 'Outlined Tag',
           groupItems: [
             {
-              name: 'Outlined Tag',
+              title: 'Outlined Tag',
               preview: `<ul data-grid="is-small">
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined">tag</span></li>
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_minor">tag</span></li>

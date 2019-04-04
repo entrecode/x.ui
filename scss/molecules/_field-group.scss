@@ -2,11 +2,11 @@
 /// @since 10.0.0
 /// @access public
 /// @group molecules
-
-// @param {array} $field-group-spacing [0 0 8 0]
-// @param {array} $field-group-padding [0]
-// @param {color} $field-group-background [none]
-// @param {array} $field-group-style
+///
+/// @param {array} $field-group-spacing [0 0 16]
+/// @param {array} $field-group-padding [0]
+/// @param {color} $field-group-background [none]
+/// @param {array} $field-group-style
 .field-group {
   @include inject-style($field-group-style);
   background: $field-group-background;
@@ -27,7 +27,7 @@
   }
 }
 
-// @param {array} $field-group-label-spacing [0 0 4 0]
+// @param {array} $field-group-label-spacing [8]
 // @param {px} $field-group-label-font-size [$base-font-size]
 // @param {array} $field-group-label-style
 .field-group__label {
@@ -37,8 +37,8 @@
   margin: arrayMagic($field-group-label-spacing);
 }
 
-// @param {array} $field-group-info-spacing [8 0 8 0]
-// @param {px} $field-group-info-font-size [$base-font-size]
+// @param {array} $field-group-info-spacing [8]
+// @param {px} $field-group-info-font-size [$base-font-size * 0.75]
 // @param {array} $field-group-info-style
 .field-group__info {
   display: block;

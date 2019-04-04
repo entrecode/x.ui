@@ -1610,17 +1610,17 @@ $field-group-padding: 0 !default;
 $field-group-background: none !default;
 $field-group-style: () !default;
 
-// @param {array} $field-group-label-spacing [0 0 4 0]
+// @param {array} $field-group-label-spacing [8]
 // @param {px} $field-group-label-font-size [$base-font-size]
 // @param {array} $field-group-label-style
-$field-group-label-spacing: 0 0 8 0 !default;
+$field-group-label-spacing: 8 !default;
 $field-group-label-font-size: $base-font-size !default;
 $field-group-label-style: () !default;
 
-// @param {array} $field-group-info-spacing [8 0 8 0]
+// @param {array} $field-group-info-spacing [8]
 // @param {px} $field-group-info-font-size [$base-font-size * 0.75]
 // @param {array} $field-group-info-style
-$field-group-info-spacing: 8 0 8 0 !default;
+$field-group-info-spacing: 8 !default;
 $field-group-info-font-size: $base-font-size * 0.75 !default;
 $field-group-info-style: () !default;
 
@@ -1764,7 +1764,7 @@ $file-upload-hover-style: () !default;
 //
 // INPUT-GROUP
 // ------------------------------------------------------
-// @param {array} $input-spacing [$input-spacing]
+// @param {array} $input-group-spacing [$input-spacing]
 $input-group-spacing: $input-spacing;
 
 // @param {color} $input-group-addon-color [$text-light]

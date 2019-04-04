@@ -20,7 +20,7 @@ export default {
           summary: '',
           groupItems: [
             {
-              name: 'btn-group',
+              title: 'btn-group',
               preview: `<div class="btn-group">
   <a class="btn">button</a>
   <div class="btn-group__divider"></div>
@@ -36,7 +36,7 @@ $btn-group-divider-size: 1;
 $btn-group-divider-color: $divider-color`,
             },
             {
-              name: 'btn-group with a dropdown',
+              title: 'btn-group with a dropdown',
               preview: `<div class="btn-group">
   <a class="btn">button</a>
   <div class="btn-group__divider"></div>

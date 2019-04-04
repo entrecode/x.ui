@@ -19,7 +19,7 @@ export default {
           navTitle: 'Default Card',
           groupItems: [
             {
-              name: 'Default Card',
+              title: 'Default Card',
               preview: `<div class="card">
   <h2>Titel</h2>
   <p>card is a standard ui element to combine related Informations or elements</p>
@@ -43,7 +43,7 @@ export default {
           navTitle: 'Additional Expamples',
           groupItems: [
             {
-              name: '...',
+              title: '...',
               preview: `...`,
               markup: `...`,
               config: `...`,

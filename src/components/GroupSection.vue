@@ -12,7 +12,7 @@
           <div v-html="group.summary" v-if="group.summary"></div>
           <DocTab v-for="(item, index) in group.groupItems" :key="index">
             <div slot="title">
-              <h3 class="is-h4" v-if="item.name" v-text="item.name"></h3>
+              <h3 class="is-h4" v-if="item.title" v-text="item.title"></h3>
               <div v-html="item.summary" v-if="item.summary"></div>
             </div>
             <div
@@ -39,6 +39,7 @@
             <li class="nav__item" v-for="(item, index) in groups" :key="index">
               <a
                 :href="'#scroll-to-' + item.id"
+                v-smooth-scroll
                 class="is-kilo is-ink-light hover:is-ink-link"
               >{{item.navTitle}}</a>
             </li>

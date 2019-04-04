@@ -20,7 +20,7 @@ export default {
           summary: '',
           groupItems: [
             {
-              name: 'Default Button',
+              title: 'Default Button',
               preview: `<a href class="btn">Default</a>&ensp;
         <a href class="btn">
           <svg class="ixo"><use xlink:href="#fire"></use></svg>
@@ -75,7 +75,7 @@ $btn-active-style: map-merge(
 );`,
             },
             {
-              name: 'Small Button',
+              title: 'Small Button',
               preview: `<a href class="btn btn_small">Small</a>&ensp;
         <a href class="btn btn_small">
           <svg class="ixo"><use xlink:href="#fire"></use></svg>
@@ -98,7 +98,7 @@ $btn-small-style: ();`,
               previewStyle: 'well',
             },
             {
-              name: 'Big Button',
+              title: 'Big Button',
               preview: `<a href class="btn btn_big">Big</a>&ensp;
         <a href class="btn btn_big">
           <svg class="ixo"><use xlink:href="#fire"></use></svg>
@@ -121,7 +121,7 @@ $btn-big-style: ();`,
               previewStyle: 'well',
             },
             {
-              name: 'Button',
+              title: 'Button',
               preview: '<a href="" class="btn">Default</a>',
               markup: '<a href="" class="btn">Default</a>',
               config: `$btn-background: $link;
@@ -134,7 +134,7 @@ $btn-hover-style: ();`,
               previewStyle: 'well',
             },
             {
-              name: 'Super Button',
+              title: 'Super Button',
               preview: '<a href="" class="btn btn_super">Super</a>',
               markup: '<a href="" class="btn btn_super">Super</a>',
               config: `$btn-super-background: $super;
@@ -147,7 +147,7 @@ $btn-super-hover-style: ();`,
               previewStyle: 'well',
             },
             {
-              name: 'Minor Button',
+              title: 'Minor Button',
               preview: '<a href="" class="btn btn_minor">Minor</a>',
               markup: '<a href="" class="btn btn_minor">Minor</a>',
               config: `$btn-minor-background: $minor;
@@ -160,7 +160,7 @@ $btn-minor-hover-style: ();`,
               previewStyle: 'well',
             },
             {
-              name: 'Inverted Button',
+              title: 'Inverted Button',
               preview: '<a href="" class="btn btn_invert">Inverted</a>',
               markup: '<a href="" class="btn btn_invert">Inverted</a>',
               config: `$btn-invert-background: $background;
@@ -173,7 +173,7 @@ $btn-invert-hover-style: ();`,
               previewStyle: 'well is-theme-invert',
             },
             {
-              name: 'Clear Button',
+              title: 'Clear Button',
               preview: '<a href="" class="btn btn_clear">Clear</a>',
               markup: '<a href="" class="btn btn_clear">Clear</a>',
               config: `$btn-clear-background: transparent;
@@ -194,7 +194,7 @@ $btn-clear-hover-style: ();`,
           summary: '',
           groupItems: [
             {
-              name: 'Outlined Button',
+              title: 'Outlined Button',
               preview: '<a href="" class="btn btn_outlined">Outlined</a>',
               markup: '<a href="" class="btn btn_outlined">Outlined</a>',
               config: `$btn-outline-border-width: 1;
@@ -210,7 +210,7 @@ $btn-outline-hover-style: ();`,
               previewStyle: 'well',
             },
             {
-              name: 'Outlined Super Button',
+              title: 'Outlined Super Button',
               preview: '<a href="" class="btn btn_outlined btn_super">Outlined Super</a>',
               markup: '<a href="" class="btn btn_outlined btn_super">Outlined Super</a>',
               config: `$btn-outline-super-border-color: $super;
@@ -223,7 +223,7 @@ $btn-outline-super-hover-style: ();`,
               previewStyle: 'well',
             },
             {
-              name: 'Outlined Minor Button',
+              title: 'Outlined Minor Button',
               preview: '<a href="" class="btn btn_outlined btn_minor">Outlined Minor</a>',
               markup: '<a href="" class="btn btn_outlined btn_minor">Outlined Minor</a>',
               config: `$btn-outline-minor-border-color: $minor;
@@ -237,7 +237,7 @@ $btn-outline-minor-hover-style: ();`,
               previewStyle: 'well',
             },
             {
-              name: 'Outlined Invert Button',
+              title: 'Outlined Invert Button',
               preview: '<a href="" class="btn btn_outlined btn_invert">Outlined Invert</a>',
               markup: '<a href="" class="btn btn_outlined btn_invert">Outlined Invert</a>',
               config: `$btn-outline-invert-border-color: $text-invert;
@@ -258,7 +258,7 @@ $btn-outline-invert-hover-style: ();`,
           summary: '',
           groupItems: [
             {
-              name: 'Wide Button',
+              title: 'Wide Button',
               preview: '<a href="" class="btn btn_wide">wide</a>',
               markup: '<a href="" class="btn btn_wide">wide</a>',
               config: `// @param {px} $btn-wide -  min width for .btn_wide button
@@ -270,7 +270,7 @@ $btn-big-wide: 240 !default;`,
               previewStyle: 'well',
             },
             {
-              name: 'Block Button',
+              title: 'Block Button',
               preview: '<a href="" class="btn btn_block">block</a>',
               markup: '<a href="" class="btn btn_block">block</a>',
               config: null,
@@ -285,7 +285,7 @@ $btn-big-wide: 240 !default;`,
           summary: '',
           groupItems: [
             {
-              name: 'Rounded Button',
+              title: 'Rounded Button',
               preview: '<a href="" class="btn btn_round">wide</a>',
               markup: '<a href="" class="btn btn_round">wide</a>',
               config: null,

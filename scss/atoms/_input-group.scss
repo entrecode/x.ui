@@ -4,7 +4,7 @@
 /// @group atoms
 
 // scss-lint:disable NestingDepth QualifyingElement
-// @param {array} $input-spacing [0]
+// @param {array} $input-group-spacing [$input-spacing]
 .input-group {
   align-items: stretch;
   display: flex;
@@ -71,28 +71,30 @@
   min-width: rem($input-min-height);
 }
 
-.input-group__addon,
-> .btn,
-> .input {
-  &:not(:only-child) {
-    &:first-child {
-      border-bottom-right-radius: 0;
-      border-right: 0;
-      border-top-right-radius: 0;
+.input-group {
+  .input-group__addon,
+  > .btn,
+  > .input {
+    &:not(:only-child) {
+      &:first-child {
+        border-bottom-right-radius: 0;
+        border-right: 0;
+        border-top-right-radius: 0;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 0;
+        border-left: 0;
+        border-top-left-radius: 0;
+      }
     }
 
-    &:last-child {
-      border-bottom-left-radius: 0;
-      border-left: 0;
-      border-top-left-radius: 0;
-    }
-  }
-
-  &:not(:last-child) {
-    &:not(:first-child) {
-      border-left: 0;
-      border-radius: 0;
-      border-right: 0;
+    &:not(:last-child) {
+      &:not(:first-child) {
+        border-left: 0;
+        border-radius: 0;
+        border-right: 0;
+      }
     }
   }
 }

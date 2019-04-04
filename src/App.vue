@@ -46,7 +46,6 @@
       </div>
 
       <div class="y-space-8"></div>
-
     </div>
 
     <div data-container>
@@ -112,9 +111,7 @@
     <div class="divider divider_big"></div>
     <Form/>
 
-    <div data-container style="max-width: 800px;">  
-
-
+    <div data-container style="max-width: 800px;">
       <div class="y-space-8"></div>
 
       <FontWeight/>
@@ -122,7 +119,6 @@
       <div class="y-space-8"></div>
 
       <h2>Functions</h2>
-
 
       <section id="scroll-to-setContrast">
         <h3>setContrast()</h3>
