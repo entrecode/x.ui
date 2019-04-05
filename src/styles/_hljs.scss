@@ -4,8 +4,8 @@
   padding: rem(16);
   background: $text;
   color: white;
-  font-size: rem(10);
-  line-height: rem(16);
+  font-size: rem(12);
+  line-height: rem(20);
   border-radius: rem(4);
 }
 
@@ -48,7 +48,7 @@
 .hljs-number,
 .hljs-symbol,
 .hljs-bullet {
-  color: #d36363;
+  color: #ff6161;
 }
 
 .hljs-keyword,

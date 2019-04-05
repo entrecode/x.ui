@@ -72,13 +72,13 @@ export default {
         media: ['img', 'img-crop', 'is-outset'],
         form: [
           'input',
+          'select',
+          'checkbox',
+          'radio',
+          'toggle',
           'slider',
           'file-upload',
           'input-group',
-          'xui-select',
-          'xui-checkbox',
-          'xui-radio',
-          'xui-toggle',
           'field-group',
         ],
         ui: [

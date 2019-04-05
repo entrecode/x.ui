@@ -1710,35 +1710,29 @@ $input-round: false !default;
 $input-radius: 4 !default;
 
 //
-// INPUT
+// RANGE-Slider
 // ------------------------------------------------------
-// @param {px} $slider-height [8]
-// @param {px} $slider-radius [4]
-// @param {color} $slider-background [rgba(#000, 0.04)]
-// @param {array} $slider-style
-// @param {array} $slider-hover-style
-$slider-height: 8 !default;
-$slider-radius: 4 !default;
-$slider-background: rgba(#000, 0.04) !default;
-$slider-style: () !default;
-$slider-hover-style: () !default;
+// @param {px} $range-slider-height [8]
+// @param {px} $range-slider-radius [4]
+// @param {color} $range-slider-background [$background-lightest]
+// @param {array} $range-slider-style
+// @param {array} $range-slider-hover-style
+$range-slider-height: 8 !default;
+$range-slider-radius: 4 !default;
+$range-slider-background: $background-lightest !default;
+$range-slider-style: () !default;
+$range-slider-hover-style: () !default;
 
-// @param {px} $slider-thumb-size [16]
-// @param {px} $slider-thumb-radius [8]
-// @param {color} $slider-thumb-background [$link]
-// @param {array} $slider-thumb-style
-// @param {array} $slider-thumb-hover-style
-$slider-thumb-background: $link !default;
-$slider-thumb-size: 16 !default;
-$slider-thumb-radius: 8 !default;
-$slider-thumb-style: () !default;
-$slider-thumb-style: map-merge(
-  (
-    box-shadow: 0 4px 8px 2px rgba(#000, 0.2),
-  ),
-  $slider-thumb-style
-);
-$slider-thumb-hover-style: () !default;
+// @param {px} $range-slider-thumb-size [16]
+// @param {px} $range-slider-thumb-radius [8]
+// @param {color} $range-slider-thumb-background [$link]
+// @param {array} $range-slider-thumb-style
+// @param {array} $range-slider-thumb-hover-style
+$range-slider-thumb-background: $link !default;
+$range-slider-thumb-size: 16 !default;
+$range-slider-thumb-radius: 8 !default;
+$range-slider-thumb-style: () !default;
+$range-slider-thumb-hover-style: () !default;
 
 //
 // FILE-UPLOAD

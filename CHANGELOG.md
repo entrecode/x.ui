@@ -36,6 +36,7 @@
 - changed `data-col="auto"` to `data-col="is-auto"`
 - changed `$xui-checkbox-` config variables
 - changed `$xui-radio-` config variables
+- renamed `.slider` to `.range-slider`
 
 ### changes
 
