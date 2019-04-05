@@ -2,38 +2,22 @@
 /// @since 10.0.0
 /// @access public
 /// @group atom modifier
+///
+/// @param {px} $input-min-height [32]
+/// @param {px} $input-small-min-height [28]
+/// @param {px} $input-big-min-height [40]
+/// @param {boolean} $input-round [false]
 
-// @param {px} $input-min-height [32]
-// @param {px} $input-small-min-height [28]
-// @param {px} $input-big-min-height [40]
-
-.input_round {
-  border-radius: arrayMagic($input-min-height / 2);
-  padding-left: rem($input-min-height / 2);
-  padding-right: rem($input-min-height / 2);
-
-  &.input_small {
-    border-radius: arrayMagic($input-small-min-height / 2);
-  }
-
-  &.input_big {
-    border-radius: arrayMagic($input-big-min-height / 2);
+@if $input-round == true {
+  .input {
+    border-radius: 100vw;
+    padding-left: rem($input-min-height / 2);
+    padding-right: rem($input-min-height / 2);
   }
 }
 
-// @param {boolean} $input-round [false] - sets border-radius to 50% of input height
-@if $input-round == true {
-  .input {
-    border-radius: arrayMagic($input-min-height / 2);
-    padding-left: rem($input-min-height / 2);
-    padding-right: rem($input-min-height / 2);
-
-    &_small {
-      border-radius: arrayMagic($input-small-min-height / 2);
-    }
-
-    &_big {
-      border-radius: arrayMagic($input-big-min-height / 2);
-    }
-  }
+.input_round {
+  padding-left: rem($input-min-height / 2);
+  padding-right: rem($input-min-height / 2);
+  border-radius: 100vw;
 }
