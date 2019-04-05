@@ -47,6 +47,8 @@
 - refactored `.is-theme-#`
 - removed background variables from `.btn_outline`
 - changed `@extend %btn;` to `@include _btn-reset;`
+- improved `.input_round`
+- improved `.btn_round`
 
 ### added
 
@@ -55,6 +57,7 @@
 - added color-modifier `.hover:is-ink-#`
 - added `data-col="is-fit"`
 - added grid config `$grid-small-gutter`
+- added `is-round` modifier
 
 ### deprecated
 
@@ -194,8 +197,6 @@
 - removed nested classes for `btn_clear` modifier - use `is-ink-#` instead
 - removed QualifyingElement
 - removed `border-color()` function
-- improved `.input_round`
-- improved `.btn_round`
 
 ## 9.0.3
 
