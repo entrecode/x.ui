@@ -37,13 +37,17 @@
     $_i: index($_states, $_state);
     $_v: nth($_values, $_i);
     $_c: '-';
-    
+
     @if $_state == '' {
       $_c: '';
     }
-    
+
     &#{$_c}#{$_state} {
       @include _has-radius(rem($_v));
     }
   }
+}
+
+.is-round {
+  @include _has-radius(100vw);
 }
