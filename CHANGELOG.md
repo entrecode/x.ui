@@ -194,6 +194,8 @@
 - removed nested classes for `btn_clear` modifier - use `is-ink-#` instead
 - removed QualifyingElement
 - removed `border-color()` function
+- improved `.input_round`
+- improved `.btn_round`
 
 ## 9.0.3
 

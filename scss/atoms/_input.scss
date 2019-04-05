@@ -2,19 +2,20 @@
 /// @since 10.0.0
 /// @access public
 /// @group atoms
+///
+/// @param {px} $input-font-size [16]
+/// @param {px} $input-line-height [24]
+/// @param {px} $input-min-height [32]
+/// @param {number} $input-padding-ratio [1]
+/// @param {array} $input-spacing [0]
+/// @param {color} $input-border-color [transparent]
+/// @param {px} $input-border-width [0]
+/// @param {string} $input-border-style [solid]
+/// @param {color} $input-background [var(--inputBackground) ]
+/// @param {color} $input-color [var(--inputColor)]
+/// @param {px} $input-radius [4]
+/// @param {array} $input-style
 
-// @param {px} $input-font-size [16]
-// @param {px} $input-line-height [24]
-// @param {px} $input-min-height [32]
-// @param {number} $input-padding-ratio [1]
-// @param {array} $input-spacing [0]
-// @param {color} $input-border-color [transparent]
-// @param {px} $input-border-width [0]
-// @param {string} $input-border-style [solid]
-// @param {color} $input-background [var(--inputBackground) ]
-// @param {color} $input-color [var(--inputColor)]
-// @param {px} $input-radius [4]
-// @param {array} $input-style
 .input {
   display: block;
   flex-grow: 1;

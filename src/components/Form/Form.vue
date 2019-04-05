@@ -305,9 +305,17 @@ $field-group-info-style: ();`,
               title: 'with fieldset',
               preview: `<fieldset class="fieldset">
   <div data-grid="is-small">
-    <div data-col="12">
+    <div data-col="8">
       <div class="field-group">
         <input type="text" placeholder="input..." class="input" />
+      </div>
+    </div>
+    <div data-col="4" data-flex="is-center-items">
+      <div class="field-group">
+        <div class="xui-checkbox">
+          <input type="checkbox" id="checkbox-4">
+          <label for="checkbox-4">checkbox</label>
+        </div>
       </div>
     </div>
     <div data-col="4">
@@ -359,26 +367,13 @@ $fieldset-style: ();`,
   <input type="text" placeholder="input..." class="input" />
   <div class="x-space-1"></div>
   <input type="text" placeholder="input..." class="input" />
-</div>`,
-              markup: `<div class="input-group">
-  <div class="input-group__addon">
-    <small>addon</small>
-  </div>
-  <input type="text" placeholder="input..." class="input" />
 </div>
+<div class="y-space-3"></div>
 <div class="input-group">
-  <input type="text" placeholder="input..." class="input" />
-  <div class="input-group__addon">
+  <div class="input-group__addon is-round-left">
     <small>addon</small>
   </div>
-</div>
-<div class="input-group">
-  <div class="input-group__addon">
-    <small>addon</small>
-  </div>
-  <input type="text" placeholder="input..." class="input" />
-  <div class="x-space-1"></div>
-  <input type="text" placeholder="input..." class="input" />
+  <input type="text" placeholder="input..." class="input input_round" />
 </div>`,
               config: `$input-group-spacing: $input-spacing;
 
@@ -462,6 +457,15 @@ $input-group-addon-style: ();`,
   <input type="text" placeholder="input..." class="input" />
   <div class="input-group__addon">
     <a class="btn btn_clear">submit</a>
+  </div>
+</div>`,
+            },
+            {
+              title: 'used with icon ',
+              preview: `<div class="input-group">
+  <input type="text" placeholder="input..." class="input" />
+  <div class="input-group__addon">
+    <svg class="ixo"><use xlink:href="#fire"></use></svg>
   </div>
 </div>`,
             },
