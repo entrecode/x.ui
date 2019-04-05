@@ -15,6 +15,7 @@
 - removed deprecated `.is-rounded#` use `has-radius#` instead
 - removed deprecated `.is-hidden-from#`
 - removed deprecated `.btn_glow`
+- removed `data-flex-item` size values, use `data-col` instead
 - refactored and combined `is-positioned` and `is-fab`
 - removed `.img_responsive` and `.img_full` use `.img-responsive` or `.img-full` instead
 - removed `.title` and `.toolbar` use `.titlebar` instead
@@ -37,6 +38,8 @@
 - changed `$xui-checkbox-` config variables
 - changed `$xui-radio-` config variables
 - renamed `.slider` to `.range-slider`
+- removed all `is-` prefixes from `data-flex` values
+- optimized `.nav` - dropped `.nav__items`
 
 ### changes
 

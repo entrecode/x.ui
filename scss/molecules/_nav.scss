@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group organism
 
@@ -7,25 +7,18 @@
 // @param {array} $nav-spacing [0]
 // @param {array} $nav-style
 .nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   @include inject-style($nav-style);
   margin: arrayMagic($nav-spacing);
   padding: arrayMagic($nav-padding);
 }
 
-.nav__items {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  @supports (display: flex) {
-    display: flex;
-    align-items: center;
-  }
-}
-
-// @param {array} $nav-item-padding [4]
+// @param {array} $nav-item-padding [8]
 .nav__item {
-  display: inline-block;
   padding: arrayMagic($nav-item-padding);
 
   .btn {
@@ -35,10 +28,10 @@
 
 // @param {px} $nav-divider-size [1]
 // @param {color} $nav-divider-color [$divider]
-// @param {px} $nav-divider-spacing [4]
+// @param {px} $nav-divider-spacing [8]
 .nav__divider {
   display: block;
-  height: 100%;
+  align-self: stretch;
   background-color: $nav-divider-color;
   margin: 0 rem($nav-divider-spacing);
   width: rem($nav-divider-size);
@@ -48,18 +41,11 @@
 // @param {array} $nav-stacked-spacing [0]
 // @param {array} $nav-stacked-style
 .nav_stacked {
+  flex-direction: column;
+  align-items: initial;
   @include inject-style($nav-stacked-style);
   margin: arrayMagic($nav-stacked-spacing);
   padding: arrayMagic($nav-stacked-padding);
-
-  // @param {array} $nav-stacked-item-padding [$nav-item-padding]
-  .nav__items {
-    @supports (display: flex) {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-    }
-  }
 
   .nav__divider {
     width: 100%;
@@ -67,6 +53,7 @@
     margin: rem($nav-divider-spacing) 0;
   }
 
+  // @param {array} $nav-stacked-item-padding [$nav-item-padding]
   .nav__item {
     padding: arrayMagic($nav-stacked-item-padding);
 

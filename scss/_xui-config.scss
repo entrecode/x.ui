@@ -888,8 +888,8 @@ $nav-padding: 0 !default;
 $nav-spacing: 0 !default;
 $nav-style: () !default;
 
-// @param {array} $nav-item-padding [4]
-$nav-item-padding: 4 !default;
+// @param {array} $nav-item-padding [8]
+$nav-item-padding: 8 !default;
 
 // @param {array} $nav-stacked-paddding [0]
 // @param {array} $nav-stacked-spacing [0]
@@ -903,10 +903,10 @@ $nav-stacked-item-padding: $nav-item-padding !default;
 
 // @param {color} $nav-divider-color [$divider]
 // @param {px} $nav-divider-size [1]
-// @param {px} $nav-divider-spacing [4]
+// @param {px} $nav-divider-spacing [$nav-item-padding]
 $nav-divider-color: $divider-color !default;
 $nav-divider-size: 1 !default;
-$nav-divider-spacing: 4 !default;
+$nav-divider-spacing: $nav-item-padding !default;
 
 //
 // TITLE
@@ -1077,6 +1077,64 @@ $card-padding: 24 !default;
 $card-spacing: 0 !default;
 $card-elevated: 4 !default;
 $card-style: () !default;
+
+// MODAL
+// ------------------------------------------------------
+// @param {array} $modal-padding [16]
+// @param {color} $modal-wrapper-background [$backdrop]
+// @param {number} $modal-z-index [100]
+// @param {array} $modal-style
+$modal-wrapper-padding: 16 !default;
+$modal-wrapper-background: $backdrop !default;
+$modal-wrapper-z-index: 100 !default;
+$modal-wrapper-style: () !default;
+
+// @param {px} $modal-min-width [240]
+// @param {percentage | false } $modal-max-width-relative [50]
+// @param {pixel | false } $modal-max-width-relative [640]
+$modal-min-width: 240 !default;
+$modal-max-width-relative: 50 !default;
+$modal-max-width-absolute: 640 !default;
+
+// @param {color} $modal-background
+// @param {color} $modal-color
+// @param {array} $modal-padding [0]
+// @param {px} $modal-radius [4]
+// @param {string} $modal-shadow
+// @param {number} $modal-z-index [100]
+// @param {array} $modal-style
+$modal-background: $background !default;
+$modal-color: $text !default;
+$modal-padding: 0 !default;
+$modal-radius: 8 !default;
+$modal-shadow: 0 4 16 -4 rgba(#000, 0.16) ',' 0 8 24 0 rgba(#000, 0.1) !default;
+$modal-z-index: 100 !default;
+$modal-style: () !default;
+
+// @param {array} $modal-dismiss-style
+$modal-dismiss-style: () !default;
+
+// @param {array} $modal-header-spacing [0]
+// @param {array} $modal-header-padding [8]
+// @param {array} $modal-header-style
+$modal-header-spacing: 0 !default;
+$modal-header-padding: 8 !default;
+$modal-header-style: () !default;
+
+// @param {array} $modal-body-spacing [0]
+// @param {array} $modal-body-padding [8]
+// @param {array} $modal-body-style
+$modal-body-spacing: 0 !default;
+$modal-body-padding: 8 !default;
+$modal-body-style: () !default;
+
+// @param {array} $modal-footer-spacing [0]
+// @param {array} $modal-footer-padding [8]
+// @param {array} $modal-footer-style
+$modal-footer-spacing: 0 !default;
+$modal-footer-padding: 8 !default;
+$modal-footer-style: () !default;
+
 
 // DIALOG
 // ------------------------------------------------------
@@ -1548,15 +1606,15 @@ $bumper-big-spacing: getSpace(6) 0 !default;
 // @param {px} $divider-height [1]
 // @param {color} $divider-background [$divider-color]
 // @param {color} $divider-invert-background [rgba($background, .2)]
-// @param {array} $divider-spacing [getSpace(5) 0]
-// @param {array} $divider-small-spacing [getSpace(3) 0]
-// @param {array} $divider-big-spacing [getSpace(6) 0]
+// @param {array} $divider-spacing [getSpace(3) 0]
+// @param {array} $divider-small-spacing [getSpace(1) 0]
+// @param {array} $divider-big-spacing [getSpace(5) 0]
 $divider-height: 1 !default;
 $divider-background: $divider-color !default;
 $divider-invert-background: rgba($background, 0.2) !default;
-$divider-spacing: getSpace(5) 0 !default;
-$divider-small-spacing: getSpace(3) 0 !default;
-$divider-big-spacing: getSpace(6) 0 !default;
+$divider-spacing: getSpace(3) 0 !default;
+$divider-small-spacing: getSpace(1) 0 !default;
+$divider-big-spacing: getSpace(5) 0 !default;
 
 //
 // SPACER
