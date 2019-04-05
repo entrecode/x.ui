@@ -55,10 +55,10 @@
 // @param {array} $input-group-addon-style
 .input-group__addon {
   display: flex;
-  align-items: center;
   flex-grow: 0;
   flex-shrink: 0;
-  justify-content: center;
+  align-items: center;
+  justify-content: stretch;
   width: auto;
   @include inject-style($input-group-addon-style);
   color: $input-group-addon-color;
