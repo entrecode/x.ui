@@ -1,15 +1,15 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 10.0.0
 /// @group flex-grid
 /// @access public
 
 $_align-content: (
-  'is-end-content': 'flex-end',
-  'is-start-content': 'flex-start',
-  'is-center-content': 'center',
-  'is-stretch-content': 'stretch',
-  'is-between-content': 'space-between',
-  'is-around-content': 'space-around'
+  'end-content': 'flex-end',
+  'start-content': 'flex-start',
+  'center-content': 'center',
+  'stretch-content': 'stretch',
+  'between-content': 'space-between',
+  'around-content': 'space-around'
 );
 
 @include set-map-breakpoints(flex, align-content, $_align-content);

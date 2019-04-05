@@ -1,11 +1,11 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 10.0.0
 /// @group flex-grid
 /// @access public
 
 $order: (
-  'is-first': '1',
-  'is-last': '-1'
+  'first': '1',
+  'last': '-1'
 );
 
 @include set-map-breakpoints(flex-order, order, $order);

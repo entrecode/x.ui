@@ -1,13 +1,13 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 10.0.0
 /// @group flex-grid
 /// @access public
 
 $_flex-direction: (
-  'is-column': 'column',
-  'is-column-reverse': 'column-reverse',
-  'is-row': 'row',
-  'is-row-reverse': 'row-reverse'
+  'column': 'column',
+  'column-reverse': 'column-reverse',
+  'row': 'row',
+  'row-reverse': 'row-reverse'
 );
 
 @include set-map-breakpoints(flex, flex-direction, $_flex-direction);
