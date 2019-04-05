@@ -1737,16 +1737,13 @@ $range-slider-thumb-hover-style: () !default;
 //
 // FILE-UPLOAD
 // ------------------------------------------------------
-// @param {px} $file-upload-font-size [$base-font-size]
-// @param {color} $file-upload-color [$text]
 // @param {array} $file-upload-spacing [0 0 16]
-// @param {number} $file-upload-padding [8 16]
+// @param {array} $file-upload-padding [16]
 // @param {color} $file-upload-background [none]
+// @param {array} $file-upload-radius [4]
 // @param {array} $file-upload-border [2px dashed $minor]
 // @param {array} $file-upload-style
 // @param {array} $file-upload-hover-style
-$file-upload-font-size: $base-font-size !default;
-$file-upload-color: $text !default;
 $file-upload-spacing: 0 0 16 !default;
 $file-upload-padding: 16 !default;
 $file-upload-background: none !default;
