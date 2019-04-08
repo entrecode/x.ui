@@ -3,6 +3,9 @@
   --color: #2a3d54;
   --background: #fff;
 
+  --link: #2fce6f;
+  --linkContrast: #fff;
+
   // input
   --inputBackground: #f4f5f6;
   --inputColor: #2a3d54;
@@ -15,3 +18,6 @@ $input-color: var(--inputColor);
 $xui-checkbox-background: var(--inputBackground);
 $xui-radio-background: var(--inputBackground);
 $range-slider-background: var(--inputBackground);
+
+$btn-background: var(--link);
+$btn-color: var(--linkContrast);

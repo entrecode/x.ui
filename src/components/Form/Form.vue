@@ -147,7 +147,7 @@ $input-big-style: ();`,
   <input type="checkbox" id="">
   <label for="">checkbox</label>
 </div>`,
-              config: `$xui-checkbox-spacing: 0 12 0 0;
+              config: `$xui-checkbox-spacing: 4 12 4 4;
 $xui-checkbox-height: 20;
 $xui-checkbox-radius: 6;
 $xui-checkbox-background: $background-lighter;
@@ -494,7 +494,7 @@ $field-group-info-style: ();`,
         <input type="text" placeholder="input..." class="input" />
       </div>
     </div>
-    <div data-col="4" data-flex="is-center-items">
+    <div data-col="4" data-flex="center-items">
       <div class="field-group">
         <div class="xui-checkbox">
           <input type="checkbox" id="checkbox-4">

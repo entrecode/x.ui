@@ -1,6 +1,6 @@
 <template>
   <div class="doc-navbar is-sticky has-padding-2 is-layer-10" style="top:0;">
-    <div class="has-padding-center-4" data-flex="is-center-items">
+    <div class="has-padding-center-4" data-flex="center-items">
       <img src="./../assets/x-logo.png" style="height: 32px; width: auto;">
       <div class="x-space-3"></div>
       <div class="flex-space"></div>

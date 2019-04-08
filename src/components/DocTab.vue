@@ -3,28 +3,26 @@
     <div class="titlebar">
       <slot name="title"></slot>
 
-      <nav class="nav">
-        <ul class="nav__items">
-          <li class="nav__item">
-            <div
-              class="btn btn_small"
-              :class="showTab === 1 ? 'btn_minor' : 'btn_clear'"
-              @click="showTab = 1"
-            >
-              <ixo name="eye-open"></ixo>
-            </div>
-          </li>
-          <li class="nav__item" v-if="hasConfig">
-            <div
-              class="btn btn_small"
-              :class="showTab === 2 ? 'btn_minor' : 'btn_clear'"
-              @click="showTab = 2"
-            >
-              <ixo name="json"></ixo>
-            </div>
-          </li>
-        </ul>
-      </nav>
+      <ul class="nav">
+        <li class="nav__item">
+          <div
+            class="btn btn_small"
+            :class="showTab === 1 ? 'btn_minor' : 'btn_clear'"
+            @click="showTab = 1"
+          >
+            <ixo name="eye-open"></ixo>
+          </div>
+        </li>
+        <li class="nav__item" v-if="hasConfig">
+          <div
+            class="btn btn_small"
+            :class="showTab === 2 ? 'btn_minor' : 'btn_clear'"
+            @click="showTab = 2"
+          >
+            <ixo name="json"></ixo>
+          </div>
+        </li>
+      </ul>
     </div>
     <div v-show="showTab === 1">
       <div data-grid>

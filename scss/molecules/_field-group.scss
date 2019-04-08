@@ -8,6 +8,7 @@
 /// @param {color} $field-group-background [none]
 /// @param {array} $field-group-style
 .field-group {
+  text-align: left;
   @include inject-style($field-group-style);
   background: $field-group-background;
   margin: arrayMagic($field-group-spacing);

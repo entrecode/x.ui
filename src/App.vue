@@ -105,31 +105,19 @@
     <div class="divider divider_big"></div>
     <button-group/>
     <div class="divider divider_big"></div>
+    <Nav/>
+    <div class="divider divider_big"></div>
     <tag/>
+    <div class="divider divider_big"></div>
+    <modal/>
     <div class="divider divider_big"></div>
     <card/>
     <div class="divider divider_big"></div>
     <Form/>
 
-    <div data-container style="max-width: 800px;">
-      <div class="y-space-8"></div>
+    <div class="divider divider_big"></div>
 
-      <FontWeight/>
-
-      <div class="y-space-8"></div>
-
-      <h2>Functions</h2>
-
-      <section id="scroll-to-setContrast">
-        <h3>setContrast()</h3>
-      </section>
-
-      <div class="y-space-8"></div>
-
-      <section id="scroll-to-setHover">
-        <h3>setHover()</h3>
-      </section>
-    </div>
+    <FontWeight/>
   </div>
 </template>
 
@@ -138,7 +126,9 @@ import Navbar from './components/Navbar.vue';
 import DocTab from './components/DocTab.vue';
 import Buttons from './components/UI/Buttons.vue';
 import ButtonGroup from './components/UI/ButtonGroup.vue';
+import Nav from './components/UI/Nav.vue';
 import Tag from './components/UI/Tag.vue';
+import Modal from './components/UI/Modal.vue';
 import Card from './components/UI/Card.vue';
 import Form from './components/Form/Form.vue';
 import Grid from './components/Grid/Grid.vue';
@@ -151,7 +141,9 @@ export default {
     DocTab,
     Buttons,
     ButtonGroup,
+    Nav,
     Tag,
+    Modal,
     Card,
     Form,
     Grid,

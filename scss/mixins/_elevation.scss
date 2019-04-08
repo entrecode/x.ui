@@ -5,8 +5,6 @@
 /// @link	https://material.io/design/environment/elevation.html
 /// @link	https://github.com/angular/material2/blob/8050f633b56b6c048fc72dad2ab79304afdfad19/src/lib/core/style/_elevation.scss
 
-
-
 @function _get-umbra-map($color, $opacity) {
   @return (
     0: '0px 0px 0px 0px #{rgba($color, $opacity * 0.1)}',
@@ -99,11 +97,7 @@
 
 // Applies the correct css rules to an element to give it the elevation specified by $zValue.
 // The $zValue must be between 0 and 24.
-@mixin elevation(
-  $zValue,
-  $color: $elevation-color,
-  $opacity: $elevation-opacity
-) {
+@mixin elevation($zValue, $color: $elevation-color, $opacity: $elevation-opacity) {
   @if type-of($zValue) != number or not unitless($zValue) {
     @error '$zValue must be a unitless number';
   }
@@ -112,17 +106,12 @@
   }
 
   box-shadow: #{map-get(_get-umbra-map($color, $opacity), $zValue)},
-    #{map-get(_get-penumbra-map($color, $opacity), $zValue)},
-    #{map-get(_get-ambient-map($color, $opacity), $zValue)};
+    #{map-get(_get-penumbra-map($color, $opacity), $zValue)}, #{map-get(_get-ambient-map($color, $opacity), $zValue)};
 }
 
 // Applies the elevation to an element in a manner that allows
 // consumers to override it via the Material elevation classes.
-@mixin overridable-elevation(
-  $zValue,
-  $color: $elevation-color,
-  $opacity: $elevation-opacity
-) {
+@mixin overridable-elevation($zValue, $color: $elevation-color, $opacity: $elevation-opacity) {
   &:not([class*='#{$elevation-prefix}']) {
     @include elevation($zValue, $color, $opacity);
   }
@@ -148,9 +137,6 @@
 //
 // NOTE(traviskaufman): Both this mixin and the above function use default parameters so they can
 // be used in the same way by clients.
-@mixin elevation-transition(
-  $duration: $elevation-transition-duration,
-  $easing: $elevation-transition-timing-function
-) {
+@mixin elevation-transition($duration: $elevation-transition-duration, $easing: $elevation-transition-timing-function) {
   transition: elevation-transition-property-value($duration, $easing);
 }
