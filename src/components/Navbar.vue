@@ -31,7 +31,7 @@
               <strong class="headings-font has-padding-3">{{key}}</strong>
               <ul>
                 <li v-for="(val, index) in value" :key="index">
-                  <a :href="'#scoll-to-' + val" class="btn btn_clear">{{val}}</a>
+                  <a :href="'#scoll-to-' + val" class="btn btn_clear" v-smooth-scroll>{{val}}</a>
                 </li>
               </ul>
             </li>
@@ -83,16 +83,17 @@ export default {
         ],
         ui: [
           'btn',
-          'hamburger-btn',
-          'tag',
-          'dropdown',
           'btn-group',
           'nav',
           'titlebar',
           'card',
+          'hamburger-btn',
+          'tag',
+          'dropdown',
           'xui-tabs',
           'xui-list',
           'xui-accordion',
+          'modal',
           'dialog',
           'deck',
           'toast',

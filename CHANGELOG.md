@@ -40,6 +40,7 @@
 - renamed `.slider` to `.range-slider`
 - removed all `is-` prefixes from `data-flex` values
 - optimized `.nav` - dropped `.nav__items`
+- changed `macro-metrics` to `atom-metric`
 
 ### changes
 
@@ -65,7 +66,11 @@
 
 ### deprecated
 
-- changed `macro-metrics` to `atom-metric`
+- `.dialog` use `.modal` instead
+- `.deck` use `.modal` instead
+- `.overlay` use `.modal` instead
+- `.toast` use `.modal` instead
+- `.snackbar` use `.modal` instead
 
 ## 9.1.4
 

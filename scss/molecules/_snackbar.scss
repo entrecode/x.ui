@@ -2,10 +2,12 @@
 /// @since 9.1.0
 /// @access public
 /// @group molecules
+///
+/// @deprecated since 10.0.0
+/// @param {color} $snackbar-wrapper-background [$backdrop]
+/// @param {number} $snackbar-z-index [100]
+/// @param {array} $snackbar-style
 
-// @param {color} $snackbar-wrapper-background [$backdrop]
-// @param {number} $snackbar-z-index [100]
-// @param {array} $snackbar-style
 .snackbar-wrapper {
   position: fixed;
   top: 0;

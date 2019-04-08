@@ -2,11 +2,13 @@
 /// @since 9.1.0
 /// @access public
 /// @group molecules
+///
+/// @deprecated since 10.0.0
+/// @param {array} $dialog-padding [16]
+/// @param {color} $dialog-wrapper-background [$backdrop]
+/// @param {number} $dialog-z-index [100]
+/// @param {array} $dialog-style
 
-// @param {array} $dialog-padding [16]
-// @param {color} $dialog-wrapper-background [$backdrop]
-// @param {number} $dialog-z-index [100]
-// @param {array} $dialog-style
 .dialog-wrapper {
   position: fixed;
   top: 0;

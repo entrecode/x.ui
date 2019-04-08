@@ -2,10 +2,12 @@
 /// @since 9.1.0
 /// @access public
 /// @group molecules
+///
+/// @deprecated since 10.0.0
+/// @param {color} $deck-wrapper-background [$backdrop]
+/// @param {number} $deck-z-index [100]
+/// @param {array} $deck-style
 
-// @param {color} $deck-wrapper-background [$backdrop]
-// @param {number} $deck-z-index [100]
-// @param {array} $deck-style
 .deck-wrapper {
   position: fixed;
   top: 0;
