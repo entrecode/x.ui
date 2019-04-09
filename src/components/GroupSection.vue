@@ -1,6 +1,6 @@
 <template>
   <section data-container>
-    <div data-grid>
+    <div data-grid="is-center">
       <div data-col="8">
         <div
           class="has-margin-bottom-8"
@@ -26,7 +26,7 @@
           </DocTab>
         </div>
       </div>
-      <div data-col="4">
+      <div data-col="2">
         <ul class="nav nav_stacked is-sticky" style="top: 120px;">
           <li class="nav__item" v-if="sectionTitle">
             <h2 v-text="sectionTitle"></h2>

@@ -56,92 +56,94 @@
           <h2>Modal Header</h2>
         </div>
         <div class="modal__body">
-          <div class="field-group">
-            <label for class="field-group__label">[data-col]</label>
-            <input
-              type="number"
-              class="input"
-              min="1"
-              max="12"
-              v-model="dataCol"
-              placeholder="1-12"
-            >
-          </div>
-          <div class="field-group">
-            <label for class="field-group__label">elevation</label>
-            <div data-grid>
-              <div data-col="8" data-flex="center-items">
-                <input
-                  type="range"
-                  class="range-slider"
-                  v-model="elevated"
-                  min="0"
-                  max="24"
-                  step="1"
-                >
-              </div>
-              <div data-col="4">
-                <input type="number" class="input" v-model="elevated" placeholder="0-24">
+          <div style="max-width: 320px; margin: 0 auto;">
+            <div class="field-group">
+              <label for class="field-group__label">[data-col]</label>
+              <input
+                type="number"
+                class="input"
+                min="1"
+                max="12"
+                v-model="dataCol"
+                placeholder="1-12"
+              >
+            </div>
+            <div class="field-group">
+              <label for class="field-group__label">elevation</label>
+              <div data-grid>
+                <div data-col="8" data-flex="center-items">
+                  <input
+                    type="range"
+                    class="range-slider"
+                    v-model="elevated"
+                    min="0"
+                    max="24"
+                    step="1"
+                  >
+                </div>
+                <div data-col="4">
+                  <input type="number" class="input" v-model="elevated" placeholder="0-24">
+                </div>
               </div>
             </div>
-          </div>
-          <div class="field-group">
-            <div class="xui-checkbox">
-              <input type="checkbox" v-model="hasBackdrop" id="hasBackdrop">
-              <label for="hasBackdrop">has backdrop</label>
+            <div class="field-group">
+              <div class="xui-checkbox">
+                <input type="checkbox" v-model="hasBackdrop" id="hasBackdrop">
+                <label for="hasBackdrop">has backdrop</label>
+              </div>
             </div>
-          </div>
 
-          <div class="position-settings">
-            <div class="position-settings-item position-settings-item_top">
-              <span
-                @click="setSectionFlex('top')"
-                :class="flexConfig.has('top') ? 'is-ink-link' : 'is-ink-light'"
-              >
-                <svg class="ixo">
-                  <use xlink:href="#flex-position-top"></use>
-                </svg>
-              </span>
-            </div>
-            <div class="position-settings-item position-settings-item_right">
-              <span
-                @click="setSectionFlex('right')"
-                :class="flexConfig.has('right') ? 'is-ink-link' : 'is-ink-light'"
-              >
-                <svg class="ixo">
-                  <use xlink:href="#flex-position-right"></use>
-                </svg>
-              </span>
-            </div>
-            <div class="position-settings-item position-settings-item_bottom">
-              <span
-                @click="setSectionFlex('bottom')"
-                :class="flexConfig.has('bottom') ? 'is-ink-link' : 'is-ink-light'"
-              >
-                <svg class="ixo">
-                  <use xlink:href="#flex-position-bottom"></use>
-                </svg>
-              </span>
-            </div>
-            <div class="position-settings-item position-settings-item_left">
-              <span
-                @click="setSectionFlex('left')"
-                :class="flexConfig.has('left') ? 'is-ink-link' : 'is-ink-light'"
-              >
-                <svg class="ixo">
-                  <use xlink:href="#flex-position-left"></use>
-                </svg>
-              </span>
-            </div>
-            <div class="position-settings-item position-settings-item_center">
-              <span
-                @click="setSectionFlex('center')"
-                :class="flexConfig.has('center') ? 'is-ink-link' : 'is-ink-light'"
-              >
-                <svg class="ixo">
-                  <use xlink:href="#flex-position-center"></use>
-                </svg>
-              </span>
+            <div class="position-settings well">
+              <div class="position-settings-item position-settings-item_top">
+                <span
+                  @click="setSectionFlex('top')"
+                  :class="flexConfig.has('top') ? 'is-ink-link' : 'is-ink-light'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#flex-position-top"></use>
+                  </svg>
+                </span>
+              </div>
+              <div class="position-settings-item position-settings-item_right">
+                <span
+                  @click="setSectionFlex('right')"
+                  :class="flexConfig.has('right') ? 'is-ink-link' : 'is-ink-light'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#flex-position-right"></use>
+                  </svg>
+                </span>
+              </div>
+              <div class="position-settings-item position-settings-item_bottom">
+                <span
+                  @click="setSectionFlex('bottom')"
+                  :class="flexConfig.has('bottom') ? 'is-ink-link' : 'is-ink-light'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#flex-position-bottom"></use>
+                  </svg>
+                </span>
+              </div>
+              <div class="position-settings-item position-settings-item_left">
+                <span
+                  @click="setSectionFlex('left')"
+                  :class="flexConfig.has('left') ? 'is-ink-link' : 'is-ink-light'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#flex-position-left"></use>
+                  </svg>
+                </span>
+              </div>
+              <div class="position-settings-item position-settings-item_center">
+                <span
+                  @click="setSectionFlex('center')"
+                  :class="flexConfig.has('center') ? 'is-ink-link' : 'is-ink-light'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#flex-position-center"></use>
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -236,8 +238,8 @@ $modal-footer-style: ();`,
       }
 
       if (f.has('center')) {
-        this.alignItems = 'center-items';
-        this.justifyContent = 'center';
+        this.alignItems = '';
+        this.justifyContent = '';
       } else {
         if (f.has('top')) {
           this.alignItems = 'start-items';

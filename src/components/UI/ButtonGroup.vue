@@ -25,11 +25,11 @@ export default {
   <a class="btn">button</a>
   <div class="btn-group__divider"></div>
   <a class="btn btn_super">button</a>
-</div>`,
-              markup: `<div class="btn-group">
-  <a class="btn">button</a>
-  <div class="btn-group__divider"></div>
-  <a class="btn btn_super">button</a>
+</div>
+<div class="y-space-2"></div>
+<div class="btn-group">
+  <a class="btn btn_round">button</a>
+  <a class="btn btn_super btn_round">button</a>
 </div>`,
               config: `$btn-group-style: ();
 $btn-group-divider-size: 1;

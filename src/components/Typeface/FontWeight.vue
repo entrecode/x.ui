@@ -1,5 +1,5 @@
 <template>
-  <section id="scroll-to-fontWeight">
+  <section id="scroll-to-fontWeight" data-container>
     <DocTab>
         <div slot="title">
           <h3>font-weight</h3>

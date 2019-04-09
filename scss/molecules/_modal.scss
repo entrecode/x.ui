@@ -2,10 +2,12 @@
 /// @since 10.0.0
 /// @access public
 /// @group molecules
+///
+/// @param {color} $modal-wrapper-background [$backdrop]
+/// @param {array} $modal-gutter [16]
+/// @param {number} $modal-z-index [100]
+/// @param {array} $modal-style
 
-// @param {color} $modal-wrapper-background [$backdrop]
-// @param {number} $modal-z-index [100]
-// @param {array} $modal-style
 .modal-wrapper {
   position: fixed;
   top: 0;
@@ -17,6 +19,7 @@
   display: none;
   overflow: hidden;
   @include inject-style($modal-wrapper-style);
+  padding: arrayMagic($modal-gutter);
   z-index: $modal-wrapper-z-index;
   pointer-events: none;
 

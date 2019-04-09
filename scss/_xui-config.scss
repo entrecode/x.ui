@@ -1087,6 +1087,9 @@ $modal-wrapper-background: $backdrop !default;
 $modal-wrapper-z-index: 100 !default;
 $modal-wrapper-style: () !default;
 
+// @param {array} $modal-gutter [16]
+$modal-gutter: 16 !default;
+
 // @param {px} $modal-min-width [240]
 // @param {percentage | false } $modal-max-width-relative [50]
 // @param {pixel | false } $modal-max-width-relative [640]

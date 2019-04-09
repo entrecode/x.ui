@@ -98,8 +98,11 @@
         </div>
       </div>
     </div>
-
     <grid/>
+    <div class="divider divider_big"></div>
+    <Headings/>
+    <div class="divider divider_big"></div>
+    <FontWeight/>
     <div class="divider divider_big"></div>
     <buttons/>
     <div class="divider divider_big"></div>
@@ -114,10 +117,8 @@
     <card/>
     <div class="divider divider_big"></div>
     <Form/>
-
     <div class="divider divider_big"></div>
 
-    <FontWeight/>
   </div>
 </template>
 
@@ -132,6 +133,7 @@ import Modal from './components/UI/Modal.vue';
 import Card from './components/UI/Card.vue';
 import Form from './components/Form/Form.vue';
 import Grid from './components/Grid/Grid.vue';
+import Headings from './components/Typeface/Headings.vue';
 import FontWeight from './components/Typeface/FontWeight.vue';
 
 export default {
@@ -147,6 +149,7 @@ export default {
     Card,
     Form,
     Grid,
+    Headings,
     FontWeight,
   },
 };
