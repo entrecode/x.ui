@@ -22,3 +22,21 @@
   user-select: all;
   margin: 0 rem(2);
 }
+
+:root {
+  --spacingColor: 252, 59, 58;
+}
+
+.headings-demo {
+  background-image: repeating-linear-gradient(-45deg, rgba(var(--spacingColor), 0.2), rgba(var(--spacingColor), 0.2) 8px, transparent 8px, transparent 16px);
+  overflow: hidden;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    background-color: var(--background);
+  }
+}

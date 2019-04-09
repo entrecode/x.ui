@@ -299,9 +299,8 @@ $kilo-style: () !default;
 //
 // TYPEFACE SPACING
 // ---------------------------------------------
-// @param {number} $vertical-rhythm [$base-line-height * $base-font-size]
-// set margin-bottom a smooth typeface
-$vertical-rhythm: round($base-line-height * $base-font-size) !default; // equals 22.4px
+// @param {number} $headings-vertical-rhythm [$headings-line-height * $base-font-size]
+$headings-vertical-rhythm: round($headings-line-height * $base-font-size) !default; // equals 22px
 
 // @param {*} $headings-spacing-unit [$base-spacing-unit]
 $headings-spacing-unit: $base-spacing-unit !default;
@@ -312,11 +311,11 @@ $headings-spacing-unit: $base-spacing-unit !default;
 // @param {array} $h4-spacing [$h3-spacing]
 // @param {array} $h5-spacing [0 0 ($vertical-rhythm / 2) 0]
 // @param {array} $h6-spacing [$h5-spacing]
-$h1-spacing: 0 0 ($vertical-rhythm * 2) 0 !default;
-$h2-spacing: 0 0 $vertical-rhythm 0 !default;
+$h1-spacing: 0 0 ($headings-vertical-rhythm * 2) 0 !default;
+$h2-spacing: 0 0 $headings-vertical-rhythm 0 !default;
 $h3-spacing: $h2-spacing !default;
 $h4-spacing: $h3-spacing !default;
-$h5-spacing: 0 0 ($vertical-rhythm / 2) 0 !default;
+$h5-spacing: 0 0 ($headings-vertical-rhythm / 2) 0 !default;
 $h6-spacing: $h5-spacing !default;
 
 // @param {array} $giga-spacing [0]
@@ -365,6 +364,9 @@ $type-scale-bp: map-merge(
 //
 // PARAGRAPH STYLES
 // ---------------------------------------------
+// @param {number} $base-vertical-rhythm [$base-line-height * $base-font-size]
+$base-vertical-rhythm: round($base-line-height * $base-font-size) !default; // equals 22px
+
 // @param {string} $paragraph-weight [$is-light]
 // @param {em} $paragraph-line-height [$base-line-height]
 // @param {array} $paragraph-spacing [0 0 $vertical-rhythm 0]
@@ -372,7 +374,7 @@ $type-scale-bp: map-merge(
 // @param {array} $paragraph-style
 $paragraph-weight: $is-normal !default;
 $paragraph-line-height: $base-line-height !default;
-$paragraph-spacing: 0 0 $vertical-rhythm 0 !default;
+$paragraph-spacing: 0 0 $base-vertical-rhythm 0 !default;
 $paragraph-spacing-unit: $base-spacing-unit !default;
 $paragraph-style: () !default;
 
