@@ -1579,6 +1579,25 @@ $is-theme: map-merge(
 );
 
 //
+// IS-INK
+// -------------------------------------------------------------------------------------------------
+// @param {map} $is-ink
+$is-ink: () !default;
+$is-ink: map-merge(
+  (
+    '': $text,
+    'light': $text-light,
+    'lighter': $text-lighter,
+    'lightest': $text-lightest,
+    'link': $link,
+    'super': $super,
+    'highlight': $highlight,
+    'invert': $text-invert,
+  ),
+  $is-ink
+);
+
+//
 // LAYOUT
 // -------------------------------------------------------------------------------------------------
 
