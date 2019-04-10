@@ -8,7 +8,7 @@
 /// @require {funtion} arrayMagic
 
 // @param {array} $headings-style
-// @param {string} $headings-font
+// @param {string} $headings-font-family
 // @param {string} $headings-weight [$is-bold]
 // @param {em} $headings-line-height [$base-line-height]
 h1,
@@ -27,7 +27,7 @@ h6,
 .is-mega,
 .is-kilo {
   @include inject-style($headings-style);
-  font-family: $headings-font;
+  font-family: $headings-font-family;
   font-weight: $headings-weight;
   line-height: $headings-line-height;
 

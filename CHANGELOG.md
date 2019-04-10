@@ -54,6 +54,9 @@
 - changed `@extend %btn;` to `@include _btn-reset;`
 - improved `.input_round`
 - improved `.btn_round`
+- changed `$base-weight` to `$base-font-weight`
+- changed `$body-font` to `$body-font-family`
+- changed `$headings-font` to `$headings-font-family`
 
 ### added
 

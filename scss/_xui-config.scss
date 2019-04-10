@@ -227,11 +227,11 @@ $breakpoints: map-merge(
 // FONTFACE
 // ---------------------------------------------
 // use @import to use custom font-families
-// @param {string} $body-font
-// @param {string} $headings-font
+// @param {string} $body-font-family
+// @param {string} $headings-font-family
 // @param {string} $monospace-font
-$body-font: sans-serif !default;
-$headings-font: sans-serif !default;
+$body-font-family: sans-serif !default;
+$headings-font-family: sans-serif !default;
 $monospace-font: monospace !default;
 
 //
@@ -251,11 +251,11 @@ $is-bold: bolder !default;
 // ---------------------------------------------
 // @param {px} $base-font-size [16]
 // @param {em} $base-line-height [1.4]
-// @param {string} $base-weight [$is-normal]
+// @param {string} $base-font-weight [$is-normal]
 // @param {string} $base-scale-unit [em]
 $base-font-size: 16 !default;
 $base-line-height: 1.4 !default;
-$base-weight: $is-normal !default;
+$base-font-weight: $is-normal !default;
 $base-scale-unit: em !default;
 
 //
@@ -283,15 +283,16 @@ $headings-inline-small-style: () !default;
 // @param {array} $h4-style
 // @param {array} $h5-style
 // @param {array} $h6-style
-// @param {array} $giga-style
-// @param {array} $mega-style
-// @param {array} $kilo-style
 $h1-style: () !default;
 $h2-style: () !default;
 $h3-style: () !default;
 $h4-style: () !default;
 $h5-style: () !default;
 $h6-style: () !default;
+
+// @param {array} $giga-style
+// @param {array} $mega-style
+// @param {array} $kilo-style
 $giga-style: () !default;
 $mega-style: () !default;
 $kilo-style: () !default;
@@ -299,8 +300,8 @@ $kilo-style: () !default;
 //
 // TYPEFACE SPACING
 // ---------------------------------------------
-// @param {number} $headings-vertical-rhythm [$headings-line-height * $base-font-size]
-$headings-vertical-rhythm: round($headings-line-height * $base-font-size) !default; // equals 22px
+// @param {number} $_headings-vertical-rhythm [$headings-line-height * $base-font-size]
+$_headings-vertical-rhythm: round($headings-line-height * $base-font-size) !default; // equals 22px
 
 // @param {*} $headings-spacing-unit [$base-spacing-unit]
 $headings-spacing-unit: $base-spacing-unit !default;
@@ -311,19 +312,19 @@ $headings-spacing-unit: $base-spacing-unit !default;
 // @param {array} $h4-spacing [$h3-spacing]
 // @param {array} $h5-spacing [0 0 ($vertical-rhythm / 2) 0]
 // @param {array} $h6-spacing [$h5-spacing]
-$h1-spacing: 0 0 ($headings-vertical-rhythm * 2) 0 !default;
-$h2-spacing: 0 0 $headings-vertical-rhythm 0 !default;
+$h1-spacing: 0 0 ($_headings-vertical-rhythm * 2) 0 !default;
+$h2-spacing: 0 0 $_headings-vertical-rhythm 0 !default;
 $h3-spacing: $h2-spacing !default;
 $h4-spacing: $h3-spacing !default;
-$h5-spacing: 0 0 ($headings-vertical-rhythm / 2) 0 !default;
+$h5-spacing: 0 0 ($_headings-vertical-rhythm / 2) 0 !default;
 $h6-spacing: $h5-spacing !default;
 
-// @param {array} $giga-spacing [0]
-// @param {array} $mega-spacing [0]
-// @param {array} $kilo-spacing [0]
-$giga-spacing: 0 !default;
-$mega-spacing: 0 !default;
-$kilo-spacing: 0 !default;
+// @param {array} $giga-spacing [($_headings-vertical-rhythm / 2) 0]
+// @param {array} $mega-spacing [$giga-spacing]
+// @param {array} $kilo-spacing [$mega-spacing]
+$giga-spacing: ($_headings-vertical-rhythm / 2) 0 !default;
+$mega-spacing: $giga-spacing !default;
+$kilo-spacing: $mega-spacing !default;
 
 //
 // TYPEFACE SCALE
@@ -364,8 +365,8 @@ $type-scale-bp: map-merge(
 //
 // PARAGRAPH STYLES
 // ---------------------------------------------
-// @param {number} $base-vertical-rhythm [$base-line-height * $base-font-size]
-$base-vertical-rhythm: round($base-line-height * $base-font-size) !default; // equals 22px
+// @param {number} $_base-vertical-rhythm [$base-line-height * $base-font-size]
+$_base-vertical-rhythm: round($base-line-height * $base-font-size) !default; // equals 22px
 
 // @param {string} $paragraph-weight [$is-light]
 // @param {em} $paragraph-line-height [$base-line-height]
@@ -374,7 +375,7 @@ $base-vertical-rhythm: round($base-line-height * $base-font-size) !default; // e
 // @param {array} $paragraph-style
 $paragraph-weight: $is-normal !default;
 $paragraph-line-height: $base-line-height !default;
-$paragraph-spacing: 0 0 $base-vertical-rhythm 0 !default;
+$paragraph-spacing: 0 0 $_base-vertical-rhythm 0 !default;
 $paragraph-spacing-unit: $base-spacing-unit !default;
 $paragraph-style: () !default;
 
@@ -399,21 +400,15 @@ $is-lead-style: () !default;
 // @param {string} $link-decoration [none]
 // @param {string} $link-weight [$is-normal]
 // @param {array} $link-style
-$link-color: $link;
+$link-color: $link !default;
 $link-decoration: none !default;
 $link-weight: $is-normal !default;
 $link-style: () !default;
-$link-style: map-merge(
-  (
-    transition: color 0.2s,
-  ),
-  $link-style
-);
 
 // @param {color} $link-hover-color [$link-color]
 // @param {string} $link-hover-decoration [none]
 // @param {array} $link-hover-style
-$link-hover-color: setHover($link-color);
+$link-hover-color: setHover($link-color) !default;
 $link-hover-decoration: $link-decoration !default;
 $link-hover-style: () !default;
 
@@ -471,9 +466,9 @@ $img-crop-ratio: map-merge(
 // ------------------------------------------------------
 
 // METRICS
-// @param {variable} $btn-font-family [$body-font]
+// @param {variable} $btn-font-family [$body-font-family]
 // @param {string} $btn-transition [background-color .2s, box-shadow .1s]
-$btn-font-family: $body-font !default;
+$btn-font-family: $body-font-family !default;
 $btn-transition: background-color 0.2s, box-shadow 0.1s !default;
 
 // @param {number} $btn-padding-ratio [1.5]
@@ -761,12 +756,12 @@ $loader-is-global-background: $backdrop !default;
 //
 // TAG
 // ------------------------------------------------------
-// @param {variable} $tag-font-family [$body-font]
+// @param {variable} $tag-font-family [$body-font-family]
 // @param {number} $tag-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
 // @param {string} $tag-weight [$is-bold]
 // @param {color} $tag-background [$minor]
 // @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
-$tag-font-family: $body-font !default;
+$tag-font-family: $body-font-family !default;
 $tag-weight: $is-bold !default;
 $tag-padding-ratio: 2 !default;
 $tag-background: $minor !default;
@@ -1138,7 +1133,6 @@ $modal-body-style: () !default;
 $modal-footer-spacing: 0 !default;
 $modal-footer-padding: 16 !default;
 $modal-footer-style: () !default;
-
 
 // DIALOG
 // ------------------------------------------------------

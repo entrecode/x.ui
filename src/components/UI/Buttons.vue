@@ -34,7 +34,7 @@ export default {
           <svg class="ixo"><use xlink:href="#fire"></use></svg>
         </a>`,
               markup: '<a href="" class="btn">Default</a>',
-              config: `$btn-font-family: $body-font;
+              config: `$btn-font-family: $body-font-family;
 $btn-transition: background-color 0.2s, box-shadow 0.1s;
 
 // automatically calculates padding-x and padding-y

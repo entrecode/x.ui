@@ -24,7 +24,7 @@ export default {
               markup: `<span class="tag">1</span>
 <a href class="btn">Button&emsp;<span class="tag">1</span></a>`,
               config: `// general tag config
-$tag-font-family: $body-font;
+$tag-font-family: $body-font-family;
 $tag-weight: $is-bold;
 $tag-padding-ratio: 1;
 $tag-background: $minor;

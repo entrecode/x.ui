@@ -2,8 +2,8 @@ $grid-small-gutter: 16;
 
 @import url('https://fonts.googleapis.com/css?family=Geo|Rubik:300,400,500,700');
 
-$body-font: 'Rubik', sans-serif;
-$headings-font: 'Geo', sans-serif;
+$body-font-family: 'Rubik', sans-serif;
+$headings-font-family: 'Geo', sans-serif;
 
 $is-light: 300;
 $is-normal: 400;
@@ -24,10 +24,10 @@ $headings-line-height: 1;
 $paragraph-line-height: 1.5;
 
 $btn-weight: $is-medium;
-$btn-font-family: $headings-font;
+$btn-font-family: $headings-font-family;
 $btn-icon-size: 20;
 
-$tag-font-family: $headings-font;
+$tag-font-family: $headings-font-family;
 $tag-weight: $is-medium;
 
 $nav-stacked-item-padding: 8;

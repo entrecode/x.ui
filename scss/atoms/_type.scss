@@ -3,10 +3,10 @@
 /// @access public
 /// @group atoms
 
-// @param {string} $body-font
+// @param {string} $body-font-family
 // @param {px} $base-font-size [16]
 // @param {px} $base-line-height [1.4]
-// @param {string} $base-weight [$is-normal]
+// @param {string} $base-font-weight [$is-normal]
 // @param {color} $body-color [$text]
 // @param {color} $body-background [$background]
 // @param {array} $body-style
@@ -14,9 +14,9 @@ body {
   @include inject-style($body-style);
   color: $body-color;
   background: $body-background;
-  font-family: $body-font;
+  font-family: $body-font-family;
   font-size: rem($base-font-size);
-  font-weight: $base-weight;
+  font-weight: $base-font-weight;
   line-height: $base-line-height;
 }
 
