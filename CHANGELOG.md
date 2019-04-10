@@ -75,6 +75,10 @@
 - `.toast` use `.modal` instead
 - `.snackbar` use `.modal` instead
 
+### deprecated
+
+- removed `has-scroll-shadow`
+
 ## 9.1.4
 
 ### deprecated
