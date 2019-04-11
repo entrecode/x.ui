@@ -14,13 +14,18 @@
   @each $_key in $_keys {
     $_i: index($_keys, $_key);
     $_value: nth($_values, $_i);
+    $_modifier: &#{$_c}#{$_key};
+
+    @if $_key == '' {
+      $_modifier: #{$_key};
+    }
 
     @if length($_value) == 3 {
-      &#{$_c}#{$_key} {
+      &#{$_modifier} {
         background: nth($_value, 1);
         color: nth($_value, 2);
 
-        a:not(.btn):not(.tag) {
+        a:not(.btn):not(.tag):not([class*="is-ink"]) {
           color: nth($_value, 3);
         }
       }

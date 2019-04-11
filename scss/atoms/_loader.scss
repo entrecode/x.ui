@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.1.0
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 ///
@@ -15,15 +15,9 @@
 @keyframes loaderDefault {
   0% {
     transform: rotate(0);
-    border-right-color: $loader-racer-color;
-  }
-
-  50% {
-    border-right-color: invert($loader-racer-color);
   }
 
   100% {
-    border-right-color: $loader-racer-color;
     transform: rotate(360deg);
   }
 }

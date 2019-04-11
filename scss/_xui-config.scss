@@ -563,10 +563,10 @@ $btn-big-wide: 240 !default;
 // BTN STYLE
 // ------------------------------------------------------------
 // @param {color} $btn-background [$link]
-// @param {color} $btn-color [setContrast($link)]
+// @param {color} $btn-color [$link-contrast]
 // @param {array} $btn-style
 $btn-background: $link !default;
-$btn-color: setContrast($link) !default;
+$btn-color: $link-contrast !default;
 $btn-style: () !default;
 
 // @param {color} $btn-hover-background [setHover($btn-background)]
@@ -602,10 +602,10 @@ $btn-outline-hover-style: () !default;
 // BTN MINOR STYLE
 // ------------------------------------------------------------
 // @param {color} $btn-minor-background [$minor]
-// @param {color} $btn-minor-color [setContrast($minor)]
+// @param {color} $btn-minor-color [$minor-contrast]
 // @param {array} $btn-minor-style
 $btn-minor-background: $minor !default;
-$btn-minor-color: setContrast($minor) !default;
+$btn-minor-color: $minor-contrast !default;
 $btn-minor-style: () !default;
 
 // @param {color} $btn-minor-hover-background [$btn-minor-background]
@@ -636,10 +636,10 @@ $btn-outline-minor-hover-style: () !default;
 // BTN SUPER STYLE
 // ------------------------------------------------------------
 // @param {color} $btn-super-background [$super]
-// @param {color} $btn-super-color [setContrast($super)]
+// @param {color} $btn-super-color [$super-contrast]
 // @param {array} $btn-super-style
 $btn-super-background: $super !default;
-$btn-super-color: setContrast($super) !default;
+$btn-super-color: $super-contrast !default;
 $btn-super-style: () !default;
 
 // @param {color} $btn-super-hover-background [setHover($btn-super-background)]
