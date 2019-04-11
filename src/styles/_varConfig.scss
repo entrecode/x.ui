@@ -12,6 +12,12 @@
   --inputPlaceholderColor: #a8aabd;
 }
 
+$link: var(--link);
+$link-contrast: var(--linkContrast);
+$link-safe: $link;
+$link-hover: setHover($link);
+
+
 $input-background: var(--inputBackground);
 $input-color: var(--inputColor);
 

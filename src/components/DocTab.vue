@@ -26,10 +26,10 @@
     </div>
     <div v-show="showTab === 1">
       <div data-grid>
-        <div :data-col="hasMarkup ? '6' : '12'">
+        <div :data-col="previewCol ? previewCol : hasMarkup ? '6' : '12'">
           <slot name="preview"></slot>
         </div>
-        <div data-col="6" v-if="hasMarkup">
+        <div :data-col="markupCol ? markupCol : '6'" v-if="hasMarkup">
           <slot name="markup"></slot>
         </div>
       </div>
@@ -43,6 +43,7 @@
 <script>
 import Ixo from './Ixo.vue';
 export default {
+  props: ['previewCol', 'markupCol'],
   name: 'Doctab',
   components: {
     Ixo,

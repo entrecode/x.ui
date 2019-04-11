@@ -2108,10 +2108,10 @@ $xui-toggle-line-height: $xui-toggle-label-size * $base-line-height !default;
 //
 // MARK
 // -------------------------------------------------------------------------------------------------
-// @param {color} $mark-color [$text]
+// @param {color} $mark-color [$highlight-contrast]
 // @param {color} $mark-background [$highlight]
 // @param {array} $mark-style
-$mark-color: setContrast($highlight) !default;
+$mark-color: $highlight-contrast !default;
 $mark-background: $highlight !default;
 $mark-style: () !default;
 

@@ -4,7 +4,7 @@
 /// @group templates
 ///
 /// @param {array} $table-spacing [0 0 16 0]
-/// @param {array} $table-border [1 solid getColor(divider)]
+/// @param {array} $table-border [1 solid $divider-color]
 /// @param {array} $table-cell-padding [8]
 
 // scss-lint:disable SelectorDepth, NestingDepth

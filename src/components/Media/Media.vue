@@ -6,7 +6,7 @@
 import GroupSection from './../GroupSection.vue';
 
 export default {
-  name: 'Card',
+  name: 'Media',
   components: {
     GroupSection,
   },

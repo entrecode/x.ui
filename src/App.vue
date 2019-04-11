@@ -98,59 +98,94 @@
         </div>
       </div>
     </div>
+    <div class="divider divider_big"></div>
     <grid/>
     <div class="divider divider_big"></div>
-    <Headings/>
+    <Colors/>
     <div class="divider divider_big"></div>
-    <FontWeight/>
+    <h2 class="is-h1 align-center is-uppercase">TYPO</h2>
+    <div class="divider divider_big"></div>
+    <typo/>
+    <div class="divider divider_big"></div>
+    <h2 class="is-h1 align-center is-uppercase">form</h2>
+    <div class="divider divider_big"></div>
+    <Form/>
+    <div class="divider divider_big"></div>
+    <h2 class="is-h1 align-center is-uppercase">UI</h2>
     <div class="divider divider_big"></div>
     <buttons/>
     <div class="divider divider_big"></div>
     <button-group/>
     <div class="divider divider_big"></div>
+    <tag/>
+    <div class="divider divider_big"></div>
     <Nav/>
     <div class="divider divider_big"></div>
-    <tag/>
+    <titlebar/>
     <div class="divider divider_big"></div>
     <modal/>
     <div class="divider divider_big"></div>
+    <well/>
+    <div class="divider divider_big"></div>
     <card/>
     <div class="divider divider_big"></div>
-    <Form/>
+    <avatar/>
     <div class="divider divider_big"></div>
-
+    <h2 class="is-h1 align-center is-uppercase">Layout</h2>
+    <div class="divider divider_big"></div>
+    <bumper/>
+    <div class="divider divider_big"></div>
+    <divider/>
+    <div class="divider divider_big"></div>
+    <spacer/>
+    <div class="divider divider_big"></div>
+    <flex-space/>
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue';
 import DocTab from './components/DocTab.vue';
+import Colors from './components/Core/Colors.vue';
 import Buttons from './components/UI/Buttons.vue';
 import ButtonGroup from './components/UI/ButtonGroup.vue';
 import Nav from './components/UI/Nav.vue';
 import Tag from './components/UI/Tag.vue';
 import Modal from './components/UI/Modal.vue';
+import Well from './components/UI/Well.vue';
+import Titlebar from './components/UI/Titlebar.vue';
 import Card from './components/UI/Card.vue';
+import Avatar from './components/UI/Avatar.vue';
 import Form from './components/Form/Form.vue';
 import Grid from './components/Grid/Grid.vue';
-import Headings from './components/Typeface/Headings.vue';
-import FontWeight from './components/Typeface/FontWeight.vue';
+import Typo from './components/Typeface/Typo.vue';
+import Bumper from './components/Layout/Bumper.vue';
+import Divider from './components/Layout/Divider.vue';
+import Spacer from './components/Layout/Spacer.vue';
+import FlexSpace from './components/Layout/Flexspace.vue';
 
 export default {
   name: 'app',
   components: {
     Navbar,
+    Colors,
     DocTab,
     Buttons,
     ButtonGroup,
     Nav,
     Tag,
     Modal,
+    Titlebar,
+    Well,
     Card,
+    Avatar,
     Form,
     Grid,
-    Headings,
-    FontWeight,
+    Typo,
+    Bumper,
+    Divider,
+    Spacer,
+    FlexSpace,
   },
 };
 </script>

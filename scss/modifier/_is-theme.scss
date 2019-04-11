@@ -14,7 +14,7 @@
   @each $_key in $_keys {
     $_i: index($_keys, $_key);
     $_value: nth($_values, $_i);
-    $_modifier: &#{$_c}#{$_key};
+    $_modifier: #{$_c}#{$_key};
 
     @if $_key == '' {
       $_modifier: #{$_key};

@@ -1,3 +1,13 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {string} $is-light [lighter]
+/// @param {string} $is-normal [normal]
+/// @param {string} $is-medium [bold]
+/// @param {string} $is-bold [bold]
+
 .is-bold {
   font-weight: $is-bold;
 }

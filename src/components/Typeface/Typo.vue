@@ -6,7 +6,7 @@
 import GroupSection from './../GroupSection.vue';
 
 export default {
-  name: 'Headings',
+  name: 'Typo',
   components: {
     GroupSection,
   },
@@ -20,7 +20,7 @@ export default {
             {
               preview: `<h1>Overcome injustice justice,</h1>
 <p class="is-lead">her body her rights gender rights silo correlation vibrant. Empower communities engaging, low-hanging fruit, catalyze citizen-centered disrupt.</p>
-<h2>filltext by <a href="http://socialgoodipsum.com" target="_blank">socialgoodipsum.com</a></h2>
+<h2>Social intrapreneurship</h2>
 <p><strong>Social intrapreneurship</strong> collective impact; greenwashing benefit corporation innovation white paper, innovate, blended.</p>`,
               previewStyle: 'typo-demo',
               config: `// modular scale for typeface see on http://www.modularscale.com/?1&em&1.25
@@ -131,7 +131,11 @@ $kilo-spacing: $mega-spacing;`,
           groupItems: [
             {
               title: 'standard paragraph',
-              preview: `<p>paragraph style: <a>Overcome injustice</a> justice, her body her rights gender rights silo correlation vibrant. Empower communities engaging, low-hanging fruit, catalyze citizen-centered disrupt. Social intrapreneurship collective impact; greenwashing benefit corporation innovation white paper, innovate, blended.</p>`,
+              preview: `<p>paragraph style: <a>Overcome injustice</a> justice, her body her rights gender
+rights silo correlation vibrant. Empower <mark>communities engaging</mark>,
+low-hanging fruit, catalyze citizen-centered disrupt. Social intrapreneurship
+collective impact; greenwashing benefit corporation innovation white paper,
+innovate, blended.</p>`,
               previewStyle: 'typo-demo',
               config: `// basic typo styles
 $body-color: $text;
@@ -157,7 +161,12 @@ $link-hover-decoration: $link-decoration;
 $link-hover-style: ();
 
 // for <small> elements
-$inline-small-style: ();`,
+$inline-small-style: ();
+
+// <mark> style
+$mark-color: $highlight-contrast;
+$mark-background: $highlight;
+$mark-style: ();`,
             },
           ],
         },
@@ -167,7 +176,11 @@ $inline-small-style: ();`,
           groupItems: [
             {
               title: 'lead paragraph',
-              preview: `<p class="is-lead">lead paragraph style: Overcome injustice justice, her body her rights gender rights silo correlation vibrant. Empower communities engaging, low-hanging fruit, catalyze citizen-centered disrupt. Social intrapreneurship collective impact; greenwashing benefit corporation innovation white paper, innovate, blended.</p>`,
+              preview: `<p class="is-lead">lead paragraph style: Overcome injustice justice, her body her rights gender
+rights silo correlation vibrant. Empower communities engaging, low-hanging
+fruit, catalyze citizen-centered disrupt. Social intrapreneurship collective
+impact; greenwashing benefit corporation innovation white paper, innovate,
+blended.</p>`,
               previewStyle: 'typo-demo',
               config: `// styles for lead paragraphs
 $is-lead-weight: $is-light; // lighter
@@ -177,6 +190,92 @@ $is-lead-style: ();
 // spacing
 $is-lead-spacing: $paragraph-spacing; // 0 0 22 0
 $is-lead-spacing-unit: $base-spacing-unit; // xrem`,
+            },
+          ],
+        },
+        {
+          id: 'list',
+          navTitle: 'list',
+          groupItems: [
+            {
+              title: '<ul><ol>',
+              preview: `<ul class="is-unstyled">
+  <li>List</li>
+  <li>List</li>
+  <li>List</li>
+</ul>
+<div class="y-space-3"></div>
+<ul class="is-inline">
+  <li>List</li>
+  <li>List</li>
+  <li>List</li>
+</ul>`,
+              markup: `<ul class="is-unstyled">...</ul>
+<ul class="is-inline">...</ul>`,
+              previewStyle: 'well',
+            },
+          ],
+        },
+        {
+          id: 'font-weight',
+          navTitle: 'font-weight',
+          groupItems: [
+            {
+              title: 'font-weight',
+              preview: `<div data-grid>
+  <div data-col="3" class="align-center">
+    <h5 class="is-light select-all">is-light</h5>
+  </div>
+  <div data-col="3" class="align-center">
+    <strong class="is-normal select-all">is-normal</strong>
+  </div>
+  <div data-col="3" class="align-center">
+    <div class="is-medium select-all">is-medium</div>
+  </div>
+  <div data-col="3" class="align-center">
+    <div class="is-bold select-all">is-bold</div>
+  </div>
+</div>`,
+              markup: `<h5 class="is-light">is-light</h5>
+<strong class="is-normal">is-normal</strong>
+<div class="is-medium">is-medium</div>
+<div class="is-bold">is-bold</div>`,
+              previewCol: 12,
+              markupCol: 12,
+              previewStyle: 'well',
+              config: `$is-light: lighter;
+$is-normal: normal;
+$is-medium: bold;
+$is-bold: bolder;`,
+            },
+          ],
+        },
+        {
+          id: 'font-family',
+          navTitle: 'font-family',
+          groupItems: [
+            {
+              title: 'font-family',
+              preview: `<div data-grid>
+  <div data-col="4" class="align-center">
+    <div class="is-body-font select-all">is-body-font</div>
+  </div>
+  <div data-col="4" class="align-center">
+    <div class="is-headings-font select-all">is-headings-font</div>
+  </div>
+  <div data-col="4" class="align-center">
+    <div class="is-monospace-font select-all">is-monospace-font</div>
+  </div>
+</div>`,
+              markup: `<div class="is-body-font">...</div>
+<div class="is-headings-font">...</div>
+<div class="is-monospace-font">...</div>`,
+              previewCol: 12,
+              markupCol: 12,
+              previewStyle: 'well',
+              config: `$body-font-family: sans-serif;
+$headings-font-family: sans-serif;
+$monospace-font: monospace;`,
             },
           ],
         },

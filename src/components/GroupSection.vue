@@ -10,7 +10,7 @@
         >
           <h2 v-text="group.title" v-if="group.title"></h2>
           <div v-html="group.summary" v-if="group.summary"></div>
-          <DocTab v-for="(item, index) in group.groupItems" :key="index">
+          <DocTab v-for="(item, index) in group.groupItems" :key="index" :markup-col="item.markupCol" :preview-col="item.previewCol">
             <div slot="title">
               <h3 class="is-h4" v-if="item.title" v-text="item.title"></h3>
               <div v-html="item.summary" v-if="item.summary"></div>
