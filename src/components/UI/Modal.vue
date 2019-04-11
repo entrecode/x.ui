@@ -1,6 +1,6 @@
 <template>
   <section data-container>
-    <div data-grid>
+    <div data-grid="is-center">
       <div data-col="8">
         <div class="has-margin-bottom-8" id="scroll-to-modal">
           <DocTab>
@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <div data-col="4">
+      <div data-col="2">
         <ul class="nav nav_stacked is-sticky" style="top: 120px;">
           <li class="nav__item">
             <h2>Modal</h2>

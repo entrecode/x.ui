@@ -69,40 +69,32 @@
 //
 // Styles
 // ------------------------------------------------------
+// @requires {array} $tag-styles
 // @param {string} $_prefix ['tag_']
-// @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
 $_prefix: 'tag_';
-@each $_n, $_c in $theme-array {
-  .#{$_prefix}#{$_n} {
-    @include set-theme-colors($_c);
 
-    a {
-      color: setContrast($_c);
-    }
+@each $_key, $_value in $tag-styles {
+  @if length($_value) == 3 {
+    $_background: nth($_value, 1);
+    $_color: nth($_value, 2);
+    $_hover: nth($_value, 3);
 
-    @at-root a.#{$_prefix}#{$_n} {
-      &:hover {
-        background: setHover($_c);
-        color: setContrast($_c);
+    .#{$_prefix}#{$_key} {
+      background: $_background;
+      color: $_color;
+
+      a {
+        color: $_color;
+      }
+
+      @at-root a.#{$_prefix}#{$_key} {
+        &:hover {
+          background: $_hover;
+          color: $_color;
+        }
       }
     }
-  }
-}
-
-// @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
-// @param {px} $tag-radius [2]
-// @param {px} $tag-small-radius [$tag-radius]
-// @param {px} $tag-big-radius [$tag-radius]
-@if $tag-round == true {
-  .tag {
-    border-radius: arrayMagic($tag-min-height / 2);
-
-    &.tag_small {
-      border-radius: arrayMagic($tag-small-min-height / 2);
-    }
-
-    &.tag_big {
-      border-radius: arrayMagic($tag-big-min-height / 2);
-    }
+  } @else {
+    @warn 'arguments missing - #{$_key}: #{$_value}';
   }
 }

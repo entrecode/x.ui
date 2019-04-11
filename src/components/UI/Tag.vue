@@ -80,7 +80,6 @@ $tag-big-radius: $tag-radius;`,
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_link">tag</span></li>
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_super">tag</span></li>
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_highlight">tag</span></li>
-  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_invert">tag</span></li>
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_info">tag</span></li>
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_error">tag</span></li>
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_success">tag</span></li>
@@ -91,21 +90,51 @@ $tag-big-radius: $tag-radius;`,
 <span class="tag tag_link">tag</span>
 <span class="tag tag_super">tag</span>
 <span class="tag tag_highlight">tag</span>
-<span class="tag tag_invert">tag</span>
 <span class="tag tag_info">tag</span>
 <span class="tag tag_error">tag</span>
 <span class="tag tag_success">tag</span>
 <span class="tag tag_warning">tag</span>`,
-              config: `$theme-array:(
-  minor: $minor,
-  link: $link,
-  super: $super,
-  highlight: $highlight,
-  invert: $text-invert,
-  info: $state-info,
-  error: $state-error,
-  success: $state-success,
-  warning: $state-warning,
+              config: `$tag-array:(
+  'minor': (
+      $minor,
+      $minor-contrast,
+      $minor-hover,
+    ),
+    'link': (
+      $link,
+      $link-contrast,
+      $link-hover,
+    ),
+    'super': (
+      $super,
+      $super-contrast,
+      $super-hover,
+    ),
+    'highlight': (
+      $highlight,
+      $highlight-contrast,
+      $highlight-hover,
+    ),
+    'info': (
+      $state-info,
+      $state-info-contrast,
+      $state-info-hover,
+    ),
+    'error': (
+      $state-error,
+      $state-error-contrast,
+      $state-error-hover,
+    ),
+    'success': (
+      $state-success,
+      $state-success-contrast,
+      $state-success-hover,
+    ),
+    'warning': (
+      $state-warning,
+      $state-warning-contrast,
+      $state-warning-hover,
+    ),
 );`,
             },
           ],
@@ -123,7 +152,6 @@ $tag-big-radius: $tag-radius;`,
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_link">tag</span></li>
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_super">tag</span></li>
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_highlight">tag</span></li>
-  <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_invert">tag</span></li>
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_info">tag</span></li>
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_error">tag</span></li>
   <li data-col="is-fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_success">tag</span></li>
@@ -134,7 +162,6 @@ $tag-big-radius: $tag-radius;`,
 <span class="tag tag_outlined tag_link">tag</span>
 <span class="tag tag_outlined tag_super">tag</span>
 <span class="tag tag_outlined tag_highlight">tag</span>
-<span class="tag tag_outlined tag_invert">tag</span>
 <span class="tag tag_outlined tag_info">tag</span>
 <span class="tag tag_outlined tag_error">tag</span>
 <span class="tag tag_outlined tag_success">tag</span>

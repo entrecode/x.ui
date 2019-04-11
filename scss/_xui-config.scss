@@ -15,10 +15,51 @@ $ec-icon-support: true !default;
 // Base theme colors
 $background: #fff !default;
 $text: #2a3d54 !default;
+
+// @param {color | false} $lighter-fallback [false] - overwrite light fallback color for setContrast
+// @param {color | false} $darker-fallback [false] - overwrite darker fallback color for setContrast
+$lighter-fallback: false !default;
+$darker-fallback: false !default;
+
+// set fallback-color depending on its luminosity
+$_luma-text: luma($text);
+$_luma-background: luma($background);
+
+@if $lighter-fallback == false {
+  @if $_luma-text > 0.5 {
+    $lighter-fallback: $text;
+  } @else {
+    $lighter-fallback: $background;
+  }
+}
+
+@if $darker-fallback == false {
+  @if $_luma-text < 0.5 {
+    $darker-fallback: $text;
+  } @else {
+    $darker-fallback: $background;
+  }
+}
+
 $link: #2fce6f !default;
+$link-contrast: setContrast($link) !default;
+$link-safe: $link !default;
+$link-hover: setHover($link) !default;
+
 $super: #14a656 !default;
-$minor: rgba($link, 0.2) !default;
+$super-contrast: setContrast($super) !default;
+$super-safe: setContrast($background, $super) !default;
+$super-hover: setHover($super) !default;
+
+$minor: #f4f5f6 !default;
+$minor-contrast: setContrast($minor) !default;
+$minor-safe: setContrast($background, $minor) !default;
+$minor-hover: setHover($minor) !default;
+
 $highlight: #fcff66 !default;
+$highlight-contrast: setContrast($highlight) !default;
+$highlight-safe: setContrast($background, $highlight) !default;
+$highlight-hover: setHover($highlight) !default;
 
 // background shading variables
 // @param {color} $background-invert [$text] - inverted color for background
@@ -46,44 +87,30 @@ $text-lightest: rgba($text, 0.2) !default;
 // @param {color} $backdrop [rgba(#000, .2)]
 $backdrop: rgba(#000, 0.2) !default;
 
-// @param {number} $hover-shading [4] - amount by which colors are darkened or lightened on hover
-$hover-shading: 4 !default;
-
 // @param {color} $divider-color [rgba($text,.1)] -  color if divider used by e.b. .bumper
 $divider-color: rgba($text, 0.1) !default;
 
-// used for theme coloring, colors are used in the x-ui-colormap an adapted to fit to theme colors
-$state-disabled: rgba($text, 0.2) !default;
 $state-hover: rgba($link, 0.1) !default;
-$state-info: systemColor(#0ff) !default;
-$state-error: systemColor(#f00) !default;
-$state-success: systemColor(#008000) !default;
-$state-warning: systemColor(#ffd700) !default;
 
-// @param {color | false} $lighter-fallback [false] - overwrite light fallback color for setContrast
-// @param {color | false} $darker-fallback [false] - overwrite darker fallback color for setContrast
-$lighter-fallback: false !default;
-$darker-fallback: false !default;
+$state-info: #0ff !default;
+$state-info-contrast: setContrast($state-info) !default;
+$state-info-safe: setContrast($background, $state-info) !default;
+$state-info-hover: setHover($state-info) !default;
 
-// set fallback-color depending on its luminosity
-$_luma-text: luma($text);
-$_luma-background: luma($background);
+$state-error: #f00 !default;
+$state-error-contrast: #fff !default;
+$state-error-safe: $state-error !default;
+$state-error-hover: setHover($state-error) !default;
 
-@if $lighter-fallback == false {
-  @if $_luma-text > 0.5 {
-    $lighter-fallback: $text;
-  } @else {
-    $lighter-fallback: $background;
-  }
-}
+$state-success: #008000 !default;
+$state-success-contrast: #fff !default;
+$state-success-safe: $state-success !default;
+$state-success-hover: setHover($state-success) !default;
 
-@if $darker-fallback == false {
-  @if $_luma-text < 0.5 {
-    $darker-fallback: $text;
-  } @else {
-    $darker-fallback: $background;
-  }
-}
+$state-warning: #ffd700 !default;
+$state-warning-contrast: #000 !default;
+$state-warning-safe: $state-warning !default;
+$state-warning-hover: setHover($state-warning) !default;
 
 //
 // COLORMAP
@@ -115,7 +142,6 @@ $xui-colors: map-merge(
     ),
     state: (
       'hover': $state-hover,
-      'disabled': $state-disabled,
       'info': $state-info,
       'error': $state-error,
       'success': $state-success,
@@ -127,23 +153,6 @@ $xui-colors: map-merge(
 
 // @param {variable} $color-map-id [$xui-colors] - can be changed use a different colormap
 $color-map-id: $xui-colors !default;
-
-// @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
-$theme-array: () !default;
-$theme-array: map-merge(
-  (
-    minor: $minor,
-    link: $link,
-    super: $super,
-    highlight: $highlight,
-    invert: $text-invert,
-    info: $state-info,
-    error: $state-error,
-    success: $state-success,
-    warning: $state-warning,
-  ),
-  $theme-array
-);
 
 //
 // ROOT
@@ -405,10 +414,10 @@ $link-decoration: none !default;
 $link-weight: $is-normal !default;
 $link-style: () !default;
 
-// @param {color} $link-hover-color [$link-color]
+// @param {color} $link-hover-color [$link-hover]
 // @param {string} $link-hover-decoration [none]
 // @param {array} $link-hover-style
-$link-hover-color: setHover($link-color) !default;
+$link-hover-color: $link-hover !default;
 $link-hover-decoration: $link-decoration !default;
 $link-hover-style: () !default;
 
@@ -810,6 +819,54 @@ $tag-outlined-border-style: solid !default;
 $tag-radius: 2 !default;
 $tag-small-radius: $tag-radius !default;
 $tag-big-radius: $tag-radius !default;
+
+// @param {array} $tag-styles
+$tag-styles: () !default;
+$tag-styles: map-merge(
+  (
+    'minor': (
+      $minor,
+      $minor-contrast,
+      $minor-hover,
+    ),
+    'link': (
+      $link,
+      $link-contrast,
+      $link-hover,
+    ),
+    'super': (
+      $super,
+      $super-contrast,
+      $super-hover,
+    ),
+    'highlight': (
+      $highlight,
+      $highlight-contrast,
+      $highlight-hover,
+    ),
+    'info': (
+      $state-info,
+      $state-info-contrast,
+      $state-info-hover,
+    ),
+    'error': (
+      $state-error,
+      $state-error-contrast,
+      $state-error-hover,
+    ),
+    'success': (
+      $state-success,
+      $state-success-contrast,
+      $state-success-hover,
+    ),
+    'warning': (
+      $state-warning,
+      $state-warning-contrast,
+      $state-warning-hover,
+    ),
+  ),
+  $tag-styles
+);
 
 //
 // DROPDOWN
@@ -1490,6 +1547,30 @@ $alert-outlined-border-color: $alert-background !default;
 $alert-outlined-border-with: 2 !default;
 $alert-outlined-border-style: solid !default;
 $alert-outlined-style: () !default;
+
+// @param {array} $alert-styles
+$alert-styles: () !default;
+$alert-styles: map-merge(
+  (
+    'info': (
+      $state-info,
+      $state-info-contrast,
+    ),
+    'error': (
+      $state-error,
+      $state-error-contrast,
+    ),
+    'success': (
+      $state-success,
+      $state-success-contrast,
+    ),
+    'warning': (
+      $state-warning,
+      $state-warning-contrast,
+    ),
+  ),
+  $tag-styles
+);
 
 //
 // TOOLTIP

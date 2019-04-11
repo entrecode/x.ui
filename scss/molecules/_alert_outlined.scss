@@ -11,26 +11,34 @@
 // @param {px} $alert-outlined-border-style [2]
 // @param {string} $alert-outlined-border-style [solid]
 // @param {array} $alert-outlined-style
-.alert {
-  &.alert_outlined {
-    @include inject-style($alert-outlined-style);
-    background: $alert-outlined-background;
-    border-style: $alert-outlined-border-style;
-    border-color: $alert-outlined-border-color;
-    border-width: rem($alert-outlined-border-with);
+.alert_outlined {
+  @include inject-style($alert-outlined-style);
+  background: $alert-outlined-background;
+  border-style: $alert-outlined-border-style;
+  border-color: $alert-outlined-border-color;
+  border-width: rem($alert-outlined-border-with);
 
-    //
-    // Styles
-    // ------------------------------------------------------
-    // @param {string} $_prefix ['alert_']
-    // @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
-    $_prefix: 'alert_';
-    @each $_n, $_c in $theme-array {
-      &.#{$_prefix}#{$_n} {
-        background: $alert-outlined-background;
-        border-color: $_c;
-        color: setContrast($background, $_c);
+  //
+  // Styles
+  // ------------------------------------------------------
+  // @requires {array} $alert-styles
+  // @param {string} $_prefix ['alert_']
+  $_prefix: 'alert_';
+
+  @each $_key, $_value in $alert-styles {
+    @if length($_value) == 2 {
+      $_color: nth($_value, 1);
+
+      &.#{$_prefix}#{$_key} {
+        border-color: $_color;
+        color: $_color;
+
+        a {
+          color: $_color;
+        }
       }
+    } @else {
+      @warn 'arguments missing - #{$_key}: #{$_value}';
     }
   }
 }

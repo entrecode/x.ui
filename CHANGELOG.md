@@ -50,6 +50,7 @@
 - refactored `.is-layer-#`
 - refactored `.is-position-#`
 - refactored `.is-theme-#`
+- refactored color variables
 - removed background variables from `.btn_outline`
 - changed `@extend %btn;` to `@include _btn-reset;`
 - improved `.input_round`
@@ -57,6 +58,9 @@
 - changed `$base-weight` to `$base-font-weight`
 - changed `$body-font` to `$body-font-family`
 - changed `$headings-font` to `$headings-font-family`
+- renamed `$hover-shading` to `$_set-hover-shading`
+- added `$alert-styles` for alert styles
+- added `$tag-styles` for tag styles
 
 ### added
 
@@ -75,9 +79,11 @@
 - `.toast` use `.modal` instead
 - `.snackbar` use `.modal` instead
 
-### deprecated
+### removed
 
 - removed `has-scroll-shadow`
+- removed `$state-disabled` and `getColor(state, disabled)`
+- removed `$theme-array`
 
 ## 9.1.4
 

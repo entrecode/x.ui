@@ -49,11 +49,24 @@
 //
 // Styles
 // ------------------------------------------------------
+// @requires {array} $alert-styles
 // @param {string} $_prefix ['alert_']
-// @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
 $_prefix: 'alert_';
-@each $_n, $_c in $theme-array {
-  .#{$_prefix}#{$_n} {
-    @include set-theme-colors($_c);
+
+@each $_key, $_value in $alert-styles {
+  @if length($_value) == 2 {
+    $_background: nth($_value, 1);
+    $_color: nth($_value, 2);
+
+    .#{$_prefix}#{$_key} {
+      background: $_background;
+      color: $_color;
+
+      a {
+        color: $_color;
+      }
+    }
+  } @else {
+    @warn 'arguments missing - #{$_key}: #{$_value}';
   }
 }

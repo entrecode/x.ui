@@ -56,24 +56,34 @@
   }
 }
 
-
 //
 // Styles
 // ------------------------------------------------------
+// @requires {array} $tag-styles
 // @param {string} $_prefix ['tag_']
-// @param {array} $theme-array - for theme-color loop used in e.g. `.tag` or `.btn`
 $_prefix: 'tag_';
-@each $_n, $_c in $theme-array {
-  .tag_outlined.#{$_prefix}#{$_n} {
-    border-color: $_c;
-    color: $_c;
 
-    @at-root a.tag_outlined.#{$_prefix}#{$_n} {
-      &:hover {
-        background: none;
-        border-color: setHover($_c);
-        color: $_c;
+@each $_key, $_value in $tag-styles {
+  @if length($_value) == 3 {
+    $_color: nth($_value, 1);
+    $_hover: nth($_value, 3);
+
+    .tag_outlined.#{$_prefix}#{$_key} {
+      border-color: $_color;
+      color: $_color;
+
+      a {
+        color: $_color;
+      }
+
+      @at-root a.tag_outlined.#{$_prefix}#{$_key} {
+        &:hover {
+          background: $_hover;
+          color: $_hover;
+        }
       }
     }
+  } @else {
+    @warn 'arguments missing - #{$_key}: #{$_value}';
   }
 }
