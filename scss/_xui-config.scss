@@ -1613,17 +1613,17 @@ $table-cell-padding: 8 !default;
 // AVATAR
 // ------------------------------------------------------
 // @param {px} $avatar-size [40]
-// @param {px} $avatar-small-size-size [32]
-// @param {px} $avatar-big-size-size [48]
+// @param {px} $avatar-small-size-size [24]
+// @param {px} $avatar-big-size-size [64]
 // @param {array} $avatar-border [0]
-// @param {array} $avatar-background [transparent]
+// @param {array} $avatar-background [$background-lightest]
 // @param {px} $avatar-square-radius [4]
 // @param {array} $avatar-style
 $avatar-size: 40 !default;
-$avatar-small-size: 32 !default;
-$avatar-big-size: 48 !default;
+$avatar-small-size: 24 !default;
+$avatar-big-size: 64 !default;
 $avatar-border: 0 !default;
-$avatar-background: transparent !default;
+$avatar-background: $background-lightest !default;
 $avatar-square-radius: 4 !default;
 $avatar-style: () !default;
 

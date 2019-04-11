@@ -4,16 +4,21 @@
 /// @group atoms
 ///
 /// @param {px} $avatar-size [40]
-/// @param {px} $avatar-small-size [32]
-/// @param {px} $avatar-big-size [48]
+/// @param {px} $avatar-small-size-size [24]
+/// @param {px} $avatar-big-size-size [64]
 /// @param {array} $avatar-border [0]
-/// @param {array} $avatar-background [transparent]
-/// @param {array} $avatar-style
+/// @param {array} $avatar-background [$background-lightest]
 /// @param {px} $avatar-square-radius [4]
+/// @param {array} $avatar-style
 
 .avatar {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  flex-grow: 0;
   overflow: hidden;
+  border-radius: 100vw;
 
   @supports (display: inline-flex) {
     display: inline-flex;
@@ -25,17 +30,12 @@
   border: arrayMagic($avatar-border);
   height: rem($avatar-size);
   width: rem($avatar-size);
-  border-radius: rem($avatar-size / 2);
 
   img {
     height: 100%;
     object-fit: cover;
     object-position: center;
     width: 100%;
-  }
-
-  &_square {
-    border-radius: arrayMagic($avatar-square-radius);
   }
 
   &_small {
@@ -46,5 +46,9 @@
   &_big {
     height: rem($avatar-big-size);
     width: rem($avatar-big-size);
+  }
+
+  &_square {
+    border-radius: arrayMagic($avatar-square-radius);
   }
 }
