@@ -33,7 +33,7 @@
   display: block;
   align-self: stretch;
   background-color: $nav-divider-color;
-  margin: 0 rem($nav-divider-spacing);
+  margin: arrayMagic($nav-divider-spacing);
   width: rem($nav-divider-size);
 }
 
