@@ -2,19 +2,15 @@
 /// @since 10.0.0
 /// @access public
 /// @group atoms modifier
+///
+/// @param {boolean} $tag-round [false]
 
-// @param {px} $tag-min-height [24]
-// @param {px} $tag-small-min-height [20]
-// @param {px} $tag-big-min-height [32]
+@if $tag-round == true {
+  .tag {
+    border-radius: 100vw;
+  }
+}
 
 .tag_round {
-  border-radius: arrayMagic($tag-min-height / 2);
-
-  &.tag_small {
-    border-radius: arrayMagic($tag-small-min-height / 2);
-  }
-
-  &.tag_big {
-    border-radius: arrayMagic($tag-big-min-height / 2);
-  }
+  border-radius: 100vw;
 }
