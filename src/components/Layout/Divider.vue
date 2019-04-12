@@ -1,14 +1,14 @@
 <template>
-  <group-section :groups="sectionGroups" section-title="Divider"></group-section>
+  <blocks-group :groups="sectionGroups" section-title="Divider"></blocks-group>
 </template>
 
 <script>
-import GroupSection from './../GroupSection.vue';
+import BlocksGroup from './../BlocksGroup.vue';
 
 export default {
   name: 'Divider',
   components: {
-    GroupSection,
+    BlocksGroup,
   },
   data: () => {
     return {

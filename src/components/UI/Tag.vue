@@ -1,14 +1,14 @@
 <template>
-  <group-section :groups="sectionGroups" section-title="Tags"></group-section>
+  <blocks-group :groups="sectionGroups" section-title="Tags"></blocks-group>
 </template>
 
 <script>
-import GroupSection from './../GroupSection.vue';
+import BlocksGroup from './../BlocksGroup.vue';
 
 export default {
   name: 'Tag',
   components: {
-    GroupSection,
+    BlocksGroup,
   },
   data: () => {
     return {

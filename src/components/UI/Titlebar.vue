@@ -1,14 +1,14 @@
 <template>
-  <group-section :groups="sectionGroups" section-title="Titlebar"></group-section>
+  <blocks-group :groups="sectionGroups" section-title="Titlebar"></blocks-group>
 </template>
 
 <script>
-import GroupSection from './../GroupSection.vue';
+import BlocksGroup from './../BlocksGroup.vue';
 
 export default {
   name: 'Titlebar',
   components: {
-    GroupSection,
+    BlocksGroup,
   },
   data: () => {
     return {
@@ -25,7 +25,7 @@ export default {
   <h2 class="is-giga">Titel</h2>
   <ul class="nav">
     <li class="nav__item">
-      <a href="" class="btn">open</a>
+      <a class="btn">open</a>
     </li>
   </ul>
 </div>`,

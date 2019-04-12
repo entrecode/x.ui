@@ -1064,12 +1064,6 @@ $xui-list-item-radius: 4 !default;
 $xui-list-item-background: none !default;
 $xui-list-item-color: inherit !default;
 $xui-list-item-style: () !default;
-$xui-list-item-style: map-merge(
-  (
-    transition: background-color 0.4s,
-  ),
-  $xui-list-item-style
-);
 
 // @param {color} $xui-list-item-hover-background [none]
 // @param {color} $xui-list-item-hover-color [inherit]

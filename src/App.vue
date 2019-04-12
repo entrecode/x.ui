@@ -103,9 +103,13 @@
     <div class="divider divider_big"></div>
     <Colors/>
     <div class="divider divider_big"></div>
-    <h2 class="is-h1 align-center is-uppercase">TYPO</h2>
+    <h2 class="is-h1 align-center is-uppercase">typo</h2>
     <div class="divider divider_big"></div>
     <typo/>
+    <div class="divider divider_big"></div>
+    <h2 class="is-h1 align-center is-uppercase">media</h2>
+    <div class="divider divider_big"></div>
+    <media/>
     <div class="divider divider_big"></div>
     <h2 class="is-h1 align-center is-uppercase">form</h2>
     <div class="divider divider_big"></div>
@@ -131,6 +135,8 @@
     <div class="divider divider_big"></div>
     <avatar/>
     <div class="divider divider_big"></div>
+    <xui-list/>
+    <div class="divider divider_big"></div>
     <h2 class="is-h1 align-center is-uppercase">Layout</h2>
     <div class="divider divider_big"></div>
     <bumper/>
@@ -140,6 +146,8 @@
     <spacer/>
     <div class="divider divider_big"></div>
     <flex-space/>
+    https://unsplash.com/collections/4386752/women-are-amazing
+    http://socialgoodipsum.com/#/
   </div>
 </template>
 
@@ -147,6 +155,8 @@
 import Navbar from './components/Navbar.vue';
 import DocTab from './components/DocTab.vue';
 import Colors from './components/Core/Colors.vue';
+import Typo from './components/Typeface/Typo.vue';
+import Media from './components/Media/Media.vue';
 import Buttons from './components/UI/Buttons.vue';
 import ButtonGroup from './components/UI/ButtonGroup.vue';
 import Nav from './components/UI/Nav.vue';
@@ -156,9 +166,9 @@ import Well from './components/UI/Well.vue';
 import Titlebar from './components/UI/Titlebar.vue';
 import Card from './components/UI/Card.vue';
 import Avatar from './components/UI/Avatar.vue';
+import XuiList from './components/UI/XuiList.vue';
 import Form from './components/Form/Form.vue';
 import Grid from './components/Grid/Grid.vue';
-import Typo from './components/Typeface/Typo.vue';
 import Bumper from './components/Layout/Bumper.vue';
 import Divider from './components/Layout/Divider.vue';
 import Spacer from './components/Layout/Spacer.vue';
@@ -169,6 +179,8 @@ export default {
   components: {
     Navbar,
     Colors,
+    Typo,
+    Media,
     DocTab,
     Buttons,
     ButtonGroup,
@@ -179,9 +191,9 @@ export default {
     Well,
     Card,
     Avatar,
+    XuiList,
     Form,
     Grid,
-    Typo,
     Bumper,
     Divider,
     Spacer,

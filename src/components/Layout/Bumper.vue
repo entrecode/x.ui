@@ -1,14 +1,14 @@
 <template>
-  <group-section :groups="sectionGroups" section-title="Bumper"></group-section>
+  <blocks-group :groups="sectionGroups" section-title="Bumper"></blocks-group>
 </template>
 
 <script>
-import GroupSection from './../GroupSection.vue';
+import BlocksGroup from './../BlocksGroup.vue';
 
 export default {
   name: 'Bumper',
   components: {
-    GroupSection,
+    BlocksGroup,
   },
   data: () => {
     return {

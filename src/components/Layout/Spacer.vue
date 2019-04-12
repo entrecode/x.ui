@@ -1,14 +1,14 @@
 <template>
-  <group-section :groups="sectionGroups" section-title="Spacer"></group-section>
+  <blocks-group :groups="sectionGroups" section-title="Spacer"></blocks-group>
 </template>
 
 <script>
-import GroupSection from './../GroupSection.vue';
+import BlocksGroup from './../BlocksGroup.vue';
 
 export default {
   name: 'Spacer',
   components: {
-    GroupSection,
+    BlocksGroup,
   },
   data: () => {
     return {

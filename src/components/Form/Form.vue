@@ -1,20 +1,21 @@
 <template>
-  <group-section :groups="sectionGroups" section-title="Form"></group-section>
+  <blocks-group :groups="sectionGroups" section-title="Form"></blocks-group>
 </template>
 
 <script>
-import GroupSection from './../GroupSection.vue';
+import BlocksGroup from './../BlocksGroup.vue';
 
 export default {
   name: 'Form',
   components: {
-    GroupSection,
+    BlocksGroup,
   },
   data: () => {
     return {
       sectionGroups: [
         {
           title: 'input',
+          type: 'atoms',
           summary: `the <span class="code">.input</span> class can be applied to the folowing input types`,
           id: 'input',
           navTitle: 'input',
@@ -83,9 +84,10 @@ $input-big-style: ();`,
           ],
         },
         {
-          title: 'select',
-          id: 'select',
-          navTitle: 'select',
+          title: 'xui-select',
+          id: 'xui-select',
+          type: 'atoms',
+          navTitle: 'xui-select',
           groupItems: [
             {
               title: '',
@@ -126,6 +128,7 @@ $input-big-style: ();`,
         {
           id: 'checkbox',
           navTitle: 'checkbox',
+          type: 'atoms',
           groupItems: [
             {
               title: 'checkbox',
@@ -166,6 +169,7 @@ $xui-checkbox-check-checked-color: $link;`,
         {
           id: 'radio',
           navTitle: 'radio',
+          type: 'atoms',
           groupItems: [
             {
               title: 'radio',
@@ -203,8 +207,9 @@ $xui-radio-dot-checked-color: $link;`,
           ],
         },
         {
-          id: 'toggle',
-          navTitle: 'toggle',
+          id: 'xui-toggle',
+          navTitle: 'xui-toggle',
+          type: 'atoms',
           groupItems: [
             {
               title: 'toggle',
@@ -257,6 +262,7 @@ $xui-toggle-line-height: $xui-toggle-label-size * $base-line-height;`,
         },
         {
           id: 'range-slider',
+          type: 'atoms',
           navTitle: 'range-slider',
           groupItems: [
             {
@@ -278,6 +284,7 @@ $range-slider-thumb-hover-style: ();`,
         },
         {
           id: 'file-upload',
+          type: 'atoms',
           navTitle: 'file-upload',
           groupItems: [
             {
@@ -299,6 +306,7 @@ $file-upload-hover-style: ();`,
         
         {
           title: 'input-group',
+          type: 'atoms',
           id: 'input-group',
           navTitle: 'input-group',
           groupItems: [
@@ -432,6 +440,7 @@ $input-group-addon-style: ();`,
         {
           title: 'field-group',
           id: 'field-group',
+          type: 'molecules',
           navTitle: 'field-group',
           groupItems: [
             {

@@ -1,14 +1,14 @@
 <template>
-  <group-section :groups="sectionGroups" section-title="Nav"></group-section>
+  <blocks-group :groups="sectionGroups" section-title="Nav"></blocks-group>
 </template>
 
 <script>
-import GroupSection from './../GroupSection.vue';
+import BlocksGroup from './../BlocksGroup.vue';
 
 export default {
   name: 'Nav',
   components: {
-    GroupSection,
+    BlocksGroup,
   },
   data: () => {
     return {
@@ -28,7 +28,7 @@ export default {
   </li>
   <li class="nav__divider"></li>
   <li class="nav__item">
-    <a href="" class="btn">Navlink</a>
+    <a class="btn">Navlink</a>
   </li>
 </ul>`,
               markup: ``,

@@ -3,11 +3,23 @@
     <h2 class="align-center">colors</h2>
     <div data-grid>
       <div data-col="3">
-        <div class="doc-color-sample doc-color-sample_link">
-          <input type="text" v-model="link" class="input input_clear is-headings-font">
-          <input type="text" v-model="linkContrast" class="input input_clear is-headings-font">
-          <input type="text" v-model="linkSafe" class="input input_clear is-headings-font">
-          <input type="text" v-model="linkHover" class="input input_clear is-headings-font">
+        <div class="doc-color-sample">
+          <div v-text="colors.link" class="is-giga has-padding-2" :style="`color: ${colors.link};`"></div>
+          <div
+            v-text="colors.linkContrast"
+            class="is-giga has-radius has-padding-2"
+            :style="`color: ${colors.linkContrast}; background-color: ${colors.link};`"
+          ></div>
+          <div
+            v-text="colors.linkSafe"
+            class="is-giga has-padding-2"
+            :style="`color: ${colors.linkSafe};`"
+          ></div>
+          <div
+            v-text="colors.linkHover"
+            class="is-giga has-padding-2"
+            :style="`color: ${colors.linkHover};`"
+          ></div>
         </div>
       </div>
       <div data-col="3"></div>
@@ -21,10 +33,17 @@ export default {
   name: 'Grid',
   data: () => {
     return {
-      link: '#2fce6f',
-      linkContrast: '#2fce6f',
-      linkSafe: '#2fce6f',
-      linkHover: '#2fce6f',
+      colors: {
+        background: '#fff',
+        backgroundLight: '#fff',
+        backgroundLighter: '#fff',
+        backgroundLightest: '#fff',
+        backgroundInvert: '#fff',
+        link: '#2fce6f',
+        linkContrast: '#fff',
+        linkSafe: '#2fce6f',
+        linkHover: '#1eb159',
+      },
     };
   },
 };

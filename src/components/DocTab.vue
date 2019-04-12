@@ -1,41 +1,24 @@
 <template>
   <div class="has-margin-bottom-7">
-    <div class="titlebar">
-      <slot name="title"></slot>
-
-      <ul class="nav">
-        <li class="nav__item">
-          <div
-            class="btn btn_small"
-            :class="showTab === 1 ? 'btn_minor' : 'btn_clear'"
-            @click="showTab = 1"
-          >
-            <ixo name="eye-open"></ixo>
+    <div data-grid>
+      <div :data-col="previewCol ? previewCol : hasMarkup ? '6' : '12'">
+        <slot name="title"></slot>
+        <slot name="preview"></slot>
+      </div>
+      <div :data-col="markupCol ? markupCol : '6'">
+        <div class="is-relative">
+          <div class="btn btn_round btn_small toggle-btn" @click="showConfig = !showConfig" v-if="hasConfig">
+            <span v-if="!showConfig">config</span>
+            <span v-if="showConfig">markup</span>
           </div>
-        </li>
-        <li class="nav__item" v-if="hasConfig">
-          <div
-            class="btn btn_small"
-            :class="showTab === 2 ? 'btn_minor' : 'btn_clear'"
-            @click="showTab = 2"
-          >
-            <ixo name="json"></ixo>
+          <div v-show="!showConfig">
+            <slot name="markup"></slot>
           </div>
-        </li>
-      </ul>
-    </div>
-    <div v-show="showTab === 1">
-      <div data-grid>
-        <div :data-col="previewCol ? previewCol : hasMarkup ? '6' : '12'">
-          <slot name="preview"></slot>
-        </div>
-        <div :data-col="markupCol ? markupCol : '6'" v-if="hasMarkup">
-          <slot name="markup"></slot>
+          <div v-show="showConfig">
+            <slot name="config"></slot>
+          </div>
         </div>
       </div>
-    </div>
-    <div v-show="showTab === 2">
-      <slot name="config"></slot>
     </div>
   </div>
 </template>
@@ -50,7 +33,7 @@ export default {
   },
   data: () => {
     return {
-      showTab: 1,
+      showConfig: false,
     };
   },
   computed: {
@@ -65,4 +48,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.toggle-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 0;
+  background: rgba(#000, .4);
+}
+
+.hljs {
+  padding-top: 32px;
+}
 </style>

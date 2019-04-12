@@ -13,12 +13,17 @@ $_c: '-';
 @each $_key in $_keys {
   $_i: index($_keys, $_key);
   $_value: nth($_values, $_i);
+  $_modifier: #{$_c}#{$_key};
 
-  .is-ink#{$_c}#{$_key} {
+  @if $_key == '' {
+    $_modifier: #{$_key};
+  }
+
+  .is-ink#{$_modifier} {
     color: $_value;
   }
 
-  .hover\:is-ink#{$_c}#{$_key} {
+  .hover\:is-ink#{$_modifier} {
     &:hover {
       color: $_value;
     }
