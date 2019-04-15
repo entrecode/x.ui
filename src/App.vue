@@ -137,6 +137,8 @@
     <div class="divider divider_big"></div>
     <card/>
     <div class="divider divider_big"></div>
+    <Table/>
+    <div class="divider divider_big"></div>
     <avatar/>
     <div class="divider divider_big"></div>
     <xui-list/>
@@ -170,6 +172,7 @@ import Modal from './components/UI/Modal.vue';
 import Well from './components/UI/Well.vue';
 import Titlebar from './components/UI/Titlebar.vue';
 import Card from './components/UI/Card.vue';
+import Table from './components/UI/Table.vue';
 import Avatar from './components/UI/Avatar.vue';
 import XuiList from './components/UI/XuiList.vue';
 import Form from './components/Form/Form.vue';
@@ -197,6 +200,7 @@ export default {
     Titlebar,
     Well,
     Card,
+    Table,
     Avatar,
     XuiList,
     Form,

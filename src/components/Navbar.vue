@@ -5,7 +5,7 @@
       <div class="x-space-3"></div>
       <div class="flex-space"></div>
       <div class="is-relative" style="flex-grow: 1; max-width: 480px;">
-        <div class="input-group">
+        <div class="input-group" style="mix-blend-mode: multiply;">
           <div class="input-group__addon">
             <ixo name="search"></ixo>
           </div>
@@ -143,7 +143,8 @@ export default {
 
 <style scoped lang="scss">
 .doc-navbar {
-  background-color: rgba(#fff, 0.9);
+  background-color: rgba(#fff, 0.6);
+  backdrop-filter: blur(4px);
 }
 
 .input-group {

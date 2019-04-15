@@ -1,5 +1,5 @@
 <template>
-  <blocks-group :groups="sectionGroups" section-title="Tags"></blocks-group>
+  <blocks-group :groups="sectionGroups" section-title="tags"></blocks-group>
 </template>
 
 <script>

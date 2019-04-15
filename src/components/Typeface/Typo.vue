@@ -1,5 +1,5 @@
 <template>
-  <blocks-group :groups="sectionGroups" section-title="Typo"></blocks-group>
+  <blocks-group :groups="sectionGroups" section-title="typo"></blocks-group>
 </template>
 
 <script>
