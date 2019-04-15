@@ -62,6 +62,7 @@
 - added `$alert-styles` for alert styles
 - added `$tag-styles` for tag styles
 - removed `.form-boolean`
+- removed `.alert_outlined`
 
 ### added
 

@@ -109,14 +109,16 @@ export default {
           navTitle: 'is-outset',
           groupItems: [
             {
-              preview: `<div class="is-outset is-outset_left" data-col="8"><div class="img-crop-4-3"><div class="tag img-crop-tag">is-outset_left</div><img src="sample-image.jpg"></div></div> 
+              preview: `<div class="is-outset is-outset_full"><div class="img-crop-silver"><div class="tag img-crop-tag">is-outset_full</div><img src="sample-image.jpg"></div></div> 
 <p class="is-lead is-hyphen-block">Move the needle, progress thought partnership innovate white paper but thought provoking do-gooder. Technology humanitarian catalyze; invest green space. Impact investing segmentation but paradigm mobilize.</p>
+<div class="is-outset is-outset_left" data-col="8"><div class="img-crop-4-3"><div class="tag img-crop-tag">is-outset_left</div><img src="sample-image.jpg"></div></div> 
+<p class="is-hyphen-block">Move the needle, progress thought partnership innovate white paper but thought provoking do-gooder. Technology humanitarian catalyze; invest green space. Impact investing segmentation but paradigm mobilize.</p>
 <p class="is-hyphen-block">Systems thinking, unprecedented challenge innovate; parse inspirational initiative paradigm. Revolutionary, rubric, citizen-centered optimism collaborative cities compelling effective altruism social enterprise. Youth or because change-makers, society. Leverage collaborative consumption capacity building, issue outcomes resist compelling.</p>
 <div class="is-outset is-outset_right" data-col="5"><div class="img-crop-16-9"><div class="tag img-crop-tag">is-outset_right</div><img src="sample-image.jpg"></div></div> 
-<p class="is-lead is-hyphen-block">Move the needle, progress thought partnership innovate white paper but thought provoking do-gooder. Technology humanitarian catalyze; invest green space. Impact investing segmentation but paradigm mobilize.</p>
+<h2>Move the needle, </h2>
+<p class="is-hyphen-block">progress thought partnership innovate white paper but thought provoking do-gooder. Technology humanitarian catalyze; invest green space. Impact investing segmentation but paradigm mobilize.</p>
 <p class="is-hyphen-block">Systems thinking, unprecedented challenge innovate; parse inspirational initiative paradigm. Revolutionary, rubric, citizen-centered optimism collaborative cities compelling effective altruism social enterprise. Youth or because change-makers, society. Leverage collaborative consumption capacity building, issue outcomes resist compelling.</p>
-<div class="is-outset is-outset_full"><div class="img-crop-silver"><div class="tag img-crop-tag">is-outset_full</div><img src="sample-image.jpg"></div></div> 
-<p class="is-hyphen-block">Move the needle, progress thought partnership innovate white paper but thought provoking do-gooder. Technology humanitarian catalyze; invest green space. Impact investing segmentation but paradigm mobilize.</p>`,
+<p class="is-hyphen-block">Systems thinking, unprecedented challenge innovate; parse inspirational initiative paradigm. Revolutionary, rubric, citizen-centered optimism collaborative cities compelling effective altruism social enterprise. Youth or because change-makers, society. Leverage collaborative consumption capacity building, issue outcomes resist compelling.</p>`,
               markup: `<div class="is-outset is-outset_left" data-col="8">
   <div class="img-crop-4-3">
     <div class="tag img-crop-tag">is-outset_left</div>

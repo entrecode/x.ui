@@ -1,7 +1,7 @@
 <template>
   <section data-container>
-    <div data-grid="is-center">
-      <div data-col="8">
+    <div data-grid>
+      <div data-col="10">
         <blocks :group="filterGroup(undefined)"></blocks>
         <blocks :group="filterGroup('atoms')"></blocks>
         <blocks :group="filterGroup('molecules')"></blocks>

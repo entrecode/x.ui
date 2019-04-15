@@ -115,9 +115,13 @@
     <div class="divider divider_big"></div>
     <Form/>
     <div class="divider divider_big"></div>
+    <alert/>
+    <div class="divider divider_big"></div>
     <h2 class="is-h1 align-center is-uppercase">UI</h2>
     <div class="divider divider_big"></div>
     <buttons/>
+    <div class="divider divider_big"></div>
+    <hamburger-btn/>
     <div class="divider divider_big"></div>
     <button-group/>
     <div class="divider divider_big"></div>
@@ -158,6 +162,7 @@ import Colors from './components/Core/Colors.vue';
 import Typo from './components/Typeface/Typo.vue';
 import Media from './components/Media/Media.vue';
 import Buttons from './components/UI/Buttons.vue';
+import HamburgerBtn from './components/UI/HamburgerBtn.vue';
 import ButtonGroup from './components/UI/ButtonGroup.vue';
 import Nav from './components/UI/Nav.vue';
 import Tag from './components/UI/Tag.vue';
@@ -168,6 +173,7 @@ import Card from './components/UI/Card.vue';
 import Avatar from './components/UI/Avatar.vue';
 import XuiList from './components/UI/XuiList.vue';
 import Form from './components/Form/Form.vue';
+import Alert from './components/UI/Alert.vue';
 import Grid from './components/Grid/Grid.vue';
 import Bumper from './components/Layout/Bumper.vue';
 import Divider from './components/Layout/Divider.vue';
@@ -183,6 +189,7 @@ export default {
     Media,
     DocTab,
     Buttons,
+    HamburgerBtn,
     ButtonGroup,
     Nav,
     Tag,
@@ -193,6 +200,7 @@ export default {
     Avatar,
     XuiList,
     Form,
+    Alert,
     Grid,
     Bumper,
     Divider,

@@ -1,7 +1,7 @@
 <template>
   <section data-container>
     <div data-grid="is-center">
-      <div data-col="8">
+      <div data-col="10">
         <div class="has-margin-bottom-8" id="scroll-to-modal">
           <DocTab>
             <div slot="title"></div>
