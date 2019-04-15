@@ -144,7 +144,7 @@ export default {
 <style scoped lang="scss">
 .doc-navbar {
   background-color: rgba(#fff, 0.6);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(16px);
 }
 
 .input-group {

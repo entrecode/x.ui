@@ -184,7 +184,7 @@ import Grid from './components/Grid/Grid.vue';
 import Bumper from './components/Layout/Bumper.vue';
 import Divider from './components/Layout/Divider.vue';
 import Spacer from './components/Layout/Spacer.vue';
-import FlexSpace from './components/Layout/Flexspace.vue';
+import FlexSpace from './components/Layout/FlexSpace.vue';
 
 export default {
   name: 'app',

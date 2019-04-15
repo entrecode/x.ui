@@ -1,53 +1,119 @@
 <template>
-  <blocks-group :groups="sectionGroups" section-title="media"></blocks-group>
+  <section data-container class="has-margin-bottom-8">
+    <div data-grid>
+      <div data-col="10">
+        <div id="#scroll-to-img-crop">
+          <doc-tab>
+            <div slot="preview">
+              <div :class="cropClass" class="is-relative" style="transition: all .2s;">
+                <div class="dropdown dropdown_right is-fab-ne is-absolute is-layer-1" tabindex="0">
+                  <div class="tag tag_link">
+                    <span v-if="cropClass === 'img-crop-1-1'">1:1</span>
+                    <span v-if="cropClass === 'img-crop-3-4'">3:4</span>
+                    <span v-if="cropClass === 'img-crop-4-3'">4:3</span>
+                    <span v-if="cropClass === 'img-crop-16-9'">16:9</span>
+                    <span v-if="cropClass === 'img-crop-golden'">golden</span>
+                    <span v-if="cropClass === 'img-crop-silver'">silver</span>
+                    <span v-if="cropClass === 'img-crop-ultrawide'">ultrawide</span>
+                  </div>
+                  <div class="dropdown-options">
+                    <ul class="nav nav_stacked">
+                      <li class="nav__item">
+                        <a @click="cropClass = 'img-crop-1-1'" tabindex="0">1:1</a>
+                      </li>
+                      <li class="nav__item">
+                        <a @click="cropClass = 'img-crop-3-4'" tabindex="0">3:4</a>
+                      </li>
+                      <li class="nav__item">
+                        <a @click="cropClass = 'img-crop-4-3'" tabindex="0">4:3</a>
+                      </li>
+                      <li class="nav__item">
+                        <a @click="cropClass = 'img-crop-16-9'" tabindex="0">16:9</a>
+                      </li>
+                      <li class="nav__item">
+                        <a @click="cropClass = 'img-crop-golden'" tabindex="0">golden</a>
+                      </li>
+                      <li class="nav__item">
+                        <a @click="cropClass = 'img-crop-silver'" tabindex="0">silver</a>
+                      </li>
+                      <li class="nav__item">
+                        <a @click="cropClass = 'img-crop-ultrawide'" tabindex="0">ultrawide</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <img src="sample-image.jpg">
+              </div>
+            </div>
+
+            <div slot="markup">
+              <pre v-highlightjs="cropMarkup"><code class="html"></code></pre>
+            </div>
+            <div slot="config">
+              <pre v-highlightjs="cropConfig"><code class="scss"></code></pre>
+            </div>
+          </doc-tab>
+        </div>
+        <div id="img-responsive" data-grid>
+          <div data-col="6">
+            <h3>img-responsive</h3>
+            <pre v-highlightjs="responsiveMarkup"><code class="html"></code></pre>
+            <div class="y-space-2"></div>
+            <img src="sample-image-small.jpg" class="img-responsive">
+          </div>
+          <div data-col="6">
+            <h3>img-full</h3>
+            <pre v-highlightjs="fullMarkup"><code class="html"></code></pre>
+            <div class="y-space-2"></div>
+            <img src="sample-image.jpg" class="img-full">
+          </div>
+        </div>
+      </div>
+      <div data-col="2">
+        <ul class="nav nav_stacked is-sticky" style="top: 120px;">
+          <li class="nav__item">
+            <h2>media</h2>
+          </li>
+          <li class="is-uppercase has-padding-2 is-headings-font is-ink-light has-margin-top-3">
+            <small>atoms</small>
+          </li>
+          <li class="nav__item">
+            <a href="#scroll-to-img-crop" class="is-kilo is-ink hover:is-ink-link">img-crop</a>
+          </li>
+          <li class="is-uppercase has-padding-2 is-headings-font is-ink-light has-margin-top-3">
+            <small>Modifier</small>
+          </li>
+          <li class="nav__item">
+            <a
+              href="#scroll-to-img-responsive"
+              class="is-kilo is-ink hover:is-ink-link"
+            >img-responsive</a>
+          </li>
+          <li class="nav__item">
+            <a href="#scroll-to-img-full" class="is-kilo is-ink hover:is-ink-link">img-full</a>
+          </li>
+          <li class="nav__item">
+            <a href="#scroll-to-is-outset" class="is-kilo is-ink hover:is-ink-link">is-outset</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- <blocks-group :groups="sectionGroups" section-title="media"></blocks-group> -->
+  </section>
 </template>
 
 <script>
-import BlocksGroup from './../BlocksGroup.vue';
+import DocTab from './../DocTab.vue';
 
 export default {
   name: 'Media',
   components: {
-    BlocksGroup,
+    DocTab,
   },
   data: () => {
     return {
-      sectionGroups: [
-        {
-          type: 'atoms',
-          id: 'img-crop',
-          navTitle: 'img-crop',
-          groupItems: [
-            {
-              preview: `<div class="img-crop-1-1 has-margin-bottom-3">
-  <div class="tag img-crop-tag">square</div>
-  <img src="sample-image.jpg" />
-</div>
-<div class="img-crop-3-4 has-margin-bottom-3">
-  <div class="tag img-crop-tag">3:4</div>
-  <img src="sample-image.jpg" />
-</div>
-<div class="img-crop-4-3 has-margin-bottom-3">
-  <div class="tag img-crop-tag">4:3</div>
-  <img src="sample-image.jpg" />
-</div>
-<div class="img-crop-16-9 has-margin-bottom-3">
-  <div class="tag img-crop-tag">16:9</div>
-  <img src="sample-image.jpg" />
-</div>
-<div class="img-crop-golden has-margin-bottom-3">
-  <div class="tag img-crop-tag">golden</div>
-  <img src="sample-image.jpg" />
-</div>
-<div class="img-crop-silver has-margin-bottom-3">
-  <div class="tag img-crop-tag">silver</div>
-  <img src="sample-image.jpg" />
-</div>
-<div class="img-crop-ultrawide has-margin-bottom-3">
-  <div class="tag img-crop-tag">ultrawide</div>
-  <img src="sample-image.jpg" />
-</div>`,
-              markup: `<div class="img-crop-1-1">
+      cropClass: 'img-crop-1-1',
+      cropMarkup: `<div class="img-crop-1-1">
   <img src="sample-image.jpg" />
 </div>
 <div class="img-crop-3-4">
@@ -68,7 +134,7 @@ export default {
 <div class="img-crop-ultrawide">
   <img src="sample-image.jpg" />
 </div>`,
-              config: `$img-crop-ratio: (
+      cropConfig: `$img-crop-ratio: (
   '1-1': (1,1,),
   '3-4': (3,4,),
   '4-3': (4,3,),
@@ -77,31 +143,9 @@ export default {
   'silver': (2.414,1,),
   'ultrawide': (3.6,1,
 );`,
-            },
-          ],
-        },
-        {
-          type: 'modifier',
-          id: 'img-responsive',
-          navTitle: 'img-responsive',
-          groupItems: [
-            {
-              preview: '<img src="sample-image-small.jpg" class="img-responsive" />',
-              config: `...`,
-            },
-          ],
-        },
-        {
-          type: 'modifier',
-          id: 'img-full',
-          navTitle: 'img-full',
-          groupItems: [
-            {
-              preview: '<img src="sample-image.jpg" class="img-full" />',
-              config: `...`,
-            },
-          ],
-        },
+      responsiveMarkup:'<img src="..." class="img-responsive" />',
+      fullMarkup:'<img src="..." class="img-full" />',
+      sectionGroups: [
         {
           title: 'is-outset',
           type: 'modifier',

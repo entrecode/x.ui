@@ -50,5 +50,7 @@ export default {
 <style scoped lang="scss">
 .spacing-demo {
   transition: all 0.2;
+  min-height: 1px;
+  min-width: 1px;
 }
 </style>
