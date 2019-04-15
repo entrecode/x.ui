@@ -61,6 +61,7 @@
 - renamed `$hover-shading` to `$_set-hover-shading`
 - added `$alert-styles` for alert styles
 - added `$tag-styles` for tag styles
+- removed `.form-boolean`
 
 ### added
 

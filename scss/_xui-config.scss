@@ -1775,27 +1775,6 @@ $field-group-info-font-size: $base-font-size * 0.75 !default;
 $field-group-info-style: () !default;
 
 //
-// FORM-BOOLEAN
-// ------------------------------------------------------
-// @param {array} $form-boolean-spacing [$field-group-spacing]
-// @param {array} $form-boolean-padding [0]
-// @param {px} $form-boolean-gutter [8]
-// @param {color} $form-boolean-background [none]
-// @param {array} $form-boolean-style
-$form-boolean-spacing: $field-group-spacing !default;
-$form-boolean-padding: 0 !default;
-$form-boolean-gutter: 8 !default;
-$form-boolean-background: none !default;
-$form-boolean-style: () !default;
-
-// @param {array} $form-boolean-label-spacing [$field-group-label-spacing]
-// @param {px} $form-boolean-label-font-size [$base-font-size]
-// @param {array} $form-boolean-label-style
-$form-boolean-label-spacing: $field-group-label-spacing !default;
-$form-boolean-label-font-size: $base-font-size !default;
-$form-boolean-label-style: () !default;
-
-//
 // INPUT
 // ------------------------------------------------------
 // @param {px} $input-font-size [16]

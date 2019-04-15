@@ -449,6 +449,10 @@ $input-group-addon-style: ();`,
   <label for="" class="field-group__label">field-group label</label>
   <input type="text" placeholder="input..." class="input">
   <p class="field-group__info">field-group info</p>
+</div>
+<div class="field-group">
+  <input type="checkbox" id="3gjh3">
+  <label for="3gjh3">field-group label</label>
 </div>`,
               markup: ``,
               config: `$field-group-spacing: 0 0 16;
