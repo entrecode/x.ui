@@ -8,7 +8,7 @@
 
 // @param {color} $alert-outlined-background [none]
 // @param {color} $alert-outlined-border-color [$alert-background]
-// @param {px} $alert-outlined-border-style [2]
+// @param {px} $alert-outlined-border-style [1]
 // @param {string} $alert-outlined-border-style [solid]
 // @param {array} $alert-outlined-style
 .alert_outlined {
@@ -21,19 +21,19 @@
   //
   // Styles
   // ------------------------------------------------------
-  // @requires {array} $alert-styles
+  // @requires {array} $alert-outlined-styles
   // @param {string} $_prefix ['alert_']
   $_prefix: 'alert_';
 
-  @each $_key, $_value in $alert-styles {
-    @if length($_value) == 2 {
+  @each $_key, $_value in $alert-outlined-styles {
+    @if length($_value) == 1 {
       $_color: nth($_value, 1);
 
       &.#{$_prefix}#{$_key} {
         border-color: $_color;
         color: $_color;
 
-        a {
+        a:not([class]) {
           color: $_color;
         }
       }

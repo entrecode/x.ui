@@ -62,7 +62,7 @@ $_prefix: 'alert_';
       background: $_background;
       color: $_color;
 
-      a {
+      a:not([class]) {
         color: $_color;
       }
     }

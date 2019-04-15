@@ -92,24 +92,24 @@ $divider-color: rgba($text, 0.1) !default;
 
 $state-hover: rgba($link, 0.1) !default;
 
-$state-info: #0ff !default;
-$state-info-contrast: setContrast($state-info) !default;
+$state-info: #cae6fe !default;
+$state-info-contrast: setContrast($background, $state-info) !default;
 $state-info-safe: setContrast($background, $state-info) !default;
 $state-info-hover: setHover($state-info) !default;
 
-$state-error: #f00 !default;
-$state-error-contrast: #fff !default;
-$state-error-safe: $state-error !default;
+$state-error: #F9D7DA !default;
+$state-error-contrast: setContrast($background, $state-error) !default;
+$state-error-safe: setContrast($background, $state-error) !default;
 $state-error-hover: setHover($state-error) !default;
 
-$state-success: #008000 !default;
-$state-success-contrast: #fff !default;
-$state-success-safe: $state-success !default;
+$state-success: #D3ECDB !default;
+$state-success-contrast: setContrast($background, $state-success) !default;
+$state-success-safe: setContrast($background, $state-success) !default;
 $state-success-hover: setHover($state-success) !default;
 
-$state-warning: #ffd700 !default;
-$state-warning-contrast: #000 !default;
-$state-warning-safe: $state-warning !default;
+$state-warning: #FFF2CF !default;
+$state-warning-contrast: setContrast($background, $state-warning) !default;
+$state-warning-safe: setContrast($background, $state-warning) !default;
 $state-warning-hover: setHover($state-warning) !default;
 
 //
@@ -1531,17 +1531,6 @@ $alert-big-padding: 24 28 !default;
 $alert-big-spacing: $alert-spacing !default;
 $alert-big-style: () !default;
 
-// @param {color} $alert-outlined-background [none]
-// @param {color} $alert-outlined-border-color [$alert-background]
-// @param {px} $alert-outlined-border-style [2]
-// @param {string} $alert-outlined-border-style [solid]
-// @param {array} $alert-outlined-style
-$alert-outlined-background: none !default;
-$alert-outlined-border-color: $alert-background !default;
-$alert-outlined-border-with: 2 !default;
-$alert-outlined-border-style: solid !default;
-$alert-outlined-style: () !default;
-
 // @param {array} $alert-styles
 $alert-styles: () !default;
 $alert-styles: map-merge(
@@ -1563,7 +1552,7 @@ $alert-styles: map-merge(
       $state-warning-contrast,
     ),
   ),
-  $tag-styles
+  $alert-styles
 );
 
 //
