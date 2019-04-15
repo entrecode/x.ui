@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 ///
@@ -18,7 +18,11 @@
 
   position: relative;
   @include _btn-reset;
+  @include _btn-reset;
+  @include inject-style($btn-style);
   @include inject-style($hamburger-btn-style);
+  @include atom-metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio);
+  border-radius: arrayMagic($btn-radius);
   background-color: $hamburger-btn-background;
   margin: arrayMagic($hamburger-btn-spacing);
 
