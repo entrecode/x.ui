@@ -117,6 +117,8 @@
     <div class="divider divider_big"></div>
     <alert/>
     <div class="divider divider_big"></div>
+    <Loader/>
+    <div class="divider divider_big"></div>
     <h2 class="is-h1 align-center is-uppercase">UI</h2>
     <div class="divider divider_big"></div>
     <buttons/>
@@ -177,6 +179,7 @@ import Avatar from './components/UI/Avatar.vue';
 import XuiList from './components/UI/XuiList.vue';
 import Form from './components/Form/Form.vue';
 import Alert from './components/UI/Alert.vue';
+import Loader from './components/UI/Loader.vue';
 import Grid from './components/Grid/Grid.vue';
 import Bumper from './components/Layout/Bumper.vue';
 import Divider from './components/Layout/Divider.vue';
@@ -205,6 +208,7 @@ export default {
     XuiList,
     Form,
     Alert,
+    Loader,
     Grid,
     Bumper,
     Divider,
