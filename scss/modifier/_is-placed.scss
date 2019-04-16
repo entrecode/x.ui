@@ -7,7 +7,6 @@
 /// @param {map} $breakpoints
 /// @requires {function} bp
 
-
 @mixin _is-placed($p) {
   &-n {
     left: 50%;
