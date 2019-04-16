@@ -8,7 +8,7 @@
 /// padding: arrayMagic(8 16); // returns rem(8) rem(16)
 ///
 /// @param {string | array} $array - array or string of numbers
-/// @param {'xrem' | 'xem' | 'rem' | 'px' | 'em' | '%' | 'pt'} $unit - array or string of numbers
+/// @param {'xrem' | 'xem' | 'rem' | 'px' | 'em' | '%' | 'pt'} $unit
 /// @require {function} rem()
 /// @require {function} em()
 ///

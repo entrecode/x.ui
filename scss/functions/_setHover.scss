@@ -3,10 +3,12 @@
 /// @access public
 /// @group color-functions
 ///
-/// @require {function} varColor
 /// @param {number} $_set-hover-shading [4] - default amount by which colors are darkened or lightened on hover
 /// @param {color} $color
 /// @param {number} $shade - amount by which the color should be shaded
+/// @require {function} varColor
+/// @require {function} getBrightness
+/// @require {function} flattenColor
 ///
 /// @return new shade of color
 

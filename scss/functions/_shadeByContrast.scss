@@ -5,6 +5,8 @@
 ///
 /// @param {color} $color - color to darken or lighten
 /// @param {number} $amount - value by which the color should be  to darkened or lightened
+/// @require {function} luma()
+/// @require {function} varColor()
 ///
 /// @return {color} a shade of a color depending on it's lightness
 

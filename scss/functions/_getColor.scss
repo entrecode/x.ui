@@ -8,7 +8,7 @@
 /// color: getColor(text, invert);
 /// color: getColor(link);
 ///
-/// @param {string} $color - Name of the color
+/// @param {string} $color-string - Name of the color
 /// @requires {variable} $color-map-id [$xui-colors] - can be changed use a different colormap
 ///
 /// @return {color} Value of the color

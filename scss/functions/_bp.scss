@@ -3,10 +3,10 @@
 /// @access public
 /// @group grid-functions
 ///
-/// @param {string} $breakpoint - name of breakpoint in map
+/// @param {string} $breakpoint - short code of the breakpoint
 /// @param {map} $map [$breakpoints] - name of breakpoint map
 ///
-/// @return {number} value of next breakpoint-key or null
+/// @return {string} value of next breakpoint-key or null
 
 @function nextBp($breakpoint, $map: $breakpoints) {
   $_keys: map-keys($map);
@@ -15,8 +15,13 @@
   @return if($_current < length($map), map-get($map, nth($_keys, $_current + 1)), null);
 }
 
-/// @param {string} $breakpoint - name of breakpoint in map
+/// get the breakpoints for responsiveness from a map
+/// @example
+/// bp(sm) // returns (min-width: 480px)
+///
+/// @param {string} $breakpoint - short code of the breakpoint
 /// @param {string} $max null - can be set to max
+/// @require {map} $breakpoints
 ///
 /// @return {px} value of breakpoint-key, if $max == true it returns the value - 1 of the next value
 

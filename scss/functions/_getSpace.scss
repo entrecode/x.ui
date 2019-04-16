@@ -1,9 +1,14 @@
 /// @author Bernhard Ruoff
 /// @since 8.0.0-beta.9
 /// @access public
-/// @group layout
+/// @group layout-functions
 ///
 /// @returns spacing-map value
+///
+/// @param {string} $space - key of map
+/// @requires {map} $spacings
+/// @requires {string} $base-spacing-unit
+/// @requires {function} arrayMagic
 
 @function getSpace($space) {
   @return arrayMagic(map-get($spacings, $space), $base-spacing-unit);

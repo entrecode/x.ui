@@ -8,9 +8,9 @@
 /// font-size: em(16); // returns 1em
 /// line-height: em(24, 12); // returns 2em
 ///
-/// @param {number} $value - value in pixels
-/// @param {number} $base [$root-size]- 16 !default
-/// @require {variable} $root-size
+/// @param {number} $value
+/// @param {number} $base [$base-font-size]
+/// @require {variable} $base-font-size
 ///
 /// @return {number} Value in em
 

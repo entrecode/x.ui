@@ -7,9 +7,9 @@
 /// @example
 /// width: rem(32); // returns 2rem
 ///
-/// @param {number} $value - value in pixels
-/// @param {number} $base [$root-size]- 16 !default
-/// @require {variable} $root-size
+/// @param {number} $value
+/// @param {number} $base [$root-size]
+/// @require {number} $root-size
 ///
 /// @return {rem} value in rem
 
