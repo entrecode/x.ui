@@ -962,6 +962,36 @@ $nav-divider-color: $divider-color !default;
 $nav-divider-size: 1 !default;
 $nav-divider-spacing: $nav-item-padding !default;
 
+// @param {px} $nav-link-radius [4]
+// @param {array} $nav-link-spacing [0]
+// @param {array} $nav-link-padding [4]
+// @param {array} $nav-link-font-size [$base-font-size]
+// @param {color} $nav-link-background
+// @param {color} $nav-link-color
+// @param {array} $nav-link-style
+$nav-link-radius: 4 !default;
+$nav-link-spacing: 0 !default;
+$nav-link-padding: 4 !default;
+$nav-link-font-size: $base-font-size !default;
+$nav-link-background: none !default;
+$nav-link-color: $text !default;
+$nav-link-style: () !default;
+
+// @param {color} $nav-link-hover-background
+// @param {color} $nav-link-hover-color
+// @param {array} $nav-link-hover-style
+$nav-link-hover-background: $state-hover !default;
+$nav-link-hover-color: inherit !default;
+$nav-link-hover-style: () !default;
+
+// @param {color} $nav-link-selected-background
+// @param {color} $nav-link-selected-color
+// @param {array} $nav-link-selected-style
+$nav-link-selected-background: $nav-link-hover-background !default;
+$nav-link-selected-color: $nav-link-hover-color !default;
+$nav-link-selected-style: $nav-link-hover-style !default;
+
+
 //
 // TITLE
 // ------------------------------------------------------
@@ -2172,7 +2202,7 @@ $is-position-states: map-merge(
 $is-placed-states: () !default;
 $is-placed-states: map-merge(
   (
-    '': 0,
+    'positioned': 0,
     'fab': 16,
   ),
   $is-placed-states
