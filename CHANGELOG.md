@@ -41,6 +41,7 @@
 - removed all `is-` prefixes from `data-flex` values
 - optimized `.nav` - dropped `.nav__items`
 - changed `macro-metrics` to `atom-metric`
+- improved `.xui-accordion`
 
 ### changes
 

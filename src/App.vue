@@ -145,6 +145,8 @@
     <div class="divider divider_big"></div>
     <xui-list/>
     <div class="divider divider_big"></div>
+    <xui-accordion/>
+    <div class="divider divider_big"></div>
     <h2 class="is-h1 align-center is-uppercase">Layout</h2>
     <div class="divider divider_big"></div>
     <bumper/>
@@ -182,6 +184,7 @@ import Card from './components/UI/Card.vue';
 import Table from './components/UI/Table.vue';
 import Avatar from './components/UI/Avatar.vue';
 import XuiList from './components/UI/XuiList.vue';
+import XuiAccordion from './components/UI/XuiAccordion.vue';
 import Form from './components/Form/Form.vue';
 import Alert from './components/UI/Alert.vue';
 import Loader from './components/UI/Loader.vue';
@@ -213,6 +216,7 @@ export default {
     Table,
     Avatar,
     XuiList,
+    XuiAccordion,
     Form,
     Alert,
     Loader,
