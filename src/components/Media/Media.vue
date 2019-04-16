@@ -16,31 +16,29 @@
                     <span v-if="cropClass === 'img-crop-silver'">silver</span>
                     <span v-if="cropClass === 'img-crop-ultrawide'">ultrawide</span>
                   </div>
-                  <div class="dropdown-options">
-                    <ul class="nav nav_stacked">
-                      <li class="nav__item">
-                        <a @click="cropClass = 'img-crop-1-1'" tabindex="0">1:1</a>
-                      </li>
-                      <li class="nav__item">
-                        <a @click="cropClass = 'img-crop-3-4'" tabindex="0">3:4</a>
-                      </li>
-                      <li class="nav__item">
-                        <a @click="cropClass = 'img-crop-4-3'" tabindex="0">4:3</a>
-                      </li>
-                      <li class="nav__item">
-                        <a @click="cropClass = 'img-crop-16-9'" tabindex="0">16:9</a>
-                      </li>
-                      <li class="nav__item">
-                        <a @click="cropClass = 'img-crop-golden'" tabindex="0">golden</a>
-                      </li>
-                      <li class="nav__item">
-                        <a @click="cropClass = 'img-crop-silver'" tabindex="0">silver</a>
-                      </li>
-                      <li class="nav__item">
-                        <a @click="cropClass = 'img-crop-ultrawide'" tabindex="0">ultrawide</a>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul class="dropdown-options">
+                    <li class="xui-select-option">
+                      <a @click="cropClass = 'img-crop-1-1'" tabindex="0">1:1</a>
+                    </li>
+                    <li class="xui-select-option">
+                      <a @click="cropClass = 'img-crop-3-4'" tabindex="0">3:4</a>
+                    </li>
+                    <li class="xui-select-option">
+                      <a @click="cropClass = 'img-crop-4-3'" tabindex="0">4:3</a>
+                    </li>
+                    <li class="xui-select-option">
+                      <a @click="cropClass = 'img-crop-16-9'" tabindex="0">16:9</a>
+                    </li>
+                    <li class="xui-select-option">
+                      <a @click="cropClass = 'img-crop-golden'" tabindex="0">golden</a>
+                    </li>
+                    <li class="xui-select-option">
+                      <a @click="cropClass = 'img-crop-silver'" tabindex="0">silver</a>
+                    </li>
+                    <li class="xui-select-option">
+                      <a @click="cropClass = 'img-crop-ultrawide'" tabindex="0">ultrawide</a>
+                    </li>
+                  </ul>
                 </div>
                 <img src="sample-image.jpg">
               </div>
@@ -59,14 +57,89 @@
             <h3>img-responsive</h3>
             <pre v-highlightjs="responsiveMarkup"><code class="html"></code></pre>
             <div class="y-space-2"></div>
-            <img src="sample-image-small.jpg" class="img-responsive">
+            <div class="spacing-demo">
+              <img src="sample-image-small.jpg" class="img-responsive">
+            </div>
           </div>
           <div data-col="6">
             <h3>img-full</h3>
             <pre v-highlightjs="fullMarkup"><code class="html"></code></pre>
             <div class="y-space-2"></div>
-            <img src="sample-image.jpg" class="img-full">
+            <div class="is-relative">
+              <img src="sample-image.jpg" class="img-full" style="opacity: .6;">
+              <img
+                src="sample-image-small.jpg"
+                class="is-absolute is-positioned-nw"
+                style="z-index:-1;"
+              >
+            </div>
           </div>
+        </div>
+        <div class="spacer"></div>
+        <div id="scroll-to-is-outset" class="has-padding-8">
+          <div class="is-outset" :class="isOutsetClass">
+            <div
+              @click="openOptions =! openOptions"
+              :class="isOutsetClass === 'is-outset_full' ? 'img-crop-16-9' : 'img-crop-1-1'"
+              style="cursor: pointer;"
+            >
+              <div class="tag img-crop-tag" v-text="isOutsetClass"></div>
+              <img src="sample-image.jpg">
+              <ul
+                class="nav is-theme-invert is-absolute is-positioned-n is-elevated-16 is-round"
+                v-if="openOptions"
+                style="z-index: 10; margin-top: -32px;"
+              >
+                <li class="nav__item">
+                  <a
+                    class="btn btn_clear has-padding-0"
+                    @click.prevent="isOutsetClass = 'is-outset_left'"
+                    :class="{'is-active': isOutsetClass === 'is-outset_left'}"
+                  >
+                    <svg class="ixo">
+                      <use xlink:href="#outset-left"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a
+                    class="btn btn_clear has-padding-0"
+                    @click.prevent="isOutsetClass = 'is-outset_full'"
+                    :class="{'is-active': isOutsetClass === 'is-outset_full'}"
+                  >
+                    <svg class="ixo">
+                      <use xlink:href="#outset-full"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a
+                    class="btn btn_clear has-padding-0"
+                    @click.prevent="isOutsetClass = 'is-outset_right'"
+                    :class="{'is-active': isOutsetClass === 'is-outset_right'}"
+                  >
+                    <svg class="ixo">
+                      <use xlink:href="#outset-right"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <h1>is-outset</h1>
+          <p
+            class="is-lead is-hyphen-block"
+          >Shine vibrant dynamic social entrepreneurship impact investing. Capacity building indicators, replicable black lives matter, thought provoking emerging natural resources program areas social entrepreneurship. Shared unit of analysis when; mobilize benefit corporation human-centered external partners. Accessibility thought leadership external partners incubator incubator academic.</p>
+          <p>Social enterprise gender rights, natural resources optimism but gender rights academic transparent save the world. Youth boots on the ground; relief social return on investment social entrepreneur thought partnership resist policymaker. Vibrant her body her rights empower communities scalable empower rubric contextualize families. Expose the truth, social innovation B-corp a natural resources. Technology synergy, initiative initiative, thought leadership parse.</p>
+          <p>Data compassion low-hanging fruit green space state of play. The resistance our work; because global global, empower communities shine granular leverage. Game-changer preliminary thinking, external partners, big data best practices state of play policymaker improve the world when. Inspirational challenges and opportunities, engaging or co-create, efficient, think tank technology;</p>
+          <doc-tab :markupCol="12">
+            <div slot="markup">
+              <pre v-highlightjs="isOutsetMarkup"><code class="html"></code></pre>
+            </div>
+            <div slot="config">
+              <pre v-highlightjs="isOutsetConfig"><code class="scss"></code></pre>
+            </div>
+          </doc-tab>
         </div>
       </div>
       <div data-col="2">
@@ -98,7 +171,6 @@
         </ul>
       </div>
     </div>
-    <!-- <blocks-group :groups="sectionGroups" section-title="media"></blocks-group> -->
   </section>
 </template>
 
@@ -112,6 +184,8 @@ export default {
   },
   data: () => {
     return {
+      openOptions: false,
+      isOutsetClass: 'is-outset_left',
       cropClass: 'img-crop-1-1',
       cropMarkup: `<div class="img-crop-1-1">
   <img src="sample-image.jpg" />
@@ -143,59 +217,21 @@ export default {
   'silver': (2.414,1,),
   'ultrawide': (3.6,1,
 );`,
-      responsiveMarkup:'<img src="..." class="img-responsive" />',
-      fullMarkup:'<img src="..." class="img-full" />',
-      sectionGroups: [
-        {
-          title: 'is-outset',
-          type: 'modifier',
-          id: 'is-outset',
-          navTitle: 'is-outset',
-          groupItems: [
-            {
-              preview: `<div class="is-outset is-outset_full"><div class="img-crop-silver"><div class="tag img-crop-tag">is-outset_full</div><img src="sample-image.jpg"></div></div> 
-<p class="is-lead is-hyphen-block">Move the needle, progress thought partnership innovate white paper but thought provoking do-gooder. Technology humanitarian catalyze; invest green space. Impact investing segmentation but paradigm mobilize.</p>
-<div class="is-outset is-outset_left" data-col="8"><div class="img-crop-4-3"><div class="tag img-crop-tag">is-outset_left</div><img src="sample-image.jpg"></div></div> 
-<p class="is-hyphen-block">Move the needle, progress thought partnership innovate white paper but thought provoking do-gooder. Technology humanitarian catalyze; invest green space. Impact investing segmentation but paradigm mobilize.</p>
-<p class="is-hyphen-block">Systems thinking, unprecedented challenge innovate; parse inspirational initiative paradigm. Revolutionary, rubric, citizen-centered optimism collaborative cities compelling effective altruism social enterprise. Youth or because change-makers, society. Leverage collaborative consumption capacity building, issue outcomes resist compelling.</p>
-<div class="is-outset is-outset_right" data-col="5"><div class="img-crop-16-9"><div class="tag img-crop-tag">is-outset_right</div><img src="sample-image.jpg"></div></div> 
-<h2>Move the needle, </h2>
-<p class="is-hyphen-block">progress thought partnership innovate white paper but thought provoking do-gooder. Technology humanitarian catalyze; invest green space. Impact investing segmentation but paradigm mobilize.</p>
-<p class="is-hyphen-block">Systems thinking, unprecedented challenge innovate; parse inspirational initiative paradigm. Revolutionary, rubric, citizen-centered optimism collaborative cities compelling effective altruism social enterprise. Youth or because change-makers, society. Leverage collaborative consumption capacity building, issue outcomes resist compelling.</p>
-<p class="is-hyphen-block">Systems thinking, unprecedented challenge innovate; parse inspirational initiative paradigm. Revolutionary, rubric, citizen-centered optimism collaborative cities compelling effective altruism social enterprise. Youth or because change-makers, society. Leverage collaborative consumption capacity building, issue outcomes resist compelling.</p>`,
-              markup: `<div class="is-outset is-outset_left" data-col="8">
-  <div class="img-crop-4-3">
-    <div class="tag img-crop-tag">is-outset_left</div>
-    <img src="sample-image.jpg" />
-  </div>
+      responsiveMarkup: '<img src="..." class="img-responsive" />',
+      isOutsetMarkup: `<div class="is-outset is-outset_left" data-col="8">
+  <img />
 </div>
-<p>...</p>
 
 <div class="is-outset is-outset_right" data-col="5">
-  <div class="img-crop-16-9">
-    <div class="tag img-crop-tag">is-outset_right</div>
-    <img src="sample-image.jpg" />
-  </div>
+  <div class="img-crop-16-9">...</div>
 </div>
-<p>...</p>
 
-<div class="is-outset is-outset_full">
-  <div class="img-crop-silver">
-    <div class="tag img-crop-tag">is-outset_full</div>
-    <img src="sample-image.jpg" />
-  </div>
-</div>
-<p>...</p>`,
-              previewCol: 12,
-              markupCol: 12,
-              config: `$is-outset: 48;
+<div class="is-outset is-outset_full">...</div>`,
+      isOutsetConfig: `$is-outset: 48;
 $is-outset-spacing: 16 0;
 $is-outset-gutter: 32;
 $is-outset-bp: 1200;`,
-            },
-          ],
-        },
-      ],
+      fullMarkup: '<img src="..." class="img-full" />',
     };
   },
 };

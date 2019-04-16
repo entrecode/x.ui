@@ -6,6 +6,8 @@
   --link: #2fce6f;
   --linkContrast: #fff;
 
+  --stateHover: #eaf9f0;
+
   // input
   --inputBackground: #f4f5f6;
   --inputColor: #2a3d54;
@@ -17,6 +19,7 @@ $link-contrast: var(--linkContrast);
 $link-safe: $link;
 $link-hover: setHover($link);
 
+$state-hover: var(--stateHover);
 
 $input-background: var(--inputBackground);
 $input-color: var(--inputColor);

@@ -52,7 +52,6 @@ export default {
   position: absolute;
   top: 4px;
   right: 4px;
-  padding: 0;
   background: rgba(#000, .4);
 }
 
