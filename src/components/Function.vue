@@ -348,27 +348,11 @@ color: getColor(link);`,
           toggleCode: false,
           title: 'getSpace',
           type: 'layout-functions',
-          description: 'Mixes two colors, considering opacity',
           return: 'number',
-          example: `color: getColor(text, invert);
-color: getColor(link);`,
-          codeShort: `@function getColor($color-string...) {...}`,
-          code: `@function getColor($color-string...) {
-  $_string-length: length($color-string);
-  $_color-map: $color-map-id;
-
-  @if $_string-length == 1 {
-    $_color-value: nth($color-string, 1);
-    @return map-get(map-get($_color-map, base), $_color-value);
-  }
-
-  @if $_string-length == 2 {
-    $_color-base: nth($color-string, 1);
-    $_color-value: nth($color-string, 2);
-
-    @return map-get(map-get($_color-map, $_color-base), $_color-value);
-  }
-}`,
+          codeShort: `@function getSpace($space) {...}`,
+          code: `@function getSpace($space) {
+  @return arrayMagic(map-get($spacings, $space), $base-spacing-unit);
+};`,
           require: ['arrayMagic()', '$spacings', '$base-spacing-unit'],
           params: [
             {

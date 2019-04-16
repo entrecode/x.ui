@@ -156,6 +156,7 @@
     <flex-space/>
     <div class="divider divider_big"></div>
     <Function/>
+    <Variables/>
     <footer class="has-padding-8 is-ink-light align-center">
       placeholder images
       <a href="https://unsplash.com/collections/4386752/women-are-amazing" target="_blank" rel="nofollow">https://unsplash.com/collections/4386752/women-are-amazing</a> &bull; filltext: <a href="http://socialgoodipsum.com/#/" target="_blank" rel="nofollow">http://socialgoodipsum.com/#/</a>
@@ -190,6 +191,7 @@ import Divider from './components/Layout/Divider.vue';
 import Spacer from './components/Layout/Spacer.vue';
 import FlexSpace from './components/Layout/FlexSpace.vue';
 import Function from './components/Function.vue';
+import Variables from './components/Variables.vue';
 
 export default {
   name: 'app',
@@ -220,6 +222,7 @@ export default {
     Spacer,
     FlexSpace,
     Function,
+    Variables,
   },
 };
 </script>
