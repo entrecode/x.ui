@@ -8,13 +8,14 @@
 
   &__target {
     display: none;
-    max-height: 0;
     opacity: 0;
-    overflow: hidden;
-    transition: all 0.8s;
   }
 
-  .xui-accordion__hidden {
+  &__handle {
+    cursor: pointer;
+  }
+
+  .is-hidden-collapsed {
     display: none;
   }
 
@@ -25,17 +26,16 @@
     &:checked {
       ~ .xui-accordion__target {
         display: block;
-        max-height: 800px;
         opacity: 1;
       }
 
-      ~ * .xui-accordion__hidden,
-      ~ .xui-accordion__hidden {
+      ~ * .is-hidden-collapsed,
+      ~ .is-hidden-collapsed {
         display: inherit;
       }
 
-      ~ * .xui-accordion__visible,
-      ~ .xui-accordion__visible {
+      ~ * .is-visible-collapsed,
+      ~ .is-visible-collapsed {
         display: none;
       }
     }
