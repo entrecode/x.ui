@@ -1,7 +1,10 @@
+/// @access public
+/// @group math-functions
+///
 /// @link https://gist.github.com/voxpelli/6304812#file-_math-scss
 
+// @link http://rosettacode.org/wiki/Greatest_common_divisor#JavaScript
 @function gcd($a, $b) {
-  // From: http://rosettacode.org/wiki/Greatest_common_divisor#JavaScript
   @if ($b != 0) {
     @return gcd($b, $a % $b);
   } @else {
@@ -9,8 +12,8 @@
   }
 }
 
+// @link http://rosettacode.org/wiki/Nth_root#JavaScript
 @function nthRoot($num, $n: 2, $prec: 12) {
-  // From: http://rosettacode.org/wiki/Nth_root#JavaScript
   $x: 1;
 
   @for $i from 0 through $prec {
@@ -20,11 +23,7 @@
   @return $x;
 }
 
-// @access public
-// @group math-functions
-//
 // Handles decimal exponents by trying to convert them into a fraction and then use a nthRoot-algorithm for parts of the calculation
-
 @function pow($base, $exponent, $prec: 12) {
   @if (floor($exponent) != $exponent) {
     $prec2: pow(10, $prec);

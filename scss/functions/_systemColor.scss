@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 10.0.0
 /// @access public
 /// @group color-functions
 ///
@@ -7,17 +7,23 @@
 /// @example
 /// color: systemColor(#00E676); // returns a color with a hue value of 151
 ///
-/// @access public
 /// @param {color} $target - name of target color
-/// @param {string} $colors [$link $super $minor $highlight] - string of colors
+/// @param {string} $colors [$_system-color-ref] - string of colors
 ///
 /// @return {color} color with harmonic lightness and saturation
 
-@function systemColor($target, $colors: $link $super $highlight) {
+// @param {array} $_system-color- [null] - array of reference colors
+$_system-color-ref: null !default;
+
+@function systemColor($target, $colors: $_system-color-ref) {
   $_target-hue: hue($target);
   $_total-hue: 0;
   $_total-sat: 0;
   $_total-light: 0;
+
+  @if $colors == null {
+    $colors: $link $super $highlight; 
+  }
 
   @each $_color in $colors {
     $i: index($colors, $_color);

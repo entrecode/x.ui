@@ -10,6 +10,7 @@
 ///
 /// @param {color} $source - source color
 /// @param {number} $amount - positive or negative number for color transformation
+/// @require {function} stripUnit()
 ///
 /// @return {color} color variation
 

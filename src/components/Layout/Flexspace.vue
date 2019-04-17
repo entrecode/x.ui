@@ -41,7 +41,7 @@ export default {
   components: {},
   data: () => {
     return {
-      space: 3,
+      space: 9,
     };
   },
 };

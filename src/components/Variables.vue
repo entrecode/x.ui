@@ -2,8 +2,13 @@
   <section>
     <div data-container>
       <div data-grid>
-        <div data-col="10">
-          <div v-for="(item, index) in items" :key="index" class="has-margin-bottom-8" :id="item.anchor">
+        <div data-col="+2 8">
+          <div
+            v-for="(item, index) in sortedArray"
+            :key="index"
+            class="has-margin-middle-8"
+            :id="item.anchor"
+          >
             <h3 v-if="item.title">
               {{ item.title }}&ensp;
               <div class="tag">{{ item.type }}</div>
@@ -50,10 +55,14 @@
         <div data-col="2">
           <ul class="nav nav_stacked is-sticky" style="top: 120px;">
             <li class="nav__item">
-              <h2>functions</h2>
+              <h2>variables</h2>
             </li>
-            <li class="nav__item" v-for="(item, index) in items" :key="index">
-              <a :href="'#' + item.anchor" v-smooth-scroll class="is-kilo is-ink hover:is-ink-link">{{item.title}}</a>
+            <li class="nav__item" v-for="(item, index) in sortedArray" :key="index">
+              <a
+                :href="'#' + item.anchor"
+                v-smooth-scroll
+                class="is-kilo is-ink hover:is-ink-link"
+              >{{item.title}}</a>
             </li>
           </ul>
         </div>
@@ -76,11 +85,99 @@ export default {
           type: 'number',
         },
         {
+          title: '$_luma-text',
+          anchor: 'scroll-to-luma-text',
+          usedBy: [
+            { name: '$lighter-fallback', type: 'variable', link: '#scroll-to-lighter-fallback' },
+            { name: '$darker-fallback', type: 'variable', link: '#scroll-to-darker-fallback' },
+          ],
+          code: `$root-size: 16 !default;`,
+          type: 'number',
+        },
+        {
+          title: '$lighter-fallback',
+          anchor: 'scroll-to-lighter-fallback',
+          usedBy: [{ name: 'setContrast()', type: 'function', link: '#scroll-to-set-contrast' }],
+          require: [
+            {
+              name: '$_luma-text',
+              type: 'number',
+              link: '#scroll-to-luma-text',
+            },
+            {
+              name: '$text',
+              type: 'color',
+            },
+            {
+              name: '$background',
+              type: 'color',
+            },
+          ],
+          code: `$lighter-fallback: false !default;
+
+@if $lighter-fallback == false {
+  @if $_luma-text > 0.5 {
+    $lighter-fallback: $text;
+  } @else {
+    $lighter-fallback: $background;
+  }
+}`,
+          type: 'color',
+        },
+        {
+          title: '$darker-fallback',
+          anchor: 'scroll-to-darker-fallback',
+          usedBy: [{ name: 'setContrast()', type: 'function', link: '#scroll-to-set-contrast' }],
+          require: [
+            {
+              name: '$_luma-text',
+              type: 'number',
+              link: '#scroll-to-luma-text',
+            },
+            {
+              name: '$text',
+              type: 'color',
+            },
+            {
+              name: '$background',
+              type: 'color',
+            },
+          ],
+          code: `$darker-fallback: false !default;
+
+@if $darker-fallback == false {
+  @if $_luma-text < 0.5 {
+    $darker-fallback: $text;
+  } @else {
+    $darker-fallback: $background;
+  }
+}`,
+          type: 'color',
+        },
+        {
+          title: '$_system-color-ref',
+          anchor: 'scroll-to-system-color-ref',
+          usedBy: [{ name: 'systemColor()', type: 'function', link: '#scroll-to-system-color' }],
+          code: `$_system-color-ref: null !default;`,
+          type: 'array',
+        },
+        {
           title: '$base-spacing',
           anchor: 'scroll-to-base-spacing',
-          usedBy: [{ name: '$spacings', type: 'variable', link: '#scroll-to-spacings' }],
+          usedBy: [
+            { name: '$spacings', type: 'variable', link: '#scroll-to-spacings' },
+          ],
           code: `$base-spacing: 16 !default;`,
           type: 'number',
+        },
+        {
+          title: '$base-spacing-unit',
+          anchor: 'scroll-to-base-spacing-unit',
+          usedBy: [
+            { name: 'getSpace()', type: 'function', link: '#scroll-to-get-space' },
+          ],
+          code: `$base-spacing-unit: xrem !default;`,
+          type: 'string',
         },
         {
           title: '$base-font-size',
@@ -118,7 +215,7 @@ export default {
           title: '$_set-hover-shading',
           anchor: 'scroll-to-set-hover-shading',
           usedBy: [{ name: 'setHover()', type: 'function', link: '#scroll-to-set-hover' }],
-          usedBy: ['setHover()'],
+          usedBy: [{ name: 'setHover()', link: '#scroll-to-set-hover' }],
           code: `$_set-hover-shading: 4 !default;`,
           type: 'number',
         },
@@ -171,6 +268,21 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    sortedArray: function() {
+      function compare(a, b) {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (a.title > b.title) {
+          return 1;
+        }
+        return 0;
+      }
+
+      return this.items.sort(compare);
+    },
   },
 };
 </script>
