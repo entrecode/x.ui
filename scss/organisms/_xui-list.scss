@@ -65,10 +65,6 @@
   background: $xui-list-item-background;
   color: $xui-list-item-color;
 
-  @include headings {
-    margin: 0;
-  }
-
   // @param {color} $xui-list-item-hover-background [none]
   // @param {color} $xui-list-item-hover-color [inherit]
   // @param {array} $xui-list-item-hover-style

@@ -157,6 +157,10 @@
     <div class="divider divider_big"></div>
     <flex-space/>
     <div class="divider divider_big"></div>
+    <h2 class="is-h1 align-center is-uppercase">mixins</h2>
+    <div class="divider divider_big"></div>
+    <mixins/>
+    <div class="divider divider_big"></div>
     <h2 class="is-h1 align-center is-uppercase">functions</h2>
     <div class="divider divider_big"></div>
     <Function/>
@@ -200,6 +204,7 @@ import Spacer from './components/Layout/Spacer.vue';
 import FlexSpace from './components/Layout/FlexSpace.vue';
 import Function from './components/Function.vue';
 import Variables from './components/Variables.vue';
+import Mixins from './components/Mixins.vue';
 
 export default {
   name: 'app',
@@ -232,6 +237,7 @@ export default {
     FlexSpace,
     Function,
     Variables,
+    Mixins,
   },
 };
 </script>

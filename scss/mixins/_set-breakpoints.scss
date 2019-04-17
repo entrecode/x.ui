@@ -4,6 +4,7 @@
 /// @group layout mixins
 ///
 /// @require {map} $breakpoints
+/// @require {function} bp()
 /// @param {boolean} $area - set a range for the media query
 /// @param {boolean} $has-root - sets @content for a root element without a media-query
 /// @return a set of styles for one element with all available breakpoints

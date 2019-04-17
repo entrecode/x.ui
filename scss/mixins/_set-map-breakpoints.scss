@@ -4,6 +4,7 @@
 /// @group layout mixins
 ///
 /// @require {map} $breakpoints
+/// @require {function} bp()
 /// @param {string} $attr-name - name of the data-attribute
 /// @param {string} $css-attr - name of the used css-attribute
 /// @param {map} $attr-map - map css and attribute values

@@ -3,7 +3,7 @@
 /// @access public
 /// @group typeface mixins
 
-@mixin ellipsis() {
+@mixin ellipsis {
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;
   overflow: hidden;

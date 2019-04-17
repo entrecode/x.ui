@@ -4,6 +4,7 @@
 /// @group layout mixins
 ///
 /// @require {map} $breakpoints
+/// @require {function} bp()
 /// @param {string} $data - name of the data-attribute
 /// @param {string} $data-value - value of the data-attribute
 /// @param {boolean} $area - set a range for the media query

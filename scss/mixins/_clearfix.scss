@@ -1,9 +1,9 @@
 /// @author Bernhard Ruoff
 /// @since 7.0.0
 /// @access public
-/// @group layout mixins
+/// @group layout-mixins
 
-@mixin clearfix() {
+@mixin clearfix {
   &::before,
   &::after {
     content: '';

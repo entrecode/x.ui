@@ -317,6 +317,13 @@ bp(sm, max) // returns 479px`,
               default: 'null',
             },
           ],
+          usedBy: [
+            { name: 'set-breakpoints()', type: 'mixin', link: '#scroll-to-set-breakpoints' },
+            {
+              name: 'set-data-breakpoints()',
+              link: '#scroll-to-set-data-breakpoints',
+            },
+          ],
         },
         {
           toggleCode: false,
@@ -810,6 +817,12 @@ color: getColor(link);`,
               name: '$darker-fallback',
               type: 'variable',
               link: '#scroll-to-darker-fallback',
+            },
+          ],
+          usedBy: [
+            {
+              name: 'set-theme-color()',
+              link: '#scroll-to-set-theme-color',
             },
           ],
           params: [

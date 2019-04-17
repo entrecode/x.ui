@@ -3,7 +3,7 @@
 /// @access public
 /// @group typeface mixins
 
-@mixin word-wrap() {
+@mixin word-wrap {
   overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-word-break: break-all;
