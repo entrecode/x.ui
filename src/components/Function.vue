@@ -1,9 +1,14 @@
 <template>
   <section>
-    <div v-for="(item, index) in items" :key="index">
-      <div data-container>
-        <div data-grid="is-center">
-          <div data-col="8">
+    <div data-container>
+      <div data-grid>
+        <div data-col="10">
+          <div
+            v-for="(item, index) in items"
+            :key="index"
+            :id="item.anchor"
+            class="has-margin-bottom-8"
+          >
             <h3 v-if="item.title">
               {{ item.title }}&ensp;
               <div class="tag">{{ item.type }}</div>
@@ -67,7 +72,14 @@
               <h4 class="is-h4">requires</h4>
               <ul data-grid="is-small">
                 <li v-for="(req, index) in item.require" :key="index" data-col="is-fit">
-                  <div class="code" v-text="req"></div>
+                  <a
+                    :href="req.link"
+                    class="code"
+                    v-text="req.name"
+                    v-if="req.link"
+                    v-smooth-scroll
+                  ></a>
+                  <span class="code" v-text="req.name" v-else></span>
                 </li>
               </ul>
             </div>
@@ -75,14 +87,30 @@
               <h4 class="is-h4">used by</h4>
               <ul data-grid="is-small">
                 <li v-for="(used, index) in item.usedBy" :key="index" data-col="is-fit">
-                  <div class="code" v-text="used"></div>
+                  <a
+                    :href="used.link"
+                    class="code"
+                    v-text="used.name"
+                    v-if="used.link"
+                    v-smooth-scroll
+                  ></a>
+                  <span class="code" v-text="used.name" v-else></span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
+        <div data-col="2">
+          <ul class="nav nav_stacked is-sticky" style="top: 120px;">
+            <li class="nav__item">
+              <h2>functions</h2>
+            </li>
+            <li class="nav__item" v-for="(item, index) in items" :key="index">
+              <a :href="'#' + item.anchor" v-smooth-scroll class="is-kilo is-ink hover:is-ink-link">{{item.title}}</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="divider divider_big"></div>
     </div>
   </section>
 </template>
@@ -95,7 +123,8 @@ export default {
       items: [
         {
           toggleCode: false,
-          title: 'arrayMagic',
+          title: 'arrayMagic()',
+          anchor: 'scroll-to-array-magic',
           usedBy: ['getSpace'],
           codeShort: `@function arrayMagic($array, $unit: 'xrem') {...}`,
           code: `@function arrayMagic($array, $unit: 'xrem') {
@@ -130,7 +159,10 @@ export default {
           type: 'size-function',
           returns: 'string',
           example: `padding: arrayMagic(8 16); // returns rem(8) rem(16)`,
-          require: ['rem()', 'em()'],
+          require: [
+            { name: 'rem()', type: 'function', link: '#scroll-to-rem' },
+            { name: 'em()', type: 'function', link: '#scroll-to-em' },
+          ],
           params: [
             {
               name: '$array',
@@ -146,10 +178,17 @@ export default {
         },
         {
           toggleCode: false,
-          title: 'rem',
+          title: 'rem()',
+          anchor: 'scroll-to-rem',
           description: 'Converts a px value into a rem value',
-          type: 'size-functions',
-          usedBy: ['arrayMagic'],
+          type: 'size-function',
+          usedBy: [
+            {
+              name: 'arrayMagic()',
+              type: 'function',
+              link: '#scroll-to-array-magic',
+            },
+          ],
           example: `width: rem(32); // returns 2rem`,
           return: 'rem',
           codeShort: `@function rem($value, $base: $root-size) {...}`,
@@ -164,7 +203,13 @@ export default {
     @return $value;
   }
 }`,
-          require: ['$root-size'],
+          require: [
+            {
+              name: '$root-size',
+              type: 'variable',
+              link: '#scroll-to-root-size',
+            },
+          ],
           params: [
             {
               name: '$value',
@@ -179,10 +224,17 @@ export default {
         },
         {
           toggleCode: false,
-          title: 'em',
+          anchor: 'scroll-to-em',
+          title: 'em()',
           description: 'Converts a px value into a em value',
-          type: 'size-functions',
-          usedBy: ['arrayMagic'],
+          type: 'size-function',
+          usedBy: [
+            {
+              name: 'arrayMagic()',
+              type: 'function',
+              link: '#scroll-to-array-magic',
+            },
+          ],
           example: `font-size: em(16); // returns 1em
 line-height: em(24, 12); // returns 2em`,
           return: 'em',
@@ -194,7 +246,13 @@ line-height: em(24, 12); // returns 2em`,
     @return $value;
   }
 }`,
-          require: ['$base-font-size'],
+          require: [
+            {
+              name: '$base-font-size',
+              type: 'variable',
+              link: '#scroll-to-base-font-size',
+            },
+          ],
           params: [
             {
               name: '$value',
@@ -209,9 +267,10 @@ line-height: em(24, 12); // returns 2em`,
         },
         {
           toggleCode: false,
-          title: 'bp',
+          title: 'bp()',
+          anchor: 'scroll-to-bp',
           description: 'get the breakpoints for responsiveness from a map',
-          type: 'grid-functions',
+          type: 'grid-function',
           example: `bp(sm) // returns 480px
 bp(sm, max) // returns 479px`,
           return: 'string',
@@ -229,7 +288,18 @@ bp(sm, max) // returns 479px`,
     @return null;
   }
 }`,
-          require: ['$breakpoints', 'nextBp()'],
+          require: [
+            {
+              name: '$breakpoints',
+              type: 'map',
+              link: '#scroll-to-breakpoints',
+            },
+            {
+              name: 'nextBp()',
+              type: 'function',
+              link: '#scroll-to-next-bp',
+            },
+          ],
           params: [
             {
               name: '$breakpoint',
@@ -245,9 +315,16 @@ bp(sm, max) // returns 479px`,
         },
         {
           toggleCode: false,
-          title: 'nextBp',
-          type: 'grid-functions',
-          usedBy: ['bp()'],
+          title: 'nextBp()',
+          anchor: 'scroll-to-next-bp',
+          type: 'grid-function',
+          usedBy: [
+            {
+              name: 'bp()',
+              type: 'function',
+              link: '#scroll-to-bp',
+            },
+          ],
           return: 'string | null',
           codeShort: `@function nextBp($breakpoint, $map: $breakpoints) {...}`,
           code: `@function nextBp($breakpoint, $map: $breakpoints) {
@@ -256,7 +333,13 @@ bp(sm, max) // returns 479px`,
 
   @return if($_current < length($map), map-get($map, nth($_keys, $_current + 1)), null);
 }`,
-          require: ['$breakpoints', 'nextBp()'],
+          require: [
+            {
+              name: '$breakpoints',
+              type: 'map',
+              link: '#scroll-to-breakpoints',
+            },
+          ],
           params: [
             {
               name: '$breakpoint',
@@ -272,8 +355,9 @@ bp(sm, max) // returns 479px`,
         },
         {
           toggleCode: false,
-          title: 'flattenColor',
-          type: 'color-functions',
+          title: 'flattenColor()',
+          anchor: 'scroll-to-flatten-color',
+          type: 'color-function',
           description: 'Mixes two colors, considering opacity',
           return: 'color',
           example: `color: flattenColor(rgba(black, .2);`,
@@ -295,7 +379,7 @@ bp(sm, max) // returns 479px`,
 
   @return rgba($r, $g, $b, $a);
 }`,
-          require: ['$background'],
+          require: [{ name: '$background', type: 'variable' }],
           params: [
             {
               name: '$fg',
@@ -312,8 +396,9 @@ bp(sm, max) // returns 479px`,
         },
         {
           toggleCode: false,
-          title: 'getColor',
-          type: 'color-functions',
+          title: 'getColor()',
+          anchor: 'scroll-to-get-color',
+          type: 'color-function',
           description: 'Mixes two colors, considering opacity',
           return: 'color',
           example: `color: getColor(text, invert);
@@ -335,7 +420,7 @@ color: getColor(link);`,
     @return map-get(map-get($_color-map, $_color-base), $_color-value);
   }
 }`,
-          require: ['$color-map-id'],
+          require: [{ name: '$color-map-id', type: 'variable', link: '#scroll-to-color-map-id' }],
           params: [
             {
               name: '$color-string',
@@ -346,14 +431,19 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'getSpace',
-          type: 'layout-functions',
+          title: 'getSpace()',
+          anchor: 'scroll-to-get-space',
+          type: 'layout-function',
           return: 'number',
           codeShort: `@function getSpace($space) {...}`,
           code: `@function getSpace($space) {
   @return arrayMagic(map-get($spacings, $space), $base-spacing-unit);
 };`,
-          require: ['arrayMagic()', '$spacings', '$base-spacing-unit'],
+          require: [
+            { name: 'arrayMagic()', type: 'function', link: '#scroll-to-array-magic' },
+            { name: '$spacings', type: 'variables', link: '#scroll-to-spacings' },
+            { name: '$base-spacing-unit', type: 'variables', link: '#scroll-base-spacing-unit' },
+          ],
           params: [
             {
               name: '$space',
@@ -364,8 +454,9 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'setHover',
-          type: 'color-functions',
+          title: 'setHover()',
+          anchor: 'scroll-to-set-hover',
+          type: 'color-function',
           codeShort: `@function setHover($color, $shade: $_set-hover-shading) {...}`,
           code: `@function setHover($color, $shade: $_set-hover-shading) {
   @if type-of($color) == 'color' {
@@ -385,7 +476,12 @@ color: getColor(link);`,
     @return $color;
   }
 }`,
-          require: ['getBrightness()', 'varColor()', 'flattenColor()', '$_set-hover-shading'],
+          require: [
+            { name: 'getBrightness()', type: 'function', link: '#scroll-to-get-brightness' },
+            { name: 'varColor()', type: 'function', link: '#scroll-to-var-color' },
+            { name: 'flattenColor()', type: 'function', link: '#scroll-to-flatten-color' },
+            { name: '$_set-hover-shading', type: 'variable', link: '#scroll-to-set-hover-shading' },
+          ],
           params: [
             {
               name: '$color',
@@ -401,9 +497,10 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'shadeByContrast',
+          title: 'shadeByContrast()',
+          anchor: 'scroll-to-shade-by-contrast',
           description: `returns a shade of a color depending on it's lightness`,
-          type: 'color-functions',
+          type: 'color-function',
           return: 'color',
           codeShort: `@function shadeByContrast($color, $amount) {...}`,
           code: `@function shadeByContrast($color, $amount) {
@@ -415,7 +512,18 @@ color: getColor(link);`,
     @return varColor($color, $amount);
   }
 }`,
-          require: ['luma()', 'varColor()'],
+          require: [
+            {
+              name: 'luma()',
+              type: 'function',
+              link: '#scroll-to-luma',
+            },
+            {
+              name: 'varColor()',
+              type: 'function',
+              link: '#scroll-to-var-color',
+            },
+          ],
           params: [
             {
               name: '$color',
@@ -430,9 +538,10 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'stripUnit',
+          title: 'stripUnit()',
+          anchor: 'scroll-to-strip-unit',
           description: `removes the unit of a value`,
-          type: 'unit-functions',
+          type: 'unit-function',
           return: 'number',
           example: `stripUnit(16px) // returns 16`,
           codeShort: `@function stripUnit($number) {...}`,

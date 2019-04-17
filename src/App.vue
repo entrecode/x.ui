@@ -157,7 +157,12 @@
     <div class="divider divider_big"></div>
     <flex-space/>
     <div class="divider divider_big"></div>
+    <h2 class="is-h1 align-center is-uppercase">functions</h2>
+    <div class="divider divider_big"></div>
     <Function/>
+    <div class="divider divider_big"></div>
+    <h2 class="is-h1 align-center is-uppercase">variables</h2>
+    <div class="divider divider_big"></div>
     <Variables/>
     <footer class="has-padding-8 is-ink-light align-center">
       placeholder images

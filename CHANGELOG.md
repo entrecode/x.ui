@@ -42,6 +42,7 @@
 - optimized `.nav` - dropped `.nav__items`
 - changed `macro-metrics` to `atom-metric`
 - improved `.xui-accordion`
+- removed state values in `$xui-colors` map
 
 ### changes
 
