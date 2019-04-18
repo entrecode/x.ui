@@ -98,82 +98,56 @@
         </div>
       </div>
     </div>
-    <div class="divider divider_big"></div>
+
     <grid/>
-    <div class="divider divider_big"></div>
+    
     <Colors/>
-    <div class="divider divider_big"></div>
+
     <h2 class="is-h1 align-center is-uppercase">typo</h2>
-    <div class="divider divider_big"></div>
     <typo/>
-    <div class="divider divider_big"></div>
+
     <h2 class="is-h1 align-center is-uppercase">media</h2>
-    <div class="divider divider_big"></div>
     <media/>
-    <div class="divider divider_big"></div>
+
     <h2 class="is-h1 align-center is-uppercase">form</h2>
-    <div class="divider divider_big"></div>
     <Form/>
-    <div class="divider divider_big"></div>
     <alert/>
-    <div class="divider divider_big"></div>
-    <Loader/>
-    <div class="divider divider_big"></div>
+
     <h2 class="is-h1 align-center is-uppercase">UI</h2>
-    <div class="divider divider_big"></div>
-    <buttons/>
-    <div class="divider divider_big"></div>
-    <hamburger-btn/>
-    <div class="divider divider_big"></div>
-    <button-group/>
-    <div class="divider divider_big"></div>
-    <tag/>
-    <div class="divider divider_big"></div>
-    <Nav/>
-    <div class="divider divider_big"></div>
-    <titlebar/>
-    <div class="divider divider_big"></div>
-    <modal/>
-    <div class="divider divider_big"></div>
-    <well/>
-    <div class="divider divider_big"></div>
-    <card/>
-    <div class="divider divider_big"></div>
-    <Table/>
-    <div class="divider divider_big"></div>
-    <avatar/>
-    <div class="divider divider_big"></div>
-    <xui-list/>
-    <div class="divider divider_big"></div>
-    <xui-accordion/>
-    <div class="divider divider_big"></div>
-    <h2 class="is-h1 align-center is-uppercase">Theme</h2>
-    <div class="divider divider_big"></div>
+    <ui-buttons/>
+    <ui-hamburger-btn/>
+    <ui-button-group/>
+    <ui-tag/>
+    <ui-nav/>
+    <ui-titlebar/>
+    <ui-modal/>
+    <ui-well/>
+    <ui-card/>
+    <ui-table/>
+    <ui-avatar/>
+    <ui-xui-list/>
+    <ui-xui-accordion/>
+    <ui-loader/>
+
+    <h2 class="is-h1 align-center is-uppercase">theme</h2>
     <is-ink/>
-    <div class="divider divider_big"></div>
     <is-theme/>
-    <div class="divider divider_big"></div>
-    <h2 class="is-h1 align-center is-uppercase">Layout</h2>
-    <div class="divider divider_big"></div>
-    <bumper/>
-    <div class="divider divider_big"></div>
-    <divider/>
-    <div class="divider divider_big"></div>
-    <Spacer/>
-    <div class="divider divider_big"></div>
-    <flex-space/>
-    <div class="divider divider_big"></div>
+
+    <h2 class="is-h1 align-center is-uppercase">layout</h2>
+    <layout-bumper/>
+    <layout-divider/>
+    <layout-spacer/>
+    <layout-flex-space/>
+
     <h2 class="is-h1 align-center is-uppercase">mixins</h2>
-    <div class="divider divider_big"></div>
     <mixins/>
-    <div class="divider divider_big"></div>
+
     <h2 class="is-h1 align-center is-uppercase">functions</h2>
-    <div class="divider divider_big"></div>
-    <Function/>
-    <div class="divider divider_big"></div>
+    <function/>
+
     <h2 class="is-h1 align-center is-uppercase">variables</h2>
-    <div class="divider divider_big"></div>
-    <Variables/>
+    <variables/>
+
     <footer class="has-padding-8 is-ink-light align-center">
       placeholder images
       <a
@@ -192,36 +166,37 @@
 
 <script>
 import Navbar from './components/Navbar.vue';
-import DocTab from './components/DocTab.vue';
 import Colors from './components/Core/Colors.vue';
 import Typo from './components/Typeface/Typo.vue';
 import Media from './components/Media/Media.vue';
-import Buttons from './components/UI/Buttons.vue';
-import HamburgerBtn from './components/UI/HamburgerBtn.vue';
-import ButtonGroup from './components/UI/ButtonGroup.vue';
-import Nav from './components/UI/Nav.vue';
-import Tag from './components/UI/Tag.vue';
-import Modal from './components/UI/Modal.vue';
-import Well from './components/UI/Well.vue';
-import Titlebar from './components/UI/Titlebar.vue';
-import Card from './components/UI/Card.vue';
-import Table from './components/UI/Table.vue';
-import Avatar from './components/UI/Avatar.vue';
-import XuiList from './components/UI/XuiList.vue';
-import XuiAccordion from './components/UI/XuiAccordion.vue';
 import Form from './components/Form/Form.vue';
-import Alert from './components/UI/Alert.vue';
-import Loader from './components/UI/Loader.vue';
 import Grid from './components/Grid/Grid.vue';
-import Bumper from './components/Layout/Bumper.vue';
-import Divider from './components/Layout/Divider.vue';
-import Spacer from './components/Layout/Spacer.vue';
-import FlexSpace from './components/Layout/FlexSpace.vue';
 import Function from './components/Function.vue';
 import Variables from './components/Variables.vue';
 import Mixins from './components/Mixins.vue';
 import IsInk from './components/Theme/IsInk.vue';
 import IsTheme from './components/Theme/IsTheme.vue';
+import Alert from './components/UI/Alert.vue';
+
+import LayoutBumper from './components/Layout/Bumper.vue';
+import LayoutDivider from './components/Layout/Divider.vue';
+import LayoutSpacer from './components/Layout/Spacer.vue';
+import LayoutFlexSpace from './components/Layout/FlexSpace.vue';
+
+import UiNav from './components/UI/Nav.vue';
+import UiTag from './components/UI/Tag.vue';
+import UiModal from './components/UI/Modal.vue';
+import UiWell from './components/UI/Well.vue';
+import UiTitlebar from './components/UI/Titlebar.vue';
+import UiCard from './components/UI/Card.vue';
+import UiTable from './components/UI/Table.vue';
+import UiAvatar from './components/UI/Avatar.vue';
+import UiXuiList from './components/UI/XuiList.vue';
+import UiXuiAccordion from './components/UI/XuiAccordion.vue';
+import UiLoader from './components/UI/Loader.vue';
+import UiHamburgerBtn from './components/UI/HamburgerBtn.vue';
+import UiButtons from './components/UI/Buttons.vue';
+import UiButtonGroup from './components/UI/ButtonGroup.vue';
 
 export default {
   name: 'app',
@@ -230,28 +205,30 @@ export default {
     Colors,
     Typo,
     Media,
-    DocTab,
-    Buttons,
-    HamburgerBtn,
-    ButtonGroup,
-    Nav,
-    Tag,
-    Modal,
-    Titlebar,
-    Well,
-    Card,
-    Table,
-    Avatar,
-    XuiList,
-    XuiAccordion,
-    Form,
     Alert,
-    Loader,
+
+    UiNav,
+    UiTag,
+    UiModal,
+    UiWell,
+    UiTitlebar,
+    UiCard,
+    UiTable,
+    UiAvatar,
+    UiXuiList,
+    UiXuiAccordion,
+    UiLoader,
+    UiButtons,
+    UiHamburgerBtn,
+    UiButtonGroup,
+
+    LayoutBumper,
+    LayoutDivider,
+    LayoutSpacer,
+    LayoutFlexSpace,
+
+    Form,
     Grid,
-    Bumper,
-    Divider,
-    Spacer,
-    FlexSpace,
     Function,
     Variables,
     Mixins,
