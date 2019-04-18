@@ -25,7 +25,7 @@
 
 a.code {
   user-select: initial;
-  
+
   &:hover {
     color: $link-safe;
   }
@@ -55,4 +55,26 @@ a.code {
   p {
     background-color: var(--background);
   }
+}
+
+.demo-wrapper {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(var(--spacingColor), 0.2),
+    rgba(var(--spacingColor), 0.2) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+.demo-type {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(var(--spacingColor), 0.4),
+    rgba(var(--spacingColor), 0.4) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  background-clip: text;
+  color: transparent;
 }

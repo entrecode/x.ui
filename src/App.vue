@@ -147,13 +147,19 @@
     <div class="divider divider_big"></div>
     <xui-accordion/>
     <div class="divider divider_big"></div>
+    <h2 class="is-h1 align-center is-uppercase">Theme</h2>
+    <div class="divider divider_big"></div>
+    <is-ink/>
+    <div class="divider divider_big"></div>
+    <is-theme/>
+    <div class="divider divider_big"></div>
     <h2 class="is-h1 align-center is-uppercase">Layout</h2>
     <div class="divider divider_big"></div>
     <bumper/>
     <div class="divider divider_big"></div>
     <divider/>
     <div class="divider divider_big"></div>
-    <Spacer />
+    <Spacer/>
     <div class="divider divider_big"></div>
     <flex-space/>
     <div class="divider divider_big"></div>
@@ -170,7 +176,16 @@
     <Variables/>
     <footer class="has-padding-8 is-ink-light align-center">
       placeholder images
-      <a href="https://unsplash.com/collections/4386752/women-are-amazing" target="_blank" rel="nofollow">https://unsplash.com/collections/4386752/women-are-amazing</a> &bull; filltext: <a href="http://socialgoodipsum.com/#/" target="_blank" rel="nofollow">http://socialgoodipsum.com/#/</a>
+      <a
+        href="https://unsplash.com/collections/4386752/women-are-amazing"
+        target="_blank"
+        rel="nofollow"
+      >https://unsplash.com/collections/4386752/women-are-amazing</a> &bull; filltext:
+      <a
+        href="http://socialgoodipsum.com/#/"
+        target="_blank"
+        rel="nofollow"
+      >http://socialgoodipsum.com/#/</a>
     </footer>
   </div>
 </template>
@@ -205,6 +220,8 @@ import FlexSpace from './components/Layout/FlexSpace.vue';
 import Function from './components/Function.vue';
 import Variables from './components/Variables.vue';
 import Mixins from './components/Mixins.vue';
+import IsInk from './components/Theme/IsInk.vue';
+import IsTheme from './components/Theme/IsTheme.vue';
 
 export default {
   name: 'app',
@@ -238,6 +255,8 @@ export default {
     Function,
     Variables,
     Mixins,
+    IsInk,
+    IsTheme,
   },
 };
 </script>
