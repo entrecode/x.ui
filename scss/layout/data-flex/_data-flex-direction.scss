@@ -10,4 +10,4 @@ $_flex-direction: (
   'row-reverse': 'row-reverse'
 );
 
-@include set-map-breakpoints(flex, flex-direction, $_flex-direction);
+@include set-data-map-breakpoints(flex, flex-direction, $_flex-direction);

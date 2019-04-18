@@ -9,4 +9,4 @@ $_flex-wrap: (
   'wrap-reverse': 'wrap-reverse'
 );
 
-@include set-map-breakpoints(flex, flex-wrap, $_flex-wrap);
+@include set-data-map-breakpoints(flex, flex-wrap, $_flex-wrap);

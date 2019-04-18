@@ -9,10 +9,10 @@
 /// @param {string} $css-attr - name of the used css-attribute
 /// @param {map} $attr-map - map css and attribute values
 /// @param {boolean} $area - set a range for the media query
-/// @param {boolean} $hasRoot - sets @content for a root element without a media-query
+/// @param {boolean} $hasRoot - styles are applied for the root element without a media-query if true
 /// @return a set of styles for one data-attribute element with all available breakpoints
 
-@mixin set-map-breakpoints(
+@mixin set-data-map-breakpoints(
   $attr-name,
   $css-attr,
   $attr-map,

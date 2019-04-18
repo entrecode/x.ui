@@ -12,4 +12,4 @@ $_align-content: (
   'around-content': 'space-around'
 );
 
-@include set-map-breakpoints(flex, align-content, $_align-content);
+@include set-data-map-breakpoints(flex, align-content, $_align-content);

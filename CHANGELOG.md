@@ -30,7 +30,8 @@
 - removed breakpoints for `is-clipped#`
 - removed breakpoints for `.is-bordered`
 - removed breakpoints for `.is-scrollable`
-- renamed `getBreakpoints()` to `bp(`
+- renamed `set-map-breakpoints()` to `set-data-map-breakpoints()`
+- renamed `getBreakpoints()` to `bp()`
 - removed `.form-group` use `.field-group` instead
 - removed input validation styles
 - removed `.bubble` use `.tag` instead

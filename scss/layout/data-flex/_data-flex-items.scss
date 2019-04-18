@@ -11,4 +11,4 @@ $_align-items: (
   'stretch-items': 'stretch'
 );
 
-@include set-map-breakpoints(flex, align-items, $_align-items);
+@include set-data-map-breakpoints(flex, align-items, $_align-items);

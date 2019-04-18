@@ -323,6 +323,10 @@ bp(sm, max) // returns 479px`,
               name: 'set-data-breakpoints()',
               link: '#scroll-to-set-data-breakpoints',
             },
+            {
+              name: 'set-data-map-breakpoints()',
+              link: '#scroll-to-set-data-map-breakpoints',
+            },
           ],
         },
         {

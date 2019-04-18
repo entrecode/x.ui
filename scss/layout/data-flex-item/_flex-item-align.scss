@@ -12,4 +12,4 @@ $_align-self: (
   'end': 'flex-end'
 );
 
-@include set-map-breakpoints(flex-item, align-self, $_align-self);
+@include set-data-map-breakpoints(flex-item, align-self, $_align-self);

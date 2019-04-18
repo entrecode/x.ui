@@ -164,18 +164,14 @@ export default {
         {
           title: '$base-spacing',
           anchor: 'scroll-to-base-spacing',
-          usedBy: [
-            { name: '$spacings', type: 'variable', link: '#scroll-to-spacings' },
-          ],
+          usedBy: [{ name: '$spacings', type: 'variable', link: '#scroll-to-spacings' }],
           code: `$base-spacing: 16 !default;`,
           type: 'number',
         },
         {
           title: '$base-spacing-unit',
           anchor: 'scroll-to-base-spacing-unit',
-          usedBy: [
-            { name: 'getSpace()', type: 'function', link: '#scroll-to-get-space' },
-          ],
+          usedBy: [{ name: 'getSpace()', type: 'function', link: '#scroll-to-get-space' }],
           code: `$base-spacing-unit: xrem !default;`,
           type: 'string',
         },
@@ -194,6 +190,11 @@ export default {
             { name: 'nextBp()', type: 'function', link: '#scroll-to-next-bp' },
             { name: 'set-breakpoints()', type: 'mixin', link: '#scroll-to-set-breakpoints' },
             { name: 'set-data-breakpoints()', type: 'mixin', link: '#scroll-to-set-data-breakpoints' },
+            {
+              name: 'set-data-map-breakpoints()',
+              type: 'mixin',
+              link: '#scroll-to-set-data-map-breakpoints',
+            },
           ],
           code: `$breakpoints: (
   'xs': 0 /* smartphone*/,
@@ -297,7 +298,7 @@ export default {
           anchor: 'scroll-to-type-scale-unit',
           usedBy: [{ name: 'get-font-size()', type: 'mixin', link: '#scroll-to-get-font-size' }],
           code: `$type-scale-unit: $base-scale-unit !default;`,
-          require: [{name: '$base-scale-unit', link: '#scroll-to-base-scale-unit'}],
+          require: [{ name: '$base-scale-unit', link: '#scroll-to-base-scale-unit' }],
           type: 'string',
         },
         {

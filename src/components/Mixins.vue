@@ -35,21 +35,21 @@
               <h4 class="is-h4">parameters</h4>
               <table class="table">
                 <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Type</th>
-                    <th>Default Value</th>
+                  <tr data-grid="no-gutter">
+                    <th data-col="2">Name</th>
+                    <th data-col="5">Description</th>
+                    <th data-col="2">Type</th>
+                    <th data-col="3">Default Value</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(param, index) in item.params" :key="index">
-                    <td>
+                  <tr v-for="(param, index) in item.params" :key="index" data-grid="no-gutter">
+                    <td data-col="2">
                       <div class="code" v-text="param.name"></div>
                     </td>
-                    <td v-text="param.description"></td>
-                    <td v-text="param.type"></td>
-                    <td>
+                    <td data-col="5" v-text="param.description"></td>
+                    <td data-col="2" v-text="param.type"></td>
+                    <td data-col="3">
                       <div class="code" v-text="param.default"></div>
                     </td>
                   </tr>
@@ -114,7 +114,7 @@
               <a
                 :href="'#' + item.anchor"
                 v-smooth-scroll
-                class="is-small is-monospace-font is-ink hover:is-ink-link"
+                class="is-kilo is-ink hover:is-ink-link"
               >{{item.title}}</a>
             </li>
           </ul>
@@ -553,81 +553,6 @@ h6 {
         },
         {
           toggleCode: false,
-          title: 'set-breakpoints()',
-          description: 'mixin for repeating styles with breakpoints',
-          anchor: 'scroll-to-set-breakpoints',
-          codeShort: `@mixin set-breakpoints($area: false, $has-root: true) {...}`,
-          code: `@mixin set-breakpoints($area: false, $has-root: true) {
-  $keys: map-keys($breakpoints);
-  $length: length($breakpoints);
-
-  @if $has-root == true {
-    @content;
-  }
-
-  @if $area == true {
-    @each $key in $keys {
-      @if index($keys, $key) == $length {
-        &-#{$key} {
-          @media (min-width: bp(#{$key})) {
-            @content;
-          }
-        }
-      } @else {
-        &-#{$key} {
-          @media (min-width: bp(#{$key})) and (max-width: bp(#{$key}, max)) {
-            @content;
-          }
-        }
-      }
-    }
-  } @else {
-    @each $key in $keys {
-      &-#{$key} {
-        @media (min-width: bp(#{$key})) {
-          @content;
-        }
-      }
-    }
-  }
-}`,
-          type: 'layout-mixin',
-          params: [
-            {
-              name: '$area',
-              type: 'boolean',
-              default: 'false',
-              description: 'set a range for the media query using min-width and max-width media queries if true',
-            },
-            {
-              name: '$has-root',
-              type: 'boolean',
-              default: 'true',
-              description: 'sets @content for a root element without a media-query',
-            },
-          ],
-          require: [
-            {
-              name: '$breakpoints',
-              link: '#scroll-to-breakpoints',
-            },
-          ],
-          usedBy: [
-            {
-              name: '_divider.scss',
-            },
-            { name: '_space.scss' },
-            { name: '_has-height.scss' },
-            { name: '_has-margin.scss' },
-            { name: '_has-padding.scss' },
-            { name: '_has-width.scss' },
-            { name: '_not-positioned.scss' },
-            { name: '_pull.scss' },
-            { name: '_word-wrap.scss' },
-          ],
-        },
-        {
-          toggleCode: false,
           title: 'set-theme-colors()',
           description: 'sets background-color and matching text-color',
           anchor: 'scroll-to-set-theme-colors',
@@ -752,7 +677,82 @@ h6 {
         },
         {
           toggleCode: false,
-          title: 'set-data-breakpoints',
+          title: 'set-breakpoints()',
+          description: 'mixin for repeating styles with breakpoints',
+          anchor: 'scroll-to-set-breakpoints',
+          codeShort: `@mixin set-breakpoints($area: false, $has-root: true) {...}`,
+          code: `@mixin set-breakpoints($area: false, $has-root: true) {
+  $keys: map-keys($breakpoints);
+  $length: length($breakpoints);
+
+  @if $has-root == true {
+    @content;
+  }
+
+  @if $area == true {
+    @each $key in $keys {
+      @if index($keys, $key) == $length {
+        &-#{$key} {
+          @media (min-width: bp(#{$key})) {
+            @content;
+          }
+        }
+      } @else {
+        &-#{$key} {
+          @media (min-width: bp(#{$key})) and (max-width: bp(#{$key}, max)) {
+            @content;
+          }
+        }
+      }
+    }
+  } @else {
+    @each $key in $keys {
+      &-#{$key} {
+        @media (min-width: bp(#{$key})) {
+          @content;
+        }
+      }
+    }
+  }
+}`,
+          type: 'layout-mixin',
+          params: [
+            {
+              name: '$area',
+              type: 'boolean',
+              default: 'false',
+              description: 'set a range for the media query using min-width and max-width media queries if true',
+            },
+            {
+              name: '$has-root',
+              type: 'boolean',
+              default: 'true',
+              description: 'sets @content for a root element without a media-query',
+            },
+          ],
+          require: [
+            {
+              name: '$breakpoints',
+              link: '#scroll-to-breakpoints',
+            },
+          ],
+          usedBy: [
+            {
+              name: '_divider.scss',
+            },
+            { name: '_space.scss' },
+            { name: '_has-height.scss' },
+            { name: '_has-margin.scss' },
+            { name: '_has-padding.scss' },
+            { name: '_has-width.scss' },
+            { name: '_not-positioned.scss' },
+            { name: '_pull.scss' },
+            { name: '_word-wrap.scss' },
+          ],
+        },
+        {
+          toggleCode: false,
+          title: 'set-data-breakpoints()',
           description: 'mixin for repeating styles with breakpoints used for an attribute related style',
           anchor: 'scroll-to-set-data-breakpoints',
           codeShort: `@mixin set-data-breakpoints($data, $data-value, $area: false, $has-root: true) {...}`,
@@ -824,6 +824,109 @@ h6 {
               name: '_data-container.scss',
               name: '_data-grid.scss',
             },
+          ],
+        },
+        {
+          toggleCode: false,
+          title: 'set-data-map-breakpoints()',
+          description: 'mixin for repeating styles with breakpoints used for attribute selectors using a map',
+          anchor: 'scroll-to-set-data-map-breakpoints',
+          codeShort: `@mixin set-data-map-breakpoints($attr-name, $css-attr, $attr-map, $area: false, $has-root: true) {...}`,
+          code: `@mixin set-data-map-breakpoints(
+  $attr-name,
+  $css-attr,
+  $attr-map,
+  $area: false,
+  $has-root: true
+) {
+  $_bp-keys: map-keys($breakpoints);
+  $_attr-keys: map-keys($attr-map);
+
+  @if $has-root == true {
+    @each $_attr-key in $_attr-keys {
+      $v: map-get($attr-map, $_attr-key);
+
+      [data-#{$attr-name}~='#{$_attr-key}'] {
+        #{$css-attr}: #{$v};
+      }
+    }
+  }
+
+  @if $area == true {
+    @each $_bp-key in $_bp-keys {
+      @each $_attr-key in $_attr-keys {
+        $v: map-get($attr-map, $_attr-key);
+
+        [data-#{$attr-name}~='#{$_attr-key}'] {
+          @media (min-width: bp(#{$_bp-key})) and (max-width: bp(#{$_bp-key}, max)) {
+            #{$css-attr}: #{$v};
+          }
+        }
+      }
+    }
+  } @else {
+    @each $_bp-key in $_bp-keys {
+      @each $_attr-key in $_attr-keys {
+        $v: map-get($attr-map, $_attr-key);
+
+        [data-#{$attr-name}~='#{$_attr-key}'] {
+          @media (min-width: bp(#{$_bp-key})) {
+            #{$css-attr}: #{$v};
+          }
+        }
+      }
+    }
+  }
+}`,
+          type: 'layout-mixin',
+          usedBy: [],
+          params: [
+            {
+              name: '$attr-name',
+              type: 'string',
+              description: 'name of the data-attribute. will be prefixed with data-.',
+            },
+            {
+              name: '$css-attr',
+              type: 'string',
+              description: 'name of the used css-attribute',
+            },
+            {
+              name: '$attr-map',
+              type: 'map',
+              description: 'map width css-attribute values',
+            },
+            {
+              name: '$area',
+              type: 'boolean',
+              description: 'set a range for the media query using min-width and max-width media queries if true',
+              default: 'false',
+            },
+            {
+              name: '$has-root',
+              type: 'boolean',
+              description: 'styles are applied for the root element without a media-query if true',
+              default: 'true',
+            },
+          ],
+          require: [
+            {
+              name: 'bp()',
+              link: '#scroll-to-bp',
+            },
+            {
+              name: '$breakpoints',
+              link: '#scroll-to-breakpoints',
+            },
+          ],
+          usedBy: [
+            { name: '_flex-item-align.scss' },
+            { name: '_data-flex-content.scss' },
+            { name: '_data-flex-direction.scss' },
+            { name: '_data-flex-items.scss' },
+            { name: '_data-flex-justify.scss' },
+            { name: '_data-flex-order.scss' },
+            { name: '_data-flex-wrap.scss' },
           ],
         },
       ],

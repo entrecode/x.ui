@@ -8,7 +8,7 @@ $order: (
   'last': '-1'
 );
 
-@include set-map-breakpoints(flex-order, order, $order);
+@include set-data-map-breakpoints(flex-order, order, $order);
 
 $_breakpoint-keys: map-keys($breakpoints);
 
