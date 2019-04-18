@@ -100,7 +100,7 @@
     </div>
 
     <grid/>
-    
+
     <Colors/>
 
     <h2 class="is-h1 align-center is-uppercase">typo</h2>
@@ -129,9 +129,10 @@
     <ui-xui-accordion/>
     <ui-loader/>
 
-    <h2 class="is-h1 align-center is-uppercase">theme</h2>
-    <is-ink/>
-    <is-theme/>
+    <h2 class="is-h1 align-center is-uppercase">style</h2>
+    <style-is-ink/>
+    <style-is-theme/>
+    <style-is-elevated/>
 
     <h2 class="is-h1 align-center is-uppercase">layout</h2>
     <layout-bumper/>
@@ -174,9 +175,11 @@ import Grid from './components/Grid/Grid.vue';
 import Function from './components/Function.vue';
 import Variables from './components/Variables.vue';
 import Mixins from './components/Mixins.vue';
-import IsInk from './components/Theme/IsInk.vue';
-import IsTheme from './components/Theme/IsTheme.vue';
 import Alert from './components/UI/Alert.vue';
+
+import StyleIsInk from './components/Style/IsInk.vue';
+import StyleIsTheme from './components/Style/IsTheme.vue';
+import StyleIsElevated from './components/Style/IsElevated.vue';
 
 import LayoutBumper from './components/Layout/Bumper.vue';
 import LayoutDivider from './components/Layout/Divider.vue';
@@ -227,13 +230,15 @@ export default {
     LayoutSpacer,
     LayoutFlexSpace,
 
+    StyleIsInk,
+    StyleIsTheme,
+    StyleIsElevated,
+
     Form,
     Grid,
     Function,
     Variables,
     Mixins,
-    IsInk,
-    IsTheme,
   },
 };
 </script>
