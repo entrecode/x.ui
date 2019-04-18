@@ -114,7 +114,7 @@
               <a
                 :href="'#' + item.anchor"
                 v-smooth-scroll
-                class="is-kilo is-ink hover:is-ink-link"
+                class="is-small is-monospace-font is-ink hover:is-ink-link"
               >{{item.title}}</a>
             </li>
           </ul>
