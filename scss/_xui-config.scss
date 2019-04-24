@@ -2080,10 +2080,12 @@ $xui-toggle-pin-width: $xui-toggle-pin-height !default;
 $xui-toggle-pin-radius: $xui-toggle-pin-height / 2 !default;
 $xui-toggle-pin-style: () !default;
 
-// @param {px} $xui-toggle-label-size [base-font-size]
-// @param {px} $xui-toggle-line-height [$xui-toggle-label-size * $base-line-height]
-$xui-toggle-label-size: $base-font-size !default;
-$xui-toggle-line-height: $xui-toggle-label-size * $base-line-height !default;
+// @param {px} $xui-toggle-label-font-size [base-font-size]
+// @param {px} $xui-toggle-label-line-height [$xui-toggle-label-font-size * $base-line-height]
+// @param {array} $xui-toggle-style
+$xui-toggle-label-font-size: $base-font-size !default;
+$xui-toggle-label-line-height: $xui-toggle-label-font-size * $base-line-height !default;
+$xui-toggle-style: ();
 
 //
 // MARK

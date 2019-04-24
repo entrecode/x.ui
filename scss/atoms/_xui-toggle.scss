@@ -47,6 +47,8 @@
 }
 
 .xui-toggle {
+  position: relative;
+
   @supports (display: flex) {
     display: flex;
     align-items: center;
@@ -63,7 +65,7 @@
     @extend %is-hidden-input;
 
     &:checked {
-      + label .xui-toggle__switch {
+      + .xui-toggle__label .xui-toggle__switch {
         @extend %toggle-is-active;
       }
 
@@ -72,24 +74,26 @@
       }
     }
   }
+}
 
-  // @param {px} $xui-toggle-label-size [base-font-size]
-  // @param {px} $xui-toggle-line-height [$xui-toggle-label-size * $base-line-height]
+// @param {px} $xui-toggle-label-font-size [base-font-size]
+// @param {px} $xui-toggle-label-line-height [$xui-toggle-label-font-size * $base-line-height]
+// @param {array} $xui-toggle-style
+.xui-toggle__switch {
+  @extend %toggle;
+  margin-top: rem(($xui-toggle-label-line-height - $xui-toggle-height) / 2);
+}
+
+.xui-toggle__label {
+  cursor: pointer;
+  display: flex;
+  user-select: none;
+  margin: 0;
+  @include inject-style($xui-toggle-style);
+  font-size: em($xui-toggle-label-font-size);
+  line-height: em($xui-toggle-label-line-height, $xui-toggle-label-font-size);
+
   .xui-toggle__switch {
-    @extend %toggle;
-    margin-top: rem(($xui-toggle-line-height - $xui-toggle-height) / 2);
-  }
-
-  label {
-    cursor: pointer;
-    display: flex;
-    user-select: none;
-    margin: 0;
-    font-size: em($xui-toggle-label-size);
-    line-height: em($xui-toggle-line-height, $xui-toggle-label-size);
-
-    .xui-toggle__switch {
-      margin: arrayMagic($xui-toggle-spacing);
-    }
+    margin: arrayMagic($xui-toggle-spacing);
   }
 }
