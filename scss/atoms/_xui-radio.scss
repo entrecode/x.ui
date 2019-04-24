@@ -12,40 +12,7 @@
 
 // scss-lint:disable NestingDepth
 .xui-radio {
-  label {
-    cursor: pointer;
-    display: flex;
-    align-items: flex-start;
-
-    &::before {
-      content: '';
-      display: inline-flex;
-      flex-grow: 0;
-      flex-shrink: 0;
-      transition: all 0.2s;
-      border-style: solid;
-      @include inject-style($xui-radio-style);
-      border-width: rem($xui-radio-height / 2);
-      border-radius: arrayMagic($xui-radio-height / 2);
-      border-color: $xui-radio-background;
-      background-color: $xui-radio-dot-color;
-      height: rem($xui-radio-height);
-      width: rem($xui-radio-height);
-      margin: arrayMagic($xui-radio-spacing);
-    }
-
-    // @param {color} $xui-radio-dot-hover-color [$text-lightest]
-    // @param {array} $xui-checkbox-hover-style
-    &:hover {
-      @media (hover: hover) {
-        &::before {
-          @include inject-style($xui-radio-hover-style);
-          background-color: $xui-radio-dot-hover-color;
-          border-width: rem(($xui-radio-height - $xui-radio-dot-size) / 2);
-        }
-      }
-    }
-  }
+  position: relative;
 
   [type='radio'],
   [type='checkbox'] {
@@ -54,12 +21,47 @@
     // @param {color} $xui-radio-dot-checked-color [$link]
     // @param {array} $xui-checkbox-checked-style
     &:checked {
-      + label {
+      + .xui-radio__label {
         &::before {
           @include inject-style($xui-radio-checked-style);
           background-color: $xui-radio-dot-checked-color;
           border-width: rem(($xui-radio-height - $xui-radio-dot-size) / 2);
         }
+      }
+    }
+  }
+}
+
+.xui-radio__label {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+
+  &::before {
+    content: '';
+    display: inline-flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    border-style: solid;
+    @include inject-style($xui-radio-style);
+    border-width: rem($xui-radio-height / 2);
+    border-radius: arrayMagic($xui-radio-height / 2);
+    border-color: $xui-radio-background;
+    background-color: $xui-radio-dot-color;
+    height: rem($xui-radio-height);
+    width: rem($xui-radio-height);
+    margin: arrayMagic($xui-radio-spacing);
+  }
+
+  // @param {color} $xui-radio-dot-hover-color [$text-lightest]
+  // @param {array} $xui-checkbox-hover-style
+  &:hover {
+    @media (hover: hover) {
+      &::before {
+        @include inject-style($xui-radio-hover-style);
+        background-color: $xui-radio-dot-hover-color;
+        border-width: rem(($xui-radio-height - $xui-radio-dot-size) / 2);
       }
     }
   }
