@@ -7,7 +7,11 @@
       </div>
       <div :data-col="markupCol ? markupCol : '6'">
         <div class="is-relative">
-          <div class="btn btn_round btn_small toggle-btn" @click="showConfig = !showConfig" v-if="hasConfig">
+          <div
+            class="btn btn_round btn_small toggle-btn"
+            @click="showConfig = !showConfig"
+            v-if="hasConfig"
+          >
             <span v-if="!showConfig">config</span>
             <span v-if="showConfig">markup</span>
           </div>
@@ -52,7 +56,7 @@ export default {
   position: absolute;
   top: 4px;
   right: 4px;
-  background: rgba(#000, .4);
+  background: rgba(#000, 0.4);
 }
 
 .hljs {

@@ -77,13 +77,11 @@
 </template>
 
 <script>
-import BlocksGroup from './../BlocksGroup.vue';
 import DocTab from './../DocTab.vue';
 
 export default {
   name: 'Loader',
   components: {
-    BlocksGroup,
     DocTab,
   },
   data: () => {

@@ -89,7 +89,7 @@
             <div class="field-group">
               <div class="xui-checkbox">
                 <input type="checkbox" v-model="hasBackdrop" id="hasBackdrop">
-                <label for="hasBackdrop">has backdrop</label>
+                <label for="hasBackdrop" class="xui-checkbox__label">has backdrop</label>
               </div>
             </div>
 

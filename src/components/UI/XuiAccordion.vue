@@ -63,7 +63,7 @@ export default {
         {
           title: 'toggle multiple',
           id: 'xui-accordion-multiple-toggle',
-          navTitle: 'single multiple',
+          navTitle: 'multiple toggle',
           groupItems: [
             {
               preview: `<div class="xui-accordion">
@@ -109,7 +109,7 @@ export default {
         {
           title: 'advanced',
           id: 'xui-accordion-advanced',
-          navTitle: 'advanced',
+          navTitle: 'examples',
           groupItems: [
             {
               preview: `<div class="xui-accordion has-border-bottom has-padding-3">

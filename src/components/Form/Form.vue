@@ -136,19 +136,19 @@ $input-big-style: ();`,
 <div data-col='6'>
 <div class="xui-checkbox">
   <input type="checkbox" id="boollean-1">
-  <label for="boollean-1">checkbox</label>
+  <label for="boollean-1" class="xui-checkbox__label">checkbox</label>
 </div>
 </div>
 <div data-col='6'>
 <div class="xui-checkbox">
   <input type="checkbox" checked id="boollean-2">
-  <label for="boollean-2">checkbox</label>
+  <label for="boollean-2" class="xui-checkbox__label">checkbox</label>
 </div>
 </div>
 </div>`,
               markup: `<div class="xui-checkbox">
   <input type="checkbox" id="">
-  <label for="">checkbox</label>
+  <label for="" class="xui-checkbox__label">checkbox</label>
 </div>`,
               config: `$xui-checkbox-spacing: 4 12 4 4;
 $xui-checkbox-height: 20;
@@ -177,19 +177,19 @@ $xui-checkbox-check-checked-color: $link;`,
 <div data-col='6'>
 <div class="xui-radio">
   <input type="radio" id="radio-1">
-  <label for="radio-1">radio boolean with longer label</label>
+  <label for="radio-1" class="xui-radio__label">radio boolean with longer label</label>
 </div>
 </div>
 <div data-col='6'>
 <div class="xui-radio">
   <input type="radio" checked id="radio-2">
-  <label for="radio-2">radio</label>
+  <label for="radio-2" class="xui-radio__label">radio</label>
 </div>
 </div>
 </div>`,
               markup: `<div class="xui-radio">
   <input type="radio" id="">
-  <label for="">radio</label>
+  <label for="" class="xui-radio__label">radio</label>
 </div>`,
               config: `$xui-radio-spacing: 0 12 0 0;
 $xui-radio-height: 20;
@@ -385,7 +385,7 @@ $input-group-addon-style: ();`,
   <div class="input-group__addon">
     <div class="xui-checkbox">
       <input type="checkbox" id="checkbox-3">
-      <label for="checkbox-3">checkbox</label>
+      <label for="checkbox-3" class="xui-checkbox__label">checkbox</label>
     </div>
   </div>
 </div>
@@ -511,7 +511,7 @@ $field-group-info-style: ();`,
       <div class="field-group">
         <div class="xui-checkbox">
           <input type="checkbox" id="checkbox-4">
-          <label for="checkbox-4">checkbox</label>
+          <label for="checkbox-4" class="xui-checkbox__label">checkbox</label>
         </div>
       </div>
     </div>
