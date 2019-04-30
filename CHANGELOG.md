@@ -44,6 +44,8 @@
 - changed `macro-metrics` to `atom-metric`
 - improved `.xui-accordion`
 - removed state values in `$xui-colors` map
+- removed `data-animate` use third-party libraries like animate.css instead
+- removed `.pull`
 
 ### changes
 
