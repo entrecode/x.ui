@@ -2085,7 +2085,7 @@ $xui-toggle-pin-style: () !default;
 // @param {array} $xui-toggle-style
 $xui-toggle-label-font-size: $base-font-size !default;
 $xui-toggle-label-line-height: $xui-toggle-label-font-size * $base-line-height !default;
-$xui-toggle-style: ();
+$xui-toggle-style: () !default;
 
 //
 // MARK
@@ -2201,16 +2201,7 @@ $is-placed-states: map-merge(
 //
 // IS-LAYER
 // -------------------------------------------------------------------------------------------------
-$is-layer: 1, 10, 100, 9999;
-
-//
-// Animation
-// -------------------------------------------------------------------------------------------------
-$linear-out-slow-in-timing-function: cubic-bezier(0, 0, 0.2, 0.1) !default;
-$fast-out-slow-in-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !default;
-$fast-out-linear-in-timing-function: cubic-bezier(0.4, 0, 1, 1) !default;
-
-$data-animate-timing: $fast-out-slow-in-timing-function !default;
+$is-layer: 1, 10, 100, 9999 !default;
 
 //
 // MIXINS
@@ -2220,7 +2211,7 @@ $data-animate-timing: $fast-out-slow-in-timing-function !default;
 $elevation-transition-duration: 280ms !default;
 
 // The default easing value for elevation transitions.
-$elevation-transition-timing-function: $fast-out-slow-in-timing-function !default;
+$elevation-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !default;
 
 // @param {color} $elevation-color [#000]- The default color for elevation shadows.
 $elevation-color: #000 !default;
