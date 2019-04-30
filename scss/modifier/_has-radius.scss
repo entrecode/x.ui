@@ -27,6 +27,22 @@
     border-bottom-left-radius: $radius;
     border-top-left-radius: $radius;
   }
+
+  &-tr {
+    border-top-right-radius: $radius;
+  }
+  
+  &-br {
+    border-bottom-right-radius: $radius;
+  }
+  
+  &-tl {
+    border-top-left-radius: $radius;
+  }
+  
+  &-bl {
+    border-bottom-left-radius: $radius;
+  }
 }
 
 .has-radius {
