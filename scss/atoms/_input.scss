@@ -11,8 +11,8 @@
 /// @param {color} $input-border-color [transparent]
 /// @param {px} $input-border-width [0]
 /// @param {string} $input-border-style [solid]
-/// @param {color} $input-background [var(--inputBackground) ]
-/// @param {color} $input-color [var(--inputColor)]
+/// @param {color} $input-background
+/// @param {color} $input-color
 /// @param {px} $input-radius [4]
 /// @param {array} $input-style
 
@@ -38,7 +38,7 @@
   margin: arrayMagic($input-spacing);
   color: $input-color;
 
-  // @param {color} $input-placeholder-color [var(--inputPlaceholderColor)]
+  // @param {color} $input-placeholder-color
   // @param {array} $input-placeholder-style
   @include placeholder {
     @include inject-style($input-placeholder-style);

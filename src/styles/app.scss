@@ -1,5 +1,4 @@
 @import 'config';
-@import 'varConfig';
 @import '../../scss/x.ui';
 @import 'hljs';
 
@@ -32,6 +31,7 @@ a.code {
 }
 
 :root {
+  --background: #{$background};
   --spacingColor: 252, 59, 58;
 }
 
@@ -57,7 +57,7 @@ a.code {
   }
 }
 
-.demo-wrapper {
+.demo-bg {
   background-image: repeating-linear-gradient(
     -45deg,
     rgba(var(--spacingColor), 0.2),
@@ -77,6 +77,12 @@ a.code {
   );
   background-clip: text;
   color: transparent;
+
+  &[class*='hover:'] {
+    &:hover {
+      background-image: none;
+    }
+  }
 }
 
 .demo-card {
