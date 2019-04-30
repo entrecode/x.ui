@@ -2123,6 +2123,12 @@ $has-radius-options: map-merge(
 );
 
 //
+// HAS-PADDING
+// -------------------------------------------------------------------------------------------------
+// @param {map} $has-padding-options [$spacings]
+$has-padding-options: $spacings !default; 
+
+//
 // HAS-HEIGHT
 // -------------------------------------------------------------------------------------------------
 // @param {map} $has-height-options
