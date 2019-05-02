@@ -3,18 +3,15 @@
 
     <grid/>
 
-    <Colors/>
 
     <h2 class="is-h1 align-center is-uppercase">media</h2>
     <media/>
 
     
-    <alert/>
+
 
     <h2 class="is-h1 align-center is-uppercase">UI</h2>
-    <ui-buttons/>
     <ui-hamburger-btn/>
-    <ui-button-group/>
     <ui-tag/>
     <ui-nav/>
     <ui-titlebar/>
@@ -69,14 +66,8 @@
 </template>
 
 <script>
-import Colors from '@/components/Core/Colors.vue';
 import Media from '@/components/Media/Media.vue';
 import Grid from '@/components/Grid/Grid.vue';
-import Function from '@/components/Function.vue';
-import Variables from '@/components/Variables.vue';
-import Mixins from '@/components/Mixins.vue';
-import Alert from '@/components/UI/Alert.vue';
-
 import StyleIsInk from '@/components/Style/IsInk.vue';
 import StyleIsTheme from '@/components/Style/IsTheme.vue';
 import StyleIsElevated from '@/components/Style/IsElevated.vue';
@@ -102,12 +93,9 @@ import UiXuiList from '@/components/UI/XuiList.vue';
 import UiXuiAccordion from '@/components/UI/XuiAccordion.vue';
 import UiLoader from '@/components/UI/Loader.vue';
 import UiHamburgerBtn from '@/components/UI/HamburgerBtn.vue';
-import UiButtons from '@/components/UI/Buttons.vue';
-import UiButtonGroup from '@/components/UI/ButtonGroup.vue';
 
 export default {
   components: {
-    Colors,
     Typo,
     Media,
     Alert,
@@ -123,9 +111,7 @@ export default {
     UiXuiList,
     UiXuiAccordion,
     UiLoader,
-    UiButtons,
     UiHamburgerBtn,
-    UiButtonGroup,
 
     LayoutBumper,
     LayoutDivider,
@@ -141,9 +127,6 @@ export default {
     StyleHasMargin,
 
     Grid,
-    Function,
-    Variables,
-    Mixins,
   },
 }
 </script>

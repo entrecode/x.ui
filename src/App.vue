@@ -1,26 +1,21 @@
 <template>
   <div id="app">
-    <Navbar/>
+    <router-view name="hero"/>
+    <!-- <demo-navbar/> -->
     <div data-grid="no-gutter">
-      <div data-col="4 2-xl">
-        <Menubar/>
-      </div>
-      <div data-col="8 10-xl">
-        <router-view/>
-      </div>
+      <router-view name="menu" style="background-color: var(--highlight);" data-col="3 2-xl"/>
+      <router-view name="main" data-col="9 10-xl"/>
     </div>
   </div>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
-import Menubar from '@/components/Menubar.vue';
+import DemoNavbar from '@/components/Navbar.vue';
 
 export default {
   name: 'app',
   components: {
-    Navbar,
-    Menubar,
+    DemoNavbar,
   },
 };
 </script>

@@ -1,119 +1,111 @@
 <template>
-  <section>
-    <div data-container>
-      <div data-grid>
-        <div data-col="+2 8">
+  <section class="demo-blocks-group">
+    <div data-grid>
+      <div data-col="8">
+        <div
+          v-for="(item, index) in sortedArray"
+          :key="index"
+          :id="item.anchor"
+          class="has-margin-middle-8"
+        >
+          <h3 v-if="item.title">
+            {{ item.title }}&ensp;
+            <div class="tag">{{ item.type }}</div>
+          </h3>
           <div
-            v-for="(item, index) in sortedArray"
-            :key="index"
-            :id="item.anchor"
-            class="has-margin-middle-8"
+            class="has-margin-bottom-5"
+            v-if="item.codeShort"
+            @click="item.code ? item.toggleCode = !item.toggleCode : null"
+            v-show="!item.toggleCode"
+            :class="{'is-clickable' : item.code}"
           >
-            <h3 v-if="item.title">
-              {{ item.title }}&ensp;
-              <div class="tag">{{ item.type }}</div>
-            </h3>
-            <div
-              class="has-margin-bottom-5"
-              v-if="item.codeShort"
-              @click="item.code ? item.toggleCode = !item.toggleCode : null"
-              v-show="!item.toggleCode"
-              :class="{'is-clickable' : item.code}"
-            >
-              <pre v-highlightjs="item.codeShort"><code class="scss" style="font-size: 16px;"></code></pre>
-            </div>
-            <div
-              class="has-margin-bottom-5"
-              v-if="item.code"
-              v-show="item.toggleCode"
-              @click="item.codeShort ? item.toggleCode = !item.toggleCode : null"
-              :class="{'is-clickable' : item.codeShort}"
-            >
-              <pre v-highlightjs="item.code"><code class="scss" style="font-size: 14px;"></code></pre>
-            </div>
-            <div class="has-margin-bottom-5" v-if="item.params">
-              <h4 class="is-h4">parameters</h4>
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Type</th>
-                    <th>Default Value</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="(param, index) in item.params" :key="index">
-                    <td>
-                      <div class="code" v-text="param.name"></div>
-                    </td>
-                    <td v-text="param.description"></td>
-                    <td v-text="param.type"></td>
-                    <td>
-                      <div class="code" v-text="param.default"></div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="has-margin-bottom-5" v-if="item.description">
-              <h4 class="is-h4">description</h4>
-              <p v-html="item.description"></p>
-            </div>
-            <div class="has-margin-bottom-5" v-if="item.returns">
-              <h4 class="is-h4">returns</h4>
-              <div class="code" v-text="item.returns"></div>
-            </div>
-            <div class="has-margin-bottom-5" v-if="item.example">
-              <h4 class="is-h4">example</h4>
-              <pre v-highlightjs="item.example"><code class="scss"></code></pre>
-            </div>
-            <div class="has-margin-bottom-5" v-if="item.require">
-              <h4 class="is-h4">requires</h4>
-              <ul data-grid="is-small">
-                <li v-for="(req, index) in item.require" :key="index" data-col="is-fit">
-                  <a
-                    :href="req.link"
-                    class="code"
-                    v-text="req.name"
-                    v-if="req.link"
-                    v-smooth-scroll
-                  ></a>
-                  <span class="code" v-text="req.name" v-else></span>
-                </li>
-              </ul>
-            </div>
-            <div class="has-margin-bottom-5" v-if="item.usedBy">
-              <h4 class="is-h4">used by</h4>
-              <ul data-grid="is-small">
-                <li v-for="(used, index) in item.usedBy" :key="index" data-col="is-fit">
-                  <a
-                    :href="used.link"
-                    class="code"
-                    v-text="used.name"
-                    v-if="used.link"
-                    v-smooth-scroll
-                  ></a>
-                  <span class="code" v-text="used.name" v-else></span>
-                </li>
-              </ul>
-            </div>
+            <pre v-highlightjs="item.codeShort"><code class="scss" style="font-size: 16px;"></code></pre>
+          </div>
+          <div
+            class="has-margin-bottom-5"
+            v-if="item.code"
+            v-show="item.toggleCode"
+            @click="item.codeShort ? item.toggleCode = !item.toggleCode : null"
+            :class="{'is-clickable' : item.codeShort}"
+          >
+            <pre v-highlightjs="item.code"><code class="scss" style="font-size: 14px;"></code></pre>
+          </div>
+          <div class="has-margin-bottom-5" v-if="item.params">
+            <h4 class="is-h4">parameters</h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Type</th>
+                  <th>Default Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(param, index) in item.params" :key="index">
+                  <td>
+                    <div class="code" v-text="param.name"></div>
+                  </td>
+                  <td v-text="param.description"></td>
+                  <td v-text="param.type"></td>
+                  <td>
+                    <div class="code" v-text="param.default"></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="has-margin-bottom-5" v-if="item.description">
+            <h4 class="is-h4">description</h4>
+            <p v-html="item.description"></p>
+          </div>
+          <div class="has-margin-bottom-5" v-if="item.returns">
+            <h4 class="is-h4">returns</h4>
+            <div class="code" v-text="item.returns"></div>
+          </div>
+          <div class="has-margin-bottom-5" v-if="item.example">
+            <h4 class="is-h4">example</h4>
+            <pre v-highlightjs="item.example"><code class="scss"></code></pre>
+          </div>
+          <div class="has-margin-bottom-5" v-if="item.require">
+            <h4 class="is-h4">requires</h4>
+            <ul data-grid="is-small">
+              <li v-for="(req, index) in item.require" :key="index" data-col="is-fit">
+                <a :href="req.link" class="code" v-text="req.name" v-if="req.link" v-smooth-scroll></a>
+                <span class="code" v-text="req.name" v-else></span>
+              </li>
+            </ul>
+          </div>
+          <div class="has-margin-bottom-5" v-if="item.usedBy">
+            <h4 class="is-h4">used by</h4>
+            <ul data-grid="is-small">
+              <li v-for="(used, index) in item.usedBy" :key="index" data-col="is-fit">
+                <a
+                  :href="used.link"
+                  class="code"
+                  v-text="used.name"
+                  v-if="used.link"
+                  v-smooth-scroll
+                ></a>
+                <span class="code" v-text="used.name" v-else></span>
+              </li>
+            </ul>
           </div>
         </div>
-        <div data-col="2">
-          <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-            <li class="nav__item">
-              <h2>functions</h2>
-            </li>
-            <li class="nav__item" v-for="(item, index) in sortedArray" :key="index">
-              <a
-                :href="'#' + item.anchor"
-                v-smooth-scroll
-                class="is-kilo is-ink hover:is-ink-link"
-              >{{item.title}}</a>
-            </li>
-          </ul>
-        </div>
+      </div>
+      <div data-col="4">
+        <ul class="nav nav_stacked is-sticky" style="top: 120px;">
+          <li class="nav__item">
+            <h2>functions</h2>
+          </li>
+          <li class="nav__item" v-for="(item, index) in sortedArray" :key="index">
+            <a
+              :href="'#' + item.anchor"
+              v-smooth-scroll
+              class="is-kilo is-ink hover:is-ink-link"
+            >{{item.title}}</a>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

@@ -1,71 +1,63 @@
 <template>
-  <section>
-    <div data-container>
-      <div data-grid>
-        <div data-col="+2 8">
-          <div
-            v-for="(item, index) in sortedArray"
-            :key="index"
-            class="has-margin-middle-8"
-            :id="item.anchor"
-          >
-            <h3 v-if="item.title">
-              {{ item.title }}&ensp;
-              <div class="tag">{{ item.type }}</div>
-            </h3>
-            <div class="has-margin-bottom-5" v-if="item.code">
-              <pre v-highlightjs="item.code"><code class="scss" style="font-size: 14px;"></code></pre>
-            </div>
-            <div class="has-margin-bottom-5" v-if="item.description">
-              <h4 class="is-h4">description</h4>
-              <p v-text="item.description"></p>
-            </div>
-            <div class="has-margin-bottom-5" v-if="item.require">
-              <h4 class="is-h4">requires</h4>
-              <ul data-grid="is-small">
-                <li v-for="(req, index) in item.require" :key="index" data-col="is-fit">
-                  <a
-                    :href="req.link"
-                    class="code"
-                    v-text="req.name"
-                    v-if="req.link"
-                    v-smooth-scroll
-                  ></a>
-                  <span class="code" v-text="req.name" v-else></span>
-                </li>
-              </ul>
-            </div>
-            <div class="has-margin-bottom-5" v-if="item.usedBy">
-              <h4 class="is-h4">used by</h4>
-              <ul data-grid="is-small">
-                <li v-for="(used, index) in item.usedBy" :key="index" data-col="is-fit">
-                  <a
-                    :href="used.link"
-                    class="code"
-                    v-text="used.name"
-                    v-if="used.link"
-                    v-smooth-scroll
-                  ></a>
-                  <span class="code" v-text="used.name" v-else></span>
-                </li>
-              </ul>
-            </div>
+  <section class="demo-blocks-group">
+    <div data-grid>
+      <div data-col="8">
+        <div
+          v-for="(item, index) in sortedArray"
+          :key="index"
+          class="has-margin-middle-8"
+          :id="item.anchor"
+        >
+          <h3 v-if="item.title">
+            {{ item.title }}&ensp;
+            <div class="tag">{{ item.type }}</div>
+          </h3>
+          <div class="has-margin-bottom-5" v-if="item.code">
+            <pre v-highlightjs="item.code"><code class="scss" style="font-size: 14px;"></code></pre>
+          </div>
+          <div class="has-margin-bottom-5" v-if="item.description">
+            <h4 class="is-h4">description</h4>
+            <p v-text="item.description"></p>
+          </div>
+          <div class="has-margin-bottom-5" v-if="item.require">
+            <h4 class="is-h4">requires</h4>
+            <ul data-grid="is-small">
+              <li v-for="(req, index) in item.require" :key="index" data-col="is-fit">
+                <a :href="req.link" class="code" v-text="req.name" v-if="req.link" v-smooth-scroll></a>
+                <span class="code" v-text="req.name" v-else></span>
+              </li>
+            </ul>
+          </div>
+          <div class="has-margin-bottom-5" v-if="item.usedBy">
+            <h4 class="is-h4">used by</h4>
+            <ul data-grid="is-small">
+              <li v-for="(used, index) in item.usedBy" :key="index" data-col="is-fit">
+                <a
+                  :href="used.link"
+                  class="code"
+                  v-text="used.name"
+                  v-if="used.link"
+                  v-smooth-scroll
+                ></a>
+                <span class="code" v-text="used.name" v-else></span>
+              </li>
+            </ul>
           </div>
         </div>
-        <div data-col="2">
-          <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-            <li class="nav__item">
-              <h2>variables</h2>
-            </li>
-            <li class="nav__item" v-for="(item, index) in sortedArray" :key="index">
-              <a
-                :href="'#' + item.anchor"
-                v-smooth-scroll
-                class="is-kilo is-ink hover:is-ink-link"
-              >{{item.title}}</a>
-            </li>
-          </ul>
-        </div>
+      </div>
+      <div data-col="4">
+        <ul class="nav nav_stacked is-sticky" style="top: 120px;">
+          <li class="nav__item">
+            <h2>variables</h2>
+          </li>
+          <li class="nav__item" v-for="(item, index) in sortedArray" :key="index">
+            <a
+              :href="'#' + item.anchor"
+              v-smooth-scroll
+              class="is-kilo is-ink hover:is-ink-link"
+            >{{item.title}}</a>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

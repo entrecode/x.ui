@@ -14,7 +14,7 @@ $ec-icon-support: true !default;
 // these variables are used in `_core/_colors.scss`
 // Base theme colors
 $background: #fff !default;
-$text: #2a3d54 !default;
+$text: #0d2e48 !default;
 
 // @param {color | false} $lighter-fallback [false] - overwrite light fallback color for setContrast
 // @param {color | false} $darker-fallback [false] - overwrite darker fallback color for setContrast
@@ -41,12 +41,12 @@ $_luma-background: luma($background);
   }
 }
 
-$link: #2fce6f !default;
+$link: #00cd97 !default;
 $link-contrast: setContrast($link) !default;
 $link-safe: $link !default;
 $link-hover: setHover($link) !default;
 
-$super: #14a656 !default;
+$super: #fb5557 !default;
 $super-contrast: setContrast($super) !default;
 $super-safe: setContrast($background, $super) !default;
 $super-hover: setHover($super) !default;
@@ -56,7 +56,7 @@ $minor-contrast: setContrast($minor) !default;
 $minor-safe: setContrast($background, $minor) !default;
 $minor-hover: setHover($minor) !default;
 
-$highlight: #fcff66 !default;
+$highlight: #fcf3b5 !default;
 $highlight-contrast: setContrast($highlight) !default;
 $highlight-safe: setContrast($background, $highlight) !default;
 $highlight-hover: setHover($highlight) !default;
@@ -97,17 +97,17 @@ $state-info-contrast: setContrast($background, $state-info) !default;
 $state-info-safe: setContrast($background, $state-info) !default;
 $state-info-hover: setHover($state-info) !default;
 
-$state-error: #F9D7DA !default;
+$state-error: #f9d7da !default;
 $state-error-contrast: setContrast($background, $state-error) !default;
 $state-error-safe: setContrast($background, $state-error) !default;
 $state-error-hover: setHover($state-error) !default;
 
-$state-success: #D3ECDB !default;
+$state-success: #d3ecdb !default;
 $state-success-contrast: setContrast($background, $state-success) !default;
 $state-success-safe: setContrast($background, $state-success) !default;
 $state-success-hover: setHover($state-success) !default;
 
-$state-warning: #FFF2CF !default;
+$state-warning: #fff2cf !default;
 $state-warning-contrast: setContrast($background, $state-warning) !default;
 $state-warning-safe: setContrast($background, $state-warning) !default;
 $state-warning-hover: setHover($state-warning) !default;
@@ -983,7 +983,6 @@ $nav-link-hover-style: () !default;
 $nav-link-selected-background: $nav-link-hover-background !default;
 $nav-link-selected-color: $nav-link-hover-color !default;
 $nav-link-selected-style: $nav-link-hover-style !default;
-
 
 //
 // TITLE
@@ -2126,7 +2125,7 @@ $has-radius-options: map-merge(
 // HAS-PADDING
 // -------------------------------------------------------------------------------------------------
 // @param {map} $has-padding-options [$spacings]
-$has-padding-options: $spacings !default; 
+$has-padding-options: $spacings !default;
 
 //
 // HAS-HEIGHT

@@ -1,5 +1,5 @@
 <template>
-  <section data-container>
+  <section class="demo-blocks-group">
     <div data-grid>
       <div data-col="10">
         <blocks :group="filterGroup(undefined)"></blocks>
@@ -91,5 +91,5 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 </style>
