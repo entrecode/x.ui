@@ -1,11 +1,11 @@
 <template>
-  <div class="doc-navbar is-sticky has-padding-2 is-layer-10" style="top:0;">
+  <div class="doc-navbar is-sticky has-padding-2 has-margin-bottom-5 is-layer-10" style="top:0;">
     <div class="has-padding-center-4" data-flex="center-items">
       <img src="./../assets/x-logo.png" style="height: 32px; width: auto;">
       <div class="x-space-3"></div>
       <div class="flex-space"></div>
       <div class="is-relative" style="flex-grow: 1; max-width: 480px;">
-        <div class="input-group" style="mix-blend-mode: multiply;">
+        <div class="input-group">
           <div class="input-group__addon">
             <ixo name="search"></ixo>
           </div>
@@ -22,16 +22,16 @@
             <div class="btn btn_small btn_clear">clear</div>
           </div>
         </div>
-        <div class="popdown is-elevated-24" v-if="showPopdown">
-          <ul>
-            <li>
-              <a href="#scroll-to-intro" class="btn btn_clear">intro</a>
+        <div class="popdown is-elevated-24" v-show="showPopdown">
+          <ul class="nav nav_stacked">
+            <li class="nav__item">
+              <a href="#scroll-to-getting-started" class="btn btn_clear">getting started</a>
             </li>
-            <li v-for="(value, key, index) in structure" :key="index">
+            <li v-for="(value, key, index) in structure" :key="index"  class="nav__item">
               <strong class="headings-font has-padding-3">{{key}}</strong>
               <ul>
                 <li v-for="(val, index) in value" :key="index">
-                  <a :href="'#scoll-to-' + val" class="btn btn_clear" v-smooth-scroll>{{val}}</a>
+                  <a :href="val.link" class="btn btn_clear">{{val.title}}</a>
                 </li>
               </ul>
             </li>
@@ -68,67 +68,10 @@ export default {
       showPopdown: false,
       structureQuery: null,
       structure: {
-        typeface: ['typo-sizes', 'headings', 'simple-headings', 'paragraph', 'lead-paragraph', 'font-weight', 'font-family'],
-        media: ['img', 'img-crop', 'is-outset'],
-        form: [
-          'input',
-          'select',
-          'checkbox',
-          'radio',
-          'toggle',
-          'slider',
-          'file-upload',
-          'input-group',
-          'field-group',
-        ],
-        ui: [
-          'btn',
-          'btn-group',
-          'tag',
-          'nav',
-          'titlebar',
-          'modal',
-          'card',
-          'avatar',
-          'hamburger-btn',
-          'dropdown',
-          'xui-tabs',
-          'xui-list',
-          'xui-accordion',
-          'dialog',
-          'deck',
-          'toast',
-          'snackbar',
-          'overlay',
-          'well',
-          'alert',
-          'loader',
-          'data-tooltip',
-          'table',
-          'is-ink',
-          'is-theme',
-          'has-radius',
-          'has-border',
-          'is-elevated',
-          'is-fab',
-        ],
-        layout: [
-          'bumper',
-          'divider',
-          'spacer',
-          'spacing',
-          'x-space',
-          'y-space',
-          'flex-space',
-          'has-margin',
-          'has-padding',
-          'flex',
-          'has-height',
-          'has-width',
-          'pull',
-          'is-clipped',
-          'is-position',
-          'is-layer',
+        typo: [
+          { title: 'sizes', link: '#scroll-to-typo-sizes' },
+          { title: 'headings', link: '#scroll-to-headings' },
+          { title: 'paragraph', link: '#scroll-to-paragraph' },
         ],
       },
     };
@@ -144,7 +87,6 @@ export default {
 <style scoped lang="scss">
 .doc-navbar {
   background-color: rgba(#fff, 0.6);
-  backdrop-filter: blur(16px);
 }
 
 .input-group {

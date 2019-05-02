@@ -12,13 +12,17 @@ $is-bold: 700;
 
 $base-font-size: 14;
 
-$type-scale: (is-kilo: 1.25);
+$type-scale: (
+  is-kilo: 1.25,
+);
 
 $background: #fff;
 $text: #252a57;
 $link: #2fce6f;
 $super: #0079ff;
 $minor: #f4f5f6;
+
+$input-background: #edf2f7;
 
 $headings-line-height: 1;
 $paragraph-line-height: 1.5;
@@ -50,5 +54,10 @@ $is-theme: (
     #f4f4f4,
     $text,
     $link,
+  ),
+  'menubar': (
+    #ca3300,
+    #fff,
+    #fed789,
   ),
 );

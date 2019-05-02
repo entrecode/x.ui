@@ -3,10 +3,19 @@
   overflow-x: auto;
   padding: rem(16);
   background: $text;
-  color: white;
+  color: #fff;
   font-size: em(12);
   line-height: em(20, 12);
   border-radius: rem(4);
+
+  a {
+    color: inherit;
+    border-bottom: 1px dotted #fff;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .hljs-name,
@@ -80,13 +89,4 @@
 .hljs-addition {
   background-color: #a2fca2;
   color: #333;
-}
-
-.hljs a {
-  color: inherit;
-  border-bottom: 1px dotted white;
-
-  &:hover {
-    text-decoration: none;
-  }
 }

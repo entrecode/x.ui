@@ -32,7 +32,7 @@ linters:
     enabled: false
 
   LeadingZero:
-    enabled: true
+    enabled: false
 
   NameFormat:
     enabled: true

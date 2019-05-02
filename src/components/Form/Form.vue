@@ -55,7 +55,7 @@ $input-hover-style: ();
 $input-focus-style: ();
 $input-disabled-style: ();
 
-$input-placeholder-color: var(--inputPlaceholderColor);
+$input-placeholder-color: $text-lighter;
 $input-placeholder-style: ();
 $input-placeholder-hover-style: ();
 $input-placeholder-focus-style: ();`,

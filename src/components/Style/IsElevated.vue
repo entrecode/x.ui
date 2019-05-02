@@ -84,7 +84,10 @@ export default {
 <div class="hover:is-elevated-#"></div>`,
       config: `$elevation-color: #000;
 $elevation-opacity: 1;
-$elevation-prefix: 'is-elevated-';`,
+$elevation-prefix: 'is-elevated-';
+
+$elevation-transition-duration: 280ms;
+$elevation-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);`,
     };
   },
 };

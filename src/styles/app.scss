@@ -20,13 +20,13 @@
   white-space: nowrap;
   user-select: all;
   margin: 0 rem(2);
-}
 
-a.code {
-  user-select: initial;
+  @at-root a#{&} {
+    user-select: initial;
 
-  &:hover {
-    color: $link-safe;
+    &:hover {
+      color: $link-safe;
+    }
   }
 }
 
