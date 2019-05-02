@@ -50,6 +50,11 @@ export default new Router({
       components: { main: () => import('./views/Form.vue'), menu: DemoMenubar },
     },
     {
+      path: '/loader',
+      name: 'loader',
+      components: { main: () => import('./views/Loader.vue'), menu: DemoMenubar },
+    },
+    {
       path: '/alert',
       name: 'alert',
       components: { main: () => import('./views/Alert.vue'), menu: DemoMenubar },
