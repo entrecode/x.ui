@@ -1,13 +1,13 @@
 <template>
   <section class="demo-blocks-group">
     <div data-grid>
-      <div data-col="10">
+      <div data-col="8">
         <blocks :group="filterGroup(undefined)"></blocks>
         <blocks :group="filterGroup('atoms')"></blocks>
         <blocks :group="filterGroup('molecules')"></blocks>
         <blocks :group="filterGroup('modifier')"></blocks>
       </div>
-      <div data-col="2">
+      <div data-col="4">
         <ul class="nav nav_stacked is-sticky" style="top: 120px;">
           <li class="nav__item" v-if="sectionTitle">
             <h2 v-text="sectionTitle"></h2>

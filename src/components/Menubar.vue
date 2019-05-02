@@ -45,6 +45,32 @@
         </li>
         <li class="nav__item">
           <router-link to="form" class="is-mega is-uppercase">form</router-link>
+          <ul v-show="$route.name === 'form'" class="nav nav_stacked has-margin-middle-3">
+            <li class="nav__item">
+              <router-link to="form#scroll-to-field-group" class="is-kilo">field-group</router-link>
+            </li>
+            <li class="nav__item">
+              <router-link to="form#scroll-to-input" class="is-kilo">input</router-link>
+            </li>
+            <li class="nav__item">
+              <router-link to="form#scroll-to-xui-select" class="is-kilo">xui-select</router-link>
+            </li>
+            <li class="nav__item">
+              <router-link to="form#scroll-to-xui-toggle" class="is-kilo">xui-toggle</router-link>
+            </li>
+            <li class="nav__item">
+              <router-link to="form#scroll-to-checkbox" class="is-kilo">checkbox</router-link>
+            </li>
+            <li class="nav__item">
+              <router-link to="form#scroll-to-radio" class="is-kilo">radio</router-link>
+            </li>
+            <li class="nav__item">
+              <router-link to="form#scroll-to-range-slider" class="is-kilo">range-slider</router-link>
+            </li>
+            <li class="nav__item">
+              <router-link to="form#scroll-to-file-upload" class="is-kilo">file-upload</router-link>
+            </li>
+          </ul>
         </li>
         <li class="nav__item">
           <router-link to="alert" class="is-mega is-uppercase">alert</router-link>

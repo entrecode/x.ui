@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="has-padding-8">
     <ui-buttons/>
     <ui-button-group/>
   </div>

@@ -1,15 +1,34 @@
 <template>
-  <div>
-    <h2 class="is-h1 align-center is-uppercase">form</h2>
-    <Form/>
-  </div>
+  <section class="has-padding-8">
+    <form-field-group/>
+    <form-input/>
+    <form-xui-select/>
+    <form-checkbox/>
+    <form-radio/>
+    <form-xui-toggle/>
+    <form-range-slider/>
+    <form-file-upload/>
+  </section>
 </template>
 
 <script>
-import Form from '@/components/Form/Form.vue';
+import FormFieldGroup from '@/components/Form/FieldGroup.vue';
+import FormInput from '@/components/Form/Input.vue';
+import FormXuiSelect from '@/components/Form/XuiSelect.vue';
+import FormCheckbox from '@/components/Form/Checkbox.vue';
+import FormRadio from '@/components/Form/Radio.vue';
+import FormXuiToggle from '@/components/Form/XuiToggle.vue';
+import FormRangeSlider from '@/components/Form/RangeSlider.vue';
+import FormFileUpload from '@/components/Form/FileUpload.vue';
 export default {
   components: {
-    Form,
+    FormFieldGroup,
+    FormInput,
+    FormXuiSelect,
+    FormCheckbox,
+    FormXuiToggle,
+    FormRangeSlider,
+    FormFileUpload,
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <blocks-group :groups="sectionGroups" section-title="btn"></blocks-group>
+  <blocks-group :groups="sectionGroups" section-title="buttons"></blocks-group>
 </template>
 
 <script>
@@ -16,7 +16,7 @@ export default {
         {
           title: '',
           id: 'btn',
-          navTitle: 'Buttons',
+          navTitle: 'buttons',
           summary: '',
           groupItems: [
             {
@@ -190,7 +190,7 @@ $btn-clear-hover-style: ();`,
         {
           title: 'Outlined Buttons',
           id: 'btn-outlined',
-          navTitle: 'Outlined Buttons',
+          navTitle: 'outlined buttons',
           summary: '',
           groupItems: [
             {
@@ -254,7 +254,7 @@ $btn-outline-invert-hover-style: ();`,
         {
           title: 'Additional Button Sizes',
           id: 'btn-sizes',
-          navTitle: 'Button Sizes',
+          navTitle: 'button sizes',
           summary: '',
           groupItems: [
             {
@@ -281,7 +281,7 @@ $btn-big-wide: 240 !default;`,
         {
           title: 'Additional Button Modifier',
           id: 'btn-modifier',
-          navTitle: 'Button Modifier',
+          navTitle: 'button modifier',
           summary: '',
           groupItems: [
             {

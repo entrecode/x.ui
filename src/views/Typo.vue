@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="has-padding-8">
     <h2 class="is-h1 is-uppercase">typo</h2>
     <typo/>
     <typo-paragraphs/>

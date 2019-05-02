@@ -3,8 +3,10 @@
     <router-view name="hero"/>
     <!-- <demo-navbar/> -->
     <div data-grid="no-gutter">
-      <router-view name="menu" style="background-color: var(--highlight);" data-col="3 2-xl"/>
-      <router-view name="main" data-col="9 10-xl"/>
+      <router-view name="menu" data-col="3 2-xl"/>
+      <div data-col="9 10-xl">
+        <router-view name="main"/>
+      </div>
     </div>
   </div>
 </template>
