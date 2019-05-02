@@ -86,7 +86,7 @@
 </template>
 
 <script>
-import DocTab from './../DocTab.vue';
+import DocTab from '@/components/DocTab.vue';
 
 export default {
   name: 'HasBorder',

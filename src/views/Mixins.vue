@@ -70,7 +70,7 @@
           <div class="has-margin-bottom-5" v-if="item.require">
             <h4 class="is-h4">requires</h4>
             <ul data-grid="is-small">
-              <li v-for="(req, index) in item.require" :key="index" data-col="is-fit">
+              <li v-for="(req, index) in item.require" :key="index" data-col="fit">
                 <a :href="req.link" class="code" v-text="req.name" v-if="req.link" v-smooth-scroll></a>
                 <span class="code" v-text="req.name" v-else></span>
               </li>
@@ -82,7 +82,7 @@
               <li
                 v-for="(used, index) in item.usedBy"
                 :key="index"
-                data-col="is-fit"
+                data-col="fit"
                 class="has-padding-bottom-3"
               >
                 <a

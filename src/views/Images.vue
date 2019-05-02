@@ -1,7 +1,7 @@
 <template>
-  <section data-container class="has-margin-bottom-8">
+  <section class="demo-blocks-group">
     <div data-grid>
-      <div data-col="10">
+      <div data-col="8">
         <div id="#scroll-to-img-crop">
           <doc-tab>
             <div slot="preview">
@@ -142,7 +142,7 @@
           </doc-tab>
         </div>
       </div>
-      <div data-col="2">
+      <div data-col="4">
         <ul class="nav nav_stacked is-sticky" style="top: 120px;">
           <li class="nav__item">
             <h2>media</h2>
@@ -175,7 +175,7 @@
 </template>
 
 <script>
-import DocTab from './../DocTab.vue';
+import DocTab from '@/components/DocTab.vue';
 
 export default {
   name: 'Media',

@@ -69,13 +69,11 @@
 </template>
 
 <script>
-import BlocksGroup from './../BlocksGroup.vue';
-import DocTab from './../DocTab.vue';
+import DocTab from '@/components/DocTab.vue';
 
 export default {
   name: 'HasRadius',
   components: {
-    BlocksGroup,
     DocTab,
   },
   data: () => {

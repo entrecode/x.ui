@@ -52,7 +52,6 @@
 
 <script>
 export default {
-  name: 'Grid',
   data: () => {
     return {
       cols: [{ size: 4, offset: null }, { size: 4, offset: null }, { size: 4, offset: null }],

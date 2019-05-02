@@ -1,5 +1,5 @@
 <template>
-  <section data-container>
+  <section class="demo-blocks-group">
     <div data-grid="is-center">
       <div data-col="10">
         <div class="has-margin-bottom-8" id="scroll-to-modal">
@@ -163,7 +163,7 @@
 </template>
 
 <script>
-import DocTab from './../DocTab.vue';
+import DocTab from '@/components/DocTab.vue';
 
 export default {
   name: 'Modal',

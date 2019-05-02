@@ -36,6 +36,9 @@
           </ul>
         </li>
         <li class="nav__item">
+          <router-link to="images" class="is-mega is-uppercase">images</router-link>
+        </li>
+        <li class="nav__item">
           <router-link to="buttons" class="is-mega is-uppercase">Buttons</router-link>
           <ul v-show="$route.name === 'buttons'" class="nav nav_stacked has-margin-middle-3">
             <li class="nav__item">
@@ -73,7 +76,73 @@
           </ul>
         </li>
         <li class="nav__item">
+          <router-link to="tags" class="is-mega is-uppercase">tags</router-link>
+        </li>
+        <li class="nav__item">
           <router-link to="alert" class="is-mega is-uppercase">alert</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="well" class="is-mega is-uppercase">well</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="avatar" class="is-mega is-uppercase">avatar</router-link>
+        </li>
+        <li class="y-space-5"></li>
+        <li>
+          <div class="is-h6 is-ink-light">ui</div>
+        </li>
+        <li class="nav__item">
+          <router-link to="titlebar" class="is-mega is-uppercase">titlebar</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="nav" class="is-mega is-uppercase">nav</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="modal" class="is-mega is-uppercase">modal</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="xui-list" class="is-mega is-uppercase">xui-list</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="card" class="is-mega is-uppercase">card</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="xui-accordion" class="is-mega is-uppercase">xui-accordion</router-link>
+        </li>
+        <li class="y-space-5"></li>
+        <li>
+          <div class="is-h6 is-ink-light">style</div>
+        </li>
+        <li class="nav__item">
+          <router-link to="is-ink" class="is-mega is-uppercase">is-ink</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="is-theme" class="is-mega is-uppercase">is-theme</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="is-elevated" class="is-mega is-uppercase">is-elevated</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="has-radius" class="is-mega is-uppercase">has-radius</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="has-border" class="is-mega is-uppercase">has-border</router-link>
+        </li>
+        <li class="y-space-5"></li>
+        <li>
+          <div class="is-h6 is-ink-light">layout</div>
+        </li>
+        <li class="nav__item">
+          <router-link to="grid" class="is-mega is-uppercase">grid</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="spacer" class="is-mega is-uppercase">spacer</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="has-margin" class="is-mega is-uppercase">has-margin</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="has-padding" class="is-mega is-uppercase">has-padding</router-link>
         </li>
         <li class="y-space-5"></li>
         <li class="nav__item">

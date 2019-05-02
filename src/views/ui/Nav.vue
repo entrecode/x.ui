@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import BlocksGroup from './../BlocksGroup.vue';
+import BlocksGroup from '@/components/BlocksGroup.vue';
 
 export default {
   name: 'Nav',

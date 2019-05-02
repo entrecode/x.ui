@@ -35,7 +35,6 @@
 - removed `.form-group` use `.field-group` instead
 - removed input validation styles
 - removed `.bubble` use `.tag` instead
-- changed `data-col="auto"` to `data-col="is-auto"`
 - changed `$xui-checkbox-` config variables
 - changed `$xui-radio-` config variables
 - renamed `.slider` to `.range-slider`
@@ -76,7 +75,7 @@
 - added color-modifier `.hover:is-ink-#`
 - added theme-modifier `.hover:is-theme-#`
 - added theme-modifier `.hover:is-elevated-#`
-- added `data-col="is-fit"`
+- added `data-col="fit"`
 - added grid config `$grid-small-gutter`
 - added `is-round` modifier
 - added `.nav__link` styles

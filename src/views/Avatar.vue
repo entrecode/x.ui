@@ -3,13 +3,10 @@
 </template>
 
 <script>
-import DocTab from './../DocTab.vue';
-import BlocksGroup from './../BlocksGroup.vue';
+import BlocksGroup from '@/components/BlocksGroup.vue';
 
 export default {
-  name: 'Avatar',
   components: {
-    DocTab,
     BlocksGroup,
   },
   data: () => {
