@@ -14,8 +14,12 @@
         <li class="nav__item">
           <router-link to="introduction" class="is-kilo is-uppercase">introduction</router-link>
         </li>
+        <li class="y-space-5"></li>
+        <li>
+          <div class="is-h6 is-ink-light">core</div>
+        </li>
         <li class="nav__item">
-          <router-link to="colors" class="is-kilo is-uppercase">colors</router-link>
+          <router-link to="colors" class="is-mega is-uppercase">colors</router-link>
         </li>
         <li class="y-space-5"></li>
         <li class="nav__item">
@@ -112,6 +116,9 @@
         <li class="nav__item">
           <router-link to="xui-accordion" class="is-mega is-uppercase">xui-accordion</router-link>
         </li>
+        <li class="nav__item">
+          <router-link to="table" class="is-mega is-uppercase">table</router-link>
+        </li>
         <li class="y-space-5"></li>
         <li>
           <div class="is-h6 is-ink-light">style</div>
@@ -130,6 +137,12 @@
         </li>
         <li class="nav__item">
           <router-link to="has-border" class="is-mega is-uppercase">has-border</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="has-height" class="is-mega is-uppercase">has-height</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="has-width" class="is-mega is-uppercase">has-width</router-link>
         </li>
         <li class="y-space-5"></li>
         <li>

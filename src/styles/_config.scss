@@ -12,6 +12,9 @@ $is-bold: 700;
 
 $base-font-size: 14;
 
+$link: #00cd97;
+$minor: #edf2f7;
+
 $input-background: #edf2f7;
 
 $type-scale: (
@@ -24,6 +27,10 @@ $paragraph-line-height: 1.5;
 $btn-weight: $is-medium;
 $btn-font-family: $headings-font-family;
 $btn-icon-size: 20;
+
+$btn-background: var(--highlight);
+$btn-color: var(--text);
+$btn-font-size: 16;
 
 $tag-font-family: $headings-font-family;
 $tag-weight: $is-medium;

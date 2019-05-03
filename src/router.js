@@ -20,9 +20,9 @@ export default new Router({
       components: { main: () => import('./views/GettingStarted.vue'), menu: DemoMenubar },
     },
     {
-      path: '/about',
-      name: 'about',
-      components: { main: () => import('./views/About.vue'), menu: DemoMenubar },
+      path: '/introduction',
+      name: 'introduction',
+      components: { main: () => import('./views/Introduction.vue'), menu: DemoMenubar },
     },
     {
       path: '/colors',
@@ -95,6 +95,11 @@ export default new Router({
       components: { main: () => import('./views/ui/XuiAccordion.vue'), menu: DemoMenubar },
     },
     {
+      path: '/table',
+      name: 'table',
+      components: { main: () => import('./views/ui/Table.vue'), menu: DemoMenubar },
+    },
+    {
       path: '/card',
       name: 'card',
       components: { main: () => import('./views/ui/Card.vue'), menu: DemoMenubar },
@@ -143,6 +148,16 @@ export default new Router({
       path: '/has-border',
       name: 'has-border',
       components: { main: () => import('./views/style/HasBorder.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/has-height',
+      name: 'has-height',
+      components: { main: () => import('./views/style/HasHeight.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/has-width',
+      name: 'has-width',
+      components: { main: () => import('./views/style/HasWidth.vue'), menu: DemoMenubar },
     },
     {
       path: '/grid',

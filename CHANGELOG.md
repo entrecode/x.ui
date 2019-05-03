@@ -87,6 +87,7 @@
 - `.overlay` use `.modal` instead
 - `.toast` use `.modal` instead
 - `.snackbar` use `.modal` instead
+- `.hanburger-btn`
 
 ### removed
 
