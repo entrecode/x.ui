@@ -34,7 +34,7 @@ $field-group-padding: 0;
 $field-group-background: none;
 $field-group-style: ();
 
-$field-group-label-spacing: 8;
+$field-group-label-spacing: 4;
 $field-group-label-font-size: $base-font-size;
 $field-group-label-style: ();
 

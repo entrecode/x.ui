@@ -1766,10 +1766,10 @@ $field-group-padding: 0 !default;
 $field-group-background: none !default;
 $field-group-style: () !default;
 
-// @param {array} $field-group-label-spacing [8]
+// @param {array} $field-group-label-spacing [4]
 // @param {px} $field-group-label-font-size [$base-font-size]
 // @param {array} $field-group-label-style
-$field-group-label-spacing: 8 !default;
+$field-group-label-spacing: 4 !default;
 $field-group-label-font-size: $base-font-size !default;
 $field-group-label-style: () !default;
 

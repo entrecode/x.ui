@@ -4,18 +4,16 @@
 /// @group grid-columns
 
 [data-col] {
+  flex: 100%;
   min-height: 1px;
-  width: 100%;
   margin: 0;
 }
 
 [data-col~='auto'] {
-  width: initial;
-  flex: auto;
+  flex: 1;
 }
 
 [data-col~='fit'] {
-  width: initial;
   flex: none;
 }
 
@@ -38,8 +36,7 @@
 @each $key in map-keys($breakpoints) {
   [data-col~='auto-#{$key}'] {
     @media (min-width: bp(#{$key})) {
-      width: initial;
-      flex: auto;
+      flex: 1;
     }
   }
 }
@@ -47,7 +44,6 @@
 @each $key in map-keys($breakpoints) {
   [data-col~='fit-#{$key}'] {
     @media (min-width: bp(#{$key})) {
-      width: initial;
       flex: none;
     }
   }
