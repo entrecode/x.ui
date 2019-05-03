@@ -33,6 +33,10 @@ input {
   user-select: none;
 }
 
+[readonly] {
+  cursor: default;
+}
+
 //
 // Universal Inheritance
 // ---------------------
