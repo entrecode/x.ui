@@ -29,7 +29,7 @@
   └─ app.scss</code></pre>
   <div class="spacer"></div>
     <pre v-highlightjs><code class="scss">@import 'your-config';
-@import '~x.ui/src/x.ui.scss';</code></pre>
+@import '~x.ui/scss/x.ui.scss';</code></pre>
   </div>
 </template>
 

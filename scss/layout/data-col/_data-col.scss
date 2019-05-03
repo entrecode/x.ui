@@ -1,11 +1,12 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0-beta.2
+/// @since 10.0.0
 /// @access public
 /// @group grid-columns
 
 [data-col] {
   min-height: 1px;
   width: 100%;
+  margin: 0;
 }
 
 [data-col~='auto'] {

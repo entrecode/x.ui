@@ -2168,7 +2168,7 @@ $has-width-options: map-merge(
 $is-display-states: () !default;
 $is-display-states: map-merge(
   (
-    'none': 'none',
+    'hidden': 'none',
     'block': 'block',
     'flex': 'flex',
   ),
