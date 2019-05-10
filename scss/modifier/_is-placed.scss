@@ -4,8 +4,6 @@
 /// @group modifier
 ///
 /// @param {map} $is-placed-map
-/// @param {map} $breakpoints
-/// @requires {function} bp
 
 @mixin _is-placed($p) {
   &-n {
@@ -68,18 +66,5 @@ $_values: map-values($is-placed-map);
 
   .#{$_key} {
     @include _is-placed($_v);
-  }
-}
-
-@each $_bp in map-keys($breakpoints) {
-  @media (min-width: bp(#{$_bp})) {
-    @each $_key in $_keys {
-      $_i: index($_keys, $_key);
-      $_v: nth($_values, $_i);
-
-      .#{$_key}-#{$_bp} {
-        @include _is-placed($_v);
-      }
-    }
   }
 }

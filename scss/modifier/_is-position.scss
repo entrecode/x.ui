@@ -4,8 +4,6 @@
 /// @group modifier
 ///
 /// @param {map} $is-position-map
-/// @param {map} $breakpoints
-/// @requires {function} bp
 
 $_keys: map-keys($is-position-map);
 $_values: map-values($is-position-map);
@@ -16,18 +14,5 @@ $_values: map-values($is-position-map);
 
   .#{$_key} {
     position: #{$_v};
-  }
-}
-
-@each $_bp in map-keys($breakpoints) {
-  @media (min-width: bp(#{$_bp})) {
-    @each $_key in $_keys {
-      $_i: index($_keys, $_key);
-      $_v: nth($_values, $_i);
-
-      .#{$_key}-#{$_bp} {
-        position: #{$_v};
-      }
-    }
   }
 }
