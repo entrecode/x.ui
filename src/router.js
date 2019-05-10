@@ -155,16 +155,6 @@ export default new Router({
       components: { main: () => import('./views/style/HasBorder.vue'), menu: DemoMenubar },
     },
     {
-      path: '/has-height',
-      name: 'has-height',
-      components: { main: () => import('./views/style/HasHeight.vue'), menu: DemoMenubar },
-    },
-    {
-      path: '/has-width',
-      name: 'has-width',
-      components: { main: () => import('./views/style/HasWidth.vue'), menu: DemoMenubar },
-    },
-    {
       path: '/grid',
       name: 'grid',
       components: { main: () => import('./views/layout/Grid.vue'), menu: DemoMenubar },
@@ -183,6 +173,21 @@ export default new Router({
       path: '/has-padding',
       name: 'has-padding',
       components: { main: () => import('./views/layout/HasPadding.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/is-height',
+      name: 'is-height',
+      components: { main: () => import('./views/layout/IsHeight.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/is-width',
+      name: 'is-width',
+      components: { main: () => import('./views/layout/IsWidth.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/position',
+      name: 'position',
+      components: { main: () => import('./views/layout/Position.vue'), menu: DemoMenubar },
     },
   ],
 });

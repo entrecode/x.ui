@@ -123,3 +123,12 @@
 .router-link-active {
   color: var(--link) !important;
 }
+
+.demo-code {
+  color: #a2fca2;
+  display: block;
+  overflow-x: auto;
+  padding: rem(16);
+  background: $text;
+  border-radius: rem(4);
+}

@@ -152,10 +152,13 @@
         <router-link to="has-padding" class="is-mega is-uppercase">has-padding</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="has-height" class="is-mega is-uppercase">has-height</router-link>
+        <router-link to="is-height" class="is-mega is-uppercase">is-height</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="has-width" class="is-mega is-uppercase">has-width</router-link>
+        <router-link to="is-width" class="is-mega is-uppercase">is-width</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="position" class="is-mega is-uppercase">position</router-link>
       </li>
       <li class="y-space-5"></li>
       <li class="nav__item">

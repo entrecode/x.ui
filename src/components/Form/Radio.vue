@@ -39,7 +39,7 @@ export default {
 </div>`,
               config: `$xui-radio-spacing: 0 12 0 0;
 $xui-radio-height: 20;
-$xui-radio-background: $background-lighter;
+$xui-radio-background: input-background;
 $xui-radio-style: ();
 
 $xui-radio-hover-style: ();

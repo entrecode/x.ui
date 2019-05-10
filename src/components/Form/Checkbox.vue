@@ -40,7 +40,7 @@ export default {
               config: `$xui-checkbox-spacing: 4 12 4 4;
 $xui-checkbox-height: 20;
 $xui-checkbox-radius: 6;
-$xui-checkbox-background: $background-lighter;
+$xui-checkbox-background: $input-background;
 $xui-checkbox-style: ();
 
 $xui-checkbox-hover-style: ();

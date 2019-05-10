@@ -4,7 +4,7 @@
     <demo-navbar class="doc-navbar"/>
     <router-view
       name="menu"
-      class="doc-menubar is-theme-menubar is-fixed has-height-vh-full is-scrollable-auto-y-contain"
+      class="doc-menubar is-theme-menubar is-fixed is-height-vh-full is-scrollable-auto-y-contain"
     />
     <router-view name="main" class="doc-body"/>
     <footer class="has-padding-8 is-ink-light align-center doc-footer">

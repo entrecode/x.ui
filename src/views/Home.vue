@@ -1,7 +1,7 @@
 <template>
   <section>
     <div style="background-color: var(--link);">
-      <div class="has-padding-8 has-margin-bottom-8 demo-texture is-theme-invert align-center has-width-vw-full has-height-vw-golden" data-flex="center center-items column">
+      <div class="has-padding-8 has-margin-bottom-8 demo-texture is-theme-invert align-center ís-width-vw-full is-height-vw-golden" data-flex="center center-items column">
         <svg class="demo-hero-logo">
           <use xlink:href="#logo"></use>
         </svg>

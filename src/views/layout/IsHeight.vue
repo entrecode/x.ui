@@ -7,25 +7,25 @@
         </svg>
       </div>
       <div
-        :class="hasHeightType + hasHeightRelation + hasHeightRatio"
+        :class="isHeightType + isHeightRelation + isHeightRatio"
         data-flex="center center-items"
         class="demo-bg"
         style="transition: height .2s;"
       >
         <div class="has-padding-8 is-theme has-margin-8">
-          <h1 v-text="hasHeightType"></h1>
+          <h1 v-text="isHeightType"></h1>
           <div data-grid>
             <div data-col="6">
               <div class="field-group">
                 <div class="xui-radio">
                   <input
                     type="radio"
-                    name="hasHeightType"
-                    id="hasHeight"
-                    v-model="hasHeightType"
-                    value="has-height"
+                    name="isHeightType"
+                    id="isHeight"
+                    v-model="isHeightType"
+                    value="is-height"
                   >
-                  <label for="hasHeight" class="xui-radio__label">has-height</label>
+                  <label for="isHeight" class="xui-radio__label">is-height</label>
                 </div>
               </div>
             </div>
@@ -34,9 +34,9 @@
                 <div class="xui-radio">
                   <input
                     type="radio"
-                    name="hasHeightType"
+                    name="isHeightType"
                     id="hasMinHeight"
-                    v-model="hasHeightType"
+                    v-model="isHeightType"
                     value="has-min-height"
                   >
                   <label for="hasMinHeight" class="xui-radio__label">has-min-height</label>
@@ -45,16 +45,16 @@
             </div>
           </div>
           <div class="field-group">
-            <label for="hasHeightRelation" class="field-group__label">relation</label>
-            <select id="hasHeightRelation" class="input" v-model="hasHeightRelation">
+            <label for="isHeightRelation" class="field-group__label">relation</label>
+            <select id="isHeightRelation" class="input" v-model="isHeightRelation">
               <option value>relative</option>
               <option value="-vw">viewport width</option>
               <option value="-vh">viewport height</option>
             </select>
           </div>
           <div class="field-group">
-            <label for="hasHeightRatio" class="field-group__label">ratio</label>
-            <select id="hasHeightRatio" class="input" v-model="hasHeightRatio">
+            <label for="isHeightRatio" class="field-group__label">ratio</label>
+            <select id="isHeightRatio" class="input" v-model="isHeightRatio">
               <option value="-full">full</option>
               <option value="-1-4">1:4</option>
               <option value="-half">half</option>
@@ -87,12 +87,12 @@ export default {
   data: () => {
     return {
       openDemo: false,
-      hasHeightType: 'has-height',
-      hasHeightRatio: '-full',
-      hasHeightRelation: '',
+      isHeightType: 'is-height',
+      isHeightRatio: '-full',
+      isHeightRelation: '',
       previewClass: '',
       markup: `...`,
-      config: `$has-height-options: (
+      config: `$is-height-map: (
   full: 100,
   '1-4': 25,
   half: 50,
