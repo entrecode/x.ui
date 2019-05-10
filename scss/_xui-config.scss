@@ -2182,10 +2182,10 @@ $is-display-map: map-merge(
 $is-position-map: () !default;
 $is-position-map: map-merge(
   (
-    'relative': 'relative',
-    'absolute': 'absolute',
-    'fixed': 'fixed',
-    'sticky': 'sticky',
+    'is-relative': 'relative',
+    'is-absolute': 'absolute',
+    'is-fixed': 'fixed',
+    'is-sticky': 'sticky',
   ),
   $is-position-map
 );

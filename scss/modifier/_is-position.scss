@@ -7,28 +7,26 @@
 /// @param {map} $breakpoints
 /// @requires {function} bp
 
-.is {
-  $_states: map-keys($is-position-map);
-  $_values: map-values($is-position-map);
+$_keys: map-keys($is-position-map);
+$_values: map-values($is-position-map);
 
-  @each $_state in $_states {
-    $_i: index($_states, $_state);
-    $_v: nth($_values, $_i);
+@each $_key in $_keys {
+  $_i: index($_keys, $_key);
+  $_v: nth($_values, $_i);
 
-    &-#{$_state} {
-      position: #{$_v} !important;
-    }
+  .#{$_key} {
+    position: #{$_v};
   }
+}
 
-  @each $_bp in map-keys($breakpoints) {
-    @media (min-width: bp(#{$_bp})) {
-      @each $_state in $_states {
-        $_i: index($_states, $_state);
-        $_v: nth($_values, $_i);
+@each $_bp in map-keys($breakpoints) {
+  @media (min-width: bp(#{$_bp})) {
+    @each $_key in $_keys {
+      $_i: index($_keys, $_key);
+      $_v: nth($_values, $_i);
 
-        &-#{$_state}-#{$_bp} {
-          position: #{$_v} !important;
-        }
+      .#{$_key}-#{$_bp} {
+        position: #{$_v};
       }
     }
   }

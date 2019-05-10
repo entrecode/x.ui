@@ -135,12 +135,6 @@
       <li class="nav__item">
         <router-link to="has-border" class="is-mega is-uppercase">has-border</router-link>
       </li>
-      <li class="nav__item">
-        <router-link to="has-height" class="is-mega is-uppercase">has-height</router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="has-width" class="is-mega is-uppercase">has-width</router-link>
-      </li>
       <li class="y-space-5"></li>
       <li>
         <div class="is-h6">layout</div>
@@ -156,6 +150,12 @@
       </li>
       <li class="nav__item">
         <router-link to="has-padding" class="is-mega is-uppercase">has-padding</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="has-height" class="is-mega is-uppercase">has-height</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="has-width" class="is-mega is-uppercase">has-width</router-link>
       </li>
       <li class="y-space-5"></li>
       <li class="nav__item">
