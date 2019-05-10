@@ -614,25 +614,28 @@ h6 {
           toggleCode: false,
           title: 'is-scrollable',
           anchor: 'scroll-to-is-scrollable-mixin',
-          codeShort: `@mixin is-scrollable($axis: both, $contain: false, $behavior: scroll) {...}`,
-          code: `@mixin is-scrollable($axis: both, $contain: false, $behavior: scroll) {
+          codeShort: `@mixin is-scrollable($axis: both, $contain: false, $behavior: scroll) {
   -webkit-overflow-scrolling: touch;
 
   @if $axis == 'both' {
     overflow: #{$behavior};
+    @if $contain != false {
+      overscroll-behavior: contain;
+    }
   } @else if $axis == 'x' {
     overflow-x: #{$behavior};
+    overflow-y: hidden;
     @if $contain != false {
       overscroll-behavior-x: contain;
     }
   } @else if $axis == 'y' {
     overflow-y: #{$behavior};
+    overflow-x: hidden;
     @if $contain != false {
       overscroll-behavior-y: contain;
     }
   }
-}
-`,
+}`,
           type: 'layout-mixin',
           usedBy: [
             {

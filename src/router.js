@@ -189,5 +189,10 @@ export default new Router({
       name: 'position',
       components: { main: () => import('./views/layout/Position.vue'), menu: DemoMenubar },
     },
+    {
+      path: '/is-scrollable',
+      name: 'is-scrollable',
+      components: { main: () => import('./views/layout/IsScrollable.vue'), menu: DemoMenubar },
+    },
   ],
 });

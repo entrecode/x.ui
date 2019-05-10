@@ -14,13 +14,18 @@
 
   @if $axis == 'both' {
     overflow: #{$behavior};
+    @if $contain != false {
+      overscroll-behavior: contain;
+    }
   } @else if $axis == 'x' {
     overflow-x: #{$behavior};
+    overflow-y: hidden;
     @if $contain != false {
       overscroll-behavior-x: contain;
     }
   } @else if $axis == 'y' {
     overflow-y: #{$behavior};
+    overflow-x: hidden;
     @if $contain != false {
       overscroll-behavior-y: contain;
     }
