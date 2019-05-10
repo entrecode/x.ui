@@ -1,14 +1,16 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0
+/// @since 10.0.0
 /// @access public
 /// @group modifier
+///
+/// @param {map} $is-width-map
 
-.has-width {
-  $keys: map-keys($has-height-options);
+.is-width {
+  $keys: map-keys($is-width-map);
 
   @each $key in $keys {
     $i: index($keys, $key);
-    $value: map-get($has-height-options, $key);
+    $value: map-get($is-width-map, $key);
 
     &-#{$key} {
       @include set-breakpoints {
@@ -20,7 +22,7 @@
   &-vh {
     @each $key in $keys {
       $i: index($keys, $key);
-      $value: map-get($has-height-options, $key);
+      $value: map-get($is-width-map, $key);
 
       &-#{$key} {
         @include set-breakpoints {
@@ -33,7 +35,7 @@
   &-vw {
     @each $key in $keys {
       $i: index($keys, $key);
-      $value: map-get($has-height-options, $key);
+      $value: map-get($is-width-map, $key);
 
       &-#{$key} {
         @include set-breakpoints {
@@ -45,11 +47,11 @@
 }
 
 .has-min-width {
-  $keys: map-keys($has-height-options);
+  $keys: map-keys($is-width-map);
 
   @each $key in $keys {
     $i: index($keys, $key);
-    $value: map-get($has-height-options, $key);
+    $value: map-get($is-width-map, $key);
 
     &-#{$key} {
       @include set-breakpoints {
@@ -61,7 +63,7 @@
   &-vh {
     @each $key in $keys {
       $i: index($keys, $key);
-      $value: map-get($has-height-options, $key);
+      $value: map-get($is-width-map, $key);
 
       &-#{$key} {
         @include set-breakpoints {
@@ -74,7 +76,7 @@
   &-vw {
     @each $key in $keys {
       $i: index($keys, $key);
-      $value: map-get($has-height-options, $key);
+      $value: map-get($is-width-map, $key);
 
       &-#{$key} {
         @include set-breakpoints {
