@@ -30,6 +30,8 @@
 - removed breakpoints for `is-clipped#`
 - removed breakpoints for `.is-bordered`
 - removed breakpoints for `.is-scrollable`
+- removed `.not-positioned`
+- removed breakpoints from `.is-placed` and `.is-position`
 - renamed `set-map-breakpoints()` to `set-data-map-breakpoints()`
 - renamed `getBreakpoints()` to `bp()`
 - removed `.form-group` use `.field-group` instead
@@ -45,6 +47,7 @@
 - removed state values in `$xui-colors` map
 - removed `data-animate` use third-party libraries like animate.css instead
 - removed `.pull`
+- renamed `.has-width` and `.has-height` to `.is-width` and `.is-height`
 
 ### changes
 
