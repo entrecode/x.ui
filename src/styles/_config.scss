@@ -52,8 +52,13 @@ $titlebar-spacing: 0 0 16;
 
 $is-theme: (
   'menubar': (
-    #ca3300,
-    #fff,
-    #fed789,
+    transparent,
+    var(--text-lighter),
+    var(--text),
+  ),
+  'submenu': (
+    transparent,
+    var(--text-lighter),
+    var(--text-light),
   ),
 );

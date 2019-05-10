@@ -1,7 +1,11 @@
 <template>
-  <div class="doc-navbar is-sticky has-padding-2 has-margin-bottom-5 is-layer-10" style="top:0;">
+  <div class="is-sticky has-padding-3 is-layer-10 is-theme" style="top:0;">
     <div class="has-padding-center-4" data-flex="center-items">
-      <img src="./../assets/x-logo.png" style="height: 32px; width: auto;">
+      <router-link to="/">
+        <svg class="xui-logo">
+          <use xlink:href="#logo"></use>
+        </svg>
+      </router-link>
       <div class="x-space-3"></div>
       <div class="flex-space"></div>
       <div class="is-relative" style="flex-grow: 1; max-width: 480px;">
@@ -27,7 +31,7 @@
             <li class="nav__item">
               <a href="#scroll-to-getting-started" class="btn btn_clear">getting started</a>
             </li>
-            <li v-for="(value, key, index) in structure" :key="index"  class="nav__item">
+            <li v-for="(value, key, index) in structure" :key="index" class="nav__item">
               <strong class="headings-font has-padding-3">{{key}}</strong>
               <ul>
                 <li v-for="(val, index) in value" :key="index">
@@ -38,7 +42,6 @@
           </ul>
         </div>
       </div>
-      <div class="flex-space"></div>
       <div class="x-space-3"></div>
       <a
         class="btn btn_clear"
@@ -48,7 +51,7 @@
       >
         <ixo name="github"></ixo>
       </a>
-      <div class="x-space-3"></div>
+      <div class="x-space-5"></div>
       <small class="is-ink-lighter is-nowrap">v.{{ version }}</small>
     </div>
   </div>
@@ -85,29 +88,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.doc-navbar {
-  background-color: rgba(#fff, 0.6);
+.xui-logo {
+  height: 32px;
+  width: 68px;
+  fill: currentColor;
 }
 
-.input-group {
-  position: relative;
 
-  .input-group__addon {
-    min-width: 40px;
-  }
-
-  .input-group__addon + .input {
-    padding-left: 0;
-  }
-
-  :first-child {
-    border-radius: 20px 0 0 20px;
-  }
-
-  :last-child {
-    border-radius: 0 20px 20px 0;
-  }
-}
 .popdown {
   position: absolute;
   top: 100%;

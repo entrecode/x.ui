@@ -52,7 +52,7 @@ $super-safe: setContrast($background, $super) !default;
 $super-hover: setHover($super) !default;
 
 $minor: #f4f5f6 !default;
-$minor-contrast: setContrast($minor) !default;
+$minor-contrast: setContrast($minor, $link) !default;
 $minor-safe: setContrast($background, $minor) !default;
 $minor-hover: setHover($minor) !default;
 

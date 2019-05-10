@@ -1,14 +1,13 @@
 <template>
-  <div id="app">
-    <router-view name="hero"/>
-    <!-- <demo-navbar/> -->
-    <div data-grid="no-gutter">
-      <router-view name="menu" data-col="3 2-xl"/>
-      <div data-col="9 10-xl">
-        <router-view name="main"/>
-      </div>
-    </div>
-    <footer class="has-padding-8 is-ink-light align-center">
+  <div id="app" class="doc-layout">
+    <router-view name="hero"  class="doc-hero"/>
+    <demo-navbar class="doc-navbar"/>
+    <router-view
+      name="menu"
+      class="doc-menubar is-theme-menubar is-fixed has-height-vh-full is-scrollable-auto-y-contain"
+    />
+    <router-view name="main" class="doc-body"/>
+    <footer class="has-padding-8 is-ink-light align-center doc-footer">
       placeholder images
       <a
         href="https://unsplash.com/collections/4386752/women-are-amazing"
@@ -49,5 +48,35 @@ pre {
 html,
 body {
   height: 100%;
+}
+
+.doc-layout {
+  display: grid;
+  grid-template-columns: 240px auto;
+  grid-template-rows: auto;
+  grid-template-areas: 'hero hero' 'navbar navbar' 'menubar body' '. footer';
+
+  .doc-hero {
+    grid-area: hero;
+  }
+  
+  .doc-navbar {
+    grid-area: navbar;
+  }
+
+  .doc-menubar {
+    grid-area: menubar;
+    width: 240px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .doc-body {
+    grid-area: body;
+  }
+
+  .doc-footer {
+    grid-area: footer;
+  }
 }
 </style>
