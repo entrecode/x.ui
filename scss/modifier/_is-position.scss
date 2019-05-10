@@ -3,13 +3,13 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {map} $is-position-states
+/// @param {map} $is-position-map
 /// @param {map} $breakpoints
 /// @requires {function} bp
 
 .is {
-  $_states: map-keys($is-position-states);
-  $_values: map-values($is-position-states);
+  $_states: map-keys($is-position-map);
+  $_values: map-values($is-position-map);
 
   @each $_state in $_states {
     $_i: index($_states, $_state);

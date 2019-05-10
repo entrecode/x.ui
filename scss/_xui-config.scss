@@ -2164,43 +2164,43 @@ $has-width-options: map-merge(
 //
 // IS-{DISPLAY}
 // -------------------------------------------------------------------------------------------------
-// @param {map} $has-display-states
-$is-display-states: () !default;
-$is-display-states: map-merge(
+// @param {map} $has-display-map
+$is-display-map: () !default;
+$is-display-map: map-merge(
   (
     'hidden': 'none',
     'block': 'block',
     'flex': 'flex',
   ),
-  $is-display-states
+  $is-display-map
 );
 
 //
 // IS-{POSITION}
 // -------------------------------------------------------------------------------------------------
-// @param {map} $is-position-states
-$is-position-states: () !default;
-$is-position-states: map-merge(
+// @param {map} $is-position-map
+$is-position-map: () !default;
+$is-position-map: map-merge(
   (
     'relative': 'relative',
     'absolute': 'absolute',
     'fixed': 'fixed',
     'sticky': 'sticky',
   ),
-  $is-position-states
+  $is-position-map
 );
 
 //
 // IS-PLACED
 // -------------------------------------------------------------------------------------------------
-// @param {map} $is-placed-states
-$is-placed-states: () !default;
-$is-placed-states: map-merge(
+// @param {map} $is-placed-map
+$is-placed-map: () !default;
+$is-placed-map: map-merge(
   (
-    'positioned': 0,
-    'fab': 16,
+    'is-placed': 0,
+    'is-fab': 16,
   ),
-  $is-placed-states
+  $is-placed-map
 );
 
 //

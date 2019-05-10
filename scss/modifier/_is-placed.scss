@@ -3,7 +3,7 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {map} $is-placed-states
+/// @param {map} $is-placed-map
 /// @param {map} $breakpoints
 /// @requires {function} bp
 
@@ -59,38 +59,26 @@
   }
 }
 
-.is {
-  $_states: map-keys($is-placed-states);
-  $_values: map-values($is-placed-states);
+$_keys: map-keys($is-placed-map);
+$_values: map-values($is-placed-map);
 
-  @each $_state in $_states {
-    $_i: index($_states, $_state);
-    $_v: nth($_values, $_i);
-    $_c: '-';
+@each $_key in $_keys {
+  $_i: index($_keys, $_key);
+  $_v: nth($_values, $_i);
 
-    @if $_state == '' {
-      $_c: '';
-    }
-
-    &#{$_c}#{$_state} {
-      @include _is-placed($_v);
-    }
+  .#{$_key} {
+    @include _is-placed($_v);
   }
+}
 
-  @each $_bp in map-keys($breakpoints) {
-    @media (min-width: bp(#{$_bp})) {
-      @each $_state in $_states {
-        $_i: index($_states, $_state);
-        $_v: nth($_values, $_i);
-        $_c: '-';
+@each $_bp in map-keys($breakpoints) {
+  @media (min-width: bp(#{$_bp})) {
+    @each $_key in $_keys {
+      $_i: index($_keys, $_key);
+      $_v: nth($_values, $_i);
 
-        @if $_state == '' {
-          $_c: '';
-        }
-
-        &#{$_c}#{$_state}-#{$_bp} {
-          @include _is-placed($_v);
-        }
+      .#{$_key}-#{$_bp} {
+        @include _is-placed($_v);
       }
     }
   }
