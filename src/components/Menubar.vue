@@ -118,7 +118,7 @@
       </li>
       <li class="y-space-5"></li>
       <li>
-        <div class="is-h6">style</div>
+        <div class="is-h6">styling</div>
       </li>
       <li class="nav__item">
         <router-link to="is-ink" class="is-mega is-uppercase">is-ink</router-link>
@@ -159,6 +159,9 @@
       </li>
       <li class="nav__item">
         <router-link to="position" class="is-mega is-uppercase">position</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="display" class="is-mega is-uppercase">display</router-link>
       </li>
       <li class="nav__item">
         <router-link to="is-scrollable" class="is-mega is-uppercase">is-scrollable</router-link>

@@ -2165,14 +2165,14 @@ $is-width-map: map-merge(
 // IS-{DISPLAY}
 // -------------------------------------------------------------------------------------------------
 // @param {map} $has-display-map
-$is-display-map: () !default;
-$is-display-map: map-merge(
+$display-map: () !default;
+$display-map: map-merge(
   (
-    'hidden': 'none',
-    'block': 'block',
-    'flex': 'flex',
+    'is-hidden': 'none',
+    'is-block': 'block',
+    'is-flex': 'flex',
   ),
-  $is-display-map
+  $display-map
 );
 
 //
