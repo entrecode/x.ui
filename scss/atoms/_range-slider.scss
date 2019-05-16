@@ -72,7 +72,7 @@
   height: rem($range-slider-thumb-size);
   background: $range-slider-thumb-background;
   border-radius: arrayMagic($range-slider-thumb-radius);
-  margin-top: rem(($range-slider-height - $range-slider-thumb-size)/2);
+  margin-top: rem(($range-slider-height - $range-slider-thumb-size) / 2);
 
   &:hover {
     @include inject-style($range-slider-thumb-style);
