@@ -1,96 +1,61 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.6
+/// @since 10.0.0
 /// @access public
 /// @group modifier
-
-@keyframes tooltipBottom {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(rem(-4));
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(rem(4));
-  }
-}
-
-@keyframes tooltipTop {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(rem(4));
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(rem(-4));
-  }
-}
-
-@keyframes tooltipLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(rem(4)) translateY(-50%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(rem(-4)) translateY(-50%);
-  }
-}
-
-@keyframes tooltipRight {
-  0% {
-    opacity: 0;
-    transform: translateX(rem(-4)) translateY(-50%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(rem(4)) translateY(-50%);
-  }
-}
+///
+/// @param {number} $tooltip-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+/// @param {px} $tooltip-font-size [12]
+/// @param {px} $tooltip-line-height [14]
+/// @param {px} $tooltip-min-height [20]]
+/// @param {string} $tooltip-weight [$is-normal]
+/// @param {color} $tooltip-background [$background-invert]
+/// @param {color} $tooltip-color [$text-invert]
+/// @param {px} $tooltip-radius [2]
+/// @param {array} $tooltip-style
+///
+/// @require {string} $body-font-family
+/// @require {mixin} inject-style
+/// @require {mixin} metrics
+/// @require {function} arrayMagic
 
 %tooltip {
+  display: none;
+  letter-spacing: 0;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  text-transform: initial;
+  white-space: nowrap;
+  z-index: 100;
+  font-family: $body-font-family;
+  @include inject-style($tooltip-style);
+  @include metrics(
+    $tooltip-font-size,
+    $tooltip-line-height,
+    $tooltip-min-height,
+    $padding-ratio: $tooltip-padding-ratio
+  );
+  background: $tooltip-background;
+  color: $tooltip-color;
+  font-weight: $tooltip-weight;
+
+  @if $tooltip-round == true {
+    border-radius: 100vh;
+  } @else {
+    border-radius: arrayMagic($tooltip-radius);
+  }
+}
+
+[data-tooltip-top],
+[data-tooltip-right],
+[data-tooltip-bottom],
+[data-tooltip-left] {
   overflow: visible;
   position: relative;
 
-  // @param {number} $tooltip-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-  // @param {px} $tooltip-font-size [12]
-  // @param {px} $tooltip-line-height [14]
-  // @param {px} $tooltip-min-height [20]]
-  // @param {string} $tooltip-weight [$is-normal]
-  // @param {color} $tooltip-background [$background-invert]
-  // @param {color} $tooltip-color [$text-invert]
-  // @param {px} $tooltip-radius [2]
-  // @param {array} $tooltip-style
   &::after {
-    display: none;
-    letter-spacing: 0;
-    pointer-events: none;
-    position: absolute;
-    text-align: center;
-    text-decoration: none;
-    text-transform: initial;
-    white-space: nowrap;
-    z-index: 100;
-    @include inject-style($tooltip-style);
-    @include atom-metrics(
-      $tooltip-font-size,
-      $tooltip-line-height,
-      $tooltip-min-height,
-      $padding-ratio: $tooltip-padding-ratio
-    );
-    background: $tooltip-background;
-    color: $tooltip-color;
-    font-weight: $tooltip-weight;
-
-    // @param {boolean} $tooltip-round [false] - sets border-radius to 50% of tooltip height
-    @if $tooltip-round == true {
-      border-radius: arrayMagic($tooltip-min-height / 2);
-    } @else {
-      border-radius: arrayMagic($tooltip-radius);
-    }
+    @extend %tooltip;
   }
 
   &:hover {
@@ -101,15 +66,13 @@
   }
 }
 
-[data-tooltip-bottom] {
-  @extend %tooltip;
-
+[data-tooltip-top] {
   &::after {
-    content: attr(data-tooltip-bottom);
-    animation: tooltipBottom 0.2s forwards;
+    content: attr(data-tooltip-top);
+    animation: tooltipTop 0.2s forwards;
+    bottom: 100%;
     left: 50%;
     opacity: 0;
-    top: 100%;
   }
 
   &:hover {
@@ -117,29 +80,21 @@
       margin-top: rem(4);
     }
   }
-}
 
-[data-tooltip-left] {
-  @extend %tooltip;
+  @keyframes tooltipTop {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(rem(4));
+    }
 
-  &::after {
-    content: attr(data-tooltip-left);
-    animation: tooltipLeft 0.2s forwards;
-    opacity: 0;
-    right: 100%;
-    top: 50%;
-  }
-
-  &:hover {
-    &::after {
-      margin-right: rem(4);
+    100% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(rem(-4));
     }
   }
 }
 
 [data-tooltip-right] {
-  @extend %tooltip;
-
   &::after {
     content: attr(data-tooltip-right);
     animation: tooltipRight 0.2s forwards;
@@ -153,22 +108,72 @@
       margin-right: rem(4);
     }
   }
+
+  @keyframes tooltipRight {
+    0% {
+      opacity: 0;
+      transform: translateX(rem(-4)) translateY(-50%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(rem(4)) translateY(-50%);
+    }
+  }
 }
 
-[data-tooltip-top] {
-  @extend %tooltip;
-
+[data-tooltip-bottom] {
   &::after {
-    content: attr(data-tooltip-top);
-    animation: tooltipTop 0.2s forwards;
-    bottom: 100%;
+    content: attr(data-tooltip-bottom);
+    animation: tooltipBottom 0.2s forwards;
     left: 50%;
     opacity: 0;
+    top: 100%;
   }
 
   &:hover {
     &::after {
       margin-top: rem(4);
+    }
+  }
+
+  @keyframes tooltipBottom {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(rem(-4));
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(rem(4));
+    }
+  }
+}
+
+[data-tooltip-left] {
+  &::after {
+    content: attr(data-tooltip-left);
+    animation: tooltipLeft 0.2s forwards;
+    opacity: 0;
+    right: 100%;
+    top: 50%;
+  }
+
+  &:hover {
+    &::after {
+      margin-right: rem(4);
+    }
+  }
+
+  @keyframes tooltipLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(rem(4)) translateY(-50%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(rem(-4)) translateY(-50%);
     }
   }
 }

@@ -199,5 +199,10 @@ export default new Router({
       name: 'is-scrollable',
       components: { main: () => import('./views/layout/IsScrollable.vue'), menu: DemoMenubar },
     },
+    {
+      path: '/data-tooltip',
+      name: 'data-tooltip',
+      components: { main: () => import('./views/utilities/DataTooltip.vue'), menu: DemoMenubar },
+    },
   ],
 });
