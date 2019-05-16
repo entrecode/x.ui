@@ -1,20 +1,21 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.8
+/// @since 10.0.0
 /// @access public
 /// @group typeface mixins
 ///
-/// @param {map} $type-scale - modular scale for typeface
-/// @param {map} $type-scale-bp - breakpoints for modular scale
-/// @param {unit} $type-scale-unit [em] - unit for modular scale
+/// @param {string} $level
+/// @param {map} $map [$type-scale]
+/// @param {map} $bp [$type-scale-bp]
+/// @param {string} $unit [$type-scale-unit]
+///
+/// @require {map} $type-scale
+/// @require {map} $type-scale-bp
+/// @require {string} $type-scale-unit [em]
+/// @require {function} array-magic
 ///
 /// @returns font-size
 
-@mixin get-font-size(
-  $level,
-  $map: $type-scale,
-  $bp: $type-scale-bp,
-  $unit: $type-scale-unit
-) {
+@mixin get-font-size($level, $map: $type-scale, $bp: $type-scale-bp, $unit: $type-scale-unit) {
   @for $i from 1 through length($bp) {
     $key: nth(map-keys($bp), $i);
     $size: map-get($map, $level);

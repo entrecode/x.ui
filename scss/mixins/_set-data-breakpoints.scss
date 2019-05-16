@@ -1,19 +1,19 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 10.0.0
 /// @access public
 /// @group layout mixins
 ///
-/// @require {map} $breakpoints
-/// @require {function} bp()
 /// @param {string} $data - name of the data-attribute
 /// @param {string} $data-value - value of the data-attribute
-/// @param {boolean} $area - set a range for the media query
-/// @param {boolean} $has-root - sets @content for a root element without a media-query
+/// @param {boolean} $area [false] - set a range for the media query
+/// @param {boolean} $has-root [true] - sets @content for a root element without a media-query
+///
 /// @return a set of styles for one data-attribute element with all available breakpoints
+///
+/// @require {map} $breakpoints
+/// @require {function} bp()
 
 @mixin set-data-breakpoints($data, $data-value, $area: false, $has-root: true) {
-  $keys: map-keys($breakpoints);
-
   @if $has-root == true {
     [data-#{$data}~='#{$data-value}'] {
       @content;
@@ -21,17 +21,17 @@
   }
 
   @if $area == true {
-    @each $key in $keys {
-      [data-#{$data}~='#{$data-value}-#{$key}'] {
-        @media (min-width: bp(#{$key})) and (max-width: bp(#{$key}, max)) {
+    @each $bp in map-keys($breakpoints) {
+      [data-#{$data}~='#{$data-value}\@#{$bp}'] {
+        @media (min-width: bp(#{$bp})) and (max-width: bp(#{$bp}, max)) {
           @content;
         }
       }
     }
   } @else {
-    @each $key in $keys {
-      [data-#{$data}~='#{$data-value}-#{$key}'] {
-        @media (min-width: bp(#{$key})) {
+    @each $bp in map-keys($breakpoints) {
+      [data-#{$data}~='#{$data-value}\@#{$bp}'] {
+        @media (min-width: bp(#{$bp})) {
           @content;
         }
       }

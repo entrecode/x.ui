@@ -1,42 +1,40 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 10.0.0
 /// @access public
 /// @group layout mixins
 ///
-/// @require {map} $breakpoints
-/// @require {function} bp()
 /// @param {boolean} $area - set a range for the media query
 /// @param {boolean} $has-root - sets @content for a root element without a media-query
 /// @return a set of styles for one element with all available breakpoints
+///
+/// @require {map} $breakpoints
+/// @require {function} bp()
 
 @mixin set-breakpoints($area: false, $has-root: true) {
-  $keys: map-keys($breakpoints);
-  $length: length($breakpoints);
-
   @if $has-root == true {
     @content;
   }
 
   @if $area == true {
-    @each $key in $keys {
-      @if index($keys, $key) == $length {
-        &-#{$key} {
-          @media (min-width: bp(#{$key})) {
+    @each $bp in $map-keys($breakpoints) {
+      @if index($bps, $bp) == length($breakpoints) {
+        &\@#{$bp} {
+          @media (min-width: bp(#{$bp})) {
             @content;
           }
         }
       } @else {
-        &-#{$key} {
-          @media (min-width: bp(#{$key})) and (max-width: bp(#{$key}, max)) {
+        &\@#{$bp} {
+          @media (min-width: bp(#{$bp})) and (max-width: bp(#{$bp}, max)) {
             @content;
           }
         }
       }
     }
   } @else {
-    @each $key in $keys {
-      &-#{$key} {
-        @media (min-width: bp(#{$key})) {
+    @each $bp in map-keys($breakpoints) {
+      &\@#{$bp} {
+        @media (min-width: bp(#{$bp})) {
           @content;
         }
       }

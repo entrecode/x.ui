@@ -25,7 +25,7 @@ $_values: map-values($display-map);
   $_nbp: next-bp($_bp);
 
   @if $_nbp != null {
-    $_nbp: $_nbp - 1 * 1px;
+    $_nbp: $_nbp - 1;
 
     @media (min-width: bp(#{$_bp})) and (max-width: #{$_nbp}) {
       @each $_key in $_keys {

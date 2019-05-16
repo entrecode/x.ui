@@ -271,14 +271,14 @@ line-height: em(24, 12); // returns 2em`,
           example: `bp(sm) // returns 480px
 bp(sm, max) // returns 479px`,
           returns: 'string',
-          codeShort: `@function bp($breakpoint, $max: null) {...}`,
-          code: `@function bp($breakpoint, $max: null) {
-  @if map-has-key($breakpoints, $breakpoint) {
+          codeShort: `@function bp($breakpoint, $max: null, $map: $breakpoints) {...}`,
+          code: `@function bp($breakpoint, $max: null, $map: $breakpoints) {
+  @if map-has-key($map, $breakpoint) {
     @if $max == max {
       $_breakpoint-max: next-bp($breakpoint);
-      @return if($_breakpoint-max, $_breakpoint-max - 1 * 1px, map-get($breakpoints, $breakpoint) * 1px);
+      @return if($_breakpoint-max, $_breakpoint-max - 1 * 1px, null);
     } @else {
-      @return map-get($breakpoints, $breakpoint) * 1px;
+      @return map-get($map, $breakpoint) * 1px;
     }
   } @else {
     @warn '#{$breakpoint} is not a key';
@@ -339,7 +339,7 @@ bp(sm, max) // returns 479px`,
   $_keys: map-keys($map);
   $_current: index($_keys, $breakpoint);
 
-  @return if($_current < length($map), map-get($map, nth($_keys, $_current + 1)), null);
+  @return if($_current < length($map), map-get($map, nth($_keys, $_current + 1)) * 1px, null);
 }`,
           require: [
             {

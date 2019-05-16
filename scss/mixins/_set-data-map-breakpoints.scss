@@ -1,29 +1,22 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.4
+/// @since 10.0.0
 /// @access public
 /// @group layout mixins
 ///
-/// @require {map} $breakpoints
-/// @require {function} bp()
 /// @param {string} $attr-name - name of the data-attribute
 /// @param {string} $css-attr - name of the used css-attribute
 /// @param {map} $attr-map - map css and attribute values
-/// @param {boolean} $area - set a range for the media query
-/// @param {boolean} $hasRoot - styles are applied for the root element without a media-query if true
+/// @param {boolean} $area [false] - set a range for the media query
+/// @param {boolean} $hasRoot [true] - styles are applied for the root element without a media-query if true
+///
 /// @return a set of styles for one data-attribute element with all available breakpoints
+///
+/// @require {map} $breakpoints
+/// @require {function} bp()
 
-@mixin set-data-map-breakpoints(
-  $attr-name,
-  $css-attr,
-  $attr-map,
-  $area: false,
-  $has-root: true
-) {
-  $_bp-keys: map-keys($breakpoints);
-  $_attr-keys: map-keys($attr-map);
-
+@mixin set-data-map-breakpoints($attr-name, $css-attr, $attr-map, $area: false, $has-root: true) {
   @if $has-root == true {
-    @each $_attr-key in $_attr-keys {
+    @each $_attr-key in map-keys($attr-map) {
       $v: map-get($attr-map, $_attr-key);
 
       [data-#{$attr-name}~='#{$_attr-key}'] {
@@ -33,24 +26,24 @@
   }
 
   @if $area == true {
-    @each $_bp-key in $_bp-keys {
-      @each $_attr-key in $_attr-keys {
+    @each $bp in map-keys($breakpoints) {
+      @each $_attr-key in map-keys($attr-map) {
         $v: map-get($attr-map, $_attr-key);
 
-        [data-#{$attr-name}~='#{$_attr-key}'] {
-          @media (min-width: bp(#{$_bp-key})) and (max-width: bp(#{$_bp-key}, max)) {
+        [data-#{$attr-name}~='#{$_attr-key}\@#{$bp}'] {
+          @media (min-width: bp(#{$bp})) and (max-width: bp(#{$bp}, max)) {
             #{$css-attr}: #{$v};
           }
         }
       }
     }
   } @else {
-    @each $_bp-key in $_bp-keys {
-      @each $_attr-key in $_attr-keys {
+    @each $bp in map-keys($breakpoints) {
+      @each $_attr-key in map-keys($attr-map) {
         $v: map-get($attr-map, $_attr-key);
 
-        [data-#{$attr-name}~='#{$_attr-key}'] {
-          @media (min-width: bp(#{$_bp-key})) {
+        [data-#{$attr-name}~='#{$_attr-key}\@#{$bp}'] {
+          @media (min-width: bp(#{$bp})) {
             #{$css-attr}: #{$v};
           }
         }

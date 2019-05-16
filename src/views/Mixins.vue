@@ -677,33 +677,30 @@ h6 {
           anchor: 'scroll-to-set-breakpoints',
           codeShort: `@mixin set-breakpoints($area: false, $has-root: true) {...}`,
           code: `@mixin set-breakpoints($area: false, $has-root: true) {
-  $keys: map-keys($breakpoints);
-  $length: length($breakpoints);
-
   @if $has-root == true {
     @content;
   }
 
   @if $area == true {
-    @each $key in $keys {
-      @if index($keys, $key) == $length {
-        &-#{$key} {
-          @media (min-width: bp(#{$key})) {
+    @each $bp in $map-keys($breakpoints) {
+      @if index($bps, $bp) == length($breakpoints) {
+        &\@#{$bp} {
+          @media (min-width: bp(#{$bp})) {
             @content;
           }
         }
       } @else {
-        &-#{$key} {
-          @media (min-width: bp(#{$key})) and (max-width: bp(#{$key}, max)) {
+        &\@#{$bp} {
+          @media (min-width: bp(#{$bp})) and (max-width: bp(#{$bp}, max)) {
             @content;
           }
         }
       }
     }
   } @else {
-    @each $key in $keys {
-      &-#{$key} {
-        @media (min-width: bp(#{$key})) {
+    @each $bp in map-keys($breakpoints) {
+      &\@#{$bp} {
+        @media (min-width: bp(#{$bp})) {
           @content;
         }
       }
@@ -730,6 +727,10 @@ h6 {
               name: '$breakpoints',
               link: '#scroll-to-breakpoints',
             },
+            {
+              name: 'bp()',
+              link: '#scroll-to-bp',
+            },
           ],
           usedBy: [
             {
@@ -752,8 +753,6 @@ h6 {
           anchor: 'scroll-to-set-data-breakpoints',
           codeShort: `@mixin set-data-breakpoints($data, $data-value, $area: false, $has-root: true) {...}`,
           code: `@mixin set-data-breakpoints($data, $data-value, $area: false, $has-root: true) {
-  $keys: map-keys($breakpoints);
-
   @if $has-root == true {
     [data-#{$data}~='#{$data-value}'] {
       @content;
@@ -761,17 +760,17 @@ h6 {
   }
 
   @if $area == true {
-    @each $key in $keys {
-      [data-#{$data}~='#{$data-value}-#{$key}'] {
-        @media (min-width: bp(#{$key})) and (max-width: bp(#{$key}, max)) {
+    @each $bp in map-keys($breakpoints) {
+      [data-#{$data}~='#{$data-value}\@#{$bp}'] {
+        @media (min-width: bp(#{$bp})) and (max-width: bp(#{$bp}, max)) {
           @content;
         }
       }
     }
   } @else {
-    @each $key in $keys {
-      [data-#{$data}~='#{$data-value}-#{$key}'] {
-        @media (min-width: bp(#{$key})) {
+    @each $bp in map-keys($breakpoints) {
+      [data-#{$data}~='#{$data-value}\@#{$bp}'] {
+        @media (min-width: bp(#{$bp})) {
           @content;
         }
       }
@@ -827,18 +826,9 @@ h6 {
           description: 'mixin for repeating styles with breakpoints used for attribute selectors using a map',
           anchor: 'scroll-to-set-data-map-breakpoints',
           codeShort: `@mixin set-data-map-breakpoints($attr-name, $css-attr, $attr-map, $area: false, $has-root: true) {...}`,
-          code: `@mixin set-data-map-breakpoints(
-  $attr-name,
-  $css-attr,
-  $attr-map,
-  $area: false,
-  $has-root: true
-) {
-  $_bp-keys: map-keys($breakpoints);
-  $_attr-keys: map-keys($attr-map);
-
+          code: `@mixin set-data-map-breakpoints($attr-name, $css-attr, $attr-map, $area: false, $has-root: true) {
   @if $has-root == true {
-    @each $_attr-key in $_attr-keys {
+    @each $_attr-key in map-keys($attr-map) {
       $v: map-get($attr-map, $_attr-key);
 
       [data-#{$attr-name}~='#{$_attr-key}'] {
@@ -848,24 +838,24 @@ h6 {
   }
 
   @if $area == true {
-    @each $_bp-key in $_bp-keys {
-      @each $_attr-key in $_attr-keys {
+    @each $bp in map-keys($breakpoints) {
+      @each $_attr-key in map-keys($attr-map) {
         $v: map-get($attr-map, $_attr-key);
 
-        [data-#{$attr-name}~='#{$_attr-key}'] {
-          @media (min-width: bp(#{$_bp-key})) and (max-width: bp(#{$_bp-key}, max)) {
+        [data-#{$attr-name}~='#{$_attr-key}\@#{$bp}'] {
+          @media (min-width: bp(#{$bp})) and (max-width: bp(#{$bp}, max)) {
             #{$css-attr}: #{$v};
           }
         }
       }
     }
   } @else {
-    @each $_bp-key in $_bp-keys {
-      @each $_attr-key in $_attr-keys {
+    @each $bp in map-keys($breakpoints) {
+      @each $_attr-key in map-keys($attr-map) {
         $v: map-get($attr-map, $_attr-key);
 
-        [data-#{$attr-name}~='#{$_attr-key}'] {
-          @media (min-width: bp(#{$_bp-key})) {
+        [data-#{$attr-name}~='#{$_attr-key}\@#{$bp}'] {
+          @media (min-width: bp(#{$bp})) {
             #{$css-attr}: #{$v};
           }
         }

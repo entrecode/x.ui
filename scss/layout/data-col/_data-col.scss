@@ -2,6 +2,9 @@
 /// @since 10.0.0
 /// @access public
 /// @group grid-columns
+///
+/// @param {map} $_offset
+/// @require {function} bp()
 
 [data-col] {
   flex: 100%;
@@ -23,27 +26,27 @@
   }
 }
 
-@each $key in map-keys($breakpoints) {
+@each $bp in map-keys($breakpoints) {
   @for $i from 1 through $grid-num-columns {
-    [data-col~='#{$i}-#{$key}'] {
-      @media (min-width: bp(#{$key})) {
+    [data-col~='#{$i}\@#{$bp}'] {
+      @media (min-width: bp(#{$bp})) {
         max-width: ($i / $grid-num-columns) * 100%;
       }
     }
   }
 }
 
-@each $key in map-keys($breakpoints) {
-  [data-col~='auto-#{$key}'] {
-    @media (min-width: bp(#{$key})) {
+@each $bp in map-keys($breakpoints) {
+  [data-col~='auto\@#{$bp}'] {
+    @media (min-width: bp(#{$bp})) {
       flex: 1;
     }
   }
 }
 
-@each $key in map-keys($breakpoints) {
-  [data-col~='fit-#{$key}'] {
-    @media (min-width: bp(#{$key})) {
+@each $bp in map-keys($breakpoints) {
+  [data-col~='fit\@#{$bp}'] {
+    @media (min-width: bp(#{$bp})) {
       flex: none;
     }
   }
