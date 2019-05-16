@@ -115,6 +115,11 @@ export default new Router({
       components: { main: () => import('./views/ui/Nav.vue'), menu: DemoMenubar },
     },
     {
+      path: '/dropdown',
+      name: 'dropdown',
+      components: { main: () => import('./views/ui/Dropdown.vue'), menu: DemoMenubar },
+    },
+    {
       path: '/functions',
       name: 'functions',
       components: { main: () => import('./views/Functions.vue'), menu: DemoMenubar },

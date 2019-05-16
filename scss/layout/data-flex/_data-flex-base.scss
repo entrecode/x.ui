@@ -1,13 +1,12 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 10.0.0
 /// @group flex-grid
 /// @access public
 
-// scss-lint:disable QualifyingElement
 [data-flex] {
   display: flex;
 
-  @at-root ul[data-flex] {
+  @at-root ul#{&} {
     list-style: none;
     margin: 0;
     padding: 0;

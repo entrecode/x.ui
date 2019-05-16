@@ -868,43 +868,37 @@ $tag-styles: map-merge(
 $dropdown-on-hover: false !default;
 
 // @param {px} $dropdown-options-radius [4]
-// @param {array} $dropdown-options-padding [4]
+// @param {array} $dropdown-options-padding [8]
 // @param {px | null} $dropdown-options-max-height [320]
 // @param {color} $dropdown-options-background
 // @param {string} $dropdown-options-shadow
 // @param {array} $dropdown-options-style
 $dropdown-options-radius: 4 !default;
-$dropdown-options-padding: 4 !default;
+$dropdown-options-padding: 8 !default;
 $dropdown-options-max-height: 320 !default;
 $dropdown-options-background: $background !default;
 $dropdown-options-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
 $dropdown-options-style: () !default;
 
-// @param {number} $dropdown-option-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
+// @param {color} $dropdown-option-color [$text]
+// @param {color} $dropdown-option-background [none]
+// @param {array} $dropdown-option-padding [4 8]
 // @param {array} $dropdown-option-spacing [0]
 // @param {px} $dropdown-option-font-size [$base-font-size]
 // @param {px} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
-// @param {px} $dropdown-option-min-height [$btn-min-height]
 // @param {string} $dropdown-option-alignment [center]
-// @param {string} $dropdown-option-weight [$is-bold]
-// @param {color} $dropdown-option-color [$text]
-// @param {color} $dropdown-option-background [none]
 // @param {array} $dropdown-option-style
-$dropdown-option-padding-ratio: 1.5 !default;
+// @param {array} $dropdown-option-hover-style
+$dropdown-option-color: $text !default;
+$dropdown-option-background: none !default;
+$dropdown-option-padding: 4 8 !default;
 $dropdown-option-spacing: 0 !default;
-$dropdown-option-min-height: $btn-min-height !default;
 $dropdown-option-font-size: $base-font-size !default;
 $dropdown-option-line-height: $dropdown-option-font-size * $base-line-height !default;
 $dropdown-option-alignment: center !default;
-$dropdown-option-weight: $is-bold !default;
-$dropdown-option-color: $text !default;
-$dropdown-option-background: none !default;
 $dropdown-option-style: () !default;
+$dropdown-option-hover-style: () !default;
 
-// @param {color} $dropdown-option-hover-color [$link]
-// @param {color} $dropdown-option-hover-background [$state-hover]
-$dropdown-option-hover-color: $link !default;
-$dropdown-option-hover-background: $state-hover !default;
 
 // @param {px} $dropdown-option-divider-size [1]
 // @param {px} $dropdown-option-divider-spacing [4 0]
