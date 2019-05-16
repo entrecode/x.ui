@@ -67,6 +67,7 @@
 - renamed `contrastRatio()` to `contrast-ratio()`
 - renamed `checkCompliance()` to `check-compliance()`
 - renamed `findContrastLoop()` to `find-contrast-loop()`
+- removed placeholder `%ec-icon`
 
 ### changes
 
