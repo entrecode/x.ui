@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.1.0
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 ///
@@ -14,12 +14,6 @@ mark {
 }
 
 ::selection {
-  @include inject-style($mark-style);
-  background: $mark-background;
-  color: $mark-color;
-}
-
-::-moz-selection {
   @include inject-style($mark-style);
   background: $mark-background;
   color: $mark-color;

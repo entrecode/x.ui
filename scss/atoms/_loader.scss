@@ -23,7 +23,6 @@
 }
 
 .loader {
-  display: none;
   align-items: center;
   justify-content: center;
   align-self: center;
@@ -38,8 +37,7 @@
     height: em($loader-size);
     border: em($loader-track-width) solid $loader-track-color;
     border-right-color: $loader-racer-color;
-    animation: $loader-racer-animation $loader-racer-animation-speed
-      $loader-racer-animation-behavior;
+    animation: $loader-racer-animation $loader-racer-animation-speed $loader-racer-animation-behavior;
     width: em($loader-size);
     flex-grow: 0;
   }
