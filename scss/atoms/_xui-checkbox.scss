@@ -31,6 +31,18 @@
   display: flex;
   align-items: center;
 
+  // @param {array} $xui-checkbox-hover-style
+  // @param {color} $xui-checkbox-check-hover-color [$text-lightest]
+  &:hover {
+    @media (hover: hover) {
+      &::before {
+        @include inject-style($xui-checkbox-hover-style);
+        color: $xui-checkbox-check-hover-color;
+        line-height: rem($xui-checkbox-height + 2);
+      }
+    }
+  }
+
   &::before {
     content: '\2714\fe0e';
     font-family: 'sans-serif';
@@ -58,18 +70,6 @@
       @include inject-style($xui-checkbox-checked-style);
       color: $xui-checkbox-check-checked-color;
       line-height: rem($xui-checkbox-height + 2);
-    }
-  }
-
-  // @param {array} $xui-checkbox-hover-style
-  // @param {color} $xui-checkbox-check-hover-color [$text-lightest]
-  &:hover {
-    @media (hover: hover) {
-      &::before {
-        @include inject-style($xui-checkbox-hover-style);
-        color: $xui-checkbox-check-hover-color;
-        line-height: rem($xui-checkbox-height + 2);
-      }
     }
   }
 }

@@ -120,6 +120,11 @@ export default new Router({
       components: { main: () => import('./views/ui/Dropdown.vue'), menu: DemoMenubar },
     },
     {
+      path: '/xui-tabs',
+      name: 'xui-tabs',
+      components: { main: () => import('./views/ui/XuiTabs.vue'), menu: DemoMenubar },
+    },
+    {
       path: '/functions',
       name: 'functions',
       components: { main: () => import('./views/Functions.vue'), menu: DemoMenubar },

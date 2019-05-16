@@ -166,7 +166,6 @@
 import DocTab from '@/components/DocTab.vue';
 
 export default {
-  name: 'Modal',
   components: {
     DocTab,
   },

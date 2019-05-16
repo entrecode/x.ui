@@ -10,39 +10,6 @@
   outline: none;
   display: inline-flex;
   position: relative;
-
-  &.dropdown_center {
-    .dropdown-options {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-
-  &.dropdown_right {
-    .dropdown-options {
-      right: 0;
-    }
-  }
-
-  &.dropdown_left {
-    .dropdown-options {
-      left: 0;
-    }
-  }
-
-  &.dropdown_full {
-    .dropdown-options {
-      left: 0;
-      width: 100%;
-    }
-  }
-
-  &.dropdown_above {
-    .dropdown-options {
-      bottom: 100%;
-      top: initial;
-    }
-  }
 }
 
 // @param {px} $dropdown-options-radius [4]
@@ -84,6 +51,29 @@
   @at-root .on-hover:hover & {
     opacity: 1;
     visibility: visible;
+  }
+
+  @at-root .dropdown_center & {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @at-root .dropdown_right & {
+    right: 0;
+  }
+
+  @at-root .dropdown_left & {
+    left: 0;
+  }
+
+  @at-root .dropdown_full & {
+    left: 0;
+    width: 100%;
+  }
+
+  @at-root .dropdown_above & {
+    bottom: 100%;
+    top: initial;
   }
 }
 

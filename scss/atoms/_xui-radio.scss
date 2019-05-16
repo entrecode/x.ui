@@ -16,18 +16,6 @@
   [type='radio'],
   [type='checkbox'] {
     @extend %is-hidden-input;
-
-    // @param {color} $xui-radio-dot-checked-color [$link]
-    // @param {array} $xui-checkbox-checked-style
-    &:checked {
-      + .xui-radio__label {
-        &::before {
-          @include inject-style($xui-radio-checked-style);
-          background-color: $xui-radio-dot-checked-color;
-          border-width: rem(($xui-radio-height - $xui-radio-dot-size) / 2);
-        }
-      }
-    }
   }
 }
 
@@ -35,6 +23,18 @@
   cursor: pointer;
   display: flex;
   align-items: flex-start;
+
+  // @param {color} $xui-radio-dot-hover-color [$text-lightest]
+  // @param {array} $xui-checkbox-hover-style
+  &:hover {
+    @media (hover: hover) {
+      &::before {
+        @include inject-style($xui-radio-hover-style);
+        background-color: $xui-radio-dot-hover-color;
+        border-width: rem(($xui-radio-height - $xui-radio-dot-size) / 2);
+      }
+    }
+  }
 
   &::before {
     content: '';
@@ -51,17 +51,13 @@
     height: rem($xui-radio-height);
     width: rem($xui-radio-height);
     margin: array-magic($xui-radio-spacing);
-  }
 
-  // @param {color} $xui-radio-dot-hover-color [$text-lightest]
-  // @param {array} $xui-checkbox-hover-style
-  &:hover {
-    @media (hover: hover) {
-      &::before {
-        @include inject-style($xui-radio-hover-style);
-        background-color: $xui-radio-dot-hover-color;
-        border-width: rem(($xui-radio-height - $xui-radio-dot-size) / 2);
-      }
+    // @param {color} $xui-radio-dot-checked-color [$link]
+    // @param {array} $xui-checkbox-checked-style
+    @at-root :checked ~ & {
+      @include inject-style($xui-radio-checked-style);
+      background-color: $xui-radio-dot-checked-color;
+      border-width: rem(($xui-radio-height - $xui-radio-dot-size) / 2);
     }
   }
 }
