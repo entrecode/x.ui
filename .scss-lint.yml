@@ -34,10 +34,6 @@ linters:
   LeadingZero:
     enabled: false
 
-  # NameFormat:
-  #   enabled: true
-  #   function_convention: camel_case
-
   NestingDepth:
     enabled: true
 
