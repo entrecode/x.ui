@@ -62,7 +62,7 @@ p {
   @include get-font-size(p);
   line-height: $paragraph-line-height;
   font-weight: $paragraph-weight;
-  margin: arrayMagic($paragraph-spacing, $paragraph-spacing-unit);
+  margin: array-magic($paragraph-spacing, $paragraph-spacing-unit);
 
   strong,
   small {

@@ -55,8 +55,8 @@
   @include inject-style($deck-style);
   background: $deck-background;
   color: $deck-color;
-  padding: arrayMagic($deck-padding);
-  box-shadow: arrayMagic($deck-opens-left-shadow);
+  padding: array-magic($deck-padding);
+  box-shadow: array-magic($deck-opens-left-shadow);
 
   // @param {pixel | false } $deck-min-width [240]
   &:not([data-col]) {
@@ -85,7 +85,7 @@
   // @param {string} $deck-opens-left-shadow
   // @param {string} $deck-opens-right-shadow
   &.opens-left {
-    box-shadow: arrayMagic($deck-opens-left-shadow);
+    box-shadow: array-magic($deck-opens-left-shadow);
 
     &.is-active {
       left: 0;
@@ -93,7 +93,7 @@
   }
 
   &.opens-right {
-    box-shadow: arrayMagic($deck-opens-right-shadow);
+    box-shadow: array-magic($deck-opens-right-shadow);
 
     &.is-active {
       left: auto;
@@ -145,8 +145,8 @@
   flex-grow: 0;
   flex-shrink: 0;
   @include inject-style($deck-header-style);
-  margin: arrayMagic($deck-header-spacing);
-  padding: arrayMagic($deck-header-padding);
+  margin: array-magic($deck-header-spacing);
+  padding: array-magic($deck-header-padding);
 
   .deck-dismiss {
     position: relative;
@@ -162,8 +162,8 @@
   flex-grow: 1;
   @include is-scrollable(y, contain, $behavior: auto);
   @include inject-style($deck-body-style);
-  margin: arrayMagic($deck-header-spacing);
-  padding: arrayMagic($deck-header-padding);
+  margin: array-magic($deck-header-spacing);
+  padding: array-magic($deck-header-padding);
 }
 
 // @param {array} $deck-footer-spacing [0]
@@ -173,6 +173,6 @@
   flex-shrink: 0;
   flex-grow: 0;
   @include inject-style($deck-footer-style);
-  margin: arrayMagic($deck-footer-spacing);
-  padding: arrayMagic($deck-footer-padding);
+  margin: array-magic($deck-footer-spacing);
+  padding: array-magic($deck-footer-padding);
 }

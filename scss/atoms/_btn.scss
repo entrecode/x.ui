@@ -28,7 +28,7 @@
   }
 
   font-family: $btn-font-family;
-  margin: arrayMagic($btn-spacing);
+  margin: array-magic($btn-spacing);
 }
 
 // @param {array} $btn-style
@@ -39,13 +39,13 @@
 // @param {string} $btn-weight [$is-bold]
 // @param {px} $btn-radius [4]
 // @param {color} $btn-background [$link]
-// @param {color} $btn-color [setContrast($link)]
+// @param {color} $btn-color [set-contrast($link)]
 // @param {string} $btn-transition [background-color .2s, box-shadow .1s]
 .btn {
   @include _btn-reset;
   @include inject-style($btn-style);
   @include metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio);
-  border-radius: arrayMagic($btn-radius);
+  border-radius: array-magic($btn-radius);
   font-weight: $btn-weight;
   background: $btn-background;
   color: $btn-color;
@@ -55,7 +55,7 @@
   // states
   // ------------------------------------------------------
 
-  // @param {color} $btn-hover-background [setHover($btn-background)]
+  // @param {color} $btn-hover-background [set-hover($btn-background)]
   // @param {color} $btn-hover-color [$btn-color]
   // @param {array} $btn-hover-style
   &.is-active,
@@ -100,7 +100,7 @@
     $btn-small-min-height,
     $padding-ratio: $btn-padding-ratio
   );
-  border-radius: arrayMagic($btn-small-radius);
+  border-radius: array-magic($btn-small-radius);
   font-weight: $btn-small-weight;
   @include inject-style($btn-small-style);
 }
@@ -119,7 +119,7 @@
     $btn-big-min-height,
     $padding-ratio: $btn-padding-ratio
   );
-  border-radius: arrayMagic($btn-big-radius);
+  border-radius: array-magic($btn-big-radius);
   font-weight: $btn-big-weight;
   @include inject-style($btn-big-style);
 }

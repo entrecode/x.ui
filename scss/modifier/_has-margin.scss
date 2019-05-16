@@ -4,14 +4,14 @@
 /// @group modifier
 ///
 /// @require {mixin} set-breakpoints
-/// @require {function} getSpace
+/// @require {function} get-space
 /// @param {map} $spacings
 
 .has-margin {
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
-        margin: getSpace($_spacing);
+        margin: get-space($_spacing);
       }
     }
   }
@@ -21,8 +21,8 @@
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
-        margin-bottom: getSpace($_spacing);
-        margin-top: getSpace($_spacing);
+        margin-bottom: get-space($_spacing);
+        margin-top: get-space($_spacing);
       }
     }
   }
@@ -32,7 +32,7 @@
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
-        margin-top: getSpace($_spacing);
+        margin-top: get-space($_spacing);
       }
     }
   }
@@ -42,7 +42,7 @@
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
-        margin-bottom: getSpace($_spacing);
+        margin-bottom: get-space($_spacing);
       }
     }
   }
@@ -59,8 +59,8 @@
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
-        margin-left: getSpace($_spacing);
-        margin-right: getSpace($_spacing);
+        margin-left: get-space($_spacing);
+        margin-right: get-space($_spacing);
       }
     }
   }
@@ -76,7 +76,7 @@
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
-        margin-left: getSpace($_spacing);
+        margin-left: get-space($_spacing);
       }
     }
   }
@@ -92,7 +92,7 @@
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
-        margin-right: getSpace($_spacing);
+        margin-right: get-space($_spacing);
       }
     }
   }

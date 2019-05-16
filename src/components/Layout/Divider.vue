@@ -31,9 +31,9 @@ export default {
               config: `$divider-height: 1;
 $divider-background: $divider-color;
 $divider-invert-background: rgba($background, 0.2);
-$divider-spacing: getSpace(3) 0; // 16 0
-$divider-small-spacing: getSpace(1) 0; // 4 0
-$divider-big-spacing: getSpace(5) 0; // 32 0`, 
+$divider-spacing: get-space(3) 0; // 16 0
+$divider-small-spacing: get-space(1) 0; // 4 0
+$divider-big-spacing: get-space(5) 0; // 32 0`, 
             },
           ],
         },

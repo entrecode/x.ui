@@ -27,12 +27,12 @@
   @include inject-style($tag-style);
   @include metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
   @include set-theme-colors($tag-background);
-  border-radius: arrayMagic($tag-radius);
+  border-radius: array-magic($tag-radius);
   font-family: $tag-font-family;
   font-weight: $tag-weight;
 
   a {
-    color: setContrast($tag-background);
+    color: set-contrast($tag-background);
   }
 
   // @param {px} $tag-small-font-size [12]
@@ -47,7 +47,7 @@
       $tag-small-min-height,
       $padding-ratio: $tag-padding-ratio
     );
-    border-radius: arrayMagic($tag-small-radius);
+    border-radius: array-magic($tag-small-radius);
   }
 
   // @param {px} $tag-big-font-size [14]
@@ -62,7 +62,7 @@
       $tag-big-min-height,
       $padding-ratio: $tag-padding-ratio
     );
-    border-radius: arrayMagic($tag-big-radius);
+    border-radius: array-magic($tag-big-radius);
   }
 }
 

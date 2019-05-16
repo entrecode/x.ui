@@ -11,8 +11,8 @@
   text-align: left;
   @include inject-style($field-group-style);
   background: $field-group-background;
-  margin: arrayMagic($field-group-spacing);
-  padding: arrayMagic($field-group-padding);
+  margin: array-magic($field-group-spacing);
+  padding: array-magic($field-group-padding);
 
   &.is-disabled,
   &[disabled] {
@@ -35,7 +35,7 @@
   display: block;
   @include inject-style($field-group-label-style);
   font-size: em($field-group-label-font-size);
-  margin: arrayMagic($field-group-label-spacing);
+  margin: array-magic($field-group-label-spacing);
 }
 
 // @param {array} $field-group-info-spacing [8]
@@ -45,5 +45,5 @@
   display: block;
   @include inject-style($field-group-info-style);
   font-size: em($field-group-info-font-size);
-  margin: arrayMagic($field-group-info-spacing);
+  margin: array-magic($field-group-info-spacing);
 }

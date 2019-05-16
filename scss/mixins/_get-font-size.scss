@@ -21,7 +21,7 @@
 
     @media (min-width: bp($key)) {
       $scale: map-get($bp, $key);
-      font-size: arrayMagic($size * $scale, $unit);
+      font-size: array-magic($size * $scale, $unit);
     }
   }
 }

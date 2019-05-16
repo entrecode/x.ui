@@ -35,7 +35,7 @@
     $padding: ($padding - $border);
   }
 
-  padding: arrayMagic($padding ($padding * $padding-ratio));
+  padding: array-magic($padding ($padding * $padding-ratio));
 
   font-size: rem($font-size);
   line-height: rem($line-height);

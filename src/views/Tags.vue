@@ -166,7 +166,7 @@ $tag-big-radius: $tag-radius;`,
 <span class="tag tag_outlined tag_error">tag</span>
 <span class="tag tag_outlined tag_success">tag</span>
 <span class="tag tag_outlined tag_warning">tag</span>`,
-              config: `$tag-outlined-color: setContrast($minor);
+              config: `$tag-outlined-color: set-contrast($minor);
 $tag-outlined-border-color: $minor;
 $tag-outlined-border-width: 1;
 $tag-outlined-border-style: solid;`,

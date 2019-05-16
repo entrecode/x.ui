@@ -1,18 +1,18 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 10.0.0
 /// @access public
 /// @group color-functions
 ///
 /// Mixes two colors, considering opacity
 /// @example
-/// color: flattenColor(rgba(black, .2);
+/// color: flatten-color(rgba(black, .2);
 ///
 /// @param {color} $fg - forground-color to be flattened
 /// @param {color} $bg [$background] - background-color
 ///
 /// @return {rgba}
 
-@function flattenColor($fg, $bg: $background) {
+@function flatten-color($fg, $bg: $background) {
   $a1: alpha($bg);
   $a2: alpha($fg);
 

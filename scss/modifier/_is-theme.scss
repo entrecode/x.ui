@@ -6,8 +6,8 @@
 /// @param {map} $is-theme
 /// @return modifier class with background-color and color values
 
-$_keys: map_keys($is-theme);
-$_values: map_values($is-theme);
+$_keys: map-keys($is-theme);
+$_values: map-values($is-theme);
 $_c: '-';
 
 @each $_key in $_keys {
@@ -28,11 +28,12 @@ $_c: '-';
         color: nth($_value, 3);
       }
     }
+
     .hover\:is-theme#{$_modifier} {
       &:hover {
         background: nth($_value, 1);
         color: nth($_value, 2);
-        
+
         a:not(.btn):not(.tag):not([class*='is-ink']) {
           color: nth($_value, 3);
         }

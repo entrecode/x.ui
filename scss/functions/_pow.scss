@@ -13,7 +13,7 @@
 }
 
 // @link http://rosettacode.org/wiki/Nth_root#JavaScript
-@function nthRoot($num, $n: 2, $prec: 12) {
+@function nth-root($num, $n: 2, $prec: 12) {
   $x: 1;
 
   @for $i from 0 through $prec {
@@ -23,13 +23,13 @@
   @return $x;
 }
 
-// Handles decimal exponents by trying to convert them into a fraction and then use a nthRoot-algorithm for parts of the calculation
+// Handles decimal exponents by trying to convert them into a fraction and then use a nth-root-algorithm for parts of the calculation
 @function pow($base, $exponent, $prec: 12) {
   @if (floor($exponent) != $exponent) {
     $prec2: pow(10, $prec);
     $exponent: round($exponent * $prec2);
     $denominator: gcd($exponent, $prec2);
-    @return nthRoot(pow($base, $exponent / $denominator), $prec2 / $denominator, $prec);
+    @return nth-root(pow($base, $exponent / $denominator), $prec2 / $denominator, $prec);
   }
 
   $value: $base;

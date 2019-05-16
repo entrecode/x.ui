@@ -287,7 +287,7 @@ h6 {
 
     @media (min-width: bp($key)) {
       $scale: map-get($bp, $key);
-      font-size: arrayMagic($size * $scale, $unit);
+      font-size: array-magic($size * $scale, $unit);
     }
   }
 }`,
@@ -365,7 +365,7 @@ h6 {
     $padding: ($padding - $border);
   }
 
-  padding: arrayMagic($padding ($padding * $padding-ratio));
+  padding: array-magic($padding ($padding * $padding-ratio));
 
   font-size: rem($font-size);
   line-height: rem($line-height);
@@ -552,9 +552,9 @@ h6 {
           code: `@mixin set-theme-colors($color, $hue: false) {
   background-color: $color;
   @if $hue {
-    color: setContrast($color, $hue);
+    color: set-contrast($color, $hue);
   } @else {
-    color: setContrast($color);
+    color: set-contrast($color);
   }
 }`,
           type: 'theme-mixin',
@@ -572,7 +572,7 @@ h6 {
           ],
           require: [
             {
-              name: 'setContrast()',
+              name: 'set-contrast()',
               link: '#scroll-to-set-contrast',
             },
           ],

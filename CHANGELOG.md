@@ -49,6 +49,24 @@
 - removed `.pull`
 - renamed `.has-width` and `.has-height` to `.is-width` and `.is-height`
 - removed placeholder `%toggle` and `%toggle-is-active`
+- renamed `arrayMagic()` to `array-magic()`
+- renamed `getColor()` to `get-color()`
+- renamed `flattenColor()` to `flatten-color()`
+- renamed `setContrast()` to `set-contrast()`
+- renamed `setHover()` to `set-hover()`
+- renamed `shadeByContrast()` to `shade-by-contrast()`
+- renamed `stripUnit()` to `strip-unit()`
+- renamed `systemColor()` to `system-color()`
+- renamed `varColor()` to `var-color()`
+- renamed `nextBp()` to `next-bp()`
+- renamed `getBrightness()` to `get-brightness()`
+- renamed `brightnessDifference()` to `brightness-difference()`
+- renamed `colorDifference()` to `color-difference()`
+- renamed `colorPass()` to `color-pass()`
+- renamed `colorMargin()` to `color-margin()`
+- renamed `contrastRatio()` to `contrast-ratio()`
+- renamed `checkCompliance()` to `check-compliance()`
+- renamed `findContrastLoop()` to `find-contrast-loop()`
 
 ### changes
 
@@ -58,6 +76,7 @@
 - refactored `.is-layer-#`
 - refactored `.is-position-#`
 - refactored `.is-theme-#`
+- refactored `btn-group`
 - refactored color variables
 - removed background variables from `.btn_outline`
 - changed `@extend %btn;` to `@include _btn-reset;`

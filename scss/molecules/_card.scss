@@ -20,7 +20,7 @@
   @include inject-style($card-style);
   background: $card-background;
   color: $card-color;
-  border-radius: arrayMagic($card-radius);
-  padding: arrayMagic($card-padding);
-  margin: arrayMagic($card-spacing);
+  border-radius: array-magic($card-radius);
+  padding: array-magic($card-padding);
+  margin: array-magic($card-spacing);
 }

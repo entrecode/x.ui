@@ -4,14 +4,14 @@
 /// @group modifier
 ///
 /// @require {mixin} set-breakpoints
-/// @require {function} getSpace
+/// @require {function} get-space
 /// @param {map} $has-padding-options [$has-padding-options]
 
 .has-padding {
   @each $_spacing, $_h in $has-padding-options {
     &-#{$_spacing} {
       @include set-breakpoints {
-        padding: getSpace($_spacing);
+        padding: get-space($_spacing);
       }
     }
   }
@@ -21,8 +21,8 @@
   @each $_spacing, $_h in $has-padding-options {
     &-#{$_spacing} {
       @include set-breakpoints {
-        padding-bottom: getSpace($_spacing);
-        padding-top: getSpace($_spacing);
+        padding-bottom: get-space($_spacing);
+        padding-top: get-space($_spacing);
       }
     }
   }
@@ -32,7 +32,7 @@
   @each $_spacing, $_h in $has-padding-options {
     &-#{$_spacing} {
       @include set-breakpoints {
-        padding-top: getSpace($_spacing);
+        padding-top: get-space($_spacing);
       }
     }
   }
@@ -42,7 +42,7 @@
   @each $_spacing, $_h in $has-padding-options {
     &-#{$_spacing} {
       @include set-breakpoints {
-        padding-bottom: getSpace($_spacing);
+        padding-bottom: get-space($_spacing);
       }
     }
   }
@@ -52,8 +52,8 @@
   @each $_spacing, $_h in $has-padding-options {
     &-#{$_spacing} {
       @include set-breakpoints {
-        padding-left: getSpace($_spacing);
-        padding-right: getSpace($_spacing);
+        padding-left: get-space($_spacing);
+        padding-right: get-space($_spacing);
       }
     }
   }
@@ -63,7 +63,7 @@
   @each $_spacing, $_h in $has-padding-options {
     &-#{$_spacing} {
       @include set-breakpoints {
-        padding-left: getSpace($_spacing);
+        padding-left: get-space($_spacing);
       }
     }
   }
@@ -73,7 +73,7 @@
   @each $_spacing, $_h in $has-padding-options {
     &-#{$_spacing} {
       @include set-breakpoints {
-        padding-right: getSpace($_spacing);
+        padding-right: get-space($_spacing);
       }
     }
   }

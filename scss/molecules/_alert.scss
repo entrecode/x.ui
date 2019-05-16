@@ -17,11 +17,11 @@
   text-align: center;
   @include set-theme-colors($alert-background);
   @include inject-style($alert-style);
-  border-radius: arrayMagic($alert-radius);
+  border-radius: array-magic($alert-radius);
   font-weight: $alert-weight;
   font-size: em($alert-font-size);
-  margin: arrayMagic($alert-spacing);
-  padding: arrayMagic($alert-padding);
+  margin: array-magic($alert-spacing);
+  padding: array-magic($alert-padding);
 }
 
 // @param {px} $alert-small-font-size [$alert-font-size * .875]
@@ -31,8 +31,8 @@
 .alert_small {
   @include inject-style($alert-small-style);
   font-size: em($alert-small-font-size);
-  margin: arrayMagic($alert-small-spacing);
-  padding: arrayMagic($alert-small-padding);
+  margin: array-magic($alert-small-spacing);
+  padding: array-magic($alert-small-padding);
 }
 
 // @param {px} $alert-big-font-size [$alert-font-size * 1.125]
@@ -42,8 +42,8 @@
 .alert_big {
   @include inject-style($alert-big-style);
   font-size: em($alert-big-font-size);
-  margin: arrayMagic($alert-big-spacing);
-  padding: arrayMagic($alert-big-padding);
+  margin: array-magic($alert-big-spacing);
+  padding: array-magic($alert-big-padding);
 }
 
 //
@@ -63,7 +63,7 @@ $_prefix: 'alert_';
       color: $_color;
 
       a:not([class]) {
-        color: $_color;
+        color: inherit;
       }
     }
   } @else {

@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 10.0.0
 /// @access public
 /// @group color-functions
 ///
@@ -8,68 +8,68 @@
 /// @link http://contrastchecker.com/
 
 //
-// getBrightness
+// get-brightness
 // ----------------------------------------------------------------------------
 // @param {color} $_c
 // @return {decimal} This algorithm is taken from a formula for converting RGB
 // values to YIQ values. This brightness value gives a perceived brightness for
 // a color.
-@function getBrightness($_c) {
+@function get-brightness($_c) {
   @return ((red($_c) * 299) + (green($_c) * 587) + (blue($_c) * 587)) / 1000;
 }
 
 //
-// brightnessDifference
+// brightness-difference
 // ----------------------------------------------------------------------------
 // @param {color} $_c1
 // @param {color} $_c2
 // @return {number} - an absolute number for the perceived brightness
 // difference of two colors.
-@function brightnessDifference($_c1, $_c2) {
-  @return abs(getBrightness($_c1) - getBrightness($_c2));
+@function brightness-difference($_c1, $_c2) {
+  @return abs(get-brightness($_c1) - get-brightness($_c2));
 }
 
 //
-// colorDifference
+// color-difference
 // ----------------------------------------------------------------------------
 // @param {color} $_c1
 // @param {color} $_c2
 // @return {number} - color difference
-@function colorDifference($_c1, $_c2) {
+@function color-difference($_c1, $_c2) {
   @return max(red($_c1), red($_c2)) - min(red($_c1), red($_c2)) +
     max(green($_c1), green($_c2)) - min(green($_c1), green($_c2)) +
     max(blue($_c1), blue($_c2)) - min(blue($_c1), blue($_c2));
 }
 
 //
-// colorPass
+// color-pass
 // ----------------------------------------------------------------------------
-// @require {function} brightnessDifference
-// @require {function} colorDifference
+// @require {function} brightness-difference
+// @require {function} color-difference
 // @param {color} $_r - reference color
 // @param {color} $_c
 // @param {number} $_b-thr [125] - brightness threshhold 125
 // @param {number} $_c-thr [500] - color threshhold is 500
 // @return {boolean}
-@function colorPass($_r, $_c, $_b-thr: 125, $_c-thr: 500) {
-  $_b-diff: brightnessDifference($_r, $_c);
-  $_c-diff: colorDifference($_r, $_c);
+@function color-pass($_r, $_c, $_b-thr: 125, $_c-thr: 500) {
+  $_b-diff: brightness-difference($_r, $_c);
+  $_c-diff: color-difference($_r, $_c);
   @return if($_b-diff > $_b-thr and $_c-diff > $_c-thr, true, false);
 }
 
 //
-// colorMargin
+// color-margin
 // ----------------------------------------------------------------------------
-// @require {function} brightnessDifference
-// @require {function} colorDifference
+// @require {function} brightness-difference
+// @require {function} color-difference
 // @param {color} $_r - reference color
 // @param {color} $_c
 // @param {number} $_b-thr [125] - brightness threshhold 125
 // @param {number} $_c-thr [500] - color threshhold is 500
 // @return {boolean}
-@function colorMargin($_r, $_c, $_b-thr: 125, $_c-thr: 500) {
-  $_b-diff: brightnessDifference($_r, $_c);
-  $_c-diff: colorDifference($_r, $_c);
+@function color-margin($_r, $_c, $_b-thr: 125, $_c-thr: 500) {
+  $_b-diff: brightness-difference($_r, $_c);
+  $_c-diff: color-difference($_r, $_c);
   @return if($_b-diff > $_b-thr or $_c-diff > $_c-thr, true, false);
 }
 
@@ -91,31 +91,31 @@
 }
 
 //
-// contrastRatio
+// contrast-ratio
 // ----------------------------------------------------------------------------
 // @require {function} luma
 // @param {color} $_c1 - reference color
 // @param {color} $_c2
 // @return {number} contrast ratios can range from 1 to 21
 
-@function contrastRatio($_c1, $_c2) {
+@function contrast-ratio($_c1, $_c2) {
   $_l1: luma($_c1);
   $_l2: luma($_c2);
   @return round((max($_l1, $_l2) + 0.05) / (min($_l1, $_l2) + 0.05) * 100) / 100;
 }
 
 //
-// checkCompliance
+// check-compliance
 // ----------------------------------------------------------------------------
 // @link https://www.w3.org/TR/WCAG/#contrast-ratiodef
-// @require {function} contrastRatio
+// @require {function} contrast-ratio
 // @param {color} $_r - reference color
 // @param {color} $_c
 // @param {decimal} $_wcag - WBAG compliance values (aaa: 7, aa: 4.5)
 // @return {boolean} - checks if a color meets the WCAG
 
-@function checkCompliance($_r, $_c, $_wcag) {
-  $_ratio: contrastRatio($_r, $_c);
+@function check-compliance($_r, $_c, $_wcag) {
+  $_ratio: contrast-ratio($_r, $_c);
   @if ($_ratio >= $_wcag) {
     @return true;
   } @else {
@@ -125,20 +125,20 @@
 
 
 //
-// findContrastLoop
+// find-contrast-loop
 // ----------------------------------------------------------------------------
 // loop to find color shade with best contrast
-// @require {function} colorDifference
-// @require {function} colorPass
-// @require {function} colorMargin
-// @require {function} contrastRatio
-// @require {function} checkCompliance
+// @require {function} color-difference
+// @require {function} color-pass
+// @require {function} color-margin
+// @require {function} contrast-ratio
+// @require {function} check-compliance
 // @param {color} $_color - reference color
 // @param {color} $_lighter-hue - lighter-shade color
 // @param {color} $_darker-hue - darker-shade color
 // @return {color}
 
-@function findContrastLoop($_color, $_lighter-hue, $_darker-hue) {
+@function find-contrast-loop($_color, $_lighter-hue, $_darker-hue) {
   $_list: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
   $_last: nth($_list, length($_list));
   $_final-color: null;
@@ -149,21 +149,21 @@
   @each $percent in $_list {
     // darker variant
     $_darker: darken($_darker-hue, $percent);
-    $_darker-color-diff: colorDifference($_color, $_darker);
-    $_darker-pass: colorPass($_color, $_darker);
-    $_darker-margin: colorMargin($_color, $_darker);
-    $_darker-contrast: contrastRatio($_color, $_darker);
-    $_darker-aa: checkCompliance($_color, $_darker, $_aa);
-    $_darker-aaa: checkCompliance($_color, $_darker, $_aaa);
+    $_darker-color-diff: color-difference($_color, $_darker);
+    $_darker-pass: color-pass($_color, $_darker);
+    $_darker-margin: color-margin($_color, $_darker);
+    $_darker-contrast: contrast-ratio($_color, $_darker);
+    $_darker-aa: check-compliance($_color, $_darker, $_aa);
+    $_darker-aaa: check-compliance($_color, $_darker, $_aaa);
 
     // lighter variant
     $_lighter: lighten($_lighter-hue, $percent);
-    $_lighter-color-diff: colorDifference($_color, $_lighter);
-    $_lighter-pass: colorPass($_color, $_lighter);
-    $_lighter-margin: colorMargin($_color, $_lighter);
-    $_lighter-contrast: contrastRatio($_color, $_lighter);
-    $_lighter-aa: checkCompliance($_color, $_lighter, $_aa);
-    $_lighter-aaa: checkCompliance($_color, $_lighter, $_aaa);
+    $_lighter-color-diff: color-difference($_color, $_lighter);
+    $_lighter-pass: color-pass($_color, $_lighter);
+    $_lighter-margin: color-margin($_color, $_lighter);
+    $_lighter-contrast: contrast-ratio($_color, $_lighter);
+    $_lighter-aa: check-compliance($_color, $_lighter, $_aa);
+    $_lighter-aaa: check-compliance($_color, $_lighter, $_aaa);
 
     @if $_lighter-pass {
       @return $_lighter;
@@ -211,30 +211,30 @@
 }
 
 //
-// setContrast
+// set-contrast
 // ----------------------------------------------------------------------------
 // @param {color} $color - reference color
 // @param {color} $hue - tweaks the output towards a specific hue
-// @require {function} flattenColor - returns an absolute color for colors with alpha transparency
-// @require {function} findContrastLoop
+// @require {function} flatten-color - returns an absolute color for colors with alpha transparency
+// @require {function} find-contrast-loop
 // @require {color} $darker-fallback
 // @require {color} $lighter-fallback
 //
 // @return {color} contrast color, that meets the WCAG
 
-@function setContrast($color, $hue: $color) {
+@function set-contrast($color, $hue: $color) {
   // remove transparency
   @if (alpha($color) < 1) {
-    $color: flattenColor($color);
+    $color: flatten-color($color);
   }
 
   @if (alpha($hue) < 1) {
-    $hue: flattenColor($hue);
+    $hue: flatten-color($hue);
   }
 
   @if $hue == $color {
-    @return findContrastLoop($color, $lighter-fallback, $darker-fallback);
+    @return find-contrast-loop($color, $lighter-fallback, $darker-fallback);
   } @else {
-    @return findContrastLoop($color, $hue, $hue);
+    @return find-contrast-loop($color, $hue, $hue);
   }
 }

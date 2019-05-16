@@ -16,7 +16,7 @@
 /// @require {string} $body-font-family
 /// @require {mixin} inject-style
 /// @require {mixin} metrics
-/// @require {function} arrayMagic
+/// @require {function} array-magic
 
 %tooltip {
   display: none;
@@ -43,7 +43,7 @@
   @if $tooltip-round == true {
     border-radius: 100vh;
   } @else {
-    border-radius: arrayMagic($tooltip-radius);
+    border-radius: array-magic($tooltip-radius);
   }
 }
 

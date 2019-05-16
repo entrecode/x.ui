@@ -16,8 +16,8 @@ $ec-icon-support: true !default;
 $background: #fff !default;
 $text: #0d2e48 !default;
 
-// @param {color | false} $lighter-fallback [false] - overwrite light fallback color for setContrast
-// @param {color | false} $darker-fallback [false] - overwrite darker fallback color for setContrast
+// @param {color | false} $lighter-fallback [false] - overwrite light fallback color for set-contrast
+// @param {color | false} $darker-fallback [false] - overwrite darker fallback color for set-contrast
 $lighter-fallback: false !default;
 $darker-fallback: false !default;
 
@@ -42,24 +42,24 @@ $_luma-background: luma($background);
 }
 
 $link: #00cd97 !default;
-$link-contrast: setContrast($link) !default;
+$link-contrast: set-contrast($link) !default;
 $link-safe: $link !default;
-$link-hover: setHover($link) !default;
+$link-hover: set-hover($link) !default;
 
 $super: #fb5557 !default;
-$super-contrast: setContrast($super) !default;
-$super-safe: setContrast($background, $super) !default;
-$super-hover: setHover($super) !default;
+$super-contrast: set-contrast($super) !default;
+$super-safe: set-contrast($background, $super) !default;
+$super-hover: set-hover($super) !default;
 
 $minor: #f4f5f6 !default;
-$minor-contrast: setContrast($minor, $link) !default;
-$minor-safe: setContrast($background, $minor) !default;
-$minor-hover: setHover($minor) !default;
+$minor-contrast: set-contrast($minor, $link) !default;
+$minor-safe: set-contrast($background, $minor) !default;
+$minor-hover: set-hover($minor) !default;
 
 $highlight: #fcf3b5 !default;
-$highlight-contrast: setContrast($highlight) !default;
-$highlight-safe: setContrast($background, $highlight) !default;
-$highlight-hover: setHover($highlight) !default;
+$highlight-contrast: set-contrast($highlight) !default;
+$highlight-safe: set-contrast($background, $highlight) !default;
+$highlight-hover: set-hover($highlight) !default;
 
 // background shading variables
 // @param {color} $background-invert [$text] - inverted color for background
@@ -67,9 +67,9 @@ $highlight-hover: setHover($highlight) !default;
 // @param {color} $background-lighter [null] - set value too overwrite generated color
 // @param {color} $background-lightest [null] - set value too overwrite generated color
 $background-invert: $text !default;
-$background-light: shadeByContrast($background, 12) !default;
-$background-lighter: shadeByContrast($background, 8) !default;
-$background-lightest: shadeByContrast($background, 3) !default;
+$background-light: shade-by-contrast($background, 12) !default;
+$background-lighter: shade-by-contrast($background, 8) !default;
+$background-lightest: shade-by-contrast($background, 3) !default;
 
 // @param {color} $base-background [$background]
 $base-background: $background !default;
@@ -93,29 +93,29 @@ $divider-color: rgba($text, 0.1) !default;
 $state-hover: rgba($link, 0.1) !default;
 
 $state-info: #cae6fe !default;
-$state-info-contrast: setContrast($background, $state-info) !default;
-$state-info-safe: setContrast($background, $state-info) !default;
-$state-info-hover: setHover($state-info) !default;
+$state-info-contrast: set-contrast($background, $state-info) !default;
+$state-info-safe: set-contrast($background, $state-info) !default;
+$state-info-hover: set-hover($state-info) !default;
 
 $state-error: #f9d7da !default;
-$state-error-contrast: setContrast($background, $state-error) !default;
-$state-error-safe: setContrast($background, $state-error) !default;
-$state-error-hover: setHover($state-error) !default;
+$state-error-contrast: set-contrast($background, $state-error) !default;
+$state-error-safe: set-contrast($background, $state-error) !default;
+$state-error-hover: set-hover($state-error) !default;
 
 $state-success: #d3ecdb !default;
-$state-success-contrast: setContrast($background, $state-success) !default;
-$state-success-safe: setContrast($background, $state-success) !default;
-$state-success-hover: setHover($state-success) !default;
+$state-success-contrast: set-contrast($background, $state-success) !default;
+$state-success-safe: set-contrast($background, $state-success) !default;
+$state-success-hover: set-hover($state-success) !default;
 
 $state-warning: #fff2cf !default;
-$state-warning-contrast: setContrast($background, $state-warning) !default;
-$state-warning-safe: setContrast($background, $state-warning) !default;
-$state-warning-hover: setHover($state-warning) !default;
+$state-warning-contrast: set-contrast($background, $state-warning) !default;
+$state-warning-safe: set-contrast($background, $state-warning) !default;
+$state-warning-hover: set-hover($state-warning) !default;
 
 //
 // COLORMAP
 // ---------------------------------------------
-// colormap used in `getColor()` function
+// colormap used in `get-color()` function
 $xui-colors: () !default;
 $xui-colors: map-merge(
   (
@@ -562,10 +562,10 @@ $btn-background: $link !default;
 $btn-color: $link-contrast !default;
 $btn-style: () !default;
 
-// @param {color} $btn-hover-background [setHover($btn-background)]
+// @param {color} $btn-hover-background [set-hover($btn-background)]
 // @param {color} $btn-hover-color [$btn-color]
 // @param {array} $btn-hover-style
-$btn-hover-background: setHover($btn-background) !default;
+$btn-hover-background: set-hover($btn-background) !default;
 $btn-hover-color: $btn-color !default;
 $btn-hover-style: () !default;
 
@@ -584,11 +584,11 @@ $btn-outline-border-color: $link !default;
 $btn-outline-color: $link !default;
 $btn-outline-style: () !default;
 
-// @param {color} $btn-outline-hover-border-color [setHover($btn-outline-border-color)]
-// @param {color} $btn-outline-hover-color [setHover($btn-outline-color)]
+// @param {color} $btn-outline-hover-border-color [set-hover($btn-outline-border-color)]
+// @param {color} $btn-outline-hover-color [set-hover($btn-outline-color)]
 // @param {array} $btn-outline-hover-style
-$btn-outline-hover-border-color: setHover($btn-outline-border-color) !default;
-$btn-outline-hover-color: setHover($btn-outline-color) !default;
+$btn-outline-hover-border-color: set-hover($btn-outline-border-color) !default;
+$btn-outline-hover-color: set-hover($btn-outline-color) !default;
 $btn-outline-hover-style: () !default;
 
 //
@@ -618,11 +618,11 @@ $btn-outline-minor-border-color: $minor !default;
 $btn-outline-minor-color: $text-light !default;
 $btn-outline-minor-style: () !default;
 
-// @param {color} $btn-outline-minor-hover-border-color [setHover($btn-outline-minor-border-color)]
-// @param {color} $btn-outline-minor-hover-color [setHover($btn-outline-minor-color)]
+// @param {color} $btn-outline-minor-hover-border-color [set-hover($btn-outline-minor-border-color)]
+// @param {color} $btn-outline-minor-hover-color [set-hover($btn-outline-minor-color)]
 // @param {array} $btn-outline-minor-hover-style
-$btn-outline-minor-hover-border-color: setHover($btn-outline-minor-border-color) !default;
-$btn-outline-minor-hover-color: setHover($btn-outline-minor-color) !default;
+$btn-outline-minor-hover-border-color: set-hover($btn-outline-minor-border-color) !default;
+$btn-outline-minor-hover-color: set-hover($btn-outline-minor-color) !default;
 $btn-outline-minor-hover-style: () !default;
 
 //
@@ -635,10 +635,10 @@ $btn-super-background: $super !default;
 $btn-super-color: $super-contrast !default;
 $btn-super-style: () !default;
 
-// @param {color} $btn-super-hover-background [setHover($btn-super-background)]
+// @param {color} $btn-super-hover-background [set-hover($btn-super-background)]
 // @param {color} $btn-super-hover-color [$btn-super-color]
 // @param {array} $btn-super-hover-style
-$btn-super-hover-background: setHover($btn-super-background) !default;
+$btn-super-hover-background: set-hover($btn-super-background) !default;
 $btn-super-hover-color: $btn-super-color !default;
 $btn-super-hover-style: () !default;
 
@@ -652,11 +652,11 @@ $btn-outline-super-border-color: $super !default;
 $btn-outline-super-color: $super !default;
 $btn-outline-super-style: () !default;
 
-// @param {color} $btn-outline-super-hover-border-color [setHover($btn-outline-super-border-color)]
-// @param {color} $btn-outline-super-hover-color [setHover($btn-outline-super-color)]
+// @param {color} $btn-outline-super-hover-border-color [set-hover($btn-outline-super-border-color)]
+// @param {color} $btn-outline-super-hover-color [set-hover($btn-outline-super-color)]
 // @param {array} $btn-outline-super-hover-style
-$btn-outline-super-hover-border-color: setHover($btn-outline-super-border-color) !default;
-$btn-outline-super-hover-color: setHover($btn-outline-super-color) !default;
+$btn-outline-super-hover-border-color: set-hover($btn-outline-super-border-color) !default;
+$btn-outline-super-hover-color: set-hover($btn-outline-super-color) !default;
 $btn-outline-super-hover-style: () !default;
 
 //
@@ -669,11 +669,11 @@ $btn-invert-background: $background !default;
 $btn-invert-color: $link !default;
 $btn-invert-style: () !default;
 
-// @param {color} $btn-invert-hover-background [setHover($btn-invert-background)]
-// @param {color} $btn-invert-hover-color [setHover($btn-invert-color)]
+// @param {color} $btn-invert-hover-background [set-hover($btn-invert-background)]
+// @param {color} $btn-invert-hover-color [set-hover($btn-invert-color)]
 // @param {array} $btn-invert-hover-style
-$btn-invert-hover-background: setHover($btn-invert-background) !default;
-$btn-invert-hover-color: setHover($btn-invert-color) !default;
+$btn-invert-hover-background: set-hover($btn-invert-background) !default;
+$btn-invert-hover-color: set-hover($btn-invert-color) !default;
 $btn-invert-hover-style: () !default;
 
 //
@@ -686,11 +686,11 @@ $btn-outline-invert-border-color: $text-invert !default;
 $btn-outline-invert-color: $text-invert !default;
 $btn-outline-invert-style: () !default;
 
-// @param {color} $btn-outline-invert-hover-border-color [setHover($btn-outline-invert-border-color)]
-// @param {color} $btn-outline-invert-hover-color [setHover($btn-outline-invert-color)]
+// @param {color} $btn-outline-invert-hover-border-color [set-hover($btn-outline-invert-border-color)]
+// @param {color} $btn-outline-invert-hover-color [set-hover($btn-outline-invert-color)]
 // @param {array} $btn-outline-invert-hover-style
-$btn-outline-invert-hover-border-color: setHover($btn-outline-invert-border-color) !default;
-$btn-outline-invert-hover-color: setHover($btn-outline-invert-color) !default;
+$btn-outline-invert-hover-border-color: set-hover($btn-outline-invert-border-color) !default;
+$btn-outline-invert-hover-color: set-hover($btn-outline-invert-color) !default;
 $btn-outline-invert-hover-style: () !default;
 
 //
@@ -704,10 +704,10 @@ $btn-clear-color: $link !default;
 $btn-clear-style: () !default;
 
 // @param {color} $btn-clear-hover-background [$btn-clear-background] - set `background` value
-// @param {color} $btn-clear-hover-color [setHover($btn-clear-color)]
+// @param {color} $btn-clear-hover-color [set-hover($btn-clear-color)]
 // @param {array} $btn-clear-hover-style
 $btn-clear-hover-background: $btn-clear-background !default;
-$btn-clear-hover-color: setHover($btn-clear-color) !default;
+$btn-clear-hover-color: set-hover($btn-clear-color) !default;
 $btn-clear-hover-style: () !default;
 
 //
@@ -796,11 +796,11 @@ $tag-big-line-height: 20 !default;
 $tag-big-min-height: 24 !default;
 $tag-big-style: () !default;
 
-// @param {color} $tag-outlined-color [setContrast($minor)]
+// @param {color} $tag-outlined-color [set-contrast($minor)]
 // @param {color} $tag-outlined-border-color [$minor]
 // @param {px} $tag-outlined-border-width [2]
 // @param {string} $tag-outlined-border-style [solid]
-$tag-outlined-color: setContrast($minor) !default;
+$tag-outlined-color: set-contrast($minor) !default;
 $tag-outlined-border-color: $minor !default;
 $tag-outlined-border-width: 1 !default;
 $tag-outlined-border-style: solid !default;
@@ -1603,7 +1603,7 @@ $tooltip-radius: 2 !default;
 // TABLE
 // ------------------------------------------------------
 // @param {array} $table-spacing [0 0 16 0]
-// @param {array} $table-border [1 solid getColor(divider)]
+// @param {array} $table-border [1 solid get-color(divider)]
 // @param {array} $table-cell-padding [8]
 $table-spacing: 0 0 16 0 !default;
 $table-border: 1 solid $divider-color !default;
@@ -1688,15 +1688,15 @@ $is-ink: map-merge(
 // @param {px} $bumper-size [4]
 // @param {color} $bumper-color [$divider-color]
 // @param {color} $bumper-invert-color [rgba($background, .2)]
-// @param {array} $bumper-spacing [getSpace(5) 0]
-// @param {array} $bumper-small-spacing [getSpace(3) 0]
-// @param {array} $bumper-big-spacing [getSpace(6) 0]
+// @param {array} $bumper-spacing [get-space(5) 0]
+// @param {array} $bumper-small-spacing [get-space(3) 0]
+// @param {array} $bumper-big-spacing [get-space(6) 0]
 $bumper-size: 4 !default;
 $bumper-color: $divider-color !default;
 $bumper-invert-color: rgba($background, 0.2) !default;
-$bumper-spacing: getSpace(5) 0 !default;
-$bumper-small-spacing: getSpace(3) 0 !default;
-$bumper-big-spacing: getSpace(6) 0 !default;
+$bumper-spacing: get-space(5) 0 !default;
+$bumper-small-spacing: get-space(3) 0 !default;
+$bumper-big-spacing: get-space(6) 0 !default;
 
 //
 // DIVIDER
@@ -1704,37 +1704,37 @@ $bumper-big-spacing: getSpace(6) 0 !default;
 // @param {px} $divider-height [1]
 // @param {color} $divider-background [$divider-color]
 // @param {color} $divider-invert-background [rgba($background, .2)]
-// @param {array} $divider-spacing [getSpace(3) 0]
-// @param {array} $divider-small-spacing [getSpace(1) 0]
-// @param {array} $divider-big-spacing [getSpace(5) 0]
+// @param {array} $divider-spacing [get-space(3) 0]
+// @param {array} $divider-small-spacing [get-space(1) 0]
+// @param {array} $divider-big-spacing [get-space(5) 0]
 $divider-height: 1 !default;
 $divider-background: $divider-color !default;
 $divider-invert-background: rgba($background, 0.2) !default;
-$divider-spacing: getSpace(3) 0 !default;
-$divider-small-spacing: getSpace(1) 0 !default;
-$divider-big-spacing: getSpace(5) 0 !default;
+$divider-spacing: get-space(3) 0 !default;
+$divider-small-spacing: get-space(1) 0 !default;
+$divider-big-spacing: get-space(5) 0 !default;
 
 //
 // SPACER
 // ------------------------------------------------------
-// @param {px} $spacer-size [getSpace(5)]
-// @param {px} $spacer-small-size [getSpace(3)]
-// @param {px} $spacer-big-size [getSpace(6)]
-$spacer-size: getSpace(5) !default;
-$spacer-small-size: getSpace(3) !default;
-$spacer-big-size: getSpace(6) !default;
+// @param {px} $spacer-size [get-space(5)]
+// @param {px} $spacer-small-size [get-space(3)]
+// @param {px} $spacer-big-size [get-space(6)]
+$spacer-size: get-space(5) !default;
+$spacer-small-size: get-space(3) !default;
+$spacer-big-size: get-space(6) !default;
 
 //
 // SPACING
 // ------------------------------------------------------
-// @param {px} $spacing-smallest-size [getSpace(1)]
-// @param {px} $spacing-small-size [getSpace(2)]
-// @param {px} $spacing-size [getSpace(3)]
-// @param {px} $spacing-big-size [getSpace(5)]
-$spacing-size: getSpace(3) !default;
-$spacing-smallest-size: getSpace(1) !default;
-$spacing-small-size: getSpace(2) !default;
-$spacing-big-size: getSpace(5) !default;
+// @param {px} $spacing-smallest-size [get-space(1)]
+// @param {px} $spacing-small-size [get-space(2)]
+// @param {px} $spacing-size [get-space(3)]
+// @param {px} $spacing-big-size [get-space(5)]
+$spacing-size: get-space(3) !default;
+$spacing-smallest-size: get-space(1) !default;
+$spacing-small-size: get-space(2) !default;
+$spacing-big-size: get-space(5) !default;
 
 //
 // FORM
@@ -2060,7 +2060,7 @@ $xui-radio-dot-checked-color: $link !default;
 // @param {array} $xui-toggle-spacing [0]
 // @param {array} $xui-toggle-style
 $xui-toggle-background: $background-lighter !default;
-$xui-toggle-hover-background: setHover($xui-toggle-background) !default;
+$xui-toggle-hover-background: set-hover($xui-toggle-background) !default;
 $xui-toggle-active-background: $link !default;
 $xui-toggle-height: 20 !default;
 $xui-toggle-width: $xui-toggle-height * 1.75 !default;

@@ -10,7 +10,7 @@
 // @param {px} $tag-font-size [$base-font-size * .875]
 // @param {px} $tag-line-height [$tag-font-size * $base-line-height]
 // @param {px} $tag-min-height [28]
-// @param {color} $tag-outlined-color [setContrast($minor)]
+// @param {color} $tag-outlined-color [set-contrast($minor)]
 // @param {color} $tag-outlined-border-color [$minor]
 .tag_outlined {
   @include metrics(
@@ -25,8 +25,8 @@
   border-style: $tag-outlined-border-style;
 
   a:hover & {
-    border-color: setHover($tag-outlined-border-color);
-    color: setHover($tag-outlined-border-color);
+    border-color: set-hover($tag-outlined-border-color);
+    color: set-hover($tag-outlined-border-color);
   }
 
   // @param {px} $tag-small-font-size [$tag-font-size * 0.875]

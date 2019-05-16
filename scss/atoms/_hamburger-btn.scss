@@ -23,9 +23,9 @@
   @include inject-style($btn-style);
   @include inject-style($hamburger-btn-style);
   @include metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio);
-  border-radius: arrayMagic($btn-radius);
+  border-radius: array-magic($btn-radius);
   background-color: $hamburger-btn-background;
-  margin: arrayMagic($hamburger-btn-spacing);
+  margin: array-magic($hamburger-btn-spacing);
 
   &::after {
     content: '';
@@ -33,7 +33,7 @@
     top: 50%;
     transition: all 0.4s;
     background-color: $_c;
-    border-radius: arrayMagic($_h / 2);
+    border-radius: array-magic($_h / 2);
     box-shadow: 0 rem(($_s)) 0 0 $_c, 0 rem(-($_s)) 0 0 $_c;
     height: rem($_h);
     left: rem((($btn-min-height - $_w) / 2));
@@ -47,7 +47,7 @@
     top: 50%;
     transition: all 0.4s;
     background-color: $_c;
-    border-radius: arrayMagic($_h / 2);
+    border-radius: array-magic($_h / 2);
     height: rem($_h);
     left: rem((($btn-min-height - $_w) / 2));
     margin-top: rem(-$_h / 2);
@@ -61,7 +61,7 @@
       top: 50%;
       box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
       background-color: $_c;
-      border-radius: arrayMagic($_h / 2);
+      border-radius: array-magic($_h / 2);
       height: rem($_h);
       left: rem((($btn-min-height - $_w) / 2));
       margin-top: rem(-$_h / 2);

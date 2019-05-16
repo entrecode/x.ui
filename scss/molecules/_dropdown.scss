@@ -89,11 +89,11 @@
   @include is-scrollable(y, contain, $behavior: auto);
   @include inject-style($dropdown-options-style);
   background: $dropdown-options-background;
-  border-radius: arrayMagic($dropdown-options-radius);
-  box-shadow: arrayMagic($dropdown-options-shadow);
-  color: setContrast($dropdown-options-background);
+  border-radius: array-magic($dropdown-options-radius);
+  box-shadow: array-magic($dropdown-options-shadow);
+  color: set-contrast($dropdown-options-background);
   max-height: rem($dropdown-options-max-height);
-  padding: arrayMagic($dropdown-options-padding);
+  padding: array-magic($dropdown-options-padding);
 
   // @param {px} $dropdown-option-divider-size [1]
   // @param {px} $dropdown-option-divider-spacing [4 0]
@@ -101,7 +101,7 @@
   .dropdown_divider {
     background-color: $dropdown-option-divider-color;
     height: rem($dropdown-option-divider-size);
-    margin: arrayMagic($dropdown-option-divider-spacing);
+    margin: array-magic($dropdown-option-divider-spacing);
     padding: 0;
   }
 }
@@ -144,7 +144,7 @@
     color: $dropdown-option-color;
     background: $dropdown-option-background;
     font-weight: $dropdown-option-weight;
-    margin: arrayMagic($dropdown-option-spacing);
+    margin: array-magic($dropdown-option-spacing);
     text-align: $dropdown-option-alignment;
 
     // @param {color} $dropdown-option-hover-color [$link]

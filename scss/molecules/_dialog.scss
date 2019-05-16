@@ -21,7 +21,7 @@
   overflow: hidden;
   overscroll-behavior: contain;
   @include inject-style($dialog-wrapper-style);
-  padding: arrayMagic($dialog-wrapper-padding);
+  padding: array-magic($dialog-wrapper-padding);
   background: $dialog-wrapper-background;
   z-index: $dialog-wrapper-z-index;
 
@@ -50,9 +50,9 @@
   @include inject-style($dialog-style);
   background: $dialog-background;
   color: $dialog-color;
-  padding: arrayMagic($dialog-padding);
-  border-radius: arrayMagic($dialog-radius);
-  box-shadow: arrayMagic($dialog-shadow);
+  padding: array-magic($dialog-padding);
+  border-radius: array-magic($dialog-radius);
+  box-shadow: array-magic($dialog-shadow);
 
   &:not([data-col]) {
     min-width: rem($dialog-min-width);
@@ -118,8 +118,8 @@
   flex-grow: 0;
   flex-shrink: 0;
   @include inject-style($dialog-header-style);
-  margin: arrayMagic($dialog-header-spacing);
-  padding: arrayMagic($dialog-header-padding);
+  margin: array-magic($dialog-header-spacing);
+  padding: array-magic($dialog-header-padding);
 
   .dialog-dismiss {
     position: relative;
@@ -135,8 +135,8 @@
   flex-grow: 1;
   @include is-scrollable(y, contain, $behavior: auto);
   @include inject-style($dialog-body-style);
-  margin: arrayMagic($dialog-header-spacing);
-  padding: arrayMagic($dialog-header-padding);
+  margin: array-magic($dialog-header-spacing);
+  padding: array-magic($dialog-header-padding);
 }
 
 // @param {array} $dialog-footer-spacing [0]
@@ -146,6 +146,6 @@
   flex-shrink: 0;
   flex-grow: 0;
   @include inject-style($dialog-footer-style);
-  margin: arrayMagic($dialog-footer-spacing);
-  padding: arrayMagic($dialog-footer-padding);
+  margin: array-magic($dialog-footer-spacing);
+  padding: array-magic($dialog-footer-padding);
 }

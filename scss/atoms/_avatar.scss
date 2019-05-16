@@ -27,7 +27,7 @@
 
   @include inject-style($avatar-style);
   background: $avatar-background;
-  border: arrayMagic($avatar-border);
+  border: array-magic($avatar-border);
   height: rem($avatar-size);
   width: rem($avatar-size);
 
@@ -49,6 +49,6 @@
   }
 
   &_square {
-    border-radius: arrayMagic($avatar-square-radius);
+    border-radius: array-magic($avatar-square-radius);
   }
 }

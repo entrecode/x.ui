@@ -125,10 +125,10 @@ $btn-big-style: ();`,
               preview: '<a class="btn">Default</a>',
               markup: '<a class="btn">Default</a>',
               config: `$btn-background: $link;
-$btn-color: setContrast($link);
+$btn-color: set-contrast($link);
 $btn-style: ();
 
-$btn-hover-background: setHover($btn-background);
+$btn-hover-background: set-hover($btn-background);
 $btn-hover-color: $btn-color;
 $btn-hover-style: ();`,
               previewStyle: 'well',
@@ -138,10 +138,10 @@ $btn-hover-style: ();`,
               preview: '<a class="btn btn_super">Super</a>',
               markup: '<a class="btn btn_super">Super</a>',
               config: `$btn-super-background: $super;
-$btn-super-color: setContrast($super);
+$btn-super-color: set-contrast($super);
 $btn-super-style: ();
 
-$btn-super-hover-background: setHover($btn-super-background);
+$btn-super-hover-background: set-hover($btn-super-background);
 $btn-super-hover-color: $btn-super-color;
 $btn-super-hover-style: ();`,
               previewStyle: 'well',
@@ -151,10 +151,10 @@ $btn-super-hover-style: ();`,
               preview: '<a class="btn btn_minor">Minor</a>',
               markup: '<a class="btn btn_minor">Minor</a>',
               config: `$btn-minor-background: $minor;
-$btn-minor-color: setContrast($minor);
+$btn-minor-color: set-contrast($minor);
 $btn-minor-style: ();
 
-$btn-minor-hover-background: setHover($btn-minor-background);
+$btn-minor-hover-background: set-hover($btn-minor-background);
 $btn-minor-hover-color: $btn-minor-color;
 $btn-minor-hover-style: ();`,
               previewStyle: 'well',
@@ -167,8 +167,8 @@ $btn-minor-hover-style: ();`,
 $btn-invert-color: $link;
 $btn-invert-style: ();
 
-$btn-invert-hover-background: setHover($btn-invert-background);
-$btn-invert-hover-color: setHover($btn-invert-color);
+$btn-invert-hover-background: set-hover($btn-invert-background);
+$btn-invert-hover-color: set-hover($btn-invert-color);
 $btn-invert-hover-style: ();`,
               previewStyle: 'well is-theme-invert',
             },
@@ -181,7 +181,7 @@ $btn-clear-color: $link;
 $btn-clear-style: ();
 
 $btn-clear-hover-background: $btn-clear-background;
-$btn-clear-hover-color: setHover($btn-clear-color);
+$btn-clear-hover-color: set-hover($btn-clear-color);
 $btn-clear-hover-style: ();`,
               previewStyle: 'well',
             },
@@ -204,8 +204,8 @@ $btn-outline-border-color: $link;
 $btn-outline-color: $link;
 $btn-outline-style: ();
 
-$btn-outline-hover-border-color: setHover($btn-outline-border-color);
-$btn-outline-hover-color: setHover($btn-outline-color);
+$btn-outline-hover-border-color: set-hover($btn-outline-border-color);
+$btn-outline-hover-color: set-hover($btn-outline-color);
 $btn-outline-hover-style: ();`,
               previewStyle: 'well',
             },
@@ -217,8 +217,8 @@ $btn-outline-hover-style: ();`,
 $btn-outline-super-color: $super;
 $btn-outline-super-style: ();
 
-$btn-outline-super-hover-border-color: setHover($btn-outline-super-border-color);
-$btn-outline-super-hover-color: setHover($btn-outline-super-color);
+$btn-outline-super-hover-border-color: set-hover($btn-outline-super-border-color);
+$btn-outline-super-hover-color: set-hover($btn-outline-super-color);
 $btn-outline-super-hover-style: ();`,
               previewStyle: 'well',
             },
@@ -230,8 +230,8 @@ $btn-outline-super-hover-style: ();`,
 $btn-outline-minor-color: $text-light;
 $btn-outline-minor-style: ();
 
-$btn-outline-minor-hover-border-color: setHover($btn-outline-minor-border-color);
-$btn-outline-minor-hover-color: setHover($btn-outline-minor-color);
+$btn-outline-minor-hover-border-color: set-hover($btn-outline-minor-border-color);
+$btn-outline-minor-hover-color: set-hover($btn-outline-minor-color);
 $btn-outline-minor-hover-style: ();`,
               previewStyle: 'is-theme',
               previewStyle: 'well',
@@ -244,8 +244,8 @@ $btn-outline-minor-hover-style: ();`,
 $btn-outline-invert-color: $text-invert;
 $btn-outline-invert-style: ();
 
-$btn-outline-invert-hover-border-color: setHover($btn-outline-invert-border-color);
-$btn-outline-invert-hover-color: setHover($btn-outline-invert-color);
+$btn-outline-invert-hover-border-color: set-hover($btn-outline-invert-border-color);
+$btn-outline-invert-hover-color: set-hover($btn-outline-invert-color);
 $btn-outline-invert-hover-style: ();`,
               previewStyle: 'well is-theme-invert',
             },

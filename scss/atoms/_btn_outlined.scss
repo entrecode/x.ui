@@ -53,8 +53,8 @@
     );
   }
 
-  // @param {color} $btn-outline-hover-border-color [setHover($btn-outline-border-color)]
-  // @param {color} $btn-outline-hover-color [setHover($btn-outline-color)]
+  // @param {color} $btn-outline-hover-border-color [set-hover($btn-outline-border-color)]
+  // @param {color} $btn-outline-hover-color [set-hover($btn-outline-color)]
   // @param {array} $btn-outline-hover-style
   &.is-active,
   &:hover,
@@ -66,15 +66,15 @@
   }
 
   // @param {color} $btn-outline-minor-border-color [$minor]
-  // @param {color} $btn-outline-minor-color [setContrast($minor)]
+  // @param {color} $btn-outline-minor-color [set-contrast($minor)]
   // @param {array} $btn-outline-minor-style
   &.btn_minor {
     @include inject-style($btn-outline-minor-style);
     border-color: $btn-outline-minor-border-color;
     color: $btn-outline-minor-hover-color;
 
-    // @param {color} $btn-outline-minor-hover-border-color [setHover($btn-outline-minor-border-color)]
-    // @param {color} $btn-outline-minor-hover-color [setHover($btn-outline-minor-color)]
+    // @param {color} $btn-outline-minor-hover-border-color [set-hover($btn-outline-minor-border-color)]
+    // @param {color} $btn-outline-minor-hover-color [set-hover($btn-outline-minor-color)]
     // @param {array} $btn-outline-minor-hover-style
     &.is-active,
     &:hover,
@@ -86,15 +86,15 @@
   }
 
   // @param {color} $btn-outline-super-border-color [$super]
-  // @param {color} $btn-outline-super-color [setContrast($super)]
+  // @param {color} $btn-outline-super-color [set-contrast($super)]
   // @param {array} $btn-outline-super-style
   &.btn_super {
     @include inject-style($btn-outline-super-style);
     border-color: $btn-outline-super-border-color;
     color: $btn-outline-super-hover-color;
 
-    // @param {color} $btn-outline-super-hover-border-color [setHover($btn-outline-super-border-color)]
-    // @param {color} $btn-outline-super-hover-color [setHover($btn-outline-super-color)]
+    // @param {color} $btn-outline-super-hover-border-color [set-hover($btn-outline-super-border-color)]
+    // @param {color} $btn-outline-super-hover-color [set-hover($btn-outline-super-color)]
     // @param {array} $btn-outline-super-hover-style
     &.is-active,
     &:hover,
@@ -106,15 +106,15 @@
   }
 
   // @param {color} $btn-outline-invert-border-color [$text-invert]
-  // @param {color} $btn-outline-invert-color [setContrast($text-invert)]
+  // @param {color} $btn-outline-invert-color [set-contrast($text-invert)]
   // @param {array} $btn-outline-invert-style
   &.btn_invert {
     @include inject-style($btn-outline-invert-style);
     border-color: $btn-outline-invert-border-color;
     color: $btn-outline-invert-hover-color;
 
-    // @param {color} $btn-outline-invert-hover-border-color [setHover($btn-outline-invert-border-color)]
-    // @param {color} $btn-outline-invert-hover-color [setHover($btn-outline-invert-color)]
+    // @param {color} $btn-outline-invert-hover-border-color [set-hover($btn-outline-invert-border-color)]
+    // @param {color} $btn-outline-invert-hover-color [set-hover($btn-outline-invert-color)]
     // @param {array} $btn-outline-invert-hover-style
     &.is-active,
     &:hover,

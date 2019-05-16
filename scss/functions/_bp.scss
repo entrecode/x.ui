@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 7.0.0
+/// @since 10.0.0
 /// @access public
 /// @group grid-functions
 ///
@@ -8,7 +8,7 @@
 ///
 /// @return {string} value of next breakpoint-key or null
 
-@function nextBp($breakpoint, $map: $breakpoints) {
+@function next-bp($breakpoint, $map: $breakpoints) {
   $_keys: map-keys($map);
   $_current: index($_keys, $breakpoint);
 
@@ -28,7 +28,7 @@
 @function bp($breakpoint, $max: null) {
   @if map-has-key($breakpoints, $breakpoint) {
     @if $max == max {
-      $_breakpoint-max: nextBp($breakpoint);
+      $_breakpoint-max: next-bp($breakpoint);
       @return if($_breakpoint-max, $_breakpoint-max - 1 * 1px, map-get($breakpoints, $breakpoint) * 1px);
     } @else {
       @return map-get($breakpoints, $breakpoint) * 1px;

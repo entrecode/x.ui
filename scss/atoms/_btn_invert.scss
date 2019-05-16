@@ -11,8 +11,8 @@
   background: $btn-invert-background;
   color: $btn-invert-color;
 
-  // @param {color} $btn-invert-hover-background [setHover($btn-invert-background)]
-  // @param {color} $btn-invert-hover-color [setHover($btn-invert-color)]
+  // @param {color} $btn-invert-hover-background [set-hover($btn-invert-background)]
+  // @param {color} $btn-invert-hover-color [set-hover($btn-invert-color)]
   // @param {array} $btn-invert-hover-style
   &.is-active,
   &:hover,

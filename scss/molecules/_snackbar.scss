@@ -57,8 +57,8 @@
   @include inject-style($snackbar-style);
   background: $snackbar-background;
   color: $snackbar-color;
-  padding: arrayMagic($snackbar-padding);
-  border-radius: arrayMagic($snackbar-radius);
+  padding: array-magic($snackbar-padding);
+  border-radius: array-magic($snackbar-radius);
 
   &:not([data-col]) {
     min-width: rem($snackbar-min-width);
@@ -87,7 +87,7 @@
   // @param {string} $snackbar-opens-bottom-shadow
 
   &.opens-top {
-    box-shadow: arrayMagic($snackbar-opens-top-shadow);
+    box-shadow: array-magic($snackbar-opens-top-shadow);
 
     &.is-active {
       top: rem($base-spacing);
@@ -95,7 +95,7 @@
   }
 
   &.opens-bottom {
-    box-shadow: arrayMagic($snackbar-opens-bottom-shadow);
+    box-shadow: array-magic($snackbar-opens-bottom-shadow);
 
     &.is-active {
       top: auto;
@@ -144,8 +144,8 @@
   flex-grow: 0;
   flex-shrink: 0;
   @include inject-style($snackbar-header-style);
-  margin: arrayMagic($snackbar-header-spacing);
-  padding: arrayMagic($snackbar-header-padding);
+  margin: array-magic($snackbar-header-spacing);
+  padding: array-magic($snackbar-header-padding);
 
   .snackbar-dismiss {
     position: relative;
@@ -161,8 +161,8 @@
   flex-grow: 1;
   @include is-scrollable(y, contain, $behavior: auto);
   @include inject-style($snackbar-body-style);
-  margin: arrayMagic($snackbar-header-spacing);
-  padding: arrayMagic($snackbar-header-padding);
+  margin: array-magic($snackbar-header-spacing);
+  padding: array-magic($snackbar-header-padding);
 }
 
 // @param {array} $snackbar-footer-spacing [0]
@@ -172,6 +172,6 @@
   flex-shrink: 0;
   flex-grow: 0;
   @include inject-style($snackbar-footer-style);
-  margin: arrayMagic($snackbar-footer-spacing);
-  padding: arrayMagic($snackbar-footer-padding);
+  margin: array-magic($snackbar-footer-spacing);
+  padding: array-magic($snackbar-footer-padding);
 }

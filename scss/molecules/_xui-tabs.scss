@@ -12,8 +12,8 @@
 .xui-tabs {
   @include inject-style($xui-tabs-style);
   background: $xui-tabs-background;
-  margin: arrayMagic($xui-tabs-spacing);
-  padding: arrayMagic($xui-tabs-padding);
+  margin: array-magic($xui-tabs-spacing);
+  padding: array-magic($xui-tabs-padding);
 
   [type='radio'] {
     @extend %is-hidden-input;
@@ -38,8 +38,8 @@
 .xui-tabs-nav {
   @include inject-style($xui-tabs-nav-style);
   background: $xui-tabs-nav-background;
-  margin: arrayMagic($xui-tabs-nav-spacing);
-  padding: arrayMagic($xui-tabs-nav-padding);
+  margin: array-magic($xui-tabs-nav-spacing);
+  padding: array-magic($xui-tabs-nav-padding);
 
   > ul {
     list-style: none;
@@ -58,7 +58,7 @@
 .xui-tabs-nav-item {
   position: relative;
   text-align: center;
-  padding: arrayMagic($xui-tabs-nav-item-gutter);
+  padding: array-magic($xui-tabs-nav-item-gutter);
 
   @supports not (display: flex) {
     display: inline-block;
@@ -75,11 +75,11 @@
     display: block;
     text-align: center;
     @include inject-style($xui-tabs-nav-item-style);
-    border-radius: arrayMagic($xui-tabs-nav-item-radius);
+    border-radius: array-magic($xui-tabs-nav-item-radius);
     background: $xui-tabs-nav-item-background;
     color: $xui-tabs-nav-item-color;
     font-weight: $xui-tabs-nav-item-weight;
-    padding: arrayMagic($xui-tabs-nav-item-padding);
+    padding: array-magic($xui-tabs-nav-item-padding);
 
     // @param {color} $xui-tabs-nav-item-active-background [none]
     // @param {color} $xui-tabs-nav-item-active-color [$link]
@@ -109,6 +109,6 @@
   display: none;
   @include inject-style($xui-tab-style);
   background: $xui-tab-background;
-  margin: arrayMagic($xui-tab-spacing);
-  padding: arrayMagic($xui-tab-padding);
+  margin: array-magic($xui-tab-spacing);
+  padding: array-magic($xui-tab-padding);
 }

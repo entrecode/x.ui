@@ -4,14 +4,14 @@
 /// @group atoms
 ///
 /// @param {color} $btn-super-background [$super]
-/// @param {color} $btn-super-color [setContrast($super)]
+/// @param {color} $btn-super-color [set-contrast($super)]
 /// @param {array} $btn-super-style
 .btn_super {
   @include inject-style($btn-super-style);
   background: $btn-super-background;
   color: $btn-super-color;
 
-  // @param {color} $btn-super-hover-background [setHover($btn-super-background)]
+  // @param {color} $btn-super-hover-background [set-hover($btn-super-background)]
   // @param {color} $btn-super-hover-color [$btn-super-color]
   // @param {array} $btn-super-hover-style
   &.is-active,

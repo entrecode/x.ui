@@ -1,4 +1,4 @@
-/// @since 9.1.0
+/// @since 10.0.0
 /// @access public
 /// @group style mixin
 ///
@@ -95,25 +95,25 @@
   );
 }
 
-// Applies the correct css rules to an element to give it the elevation specified by $zValue.
-// The $zValue must be between 0 and 24.
-@mixin elevation($zValue, $color: $elevation-color, $opacity: $elevation-opacity) {
-  @if type-of($zValue) != number or not unitless($zValue) {
-    @error '$zValue must be a unitless number';
+// Applies the correct css rules to an element to give it the elevation specified by $z-value.
+// The $z-value must be between 0 and 24.
+@mixin elevation($z-value, $color: $elevation-color, $opacity: $elevation-opacity) {
+  @if type-of($z-value) != number or not unitless($z-value) {
+    @error '$z-value must be a unitless number';
   }
-  @if $zValue < 0 or $zValue > 24 {
-    @error '$zValue must be between 0 and 24';
+  @if $z-value < 0 or $z-value > 24 {
+    @error '$z-value must be between 0 and 24';
   }
 
-  box-shadow: #{map-get(_get-umbra-map($color, $opacity), $zValue)},
-    #{map-get(_get-penumbra-map($color, $opacity), $zValue)}, #{map-get(_get-ambient-map($color, $opacity), $zValue)};
+  box-shadow: #{map-get(_get-umbra-map($color, $opacity), $z-value)},
+    #{map-get(_get-penumbra-map($color, $opacity), $z-value)}, #{map-get(_get-ambient-map($color, $opacity), $z-value)};
 }
 
 // Applies the elevation to an element in a manner that allows
 // consumers to override it via the Material elevation classes.
-@mixin overridable-elevation($zValue, $color: $elevation-color, $opacity: $elevation-opacity) {
+@mixin overridable-elevation($z-value, $color: $elevation-color, $opacity: $elevation-opacity) {
   &:not([class*='#{$elevation-prefix}']) {
-    @include elevation($zValue, $color, $opacity);
+    @include elevation($z-value, $color, $opacity);
   }
 }
 

@@ -9,9 +9,9 @@
 /// @param {px} $bumper-size [4]
 /// @param {color} $bumper-color [$divider-color]
 /// @param {color} $bumper-invert-color [rgba($background, .2)]
-/// @param {array} $bumper-spacing [getSpace(5) 0]
-/// @param {array} $bumper-small-spacing [getSpace(3) 0]
-/// @param {array} $bumper-big-spacing [getSpace(6) 0]
+/// @param {array} $bumper-spacing [get-space(5) 0]
+/// @param {array} $bumper-small-spacing [get-space(3) 0]
+/// @param {array} $bumper-big-spacing [get-space(6) 0]
 
 .bumper {
   flex-shrink: 0;
@@ -19,7 +19,7 @@
   position: relative;
   text-align: center;
   height: rem($bumper-size);
-  margin: arrayMagic($bumper-spacing);
+  margin: array-magic($bumper-spacing);
 
   &::before {
     content: '';
@@ -41,11 +41,11 @@
 }
 
 .bumper_small {
-  margin: arrayMagic($bumper-small-spacing);
+  margin: array-magic($bumper-small-spacing);
 }
 
 .bumper_big {
-  margin: arrayMagic($bumper-big-spacing);
+  margin: array-magic($bumper-big-spacing);
 }
 
 @mixin bumper {

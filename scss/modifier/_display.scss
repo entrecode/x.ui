@@ -5,6 +5,7 @@
 ///
 /// @param {map} $display-map
 /// @param {map} $breakpoints
+///
 /// @requires {function} bp
 
 // scss-lint:disable ImportantRule
@@ -21,10 +22,11 @@ $_values: map-values($display-map);
 }
 
 @each $_bp in map-keys($breakpoints) {
-  $_nbp: nextBp($_bp);
+  $_nbp: next-bp($_bp);
 
   @if $_nbp != null {
     $_nbp: $_nbp - 1 * 1px;
+
     @media (min-width: bp(#{$_bp})) and (max-width: #{$_nbp}) {
       @each $_key in $_keys {
         $_i: index($_keys, $_key);

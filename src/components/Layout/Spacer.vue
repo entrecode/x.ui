@@ -24,9 +24,9 @@ export default {
               markup: `<div class="spacer"></div>
 <div class="spacer spacer_big"></div>
 <div class="spacer spacer_small"></div>`,
-              config: `$spacer-size: getSpace(5); // 32
-$spacer-small-size: getSpace(3); // 16
-$spacer-big-size: getSpace(6); // 48`,
+              config: `$spacer-size: get-space(5); // 32
+$spacer-small-size: get-space(3); // 16
+$spacer-big-size: get-space(6); // 48`,
             },
           ],
         },

@@ -11,8 +11,8 @@
 
 .fieldset {
   @include inject-style($fieldset-style);
-  padding: arrayMagic($fieldset-padding);
-  margin: arrayMagic($fieldset-spacing);
+  padding: array-magic($fieldset-padding);
+  margin: array-magic($fieldset-spacing);
   background: $fieldset-background;
-  border: arrayMagic($fieldset-border);
+  border: array-magic($fieldset-border);
 }

@@ -13,7 +13,7 @@
   @include inject-style($well-style);
   background: $well-background;
   color: $well-color;
-  border-radius: arrayMagic($well-radius);
-  margin: arrayMagic($well-spacing);
-  padding: arrayMagic($well-padding);
+  border-radius: array-magic($well-radius);
+  margin: array-magic($well-spacing);
+  padding: array-magic($well-padding);
 }

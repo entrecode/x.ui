@@ -1,15 +1,15 @@
 /// @author Bernhard Ruoff
-/// @since 8.0.0-beta.5
+/// @since 10.0.0
 /// @access public
 /// @group unit-functions
 ///
 /// removes the unit of a value
 /// @example
-/// stripUnit(16px) // returns 16
+/// strip-unit(16px) // returns 16
 ///
 /// @param {string} $number
 
-@function stripUnit($number) {
+@function strip-unit($number) {
   @if type-of($number) == 'number' and not unitless($number) {
     @return $number / ($number * 0 + 1);
   }

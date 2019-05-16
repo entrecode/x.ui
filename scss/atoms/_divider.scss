@@ -9,9 +9,9 @@
 /// @param {px} $divider-height [1]
 /// @param {color} $divider-background [$divider-color]
 /// @param {color} $divider-invert-background [rgba($background, .2)]
-/// @param {array} $divider-spacing [getSpace(5) 0]
-/// @param {array} $divider-small-spacing [getSpace(3) 0]
-/// @param {array} $divider-big-spacing [getSpace(6) 0]
+/// @param {array} $divider-spacing [get-space(5) 0]
+/// @param {array} $divider-small-spacing [get-space(3) 0]
+/// @param {array} $divider-big-spacing [get-space(6) 0]
 
 .divider {
   border: 0;
@@ -20,7 +20,7 @@
   background: $divider-background;
 
   @include set-breakpoints {
-    margin: arrayMagic($divider-spacing);
+    margin: array-magic($divider-spacing);
   }
 
   &.divider_invert {
@@ -30,12 +30,12 @@
 
 .divider_small {
   @include set-breakpoints {
-    margin: arrayMagic($divider-small-spacing);
+    margin: array-magic($divider-small-spacing);
   }
 }
 
 .divider_big {
   @include set-breakpoints {
-    margin: arrayMagic($divider-big-spacing);
+    margin: array-magic($divider-big-spacing);
   }
 }

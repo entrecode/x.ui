@@ -14,7 +14,7 @@
 ///
 /// @require {placeholer} is-hidden-input
 /// @require {mixin} inject-style()
-/// @require {function} arrayMagic()
+/// @require {function} array-magic()
 /// @require {function} rem()
 /// @require {function} em()
 
@@ -40,7 +40,7 @@
   transition: background-color 0.2s;
   @include inject-style($xui-toggle-style);
   background: $xui-toggle-background;
-  border-radius: arrayMagic($xui-toggle-radius);
+  border-radius: array-magic($xui-toggle-radius);
   height: rem($xui-toggle-height);
   width: rem($xui-toggle-width);
 
@@ -54,7 +54,7 @@
     display: block;
     @include inject-style($xui-toggle-pin-style);
     background: $xui-toggle-pin-background;
-    border-radius: arrayMagic($xui-toggle-pin-radius);
+    border-radius: array-magic($xui-toggle-pin-radius);
     height: rem($xui-toggle-pin-height);
     width: rem($xui-toggle-pin-width);
     margin: rem(($xui-toggle-height - $xui-toggle-pin-height) / 2);
@@ -81,6 +81,6 @@
   line-height: em($xui-toggle-label-line-height, $xui-toggle-label-font-size);
 
   .xui-toggle__switch {
-    margin: arrayMagic($xui-toggle-spacing);
+    margin: array-magic($xui-toggle-spacing);
   }
 }

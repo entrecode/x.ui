@@ -1,20 +1,20 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 10.0.0
 /// @access public
 /// @group color-functions
 ///
 /// generate darker or lighter variation
 /// @link https://medium.com/@erikdkennedy/color-in-ui-design-a-practical-framework-e18cacd97f9e#.78i84mre8
 /// @example
-///  color: varColor(#ff0000, 20); // returns color: #fe6e67;
+///  color: var-color(#ff0000, 20); // returns color: #fe6e67;
 ///
 /// @param {color} $source - source color
 /// @param {number} $amount - positive or negative number for color transformation
-/// @require {function} stripUnit()
+/// @require {function} strip-unit()
 ///
 /// @return {color} color variation
 
-@function varColor($source, $amount) {
+@function var-color($source, $amount) {
   // @param {string} $_h: hue value of source color
   // @param {string} $_l - lightness value of source color
   // @param {string} $_s - saturation value of source color
@@ -22,10 +22,10 @@
   // @param {number} $_s-ratio -  ratio for increasing or decreasing saturation based on $amount
   // @param {string} $_target - target color value
   // @param {string} $_a - alpha color value
-  $_h: stripUnit(hue($source));
-  $_l: stripUnit(lightness($source));
-  $_s: stripUnit(saturation($source));
-  $_a: stripUnit(alpha($source));
+  $_h: strip-unit(hue($source));
+  $_l: strip-unit(lightness($source));
+  $_s: strip-unit(saturation($source));
+  $_a: strip-unit(alpha($source));
   $_h-ratio: 0.15;
   $_s-ratio: 0.66;
   $_target: null;

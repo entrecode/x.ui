@@ -10,7 +10,7 @@
   display: flex;
   position: relative;
   flex-grow: 1;
-  margin: arrayMagic($input-group-spacing);
+  margin: array-magic($input-group-spacing);
 
   > .btn {
     align-items: center;
@@ -94,6 +94,6 @@
   border-color: $input-group-addon-border-color;
   border-style: $input-group-addon-border-style;
   border-radius: rem($input-radius);
-  padding: arrayMagic($input-group-addon-padding);
+  padding: array-magic($input-group-addon-padding);
   min-width: rem($input-min-height);
 }

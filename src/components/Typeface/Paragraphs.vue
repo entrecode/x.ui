@@ -43,7 +43,7 @@ $link-decoration: none;
 $link-weight: $is-normal; // normal
 $link-style: ();
 
-$link-hover-color: setHover($link-hover);
+$link-hover-color: set-hover($link-hover);
 $link-hover-decoration: $link-decoration;
 $link-hover-style: ();
 

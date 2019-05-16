@@ -33,14 +33,14 @@
   background: $xui-select-background;
   border-color: $xui-select-border-color;
   color: $xui-select-color;
-  margin: arrayMagic($xui-select-spacing);
+  margin: array-magic($xui-select-spacing);
 
   // @param {boolean} $xui-select-round [$input-round]
   // @param {array} $xui-select-radius [$input-radius]
   @if $xui-select-round {
     border-radius: 100vw;
   } @else {
-    border-radius: arrayMagic($xui-select-radius);
+    border-radius: array-magic($xui-select-radius);
   }
 
   &.xui-select_top {
@@ -107,10 +107,10 @@
   @include is-scrollable(y, contain, $behavior: auto);
   @include inject-style($xui-select-options-style);
   background: $xui-select-options-background;
-  border-radius: arrayMagic($xui-select-options-radius);
-  box-shadow: arrayMagic($xui-select-options-shadow);
+  border-radius: array-magic($xui-select-options-radius);
+  box-shadow: array-magic($xui-select-options-shadow);
   max-height: rem($xui-select-options-max-height);
-  padding: arrayMagic($xui-select-options-padding);
+  padding: array-magic($xui-select-options-padding);
 
   @at-root .xui-select:focus & {
     opacity: 1;
@@ -130,11 +130,11 @@
   outline: none;
   transition: background-color 0.4s, color 0.4s;
   @include inject-style($xui-select-option-style);
-  margin: arrayMagic($xui-select-option-spacing);
+  margin: array-magic($xui-select-option-spacing);
   background: $xui-select-option-background;
   color: $xui-select-option-color;
-  border-radius: arrayMagic($xui-select-option-radius);
-  padding: arrayMagic($xui-select-option-padding);
+  border-radius: array-magic($xui-select-option-radius);
+  padding: array-magic($xui-select-option-padding);
   font-size: em($xui-select-option-font-size, $xui-select-font-size);
 
   // @param {color} $xui-select-option-hover-background

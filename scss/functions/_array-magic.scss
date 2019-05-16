@@ -1,11 +1,11 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.4
+/// @since 10.0.0
 /// @access public
 /// @group size-functions
 ///
 /// Converts an array or string of numbers into a a string of rem values;
 /// @example
-/// padding: arrayMagic(8 16); // returns rem(8) rem(16)
+/// padding: array-magic(8 16); // returns rem(8) rem(16)
 ///
 /// @param {string | array} $array - array or string of numbers
 /// @param {'xrem' | 'xem' | 'rem' | 'px' | 'em' | '%' | 'pt'} $unit
@@ -14,7 +14,7 @@
 ///
 /// @return {rem} string of values in rem
 
-@function arrayMagic($array, $unit: 'xrem') {
+@function array-magic($array, $unit: 'xrem') {
   $_output: null;
   $_value: null;
 

@@ -10,12 +10,12 @@
 @each $_spacing, $_h in $spacings {
   .y-space-#{$_spacing} {
     width: auto;
-    height: getSpace($_spacing);
+    height: get-space($_spacing);
     flex-shrink: 0;
 
     @include set-breakpoints($has-root: false) {
       width: auto;
-      height: getSpace($_spacing);
+      height: get-space($_spacing);
       flex-shrink: 0;
     }
   }
@@ -24,12 +24,12 @@
 @each $_spacing, $_h in $spacings {
   .x-space-#{$_spacing} {
     height: auto;
-    width: getSpace($_spacing);
+    width: get-space($_spacing);
     flex-shrink: 0;
 
     @include set-breakpoints($has-root: false) {
       height: auto;
-      width: getSpace($_spacing);
+      width: get-space($_spacing);
       flex-shrink: 0;
     }
   }

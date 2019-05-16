@@ -55,8 +55,8 @@
   @include inject-style($toast-style);
   background: $toast-background;
   color: $toast-color;
-  padding: arrayMagic($toast-padding);
-  box-shadow: arrayMagic($toast-opens-top-shadow);
+  padding: array-magic($toast-padding);
+  box-shadow: array-magic($toast-opens-top-shadow);
 
   &.is-active {
     top: 0;
@@ -66,7 +66,7 @@
   // @param {string} $toast-opens-bottom-shadow
 
   &.opens-top {
-    box-shadow: arrayMagic($toast-opens-top-shadow);
+    box-shadow: array-magic($toast-opens-top-shadow);
 
     &.is-active {
       top: 0;
@@ -74,7 +74,7 @@
   }
 
   &.opens-bottom {
-    box-shadow: arrayMagic($toast-opens-bottom-shadow);
+    box-shadow: array-magic($toast-opens-bottom-shadow);
 
     &.is-active {
       top: auto;
@@ -129,8 +129,8 @@
   flex-grow: 0;
   flex-shrink: 0;
   @include inject-style($toast-header-style);
-  margin: arrayMagic($toast-header-spacing);
-  padding: arrayMagic($toast-header-padding);
+  margin: array-magic($toast-header-spacing);
+  padding: array-magic($toast-header-padding);
 
   .toast-dismiss {
     position: relative;
@@ -146,8 +146,8 @@
   flex-grow: 1;
   @include is-scrollable(y, contain, $behavior: auto);
   @include inject-style($toast-body-style);
-  margin: arrayMagic($toast-header-spacing);
-  padding: arrayMagic($toast-header-padding);
+  margin: array-magic($toast-header-spacing);
+  padding: array-magic($toast-header-padding);
 }
 
 // @param {array} $toast-footer-spacing [0]
@@ -157,6 +157,6 @@
   flex-shrink: 0;
   flex-grow: 0;
   @include inject-style($toast-footer-style);
-  margin: arrayMagic($toast-footer-spacing);
-  padding: arrayMagic($toast-footer-padding);
+  margin: array-magic($toast-footer-spacing);
+  padding: array-magic($toast-footer-padding);
 }

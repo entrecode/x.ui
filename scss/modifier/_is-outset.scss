@@ -7,12 +7,12 @@
 /// @param {array} $is-outset-spacing [16 0]
 /// @param {px} $is-outset-gutter [32]
 /// @param {px} $is-outset-bp [1200]
-/// @require {function} arrayMagic()
+/// @require {function} array-magic()
 /// @require {function} rem()
 
 .is-outset {
   width: 100%;
-  padding: arrayMagic($is-outset-spacing);
+  padding: array-magic($is-outset-spacing);
   margin: 0;
 
   img {

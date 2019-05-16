@@ -26,10 +26,10 @@
 
   @include inject-style($file-upload-style);
   background: $file-upload-background;
-  padding: arrayMagic($file-upload-padding);
-  margin: arrayMagic($file-upload-spacing);
-  border-radius: arrayMagic($file-upload-border-radius);
-  border: arrayMagic($file-upload-border);
+  padding: array-magic($file-upload-padding);
+  margin: array-magic($file-upload-spacing);
+  border-radius: array-magic($file-upload-border-radius);
+  border: array-magic($file-upload-border);
 
   &:hover {
     @include inject-style($file-upload-hover-style);

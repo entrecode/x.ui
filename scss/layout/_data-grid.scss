@@ -12,7 +12,7 @@
   margin-left: rem($grid-gutter / -2);
   margin-right: rem($grid-gutter / -2);
 
-  @at-root ul[data-grid] {
+  @at-root ul#{&} {
     list-style: none;
     margin-top: 0;
     margin-bottom: 0;

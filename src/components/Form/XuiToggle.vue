@@ -77,7 +77,7 @@ export default {
   </label>
 </div>`,
               config: `$xui-toggle-background: $background-lighter;
-$xui-toggle-hover-background: setHover($xui-toggle-background);
+$xui-toggle-hover-background: set-hover($xui-toggle-background);
 $xui-toggle-active-background: $link;
 $xui-toggle-height: 20;
 $xui-toggle-width: $xui-toggle-height * 1.75;

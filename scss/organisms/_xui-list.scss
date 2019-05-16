@@ -11,9 +11,9 @@
 .xui-list-group {
   width: 100%;
   @include inject-style($xui-list-group-style);
-  border-radius: arrayMagic($xui-list-group-radius);
-  padding: arrayMagic($xui-list-group-padding);
-  margin: arrayMagic($xui-list-group-spacing);
+  border-radius: array-magic($xui-list-group-radius);
+  padding: array-magic($xui-list-group-padding);
+  margin: array-magic($xui-list-group-spacing);
   background: $xui-list-group-background;
 
   // @param {color} $xui-list-group-header-background [none]
@@ -24,9 +24,9 @@
   // @param {array} $xui-list-group-header-style
   &__header {
     @include inject-style($xui-list-group-header-style);
-    border-radius: arrayMagic($xui-list-group-header-radius);
-    padding: arrayMagic($xui-list-group-header-padding);
-    margin: arrayMagic($xui-list-group-header-spacing);
+    border-radius: array-magic($xui-list-group-header-radius);
+    padding: array-magic($xui-list-group-header-padding);
+    margin: array-magic($xui-list-group-header-spacing);
     background: $xui-list-group-header-background;
     color: $xui-list-group-header-color;
   }
@@ -41,9 +41,9 @@
 .xui-list {
   list-style: none;
   @include inject-style($xui-list-style);
-  border-radius: arrayMagic($xui-list-radius);
-  padding: arrayMagic($xui-list-padding);
-  margin: arrayMagic($xui-list-spacing);
+  border-radius: array-magic($xui-list-radius);
+  padding: array-magic($xui-list-padding);
+  margin: array-magic($xui-list-spacing);
   background: $xui-list-background;
   color: $xui-list-color;
 }
@@ -59,9 +59,9 @@
   align-items: center;
   display: flex;
   @include inject-style($xui-list-item-style);
-  border-radius: arrayMagic($xui-list-item-radius);
-  padding: arrayMagic($xui-list-item-padding);
-  margin: arrayMagic($xui-list-item-spacing);
+  border-radius: array-magic($xui-list-item-radius);
+  padding: array-magic($xui-list-item-padding);
+  margin: array-magic($xui-list-item-spacing);
   background: $xui-list-item-background;
   color: $xui-list-item-color;
 

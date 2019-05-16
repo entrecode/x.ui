@@ -6,20 +6,20 @@
 /// @param {number} $_set-hover-shading [4] - default amount by which colors are darkened or lightened on hover
 /// @param {color} $color
 /// @param {number} $shade - amount by which the color should be shaded
-/// @require {function} varColor
-/// @require {function} getBrightness
-/// @require {function} flattenColor
+/// @require {function} var-color
+/// @require {function} get-brightness
+/// @require {function} flatten-color
 ///
 /// @return new shade of color
 
 $_set-hover-shading: 4 !default;
 
-@function setHover($color, $shade: $_set-hover-shading) {
+@function set-hover($color, $shade: $_set-hover-shading) {
   @if type-of($color) == 'color' {
-    $_brightness: getBrightness($color);
+    $_brightness: get-brightness($color);
 
     @if (alpha($color) < 1) {
-      $color: flattenColor($color);
+      $color: flatten-color($color);
     }
 
     // if color is brighter
@@ -27,7 +27,7 @@ $_set-hover-shading: 4 !default;
       $shade: $shade * -1;
     }
 
-    @return varColor($color, $shade);
+    @return var-color($color, $shade);
   } @else {
     @return $color;
   }

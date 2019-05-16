@@ -16,7 +16,7 @@
   height: rem($range-slider-height);
   background: $range-slider-background;
   border: 0;
-  border-radius: arrayMagic($range-slider-radius);
+  border-radius: array-magic($range-slider-radius);
   @include inject-style($range-slider-style);
 
   &:hover {
@@ -32,7 +32,7 @@
   height: rem($range-slider-height);
   background: $range-slider-background;
   border: 0;
-  border-radius: arrayMagic($range-slider-radius);
+  border-radius: array-magic($range-slider-radius);
   @include inject-style($range-slider-style);
 
   &:hover {
@@ -48,7 +48,7 @@
   height: rem($range-slider-height);
   background: $range-slider-background;
   border: 0;
-  border-radius: arrayMagic($range-slider-radius);
+  border-radius: array-magic($range-slider-radius);
   @include inject-style($range-slider-style);
 
   &:hover {
@@ -71,7 +71,7 @@
   width: rem($range-slider-thumb-size);
   height: rem($range-slider-thumb-size);
   background: $range-slider-thumb-background;
-  border-radius: arrayMagic($range-slider-thumb-radius);
+  border-radius: array-magic($range-slider-thumb-radius);
   margin-top: rem(($range-slider-height - $range-slider-thumb-size) / 2);
 
   &:hover {
@@ -86,7 +86,7 @@
   width: rem($range-slider-thumb-size);
   height: rem($range-slider-thumb-size);
   background: $range-slider-thumb-background;
-  border-radius: arrayMagic($range-slider-thumb-radius);
+  border-radius: array-magic($range-slider-thumb-radius);
 
   &:hover {
     @include inject-style($range-slider-thumb-style);

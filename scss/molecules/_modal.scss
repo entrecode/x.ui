@@ -19,7 +19,7 @@
   display: none;
   overflow: hidden;
   @include inject-style($modal-wrapper-style);
-  padding: arrayMagic($modal-gutter);
+  padding: array-magic($modal-gutter);
   z-index: $modal-wrapper-z-index;
   pointer-events: none;
 
@@ -60,7 +60,7 @@
   }
   background: $modal-background;
   color: $modal-color;
-  border-radius: arrayMagic($modal-radius);
+  border-radius: array-magic($modal-radius);
   pointer-events: initial;
 
   &:not([data-col]) {
@@ -110,8 +110,8 @@
   flex-grow: 0;
   flex-shrink: 0;
   @include inject-style($modal-header-style);
-  margin: arrayMagic($modal-header-spacing);
-  padding: arrayMagic($modal-header-padding);
+  margin: array-magic($modal-header-spacing);
+  padding: array-magic($modal-header-padding);
 
   .modal__dismiss {
     position: relative;
@@ -129,8 +129,8 @@
   overflow-x: hidden;
   @include is-scrollable(y, contain, $behavior: auto);
   @include inject-style($modal-body-style);
-  margin: arrayMagic($modal-body-spacing);
-  padding: arrayMagic($modal-body-padding);
+  margin: array-magic($modal-body-spacing);
+  padding: array-magic($modal-body-padding);
 }
 
 // @param {array} $modal-footer-spacing [0]
@@ -140,6 +140,6 @@
   flex-shrink: 0;
   flex-grow: 0;
   @include inject-style($modal-footer-style);
-  margin: arrayMagic($modal-footer-spacing);
-  padding: arrayMagic($modal-footer-padding);
+  margin: array-magic($modal-footer-spacing);
+  padding: array-magic($modal-footer-padding);
 }

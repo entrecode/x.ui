@@ -7,15 +7,15 @@
 /// @example
 /// include set-theme-colors(red);
 ///
-/// @require {function} setContrast
+/// @require {function} set-contrast
 /// @param {color} $color - color value
 /// @param {color} $hue [$color] - color value for hue orientation
 
 @mixin set-theme-colors($color, $hue: false) {
   background-color: $color;
   @if $hue {
-    color: setContrast($color, $hue);
+    color: set-contrast($color, $hue);
   } @else {
-    color: setContrast($color);
+    color: set-contrast($color);
   }
 }

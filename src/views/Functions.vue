@@ -119,11 +119,11 @@ export default {
       items: [
         {
           toggleCode: false,
-          title: 'arrayMagic()',
+          title: 'array-magic()',
           anchor: 'scroll-to-array-magic',
-          usedBy: ['getSpace'],
-          codeShort: `@function arrayMagic($array, $unit: 'xrem') {...}`,
-          code: `@function arrayMagic($array, $unit: 'xrem') {
+          usedBy: ['get-space'],
+          codeShort: `@function array-magic($array, $unit: 'xrem') {...}`,
+          code: `@function array-magic($array, $unit: 'xrem') {
   $_output: null;
   $_value: null;
 
@@ -154,12 +154,12 @@ export default {
           description: 'Converts an array or string of numbers into a a string of rem values',
           type: 'size-function',
           returns: 'string',
-          example: `padding: arrayMagic(8 16); // returns rem(8) rem(16)`,
+          example: `padding: array-magic(8 16); // returns rem(8) rem(16)`,
           require: [
             { name: 'rem()', type: 'function', link: '#scroll-to-rem' },
             { name: 'em()', type: 'function', link: '#scroll-to-em' },
           ],
-          usedBy: [{ name: 'getSpace()', type: 'function', link: '#scroll-to-get-space' }],
+          usedBy: [{ name: 'get-space()', type: 'function', link: '#scroll-to-get-space' }],
           params: [
             {
               name: '$array',
@@ -181,7 +181,7 @@ export default {
           type: 'size-function',
           usedBy: [
             {
-              name: 'arrayMagic()',
+              name: 'array-magic()',
               type: 'function',
               link: '#scroll-to-array-magic',
             },
@@ -227,7 +227,7 @@ export default {
           type: 'size-function',
           usedBy: [
             {
-              name: 'arrayMagic()',
+              name: 'array-magic()',
               type: 'function',
               link: '#scroll-to-array-magic',
             },
@@ -275,7 +275,7 @@ bp(sm, max) // returns 479px`,
           code: `@function bp($breakpoint, $max: null) {
   @if map-has-key($breakpoints, $breakpoint) {
     @if $max == max {
-      $_breakpoint-max: nextBp($breakpoint);
+      $_breakpoint-max: next-bp($breakpoint);
       @return if($_breakpoint-max, $_breakpoint-max - 1 * 1px, map-get($breakpoints, $breakpoint) * 1px);
     } @else {
       @return map-get($breakpoints, $breakpoint) * 1px;
@@ -292,7 +292,7 @@ bp(sm, max) // returns 479px`,
               link: '#scroll-to-breakpoints',
             },
             {
-              name: 'nextBp()',
+              name: 'next-bp()',
               type: 'function',
               link: '#scroll-to-next-bp',
             },
@@ -323,7 +323,7 @@ bp(sm, max) // returns 479px`,
         },
         {
           toggleCode: false,
-          title: 'nextBp()',
+          title: 'next-bp()',
           anchor: 'scroll-to-next-bp',
           type: 'grid-function',
           usedBy: [
@@ -334,8 +334,8 @@ bp(sm, max) // returns 479px`,
             },
           ],
           returns: 'string | null',
-          codeShort: `@function nextBp($breakpoint, $map: $breakpoints) {...}`,
-          code: `@function nextBp($breakpoint, $map: $breakpoints) {
+          codeShort: `@function next-bp($breakpoint, $map: $breakpoints) {...}`,
+          code: `@function next-bp($breakpoint, $map: $breakpoints) {
   $_keys: map-keys($map);
   $_current: index($_keys, $breakpoint);
 
@@ -363,18 +363,18 @@ bp(sm, max) // returns 479px`,
         },
         {
           toggleCode: false,
-          title: 'flattenColor()',
+          title: 'flatten-color()',
           anchor: 'scroll-to-flatten-color',
           type: 'color-function',
           description: 'Mixes two colors, considering opacity',
           returns: 'color',
           usedBy: [
-            { name: 'setHover()', link: '#scroll-to-set-hover' },
-            { name: 'setContrast()', link: '#scroll-to-set-contrast' },
+            { name: 'set-hover()', link: '#scroll-to-set-hover' },
+            { name: 'set-contrast()', link: '#scroll-to-set-contrast' },
           ],
-          example: `color: flattenColor(rgba(black, .2);`,
-          codeShort: `@function flattenColor($fg, $bg: $background) {...}`,
-          code: `@function flattenColor($fg, $bg: $background) {
+          example: `color: flatten-color(rgba(black, .2);`,
+          codeShort: `@function flatten-color($fg, $bg: $background) {...}`,
+          code: `@function flatten-color($fg, $bg: $background) {
   $a1: alpha($bg);
   $a2: alpha($fg);
 
@@ -408,15 +408,15 @@ bp(sm, max) // returns 479px`,
         },
         {
           toggleCode: false,
-          title: 'getColor()',
+          title: 'get-color()',
           anchor: 'scroll-to-get-color',
           type: 'color-function',
           description: 'Mixes two colors, considering opacity',
           returns: 'color',
-          example: `color: getColor(text, invert);
-color: getColor(link);`,
-          codeShort: `@function getColor($color-string...) {...}`,
-          code: `@function getColor($color-string...) {
+          example: `color: get-color(text, invert);
+color: get-color(link);`,
+          codeShort: `@function get-color($color-string...) {...}`,
+          code: `@function get-color($color-string...) {
   $_string-length: length($color-string);
   $_color-map: $color-map-id;
 
@@ -443,16 +443,16 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'getSpace()',
+          title: 'get-space()',
           anchor: 'scroll-to-get-space',
           type: 'layout-function',
           returns: 'number',
-          codeShort: `@function getSpace($space) {...}`,
-          code: `@function getSpace($space) {
-  @return arrayMagic(map-get($spacings, $space), $base-spacing-unit);
+          codeShort: `@function get-space($space) {...}`,
+          code: `@function get-space($space) {
+  @return array-magic(map-get($spacings, $space), $base-spacing-unit);
 };`,
           require: [
-            { name: 'arrayMagic()', type: 'function', link: '#scroll-to-array-magic' },
+            { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
             { name: '$spacings', type: 'variables', link: '#scroll-to-spacings' },
             { name: '$base-spacing-unit', type: 'variables', link: '#scroll-base-spacing-unit' },
           ],
@@ -466,16 +466,16 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'setHover()',
+          title: 'set-hover()',
           anchor: 'scroll-to-set-hover',
           type: 'color-function',
-          codeShort: `@function setHover($color, $shade: $_set-hover-shading) {...}`,
-          code: `@function setHover($color, $shade: $_set-hover-shading) {
+          codeShort: `@function set-hover($color, $shade: $_set-hover-shading) {...}`,
+          code: `@function set-hover($color, $shade: $_set-hover-shading) {
   @if type-of($color) == 'color' {
-    $_brightness: getBrightness($color);
+    $_brightness: get-brightness($color);
 
     @if (alpha($color) < 1) {
-      $color: flattenColor($color);
+      $color: flatten-color($color);
     }
 
     // if color is brighter
@@ -483,15 +483,15 @@ color: getColor(link);`,
       $shade: $shade * -1;
     }
 
-    @return varColor($color, $shade);
+    @return var-color($color, $shade);
   } @else {
     @return $color;
   }
 }`,
           require: [
-            { name: 'getBrightness()', type: 'function', link: '#scroll-to-get-brightness' },
-            { name: 'varColor()', type: 'function', link: '#scroll-to-var-color' },
-            { name: 'flattenColor()', type: 'function', link: '#scroll-to-flatten-color' },
+            { name: 'get-brightness()', type: 'function', link: '#scroll-to-get-brightness' },
+            { name: 'var-color()', type: 'function', link: '#scroll-to-var-color' },
+            { name: 'flatten-color()', type: 'function', link: '#scroll-to-flatten-color' },
             { name: '$_set-hover-shading', type: 'variable', link: '#scroll-to-set-hover-shading' },
           ],
           params: [
@@ -509,19 +509,19 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'shadeByContrast()',
+          title: 'shade-by-contrast()',
           anchor: 'scroll-to-shade-by-contrast',
           description: `returns a shade of a color depending on it's lightness`,
           type: 'color-function',
           returns: 'color',
-          codeShort: `@function shadeByContrast($color, $amount) {...}`,
-          code: `@function shadeByContrast($color, $amount) {
+          codeShort: `@function shade-by-contrast($color, $amount) {...}`,
+          code: `@function shade-by-contrast($color, $amount) {
   $_luma: luma($color);
 
   @if $_luma > .5 {
-    @return varColor($color, $amount * -1);
+    @return var-color($color, $amount * -1);
   } @else {
-    @return varColor($color, $amount);
+    @return var-color($color, $amount);
   }
 }`,
           require: [
@@ -531,7 +531,7 @@ color: getColor(link);`,
               link: '#scroll-to-luma',
             },
             {
-              name: 'varColor()',
+              name: 'var-color()',
               type: 'function',
               link: '#scroll-to-var-color',
             },
@@ -550,15 +550,15 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'stripUnit()',
+          title: 'strip-unit()',
           anchor: 'scroll-to-strip-unit',
           description: `removes the unit of a value`,
           type: 'unit-function',
           returns: 'number',
-          usedBy: [{ name: 'varColor()', link: '#scroll-to-var-color' }],
-          example: `stripUnit(16px) // returns 16`,
-          codeShort: `@function stripUnit($number) {...}`,
-          code: `@function stripUnit($number) {
+          usedBy: [{ name: 'var-color()', link: '#scroll-to-var-color' }],
+          example: `strip-unit(16px) // returns 16`,
+          codeShort: `@function strip-unit($number) {...}`,
+          code: `@function strip-unit($number) {
   @if type-of($number) == 'number' and not unitless($number) {
     @return $number / ($number * 0 + 1);
   }
@@ -574,14 +574,14 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'systemColor()',
+          title: 'system-color()',
           anchor: 'scroll-to-system-color',
           description: `harmonizes lightness and saturation of a color based on a set of colors`,
           type: 'color-function',
           returns: 'color',
-          example: `systemColor(#00E676) // returns a color with a hue value of 151`,
-          codeShort: `@function systemColor($target, $colors: $link $super $highlight) {...}`,
-          code: `@function systemColor($target, $colors: $link $super $highlight) {
+          example: `system-color(#00E676) // returns a color with a hue value of 151`,
+          codeShort: `@function system-color($target, $colors: $link $super $highlight) {...}`,
+          code: `@function system-color($target, $colors: $link $super $highlight) {
   $_target-hue: hue($target);
   $_total-hue: 0;
   $_total-sat: 0;
@@ -623,18 +623,18 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'varColor()',
+          title: 'var-color()',
           anchor: 'scroll-to-var-color',
           description: `generates a natural darker or lighter variation of a color. read <a href="https://medium.com/@erikdkennedy/color-in-ui-design-a-practical-framework-e18cacd97f9e" target="_blank" rel="nofollow">https://medium.com/@erikdkennedy/color-in-ui-design-a-practical-framework-e18cacd97f9e</a> for more.`,
           type: 'color-function',
           returns: 'color',
           usedBy: [
-            { name: 'setHover()', link: '#scroll-to-set-hover' },
-            { name: 'shadeByContrast()', link: '#scroll-to-shade-by-contrast' },
+            { name: 'set-hover()', link: '#scroll-to-set-hover' },
+            { name: 'shade-by-contrast()', link: '#scroll-to-shade-by-contrast' },
           ],
-          example: `varColor(#ff0000, 20); // returns color: #fe6e67`,
-          codeShort: `@function varColor($source, $amount) {...}`,
-          code: `@function varColor($source, $amount) {
+          example: `var-color(#ff0000, 20); // returns color: #fe6e67`,
+          codeShort: `@function var-color($source, $amount) {...}`,
+          code: `@function var-color($source, $amount) {
   // @param {string} $_h: hue value of source color
   // @param {string} $_l - lightness value of source color
   // @param {string} $_s - saturation value of source color
@@ -642,10 +642,10 @@ color: getColor(link);`,
   // @param {number} $_s-ratio -  ratio for increasing or decreasing saturation based on $amount
   // @param {string} $_target - target color value
   // @param {string} $_a - alpha color value
-  $_h: stripUnit(hue($source));
-  $_l: stripUnit(lightness($source));
-  $_s: stripUnit(saturation($source));
-  $_a: stripUnit(alpha($source));
+  $_h: strip-unit(hue($source));
+  $_l: strip-unit(lightness($source));
+  $_s: strip-unit(saturation($source));
+  $_a: strip-unit(alpha($source));
   $_h-ratio: 0.15;
   $_s-ratio: 0.66;
   $_target: null;
@@ -750,7 +750,7 @@ color: getColor(link);`,
 }`,
           require: [
             {
-              name: 'stripUnit()',
+              name: 'strip-unit()',
               type: 'function',
               link: '#scroll-to-strip-unit',
             },
@@ -770,37 +770,37 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'setContrast()',
+          title: 'set-contrast()',
           anchor: 'scroll-to-set-contrast',
           description: `sets a contrast color based on the Web Content Accessibility Guidelines (WCAG). read <a href="https://www.w3.org/TR/AERT#color-contrast" target="_blank" rel="nofollow">https://www.w3.org/TR/AERT#color-contrast</a> for more.`,
           type: 'color-function',
           returns: 'color',
-          example: `setContrast(#fff) // returns #000`,
-          codeShort: `@function setContrast($color, $hue: $color) {...}`,
-          code: `@function setContrast($color, $hue: $color) {
+          example: `set-contrast(#fff) // returns #000`,
+          codeShort: `@function set-contrast($color, $hue: $color) {...}`,
+          code: `@function set-contrast($color, $hue: $color) {
   // remove transparency
   @if (alpha($color) < 1) {
-    $color: flattenColor($color);
+    $color: flatten-color($color);
   }
 
   @if (alpha($hue) < 1) {
-    $hue: flattenColor($hue);
+    $hue: flatten-color($hue);
   }
 
   @if $hue == $color {
-    @return findContrastLoop($color, $lighter-fallback, $darker-fallback);
+    @return find-contrast-loop($color, $lighter-fallback, $darker-fallback);
   } @else {
-    @return findContrastLoop($color, $hue, $hue);
+    @return find-contrast-loop($color, $hue, $hue);
   }
 }`,
           require: [
             {
-              name: 'flattenColor()',
+              name: 'flatten-color()',
               type: 'function',
               link: '#scroll-to-flatten-color',
             },
             {
-              name: 'findContrastLoop()',
+              name: 'find-contrast-loop()',
               type: 'function',
               link: '#scroll-to-find-contrast-loop',
             },
@@ -837,14 +837,14 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'findContrastLoop',
+          title: 'find-contrast-loop',
           anchor: 'scroll-to-find-contrast-loop',
           description: 'loop to find color shade with best contrast',
           type: 'color-function',
           returns: 'color',
-          usedBy: [{ name: 'setContrast()', link: '#scroll-to-set-contrast' }],
-          codeShort: `@function findContrastLoop($_color, $_lighter-hue, $_darker-hue) {...}`,
-          code: `@function findContrastLoop($_color, $_lighter-hue, $_darker-hue) {
+          usedBy: [{ name: 'set-contrast()', link: '#scroll-to-set-contrast' }],
+          codeShort: `@function find-contrast-loop($_color, $_lighter-hue, $_darker-hue) {...}`,
+          code: `@function find-contrast-loop($_color, $_lighter-hue, $_darker-hue) {
   $_list: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
   $_last: nth($_list, length($_list));
   $_final-color: null;
@@ -855,21 +855,21 @@ color: getColor(link);`,
   @each $percent in $_list {
     // darker variant
     $_darker: darken($_darker-hue, $percent);
-    $_darker-color-diff: colorDifference($_color, $_darker);
-    $_darker-pass: colorPass($_color, $_darker);
-    $_darker-margin: colorMargin($_color, $_darker);
-    $_darker-contrast: contrastRatio($_color, $_darker);
-    $_darker-aa: checkCompliance($_color, $_darker, $_aa);
-    $_darker-aaa: checkCompliance($_color, $_darker, $_aaa);
+    $_darker-color-diff: color-difference($_color, $_darker);
+    $_darker-pass: color-pass($_color, $_darker);
+    $_darker-margin: color-margin($_color, $_darker);
+    $_darker-contrast: contrast-ratio($_color, $_darker);
+    $_darker-aa: check-compliance($_color, $_darker, $_aa);
+    $_darker-aaa: check-compliance($_color, $_darker, $_aaa);
 
     // lighter variant
     $_lighter: lighten($_lighter-hue, $percent);
-    $_lighter-color-diff: colorDifference($_color, $_lighter);
-    $_lighter-pass: colorPass($_color, $_lighter);
-    $_lighter-margin: colorMargin($_color, $_lighter);
-    $_lighter-contrast: contrastRatio($_color, $_lighter);
-    $_lighter-aa: checkCompliance($_color, $_lighter, $_aa);
-    $_lighter-aaa: checkCompliance($_color, $_lighter, $_aaa);
+    $_lighter-color-diff: color-difference($_color, $_lighter);
+    $_lighter-pass: color-pass($_color, $_lighter);
+    $_lighter-margin: color-margin($_color, $_lighter);
+    $_lighter-contrast: contrast-ratio($_color, $_lighter);
+    $_lighter-aa: check-compliance($_color, $_lighter, $_aa);
+    $_lighter-aaa: check-compliance($_color, $_lighter, $_aaa);
 
     @if $_lighter-pass {
       @return $_lighter;
@@ -934,27 +934,27 @@ color: getColor(link);`,
           ],
           require: [
             {
-              name: 'colorDifference()',
+              name: 'color-difference()',
               link: '#scroll-to-color-difference',
               type: 'function',
             },
             {
-              name: 'colorPass()',
+              name: 'color-pass()',
               link: '#scroll-to-color-pass',
               type: 'function',
             },
             {
-              name: 'colorMargin()',
+              name: 'color-margin()',
               link: '#scroll-to-color-margin',
               type: 'function',
             },
             {
-              name: 'contrastRatio()',
+              name: 'contrast-ratio()',
               link: '#scroll-to-contrast-ratio',
               type: 'function',
             },
             {
-              name: 'checkCompliance()',
+              name: 'check-compliance()',
               link: '#scroll-to-check-compliance',
               type: 'function',
             },
@@ -962,15 +962,15 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'checkCompliance()',
+          title: 'check-compliance()',
           anchor: 'scroll-to-check-compliance',
           description: `checks if a color meets the WCAG. read <a href="https://www.w3.org/TR/WCAG/#contrast-ratiodef" target="_blank" rel="nofollow">https://www.w3.org/TR/WCAG/#contrast-ratiodef</a> for more.`,
           type: 'color-function',
           returns: 'boolean',
-          example: 'checkCompliance(#fff, #ccc, 7) // returns false',
-          codeShort: `@function checkCompliance($_r, $_c, $_wcag) {...}`,
-          code: `@function checkCompliance($_r, $_c, $_wcag) {
-  $_ratio: contrastRatio($_r, $_c);
+          example: 'check-compliance(#fff, #ccc, 7) // returns false',
+          codeShort: `@function check-compliance($_r, $_c, $_wcag) {...}`,
+          code: `@function check-compliance($_r, $_c, $_wcag) {
+  $_ratio: contrast-ratio($_r, $_c);
   @if ($_ratio >= $_wcag) {
     @return true;
   } @else {
@@ -979,14 +979,14 @@ color: getColor(link);`,
 }`,
           require: [
             {
-              name: 'contrastRatio()',
+              name: 'contrast-ratio()',
               type: 'function',
               link: '#scroll-to-contrast-ratio',
             },
           ],
           usedBy: [
             {
-              name: 'findContrastLoop()',
+              name: 'find-contrast-loop()',
               link: '#scroll-to-find-contrast-loop',
             },
           ],
@@ -1008,13 +1008,13 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'contrastRatio()',
+          title: 'contrast-ratio()',
           anchor: 'scroll-to-contrast-ratio',
           description: `contrast ratios can range from 1 to 21`,
           type: 'color-function',
           returns: 'boolean',
-          codeShort: `@function contrastRatio($_c1, $_c2) {...}`,
-          code: `@function contrastRatio($_c1, $_c2) {
+          codeShort: `@function contrast-ratio($_c1, $_c2) {...}`,
+          code: `@function contrast-ratio($_c1, $_c2) {
   $_l1: luma($_c1);
   $_l2: luma($_c2);
   @return round((max($_l1, $_l2) + 0.05) / (min($_l1, $_l2) + 0.05) * 100) / 100;
@@ -1028,11 +1028,11 @@ color: getColor(link);`,
           ],
           usedBy: [
             {
-              name: 'checkCompliance()',
+              name: 'check-compliance()',
               link: '#scroll-to-check-compliance',
             },
             {
-              name: 'findContrastLoop()',
+              name: 'find-contrast-loop()',
               link: '#scroll-to-find-contrast-loop',
             },
           ],
@@ -1055,9 +1055,9 @@ color: getColor(link);`,
           type: 'color-function',
           returns: 'number',
           usedBy: [
-            { name: 'shadeByContrast()', link: '#scroll-to-shade-by-contrast' },
+            { name: 'shade-by-contrast()', link: '#scroll-to-shade-by-contrast' },
             {
-              name: 'contrastRatio()',
+              name: 'contrast-ratio()',
               link: '#scroll-to-contrast-ratio',
             },
           ],
@@ -1088,26 +1088,26 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'colorMargin()',
+          title: 'color-margin()',
           description: 'lesser grade for color compliance',
           anchor: 'scroll-to-color-margin',
           type: 'color-function',
           returns: 'boolean',
-          usedBy: [{ name: 'findContrastLoop()', link: '#scroll-to-find-contrast-loop' }],
-          codeShort: `@function colorMargin($r, $c, $b-thr: 125, $c-thr: 500) {...}`,
-          code: `@function colorMargin($r, $c, $b-thr: 125, $c-thr: 500) {
-  $_b-diff: brightnessDifference($r, $c);
-  $_c-diff: colorDifference($r, $c);
+          usedBy: [{ name: 'find-contrast-loop()', link: '#scroll-to-find-contrast-loop' }],
+          codeShort: `@function color-margin($r, $c, $b-thr: 125, $c-thr: 500) {...}`,
+          code: `@function color-margin($r, $c, $b-thr: 125, $c-thr: 500) {
+  $_b-diff: brightness-difference($r, $c);
+  $_c-diff: color-difference($r, $c);
   @return if($_b-diff > $b-thr or $_c-diff > $c-thr, true, false);
 }`,
           require: [
             {
-              name: 'brightnessDifference()',
+              name: 'brightness-difference()',
               type: 'function',
               link: '#scroll-to-brightness-difference',
             },
             {
-              name: 'colorDifference()',
+              name: 'color-difference()',
               type: 'function',
               link: '#scroll-to-color-difference',
             },
@@ -1137,26 +1137,26 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'colorPass()',
+          title: 'color-pass()',
           description: 'best grade for color compliance',
           anchor: 'scroll-to-color-pass',
           type: 'color-function',
           returns: 'boolean',
-          usedBy: [{ name: 'findContrastLoop()', link: '#scroll-to-find-contrast-loop' }],
-          codeShort: `@function colorPass($r, $c, $b-thr: 125, $c-thr: 500) {...}`,
-          code: `@function colorPass($r, $c, $b-thr: 125, $c-thr: 500) {
-  $_b-diff: brightnessDifference($r, $c);
-  $_c-diff: colorDifference($r, $c);
+          usedBy: [{ name: 'find-contrast-loop()', link: '#scroll-to-find-contrast-loop' }],
+          codeShort: `@function color-pass($r, $c, $b-thr: 125, $c-thr: 500) {...}`,
+          code: `@function color-pass($r, $c, $b-thr: 125, $c-thr: 500) {
+  $_b-diff: brightness-difference($r, $c);
+  $_c-diff: color-difference($r, $c);
   @return if($_b-diff > $b-thr and $_c-diff > $c-thr, true, false);
 }`,
           require: [
             {
-              name: 'brightnessDifference()',
+              name: 'brightness-difference()',
               type: 'function',
               link: '#scroll-to-brightness-difference',
             },
             {
-              name: 'colorDifference()',
+              name: 'color-difference()',
               type: 'function',
               link: '#scroll-to-color-difference',
             },
@@ -1186,20 +1186,20 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'colorDifference()',
+          title: 'color-difference()',
           anchor: 'scroll-to-color-difference',
           type: 'color-function',
           returns: 'number',
-          codeShort: `@function colorDifference($_c1, $_c2) {...}`,
-          code: `@function colorDifference($_c1, $_c2) {
+          codeShort: `@function color-difference($_c1, $_c2) {...}`,
+          code: `@function color-difference($_c1, $_c2) {
             @return max(red($_c1), red($_c2)) - min(red($_c1), red($_c2)) +
     max(green($_c1), green($_c2)) - min(green($_c1), green($_c2)) +
     max(blue($_c1), blue($_c2)) - min(blue($_c1), blue($_c2));
 }`,
           usedBy: [
-            { name: 'findContrastLoop()', link: '#scroll-to-find-contrast-loop' },
-            { name: 'colorMargin', link: '#scroll-to-color-margin' },
-            { name: 'colorPass', link: '#scroll-to-color-pass' },
+            { name: 'find-contrast-loop()', link: '#scroll-to-find-contrast-loop' },
+            { name: 'color-margin', link: '#scroll-to-color-margin' },
+            { name: 'color-pass', link: '#scroll-to-color-pass' },
           ],
           params: [
             {
@@ -1214,24 +1214,24 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'brightnessDifference()',
+          title: 'brightness-difference()',
           description: 'an absolute number for the perceived brightness',
           anchor: 'scroll-to-brightness-difference',
           type: 'color-function',
           returns: 'number',
-          codeShort: `@function brightnessDifference($_c1, $_c2) {...}`,
-          code: `@function brightnessDifference($_c1, $_c2) {
-  @return abs(getBrightness($_c1) - getBrightness($_c2));
+          codeShort: `@function brightness-difference($_c1, $_c2) {...}`,
+          code: `@function brightness-difference($_c1, $_c2) {
+  @return abs(get-brightness($_c1) - get-brightness($_c2));
 }`,
           require: [
             {
-              name: 'getBrightness()',
+              name: 'get-brightness()',
               link: '#scroll-to-get-brightness',
             },
           ],
           usedBy: [
-            { name: 'colorMargin', link: '#scroll-to-color-margin' },
-            { name: 'colorPass', link: '#scroll-to-color-pass' },
+            { name: 'color-margin', link: '#scroll-to-color-margin' },
+            { name: 'color-pass', link: '#scroll-to-color-pass' },
           ],
           params: [
             {
@@ -1246,18 +1246,18 @@ color: getColor(link);`,
         },
         {
           toggleCode: false,
-          title: 'getBrightness()',
+          title: 'get-brightness()',
           description:
             'converts a RGB values to YIQ values. This brightness value gives a perceived brightness for a color.',
           anchor: 'scroll-to-get-brightness',
           type: 'color-function',
           returns: 'number',
           usedBy: [
-            { name: 'setHover()', link: '#scroll-to-set-hover' },
-            { name: 'brightnessDifference', link: '#scroll-to-brightness-difference' },
+            { name: 'set-hover()', link: '#scroll-to-set-hover' },
+            { name: 'brightness-difference', link: '#scroll-to-brightness-difference' },
           ],
-          codeShort: `@function getBrightness($_c) {...}`,
-          code: `@function getBrightness($_c) {
+          codeShort: `@function get-brightness($_c) {...}`,
+          code: `@function get-brightness($_c) {
   @return ((red($_c) * 299) + (green($_c) * 587) + (blue($_c) * 587)) / 1000;
 }`,
           params: [
@@ -1271,7 +1271,7 @@ color: getColor(link);`,
           toggleCode: false,
           title: 'pow()',
           description:
-            'Handles decimal exponents by trying to convert them into a fraction and then use a nthRoot-algorithm for parts of the calculation. See <a href="https://gist.github.com/voxpelli/6304812#file-_math-scss" target="_blank" rel="nofollow">https://gist.github.com/voxpelli/6304812#file-_math-scss</a>',
+            'Handles decimal exponents by trying to convert them into a fraction and then use a nth-root-algorithm for parts of the calculation. See <a href="https://gist.github.com/voxpelli/6304812#file-_math-scss" target="_blank" rel="nofollow">https://gist.github.com/voxpelli/6304812#file-_math-scss</a>',
           anchor: 'scroll-to-pow',
           type: 'math-function',
           usedBy: [{ name: 'luma()', link: '#scroll-to-luma' }],

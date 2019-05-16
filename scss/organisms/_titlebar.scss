@@ -11,8 +11,8 @@
   align-items: center;
   justify-content: space-between;
   @include inject-style($titlebar-style);
-  margin: arrayMagic($titlebar-spacing);
-  padding: arrayMagic($titlebar-padding);
+  margin: array-magic($titlebar-spacing);
+  padding: array-magic($titlebar-padding);
 
   > .nav,
   > .btn {

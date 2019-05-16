@@ -13,7 +13,7 @@
 ///
 /// @require {placeholder} is-hidden-input
 /// @require {mixin} inject-style()
-/// @require {function} arrayMagic
+/// @require {function} array-magic
 /// @require {function} rem
 /// @require {function} rem
 
@@ -43,11 +43,11 @@
     overflow: hidden;
     transition: all 0.2s;
     @include inject-style($xui-checkbox-style);
-    border-radius: arrayMagic($xui-checkbox-radius);
+    border-radius: array-magic($xui-checkbox-radius);
     font-size: rem($xui-checkbox-check-size);
     height: rem($xui-checkbox-height);
     line-height: rem($xui-checkbox-height * 2);
-    margin: arrayMagic($xui-checkbox-spacing);
+    margin: array-magic($xui-checkbox-spacing);
     width: rem($xui-checkbox-height);
     background-color: $xui-checkbox-background;
     color: $xui-checkbox-check-color;

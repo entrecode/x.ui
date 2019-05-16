@@ -16,21 +16,21 @@ table {
 }
 
 .table {
-  margin: arrayMagic($table-spacing);
+  margin: array-magic($table-spacing);
 
   td {
-    border-bottom: arrayMagic($table-border);
+    border-bottom: array-magic($table-border);
   }
 
   td,
   th {
-    padding: arrayMagic($table-cell-padding);
+    padding: array-magic($table-cell-padding);
   }
 
   tbody {
     tr:first-child {
       td {
-        border-top: arrayMagic($table-border);
+        border-top: array-magic($table-border);
       }
     }
   }
@@ -56,22 +56,22 @@ table {
 
 .table_bordered {
   thead {
-    border-top: arrayMagic($table-border);
+    border-top: array-magic($table-border);
   }
   
   td,
   th {
-    border-right: arrayMagic($table-border);
+    border-right: array-magic($table-border);
 
     &:first-child {
-      border-left: arrayMagic($table-border);
+      border-left: array-magic($table-border);
     }
   }
 
   tbody {
     tr:first-child {
       td {
-        border-top: arrayMagic($table-border);
+        border-top: array-magic($table-border);
       }
     }
   }

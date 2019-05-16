@@ -6,8 +6,8 @@
 /// @param {map} $is-ink
 /// @return modifier class with a color values
 
-$_keys: map_keys($is-ink);
-$_values: map_values($is-ink);
+$_keys: map-keys($is-ink);
+$_values: map-values($is-ink);
 $_c: '-';
 
 @each $_key in $_keys {

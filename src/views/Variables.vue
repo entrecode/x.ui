@@ -89,7 +89,7 @@ export default {
         {
           title: '$lighter-fallback',
           anchor: 'scroll-to-lighter-fallback',
-          usedBy: [{ name: 'setContrast()', type: 'function', link: '#scroll-to-set-contrast' }],
+          usedBy: [{ name: 'set-contrast()', type: 'function', link: '#scroll-to-set-contrast' }],
           require: [
             {
               name: '$_luma-text',
@@ -119,7 +119,7 @@ export default {
         {
           title: '$darker-fallback',
           anchor: 'scroll-to-darker-fallback',
-          usedBy: [{ name: 'setContrast()', type: 'function', link: '#scroll-to-set-contrast' }],
+          usedBy: [{ name: 'set-contrast()', type: 'function', link: '#scroll-to-set-contrast' }],
           require: [
             {
               name: '$_luma-text',
@@ -149,7 +149,7 @@ export default {
         {
           title: '$_system-color-ref',
           anchor: 'scroll-to-system-color-ref',
-          usedBy: [{ name: 'systemColor()', type: 'function', link: '#scroll-to-system-color' }],
+          usedBy: [{ name: 'system-color()', type: 'function', link: '#scroll-to-system-color' }],
           code: `$_system-color-ref: null !default;`,
           type: 'array',
         },
@@ -163,7 +163,7 @@ export default {
         {
           title: '$base-spacing-unit',
           anchor: 'scroll-to-base-spacing-unit',
-          usedBy: [{ name: 'getSpace()', type: 'function', link: '#scroll-to-get-space' }],
+          usedBy: [{ name: 'get-space()', type: 'function', link: '#scroll-to-get-space' }],
           code: `$base-spacing-unit: xrem !default;`,
           type: 'string',
         },
@@ -179,7 +179,7 @@ export default {
           anchor: 'scroll-to-breakpoints',
           usedBy: [
             { name: 'bp()', type: 'function', link: '#scroll-to-bp' },
-            { name: 'nextBp()', type: 'function', link: '#scroll-to-next-bp' },
+            { name: 'next-bp()', type: 'function', link: '#scroll-to-next-bp' },
             { name: 'set-breakpoints()', type: 'mixin', link: '#scroll-to-set-breakpoints' },
             { name: 'set-data-breakpoints()', type: 'mixin', link: '#scroll-to-set-data-breakpoints' },
             {
@@ -201,7 +201,7 @@ export default {
         {
           title: '$color-map-id',
           anchor: 'scroll-to-color-map-id',
-          usedBy: [{ name: 'getColor()', type: 'function', link: '#scroll-to-get-color' }],
+          usedBy: [{ name: 'get-color()', type: 'function', link: '#scroll-to-get-color' }],
           code: `$color-map-id: $xui-colors !default;`,
           type: 'map',
           require: [{ name: '$xui-colors', type: 'variable', link: '#scroll-to-xui-colors' }],
@@ -209,15 +209,15 @@ export default {
         {
           title: '$_set-hover-shading',
           anchor: 'scroll-to-set-hover-shading',
-          usedBy: [{ name: 'setHover()', type: 'function', link: '#scroll-to-set-hover' }],
-          usedBy: [{ name: 'setHover()', link: '#scroll-to-set-hover' }],
+          usedBy: [{ name: 'set-hover()', type: 'function', link: '#scroll-to-set-hover' }],
+          usedBy: [{ name: 'set-hover()', link: '#scroll-to-set-hover' }],
           code: `$_set-hover-shading: 4 !default;`,
           type: 'number',
         },
         {
           title: '$spacings',
           anchor: 'scroll-to-spacings',
-          usedBy: [{ name: 'getSpace()', type: 'function', link: '#scroll-to-get-space' }],
+          usedBy: [{ name: 'get-space()', type: 'function', link: '#scroll-to-get-space' }],
           require: [{ name: '$base-spacing', type: 'variable', link: '#scroll-to-base-spacing' }],
           code: `$spacings: (
   0: 0,

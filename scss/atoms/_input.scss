@@ -26,11 +26,11 @@
   @include inject-style($input-style);
   @include metrics($input-font-size, $input-line-height, $input-min-height, $input-border-width, $input-padding-ratio);
   background: $input-background;
-  border-radius: arrayMagic($input-radius);
+  border-radius: array-magic($input-radius);
   border-width: $input-border-width;
   border-color: $input-border-color;
   border-style: $input-border-style;
-  margin: arrayMagic($input-spacing);
+  margin: array-magic($input-spacing);
   color: $input-color;
 
   // @param {color} $input-placeholder-color

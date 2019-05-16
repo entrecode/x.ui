@@ -13,13 +13,13 @@
   margin: 0;
   padding: 0;
   @include inject-style($nav-style);
-  margin: arrayMagic($nav-spacing);
-  padding: arrayMagic($nav-padding);
+  margin: array-magic($nav-spacing);
+  padding: array-magic($nav-padding);
 }
 
 // @param {array} $nav-item-padding [8]
 .nav__item {
-  padding: arrayMagic($nav-item-padding);
+  padding: array-magic($nav-item-padding);
 
   .btn {
     margin: 0;
@@ -33,7 +33,7 @@
   display: block;
   align-self: stretch;
   background-color: $nav-divider-color;
-  margin: arrayMagic($nav-divider-spacing);
+  margin: array-magic($nav-divider-spacing);
   width: rem($nav-divider-size);
 }
 
@@ -44,8 +44,8 @@
   flex-direction: column;
   align-items: initial;
   @include inject-style($nav-stacked-style);
-  margin: arrayMagic($nav-stacked-spacing);
-  padding: arrayMagic($nav-stacked-padding);
+  margin: array-magic($nav-stacked-spacing);
+  padding: array-magic($nav-stacked-padding);
 
   .nav__divider {
     width: 100%;
@@ -55,7 +55,7 @@
 
   // @param {array} $nav-stacked-item-padding [$nav-item-padding]
   .nav__item {
-    padding: arrayMagic($nav-stacked-item-padding);
+    padding: array-magic($nav-stacked-item-padding);
 
     .btn {
       display: flex;
@@ -77,8 +77,8 @@
   @include inject-style($nav-link-style);
   background: $nav-link-background;
   color: $nav-link-color;
-  border-radius: arrayMagic($nav-link-radius);
-  padding: arrayMagic($nav-link-padding);
+  border-radius: array-magic($nav-link-radius);
+  padding: array-magic($nav-link-padding);
   font-size: em($nav-link-font-size);
 
   // @param {color} $nav-link-hover-background

@@ -46,12 +46,12 @@
     border-style: solid;
     @include inject-style($xui-radio-style);
     border-width: rem($xui-radio-height / 2);
-    border-radius: arrayMagic($xui-radio-height / 2);
+    border-radius: array-magic($xui-radio-height / 2);
     border-color: $xui-radio-background;
     background-color: $xui-radio-dot-color;
     height: rem($xui-radio-height);
     width: rem($xui-radio-height);
-    margin: arrayMagic($xui-radio-spacing);
+    margin: array-magic($xui-radio-spacing);
   }
 
   // @param {color} $xui-radio-dot-hover-color [$text-lightest]

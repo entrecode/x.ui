@@ -31,9 +31,9 @@ export default {
               config: `$bumper-size: 4;
 $bumper-color: $divider-color;
 $bumper-invert-color: rgba($background, 0.2);
-$bumper-spacing: getSpace(5) 0;
-$bumper-small-spacing: getSpace(3) 0;
-$bumper-big-spacing: getSpace(6) 0;`,
+$bumper-spacing: get-space(5) 0;
+$bumper-small-spacing: get-space(3) 0;
+$bumper-big-spacing: get-space(6) 0;`,
             },
           ],
         },
