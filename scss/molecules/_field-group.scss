@@ -13,19 +13,6 @@
   background: $field-group-background;
   margin: array-magic($field-group-spacing);
   padding: array-magic($field-group-padding);
-
-  &.is-disabled,
-  &[disabled] {
-    cursor: not-allowed;
-
-    &:not(.is-active) {
-      opacity: 0.4;
-
-      &:hover {
-        opacity: 0.2;
-      }
-    }
-  }
 }
 
 // @param {array} $field-group-label-spacing [4]

@@ -6,36 +6,36 @@
 .xui-accordion {
   position: relative;
 
-  &__target {
-    display: none;
-  }
-
   &__handle {
     cursor: pointer;
-  }
-
-  .is-hidden-collapsed {
-    display: none;
   }
 
   > [type='radio'],
   > [type='checkbox'] {
     @extend %is-hidden-input;
+  }
+}
 
-    &:checked {
-      ~ .xui-accordion__target {
-        display: block;
-      }
+.xui-accordion__target {
+  display: none;
 
-      ~ * .is-hidden-collapsed,
-      ~ .is-hidden-collapsed {
-        display: inherit;
-      }
+  @at-root :checked ~ & {
+    display: block;
+  }
+}
 
-      ~ * .is-visible-collapsed,
-      ~ .is-visible-collapsed {
-        display: none;
-      }
-    }
+.is-hidden-collapsed {
+  display: none;
+
+  @at-root :checked ~ &,
+    :checked ~ * & {
+    display: inherit;
+  }
+}
+
+.is-visible-collapsed {
+  @at-root :checked ~ &,
+    :checked ~ * & {
+    display: none;
   }
 }
