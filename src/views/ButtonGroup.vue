@@ -22,14 +22,14 @@ export default {
             {
               title: 'btn-group',
               preview: `<div class="btn-group">
-  <a class="btn">button</a>
+  <a class="btn-group__start btn">button</a>
   <div class="btn-group__divider"></div>
-  <a class="btn btn_super">button</a>
+  <a class="btn-group__end btn btn_super">button</a>
 </div>
 <div class="y-space-2"></div>
 <div class="btn-group">
-  <a class="btn btn_round">button</a>
-  <a class="btn btn_super btn_round">button</a>
+  <a class="btn-group__start btn btn_round">button</a>
+  <a class="btn-group__end btn btn_super btn_round">button</a>
 </div>`,
               config: `$btn-group-style: ();
 $btn-group-divider-size: 1;
@@ -38,20 +38,20 @@ $btn-group-divider-color: $divider-color`,
             {
               title: 'btn-group with a dropdown',
               preview: `<div class="btn-group">
-  <a class="btn">button</a>
+  <a class="btn-group__start btn_outlined btn">button</a>
   <div class="btn-group__divider"></div>
   <div class="dropdown" tabindex="0">
-    <div class="btn"><svg class="ixo"><use xlink:href="#more-vertical"></use></svg></div>
+    <div class="btn  btn_outlined btn-group__end"><svg class="ixo"><use xlink:href="#more-vertical"></use></svg></div>
     <div class="dropdown-options">
       ...
     </div>
   </div>
 </div>`,
               markup: `<div class="btn-group">
-  <a class="btn">button</a>
+  <a class="btn-group__start btn">button</a>
   <div class="btn-group__divider"></div>
   <div class="dropdown" tabindex="0">
-    <div class="btn"><svg class="ixo"><use xlink:href="#more-vertical"></use></svg></div>
+    <div class="btn btn-group__end"><svg class="ixo"><use xlink:href="#more-vertical"></use></svg></div>
     <div class="dropdown-options">
       ...
     </div>
