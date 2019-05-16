@@ -26,6 +26,7 @@ export default {
     FormInput,
     FormXuiSelect,
     FormCheckbox,
+    FormRadio,
     FormXuiToggle,
     FormRangeSlider,
     FormFileUpload,
