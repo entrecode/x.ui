@@ -24,7 +24,7 @@
   width: 100%;
   font-family: inherit;
   @include inject-style($input-style);
-  @include atom-metrics(
+  @include metrics(
     $input-font-size,
     $input-line-height,
     $input-min-height,

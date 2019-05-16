@@ -13,7 +13,7 @@
 // @param {color} $tag-outlined-color [setContrast($minor)]
 // @param {color} $tag-outlined-border-color [$minor]
 .tag_outlined {
-  @include atom-metrics(
+  @include metrics(
     $tag-font-size,
     $tag-line-height,
     $tag-min-height,
@@ -33,7 +33,7 @@
   // @param {px} $tag-small-line-height [$tag-small-font-size * $base-line]
   // @param {px} $tag-small-min-height [24]
   &.tag_small {
-    @include atom-metrics(
+    @include metrics(
       $tag-small-font-size,
       $tag-small-line-height,
       $tag-small-min-height,
@@ -46,7 +46,7 @@
   // @param {px} $tag-big-line-height [$tag-big-font-size * $base-line-height]
   // @param {px} $tag-big-min-height [32]
   &.tag_big {
-    @include atom-metrics(
+    @include metrics(
       $tag-big-font-size,
       $tag-big-line-height,
       $tag-big-min-height,

@@ -23,7 +23,7 @@
   text-align: left;
   position: relative;
   @include inject-style($xui-select-style);
-  @include atom-metrics(
+  @include metrics(
     $xui-select-font-size,
     $xui-select-line-height,
     $xui-select-min-height,

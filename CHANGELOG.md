@@ -42,7 +42,7 @@
 - renamed `.slider` to `.range-slider`
 - removed all `is-` prefixes from `data-flex` values
 - optimized `.nav` - dropped `.nav__items`
-- changed `macro-metrics` to `atom-metric`
+- changed `macro-metrics()` to `metrics()`
 - improved `.xui-accordion`
 - removed state values in `$xui-colors` map
 - removed `data-animate` use third-party libraries like animate.css instead

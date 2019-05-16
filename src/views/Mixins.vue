@@ -347,10 +347,10 @@ h6 {
         },
         {
           toggleCode: false,
-          title: 'atom-metrics()',
+          title: 'metrics()',
           description: '',
-          codeShort: `@mixin atom-metrics($font-size, $line-height, $min-height, $border: null, $padding-ratio: 2) {...}`,
-          code: `@mixin atom-metrics($font-size, $line-height, $min-height, $border: null, $padding-ratio: 2) {
+          codeShort: `@mixin metrics($font-size, $line-height, $min-height, $border: null, $padding-ratio: 2) {...}`,
+          code: `@mixin metrics($font-size, $line-height, $min-height, $border: null, $padding-ratio: 2) {
   $padding: false;
 
   // check if $min-height is a number, some of the styles will not be rendered
@@ -379,7 +379,7 @@ h6 {
 
   @content;
 }`,
-          anchor: 'scroll-to-atom-metrics',
+          anchor: 'scroll-to-metrics',
           type: 'layout-mixin',
           params: [
             {

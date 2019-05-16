@@ -10,7 +10,7 @@
 /// @param {number} $border [null] - size of element border
 /// @param {number} $padding-ratio [2] - ratio by which padding-left and padding-right are bigger
 
-@mixin atom-metrics($font-size, $line-height, $min-height, $border: null, $padding-ratio: 2) {
+@mixin metrics($font-size, $line-height, $min-height, $border: null, $padding-ratio: 2) {
   $padding: false;
 
   // check if $min-height is a number, some of the styles will not be rendered

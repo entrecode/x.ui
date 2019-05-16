@@ -44,7 +44,7 @@
 .btn {
   @include _btn-reset;
   @include inject-style($btn-style);
-  @include atom-metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio);
+  @include metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio);
   border-radius: arrayMagic($btn-radius);
   font-weight: $btn-weight;
   background: $btn-background;
@@ -94,7 +94,7 @@
 // @param {px} $btn-small-radius [$btn-radius]
 // @param {array} $btn-small-style
 .btn_small {
-  @include atom-metrics(
+  @include metrics(
     $btn-small-font-size,
     $btn-small-line-height,
     $btn-small-min-height,
@@ -113,7 +113,7 @@
 // @param {px} $btn-big-radius [$btn-radius]
 // @param {array} $btn-big-style
 .btn_big {
-  @include atom-metrics(
+  @include metrics(
     $btn-big-font-size,
     $btn-big-line-height,
     $btn-big-min-height,

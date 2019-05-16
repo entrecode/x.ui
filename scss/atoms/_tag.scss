@@ -25,7 +25,7 @@
   white-space: nowrap;
   vertical-align: text-bottom;
   @include inject-style($tag-style);
-  @include atom-metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
+  @include metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
   @include set-theme-colors($tag-background);
   border-radius: arrayMagic($tag-radius);
   font-family: $tag-font-family;
@@ -41,7 +41,7 @@
   // @param {array} $tag-small-style
   &_small {
     @include inject-style($tag-small-style);
-    @include atom-metrics(
+    @include metrics(
       $tag-small-font-size,
       $tag-small-line-height,
       $tag-small-min-height,
@@ -56,7 +56,7 @@
   // @param {array} $tag-big-style
   &_big {
     @include inject-style($tag-big-style);
-    @include atom-metrics(
+    @include metrics(
       $tag-big-font-size,
       $tag-big-line-height,
       $tag-big-min-height,

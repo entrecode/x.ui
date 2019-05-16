@@ -167,6 +167,13 @@
         <router-link to="is-scrollable" class="is-mega is-uppercase">is-scrollable</router-link>
       </li>
       <li class="y-space-5"></li>
+      <li>
+        <div class="is-h6">utilities</div>
+      </li>
+      <li class="nav__item">
+        <router-link to="data-tooltip" class="is-mega is-uppercase">data-tooltip</router-link>
+      </li>
+      <li class="y-space-5"></li>
       <li class="nav__item">
         <router-link to="mixins" class="is-kilo is-uppercase">mixins</router-link>
       </li>

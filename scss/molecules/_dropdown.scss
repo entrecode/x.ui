@@ -135,7 +135,7 @@
     user-select: none;
     width: 100%;
     @include inject-style($dropdown-option-style);
-    @include atom-metrics(
+    @include metrics(
       $dropdown-option-font-size,
       $dropdown-option-line-height,
       $dropdown-option-min-height,
