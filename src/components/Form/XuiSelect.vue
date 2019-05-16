@@ -22,30 +22,32 @@ export default {
               title: '',
               preview: `<div tabindex="0" class="xui-select">
   <span class="xui-select__placeholder">select</span>
+  <span class="xui-select__caret"></span>
   <ul class="xui-select-options">
-    <li tabindex="0" class="xui-select-option">
-      <a href="">option 1</a>
+    <li>
+      <a href="" tabindex="0" class="xui-select-option">option 1</a>
     </li>
-    <li tabindex="0" class="xui-select-option">
-      <a href="">option 2</a>
+    <li>
+      <a href="" tabindex="0" class="xui-select-option">option 2</a>
     </li>
-    <li tabindex="0" class="xui-select-option">
-      <a href="">option 3</a>
+    <li>
+      <a href="" tabindex="0" class="xui-select-option">option 3</a>
     </li>
   </ul>
 </div>
 <div class="y-space-3"></div>
 <div tabindex="0" class="xui-select">
   <span class="xui-select__selected">selected option</span>
+  <span class="xui-select__caret"></span>
   <ul class="xui-select-options">
-    <li tabindex="0" class="xui-select-option is-selected">
-      <a href="">selected option</a>
+    <li>
+      <a href="" tabindex="0" class="xui-select-option is-selected">option 1</a>
     </li>
-    <li tabindex="0" class="xui-select-option">
-      <a href="">option 2</a>
+    <li>
+      <a href="" tabindex="0" class="xui-select-option">option 2</a>
     </li>
-    <li tabindex="0" class="xui-select-option">
-      <a href="">option 3</a>
+    <li>
+      <a href="" tabindex="0" class="xui-select-option">option 3</a>
     </li>
   </ul>
 </div>

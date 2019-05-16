@@ -19,11 +19,6 @@
 
 .btn {
   .tag {
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-
-  .tag {
     @include _btn-inline-elements($btn-line-height, $tag-min-height);
 
     &.tag_small {

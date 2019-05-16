@@ -18,7 +18,7 @@
   width: 100%;
   height: rem($divider-height);
   background: $divider-background;
-  
+
   @include set-breakpoints {
     margin: arrayMagic($divider-spacing);
   }
@@ -26,7 +26,6 @@
   &.divider_invert {
     background: $divider-invert-background;
   }
-  
 }
 
 .divider_small {

@@ -44,34 +44,7 @@
       }
     }
   }
-}
 
-// @param {color} $input-group-addon-color [$text-light]
-// @param {color} $input-group-addon-background [transparent]
-// @param {color} $input-group-addon-border-color [$input-border-color]
-// @param {color} $input-group-addon-border-width [$input-border-width]
-// @param {array} $input-group-addon-border-width [$input-border-style]
-// @param {array} $input-group-addon-padding [0 8]
-// @param {array} $input-group-addon-style
-.input-group__addon {
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: stretch;
-  width: auto;
-  @include inject-style($input-group-addon-style);
-  color: $input-group-addon-color;
-  background: $input-group-addon-background;
-  border-width: rem($input-group-addon-border-width);
-  border-color: $input-group-addon-border-color;
-  border-style: $input-group-addon-border-style;
-  border-radius: rem($input-radius);
-  padding: arrayMagic($input-group-addon-padding);
-  min-width: rem($input-min-height);
-}
-
-.input-group {
   .input-group__addon,
   > .btn,
   > .input,
@@ -98,4 +71,29 @@
       }
     }
   }
+}
+
+// @param {color} $input-group-addon-color [$text-light]
+// @param {color} $input-group-addon-background [transparent]
+// @param {color} $input-group-addon-border-color [$input-border-color]
+// @param {color} $input-group-addon-border-width [$input-border-width]
+// @param {array} $input-group-addon-border-width [$input-border-style]
+// @param {array} $input-group-addon-padding [0 8]
+// @param {array} $input-group-addon-style
+.input-group__addon {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: stretch;
+  width: auto;
+  @include inject-style($input-group-addon-style);
+  color: $input-group-addon-color;
+  background: $input-group-addon-background;
+  border-width: rem($input-group-addon-border-width);
+  border-color: $input-group-addon-border-color;
+  border-style: $input-group-addon-border-style;
+  border-radius: rem($input-radius);
+  padding: arrayMagic($input-group-addon-padding);
+  min-width: rem($input-min-height);
 }

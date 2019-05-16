@@ -24,15 +24,11 @@
   width: 100%;
   font-family: inherit;
   @include inject-style($input-style);
-  @include metrics(
-    $input-font-size,
-    $input-line-height,
-    $input-min-height,
-    $input-border-width,
-    $input-padding-ratio
-  );
+  @include metrics($input-font-size, $input-line-height, $input-min-height, $input-border-width, $input-padding-ratio);
+  height: rem($input-min-height);
   background: $input-background;
   border-radius: arrayMagic($input-radius);
+  border-width: $input-border-width;
   border-color: $input-border-color;
   border-style: $input-border-style;
   margin: arrayMagic($input-spacing);
@@ -76,19 +72,13 @@
     @include inject-style($input-disabled-style);
   }
 
-  @at-root select.input {
-    height: em($input-min-height, $input-font-size);
-
+  @at-root select#{&} {
     &[multiple] {
       height: auto;
     }
-
-    option {
-      padding: 0 rem(8);
-    }
   }
 
-  @at-root textarea.input {
+  @at-root textarea#{&} {
     height: auto;
     resize: vertical;
   }
@@ -121,12 +111,7 @@
   @include inject-style($input-small-style);
   font-size: rem($input-small-font-size);
   line-height: rem($input-small-line-height);
-  min-height: rem($input-small-min-height);
-  min-width: rem($input-small-min-height);
-
-  @at-root select.input_small {
-    height: em($input-small-min-height, $input-small-font-size);
-  }
+  height: rem($input-small-min-height);
 }
 
 // @param {px} $input-big-font-size [18]
@@ -138,12 +123,7 @@
   @include inject-style($input-big-style);
   font-size: rem($input-big-font-size);
   line-height: rem($input-big-line-height);
-  min-height: rem($input-big-min-height);
-  min-width: rem($input-big-min-height);
-
-  @at-root select.input_small {
-    height: em($input-big-min-height, $input-big-font-size);
-  }
+  height: rem($input-big-min-height);
 }
 
 /// Keep the original size

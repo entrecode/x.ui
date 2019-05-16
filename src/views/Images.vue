@@ -17,26 +17,54 @@
                     <span v-if="cropClass === 'img-crop-ultrawide'">ultrawide</span>
                   </div>
                   <ul class="dropdown-options">
-                    <li class="xui-select-option">
-                      <a @click="cropClass = 'img-crop-1-1'" tabindex="0">1:1</a>
+                    <li>
+                      <a
+                        @click="cropClass = 'img-crop-1-1'"
+                        class="xui-select-option"
+                        tabindex="0"
+                      >1:1</a>
                     </li>
-                    <li class="xui-select-option">
-                      <a @click="cropClass = 'img-crop-3-4'" tabindex="0">3:4</a>
+                    <li>
+                      <a
+                        @click="cropClass = 'img-crop-3-4'"
+                        class="xui-select-option"
+                        tabindex="0"
+                      >3:4</a>
                     </li>
-                    <li class="xui-select-option">
-                      <a @click="cropClass = 'img-crop-4-3'" tabindex="0">4:3</a>
+                    <li>
+                      <a
+                        @click="cropClass = 'img-crop-4-3'"
+                        class="xui-select-option"
+                        tabindex="0"
+                      >4:3</a>
                     </li>
-                    <li class="xui-select-option">
-                      <a @click="cropClass = 'img-crop-16-9'" tabindex="0">16:9</a>
+                    <li>
+                      <a
+                        @click="cropClass = 'img-crop-16-9'"
+                        class="xui-select-option"
+                        tabindex="0"
+                      >16:9</a>
                     </li>
-                    <li class="xui-select-option">
-                      <a @click="cropClass = 'img-crop-golden'" tabindex="0">golden</a>
+                    <li>
+                      <a
+                        @click="cropClass = 'img-crop-golden'"
+                        class="xui-select-option"
+                        tabindex="0"
+                      >golden</a>
                     </li>
-                    <li class="xui-select-option">
-                      <a @click="cropClass = 'img-crop-silver'" tabindex="0">silver</a>
+                    <li>
+                      <a
+                        @click="cropClass = 'img-crop-silver'"
+                        class="xui-select-option"
+                        tabindex="0"
+                      >silver</a>
                     </li>
-                    <li class="xui-select-option">
-                      <a @click="cropClass = 'img-crop-ultrawide'" tabindex="0">ultrawide</a>
+                    <li>
+                      <a
+                        @click="cropClass = 'img-crop-ultrawide'"
+                        class="xui-select-option"
+                        tabindex="0"
+                      >ultrawide</a>
                     </li>
                   </ul>
                 </div>
