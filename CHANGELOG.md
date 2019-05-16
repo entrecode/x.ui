@@ -69,6 +69,7 @@
 - renamed `findContrastLoop()` to `find-contrast-loop()`
 - removed placeholder `%ec-icon`
 - removed `xui-tabs`
+- changed breakpoint postfix from `-` to `@` e.g. `@sm`
 
 ### changes
 
