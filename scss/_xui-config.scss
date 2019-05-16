@@ -2089,11 +2089,11 @@ $xui-toggle-style: () !default;
 //
 // MARK
 // -------------------------------------------------------------------------------------------------
-// @param {color} $mark-color [initial]
-// @param {color} $mark-background [initial]
+// @param {color} $mark-color [false]
+// @param {color} $mark-background [false]
 // @param {array} $mark-style
-$mark-color: initial !default;
-$mark-background: initial !default;
+$mark-color: false !default;
+$mark-background: false !default;
 $mark-style: () !default;
 
 //
