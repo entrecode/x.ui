@@ -97,7 +97,7 @@
               <img src="sample-image.jpg" class="img-full" style="opacity: .6;">
               <img
                 src="sample-image-small.jpg"
-                class="is-absolute is-positioned-nw"
+                class="is-absolute is-placed-nw"
                 style="z-index:-1;"
               >
             </div>
@@ -114,7 +114,7 @@
               <div class="tag img-crop-tag" v-text="isOutsetClass"></div>
               <img src="sample-image.jpg">
               <ul
-                class="nav is-theme-invert is-absolute is-positioned-n is-elevated-16 is-round"
+                class="nav is-theme-invert is-absolute is-placed-n is-elevated-16 is-round"
                 v-if="openOptions"
                 style="z-index: 10; margin-top: -32px;"
               >
