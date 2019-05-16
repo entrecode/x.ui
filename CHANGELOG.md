@@ -68,6 +68,7 @@
 - renamed `checkCompliance()` to `check-compliance()`
 - renamed `findContrastLoop()` to `find-contrast-loop()`
 - removed placeholder `%ec-icon`
+- removed `xui-tabs`
 
 ### changes
 

@@ -105,9 +105,6 @@
         <router-link to="dropdown" class="is-mega is-uppercase">dropdown</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="xui-tabs" class="is-mega is-uppercase">xui-tabs</router-link>
-      </li>
-      <li class="nav__item">
         <router-link to="modal" class="is-mega is-uppercase">modal</router-link>
       </li>
       <li class="nav__item">
