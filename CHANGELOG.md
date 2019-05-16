@@ -48,6 +48,7 @@
 - removed `data-animate` use third-party libraries like animate.css instead
 - removed `.pull`
 - renamed `.has-width` and `.has-height` to `.is-width` and `.is-height`
+- removed placeholder `%toggle` and `%toggle-is-active`
 
 ### changes
 

@@ -2,27 +2,47 @@
 /// @since 10.0.0
 /// @access public
 /// @group atoms
+///
+/// @param {color} $xui-toggle-background [$background-lighter]
+/// @param {color} $xui-toggle-hover-background [etHover($xui-toggle-background)]
+/// @param {color} $xui-toggle-active-background [$link)]
+/// @param {px} $xui-toggle-height [20]
+/// @param {color} $xui-toggle-width [$xui-toggle-height * 1.75]
+/// @param {color} $xui-toggle-radius [$xui-toggle-height / 2]
+/// @param {array} $xui-toggle-spacing [0]
+/// @param {array} $xui-toggle-style
+///
+/// @require {placeholer} is-hidden-input
+/// @require {mixin} inject-style()
+/// @require {function} arrayMagic()
+/// @require {function} rem()
+/// @require {function} em()
 
-// scss-lint:disable NestingDepth
-// @param {color} $xui-toggle-background [$background-lighter]
-// @param {color} $xui-toggle-hover-background [etHover($xui-toggle-background)]
-// @param {color} $xui-toggle-active-background [$link)]
-// @param {px} $xui-toggle-height [20]
-// @param {color} $xui-toggle-width [$xui-toggle-height * 1.75]
-// @param {color} $xui-toggle-radius [$xui-toggle-height / 2]
-// @param {array} $xui-toggle-spacing [0]
+.xui-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  [type='radio'],
+  [type='checkbox'] {
+    @extend %is-hidden-input;
+  }
+}
+
+// @param {px} $xui-toggle-label-font-size [base-font-size]
+// @param {px} $xui-toggle-label-line-height [$xui-toggle-label-font-size * $base-line-height]
 // @param {array} $xui-toggle-style
-%toggle {
+.xui-toggle__switch {
   cursor: pointer;
   direction: ltr;
   display: inline-block;
   flex-shrink: 0;
+  transition: background-color 0.2s;
   @include inject-style($xui-toggle-style);
   background: $xui-toggle-background;
   border-radius: arrayMagic($xui-toggle-radius);
   height: rem($xui-toggle-height);
   width: rem($xui-toggle-width);
-  transition: background-color 0.2s;
 
   // @param {color} $xui-toggle-pin-background [$background]
   // @param {px} $xui-toggle-pin-height[$xui-toggle-height - 8]
@@ -39,49 +59,16 @@
     width: rem($xui-toggle-pin-width);
     margin: rem(($xui-toggle-height - $xui-toggle-pin-height) / 2);
   }
-}
 
-%toggle-is-active {
-  direction: rtl;
-  background: $xui-toggle-active-background;
-}
-
-.xui-toggle {
-  position: relative;
-
-  @supports (display: flex) {
-    display: flex;
-    align-items: center;
+  @at-root :hover > & {
+    background: $xui-toggle-hover-background;
   }
 
-  &:hover {
-    .xui-toggle__switch {
-      background: $xui-toggle-hover-background;
-    }
+  @at-root :checked ~ &,
+    :checked ~ .xui-toggle__label & {
+    direction: rtl;
+    background: $xui-toggle-active-background;
   }
-
-  [type='radio'],
-  [type='checkbox'] {
-    @extend %is-hidden-input;
-
-    &:checked {
-      + .xui-toggle__label .xui-toggle__switch {
-        @extend %toggle-is-active;
-      }
-
-      + label.xui-toggle__switch {
-        @extend %toggle-is-active;
-      }
-    }
-  }
-}
-
-// @param {px} $xui-toggle-label-font-size [base-font-size]
-// @param {px} $xui-toggle-label-line-height [$xui-toggle-label-font-size * $base-line-height]
-// @param {array} $xui-toggle-style
-.xui-toggle__switch {
-  @extend %toggle;
-  margin-top: rem(($xui-toggle-label-line-height - $xui-toggle-height) / 2);
 }
 
 .xui-toggle__label {

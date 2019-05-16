@@ -10,6 +10,12 @@
 /// @param {array} $xui-checkbox-style
 /// @param {px} $xui-checkbox-check-size [14]
 /// @param {color} $xui-checkbox-check-color [transparent]
+///
+/// @require {placeholder} is-hidden-input
+/// @require {mixin} inject-style()
+/// @require {function} arrayMagic
+/// @require {function} rem
+/// @require {function} rem
 
 .xui-checkbox {
   position: relative;
@@ -17,13 +23,6 @@
   [type='radio'],
   [type='checkbox'] {
     @extend %is-hidden-input;
-
-    &:checked {
-      ~ .xui-checkbox__label {
-        &::before {
-        }
-      }
-    }
   }
 }
 
