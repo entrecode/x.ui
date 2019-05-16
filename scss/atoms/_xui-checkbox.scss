@@ -18,14 +18,9 @@
   [type='checkbox'] {
     @extend %is-hidden-input;
 
-    // @param {color} $xui-checkbox-check-checked-color [$link]
-    // @param {array} $xui-checkbox-checked-style
     &:checked {
       ~ .xui-checkbox__label {
         &::before {
-          @include inject-style($xui-checkbox-checked-style);
-          color: $xui-checkbox-check-checked-color;
-          line-height: rem($xui-checkbox-height + 2);
         }
       }
     }
@@ -57,6 +52,14 @@
     width: rem($xui-checkbox-height);
     background-color: $xui-checkbox-background;
     color: $xui-checkbox-check-color;
+
+    // @param {color} $xui-checkbox-check-checked-color [$link]
+    // @param {array} $xui-checkbox-checked-style
+    @at-root :checked ~ & {
+      @include inject-style($xui-checkbox-checked-style);
+      color: $xui-checkbox-check-checked-color;
+      line-height: rem($xui-checkbox-height + 2);
+    }
   }
 
   // @param {array} $xui-checkbox-hover-style
