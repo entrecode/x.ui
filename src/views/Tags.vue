@@ -74,7 +74,7 @@ $tag-big-radius: $tag-radius;`,
           groupItems: [
             {
               title: 'Tag Styles',
-              preview: `<ul data-grid="is-small">
+              preview: `<ul data-grid="small-gutter">
   <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big">tag</span></li>
   <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_minor">tag</span></li>
   <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_link">tag</span></li>
@@ -146,7 +146,7 @@ $tag-big-radius: $tag-radius;`,
           groupItems: [
             {
               title: 'Outlined Tag',
-              preview: `<ul data-grid="is-small">
+              preview: `<ul data-grid="small-gutter">
   <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined">tag</span></li>
   <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_minor">tag</span></li>
   <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_link">tag</span></li>

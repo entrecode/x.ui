@@ -2,6 +2,8 @@
 /// @since 9.1.0
 /// @access public
 /// @group atoms
+///
+/// @param {map} $img-crop-ratio
 
 @each $_postfix, $_array in $img-crop-ratio {
   .img-crop-#{$_postfix} {

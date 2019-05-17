@@ -35,9 +35,20 @@
           </li>
         </ul>
       </li>
-      <li class="nav__item">
-        <router-link to="images" class="is-mega is-uppercase">images</router-link>
+      <li class="y-space-5"></li>
+      <li>
+        <div class="is-h6">images</div>
       </li>
+      <li class="nav__item">
+        <router-link to="img-crop" class="is-mega is-uppercase">img-crop</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="responsiveness" class="is-mega is-uppercase">responsiveness</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="is-outset" class="is-mega is-uppercase">is-outset</router-link>
+      </li>
+      <li class="y-space-5"></li>
       <li class="nav__item">
         <router-link to="buttons" class="is-mega is-uppercase">buttons</router-link>
       </li>

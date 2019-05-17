@@ -111,7 +111,7 @@ $monospace-font: monospace;`,
           groupItems: [
             {
               title: 'text-transform',
-              preview: `<div data-grid="is-center">
+              preview: `<div data-grid="center">
   <div data-col="4" class="align-center">
     <div class="is-giga is-lowercase">is-lowercase</div>
   </div>

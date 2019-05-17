@@ -1,6 +1,6 @@
 <template>
   <section class="demo-blocks-group">
-    <div data-grid="is-center">
+    <div data-grid="center">
       <div data-col="10">
         <div class="has-margin-bottom-8" id="scroll-to-modal">
           <DocTab>

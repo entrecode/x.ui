@@ -1,7 +1,7 @@
 <template>
   <section>
     <div data-container>
-      <div data-grid="is-center">
+      <div data-grid="center">
         <div data-col="6-md">
           <input type="range" v-model="space" class="range-slider" min="0" max="9">
         </div>

@@ -8,7 +8,7 @@
         <div class="y-space-4"></div>
         <router-link to="getting-started" class="btn btn_big is-uppercase">get started</router-link>
         <div class="y-space-8"></div>
-        <div data-grid="is-center">
+        <div data-grid="center">
           <div data-col="fit">
             <h2 class="align-center is-ink-highlight">modular</h2>
           </div>

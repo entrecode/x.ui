@@ -55,9 +55,9 @@ export default {
   data: () => {
     return {
       cols: [{ size: 4, offset: null }, { size: 4, offset: null }, { size: 4, offset: null }],
-      gridAlign: 'is-center',
+      gridAlign: 'center',
       gridContainer: false,
-      gridGutterSize: 'is-small',
+      gridGutterSize: 'small-gutter',
     };
   },
   methods: {

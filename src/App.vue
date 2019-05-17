@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="doc-layout">
-    <router-view name="hero"  class="doc-hero"/>
+    <router-view name="hero" class="doc-hero"/>
     <demo-navbar class="doc-navbar"/>
     <router-view
       name="menu"
@@ -52,21 +52,21 @@ body {
 
 .doc-layout {
   display: grid;
-  grid-template-columns: 240px auto;
+  grid-template-columns: 320px auto;
   grid-template-rows: auto;
   grid-template-areas: 'hero hero' 'navbar navbar' 'menubar body' '. footer';
 
   .doc-hero {
     grid-area: hero;
   }
-  
+
   .doc-navbar {
     grid-area: navbar;
   }
 
   .doc-menubar {
     grid-area: menubar;
-    width: 240px;
+    width: 320px;
     padding-top: 120px;
     padding-bottom: 120px;
   }

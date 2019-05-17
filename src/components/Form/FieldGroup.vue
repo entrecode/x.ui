@@ -75,7 +75,7 @@ $field-group-info-style: ();`,
             {
               title: 'with fieldset',
               preview: `<fieldset class="fieldset">
-  <div data-grid="is-small">
+  <div data-grid="small-gutter">
     <div data-col="8">
       <div class="field-group">
         <input type="text" placeholder="input..." class="input" />

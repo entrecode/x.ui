@@ -12,7 +12,7 @@
         class="demo-code has-margin-bottom-3"
         v-text="isClipped ? 'is-clipped' : 'is-scrollable' + (behavior === 'scroll' ? '' : '-auto') + (axis === 'both' ? '' : '-' + axis ) + (contain ? '-contain' : '')"
       ></code>
-      <div data-grid="is-small is-center" data-flex="center-items">
+      <div data-grid="small-gutter center" data-flex="center-items">
         <div data-col="fit">
           <select id="behavior" class="input" v-model="behavior">
             <option :value="value" v-for="(value, index) in behaviors" :key="index" v-text="value"></option>

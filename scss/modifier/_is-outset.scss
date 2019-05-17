@@ -3,10 +3,10 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {px} $is-outset [48]
+/// @param {number} $is-outset [48]
 /// @param {array} $is-outset-spacing [16 0]
-/// @param {px} $is-outset-gutter [32]
-/// @param {px} $is-outset-bp [1200]
+/// @param {number} $is-outset-gutter [32]
+/// @param {number} $is-outset-bp [1200]
 /// @require {function} array-magic()
 /// @require {function} rem()
 

@@ -35,9 +35,19 @@ export default new Router({
       components: { main: () => import('./views/Typo.vue'), menu: DemoMenubar },
     },
     {
-      path: '/images',
-      name: 'images',
-      components: { main: () => import('./views/Images.vue'), menu: DemoMenubar },
+      path: '/img-crop',
+      name: 'img-crop',
+      components: { main: () => import('./views/ImgCrop.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/responsiveness',
+      name: 'responsiveness',
+      components: { main: () => import('./views/ImgResponsive.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/is-outset',
+      name: 'is-outset',
+      components: { main: () => import('./views/IsOutset.vue'), menu: DemoMenubar },
     },
     {
       path: '/buttons',
