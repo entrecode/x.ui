@@ -25,7 +25,7 @@
   }
 }
 
-@include set-data-breakpoints('grid', 'is-default') {
+@include set-data-breakpoints('grid', 'default-gutter') {
   margin-left: rem($grid-gutter / -2);
   margin-right: rem($grid-gutter / -2);
 
@@ -35,7 +35,7 @@
   }
 }
 
-@include set-data-breakpoints('grid', 'is-small') {
+@include set-data-breakpoints('grid', 'small-gutter') {
   margin-left: rem($grid-small-gutter / -2);
   margin-right: rem($grid-small-gutter / -2);
 
@@ -55,14 +55,14 @@
   }
 }
 
-@include set-data-breakpoints('grid', 'is-center') {
+@include set-data-breakpoints('grid', 'center') {
   justify-content: center;
 }
 
-@include set-data-breakpoints('grid', 'is-start') {
+@include set-data-breakpoints('grid', 'start') {
   justify-content: flex-start;
 }
 
-@include set-data-breakpoints('grid', 'is-end') {
+@include set-data-breakpoints('grid', 'end') {
   justify-content: flex-end;
 }
