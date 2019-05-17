@@ -87,8 +87,8 @@ $text-lightest: rgba($text, 0.2) !default;
 // @param {color} $backdrop [rgba(#000, .2)]
 $backdrop: rgba(#000, 0.2) !default;
 
-// @param {color} $divider-color [rgba($text,.1)] -  color if divider used by e.b. .bumper
-$divider-color: rgba($text, 0.1) !default;
+// @param {color} $base-divider-color [rgba($text,.1)] -  color if divider used by e.b. .bumper
+$base-divider-color: rgba($text, 0.1) !default;
 
 $state-hover: rgba($link, 0.1) !default;
 
@@ -126,7 +126,7 @@ $xui-colors: map-merge(
       'minor': $minor,
       'super': $super,
       'highlight': $highlight,
-      'divider': $divider-color,
+      'divider': $base-divider-color,
     ),
     text: (
       'invert': $text-invert,
@@ -901,11 +901,11 @@ $dropdown-option-hover-style: () !default;
 
 // @param {px} $dropdown-option-divider-size [1]
 // @param {px} $dropdown-option-divider-spacing [4 0]
-// @param {color} $dropdown-option-divider-color [$divider-color]
+// @param {color} $dropdown-option-divider-color [$base-divider-color]
 // @param {array} $dropdown-option-divider-style
 $dropdown-option-divider-size: 1 !default;
 $dropdown-option-divider-spacing: 4 0 !default;
-$dropdown-option-divider-color: $divider-color !default;
+$dropdown-option-divider-color: $base-divider-color !default;
 $dropdown-option-divider-style: () !default;
 
 //
@@ -913,10 +913,10 @@ $dropdown-option-divider-style: () !default;
 // ------------------------------------------------------
 // @param {array} $btn-group-style
 // @param {px} $btn-group-divider-size [1]
-// @param {color} $btn-group-divider-color [$divider-color]
+// @param {color} $btn-group-divider-color [$base-divider-color]
 $btn-group-style: () !default;
 $btn-group-divider-size: 1 !default;
-$btn-group-divider-color: $divider-color !default;
+$btn-group-divider-color: $base-divider-color !default;
 
 //
 // NAV
@@ -944,7 +944,7 @@ $nav-stacked-item-padding: $nav-item-padding !default;
 // @param {color} $nav-divider-color [$divider]
 // @param {px} $nav-divider-size [1]
 // @param {px} $nav-divider-spacing [$nav-item-padding]
-$nav-divider-color: $divider-color !default;
+$nav-divider-color: $base-divider-color !default;
 $nav-divider-size: 1 !default;
 $nav-divider-spacing: $nav-item-padding !default;
 
@@ -1599,7 +1599,7 @@ $tooltip-radius: 2 !default;
 // @param {array} $table-border [1 solid get-color(divider)]
 // @param {array} $table-cell-padding [8]
 $table-spacing: 0 0 16 0 !default;
-$table-border: 1 solid $divider-color !default;
+$table-border: 1 solid $base-divider-color !default;
 $table-cell-padding: 8 !default;
 
 //
@@ -1679,13 +1679,13 @@ $is-ink: map-merge(
 // BUMPER
 // ------------------------------------------------------
 // @param {px} $bumper-size [4]
-// @param {color} $bumper-color [$divider-color]
+// @param {color} $bumper-color [$base-divider-color]
 // @param {color} $bumper-invert-color [rgba($background, .2)]
 // @param {array} $bumper-spacing [get-space(5) 0]
 // @param {array} $bumper-small-spacing [get-space(3) 0]
 // @param {array} $bumper-big-spacing [get-space(6) 0]
 $bumper-size: 4 !default;
-$bumper-color: $divider-color !default;
+$bumper-color: $base-divider-color !default;
 $bumper-invert-color: rgba($background, 0.2) !default;
 $bumper-spacing: get-space(5) 0 !default;
 $bumper-small-spacing: get-space(3) 0 !default;
@@ -1695,14 +1695,14 @@ $bumper-big-spacing: get-space(6) 0 !default;
 // DIVIDER
 // ------------------------------------------------------
 // @param {px} $divider-height [1]
-// @param {color} $divider-background [$divider-color]
-// @param {color} $divider-invert-background [rgba($background, .2)]
+// @param {color} $divider-color [$base-divider-color]
+// @param {color} $divider-invert-color [rgba($background, .2)]
 // @param {array} $divider-spacing [get-space(3) 0]
 // @param {array} $divider-small-spacing [get-space(1) 0]
 // @param {array} $divider-big-spacing [get-space(5) 0]
 $divider-height: 1 !default;
-$divider-background: $divider-color !default;
-$divider-invert-background: rgba($background, 0.2) !default;
+$divider-color: $base-divider-color !default;
+$divider-invert-color: rgba($background, 0.2) !default;
 $divider-spacing: get-space(3) 0 !default;
 $divider-small-spacing: get-space(1) 0 !default;
 $divider-big-spacing: get-space(5) 0 !default;

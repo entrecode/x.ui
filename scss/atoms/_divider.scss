@@ -7,8 +7,8 @@
 ///   <hr class='divider'>
 ///
 /// @param {px} $divider-height [1]
-/// @param {color} $divider-background [$divider-color]
-/// @param {color} $divider-invert-background [rgba($background, .2)]
+/// @param {color} $divider-color [$base-divider-color]
+/// @param {color} $divider-invert-color [rgba($background, .2)]
 /// @param {array} $divider-spacing [get-space(5) 0]
 /// @param {array} $divider-small-spacing [get-space(3) 0]
 /// @param {array} $divider-big-spacing [get-space(6) 0]
@@ -17,14 +17,14 @@
   border: 0;
   width: 100%;
   height: rem($divider-height);
-  background: $divider-background;
+  background: $divider-color;
 
   @include set-breakpoints {
     margin: array-magic($divider-spacing);
   }
 
   &.divider_invert {
-    background: $divider-invert-background;
+    background: $divider-invert-color;
   }
 }
 

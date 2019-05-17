@@ -1,10 +1,10 @@
 /// @author Bernhard Ruoff
-/// @since 9.0.0
+/// @since 10.0.0
 /// @access public
 /// @group templates
 ///
 /// @param {array} $table-spacing [0 0 16 0]
-/// @param {array} $table-border [1 solid $divider-color]
+/// @param {array} $table-border [1 solid $base-divider-color]
 /// @param {array} $table-cell-padding [8]
 
 // scss-lint:disable SelectorDepth, NestingDepth
@@ -24,7 +24,9 @@ table {
 
   td,
   th {
-    padding: array-magic($table-cell-padding);
+    &:not(data-col) {
+      padding: array-magic($table-cell-padding);
+    }
   }
 
   tbody {

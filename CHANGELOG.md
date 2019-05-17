@@ -75,6 +75,8 @@
 - changed `data-grid="is-center"` to  `data-grid="center"`
 - changed `data-grid="is-end"` to  `data-grid="end"`
 - changed `data-grid="is-start"` to  `data-grid="start"`
+- renamed `$divider-color` to `$base-divider-color`
+- renamed `$divider-background` and `$divider-background-invert` to `$divider-color` and  `$divider-color-invert`
 
 ### changes
 
