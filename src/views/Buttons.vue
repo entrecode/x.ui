@@ -1,5 +1,109 @@
 <template>
-  <blocks-group :groups="sectionGroups" section-title="buttons"></blocks-group>
+  <section>
+    <div class="demo-preview has-padding-8 has-margin-bottom-5 is-relative">
+      <div data-grid="center">
+        <div data-col="3" class="align-center">
+          <a
+            href
+            class="btn demo-transition"
+            :class="[btnStyle, btnSize, {'btn_round' : btnRound}, {'btn_outlined' : btnOutlined}, btnWide]"
+          >button</a>
+        </div>
+        <div data-col="3" class="align-center">
+          <a
+            href
+            class="btn demo-transition"
+            :class="[btnStyle, btnSize, {'btn_round' : btnRound}, {'btn_outlined' : btnOutlined}, btnWide]"
+          >
+            <svg class="ixo">
+              <use xlink:href="#fire"></use>
+            </svg>
+            Button
+          </a>
+        </div>
+        <div data-col="3" class="align-center">
+          <a
+            href
+            class="btn demo-transition"
+            :class="[btnStyle, btnSize, {'btn_round' : btnRound}, {'btn_outlined' : btnOutlined}, btnWide]"
+          >
+            <svg class="ixo">
+              <use xlink:href="#fire"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="demo-preview-settings is-theme has-padding-3 has-margin-top-8">
+        <div data-grid="center">
+          <div data-col="fit">
+            <div class="input-group">
+              <label for="btnStyle" class="input-group__addon">
+                <svg class="ixo">
+                  <use xlink:href="#color-palette"></use>
+                </svg>
+              </label>
+              <div class="input-group__addon">
+                <select id="btnStyle" v-model="btnStyle" class="input">
+                  <option value>default</option>
+                  <option value="btn_minor">minor</option>
+                  <option value="btn_super">super</option>
+                  <option value="btn_invert">inverted</option>
+                  <option value="btn_clear">clear</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div data-col="fit">
+            <div class="input-group">
+              <label for="btnSize" class="input-group__addon">
+                <svg class="ixo">
+                  <use xlink:href="#move-vertical"></use>
+                </svg>
+              </label>
+              <div class="input-group__addon">
+                <select id="btnSize" v-model="btnSize" class="input">
+                  <option value>default</option>
+                  <option value="btn_small">small</option>
+                  <option value="btn_big">big</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div data-col="fit">
+            <div class="input-group">
+              <label for="btnWide" class="input-group__addon">
+                <svg class="ixo">
+                  <use xlink:href="#move-horizontal"></use>
+                </svg>
+              </label>
+              <div class="input-group__addon">
+                <select id="btnWide" v-model="btnWide" class="input">
+                  <option value>default</option>
+                  <option value="btn_wide">wide</option>
+                  <option value="btn_block">block</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div data-col="fit">
+            <div class="xui-checkbox">
+              <input type="checkbox" id="btnRound" v-model="btnRound">
+              <label for="btnRound" class="xui-checkbox__label">round</label>
+            </div>
+          </div>
+          <div data-col="fit">
+            <div class="xui-checkbox">
+              <input type="checkbox" id="btnOutlined" v-model="btnOutlined">
+              <label for="btnOutlined" class="xui-checkbox__label">outlined</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- alt -->
+    <blocks-group :groups="sectionGroups" section-title="buttons"></blocks-group>
+  </section>
 </template>
 
 <script>
@@ -12,6 +116,11 @@ export default {
   },
   data: () => {
     return {
+      btnStyle: '',
+      btnSize: '',
+      btnWide: '',
+      btnRound: false,
+      btnOutlined: false,
       sectionGroups: [
         {
           title: '',
