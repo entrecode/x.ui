@@ -1,22 +1,22 @@
 <template>
-  <div class="has-margin-bottom-5" v-if="params">
+  <div v-if="params">
     <h4 class="is-h4">parameters</h4>
     <table class="table">
       <thead>
-        <tr data-flex>
-          <th data-col="3">Name</th>
+        <tr data-grid="small-gutter">
+          <th data-col="2">Name</th>
           <th data-col="4">Description</th>
-          <th data-col="1">Type</th>
+          <th data-col="2">Type</th>
           <th data-col="4">Default Value</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(param, index) in params" :key="index" data-flex>
-          <td valign="top" data-col="3">
-            <div class="code" v-text="param.name"></div>
+        <tr v-for="(param, index) in params" :key="index" data-grid="small-gutter">
+          <td valign="top" data-col="2">
+            <code v-text="param.name" class="is-bold"></code>
           </td>
           <td v-html="param.description" valign="top" data-col="4"></td>
-          <td v-if="param.type" valign="top" data-col="1">
+          <td v-if="param.type" valign="top" data-col="2">
             <span class="tag" v-text="param.type"></span>
           </td>
           <td valign="top" data-col="4">
@@ -36,13 +36,15 @@ export default {
 
 <style scoped lang="scss">
 .table {
-  thead {
-    font-size: 0.75em;
+  font-size: 12px;
+  text-align: left;
+
+  tr:last-child td {
+    border: 0;
   }
-  td,
-  th {
-    text-align: left;
-    padding: 8px 0;
-  }
+}
+
+.hljs {
+  padding: 4px 8px;
 }
 </style>

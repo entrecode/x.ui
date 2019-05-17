@@ -29,7 +29,7 @@ export default {
 // inverted bumper
 <div class="bumper bumper_invert"></div>`,
               config: `$bumper-size: 4;
-$bumper-color: $divider-color;
+$bumper-color: $base-divider-color;
 $bumper-invert-color: rgba($background, 0.2);
 $bumper-spacing: get-space(5) 0;
 $bumper-small-spacing: get-space(3) 0;

@@ -38,7 +38,7 @@ $nav-style: ();
 
 $nav-item-padding: 8;
 
-$nav-divider-color: $divider-color;
+$nav-divider-color: $base-divider-color;
 $nav-divider-size: 1;
 $nav-divider-spacing: $nav-item-padding;`,
             },

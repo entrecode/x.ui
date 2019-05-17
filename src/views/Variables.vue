@@ -244,7 +244,7 @@ export default {
     'minor': $minor,
     'super': $super,
     'highlight': $highlight,
-    'divider': $divider-color,
+    'divider': $base-divider-color,
   ),
   text: (
     'invert': $text-invert,

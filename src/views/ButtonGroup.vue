@@ -33,7 +33,7 @@ export default {
 </div>`,
               config: `$btn-group-style: ();
 $btn-group-divider-size: 1;
-$btn-group-divider-color: $divider-color`,
+$btn-group-divider-color: $base-divider-color`,
             },
             {
               title: 'btn-group with a dropdown',

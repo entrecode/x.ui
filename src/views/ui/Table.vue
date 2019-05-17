@@ -54,7 +54,7 @@ export default {
   </tbody>
 </table>`,
               config: `$table-spacing: 0 0 16 0;
-$table-border: 1 solid $divider-color;
+$table-border: 1 solid $base-divider-color;
 $table-cell-padding: 8;`,
               previewCol: 12,
               markupCol: 12,

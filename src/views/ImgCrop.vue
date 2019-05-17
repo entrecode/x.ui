@@ -23,11 +23,12 @@
       </div>
     </div>
     <div data-grid="center">
-      <div data-col="8 6@xl">
+      <div data-col="8@xl">
         <h2 class="is-giga">img-crop</h2>
         <div class="demo-markup-preview has-margin-middle-5">
           <pre v-highlightjs="imgCropMarkup"><code class="html"></code></pre>
         </div>
+        <div class="divider"></div>
         <div class="has-margin-middle-5">
           <params-table :params="imgCropParams"></params-table>
         </div>

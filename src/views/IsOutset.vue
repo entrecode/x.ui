@@ -68,15 +68,17 @@
       </div>
     </div>
     <div data-grid="center">
-      <div data-col="8 6@xl">
+      <div data-col="8@xl">
         <h2 class="is-giga">is-outset</h2>
         <p class="is-lead"><code class="code">.is-outset</code> is still in an experimental state. it can be used as a wrapper with all kinds of elements.</p>
         <div class="demo-markup-preview has-margin-middle-5">
           <pre v-highlightjs="markup"><code class="html"></code></pre>
         </div>
+        <div class="divider"></div>
         <div class="has-margin-middle-5">
           <params-table :params="params"></params-table>
         </div>
+        <div class="divider"></div>
         <div class="has-margin-middle-5">
           <requires-list :requires="requires"></requires-list>
         </div>
