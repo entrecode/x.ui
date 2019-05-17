@@ -41,7 +41,7 @@
 
       <div class="y-space-8"></div>
       <div data-grid>
-        <div data-col="3-sm">
+        <div data-col="3@sm">
           <div class="align-center">
             <img src="@/assets/atoms.svg" alt="x.ui atoms">
             <h3>atoms</h3>
@@ -54,7 +54,7 @@
             style or color.
           </p>
         </div>
-        <div data-col="3-sm">
+        <div data-col="3@sm">
           <div class="align-center">
             <img src="@/assets/molecules.svg" alt="x.ui atoms">
             <h3>molecules</h3>
@@ -65,7 +65,7 @@
             interactions.
           </p>
         </div>
-        <div data-col="3-sm">
+        <div data-col="3@sm">
           <div class="align-center">
             <img src="@/assets/organisms.svg" alt="x.ui atoms">
             <h3>organisms</h3>
@@ -76,7 +76,7 @@
             interactions.
           </p>
         </div>
-        <div data-col="3-sm">
+        <div data-col="3@sm">
           <div class="align-center">
             <img src="@/assets/modifier.svg" alt="x.ui atoms">
             <h3>modifier</h3>
