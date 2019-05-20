@@ -50,7 +50,7 @@
       </li>
       <li class="y-space-5"></li>
       <li class="nav__item">
-        <router-link to="buttons" class="is-mega is-uppercase">buttons</router-link>
+        <router-link to="button" class="is-mega is-uppercase">button</router-link>
       </li>
       <li class="nav__item">
         <router-link to="button-group" class="is-mega is-uppercase">button-group</router-link>

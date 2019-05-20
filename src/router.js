@@ -50,9 +50,9 @@ export default new Router({
       components: { main: () => import('./views/IsOutset.vue'), menu: DemoMenubar },
     },
     {
-      path: '/buttons',
-      name: 'buttons',
-      components: { main: () => import('./views/Buttons.vue'), menu: DemoMenubar },
+      path: '/button',
+      name: 'button',
+      components: { main: () => import('./views/Button.vue'), menu: DemoMenubar },
     },
     {
       path: '/button-group',

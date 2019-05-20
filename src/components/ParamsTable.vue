@@ -1,6 +1,6 @@
 <template>
   <div v-if="params">
-    <h4 class="is-h4">parameters</h4>
+    <h4 class="is-h4" v-text="title ? title : 'parameters'"></h4>
     <table class="table">
       <thead>
         <tr data-grid="small-gutter">
@@ -20,7 +20,7 @@
             <span class="tag" v-text="param.type"></span>
           </td>
           <td valign="top" data-col="4">
-            <pre v-highlightjs="param.default"><code class="scss"></code></pre>
+            <pre v-highlightjs="param.default" v-if="param.default"><code class="scss"></code></pre>
           </td>
         </tr>
       </tbody>
@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  props: ['params'],
+  props: ['params', 'title'],
 };
 </script>
 

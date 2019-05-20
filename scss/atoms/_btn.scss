@@ -34,9 +34,9 @@
 // @param {array} $btn-style
 // @param {px} $btn-font-size [$base-font-size]
 // @param {px} $btn-line-height [$btn-font-size * $base-line-height]
+// @param {string} $btn-weight [$is-bold]
 // @param {px} $btn-icon-size [$base-icon-size]
 // @param {px} $btn-min-height [40]
-// @param {string} $btn-weight [$is-bold]
 // @param {px} $btn-radius [4]
 // @param {color} $btn-background [$link]
 // @param {color} $btn-color [set-contrast($link)]
@@ -113,39 +113,8 @@
 // @param {px} $btn-big-radius [$btn-radius]
 // @param {array} $btn-big-style
 .btn_big {
-  @include metrics(
-    $btn-big-font-size,
-    $btn-big-line-height,
-    $btn-big-min-height,
-    $padding-ratio: $btn-padding-ratio
-  );
+  @include metrics($btn-big-font-size, $btn-big-line-height, $btn-big-min-height, $padding-ratio: $btn-padding-ratio);
   border-radius: array-magic($btn-big-radius);
   font-weight: $btn-big-weight;
   @include inject-style($btn-big-style);
-}
-
-// @param {px} $btn-wide -  min width for .btn_wide button
-// @param {px} $btn-small-wide - min width for .btn_wide.btn_small button
-// @param {px} $btn-big-wide - min width for .btn_wide.btn_big button
-
-.btn_wide {
-  min-width: rem($btn-wide);
-
-  &.btn_small {
-    min-width: rem($btn-small-wide);
-  }
-
-  &.btn_big {
-    min-width: rem($btn-big-wide);
-  }
-}
-
-// full-width buttons
-.btn_block {
-  display: block;
-
-  @supports (display: flex) {
-    display: flex;
-    flex-grow: 1;
-  }
 }
