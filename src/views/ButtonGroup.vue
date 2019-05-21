@@ -53,7 +53,7 @@
       </div>
       <pre v-highlightjs="markup3"><code class="html"></code></pre>
     </div>
-    <div data-col="8@sm">
+    <div data-col="10@md 8@lg">
       <params-table :params="params"></params-table>
       <requires-list :requires="requires"></requires-list>
     </div>
