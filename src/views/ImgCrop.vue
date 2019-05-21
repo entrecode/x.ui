@@ -26,13 +26,9 @@
       </div>
     </div>
     <div data-col="10@md 8@lg">
-      <div class="demo-markup-preview has-margin-middle-5">
-        <pre v-highlightjs="imgCropMarkup"><code class="html"></code></pre>
-      </div>
+      <pre v-highlightjs="imgCropMarkup"><code class="html"></code></pre>
       <div class="divider"></div>
-      <div class="has-margin-middle-5">
-        <params-table :params="imgCropParams"></params-table>
-      </div>
+      <params-table :params="imgCropParams"></params-table>
     </div>
   </section>
 </template>
