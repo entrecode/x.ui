@@ -3,7 +3,8 @@
 /// @access public
 /// @group molecules
 ///
-/// @param {array} $btn-group-style
+/// @param {map} $btn-group-style
+/// @require {function} rem
 .btn-group {
   display: flex;
   @include inject-style($btn-group-style);
