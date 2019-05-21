@@ -99,12 +99,12 @@
       <li class="nav__item">
         <router-link to="well" class="is-mega is-uppercase">well</router-link>
       </li>
-      <li class="nav__item">
-        <router-link to="avatar" class="is-mega is-uppercase">avatar</router-link>
-      </li>
       <li class="y-space-5"></li>
       <li>
         <div class="is-h6">ui</div>
+      </li>
+      <li class="nav__item">
+        <router-link to="avatar" class="is-mega is-uppercase">avatar</router-link>
       </li>
       <li class="nav__item">
         <router-link to="titlebar" class="is-mega is-uppercase">titlebar</router-link>

@@ -8,7 +8,7 @@
       </router-link>
       <div class="x-space-3"></div>
       <div class="flex-space"></div>
-      <div class="is-relative" style="flex-grow: 1; max-width: 480px;">
+      <!-- <div class="is-relative" style="flex-grow: 1; max-width: 480px;">
         <div class="input-group">
           <div class="input-group__addon">
             <ixo name="search"></ixo>
@@ -42,7 +42,7 @@
           </ul>
         </div>
       </div>
-      <div class="x-space-3"></div>
+      <div class="x-space-3"></div> -->
       <a
         class="btn btn_clear"
         href="https://github.com/entrecode/x.ui"
