@@ -103,7 +103,7 @@ export default {
   },
   watch: {
     computedClasses: function(val) {
-      this.markup = `<div class="avatar ${this.computedClasses}">
+      this.markup = `<div class="avatar${this.computedClasses}">
   <img ...>
 </div>`;
     },
