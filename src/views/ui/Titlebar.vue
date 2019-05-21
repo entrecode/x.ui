@@ -1,27 +1,62 @@
 <template>
-  <blocks-group :groups="sectionGroups" section-title="titlebar"></blocks-group>
+  <section>
+    <a
+      @click="activeTab = 1"
+      class="btn btn_clear demo-tab"
+      :class="{'is-active' : activeTab === 1}"
+    >standard</a>
+    <a
+      @click="activeTab = 2"
+      class="btn btn_clear demo-tab"
+      :class="{'is-active' : activeTab === 2}"
+    >example</a>
+    <div data-col="10@md 8@lg">
+      <div class="demo-preview has-padding-5">
+        <div class="titlebar" v-if="activeTab === 1">
+          <h2 class="is-giga">Titel</h2>
+          <ul class="nav">
+            <li class="nav__item">
+              <a class="btn">button</a>
+            </li>
+          </ul>
+        </div>
+        <div class="titlebar is-theme is-elevated-16 is-round has-padding-left-5" v-if="activeTab === 2">
+          <h2 class="is-giga">Titel</h2>
+          <ul class="nav">
+            <li class="nav__item">
+              <a class="btn btn_clear">button</a>
+            </li>
+            <li class="nav__divider"></li>
+            <li class="nav__item">
+              <a class="btn btn_round">button</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="y-space-5"></div>
+      <pre v-highlightjs="markup" v-if="activeTab === 1"><code class="html"></code></pre>
+      <pre v-highlightjs="markup2" v-if="activeTab === 2"><code class="html"></code></pre>
+      <div class="y-space-5"></div>
+      <params-table :params="params"></params-table>
+      <div class="divider"></div>
+      <requires-list :requires="requires"></requires-list>
+    </div>
+  </section>
 </template>
 
 <script>
-import BlocksGroup from '@/components/BlocksGroup.vue';
+import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
-  name: 'Titlebar',
   components: {
-    BlocksGroup,
+    RequiresList,
+    ParamsTable,
   },
   data: () => {
     return {
-      sectionGroups: [
-        {
-          title: '',
-          id: 'titlebar',
-          navTitle: 'titlebar',
-          groupItems: [
-            {
-              previewCol: 12,
-              markupCol: 12,
-              preview: `<div class="titlebar">
+      activeTab: 1,
+      markup: `<div class="titlebar">
   <h2 class="is-giga">Titel</h2>
   <ul class="nav">
     <li class="nav__item">
@@ -29,13 +64,26 @@ export default {
     </li>
   </ul>
 </div>`,
-              config: `$titlebar-spacing: 0;
-$titlebar-padding: 0;
-$titlebar-style: ();
-`,
-            },
-          ],
-        },
+      markup2: `<div class="titlebar is-theme is-elevated-16 is-round has-padding-left-5">
+  <h2 class="is-giga">Titel</h2>
+  <ul class="nav">
+    <li class="nav__item">
+      <a class="btn btn_clear">button</a>
+    </li>
+    <li class="nav__divider"></li>
+    <li class="nav__item">
+      <a class="btn btn_round">button</a>
+    </li>
+  </ul>
+</div>`,
+      params: [
+        { name: '$titlebar-spacing', type: 'array', default: '0' },
+        { name: '$titlebar-padding', type: 'array', default: '0' },
+        { name: '$titlebar-style', type: 'map' },
+      ],
+      requires: [
+        { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
+        { name: 'inject-style()', type: 'mixin', link: '#scroll-to-inject-style' },
       ],
     };
   },
