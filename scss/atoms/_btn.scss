@@ -11,7 +11,6 @@
 /// @require {mixin} inject-style
 /// @require {mixin} metrics
 
-
 // button core style mixin
 @mixin _btn-reset {
   cursor: pointer;
@@ -84,6 +83,10 @@
   // @param {array} $btn-ative-style
   &:active {
     @include inject-style($btn-active-style);
+  }
+
+  * {
+    pointer-events: none;
   }
 }
 
