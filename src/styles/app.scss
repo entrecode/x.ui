@@ -123,7 +123,7 @@
 }
 
 .router-link-active {
-  color: var(--link);
+  color: var(--link) !important;
 }
 
 .demo-code {
@@ -142,7 +142,6 @@
 .demo-transition {
   transition: all 0.2s;
 }
-
 
 .demo-tab {
   border-radius: 0;
@@ -165,7 +164,7 @@
     background: var(--text);
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform .2s;
+    transition: transform 0.2s;
     border-radius: 100vh;
 
     @at-root .is-active#{&} {

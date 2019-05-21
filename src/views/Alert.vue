@@ -5,7 +5,7 @@
         <div data-col="6">
           <div class="demo-preview has-padding-8" data-flex="column center">
             <div
-              class="alert demo-transition has-margin-bottom-5"
+              class="alert demo-transition"
               :class="alertClasses"
             >ecosystem families energize correlation, social enterprise citizen-centered.</div>
           </div>
@@ -67,7 +67,6 @@
 <script>
 import ParamsTable from '@/components/ParamsTable.vue';
 import RequiresList from '@/components/RequiresList.vue';
-import { maxHeaderSize } from 'http';
 
 export default {
   components: {

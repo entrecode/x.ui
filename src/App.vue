@@ -73,6 +73,7 @@ body {
 
   .doc-body {
     grid-area: body;
+    padding-right: 80px;
   }
 
   .doc-footer {

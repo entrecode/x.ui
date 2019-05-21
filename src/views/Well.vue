@@ -1,35 +1,70 @@
 <template>
-  <blocks-group :groups="sectionGroups" section-title="well"></blocks-group>
+  <section>
+    <div data-col="10@md 8@lg">
+      <div class="has-margin-bottom-5">
+        <div class="demo-preview has-padding-8" data-flex="column center">
+          <div class="well">
+            <p>ecosystem families energize correlation, social enterprise citizen-centered.</p>
+          </div>
+        </div>
+      </div>
+      <pre v-highlightjs="markup"><code class="html"></code></pre>
+      <div class="y-space-8"></div>
+      <params-table :params="params" title="default params"></params-table>
+      <div class="divider"></div>
+      <requires-list :requires="requires"></requires-list>
+    </div>
+  </section>
 </template>
 
 <script>
-import BlocksGroup from '@/components/BlocksGroup.vue';
+import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   components: {
-    BlocksGroup,
+    ParamsTable,
+    RequiresList,
   },
   data: () => {
     return {
-      sectionGroups: [
-        {
-          title: '',
-          id: 'well',
-          groupItems: [
-            {
-              preview: `<div class="well">
-  <h2>Titel</h2>
-  <p>card is a standard ui element to combine related Informations or elements</p>
+      markup: `<div class="well">
+  ...
 </div>`,
-              config: `$well-background: $background-lightest;
-$well-color: inherit;
-$well-radius: 4;
-$well-padding: 16 24;
-$well-spacing: 0 0 16 0;
-$well-style: ();`,
-            },
-          ],
+      params: [
+        {
+          name: '$well-background',
+          type: 'color',
+          default: '$background-lightest',
         },
+        {
+          name: '$well-color',
+          type: 'color',
+          default: 'inherit',
+        },
+        {
+          name: '$well-radius',
+          type: 'number',
+          default: '4',
+        },
+        {
+          name: '$well-padding',
+          type: 'array',
+          default: '16 24',
+        },
+        {
+          name: '$well-spacing',
+          type: 'array',
+          default: '0 0 16 0',
+        },
+        {
+          name: '$well-style',
+          type: 'map',
+        },
+      ],
+      requires: [
+        { name: 'inject-style()', type: 'mixin', link: '#scroll-to-inject-style' },
+        { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
       ],
     };
   },
