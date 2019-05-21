@@ -2,7 +2,7 @@
   <section>
     <div data-col="10@md 8@lg">
       <div class="demo-preview has-padding-5" data-flex="column center-items">
-        <div class="has-padding-3 has-margin-bottom-5 is-theme">
+        <div class="has-padding-4 has-radius is-elevated-16 has-margin-bottom-5 is-theme">
           <ul class="nav demo-transition" :class="computedClasses">
             <li class="nav__item">
               <a href>Navlink</a>
