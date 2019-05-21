@@ -612,10 +612,10 @@ $btn-minor-hover-style: () !default;
 // BTN OUTLINE MINOR STYLE
 // ------------------------------------------------------------
 // @param {color} $btn-outline-minor-border-color [$minor]
-// @param {color} $btn-outline-minor-color [$text-light]
+// @param {color} $btn-outline-minor-color [$minor]
 // @param {array} $btn-outline-minor-style
 $btn-outline-minor-border-color: $minor !default;
-$btn-outline-minor-color: $text-light !default;
+$btn-outline-minor-color: $minor !default;
 $btn-outline-minor-style: () !default;
 
 // @param {color} $btn-outline-minor-hover-border-color [set-hover($btn-outline-minor-border-color)]

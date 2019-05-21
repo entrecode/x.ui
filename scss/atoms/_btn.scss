@@ -6,6 +6,11 @@
 /// @param {variable} $btn-font-family
 /// @param {number} $btn-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
 /// @param {array} $btn-spacing [0]
+///
+/// @require {function} array-magic
+/// @require {mixin} inject-style
+/// @require {mixin} metrics
+
 
 // button core style mixin
 @mixin _btn-reset {

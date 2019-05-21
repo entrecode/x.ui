@@ -9,7 +9,7 @@
 - removed deprecated `.spacer-small` and `.spacer-big` use `.spacer.spacer_small` or `.spacer.spacer_big` instead
 - removed deprecated `.alert-small` and `.alert-big` use `.alert.alert_small` or `.alert.alert_big` instead
 - removed deprecated `.well-small` and `.well-big`
-- removed deprecated `.is-visible#` use `is-block#` or `is-flex#` instead
+- removed deprecated `.is-visible#` use `is-block#` or `is-flex#`
 - removed deprecated `.is-raises#` use `is-elevated#` instead
 - removed deprecated `.is-lifted#` use `is-elevated#` instead
 - removed deprecated `.is-rounded#` use `has-radius#` instead
@@ -23,8 +23,8 @@
 - removed `.no-padding` use `.has-padding-0` instead
 - removed `.xui-overlay`
 - removed float grid styles `data-row`
-- removed `.has-margin#`, `.has-margin#-smalles`, `.has-margin#-small`, `.has-margin#-big`
-- removed `.has-padding#`, `.has-padding#-smalles`, `.has-padding#-small`, `.has-padding#-big`
+- removed `.has-margin#`, `.has-margin#-smallest`, `.has-margin#-small`, `.has-margin#-big`
+- removed `.has-padding#`, `.has-padding#-smallets`, `.has-padding#-small`, `.has-padding#-big`
 - renamed `.is-bordered` to `.has-border`
 - removed breakpoints for `align-`
 - removed breakpoints for `is-clipped#`
@@ -33,7 +33,7 @@
 - removed `.not-positioned`
 - removed breakpoints from `.is-placed` and `.is-position`
 - renamed `set-map-breakpoints()` to `set-data-map-breakpoints()`
-- renamed `getBreakpoints()` to `bp()`
+- renamed `getBreakpoint()` to `bp()`
 - removed `.form-group` use `.field-group` instead
 - removed input validation styles
 - removed `.bubble` use `.tag` instead

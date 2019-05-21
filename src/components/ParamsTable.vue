@@ -1,5 +1,5 @@
 <template>
-  <div v-if="params">
+  <div v-if="params" class="params-table">
     <h4 class="is-h4" v-text="title ? title : 'parameters'"></h4>
     <table class="table">
       <thead>
@@ -35,6 +35,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.params-table {
+  margin: 32px 0;
+}
+
 .table {
   font-size: 12px;
   text-align: left;
