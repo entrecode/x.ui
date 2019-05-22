@@ -90,8 +90,8 @@
 // @param {array} $modal-dismiss-style
 .modal__dismiss {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: rem(8);
+  top: rem(8);
   z-index: 1;
   @include inject-style($modal-dismiss-style);
 

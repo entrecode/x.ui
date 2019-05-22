@@ -1,40 +1,34 @@
 <template>
-  <section class="demo-blocks-group">
-    <div data-grid="center">
-      <div data-col="10">
-        <div class="has-margin-bottom-8" id="scroll-to-modal">
-          <DocTab>
-            <div slot="title"></div>
-            <div slot="preview" data-flex="center center-items" style="height: 100%;">
-              <div class="align-center">
-                <a @click.prevent="showModal = !showModal" class="btn">open modal</a>
-              </div>
-            </div>
-            <div slot="markup">
-              <pre v-highlightjs="markup"><code class="html"></code></pre>
-            </div>
-            <div slot="config">
-              <pre v-highlightjs="config"><code class="scss"></code></pre>
-            </div>
-          </DocTab>
-        </div>
+  <section>
+    <div class="nav">
+      <div class="nav__item">
+        <a
+          @click="activeTab = 1"
+          class="btn btn_clear demo-tab"
+          :class="{'is-active' : activeTab === 1}"
+        >simple</a>
       </div>
-
-      <div data-col="2">
-        <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-          <li class="nav__item">
-            <h2>Modal</h2>
-          </li>
-          <li class="nav__item">
-            <a
-              href="#scroll-to-modal"
-              v-smooth-scroll
-              class="is-kilo is-ink-light hover:is-ink-link"
-            >default modal</a>
-          </li>
-        </ul>
+      <div class="nav__item">
+        <a
+          @click="activeTab = 2"
+          class="btn btn_clear demo-tab"
+          :class="{'is-active' : activeTab === 2}"
+        >advanced</a>
       </div>
     </div>
+    <div v-if="activeTab === 1" class="animated fadeIn">
+      <div class="demo-preview has-padding-8" data-flex="center">
+        <a @click.prevent="showModal = !showModal" class="btn btn_big is-elevated-16">open modal</a>
+      </div>
+
+      <pre v-highlightjs="markupSimple"><code class="html"></code></pre>
+    </div>
+
+    <params-table :params="params"></params-table>
+    <div class="divider"></div>
+    <params-table :params="layoutParams" title="layout params"></params-table>
+    <div class="divider"></div>
+    <requires-list :requires="requires"></requires-list>
 
     <div
       class="modal-wrapper"
@@ -43,7 +37,7 @@
       :data-flex="[alignItems, justifyContent].join(' ')"
     >
       <div
-        class="modal"
+        class="modal has-padding-5"
         :data-col="dataCol ? dataCol : false"
         :class="[elevated.length ? 'is-elevated-' + elevated : false]"
       >
@@ -52,111 +46,97 @@
             <use xlink:href="#close"></use>
           </svg>
         </a>
-        <div class="modal__header">
-          <h2>Modal Header</h2>
-        </div>
-        <div class="modal__body">
-          <div style="max-width: 320px; margin: 0 auto;">
-            <div class="field-group">
-              <label for class="field-group__label">[data-col]</label>
-              <input
-                type="number"
-                class="input"
-                min="1"
-                max="12"
-                v-model="dataCol"
-                placeholder="1-12"
-              >
-            </div>
-            <div class="field-group">
-              <label for class="field-group__label">elevation</label>
-              <div data-grid>
-                <div data-col="8" data-flex="center-items">
-                  <input
-                    type="range"
-                    class="range-slider"
-                    v-model="elevated"
-                    min="0"
-                    max="24"
-                    step="1"
-                  >
-                </div>
-                <div data-col="4">
-                  <input type="number" class="input" v-model="elevated" placeholder="0-24">
-                </div>
-              </div>
-            </div>
-            <div class="field-group">
-              <div class="xui-checkbox">
-                <input type="checkbox" v-model="hasBackdrop" id="hasBackdrop">
-                <label for="hasBackdrop" class="xui-checkbox__label">has backdrop</label>
-              </div>
-            </div>
-
-            <div class="position-settings well">
-              <div class="position-settings-item position-settings-item_top">
-                <span
-                  @click="setSectionFlex('top')"
-                  :class="flexConfig.has('top') ? 'is-ink-link' : 'is-ink-light'"
+        <div style="max-width: 320px; margin: 0 auto;">
+          <div class="field-group">
+            <label for class="field-group__label">[data-col]</label>
+            <input
+              type="number"
+              class="input"
+              min="1"
+              max="12"
+              v-model="dataCol"
+              placeholder="1-12"
+            >
+          </div>
+          <div class="field-group">
+            <label for class="field-group__label">elevation</label>
+            <div data-grid>
+              <div data-col="8" data-flex="center-items">
+                <input
+                  type="range"
+                  class="range-slider"
+                  v-model="elevated"
+                  min="0"
+                  max="24"
+                  step="1"
                 >
-                  <svg class="ixo">
-                    <use xlink:href="#flex-position-top"></use>
-                  </svg>
-                </span>
               </div>
-              <div class="position-settings-item position-settings-item_right">
-                <span
-                  @click="setSectionFlex('right')"
-                  :class="flexConfig.has('right') ? 'is-ink-link' : 'is-ink-light'"
-                >
-                  <svg class="ixo">
-                    <use xlink:href="#flex-position-right"></use>
-                  </svg>
-                </span>
-              </div>
-              <div class="position-settings-item position-settings-item_bottom">
-                <span
-                  @click="setSectionFlex('bottom')"
-                  :class="flexConfig.has('bottom') ? 'is-ink-link' : 'is-ink-light'"
-                >
-                  <svg class="ixo">
-                    <use xlink:href="#flex-position-bottom"></use>
-                  </svg>
-                </span>
-              </div>
-              <div class="position-settings-item position-settings-item_left">
-                <span
-                  @click="setSectionFlex('left')"
-                  :class="flexConfig.has('left') ? 'is-ink-link' : 'is-ink-light'"
-                >
-                  <svg class="ixo">
-                    <use xlink:href="#flex-position-left"></use>
-                  </svg>
-                </span>
-              </div>
-              <div class="position-settings-item position-settings-item_center">
-                <span
-                  @click="setSectionFlex('center')"
-                  :class="flexConfig.has('center') ? 'is-ink-link' : 'is-ink-light'"
-                >
-                  <svg class="ixo">
-                    <use xlink:href="#flex-position-center"></use>
-                  </svg>
-                </span>
+              <div data-col="4">
+                <input type="number" class="input" v-model="elevated" placeholder="0-24">
               </div>
             </div>
           </div>
+          <div class="field-group">
+            <div class="xui-checkbox">
+              <input type="checkbox" v-model="hasBackdrop" id="hasBackdrop">
+              <label for="hasBackdrop" class="xui-checkbox__label">has backdrop</label>
+            </div>
+          </div>
+
+          <div class="position-settings well">
+            <div class="position-settings-item position-settings-item_top">
+              <span
+                @click="setSectionFlex('top')"
+                :class="flexConfig.has('top') ? 'is-ink-link' : 'is-ink-light'"
+              >
+                <svg class="ixo">
+                  <use xlink:href="#flex-position-top"></use>
+                </svg>
+              </span>
+            </div>
+            <div class="position-settings-item position-settings-item_right">
+              <span
+                @click="setSectionFlex('right')"
+                :class="flexConfig.has('right') ? 'is-ink-link' : 'is-ink-light'"
+              >
+                <svg class="ixo">
+                  <use xlink:href="#flex-position-right"></use>
+                </svg>
+              </span>
+            </div>
+            <div class="position-settings-item position-settings-item_bottom">
+              <span
+                @click="setSectionFlex('bottom')"
+                :class="flexConfig.has('bottom') ? 'is-ink-link' : 'is-ink-light'"
+              >
+                <svg class="ixo">
+                  <use xlink:href="#flex-position-bottom"></use>
+                </svg>
+              </span>
+            </div>
+            <div class="position-settings-item position-settings-item_left">
+              <span
+                @click="setSectionFlex('left')"
+                :class="flexConfig.has('left') ? 'is-ink-link' : 'is-ink-light'"
+              >
+                <svg class="ixo">
+                  <use xlink:href="#flex-position-left"></use>
+                </svg>
+              </span>
+            </div>
+            <div class="position-settings-item position-settings-item_center">
+              <span
+                @click="setSectionFlex('center')"
+                :class="flexConfig.has('center') ? 'is-ink-link' : 'is-ink-light'"
+              >
+                <svg class="ixo">
+                  <use xlink:href="#flex-position-center"></use>
+                </svg>
+              </span>
+            </div>
+          </div>
         </div>
-        <div class="modal__footer">
-          <ul class="nav" data-flex="center">
-            <li class="nav__item">
-              <a class="btn">save</a>
-            </li>
-            <li class="nav__item">
-              <a class="btn btn_minor">cancel</a>
-            </li>
-          </ul>
-        </div>
+        <pre v-highlightjs="markupSimple"><code class="html"></code></pre>
       </div>
     </div>
   </section>
@@ -164,13 +144,139 @@
 
 <script>
 import DocTab from '@/components/DocTab.vue';
+import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
+import { maxHeaderSize } from 'http';
 
 export default {
   components: {
+    ParamsTable,
+    RequiresList,
     DocTab,
   },
   data: () => {
     return {
+      activeTab: 1,
+      requires: [
+        { name: 'rem()', type: 'function', link: '#scroll-to-rem' },
+        { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
+        { name: 'inject-style()', type: 'mixin', link: '#scroll-to-inject-style' },
+        { name: 'elevation()', type: 'mixin', link: '#scroll-to-elevation' },
+        { name: 'is-scrollable()', type: 'mixin', link: '#scroll-to-is-scrollable' },
+      ],
+      params: [
+        {
+          name: '$modal-wrapper-background',
+          type: 'color',
+          default: '$backdrop // rgba(#000, 0.2)',
+        },
+        {
+          name: '$modal-wrapper-z-index',
+          type: 'number',
+          default: '100',
+        },
+        {
+          name: '$modal-wrapper-style',
+          type: 'map',
+        },
+        {
+          name: '$modal-min-width',
+          type: 'number',
+          default: '240',
+        },
+        {
+          name: '$modal-max-width-relative',
+          type: 'number',
+          default: '50',
+        },
+        {
+          name: '$modal-max-width-absolute',
+          type: 'number',
+          default: '640',
+        },
+        {
+          name: '$modal-background',
+          type: 'color',
+          default: '$background',
+        },
+        {
+          name: '$modal-color',
+          type: 'color',
+          default: '$text',
+        },
+        {
+          name: '$modal-padding',
+          type: 'array',
+          default: '16',
+        },
+        {
+          name: '$modal-radius',
+          type: 'array',
+          default: '16',
+        },
+        {
+          name: '$modal-elevated',
+          type: '[1-24 | false]',
+          default: '8',
+        },
+        {
+          name: '$modal-z-index',
+          type: 'number',
+          default: '100',
+        },
+        {
+          name: '$modal-style',
+          type: 'map',
+        },
+        {
+          name: '$modal-dismiss-style',
+          type: 'map',
+        },
+      ],
+      layoutParams: [
+        {
+          name: '$modal-header-spacing',
+          type: 'array',
+          default: '0',
+        },
+        {
+          name: '$modal-header-padding',
+          type: 'array',
+          default: '16',
+        },
+        {
+          name: '$modal-header-style',
+          type: 'map',
+        },
+        {
+          name: '$modal-body-spacing',
+          type: 'array',
+          default: '0',
+        },
+        {
+          name: '$modal-body-padding',
+          type: 'array',
+          default: '16',
+        },
+        {
+          name: '$modal-body-style',
+          type: 'map',
+        },
+        {
+          name: '$modal-footer-spacing',
+          type: 'array',
+          default: '0',
+        },
+        {
+          name: '$modal-footer-padding',
+          type: 'array',
+          default: '16',
+        },
+        {
+          name: '$modal-footer-style',
+          type: 'map',
+        },
+      ],
       showModal: false,
       dataCol: null,
       hasBackdrop: false,
@@ -178,43 +284,20 @@ export default {
       alignItems: '',
       justifyContent: '',
       elevated: 8,
-      markup: `<div class="modal-wrapper">
+      markupSimple: `<div class="modal-wrapper">
   <div class="modal">
-    <a class="modal__dismiss btn btn_clear">...</a>
-    <div class="modal__header">...</div>
+    <!-- whatever you want -->
+  </div>
+</div>`,
+      markupLayout: `<div class="modal-wrapper">
+  <div class="modal">
+    <div class="modal__header">...
+      <a class="modal__dismiss btn btn_clear">...</a>
+    </div>
     <div class="modal__body">...</div>
     <div class="modal__footer">...</div>
   </div>
 </div>`,
-      config: `$modal-wrapper-background: $backdrop;
-$modal-wrapper-z-index: 100;
-$modal-wrapper-style: ();
-
-$modal-min-width: 240;
-$modal-max-width-relative: 50;
-$modal-max-width-absolute: 640;
-
-$modal-background: $background;
-$modal-color: $text;
-$modal-padding: 16;
-$modal-radius: 16;
-$modal-elevated: 8;
-$modal-z-index: 100;
-$modal-style: ();
-
-$modal-dismiss-style: ();
-
-$modal-header-spacing: 0;
-$modal-header-padding: 16;
-$modal-header-style: ();
-
-$modal-body-spacing: 0;
-$modal-body-padding: 16;
-$modal-body-style: ();
-
-$modal-footer-spacing: 0;
-$modal-footer-padding: 16;
-$modal-footer-style: ();`,
     };
   },
   methods: {
@@ -258,6 +341,26 @@ $modal-footer-style: ();`,
           this.justifyContent = 'end';
         }
       }
+    },
+  },
+  computed: {
+    hasChange() {
+      return [this.dataCol, this.hasBackdrop, this.alignItems, this.justifyContent, this.elevated].join();
+    },
+  },
+  watch: {
+    hasChange: function(val) {
+      this.markupSimple = `<div class="modal-wrapper${this.hasBackdrop ? ' has-backdrop' : ''}"${
+        this.alignItems || this.justifyContent
+          ? ' data-flex="' + [this.alignItems, this.justifyContent].join(' ') + '"'
+          : ''
+      }>
+  <div class="modal${this.elevated ? ' is-elevated-' + this.elevated : ''}"${
+        this.dataCol ? ' data-col="' + this.dataCol + '"' : ''
+      }>
+    <!-- whatever you want -->
+  </div>
+</div>`;
     },
   },
 };

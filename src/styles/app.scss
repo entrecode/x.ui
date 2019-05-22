@@ -54,6 +54,7 @@
     transparent 16px
   );
   overflow: hidden;
+  mix-blend-mode: multiply;
 
   h1,
   h2,
@@ -86,7 +87,6 @@
   );
   background-clip: text;
   color: transparent;
-  mix-blend-mode: multiply;
 
   &[class*='hover:'] {
     &:hover {
