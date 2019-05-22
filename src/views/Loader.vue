@@ -1,21 +1,30 @@
 <template>
   <section>
-    <a
-      @click="activeTab = 1"
-      class="btn btn_clear demo-tab"
-      :class="{'is-active' : activeTab === 1}"
-    >inline</a>
-    <a
-      @click="activeTab = 2"
-      class="btn btn_clear demo-tab"
-      :class="{'is-active' : activeTab === 2}"
-    >local</a>
-    <a
-      @click="activeTab = 3"
-      class="btn btn_clear demo-tab"
-      :class="{'is-active' : activeTab === 3}"
-    >global</a>
-    <div v-if="activeTab === 1">
+    <div class="nav">
+      <div class="nav__item">
+        <a
+          @click="activeTab = 1"
+          class="btn btn_clear demo-tab"
+          :class="{'is-active' : activeTab === 1}"
+        >inline</a>
+      </div>
+      <div class="nav__item">
+        <a
+          @click="activeTab = 2"
+          class="btn btn_clear demo-tab"
+          :class="{'is-active' : activeTab === 2}"
+        >local</a>
+      </div>
+      <div class="nav__item">
+        <a
+          @click="activeTab = 3"
+          class="btn btn_clear demo-tab"
+          :class="{'is-active' : activeTab === 3}"
+        >global</a>
+      </div>
+    </div>
+
+    <div v-if="activeTab === 1" class="animated fadeIn">
       <div class="demo-preview has-padding-8 has-margin-bottom-5">
         <div data-grid>
           <div data-col="4" data-flex="center center-items">
@@ -38,7 +47,7 @@
       </div>
       <pre v-highlightjs="markup1"><code class="html"></code></pre>
     </div>
-    <div v-if="activeTab === 2">
+    <div v-if="activeTab === 2" class="animated fadeIn">
       <div class="demo-preview has-padding-8 has-margin-bottom-5" data-flex="center center-items">
         <a class="btn btn_super is-relative">
           save
@@ -47,7 +56,7 @@
       </div>
       <pre v-highlightjs="markupLocal"><code class="html"></code></pre>
     </div>
-    <div v-if="activeTab === 3">
+    <div v-if="activeTab === 3" class="animated">
       <div class="demo-preview has-padding-8 has-margin-bottom-5" data-flex="center center-items">
         <a class="btn" @click="showLoader = !showLoader">show global loader</a>
         <div class="loader is-global" v-if="showLoader" @click="showLoader = !showLoader"></div>

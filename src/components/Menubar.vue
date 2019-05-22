@@ -15,15 +15,19 @@
         <router-link to="colors" class="is-mega is-uppercase">colors</router-link>
       </li>
       <li class="y-space-5"></li>
+      <li>
+        <div class="is-h6">typo</div>
+      </li>
+      <li class="nav__item">
+        <router-link to="headings" class="is-mega is-uppercase">headings</router-link>
+      </li>
+      <li class="y-space-5"></li>
       <li class="nav__item">
         <router-link to="typo" class="is-mega is-uppercase">typo</router-link>
         <ul
           v-show="$route.name === 'typo'"
           class="nav nav_stacked has-margin-middle-3 is-theme-submenu"
         >
-          <li class="nav__item">
-            <router-link to="typo#scroll-to-headings" class="is-kilo">headings</router-link>
-          </li>
           <li class="nav__item">
             <router-link to="typo#scroll-to-paragraph" class="is-kilo">paragraph</router-link>
           </li>

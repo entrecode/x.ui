@@ -23,7 +23,7 @@
             <span class="tag" v-text="param.type"></span>
           </td>
           <td valign="top" data-col="5">
-            <pre v-highlightjs="param.default" v-if="param.default"><code class="scss"></code></pre>
+            <pre v-highlightjs="param.default || '...'"><code class="scss"></code></pre>
           </td>
         </tr>
       </tbody>

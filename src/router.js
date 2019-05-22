@@ -6,8 +6,6 @@ import Home from './views/Home.vue';
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
@@ -33,6 +31,11 @@ export default new Router({
       path: '/typo',
       name: 'typo',
       components: { main: () => import('./views/Typo.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/headings',
+      name: 'headings',
+      components: { main: () => import('./views/Headings.vue'), menu: DemoMenubar },
     },
     {
       path: '/img-crop',
@@ -220,4 +223,8 @@ export default new Router({
       components: { main: () => import('./views/utilities/DataTooltip.vue'), menu: DemoMenubar },
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0 };
+  },
+  mode: 'history',
 });

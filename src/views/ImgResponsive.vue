@@ -21,7 +21,7 @@
                 value="img-responsive"
                 v-model="responsiveness"
               >
-              <label for="imgResponsive" class="xui-checkbox__label">responsive</label>
+              <label for="imgResponsive" class="xui-radio__label">responsive</label>
             </div>
           </div>
           <div data-col="6">
@@ -33,7 +33,7 @@
                 value="img-full"
                 v-model="responsiveness"
               >
-              <label for="imgFull" class="xui-checkbox__label">full</label>
+              <label for="imgFull" class="xui-radio__label">full</label>
             </div>
           </div>
         </div>
@@ -41,7 +41,6 @@
     </div>
     <div data-grid="center">
       <div data-col="8@xl">
-        <h2 class="is-giga">img-crop</h2>
         <div class="demo-markup-preview has-margin-middle-5">
           <pre v-highlightjs="markup"><code class="html"></code></pre>
         </div>

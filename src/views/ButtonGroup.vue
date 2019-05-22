@@ -1,46 +1,55 @@
 <template>
   <section>
-    <a
-      @click="activeTab = 1"
-      class="btn btn_clear demo-tab"
-      :class="{'is-active' : activeTab === 1}"
-    >normal</a>
-    <a
-      @click="activeTab = 2"
-      class="btn btn_clear demo-tab"
-      :class="{'is-active' : activeTab === 2}"
-    >rounded</a>
-    <a
-      @click="activeTab = 3"
-      class="btn btn_clear demo-tab"
-      :class="{'is-active' : activeTab === 3}"
-    >dropdown</a>
-    <div v-if="activeTab === 1">
+    <div class="nav">
+      <div class="nav__item">
+        <a
+          @click="activeTab = 1"
+          class="btn btn_clear demo-tab"
+          :class="{'is-active' : activeTab === 1}"
+        >normal</a>
+      </div>
+      <div class="nav__item">
+        <a
+          @click="activeTab = 2"
+          class="btn btn_clear demo-tab"
+          :class="{'is-active' : activeTab === 2}"
+        >rounded</a>
+      </div>
+      <div class="nav__item">
+        <a
+          @click="activeTab = 3"
+          class="btn btn_clear demo-tab"
+          :class="{'is-active' : activeTab === 3}"
+        >dropdown</a>
+      </div>
+    </div>
+    <div v-if="activeTab === 1" class="animated fadeIn">
       <div class="demo-preview has-padding-8" data-flex="center center-items">
         <div class="btn-group">
           <a class="btn-group__start btn">button</a>
           <div class="btn-group__divider"></div>
-          <a class="btn-group__middle btn">button</a>
+          <a class="btn-group__inner btn">button</a>
           <div class="btn-group__divider"></div>
           <a class="btn-group__end btn">button</a>
         </div>
       </div>
       <pre v-highlightjs="markup1"><code class="html"></code></pre>
     </div>
-    <div v-if="activeTab === 2">
+    <div v-if="activeTab === 2" class="animated fadeIn">
       <div class="demo-preview has-padding-8" data-flex="center center-items">
         <div class="btn-group">
           <a class="btn-group__start btn btn_round">button</a>
+          <a class="btn-group__inner btn btn_round">button</a>
           <a class="btn-group__end btn btn_super btn_round">button</a>
         </div>
       </div>
       <pre v-highlightjs="markup2"><code class="html"></code></pre>
     </div>
-    <div v-if="activeTab === 3">
+    <div v-if="activeTab === 3" class="animated fadeIn">
       <div class="demo-preview has-padding-8" data-flex="center center-items">
         <div class="btn-group">
           <a class="btn-group__start btn_outlined btn">button</a>
-          <div class="btn-group__divider"></div>
+          <a class="btn-group__inner btn_outlined btn">button</a>
           <div class="dropdown" tabindex="0">
             <div class="btn btn_outlined btn-group__end">
               <svg class="ixo">
@@ -75,12 +84,13 @@ export default {
       markup1: `<div class="btn-group">
   <a class="btn-group__start btn">button</a>
   <div class="btn-group__divider"></div>
-  <a class="btn-group__middle btn ">button</a>
+  <a class="btn-group__inner btn ">button</a>
   <div class="btn-group__divider"></div>
   <a class="btn-group__end btn ">button</a>
 </div>`,
       markup2: `<div class="btn-group">
   <a class="btn-group__start btn btn_round">button</a>
+  <a class="btn-group__inner btn btn_round">button</a>
   <a class="btn-group__end btn btn_super btn_round">button</a>
 </div>`,
       markup3: `<div class="btn-group">

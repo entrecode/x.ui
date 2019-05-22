@@ -210,7 +210,6 @@ export default {
           title: '$_set-hover-shading',
           anchor: 'scroll-to-set-hover-shading',
           usedBy: [{ name: 'set-hover()', type: 'function', link: '#scroll-to-set-hover' }],
-          usedBy: [{ name: 'set-hover()', link: '#scroll-to-set-hover' }],
           code: `$_set-hover-shading: 4 !default;`,
           type: 'number',
         },

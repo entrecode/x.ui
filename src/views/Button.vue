@@ -1,8 +1,8 @@
 <template>
   <section>
     <div class="has-margin-bottom-5">
-      <div data-grid="center">
-        <div data-col="6">
+      <div data-grid>
+        <div data-col="10@md 8@lg">
           <div class="demo-preview has-padding-8 has-min-height-vh-half" data-flex="column center">
             <div class="align-center has-padding-bottom-5">
               <input
@@ -36,7 +36,7 @@
             </div>
           </div>
         </div>
-        <div data-col="6" data-flex="column center">
+        <div data-col="2@md 4@lg" data-flex="column center">
           <div class="field-group">
             <div class="input-group">
               <label for="btnStyle" class="input-group__addon">
@@ -102,40 +102,42 @@
         </div>
       </div>
     </div>
-    <div data-col="10@md 8@lg">
-      <pre v-highlightjs="markup"><code class="html"></code></pre>
-      <div class="y-space-8"></div>
-      <params-table :params="coreParams" title="default params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="smallParams" title="small params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="bigParams" title="big params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="wideParams" title="wide params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="stateParams" title="state params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="defaultStyleParams" title="default style params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="minorStyleParams" title="minor style params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="superStyleParams" title="super style params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="invertStyleParams" title="invert style params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="clearStyleParams" title="invert style params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="defaultOutlinedParams" title="default outline params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="defaultOutlinedStyleParams" title="default outline style params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="minorOutlinedStyleParams" title="minor outline style params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="superOutlinedStyleParams" title="super outline style params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="invertOutlinedStyleParams" title="invert outline style params"></params-table>
-      <div class="divider"></div>
-      <requires-list :requires="requires"></requires-list>
+    <div data-grid>
+      <div data-col="10@md 8@lg">
+        <pre v-highlightjs="markup"><code class="html"></code></pre>
+        <div class="y-space-8"></div>
+        <params-table :params="coreParams" title="default params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="smallParams" title="small params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="bigParams" title="big params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="wideParams" title="wide params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="stateParams" title="state params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="defaultStyleParams" title="default style params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="minorStyleParams" title="minor style params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="superStyleParams" title="super style params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="invertStyleParams" title="invert style params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="clearStyleParams" title="invert style params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="defaultOutlinedParams" title="default outline params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="defaultOutlinedStyleParams" title="default outline style params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="minorOutlinedStyleParams" title="minor outline style params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="superOutlinedStyleParams" title="super outline style params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="invertOutlinedStyleParams" title="invert outline style params"></params-table>
+        <div class="divider"></div>
+        <requires-list :requires="requires"></requires-list>
+      </div>
     </div>
   </section>
 </template>
