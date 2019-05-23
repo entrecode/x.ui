@@ -8,8 +8,8 @@
 /// @require {function} bp()
 
 $_order: (
-  'first': '1',
-  'last': '-1',
+  'first': '-1',
+  'last': '1',
 );
 
 @include set-data-map-breakpoints(flex-order, order, $_order);
