@@ -35,7 +35,12 @@ export default new Router({
     {
       path: '/headings',
       name: 'headings',
-      components: { main: () => import('./views/Headings.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/typeface/Headings.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/paragraphs',
+      name: 'paragraphs',
+      components: { main: () => import('./views/typeface/Paragraphs.vue'), menu: DemoMenubar },
     },
     {
       path: '/img-crop',

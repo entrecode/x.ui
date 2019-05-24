@@ -572,24 +572,24 @@ $btn-hover-style: () !default;
 //
 // BTN OUTLINE STYLE
 // ------------------------------------------------------------
-// @param {px} $btn-outline-border-width [2]
-// @param {color} $btn-outline-border-style [solid]
-$btn-outline-border-width: 1 !default;
-$btn-outline-border-style: solid !default;
+// @param {px} $btn-outlined-border-width [2]
+// @param {color} $btn-outlined-border-style [solid]
+$btn-outlined-border-width: 1 !default;
+$btn-outlined-border-style: solid !default;
 
-// @param {color} $btn-outline-border-color [$link]
-// @param {color} $btn-outline-color [$link]
-// @param {array} $btn-outline-style
-$btn-outline-border-color: $link !default;
-$btn-outline-color: $link !default;
-$btn-outline-style: () !default;
+// @param {color} $btn-outlined-border-color [$link]
+// @param {color} $btn-outlined-color [$link]
+// @param {array} $btn-outlined-style
+$btn-outlined-border-color: $link !default;
+$btn-outlined-color: $link !default;
+$btn-outlined-style: () !default;
 
-// @param {color} $btn-outline-hover-border-color [set-hover($btn-outline-border-color)]
-// @param {color} $btn-outline-hover-color [set-hover($btn-outline-color)]
-// @param {array} $btn-outline-hover-style
-$btn-outline-hover-border-color: set-hover($btn-outline-border-color) !default;
-$btn-outline-hover-color: set-hover($btn-outline-color) !default;
-$btn-outline-hover-style: () !default;
+// @param {color} $btn-outlined-hover-border-color [set-hover($btn-outlined-border-color)]
+// @param {color} $btn-outlined-hover-color [set-hover($btn-outlined-color)]
+// @param {array} $btn-outlined-hover-style
+$btn-outlined-hover-border-color: set-hover($btn-outlined-border-color) !default;
+$btn-outlined-hover-color: set-hover($btn-outlined-color) !default;
+$btn-outlined-hover-style: () !default;
 
 //
 // BTN MINOR STYLE
@@ -611,19 +611,19 @@ $btn-minor-hover-style: () !default;
 //
 // BTN OUTLINE MINOR STYLE
 // ------------------------------------------------------------
-// @param {color} $btn-outline-minor-border-color [$minor]
-// @param {color} $btn-outline-minor-color [$minor]
-// @param {array} $btn-outline-minor-style
-$btn-outline-minor-border-color: $minor !default;
-$btn-outline-minor-color: $minor !default;
-$btn-outline-minor-style: () !default;
+// @param {color} $btn-outlined-minor-border-color [$minor]
+// @param {color} $btn-outlined-minor-color [$minor]
+// @param {array} $btn-outlined-minor-style
+$btn-outlined-minor-border-color: $minor !default;
+$btn-outlined-minor-color: $minor !default;
+$btn-outlined-minor-style: () !default;
 
-// @param {color} $btn-outline-minor-hover-border-color [set-hover($btn-outline-minor-border-color)]
-// @param {color} $btn-outline-minor-hover-color [set-hover($btn-outline-minor-color)]
-// @param {array} $btn-outline-minor-hover-style
-$btn-outline-minor-hover-border-color: set-hover($btn-outline-minor-border-color) !default;
-$btn-outline-minor-hover-color: set-hover($btn-outline-minor-color) !default;
-$btn-outline-minor-hover-style: () !default;
+// @param {color} $btn-outlined-minor-hover-border-color [set-hover($btn-outlined-minor-border-color)]
+// @param {color} $btn-outlined-minor-hover-color [set-hover($btn-outlined-minor-color)]
+// @param {array} $btn-outlined-minor-hover-style
+$btn-outlined-minor-hover-border-color: set-hover($btn-outlined-minor-border-color) !default;
+$btn-outlined-minor-hover-color: set-hover($btn-outlined-minor-color) !default;
+$btn-outlined-minor-hover-style: () !default;
 
 //
 // BTN SUPER STYLE
@@ -645,19 +645,19 @@ $btn-super-hover-style: () !default;
 //
 // BTN OUTLINE SUPER STYLE
 // ------------------------------------------------------------
-// @param {color} $btn-outline-super-border-color [$super]
-// @param {color} $btn-outline-super-color [$super]
-// @param {array} $btn-outline-super-style
-$btn-outline-super-border-color: $super !default;
-$btn-outline-super-color: $super !default;
-$btn-outline-super-style: () !default;
+// @param {color} $btn-outlined-super-border-color [$super]
+// @param {color} $btn-outlined-super-color [$super]
+// @param {array} $btn-outlined-super-style
+$btn-outlined-super-border-color: $super !default;
+$btn-outlined-super-color: $super !default;
+$btn-outlined-super-style: () !default;
 
-// @param {color} $btn-outline-super-hover-border-color [set-hover($btn-outline-super-border-color)]
-// @param {color} $btn-outline-super-hover-color [set-hover($btn-outline-super-color)]
-// @param {array} $btn-outline-super-hover-style
-$btn-outline-super-hover-border-color: set-hover($btn-outline-super-border-color) !default;
-$btn-outline-super-hover-color: set-hover($btn-outline-super-color) !default;
-$btn-outline-super-hover-style: () !default;
+// @param {color} $btn-outlined-super-hover-border-color [set-hover($btn-outlined-super-border-color)]
+// @param {color} $btn-outlined-super-hover-color [set-hover($btn-outlined-super-color)]
+// @param {array} $btn-outlined-super-hover-style
+$btn-outlined-super-hover-border-color: set-hover($btn-outlined-super-border-color) !default;
+$btn-outlined-super-hover-color: set-hover($btn-outlined-super-color) !default;
+$btn-outlined-super-hover-style: () !default;
 
 //
 // BTN INVERT STYLE
@@ -679,19 +679,19 @@ $btn-invert-hover-style: () !default;
 //
 // BTN OUTLINE INVERT STYLE
 // ------------------------------------------------------------
-// @param {color} $btn-outline-invert-border-color [$text-invert]
-// @param {color} $btn-outline-invert-color [$text-invert]
-// @param {array} $btn-outline-invert-style
-$btn-outline-invert-border-color: $text-invert !default;
-$btn-outline-invert-color: $text-invert !default;
-$btn-outline-invert-style: () !default;
+// @param {color} $btn-outlined-invert-border-color [$text-invert]
+// @param {color} $btn-outlined-invert-color [$text-invert]
+// @param {array} $btn-outlined-invert-style
+$btn-outlined-invert-border-color: $text-invert !default;
+$btn-outlined-invert-color: $text-invert !default;
+$btn-outlined-invert-style: () !default;
 
-// @param {color} $btn-outline-invert-hover-border-color [set-hover($btn-outline-invert-border-color)]
-// @param {color} $btn-outline-invert-hover-color [set-hover($btn-outline-invert-color)]
-// @param {array} $btn-outline-invert-hover-style
-$btn-outline-invert-hover-border-color: set-hover($btn-outline-invert-border-color) !default;
-$btn-outline-invert-hover-color: set-hover($btn-outline-invert-color) !default;
-$btn-outline-invert-hover-style: () !default;
+// @param {color} $btn-outlined-invert-hover-border-color [set-hover($btn-outlined-invert-border-color)]
+// @param {color} $btn-outlined-invert-hover-color [set-hover($btn-outlined-invert-color)]
+// @param {array} $btn-outlined-invert-hover-style
+$btn-outlined-invert-hover-border-color: set-hover($btn-outlined-invert-border-color) !default;
+$btn-outlined-invert-hover-color: set-hover($btn-outlined-invert-color) !default;
+$btn-outlined-invert-hover-style: () !default;
 
 //
 // BTN CLEAR STYLE

@@ -25,7 +25,7 @@
     &:first-child {
       &.btn_outlined {
         border-right-style: solid;
-        border-right-width: rem($btn-outline-border-width);
+        border-right-width: rem($btn-outlined-border-width);
       }
     }
   }
@@ -39,7 +39,7 @@
     + .btn {
       &.btn_outlined {
         border-left-style: solid;
-        border-left-width: rem($btn-outline-border-width);
+        border-left-width: rem($btn-outlined-border-width);
       }
     }
   }

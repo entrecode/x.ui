@@ -16,10 +16,13 @@
       </li>
       <li class="y-space-5"></li>
       <li>
-        <div class="is-h6">typo</div>
+        <div class="is-h6">typeface</div>
       </li>
       <li class="nav__item">
         <router-link to="headings" class="is-mega is-uppercase">headings</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="paragraphs" class="is-mega is-uppercase">paragraphs</router-link>
       </li>
       <li class="y-space-5"></li>
       <li class="nav__item">
