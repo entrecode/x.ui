@@ -4,6 +4,7 @@
 /// @group modifier
 ///
 /// @param {map} $is-theme
+/// @param {map} $is-theme-style
 /// @return modifier class with background-color and color values
 
 $_keys: map-keys($is-theme);
@@ -21,6 +22,7 @@ $_c: '-';
 
   @if length($_value) == 3 {
     .is-theme#{$_modifier} {
+      @include inject-style($is-theme-style);
       background: nth($_value, 1);
       color: nth($_value, 2);
 

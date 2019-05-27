@@ -1630,6 +1630,7 @@ $has-border: 1 solid rgba($text, 0.1) !default;
 // IS-THEME
 // -------------------------------------------------------------------------------------------------
 // @param {map} $is-theme
+// @param {map} $is-theme-style
 $is-theme: () !default;
 $is-theme: map-merge(
   (
@@ -1651,6 +1652,9 @@ $is-theme: map-merge(
   ),
   $is-theme
 );
+
+$is-theme-style: () !default;
+
 
 //
 // IS-INK
