@@ -7,14 +7,16 @@
 /// @param {color} $mark-background [false]
 /// @param {array} $mark-style
 
-mark {
-  @include inject-style($mark-style);
-  background: $mark-background;
-  color: $mark-color;
-}
+@if ($mark-background != false) and ($mark-color != false) {
+  mark {
+    @include inject-style($mark-style);
+    background: $mark-background;
+    color: $mark-color;
+  }
 
-::selection {
-  @include inject-style($mark-style);
-  background: $mark-background;
-  color: $mark-color;
+  ::selection {
+    @include inject-style($mark-style);
+    background: $mark-background;
+    color: $mark-color;
+  }
 }

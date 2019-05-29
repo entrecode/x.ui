@@ -25,6 +25,7 @@
 .loader {
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   align-self: center;
   margin: 0 auto;
   display: flex;
@@ -40,6 +41,7 @@
     animation: $loader-racer-animation $loader-racer-animation-speed $loader-racer-animation-behavior;
     width: em($loader-size);
     flex-grow: 0;
+    order: -1;
   }
 
   // @param {array} $loader-is-local-style
