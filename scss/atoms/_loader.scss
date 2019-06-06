@@ -34,14 +34,14 @@
     content: '';
     display: block;
     border-radius: 50%;
+    flex-grow: 0;
+    order: -1;
     @include inject-style($loader-style);
     height: em($loader-size);
     border: em($loader-track-width) solid $loader-track-color;
     border-right-color: $loader-racer-color;
     animation: $loader-racer-animation $loader-racer-animation-speed $loader-racer-animation-behavior;
     width: em($loader-size);
-    flex-grow: 0;
-    order: -1;
   }
 
   // @param {array} $loader-is-local-style
