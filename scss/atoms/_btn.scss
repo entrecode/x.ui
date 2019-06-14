@@ -23,14 +23,10 @@
   text-decoration: none;
   height: auto;
   border: 0;
-  display: inline-block;
-
-  @supports (display: inline-flex) {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   font-family: $btn-font-family;
   margin: array-magic($btn-spacing);
 }
