@@ -10,7 +10,7 @@
 - removed deprecated `.alert-small` and `.alert-big` use `.alert.alert_small` or `.alert.alert_big` instead
 - removed deprecated `.well-small` and `.well-big`
 - removed deprecated `.is-visible#` use `is-block#` or `is-flex#`
-- removed deprecated `.is-raises#` use `is-elevated#` instead
+- removed deprecated `.is-raised#` use `is-elevated#` instead
 - removed deprecated `.is-lifted#` use `is-elevated#` instead
 - removed deprecated `.is-rounded#` use `has-radius#` instead
 - removed deprecated `.is-hidden-from#`
@@ -120,7 +120,6 @@
 - `.overlay` use `.modal` instead
 - `.toast` use `.modal` instead
 - `.snackbar` use `.modal` instead
-- `.hanburger-btn`
 
 ### removed
 
