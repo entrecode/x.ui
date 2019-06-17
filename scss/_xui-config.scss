@@ -1689,7 +1689,7 @@ $is-ink: map-merge(
     'highlight': $highlight,
     'invert': $text-invert,
     'error': $state-error-safe,
-    'error': $state-success-safe,
+    'success': $state-success-safe,
     'info': $state-info-safe,
     'warning': $state-warning-safe,
   ),
