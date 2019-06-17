@@ -90,23 +90,40 @@ $backdrop: rgba(#000, 0.2) !default;
 // @param {color} $base-divider-color [rgba($text,.1)] -  color if divider used by e.b. .bumper
 $base-divider-color: rgba($text, 0.1) !default;
 
+// @param {color} $state-hover [rgba($link, 0.1)]
 $state-hover: rgba($link, 0.1) !default;
 
+// @param {color} $state-info [#cae6fe]
+// @param {color} $state-info-contrast [set-contrast($background, $state-info)]
+// @param {color} $state-info-safe [set-contrast($background, $state-info)]
+// @param {color} $state-info-hover [set-hover($state-info)]
 $state-info: #cae6fe !default;
 $state-info-contrast: set-contrast($background, $state-info) !default;
 $state-info-safe: set-contrast($background, $state-info) !default;
 $state-info-hover: set-hover($state-info) !default;
 
+// @param {color} $state-error [#f9d7da]
+// @param {color} $state-error-contrast [set-contrast($background, $state-error)]
+// @param {color} $state-error-safe [set-contrast($background, $state-error)]
+// @param {color} $state-error-hover [set-hover($state-error)]
 $state-error: #f9d7da !default;
 $state-error-contrast: set-contrast($background, $state-error) !default;
 $state-error-safe: set-contrast($background, $state-error) !default;
 $state-error-hover: set-hover($state-error) !default;
 
+// @param {color} $state-success [#d3ecdb]
+// @param {color} $state-success-contrast [set-contrast($background, $state-success)]
+// @param {color} $state-success-safe [set-contrast($background, $state-success)]
+// @param {color} $state-success-hover [set-hover($state-success)]
 $state-success: #d3ecdb !default;
 $state-success-contrast: set-contrast($background, $state-success) !default;
 $state-success-safe: set-contrast($background, $state-success) !default;
 $state-success-hover: set-hover($state-success) !default;
 
+// @param {color} $state-warning [#fff2cf]
+// @param {color} $state-warning-contrast [set-contrast($background, $state-warning)]
+// @param {color} $state-warning-safe [set-contrast($background, $state-warning)]
+// @param {color} $state-warning-hover [set-hover($state-warning)]
 $state-warning: #fff2cf !default;
 $state-warning-contrast: set-contrast($background, $state-warning) !default;
 $state-warning-safe: set-contrast($background, $state-warning) !default;
@@ -1671,6 +1688,10 @@ $is-ink: map-merge(
     'super': $super,
     'highlight': $highlight,
     'invert': $text-invert,
+    'error': $state-error-safe,
+    'error': $state-success-safe,
+    'info': $state-info-safe,
+    'warning': $state-warning-safe,
   ),
   $is-ink
 );
