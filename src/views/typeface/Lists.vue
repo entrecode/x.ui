@@ -1,7 +1,8 @@
 <template>
   <section>
-    <div data-grid>
+    <div data-grid="center">
       <div data-col="10@md 8@lg">
+        <h2>lists</h2>
         <div class="nav">
           <div class="nav__item">
             <a
@@ -18,58 +19,66 @@
             >data-grid</a>
           </div>
         </div>
-        <div v-if="activeTab === 1" class="animated fadeIn">
-          <div class="demo-preview has-padding-8" data-flex="column center-items">
-            <div class="demo-transition">
-              <ul :class="elementClass">
-                <li>
-                  <div class="well">list item</div>
-                </li>
-                <li>
-                  <div class="well">list item</div>
-                </li>
-                <li>
-                  <div class="well">list item</div>
-                </li>
-              </ul>
+      </div>
+    </div>
+    <div v-if="activeTab === 1" class="animated fadeIn">
+      <div class="demo-preview has-padding-8 has-margin-bottom-5" data-flex="column center-items">
+        <div class="demo-transition">
+          <ul :class="elementClass">
+            <li>
+              <div class="well">list item</div>
+            </li>
+            <li>
+              <div class="well">list item</div>
+            </li>
+            <li>
+              <div class="well">list item</div>
+            </li>
+          </ul>
+        </div>
+        <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+          <div class="nav">
+            <div class="nav__item">
+              <a
+                @click="elementClass = 'is-unstyled'"
+                class="btn btn_clear is-uppercase"
+                :class="{'is-ink': elementClass !== 'is-unstyled'}"
+              >is-unstyled</a>
             </div>
-            <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
-              <div class="nav">
-                <div class="nav__item">
-                  <a
-                    @click="elementClass = 'is-unstyled'"
-                    class="btn btn_clear is-uppercase"
-                    :class="{'is-ink': elementClass !== 'is-unstyled'}"
-                  >is-unstyled</a>
-                </div>
-                <div class="nav__item">
-                  <a
-                    @click="elementClass = 'is-inline'"
-                    class="btn btn_clear is-uppercase"
-                    :class="{'is-ink': elementClass !== 'is-inline'}"
-                  >is-inline</a>
-                </div>
-              </div>
+            <div class="nav__item">
+              <a
+                @click="elementClass = 'is-inline'"
+                class="btn btn_clear is-uppercase"
+                :class="{'is-ink': elementClass !== 'is-inline'}"
+              >is-inline</a>
             </div>
           </div>
+        </div>
+      </div>
+      <div data-grid="center">
+        <div data-col="10@md 8@lg">
           <pre v-highlightjs="preview"><code class="html"></code></pre>
         </div>
-        <div v-if="activeTab === 2" class="animated fadeIn">
-          <div class="demo-preview has-padding-8" data-flex="column center-items">
-            <div class="demo-transition">
-              <ul data-grid>
-                <li data-col="4">
-                  <div class="well">list item</div>
-                </li>
-                <li data-col="auto">
-                  <div class="well">list item</div>
-                </li>
-                <li data-col="fit">
-                  <div class="well">list item</div>
-                </li>
-              </ul>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div v-if="activeTab === 2" class="animated fadeIn">
+      <div class="demo-preview has-padding-8 has-margin-bottom-5" data-flex="column center-items">
+        <div class="demo-transition">
+          <ul data-grid>
+            <li data-col="4">
+              <div class="well">list item</div>
+            </li>
+            <li data-col="auto">
+              <div class="well">list item</div>
+            </li>
+            <li data-col="fit">
+              <div class="well">list item</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div data-grid="center">
+        <div data-col="10@md 8@lg">
           <pre v-highlightjs="previewGrid"><code class="html"></code></pre>
         </div>
       </div>

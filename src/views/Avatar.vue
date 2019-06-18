@@ -1,5 +1,6 @@
 <template>
   <section>
+    <h2>avatar</h2>
     <div data-col="10@md 8@lg">
       <div class="demo-preview has-padding-5">
         <div data-grid="center">

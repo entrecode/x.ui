@@ -1,5 +1,10 @@
 <template>
   <section>
+    <div data-grid="center">
+      <div data-col="10@md 8@lg">
+        <h2>img-crop</h2>
+      </div>
+    </div>
     <div class="demo-preview has-padding-5 has-margin-bottom-5 is-relative">
       <div data-grid="center">
         <div
@@ -25,10 +30,12 @@
         </select>
       </div>
     </div>
-    <div data-col="10@md 8@lg">
-      <pre v-highlightjs="imgCropMarkup"><code class="html"></code></pre>
-      <div class="divider"></div>
-      <params-table :params="imgCropParams"></params-table>
+    <div data-grid="center">
+      <div data-col="10@md 8@lg">
+        <pre v-highlightjs="imgCropMarkup"><code class="html"></code></pre>
+        <div class="divider"></div>
+        <params-table :params="imgCropParams"></params-table>
+      </div>
     </div>
   </section>
 </template>

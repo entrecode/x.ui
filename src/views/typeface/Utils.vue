@@ -1,155 +1,354 @@
 
 <template>
-  <blocks-group :groups="sectionGroups" section-title="modifier"></blocks-group>
+  <section class="demo-blocks-group">
+    <div data-grid>
+      <div data-col="8">
+        <section class="has-margin-bottom-8" id="scroll-to-align">
+          <h2>align</h2>
+          <div class="demo-preview has-padding-8" data-flex="column center center-items">
+            <div data-col="8">
+              <p
+                class="is-lead"
+                :class="alignClass"
+              >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
+            </div>
+            <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+              <div class="nav">
+                <div class="nav__item">
+                  <a
+                    @click="alignClass = 'align-left'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': alignClass !== 'align-left'}"
+                  >
+                    <svg class="ixo">
+                      <use xlink:href="#align-left"></use>
+                    </svg>
+                  </a>
+                </div>
+                <div class="nav__item">
+                  <a
+                    @click="alignClass = 'align-center'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': alignClass !== 'align-center'}"
+                  >
+                    <svg class="ixo">
+                      <use xlink:href="#align-center"></use>
+                    </svg>
+                  </a>
+                </div>
+                <div class="nav__item">
+                  <a
+                    @click="alignClass = 'align-right'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': alignClass !== 'align-right'}"
+                  >
+                    <svg class="ixo">
+                      <use xlink:href="#align-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre v-highlightjs="alignPreview"><code class="html"></code></pre>
+        </section>
+
+        <div class="divider"></div>
+        <!-- scroll-to-font-weight -->
+        <section class="has-margin-middle-8" id="scroll-to-font-weight">
+          <h2>font-weight</h2>
+          <div class="demo-preview has-padding-8" data-flex="column center center-items">
+            <div data-col="8">
+              <p
+                class="is-lead"
+                :class="fontWeightClass"
+              >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
+            </div>
+            <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+              <div class="nav">
+                <div class="nav__item">
+                  <a
+                    @click="fontWeightClass = 'is-light'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': fontWeightClass !== 'is-light'}"
+                  >
+                    <svg class="ixo">
+                      <use xlink:href="#is-light"></use>
+                    </svg>
+                  </a>
+                </div>
+                <div class="nav__item">
+                  <a
+                    @click="fontWeightClass = 'is-normal'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': fontWeightClass !== 'is-normal'}"
+                  >
+                    <svg class="ixo">
+                      <use xlink:href="#is-normal"></use>
+                    </svg>
+                  </a>
+                </div>
+                <div class="nav__item">
+                  <a
+                    @click="fontWeightClass = 'is-medium'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': fontWeightClass !== 'is-medium'}"
+                  >
+                    <svg class="ixo">
+                      <use xlink:href="#is-medium"></use>
+                    </svg>
+                  </a>
+                </div>
+                <div class="nav__item">
+                  <a
+                    @click="fontWeightClass = 'is-bold'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': fontWeightClass !== 'is-bold'}"
+                  >
+                    <svg class="ixo">
+                      <use xlink:href="#is-bold"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre v-highlightjs="fontWeightPreview"><code class="html"></code></pre>
+          <params-table :params="fontWeightParams" title="core params"></params-table>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- scroll-to-font-family -->
+        <section class="has-margin-middle-8" id="scroll-to-font-family">
+          <h2>font-family</h2>
+          <div class="demo-preview has-padding-8" data-flex="column center center-items">
+            <div data-col="8">
+              <div class="is-h1" :class="fontFamilyClass">our work shared unit of analysis.</div>
+            </div>
+            <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+              <div class="nav">
+                <div class="nav__item">
+                  <a
+                    @click="fontFamilyClass = 'is-body-font'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': fontFamilyClass !== 'is-body-font'}"
+                  >body-font</a>
+                </div>
+                <div class="nav__item">
+                  <a
+                    @click="fontFamilyClass = 'is-headings-font'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': fontFamilyClass !== 'is-headings-font'}"
+                  >headings-font</a>
+                </div>
+                <div class="nav__item">
+                  <a
+                    @click="fontFamilyClass = 'is-monospace-font'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': fontFamilyClass !== 'is-monospace-font'}"
+                  >monospace-font</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre v-highlightjs="fontFamilyPreview"><code class="html"></code></pre>
+          <params-table :params="fontFamilyParams" title="core params"></params-table>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="has-margin-middle-8" id="scroll-to-text-transform">
+          <h2>text-transform</h2>
+          <div class="demo-preview has-padding-8" data-flex="column center center-items">
+            <div data-col="8">
+              <p
+                class="is-lead"
+                :class="textTransformClass"
+              >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
+            </div>
+            <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+              <div class="nav">
+                <div class="nav__item">
+                  <a
+                    @click="textTransformClass = 'is-lowercase'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': textTransformClass !== 'is-lowercase'}"
+                  >
+                    <svg class="ixo">
+                      <use xlink:href="#lowercase"></use>
+                    </svg>
+                  </a>
+                </div>
+                <div class="nav__item">
+                  <a
+                    @click="textTransformClass = 'is-uppercase'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': textTransformClass !== 'is-uppercase'}"
+                  >
+                    <svg class="ixo">
+                      <use xlink:href="#uppercase"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre v-highlightjs="textTransformPreview"><code class="html"></code></pre>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="has-margin-middle-8" id="scroll-to-word-wrap">
+          <h2>word-wrap</h2>
+          <div class="demo-preview has-padding-8" data-flex="column center center-items">
+            <div data-col="8">
+              <div class="is-clipped">
+                <div
+                  class="is-lead"
+                  :class="wordWrapClass"
+                >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</div>
+              </div>
+            </div>
+            <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+              <div class="nav">
+                <div class="nav__item">
+                  <a
+                    @click="wordWrapClass = 'is-nowrap'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': wordWrapClass !== 'is-nowrap'}"
+                  >is-nowrap</a>
+                </div>
+                <div class="nav__item">
+                  <a
+                    @click="wordWrapClass = 'is-ellipsis'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': wordWrapClass !== 'is-ellipsis'}"
+                  >is-ellipsis</a>
+                </div>
+                <div class="nav__item">
+                  <a
+                    @click="wordWrapClass = 'is-hyphen'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': wordWrapClass !== 'is-hyphen'}"
+                  >is-hyphen</a>
+                </div>
+                <div class="nav__item">
+                  <a
+                    @click="wordWrapClass = 'is-hyphen-block'"
+                    class="btn btn_clear is-uppercase"
+                    :class="{'is-ink': wordWrapClass !== 'is-hyphen-block'}"
+                  >is-hyphen-block</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre v-highlightjs="wordWrapPreview"><code class="html"></code></pre>
+        </section>
+      </div>
+      <div data-col="4">
+        <ul class="nav nav_stacked is-sticky" style="top: 120px;">
+          <li class="nav__item">
+            <a href="#scroll-to-align" class="is-kilo is-ink hover:is-ink-link">align</a>
+          </li>
+          <li class="nav__item">
+            <a href="#scroll-to-font-weight" class="is-kilo is-ink hover:is-ink-link">font-weight</a>
+          </li>
+          <li class="nav__item">
+            <a href="#scroll-to-font-family" class="is-kilo is-ink hover:is-ink-link">font-family</a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="#scroll-to-text-transform"
+              class="is-kilo is-ink hover:is-ink-link"
+            >text-transform</a>
+          </li>
+          <li class="nav__item">
+            <a href="#scroll-to-word-wrap" class="is-kilo is-ink hover:is-ink-link">word-wrap</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-import BlocksGroup from '@/components/BlocksGroup.vue';
+import ParamsTable from '@/components/ParamsTable.vue';
 
 export default {
   name: 'TypoModifier',
   components: {
-    BlocksGroup,
+    ParamsTable,
   },
   data: () => {
     return {
-      sectionGroups: [
+      alignClass: 'align-left',
+      alignPreview: `<p class="align-left">...</p>`,
+      wordWrapClass: 'is-nowrap',
+      wordWrapPreview: `<div class="is-nowrap">...</div>`,
+      textTransformClass: 'is-uppercase',
+      textTransformPreview: `<div class="is-uppercase">...</div>`,
+      fontWeightClass: 'is-light',
+      fontWeightPreview: `<p class="is-light">...</p>`,
+      fontWeightParams: [
         {
-          id: 'align',
-          type: 'modifier',
-          navTitle: 'align',
-          groupItems: [
-            {
-              title: 'align',
-              preview: `<div data-grid>
-  <div data-col="4">
-    <p class="align-left">Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
-  </div>
-  <div data-col="4">
-    <p class="align-center">Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
-  </div>
-  <div data-col="4">
-    <p class="align-right">Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
-  </div>
-</div>`,
-              markup: `<p class="align-left">...</p>
-<p class="align-center"></p>
-<p class="align-right"></p>`,
-              previewCol: 12,
-              markupCol: 12,
-            },
-          ],
+          name: '$is-light',
+          type: 'string',
+          default: 'lighter',
         },
         {
-          id: 'font-weight',
-          type: 'modifier',
-          navTitle: 'font-weight',
-          groupItems: [
-            {
-              title: 'font-weight',
-              preview: `<div data-grid>
-  <div data-col="3" class="align-center">
-    <h5 class="is-light select-all">is-light</h5>
-  </div>
-  <div data-col="3" class="align-center">
-    <strong class="is-normal select-all">is-normal</strong>
-  </div>
-  <div data-col="3" class="align-center">
-    <div class="is-medium select-all">is-medium</div>
-  </div>
-  <div data-col="3" class="align-center">
-    <div class="is-bold select-all">is-bold</div>
-  </div>
-</div>`,
-              markup: `<h5 class="is-light">is-light</h5>
-<strong class="is-normal">is-normal</strong>
-<div class="is-medium">is-medium</div>
-<div class="is-bold">is-bold</div>`,
-              previewCol: 12,
-              markupCol: 12,
-              previewStyle: 'well',
-              config: `$is-light: lighter;
-$is-normal: normal;
-$is-medium: bold;
-$is-bold: bolder;`,
-            },
-          ],
+          name: '$is-normal',
+          type: 'string',
+          default: 'normal',
         },
         {
-          id: 'font-family',
-          type: 'modifier',
-          navTitle: 'font-family',
-          groupItems: [
-            {
-              title: 'font-family',
-              preview: `<div data-grid>
-  <div data-col="4" class="align-center">
-    <div class="is-body-font select-all">is-body-font</div>
-  </div>
-  <div data-col="4" class="align-center">
-    <div class="is-headings-font select-all">is-headings-font</div>
-  </div>
-  <div data-col="4" class="align-center">
-    <div class="is-monospace-font select-all">is-monospace-font</div>
-  </div>
-</div>`,
-              markup: `<div class="is-body-font">...</div>
-<div class="is-headings-font">...</div>
-<div class="is-monospace-font">...</div>`,
-              previewCol: 12,
-              markupCol: 12,
-              previewStyle: 'well',
-              config: `$body-font-family: sans-serif;
-$headings-font-family: sans-serif;
-$monospace-font: monospace;`,
-            },
-          ],
+          name: '$is-medium',
+          type: 'string',
+          default: 'bold',
         },
         {
-          id: 'text-transform',
-          type: 'modifier',
-          navTitle: 'text-transform',
-          groupItems: [
-            {
-              title: 'text-transform',
-              preview: `<div data-grid="center">
-  <div data-col="4" class="align-center">
-    <div class="is-giga is-lowercase">is-lowercase</div>
-  </div>
-  <div data-col="4" class="align-center">
-    <div class="is-giga is-uppercase">is-uppercase</div>
-  </div>
-</div>`,
-              markup: `<div class="is-lowercase">...</div>
-<h2 class="is-uppercase">...</h2>`,
-              previewCol: 12,
-              markupCol: 12,
-              previewStyle: 'well',
-            },
-          ],
+          name: '$is-bold',
+          type: 'string',
+          default: 'bolder',
+        },
+      ],
+      fontFamilyClass: 'is-body-font',
+      fontFamilyPreview: `<div class="is-body-font">...</div>`,
+      fontFamilyParams: [
+        {
+          name: '$body-font-family',
+          type: 'string',
+          default: 'sans-serif',
         },
         {
-          id: 'word-wrap',
-          type: 'modifier',
-          navTitle: 'word-wrap',
-          groupItems: [
-            {
-              title: 'word-wrap',
-              preview: `<div class="well is-clipped"><p class="is-nowrap">Social entrepreneur blended value catalyze, synergy contextualize living a fully ethical life state of play natural resources best practices.</p></div>
-<div class="well"><p class="is-hyphen">Social entrepreneur blended value catalyze, synergy contextualize living a fully ethical life state of play natural resources best practices.</p></div>
-<div class="well"><p class="is-hyphen-block">Social entrepreneur blended value catalyze, synergy contextualize living a fully ethical life state of play natural resources best practices.</p></div>
-<div class="well"><p class="is-ellipsis">Social entrepreneur blended value catalyze, synergy contextualize living a fully ethical life state of play natural resources best practices.</p></div>`,
-              markup: `<div class="is-clipped">...</div>
-<h2 class="is-hyphen">...</h2>
-<p class="is-hyphen-block">...</p>
-<div class="is-ellipsis">...</div>`,
-              previewCol: 6,
-              markupCol: 6,
-            },
-          ],
+          name: '$headings-font-family',
+          type: 'string',
+          default: 'sans-serif',
+        },
+        {
+          name: '$monospace-font',
+          type: 'string',
+          default: 'monospace',
         },
       ],
     };
+  },
+  watch: {
+    textTransformClass: function(val) {
+      this.textTransformPreview = `<div${val ? ' class="' + val + '"' : ''}>...</div>`;
+    },
+    alignClass: function(val) {
+      this.alignPreview = `<p${val ? ' class="' + val + '"' : ''}>...</p>`;
+    },
+    fontWeightClass: function(val) {
+      this.fontWeightPreview = `<p${val ? ' class="' + val + '"' : ''}>...</p>`;
+    },
+    fontFamilyClass: function(val) {
+      this.fontFamilyPreview = `<div${val ? ' class="' + val + '"' : ''}>...</div>`;
+    },
+    wordWrapClass: function(val) {
+      this.wordWrapPreview = `<div${val ? ' class="' + val + '"' : ''}>...</div>`;
+    },
   },
 };
 </script>

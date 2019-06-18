@@ -1,5 +1,13 @@
 <template>
   <section>
+    <div data-grid="center">
+      <div data-col="10@md 8@lg">
+        <h2>is-outset</h2>
+        <p class="is-lead">
+          <code class="code">.is-outset</code> is still in an experimental state. it can be used as a wrapper with all kinds of elements.
+        </p>
+      </div>
+    </div>
     <div class="demo-preview has-padding-5 has-margin-bottom-5 is-relative">
       <div data-grid="center">
         <div data-col="8">
@@ -68,9 +76,7 @@
       </div>
     </div>
     <div data-grid="center">
-      <div data-col="8@xl">
-        <h2 class="is-giga">is-outset</h2>
-        <p class="is-lead"><code class="code">.is-outset</code> is still in an experimental state. it can be used as a wrapper with all kinds of elements.</p>
+      <div data-col="10@md 8@lg">
         <div class="demo-markup-preview has-margin-middle-5">
           <pre v-highlightjs="markup"><code class="html"></code></pre>
         </div>
@@ -103,6 +109,8 @@ export default {
       markup: `<div class="is-outset is-outset_left">
   <img src="..." />
 </div>`,
+      col: 6,
+      useCol: false,
       requires: [
         { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
         { name: 'rem()', type: 'function', link: '#scroll-to-rem' },
@@ -133,9 +141,6 @@ export default {
           default: `1200`,
         },
       ],
-
-      col: 6,
-      useCol: false,
     };
   },
   watch: {

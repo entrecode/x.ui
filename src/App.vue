@@ -10,10 +10,10 @@
     <footer class="has-padding-8 is-ink-light align-center doc-footer">
       placeholder images
       <a
-        href="https://unsplash.com/collections/4386752/women-are-amazing"
+        href="https://unsplash.com/@princearkman"
         target="_blank"
         rel="nofollow"
-      >https://unsplash.com/collections/4386752/women-are-amazing</a> &bull; filltext:
+      >https://unsplash.com/@princearkman</a> &bull; filltext:
       <a
         href="http://socialgoodipsum.com/#/"
         target="_blank"

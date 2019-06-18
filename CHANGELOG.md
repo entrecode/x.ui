@@ -17,7 +17,7 @@
 - removed deprecated `.btn_glow`
 - removed `data-flex-item` size values, use `data-col` instead
 - refactored and combined `is-positioned` and `is-fab`
-- removed `.img_responsive` and `.img_full` use `.img-responsive` or `.img-full` instead
+- removed `.img_responsive` and `.img_full` use `.is-responsive` or `.is-fullwidth` instead
 - removed `.title` and `.toolbar` use `.titlebar` instead
 - removed `.no-margin` use `.has-margin-0` instead
 - removed `.no-padding` use `.has-padding-0` instead
