@@ -43,13 +43,11 @@
 </template>
 
 <script>
-import BlocksGroup from '@/components/BlocksGroup.vue';
 import ParamsTable from '@/components/ParamsTable.vue';
 import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   components: {
-    BlocksGroup,
     ParamsTable,
     RequiresList,
   },

@@ -24,23 +24,11 @@
       <li class="nav__item">
         <router-link to="paragraphs" class="is-mega is-uppercase">paragraphs</router-link>
       </li>
-      <li class="y-space-5"></li>
       <li class="nav__item">
-        <router-link to="typo" class="is-mega is-uppercase">typo</router-link>
-        <ul
-          v-show="$route.name === 'typo'"
-          class="nav nav_stacked has-margin-middle-3 is-theme-submenu"
-        >
-          <li class="nav__item">
-            <router-link to="typo#scroll-to-paragraph" class="is-kilo">paragraph</router-link>
-          </li>
-          <li class="nav__item">
-            <router-link to="typo#scroll-to-list" class="is-kilo">list</router-link>
-          </li>
-          <li class="nav__item">
-            <router-link to="typo#scroll-to-modifier" class="is-kilo">modifier</router-link>
-          </li>
-        </ul>
+        <router-link to="lists" class="is-mega is-uppercase">lists</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="utils" class="is-mega is-uppercase">utils</router-link>
       </li>
       <li class="y-space-5"></li>
       <li>

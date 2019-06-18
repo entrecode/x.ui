@@ -28,11 +28,6 @@ export default new Router({
       components: { main: () => import('./views/Colors.vue'), menu: DemoMenubar },
     },
     {
-      path: '/typo',
-      name: 'typo',
-      components: { main: () => import('./views/Typo.vue'), menu: DemoMenubar },
-    },
-    {
       path: '/headings',
       name: 'headings',
       components: { main: () => import('./views/typeface/Headings.vue'), menu: DemoMenubar },
@@ -41,6 +36,16 @@ export default new Router({
       path: '/paragraphs',
       name: 'paragraphs',
       components: { main: () => import('./views/typeface/Paragraphs.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/lists',
+      name: 'lists',
+      components: { main: () => import('./views/typeface/Lists.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/utils',
+      name: 'utils',
+      components: { main: () => import('./views/typeface/Utils.vue'), menu: DemoMenubar },
     },
     {
       path: '/img-crop',

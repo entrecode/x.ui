@@ -56,7 +56,6 @@ export default {
   position: absolute;
   top: 4px;
   right: 4px;
-  background: rgba(#000, 0.4);
 }
 
 .hljs {
