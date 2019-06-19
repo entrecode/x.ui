@@ -747,7 +747,7 @@ $hamburger-btn-style: () !default;
 // @param {px} $loader-size [24]
 // @param {array} $loader-style
 // @param {px} $loader-track-width [4]
-// @param {color} $loader-track-color [rgba($text, 0.1)]
+// @param {color} $loader-track-color [$background-lightest]
 // @param {color} $loader-racer-color [$link]
 // @param {string} $loader-racer-animation [loaderDefault]
 // @param {s | ms} $loader-racer-animation-speed [1s]
@@ -755,7 +755,7 @@ $hamburger-btn-style: () !default;
 $loader-size: 24 !default;
 $loader-style: () !default;
 $loader-track-width: 4 !default;
-$loader-track-color: rgba($text, 0.1) !default;
+$loader-track-color: $background-lightest !default;
 $loader-racer-color: $link !default;
 $loader-racer-animation: loaderDefault !default;
 $loader-racer-animation-speed: 1s !default;
