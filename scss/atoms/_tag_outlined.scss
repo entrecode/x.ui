@@ -10,7 +10,7 @@
 // @param {px} $tag-font-size [$base-font-size * .875]
 // @param {px} $tag-line-height [$tag-font-size * $base-line-height]
 // @param {px} $tag-min-height [28]
-// @param {color} $tag-outlined-color [set-contrast($minor)]
+// @param {color} $tag-outlined-color [$minor-contrast]
 // @param {color} $tag-outlined-border-color [$minor]
 .tag_outlined {
   @include metrics(

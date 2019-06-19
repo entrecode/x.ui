@@ -4,7 +4,7 @@
 /// @group atoms
 ///
 /// @param {color} $btn-super-background [$super]
-/// @param {color} $btn-super-color [set-contrast($super)]
+/// @param {color} $btn-super-color [$super-contrast]
 /// @param {array} $btn-super-style
 .btn_super {
   @include inject-style($btn-super-style);

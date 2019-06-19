@@ -7,6 +7,7 @@
 ///   <p class='alert alert_error'>Error Message</p>
 
 // @param {color} $alert-background [$background-lightest]
+// @param {color} $alert-color [$text]
 // @param {string} $alert-weight [$is-normal]
 // @param {px} $alert-radius [4]
 // @param {px} $alert-font-size [$base-font-size]
@@ -15,8 +16,9 @@
 // @param {array} $alert-style
 .alert {
   text-align: center;
-  @include set-theme-colors($alert-background);
   @include inject-style($alert-style);
+  background: $alert-background;
+  color: $alert-color;
   border-radius: array-magic($alert-radius);
   font-weight: $alert-weight;
   font-size: em($alert-font-size);

@@ -21,12 +21,8 @@ $text: #0d2e48 !default;
 $lighter-fallback: false !default;
 $darker-fallback: false !default;
 
-// set fallback-color depending on its luminosity
-$_luma-text: luma($text);
-$_luma-background: luma($background);
-
 @if $lighter-fallback == false {
-  @if $_luma-text > 0.5 {
+  @if luma($text) > 0.5 {
     $lighter-fallback: $text;
   } @else {
     $lighter-fallback: $background;
@@ -34,7 +30,7 @@ $_luma-background: luma($background);
 }
 
 @if $darker-fallback == false {
-  @if $_luma-text < 0.5 {
+  @if luma($text) < 0.5 {
     $darker-fallback: $text;
   } @else {
     $darker-fallback: $background;
@@ -779,11 +775,13 @@ $loader-is-global-background: $backdrop !default;
 // @param {number} $tag-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
 // @param {string} $tag-weight [$is-bold]
 // @param {color} $tag-background [$minor]
+// @param {color} $tag-color [$minor-contrast]
 // @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
 $tag-font-family: $body-font-family !default;
 $tag-weight: $is-bold !default;
 $tag-padding-ratio: 2 !default;
 $tag-background: $minor !default;
+$tag-color: $minor-contrast !default;
 $tag-round: false !default;
 
 // @param {px} $tag-font-size [14]
@@ -813,11 +811,11 @@ $tag-big-line-height: 20 !default;
 $tag-big-min-height: 24 !default;
 $tag-big-style: () !default;
 
-// @param {color} $tag-outlined-color [set-contrast($minor)]
+// @param {color} $tag-outlined-color [$minor-contrast]
 // @param {color} $tag-outlined-border-color [$minor]
 // @param {px} $tag-outlined-border-width [2]
 // @param {string} $tag-outlined-border-style [solid]
-$tag-outlined-color: set-contrast($minor) !default;
+$tag-outlined-color: $minor-contrast !default;
 $tag-outlined-border-color: $minor !default;
 $tag-outlined-border-width: 1 !default;
 $tag-outlined-border-style: solid !default;
@@ -887,13 +885,15 @@ $dropdown-on-hover: false !default;
 // @param {px} $dropdown-options-radius [4]
 // @param {array} $dropdown-options-padding [8]
 // @param {px | null} $dropdown-options-max-height [320]
-// @param {color} $dropdown-options-background
+// @param {color} $dropdown-options-background [$background]
+// @param {color} $dropdown-options-color [$text]
 // @param {string} $dropdown-options-shadow
 // @param {array} $dropdown-options-style
 $dropdown-options-radius: 4 !default;
 $dropdown-options-padding: 8 !default;
 $dropdown-options-max-height: 320 !default;
 $dropdown-options-background: $background !default;
+$dropdown-options-color: $text !default;
 $dropdown-options-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
 $dropdown-options-style: () !default;
 
@@ -1525,9 +1525,11 @@ $well-style: () !default;
 // ALERT
 // ------------------------------------------------------
 // @param {color} $alert-background [$background-lightest]
+// @param {color} $alert-color [$text]
 // @param {string} $alert-weight [$is-normal]
 // @param {px} $alert-radius [4]
 $alert-background: $background-lightest !default;
+$alert-color: $text !default;
 $alert-weight: $is-normal !default;
 $alert-radius: 4 !default;
 
@@ -1671,7 +1673,6 @@ $is-theme: map-merge(
 );
 
 $is-theme-style: () !default;
-
 
 //
 // IS-INK

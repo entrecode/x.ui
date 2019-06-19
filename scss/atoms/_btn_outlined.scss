@@ -66,7 +66,7 @@
   }
 
   // @param {color} $btn-outlined-minor-border-color [$minor]
-  // @param {color} $btn-outlined-minor-color [set-contrast($minor)]
+  // @param {color} $btn-outlined-minor-color [$minor-contrast]
   // @param {array} $btn-outlined-minor-style
   &.btn_minor {
     @include inject-style($btn-outlined-minor-style);
@@ -86,7 +86,7 @@
   }
 
   // @param {color} $btn-outlined-super-border-color [$super]
-  // @param {color} $btn-outlined-super-color [set-contrast($super)]
+  // @param {color} $btn-outlined-super-color [$super-contrast]
   // @param {array} $btn-outlined-super-style
   &.btn_super {
     @include inject-style($btn-outlined-super-style);
@@ -106,7 +106,7 @@
   }
 
   // @param {color} $btn-outlined-invert-border-color [$text-invert]
-  // @param {color} $btn-outlined-invert-color [set-contrast($text-invert)]
+  // @param {color} $btn-outlined-invert-color [$text-invert]
   // @param {array} $btn-outlined-invert-style
   &.btn_invert {
     @include inject-style($btn-outlined-invert-style);

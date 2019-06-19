@@ -36,9 +36,8 @@
 // @param {color} $_c2
 // @return {number} - color difference
 @function color-difference($_c1, $_c2) {
-  @return max(red($_c1), red($_c2)) - min(red($_c1), red($_c2)) +
-    max(green($_c1), green($_c2)) - min(green($_c1), green($_c2)) +
-    max(blue($_c1), blue($_c2)) - min(blue($_c1), blue($_c2));
+  @return max(red($_c1), red($_c2)) - min(red($_c1), red($_c2)) + max(green($_c1), green($_c2)) -
+    min(green($_c1), green($_c2)) + max(blue($_c1), blue($_c2)) - min(blue($_c1), blue($_c2));
 }
 
 //
@@ -123,7 +122,6 @@
   }
 }
 
-
 //
 // find-contrast-loop
 // ----------------------------------------------------------------------------
@@ -144,7 +142,6 @@
   $_final-color: null;
   $_aa: 7;
   $_aaa: 4.5;
-
 
   @each $percent in $_list {
     // darker variant

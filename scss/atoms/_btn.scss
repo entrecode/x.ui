@@ -39,7 +39,7 @@
 // @param {px} $btn-min-height [40]
 // @param {px} $btn-radius [4]
 // @param {color} $btn-background [$link]
-// @param {color} $btn-color [set-contrast($link)]
+// @param {color} $btn-color [$link-contrast]
 // @param {string} $btn-transition [background-color .2s, box-shadow .1s]
 .btn {
   @include _btn-reset;

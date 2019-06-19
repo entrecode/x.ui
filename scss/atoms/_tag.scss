@@ -26,13 +26,14 @@
   vertical-align: text-bottom;
   @include inject-style($tag-style);
   @include metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
-  @include set-theme-colors($tag-background);
+  background: $tag-background;
+  color: $tag-color;
   border-radius: array-magic($tag-radius);
   font-family: $tag-font-family;
   font-weight: $tag-weight;
 
   a {
-    color: set-contrast($tag-background);
+    color: $tag-color;
   }
 
   // @param {px} $tag-small-font-size [12]

@@ -7,21 +7,15 @@
         :class="[posX !== '' ? 'dropdown_' + posX : '', posY !== '' ? 'dropdown_' + posY : '' , {'on-hover' : onHover }]"
       >
         <a class="btn">click here</a>
-        <ul class="dropdown-options">
-          <li>
-            <a href class="dropdown-option">dropdown option</a>
-          </li>
-          <li>
-            <a href class="dropdown-option">dropdown option</a>
-          </li>
-          <li>
-            <a href class="dropdown-option">dropdown option</a>
-          </li>
-          <li class="dropdown_divider"></li>
-          <li class="dropdown-option">
+        <div class="dropdown-options">
+          <a href class="dropdown-option">dropdown option</a>
+          <a href class="dropdown-option">dropdown option</a>
+          <a href class="dropdown-option">dropdown option</a>
+          <div class="dropdown_divider"></div>
+          <div class="dropdown-option">
             <a href class="btn btn_block">a button</a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
     <div data-grid>

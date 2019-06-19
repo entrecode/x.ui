@@ -4,14 +4,14 @@
 /// @group atoms
 ///
 /// @param {color} $btn-minor-background [$minor]
-/// @param {color} $btn-minor-color [set-contrast($minor)]
+/// @param {color} $btn-minor-color [$minor-contrast]
 /// @param {array} $btn-minor-style
 .btn_minor {
   @include inject-style($btn-minor-style);
   background: $btn-minor-background;
   color: $btn-minor-color;
 
-  // @param {color} $btn-minor-hover-background [set-hover($btn-minor-background)]
+  // @param {color} $btn-minor-hover-background [$btn-minor-background]
   // @param {color} $btn-minor-hover-color [$btn-minor-color]
   // @param {array} $btn-minor-hover-style
   &.is-active,
