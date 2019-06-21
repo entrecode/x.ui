@@ -1,5 +1,8 @@
 <template>
   <section>
+    <div class="has-padding-center-3">
+      <h2>button-group</h2>
+    </div>
     <div class="nav">
       <div class="nav__item">
         <a

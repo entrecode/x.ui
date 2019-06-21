@@ -1,24 +1,22 @@
 <template>
   <section>
-    <div data-grid="center">
-      <div data-col="10@md 8@lg">
-        <h2>lists</h2>
-        <div class="nav">
-          <div class="nav__item">
-            <a
-              @click="activeTab = 1"
-              class="btn btn_clear demo-tab"
-              :class="{'is-active' : activeTab === 1}"
-            >default</a>
-          </div>
-          <div class="nav__item">
-            <a
-              @click="activeTab = 2"
-              class="btn btn_clear demo-tab"
-              :class="{'is-active' : activeTab === 2}"
-            >data-grid</a>
-          </div>
-        </div>
+    <div class="has-padding-center-3">
+      <h2>lists</h2>
+    </div>
+    <div class="nav">
+      <div class="nav__item">
+        <a
+          @click="activeTab = 1"
+          class="btn btn_clear demo-tab"
+          :class="{'is-active' : activeTab === 1}"
+        >default</a>
+      </div>
+      <div class="nav__item">
+        <a
+          @click="activeTab = 2"
+          class="btn btn_clear demo-tab"
+          :class="{'is-active' : activeTab === 2}"
+        >data-grid</a>
       </div>
     </div>
     <div v-if="activeTab === 1" class="animated fadeIn">

@@ -1,5 +1,8 @@
 <template>
   <section>
+    <div class="has-padding-center-3">
+      <h2>button</h2>
+    </div>
     <div class="has-margin-bottom-5">
       <div data-grid>
         <div data-col="10@md 8@lg">

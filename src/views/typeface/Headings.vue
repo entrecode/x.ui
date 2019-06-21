@@ -1,9 +1,7 @@
 <template>
   <section>
-    <div data-grid="center">
-      <div data-col="10@md 8@lg">
-        <h2>headings</h2>
-      </div>
+    <div class="has-padding-center-3">
+      <h2>headings</h2>
     </div>
     <div class="demo-preview has-padding-8" data-flex="column center-items">
       <div class="typo-demo" v-html="preview"></div>

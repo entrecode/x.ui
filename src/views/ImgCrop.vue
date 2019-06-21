@@ -1,9 +1,7 @@
 <template>
   <section>
-    <div data-grid="center">
-      <div data-col="10@md 8@lg">
-        <h2>img-crop</h2>
-      </div>
+    <div class="has-padding-center-3">
+      <h2>img-crop</h2>
     </div>
     <div class="demo-preview has-padding-5 has-margin-bottom-5 is-relative">
       <div data-grid="center">

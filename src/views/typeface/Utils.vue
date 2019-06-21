@@ -1,6 +1,6 @@
 
 <template>
-  <section class="demo-blocks-group">
+  <section>
     <div data-grid>
       <div data-col="8">
         <section class="has-margin-bottom-8" id="scroll-to-align">
