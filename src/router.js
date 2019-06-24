@@ -73,6 +73,11 @@ export default new Router({
       components: { main: () => import('./views/ButtonGroup.vue'), menu: DemoMenubar },
     },
     {
+      path: '/input',
+      name: 'input',
+      components: { main: () => import('./views/form/Input.vue'), menu: DemoMenubar },
+    },
+    {
       path: '/form',
       name: 'form',
       components: { main: () => import('./views/Form.vue'), menu: DemoMenubar },

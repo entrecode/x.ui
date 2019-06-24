@@ -1,9 +1,64 @@
 <template>
-  <blocks-group :groups="sectionGroups" section-title="input"></blocks-group>
+  <section>
+    <div class="has-padding-center-3">
+      <h2>input</h2>
+    </div>
+    <div class="demo-preview has-padding-8" data-flex="column center-items">
+      <input
+        :type="inputType"
+        class="input"
+        :class="inputSize"
+        :placeholder="`${inputType} input...`"
+      >
+
+      <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+        <div class="nav">
+          <div class="nav__item">
+            <div class="input-group">
+              <label for="inputSize" class="input-group__addon">
+                <svg class="ixo is-ink-link">
+                  <use xlink:href="#move-vertical"></use>
+                </svg>
+              </label>
+              <div class="input-group__addon">
+                <select id="inputSize" v-model="inputSize" class="input">
+                  <option value>default</option>
+                  <option value="input_small">small</option>
+                  <option value="input_big">big</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="nav__item">
+            <div class="input-group">
+              <label for="inputSize" class="input-group__addon">
+                <small>type</small>
+              </label>
+              <div class="input-group__addon">
+                <select id="inputType" v-model="inputType" class="input">
+                  <option value="text">text</option>
+                  <option value="date">date</option>
+                  <option value="datetime-local">datetime-local</option>
+                  <option value="time">time</option>
+                  <option value="week">week</option>
+                  <option value="month">month</option>
+                  <option value="password">password</option>
+                  <option value="search">search</option>
+                  <option value="tel">tel</option>
+                  <option value="url">url</option>
+                  <option value="number">number</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-import BlocksGroup from './../BlocksGroup.vue';
+import BlocksGroup from '@/components/BlocksGroup.vue';
 
 export default {
   name: 'Form',
@@ -12,6 +67,9 @@ export default {
   },
   data: () => {
     return {
+      elementClass: 'input',
+      inputSize: '',
+      inputType: 'text',
       sectionGroups: [
         {
           title: 'input',
@@ -22,24 +80,13 @@ export default {
           groupItems: [
             {
               title: '',
-              preview: `<input type="text" class="input" placeholder="text input..."><br>
+              preview: `
 <textarea rows="3" class="input" placeholder="textarea..."></textarea><br>
 <select class="input">
   <option value="" selected>select option</option>
   <option value="">option</option>
   <option value="">option</option>
-</select><br>
-<input type="date" class="input" placeholder="date input..."><br>
-<input type="datetime-local" class="input" placeholder="date input..."><br>
-<input type="time" class="input" placeholder="time input..."><br>
-<input type="week" class="input" placeholder="week input..."><br>
-<input type="month" class="input" placeholder="month input..."><br>
-<input type="email" class="input" placeholder="email input..."><br>
-<input type="password" class="input" placeholder="password input..."><br>
-<input type="search" class="input" placeholder="search input..."><br>
-<input type="tel" class="input" placeholder="tel input..."><br>
-<input type="url" class="input" placeholder="url input..."><br>
-<input type="number" class="input" placeholder="number input...">`,
+</select><br>`,
               config: `$input-font-size: $base-font-size;
 $input-line-height: $input-font-size * 1.125;
 $input-min-height: 32;

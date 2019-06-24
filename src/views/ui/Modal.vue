@@ -33,7 +33,7 @@
     <div
       class="modal-wrapper"
       ref="default"
-      :class="[{'has-backdrop' : hasBackdrop }, {'is-active' : showModal } ]"
+      :class="[{'has-backdrop' : hasBackdrop }, {'is-active' : showModal }, presets ]"
       :data-flex="[alignItems, justifyContent].join(' ')"
     >
       <div
@@ -47,6 +47,17 @@
           </svg>
         </a>
         <div style="max-width: 320px; margin: 0 auto;">
+          <div class="field-group">
+            <label for="presets" class="field-group__label">modal presets</label>
+            <select v-model="presets" id="presets" class="input" @change="resetConfig()">
+              <option value>select preset</option>
+              <option value="modal_deck">deck</option>
+              <option value="modal_deck opens-right">deck right</option>
+              <option value="modal_toast">toast</option>
+              <option value="modal_toast opens-bottom">toast bottom</option>
+              <option value="modal_overlay">overlay</option>
+            </select>
+          </div>
           <div class="field-group">
             <label for class="field-group__label">[data-col]</label>
             <input
@@ -278,9 +289,10 @@ export default {
         },
       ],
       showModal: false,
-      dataCol: null,
       hasBackdrop: false,
       flexConfig: new Set(),
+      presets: '',
+      dataCol: null,
       alignItems: '',
       justifyContent: '',
       elevated: 8,
@@ -302,6 +314,7 @@ export default {
   },
   methods: {
     setSectionFlex: function(pos) {
+      this.presets = '';
       const f = this.flexConfig;
 
       if (f.has(pos)) {
@@ -320,8 +333,8 @@ export default {
       }
 
       if (f.has('center')) {
-        this.alignItems = '';
-        this.justifyContent = '';
+        this.alignItems = 'center-items';
+        this.justifyContent = 'center';
       } else {
         if (f.has('top')) {
           this.alignItems = 'start-items';
@@ -342,15 +355,22 @@ export default {
         }
       }
     },
+    resetConfig: function() {
+      this.dataCol = null;
+      this.alignItems = '';
+      this.justifyContent = '';
+    },
   },
   computed: {
     hasChange() {
-      return [this.dataCol, this.hasBackdrop, this.alignItems, this.justifyContent, this.elevated].join();
+      return [this.dataCol, this.hasBackdrop, this.alignItems, this.justifyContent, this.elevated, this.presets].join();
     },
   },
   watch: {
     hasChange: function(val) {
-      this.markupSimple = `<div class="modal-wrapper${this.hasBackdrop ? ' has-backdrop' : ''}"${
+      this.markupSimple = `<div class="modal-wrapper${this.hasBackdrop ? ' has-backdrop' : ''}${
+        this.presets ? ' ' + this.presets : ''
+      }"${
         this.alignItems || this.justifyContent
           ? ' data-flex="' + [this.alignItems, this.justifyContent].join(' ') + '"'
           : ''

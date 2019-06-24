@@ -1,7 +1,6 @@
 <template>
   <section class="has-padding-8">
     <form-field-group/>
-    <form-input/>
     <form-xui-select/>
     <form-checkbox/>
     <form-radio/>
@@ -13,7 +12,6 @@
 
 <script>
 import FormFieldGroup from '@/components/Form/FieldGroup.vue';
-import FormInput from '@/components/Form/Input.vue';
 import FormXuiSelect from '@/components/Form/XuiSelect.vue';
 import FormCheckbox from '@/components/Form/Checkbox.vue';
 import FormRadio from '@/components/Form/Radio.vue';
@@ -23,7 +21,6 @@ import FormFileUpload from '@/components/Form/FileUpload.vue';
 export default {
   components: {
     FormFieldGroup,
-    FormInput,
     FormXuiSelect,
     FormCheckbox,
     FormRadio,

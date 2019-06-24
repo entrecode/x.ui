@@ -116,10 +116,10 @@
 ### deprecated
 
 - `.dialog` use `.modal` instead
-- `.deck` use `.modal` instead
-- `.overlay` use `.modal` instead
-- `.toast` use `.modal` instead
-- `.snackbar` use `.modal` instead
+- `.deck` use `.modal_deck` instead
+- `.overlay` use `.modal_overlay` instead
+- `.toast` use `.modal_toast` instead
+- `.snackbar` use `.modal_toast` instead
 
 ### removed
 

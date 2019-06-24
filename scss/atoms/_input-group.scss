@@ -2,8 +2,10 @@
 /// @since 10.0.0
 /// @access public
 /// @group atoms
+///
+/// @param {array} $input-group-spacing [$input-spacing]
 
-// @param {array} $input-group-spacing [$input-spacing]
+// scss-lint:disable NestingDepth
 .input-group {
   align-items: stretch;
   display: flex;
