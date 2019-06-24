@@ -78,6 +78,11 @@ export default new Router({
       components: { main: () => import('./views/form/Input.vue'), menu: DemoMenubar },
     },
     {
+      path: '/xui-checkbox',
+      name: 'xui-checkbox',
+      components: { main: () => import('./views/form/XuiCheckbox.vue'), menu: DemoMenubar },
+    },
+    {
       path: '/form',
       name: 'form',
       components: { main: () => import('./views/Form.vue'), menu: DemoMenubar },

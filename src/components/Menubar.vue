@@ -44,15 +44,14 @@
         <router-link to="is-outset" class="is-mega is-uppercase">is-outset</router-link>
       </li>
       <li class="y-space-5"></li>
-      <li class="nav__item">
-        <router-link to="button" class="is-mega is-uppercase">button</router-link>
+      <li>
+        <div class="is-h6">form</div>
       </li>
-      <li class="nav__item">
-        <router-link to="button-group" class="is-mega is-uppercase">button-group</router-link>
-      </li>
-      <li class="y-space-5"></li>
       <li class="nav__item">
         <router-link to="input" class="is-mega is-uppercase">input</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="xui-checkbox" class="is-mega is-uppercase">xui-checkbox</router-link>
       </li>
       <li class="nav__item">
         <router-link to="form" class="is-mega is-uppercase">form</router-link>
@@ -98,6 +97,12 @@
       <li class="y-space-5"></li>
       <li>
         <div class="is-h6">ui</div>
+      </li>
+      <li class="nav__item">
+        <router-link to="button" class="is-mega is-uppercase">button</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="button-group" class="is-mega is-uppercase">button-group</router-link>
       </li>
       <li class="nav__item">
         <router-link to="avatar" class="is-mega is-uppercase">avatar</router-link>
