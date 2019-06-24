@@ -15,7 +15,7 @@
   width: 100%;
   height: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   display: none;
   overflow: hidden;
   @include inject-style($modal-wrapper-style);
@@ -89,14 +89,30 @@
 
 // @param {array} $modal-dismiss-style
 .modal__dismiss {
+  cursor: pointer;
   position: absolute;
   right: rem(8);
   top: rem(8);
   z-index: 1;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0;
+  transition: opacity 0.2s;
   @include inject-style($modal-dismiss-style);
+  width: rem($btn-min-height);
+  height: rem($btn-min-height);
+  color: $modal-color;
+  font-size: rem($btn-icon-size);
 
   &:only-child {
     margin-left: auto;
+  }
+
+  &:hover {
+    opacity: 1;
   }
 }
 
