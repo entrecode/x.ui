@@ -29,9 +29,6 @@
   }
 }
 
-// @param {px} $xui-toggle-label-font-size [base-font-size]
-// @param {px} $xui-toggle-label-line-height [$xui-toggle-label-font-size * $base-line-height]
-// @param {array} $xui-toggle-style
 .xui-toggle__switch {
   cursor: pointer;
   direction: ltr;
@@ -71,12 +68,15 @@
   }
 }
 
+// @param {px} $xui-toggle-label-font-size [base-font-size]
+// @param {px} $xui-toggle-label-line-height [$xui-toggle-label-font-size * $base-line-height]
+// @param {array} xui-toggle-label-style
 .xui-toggle__label {
   cursor: pointer;
   display: flex;
   user-select: none;
   margin: 0;
-  @include inject-style($xui-toggle-style);
+  @include inject-style($xui-toggle-label-style);
   font-size: em($xui-toggle-label-font-size);
   line-height: em($xui-toggle-label-line-height, $xui-toggle-label-font-size);
 

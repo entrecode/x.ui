@@ -77,9 +77,6 @@
           <li class="nav__item">
             <router-link to="form#scroll-to-xui-toggle" class="is-kilo">xui-toggle</router-link>
           </li>
-          <li class="nav__item">
-            <router-link to="form#scroll-to-file-upload" class="is-kilo">file-upload</router-link>
-          </li>
         </ul>
       </li>
       <li class="nav__item">

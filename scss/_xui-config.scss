@@ -2100,10 +2100,10 @@ $xui-toggle-pin-style: () !default;
 
 // @param {px} $xui-toggle-label-font-size [base-font-size]
 // @param {px} $xui-toggle-label-line-height [$xui-toggle-label-font-size * $base-line-height]
-// @param {array} $xui-toggle-style
+// @param {array} xui-toggle-label-style
 $xui-toggle-label-font-size: $base-font-size !default;
 $xui-toggle-label-line-height: $xui-toggle-label-font-size * $base-line-height !default;
-$xui-toggle-style: () !default;
+$xui-toggle-label-style: () !default;
 
 //
 // MARK
