@@ -1,14 +1,11 @@
 <template>
   <section>
     <div class="has-padding-center-3">
-      <h2>xui-checkbox</h2>
+      <h2>range-slider</h2>
     </div>
     <div class="demo-preview has-padding-8" data-flex="column center-items">
       <div class="is-theme has-padding-5 has-radius">
-        <div class="xui-checkbox">
-          <input type="checkbox" id="boollean-1">
-          <label for="boollean-1" class="xui-checkbox__label">checkbox</label>
-        </div>
+        <input type="range" class="range-slider">
       </div>
     </div>
     <div data-grid="center">
@@ -33,71 +30,59 @@ export default {
   },
   data: () => {
     return {
-      markup: `<div class="xui-checkbox">
-  <input type="checkbox" id="">
-  <label for="" class="xui-checkbox__label">checkbox</label>
-</div>`,
+      markup: `<input type="range" class="range-slider">`,
       params: [
-        { name: '$xui-checkbox-spacing', type: 'array', default: '4 12 4 4' },
+        { name: '$range-slider-height', type: 'number', default: '8' },
         {
-          name: '$xui-checkbox-height',
+          name: '$range-slider-radius',
           type: 'number',
-          default: '20',
+          default: '4',
         },
         {
-          name: '$xui-checkbox-radius',
-          type: 'number',
-          default: '6',
-        },
-        {
-          name: '$xui-checkbox-background',
+          name: '$range-slider-background',
           type: 'color',
-          default: '$input-background',
+          default: '$background-lightest',
         },
         {
-          name: '$xui-checkbox-style',
+          name: '$range-slider-style',
           type: 'array',
           default: '',
         },
         {
-          name: '$xui-checkbox-hover-style',
+          name: '$range-slider-hover-style',
           type: 'array',
           default: '',
         },
         {
-          name: '$xui-checkbox-checked-style',
-          type: 'array',
-          default: '',
-        },
-        {
-          name: '$xui-checkbox-check-size',
-          type: 'number',
-          default: '14',
-        },
-        {
-          name: '$xui-checkbox-check-color',
+          name: '$range-slider-thumb-color',
           type: 'color',
-          description: 'color of the checkmark if unchecked',
-          default: 'transparent',
-        },
-        {
-          name: '$xui-checkbox-check-hover-color',
-          type: 'color',
-          description: 'color of the checkmark on hover',
-          default: '$text-lightest',
-        },
-        {
-          name: '$xui-checkbox-check-checked-color',
-          type: 'color',
-          description: 'color of the checkmark if checked',
           default: '$link',
+        },
+        {
+          name: '$range-slider-thumb-size',
+          type: 'number',
+          default: '16',
+        },
+        {
+          name: '$range-slider-thumb-radius',
+          type: 'number',
+          default: '8',
+        },
+        {
+          name: '$range-slider-thumb-style',
+          type: 'array',
+          default: '',
+        },
+        {
+          name: '$range-slider-thumb-hover-style',
+          type: 'array',
+          default: '',
         },
       ],
       requires: [
         { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
         { name: 'rem()', type: 'function', link: '#scroll-to-rem' },
         { name: 'inject-style()', type: 'mixin', link: '#scroll-to-inject-style' },
-        { name: '%is-hidden-input', type: 'placeholder' },
       ],
     };
   },

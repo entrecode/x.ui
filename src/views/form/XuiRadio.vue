@@ -1,13 +1,23 @@
 <template>
   <section>
     <div class="has-padding-center-3">
-      <h2>xui-checkbox</h2>
+      <h2>xui-radio</h2>
     </div>
     <div class="demo-preview has-padding-8" data-flex="column center-items">
       <div class="is-theme has-padding-5 has-radius">
-        <div class="xui-checkbox">
-          <input type="checkbox" id="boollean-1">
-          <label for="boollean-1" class="xui-checkbox__label">checkbox</label>
+        <div data-grid>
+          <div data-col="6">
+            <div class="xui-radio">
+              <input type="radio" name="choice" id="boollean-1">
+              <label for="boollean-1" class="xui-radio__label">checkbox</label>
+            </div>
+          </div>
+          <div data-col="6">
+            <div class="xui-radio">
+              <input type="radio" name="choice" id="boollean-2">
+              <label for="boollean-2" class="xui-radio__label">checkbox</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -33,63 +43,58 @@ export default {
   },
   data: () => {
     return {
-      markup: `<div class="xui-checkbox">
-  <input type="checkbox" id="">
-  <label for="" class="xui-checkbox__label">checkbox</label>
+      markup: `<div class="xui-radio">
+  <input type="radio" id="" name>
+  <label for="" class="xui-radio__label">checkbox</label>
 </div>`,
       params: [
-        { name: '$xui-checkbox-spacing', type: 'array', default: '4 12 4 4' },
+        { name: '$xui-radio-spacing', type: 'array', default: '0 12 0 0' },
         {
-          name: '$xui-checkbox-height',
+          name: '$xui-radio-height',
           type: 'number',
           default: '20',
         },
         {
-          name: '$xui-checkbox-radius',
-          type: 'number',
-          default: '6',
-        },
-        {
-          name: '$xui-checkbox-background',
+          name: '$xui-radio-background',
           type: 'color',
           default: '$input-background',
         },
         {
-          name: '$xui-checkbox-style',
+          name: '$xui-radio-style',
           type: 'array',
           default: '',
         },
         {
-          name: '$xui-checkbox-hover-style',
+          name: '$xui-radio-hover-style',
           type: 'array',
           default: '',
         },
         {
-          name: '$xui-checkbox-checked-style',
+          name: '$xui-radio-checked-style',
           type: 'array',
           default: '',
         },
         {
-          name: '$xui-checkbox-check-size',
+          name: '$xui-radio-dot-size',
           type: 'number',
-          default: '14',
+          default: '8',
         },
         {
-          name: '$xui-checkbox-check-color',
+          name: '$xui-radio-dot-color',
           type: 'color',
-          description: 'color of the checkmark if unchecked',
+          description: 'color of the dot if unchecked',
           default: 'transparent',
         },
         {
-          name: '$xui-checkbox-check-hover-color',
+          name: '$xui-radio-dot-hover-color',
           type: 'color',
-          description: 'color of the checkmark on hover',
+          description: 'color of the dot on hover',
           default: '$text-lightest',
         },
         {
-          name: '$xui-checkbox-check-checked-color',
+          name: '$xui-radio-dot-checked-color',
           type: 'color',
-          description: 'color of the checkmark if checked',
+          description: 'color of the dot if checked',
           default: '$link',
         },
       ],

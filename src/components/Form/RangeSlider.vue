@@ -4,10 +4,12 @@
 
 <script>
 import BlocksGroup from './../BlocksGroup.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   components: {
     BlocksGroup,
+    RequiresList,
   },
   data: () => {
     return {
@@ -20,13 +22,9 @@ export default {
             {
               title: 'range-slider',
               preview: `<input type="range" class="range-slider">`,
-              config: `$range-slider-height: 8;
-$range-slider-radius: 4;
-$range-slider-background: $background-lightest;
-$range-slider-style: ();
-$range-slider-hover-style: ();
+              config: `
 
-$range-slider-thumb-background: $link;
+$range-slider-thumb-color: $link;
 $range-slider-thumb-size: 16;
 $range-slider-thumb-radius: 8;
 $range-slider-thumb-style: ();

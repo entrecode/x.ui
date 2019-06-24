@@ -10,6 +10,10 @@
 /// @param {array} $file-upload-border [2px dashed $minor]
 /// @param {array} $file-upload-style
 /// @param {array} $file-upload-hover-style
+///
+/// @require {mixin} inject-style
+/// @require {function} array-magic
+
 
 .file-upload {
   cursor: pointer;

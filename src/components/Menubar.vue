@@ -54,6 +54,15 @@
         <router-link to="xui-checkbox" class="is-mega is-uppercase">xui-checkbox</router-link>
       </li>
       <li class="nav__item">
+        <router-link to="xui-radio" class="is-mega is-uppercase">xui-radio</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="range-slider" class="is-mega is-uppercase">range-slider</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="file-upload" class="is-mega is-uppercase">file-upload</router-link>
+      </li>
+      <li class="nav__item">
         <router-link to="form" class="is-mega is-uppercase">form</router-link>
         <ul
           v-show="$route.name === 'form'"
@@ -67,15 +76,6 @@
           </li>
           <li class="nav__item">
             <router-link to="form#scroll-to-xui-toggle" class="is-kilo">xui-toggle</router-link>
-          </li>
-          <li class="nav__item">
-            <router-link to="form#scroll-to-checkbox" class="is-kilo">checkbox</router-link>
-          </li>
-          <li class="nav__item">
-            <router-link to="form#scroll-to-radio" class="is-kilo">radio</router-link>
-          </li>
-          <li class="nav__item">
-            <router-link to="form#scroll-to-range-slider" class="is-kilo">range-slider</router-link>
           </li>
           <li class="nav__item">
             <router-link to="form#scroll-to-file-upload" class="is-kilo">file-upload</router-link>

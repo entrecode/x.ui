@@ -9,6 +9,11 @@
 /// @param {array} $xui-radio-style
 /// @param {px} $xui-radio-dot-size [8]
 /// @param {color} $xui-radio-dot-color [transparent]
+///
+/// @require {placeholder} is-hidden-input
+/// @require {mixin} inject-style()
+/// @require {function} array-magic
+/// @require {function} rem
 
 .xui-radio {
   position: relative;

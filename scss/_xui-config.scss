@@ -1879,10 +1879,10 @@ $range-slider-hover-style: () !default;
 
 // @param {px} $range-slider-thumb-size [16]
 // @param {px} $range-slider-thumb-radius [8]
-// @param {color} $range-slider-thumb-background [$link]
+// @param {color} $range-slider-thumb-color [$link]
 // @param {array} $range-slider-thumb-style
 // @param {array} $range-slider-thumb-hover-style
-$range-slider-thumb-background: $link !default;
+$range-slider-thumb-color: $link !default;
 $range-slider-thumb-size: 16 !default;
 $range-slider-thumb-radius: 8 !default;
 $range-slider-thumb-style: () !default;

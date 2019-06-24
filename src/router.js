@@ -83,6 +83,21 @@ export default new Router({
       components: { main: () => import('./views/form/XuiCheckbox.vue'), menu: DemoMenubar },
     },
     {
+      path: '/xui-radio',
+      name: 'xui-radio',
+      components: { main: () => import('./views/form/XuiRadio.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/range-slider',
+      name: 'range-slider',
+      components: { main: () => import('./views/form/RangeSlider.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/file-upload',
+      name: 'file-upload',
+      components: { main: () => import('./views/form/FileUpload.vue'), menu: DemoMenubar },
+    },
+    {
       path: '/form',
       name: 'form',
       components: { main: () => import('./views/Form.vue'), menu: DemoMenubar },

@@ -8,6 +8,11 @@
 /// @param {color} $range-slider-background [$background-lightest]
 /// @param {array} $range-slider-style
 /// @param {array} $range-slider-hover-style
+///
+/// @require {mixin} inject-style()
+/// @require {function} array-magic
+/// @require {function} rem
+
 .range-slider {
   appearance: none;
   width: 100%;
@@ -58,7 +63,7 @@
 
 // @param {px} $range-slider-thumb-size [16]
 // @param {px} $range-slider-thumb-radius [8]
-// @param {color} $range-slider-thumb-background [$link]
+// @param {color} $range-slider-thumb-color [$link]
 // @param {array} $range-slider-thumb-style
 // @param {array} $range-slider-thumb-hover-style
 
@@ -70,7 +75,7 @@
   @include inject-style($range-slider-thumb-style);
   width: rem($range-slider-thumb-size);
   height: rem($range-slider-thumb-size);
-  background: $range-slider-thumb-background;
+  background: $range-slider-thumb-color;
   border-radius: array-magic($range-slider-thumb-radius);
   margin-top: rem(($range-slider-height - $range-slider-thumb-size) / 2);
 
@@ -85,7 +90,7 @@
   @include inject-style($range-slider-thumb-style);
   width: rem($range-slider-thumb-size);
   height: rem($range-slider-thumb-size);
-  background: $range-slider-thumb-background;
+  background: $range-slider-thumb-color;
   border-radius: array-magic($range-slider-thumb-radius);
 
   &:hover {

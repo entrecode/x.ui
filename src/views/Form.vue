@@ -2,7 +2,6 @@
   <section class="has-padding-8">
     <form-field-group/>
     <form-xui-select/>
-    <form-radio/>
     <form-xui-toggle/>
     <form-range-slider/>
     <form-file-upload/>
@@ -12,7 +11,6 @@
 <script>
 import FormFieldGroup from '@/components/Form/FieldGroup.vue';
 import FormXuiSelect from '@/components/Form/XuiSelect.vue';
-import FormRadio from '@/components/Form/Radio.vue';
 import FormXuiToggle from '@/components/Form/XuiToggle.vue';
 import FormRangeSlider from '@/components/Form/RangeSlider.vue';
 import FormFileUpload from '@/components/Form/FileUpload.vue';
@@ -20,7 +18,6 @@ export default {
   components: {
     FormFieldGroup,
     FormXuiSelect,
-    FormRadio,
     FormXuiToggle,
     FormRangeSlider,
     FormFileUpload,
