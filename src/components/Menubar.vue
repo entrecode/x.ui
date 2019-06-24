@@ -57,11 +57,15 @@
         <router-link to="xui-radio" class="is-mega is-uppercase">xui-radio</router-link>
       </li>
       <li class="nav__item">
+        <router-link to="xui-toggle" class="is-mega is-uppercase">xui-toggle</router-link>
+      </li>
+      <li class="nav__item">
         <router-link to="range-slider" class="is-mega is-uppercase">range-slider</router-link>
       </li>
       <li class="nav__item">
         <router-link to="file-upload" class="is-mega is-uppercase">file-upload</router-link>
       </li>
+      <li class="y-space-5"></li>
       <li class="nav__item">
         <router-link to="form" class="is-mega is-uppercase">form</router-link>
         <ul
@@ -73,9 +77,6 @@
           </li>
           <li class="nav__item">
             <router-link to="form#scroll-to-xui-select" class="is-kilo">xui-select</router-link>
-          </li>
-          <li class="nav__item">
-            <router-link to="form#scroll-to-xui-toggle" class="is-kilo">xui-toggle</router-link>
           </li>
         </ul>
       </li>
