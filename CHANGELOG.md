@@ -112,6 +112,7 @@
 - added grid config `$grid-small-gutter`
 - added `is-round` modifier
 - added `.nav__link` styles
+- added `.btn_square` styles
 
 ### deprecated
 
