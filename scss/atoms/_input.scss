@@ -113,6 +113,14 @@
   font-size: rem($input-small-font-size);
   line-height: rem($input-small-line-height);
   height: rem($input-small-min-height);
+
+  @at-root select#{&} {
+    height: rem($input-small-min-height);
+
+    &[multiple] {
+      height: auto;
+    }
+  }
 }
 
 // @param {px} $input-big-font-size [18]
@@ -125,6 +133,14 @@
   font-size: rem($input-big-font-size);
   line-height: rem($input-big-line-height);
   height: rem($input-big-min-height);
+
+  @at-root select#{&} {
+    height: rem($input-big-min-height);
+
+    &[multiple] {
+      height: auto;
+    }
+  }
 }
 
 /// Keep the original size
