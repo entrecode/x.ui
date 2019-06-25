@@ -5,6 +5,7 @@
 ///
 /// @param {color} $modal-wrapper-background [$backdrop]
 /// @param {array} $modal-gutter [16]
+/// @param {string} $modal-align-item [flex-start]
 /// @param {number} $modal-z-index [100]
 /// @param {array} $modal-style
 
@@ -15,7 +16,7 @@
   width: 100%;
   height: 100%;
   justify-content: center;
-  align-items: flex-start;
+  align-items: $modal-align-item;
   display: none;
   overflow: hidden;
   @include inject-style($modal-wrapper-style);

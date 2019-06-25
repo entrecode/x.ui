@@ -1165,6 +1165,9 @@ $modal-wrapper-style: () !default;
 // @param {array} $modal-gutter [16]
 $modal-gutter: 16 !default;
 
+// @param {string} $modal-align-item [flex-start]
+$modal-align-item: flex-start !default;
+
 // @param {px} $modal-min-width [240]
 // @param {percentage | false } $modal-max-width-relative [50]
 // @param {pixel | false } $modal-max-width-relative [640]

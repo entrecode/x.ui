@@ -191,6 +191,16 @@ export default {
           type: 'map',
         },
         {
+          name: '$modal-gutter',
+          type: 'array',
+          default: '16',
+        },
+        {
+          name: '$modal-align-item',
+          type: 'string',
+          default: 'flex-start',
+        },
+        {
           name: '$modal-min-width',
           type: 'number',
           default: '240',
