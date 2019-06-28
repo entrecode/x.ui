@@ -7,7 +7,7 @@
       >
         <svg class="demo-hero-logo"><use xlink:href="#logo"></use></svg>
         <div class="y-space-4"></div>
-        <router-link to="getting-started" class="btn btn_big is-uppercase">get started</router-link>
+        <router-link to="home" class="btn btn_big is-uppercase">get started</router-link>
         <div class="y-space-8"></div>
         <div data-grid="center">
           <div data-col="fit"><h2 class="align-center is-ink-highlight">modular</h2></div>

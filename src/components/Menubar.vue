@@ -2,7 +2,7 @@
   <div class="has-padding-5">
     <ul class="nav nav_stacked">
       <li class="nav__item">
-        <router-link to="getting-started" class="is-kilo is-uppercase">getting started</router-link>
+        <router-link to="/" class="is-kilo is-uppercase">getting started</router-link>
       </li>
       <!-- <li class="nav__item">
         <router-link to="introduction" class="is-kilo is-uppercase">introduction</router-link>

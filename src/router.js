@@ -4,16 +4,11 @@ import Router from 'vue-router';
 
 Vue.use(Router);
 
-export default new Router({
+export const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'getting-started',
-      components: { main: () => import('./views/GettingStarted.vue'), menu: DemoMenubar },
-    },
-    {
-      path: '/getting-started',
-      name: 'getting-started',
+      name: 'home',
       components: { main: () => import('./views/GettingStarted.vue'), menu: DemoMenubar },
     },
     {
