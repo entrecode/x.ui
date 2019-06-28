@@ -16,7 +16,6 @@ export default {
 };
 </script>
 
-
 <style scoped lang="scss">
 .requires-list {
   margin: 32px 0;

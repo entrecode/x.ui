@@ -1,8 +1,6 @@
 <template>
   <section>
-    <div class="has-padding-center-3">
-      <h2>input</h2>
-    </div>
+    <div class="has-padding-center-3"><h2>input</h2></div>
     <div class="demo-preview has-padding-8" data-flex="column center-items">
       <textarea
         class="input"
@@ -11,11 +9,7 @@
         rows="4"
         v-if="inputType === 'textarea'"
       ></textarea>
-      <select
-        v-else-if="inputType === 'select'"
-        class="input"
-        :class="[inputSize, inputRound ? ' input_round' : '']"
-      >
+      <select v-else-if="inputType === 'select'" class="input" :class="[inputSize, inputRound ? ' input_round' : '']">
         <option value>select</option>
         <option value="option 1">option 1</option>
         <option value="option 2">option 2</option>
@@ -27,16 +21,14 @@
         :class="[inputSize, inputRound ? ' input_round' : '']"
         :placeholder="`${inputType} input...`"
         v-else
-      >
+      />
 
       <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
         <div class="nav">
           <div class="nav__item">
             <div class="input-group">
               <label for="inputSize" class="input-group__addon">
-                <svg class="ixo is-ink-link">
-                  <use xlink:href="#move-vertical"></use>
-                </svg>
+                <svg class="ixo is-ink-link"><use xlink:href="#move-vertical"></use></svg>
               </label>
               <div class="input-group__addon">
                 <select id="inputSize" v-model="inputSize" class="input">
@@ -49,9 +41,7 @@
           </div>
           <div class="nav__item">
             <div class="input-group">
-              <label for="inputSize" class="input-group__addon">
-                <small>type</small>
-              </label>
+              <label for="inputSize" class="input-group__addon"> <small>type</small> </label>
               <div class="input-group__addon">
                 <select id="inputType" v-model="inputType" class="input">
                   <option value="text">text</option>
@@ -73,7 +63,7 @@
           </div>
           <div class="nav__item">
             <div class="xui-checkbox">
-              <input type="checkbox" id="inputRound" v-model="inputRound">
+              <input type="checkbox" id="inputRound" v-model="inputRound" />
               <label for="inputRound" class="xui-checkbox__label">round</label>
             </div>
           </div>
@@ -403,5 +393,4 @@ $input-group-addon-style: ();`,
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

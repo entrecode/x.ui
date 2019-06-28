@@ -1,41 +1,39 @@
 <template>
   <section>
-    <div class="has-padding-center-3">
-      <h2>xui-select</h2>
-    </div>
+    <div class="has-padding-center-3"><h2>xui-select</h2></div>
     <div class="demo-preview has-padding-8" data-flex="center">
       <div class="is-theme has-padding-5 has-radius" data-col="8 6@lg 4@xl">
         <div tabindex="0" class="xui-select">
           <span class="xui-select__placeholder" v-if="!selected">select</span>
-          <span class="xui-select__selected" v-else v-text="selected"></span>
-          <span class="xui-select__caret"></span>
+          <span class="xui-select__selected" v-else v-text="selected"></span> <span class="xui-select__caret"></span>
           <ul class="xui-select-options">
-            <li>
-              <a @mousedown="selected = ''" tabindex="0" class="xui-select-option">make a selection</a>
-            </li>
+            <li><a @mousedown="selected = ''" tabindex="0" class="xui-select-option">make a selection</a></li>
             <li>
               <a
                 @mousedown="selected = 'option 1'"
                 tabindex="0"
                 class="xui-select-option"
-                :class="{'is-active' : selected === 'option 1'}"
-              >option 1</a>
+                :class="{ 'is-active': selected === 'option 1' }"
+                >option 1</a
+              >
             </li>
             <li>
               <a
                 @mousedown="selected = 'option 2'"
                 tabindex="0"
                 class="xui-select-option"
-                :class="{'is-active' : selected === 'option 2'}"
-              >option 2</a>
+                :class="{ 'is-active': selected === 'option 2' }"
+                >option 2</a
+              >
             </li>
             <li>
               <a
                 @mousedown="selected = 'option 3'"
                 tabindex="0"
                 class="xui-select-option"
-                :class="{'is-active' : selected === 'option 3'}"
-              >option 3</a>
+                :class="{ 'is-active': selected === 'option 3' }"
+                >option 3</a
+              >
             </li>
           </ul>
         </div>
@@ -118,5 +116,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

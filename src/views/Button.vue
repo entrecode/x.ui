@@ -1,8 +1,6 @@
 <template>
   <section>
-    <div class="has-padding-center-3">
-      <h2>button</h2>
-    </div>
+    <div class="has-padding-center-3"><h2>button</h2></div>
     <div class="has-margin-bottom-5">
       <div data-grid>
         <div data-col="10@md 8@lg">
@@ -11,30 +9,25 @@
               <input
                 type="button"
                 class="btn demo-transition"
-                :class="[btnStyle, btnSize, {'btn_round' : btnRound}, {'btn_outlined' : btnOutlined}, btnWide]"
+                :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
                 value="button"
-              >
+              />
             </div>
             <div class="align-center has-padding-bottom-5">
               <button
                 class="btn demo-transition"
-                :class="[btnStyle, btnSize, {'btn_round' : btnRound}, {'btn_outlined' : btnOutlined}, btnWide]"
+                :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
               >
-                <svg class="ixo">
-                  <use xlink:href="#fire"></use>
-                </svg>
-                Button
+                <svg class="ixo"><use xlink:href="#fire"></use></svg> Button
               </button>
             </div>
             <div class="align-center has-padding-bottom-5">
               <a
                 href
                 class="btn demo-transition"
-                :class="[btnStyle, btnSize, {'btn_round' : btnRound}, {'btn_outlined' : btnOutlined}, btnWide]"
+                :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
               >
-                <svg class="ixo">
-                  <use xlink:href="#fire"></use>
-                </svg>
+                <svg class="ixo"><use xlink:href="#fire"></use></svg>
               </a>
             </div>
           </div>
@@ -43,9 +36,7 @@
           <div class="field-group">
             <div class="input-group">
               <label for="btnStyle" class="input-group__addon">
-                <svg class="ixo is-ink-link">
-                  <use xlink:href="#color-palette"></use>
-                </svg>
+                <svg class="ixo is-ink-link"><use xlink:href="#color-palette"></use></svg>
               </label>
               <div class="input-group__addon">
                 <select id="btnStyle" v-model="btnStyle" class="input">
@@ -61,9 +52,7 @@
           <div class="field-group">
             <div class="input-group">
               <label for="btnSize" class="input-group__addon">
-                <svg class="ixo is-ink-link">
-                  <use xlink:href="#move-vertical"></use>
-                </svg>
+                <svg class="ixo is-ink-link"><use xlink:href="#move-vertical"></use></svg>
               </label>
               <div class="input-group__addon">
                 <select id="btnSize" v-model="btnSize" class="input">
@@ -77,9 +66,7 @@
           <div class="field-group">
             <div class="input-group">
               <label for="btnWide" class="input-group__addon">
-                <svg class="ixo is-ink-link">
-                  <use xlink:href="#move-horizontal"></use>
-                </svg>
+                <svg class="ixo is-ink-link"><use xlink:href="#move-horizontal"></use></svg>
               </label>
               <div class="input-group__addon">
                 <select id="btnWide" v-model="btnWide" class="input">
@@ -92,13 +79,13 @@
           </div>
           <div class="field-group">
             <div class="xui-checkbox">
-              <input type="checkbox" id="btnRound" v-model="btnRound">
+              <input type="checkbox" id="btnRound" v-model="btnRound" />
               <label for="btnRound" class="xui-checkbox__label">round</label>
             </div>
           </div>
           <div class="field-group">
             <div class="xui-checkbox">
-              <input type="checkbox" id="btnOutlined" v-model="btnOutlined">
+              <input type="checkbox" id="btnOutlined" v-model="btnOutlined" />
               <label for="btnOutlined" class="xui-checkbox__label">outlined</label>
             </div>
           </div>
@@ -650,5 +637,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

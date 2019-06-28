@@ -1,14 +1,12 @@
 <template>
   <section>
-    <div class="has-padding-center-3">
-      <h2>paragraphs</h2>
-    </div>
+    <div class="has-padding-center-3"><h2>paragraphs</h2></div>
     <div class="demo-preview has-padding-8" data-flex="column center center-items">
       <div class="typo-demo demo-transition" data-col="8@md">
         <p :class="paragraphClass">
-          Overcome injustice justice, her body her rights gender rights silo correlation
-          vibrant. Empower communities engaging, low-hanging fruit, catalyze citizen-centered disrupt. Social
-          intrapreneurship collective impact; greenwashing benefit corporation innovation white paper, innovate, blended.
+          Overcome injustice justice, her body her rights gender rights silo correlation vibrant. Empower communities
+          engaging, low-hanging fruit, catalyze citizen-centered disrupt. Social intrapreneurship collective impact;
+          greenwashing benefit corporation innovation white paper, innovate, blended.
         </p>
       </div>
       <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
@@ -17,15 +15,17 @@
             <a
               @click="paragraphClass = ''"
               class="btn btn_clear is-uppercase"
-              :class="{'is-ink': paragraphClass !== ''}"
-            >default</a>
+              :class="{ 'is-ink': paragraphClass !== '' }"
+              >default</a
+            >
           </div>
           <div class="nav__item">
             <a
               @click="paragraphClass = 'is-lead'"
               class="btn btn_clear is-uppercase"
-              :class="{'is-ink': paragraphClass !== 'is-lead'}"
-            >is-lead</a>
+              :class="{ 'is-ink': paragraphClass !== 'is-lead' }"
+              >is-lead</a
+            >
           </div>
         </div>
       </div>

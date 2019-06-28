@@ -2,9 +2,7 @@
   <div class="is-sticky has-padding-3 is-layer-10 is-theme" style="top:0;">
     <div class="has-padding-center-4" data-flex="center-items">
       <router-link to="/">
-        <svg class="xui-logo">
-          <use xlink:href="#logo"></use>
-        </svg>
+        <svg class="xui-logo"><use xlink:href="#logo"></use></svg>
       </router-link>
       <div class="x-space-3"></div>
       <div class="flex-space"></div>
@@ -43,12 +41,7 @@
         </div>
       </div>
       <div class="x-space-3"></div> -->
-      <a
-        class="btn btn_clear"
-        href="https://github.com/entrecode/x.ui"
-        rel="nofollow"
-        target="_blank"
-      >
+      <a class="btn btn_clear" href="https://github.com/entrecode/x.ui" rel="nofollow" target="_blank">
         <ixo name="github"></ixo>
       </a>
       <div class="x-space-5"></div>
@@ -93,7 +86,6 @@ export default {
   width: 68px;
   fill: currentColor;
 }
-
 
 .popdown {
   position: absolute;

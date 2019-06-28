@@ -2,25 +2,15 @@
   <div class="has-margin-bottom-7">
     <div data-grid>
       <div :data-col="previewCol ? previewCol : hasMarkup ? '6' : '12'">
-        <slot name="title"></slot>
-        <slot name="preview"></slot>
+        <slot name="title"></slot> <slot name="preview"></slot>
       </div>
       <div :data-col="markupCol ? markupCol : '6'">
         <div class="is-relative">
-          <div
-            class="btn btn_round btn_small toggle-btn"
-            @click="showConfig = !showConfig"
-            v-if="hasConfig"
-          >
-            <span v-if="!showConfig">config</span>
-            <span v-if="showConfig">markup</span>
+          <div class="btn btn_round btn_small toggle-btn" @click="showConfig = !showConfig" v-if="hasConfig">
+            <span v-if="!showConfig">config</span> <span v-if="showConfig">markup</span>
           </div>
-          <div v-show="!showConfig">
-            <slot name="markup"></slot>
-          </div>
-          <div v-show="showConfig">
-            <slot name="config"></slot>
-          </div>
+          <div v-show="!showConfig"><slot name="markup"></slot></div>
+          <div v-show="showConfig"><slot name="config"></slot></div>
         </div>
       </div>
     </div>

@@ -1,20 +1,18 @@
 <template>
   <section>
-    <div class="has-padding-center-3">
-      <h2>xui-radio</h2>
-    </div>
+    <div class="has-padding-center-3"><h2>xui-radio</h2></div>
     <div class="demo-preview has-padding-8" data-flex="column center-items">
       <div class="is-theme has-padding-5 has-radius">
         <div data-grid>
           <div data-col="6">
             <div class="xui-radio">
-              <input type="radio" name="choice" id="boollean-1">
+              <input type="radio" name="choice" id="boollean-1" />
               <label for="boollean-1" class="xui-radio__label">checkbox</label>
             </div>
           </div>
           <div data-col="6">
             <div class="xui-radio">
-              <input type="radio" name="choice" id="boollean-2">
+              <input type="radio" name="choice" id="boollean-2" />
               <label for="boollean-2" class="xui-radio__label">checkbox</label>
             </div>
           </div>
@@ -111,5 +109,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

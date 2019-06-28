@@ -43,5 +43,4 @@ $bumper-big-spacing: get-space(6) 0;`,
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

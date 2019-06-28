@@ -2,18 +2,10 @@
   <section>
     <div class="nav">
       <div class="nav__item">
-        <a
-          @click="activeTab = 1"
-          class="btn btn_clear demo-tab"
-          :class="{'is-active' : activeTab === 1}"
-        >simple</a>
+        <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">simple</a>
       </div>
       <div class="nav__item">
-        <a
-          @click="activeTab = 2"
-          class="btn btn_clear demo-tab"
-          :class="{'is-active' : activeTab === 2}"
-        >advanced</a>
+        <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }">advanced</a>
       </div>
     </div>
     <div v-if="activeTab === 1" class="animated fadeIn">
@@ -33,7 +25,7 @@
     <div
       class="modal-wrapper"
       ref="default"
-      :class="[{'has-backdrop' : hasBackdrop }, {'is-active' : showModal }, presets ]"
+      :class="[{ 'has-backdrop': hasBackdrop }, { 'is-active': showModal }, presets]"
       :data-flex="[alignItems, justifyContent].join(' ')"
     >
       <div
@@ -42,9 +34,7 @@
         :class="[elevated.length ? 'is-elevated-' + elevated : false]"
       >
         <a class="modal__dismiss btn btn_clear" @click.prevent="showModal = !showModal">
-          <svg class="ixo">
-            <use xlink:href="#close"></use>
-          </svg>
+          <svg class="ixo"><use xlink:href="#close"></use></svg>
         </a>
         <div style="max-width: 320px; margin: 0 auto;">
           <div class="field-group">
@@ -60,59 +50,33 @@
           </div>
           <div class="field-group">
             <label for class="field-group__label">[data-col]</label>
-            <input
-              type="number"
-              class="input"
-              min="1"
-              max="12"
-              v-model="dataCol"
-              placeholder="1-12"
-            >
+            <input type="number" class="input" min="1" max="12" v-model="dataCol" placeholder="1-12" />
           </div>
           <div class="field-group">
             <label for class="field-group__label">elevation</label>
             <div data-grid>
               <div data-col="8" data-flex="center-items">
-                <input
-                  type="range"
-                  class="range-slider"
-                  v-model="elevated"
-                  min="0"
-                  max="24"
-                  step="1"
-                >
+                <input type="range" class="range-slider" v-model="elevated" min="0" max="24" step="1" />
               </div>
-              <div data-col="4">
-                <input type="number" class="input" v-model="elevated" placeholder="0-24">
-              </div>
+              <div data-col="4"><input type="number" class="input" v-model="elevated" placeholder="0-24" /></div>
             </div>
           </div>
           <div class="field-group">
             <div class="xui-checkbox">
-              <input type="checkbox" v-model="hasBackdrop" id="hasBackdrop">
+              <input type="checkbox" v-model="hasBackdrop" id="hasBackdrop" />
               <label for="hasBackdrop" class="xui-checkbox__label">has backdrop</label>
             </div>
           </div>
 
           <div class="position-settings well">
             <div class="position-settings-item position-settings-item_top">
-              <span
-                @click="setSectionFlex('top')"
-                :class="flexConfig.has('top') ? 'is-ink-link' : 'is-ink-light'"
-              >
-                <svg class="ixo">
-                  <use xlink:href="#flex-position-top"></use>
-                </svg>
+              <span @click="setSectionFlex('top')" :class="flexConfig.has('top') ? 'is-ink-link' : 'is-ink-light'">
+                <svg class="ixo"><use xlink:href="#flex-position-top"></use></svg>
               </span>
             </div>
             <div class="position-settings-item position-settings-item_right">
-              <span
-                @click="setSectionFlex('right')"
-                :class="flexConfig.has('right') ? 'is-ink-link' : 'is-ink-light'"
-              >
-                <svg class="ixo">
-                  <use xlink:href="#flex-position-right"></use>
-                </svg>
+              <span @click="setSectionFlex('right')" :class="flexConfig.has('right') ? 'is-ink-link' : 'is-ink-light'">
+                <svg class="ixo"><use xlink:href="#flex-position-right"></use></svg>
               </span>
             </div>
             <div class="position-settings-item position-settings-item_bottom">
@@ -120,19 +84,12 @@
                 @click="setSectionFlex('bottom')"
                 :class="flexConfig.has('bottom') ? 'is-ink-link' : 'is-ink-light'"
               >
-                <svg class="ixo">
-                  <use xlink:href="#flex-position-bottom"></use>
-                </svg>
+                <svg class="ixo"><use xlink:href="#flex-position-bottom"></use></svg>
               </span>
             </div>
             <div class="position-settings-item position-settings-item_left">
-              <span
-                @click="setSectionFlex('left')"
-                :class="flexConfig.has('left') ? 'is-ink-link' : 'is-ink-light'"
-              >
-                <svg class="ixo">
-                  <use xlink:href="#flex-position-left"></use>
-                </svg>
+              <span @click="setSectionFlex('left')" :class="flexConfig.has('left') ? 'is-ink-link' : 'is-ink-light'">
+                <svg class="ixo"><use xlink:href="#flex-position-left"></use></svg>
               </span>
             </div>
             <div class="position-settings-item position-settings-item_center">
@@ -140,9 +97,7 @@
                 @click="setSectionFlex('center')"
                 :class="flexConfig.has('center') ? 'is-ink-link' : 'is-ink-light'"
               >
-                <svg class="ixo">
-                  <use xlink:href="#flex-position-center"></use>
-                </svg>
+                <svg class="ixo"><use xlink:href="#flex-position-center"></use></svg>
               </span>
             </div>
           </div>

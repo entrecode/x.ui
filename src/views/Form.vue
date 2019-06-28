@@ -1,7 +1,5 @@
 <template>
-  <section class="has-padding-8">
-    <form-field-group/>
-  </section>
+  <section class="has-padding-8"><form-field-group /></section>
 </template>
 
 <script>

@@ -33,7 +33,7 @@ $divider-color: $base-divider-color;
 $divider-invert-color: rgba($background, 0.2);
 $divider-spacing: get-space(3) 0; // 16 0
 $divider-small-spacing: get-space(1) 0; // 4 0
-$divider-big-spacing: get-space(5) 0; // 32 0`, 
+$divider-big-spacing: get-space(5) 0; // 32 0`,
             },
           ],
         },
@@ -43,5 +43,4 @@ $divider-big-spacing: get-space(5) 0; // 32 0`,
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

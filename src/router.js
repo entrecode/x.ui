@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import DemoMenubar from './components/Menubar.vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
 
 Vue.use(Router);
 
@@ -268,8 +267,7 @@ export default new Router({
       components: { main: () => import('./views/utilities/DataTooltip.vue'), menu: DemoMenubar },
     },
   ],
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior() {
     return { x: 0, y: 0 };
   },
-  mode: 'history',
 });

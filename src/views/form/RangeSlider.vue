@@ -1,12 +1,8 @@
 <template>
   <section>
-    <div class="has-padding-center-3">
-      <h2>range-slider</h2>
-    </div>
+    <div class="has-padding-center-3"><h2>range-slider</h2></div>
     <div class="demo-preview has-padding-8" data-flex="column center-items">
-      <div class="is-theme has-padding-5 has-radius">
-        <input type="range" class="range-slider">
-      </div>
+      <div class="is-theme has-padding-5 has-radius"><input type="range" class="range-slider" /></div>
     </div>
     <div data-grid="center">
       <div data-col="10@md 8@lg">
@@ -91,5 +87,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

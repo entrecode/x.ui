@@ -202,5 +202,4 @@ $table-cell-padding: 8;`,
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>
