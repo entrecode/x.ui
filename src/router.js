@@ -9,8 +9,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      components: { hero: Home },
+      name: 'getting-started',
+      components: { main: () => import('./views/GettingStarted.vue'), menu: DemoMenubar },
     },
     {
       path: '/getting-started',
