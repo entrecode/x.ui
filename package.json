@@ -3,7 +3,7 @@
   "version": "10.0.0-beta.1",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --dest docs"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "core-js": "^2.6.5",
