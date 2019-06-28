@@ -1,0 +1,89 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms modifier
+///
+/// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
+/// @param {px} $tag-outlined-border-width [2]
+/// @param {string} $tag-outlined-border-style [solid]
+
+// @param {px} $tag-font-size [$base-font-size * .875]
+// @param {px} $tag-line-height [$tag-font-size * $base-line-height]
+// @param {px} $tag-min-height [28]
+// @param {color} $tag-outlined-color [$minor-contrast]
+// @param {color} $tag-outlined-border-color [$minor]
+.tag_outlined {
+  @include metrics(
+    $tag-font-size,
+    $tag-line-height,
+    $tag-min-height,
+    $tag-outlined-border-width,
+    $padding-ratio: $tag-padding-ratio
+  );
+  background: none;
+  border-color: $tag-outlined-border-color;
+  border-style: $tag-outlined-border-style;
+
+  a:hover & {
+    border-color: set-hover($tag-outlined-border-color);
+    color: set-hover($tag-outlined-border-color);
+  }
+
+  // @param {px} $tag-small-font-size [$tag-font-size * 0.875]
+  // @param {px} $tag-small-line-height [$tag-small-font-size * $base-line]
+  // @param {px} $tag-small-min-height [24]
+  &.tag_small {
+    @include metrics(
+      $tag-small-font-size,
+      $tag-small-line-height,
+      $tag-small-min-height,
+      $tag-outlined-border-width,
+      $padding-ratio: $tag-padding-ratio
+    );
+  }
+
+  // @param {px} $tag-big-font-size [$tag-font-size * 1.125]
+  // @param {px} $tag-big-line-height [$tag-big-font-size * $base-line-height]
+  // @param {px} $tag-big-min-height [32]
+  &.tag_big {
+    @include metrics(
+      $tag-big-font-size,
+      $tag-big-line-height,
+      $tag-big-min-height,
+      $tag-outlined-border-width,
+      $padding-ratio: $tag-padding-ratio
+    );
+  }
+}
+
+//
+// Styles
+// ------------------------------------------------------
+// @requires {array} $tag-styles
+// @param {string} $_prefix ['tag_']
+$_prefix: 'tag_';
+
+@each $_key, $_value in $tag-styles {
+  @if length($_value) == 3 {
+    $_color: nth($_value, 1);
+    $_hover: nth($_value, 3);
+
+    .tag_outlined.#{$_prefix}#{$_key} {
+      border-color: $_color;
+      color: $_color;
+
+      a {
+        color: $_color;
+      }
+
+      @at-root a.tag_outlined.#{$_prefix}#{$_key} {
+        &:hover {
+          background: $_hover;
+          color: $_hover;
+        }
+      }
+    }
+  } @else {
+    @warn 'arguments missing - #{$_key}: #{$_value}';
+  }
+}

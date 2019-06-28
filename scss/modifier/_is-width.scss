@@ -1,0 +1,88 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {map} $is-width-map
+
+.is-width {
+  $keys: map-keys($is-width-map);
+
+  @each $key in $keys {
+    $i: index($keys, $key);
+    $value: map-get($is-width-map, $key);
+
+    &-#{$key} {
+      @include set-breakpoints {
+        width: $value * 1%;
+      }
+    }
+  }
+
+  &-vh {
+    @each $key in $keys {
+      $i: index($keys, $key);
+      $value: map-get($is-width-map, $key);
+
+      &-#{$key} {
+        @include set-breakpoints {
+          width: $value * 1vh;
+        }
+      }
+    }
+  }
+
+  &-vw {
+    @each $key in $keys {
+      $i: index($keys, $key);
+      $value: map-get($is-width-map, $key);
+
+      &-#{$key} {
+        @include set-breakpoints {
+          width: $value * 1vw;
+        }
+      }
+    }
+  }
+}
+
+.has-min-width {
+  $keys: map-keys($is-width-map);
+
+  @each $key in $keys {
+    $i: index($keys, $key);
+    $value: map-get($is-width-map, $key);
+
+    &-#{$key} {
+      @include set-breakpoints {
+        min-width: $value * 1%;
+      }
+    }
+  }
+
+  &-vh {
+    @each $key in $keys {
+      $i: index($keys, $key);
+      $value: map-get($is-width-map, $key);
+
+      &-#{$key} {
+        @include set-breakpoints {
+          min-width: $value * 1vh;
+        }
+      }
+    }
+  }
+
+  &-vw {
+    @each $key in $keys {
+      $i: index($keys, $key);
+      $value: map-get($is-width-map, $key);
+
+      &-#{$key} {
+        @include set-breakpoints {
+          min-width: $value * 1vw;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group typeface mixins
+///
+/// @param {string} $level
+/// @param {map} $map [$type-scale]
+/// @param {map} $bp [$type-scale-bp]
+/// @param {string} $unit [$type-scale-unit]
+///
+/// @require {map} $type-scale
+/// @require {map} $type-scale-bp
+/// @require {string} $type-scale-unit [em]
+/// @require {function} array-magic
+///
+/// @returns font-size
+
+@mixin get-font-size($level, $map: $type-scale, $bp: $type-scale-bp, $unit: $type-scale-unit) {
+  @for $i from 1 through length($bp) {
+    $key: nth(map-keys($bp), $i);
+    $size: map-get($map, $level);
+
+    @media (min-width: bp($key)) {
+      $scale: map-get($bp, $key);
+      font-size: array-magic($size * $scale, $unit);
+    }
+  }
+}

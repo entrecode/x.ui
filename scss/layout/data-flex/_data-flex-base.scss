@@ -1,0 +1,14 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @group flex-grid
+/// @access public
+
+[data-flex] {
+  display: flex;
+
+  @at-root ul#{&} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}

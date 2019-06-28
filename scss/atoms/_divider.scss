@@ -1,0 +1,41 @@
+/// @author Bernhard Ruoff
+/// @since 9.1.1
+/// @access public
+/// @group atoms
+///
+/// @example
+///   <hr class='divider'>
+///
+/// @param {px} $divider-height [1]
+/// @param {color} $divider-color [$base-divider-color]
+/// @param {color} $divider-invert-color [rgba($background, .2)]
+/// @param {array} $divider-spacing [get-space(5) 0]
+/// @param {array} $divider-small-spacing [get-space(3) 0]
+/// @param {array} $divider-big-spacing [get-space(6) 0]
+
+.divider {
+  border: 0;
+  width: 100%;
+  height: rem($divider-height);
+  background: $divider-color;
+
+  @include set-breakpoints {
+    margin: array-magic($divider-spacing);
+  }
+
+  &.divider_invert {
+    background: $divider-invert-color;
+  }
+}
+
+.divider_small {
+  @include set-breakpoints {
+    margin: array-magic($divider-small-spacing);
+  }
+}
+
+.divider_big {
+  @include set-breakpoints {
+    margin: array-magic($divider-big-spacing);
+  }
+}

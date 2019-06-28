@@ -1,0 +1,14 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @group flex-grid
+/// @access public
+
+$_justify-content: (
+  'around': 'space-around',
+  'between': 'space-between',
+  'center': 'center',
+  'start': 'flex-start',
+  'end': 'flex-end'
+);
+
+@include set-data-map-breakpoints(flex, justify-content, $_justify-content);

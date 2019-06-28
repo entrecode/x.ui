@@ -1,0 +1,36 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group molecules
+///
+/// @param {map} $btn-group-style
+/// @require {function} rem
+.btn-group {
+  display: flex;
+  @include inject-style($btn-group-style);
+}
+
+// @param {px} $btn-group-divider-size [1]
+// @param {color} $btn-group-divider-color [$base-divider-color]
+.btn-group__divider {
+  background: $btn-group-divider-color;
+  width: rem($btn-group-divider-size);
+  margin-left: rem($btn-group-divider-size * -1);
+  z-index: 1;
+}
+
+.btn-group__inner {
+  border-radius: 0;
+  border-right: 0;
+}
+
+.btn-group__start {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+}
+
+.btn-group__end {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

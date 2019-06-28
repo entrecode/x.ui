@@ -1,0 +1,31 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {px} $btn-wide -  min width for .btn_wide button
+/// @param {px} $btn-small-wide - min width for .btn_wide.btn_small button
+/// @param {px} $btn-big-wide - min width for .btn_wide.btn_big button
+
+.btn_wide {
+  min-width: rem($btn-wide);
+
+  &.btn_small {
+    min-width: rem($btn-small-wide);
+  }
+
+  &.btn_big {
+    min-width: rem($btn-big-wide);
+  }
+}
+
+// full-width buttons
+.btn_block {
+  display: flex;
+  flex: auto;
+
+  @at-root [type='button']#{&},
+    button#{&} {
+    width: 100%;
+  }
+}

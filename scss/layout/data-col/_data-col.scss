@@ -1,0 +1,59 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group grid-columns
+///
+/// @param {map} $_offset
+/// @require {function} bp()
+
+[data-col] {
+  flex: 100%;
+  min-height: 1px;
+  margin: 0;
+}
+
+[data-col~='auto'] {
+  flex: 1;
+}
+
+[data-col~='fit'] {
+  flex: none;
+}
+
+@for $i from 1 through $grid-num-columns {
+  [data-col~='#{$i}'] {
+    max-width: ($i / $grid-num-columns) * 100%;
+  }
+}
+
+@each $bp in map-keys($breakpoints) {
+  @for $i from 1 through $grid-num-columns {
+    [data-col~='#{$i}\@#{$bp}'] {
+      @media (min-width: bp(#{$bp})) {
+        max-width: ($i / $grid-num-columns) * 100%;
+      }
+    }
+  }
+}
+
+@each $bp in map-keys($breakpoints) {
+  [data-col~='auto\@#{$bp}'] {
+    @media (min-width: bp(#{$bp})) {
+      flex: 1;
+    }
+  }
+}
+
+@each $bp in map-keys($breakpoints) {
+  [data-col~='fit\@#{$bp}'] {
+    @media (min-width: bp(#{$bp})) {
+      flex: none;
+    }
+  }
+}
+
+// scss-lint:disable ImportantRule
+[data-col~='no-gutter'] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

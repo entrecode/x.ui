@@ -1,0 +1,19 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms modifier
+///
+/// @param {boolean} $btn-round
+/// @param {px} $btn-min-height [40]
+/// @param {px} $btn-small-min-height [32]
+/// @param {px} $btn-big-min-height [48]
+
+@if $btn-round == true {
+  .btn {
+    border-radius: 100vw;
+  }
+}
+
+.btn_round {
+  border-radius: 100vw;
+}

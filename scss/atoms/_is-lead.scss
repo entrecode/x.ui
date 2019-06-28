@@ -1,0 +1,17 @@
+/// @author Bernhard Ruoff
+/// @since 9.0.6
+/// @access public
+/// @group atoms
+
+// @param {string} $is-lead-weight [$is-light]
+// @param {em} $is-lead-line-height [$base-line-height]
+// @param {array} $is-lead-spacing [$paragraph-spacing]
+// @param {string} $is-lead-spacing-unit [$base-spacing-unit]
+// @param {array} $is-lead-style
+.is-lead {
+  @include inject-style($is-lead-style);
+  @include get-font-size(is-lead);
+  font-weight: $is-lead-weight;
+  line-height: $is-lead-line-height;
+  margin: array-magic($is-lead-spacing, $is-lead-spacing-unit);
+}

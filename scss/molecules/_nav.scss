@@ -1,0 +1,94 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group organism
+
+// @param {array} $nav-paddding [0]
+// @param {array} $nav-spacing [0]
+// @param {array} $nav-style
+.nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  @include inject-style($nav-style);
+  margin: array-magic($nav-spacing);
+  padding: array-magic($nav-padding);
+}
+
+// @param {array} $nav-item-padding [8]
+.nav__item {
+  padding: array-magic($nav-item-padding);
+
+  .btn {
+    margin: 0;
+  }
+}
+
+// @param {px} $nav-divider-size [1]
+// @param {color} $nav-divider-color [$divider]
+// @param {px} $nav-divider-spacing [8]
+.nav__divider {
+  display: block;
+  align-self: stretch;
+  background-color: $nav-divider-color;
+  margin: array-magic($nav-divider-spacing);
+  width: rem($nav-divider-size);
+}
+
+// @param {array} $nav-stacked-paddding [0]
+// @param {array} $nav-stacked-spacing [0]
+// @param {array} $nav-stacked-style
+.nav_stacked {
+  flex-direction: column;
+  align-items: initial;
+  @include inject-style($nav-stacked-style);
+  margin: array-magic($nav-stacked-spacing);
+  padding: array-magic($nav-stacked-padding);
+
+  .nav__divider {
+    width: 100%;
+    height: rem($nav-divider-size);
+    margin: rem($nav-divider-spacing) 0;
+  }
+
+  // @param {array} $nav-stacked-item-padding [$nav-item-padding]
+  .nav__item {
+    padding: array-magic($nav-stacked-item-padding);
+  }
+}
+
+// @param {px} $nav-link-radius [4]
+// @param {array} $nav-links-padding [4]
+// @param {array} $nav-link-font-size [$base-font-size]
+// @param {color} $nav-link-background
+// @param {color} $nav-link-color
+// @param {array} $nav-link-style
+.nav__link {
+  outline: none;
+  display: block;
+  transition: background-color 0.4s, color 0.4s;
+  @include inject-style($nav-link-style);
+  background: $nav-link-background;
+  color: $nav-link-color;
+  border-radius: array-magic($nav-link-radius);
+  padding: array-magic($nav-link-padding);
+  font-size: em($nav-link-font-size);
+
+  // @param {color} $nav-link-hover-background
+  // @param {color} $nav-link-hover-color
+  // @param {array} $nav-link-hover-style
+  &:hover {
+    @include inject-style($nav-link-hover-style);
+    background: $nav-link-hover-background;
+    color: $nav-link-hover-color;
+  }
+
+  // @param {color} $nav-link-selected-background
+  // @param {color} $nav-link-selected-color
+  // @param {array} $nav-link-selected-style
+  &.is-active {
+    @include inject-style($nav-link-selected-style);
+    background: $nav-link-selected-background;
+    color: $nav-link-selected-color;
+  }
+}

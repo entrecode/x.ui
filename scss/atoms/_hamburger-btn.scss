@@ -1,0 +1,76 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {array} $hamburger-btn-spacing [$btn-spacing]
+/// @param {px} $hamburger-btn-width [16] - width of hamburger menu
+/// @param {color} $hamburger-btn-background [transparent]
+/// @param {px} $hamburger-btn-line-weight [2] - height of hamburger menu bars
+/// @param {px} $hamburger-btn-line-spacing [4]
+/// @param {color} $hamburger-btn-line-color [$link]
+/// @param {array} $hamburger-btn-style
+
+.hamburger-btn {
+  $_h: $hamburger-btn-line-weight;
+  $_w: $hamburger-btn-line-width;
+  $_s: $hamburger-btn-line-weight + $hamburger-btn-line-spacing;
+  $_c: $hamburger-btn-line-color;
+
+  position: relative;
+  @include _btn-reset;
+  @include _btn-reset;
+  @include inject-style($btn-style);
+  @include inject-style($hamburger-btn-style);
+  @include metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio);
+  border-radius: array-magic($btn-radius);
+  background-color: $hamburger-btn-background;
+  margin: array-magic($hamburger-btn-spacing);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transition: all 0.4s;
+    background-color: $_c;
+    border-radius: array-magic($_h / 2);
+    box-shadow: 0 rem(($_s)) 0 0 $_c, 0 rem(-($_s)) 0 0 $_c;
+    height: rem($_h);
+    left: rem((($btn-min-height - $_w) / 2));
+    margin-top: rem(-$_h / 2);
+    width: rem($_w);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transition: all 0.4s;
+    background-color: $_c;
+    border-radius: array-magic($_h / 2);
+    height: rem($_h);
+    left: rem((($btn-min-height - $_w) / 2));
+    margin-top: rem(-$_h / 2);
+    width: rem($_w);
+  }
+
+  &.is-active {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+      background-color: $_c;
+      border-radius: array-magic($_h / 2);
+      height: rem($_h);
+      left: rem((($btn-min-height - $_w) / 2));
+      margin-top: rem(-$_h / 2);
+      transform: rotate(45deg);
+      width: rem($_w);
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+  }
+}

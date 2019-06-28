@@ -1,0 +1,101 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {variable} $tag-font-family [$body-font-family]
+/// @param {number} $tag-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
+/// @param {string} $tag-weight [$is-bold]
+/// @param {color} $tag-background [$minor]
+
+// @param {px} $tag-font-size [14]
+// @param {px} $tag-line-height [14]
+// @param {px} $tag-min-height [20]
+// @param {array} $tag-style
+.tag {
+  display: inline-block;
+
+  @supports (display: inline-flex) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: text-bottom;
+  @include inject-style($tag-style);
+  @include metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
+  background: $tag-background;
+  color: $tag-color;
+  border-radius: array-magic($tag-radius);
+  font-family: $tag-font-family;
+  font-weight: $tag-weight;
+
+  a {
+    color: $tag-color;
+  }
+
+  // @param {px} $tag-small-font-size [12]
+  // @param {px} $tag-small-line-height [12]
+  // @param {px} $tag-small-min-height [16]
+  // @param {array} $tag-small-style
+  &_small {
+    @include inject-style($tag-small-style);
+    @include metrics(
+      $tag-small-font-size,
+      $tag-small-line-height,
+      $tag-small-min-height,
+      $padding-ratio: $tag-padding-ratio
+    );
+    border-radius: array-magic($tag-small-radius);
+  }
+
+  // @param {px} $tag-big-font-size [14]
+  // @param {px} $tag-big-line-height [14]
+  // @param {px} $tag-big-min-height [28]
+  // @param {array} $tag-big-style
+  &_big {
+    @include inject-style($tag-big-style);
+    @include metrics(
+      $tag-big-font-size,
+      $tag-big-line-height,
+      $tag-big-min-height,
+      $padding-ratio: $tag-padding-ratio
+    );
+    border-radius: array-magic($tag-big-radius);
+  }
+}
+
+//
+// Styles
+// ------------------------------------------------------
+// @requires {array} $tag-styles
+// @param {string} $_prefix ['tag_']
+$_prefix: 'tag_';
+
+@each $_key, $_value in $tag-styles {
+  @if length($_value) == 3 {
+    $_background: nth($_value, 1);
+    $_color: nth($_value, 2);
+    $_hover: nth($_value, 3);
+
+    .#{$_prefix}#{$_key} {
+      background: $_background;
+      color: $_color;
+
+      a {
+        color: $_color;
+      }
+
+      @at-root a.#{$_prefix}#{$_key} {
+        &:hover {
+          background: $_hover;
+          color: $_color;
+        }
+      }
+    }
+  } @else {
+    @warn 'arguments missing - #{$_key}: #{$_value}';
+  }
+}

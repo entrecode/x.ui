@@ -1,5 +1,0 @@
-@for $i from 1 through 5 {
-  [data-animate~="#{$i}"] {
-    animation-duration: $i * 0.1s;
-  }
-}

@@ -1,0 +1,24 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group grid
+///
+/// @param {px} $grid-container-width [1200] - max-width of container
+/// @param {string} $grid-container-gutter [16]
+
+[data-container] {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $grid-container-width + px;
+  padding-left: rem($grid-container-gutter);
+  padding-right: rem($grid-container-gutter);
+}
+
+@include set-data-breakpoints('container', 'is-left') {
+  margin: 0 auto 0 0;
+}
+
+@include set-data-breakpoints('container', 'is-right') {
+  margin: 0 0 0 auto;
+}

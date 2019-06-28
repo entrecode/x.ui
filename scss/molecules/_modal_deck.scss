@@ -1,0 +1,17 @@
+.modal_deck {
+  padding: 0;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  .modal {
+    border-radius: 0;
+  }
+
+  &.opens-right {
+    justify-content: flex-end;
+
+    .modal {
+      border-radius: 0;
+    }
+  }
+}

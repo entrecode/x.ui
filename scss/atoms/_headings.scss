@@ -1,0 +1,126 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @require {mixin} get-font-size
+/// @require {mixin} inject-style
+/// @require {funtion} array-magic
+
+// @param {array} $headings-style
+// @param {string} $headings-font-family
+// @param {string} $headings-weight [$is-bold]
+// @param {em} $headings-line-height [$base-line-height]
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.is-h1,
+.is-h2,
+.is-h3,
+.is-h4,
+.is-h5,
+.is-h6,
+.is-giga,
+.is-mega,
+.is-kilo {
+  @include inject-style($headings-style);
+  font-family: $headings-font-family;
+  font-weight: $headings-weight;
+  line-height: $headings-line-height;
+
+  small {
+    @include inject-style($headings-inline-small-style);
+  }
+
+  a {
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  .tag {
+    vertical-align: middle;
+  }
+}
+
+// @param {*} $headings-spacing-unit [$base-spacing-unit]
+// @param {array} $giga-style
+// @param {array} $giga-spacing [0]
+.is-giga {
+  @include get-font-size(is-giga);
+  @include inject-style($giga-style);
+  margin: array-magic($giga-spacing, $headings-spacing-unit);
+}
+
+// @param {array} $mega-style
+// @param {array} $mega-spacing [0]
+.is-mega {
+  @include get-font-size(is-mega);
+  @include inject-style($mega-style);
+  margin: array-magic($mega-spacing, $headings-spacing-unit);
+}
+
+// @param {array} $kilo-style
+// @param {array} $kilo-spacing [0]
+.is-kilo {
+  @include get-font-size(is-kilo);
+  @include inject-style($kilo-style);
+  margin: array-magic($kilo-spacing, $headings-spacing-unit);
+}
+
+// @param {array} $h1-style
+// @param {array} $h1-spacing [0 0 ($vertical-rhythm * 2) 0]
+h1,
+.is-h1 {
+  @include get-font-size(h1);
+  @include inject-style($h1-style);
+  margin: array-magic($h1-spacing, $headings-spacing-unit);
+}
+
+// @param {array} $h2-style
+// @param {array} $h2-spacing [0 0 $vertical-rhythm 0]
+h2,
+.is-h2 {
+  @include get-font-size(h2);
+  @include inject-style($h2-style);
+  margin: array-magic($h2-spacing, $headings-spacing-unit);
+}
+
+// @param {array} $h3-style
+// @param {array} $h3-spacing [$h2-spacing]
+h3,
+.is-h3 {
+  @include get-font-size(h3);
+  @include inject-style($h3-style);
+  margin: array-magic($h3-spacing, $headings-spacing-unit);
+}
+
+// @param {array} $h4-style
+// @param {array} $h4-spacing [$h3-spacing]
+h4,
+.is-h4 {
+  @include get-font-size(h4);
+  @include inject-style($h4-style);
+  margin: array-magic($h4-spacing, $headings-spacing-unit);
+}
+
+// @param {array} $h5-style
+// @param {array} $h5-spacing [0 0 ($vertical-rhythm / 2) 0]
+h5,
+.is-h5 {
+  @include get-font-size(h5);
+  @include inject-style($h5-style);
+  margin: array-magic($h5-spacing, $headings-spacing-unit);
+}
+
+// @param {array} $h6-style
+// @param {array} $h6-spacing [$h5-spacing]
+h6,
+.is-h6 {
+  @include get-font-size(h6);
+  @include inject-style($h6-style);
+  margin: array-magic($h6-spacing, $headings-spacing-unit);
+}

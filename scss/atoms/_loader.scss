@@ -1,0 +1,96 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+// @param {px} $loader-size [24]
+// @param {array} $loader-style
+// @param {px} $loader-track-width [4]
+// @param {color} $loader-track-color [$background-lightest]
+// @param {color} $loader-racer-color [$link]
+// @param {string} $loader-racer-animation [loaderDefault]
+// @param {s | ms} $loader-racer-animation-speed [1s]
+// @param {string} $loader-racer-animation-behavior [infinite linear]
+
+@keyframes loaderDefault {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+  margin: 0 auto;
+  display: flex;
+
+  &::after {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    flex-grow: 0;
+    order: -1;
+    @include inject-style($loader-style);
+    height: em($loader-size);
+    border: em($loader-track-width) solid $loader-track-color;
+    border-right-color: $loader-racer-color;
+    animation: $loader-racer-animation $loader-racer-animation-speed $loader-racer-animation-behavior;
+    width: em($loader-size);
+  }
+
+  // @param {array} $loader-is-local-style
+  &.is-local {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include inject-style($loader-is-local-style);
+  }
+
+  // @param {array} $loader-is-global-style
+  // @param {color} $loader-is-global-background [$backdrop]
+  &.is-global {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    @include inject-style($loader-is-global-style);
+    background: $loader-is-global-background;
+  }
+}
+
+.btn {
+  $_position: ($btn-min-height - $loader-size) / 2 * -1;
+
+  .loader:not(.is-local) {
+    margin-top: rem($_position);
+    margin-bottom: rem($_position);
+  }
+}
+
+.btn_small {
+  $_position: ($btn-small-min-height - $loader-size) / 2 * -1;
+
+  .loader:not(.is-local) {
+    margin-top: rem($_position);
+    margin-bottom: rem($_position);
+  }
+}
+
+.btn_big {
+  $_position: ($btn-big-min-height - $loader-size) / 2 * -1;
+
+  .loader:not(.is-local) {
+    margin-top: rem($_position);
+    margin-bottom: rem($_position);
+  }
+}

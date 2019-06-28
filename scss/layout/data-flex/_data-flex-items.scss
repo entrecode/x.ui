@@ -1,0 +1,14 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @group flex-grid
+/// @access public
+
+$_align-items: (
+  'end-items': 'flex-end',
+  'start-items': 'flex-start',
+  'center-items': 'center',
+  'baseline-items': 'baseline',
+  'stretch-items': 'stretch'
+);
+
+@include set-data-map-breakpoints(flex, align-items, $_align-items);

@@ -1,0 +1,85 @@
+/// @author Bernhard Ruoff
+/// @since 9.0.6
+/// @access public
+/// @group atoms
+
+// @param {string} $body-font-family
+// @param {px} $base-font-size [16]
+// @param {px} $base-line-height [1.4]
+// @param {string} $base-font-weight [$is-normal]
+// @param {color} $body-color [$text]
+// @param {color} $body-background [$background]
+// @param {array} $body-style
+body {
+  @include inject-style($body-style);
+  color: $body-color;
+  background: $body-background;
+  font-family: $body-font-family;
+  font-size: rem($base-font-size);
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+}
+
+//
+// Link styles
+// --------
+// @param {color} $link-color [$link]
+// @param {string} $link-decoration [none]
+// @param {string} $link-weight [$is-normal]
+// @param {array} $link-style
+a {
+  cursor: pointer;
+  outline: none;
+  @include inject-style($link-style);
+  color: $link-color;
+  font-weight: $link-weight;
+  text-decoration: $link-decoration;
+
+  * {
+    cursor: pointer;
+  }
+
+  // @param {color} $link-hover-color [$link-color]
+  // @param {string} $link-hover-decoration [none]
+  // @param {array} $link-hover-style
+  &:hover {
+    @include inject-style($link-hover-style);
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+///
+/// Paragraph styles
+/// --------
+// @param {string} $paragraph-weight [$is-light]
+// @param {number} $paragraph-line-height [$base-line-height]
+// @param {array} $paragraph-spacing [0 0 $vertical-rhythm 0]
+// @param {string} $paragraph-spacing-unit [$base-spacing-unit]
+// @param {array} $paragraph-style
+p {
+  @include inject-style($paragraph-style);
+  @include get-font-size(p);
+  line-height: $paragraph-line-height;
+  font-weight: $paragraph-weight;
+  margin: array-magic($paragraph-spacing, $paragraph-spacing-unit);
+
+  strong,
+  small {
+    vertical-align: baseline;
+  }
+}
+
+b,
+strong {
+  font-weight: $is-bold;
+}
+
+// @param {array} $inline-small-style
+small {
+  @include inject-style($inline-small-style);
+}
+
+code {
+  font-family: $monospace-font;
+}

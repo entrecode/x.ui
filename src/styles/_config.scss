@@ -1,0 +1,74 @@
+$grid-small-gutter: 16;
+
+@import url('https://fonts.googleapis.com/css?family=Geo|Rubik:300,400,500,700');
+$body-font-family: 'Rubik', sans-serif;
+$headings-font-family: 'Geo', sans-serif;
+
+$is-light: 300;
+$is-normal: 400;
+$is-medium: 500;
+$is-bold: 700;
+
+/* @import url('https://fonts.googleapis.com/css?family=Raleway:200,400,600,800&display=swap');
+$body-font-family: 'Raleway', sans-serif;
+$headings-font-family: 'Raleway', sans-serif;
+
+$is-light: 200;
+$is-normal: 400;
+$is-medium: 600;
+$is-bold: 800; */
+
+$divider-color: var(--text);
+
+$base-font-size: 14;
+
+$link: #00cd97;
+$minor: #edf2f7;
+
+$input-background: #edf2f7;
+
+$type-scale: (
+  is-kilo: 1.25,
+);
+
+$headings-line-height: 1;
+$paragraph-line-height: 1.5;
+
+$btn-weight: $is-medium;
+$btn-font-family: $headings-font-family;
+$btn-icon-size: 20;
+
+$btn-background: var(--link);
+$btn-color: var(--text);
+$btn-font-size: 16;
+
+$tag-font-family: $headings-font-family;
+$tag-weight: $is-medium;
+
+$nav-stacked-item-padding: 8 0;
+
+$dropdown-options-style: (
+  font-size: 14px,
+);
+
+$dropdown-option-min-height: initial;
+$dropdown-option-weight: $is-medium;
+$dropdown-option-alignment: left;
+$dropdown-option-style: (
+  white-space: nowrap,
+);
+
+$titlebar-spacing: 0 0 16;
+
+$is-theme: (
+  'menubar': (
+    transparent,
+    var(--text-lighter),
+    var(--text),
+  ),
+  'submenu': (
+    transparent,
+    var(--text-lighter),
+    var(--text-light),
+  ),
+);

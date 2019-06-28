@@ -1,0 +1,52 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {array} $file-upload-spacing [0 0 16]
+/// @param {array} $file-upload-padding [16]
+/// @param {color} $file-upload-background [none]
+/// @param {array} $file-upload-radius [4]
+/// @param {array} $file-upload-border [2px dashed $minor]
+/// @param {array} $file-upload-style
+/// @param {array} $file-upload-hover-style
+///
+/// @require {mixin} inject-style
+/// @require {function} array-magic
+
+
+.file-upload {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  text-align: center;
+
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include inject-style($file-upload-style);
+  background: $file-upload-background;
+  padding: array-magic($file-upload-padding);
+  margin: array-magic($file-upload-spacing);
+  border-radius: array-magic($file-upload-border-radius);
+  border: array-magic($file-upload-border);
+
+  &:hover {
+    @include inject-style($file-upload-hover-style);
+  }
+
+  [type='file'] {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0;
+  }
+}

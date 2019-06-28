@@ -1,0 +1,24 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {color} $btn-super-background [$super]
+/// @param {color} $btn-super-color [$super-contrast]
+/// @param {array} $btn-super-style
+.btn_super {
+  @include inject-style($btn-super-style);
+  background: $btn-super-background;
+  color: $btn-super-color;
+
+  // @param {color} $btn-super-hover-background [set-hover($btn-super-background)]
+  // @param {color} $btn-super-hover-color [$btn-super-color]
+  // @param {array} $btn-super-hover-style
+  &.is-active,
+  &:hover,
+  &:focus {
+    @include inject-style($btn-super-hover-style);
+    background: $btn-super-hover-background;
+    color: $btn-super-hover-color;
+  }
+}

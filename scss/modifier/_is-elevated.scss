@@ -1,0 +1,21 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {string} $elevation-prefix [is-elevated-]
+/// @require {mixin} elevation()
+/// @require {mixin} elevation-transition()
+
+@for $i from 0 through 24 {
+  .#{$elevation-prefix}#{$i} {
+    @include elevation($i);
+  }
+
+  .hover\:#{$elevation-prefix}#{$i} {
+    &:hover {
+      @include elevation($i);
+      @include elevation-transition;
+    }
+  }
+}

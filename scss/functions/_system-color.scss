@@ -1,0 +1,40 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group color-functions
+///
+/// generate color based on a set of colors
+/// @example
+/// color: system-color(#00E676); // returns a color with a hue value of 151
+///
+/// @param {color} $target - name of target color
+/// @param {string} $colors [$_system-color-ref] - string of colors
+///
+/// @return {color} color with harmonic lightness and saturation
+
+// @param {array} $_system-color- [null] - array of reference colors
+$_system-color-ref: null !default;
+
+@function system-color($target, $colors: $_system-color-ref) {
+  $_target-hue: hue($target);
+  $_total-hue: 0;
+  $_total-sat: 0;
+  $_total-light: 0;
+
+  @if $colors == null {
+    $colors: $link $super $highlight;
+  }
+
+  @each $_color in $colors {
+    $i: index($colors, $_color);
+    $_total-hue: $_total-hue + hue($_color);
+    $_total-sat: $_total-sat + saturation($_color);
+    $_total-light: $_total-light + lightness($_color);
+  }
+
+  $_total-hue: $_total-hue / length($colors);
+  $_total-sat: $_total-sat / length($colors);
+  $_total-light: $_total-light / length($colors);
+
+  @return hsl($_target-hue, $_total-sat, $_total-light);
+}

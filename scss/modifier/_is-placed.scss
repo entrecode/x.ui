@@ -1,0 +1,70 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {map} $is-placed-map
+
+@mixin _is-placed($p) {
+  &-n {
+    left: 50%;
+    top: rem($p);
+    transform: translateX(-50%);
+  }
+
+  &-ne {
+    right: rem($p);
+    top: rem($p);
+  }
+
+  &-e {
+    right: rem($p);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-se {
+    bottom: rem($p);
+    right: rem($p);
+  }
+
+  &-s {
+    bottom: rem($p);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-sw {
+    bottom: rem($p);
+    left: rem($p);
+  }
+
+  &-w {
+    left: rem($p);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-nw {
+    left: rem($p);
+    top: rem($p);
+  }
+
+  &-0 {
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+$_keys: map-keys($is-placed-map);
+$_values: map-values($is-placed-map);
+
+@each $_key in $_keys {
+  $_i: index($_keys, $_key);
+  $_v: nth($_values, $_i);
+
+  .#{$_key} {
+    @include _is-placed($_v);
+  }
+}

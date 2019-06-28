@@ -1,0 +1,41 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group molecules
+
+.xui-accordion {
+  position: relative;
+
+  &__handle {
+    cursor: pointer;
+  }
+
+  > [type='radio'],
+  > [type='checkbox'] {
+    @extend %is-hidden-input;
+  }
+}
+
+.xui-accordion__target {
+  display: none;
+
+  @at-root :checked ~ & {
+    display: block;
+  }
+}
+
+.is-hidden-collapsed {
+  display: none;
+
+  @at-root :checked ~ &,
+    :checked ~ * & {
+    display: inherit;
+  }
+}
+
+.is-visible-collapsed {
+  @at-root :checked ~ &,
+    :checked ~ * & {
+    display: none;
+  }
+}

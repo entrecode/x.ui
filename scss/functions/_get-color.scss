@@ -1,0 +1,31 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group color-functions
+///
+/// Easily retrieve colors for use.
+/// @example
+/// color: get-color(text, invert);
+/// color: get-color(link);
+///
+/// @param {string} $color-string - Name of the color
+/// @requires {variable} $color-map-id [$xui-colors] - can be changed use a different colormap
+///
+/// @return {color} Value of the color
+
+@function get-color($color-string...) {
+  $_string-length: length($color-string);
+  $_color-map: $color-map-id;
+
+  @if $_string-length == 1 {
+    $_color-value: nth($color-string, 1);
+    @return map-get(map-get($_color-map, base), $_color-value);
+  }
+
+  @if $_string-length == 2 {
+    $_color-base: nth($color-string, 1);
+    $_color-value: nth($color-string, 2);
+
+    @return map-get(map-get($_color-map, $_color-base), $_color-value);
+  }
+}

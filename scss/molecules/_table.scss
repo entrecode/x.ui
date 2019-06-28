@@ -1,0 +1,80 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group templates
+///
+/// @param {array} $table-spacing [0 0 16 0]
+/// @param {array} $table-border [1 solid $base-divider-color]
+/// @param {array} $table-cell-padding [8]
+
+// scss-lint:disable SelectorDepth, NestingDepth
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table {
+  margin: array-magic($table-spacing);
+
+  td {
+    border-bottom: array-magic($table-border);
+  }
+
+  td,
+  th {
+    &:not(data-col) {
+      padding: array-magic($table-cell-padding);
+    }
+  }
+
+  tbody {
+    tr:first-child {
+      td {
+        border-top: array-magic($table-border);
+      }
+    }
+  }
+}
+
+.table_clear {
+  thead {
+    border-top: 0;
+  }
+
+  td {
+    border-bottom: 0;
+  }
+
+  tbody {
+    tr:first-child {
+      td {
+        border-top: 0;
+      }
+    }
+  }
+}
+
+.table_bordered {
+  thead {
+    border-top: array-magic($table-border);
+  }
+
+  td,
+  th {
+    border-right: array-magic($table-border);
+
+    &:first-child {
+      border-left: array-magic($table-border);
+    }
+  }
+
+  tbody {
+    tr:first-child {
+      td {
+        border-top: array-magic($table-border);
+      }
+    }
+  }
+}
