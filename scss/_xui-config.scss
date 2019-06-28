@@ -87,7 +87,9 @@ $backdrop: rgba(#000, 0.2) !default;
 $base-divider-color: rgba($text, 0.1) !default;
 
 // @param {color} $state-hover [rgba($link, 0.1)]
+// @param {color} $state-hover-contrast [$link]
 $state-hover: rgba($link, 0.1) !default;
+$state-hover-contrast: $link !default;
 
 // @param {color} $state-info [#cae6fe]
 // @param {color} $state-info-contrast [set-contrast($background, $state-info)]
