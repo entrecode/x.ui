@@ -36,5 +36,4 @@ $spacer-big-size: get-space(6); // 48`,
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

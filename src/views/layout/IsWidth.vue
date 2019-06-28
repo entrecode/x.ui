@@ -1,10 +1,8 @@
 <template>
   <section>
-    <div :class="{'demo-fullscreen' : openDemo}" data-flex="is-center center">
+    <div :class="{ 'demo-fullscreen': openDemo }" data-flex="is-center center">
       <div class="btn is-absolute is-fab-ne" @click="openDemo = !openDemo">
-        <svg class="ixo">
-          <use xlink:href="#fullscreen"></use>
-        </svg>
+        <svg class="ixo"><use xlink:href="#fullscreen"></use></svg>
       </div>
       <div
         :class="isWidthType + isWidthRelation + isWidthRatio"
@@ -18,13 +16,7 @@
             <div data-col="6">
               <div class="field-group">
                 <div class="xui-radio">
-                  <input
-                    type="radio"
-                    name="isWidthType"
-                    id="isWidth"
-                    v-model="isWidthType"
-                    value="is-width"
-                  >
+                  <input type="radio" name="isWidthType" id="isWidth" v-model="isWidthType" value="is-width" />
                   <label for="isWidth" class="xui-radio__label">is-width</label>
                 </div>
               </div>
@@ -32,13 +24,7 @@
             <div data-col="6">
               <div class="field-group">
                 <div class="xui-radio">
-                  <input
-                    type="radio"
-                    name="isWidthType"
-                    id="hasMinWidth"
-                    v-model="isWidthType"
-                    value="has-min-width"
-                  >
+                  <input type="radio" name="isWidthType" id="hasMinWidth" v-model="isWidthType" value="has-min-width" />
                   <label for="hasMinWidth" class="xui-radio__label">has-min-width</label>
                 </div>
               </div>
@@ -105,5 +91,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

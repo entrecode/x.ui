@@ -10,16 +10,8 @@
             class="is-giga has-radius has-padding-2"
             :style="`color: ${colors.linkContrast}; background-color: ${colors.link};`"
           ></div>
-          <div
-            v-text="colors.linkSafe"
-            class="is-giga has-padding-2"
-            :style="`color: ${colors.linkSafe};`"
-          ></div>
-          <div
-            v-text="colors.linkHover"
-            class="is-giga has-padding-2"
-            :style="`color: ${colors.linkHover};`"
-          ></div>
+          <div v-text="colors.linkSafe" class="is-giga has-padding-2" :style="`color: ${colors.linkSafe};`"></div>
+          <div v-text="colors.linkHover" class="is-giga has-padding-2" :style="`color: ${colors.linkHover};`"></div>
         </div>
       </div>
       <div data-col="3"></div>

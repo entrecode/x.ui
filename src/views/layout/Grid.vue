@@ -11,16 +11,12 @@
               :class="gridContainer ? 'is-ink-link' : 'is-ink-lighter'"
               data-tooltip-top="use a container"
             >
-              <svg class="ixo">
-                <use xlink:href="#grid-half"></use>
-              </svg>
+              <svg class="ixo"><use xlink:href="#grid-half"></use></svg>
             </a>
           </div>
           <div class="nav__item">
             <a @click.prevent="addCol" class="btn btn_clear">
-              <svg class="ixo">
-                <use xlink:href="#add"></use>
-              </svg>
+              <svg class="ixo"><use xlink:href="#add"></use></svg>
             </a>
           </div>
         </div>
@@ -30,18 +26,20 @@
     <div :data-container="gridContainer">
       <div :data-grid="[gridAlign + ' ' + gridGutterSize]" class>
         <div
-          :data-col="[col.size, col.offset ? '+' + col.offset : null ].join(' ')"
+          :data-col="[col.size, col.offset ? '+' + col.offset : null].join(' ')"
           v-for="(col, index) in cols"
           :key="index"
         >
           <div class="typo-demo has-padding-3 has-margin-bottom-3" data-flex="center center-items">
             <div data-flex="center center-items" class="has-padding-3 is-theme" style="user-select: none;">
-              <a class="is-mega" @click.prevent="upSize(col)">{{col.size}}</a>&ensp;
+              <a class="is-mega" @click.prevent="upSize(col)">{{ col.size }}</a
+              >&ensp;
               <a
                 class="is-mega"
                 :class="col.offset ? 'is-ink-link' : 'is-ink-lightest'"
                 @click.prevent="upOffset(col)"
-              >{{'+' + col.offset}}</a>
+                >{{ '+' + col.offset }}</a
+              >
             </div>
           </div>
         </div>
@@ -82,5 +80,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

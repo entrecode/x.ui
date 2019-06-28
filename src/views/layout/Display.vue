@@ -5,12 +5,7 @@
       <div data-col="6">
         <div class="field-group">
           <select id="displaySelected" class="input" v-model="displaySelected">
-            <option
-              :value="value"
-              v-for="(value, index) in displayOptions"
-              :key="index"
-              v-text="value"
-            ></option>
+            <option :value="value" v-for="(value, index) in displayOptions" :key="index" v-text="value"></option>
           </select>
         </div>
       </div>

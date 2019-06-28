@@ -3,7 +3,8 @@
     <div class="has-padding-center-3">
       <h2>is-outset</h2>
       <p class="is-lead">
-        <code class="code">.is-outset</code> is still in an experimental state. it can be used as a wrapper with all kinds of elements.
+        <code class="code">.is-outset</code> is still in an experimental state. it can be used as a wrapper with all
+        kinds of elements.
       </p>
     </div>
     <div class="demo-preview has-padding-5 has-margin-bottom-5 is-relative">
@@ -14,13 +15,27 @@
             class="is-outset demo-transition"
             :data-col="useCol && isOutsetClass !== 'is-outset_full' ? col : null"
           >
-            <img src="sample-image.jpg">
+            <img src="sample-image.jpg" />
           </div>
-          <p
-            class="is-lead is-hyphen-block"
-          >Shine vibrant dynamic social entrepreneurship impact investing. Capacity building indicators, replicable black lives matter, thought provoking emerging natural resources program areas social entrepreneurship. Shared unit of analysis when; mobilize benefit corporation human-centered external partners. Accessibility thought leadership external partners incubator incubator academic.</p>
-          <p>Social enterprise gender rights, natural resources optimism but gender rights academic transparent save the world. Youth boots on the ground; relief social return on investment social entrepreneur thought partnership resist policymaker. Vibrant her body her rights empower communities scalable empower rubric contextualize families. Expose the truth, social innovation B-corp a natural resources. Technology synergy, initiative initiative, thought leadership parse.</p>
-          <p>Data compassion low-hanging fruit green space state of play. The resistance our work; because global global, empower communities shine granular leverage. Game-changer preliminary thinking, external partners, big data best practices state of play policymaker improve the world when. Inspirational challenges and opportunities, engaging or co-create, efficient, think tank technology;</p>
+          <p class="is-lead is-hyphen-block">
+            Shine vibrant dynamic social entrepreneurship impact investing. Capacity building indicators, replicable
+            black lives matter, thought provoking emerging natural resources program areas social entrepreneurship.
+            Shared unit of analysis when; mobilize benefit corporation human-centered external partners. Accessibility
+            thought leadership external partners incubator incubator academic.
+          </p>
+          <p>
+            Social enterprise gender rights, natural resources optimism but gender rights academic transparent save the
+            world. Youth boots on the ground; relief social return on investment social entrepreneur thought partnership
+            resist policymaker. Vibrant her body her rights empower communities scalable empower rubric contextualize
+            families. Expose the truth, social innovation B-corp a natural resources. Technology synergy, initiative
+            initiative, thought leadership parse.
+          </p>
+          <p>
+            Data compassion low-hanging fruit green space state of play. The resistance our work; because global global,
+            empower communities shine granular leverage. Game-changer preliminary thinking, external partners, big data
+            best practices state of play policymaker improve the world when. Inspirational challenges and opportunities,
+            engaging or co-create, efficient, think tank technology;
+          </p>
         </div>
       </div>
       <div
@@ -31,44 +46,38 @@
             <a
               class="btn btn_clear has-padding-0"
               @click.prevent="isOutsetClass = 'is-outset_left'"
-              :class="{'is-active': isOutsetClass === 'is-outset_left'}"
+              :class="{ 'is-active': isOutsetClass === 'is-outset_left' }"
             >
-              <svg class="ixo">
-                <use xlink:href="#outset-left"></use>
-              </svg>
+              <svg class="ixo"><use xlink:href="#outset-left"></use></svg>
             </a>
           </li>
           <li class="nav__item">
             <a
               class="btn btn_clear has-padding-0"
               @click.prevent="isOutsetClass = 'is-outset_full'"
-              :class="{'is-active': isOutsetClass === 'is-outset_full'}"
+              :class="{ 'is-active': isOutsetClass === 'is-outset_full' }"
             >
-              <svg class="ixo">
-                <use xlink:href="#outset-full"></use>
-              </svg>
+              <svg class="ixo"><use xlink:href="#outset-full"></use></svg>
             </a>
           </li>
           <li class="nav__item">
             <a
               class="btn btn_clear has-padding-0"
               @click.prevent="isOutsetClass = 'is-outset_right'"
-              :class="{'is-active': isOutsetClass === 'is-outset_right'}"
+              :class="{ 'is-active': isOutsetClass === 'is-outset_right' }"
             >
-              <svg class="ixo">
-                <use xlink:href="#outset-right"></use>
-              </svg>
+              <svg class="ixo"><use xlink:href="#outset-right"></use></svg>
             </a>
           </li>
           <li class="nav__divider" v-if="isOutsetClass !== 'is-outset_full'"></li>
           <li class="nav__item" v-if="isOutsetClass !== 'is-outset_full'">
             <div class="xui-checkbox">
-              <input type="checkbox" id="useCol" v-model="useCol">
+              <input type="checkbox" id="useCol" v-model="useCol" />
               <label for="useCol" class="xui-checkbox__label">data-col</label>
             </div>
           </li>
           <li class="nav__item" v-if="isOutsetClass !== 'is-outset_full'">
-            <input type="number" min="1" max="12" :disabled="!useCol" v-model="col" class="input">
+            <input type="number" min="1" max="12" :disabled="!useCol" v-model="col" class="input" />
           </li>
         </ul>
       </div>
@@ -79,13 +88,9 @@
           <pre v-highlightjs="markup"><code class="html"></code></pre>
         </div>
         <div class="divider"></div>
-        <div class="has-margin-middle-5">
-          <params-table :params="params"></params-table>
-        </div>
+        <div class="has-margin-middle-5"><params-table :params="params"></params-table></div>
         <div class="divider"></div>
-        <div class="has-margin-middle-5">
-          <requires-list :requires="requires"></requires-list>
-        </div>
+        <div class="has-margin-middle-5"><requires-list :requires="requires"></requires-list></div>
       </div>
     </div>
   </section>
@@ -151,5 +156,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

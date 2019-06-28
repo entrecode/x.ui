@@ -3,14 +3,29 @@
     <div
       class="has-radius has-margin-bottom-5 demo-highlight"
       style="height: 400px; max-width: 100%;"
-      :class="[isClipped ? 'is-clipped' : 'is-scrollable' + (behavior === 'scroll' ? '' : '-auto') + (axis === 'both' ? '' : '-' + axis ) + (contain ? '-contain' : ''), !isClipped ? 'demo-highlight-' + axis : '']"
+      :class="[
+        isClipped
+          ? 'is-clipped'
+          : 'is-scrollable' +
+            (behavior === 'scroll' ? '' : '-auto') +
+            (axis === 'both' ? '' : '-' + axis) +
+            (contain ? '-contain' : ''),
+        !isClipped ? 'demo-highlight-' + axis : '',
+      ]"
     >
-      <img src="sample-image.jpg" style="width: 120vw; height: auto;">
+      <img src="sample-image.jpg" style="width: 120vw; height: auto;" />
     </div>
     <div>
       <code
         class="demo-code has-margin-bottom-3"
-        v-text="isClipped ? 'is-clipped' : 'is-scrollable' + (behavior === 'scroll' ? '' : '-auto') + (axis === 'both' ? '' : '-' + axis ) + (contain ? '-contain' : '')"
+        v-text="
+          isClipped
+            ? 'is-clipped'
+            : 'is-scrollable' +
+              (behavior === 'scroll' ? '' : '-auto') +
+              (axis === 'both' ? '' : '-' + axis) +
+              (contain ? '-contain' : '')
+        "
       ></code>
       <div data-grid="small-gutter center" data-flex="center-items">
         <div data-col="fit">
@@ -25,13 +40,13 @@
         </div>
         <div data-col="fit">
           <div class="xui-checkbox">
-            <input type="checkbox" v-model="contain" id="contain">
+            <input type="checkbox" v-model="contain" id="contain" />
             <label for="contain" class="xui-checkbox__label">contain</label>
           </div>
         </div>
         <div data-col="fit">
           <div class="xui-checkbox">
-            <input type="checkbox" v-model="isClipped" id="isClipped">
+            <input type="checkbox" v-model="isClipped" id="isClipped" />
             <label for="isClipped" class="xui-checkbox__label">is-clipped</label>
           </div>
         </div>

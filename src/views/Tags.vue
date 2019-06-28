@@ -179,5 +179,4 @@ $tag-outlined-border-style: solid;`,
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

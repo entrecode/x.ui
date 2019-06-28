@@ -1,13 +1,10 @@
 <template>
   <section>
-    <div class="has-padding-center-3">
-      <h2>xui-checkbox</h2>
-    </div>
+    <div class="has-padding-center-3"><h2>xui-checkbox</h2></div>
     <div class="demo-preview has-padding-8" data-flex="column center-items">
       <div class="is-theme has-padding-5 has-radius">
         <div class="xui-checkbox">
-          <input type="checkbox" id="boollean-1">
-          <label for="boollean-1" class="xui-checkbox__label">checkbox</label>
+          <input type="checkbox" id="boollean-1" /> <label for="boollean-1" class="xui-checkbox__label">checkbox</label>
         </div>
       </div>
     </div>
@@ -106,5 +103,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

@@ -70,13 +70,13 @@
 - removed placeholder `%ec-icon`
 - removed `xui-tabs`
 - changed breakpoint postfix from `-` to `@` e.g. `@sm`
-- changed `data-grid="is-small"` to  `data-grid="small-gutter"`
-- changed `data-grid="default"` to  `data-grid="default-gutter"`
-- changed `data-grid="is-center"` to  `data-grid="center"`
-- changed `data-grid="is-end"` to  `data-grid="end"`
-- changed `data-grid="is-start"` to  `data-grid="start"`
+- changed `data-grid="is-small"` to `data-grid="small-gutter"`
+- changed `data-grid="default"` to `data-grid="default-gutter"`
+- changed `data-grid="is-center"` to `data-grid="center"`
+- changed `data-grid="is-end"` to `data-grid="end"`
+- changed `data-grid="is-start"` to `data-grid="start"`
 - renamed `$divider-color` to `$base-divider-color`
-- renamed `$divider-background` and `$divider-background-invert` to `$divider-color` and  `$divider-color-invert`
+- renamed `$divider-background` and `$divider-background-invert` to `$divider-color` and `$divider-color-invert`
 
 ### changes
 

@@ -2,45 +2,27 @@
   <section>
     <div class="nav">
       <div class="nav__item">
-        <a
-          @click="activeTab = 1"
-          class="btn btn_clear demo-tab"
-          :class="{'is-active' : activeTab === 1}"
-        >inline</a>
+        <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">inline</a>
       </div>
       <div class="nav__item">
-        <a
-          @click="activeTab = 2"
-          class="btn btn_clear demo-tab"
-          :class="{'is-active' : activeTab === 2}"
-        >local</a>
+        <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }">local</a>
       </div>
       <div class="nav__item">
-        <a
-          @click="activeTab = 3"
-          class="btn btn_clear demo-tab"
-          :class="{'is-active' : activeTab === 3}"
-        >global</a>
+        <a @click="activeTab = 3" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 3 }">global</a>
       </div>
     </div>
 
     <div v-if="activeTab === 1" class="animated fadeIn">
       <div class="demo-preview has-padding-8 has-margin-bottom-5">
         <div data-grid>
+          <div data-col="4" data-flex="center center-items"><span class="loader"></span></div>
           <div data-col="4" data-flex="center center-items">
-            <span class="loader"></span>
-          </div>
-          <div data-col="4" data-flex="center center-items">
-            <a class="btn">
-              <span class="loader"></span>
-            </a>
+            <a class="btn"> <span class="loader"></span> </a>
           </div>
           <div data-col="4" data-flex="center center-items">
             <div class="input-group">
-              <input type="text" class="input input_big" placeholder="input...">
-              <div class="input-group__addon">
-                <span class="loader"></span>
-              </div>
+              <input type="text" class="input input_big" placeholder="input..." />
+              <div class="input-group__addon"><span class="loader"></span></div>
             </div>
           </div>
         </div>
@@ -49,10 +31,7 @@
     </div>
     <div v-if="activeTab === 2" class="animated fadeIn">
       <div class="demo-preview has-padding-8 has-margin-bottom-5" data-flex="center center-items">
-        <a class="btn btn_super is-relative">
-          save
-          <span class="loader is-local"></span>
-        </a>
+        <a class="btn btn_super is-relative"> save <span class="loader is-local"></span> </a>
       </div>
       <pre v-highlightjs="markupLocal"><code class="html"></code></pre>
     </div>
@@ -164,5 +143,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

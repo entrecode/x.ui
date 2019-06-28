@@ -6,7 +6,7 @@
         <div data-grid="center">
           <div data-col="12" data-flex="center">
             <div class="avatar demo-transition has-margin-middle-5" :class="computedClasses">
-              <img src="avatar.png">
+              <img src="avatar.png" />
             </div>
           </div>
           <div class="is-theme has-padding-middle-2 has-padding-center-3" data-col="fit" data-grid="small">
@@ -19,7 +19,7 @@
             </div>
             <div data-col="fit">
               <div class="xui-checkbox">
-                <input type="checkbox" v-model="avatarStyle" id="avatarStyle">
+                <input type="checkbox" v-model="avatarStyle" id="avatarStyle" />
                 <label for="avatarStyle" class="xui-checkbox__label">square</label>
               </div>
             </div>
@@ -112,5 +112,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

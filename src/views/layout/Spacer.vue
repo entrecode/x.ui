@@ -1,9 +1,9 @@
 <template>
   <div class="has-padding-8">
-    <layout-bumper/>
-    <layout-divider/>
-    <layout-spacer/>
-    <layout-flex-space/>
+    <layout-bumper />
+    <layout-divider />
+    <layout-spacer />
+    <layout-flex-space />
   </div>
 </template>
 

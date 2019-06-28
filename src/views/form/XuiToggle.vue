@@ -1,14 +1,13 @@
 <template>
   <section>
-    <div class="has-padding-center-3">
-      <h2>xui-toggle</h2>
-    </div>
+    <div class="has-padding-center-3"><h2>xui-toggle</h2></div>
     <div class="demo-preview has-padding-8" data-flex="column center-items">
       <div class="is-theme has-padding-5 has-radius">
         <div class="xui-toggle">
-          <input id="toggle-1" type="checkbox">
+          <input id="toggle-1" type="checkbox" />
           <label for="toggle-1" class="xui-toggle__label">
-            <div class="xui-toggle__switch"></div>toggle with a longer label
+            <div class="xui-toggle__switch"></div>
+            toggle with a longer label
           </label>
         </div>
       </div>
@@ -109,5 +108,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

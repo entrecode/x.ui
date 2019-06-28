@@ -13,15 +13,9 @@
         <tr v-for="(param, index) in params" :key="index" data-grid="small-gutter">
           <td valign="top" data-col="5">
             <code v-text="param.name" class="is-bold"></code>
-            <div
-              v-html="param.description"
-              v-if="param.description"
-              style="font-size: .825em; padding: 8px 0;"
-            ></div>
+            <div v-html="param.description" v-if="param.description" style="font-size: .825em; padding: 8px 0;"></div>
           </td>
-          <td v-if="param.type" valign="top" data-col="2">
-            <span class="tag" v-text="param.type"></span>
-          </td>
+          <td v-if="param.type" valign="top" data-col="2"><span class="tag" v-text="param.type"></span></td>
           <td valign="top" data-col="5">
             <pre v-highlightjs="param.default || '...'"><code class="scss"></code></pre>
           </td>

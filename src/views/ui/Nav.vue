@@ -4,21 +4,15 @@
       <div class="demo-preview has-padding-5" data-flex="column center-items">
         <div class="has-padding-4 has-radius is-elevated-16 has-margin-bottom-5 is-theme">
           <ul class="nav demo-transition" :class="computedClasses">
-            <li class="nav__item">
-              <a href>Navlink</a>
-            </li>
-            <li class="nav__item">
-              <a href>Navlink</a>
-            </li>
+            <li class="nav__item"><a href>Navlink</a></li>
+            <li class="nav__item"><a href>Navlink</a></li>
             <li class="nav__divider"></li>
-            <li class="nav__item">
-              <a class="btn">Navlink</a>
-            </li>
+            <li class="nav__item"><a class="btn">Navlink</a></li>
           </ul>
         </div>
         <div class="is-theme has-padding-middle-2 has-padding-center-3">
           <div class="xui-checkbox">
-            <input type="checkbox" v-model="navStyle" id="navStyle">
+            <input type="checkbox" v-model="navStyle" id="navStyle" />
             <label for="navStyle" class="xui-checkbox__label">square</label>
           </div>
         </div>
@@ -96,5 +90,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

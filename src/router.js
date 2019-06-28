@@ -1,20 +1,14 @@
 import Vue from 'vue';
 import DemoMenubar from './components/Menubar.vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
 
 Vue.use(Router);
 
-export default new Router({
+export const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'getting-started',
-      components: { main: () => import('./views/GettingStarted.vue'), menu: DemoMenubar },
-    },
-    {
-      path: '/getting-started',
-      name: 'getting-started',
+      name: 'home',
       components: { main: () => import('./views/GettingStarted.vue'), menu: DemoMenubar },
     },
     {
@@ -268,8 +262,7 @@ export default new Router({
       components: { main: () => import('./views/utilities/DataTooltip.vue'), menu: DemoMenubar },
     },
   ],
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior() {
     return { x: 0, y: 0 };
   },
-  mode: 'history',
 });

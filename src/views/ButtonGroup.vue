@@ -1,29 +1,15 @@
 <template>
   <section>
-    <div class="has-padding-center-3">
-      <h2>button-group</h2>
-    </div>
+    <div class="has-padding-center-3"><h2>button-group</h2></div>
     <div class="nav">
       <div class="nav__item">
-        <a
-          @click="activeTab = 1"
-          class="btn btn_clear demo-tab"
-          :class="{'is-active' : activeTab === 1}"
-        >normal</a>
+        <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">normal</a>
       </div>
       <div class="nav__item">
-        <a
-          @click="activeTab = 2"
-          class="btn btn_clear demo-tab"
-          :class="{'is-active' : activeTab === 2}"
-        >rounded</a>
+        <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }">rounded</a>
       </div>
       <div class="nav__item">
-        <a
-          @click="activeTab = 3"
-          class="btn btn_clear demo-tab"
-          :class="{'is-active' : activeTab === 3}"
-        >dropdown</a>
+        <a @click="activeTab = 3" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 3 }">dropdown</a>
       </div>
     </div>
     <div v-if="activeTab === 1" class="animated fadeIn">
@@ -41,8 +27,7 @@
     <div v-if="activeTab === 2" class="animated fadeIn">
       <div class="demo-preview has-padding-8" data-flex="center center-items">
         <div class="btn-group">
-          <a class="btn-group__start btn btn_round">button</a>
-          <a class="btn-group__inner btn btn_round">button</a>
+          <a class="btn-group__start btn btn_round">button</a> <a class="btn-group__inner btn btn_round">button</a>
           <a class="btn-group__end btn btn_super btn_round">button</a>
         </div>
       </div>
@@ -55,9 +40,7 @@
           <a class="btn-group__inner btn_outlined btn">button</a>
           <div class="dropdown" tabindex="0">
             <div class="btn btn_outlined btn-group__end">
-              <svg class="ixo">
-                <use xlink:href="#more-vertical"></use>
-              </svg>
+              <svg class="ixo"><use xlink:href="#more-vertical"></use></svg>
             </div>
             <div class="dropdown-options">...</div>
           </div>
@@ -128,5 +111,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

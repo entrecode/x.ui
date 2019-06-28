@@ -6,17 +6,20 @@
           <doc-tab>
             <div slot="preview">
               <div class="demo-bg has-padding-6" :class="hasRadiusClass">
-                <div class="demo-radius-settings is-theme has-padding-center-6 has-padding-middle-3" :class="hasRadiusClass">
+                <div
+                  class="demo-radius-settings is-theme has-padding-center-6 has-padding-middle-3"
+                  :class="hasRadiusClass"
+                >
                   <div>
                     <div class="xui-checkbox">
-                      <input type="checkbox" id="radiusTL" v-model="radiusEdge.tl">
+                      <input type="checkbox" id="radiusTL" v-model="radiusEdge.tl" />
                       <label for="radiusTL" class="xui-checkbox__label"></label>
                     </div>
                   </div>
                   <div></div>
                   <div data-flex="end">
                     <div class="xui-checkbox">
-                      <input type="checkbox" id="radiusTR" v-model="radiusEdge.tr">
+                      <input type="checkbox" id="radiusTR" v-model="radiusEdge.tr" />
                       <label for="radiusTR" class="xui-checkbox__label"></label>
                     </div>
                   </div>
@@ -34,14 +37,14 @@
                   <div></div>
                   <div>
                     <div class="xui-checkbox">
-                      <input type="checkbox" id="radiusBL" v-model="radiusEdge.bl">
+                      <input type="checkbox" id="radiusBL" v-model="radiusEdge.bl" />
                       <label for="radiusBL" class="xui-checkbox__label"></label>
                     </div>
                   </div>
                   <div></div>
                   <div data-flex="end">
                     <div class="xui-checkbox">
-                      <input type="checkbox" id="radiusBR" v-model="radiusEdge.br">
+                      <input type="checkbox" id="radiusBR" v-model="radiusEdge.br" />
                       <label for="radiusBR" class="xui-checkbox__label"></label>
                     </div>
                   </div>
@@ -58,9 +61,7 @@
         </div>
         <div data-col="2">
           <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-            <li class="nav__item">
-              <h2>has-radius</h2>
-            </li>
+            <li class="nav__item"><h2>has-radius</h2></li>
           </ul>
         </div>
       </div>

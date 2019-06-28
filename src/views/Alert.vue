@@ -4,19 +4,16 @@
       <div data-grid="center">
         <div data-col="6">
           <div class="demo-preview has-padding-8" data-flex="column center">
-            <div
-              class="alert demo-transition"
-              :class="alertClasses"
-            >ecosystem families energize correlation, social enterprise citizen-centered.</div>
+            <div class="alert demo-transition" :class="alertClasses">
+              ecosystem families energize correlation, social enterprise citizen-centered.
+            </div>
           </div>
         </div>
         <div data-col="6" data-flex="column center">
           <div class="field-group">
             <div class="input-group">
               <label for="alertSize" class="input-group__addon">
-                <svg class="ixo is-ink-link">
-                  <use xlink:href="#move-vertical"></use>
-                </svg>
+                <svg class="ixo is-ink-link"><use xlink:href="#move-vertical"></use></svg>
               </label>
               <div class="input-group__addon">
                 <select id="alertSize" class="input input_round" v-model="size">
@@ -30,9 +27,7 @@
           <div class="field-group">
             <div class="input-group">
               <label for="alerStyle" class="input-group__addon">
-                <svg class="ixo is-ink-link">
-                  <use xlink:href="#color-palette"></use>
-                </svg>
+                <svg class="ixo is-ink-link"><use xlink:href="#color-palette"></use></svg>
               </label>
               <div class="input-group__addon">
                 <select class="input input_round" id="alerStyle" v-model="style">
@@ -206,5 +201,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>
