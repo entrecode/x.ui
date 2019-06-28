@@ -1,5 +1,145 @@
 # CHANGELOG
 
+## 10.0.0
+
+### breaking changes
+
+- removed deprecated `.flex-spacer` use `.flex-space` instead
+- removed deprecated `.bumper-small` and `.bumper-big` use `.bumper.bumper_small` or `.bumper.bumper_big` instead
+- removed deprecated `.spacer-small` and `.spacer-big` use `.spacer.spacer_small` or `.spacer.spacer_big` instead
+- removed deprecated `.alert-small` and `.alert-big` use `.alert.alert_small` or `.alert.alert_big` instead
+- removed deprecated `.well-small` and `.well-big`
+- removed deprecated `.is-visible#` use `is-block#` or `is-flex#`
+- removed deprecated `.is-raised#` use `is-elevated#` instead
+- removed deprecated `.is-lifted#` use `is-elevated#` instead
+- removed deprecated `.is-rounded#` use `has-radius#` instead
+- removed deprecated `.is-hidden-from#`
+- removed deprecated `.btn_glow`
+- removed `data-flex-item` size values, use `data-col` instead
+- refactored and combined `is-positioned` and `is-fab`
+- removed `.img_responsive` and `.img_full` use `.is-responsive` or `.is-fullwidth` instead
+- removed `.title` and `.toolbar` use `.titlebar` instead
+- removed `.no-margin` use `.has-margin-0` instead
+- removed `.no-padding` use `.has-padding-0` instead
+- removed `.xui-overlay`
+- removed float grid styles `data-row`
+- removed `.has-margin#`, `.has-margin#-smallest`, `.has-margin#-small`, `.has-margin#-big`
+- removed `.has-padding#`, `.has-padding#-smallets`, `.has-padding#-small`, `.has-padding#-big`
+- renamed `.is-bordered` to `.has-border`
+- removed breakpoints for `align-`
+- removed breakpoints for `is-clipped#`
+- removed breakpoints for `.is-bordered`
+- removed breakpoints for `.is-scrollable`
+- removed `.not-positioned`
+- removed breakpoints from `.is-placed` and `.is-position`
+- renamed `set-map-breakpoints()` to `set-data-map-breakpoints()`
+- renamed `getBreakpoint()` to `bp()`
+- removed `.form-group` use `.field-group` instead
+- removed input validation styles
+- removed `.bubble` use `.tag` instead
+- changed `$xui-checkbox-` config variables
+- changed `$xui-radio-` config variables
+- renamed `.slider` to `.range-slider`
+- removed all `is-` prefixes from `data-flex` values
+- optimized `.nav` - dropped `.nav__items`
+- changed `macro-metrics()` to `metrics()`
+- improved `.xui-accordion`
+- removed state values in `$xui-colors` map
+- removed `data-animate` use third-party libraries like animate.css instead
+- removed `.pull`
+- renamed `.has-width` and `.has-height` to `.is-width` and `.is-height`
+- removed placeholder `%toggle` and `%toggle-is-active`
+- renamed `arrayMagic()` to `array-magic()`
+- renamed `getColor()` to `get-color()`
+- renamed `flattenColor()` to `flatten-color()`
+- renamed `setContrast()` to `set-contrast()`
+- renamed `setHover()` to `set-hover()`
+- renamed `shadeByContrast()` to `shade-by-contrast()`
+- renamed `stripUnit()` to `strip-unit()`
+- renamed `systemColor()` to `system-color()`
+- renamed `varColor()` to `var-color()`
+- renamed `nextBp()` to `next-bp()`
+- renamed `getBrightness()` to `get-brightness()`
+- renamed `brightnessDifference()` to `brightness-difference()`
+- renamed `colorDifference()` to `color-difference()`
+- renamed `colorPass()` to `color-pass()`
+- renamed `colorMargin()` to `color-margin()`
+- renamed `contrastRatio()` to `contrast-ratio()`
+- renamed `checkCompliance()` to `check-compliance()`
+- renamed `findContrastLoop()` to `find-contrast-loop()`
+- removed placeholder `%ec-icon`
+- removed `xui-tabs`
+- changed breakpoint postfix from `-` to `@` e.g. `@sm`
+- changed `data-grid="is-small"` to  `data-grid="small-gutter"`
+- changed `data-grid="default"` to  `data-grid="default-gutter"`
+- changed `data-grid="is-center"` to  `data-grid="center"`
+- changed `data-grid="is-end"` to  `data-grid="end"`
+- changed `data-grid="is-start"` to  `data-grid="start"`
+- renamed `$divider-color` to `$base-divider-color`
+- renamed `$divider-background` and `$divider-background-invert` to `$divider-color` and  `$divider-color-invert`
+
+### changes
+
+- updated headings styles
+- refactored `.avatar`
+- refactored `.file-upload`
+- refactored `.is-layer-#`
+- refactored `.is-position-#`
+- refactored `.is-theme-#`
+- refactored `btn-group`
+- refactored color variables
+- removed background variables from `.btn_outline`
+- changed `@extend %btn;` to `@include _btn-reset;`
+- improved `.input_round`
+- improved `.btn_round`
+- changed `$base-weight` to `$base-font-weight`
+- changed `$body-font` to `$body-font-family`
+- changed `$headings-font` to `$headings-font-family`
+- renamed `$hover-shading` to `$_set-hover-shading`
+- added `$alert-styles` for alert styles
+- added `$tag-styles` for tag styles
+- removed `.form-boolean`
+- removed `.alert_outlined`
+
+### added
+
+- added `.is-font` for `font-family` styles
+- added addional config for `.nav_stacked`
+- added color-modifier `.hover:is-ink-#`
+- added theme-modifier `.hover:is-theme-#`
+- added theme-modifier `.hover:is-elevated-#`
+- added `data-col="fit"`
+- added grid config `$grid-small-gutter`
+- added `is-round` modifier
+- added `.nav__link` styles
+- added `.btn_square` styles
+
+### deprecated
+
+- `.dialog` use `.modal` instead
+- `.deck` use `.modal_deck` instead
+- `.overlay` use `.modal_overlay` instead
+- `.toast` use `.modal_toast` instead
+- `.snackbar` use `.modal_toast` instead
+
+### removed
+
+- removed `has-scroll-shadow`
+- removed `$state-disabled` and `getColor(state, disabled)`
+- removed `$theme-array`
+
+## 9.1.4
+
+### deprecated
+
+- `is-hidden#` and `is-visible#` might be removed in 10.0.0
+
+## 9.1.3
+
+### changes
+
+- changed `<fieldset>` to `.fieldset`
+
 ## 9.1.2
 
 ### changes
@@ -30,6 +170,7 @@
 - `xui-overlay` use `.dialog` instead
 
 ### added
+
 - config for `.kilo`, `.mega` and `.giga`
 - new atom `.file-upload` with config
 - new atom `.slider` with config
@@ -49,6 +190,7 @@
 - new font-weight variable and modifier class `.is-medium`
 
 ### updated
+
 - `.img-crop-#` - uses now a map to generate classes. can be extended via custom config
 - `arrayMagic` - can now be used with mixed arrays using different values like 2px 8 .1em 100%
 
@@ -270,10 +412,10 @@
 ### changes
 
 - new config variables `$giga-margin`, `$mega-margin` and `$kilo-margin` for headings margin-bottom
-- changed default values for .btn config variables - new based on $base-font-size
-- changed default values for .tag config variables - new based on $base-font-size
-- changed default values for .input config variables - new based on $base-font-size
-- fixed em function for $base-font-size usage
+- changed default values for .btn config variables - new based on \$base-font-size
+- changed default values for .tag config variables - new based on \$base-font-size
+- changed default values for .input config variables - new based on \$base-font-size
+- fixed em function for \$base-font-size usage
 - moved `$hamburger-btn-color` to config
 - removed `:invalid` styles of `.input`
 - flex fix for `xui-checkbox` and `xui-radio`
@@ -581,7 +723,7 @@ version bump
 
 ### added
 
-- added color `base, shadow` to $colors map
+- added color `base, shadow` to \$colors map
 - added modifier for `.btn` `.btn_delete` and `.btn_abort`
 
 ### changes

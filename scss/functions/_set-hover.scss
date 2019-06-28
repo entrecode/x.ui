@@ -1,0 +1,34 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group color-functions
+///
+/// @param {number} $_set-hover-shading [4] - default amount by which colors are darkened or lightened on hover
+/// @param {color} $color
+/// @param {number} $shade - amount by which the color should be shaded
+/// @require {function} var-color
+/// @require {function} get-brightness
+/// @require {function} flatten-color
+///
+/// @return new shade of color
+
+$_set-hover-shading: 4 !default;
+
+@function set-hover($color, $shade: $_set-hover-shading) {
+  @if type-of($color) == 'color' {
+    $_brightness: get-brightness($color);
+
+    @if (alpha($color) < 1) {
+      $color: flatten-color($color);
+    }
+
+    // if color is brighter
+    @if $_brightness > 180 {
+      $shade: $shade * -1;
+    }
+
+    @return var-color($color, $shade);
+  } @else {
+    @return $color;
+  }
+}

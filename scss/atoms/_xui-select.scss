@@ -1,0 +1,165 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {color} $xui-select-background [$input-background]
+/// @param {color} $xui-select-color [$input-color]
+/// @param {array} $xui-select-spacing [$input-spacing]
+/// @param {number} $xui-select-padding-ratio [$input-padding-ratio]
+/// @param {px} $xui-select-font-size [$input-font-size]
+/// @param {px} $xui-select-line-height [$input-line-height]
+/// @param {px} $xui-select-min-height [$input-min-height]
+///
+/// @require {mixin} array-magic()
+/// @require {mixin} inject-style()
+/// @require {mixin} metrics()
+/// @require {mixin} is-scrollable()
+/// @require {function} array-magic
+/// @require {function} rem
+/// @require {function} em
+
+.xui-select {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-style: solid;
+  flex-grow: 1;
+  outline: none;
+  text-align: left;
+  position: relative;
+  @include inject-style($xui-select-style);
+  @include metrics(
+    $xui-select-font-size,
+    $xui-select-line-height,
+    $xui-select-min-height,
+    $xui-select-border-width,
+    $xui-select-padding-ratio
+  );
+  background: $xui-select-background;
+  border-color: $xui-select-border-color;
+  color: $xui-select-color;
+  margin: array-magic($xui-select-spacing);
+
+  // @param {boolean} $xui-select-round [$input-round]
+  // @param {array} $xui-select-radius [$input-radius]
+  @if $xui-select-round {
+    border-radius: 100vw;
+  } @else {
+    border-radius: array-magic($xui-select-radius);
+  }
+
+  &.xui-select_top {
+    .xui-select-options {
+      bottom: 100%;
+      top: auto;
+    }
+  }
+}
+
+.xui-select__caret {
+  border: 4px solid transparent;
+  border-top-color: rgba($xui-select-color, 0.2);
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-top: rem(4);
+  transition: border-top-color 0.2s;
+  z-index: 1;
+
+  @at-root .xui-select:focus & {
+    margin-bottom: rem(4);
+    margin-top: 0;
+    transform: rotate(180deg);
+    z-index: 11;
+  }
+
+  @at-root .xui-select:hover & {
+    border-top-color: rgba($xui-select-color, 0.4);
+  }
+}
+
+// @param {color} $xui-select-placeholder-color [$input-placeholder-color]
+// @param {array} $xui-select-placeholder-style
+// @param {color} $xui-select-placeholder-hover-style
+.xui-select__placeholder {
+  flex-grow: 1;
+  flex-shrink: 0;
+  user-select: none;
+  @include inject-style($xui-select-placeholder-style);
+  color: $xui-select-placeholder-color;
+
+  @at-root .xui-select:hover & {
+    @include inject-style($xui-select-placeholder-hover-style);
+  }
+}
+
+// @param {px} $xui-select-options-radius [4]
+// @param {array} $xui-select-options-padding [4]
+// @param {px | null} $xui-select-options-max-height [240]
+// @param {color} $xui-select-options-background
+// @param {string} $xui-select-options-shadow
+// @param {array} $xui-select-options-style
+.xui-select-options {
+  width: 100%;
+  opacity: 0;
+  list-style: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin: 0;
+  transition: opacity 0.2s;
+  visibility: hidden;
+  z-index: 10;
+  @include is-scrollable(y, contain, $behavior: auto);
+  @include inject-style($xui-select-options-style);
+  background: $xui-select-options-background;
+  border-radius: array-magic($xui-select-options-radius);
+  box-shadow: array-magic($xui-select-options-shadow);
+  max-height: rem($xui-select-options-max-height);
+  padding: array-magic($xui-select-options-padding);
+
+  @at-root .xui-select:focus & {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// @param {px} $xui-select-option-radius [4]
+// @param {array} $xui-select-options-padding [4]
+// @param {array} $xui-select-option-font-size [$xui-select-font-size]
+// @param {color} $xui-select-option-background
+// @param {color} $xui-select-option-color
+// @param {array} $xui-select-option-style
+// @param {array} $xui-select-option-spacing [2 0]
+.xui-select-option {
+  display: block;
+  outline: none;
+  transition: background-color 0.4s, color 0.4s;
+  @include inject-style($xui-select-option-style);
+  margin: array-magic($xui-select-option-spacing);
+  background: $xui-select-option-background;
+  color: $xui-select-option-color;
+  border-radius: array-magic($xui-select-option-radius);
+  padding: array-magic($xui-select-option-padding);
+  font-size: em($xui-select-option-font-size, $xui-select-font-size);
+
+  // @param {color} $xui-select-option-hover-background
+  // @param {color} $xui-select-option-hover-color
+  // @param {array} $xui-select-option-hover-style
+  &:hover {
+    @include inject-style($xui-select-option-hover-style);
+    background: $xui-select-option-hover-background;
+    color: $xui-select-option-hover-color;
+  }
+
+  // @param {color} $xui-select-option-selected-background
+  // @param {color} $xui-select-option-selected-color
+  // @param {array} $xui-select-option-selected-style
+  &.is-selected {
+    @include inject-style($xui-select-option-selected-style);
+    background: $xui-select-option-selected-background;
+    color: $xui-select-option-selected-color;
+  }
+}

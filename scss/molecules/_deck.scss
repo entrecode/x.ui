@@ -1,0 +1,178 @@
+/// @author Bernhard Ruoff
+/// @since 9.1.0
+/// @access public
+/// @group molecules
+///
+/// @deprecated since 10.0.0
+/// @param {color} $deck-wrapper-background [$backdrop]
+/// @param {number} $deck-z-index [100]
+/// @param {array} $deck-style
+
+.deck-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  @include inject-style($deck-wrapper-style);
+  background: $deck-wrapper-background;
+  z-index: $deck-wrapper-z-index;
+
+  &.is-active {
+    display: flex;
+
+    > .deck {
+      display: flex;
+      align-self: flex-start;
+    }
+
+    > .opens-left {
+      align-self: flex-start;
+    }
+
+    > .opens-right {
+      align-self: flex-end;
+    }
+  }
+}
+
+// @param {color} $deck-background
+// @param {color} $deck-color
+// @param {px} $deck-min-width [240]
+// @param {array} $deck-padding [4]
+// @param {px} $deck-radius [4]
+// @param {number} $deck-z-index [100]
+// @param {array} $deck-style
+.deck {
+  display: none;
+  position: relative;
+  height: 100%;
+  flex-direction: column;
+  @include inject-style($deck-style);
+  background: $deck-background;
+  color: $deck-color;
+  padding: array-magic($deck-padding);
+  box-shadow: array-magic($deck-opens-left-shadow);
+
+  // @param {pixel | false } $deck-min-width [240]
+  &:not([data-col]) {
+    min-width: rem($deck-min-width);
+
+    // @param {percentage | false } $deck-max-width-relative [50]
+    // @param {pixel | false } $deck-max-width-relative [640]
+
+    @if $deck-max-width-absolute and $deck-max-width-relative {
+      @media (min-width: ($deck-max-width-absolute * 1px)) {
+        max-width: $deck-max-width-relative * 1%;
+
+        .deck-header,
+        .deck-body,
+        .deck-footer {
+          max-width: rem($deck-max-width-absolute);
+        }
+      }
+    }
+  }
+
+  &.is-active {
+    left: 0;
+  }
+
+  // @param {string} $deck-opens-left-shadow
+  // @param {string} $deck-opens-right-shadow
+  &.opens-left {
+    box-shadow: array-magic($deck-opens-left-shadow);
+
+    &.is-active {
+      left: 0;
+    }
+  }
+
+  &.opens-right {
+    box-shadow: array-magic($deck-opens-right-shadow);
+
+    &.is-active {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &.is-active {
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: $deck-z-index;
+  }
+
+  > .deck-dismiss + .deck-body {
+    margin-top: rem($btn-min-height);
+  }
+}
+
+// @param {array} $deck-dismiss-style
+.deck-dismiss {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+  background: none;
+  @include _btn-reset;
+  @include inject-style($deck-dismiss-style);
+  color: $deck-color;
+
+  &:only-child {
+    margin-left: auto;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// @param {array} $deck-header-spacing [0]
+// @param {array} $deck-header-padding [8]
+// @param {array} $deck-header-style
+.deck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  @include inject-style($deck-header-style);
+  margin: array-magic($deck-header-spacing);
+  padding: array-magic($deck-header-padding);
+
+  .deck-dismiss {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+}
+
+// @param {array} $deck-body-spacing [0]
+// @param {array} $deck-body-padding [8]
+// @param {array} $deck-body-style
+.deck-body {
+  flex-grow: 1;
+  @include is-scrollable(y, contain, $behavior: auto);
+  @include inject-style($deck-body-style);
+  margin: array-magic($deck-header-spacing);
+  padding: array-magic($deck-header-padding);
+}
+
+// @param {array} $deck-footer-spacing [0]
+// @param {array} $deck-footer-padding [8]
+// @param {array} $deck-footer-style
+.deck-footer {
+  flex-shrink: 0;
+  flex-grow: 0;
+  @include inject-style($deck-footer-style);
+  margin: array-magic($deck-footer-spacing);
+  padding: array-magic($deck-footer-padding);
+}

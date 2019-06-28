@@ -1,0 +1,54 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @require (mixin) is-scrollable
+
+.is-scrollable {
+  @include is-scrollable();
+
+  &-contain {
+    @include is-scrollable(both, true);
+  }
+
+  &-x {
+    @include is-scrollable(x);
+
+    &-contain {
+      @include is-scrollable(x, true);
+    }
+  }
+
+  &-y {
+    @include is-scrollable(y);
+
+    &-contain {
+      @include is-scrollable(y, true);
+    }
+  }
+}
+
+.is-scrollable-auto {
+  @include is-scrollable(both, false, auto);
+
+  &-contain {
+    @include is-scrollable(both, true, auto);
+  }
+
+  &-x {
+    @include is-scrollable(x, false, auto);
+
+    &-contain {
+      @include is-scrollable(x, true, auto);
+    }
+  }
+
+  &-y {
+    @include is-scrollable(y, false, auto);
+
+    &-contain {
+      @include is-scrollable(y, true, auto);
+    }
+  }
+}

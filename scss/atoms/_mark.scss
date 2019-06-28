@@ -1,0 +1,22 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {color} $mark-color [false]
+/// @param {color} $mark-background [false]
+/// @param {array} $mark-style
+
+@if ($mark-background != false) and ($mark-color != false) {
+  mark {
+    @include inject-style($mark-style);
+    background: $mark-background;
+    color: $mark-color;
+  }
+
+  ::selection {
+    @include inject-style($mark-style);
+    background: $mark-background;
+    color: $mark-color;
+  }
+}

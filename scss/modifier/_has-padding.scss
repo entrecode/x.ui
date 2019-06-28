@@ -1,0 +1,80 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @require {mixin} set-breakpoints
+/// @require {function} get-space
+/// @param {map} $has-padding-options [$has-padding-options]
+
+.has-padding {
+  @each $_spacing, $_h in $has-padding-options {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding: get-space($_spacing);
+      }
+    }
+  }
+}
+
+.has-padding-middle {
+  @each $_spacing, $_h in $has-padding-options {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding-bottom: get-space($_spacing);
+        padding-top: get-space($_spacing);
+      }
+    }
+  }
+}
+
+.has-padding-top {
+  @each $_spacing, $_h in $has-padding-options {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding-top: get-space($_spacing);
+      }
+    }
+  }
+}
+
+.has-padding-bottom {
+  @each $_spacing, $_h in $has-padding-options {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding-bottom: get-space($_spacing);
+      }
+    }
+  }
+}
+
+.has-padding-center {
+  @each $_spacing, $_h in $has-padding-options {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding-left: get-space($_spacing);
+        padding-right: get-space($_spacing);
+      }
+    }
+  }
+}
+
+.has-padding-left {
+  @each $_spacing, $_h in $has-padding-options {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding-left: get-space($_spacing);
+      }
+    }
+  }
+}
+
+.has-padding-right {
+  @each $_spacing, $_h in $has-padding-options {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        padding-right: get-space($_spacing);
+      }
+    }
+  }
+}

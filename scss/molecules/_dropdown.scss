@@ -1,0 +1,124 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group molecules
+///
+/// @param {boolean} $dropdown-in-hover [false]
+
+.dropdown {
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  position: relative;
+}
+
+// @param {px} $dropdown-options-radius [4]
+// @param {array} $dropdown-options-padding [8]
+// @param {px | null} $dropdown-options-max-height [320]
+// @param {color} $dropdown-options-background [$background]
+// @param {color} $dropdown-options-color [$text]
+// @param {string} $dropdown-options-shadow
+// @param {array} $dropdown-options-style
+.dropdown-options {
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  visibility: hidden;
+  z-index: 10;
+  transition: visibility 0.5s, opacity 0.2s;
+  @include is-scrollable(y, contain, $behavior: auto);
+  @include inject-style($dropdown-options-style);
+  background: $dropdown-options-background;
+  border-radius: array-magic($dropdown-options-radius);
+  box-shadow: array-magic($dropdown-options-shadow);
+  color: $dropdown-options-color;
+  max-height: rem($dropdown-options-max-height);
+  padding: array-magic($dropdown-options-padding);
+
+  @if $dropdown-on-hover == false {
+    @at-root :focus > & {
+      opacity: 1;
+      visibility: visible;
+    }
+  } @else {
+    @at-root :hover > & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @at-root .on-hover:hover & {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @at-root .dropdown_center & {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @at-root .dropdown_right & {
+    right: 0;
+  }
+
+  @at-root .dropdown_left & {
+    left: 0;
+  }
+
+  @at-root .dropdown_full & {
+    left: 0;
+    width: 100%;
+  }
+
+  @at-root .dropdown_above & {
+    bottom: 100%;
+    top: initial;
+  }
+}
+
+// @param {color} $dropdown-option-color [$text]
+// @param {color} $dropdown-option-background [none]
+// @param {array} $dropdown-option-padding [4 8]
+// @param {array} $dropdown-option-spacing [0]
+// @param {px} $dropdown-option-font-size [$base-font-size]
+// @param {px} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
+// @param {string} $dropdown-option-alignment [center]
+// @param {array} $dropdown-option-style
+// @param {array} $dropdown-option-hover-style
+.dropdown-option {
+  cursor: pointer;
+  border: 0;
+  height: auto;
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  touch-action: manipulation;
+  user-select: none;
+  display: block;
+  @include inject-style($dropdown-option-style);
+  font-size: rem($dropdown-option-font-size);
+  line-height: rem($dropdown-option-line-height);
+  color: $dropdown-option-color;
+  background: $dropdown-option-background;
+  margin: array-magic($dropdown-option-spacing);
+  padding: array-magic($dropdown-option-padding);
+  text-align: $dropdown-option-alignment;
+
+  &:hover {
+    @include inject-style($dropdown-option-hover-style);
+  }
+}
+
+// @param {px} $dropdown-option-divider-size [1]
+// @param {px} $dropdown-option-divider-spacing [4 0]
+// @param {color} $dropdown-option-divider-color [$base-divider-color]
+// @param {array} $dropdown-option-divider-style
+.dropdown_divider {
+  padding: 0;
+  @include inject-style($dropdown-option-divider-style);
+  background-color: $dropdown-option-divider-color;
+  height: rem($dropdown-option-divider-size);
+  margin: array-magic($dropdown-option-divider-spacing);
+}

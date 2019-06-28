@@ -1,0 +1,19 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group molecules
+
+// @param {array} $well-style
+// @param {color} $well-background [$background-lightest]
+// @param {color} $well-color [inherit]
+// @param {px} $well-radius [4]
+// @param {array} $well-padding [16 24]
+// @param {array} $well-spacing [0 0 16 0]
+.well {
+  @include inject-style($well-style);
+  background: $well-background;
+  color: $well-color;
+  border-radius: array-magic($well-radius);
+  margin: array-magic($well-spacing);
+  padding: array-magic($well-padding);
+}

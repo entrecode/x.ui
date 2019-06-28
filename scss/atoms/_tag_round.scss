@@ -1,0 +1,16 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms modifier
+///
+/// @param {boolean} $tag-round [false]
+
+@if $tag-round == true {
+  .tag {
+    border-radius: 100vw;
+  }
+}
+
+.tag_round {
+  border-radius: 100vw;
+}

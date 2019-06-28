@@ -1,0 +1,26 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @example
+///   <div class='spacer'></div>
+///
+/// @param {px} $spacer-size [get-space(5)]
+/// @param {px} $spacer-small-size [get-space(3)]
+/// @param {px} $spacer-big-size [get-space(6)]
+
+.spacer {
+  align-self: center;
+  flex-shrink: 0;
+  width: 100%;
+  height: $spacer-size;
+
+  &_small {
+    height: $spacer-small-size;
+  }
+
+  &_big {
+    height: $spacer-big-size;
+  }
+}

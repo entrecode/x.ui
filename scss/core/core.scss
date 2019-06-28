@@ -1,0 +1,68 @@
+/// @author Bernhard Ruoff
+/// @since 9.0.6
+/// @access public
+/// @group core
+
+:root {
+  box-sizing: border-box;
+  cursor: default;
+  font-size: $root-size + px;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  vertical-align: top;
+}
+
+input {
+  &[type='search'] {
+    -webkit-appearance: textfield;
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+  }
+}
+
+[hidden] {
+  display: none;
+}
+
+[unselectable] {
+  user-select: none;
+}
+
+[readonly] {
+  cursor: default;
+}
+
+//
+// Universal Inheritance
+// ---------------------
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+//
+// Misc
+// ----
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: top;
+}

@@ -1,0 +1,25 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group grid-columns
+///
+/// @param {map} $_offset
+/// @require {function} bp()
+
+$_offset: $grid-num-columns - 1;
+
+@for $i from 0 through $_offset {
+  [data-col~='+#{$i}'] {
+    margin-left: (($i / $grid-num-columns) * 100%);
+  }
+}
+
+@each $bp in map-keys($breakpoints) {
+  @for $i from 0 through $_offset {
+    [data-col~='+#{$i}\@#{$bp}'] {
+      @media (min-width: bp(#{$bp})) {
+        margin-left: (($i / $grid-num-columns) * 100%);
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @example
+///   <div class='bumper'></div>
+///
+/// @param {px} $bumper-size [4]
+/// @param {color} $bumper-color [$base-divider-color]
+/// @param {color} $bumper-invert-color [rgba($background, .2)]
+/// @param {array} $bumper-spacing [get-space(5) 0]
+/// @param {array} $bumper-small-spacing [get-space(3) 0]
+/// @param {array} $bumper-big-spacing [get-space(6) 0]
+
+.bumper {
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  height: rem($bumper-size);
+  margin: array-magic($bumper-spacing);
+
+  &::before {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    background-color: $bumper-color;
+    box-shadow: rem($bumper-size * 2) 0 0 $bumper-color, rem($bumper-size * 4) 0 0 $bumper-color;
+    height: rem($bumper-size);
+    margin-left: rem($bumper-size * 5 / -2);
+    width: rem($bumper-size);
+  }
+
+  &.bumper_invert {
+    &::before {
+      background-color: $bumper-invert-color;
+      box-shadow: rem($bumper-size * 2) 0 0 $bumper-invert-color, rem($bumper-size * 4) 0 0 $bumper-invert-color;
+    }
+  }
+}
+
+.bumper_small {
+  margin: array-magic($bumper-small-spacing);
+}
+
+.bumper_big {
+  margin: array-magic($bumper-big-spacing);
+}
+
+@mixin bumper {
+  position: relative;
+  height: rem($bumper-size);
+  text-align: center;
+
+  &::before {
+    background-color: $bumper-color;
+    border-radius: 50%;
+    box-shadow: rem($bumper-size * 2) 0 0 $bumper-color, rem($bumper-size * 4) 0 0 $bumper-color;
+    content: '';
+    height: rem($bumper-size);
+    margin-left: rem($bumper-size * 5 / -2);
+    position: absolute;
+    width: rem($bumper-size);
+  }
+
+  &.bumper_invert {
+    &::before {
+      background-color: $bumper-invert-color;
+      box-shadow: rem($bumper-size * 2) 0 0 $bumper-invert-color, rem($bumper-size * 4) 0 0 $bumper-invert-color;
+    }
+  }
+}

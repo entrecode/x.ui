@@ -1,0 +1,124 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {variable} $btn-font-family
+/// @param {number} $btn-padding-ratio [1.5] - ratio by which padding-left and padding-right are bigger
+/// @param {array} $btn-spacing [0]
+///
+/// @require {function} array-magic
+/// @require {mixin} inject-style
+/// @require {mixin} metrics
+
+// button core style mixin
+@mixin _btn-reset {
+  cursor: pointer;
+  appearance: none;
+  user-select: none;
+  outline: none;
+  touch-action: manipulation;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  height: auto;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: $btn-font-family;
+  margin: array-magic($btn-spacing);
+}
+
+// @param {array} $btn-style
+// @param {px} $btn-font-size [$base-font-size]
+// @param {px} $btn-line-height [$btn-font-size * $base-line-height]
+// @param {string} $btn-weight [$is-bold]
+// @param {px} $btn-icon-size [$base-icon-size]
+// @param {px} $btn-min-height [40]
+// @param {px} $btn-radius [4]
+// @param {color} $btn-background [$link]
+// @param {color} $btn-color [$link-contrast]
+// @param {string} $btn-transition [background-color .2s, box-shadow .1s]
+.btn {
+  @include _btn-reset;
+  @include inject-style($btn-style);
+  @include metrics($btn-font-size, $btn-line-height, $btn-min-height, $padding-ratio: $btn-padding-ratio);
+  border-radius: array-magic($btn-radius);
+  font-weight: $btn-weight;
+  background: $btn-background;
+  color: $btn-color;
+  transition: $btn-transition;
+
+  //
+  // states
+  // ------------------------------------------------------
+
+  // @param {color} $btn-hover-background [set-hover($btn-background)]
+  // @param {color} $btn-hover-color [$btn-color]
+  // @param {array} $btn-hover-style
+  &.is-active,
+  &:hover,
+  &:focus {
+    outline: none;
+    @include inject-style($btn-hover-style);
+    background: $btn-hover-background;
+    color: $btn-hover-color;
+  }
+
+  // disabled state style for buttons
+  // @param {array} $btn-disabled-style
+  &.is-disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    @include inject-style($btn-disabled-style);
+  }
+
+  // little transform animation onclick
+  // @param {array} $btn-ative-style
+  &:active {
+    @include inject-style($btn-active-style);
+  }
+
+  * {
+    pointer-events: none;
+  }
+}
+
+//
+// sizes
+// ------------------------------------------------------
+
+// @param {px} $btn-small-font-size [$btn-font-size * .875]
+// @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
+// @param {px} $btn-small-icon-size [$btn-icon-size]
+// @param {px} $btn-small-min-height [32]
+// @param {string} $btn-small-weight [$btn-weight]
+// @param {px} $btn-small-radius [$btn-radius]
+// @param {array} $btn-small-style
+.btn_small {
+  @include metrics(
+    $btn-small-font-size,
+    $btn-small-line-height,
+    $btn-small-min-height,
+    $padding-ratio: $btn-padding-ratio
+  );
+  border-radius: array-magic($btn-small-radius);
+  font-weight: $btn-small-weight;
+  @include inject-style($btn-small-style);
+}
+
+// @param {px} $btn-big-font-size [$btn-font-size * 1.125]
+// @param {px} $btn-big-line-height [$btn-big-font-size * $base-line-height]
+// @param {px} $btn-big-icon-size [$btn-icon-size]
+// @param {px} $btn-big-min-height [48]
+// @param {string} $btn-big-weight [$btn-weight]
+// @param {px} $btn-big-radius [$btn-radius]
+// @param {array} $btn-big-style
+.btn_big {
+  @include metrics($btn-big-font-size, $btn-big-line-height, $btn-big-min-height, $padding-ratio: $btn-padding-ratio);
+  border-radius: array-magic($btn-big-radius);
+  font-weight: $btn-big-weight;
+  @include inject-style($btn-big-style);
+}

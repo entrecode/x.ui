@@ -1,0 +1,31 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {map} $is-ink
+/// @return modifier class with a color values
+
+$_keys: map-keys($is-ink);
+$_values: map-values($is-ink);
+$_c: '-';
+
+@each $_key in $_keys {
+  $_i: index($_keys, $_key);
+  $_value: nth($_values, $_i);
+  $_modifier: #{$_c}#{$_key};
+
+  @if $_key == '' {
+    $_modifier: #{$_key};
+  }
+
+  .is-ink#{$_modifier} {
+    color: $_value;
+  }
+
+  .hover\:is-ink#{$_modifier} {
+    &:hover {
+      color: $_value;
+    }
+  }
+}

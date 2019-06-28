@@ -1,0 +1,21 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group color-functions
+///
+/// @param {color} $color - color to darken or lighten
+/// @param {number} $amount - value by which the color should be  to darkened or lightened
+/// @require {function} luma()
+/// @require {function} var-color()
+///
+/// @return {color} a shade of a color depending on it's lightness
+
+@function shade-by-contrast($color, $amount) {
+  $_luma: luma($color);
+
+  @if $_luma > .5 {
+    @return var-color($color, $amount * -1);
+  } @else {
+    @return var-color($color, $amount);
+  }
+}

@@ -1,0 +1,99 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {px} $range-slider-height [8]
+/// @param {px} $range-slider-radius [4]
+/// @param {color} $range-slider-background [$background-lightest]
+/// @param {array} $range-slider-style
+/// @param {array} $range-slider-hover-style
+///
+/// @require {mixin} inject-style()
+/// @require {function} array-magic
+/// @require {function} rem
+
+.range-slider {
+  appearance: none;
+  width: 100%;
+  outline: none;
+  margin: 0;
+  height: rem($range-slider-height);
+  background: $range-slider-background;
+  border: 0;
+  border-radius: array-magic($range-slider-radius);
+  @include inject-style($range-slider-style);
+
+  &:hover {
+    @include inject-style($range-slider-hover-style);
+  }
+}
+
+.range-slider::-webkit-slider-runnable-track {
+  appearance: none;
+  width: 100%;
+  outline: none;
+  margin: 0;
+  height: rem($range-slider-height);
+  background: $range-slider-background;
+  border: 0;
+  border-radius: array-magic($range-slider-radius);
+  @include inject-style($range-slider-style);
+
+  &:hover {
+    @include inject-style($range-slider-hover-style);
+  }
+}
+
+.range-slider::-moz-range-track {
+  appearance: none;
+  width: 100%;
+  outline: none;
+  margin: 0;
+  height: rem($range-slider-height);
+  background: $range-slider-background;
+  border: 0;
+  border-radius: array-magic($range-slider-radius);
+  @include inject-style($range-slider-style);
+
+  &:hover {
+    @include inject-style($range-slider-hover-style);
+  }
+}
+
+// @param {px} $range-slider-thumb-size [16]
+// @param {px} $range-slider-thumb-radius [8]
+// @param {color} $range-slider-thumb-color [$link]
+// @param {array} $range-slider-thumb-style
+// @param {array} $range-slider-thumb-hover-style
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  border: 0;
+  @include inject-style($range-slider-thumb-style);
+  width: rem($range-slider-thumb-size);
+  height: rem($range-slider-thumb-size);
+  background: $range-slider-thumb-color;
+  border-radius: array-magic($range-slider-thumb-radius);
+  margin-top: rem(($range-slider-height - $range-slider-thumb-size) / 2);
+
+  &:hover {
+    @include inject-style($range-slider-thumb-style);
+  }
+}
+
+.range-slider::-moz-range-thumb {
+  cursor: pointer;
+  border: 0;
+  @include inject-style($range-slider-thumb-style);
+  width: rem($range-slider-thumb-size);
+  height: rem($range-slider-thumb-size);
+  background: $range-slider-thumb-color;
+  border-radius: array-magic($range-slider-thumb-radius);
+
+  &:hover {
+    @include inject-style($range-slider-thumb-style);
+  }
+}

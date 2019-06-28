@@ -1,0 +1,53 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group layout mixins
+///
+/// @param {string} $attr-name - name of the data-attribute
+/// @param {string} $css-attr - name of the used css-attribute
+/// @param {map} $attr-map - map css and attribute values
+/// @param {boolean} $area [false] - set a range for the media query
+/// @param {boolean} $hasRoot [true] - styles are applied for the root element without a media-query if true
+///
+/// @return a set of styles for one data-attribute element with all available breakpoints
+///
+/// @require {map} $breakpoints
+/// @require {function} bp()
+
+@mixin set-data-map-breakpoints($attr-name, $css-attr, $attr-map, $area: false, $has-root: true) {
+  @if $has-root == true {
+    @each $_attr-key in map-keys($attr-map) {
+      $v: map-get($attr-map, $_attr-key);
+
+      [data-#{$attr-name}~='#{$_attr-key}'] {
+        #{$css-attr}: #{$v};
+      }
+    }
+  }
+
+  @if $area == true {
+    @each $bp in map-keys($breakpoints) {
+      @each $_attr-key in map-keys($attr-map) {
+        $v: map-get($attr-map, $_attr-key);
+
+        [data-#{$attr-name}~='#{$_attr-key}\@#{$bp}'] {
+          @media (min-width: bp(#{$bp})) and (max-width: bp(#{$bp}, max)) {
+            #{$css-attr}: #{$v};
+          }
+        }
+      }
+    }
+  } @else {
+    @each $bp in map-keys($breakpoints) {
+      @each $_attr-key in map-keys($attr-map) {
+        $v: map-get($attr-map, $_attr-key);
+
+        [data-#{$attr-name}~='#{$_attr-key}\@#{$bp}'] {
+          @media (min-width: bp(#{$bp})) {
+            #{$css-attr}: #{$v};
+          }
+        }
+      }
+    }
+  }
+}

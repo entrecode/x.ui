@@ -1,0 +1,74 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {array} $xui-checkbox-spacing [0 8 0 0]
+/// @param {px} $xui-checkbox-min-height [20]
+/// @param {px} $xui-checkbox-radius [6]
+/// @param {color} $xui-checkbox-background [$input-background]
+/// @param {array} $xui-checkbox-style
+/// @param {px} $xui-checkbox-check-size [14]
+/// @param {color} $xui-checkbox-check-color [transparent]
+///
+/// @require {placeholder} is-hidden-input
+/// @require {mixin} inject-style()
+/// @require {function} array-magic
+/// @require {function} rem
+
+.xui-checkbox {
+  position: relative;
+
+  [type='radio'],
+  [type='checkbox'] {
+    @extend %is-hidden-input;
+  }
+}
+
+.xui-checkbox__label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  // @param {array} $xui-checkbox-hover-style
+  // @param {color} $xui-checkbox-check-hover-color [$text-lightest]
+  &:hover {
+    @media (hover: hover) {
+      &::before {
+        @include inject-style($xui-checkbox-hover-style);
+        color: $xui-checkbox-check-hover-color;
+        line-height: rem($xui-checkbox-height + 2);
+      }
+    }
+  }
+
+  &::before {
+    content: '\2714\fe0e';
+    font-family: 'sans-serif';
+    display: flex;
+    align-self: flex-start;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.2s;
+    @include inject-style($xui-checkbox-style);
+    border-radius: array-magic($xui-checkbox-radius);
+    font-size: rem($xui-checkbox-check-size);
+    height: rem($xui-checkbox-height);
+    line-height: rem($xui-checkbox-height * 2);
+    margin: array-magic($xui-checkbox-spacing);
+    width: rem($xui-checkbox-height);
+    background-color: $xui-checkbox-background;
+    color: $xui-checkbox-check-color;
+
+    // @param {color} $xui-checkbox-check-checked-color [$link]
+    // @param {array} $xui-checkbox-checked-style
+    @at-root :checked ~ & {
+      @include inject-style($xui-checkbox-checked-style);
+      color: $xui-checkbox-check-checked-color;
+      line-height: rem($xui-checkbox-height + 2);
+    }
+  }
+}

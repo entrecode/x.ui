@@ -1,0 +1,15 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @group data-flex-item
+/// @access public
+
+$_align-self: (
+  'auto': 'auto',
+  'baseline': 'baseline',
+  'stretch': 'stretch',
+  'center': 'center',
+  'start': 'flex-start',
+  'end': 'flex-end'
+);
+
+@include set-data-map-breakpoints(flex-item, align-self, $_align-self);

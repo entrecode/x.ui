@@ -32,11 +32,7 @@ linters:
     enabled: false
 
   LeadingZero:
-    enabled: true
-
-  NameFormat:
-    enabled: true
-    function_convention: camel_case
+    enabled: false
 
   NestingDepth:
     enabled: true

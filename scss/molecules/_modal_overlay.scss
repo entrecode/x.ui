@@ -1,0 +1,12 @@
+.modal_overlay {
+  padding: 0;
+  justify-content: stretch;
+  align-items: stretch;
+
+  .modal {
+    border-radius: 0;
+    max-width: initial;
+    min-width: initial;
+    width: 100%;
+  }
+}

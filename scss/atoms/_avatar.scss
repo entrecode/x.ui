@@ -1,0 +1,54 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {px} $avatar-size [40]
+/// @param {px} $avatar-small-size-size [24]
+/// @param {px} $avatar-big-size-size [64]
+/// @param {array} $avatar-border [0]
+/// @param {array} $avatar-background [$background-lightest]
+/// @param {px} $avatar-square-radius [4]
+/// @param {array} $avatar-style
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  flex-grow: 0;
+  overflow: hidden;
+  border-radius: 100vw;
+
+  @supports (display: inline-flex) {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
+  @include inject-style($avatar-style);
+  background: $avatar-background;
+  border: array-magic($avatar-border);
+  height: rem($avatar-size);
+  width: rem($avatar-size);
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+
+  &_small {
+    height: rem($avatar-small-size);
+    width: rem($avatar-small-size);
+  }
+
+  &_big {
+    height: rem($avatar-big-size);
+    width: rem($avatar-big-size);
+  }
+
+  &_square {
+    border-radius: array-magic($avatar-square-radius);
+  }
+}

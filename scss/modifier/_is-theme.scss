@@ -1,0 +1,47 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @param {map} $is-theme
+/// @param {map} $is-theme-style
+/// @return modifier class with background-color and color values
+
+$_keys: map-keys($is-theme);
+$_values: map-values($is-theme);
+$_c: '-';
+
+@each $_key in $_keys {
+  $_i: index($_keys, $_key);
+  $_value: nth($_values, $_i);
+  $_modifier: #{$_c}#{$_key};
+
+  @if $_key == '' {
+    $_modifier: #{$_key};
+  }
+
+  @if length($_value) == 3 {
+    .is-theme#{$_modifier} {
+      @include inject-style($is-theme-style);
+      background: nth($_value, 1);
+      color: nth($_value, 2);
+
+      a:not(.btn):not(.tag):not([class*='is-ink']) {
+        color: nth($_value, 3);
+      }
+    }
+
+    .hover\:is-theme#{$_modifier} {
+      &:hover {
+        background: nth($_value, 1);
+        color: nth($_value, 2);
+
+        a:not(.btn):not(.tag):not([class*='is-ink']) {
+          color: nth($_value, 3);
+        }
+      }
+    }
+  } @else {
+    @warn 'is-theme: arguments missing';
+  }
+}

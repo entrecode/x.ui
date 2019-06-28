@@ -1,0 +1,24 @@
+.modal_toast {
+  padding: 0;
+  align-items: flex-start;
+  justify-content: stretch;
+
+  .modal {
+    border-radius: array-magic(0 0 $modal-radius $modal-radius);
+
+    &:not([data-col]) {
+      border-radius: 0;
+      max-width: initial;
+      min-width: initial;
+      width: 100%;
+    }
+  }
+
+  &.opens-bottom {
+    align-items: flex-end;
+
+    .modal {
+      border-radius: array-magic($modal-radius $modal-radius 0 0);
+    }
+  }
+}

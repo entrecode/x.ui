@@ -1,0 +1,33 @@
+/// @author Berhhard Ruoff
+/// @since 9.0.6
+/// @access public
+/// @group layout mixins
+///
+/// @param {both | x | y} $axis [both]
+/// @param {boolean} $contain [false] - defines the scroll-behavior
+/// @param {scroll | auto} $behavior [scroll]
+
+// scss-lint:disable PropertySpelling
+
+@mixin is-scrollable($axis: both, $contain: false, $behavior: scroll) {
+  -webkit-overflow-scrolling: touch;
+
+  @if $axis == 'both' {
+    overflow: #{$behavior};
+    @if $contain != false {
+      overscroll-behavior: contain;
+    }
+  } @else if $axis == 'x' {
+    overflow-x: #{$behavior};
+    overflow-y: hidden;
+    @if $contain != false {
+      overscroll-behavior-x: contain;
+    }
+  } @else if $axis == 'y' {
+    overflow-y: #{$behavior};
+    overflow-x: hidden;
+    @if $contain != false {
+      overscroll-behavior-y: contain;
+    }
+  }
+}

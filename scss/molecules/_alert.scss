@@ -1,0 +1,74 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group molecules
+///
+/// @example
+///   <p class='alert alert_error'>Error Message</p>
+
+// @param {color} $alert-background [$background-lightest]
+// @param {color} $alert-color [$text]
+// @param {string} $alert-weight [$is-normal]
+// @param {px} $alert-radius [4]
+// @param {px} $alert-font-size [$base-font-size]
+// @param {array} $alert-padding [16 24]
+// @param {array} $alert-spacing [0 0 16 0]
+// @param {array} $alert-style
+.alert {
+  text-align: center;
+  @include inject-style($alert-style);
+  background: $alert-background;
+  color: $alert-color;
+  border-radius: array-magic($alert-radius);
+  font-weight: $alert-weight;
+  font-size: em($alert-font-size);
+  margin: array-magic($alert-spacing);
+  padding: array-magic($alert-padding);
+}
+
+// @param {px} $alert-small-font-size [$alert-font-size * .875]
+// @param {array} $alert-small-padding [8 12]
+// @param {array} $alert-small-spacing [$alert-spacing]
+// @param {array} $alert-small-style
+.alert_small {
+  @include inject-style($alert-small-style);
+  font-size: em($alert-small-font-size);
+  margin: array-magic($alert-small-spacing);
+  padding: array-magic($alert-small-padding);
+}
+
+// @param {px} $alert-big-font-size [$alert-font-size * 1.125]
+// @param {array} $alert-big-padding [24 28]
+// @param {array} $alert-big-spacing [$alert-spacing]
+// @param {array} $alert-big-style
+.alert_big {
+  @include inject-style($alert-big-style);
+  font-size: em($alert-big-font-size);
+  margin: array-magic($alert-big-spacing);
+  padding: array-magic($alert-big-padding);
+}
+
+//
+// Styles
+// ------------------------------------------------------
+// @requires {array} $alert-styles
+// @param {string} $_prefix ['alert_']
+$_prefix: 'alert_';
+
+@each $_key, $_value in $alert-styles {
+  @if length($_value) == 2 {
+    $_background: nth($_value, 1);
+    $_color: nth($_value, 2);
+
+    .#{$_prefix}#{$_key} {
+      background: $_background;
+      color: $_color;
+
+      a:not([class]) {
+        color: inherit;
+      }
+    }
+  } @else {
+    @warn 'arguments missing - #{$_key}: #{$_value}';
+  }
+}
