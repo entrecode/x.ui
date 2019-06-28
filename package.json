@@ -1,6 +1,6 @@
 {
   "name": "x.ui",
-  "version": "10.0.0",
+  "version": "10.0.0-beta",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
