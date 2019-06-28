@@ -10,7 +10,9 @@
     </div>
     <div data-grid="center">
       <div data-col="10@md 8@lg">
+        <div class="spacer"></div>
         <pre v-highlightjs="markup"><code class="html"></code></pre>
+        <div class="spacer"></div>
         <params-table :params="params"></params-table>
         <div class="divider"></div>
         <requires-list :requires="requires"></requires-list>

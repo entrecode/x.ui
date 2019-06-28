@@ -49,6 +49,7 @@
       </div>
     </div>
     <div data-col="10@md 8@lg">
+      <div class="y-space-5"></div>
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="y-space-8"></div>
       <params-table :params="params" title="default params"></params-table>

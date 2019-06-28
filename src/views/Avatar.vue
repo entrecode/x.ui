@@ -26,9 +26,9 @@
           </div>
         </div>
       </div>
-      <div class="y-space-5"></div>
+      <div class="spacer"></div>
       <pre v-highlightjs="markup"><code class="html"></code></pre>
-      <div class="y-space-8"></div>
+      <div class="spacer"></div>
       <params-table :params="params"></params-table>
       <div class="divider"></div>
       <requires-list :requires="requires"></requires-list>

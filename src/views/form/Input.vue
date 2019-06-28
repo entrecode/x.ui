@@ -4,11 +4,29 @@
       <h2>input</h2>
     </div>
     <div class="demo-preview has-padding-8" data-flex="column center-items">
+      <textarea
+        class="input"
+        :class="[inputSize, inputRound ? ' input_round' : '']"
+        placeholder="textarea..."
+        rows="4"
+        v-if="inputType === 'textarea'"
+      ></textarea>
+      <select
+        v-else-if="inputType === 'select'"
+        class="input"
+        :class="[inputSize, inputRound ? ' input_round' : '']"
+      >
+        <option value>select</option>
+        <option value="option 1">option 1</option>
+        <option value="option 2">option 2</option>
+        <option value="option 3">option 3</option>
+      </select>
       <input
         :type="inputType"
         class="input"
-        :class="inputSize"
+        :class="[inputSize, inputRound ? ' input_round' : '']"
         :placeholder="`${inputType} input...`"
+        v-else
       >
 
       <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
@@ -47,89 +65,178 @@
                   <option value="tel">tel</option>
                   <option value="url">url</option>
                   <option value="number">number</option>
+                  <option value="textarea">textarea</option>
+                  <option value="select">select</option>
                 </select>
               </div>
             </div>
           </div>
+          <div class="nav__item">
+            <div class="xui-checkbox">
+              <input type="checkbox" id="inputRound" v-model="inputRound">
+              <label for="inputRound" class="xui-checkbox__label">round</label>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+    <div data-grid="center">
+      <div data-col="10@md 8@lg">
+        <div class="spacer"></div>
+        <pre v-highlightjs="inputMarkup"><code class="html"></code></pre>
+        <div class="spacer"></div>
+        <params-table :params="inputParams"></params-table>
+        <div class="spacer"></div>
+        <params-table :params="inputSizeParama" title="size params"></params-table>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import BlocksGroup from '@/components/BlocksGroup.vue';
+import ParamsTable from '@/components/ParamsTable.vue';
 
 export default {
   name: 'Form',
   components: {
-    BlocksGroup,
+    ParamsTable,
   },
   data: () => {
     return {
-      elementClass: 'input',
       inputSize: '',
       inputType: 'text',
-      sectionGroups: [
+      inputRound: false,
+      inputMarkup: `<input
+  type="text"
+  class="input"
+  placeholder="..."
+>`,
+      inputParams: [
         {
-          title: 'input',
-          type: 'atoms',
-          summary: `the <span class="code">.input</span> class can be applied to the folowing input types`,
-          id: 'input',
-          navTitle: 'input',
-          groupItems: [
-            {
-              title: '',
-              preview: `
-<textarea rows="3" class="input" placeholder="textarea..."></textarea><br>
-<select class="input">
-  <option value="" selected>select option</option>
-  <option value="">option</option>
-  <option value="">option</option>
-</select><br>`,
-              config: `$input-font-size: $base-font-size;
-$input-line-height: $input-font-size * 1.125;
-$input-min-height: 32;
-$input-padding-ratio: 1;
-$input-spacing: 0;
-$input-border-color: transparent;
-$input-border-width: 0;
-$input-border-style: solid;
-$input-background: $background-lighter;
-$input-color: $text;
-$input-style: ();
-$input-hover-style: ();
-$input-focus-style: ();
-$input-disabled-style: ();
-
-$input-placeholder-color: $text-lighter;
-$input-placeholder-style: ();
-$input-placeholder-hover-style: ();
-$input-placeholder-focus-style: ();`,
-            },
-            {
-              title: 'input sizes',
-              summary: 'besides the default size there are two additional sizes',
-              preview: `<input type="text" class="input input_small" placeholder="small input..."><br>
-<input type="text" class="input" placeholder="default input..."><br>
-<input type="text" class="input input_big" placeholder="big input...">`,
-              config: `$input-small-font-size: $input-font-size * 0.875;
-$input-small-line-height: $input-small-font-size * $base-line-height;
-$input-small-min-height: 28;
-$input-small-style: ();
-
-$input-big-font-size: $input-font-size * 1.125;
-$input-big-line-height: $input-big-font-size * $base-line-height;
-$input-big-min-height: 40;
-$input-big-style: ();`,
-            },
-            {
-              title: 'input round',
-              preview: `<input type="text" class="input input_round" placeholder="round input...">`,
-              config: ``,
-            },
-          ],
+          name: '$input-font-size',
+          type: 'number',
+          default: '$base-font-size',
         },
+        {
+          name: '$input-line-height',
+          type: 'number',
+          default: '$input-font-size * 1.125',
+        },
+        {
+          name: '$input-min-height',
+          type: 'number',
+          default: '32',
+        },
+        {
+          name: '$input-padding-ratio',
+          type: 'number',
+          default: '1',
+        },
+        {
+          name: '$input-spacing',
+          type: 'number',
+          default: '0',
+        },
+        {
+          name: '$input-border-color',
+          type: 'color',
+          default: 'transparent',
+        },
+        {
+          name: '$input-border-width',
+          type: 'number',
+          default: '0',
+        },
+        {
+          name: '$input-border-style',
+          type: 'string',
+          default: 'solid',
+        },
+        {
+          name: '$input-background',
+          type: 'color',
+          default: '$background-lighter',
+        },
+        {
+          name: '$input-color',
+          type: 'color',
+          default: '$text',
+        },
+        {
+          name: '$input-style',
+          type: 'array',
+        },
+        {
+          name: '$input-hover-style',
+          type: 'array',
+        },
+        {
+          name: '$input-focus-style',
+          type: 'array',
+        },
+        {
+          name: '$input-disabled-style',
+          type: 'array',
+        },
+        {
+          name: '$input-placeholder-color',
+          type: 'color',
+          default: '$text-lighter',
+        },
+        {
+          name: '$input-placeholder-style',
+          type: 'array',
+        },
+        {
+          name: '$input-placeholder-hover-style',
+          type: 'array',
+        },
+        {
+          name: '$input-placeholder-focus-style',
+          type: 'array',
+        },
+      ],
+      inputSizeParama: [
+        {
+          name: '$input-small-font-size',
+          type: 'number',
+          default: '$input-font-size * 0.875',
+        },
+        {
+          name: '$input-small-line-height',
+          type: 'number',
+          default: '$input-small-font-size * $base-line-height',
+        },
+        {
+          name: '$input-small-min-height',
+          type: 'number',
+          default: '28',
+        },
+        {
+          name: '$input-small-style',
+          type: 'array',
+        },
+        {
+          name: '$input-big-font-size',
+          type: 'number',
+          default: '$input-font-size * 1.125',
+        },
+        {
+          name: '$input-big-line-height',
+          type: 'number',
+          default: '$input-big-font-size * $base-line-height',
+        },
+        {
+          name: '$input-big-min-height',
+          type: 'number',
+          default: '40',
+        },
+        {
+          name: '$input-big-style',
+          type: 'array',
+        },
+      ],
+      sectionGroups: [
         {
           title: 'input-group',
           type: 'atoms',
@@ -266,6 +373,32 @@ $input-group-addon-style: ();`,
         },
       ],
     };
+  },
+  computed: {
+    hasChange() {
+      return [this.inputSize, this.inputType, this.inputRound].join();
+    },
+  },
+  watch: {
+    hasChange: function() {
+      if (this.inputType === 'textarea') {
+        this.inputMarkup = `<textarea class="input${this.inputSize ? ' ' + this.inputSize : ''}${
+          this.inputRound ? ' input_round' : ''
+        }" placeholder="..."></textarea>`;
+      } else if (this.inputType === 'select') {
+        this.inputMarkup = `<select class="input${this.inputSize ? ' ' + this.inputSize : ''}${
+          this.inputRound ? ' input_round' : ''
+        }">
+  <option value>...</option>
+  ...
+</select>`;
+      } else {
+        this.inputMarkup = `<input type="${this.inputType}" class="input${this.inputSize ? ' ' + this.inputSize : ''}${
+          this.inputRound ? ' input_round' : ''
+        }" placeholder="..."
+      >`;
+      }
+    },
   },
 };
 </script>

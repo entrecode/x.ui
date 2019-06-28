@@ -60,6 +60,9 @@
         <router-link to="xui-toggle" class="is-mega is-uppercase">xui-toggle</router-link>
       </li>
       <li class="nav__item">
+        <router-link to="xui-select" class="is-mega is-uppercase">xui-select</router-link>
+      </li>
+      <li class="nav__item">
         <router-link to="range-slider" class="is-mega is-uppercase">range-slider</router-link>
       </li>
       <li class="nav__item">

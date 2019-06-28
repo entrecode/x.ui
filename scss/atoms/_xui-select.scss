@@ -10,6 +10,14 @@
 /// @param {px} $xui-select-font-size [$input-font-size]
 /// @param {px} $xui-select-line-height [$input-line-height]
 /// @param {px} $xui-select-min-height [$input-min-height]
+///
+/// @require {mixin} array-magic()
+/// @require {mixin} inject-style()
+/// @require {mixin} metrics()
+/// @require {mixin} is-scrollable()
+/// @require {function} array-magic
+/// @require {function} rem
+/// @require {function} em
 
 .xui-select {
   cursor: pointer;

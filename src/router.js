@@ -93,6 +93,11 @@ export default new Router({
       components: { main: () => import('./views/form/XuiToggle.vue'), menu: DemoMenubar },
     },
     {
+      path: '/xui-select',
+      name: 'xui-select',
+      components: { main: () => import('./views/form/XuiSelect.vue'), menu: DemoMenubar },
+    },
+    {
       path: '/range-slider',
       name: 'range-slider',
       components: { main: () => import('./views/form/RangeSlider.vue'), menu: DemoMenubar },
