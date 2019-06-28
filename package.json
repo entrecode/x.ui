@@ -1,9 +1,9 @@
 {
   "name": "x.ui",
-  "version": "10.0.0-beta.0",
+  "version": "10.0.0-beta.1",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build --dest docs"
   },
   "dependencies": {
     "core-js": "^2.6.5",
