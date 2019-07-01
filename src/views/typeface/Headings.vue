@@ -1,11 +1,11 @@
 <template>
   <section>
-    <div class="has-padding-center-3">
+    <div class="is-padding-center-3">
       <h2>headings</h2>
     </div>
-    <div class="demo-preview has-padding-8" data-flex="column center-items">
+    <div class="demo-preview is-padding-8" data-flex="column center-items">
       <div class="typo-demo" v-html="preview"></div>
-      <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+      <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
         <div class="nav">
           <div class="nav__item">
             <a

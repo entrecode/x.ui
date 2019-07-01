@@ -4,14 +4,14 @@
     <div data-grid>
       <div data-col="3">
         <div class="doc-color-sample">
-          <div v-text="colors.link" class="is-giga has-padding-2" :style="`color: ${colors.link};`"></div>
+          <div v-text="colors.link" class="is-giga is-padding-2" :style="`color: ${colors.link};`"></div>
           <div
             v-text="colors.linkContrast"
-            class="is-giga has-radius has-padding-2"
+            class="is-giga is-radius is-padding-2"
             :style="`color: ${colors.linkContrast}; background-color: ${colors.link};`"
           ></div>
-          <div v-text="colors.linkSafe" class="is-giga has-padding-2" :style="`color: ${colors.linkSafe};`"></div>
-          <div v-text="colors.linkHover" class="is-giga has-padding-2" :style="`color: ${colors.linkHover};`"></div>
+          <div v-text="colors.linkSafe" class="is-giga is-padding-2" :style="`color: ${colors.linkSafe};`"></div>
+          <div v-text="colors.linkHover" class="is-giga is-padding-2" :style="`color: ${colors.linkHover};`"></div>
         </div>
       </div>
       <div data-col="3"></div>

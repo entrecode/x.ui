@@ -18,9 +18,9 @@ export default {
           id: 'bumper',
           groupItems: [
             {
-              preview: `<div class="spacing-demo has-margin-bottom-5"><div class="bumper"></div></div>
-              <div class="spacing-demo has-margin-bottom-5"><div class="bumper bumper_big"></div></div>
-              <div class="spacing-demo has-margin-bottom-5"><div class="bumper bumper_small"></div></div>
+              preview: `<div class="spacing-demo is-margin-bottom-5"><div class="bumper"></div></div>
+              <div class="spacing-demo is-margin-bottom-5"><div class="bumper bumper_big"></div></div>
+              <div class="spacing-demo is-margin-bottom-5"><div class="bumper bumper_small"></div></div>
               <div class="is-theme-invert"><div class="spacing-demo"><div class="bumper bumper_invert"></div></div></div>`,
               markup: `<div class="bumper"></div>
 <div class="bumper bumper_big"></div>

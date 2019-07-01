@@ -4,13 +4,13 @@
 /// @group atoms modifier
 
 // image grows up to its initial width
-.is-responsive {
+.img-responsive {
   height: auto;
   max-width: 100%;
 }
 
 // image grows up to its parents width
-.is-fullwidth {
+.img-fullwidth {
   height: auto;
   width: 100%;
 }

@@ -3,14 +3,14 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {map} $display-map
+/// @param {map} $is-display-map
 /// @param {map} $breakpoints
 ///
 /// @requires {function} bp
 
 // scss-lint:disable ImportantRule
-$_keys: map-keys($display-map);
-$_values: map-values($display-map);
+$_keys: map-keys($is-display-map);
+$_values: map-values($is-display-map);
 
 @each $_key in $_keys {
   $_i: index($_keys, $_key);

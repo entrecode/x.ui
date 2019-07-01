@@ -2,14 +2,14 @@
   <section>
     <h2>avatar</h2>
     <div data-col="10@md 8@lg">
-      <div class="demo-preview has-padding-5">
+      <div class="demo-preview is-padding-5">
         <div data-grid="center">
           <div data-col="12" data-flex="center">
-            <div class="avatar demo-transition has-margin-middle-5" :class="computedClasses">
+            <div class="avatar demo-transition is-margin-middle-5" :class="computedClasses">
               <img src="avatar.png" />
             </div>
           </div>
-          <div class="is-theme has-padding-middle-2 has-padding-center-3" data-col="fit" data-grid="small">
+          <div class="is-theme is-padding-middle-2 is-padding-center-3" data-col="fit" data-grid="small">
             <div data-col="fit">
               <select class="input input_round" v-model="avatarSize">
                 <option value>default</option>

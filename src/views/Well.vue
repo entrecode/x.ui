@@ -1,8 +1,8 @@
 <template>
   <section>
     <div data-col="10@md 8@lg">
-      <div class="has-margin-bottom-5">
-        <div class="demo-preview has-padding-8" data-flex="column center">
+      <div class="is-margin-bottom-5">
+        <div class="demo-preview is-padding-8" data-flex="column center">
           <div class="well"><p>ecosystem families energize correlation, social enterprise citizen-centered.</p></div>
         </div>
       </div>

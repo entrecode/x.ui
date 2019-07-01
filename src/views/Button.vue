@@ -1,11 +1,11 @@
 <template>
   <section>
-    <div class="has-padding-center-3"><h2>button</h2></div>
-    <div class="has-margin-bottom-5">
+    <div class="is-padding-center-3"><h2>button</h2></div>
+    <div class="is-margin-bottom-5">
       <div data-grid>
         <div data-col="10@md 8@lg">
-          <div class="demo-preview has-padding-8 has-min-height-vh-half" data-flex="column center">
-            <div class="align-center has-padding-bottom-5">
+          <div class="demo-preview is-padding-8 is-min-height-vh-half" data-flex="column center">
+            <div class="align-center is-padding-bottom-5">
               <input
                 type="button"
                 class="btn demo-transition"
@@ -13,7 +13,7 @@
                 value="button"
               />
             </div>
-            <div class="align-center has-padding-bottom-5">
+            <div class="align-center is-padding-bottom-5">
               <button
                 class="btn demo-transition"
                 :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
@@ -21,7 +21,7 @@
                 <svg class="ixo"><use xlink:href="#fire"></use></svg> Button
               </button>
             </div>
-            <div class="align-center has-padding-bottom-5">
+            <div class="align-center is-padding-bottom-5">
               <a
                 href
                 class="btn demo-transition"

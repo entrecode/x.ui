@@ -3,9 +3,9 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {map} $has-radius-options
+/// @param {map} $is-radius-options
 
-@mixin _has-radius($radius) {
+@mixin _is-radius($radius) {
   border-radius: $radius;
 
   &-top {
@@ -45,9 +45,9 @@
   }
 }
 
-.has-radius {
-  $_states: map-keys($has-radius-options);
-  $_values: map-values($has-radius-options);
+.is-radius {
+  $_states: map-keys($is-radius-options);
+  $_values: map-values($is-radius-options);
 
   @each $_state in $_states {
     $_i: index($_states, $_state);
@@ -59,11 +59,11 @@
     }
 
     &#{$_c}#{$_state} {
-      @include _has-radius(rem($_v));
+      @include _is-radius(rem($_v));
     }
   }
 }
 
 .is-round {
-  @include _has-radius(100vw);
+  @include _is-radius(100vw);
 }

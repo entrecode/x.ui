@@ -1,5 +1,5 @@
 <template>
-  <div class="has-padding-5">
+  <div class="is-padding-5">
     <ul class="nav nav_stacked">
       <li class="nav__item">
         <router-link to="/" class="is-kilo is-uppercase">getting started</router-link>
@@ -39,7 +39,7 @@
       <li class="y-space-5"></li>
       <li class="nav__item">
         <router-link to="form" class="is-mega is-uppercase">form</router-link>
-        <ul v-show="$route.name === 'form'" class="nav nav_stacked has-margin-middle-3 is-theme-submenu">
+        <ul v-show="$route.name === 'form'" class="nav nav_stacked is-margin-middle-3 is-theme-submenu">
           <li class="nav__item">
             <router-link to="form#scroll-to-field-group" class="is-kilo">field-group</router-link>
           </li>
@@ -72,14 +72,14 @@
       <li class="nav__item"><router-link to="is-ink" class="is-mega is-uppercase">is-ink</router-link></li>
       <li class="nav__item"><router-link to="is-theme" class="is-mega is-uppercase">is-theme</router-link></li>
       <li class="nav__item"><router-link to="is-elevated" class="is-mega is-uppercase">is-elevated</router-link></li>
-      <li class="nav__item"><router-link to="has-radius" class="is-mega is-uppercase">has-radius</router-link></li>
-      <li class="nav__item"><router-link to="has-border" class="is-mega is-uppercase">has-border</router-link></li>
+      <li class="nav__item"><router-link to="is-radius" class="is-mega is-uppercase">is-radius</router-link></li>
+      <li class="nav__item"><router-link to="is-border" class="is-mega is-uppercase">is-border</router-link></li>
       <li class="y-space-5"></li>
       <li><div class="is-h6">layout</div></li>
       <li class="nav__item"><router-link to="grid" class="is-mega is-uppercase">grid</router-link></li>
       <li class="nav__item"><router-link to="spacer" class="is-mega is-uppercase">spacer</router-link></li>
-      <li class="nav__item"><router-link to="has-margin" class="is-mega is-uppercase">has-margin</router-link></li>
-      <li class="nav__item"><router-link to="has-padding" class="is-mega is-uppercase">has-padding</router-link></li>
+      <li class="nav__item"><router-link to="is-margin" class="is-mega is-uppercase">is-margin</router-link></li>
+      <li class="nav__item"><router-link to="is-padding" class="is-mega is-uppercase">is-padding</router-link></li>
       <li class="nav__item"><router-link to="is-height" class="is-mega is-uppercase">is-height</router-link></li>
       <li class="nav__item"><router-link to="is-width" class="is-mega is-uppercase">is-width</router-link></li>
       <li class="nav__item"><router-link to="position" class="is-mega is-uppercase">position</router-link></li>

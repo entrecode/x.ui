@@ -18,10 +18,10 @@ export default {
           id: 'divider',
           groupItems: [
             {
-              preview: `<div class="typo-demo has-margin-bottom-5"><div class="divider"></div></div>
-              <div class="typo-demo has-margin-bottom-5"><div class="divider divider_big"></div></div>
-              <div class="typo-demo has-margin-bottom-5"><div class="divider divider_small"></div></div>
-              <div class="is-theme-invert"><div class="typo-demo has-margin-bottom-5"><div class="divider divider_invert"></div></div></div>`,
+              preview: `<div class="typo-demo is-margin-bottom-5"><div class="divider"></div></div>
+              <div class="typo-demo is-margin-bottom-5"><div class="divider divider_big"></div></div>
+              <div class="typo-demo is-margin-bottom-5"><div class="divider divider_small"></div></div>
+              <div class="is-theme-invert"><div class="typo-demo is-margin-bottom-5"><div class="divider divider_invert"></div></div></div>`,
               markup: `<div class="divider"></div>
 <div class="divider divider_big"></div>
 <div class="divider divider_small"></div>

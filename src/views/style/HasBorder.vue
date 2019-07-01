@@ -1,5 +1,5 @@
 <template>
-  <section class="demo-section" id="scroll-to-has-border">
+  <section class="demo-section" id="scroll-to-is-border">
     <div data-container>
       <div data-grid>
         <div data-col="10">
@@ -65,7 +65,7 @@
         </div>
         <div data-col="2">
           <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-            <li class="nav__item"><h2>has-border</h2></li>
+            <li class="nav__item"><h2>is-border</h2></li>
           </ul>
         </div>
       </div>
@@ -86,7 +86,7 @@ export default {
       border: new Set(),
       borderClass: '',
       markup: `...`,
-      config: `$has-border: 1 solid rgba($text, 0.1);`,
+      config: `$is-border: 1 solid rgba($text, 0.1);`,
     };
   },
   methods: {
@@ -115,39 +115,39 @@ export default {
       let vb = '';
 
       if (this.border.has('top')) {
-        hb = 'has-border-top';
+        hb = 'is-border-top';
 
         if (this.border.has('bottom')) {
-          hb = 'has-border-middle';
+          hb = 'is-border-middle';
         }
       }
 
       if (this.border.has('bottom')) {
-        hb = 'has-border-bottom';
+        hb = 'is-border-bottom';
 
         if (this.border.has('top')) {
-          hb = 'has-border-middle';
+          hb = 'is-border-middle';
         }
       }
 
       if (this.border.has('left')) {
-        vb = 'has-border-left';
+        vb = 'is-border-left';
 
         if (this.border.has('right')) {
-          vb = 'has-border-center';
+          vb = 'is-border-center';
         }
       }
 
       if (this.border.has('right')) {
-        vb = 'has-border-right';
+        vb = 'is-border-right';
 
         if (this.border.has('left')) {
-          vb = 'has-border-center';
+          vb = 'is-border-center';
         }
       }
 
       if (this.border.has('outside')) {
-        hb = 'has-border';
+        hb = 'is-border';
         vb = null;
       }
 

@@ -7,7 +7,7 @@
 /// @require {function} get-space
 /// @param {map} $spacings
 
-.has-margin {
+.is-margin {
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
@@ -17,7 +17,7 @@
   }
 }
 
-.has-margin-middle {
+.is-margin-middle {
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
@@ -28,7 +28,7 @@
   }
 }
 
-.has-margin-top {
+.is-margin-top {
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
@@ -38,7 +38,7 @@
   }
 }
 
-.has-margin-bottom {
+.is-margin-bottom {
   @each $_spacing, $_h in $spacings {
     &-#{$_spacing} {
       @include set-breakpoints {
@@ -48,7 +48,7 @@
   }
 }
 
-.has-margin-center {
+.is-margin-center {
   &-auto {
     @include set-breakpoints {
       margin-left: auto;
@@ -66,7 +66,7 @@
   }
 }
 
-.has-margin-left {
+.is-margin-left {
   &-auto {
     @include set-breakpoints {
       margin-left: auto;
@@ -82,7 +82,7 @@
   }
 }
 
-.has-margin-right {
+.is-margin-right {
   &-auto {
     @include set-breakpoints {
       margin-right: auto;

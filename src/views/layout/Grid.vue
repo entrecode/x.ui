@@ -30,8 +30,8 @@
           v-for="(col, index) in cols"
           :key="index"
         >
-          <div class="typo-demo has-padding-3 has-margin-bottom-3" data-flex="center center-items">
-            <div data-flex="center center-items" class="has-padding-3 is-theme" style="user-select: none;">
+          <div class="typo-demo is-padding-3 is-margin-bottom-3" data-flex="center center-items">
+            <div data-flex="center center-items" class="is-padding-3 is-theme" style="user-select: none;">
               <a class="is-mega" @click.prevent="upSize(col)">{{ col.size }}</a
               >&ensp;
               <a

@@ -1,5 +1,5 @@
 <template>
-  <div class="has-padding-8">
+  <div class="is-padding-8">
     <layout-bumper />
     <layout-divider />
     <layout-spacer />

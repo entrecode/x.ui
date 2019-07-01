@@ -1,13 +1,13 @@
 <template>
   <section>
-    <div class="has-padding-center-3">
+    <div class="is-padding-center-3">
       <h2>is-outset</h2>
       <p class="is-lead">
         <code class="code">.is-outset</code> is still in an experimental state. it can be used as a wrapper with all
         kinds of elements.
       </p>
     </div>
-    <div class="demo-preview has-padding-5 has-margin-bottom-5 is-relative">
+    <div class="demo-preview is-padding-5 is-margin-bottom-5 is-relative">
       <div data-grid="center">
         <div data-col="8">
           <div
@@ -39,12 +39,12 @@
         </div>
       </div>
       <div
-        class="demo-preview-settings is-absolute is-fab-s is-theme is-elevated-16 has-padding-middle-2 has-padding-center-3 is-round"
+        class="demo-preview-settings is-absolute is-fab-s is-theme is-elevated-16 is-padding-middle-2 is-padding-center-3 is-round"
       >
         <ul class="nav">
           <li class="nav__item">
             <a
-              class="btn btn_clear has-padding-0"
+              class="btn btn_clear is-padding-0"
               @click.prevent="isOutsetClass = 'is-outset_left'"
               :class="{ 'is-active': isOutsetClass === 'is-outset_left' }"
             >
@@ -53,7 +53,7 @@
           </li>
           <li class="nav__item">
             <a
-              class="btn btn_clear has-padding-0"
+              class="btn btn_clear is-padding-0"
               @click.prevent="isOutsetClass = 'is-outset_full'"
               :class="{ 'is-active': isOutsetClass === 'is-outset_full' }"
             >
@@ -62,7 +62,7 @@
           </li>
           <li class="nav__item">
             <a
-              class="btn btn_clear has-padding-0"
+              class="btn btn_clear is-padding-0"
               @click.prevent="isOutsetClass = 'is-outset_right'"
               :class="{ 'is-active': isOutsetClass === 'is-outset_right' }"
             >
@@ -84,13 +84,13 @@
     </div>
     <div data-grid="center">
       <div data-col="10@md 8@lg">
-        <div class="demo-markup-preview has-margin-middle-5">
+        <div class="demo-markup-preview is-margin-middle-5">
           <pre v-highlightjs="markup"><code class="html"></code></pre>
         </div>
         <div class="divider"></div>
-        <div class="has-margin-middle-5"><params-table :params="params"></params-table></div>
+        <div class="is-margin-middle-5"><params-table :params="params"></params-table></div>
         <div class="divider"></div>
-        <div class="has-margin-middle-5"><requires-list :requires="requires"></requires-list></div>
+        <div class="is-margin-middle-5"><requires-list :requires="requires"></requires-list></div>
       </div>
     </div>
   </section>

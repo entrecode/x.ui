@@ -3,16 +3,16 @@
   <section>
     <div data-grid>
       <div data-col="8">
-        <section class="has-margin-bottom-8" id="scroll-to-align">
+        <section class="is-margin-bottom-8" id="scroll-to-align">
           <h2>align</h2>
-          <div class="demo-preview has-padding-8" data-flex="column center center-items">
+          <div class="demo-preview is-padding-8" data-flex="column center center-items">
             <div data-col="8">
               <p
                 class="is-lead"
                 :class="alignClass"
               >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
             </div>
-            <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
@@ -55,16 +55,16 @@
 
         <div class="divider"></div>
         <!-- scroll-to-font-weight -->
-        <section class="has-margin-middle-8" id="scroll-to-font-weight">
+        <section class="is-margin-middle-8" id="scroll-to-font-weight">
           <h2>font-weight</h2>
-          <div class="demo-preview has-padding-8" data-flex="column center center-items">
+          <div class="demo-preview is-padding-8" data-flex="column center center-items">
             <div data-col="8">
               <p
                 class="is-lead"
                 :class="fontWeightClass"
               >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
             </div>
-            <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
@@ -120,13 +120,13 @@
         <div class="divider"></div>
 
         <!-- scroll-to-font-family -->
-        <section class="has-margin-middle-8" id="scroll-to-font-family">
+        <section class="is-margin-middle-8" id="scroll-to-font-family">
           <h2>font-family</h2>
-          <div class="demo-preview has-padding-8" data-flex="column center center-items">
+          <div class="demo-preview is-padding-8" data-flex="column center center-items">
             <div data-col="8">
               <div class="is-h1" :class="fontFamilyClass">our work shared unit of analysis.</div>
             </div>
-            <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
@@ -158,16 +158,16 @@
 
         <div class="divider"></div>
 
-        <section class="has-margin-middle-8" id="scroll-to-text-transform">
+        <section class="is-margin-middle-8" id="scroll-to-text-transform">
           <h2>text-transform</h2>
-          <div class="demo-preview has-padding-8" data-flex="column center center-items">
+          <div class="demo-preview is-padding-8" data-flex="column center center-items">
             <div data-col="8">
               <p
                 class="is-lead"
                 :class="textTransformClass"
               >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
             </div>
-            <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
@@ -199,9 +199,9 @@
 
         <div class="divider"></div>
 
-        <section class="has-margin-middle-8" id="scroll-to-word-wrap">
+        <section class="is-margin-middle-8" id="scroll-to-word-wrap">
           <h2>word-wrap</h2>
-          <div class="demo-preview has-padding-8" data-flex="column center center-items">
+          <div class="demo-preview is-padding-8" data-flex="column center center-items">
             <div data-col="8">
               <div class="is-clipped">
                 <div
@@ -210,7 +210,7 @@
                 >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</div>
               </div>
             </div>
-            <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a

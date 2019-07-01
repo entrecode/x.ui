@@ -10,7 +10,7 @@
         class="demo-bg"
         style="transition: height .2s;"
       >
-        <div class="has-padding-8 is-theme has-margin-8">
+        <div class="is-padding-8 is-theme is-margin-8">
           <h1 v-text="isHeightType"></h1>
           <div data-grid>
             <div data-col="6">
@@ -29,9 +29,9 @@
                     name="isHeightType"
                     id="hasMinHeight"
                     v-model="isHeightType"
-                    value="has-min-height"
+                    value="is-min-height"
                   />
-                  <label for="hasMinHeight" class="xui-radio__label">has-min-height</label>
+                  <label for="hasMinHeight" class="xui-radio__label">is-min-height</label>
                 </div>
               </div>
             </div>

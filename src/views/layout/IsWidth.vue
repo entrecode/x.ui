@@ -10,7 +10,7 @@
         class="demo-bg"
         style="transition: height .2s;"
       >
-        <div class="has-padding-8 is-theme has-margin-8">
+        <div class="is-padding-8 is-theme is-margin-8">
           <h1 v-text="isWidthType"></h1>
           <div data-grid>
             <div data-col="6">
@@ -24,8 +24,8 @@
             <div data-col="6">
               <div class="field-group">
                 <div class="xui-radio">
-                  <input type="radio" name="isWidthType" id="hasMinWidth" v-model="isWidthType" value="has-min-width" />
-                  <label for="hasMinWidth" class="xui-radio__label">has-min-width</label>
+                  <input type="radio" name="isWidthType" id="hasMinWidth" v-model="isWidthType" value="is-min-width" />
+                  <label for="hasMinWidth" class="xui-radio__label">is-min-width</label>
                 </div>
               </div>
             </div>

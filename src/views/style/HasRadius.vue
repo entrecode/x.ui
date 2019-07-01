@@ -1,13 +1,13 @@
 <template>
-  <section class="demo-section" id="scroll-to-has-radius">
+  <section class="demo-section" id="scroll-to-is-radius">
     <div data-container>
       <div data-grid>
         <div data-col="10">
           <doc-tab>
             <div slot="preview">
-              <div class="demo-bg has-padding-6" :class="hasRadiusClass">
+              <div class="demo-bg is-padding-6" :class="hasRadiusClass">
                 <div
-                  class="demo-radius-settings is-theme has-padding-center-6 has-padding-middle-3"
+                  class="demo-radius-settings is-theme is-padding-center-6 is-padding-middle-3"
                   :class="hasRadiusClass"
                 >
                   <div>
@@ -61,7 +61,7 @@
         </div>
         <div data-col="2">
           <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-            <li class="nav__item"><h2>has-radius</h2></li>
+            <li class="nav__item"><h2>is-radius</h2></li>
           </ul>
         </div>
       </div>
@@ -83,10 +83,10 @@ export default {
       radiusOption: 'round',
       radiusEdge: { tl: true, tr: true, bl: true, br: true },
       hasRadiusClass: 'is-round',
-      markup: `<div class="has-radius-0"></div>
-<div class="has-radius"></div>
+      markup: `<div class="is-radius-0"></div>
+<div class="is-radius"></div>
 <div class="is-round"></div>`,
-      config: `$has-radius-options: (
+      config: `$is-radius-options: (
   '0': 0,
   '': 4,
 );`,

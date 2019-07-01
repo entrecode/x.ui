@@ -36,7 +36,7 @@
     }
   }
 
-  &.has-backdrop {
+  &_backdrop {
     background: $modal-wrapper-background;
     pointer-events: inherit;
   }

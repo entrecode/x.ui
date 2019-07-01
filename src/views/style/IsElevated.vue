@@ -14,7 +14,7 @@
               >
                 <div class="field-group">
                   <div class="is-giga">is-elevated- <span class="is-ink-link" v-text="elevation"></span></div>
-                  <div class="has-padding-middle-3">
+                  <div class="is-padding-middle-3">
                     <input type="range" min="0" max="24" v-model="elevation" class="range-slider" />
                   </div>
                 </div>
@@ -27,7 +27,7 @@
                       </div>
                     </label>
                   </div>
-                  <div class="has-padding-middle-3">
+                  <div class="is-padding-middle-3">
                     <input type="range" min="0" max="24" v-model="hoverElevation" class="range-slider" />
                   </div>
                 </div>

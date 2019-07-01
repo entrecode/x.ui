@@ -1,9 +1,9 @@
 <template>
   <section>
-    <div class="has-margin-bottom-5">
+    <div class="is-margin-bottom-5">
       <div data-grid="center">
         <div data-col="6">
-          <div class="demo-preview has-padding-8" data-flex="column center">
+          <div class="demo-preview is-padding-8" data-flex="column center">
             <div class="alert demo-transition" :class="alertClasses">
               ecosystem families energize correlation, social enterprise citizen-centered.
             </div>

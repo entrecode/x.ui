@@ -1,8 +1,8 @@
 <template>
   <section>
-    <div class="has-padding-center-3"><h2>file-upload</h2></div>
-    <div class="demo-preview has-padding-8" data-flex="column center-items">
-      <div class="is-theme has-padding-5 has-radius">
+    <div class="is-padding-center-3"><h2>file-upload</h2></div>
+    <div class="demo-preview is-padding-8" data-flex="column center-items">
+      <div class="is-theme is-padding-5 is-radius">
         <form class="file-upload"><input type="file" multiple="multiple" /> drop files here or <a>upload</a></form>
       </div>
     </div>

@@ -1645,10 +1645,10 @@ $avatar-square-radius: 4 !default;
 $avatar-style: () !default;
 
 //
-// has-border
+// is-border
 // ------------------------------------------------------
-// @param {array} $has-border
-$has-border: 1 solid rgba($text, 0.1) !default;
+// @param {array} $is-border
+$is-border: 1 solid $base-divider-color !default;
 
 //
 // IS-THEME
@@ -2133,23 +2133,23 @@ $is-outset-gutter: 32 !default;
 $is-outset-bp: 1200 !default;
 
 //
-// HAS-RADIUS
+// IS-RADIUS
 // -------------------------------------------------------------------------------------------------
-// @param {map} $has-radius-options
-$has-radius-options: () !default;
-$has-radius-options: map-merge(
+// @param {map} $is-radius-options
+$is-radius-options: () !default;
+$is-radius-options: map-merge(
   (
     '0': 0,
     '': 4,
   ),
-  $has-radius-options
+  $is-radius-options
 );
 
 //
-// HAS-PADDING
+// IS-PADDING
 // -------------------------------------------------------------------------------------------------
-// @param {map} $has-padding-options [$spacings]
-$has-padding-options: $spacings !default;
+// @param {map} $is-padding-options [$spacings]
+$is-padding-options: $spacings !default;
 
 //
 // IS-HEIGHT
@@ -2188,15 +2188,15 @@ $is-width-map: map-merge(
 //
 // IS-{DISPLAY}
 // -------------------------------------------------------------------------------------------------
-// @param {map} $has-display-map
-$display-map: () !default;
-$display-map: map-merge(
+// @param {map} $is-display-map
+$is-display-map: () !default;
+$is-display-map: map-merge(
   (
     'is-hidden': 'none',
     'is-block': 'block',
     'is-flex': 'flex',
   ),
-  $display-map
+  $is-display-map
 );
 
 //

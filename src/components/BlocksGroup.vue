@@ -13,7 +13,7 @@
           </li>
           <li
             v-if="filterGroup('atoms').length"
-            class="is-uppercase has-padding-2 is-headings-font is-ink-light has-margin-top-3"
+            class="is-uppercase is-padding-2 is-headings-font is-ink-light is-margin-top-3"
           >
             <small>atoms</small>
           </li>
@@ -22,7 +22,7 @@
           </li>
           <li
             v-if="filterGroup('molecules').length"
-            class="is-uppercase has-padding-2 is-headings-font is-ink-light has-margin-top-3"
+            class="is-uppercase is-padding-2 is-headings-font is-ink-light is-margin-top-3"
           >
             <small>molecules</small>
           </li>
@@ -31,7 +31,7 @@
           </li>
           <li
             v-if="filterGroup('organisms').length"
-            class="is-uppercase has-padding-2 is-headings-font is-ink-light has-margin-top-3"
+            class="is-uppercase is-padding-2 is-headings-font is-ink-light is-margin-top-3"
           >
             <small>organisms</small>
           </li>
@@ -40,7 +40,7 @@
           </li>
           <li
             v-if="filterGroup('modifier').length"
-            class="is-uppercase has-padding-2 is-headings-font is-ink-light has-margin-top-3"
+            class="is-uppercase is-padding-2 is-headings-font is-ink-light is-margin-top-3"
           >
             <small>Modifier</small>
           </li>

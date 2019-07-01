@@ -1,7 +1,7 @@
 <template>
   <section>
-    <div class="has-padding-center-3"><h2>paragraphs</h2></div>
-    <div class="demo-preview has-padding-8" data-flex="column center center-items">
+    <div class="is-padding-center-3"><h2>paragraphs</h2></div>
+    <div class="demo-preview is-padding-8" data-flex="column center center-items">
       <div class="typo-demo demo-transition" data-col="8@md">
         <p :class="paragraphClass">
           Overcome injustice justice, her body her rights gender rights silo correlation vibrant. Empower communities
@@ -9,7 +9,7 @@
           greenwashing benefit corporation innovation white paper, innovate, blended.
         </p>
       </div>
-      <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+      <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
         <div class="nav">
           <div class="nav__item">
             <a

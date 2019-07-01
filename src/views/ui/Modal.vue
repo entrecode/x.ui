@@ -9,7 +9,7 @@
       </div>
     </div>
     <div v-if="activeTab === 1" class="animated fadeIn">
-      <div class="demo-preview has-padding-8" data-flex="center">
+      <div class="demo-preview is-padding-8" data-flex="center">
         <a @click.prevent="showModal = !showModal" class="btn btn_big is-elevated-16">open modal</a>
       </div>
 
@@ -25,11 +25,11 @@
     <div
       class="modal-wrapper"
       ref="default"
-      :class="[{ 'has-backdrop': hasBackdrop }, { 'is-active': showModal }, presets]"
+      :class="[{ 'modal-wrapper_backdrop': hasBackdrop }, { 'is-active': showModal }, presets]"
       :data-flex="[alignItems, justifyContent].join(' ')"
     >
       <div
-        class="modal has-padding-5"
+        class="modal is-padding-5"
         :data-col="dataCol ? dataCol : false"
         :class="[elevated.length ? 'is-elevated-' + elevated : false]"
       >
@@ -333,7 +333,7 @@ export default {
   },
   watch: {
     hasChange: function(val) {
-      this.markupSimple = `<div class="modal-wrapper${this.hasBackdrop ? ' has-backdrop' : ''}${
+      this.markupSimple = `<div class="modal-wrapper${this.hasBackdrop ? ' modal-wrapper_backdrop' : ''}${
         this.presets ? ' ' + this.presets : ''
       }"${
         this.alignItems || this.justifyContent

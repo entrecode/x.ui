@@ -2,12 +2,12 @@
   <section>
     <div class="demo-bg is-relative is-height-vh-golden">
       <div
-        class="is-theme has-padding-5 has-radius is-elevated-24"
+        class="is-theme is-padding-5 is-radius is-elevated-24"
         style="max-width: 320px;"
         :class="isPosition + ' ' + isPlaced + '-' + orientation + ' is-layer-' + isLayer"
       >
         <code
-          class="demo-code has-margin-bottom-5"
+          class="demo-code is-margin-bottom-5"
           v-text="isPosition + ' ' + isPlaced + '-' + orientation + ' is-layer-' + isLayer"
         ></code>
         <div class="field-group">
@@ -22,7 +22,7 @@
             <option :value="value" v-for="(value, index) in isPlaceds" :key="index" v-text="value"></option>
           </select>
         </div>
-        <div class="demo-compass has-margin-bottom-3">
+        <div class="demo-compass is-margin-bottom-3">
           <div class="xui-radio">
             <input type="radio" id="nw" name="compass" value="nw" v-model="orientation" />
             <label for="nw" class="xui-radio__label"></label>

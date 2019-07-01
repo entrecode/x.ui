@@ -1,18 +1,18 @@
 <template>
-  <section class="demo-section" id="scroll-to-has-padding">
+  <section class="demo-section" id="scroll-to-is-padding">
     <div data-container>
       <div data-grid>
         <div data-col="10">
           <doc-tab>
             <div slot="preview">
               <div class="demo-bg" :class="hasPaddingClass + paddingSize">
-                <div class="is-theme has-padding-3">
+                <div class="is-theme is-padding-3">
                   <div class="nav" data-flex="center">
                     <div class="nav__item">
                       <div
                         class="btn btn_clear"
-                        @click="hasPaddingClass = 'has-padding-'"
-                        :class="hasPaddingClass === 'has-padding-' ? 'is-ink-link' : 'is-ink-lighter'"
+                        @click="hasPaddingClass = 'is-padding-'"
+                        :class="hasPaddingClass === 'is-padding-' ? 'is-ink-link' : 'is-ink-lighter'"
                       >
                         <svg class="ixo"><use xlink:href="#border-outside"></use></svg>
                       </div>
@@ -20,8 +20,8 @@
                     <div class="nav__item">
                       <div
                         class="btn btn_clear"
-                        @click="hasPaddingClass = 'has-padding-top-'"
-                        :class="hasPaddingClass === 'has-padding-top-' ? 'is-ink-link' : 'is-ink-lighter'"
+                        @click="hasPaddingClass = 'is-padding-top-'"
+                        :class="hasPaddingClass === 'is-padding-top-' ? 'is-ink-link' : 'is-ink-lighter'"
                       >
                         <svg class="ixo"><use xlink:href="#border-top"></use></svg>
                       </div>
@@ -29,8 +29,8 @@
                     <div class="nav__item">
                       <div
                         class="btn btn_clear"
-                        @click="hasPaddingClass = 'has-padding-right-'"
-                        :class="hasPaddingClass === 'has-padding-right-' ? 'is-ink-link' : 'is-ink-lighter'"
+                        @click="hasPaddingClass = 'is-padding-right-'"
+                        :class="hasPaddingClass === 'is-padding-right-' ? 'is-ink-link' : 'is-ink-lighter'"
                       >
                         <svg class="ixo"><use xlink:href="#border-right"></use></svg>
                       </div>
@@ -38,8 +38,8 @@
                     <div class="nav__item">
                       <div
                         class="btn btn_clear"
-                        @click="hasPaddingClass = 'has-padding-bottom-'"
-                        :class="hasPaddingClass === 'has-padding-bottom-' ? 'is-ink-link' : 'is-ink-lighter'"
+                        @click="hasPaddingClass = 'is-padding-bottom-'"
+                        :class="hasPaddingClass === 'is-padding-bottom-' ? 'is-ink-link' : 'is-ink-lighter'"
                       >
                         <svg class="ixo"><use xlink:href="#border-bottom"></use></svg>
                       </div>
@@ -47,8 +47,8 @@
                     <div class="nav__item">
                       <div
                         class="btn btn_clear"
-                        @click="hasPaddingClass = 'has-padding-left-'"
-                        :class="hasPaddingClass === 'has-padding-left-' ? 'is-ink-link' : 'is-ink-lighter'"
+                        @click="hasPaddingClass = 'is-padding-left-'"
+                        :class="hasPaddingClass === 'is-padding-left-' ? 'is-ink-link' : 'is-ink-lighter'"
                       >
                         <svg class="ixo"><use xlink:href="#border-left"></use></svg>
                       </div>
@@ -68,7 +68,7 @@
         </div>
         <div data-col="2">
           <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-            <li class="nav__item"><h2>has-padding</h2></li>
+            <li class="nav__item"><h2>is-padding</h2></li>
           </ul>
         </div>
       </div>
@@ -85,10 +85,10 @@ export default {
   },
   data: () => {
     return {
-      hasPaddingClass: 'has-padding-',
+      hasPaddingClass: 'is-padding-',
       paddingSize: 3,
       markup: `...`,
-      config: `$has-padding-options: $spacings;`,
+      config: `$is-padding-options: $spacings;`,
     };
   },
 };
@@ -96,7 +96,7 @@ export default {
 
 <style scoped lang="scss">
 .demo-bg {
-  &.has-padding-0 {
+  &.is-padding-0 {
     padding: 1px;
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <section style="overflow: hidden;">
     <div
-      class="has-radius has-margin-bottom-5 demo-highlight"
+      class="is-radius is-margin-bottom-5 demo-highlight"
       style="height: 400px; max-width: 100%;"
       :class="[
         isClipped
@@ -17,7 +17,7 @@
     </div>
     <div>
       <code
-        class="demo-code has-margin-bottom-3"
+        class="demo-code is-margin-bottom-3"
         v-text="
           isClipped
             ? 'is-clipped'

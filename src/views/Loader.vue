@@ -13,7 +13,7 @@
     </div>
 
     <div v-if="activeTab === 1" class="animated fadeIn">
-      <div class="demo-preview has-padding-8 has-margin-bottom-5">
+      <div class="demo-preview is-padding-8 is-margin-bottom-5">
         <div data-grid>
           <div data-col="4" data-flex="center center-items"><span class="loader"></span></div>
           <div data-col="4" data-flex="center center-items">
@@ -30,13 +30,13 @@
       <pre v-highlightjs="markup1"><code class="html"></code></pre>
     </div>
     <div v-if="activeTab === 2" class="animated fadeIn">
-      <div class="demo-preview has-padding-8 has-margin-bottom-5" data-flex="center center-items">
+      <div class="demo-preview is-padding-8 is-margin-bottom-5" data-flex="center center-items">
         <a class="btn btn_super is-relative"> save <span class="loader is-local"></span> </a>
       </div>
       <pre v-highlightjs="markupLocal"><code class="html"></code></pre>
     </div>
     <div v-if="activeTab === 3" class="animated">
-      <div class="demo-preview has-padding-8 has-margin-bottom-5" data-flex="center center-items">
+      <div class="demo-preview is-padding-8 is-margin-bottom-5" data-flex="center center-items">
         <a class="btn" @click="showLoader = !showLoader">show global loader</a>
         <div class="loader is-global" v-if="showLoader" @click="showLoader = !showLoader"></div>
       </div>

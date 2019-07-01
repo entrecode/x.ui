@@ -1,5 +1,5 @@
 <template>
-  <div class="has-padding-8" style="max-width: 800px;">
+  <div class="is-padding-8" style="max-width: 800px;">
     <h1>getting started</h1>
     <h2>1. install with npm</h2>
     <pre v-highlightjs><code class="shell">npm i x.ui --save</code></pre>
