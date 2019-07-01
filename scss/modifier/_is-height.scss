@@ -46,7 +46,7 @@
   }
 }
 
-.has-min-height {
+.is-min-height {
   $keys: map-keys($is-height-map);
 
   @each $key in $keys {

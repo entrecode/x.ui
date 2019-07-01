@@ -1,0 +1,99 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group modifier
+///
+/// @require {mixin} set-breakpoints
+/// @require {function} get-space
+/// @param {map} $spacings
+
+.is-margin {
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        margin: get-space($_spacing);
+      }
+    }
+  }
+}
+
+.is-margin-middle {
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        margin-bottom: get-space($_spacing);
+        margin-top: get-space($_spacing);
+      }
+    }
+  }
+}
+
+.is-margin-top {
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        margin-top: get-space($_spacing);
+      }
+    }
+  }
+}
+
+.is-margin-bottom {
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        margin-bottom: get-space($_spacing);
+      }
+    }
+  }
+}
+
+.is-margin-center {
+  &-auto {
+    @include set-breakpoints {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        margin-left: get-space($_spacing);
+        margin-right: get-space($_spacing);
+      }
+    }
+  }
+}
+
+.is-margin-left {
+  &-auto {
+    @include set-breakpoints {
+      margin-left: auto;
+    }
+  }
+
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        margin-left: get-space($_spacing);
+      }
+    }
+  }
+}
+
+.is-margin-right {
+  &-auto {
+    @include set-breakpoints {
+      margin-right: auto;
+    }
+  }
+
+  @each $_spacing, $_h in $spacings {
+    &-#{$_spacing} {
+      @include set-breakpoints {
+        margin-right: get-space($_spacing);
+      }
+    }
+  }
+}

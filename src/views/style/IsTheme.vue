@@ -22,19 +22,19 @@ export default {
               title: '',
               preview: `<div data-grid>
   <div data-col="12">
-    <div class="is-giga has-margin-bottom-2 has-padding-2 align-center is-theme">
+    <div class="is-giga is-margin-bottom-2 is-padding-2 align-center is-theme">
       is-theme
       <a>link</a>
     </div>
   </div>
   <div data-col="12">
-    <div class="is-giga has-margin-bottom-2 has-padding-2 align-center is-theme-lightest">
+    <div class="is-giga is-margin-bottom-2 is-padding-2 align-center is-theme-lightest">
       is-theme-lightest
       <a>link</a>
     </div>
   </div>
   <div data-col="12">
-    <div class="is-giga has-margin-bottom-2 has-padding-2 align-center is-theme-invert">
+    <div class="is-giga is-margin-bottom-2 is-padding-2 align-center is-theme-invert">
       is-theme-invert
       <a>link</a>
     </div>
@@ -72,19 +72,19 @@ export default {
               title: '',
               preview: `<div data-grid>
   <div data-col="12">
-    <div class="demo-bg is-giga has-margin-bottom-2 has-padding-2 align-center hover:is-theme">
+    <div class="demo-bg is-giga is-margin-bottom-2 is-padding-2 align-center hover:is-theme">
       hover:is-theme
       <a>link</a>
     </div>
   </div>
   <div data-col="12">
-    <div class="demo-bg is-giga has-margin-bottom-2 has-padding-2 align-center hover:is-theme-lightest">
+    <div class="demo-bg is-giga is-margin-bottom-2 is-padding-2 align-center hover:is-theme-lightest">
       hover:is-theme-lightest
       <a>link</a>
     </div>
   </div>
   <div data-col="12">
-    <div class="demo-bg is-giga has-margin-bottom-2 has-padding-2 align-center hover:is-theme-invert">
+    <div class="demo-bg is-giga is-margin-bottom-2 is-padding-2 align-center hover:is-theme-invert">
       hover:is-theme-invert
       <a>link</a>
     </div>

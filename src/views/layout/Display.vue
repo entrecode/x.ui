@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div :class="displaySelected + breakpoint" class="demo-bg has-margin-bottom-5 has-padding-8"></div>
+    <div :class="displaySelected + breakpoint" class="demo-bg is-margin-bottom-5 is-padding-8"></div>
     <div data-grid>
       <div data-col="6">
         <div class="field-group">

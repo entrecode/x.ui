@@ -46,7 +46,7 @@
   }
 }
 
-.has-min-width {
+.is-min-width {
   $keys: map-keys($is-width-map);
 
   @each $key in $keys {

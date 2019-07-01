@@ -202,14 +202,14 @@ export const router = new Router({
       components: { main: () => import('./views/style/IsElevated.vue'), menu: DemoMenubar },
     },
     {
-      path: '/has-radius',
-      name: 'has-radius',
-      components: { main: () => import('./views/style/HasRadius.vue'), menu: DemoMenubar },
+      path: '/is-radius',
+      name: 'is-radius',
+      components: { main: () => import('./views/style/IsRadius.vue'), menu: DemoMenubar },
     },
     {
-      path: '/has-border',
-      name: 'has-border',
-      components: { main: () => import('./views/style/HasBorder.vue'), menu: DemoMenubar },
+      path: '/is-border',
+      name: 'is-border',
+      components: { main: () => import('./views/style/IsBorder.vue'), menu: DemoMenubar },
     },
     {
       path: '/grid',
@@ -222,14 +222,14 @@ export const router = new Router({
       components: { main: () => import('./views/layout/Spacer.vue'), menu: DemoMenubar },
     },
     {
-      path: '/has-margin',
-      name: 'has-margin',
-      components: { main: () => import('./views/layout/HasMargin.vue'), menu: DemoMenubar },
+      path: '/is-margin',
+      name: 'is-margin',
+      components: { main: () => import('./views/layout/IsMargin.vue'), menu: DemoMenubar },
     },
     {
-      path: '/has-padding',
-      name: 'has-padding',
-      components: { main: () => import('./views/layout/HasPadding.vue'), menu: DemoMenubar },
+      path: '/is-padding',
+      name: 'is-padding',
+      components: { main: () => import('./views/layout/IsPadding.vue'), menu: DemoMenubar },
     },
     {
       path: '/is-height',

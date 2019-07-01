@@ -1,5 +1,5 @@
 <template>
-  <div class="has-margin-bottom-8" v-if="group && group.length">
+  <div class="is-margin-bottom-8" v-if="group && group.length">
     <div v-for="(group, index) in group" :key="index" :id="'#scroll-to-' + group.id">
       <h2 v-text="group.title" v-if="group.title"></h2>
       <div v-html="group.summary" v-if="group.summary"></div>

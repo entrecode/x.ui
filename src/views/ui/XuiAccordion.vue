@@ -112,7 +112,7 @@ export default {
           navTitle: 'examples',
           groupItems: [
             {
-              preview: `<div class="xui-accordion has-border-bottom has-padding-3">
+              preview: `<div class="xui-accordion is-border-bottom is-padding-3">
   <input
     type="checkbox"
     id="toggleListAdvanced1"
@@ -130,7 +130,7 @@ export default {
     Effective altruism collaborate social return on investment social enterprise inclusion sustainable. 
   </div>
 </div>
-<div class="xui-accordion has-border-bottom has-padding-3">
+<div class="xui-accordion is-border-bottom is-padding-3">
   <input
     type="checkbox"
     id="toggleListAdvanced2"
@@ -147,7 +147,7 @@ export default {
     Effective altruism collaborate social return on investment social enterprise inclusion sustainable. 
   </div>
 </div>
-<div class="xui-accordion has-padding-3">
+<div class="xui-accordion is-padding-3">
   <input
     type="checkbox"
     id="toggleListAdvanced3"
@@ -172,7 +172,7 @@ export default {
     Effective altruism collaborate social return on investment social enterprise inclusion sustainable. 
   </div>
 </div>
-<div class="xui-accordion card has-padding-2">
+<div class="xui-accordion card is-padding-2">
   <input
     type="checkbox"
     id="toggleListAdvanced4"

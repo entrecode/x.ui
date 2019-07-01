@@ -18,9 +18,9 @@ export default {
           id: 'spacer',
           groupItems: [
             {
-              preview: `<div class="typo-demo has-margin-bottom-5"><div class="spacer"></div></div>
-              <div class="typo-demo has-margin-bottom-5"><div class="spacer spacer_big"></div></div>
-              <div class="typo-demo has-margin-bottom-5"><div class="spacer spacer_small"></div></div>`,
+              preview: `<div class="typo-demo is-margin-bottom-5"><div class="spacer"></div></div>
+              <div class="typo-demo is-margin-bottom-5"><div class="spacer spacer_big"></div></div>
+              <div class="typo-demo is-margin-bottom-5"><div class="spacer spacer_small"></div></div>`,
               markup: `<div class="spacer"></div>
 <div class="spacer spacer_big"></div>
 <div class="spacer spacer_small"></div>`,

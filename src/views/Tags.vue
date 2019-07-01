@@ -75,15 +75,15 @@ $tag-big-radius: $tag-radius;`,
             {
               title: 'Tag Styles',
               preview: `<ul data-grid="small-gutter">
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_minor">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_link">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_super">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_highlight">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_info">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_error">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_success">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_warning">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_minor">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_link">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_super">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_highlight">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_info">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_error">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_success">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_warning">tag</span></li>
 </ul>`,
               markup: `<span class="tag">tag</span>
 <span class="tag tag_minor">tag</span>
@@ -147,15 +147,15 @@ $tag-big-radius: $tag-radius;`,
             {
               title: 'Outlined Tag',
               preview: `<ul data-grid="small-gutter">
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_minor">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_link">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_super">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_highlight">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_info">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_error">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_success">tag</span></li>
-  <li data-col="fit" class="has-padding-bottom-2"><span class="tag tag_big tag_outlined tag_warning">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_minor">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_link">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_super">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_highlight">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_info">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_error">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_success">tag</span></li>
+  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_warning">tag</span></li>
 </ul>`,
               markup: `<span class="tag tag_outlined">tag</span>
 <span class="tag tag_outlined tag_minor">tag</span>

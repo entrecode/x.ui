@@ -1,8 +1,8 @@
 <template>
   <section>
-    <div class="has-padding-center-3"><h2>xui-radio</h2></div>
-    <div class="demo-preview has-padding-8" data-flex="column center-items">
-      <div class="is-theme has-padding-5 has-radius">
+    <div class="is-padding-center-3"><h2>xui-radio</h2></div>
+    <div class="demo-preview is-padding-8" data-flex="column center-items">
+      <div class="is-theme is-padding-5 is-radius">
         <div data-grid>
           <div data-col="6">
             <div class="xui-radio">

@@ -1,6 +1,6 @@
 <template>
-  <div class="is-sticky has-padding-3 is-layer-10 is-theme" style="top:0;">
-    <div class="has-padding-center-4" data-flex="center-items">
+  <div class="is-sticky is-padding-3 is-layer-10 is-theme" style="top:0;">
+    <div class="is-padding-center-4" data-flex="center-items">
       <router-link to="/">
         <svg class="xui-logo"><use xlink:href="#logo"></use></svg>
       </router-link>
@@ -30,7 +30,7 @@
               <a href="#scroll-to-getting-started" class="btn btn_clear">getting started</a>
             </li>
             <li v-for="(value, key, index) in structure" :key="index" class="nav__item">
-              <strong class="headings-font has-padding-3">{{key}}</strong>
+              <strong class="headings-font is-padding-3">{{key}}</strong>
               <ul>
                 <li v-for="(val, index) in value" :key="index">
                   <a :href="val.link" class="btn btn_clear">{{val.title}}</a>

@@ -1,8 +1,8 @@
 <template>
   <section>
-    <div class="has-padding-center-3"><h2>xui-select</h2></div>
-    <div class="demo-preview has-padding-8" data-flex="center">
-      <div class="is-theme has-padding-5 has-radius" data-col="8 6@lg 4@xl">
+    <div class="is-padding-center-3"><h2>xui-select</h2></div>
+    <div class="demo-preview is-padding-8" data-flex="center">
+      <div class="is-theme is-padding-5 is-radius" data-col="8 6@lg 4@xl">
         <div tabindex="0" class="xui-select">
           <span class="xui-select__placeholder" v-if="!selected">select</span>
           <span class="xui-select__selected" v-else v-text="selected"></span> <span class="xui-select__caret"></span>

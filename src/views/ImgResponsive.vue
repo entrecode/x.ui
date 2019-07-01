@@ -1,7 +1,7 @@
 <template>
   <section>
-    <div class="has-padding-center-3"><h2>responsiveness</h2></div>
-    <div class="demo-preview has-padding-5 has-margin-bottom-5 is-relative">
+    <div class="is-padding-center-3"><h2>responsiveness</h2></div>
+    <div class="demo-preview is-padding-5 is-margin-bottom-5 is-relative">
       <div data-grid="center">
         <div data-col="4">
           <div class="demo-bg">
@@ -10,23 +10,23 @@
         </div>
       </div>
       <div
-        class="demo-preview-settings is-absolute is-fab-s is-theme is-elevated-16 has-padding-middle-2 has-padding-center-3 is-round"
+        class="demo-preview-settings is-absolute is-fab-s is-theme is-elevated-16 is-padding-middle-2 is-padding-center-3 is-round"
       >
         <div class="nav">
           <div class="nav__item">
             <a
-              @click="responsiveness = 'is-responsive'"
+              @click="responsiveness = 'img-responsive'"
               class="btn btn_clear is-uppercase"
-              :class="{ 'is-ink': responsiveness !== 'is-responsive' }"
-              >is-responsive</a
+              :class="{ 'is-ink': responsiveness !== 'img-responsive' }"
+              >img-responsive</a
             >
           </div>
           <div class="nav__item">
             <a
-              @click="responsiveness = 'is-fullwidth'"
+              @click="responsiveness = 'img-fullwidth'"
               class="btn btn_clear is-uppercase"
-              :class="{ 'is-ink': responsiveness !== 'is-fullwidth' }"
-              >is-fullwidth</a
+              :class="{ 'is-ink': responsiveness !== 'img-fullwidth' }"
+              >img-fullwidth</a
             >
           </div>
         </div>
@@ -50,8 +50,8 @@ export default {
   },
   data: () => {
     return {
-      responsiveness: 'is-responsive',
-      markup: `<img class="is-responsive" />`,
+      responsiveness: 'img-responsive',
+      markup: `<img class="img-responsive" />`,
     };
   },
   watch: {

@@ -12,20 +12,27 @@
 - removed deprecated `.is-visible#` use `is-block#` or `is-flex#`
 - removed deprecated `.is-raised#` use `is-elevated#` instead
 - removed deprecated `.is-lifted#` use `is-elevated#` instead
-- removed deprecated `.is-rounded#` use `has-radius#` instead
+- removed deprecated `.is-rounded#` use `is-radius#` instead
 - removed deprecated `.is-hidden-from#`
 - removed deprecated `.btn_glow`
 - removed `data-flex-item` size values, use `data-col` instead
 - refactored and combined `is-positioned` and `is-fab`
-- removed `.img_responsive` and `.img_full` use `.is-responsive` or `.is-fullwidth` instead
+- removed `.img_responsive` and `.img_full` use `.img-responsive` or `.img-fullwidth` instead
 - removed `.title` and `.toolbar` use `.titlebar` instead
-- removed `.no-margin` use `.has-margin-0` instead
-- removed `.no-padding` use `.has-padding-0` instead
+- removed `.no-margin` use `.is-margin-0` instead
+- removed `.no-padding` use `.is-padding-0` instead
 - removed `.xui-overlay`
 - removed float grid styles `data-row`
+- renamed `.has-margin` to `.is-margin`
+- renamed `.has-padding` to `.is-padding`
+- renamed `.has-radius` to `.is-radius`
+- renamed `.has-height` to `.is-height`
+- renamed `.has-min-height` to `.is-min-height`
+- renamed `.has-width` to `.is-width`
+- renamed `.has-min-width` to `.is-min-width`
 - removed `.has-margin#`, `.has-margin#-smallest`, `.has-margin#-small`, `.has-margin#-big`
 - removed `.has-padding#`, `.has-padding#-smallets`, `.has-padding#-small`, `.has-padding#-big`
-- renamed `.is-bordered` to `.has-border`
+- renamed `.is-bordered` to `.is-border`
 - removed breakpoints for `align-`
 - removed breakpoints for `is-clipped#`
 - removed breakpoints for `.is-bordered`
@@ -47,7 +54,6 @@
 - removed state values in `$xui-colors` map
 - removed `data-animate` use third-party libraries like animate.css instead
 - removed `.pull`
-- renamed `.has-width` and `.has-height` to `.is-width` and `.is-height`
 - removed placeholder `%toggle` and `%toggle-is-active`
 - renamed `arrayMagic()` to `array-magic()`
 - renamed `getColor()` to `get-color()`

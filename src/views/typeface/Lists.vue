@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="has-padding-center-3"><h2>lists</h2></div>
+    <div class="is-padding-center-3"><h2>lists</h2></div>
     <div class="nav">
       <div class="nav__item">
         <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">default</a>
@@ -10,7 +10,7 @@
       </div>
     </div>
     <div v-if="activeTab === 1" class="animated fadeIn">
-      <div class="demo-preview has-padding-8 has-margin-bottom-5" data-flex="column center-items">
+      <div class="demo-preview is-padding-8 is-margin-bottom-5" data-flex="column center-items">
         <div class="demo-transition">
           <ul :class="elementClass">
             <li><div class="well">list item</div></li>
@@ -18,7 +18,7 @@
             <li><div class="well">list item</div></li>
           </ul>
         </div>
-        <div class="is-theme has-margin-top-5 has-padding-center-2 is-round is-elevated-16">
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
           <div class="nav">
             <div class="nav__item">
               <a
@@ -46,7 +46,7 @@
       </div>
     </div>
     <div v-if="activeTab === 2" class="animated fadeIn">
-      <div class="demo-preview has-padding-8 has-margin-bottom-5" data-flex="column center-items">
+      <div class="demo-preview is-padding-8 is-margin-bottom-5" data-flex="column center-items">
         <div class="demo-transition">
           <ul data-grid>
             <li data-col="4"><div class="well">list item</div></li>

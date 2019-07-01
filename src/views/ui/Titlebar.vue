@@ -10,14 +10,14 @@
     </div>
 
     <div data-col="10@md 8@lg">
-      <div class="demo-preview has-padding-5">
+      <div class="demo-preview is-padding-5">
         <div class="titlebar" v-if="activeTab === 1">
           <h2 class="is-giga">Titel</h2>
           <ul class="nav">
             <li class="nav__item"><a class="btn">button</a></li>
           </ul>
         </div>
-        <div class="titlebar is-theme is-elevated-16 is-round has-padding-left-5" v-if="activeTab === 2">
+        <div class="titlebar is-theme is-elevated-16 is-round is-padding-left-5" v-if="activeTab === 2">
           <h2 class="is-giga">Titel</h2>
           <ul class="nav">
             <li class="nav__item"><a class="btn btn_clear">button</a></li>
@@ -57,7 +57,7 @@ export default {
     </li>
   </ul>
 </div>`,
-      markup2: `<div class="titlebar is-theme is-elevated-16 is-round has-padding-left-5">
+      markup2: `<div class="titlebar is-theme is-elevated-16 is-round is-padding-left-5">
   <h2 class="is-giga">Titel</h2>
   <ul class="nav">
     <li class="nav__item">

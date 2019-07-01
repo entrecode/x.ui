@@ -2,19 +2,19 @@
   <section class="demo-blocks-group">
     <div data-grid>
       <div data-col="8">
-        <div v-for="(item, index) in sortedArray" :key="index" class="has-margin-middle-8" :id="item.anchor">
+        <div v-for="(item, index) in sortedArray" :key="index" class="is-margin-middle-8" :id="item.anchor">
           <h3 v-if="item.title">
             {{ item.title }}&ensp;
             <div class="tag">{{ item.type }}</div>
           </h3>
-          <div class="has-margin-bottom-5" v-if="item.code">
+          <div class="is-margin-bottom-5" v-if="item.code">
             <pre v-highlightjs="item.code"><code class="scss" style="font-size: 14px;"></code></pre>
           </div>
-          <div class="has-margin-bottom-5" v-if="item.description">
+          <div class="is-margin-bottom-5" v-if="item.description">
             <h4 class="is-h4">description</h4>
             <p v-text="item.description"></p>
           </div>
-          <div class="has-margin-bottom-5" v-if="item.require">
+          <div class="is-margin-bottom-5" v-if="item.require">
             <h4 class="is-h4">requires</h4>
             <ul data-grid="small-gutter">
               <li v-for="(req, index) in item.require" :key="index" data-col="fit">
@@ -23,7 +23,7 @@
               </li>
             </ul>
           </div>
-          <div class="has-margin-bottom-5" v-if="item.usedBy">
+          <div class="is-margin-bottom-5" v-if="item.usedBy">
             <h4 class="is-h4">used by</h4>
             <ul data-grid="small-gutter">
               <li v-for="(used, index) in item.usedBy" :key="index" data-col="fit">

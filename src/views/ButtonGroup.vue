@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="has-padding-center-3"><h2>button-group</h2></div>
+    <div class="is-padding-center-3"><h2>button-group</h2></div>
     <div class="nav">
       <div class="nav__item">
         <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">normal</a>
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div v-if="activeTab === 1" class="animated fadeIn">
-      <div class="demo-preview has-padding-8" data-flex="center center-items">
+      <div class="demo-preview is-padding-8" data-flex="center center-items">
         <div class="btn-group">
           <a class="btn-group__start btn">button</a>
           <div class="btn-group__divider"></div>
@@ -25,7 +25,7 @@
       <pre v-highlightjs="markup1"><code class="html"></code></pre>
     </div>
     <div v-if="activeTab === 2" class="animated fadeIn">
-      <div class="demo-preview has-padding-8" data-flex="center center-items">
+      <div class="demo-preview is-padding-8" data-flex="center center-items">
         <div class="btn-group">
           <a class="btn-group__start btn btn_round">button</a> <a class="btn-group__inner btn btn_round">button</a>
           <a class="btn-group__end btn btn_super btn_round">button</a>
@@ -34,7 +34,7 @@
       <pre v-highlightjs="markup2"><code class="html"></code></pre>
     </div>
     <div v-if="activeTab === 3" class="animated fadeIn">
-      <div class="demo-preview has-padding-8" data-flex="center center-items">
+      <div class="demo-preview is-padding-8" data-flex="center center-items">
         <div class="btn-group">
           <a class="btn-group__start btn_outlined btn">button</a>
           <a class="btn-group__inner btn_outlined btn">button</a>

@@ -1,7 +1,7 @@
 <template>
   <section>
-    <div class="has-padding-center-3"><h2>img-crop</h2></div>
-    <div class="demo-preview has-padding-5 has-margin-bottom-5 is-relative">
+    <div class="is-padding-center-3"><h2>img-crop</h2></div>
+    <div class="demo-preview is-padding-5 is-margin-bottom-5 is-relative">
       <div data-grid="center">
         <div
           :data-col="[
@@ -17,7 +17,7 @@
         </div>
       </div>
       <div
-        class="demo-preview-settings is-absolute is-fab-s is-theme is-elevated-16 has-padding-middle-2 has-padding-center-3 is-round"
+        class="demo-preview-settings is-absolute is-fab-s is-theme is-elevated-16 is-padding-middle-2 is-padding-center-3 is-round"
       >
         <select class="input input_round" v-model="imgCrop">
           <option value="img-crop-1-1">square</option>

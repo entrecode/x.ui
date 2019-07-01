@@ -1,5 +1,5 @@
 <template>
-  <div class="has-margin-bottom-7">
+  <div class="is-margin-bottom-7">
     <div data-grid>
       <div :data-col="previewCol ? previewCol : hasMarkup ? '6' : '12'">
         <slot name="title"></slot> <slot name="preview"></slot>

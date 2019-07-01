@@ -7,7 +7,7 @@
       class="doc-menubar is-theme-menubar is-fixed is-height-vh-full is-scrollable-auto-y-contain"
     />
     <router-view name="main" class="doc-body" />
-    <footer class="has-padding-8 is-ink-light align-center doc-footer">
+    <footer class="is-padding-8 is-ink-light align-center doc-footer">
       placeholder images
       <a href="https://unsplash.com/@princearkman" target="_blank" rel="nofollow">https://unsplash.com/@princearkman</a>
       &bull; filltext:

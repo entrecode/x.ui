@@ -22,42 +22,42 @@ export default {
               title: '',
               preview: `<div data-grid>
   <div data-col="6">
-    <div class="is-giga has-margin-bottom-3 well align-center is-ink">
+    <div class="is-giga is-margin-bottom-3 well align-center is-ink">
       is-ink
     </div>
   </div>
   <div data-col="6">
-    <div class="is-giga has-margin-bottom-3 well align-center is-ink-light">
+    <div class="is-giga is-margin-bottom-3 well align-center is-ink-light">
       is-ink-light
     </div>
   </div>
   <div data-col="6">
-    <div class="is-giga has-margin-bottom-3 well align-center is-ink-lighter">
+    <div class="is-giga is-margin-bottom-3 well align-center is-ink-lighter">
       is-ink-lighter
     </div>
   </div>
   <div data-col="6">
-    <div class="is-giga has-margin-bottom-3 well align-center is-ink-lightest">
+    <div class="is-giga is-margin-bottom-3 well align-center is-ink-lightest">
       is-ink-lightest
     </div>
   </div>
   <div data-col="6">
-    <div class="is-giga has-margin-bottom-3 well align-center is-ink-link">
+    <div class="is-giga is-margin-bottom-3 well align-center is-ink-link">
       is-ink-link
     </div>
   </div>
   <div data-col="6">
-    <div class="is-giga has-margin-bottom-3 well align-center is-ink-super">
+    <div class="is-giga is-margin-bottom-3 well align-center is-ink-super">
       is-ink-super
     </div>
   </div>
   <div data-col="6">
-    <div class="is-giga has-margin-bottom-3 well align-center is-ink-highlight">
+    <div class="is-giga is-margin-bottom-3 well align-center is-ink-highlight">
       is-ink-highlight
     </div>
   </div>
   <div data-col="6">
-    <div class="is-giga has-margin-bottom-3 well align-center is-ink-invert">
+    <div class="is-giga is-margin-bottom-3 well align-center is-ink-invert">
       is-ink-invert
     </div>
   </div>
@@ -93,42 +93,42 @@ export default {
               title: '',
               preview: `<div data-grid>
   <div data-col="6">
-    <div class="demo-type is-giga has-margin-bottom-3 well align-center hover:is-ink">
+    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink">
       hover:is-ink
     </div>
   </div>
   <div data-col="6">
-    <div class="demo-type is-giga has-margin-bottom-3 well align-center hover:is-ink-light">
+    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-light">
       hover:is-ink-light
     </div>
   </div>
   <div data-col="6">
-    <div class="demo-type is-giga has-margin-bottom-3 well align-center hover:is-ink-lighter">
+    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-lighter">
       hover:is-ink-lighter
     </div>
   </div>
   <div data-col="6">
-    <div class="demo-type is-giga has-margin-bottom-3 well align-center hover:is-ink-lightest">
+    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-lightest">
       hover:is-ink-lightest
     </div>
   </div>
   <div data-col="6">
-    <div class="demo-type is-giga has-margin-bottom-3 well align-center hover:is-ink-link">
+    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-link">
       hover:is-ink-link
     </div>
   </div>
   <div data-col="6">
-    <div class="demo-type is-giga has-margin-bottom-3 well align-center hover:is-ink-super">
+    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-super">
       hover:is-ink-super
     </div>
   </div>
   <div data-col="6">
-    <div class="demo-type is-giga has-margin-bottom-3 well align-center hover:is-ink-highlight">
+    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-highlight">
       hover:is-ink-highlight
     </div>
   </div>
   <div data-col="6">
-    <div class="demo-type is-giga has-margin-bottom-3 well align-center hover:is-ink-invert">
+    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-invert">
       hover:is-ink-invert
     </div>
   </div>
