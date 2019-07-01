@@ -162,6 +162,10 @@ $xui-colors: map-merge(
 // @param {variable} $color-map-id [$xui-colors] - can be changed use a different colormap
 $color-map-id: $xui-colors !default;
 
+
+// @param {color} $flatten-color-base
+$flatten-color-base: $background;
+
 //
 // ROOT
 // -------------------------------------------------------------------------------------------------
@@ -2250,3 +2254,4 @@ $elevation-opacity: 1 !default;
 
 // @param {string} $elevation-prefix [is-elevated-]
 $elevation-prefix: 'is-elevated-';
+
