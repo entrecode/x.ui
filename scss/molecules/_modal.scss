@@ -47,7 +47,7 @@
 // @param {px} $modal-min-width [240]
 // @param {array} $modal-padding [4]
 // @param {px} $modal-radius [4]
-// @param {[1-24] | false} $modal-elevated [8]
+// @param {[1-24] | false} $modal-elevation [8]
 // @param {number} $modal-z-index [100]
 // @param {array} $modal-style
 .modal {
@@ -56,8 +56,8 @@
   max-height: 100%;
   flex-direction: column;
   @include inject-style($modal-style);
-  @if $modal-elevated {
-    @include elevation($modal-elevated);
+  @if $modal-elevation {
+    @include elevation($modal-elevation);
   }
   background: $modal-background;
   color: $modal-color;

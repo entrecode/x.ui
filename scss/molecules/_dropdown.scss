@@ -17,7 +17,7 @@
 // @param {px | null} $dropdown-options-max-height [320]
 // @param {color} $dropdown-options-background [$background]
 // @param {color} $dropdown-options-color [$text]
-// @param {string} $dropdown-options-shadow
+// @param {[1-24] | false} $dropdown-options-elevation [8]
 // @param {array} $dropdown-options-style
 .dropdown-options {
   list-style: none;
@@ -30,9 +30,11 @@
   transition: visibility 0.5s, opacity 0.2s;
   @include is-scrollable(y, contain, $behavior: auto);
   @include inject-style($dropdown-options-style);
+  @if $dropdown-options-elevation {
+    @include elevation($dropdown-options-elevation);
+  }
   background: $dropdown-options-background;
   border-radius: array-magic($dropdown-options-radius);
-  box-shadow: array-magic($dropdown-options-shadow);
   color: $dropdown-options-color;
   max-height: rem($dropdown-options-max-height);
   padding: array-magic($dropdown-options-padding);

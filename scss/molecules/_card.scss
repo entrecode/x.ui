@@ -8,14 +8,14 @@
 /// @param {color} $card-color [$text]
 /// @param {array} $card-padding [24]
 /// @param {array} $card-spacing [0]
-/// @param {[1-24] | false} $card-elevated [4]
+/// @param {[1-24] | false} $card-elevation [4]
 /// @param {array} $card-style
 
 .card {
   position: relative;
   z-index: 1;
-  @if $card-elevated {
-    @include elevation($card-elevated);
+  @if $card-elevation {
+    @include elevation($card-elevation);
   }
   @include inject-style($card-style);
   background: $card-background;
