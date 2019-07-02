@@ -67,9 +67,24 @@ export const router = new Router({
       components: { main: () => import('./views/ButtonGroup.vue'), menu: DemoMenubar },
     },
     {
+      path: '/field-group',
+      name: 'field-group',
+      components: { main: () => import('./views/form/FieldGroup.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/fieldset',
+      name: 'fieldset',
+      components: { main: () => import('./views/form/Fieldset.vue'), menu: DemoMenubar },
+    },
+    {
       path: '/input',
       name: 'input',
       components: { main: () => import('./views/form/Input.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/input-group',
+      name: 'input-group',
+      components: { main: () => import('./views/form/InputGroup.vue'), menu: DemoMenubar },
     },
     {
       path: '/xui-checkbox',
@@ -100,11 +115,6 @@ export const router = new Router({
       path: '/file-upload',
       name: 'file-upload',
       components: { main: () => import('./views/form/FileUpload.vue'), menu: DemoMenubar },
-    },
-    {
-      path: '/form',
-      name: 'form',
-      components: { main: () => import('./views/Form.vue'), menu: DemoMenubar },
     },
     {
       path: '/loader',

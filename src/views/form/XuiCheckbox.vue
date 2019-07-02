@@ -1,21 +1,28 @@
 <template>
   <section>
-    <div class="is-padding-center-3"><h2>xui-checkbox</h2></div>
-    <div class="demo-preview is-padding-8" data-flex="column center-items">
-      <div class="is-theme is-padding-5 is-radius">
-        <div class="xui-checkbox">
-          <input type="checkbox" id="boollean-1" /> <label for="boollean-1" class="xui-checkbox__label">checkbox</label>
+    <div data-grid>
+      <div data-col="10 8@xl">
+        <div class="is-padding-center-3">
+          <h2>xui-checkbox</h2>
         </div>
-      </div>
-    </div>
-    <div data-grid="center">
-      <div data-col="10@md 8@lg">
-        <div class="spacer"></div>
-        <pre v-highlightjs="markup"><code class="html"></code></pre>
-        <div class="spacer"></div>
-        <params-table :params="params"></params-table>
-        <div class="divider"></div>
-        <requires-list :requires="requires"></requires-list>
+        <div class="demo-preview is-padding-8" data-flex="column center-items">
+          <div class="is-theme is-padding-5 is-radius">
+            <div class="xui-checkbox">
+              <input type="checkbox" id="boollean-1" />
+              <label for="boollean-1" class="xui-checkbox__label">checkbox</label>
+            </div>
+          </div>
+        </div>
+        <div data-grid="center">
+          <div data-col="10@md 8@lg">
+            <div class="spacer"></div>
+            <pre v-highlightjs="markup"><code class="html"></code></pre>
+            <div class="spacer"></div>
+            <params-table :params="params"></params-table>
+            <div class="divider"></div>
+            <requires-list :requires="requires"></requires-list>
+          </div>
+        </div>
       </div>
     </div>
   </section>

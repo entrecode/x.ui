@@ -11,9 +11,12 @@
   --super: #{$super};
   --highlight: #{$highlight};
   --link: #{$link};
+  --link-contrast: #{$link-contrast};
   --text: #{$text};
   --text-light: #{$text-light};
   --text-lighter: #{$text-lighter};
+  --demo: #f00;
+  --demo-contrast: #{set-contrast(#f00)};
 }
 
 .headings-font {
@@ -139,6 +142,19 @@
 
 .demo-preview {
   background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 .5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0' fill='%23000000' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  position: relative;
+
+  &::after {
+    content: 'demo';
+    background: var(--demo);
+    color: var(--demo-contrast);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    padding: 0 8px;
+    font-size: 12px;
+    opacity: 0.8;
+  }
 }
 
 .demo-transition {

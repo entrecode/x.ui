@@ -1,17 +1,25 @@
 <template>
   <section>
-    <div class="is-padding-center-3"><h2>range-slider</h2></div>
-    <div class="demo-preview is-padding-8" data-flex="column center-items">
-      <div class="is-theme is-padding-5 is-radius"><input type="range" class="range-slider" /></div>
-    </div>
-    <div data-grid="center">
-      <div data-col="10@md 8@lg">
-        <div class="spacer"></div>
-        <pre v-highlightjs="markup"><code class="html"></code></pre>
-        <div class="spacer"></div>
-        <params-table :params="params"></params-table>
-        <div class="divider"></div>
-        <requires-list :requires="requires"></requires-list>
+    <div data-grid>
+      <div data-col="10 8@xl">
+        <div class="is-padding-center-3">
+          <h2>range-slider</h2>
+        </div>
+        <div class="demo-preview is-padding-8" data-flex="center">
+          <div class="is-theme is-padding-5 is-radius" data-col="8">
+            <input type="range" class="range-slider" />
+          </div>
+        </div>
+        <div data-grid="center">
+          <div data-col="10@md 8@lg">
+            <div class="spacer"></div>
+            <pre v-highlightjs="markup"><code class="html"></code></pre>
+            <div class="spacer"></div>
+            <params-table :params="params"></params-table>
+            <div class="divider"></div>
+            <requires-list :requires="requires"></requires-list>
+          </div>
+        </div>
       </div>
     </div>
   </section>
