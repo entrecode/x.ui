@@ -3,12 +3,6 @@
 /// @access public
 
 //
-// FEATURE - SUPPORT
-// -------------------------------------------------------------------------------------------------
-// @param {boolean} $ec-icon-support [true] - set ec-icon support
-$ec-icon-support: true !default;
-
-//
 // COLORS
 // -------------------------------------------------------------------------------------------------
 // these variables are used in `_core/_colors.scss`
@@ -161,7 +155,6 @@ $xui-colors: map-merge(
 
 // @param {variable} $color-map-id [$xui-colors] - can be changed use a different colormap
 $color-map-id: $xui-colors !default;
-
 
 // @param {color} $flatten-color-base
 $flatten-color-base: $background;
@@ -2254,4 +2247,3 @@ $elevation-opacity: 1 !default;
 
 // @param {string} $elevation-prefix [is-elevated-]
 $elevation-prefix: 'is-elevated-';
-
