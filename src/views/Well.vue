@@ -1,15 +1,20 @@
 <template>
   <section>
     <div data-col="10@md 8@lg">
+      <div class="is-padding-center-3">
+        <h2>alert</h2>
+      </div>
       <div class="is-margin-bottom-5">
         <div class="demo-preview is-padding-8" data-flex="column center">
-          <div class="well"><p>ecosystem families energize correlation, social enterprise citizen-centered.</p></div>
+          <div class="well">
+            <p>ecosystem families energize correlation, social enterprise citizen-centered.</p>
+          </div>
         </div>
       </div>
       <pre v-highlightjs="markup"><code class="html"></code></pre>
-      <div class="y-space-8"></div>
+      <div class="spacer"></div>
       <params-table :params="params" title="default params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

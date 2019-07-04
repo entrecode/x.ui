@@ -1,100 +1,94 @@
 <template>
   <section>
-    <div data-grid>
-      <div data-col="10 8@xl">
-        <div class="is-padding-center-3">
-          <h2>input</h2>
+    <div data-col="10 8@xl">
+      <div class="is-padding-center-3">
+        <h2>input</h2>
+      </div>
+      <div class="demo-preview is-padding-8" data-flex="column center-items">
+        <div class="is-theme is-padding-5 is-radius">
+          <textarea
+            class="input"
+            :class="[inputSize, inputRound ? ' input_round' : '']"
+            placeholder="textarea..."
+            rows="4"
+            v-if="inputType === 'textarea'"
+          ></textarea>
+          <select
+            v-else-if="inputType === 'select'"
+            class="input"
+            :class="[inputSize, inputRound ? ' input_round' : '']"
+          >
+            <option value>select</option>
+            <option value="option 1">option 1</option>
+            <option value="option 2">option 2</option>
+            <option value="option 3">option 3</option>
+          </select>
+          <input
+            :type="inputType"
+            class="input"
+            :class="[inputSize, inputRound ? ' input_round' : '']"
+            :placeholder="`${inputType} input...`"
+            v-else
+          />
         </div>
-        <div class="demo-preview is-padding-8" data-flex="column center-items">
-          <div class="is-theme is-padding-5 is-radius">
-            <textarea
-              class="input"
-              :class="[inputSize, inputRound ? ' input_round' : '']"
-              placeholder="textarea..."
-              rows="4"
-              v-if="inputType === 'textarea'"
-            ></textarea>
-            <select
-              v-else-if="inputType === 'select'"
-              class="input"
-              :class="[inputSize, inputRound ? ' input_round' : '']"
-            >
-              <option value>select</option>
-              <option value="option 1">option 1</option>
-              <option value="option 2">option 2</option>
-              <option value="option 3">option 3</option>
-            </select>
-            <input
-              :type="inputType"
-              class="input"
-              :class="[inputSize, inputRound ? ' input_round' : '']"
-              :placeholder="`${inputType} input...`"
-              v-else
-            />
-          </div>
 
-          <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
-            <div class="nav">
-              <div class="nav__item">
-                <div class="input-group">
-                  <label for="inputSize" class="input-group__addon">
-                    <svg class="ixo is-ink-link">
-                      <use xlink:href="#move-vertical" />
-                    </svg>
-                  </label>
-                  <div class="input-group__addon">
-                    <select id="inputSize" v-model="inputSize" class="input">
-                      <option value>default</option>
-                      <option value="input_small">small</option>
-                      <option value="input_big">big</option>
-                    </select>
-                  </div>
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+          <div class="nav">
+            <div class="nav__item">
+              <div class="input-group">
+                <label for="inputSize" class="input-group__addon">
+                  <svg class="ixo is-ink-link">
+                    <use xlink:href="#move-vertical" />
+                  </svg>
+                </label>
+                <div class="input-group__addon">
+                  <select id="inputSize" v-model="inputSize" class="input">
+                    <option value>default</option>
+                    <option value="input_small">small</option>
+                    <option value="input_big">big</option>
+                  </select>
                 </div>
               </div>
-              <div class="nav__item">
-                <div class="input-group">
-                  <label for="inputSize" class="input-group__addon">
-                    <small>type</small>
-                  </label>
-                  <div class="input-group__addon">
-                    <select id="inputType" v-model="inputType" class="input">
-                      <option value="text">text</option>
-                      <option value="date">date</option>
-                      <option value="datetime-local">datetime-local</option>
-                      <option value="time">time</option>
-                      <option value="week">week</option>
-                      <option value="month">month</option>
-                      <option value="password">password</option>
-                      <option value="search">search</option>
-                      <option value="tel">tel</option>
-                      <option value="url">url</option>
-                      <option value="number">number</option>
-                      <option value="textarea">textarea</option>
-                      <option value="select">select</option>
-                    </select>
-                  </div>
+            </div>
+            <div class="nav__item">
+              <div class="input-group">
+                <label for="inputSize" class="input-group__addon">
+                  <small>type</small>
+                </label>
+                <div class="input-group__addon">
+                  <select id="inputType" v-model="inputType" class="input">
+                    <option value="text">text</option>
+                    <option value="date">date</option>
+                    <option value="datetime-local">datetime-local</option>
+                    <option value="time">time</option>
+                    <option value="week">week</option>
+                    <option value="month">month</option>
+                    <option value="password">password</option>
+                    <option value="search">search</option>
+                    <option value="tel">tel</option>
+                    <option value="url">url</option>
+                    <option value="number">number</option>
+                    <option value="textarea">textarea</option>
+                    <option value="select">select</option>
+                  </select>
                 </div>
               </div>
-              <div class="nav__item">
-                <div class="xui-checkbox">
-                  <input type="checkbox" id="inputRound" v-model="inputRound" />
-                  <label for="inputRound" class="xui-checkbox__label">round</label>
-                </div>
+            </div>
+            <div class="nav__item">
+              <div class="xui-checkbox">
+                <input type="checkbox" id="inputRound" v-model="inputRound" />
+                <label for="inputRound" class="xui-checkbox__label">round</label>
               </div>
             </div>
           </div>
         </div>
-        <div data-grid="center">
-          <div data-col="10@md 8@lg">
-            <div class="spacer"></div>
-            <pre v-highlightjs="inputMarkup"><code class="html"></code></pre>
-            <div class="spacer"></div>
-            <params-table :params="inputParams"></params-table>
-            <div class="spacer"></div>
-            <params-table :params="inputSizeParama" title="size params"></params-table>
-          </div>
-        </div>
       </div>
+      <div class="spacer"></div>
+      <pre v-highlightjs="inputMarkup"><code class="html"></code></pre>
+      <div class="spacer"></div>
+      <params-table :params="inputParams"></params-table>
+      <div class="divider"></div>
+      <params-table :params="inputSizeParama" title="size params"></params-table>
     </div>
   </section>
 </template>
@@ -259,14 +253,20 @@ export default {
   watch: {
     hasChange: function() {
       if (this.inputType === 'textarea') {
-        this.inputMarkup = `<textarea class="input${this.inputSize ? ' ' + this.inputSize : ''}${this.inputRound ? ' input_round' : ''}" placeholder="..."></textarea>`;
+        this.inputMarkup = `<textarea class="input${this.inputSize ? ' ' + this.inputSize : ''}${
+          this.inputRound ? ' input_round' : ''
+        }" placeholder="..."></textarea>`;
       } else if (this.inputType === 'select') {
-        this.inputMarkup = `<select class="input${this.inputSize ? ' ' + this.inputSize : ''}${this.inputRound ? ' input_round' : ''}">
+        this.inputMarkup = `<select class="input${this.inputSize ? ' ' + this.inputSize : ''}${
+          this.inputRound ? ' input_round' : ''
+        }">
   <option value>...</option>
   ...
 </select>`;
       } else {
-        this.inputMarkup = `<input type="${this.inputType}" class="input${this.inputSize ? ' ' + this.inputSize : ''}${this.inputRound ? ' input_round' : ''}" placeholder="...">`;
+        this.inputMarkup = `<input type="${this.inputType}" class="input${this.inputSize ? ' ' + this.inputSize : ''}${
+          this.inputRound ? ' input_round' : ''
+        }" placeholder="...">`;
       }
     },
   },

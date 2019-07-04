@@ -97,21 +97,12 @@
             </ul>
           </div>
         </div>
-        <div data-grid="center">
-          <div data-col="10@md 8@lg">
-            <div class="demo-markup-preview is-margin-middle-5">
-              <pre v-highlightjs="markup"><code class="html"></code></pre>
-            </div>
-            <div class="divider"></div>
-            <div class="is-margin-middle-5">
-              <params-table :params="params"></params-table>
-            </div>
-            <div class="divider"></div>
-            <div class="is-margin-middle-5">
-              <requires-list :requires="requires"></requires-list>
-            </div>
-          </div>
-        </div>
+        <div class="spacer"></div>
+        <pre v-highlightjs="markup"><code class="html"></code></pre>
+        <div class="spacer"></div>
+        <params-table :params="params"></params-table>
+        <div class="spacer"></div>
+        <requires-list :requires="requires"></requires-list>
       </div>
     </div>
   </section>

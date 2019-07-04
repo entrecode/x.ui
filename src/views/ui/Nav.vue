@@ -1,29 +1,42 @@
 <template>
   <section>
     <div data-col="10@md 8@lg">
+      <div class="is-padding-center-3">
+        <h2>nav</h2>
+      </div>
       <div class="demo-preview is-padding-5" data-flex="column center-items">
-        <div class="is-padding-4 is-radius is-elevated-16 is-margin-bottom-5 is-theme">
+        <div class="is-padding-5">
           <ul class="nav demo-transition" :class="computedClasses">
-            <li class="nav__item"><a href>Navlink</a></li>
-            <li class="nav__item"><a href>Navlink</a></li>
+            <li class="nav__item">
+              <a href>Navlink</a>
+            </li>
+            <li class="nav__item">
+              <a href>Navlink</a>
+            </li>
             <li class="nav__divider"></li>
-            <li class="nav__item"><a class="btn">Navlink</a></li>
+            <li class="nav__item">
+              <a class="btn">Navlink</a>
+            </li>
           </ul>
         </div>
-        <div class="is-theme is-padding-middle-2 is-padding-center-3">
-          <div class="xui-checkbox">
-            <input type="checkbox" v-model="navStyle" id="navStyle" />
-            <label for="navStyle" class="xui-checkbox__label">square</label>
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+          <div class="nav">
+            <div class="nav__item">
+              <div class="xui-checkbox">
+                <input type="checkbox" v-model="navStyle" id="navStyle" />
+                <label for="navStyle" class="xui-checkbox__label">square</label>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="y-space-5"></div>
+      <div class="spacer"></div>
       <pre v-highlightjs="markup"><code class="html"></code></pre>
-      <div class="y-space-5"></div>
+      <div class="spacer"></div>
       <params-table :params="params"></params-table>
       <div class="divider"></div>
       <params-table :params="stackedParams" title="stacked params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

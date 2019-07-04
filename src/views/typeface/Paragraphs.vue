@@ -32,18 +32,16 @@
             </div>
           </div>
         </div>
-        <div data-grid="center">
-          <div data-col="10@md 8@lg">
-            <pre v-highlightjs="preview"><code class="html"></code></pre>
-            <params-table :params="coreParams" title="core params"></params-table>
-            <div class="divider"></div>
-            <params-table :params="paragraphParams" title="paragraph params"></params-table>
-            <div class="divider"></div>
-            <params-table :params="leadParams" title="lead params"></params-table>
-            <div class="divider"></div>
-            <requires-list :requires="requires"></requires-list>
-          </div>
-        </div>
+        <div class="spacer"></div>
+        <pre v-highlightjs="preview"><code class="html"></code></pre>
+        <div class="spacer"></div>
+        <params-table :params="coreParams" title="core params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="paragraphParams" title="paragraph params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="leadParams" title="lead params"></params-table>
+        <div class="spacer"></div>
+        <requires-list :requires="requires"></requires-list>
       </div>
     </div>
   </section>

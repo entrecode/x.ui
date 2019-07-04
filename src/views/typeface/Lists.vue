@@ -55,11 +55,8 @@
               </div>
             </div>
           </div>
-          <div data-grid="center">
-            <div data-col="10@md 8@lg">
-              <pre v-highlightjs="preview"><code class="html"></code></pre>
-            </div>
-          </div>
+          <div class="spacer"></div>
+          <pre v-highlightjs="preview"><code class="html"></code></pre>
         </div>
         <div v-if="activeTab === 2" class="animated fadeIn">
           <div class="demo-preview is-padding-8 is-margin-bottom-5" data-flex="column center-items">
@@ -77,11 +74,8 @@
               </ul>
             </div>
           </div>
-          <div data-grid="center">
-            <div data-col="10@md 8@lg">
-              <pre v-highlightjs="previewGrid"><code class="html"></code></pre>
-            </div>
-          </div>
+          <div class="spacer"></div>
+          <pre v-highlightjs="previewGrid"><code class="html"></code></pre>
         </div>
       </div>
     </div>

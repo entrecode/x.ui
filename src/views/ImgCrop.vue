@@ -36,13 +36,10 @@
             </select>
           </div>
         </div>
-        <div data-grid="center">
-          <div data-col="10@md 8@lg">
-            <pre v-highlightjs="imgCropMarkup"><code class="html"></code></pre>
-            <div class="divider"></div>
-            <params-table :params="imgCropParams"></params-table>
-          </div>
-        </div>
+        <div class="spacer"></div>
+        <pre v-highlightjs="imgCropMarkup"><code class="html"></code></pre>
+        <div class="spacer"></div>
+        <params-table :params="imgCropParams"></params-table>
       </div>
     </div>
   </section>

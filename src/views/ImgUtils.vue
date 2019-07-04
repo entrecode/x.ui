@@ -3,7 +3,7 @@
     <div data-grid>
       <div data-col="10 8@xl">
         <div class="is-padding-center-3">
-          <h2>responsiveness</h2>
+          <h2>img-utils</h2>
         </div>
         <div class="demo-preview is-padding-5 is-margin-bottom-5 is-relative">
           <div data-grid="center">
@@ -34,11 +34,7 @@
             </div>
           </div>
         </div>
-        <div data-grid="center">
-          <div data-col="10@md 8@lg">
-            <pre v-highlightjs="markup"><code class="html"></code></pre>
-          </div>
-        </div>
+        <pre v-highlightjs="markup"><code class="html"></code></pre>
       </div>
     </div>
   </section>

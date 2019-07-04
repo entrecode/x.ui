@@ -200,19 +200,15 @@
           </div>
         </div>
 
-        <div data-grid="center">
-          <div data-col="10@md 8@lg">
-            <div class="spacer"></div>
-            <pre v-highlightjs="defaultMarkup" v-show="activeTab === 1"><code class="html"></code></pre>
-            <pre v-highlightjs="advancedMarkup" v-show="activeTab === 2"><code class="html"></code></pre>
-            <pre v-highlightjs="withGridMarkup" v-show="activeTab === 3"><code class="html"></code></pre>
-            <pre v-highlightjs="mixedMarkup" v-show="activeTab === 4"><code class="html"></code></pre>
-            <pre v-highlightjs="buttonMarkup" v-show="activeTab === 5"><code class="html"></code></pre>
-            <pre v-highlightjs="ixoMarkup" v-show="activeTab === 6"><code class="html"></code></pre>
-            <div class="spacer"></div>
-            <params-table :params="inputParams"></params-table>
-          </div>
-        </div>
+        <div class="spacer"></div>
+        <pre v-highlightjs="defaultMarkup" v-show="activeTab === 1"><code class="html"></code></pre>
+        <pre v-highlightjs="advancedMarkup" v-show="activeTab === 2"><code class="html"></code></pre>
+        <pre v-highlightjs="withGridMarkup" v-show="activeTab === 3"><code class="html"></code></pre>
+        <pre v-highlightjs="mixedMarkup" v-show="activeTab === 4"><code class="html"></code></pre>
+        <pre v-highlightjs="buttonMarkup" v-show="activeTab === 5"><code class="html"></code></pre>
+        <pre v-highlightjs="ixoMarkup" v-show="activeTab === 6"><code class="html"></code></pre>
+        <div class="spacer"></div>
+        <params-table :params="inputParams"></params-table>
       </div>
     </div>
   </section>

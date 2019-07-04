@@ -47,9 +47,9 @@ export const router = new Router({
       components: { main: () => import('./views/ImgCrop.vue'), menu: DemoMenubar },
     },
     {
-      path: '/responsiveness',
-      name: 'responsiveness',
-      components: { main: () => import('./views/ImgResponsive.vue'), menu: DemoMenubar },
+      path: '/img-utils',
+      name: 'img-utils',
+      components: { main: () => import('./views/ImgUtils.vue'), menu: DemoMenubar },
     },
     {
       path: '/is-outset',

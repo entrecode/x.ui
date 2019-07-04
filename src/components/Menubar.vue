@@ -38,10 +38,13 @@
         <router-link to="img-crop" class="is-mega is-uppercase">img-crop</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="responsiveness" class="is-mega is-uppercase">responsiveness</router-link>
+        <router-link to="is-outset" class="is-mega is-uppercase">is-outset</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="is-outset" class="is-mega is-uppercase">is-outset</router-link>
+        <router-link to="avatar" class="is-mega is-uppercase">avatar</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="img-utils" class="is-mega is-uppercase">utils</router-link>
       </li>
       <li class="y-space-5"></li>
       <li>
@@ -78,33 +81,8 @@
         <router-link to="file-upload" class="is-mega is-uppercase">file-upload</router-link>
       </li>
       <li class="y-space-5"></li>
-      <li class="nav__item">
-        <router-link to="loader" class="is-mega is-uppercase">loader</router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="tags" class="is-mega is-uppercase">tags</router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="alert" class="is-mega is-uppercase">alert</router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="well" class="is-mega is-uppercase">well</router-link>
-      </li>
-      <li class="y-space-5"></li>
       <li>
-        <div class="is-h6">ui</div>
-      </li>
-      <li class="nav__item">
-        <router-link to="button" class="is-mega is-uppercase">button</router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="button-group" class="is-mega is-uppercase">button-group</router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="avatar" class="is-mega is-uppercase">avatar</router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="titlebar" class="is-mega is-uppercase">titlebar</router-link>
+        <div class="is-h6">interaction</div>
       </li>
       <li class="nav__item">
         <router-link to="nav" class="is-mega is-uppercase">nav</router-link>
@@ -113,16 +91,41 @@
         <router-link to="dropdown" class="is-mega is-uppercase">dropdown</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="modal" class="is-mega is-uppercase">modal</router-link>
+        <router-link to="button" class="is-mega is-uppercase">button</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="button-group" class="is-mega is-uppercase">button-group</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="tags" class="is-mega is-uppercase">tags</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="loader" class="is-mega is-uppercase">loader</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="alert" class="is-mega is-uppercase">alert</router-link>
+      </li>
+      <li class="y-space-5"></li>
+      <li>
+        <div class="is-h6">interface</div>
+      </li>
+      <li class="nav__item">
+        <router-link to="titlebar" class="is-mega is-uppercase">titlebar</router-link>
       </li>
       <li class="nav__item">
         <router-link to="xui-list" class="is-mega is-uppercase">xui-list</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="card" class="is-mega is-uppercase">card</router-link>
+        <router-link to="xui-accordion" class="is-mega is-uppercase">xui-accordion</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="xui-accordion" class="is-mega is-uppercase">xui-accordion</router-link>
+        <router-link to="modal" class="is-mega is-uppercase">modal</router-link>
+      </li>
+      <router-link class="nav__item">
+        <router-link to="card" class="is-mega is-uppercase">card</router-link>
+      </router-link>
+      <li class="nav__item">
+        <router-link to="well" class="is-mega is-uppercase">well</router-link>
       </li>
       <li class="nav__item">
         <router-link to="table" class="is-mega is-uppercase">table</router-link>

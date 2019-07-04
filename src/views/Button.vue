@@ -1,133 +1,137 @@
 <template>
   <section>
-    <div class="is-padding-center-3"><h2>button</h2></div>
-    <div class="is-margin-bottom-5">
-      <div data-grid>
-        <div data-col="10@md 8@lg">
-          <div class="demo-preview is-padding-8 is-min-height-vh-half" data-flex="column center">
-            <div class="align-center is-padding-bottom-5">
-              <input
-                type="button"
-                class="btn demo-transition"
-                :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
-                value="button"
-              />
-            </div>
-            <div class="align-center is-padding-bottom-5">
-              <button
-                class="btn demo-transition"
-                :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
-              >
-                <svg class="ixo"><use xlink:href="#fire"></use></svg> Button
-              </button>
-            </div>
-            <div class="align-center is-padding-bottom-5">
-              <a
-                href
-                class="btn demo-transition"
-                :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
-              >
-                <svg class="ixo"><use xlink:href="#fire"></use></svg>
-              </a>
-            </div>
-          </div>
+    <div data-col="10 8@xl">
+      <div class="is-padding-center-3">
+        <h2>button</h2>
+      </div>
+      <div class="demo-preview is-padding-8" data-flex="column center-items">
+        <div class="align-center is-padding-bottom-5">
+          <input
+            type="button"
+            class="btn demo-transition"
+            :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
+            value="button"
+          />
+          <button
+            class="btn demo-transition"
+            :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
+          >
+            <svg class="ixo">
+              <use xlink:href="#fire" />
+            </svg> Button
+          </button>
+          <a
+            href
+            class="btn demo-transition"
+            :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
+          >
+            <svg class="ixo">
+              <use xlink:href="#fire" />
+            </svg>
+          </a>
         </div>
-        <div data-col="2@md 4@lg" data-flex="column center">
-          <div class="field-group">
-            <div class="input-group">
-              <label for="btnStyle" class="input-group__addon">
-                <svg class="ixo is-ink-link"><use xlink:href="#color-palette"></use></svg>
-              </label>
-              <div class="input-group__addon">
-                <select id="btnStyle" v-model="btnStyle" class="input">
-                  <option value>default</option>
-                  <option value="btn_minor">minor</option>
-                  <option value="btn_super">super</option>
-                  <option value="btn_invert">inverted</option>
-                  <option value="btn_clear">clear</option>
-                </select>
+
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+          <div class="nav">
+            <div class="nav__item">
+              <div class="input-group">
+                <label for="btnStyle" class="input-group__addon">
+                  <svg class="ixo is-ink-link">
+                    <use xlink:href="#color-palette" />
+                  </svg>
+                </label>
+                <div class="input-group__addon">
+                  <select id="btnStyle" v-model="btnStyle" class="input">
+                    <option value>default</option>
+                    <option value="btn_minor">minor</option>
+                    <option value="btn_super">super</option>
+                    <option value="btn_invert">inverted</option>
+                    <option value="btn_clear">clear</option>
+                  </select>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="field-group">
-            <div class="input-group">
-              <label for="btnSize" class="input-group__addon">
-                <svg class="ixo is-ink-link"><use xlink:href="#move-vertical"></use></svg>
-              </label>
-              <div class="input-group__addon">
-                <select id="btnSize" v-model="btnSize" class="input">
-                  <option value>default</option>
-                  <option value="btn_small">small</option>
-                  <option value="btn_big">big</option>
-                </select>
+            <div class="nav__item">
+              <div class="input-group">
+                <label for="btnSize" class="input-group__addon">
+                  <svg class="ixo is-ink-link">
+                    <use xlink:href="#move-vertical" />
+                  </svg>
+                </label>
+                <div class="input-group__addon">
+                  <select id="btnSize" v-model="btnSize" class="input">
+                    <option value>default</option>
+                    <option value="btn_small">small</option>
+                    <option value="btn_big">big</option>
+                  </select>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="field-group">
-            <div class="input-group">
-              <label for="btnWide" class="input-group__addon">
-                <svg class="ixo is-ink-link"><use xlink:href="#move-horizontal"></use></svg>
-              </label>
-              <div class="input-group__addon">
-                <select id="btnWide" v-model="btnWide" class="input">
-                  <option value>default</option>
-                  <option value="btn_wide">wide</option>
-                  <option value="btn_block">block</option>
-                </select>
+            <div class="nav__item">
+              <div class="input-group">
+                <label for="btnWide" class="input-group__addon">
+                  <svg class="ixo is-ink-link">
+                    <use xlink:href="#move-horizontal" />
+                  </svg>
+                </label>
+                <div class="input-group__addon">
+                  <select id="btnWide" v-model="btnWide" class="input">
+                    <option value>default</option>
+                    <option value="btn_wide">wide</option>
+                    <option value="btn_block">block</option>
+                  </select>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="field-group">
-            <div class="xui-checkbox">
-              <input type="checkbox" id="btnRound" v-model="btnRound" />
-              <label for="btnRound" class="xui-checkbox__label">round</label>
+            <div class="nav__item">
+              <div class="xui-checkbox">
+                <input type="checkbox" id="btnRound" v-model="btnRound" />
+                <label for="btnRound" class="xui-checkbox__label">round</label>
+              </div>
             </div>
-          </div>
-          <div class="field-group">
-            <div class="xui-checkbox">
-              <input type="checkbox" id="btnOutlined" v-model="btnOutlined" />
-              <label for="btnOutlined" class="xui-checkbox__label">outlined</label>
+            <div class="nav__item">
+              <div class="xui-checkbox">
+                <input type="checkbox" id="btnOutlined" v-model="btnOutlined" />
+                <label for="btnOutlined" class="xui-checkbox__label">outlined</label>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div data-grid>
-      <div data-col="10@md 8@lg">
-        <pre v-highlightjs="markup"><code class="html"></code></pre>
-        <div class="y-space-8"></div>
-        <params-table :params="coreParams" title="default params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="smallParams" title="small params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="bigParams" title="big params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="wideParams" title="wide params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="stateParams" title="state params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="defaultStyleParams" title="default style params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="minorStyleParams" title="minor style params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="superStyleParams" title="super style params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="invertStyleParams" title="invert style params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="clearStyleParams" title="invert style params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="defaultOutlinedParams" title="default outline params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="defaultOutlinedStyleParams" title="default outline style params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="minorOutlinedStyleParams" title="minor outline style params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="superOutlinedStyleParams" title="super outline style params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="invertOutlinedStyleParams" title="invert outline style params"></params-table>
-        <div class="divider"></div>
-        <requires-list :requires="requires"></requires-list>
-      </div>
+      <div class="spacer"></div>
+      <pre v-highlightjs="markup"><code class="html"></code></pre>
+      <div class="spacer"></div>
+      <params-table :params="coreParams" title="default params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="smallParams" title="small params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="bigParams" title="big params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="wideParams" title="wide params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="stateParams" title="state params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="defaultStyleParams" title="default style params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="minorStyleParams" title="minor style params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="superStyleParams" title="super style params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="invertStyleParams" title="invert style params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="clearStyleParams" title="invert style params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="defaultOutlinedParams" title="default outline params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="defaultOutlinedStyleParams" title="default outline style params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="minorOutlinedStyleParams" title="minor outline style params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="superOutlinedStyleParams" title="super outline style params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="invertOutlinedStyleParams" title="invert outline style params"></params-table>
+      <div class="spacer"> </div>
+      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>

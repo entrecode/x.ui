@@ -1,61 +1,68 @@
 <template>
   <section>
-    <div class="is-margin-bottom-5">
-      <div data-grid="center">
-        <div data-col="6">
-          <div class="demo-preview is-padding-8" data-flex="column center">
-            <div class="alert demo-transition" :class="alertClasses">
-              ecosystem families energize correlation, social enterprise citizen-centered.
-            </div>
-          </div>
+    <div data-grid>
+      <div data-col="10 8@xl">
+        <div class="is-padding-center-3">
+          <h2>alert</h2>
         </div>
-        <div data-col="6" data-flex="column center">
-          <div class="field-group">
-            <div class="input-group">
-              <label for="alertSize" class="input-group__addon">
-                <svg class="ixo is-ink-link"><use xlink:href="#move-vertical"></use></svg>
-              </label>
-              <div class="input-group__addon">
-                <select id="alertSize" class="input input_round" v-model="size">
-                  <option value>default</option>
-                  <option value="alert_small">small</option>
-                  <option value="alert_big">big</option>
-                </select>
+        <div class="demo-preview is-padding-8" data-flex="column center-items">
+          <div
+            class="alert demo-transition"
+            :class="alertClasses"
+          >ecosystem families energize correlation, social enterprise citizen-centered.</div>
+
+          <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+            <div class="nav">
+              <div class="nav__item">
+                <div class="input-group">
+                  <label for="alertSize" class="input-group__addon">
+                    <svg class="ixo is-ink-link">
+                      <use xlink:href="#move-vertical" />
+                    </svg>
+                  </label>
+                  <div class="input-group__addon">
+                    <select id="alertSize" class="input input_round" v-model="size">
+                      <option value>default</option>
+                      <option value="alert_small">small</option>
+                      <option value="alert_big">big</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="nav__item">
+                <div class="input-group">
+                  <label for="alerStyle" class="input-group__addon">
+                    <svg class="ixo is-ink-link">
+                      <use xlink:href="#color-palette" />
+                    </svg>
+                  </label>
+                  <div class="input-group__addon">
+                    <select class="input input_round" id="alerStyle" v-model="style">
+                      <option value>default</option>
+                      <option value="alert_info">info</option>
+                      <option value="alert_error">error</option>
+                      <option value="alert_success">success</option>
+                      <option value="alert_warning">warning</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="field-group">
-            <div class="input-group">
-              <label for="alerStyle" class="input-group__addon">
-                <svg class="ixo is-ink-link"><use xlink:href="#color-palette"></use></svg>
-              </label>
-              <div class="input-group__addon">
-                <select class="input input_round" id="alerStyle" v-model="style">
-                  <option value>default</option>
-                  <option value="alert_info">info</option>
-                  <option value="alert_error">error</option>
-                  <option value="alert_success">success</option>
-                  <option value="alert_warning">warning</option>
-                </select>
-              </div>
-            </div>
-          </div>
         </div>
+        <div class="spacer"></div>
+        <pre v-highlightjs="markup"><code class="html"></code></pre>
+        <div class="spacer"></div>
+        <params-table :params="params" title="default params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="smallParams" title="small params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="bigParams" title="big params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="stylesParams" title="style params"></params-table>
+        <div class="spacer"></div>
+        <requires-list :requires="requires"></requires-list>
       </div>
-    </div>
-    <div data-col="10@md 8@lg">
-      <div class="y-space-5"></div>
-      <pre v-highlightjs="markup"><code class="html"></code></pre>
-      <div class="y-space-8"></div>
-      <params-table :params="params" title="default params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="smallParams" title="small params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="bigParams" title="big params"></params-table>
-      <div class="divider"></div>
-      <params-table :params="stylesParams" title="style params"></params-table>
-      <div class="divider"></div>
-      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>

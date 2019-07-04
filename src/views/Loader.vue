@@ -68,14 +68,10 @@
           </div>
           <pre v-highlightjs="markupGlobal"><code class="html"></code></pre>
         </div>
-        <div data-grid="center">
-          <div data-col="10@md 8@lg">
-            <div class="spacer"></div>
-            <params-table :params="params"></params-table>
-            <div class="divider"></div>
-            <requires-list :requires="requires"></requires-list>
-          </div>
-        </div>
+        <div class="spacer"></div>
+        <params-table :params="params"></params-table>
+        <div class="spacer"></div>
+        <requires-list :requires="requires"></requires-list>
       </div>
     </div>
   </section>

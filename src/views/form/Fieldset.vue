@@ -7,7 +7,7 @@
         </div>
 
         <div class="demo-preview is-padding-8" data-flex="center">
-          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="10 6@xl">
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="10 8@xl">
             <fieldset class="fieldset">
               <div data-grid="small-gutter">
                 <div data-col="8">
@@ -37,15 +37,10 @@
             </fieldset>
           </div>
         </div>
-
-        <div data-grid="center">
-          <div data-col="10@md 8@lg">
-            <div class="spacer"></div>
-            <pre v-highlightjs="defaultMarkup"><code class="html"></code></pre>
-            <div class="spacer"></div>
-            <params-table :params="inputParams"></params-table>
-          </div>
-        </div>
+        <div class="spacer"></div>
+        <pre v-highlightjs="defaultMarkup"><code class="html"></code></pre>
+        <div class="spacer"></div>
+        <params-table :params="inputParams"></params-table>
       </div>
     </div>
   </section>
