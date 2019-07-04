@@ -86,11 +86,11 @@
       <div class="spacer"></div>
       <params-table :params="coreParams" title="default params"></params-table>
       <div class="divider"></div>
-      <params-table :params="smallParams" title="default params"></params-table>
+      <params-table :params="smallParams" title="size params"></params-table>
       <div class="divider"></div>
-      <params-table :params="bigParams" title="default params"></params-table>
+      <params-table :params="bigParams" title="size params"></params-table>
       <div class="divider"></div>
-      <params-table :params="outlinedParams" title="default params"></params-table>
+      <params-table :params="outlinedParams" title="outlined params"></params-table>
       <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
