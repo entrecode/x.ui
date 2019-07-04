@@ -10,6 +10,10 @@
 /// @param {array} $card-spacing [0]
 /// @param {[1-24] | false} $card-elevation [4]
 /// @param {array} $card-style
+///
+/// @require {mixin} inject-style
+/// @require {mixin} elevation
+/// @require {function} array-magic
 
 .card {
   position: relative;
