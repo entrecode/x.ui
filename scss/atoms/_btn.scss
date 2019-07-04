@@ -32,12 +32,12 @@
 }
 
 // @param {array} $btn-style
-// @param {px} $btn-font-size [$base-font-size]
-// @param {px} $btn-line-height [$btn-font-size * $base-line-height]
+// @param {number} $btn-font-size [$base-font-size]
+// @param {number} $btn-line-height [$btn-font-size * $base-line-height]
 // @param {string} $btn-weight [$is-bold]
-// @param {px} $btn-icon-size [$base-icon-size]
-// @param {px} $btn-min-height [40]
-// @param {px} $btn-radius [4]
+// @param {number} $btn-icon-size [$base-icon-size]
+// @param {number} $btn-min-height [40]
+// @param {number} $btn-radius [4]
 // @param {color} $btn-background [$link]
 // @param {color} $btn-color [$link-contrast]
 // @param {string} $btn-transition [background-color .2s, box-shadow .1s]
@@ -90,12 +90,12 @@
 // sizes
 // ------------------------------------------------------
 
-// @param {px} $btn-small-font-size [$btn-font-size * .875]
-// @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
-// @param {px} $btn-small-icon-size [$btn-icon-size]
-// @param {px} $btn-small-min-height [32]
+// @param {number} $btn-small-font-size [$btn-font-size * .875]
+// @param {number} $btn-small-line-height [$btn-small-font-size * $base-line-height]
+// @param {number} $btn-small-icon-size [$btn-icon-size]
+// @param {number} $btn-small-min-height [32]
 // @param {string} $btn-small-weight [$btn-weight]
-// @param {px} $btn-small-radius [$btn-radius]
+// @param {number} $btn-small-radius [$btn-radius]
 // @param {array} $btn-small-style
 .btn_small {
   @include metrics(
@@ -109,12 +109,12 @@
   @include inject-style($btn-small-style);
 }
 
-// @param {px} $btn-big-font-size [$btn-font-size * 1.125]
-// @param {px} $btn-big-line-height [$btn-big-font-size * $base-line-height]
-// @param {px} $btn-big-icon-size [$btn-icon-size]
-// @param {px} $btn-big-min-height [48]
+// @param {number} $btn-big-font-size [$btn-font-size * 1.125]
+// @param {number} $btn-big-line-height [$btn-big-font-size * $base-line-height]
+// @param {number} $btn-big-icon-size [$btn-icon-size]
+// @param {number} $btn-big-min-height [48]
 // @param {string} $btn-big-weight [$btn-weight]
-// @param {px} $btn-big-radius [$btn-radius]
+// @param {number} $btn-big-radius [$btn-radius]
 // @param {array} $btn-big-style
 .btn_big {
   @include metrics($btn-big-font-size, $btn-big-line-height, $btn-big-min-height, $padding-ratio: $btn-padding-ratio);

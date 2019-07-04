@@ -23,7 +23,7 @@
 /// @param {string} $max null - can be set to max
 /// @require {map} $breakpoints
 ///
-/// @return {px} value of breakpoint-key, if $max == true it returns the value - 1 of the next value
+/// @return {number} value of breakpoint-key, if $max == true it returns the value - 1 of the next value
 
 @function bp($breakpoint, $max: null, $map: $breakpoints) {
   @if map-has-key($map, $breakpoint) {

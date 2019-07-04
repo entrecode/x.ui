@@ -6,11 +6,16 @@
 /// @param {variable} $tag-font-family [$body-font-family]
 /// @param {number} $tag-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
 /// @param {string} $tag-weight [$is-bold]
+/// @param {number} $tag-spacing [0]
 /// @param {color} $tag-background [$minor]
+///
+/// @require {function} array-magic
+/// @require {mixin} inject-style
+/// @require {mixin} metrics
 
-// @param {px} $tag-font-size [14]
-// @param {px} $tag-line-height [14]
-// @param {px} $tag-min-height [20]
+// @param {number} $tag-font-size [14]
+// @param {number} $tag-line-height [14]
+// @param {number} $tag-min-height [20]
 // @param {array} $tag-style
 .tag {
   display: inline-block;
@@ -26,6 +31,7 @@
   vertical-align: text-bottom;
   @include inject-style($tag-style);
   @include metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
+  margin: array-magic($tag-spacing);
   background: $tag-background;
   color: $tag-color;
   border-radius: array-magic($tag-radius);
@@ -36,9 +42,9 @@
     color: $tag-color;
   }
 
-  // @param {px} $tag-small-font-size [12]
-  // @param {px} $tag-small-line-height [12]
-  // @param {px} $tag-small-min-height [16]
+  // @param {number} $tag-small-font-size [12]
+  // @param {number} $tag-small-line-height [12]
+  // @param {number} $tag-small-min-height [16]
   // @param {array} $tag-small-style
   &_small {
     @include inject-style($tag-small-style);
@@ -51,9 +57,9 @@
     border-radius: array-magic($tag-small-radius);
   }
 
-  // @param {px} $tag-big-font-size [14]
-  // @param {px} $tag-big-line-height [14]
-  // @param {px} $tag-big-min-height [28]
+  // @param {number} $tag-big-font-size [14]
+  // @param {number} $tag-big-line-height [14]
+  // @param {number} $tag-big-min-height [28]
   // @param {array} $tag-big-style
   &_big {
     @include inject-style($tag-big-style);

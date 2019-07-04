@@ -3,8 +3,14 @@
 /// @access public
 /// @group molecules
 ///
-/// @param {boolean} $dropdown-in-hover [false]
+/// @require {function} rem
+/// @require {function} array-magic
+/// @require {mixin} inject-style
+/// @require {mixin} is-scrollable
+/// @require {mixin} elevation
 
+
+// @param {boolean} $dropdown-in-hover [false]
 .dropdown {
   cursor: pointer;
   outline: none;
@@ -12,12 +18,12 @@
   position: relative;
 }
 
-// @param {px} $dropdown-options-radius [4]
+// @param {number} $dropdown-options-radius [4]
 // @param {array} $dropdown-options-padding [8]
 // @param {px | null} $dropdown-options-max-height [320]
 // @param {color} $dropdown-options-background [$background]
 // @param {color} $dropdown-options-color [$text]
-// @param {string} $dropdown-options-shadow
+// @param {[1-24] | false} $dropdown-options-elevation [8]
 // @param {array} $dropdown-options-style
 .dropdown-options {
   list-style: none;
@@ -30,9 +36,11 @@
   transition: visibility 0.5s, opacity 0.2s;
   @include is-scrollable(y, contain, $behavior: auto);
   @include inject-style($dropdown-options-style);
+  @if $dropdown-options-elevation {
+    @include elevation($dropdown-options-elevation);
+  }
   background: $dropdown-options-background;
   border-radius: array-magic($dropdown-options-radius);
-  box-shadow: array-magic($dropdown-options-shadow);
   color: $dropdown-options-color;
   max-height: rem($dropdown-options-max-height);
   padding: array-magic($dropdown-options-padding);
@@ -82,8 +90,8 @@
 // @param {color} $dropdown-option-background [none]
 // @param {array} $dropdown-option-padding [4 8]
 // @param {array} $dropdown-option-spacing [0]
-// @param {px} $dropdown-option-font-size [$base-font-size]
-// @param {px} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
+// @param {number} $dropdown-option-font-size [$base-font-size]
+// @param {number} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
 // @param {string} $dropdown-option-alignment [center]
 // @param {array} $dropdown-option-style
 // @param {array} $dropdown-option-hover-style
@@ -111,8 +119,8 @@
   }
 }
 
-// @param {px} $dropdown-option-divider-size [1]
-// @param {px} $dropdown-option-divider-spacing [4 0]
+// @param {number} $dropdown-option-divider-size [1]
+// @param {array} $dropdown-option-divider-spacing [4 0]
 // @param {color} $dropdown-option-divider-color [$base-divider-color]
 // @param {array} $dropdown-option-divider-style
 .dropdown_divider {

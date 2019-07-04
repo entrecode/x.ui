@@ -3,12 +3,6 @@
 /// @access public
 
 //
-// FEATURE - SUPPORT
-// -------------------------------------------------------------------------------------------------
-// @param {boolean} $ec-icon-support [true] - set ec-icon support
-$ec-icon-support: true !default;
-
-//
 // COLORS
 // -------------------------------------------------------------------------------------------------
 // these variables are used in `_core/_colors.scss`
@@ -162,10 +156,13 @@ $xui-colors: map-merge(
 // @param {variable} $color-map-id [$xui-colors] - can be changed use a different colormap
 $color-map-id: $xui-colors !default;
 
+// @param {color} $flatten-color-base
+$flatten-color-base: $background;
+
 //
 // ROOT
 // -------------------------------------------------------------------------------------------------
-// @param {px} $root-size [16] - default size used for global size calculations
+// @param {number} $root-size [16] - default size used for global size calculations
 $root-size: 16 !default;
 
 //
@@ -181,7 +178,7 @@ $body-style: () !default;
 //
 // GRID
 // -------------------------------------------------------------------------------------------------
-// @param {px} $grid-container-width [1200] - max-width of container
+// @param {number} $grid-container-width [1200] - max-width of container
 // @param {string} $grid-container-gutter [16]
 $grid-container-width: 1200 !default;
 $grid-container-gutter: 16 !default;
@@ -189,15 +186,15 @@ $grid-container-gutter: 16 !default;
 // @param {number} $grid-num-columns [12] - number of columns in a row
 $grid-num-columns: 12 !default;
 
-// @param {px} $grid-gutter [32] - default gutter size
-// @param {px} $grid-small-gutter [16] - default gutter size
+// @param {number} $grid-gutter [32] - default gutter size
+// @param {number} $grid-small-gutter [16] - default gutter size
 $grid-gutter: 32 !default;
 $grid-small-gutter: 16 !default;
 
 //
 // SPACING
 // -------------------------------------------------------------------------------------------------
-// @param {px} $base-spacing [16]
+// @param {number} $base-spacing [16]
 // @param {*} $base-spacing-unit [xrem]
 // @param {map} $spacings
 $base-spacing: 16 !default;
@@ -266,7 +263,7 @@ $is-bold: bolder !default;
 //
 // FONT-SIZE
 // ---------------------------------------------
-// @param {px} $base-font-size [16]
+// @param {number} $base-font-size [16]
 // @param {em} $base-line-height [1.4]
 // @param {string} $base-font-weight [$is-normal]
 // @param {string} $base-scale-unit [em]
@@ -278,7 +275,7 @@ $base-scale-unit: em !default;
 //
 // EC-ICON
 // ---------------------------------------------
-// @param {px} $base-icon-size [16]
+// @param {number} $base-icon-size [16]
 $base-icon-size: 16 !default;
 
 //
@@ -497,17 +494,17 @@ $btn-spacing: 0 !default;
 $btn-round: false !default;
 
 // radius of buttons - if $btn-round === false
-// @param {px} $btn-radius [4]
-// @param {px} $btn-small-radius [$btn-radius]
-// @param {px} $btn-big-radius [$btn-radius]
+// @param {number} $btn-radius [4]
+// @param {number} $btn-small-radius [$btn-radius]
+// @param {number} $btn-big-radius [$btn-radius]
 $btn-radius: 4 !default;
 $btn-small-radius: $btn-radius !default;
 $btn-big-radius: $btn-radius !default;
 
-// @param {px} $btn-font-size [$base-font-size]
-// @param {px} $btn-line-height [$btn-font-size * $base-line-height]
-// @param {px} $btn-icon-size [$base-icon-size]
-// @param {px} $btn-min-height [40]
+// @param {number} $btn-font-size [$base-font-size]
+// @param {number} $btn-line-height [$btn-font-size * $base-line-height]
+// @param {number} $btn-icon-size [$base-icon-size]
+// @param {number} $btn-min-height [40]
 // @param {string} $btn-weight [$is-bold]
 $btn-font-size: $base-font-size !default;
 $btn-line-height: $btn-font-size * $base-line-height !default;
@@ -534,10 +531,10 @@ $btn-active-style: map-merge(
   $btn-active-style
 );
 
-// @param {px} $btn-small-font-size [$btn-font-size * .875]
-// @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
-// @param {px} $btn-small-icon-size [$btn-icon-size]
-// @param {px} $btn-small-min-height [32]
+// @param {number} $btn-small-font-size [$btn-font-size * .875]
+// @param {number} $btn-small-line-height [$btn-small-font-size * $base-line-height]
+// @param {number} $btn-small-icon-size [$btn-icon-size]
+// @param {number} $btn-small-min-height [32]
 // @param {string} $btn-small-weight [$btn-weight]
 // @param {array} $btn-small-style
 $btn-small-font-size: $btn-font-size * 0.875 !default;
@@ -547,10 +544,10 @@ $btn-small-min-height: 32 !default;
 $btn-small-weight: $btn-weight !default;
 $btn-small-style: () !default;
 
-// @param {px} $btn-big-font-size [$btn-font-size * 1.125]
-// @param {px} $btn-big-line-height [$btn-big-font-size * $base-line-height]
-// @param {px} $btn-big-icon-size [$btn-icon-size]
-// @param {px} $btn-big-min-height [48]
+// @param {number} $btn-big-font-size [$btn-font-size * 1.125]
+// @param {number} $btn-big-line-height [$btn-big-font-size * $base-line-height]
+// @param {number} $btn-big-icon-size [$btn-icon-size]
+// @param {number} $btn-big-min-height [48]
 // @param {string} $btn-big-weight [$btn-weight]
 // @param {array} $btn-big-style
 $btn-big-font-size: $btn-font-size * 1.125 !default;
@@ -560,9 +557,9 @@ $btn-big-min-height: 48 !default;
 $btn-big-weight: $btn-weight !default;
 $btn-big-style: () !default;
 
-// @param {px} $btn-wide -  min width for .btn_wide button
-// @param {px} $btn-small-wide - min width for .btn_wide.btn_small button
-// @param {px} $btn-big-wide - min width for .btn_wide.btn_big button
+// @param {number} $btn-wide -  min width for .btn_wide button
+// @param {number} $btn-small-wide - min width for .btn_wide.btn_small button
+// @param {number} $btn-big-wide - min width for .btn_wide.btn_big button
 $btn-wide: 240 !default;
 $btn-small-wide: 160 !default;
 $btn-big-wide: 240 !default;
@@ -587,7 +584,7 @@ $btn-hover-style: () !default;
 //
 // BTN OUTLINE STYLE
 // ------------------------------------------------------------
-// @param {px} $btn-outlined-border-width [2]
+// @param {number} $btn-outlined-border-width [2]
 // @param {color} $btn-outlined-border-style [solid]
 $btn-outlined-border-width: 1 !default;
 $btn-outlined-border-style: solid !default;
@@ -729,10 +726,10 @@ $btn-clear-hover-style: () !default;
 // HAMBURGER BUTTON
 // ------------------------------------------------------
 // @param {array} $hamburger-btn-spacing [$btn-spacing]
-// @param {px} $hamburger-btn-width [16] - width of hamburger menu
+// @param {number} $hamburger-btn-width [16] - width of hamburger menu
 // @param {color} $hamburger-btn-background [transparent]
-// @param {px} $hamburger-btn-line-weight [2] - height of hamburger menu bars
-// @param {px} $hamburger-btn-line-spacing [4]
+// @param {number} $hamburger-btn-line-weight [2] - height of hamburger menu bars
+// @param {number} $hamburger-btn-line-spacing [4]
 // @param {color} $hamburger-btn-line-color [$link]
 // @param {array} $hamburger-btn-style
 $hamburger-btn-spacing: $btn-spacing !default;
@@ -746,9 +743,9 @@ $hamburger-btn-style: () !default;
 //
 // LOADER
 // ------------------------------------------------------
-// @param {px} $loader-size [24]
+// @param {number} $loader-size [24]
 // @param {array} $loader-style
-// @param {px} $loader-track-width [4]
+// @param {number} $loader-track-width [4]
 // @param {color} $loader-track-color [$background-lightest]
 // @param {color} $loader-racer-color [$link]
 // @param {string} $loader-racer-animation [loaderDefault]
@@ -776,37 +773,39 @@ $loader-is-global-background: $backdrop !default;
 // @param {variable} $tag-font-family [$body-font-family]
 // @param {number} $tag-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
 // @param {string} $tag-weight [$is-bold]
+// @param {number} $tag-spacing [0]
 // @param {color} $tag-background [$minor]
 // @param {color} $tag-color [$minor-contrast]
 // @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
 $tag-font-family: $body-font-family !default;
 $tag-weight: $is-bold !default;
 $tag-padding-ratio: 2 !default;
+$tag-spacing: 0 !default;
 $tag-background: $minor !default;
 $tag-color: $minor-contrast !default;
 $tag-round: false !default;
 
-// @param {px} $tag-font-size [14]
-// @param {px} $tag-line-height [14]
-// @param {px} $tag-min-height [20]
+// @param {number} $tag-font-size [14]
+// @param {number} $tag-line-height [14]
+// @param {number} $tag-min-height [20]
 // @param {array} $tag-style
 $tag-font-size: 14 !default;
 $tag-line-height: 16 !default;
 $tag-min-height: 20 !default;
 $tag-style: () !default;
 
-// @param {px} $tag-small-font-size [12]
-// @param {px} $tag-small-line-height [12]
-// @param {px} $tag-small-min-height [16]
+// @param {number} $tag-small-font-size [12]
+// @param {number} $tag-small-line-height [12]
+// @param {number} $tag-small-min-height [16]
 // @param {array} $tag-small-style
 $tag-small-font-size: 12 !default;
 $tag-small-line-height: 12 !default;
 $tag-small-min-height: 16 !default;
 $tag-small-style: () !default;
 
-// @param {px} $tag-big-font-size [16]
-// @param {px} $tag-big-line-height [20]
-// @param {px} $tag-big-min-height [24]
+// @param {number} $tag-big-font-size [16]
+// @param {number} $tag-big-line-height [20]
+// @param {number} $tag-big-min-height [24]
 // @param {array} $tag-big-style
 $tag-big-font-size: 16 !default;
 $tag-big-line-height: 20 !default;
@@ -815,7 +814,7 @@ $tag-big-style: () !default;
 
 // @param {color} $tag-outlined-color [$minor-contrast]
 // @param {color} $tag-outlined-border-color [$minor]
-// @param {px} $tag-outlined-border-width [2]
+// @param {number} $tag-outlined-border-width [2]
 // @param {string} $tag-outlined-border-style [solid]
 $tag-outlined-color: $minor-contrast !default;
 $tag-outlined-border-color: $minor !default;
@@ -823,9 +822,9 @@ $tag-outlined-border-width: 1 !default;
 $tag-outlined-border-style: solid !default;
 
 // radius of buttons - if $tag-round === false
-// @param {px} $tag-radius [2]
-// @param {px} $tag-small-radius [$tag-radius]
-// @param {px} $tag-big-radius [$tag-radius]
+// @param {number} $tag-radius [2]
+// @param {number} $tag-small-radius [$tag-radius]
+// @param {number} $tag-big-radius [$tag-radius]
 $tag-radius: 2 !default;
 $tag-small-radius: $tag-radius !default;
 $tag-big-radius: $tag-radius !default;
@@ -884,27 +883,27 @@ $tag-styles: map-merge(
 // @param {boolean} $dropdown-in-hover [false]
 $dropdown-on-hover: false !default;
 
-// @param {px} $dropdown-options-radius [4]
+// @param {number} $dropdown-options-radius [4]
 // @param {array} $dropdown-options-padding [8]
 // @param {px | null} $dropdown-options-max-height [320]
 // @param {color} $dropdown-options-background [$background]
 // @param {color} $dropdown-options-color [$text]
-// @param {string} $dropdown-options-shadow
+// @param {[1-24] | false} $dropdown-options-elevation [8]
 // @param {array} $dropdown-options-style
 $dropdown-options-radius: 4 !default;
 $dropdown-options-padding: 8 !default;
 $dropdown-options-max-height: 320 !default;
 $dropdown-options-background: $background !default;
 $dropdown-options-color: $text !default;
-$dropdown-options-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
+$dropdown-options-elevation: 8 !default;
 $dropdown-options-style: () !default;
 
 // @param {color} $dropdown-option-color [$text]
 // @param {color} $dropdown-option-background [none]
 // @param {array} $dropdown-option-padding [4 8]
 // @param {array} $dropdown-option-spacing [0]
-// @param {px} $dropdown-option-font-size [$base-font-size]
-// @param {px} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
+// @param {number} $dropdown-option-font-size [$base-font-size]
+// @param {number} $dropdown-option-line-height [$dropdown-option-font-size * $base-line-height]
 // @param {string} $dropdown-option-alignment [center]
 // @param {array} $dropdown-option-style
 // @param {array} $dropdown-option-hover-style
@@ -918,8 +917,8 @@ $dropdown-option-alignment: center !default;
 $dropdown-option-style: () !default;
 $dropdown-option-hover-style: () !default;
 
-// @param {px} $dropdown-option-divider-size [1]
-// @param {px} $dropdown-option-divider-spacing [4 0]
+// @param {number} $dropdown-option-divider-size [1]
+// @param {number} $dropdown-option-divider-spacing [4 0]
 // @param {color} $dropdown-option-divider-color [$base-divider-color]
 // @param {array} $dropdown-option-divider-style
 $dropdown-option-divider-size: 1 !default;
@@ -931,7 +930,7 @@ $dropdown-option-divider-style: () !default;
 // BUTTON GROUP
 // ------------------------------------------------------
 // @param {array} $btn-group-style
-// @param {px} $btn-group-divider-size [1]
+// @param {number} $btn-group-divider-size [1]
 // @param {color} $btn-group-divider-color [$base-divider-color]
 $btn-group-style: () !default;
 $btn-group-divider-size: 1 !default;
@@ -961,13 +960,13 @@ $nav-stacked-style: () !default;
 $nav-stacked-item-padding: $nav-item-padding !default;
 
 // @param {color} $nav-divider-color [$divider]
-// @param {px} $nav-divider-size [1]
-// @param {px} $nav-divider-spacing [$nav-item-padding]
+// @param {number} $nav-divider-size [1]
+// @param {number} $nav-divider-spacing [$nav-item-padding]
 $nav-divider-color: $base-divider-color !default;
 $nav-divider-size: 1 !default;
 $nav-divider-spacing: $nav-item-padding !default;
 
-// @param {px} $nav-link-radius [4]
+// @param {number} $nav-link-radius [4]
 // @param {array} $nav-link-spacing [0]
 // @param {array} $nav-link-padding [4]
 // @param {array} $nav-link-font-size [$base-font-size]
@@ -1075,7 +1074,7 @@ $xui-tab-style: () !default;
 // @param {color} $xui-list-color [inherit]
 // @param {array} $xui-list-padding [0]
 // @param {array} $xui-list-spacing [0 0 16]
-// @param {px} $xui-list-radius [0]
+// @param {number} $xui-list-radius [0]
 // @param {array} $xui-list-style
 $xui-list-background: none !default;
 $xui-list-color: inherit !default;
@@ -1087,7 +1086,7 @@ $xui-list-style: () !default;
 // @param {array} $xui-list-item-padding [8]
 // @param {array} $xui-list-item-spacing [0]
 // @param {array} $xui-list-item-gutter [$base-spacing]
-// @param {px} $xui-list-item-radius [4]
+// @param {number} $xui-list-item-radius [4]
 // @param {color} $xui-list-item-background [none]
 // @param {color} $xui-list-item-color [inherit]
 // @param {array} $xui-list-item-style
@@ -1101,7 +1100,7 @@ $xui-list-item-style: () !default;
 
 // @param {color} $xui-list-item-hover-background [none]
 // @param {color} $xui-list-item-hover-color [inherit]
-// @param {array} $xui-list-item-hover-stylee
+// @param {array} $xui-list-item-hover-style
 $xui-list-item-hover-background: none !default;
 $xui-list-item-hover-color: inherit !default;
 $xui-list-item-hover-style: () !default;
@@ -1116,7 +1115,7 @@ $xui-list-item-active-style: () !default;
 // @param {color} $xui-list-group-background [none]
 // @param {array} $xui-list-group-padding [0]
 // @param {array} $xui-list-group-spacing [0 0 16]
-// @param {px} $xui-list-group-radius [0]
+// @param {number} $xui-list-group-radius [0]
 // @param {array} $xui-list-group-style
 $xui-list-group-background: none !default;
 $xui-list-group-padding: 0 !default;
@@ -1128,7 +1127,7 @@ $xui-list-group-style: () !default;
 // @param {color} $xui-list-group-header-color [inherit]
 // @param {array} $xui-list-group-header-padding [0]
 // @param {array} $xui-list-group-header-spacing [0 0 16]
-// @param {px} $xui-list-group-header-radius [0]
+// @param {number} $xui-list-group-header-radius [0]
 // @param {array} $xui-list-group-header-style
 $xui-list-group-header-background: none !default;
 $xui-list-group-header-color: inherit !default;
@@ -1140,19 +1139,19 @@ $xui-list-group-header-style: () !default;
 //
 // CARD
 // ------------------------------------------------------
-// @param {px} $card-radius [4]
+// @param {number} $card-radius [4]
 // @param {color} $card-background [$background]
 // @param {color} $card-color [$text]
 // @param {array} $card-padding [24]
 // @param {array} $card-spacing [0]
-// @param {[1-24] | false} $card-elevated [4]
+// @param {[1-24] | false} $card-elevation [4]
 // @param {array} $card-style
 $card-radius: 4 !default;
 $card-background: $background !default;
 $card-color: $text !default;
 $card-padding: 24 !default;
 $card-spacing: 0 !default;
-$card-elevated: 4 !default;
+$card-elevation: 4 !default;
 $card-style: () !default;
 
 // MODAL
@@ -1167,10 +1166,10 @@ $modal-wrapper-style: () !default;
 // @param {array} $modal-gutter [16]
 $modal-gutter: 16 !default;
 
-// @param {string} $modal-align-item [flex-start]
-$modal-align-item: flex-start !default;
+// @param {string} $modal-align-items [flex-start]
+$modal-align-items: flex-start !default;
 
-// @param {px} $modal-min-width [240]
+// @param {number} $modal-min-width [240]
 // @param {percentage | false } $modal-max-width-relative [50]
 // @param {pixel | false } $modal-max-width-relative [640]
 $modal-min-width: 240 !default;
@@ -1180,16 +1179,16 @@ $modal-max-width-absolute: 640 !default;
 // @param {color} $modal-background
 // @param {color} $modal-color
 // @param {array} $modal-padding [16]
-// @param {px} $modal-radius [16]
+// @param {number} $modal-radius [16]
 // @param {string} $modal-shadow
-// @param {[1-24] | false} $modal-elevated [8]
+// @param {[1-24] | false} $modal-elevation [8]
 // @param {number} $modal-z-index [100]
 // @param {array} $modal-style
 $modal-background: $background !default;
 $modal-color: $text !default;
 $modal-padding: 16 !default;
 $modal-radius: 16 !default;
-$modal-elevated: 8 !default;
+$modal-elevation: 8 !default;
 $modal-z-index: 100 !default;
 $modal-style: () !default;
 
@@ -1228,7 +1227,7 @@ $dialog-wrapper-background: $backdrop !default;
 $dialog-wrapper-z-index: 100 !default;
 $dialog-wrapper-style: () !default;
 
-// @param {px} $dialog-min-width [240]
+// @param {number} $dialog-min-width [240]
 // @param {percentage | false } $dialog-max-width-relative [50]
 // @param {pixel | false } $dialog-max-width-relative [640]
 $dialog-min-width: 240 !default;
@@ -1238,7 +1237,7 @@ $dialog-max-width-absolute: 640 !default;
 // @param {color} $dialog-background
 // @param {color} $dialog-color
 // @param {array} $dialog-padding [0]
-// @param {px} $dialog-radius [4]
+// @param {number} $dialog-radius [4]
 // @param {string} $dialog-shadow
 // @param {number} $dialog-z-index [100]
 // @param {array} $dialog-style
@@ -1283,7 +1282,7 @@ $deck-wrapper-background: $backdrop !default;
 $deck-wrapper-z-index: 100 !default;
 $deck-wrapper-style: () !default;
 
-// @param {px} $deck-min-width [240]
+// @param {number} $deck-min-width [240]
 // @param {percentage | false } $deck-max-width-relative [50]
 // @param {pixel | false } $deck-max-width-relative [640]
 $deck-min-width: 240 !default;
@@ -1388,7 +1387,7 @@ $snackbar-wrapper-background: $backdrop !default;
 $snackbar-wrapper-z-index: 100 !default;
 $snackbar-wrapper-style: () !default;
 
-// @param {px} $snackbar-min-width [240]
+// @param {number} $snackbar-min-width [240]
 // @param {percentage | false } $snackbar-max-width-relative [50]
 // @param {pixel | false } $snackbar-max-width-relative [640]
 $snackbar-min-width: 240 !default;
@@ -1440,7 +1439,7 @@ $snackbar-footer-style: () !default;
 //
 // XUI-OVERLAY
 // ------------------------------------------------------
-// @param {px} $xui-overlay-radius [4]
+// @param {number} $xui-overlay-radius [4]
 // @param {array} $xui-overlay-padding [4]
 // @param {color} $xui-overlay-background
 // @param {array} $xui-overlay-style
@@ -1498,7 +1497,7 @@ $overlay-footer-style: () !default;
 //
 // POPOVER
 // ------------------------------------------------------
-// @param {px} $popover-radius [4]
+// @param {number} $popover-radius [4]
 // @param {array} $popover-padding [4]
 // @param {color} $popover-background
 // @param {string} $popover-shadow
@@ -1515,7 +1514,7 @@ $popover-style: () !default;
 // ------------------------------------------------------
 // @param {color} $well-background [$background-lightest]
 // @param {color} $well-color [inherit]
-// @param {px} $well-radius [4]
+// @param {number} $well-radius [4]
 // @param {array} $well-padding [16 24]
 // @param {array} $well-spacing [0 0 16 0]
 // @param {array} $well-style
@@ -1532,13 +1531,13 @@ $well-style: () !default;
 // @param {color} $alert-background [$background-lightest]
 // @param {color} $alert-color [$text]
 // @param {string} $alert-weight [$is-normal]
-// @param {px} $alert-radius [4]
+// @param {number} $alert-radius [4]
 $alert-background: $background-lightest !default;
 $alert-color: $text !default;
 $alert-weight: $is-normal !default;
 $alert-radius: 4 !default;
 
-// @param {px} $alert-font-size [$base-font-size]
+// @param {number} $alert-font-size [$base-font-size]
 // @param {array} $alert-padding [16 24]
 // @param {array} $alert-spacing [0 0 16 0]
 // @param {array} $alert-style
@@ -1547,7 +1546,7 @@ $alert-padding: 16 24 !default;
 $alert-spacing: 0 0 16 0 !default;
 $alert-style: () !default;
 
-// @param {px} $alert-small-font-size [$alert-font-size * .875]
+// @param {number} $alert-small-font-size [$alert-font-size * .875]
 // @param {array} $alert-small-padding [8 12]
 // @param {array} $alert-small-spacing [$alert-spacing]
 // @param {array} $alert-small-style
@@ -1556,7 +1555,7 @@ $alert-small-padding: 8 12 !default;
 $alert-small-spacing: $alert-spacing !default;
 $alert-small-style: () !default;
 
-// @param {px} $alert-big-font-size [$alert-font-size * 1.125]
+// @param {number} $alert-big-font-size [$alert-font-size * 1.125]
 // @param {array} $alert-big-padding [24 28]
 // @param {array} $alert-big-spacing [$alert-spacing]
 // @param {array} $alert-big-style
@@ -1593,9 +1592,9 @@ $alert-styles: map-merge(
 // TOOLTIP
 // ------------------------------------------------------
 // @param {number} $tooltip-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-// @param {px} $tooltip-font-size [12]
-// @param {px} $tooltip-line-height [14]
-// @param {px} $tooltip-min-height [20]
+// @param {number} $tooltip-font-size [12]
+// @param {number} $tooltip-line-height [14]
+// @param {number} $tooltip-min-height [20]
 // @param {string} $tooltip-weight [$is-normal]
 // @param {color} $tooltip-background [$background-invert]
 // @param {color} $tooltip-color [$text-invert]
@@ -1613,7 +1612,7 @@ $tooltip-style: () !default;
 $tooltip-round: false !default;
 
 // radius of buttons - if $tooltip-round === false
-// @param {px} $tooltip-radius [2]
+// @param {number} $tooltip-radius [2]
 $tooltip-radius: 2 !default;
 
 //
@@ -1629,12 +1628,12 @@ $table-cell-padding: 8 !default;
 //
 // AVATAR
 // ------------------------------------------------------
-// @param {px} $avatar-size [40]
-// @param {px} $avatar-small-size-size [24]
-// @param {px} $avatar-big-size-size [64]
+// @param {number} $avatar-size [40]
+// @param {number} $avatar-small-size-size [24]
+// @param {number} $avatar-big-size-size [64]
 // @param {array} $avatar-border [0]
 // @param {array} $avatar-background [$background-lightest]
-// @param {px} $avatar-square-radius [4]
+// @param {number} $avatar-square-radius [4]
 // @param {array} $avatar-style
 $avatar-size: 40 !default;
 $avatar-small-size: 24 !default;
@@ -1709,7 +1708,7 @@ $is-ink: map-merge(
 //
 // BUMPER
 // ------------------------------------------------------
-// @param {px} $bumper-size [4]
+// @param {number} $bumper-size [4]
 // @param {color} $bumper-color [$base-divider-color]
 // @param {color} $bumper-invert-color [rgba($background, .2)]
 // @param {array} $bumper-spacing [get-space(5) 0]
@@ -1725,7 +1724,7 @@ $bumper-big-spacing: get-space(6) 0 !default;
 //
 // DIVIDER
 // ------------------------------------------------------
-// @param {px} $divider-height [1]
+// @param {number} $divider-height [1]
 // @param {color} $divider-color [$base-divider-color]
 // @param {color} $divider-invert-color [rgba($background, .2)]
 // @param {array} $divider-spacing [get-space(3) 0]
@@ -1741,9 +1740,9 @@ $divider-big-spacing: get-space(5) 0 !default;
 //
 // SPACER
 // ------------------------------------------------------
-// @param {px} $spacer-size [get-space(5)]
-// @param {px} $spacer-small-size [get-space(3)]
-// @param {px} $spacer-big-size [get-space(6)]
+// @param {number} $spacer-size [get-space(5)]
+// @param {number} $spacer-small-size [get-space(3)]
+// @param {number} $spacer-big-size [get-space(6)]
 $spacer-size: get-space(5) !default;
 $spacer-small-size: get-space(3) !default;
 $spacer-big-size: get-space(6) !default;
@@ -1751,10 +1750,10 @@ $spacer-big-size: get-space(6) !default;
 //
 // SPACING
 // ------------------------------------------------------
-// @param {px} $spacing-smallest-size [get-space(1)]
-// @param {px} $spacing-small-size [get-space(2)]
-// @param {px} $spacing-size [get-space(3)]
-// @param {px} $spacing-big-size [get-space(5)]
+// @param {number} $spacing-smallest-size [get-space(1)]
+// @param {number} $spacing-small-size [get-space(2)]
+// @param {number} $spacing-size [get-space(3)]
+// @param {number} $spacing-big-size [get-space(5)]
 $spacing-size: get-space(3) !default;
 $spacing-smallest-size: get-space(1) !default;
 $spacing-small-size: get-space(2) !default;
@@ -1791,14 +1790,14 @@ $field-group-background: none !default;
 $field-group-style: () !default;
 
 // @param {array} $field-group-label-spacing [4]
-// @param {px} $field-group-label-font-size [$base-font-size]
+// @param {number} $field-group-label-font-size [$base-font-size]
 // @param {array} $field-group-label-style
 $field-group-label-spacing: 4 !default;
 $field-group-label-font-size: $base-font-size !default;
 $field-group-label-style: () !default;
 
 // @param {array} $field-group-info-spacing [8]
-// @param {px} $field-group-info-font-size [$base-font-size * 0.75]
+// @param {number} $field-group-info-font-size [$base-font-size * 0.75]
 // @param {array} $field-group-info-style
 $field-group-info-spacing: 8 !default;
 $field-group-info-font-size: $base-font-size * 0.75 !default;
@@ -1807,13 +1806,13 @@ $field-group-info-style: () !default;
 //
 // INPUT
 // ------------------------------------------------------
-// @param {px} $input-font-size [16]
-// @param {px} $input-line-height [24]
-// @param {px} $input-min-height [32]
+// @param {number} $input-font-size [16]
+// @param {number} $input-line-height [24]
+// @param {number} $input-min-height [32]
 // @param {number} $input-padding-ratio [1]
 // @param {array} $input-spacing [0]
 // @param {color} $input-border-color [transparent]
-// @param {px} $input-border-width [0]
+// @param {number} $input-border-width [0]
 // @param {string} $input-border-style [solid]
 // @param {color} $input-background [$background-lighter]
 // @param {color} $input-color [$text]
@@ -1845,18 +1844,18 @@ $input-placeholder-style: () !default;
 $input-placeholder-hover-style: () !default;
 $input-placeholder-focus-style: () !default;
 
-// @param {px} $input-small-font-size [14]
-// @param {px} $input-small-line-height [18]
-// @param {px} $input-small-min-height [28]
+// @param {number} $input-small-font-size [14]
+// @param {number} $input-small-line-height [18]
+// @param {number} $input-small-min-height [28]
 // @param {array} $input-small-style
 $input-small-font-size: $input-font-size * 0.875 !default;
 $input-small-line-height: $input-small-font-size * 1.125 !default;
 $input-small-min-height: 28 !default;
 $input-small-style: () !default;
 
-// @param {px} $input-big-font-size [18]
-// @param {px} $input-big-line-height [24]
-// @param {px} $input-big-min-height [40]
+// @param {number} $input-big-font-size [18]
+// @param {number} $input-big-line-height [24]
+// @param {number} $input-big-min-height [40]
 // @param {array} $input-big-style
 $input-big-font-size: $input-font-size * 1.125 !default;
 $input-big-line-height: $input-big-font-size * 1.125 !default;
@@ -1864,15 +1863,15 @@ $input-big-min-height: 40 !default;
 $input-big-style: () !default;
 
 // @param {boolean} $input-round [false] - sets border-radius to 50% of input height
-// @param {px} $input-radius [4] - if $input-round === false
+// @param {number} $input-radius [4] - if $input-round === false
 $input-round: false !default;
 $input-radius: 4 !default;
 
 //
 // RANGE-Slider
 // ------------------------------------------------------
-// @param {px} $range-slider-height [8]
-// @param {px} $range-slider-radius [4]
+// @param {number} $range-slider-height [8]
+// @param {number} $range-slider-radius [4]
 // @param {color} $range-slider-background [$background-lightest]
 // @param {array} $range-slider-style
 // @param {array} $range-slider-hover-style
@@ -1882,8 +1881,8 @@ $range-slider-background: $background-lightest !default;
 $range-slider-style: () !default;
 $range-slider-hover-style: () !default;
 
-// @param {px} $range-slider-thumb-size [16]
-// @param {px} $range-slider-thumb-radius [8]
+// @param {number} $range-slider-thumb-size [16]
+// @param {number} $range-slider-thumb-radius [8]
 // @param {color} $range-slider-thumb-color [$link]
 // @param {array} $range-slider-thumb-style
 // @param {array} $range-slider-thumb-hover-style
@@ -1939,9 +1938,9 @@ $input-group-addon-style: () !default;
 // @param {color} $xui-select-color [$input-color]
 // @param {array} $xui-select-spacing [$input-spacing]
 // @param {number} $xui-select-padding-ratio [$input-padding-ratio]
-// @param {px} $xui-select-font-size [$input-font-size]
-// @param {px} $xui-select-line-height [$input-line-height]
-// @param {px} $xui-select-min-height [$input-min-height]
+// @param {number} $xui-select-font-size [$input-font-size]
+// @param {number} $xui-select-line-height [$input-line-height]
+// @param {number} $xui-select-min-height [$input-min-height]
 // @param {boolean} $xui-select-round [$input-round]
 // @param {array} $xui-select-radius [$input-radius]
 $xui-select-background: $input-background !default;
@@ -1955,7 +1954,7 @@ $xui-select-round: $input-round !default;
 $xui-select-radius: $input-radius !default;
 
 // @param {color} $xui-select-border-color [$input-border-color]
-// @param {px} $xui-select-border-width [$input-border-width]
+// @param {number} $xui-select-border-width [$input-border-width]
 // @param {string} $xui-select-border-style [$input-border-style]
 // @param {array} $xui-select-style
 $xui-select-border-color: $input-border-color !default;
@@ -1970,7 +1969,7 @@ $xui-select-placeholder-color: $input-placeholder-color !default;
 $xui-select-placeholder-style: () !default;
 $xui-select-placeholder-hover-style: () !default;
 
-// @param {px} $xui-select-options-radius [4]
+// @param {number} $xui-select-options-radius [4]
 // @param {array} $xui-select-options-padding [4]
 // @param {px | null} $xui-select-options-max-height [240]
 // @param {color} $xui-select-options-background
@@ -1983,7 +1982,7 @@ $xui-select-options-background: $background !default;
 $xui-select-options-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
 $xui-select-options-style: () !default;
 
-// @param {px} $xui-select-option-radius [4]
+// @param {number} $xui-select-option-radius [4]
 // @param {array} $xui-select-option-spacing [4 0]
 // @param {array} $xui-select-option-padding [4]
 // @param {array} $xui-select-option-font-size [$xui-select-font-size]
@@ -2016,8 +2015,8 @@ $xui-select-option-selected-style: $xui-select-option-hover-style !default;
 // XUI-CHECKBOX
 // ------------------------------------------------------
 // @param {array} $xui-checkbox-spacing [4 12 4 4]
-// @param {px} $xui-checkbox-min-height [20]
-// @param {px} $xui-checkbox-radius [6]
+// @param {number} $xui-checkbox-min-height [20]
+// @param {number} $xui-checkbox-radius [6]
 // @param {color} $xui-checkbox-background [$input-background]
 // @param {array} $xui-checkbox-style
 $xui-checkbox-spacing: 4 12 4 4 !default;
@@ -2032,7 +2031,7 @@ $xui-checkbox-hover-style: () !default;
 // @param {array} $xui-checkbox-checked-style
 $xui-checkbox-checked-style: () !default;
 
-// @param {px} $xui-checkbox-check-size [14]
+// @param {number} $xui-checkbox-check-size [14]
 // @param {color} $xui-checkbox-check-color [transparent]
 $xui-checkbox-check-size: 14 !default;
 $xui-checkbox-check-color: transparent !default;
@@ -2047,7 +2046,7 @@ $xui-checkbox-check-checked-color: $link !default;
 // XUI-RADIO
 // ------------------------------------------------------
 // @param {array} $xui-radio-spacing [0 12 0 0]
-// @param {px} $xui-radio-height [20]
+// @param {number} $xui-radio-height [20]
 // @param {color} $xui-radio-background [$input-background]
 // @param {array} $xui-radio-style
 $xui-radio-spacing: 0 12 0 0 !default;
@@ -2061,7 +2060,7 @@ $xui-radio-hover-style: () !default;
 // @param {array} $xui-checkbox-checked-style
 $xui-radio-checked-style: () !default;
 
-// @param {px} $xui-radio-dot-size [8]
+// @param {number} $xui-radio-dot-size [8]
 // @param {color} $xui-radio-dot-color [transparent]
 $xui-radio-dot-size: 8 !default;
 $xui-radio-dot-color: transparent !default;
@@ -2078,7 +2077,7 @@ $xui-radio-dot-checked-color: $link !default;
 // @param {color} $xui-toggle-background [$background-lighter]
 // @param {color} $xui-toggle-hover-background [etHover($xui-toggle-background)]
 // @param {color} $xui-toggle-active-background [$link)]
-// @param {px} $xui-toggle-height [20]
+// @param {number} $xui-toggle-height [20]
 // @param {color} $xui-toggle-width [$xui-toggle-height * 1.75]
 // @param {color} $xui-toggle-radius [$xui-toggle-height / 2]
 // @param {array} $xui-toggle-spacing [0]
@@ -2093,9 +2092,9 @@ $xui-toggle-spacing: 0 8 0 0 !default;
 $xui-toggle-style: () !default;
 
 // @param {color} $xui-toggle-pin-background [$background]
-// @param {px} $xui-toggle-pin-height[$xui-toggle-height - 8]
-// @param {px} $xui-toggle-pin-width [$xui-toggle-pin-height]
-// @param {px} $xui-toggle-pin-radius [$xui-toggle-pin-height / 2]
+// @param {number} $xui-toggle-pin-height[$xui-toggle-height - 8]
+// @param {number} $xui-toggle-pin-width [$xui-toggle-pin-height]
+// @param {number} $xui-toggle-pin-radius [$xui-toggle-pin-height / 2]
 // @param {array} $xui-toggle-pin-style
 $xui-toggle-pin-background: $background !default;
 $xui-toggle-pin-height: $xui-toggle-height - 8 !default;
@@ -2103,8 +2102,8 @@ $xui-toggle-pin-width: $xui-toggle-pin-height !default;
 $xui-toggle-pin-radius: $xui-toggle-pin-height / 2 !default;
 $xui-toggle-pin-style: () !default;
 
-// @param {px} $xui-toggle-label-font-size [base-font-size]
-// @param {px} $xui-toggle-label-line-height [$xui-toggle-label-font-size * $base-line-height]
+// @param {number} $xui-toggle-label-font-size [base-font-size]
+// @param {number} $xui-toggle-label-line-height [$xui-toggle-label-font-size * $base-line-height]
 // @param {array} xui-toggle-label-style
 $xui-toggle-label-font-size: $base-font-size !default;
 $xui-toggle-label-line-height: $xui-toggle-label-font-size * $base-line-height !default;
@@ -2123,10 +2122,10 @@ $mark-style: () !default;
 //
 // IS-OUTSET
 // -------------------------------------------------------------------------------------------------
-// @param {px} $is-outset [48]
+// @param {number} $is-outset [48]
 // @param {array} $is-outset-spacing [16 0]
-// @param {px} $is-outset-gutter [32]
-// @param {px} $is-outset-bp [1200]
+// @param {number} $is-outset-gutter [32]
+// @param {number} $is-outset-bp [1200]
 $is-outset: 48 !default;
 $is-outset-spacing: 16 0 !default;
 $is-outset-gutter: 32 !default;

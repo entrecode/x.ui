@@ -6,7 +6,7 @@
 /// @param {color} $xui-toggle-background [$background-lighter]
 /// @param {color} $xui-toggle-hover-background [etHover($xui-toggle-background)]
 /// @param {color} $xui-toggle-active-background [$link)]
-/// @param {px} $xui-toggle-height [20]
+/// @param {number} $xui-toggle-height [20]
 /// @param {color} $xui-toggle-width [$xui-toggle-height * 1.75]
 /// @param {color} $xui-toggle-radius [$xui-toggle-height / 2]
 /// @param {array} $xui-toggle-spacing [0]
@@ -42,9 +42,9 @@
   width: rem($xui-toggle-width);
 
   // @param {color} $xui-toggle-pin-background [$background]
-  // @param {px} $xui-toggle-pin-height[$xui-toggle-height - 8]
-  // @param {px} $xui-toggle-pin-width [$xui-toggle-pin-height]
-  // @param {px} $xui-toggle-pin-radius [$xui-toggle-pin-height / 2]
+  // @param {number} $xui-toggle-pin-height[$xui-toggle-height - 8]
+  // @param {number} $xui-toggle-pin-width [$xui-toggle-pin-height]
+  // @param {number} $xui-toggle-pin-radius [$xui-toggle-pin-height / 2]
   // @param {array} $xui-toggle-pin-style
   &::after {
     content: '';
@@ -68,8 +68,8 @@
   }
 }
 
-// @param {px} $xui-toggle-label-font-size [base-font-size]
-// @param {px} $xui-toggle-label-line-height [$xui-toggle-label-font-size * $base-line-height]
+// @param {number} $xui-toggle-label-font-size [base-font-size]
+// @param {number} $xui-toggle-label-line-height [$xui-toggle-label-font-size * $base-line-height]
 // @param {array} xui-toggle-label-style
 .xui-toggle__label {
   cursor: pointer;

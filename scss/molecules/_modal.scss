@@ -5,7 +5,7 @@
 ///
 /// @param {color} $modal-wrapper-background [$backdrop]
 /// @param {array} $modal-gutter [16]
-/// @param {string} $modal-align-item [flex-start]
+/// @param {string} $modal-align-items [flex-start]
 /// @param {number} $modal-z-index [100]
 /// @param {array} $modal-style
 
@@ -16,7 +16,7 @@
   width: 100%;
   height: 100%;
   justify-content: center;
-  align-items: $modal-align-item;
+  align-items: $modal-align-items;
   display: none;
   overflow: hidden;
   @include inject-style($modal-wrapper-style);
@@ -44,10 +44,10 @@
 
 // @param {color} $modal-background
 // @param {color} $modal-color
-// @param {px} $modal-min-width [240]
+// @param {number} $modal-min-width [240]
 // @param {array} $modal-padding [4]
-// @param {px} $modal-radius [4]
-// @param {[1-24] | false} $modal-elevated [8]
+// @param {number} $modal-radius [4]
+// @param {[1-24] | false} $modal-elevation [8]
 // @param {number} $modal-z-index [100]
 // @param {array} $modal-style
 .modal {
@@ -56,8 +56,8 @@
   max-height: 100%;
   flex-direction: column;
   @include inject-style($modal-style);
-  @if $modal-elevated {
-    @include elevation($modal-elevated);
+  @if $modal-elevation {
+    @include elevation($modal-elevation);
   }
   background: $modal-background;
   color: $modal-color;

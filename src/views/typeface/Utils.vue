@@ -2,7 +2,7 @@
 <template>
   <section>
     <div data-grid>
-      <div data-col="8">
+      <div data-col="8 6@xl">
         <section class="is-margin-bottom-8" id="scroll-to-align">
           <h2>align</h2>
           <div class="demo-preview is-padding-8" data-flex="column center center-items">
@@ -50,6 +50,7 @@
               </div>
             </div>
           </div>
+          <div class="spacer"></div>
           <pre v-highlightjs="alignPreview"><code class="html"></code></pre>
         </section>
 
@@ -113,7 +114,9 @@
               </div>
             </div>
           </div>
+          <div class="spacer"></div>
           <pre v-highlightjs="fontWeightPreview"><code class="html"></code></pre>
+          <div class="spacer"></div>
           <params-table :params="fontWeightParams" title="core params"></params-table>
         </section>
 
@@ -152,7 +155,9 @@
               </div>
             </div>
           </div>
+          <div class="spacer"></div>
           <pre v-highlightjs="fontFamilyPreview"><code class="html"></code></pre>
+          <div class="spacer"></div>
           <params-table :params="fontFamilyParams" title="core params"></params-table>
         </section>
 
@@ -194,6 +199,7 @@
               </div>
             </div>
           </div>
+          <div class="spacer"></div>
           <pre v-highlightjs="textTransformPreview"><code class="html"></code></pre>
         </section>
 
@@ -243,6 +249,7 @@
               </div>
             </div>
           </div>
+          <div class="spacer"></div>
           <pre v-highlightjs="wordWrapPreview"><code class="html"></code></pre>
         </section>
       </div>

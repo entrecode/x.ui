@@ -3,13 +3,13 @@
 /// @access public
 /// @group atoms inline
 ///
-/// @param {px} $btn-line-height [$btn-font-size * $base-line-height]
-/// @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
-/// @param {px} $btn-big-line-height [$btn-big-font-size * $base-line-height]
+/// @param {number} $btn-line-height [$btn-font-size * $base-line-height]
+/// @param {number} $btn-small-line-height [$btn-small-font-size * $base-line-height]
+/// @param {number} $btn-big-line-height [$btn-big-font-size * $base-line-height]
 ///
-/// @param {px} $tag-min-height [28]
-/// @param {px} $tag-small-min-height [24]
-/// @param {px} $tag-big-min-height [32]
+/// @param {number} $tag-min-height [28]
+/// @param {number} $tag-small-min-height [24]
+/// @param {number} $tag-big-min-height [32]
 
 @mixin _btn-inline-elements($parent, $child) {
   $margin: $parent - $child;

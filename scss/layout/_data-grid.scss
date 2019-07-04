@@ -3,8 +3,8 @@
 /// @group flex-grid
 /// @access public
 ///
-/// @param {px} $grid-gutter [32] - default gutter size
-/// @param {px} $grid-small-gutter [16] - default gutter size
+/// @param {number} $grid-gutter [32] - default gutter size
+/// @param {number} $grid-small-gutter [16] - default gutter size
 
 [data-grid] {
   display: flex;

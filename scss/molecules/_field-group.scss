@@ -16,7 +16,7 @@
 }
 
 // @param {array} $field-group-label-spacing [4]
-// @param {px} $field-group-label-font-size [$base-font-size]
+// @param {number} $field-group-label-font-size [$base-font-size]
 // @param {array} $field-group-label-style
 .field-group__label {
   display: block;
@@ -26,7 +26,7 @@
 }
 
 // @param {array} $field-group-info-spacing [8]
-// @param {px} $field-group-info-font-size [$base-font-size * 0.75]
+// @param {number} $field-group-info-font-size [$base-font-size * 0.75]
 // @param {array} $field-group-info-style
 .field-group__info {
   display: block;

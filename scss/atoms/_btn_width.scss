@@ -3,9 +3,9 @@
 /// @access public
 /// @group atoms
 ///
-/// @param {px} $btn-wide -  min width for .btn_wide button
-/// @param {px} $btn-small-wide - min width for .btn_wide.btn_small button
-/// @param {px} $btn-big-wide - min width for .btn_wide.btn_big button
+/// @param {number} $btn-wide -  min width for .btn_wide button
+/// @param {number} $btn-small-wide - min width for .btn_wide.btn_small button
+/// @param {number} $btn-big-wide - min width for .btn_wide.btn_big button
 
 .btn_wide {
   min-width: rem($btn-wide);

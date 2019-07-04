@@ -1,53 +1,57 @@
 <template>
   <section>
-    <div class="is-padding-center-3"><h2>xui-select</h2></div>
-    <div class="demo-preview is-padding-8" data-flex="center">
-      <div class="is-theme is-padding-5 is-radius" data-col="8 6@lg 4@xl">
-        <div tabindex="0" class="xui-select">
-          <span class="xui-select__placeholder" v-if="!selected">select</span>
-          <span class="xui-select__selected" v-else v-text="selected"></span> <span class="xui-select__caret"></span>
-          <ul class="xui-select-options">
-            <li><a @mousedown="selected = ''" tabindex="0" class="xui-select-option">make a selection</a></li>
-            <li>
-              <a
-                @mousedown="selected = 'option 1'"
-                tabindex="0"
-                class="xui-select-option"
-                :class="{ 'is-active': selected === 'option 1' }"
-                >option 1</a
-              >
-            </li>
-            <li>
-              <a
-                @mousedown="selected = 'option 2'"
-                tabindex="0"
-                class="xui-select-option"
-                :class="{ 'is-active': selected === 'option 2' }"
-                >option 2</a
-              >
-            </li>
-            <li>
-              <a
-                @mousedown="selected = 'option 3'"
-                tabindex="0"
-                class="xui-select-option"
-                :class="{ 'is-active': selected === 'option 3' }"
-                >option 3</a
-              >
-            </li>
-          </ul>
+    <div data-col="10 8@xl">
+      <div class="titlebar">
+        <h1>xui-select</h1>
+      </div>
+      <div class="demo-preview is-padding-8" data-flex="center">
+        <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
+          <div tabindex="0" class="xui-select">
+            <span class="xui-select__placeholder" v-if="!selected">select</span>
+            <span class="xui-select__selected" v-else v-text="selected"></span>
+            <span class="xui-select__caret"></span>
+            <ul class="xui-select-options">
+              <li>
+                <a
+                  @mousedown="selected = ''"
+                  tabindex="0"
+                  class="xui-select-option"
+                >make a selection</a>
+              </li>
+              <li>
+                <a
+                  @mousedown="selected = 'option 1'"
+                  tabindex="0"
+                  class="xui-select-option"
+                  :class="{ 'is-active': selected === 'option 1' }"
+                >option 1</a>
+              </li>
+              <li>
+                <a
+                  @mousedown="selected = 'option 2'"
+                  tabindex="0"
+                  class="xui-select-option"
+                  :class="{ 'is-active': selected === 'option 2' }"
+                >option 2</a>
+              </li>
+              <li>
+                <a
+                  @mousedown="selected = 'option 3'"
+                  tabindex="0"
+                  class="xui-select-option"
+                  :class="{ 'is-active': selected === 'option 3' }"
+                >option 3</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <div data-grid="center">
-      <div data-col="10@md 8@lg">
-        <div class="spacer"></div>
-        <pre v-highlightjs="markup"><code class="html"></code></pre>
-        <div class="spacer"></div>
-        <params-table :params="params"></params-table>
-        <div class="divider"></div>
-        <requires-list :requires="requires"></requires-list>
-      </div>
+      <div class="spacer"></div>
+      <pre v-highlightjs="markup"><code class="html"></code></pre>
+      <div class="spacer"></div>
+      <params-table :params="params"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>

@@ -2,11 +2,15 @@
 /// @since 9.0.6
 /// @access public
 /// @group organism
+///
+/// @require {function} rem
+/// @require {function} array-magic
+/// @require {mixin} inject-style
 
 // @param {color} $xui-list-group-background [none]
 // @param {array} $xui-list-group-padding [0]
 // @param {array} $xui-list-group-spacing [0 0 16]
-// @param {px} $xui-list-group-radius [0]
+// @param {number} $xui-list-group-radius [0]
 // @param {array} $xui-list-group-style
 .xui-list-group {
   width: 100%;
@@ -20,7 +24,7 @@
   // @param {color} $xui-list-group-header-color [inherit]
   // @param {array} $xui-list-group-header-padding [0]
   // @param {array} $xui-list-group-header-spacing [0 0 16]
-  // @param {px} $xui-list-group-header-radius [0]
+  // @param {number} $xui-list-group-header-radius [0]
   // @param {array} $xui-list-group-header-style
   &__header {
     @include inject-style($xui-list-group-header-style);
@@ -36,7 +40,7 @@
 // @param {color} $xui-list-color [inherit]
 // @param {array} $xui-list-padding [0]
 // @param {array} $xui-list-spacing [0 0 16]
-// @param {px} $xui-list-radius [0]
+// @param {number} $xui-list-radius [0]
 // @param {array} $xui-list-style
 .xui-list {
   list-style: none;
@@ -53,7 +57,7 @@
 // @param {array} $xui-list-item-padding [8]
 // @param {array} $xui-list-item-spacing [0]
 // @param {array} $xui-list-item-gutter [$base-spacing]
-// @param {px} $xui-list-item-radius [4]
+// @param {number} $xui-list-item-radius [4]
 // @param {array} $xui-list-item-style
 .xui-list-item {
   align-items: center;

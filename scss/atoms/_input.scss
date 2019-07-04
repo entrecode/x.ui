@@ -3,17 +3,17 @@
 /// @access public
 /// @group atoms
 ///
-/// @param {px} $input-font-size [16]
-/// @param {px} $input-line-height [24]
-/// @param {px} $input-min-height [32]
+/// @param {number} $input-font-size [16]
+/// @param {number} $input-line-height [24]
+/// @param {number} $input-min-height [32]
 /// @param {number} $input-padding-ratio [1]
 /// @param {array} $input-spacing [0]
 /// @param {color} $input-border-color [transparent]
-/// @param {px} $input-border-width [0]
+/// @param {number} $input-border-width [0]
 /// @param {string} $input-border-style [solid]
 /// @param {color} $input-background
 /// @param {color} $input-color
-/// @param {px} $input-radius [4]
+/// @param {number} $input-radius [4]
 /// @param {array} $input-style
 
 .input {
@@ -104,9 +104,9 @@
 // size modifier
 // ------------------------------------------------------
 
-// @param {px} $input-small-font-size [14]
-// @param {px} $input-small-line-height [18]
-// @param {px} $input-small-min-height [28]
+// @param {number} $input-small-font-size [14]
+// @param {number} $input-small-line-height [18]
+// @param {number} $input-small-min-height [28]
 // @param {array} $input-small-style]
 .input_small {
   @include inject-style($input-small-style);
@@ -123,9 +123,9 @@
   }
 }
 
-// @param {px} $input-big-font-size [18]
-// @param {px} $input-big-line-height [24]
-// @param {px} $input-big-min-height [40]
+// @param {number} $input-big-font-size [18]
+// @param {number} $input-big-line-height [24]
+// @param {number} $input-big-min-height [40]
 // @param {array} $input-big-radius [$input-radius]
 // @param {array} $input-big-style
 .input_big {

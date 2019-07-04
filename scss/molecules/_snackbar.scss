@@ -43,9 +43,9 @@
 
 // @param {color} $snackbar-background
 // @param {color} $snackbar-color
-// @param {px} $snackbar-min-width [240]
+// @param {number} $snackbar-min-width [240]
 // @param {array} $snackbar-padding [4]
-// @param {px} $snackbar-radius [4]
+// @param {number} $snackbar-radius [4]
 // @param {number} $snackbar-z-index [100]
 // @param {array} $snackbar-style
 .snackbar {

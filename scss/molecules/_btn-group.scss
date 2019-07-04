@@ -10,7 +10,7 @@
   @include inject-style($btn-group-style);
 }
 
-// @param {px} $btn-group-divider-size [1]
+// @param {number} $btn-group-divider-size [1]
 // @param {color} $btn-group-divider-color [$base-divider-color]
 .btn-group__divider {
   background: $btn-group-divider-color;
