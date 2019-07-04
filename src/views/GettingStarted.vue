@@ -11,7 +11,7 @@
     </p>
     <p>for a full overview of all config parameters you se the complete defautl config file here</p>
     <a
-      href="https://raw.githubusercontent.com/entrecode/x.ui/master/src/_xui-config.scss"
+      href="https://raw.githubusercontent.com/entrecode/x.ui/master/scss/_xui-config.scss"
       title="config file for x.ui"
       target="_blank"
       rel="noopener"
