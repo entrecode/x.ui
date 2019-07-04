@@ -4,16 +4,6 @@
       <li class="nav__item">
         <router-link to="/" class="is-kilo is-uppercase">getting started</router-link>
       </li>
-      <!-- <li class="nav__item">
-        <router-link to="introduction" class="is-kilo is-uppercase">introduction</router-link>
-      </li>
-      <li class="y-space-5"></li>
-      <li>
-        <div class="is-h6">core</div>
-      </li>
-      <li class="nav__item">
-        <router-link to="colors" class="is-mega is-uppercase">colors</router-link>
-      </li>-->
       <li class="y-space-5"></li>
       <li>
         <div class="is-h6">typeface</div>
@@ -203,7 +193,6 @@
 
 <script>
 export default {
-  name: 'Menubar',
   components: {},
   data: () => {
     return {};

@@ -24,7 +24,7 @@
             <div class="nav__item">
               <div class="xui-checkbox">
                 <input type="checkbox" v-model="navStyle" id="navStyle" />
-                <label for="navStyle" class="xui-checkbox__label">square</label>
+                <label for="navStyle" class="xui-checkbox__label">stacked</label>
               </div>
             </div>
           </div>
