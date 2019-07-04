@@ -37,6 +37,7 @@
             <a class="btn-group__end btn">button</a>
           </div>
         </div>
+        <div class="spacer"></div>
         <pre v-highlightjs="markup1"><code class="html"></code></pre>
       </div>
       <div v-if="activeTab === 2" class="animated fadeIn">
@@ -47,6 +48,7 @@
             <a class="btn-group__end btn btn_super btn_round">button</a>
           </div>
         </div>
+        <div class="spacer"></div>
         <pre v-highlightjs="markup2"><code class="html"></code></pre>
       </div>
       <div v-if="activeTab === 3" class="animated fadeIn">
@@ -64,6 +66,7 @@
             </div>
           </div>
         </div>
+        <div class="spacer"></div>
         <pre v-highlightjs="markup3"><code class="html"></code></pre>
       </div>
       <div class="spacer"></div>

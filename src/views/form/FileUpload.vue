@@ -1,25 +1,23 @@
 <template>
   <section>
-    <div data-grid>
-      <div data-col="10 8@xl">
-        <div class="is-padding-center-3">
-          <h2>file-upload</h2>
-        </div>
-        <div class="demo-preview is-padding-8" data-flex="center">
-          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
-            <form class="file-upload">
-              <input type="file" class="file-upload__input" multiple="multiple" /> drop files here or
-              <a>upload</a>
-            </form>
-          </div>
-        </div>
-        <div class="spacer"></div>
-        <pre v-highlightjs="markup"><code class="html"></code></pre>
-        <div class="spacer"></div>
-        <params-table :params="params"></params-table>
-        <div class="spacer"></div>
-        <requires-list :requires="requires"></requires-list>
+    <div data-col="10 8@xl">
+      <div class="titlebar">
+        <h1>file-upload</h1>
       </div>
+      <div class="demo-preview is-padding-8" data-flex="center">
+        <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
+          <form class="file-upload">
+            <input type="file" class="file-upload__input" multiple="multiple" /> drop files here or
+            <a>upload</a>
+          </form>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <pre v-highlightjs="markup"><code class="html"></code></pre>
+      <div class="spacer"></div>
+      <params-table :params="params"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>

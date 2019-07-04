@@ -2,8 +2,8 @@
   <section>
     <div data-grid>
       <div data-col="10 8@xl">
-        <div class="is-padding-center-3">
-          <h2>headings</h2>
+        <div class="titlebar">
+          <h1>headings</h1>
         </div>
         <div class="demo-preview is-padding-8" data-flex="column center-items">
           <div class="typo-demo" v-html="preview"></div>

@@ -1,48 +1,46 @@
 <template>
   <section>
-    <div data-grid>
-      <div data-col="10 8@xl">
-        <div class="is-padding-center-3">
-          <h2>paragraphs</h2>
+    <div data-col="10 8@xl">
+      <div class="titlebar">
+        <h1>paragraphs</h1>
+      </div>
+      <div class="demo-preview is-padding-8" data-flex="column center center-items">
+        <div class="typo-demo demo-transition" data-col="8@md">
+          <p :class="paragraphClass">
+            Overcome injustice justice, her body her rights gender rights silo correlation vibrant. Empower communities
+            engaging, low-hanging fruit, catalyze citizen-centered disrupt. Social intrapreneurship collective impact;
+            greenwashing benefit corporation innovation white paper, innovate, blended.
+          </p>
         </div>
-        <div class="demo-preview is-padding-8" data-flex="column center center-items">
-          <div class="typo-demo demo-transition" data-col="8@md">
-            <p :class="paragraphClass">
-              Overcome injustice justice, her body her rights gender rights silo correlation vibrant. Empower communities
-              engaging, low-hanging fruit, catalyze citizen-centered disrupt. Social intrapreneurship collective impact;
-              greenwashing benefit corporation innovation white paper, innovate, blended.
-            </p>
-          </div>
-          <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
-            <div class="nav">
-              <div class="nav__item">
-                <a
-                  @click="paragraphClass = ''"
-                  class="btn btn_clear is-uppercase"
-                  :class="{ 'is-ink': paragraphClass !== '' }"
-                >default</a>
-              </div>
-              <div class="nav__item">
-                <a
-                  @click="paragraphClass = 'is-lead'"
-                  class="btn btn_clear is-uppercase"
-                  :class="{ 'is-ink': paragraphClass !== 'is-lead' }"
-                >is-lead</a>
-              </div>
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+          <div class="nav">
+            <div class="nav__item">
+              <a
+                @click="paragraphClass = ''"
+                class="btn btn_clear is-uppercase"
+                :class="{ 'is-ink': paragraphClass !== '' }"
+              >default</a>
+            </div>
+            <div class="nav__item">
+              <a
+                @click="paragraphClass = 'is-lead'"
+                class="btn btn_clear is-uppercase"
+                :class="{ 'is-ink': paragraphClass !== 'is-lead' }"
+              >is-lead</a>
             </div>
           </div>
         </div>
-        <div class="spacer"></div>
-        <pre v-highlightjs="preview"><code class="html"></code></pre>
-        <div class="spacer"></div>
-        <params-table :params="coreParams" title="core params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="paragraphParams" title="paragraph params"></params-table>
-        <div class="divider"></div>
-        <params-table :params="leadParams" title="lead params"></params-table>
-        <div class="spacer"></div>
-        <requires-list :requires="requires"></requires-list>
       </div>
+      <div class="spacer"></div>
+      <pre v-highlightjs="preview"><code class="html"></code></pre>
+      <div class="spacer"></div>
+      <params-table :params="coreParams" title="core params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="paragraphParams" title="paragraph params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="leadParams" title="lead params"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>

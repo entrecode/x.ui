@@ -2,7 +2,7 @@
 <template>
   <section>
     <div data-grid>
-      <div data-col="8">
+      <div data-col="8 6@xl">
         <section class="is-margin-bottom-8" id="scroll-to-align">
           <h2>align</h2>
           <div class="demo-preview is-padding-8" data-flex="column center center-items">

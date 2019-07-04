@@ -44,17 +44,17 @@ export const router = new Router({
     {
       path: '/img-crop',
       name: 'img-crop',
-      components: { main: () => import('./views/ImgCrop.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/img/ImgCrop.vue'), menu: DemoMenubar },
     },
     {
       path: '/img-utils',
       name: 'img-utils',
-      components: { main: () => import('./views/ImgUtils.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/img/ImgUtils.vue'), menu: DemoMenubar },
     },
     {
       path: '/is-outset',
       name: 'is-outset',
-      components: { main: () => import('./views/IsOutset.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/img/IsOutset.vue'), menu: DemoMenubar },
     },
     {
       path: '/button',
@@ -139,7 +139,7 @@ export const router = new Router({
     {
       path: '/avatar',
       name: 'avatar',
-      components: { main: () => import('./views/Avatar.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/img/Avatar.vue'), menu: DemoMenubar },
     },
     {
       path: '/tags',
