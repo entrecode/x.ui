@@ -1,108 +1,206 @@
 <template>
   <section>
-    <div class="nav">
-      <div class="nav__item">
-        <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">simple</a>
+    <div data-col="10 8@xl">
+      <div class="is-padding-center-3">
+        <h2>modal</h2>
       </div>
-      <div class="nav__item">
-        <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }">advanced</a>
+      <div class="nav">
+        <div class="nav__item">
+          <a
+            @click="activeTab = 1"
+            class="btn btn_clear demo-tab"
+            :class="{ 'is-active': activeTab === 1 }"
+          >simple</a>
+        </div>
+        <div class="nav__item">
+          <a
+            @click="activeTab = 2"
+            class="btn btn_clear demo-tab"
+            :class="{ 'is-active': activeTab === 2 }"
+          >advanced</a>
+        </div>
       </div>
-    </div>
-    <div v-if="activeTab === 1" class="animated fadeIn">
-      <div class="demo-preview is-padding-8" data-flex="center">
-        <a @click.prevent="showModal = !showModal" class="btn btn_big is-elevated-16">open modal</a>
+      <div v-if="activeTab === 1" class="animated fadeIn">
+        <div class="demo-preview is-padding-8" data-flex="center">
+          <a @click.prevent="showModal = !showModal" class="btn btn_big is-elevated-16">open modal</a>
+        </div>
+        <div class="spacer"></div>
+        <pre v-highlightjs="markupSimple"><code class="html"></code></pre>
+      </div>
+      <div v-if="activeTab === 2" class="animated fadeIn">
+        <div class="demo-preview is-padding-8" data-flex="center">
+          <a
+            @click.prevent="showModalAdvanced = !showModalAdvanced"
+            class="btn btn_big is-elevated-16"
+          >open modal</a>
+        </div>
+        <div class="spacer"></div>
+        <pre v-highlightjs="markupAdvanded"><code class="html"></code></pre>
       </div>
 
-      <pre v-highlightjs="markupSimple"><code class="html"></code></pre>
-    </div>
+      <div class="spacer"></div>
+      <params-table :params="params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="layoutParams" title="layout params"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
 
-    <params-table :params="params"></params-table>
-    <div class="divider"></div>
-    <params-table :params="layoutParams" title="layout params"></params-table>
-    <div class="divider"></div>
-    <requires-list :requires="requires"></requires-list>
-
-    <div
-      class="modal-wrapper"
-      ref="default"
-      :class="[{ 'modal-wrapper_backdrop': hasBackdrop }, { 'is-active': showModal }, presets]"
-      :data-flex="[alignItems, justifyContent].join(' ')"
-    >
       <div
-        class="modal is-padding-5"
-        :data-col="dataCol ? dataCol : false"
-        :class="[elevated.length ? 'is-elevated-' + elevated : false]"
+        class="modal-wrapper modal-wrapper_backdrop"
+        ref="advanced"
+        :class="{ 'is-active': showModalAdvanced }"
+        data-flex="center-items"
       >
-        <a class="modal__dismiss btn btn_clear" @click.prevent="showModal = !showModal">
-          <svg class="ixo"><use xlink:href="#close"></use></svg>
-        </a>
-        <div style="max-width: 320px; margin: 0 auto;">
-          <div class="field-group">
-            <label for="presets" class="field-group__label">modal presets</label>
-            <select v-model="presets" id="presets" class="input" @change="resetConfig()">
-              <option value>select preset</option>
-              <option value="modal_deck">deck</option>
-              <option value="modal_deck opens-right">deck right</option>
-              <option value="modal_toast">toast</option>
-              <option value="modal_toast opens-bottom">toast bottom</option>
-              <option value="modal_overlay">overlay</option>
-            </select>
+        <div class="modal" data-col="4@lg 2@xxl">
+          <div class="modal__header">
+            <h2 class="is-mega">Agile blended</h2>
+            <a
+              class="modal__dismiss btn btn_clear"
+              @click.prevent="showModalAdvanced = !showModalAdvanced"
+            >
+              <svg class="ixo">
+                <use xlink:href="#close" />
+              </svg>
+            </a>
           </div>
-          <div class="field-group">
-            <label for class="field-group__label">[data-col]</label>
-            <input type="number" class="input" min="1" max="12" v-model="dataCol" placeholder="1-12" />
+          <div class="modal__body">
+            <p>Agile blended value thought partnership systems thinking parse radical. Social impact uplift, social entrepreneur preliminary thinking human-centered, families the resistance save the world shared value. Support dynamic, a cultivate strengthening infrastructure.</p>
           </div>
-          <div class="field-group">
-            <label for class="field-group__label">elevation</label>
-            <div data-grid>
-              <div data-col="8" data-flex="center-items">
-                <input type="range" class="range-slider" v-model="elevated" min="0" max="24" step="1" />
+          <div class="modal__footer">
+            <div class="nav" data-flex="center">
+              <div class="nav__item">
+                <a @click.prevent="showModalAdvanced = !showModalAdvanced" class="btn">okay</a>
               </div>
-              <div data-col="4"><input type="number" class="input" v-model="elevated" placeholder="0-24" /></div>
-            </div>
-          </div>
-          <div class="field-group">
-            <div class="xui-checkbox">
-              <input type="checkbox" v-model="hasBackdrop" id="hasBackdrop" />
-              <label for="hasBackdrop" class="xui-checkbox__label">has backdrop</label>
-            </div>
-          </div>
-
-          <div class="position-settings well">
-            <div class="position-settings-item position-settings-item_top">
-              <span @click="setSectionFlex('top')" :class="flexConfig.has('top') ? 'is-ink-link' : 'is-ink-light'">
-                <svg class="ixo"><use xlink:href="#flex-position-top"></use></svg>
-              </span>
-            </div>
-            <div class="position-settings-item position-settings-item_right">
-              <span @click="setSectionFlex('right')" :class="flexConfig.has('right') ? 'is-ink-link' : 'is-ink-light'">
-                <svg class="ixo"><use xlink:href="#flex-position-right"></use></svg>
-              </span>
-            </div>
-            <div class="position-settings-item position-settings-item_bottom">
-              <span
-                @click="setSectionFlex('bottom')"
-                :class="flexConfig.has('bottom') ? 'is-ink-link' : 'is-ink-light'"
-              >
-                <svg class="ixo"><use xlink:href="#flex-position-bottom"></use></svg>
-              </span>
-            </div>
-            <div class="position-settings-item position-settings-item_left">
-              <span @click="setSectionFlex('left')" :class="flexConfig.has('left') ? 'is-ink-link' : 'is-ink-light'">
-                <svg class="ixo"><use xlink:href="#flex-position-left"></use></svg>
-              </span>
-            </div>
-            <div class="position-settings-item position-settings-item_center">
-              <span
-                @click="setSectionFlex('center')"
-                :class="flexConfig.has('center') ? 'is-ink-link' : 'is-ink-light'"
-              >
-                <svg class="ixo"><use xlink:href="#flex-position-center"></use></svg>
-              </span>
+              <div class="nav__item">
+                <a
+                  @click.prevent="showModalAdvanced = !showModalAdvanced"
+                  class="btn btn_minor"
+                >cancel</a>
+              </div>
             </div>
           </div>
         </div>
-        <pre v-highlightjs="markupSimple"><code class="html"></code></pre>
+      </div>
+
+      <div
+        class="modal-wrapper"
+        ref="default"
+        :class="[{ 'modal-wrapper_backdrop': hasBackdrop }, { 'is-active': showModal }, presets]"
+        :data-flex="[alignItems, justifyContent].join(' ')"
+      >
+        <div
+          class="modal is-padding-5"
+          :data-col="dataCol ? dataCol : false"
+          :class="[elevated.length ? 'is-elevated-' + elevated : false]"
+        >
+          <a class="modal__dismiss btn btn_clear" @click.prevent="showModal = !showModal">
+            <svg class="ixo">
+              <use xlink:href="#close" />
+            </svg>
+          </a>
+          <div style="max-width: 320px; margin: 0 auto;">
+            <div class="field-group">
+              <label for="presets" class="field-group__label">modal presets</label>
+              <select v-model="presets" id="presets" class="input" @change="resetConfig()">
+                <option value>select preset</option>
+                <option value="modal_deck">deck</option>
+                <option value="modal_deck opens-right">deck right</option>
+                <option value="modal_toast">toast</option>
+                <option value="modal_toast opens-bottom">toast bottom</option>
+                <option value="modal_overlay">overlay</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for class="field-group__label">[data-col]</label>
+              <input
+                type="number"
+                class="input"
+                min="1"
+                max="12"
+                v-model="dataCol"
+                placeholder="1-12"
+              />
+            </div>
+            <div class="field-group">
+              <label for class="field-group__label">elevation</label>
+              <div data-grid>
+                <div data-col="8" data-flex="center-items">
+                  <input
+                    type="range"
+                    class="range-slider"
+                    v-model="elevated"
+                    min="0"
+                    max="24"
+                    step="1"
+                  />
+                </div>
+                <div data-col="4">
+                  <input type="number" class="input" v-model="elevated" placeholder="0-24" />
+                </div>
+              </div>
+            </div>
+            <div class="field-group">
+              <div class="xui-checkbox">
+                <input type="checkbox" v-model="hasBackdrop" id="hasBackdrop" />
+                <label for="hasBackdrop" class="xui-checkbox__label">has backdrop</label>
+              </div>
+            </div>
+
+            <div class="position-settings well">
+              <div class="position-settings-item position-settings-item_top">
+                <span
+                  @click="setSectionFlex('top')"
+                  :class="flexConfig.has('top') ? 'is-ink-link' : 'is-ink-light'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#flex-position-top" />
+                  </svg>
+                </span>
+              </div>
+              <div class="position-settings-item position-settings-item_right">
+                <span
+                  @click="setSectionFlex('right')"
+                  :class="flexConfig.has('right') ? 'is-ink-link' : 'is-ink-light'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#flex-position-right" />
+                  </svg>
+                </span>
+              </div>
+              <div class="position-settings-item position-settings-item_bottom">
+                <span
+                  @click="setSectionFlex('bottom')"
+                  :class="flexConfig.has('bottom') ? 'is-ink-link' : 'is-ink-light'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#flex-position-bottom" />
+                  </svg>
+                </span>
+              </div>
+              <div class="position-settings-item position-settings-item_left">
+                <span
+                  @click="setSectionFlex('left')"
+                  :class="flexConfig.has('left') ? 'is-ink-link' : 'is-ink-light'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#flex-position-left" />
+                  </svg>
+                </span>
+              </div>
+              <div class="position-settings-item position-settings-item_center">
+                <span
+                  @click="setSectionFlex('center')"
+                  :class="flexConfig.has('center') ? 'is-ink-link' : 'is-ink-light'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#flex-position-center" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <pre v-highlightjs="markupSimple"><code class="html"></code></pre>
+        </div>
       </div>
     </div>
   </section>
@@ -254,6 +352,7 @@ export default {
         },
       ],
       showModal: false,
+      showModalAdvanced: false,
       hasBackdrop: false,
       flexConfig: new Set(),
       presets: '',
@@ -266,13 +365,27 @@ export default {
     <!-- whatever you want -->
   </div>
 </div>`,
-      markupLayout: `<div class="modal-wrapper">
-  <div class="modal">
-    <div class="modal__header">...
-      <a class="modal__dismiss btn btn_clear">...</a>
+      markupAdvanded: `<div class="modal-wrapper modal-wrapper_backdrop" data-flex="center-items">
+  <div class="modal" data-col="4@lg 2@xxl">
+    <div class="modal__header">
+      <a class="modal__dismiss btn btn_clear">
+        <svg class="ixo">
+          <use xlink:href="#close" />
+        </svg>
+      </a>
     </div>
-    <div class="modal__body">...</div>
-    <div class="modal__footer">...</div>
+    <div class="modal__body">
+    </div>
+    <div class="modal__footer">
+      <div class="nav" data-flex="center">
+        <div class="nav__item">
+          <a class="btn">okay</a>
+        </div>
+        <div class="nav__item">
+          <a class="btn btn_minor">cancel</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>`,
     };
