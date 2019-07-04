@@ -42,9 +42,9 @@
 
 // @param {color} $deck-background
 // @param {color} $deck-color
-// @param {px} $deck-min-width [240]
+// @param {number} $deck-min-width [240]
 // @param {array} $deck-padding [4]
-// @param {px} $deck-radius [4]
+// @param {number} $deck-radius [4]
 // @param {number} $deck-z-index [100]
 // @param {array} $deck-style
 .deck {

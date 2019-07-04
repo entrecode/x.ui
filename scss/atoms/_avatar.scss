@@ -3,12 +3,12 @@
 /// @access public
 /// @group atoms
 ///
-/// @param {px} $avatar-size [40]
-/// @param {px} $avatar-small-size-size [24]
-/// @param {px} $avatar-big-size-size [64]
+/// @param {number} $avatar-size [40]
+/// @param {number} $avatar-small-size-size [24]
+/// @param {number} $avatar-big-size-size [64]
 /// @param {array} $avatar-border [0]
 /// @param {array} $avatar-background [$background-lightest]
-/// @param {px} $avatar-square-radius [4]
+/// @param {number} $avatar-square-radius [4]
 /// @param {array} $avatar-style
 
 .avatar {

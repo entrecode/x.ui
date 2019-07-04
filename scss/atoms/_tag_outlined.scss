@@ -4,12 +4,12 @@
 /// @group atoms modifier
 ///
 /// @param {number} $tag-padding-ratio [2] - ratio by which padding-left and padding-right are bigger
-/// @param {px} $tag-outlined-border-width [2]
+/// @param {number} $tag-outlined-border-width [2]
 /// @param {string} $tag-outlined-border-style [solid]
 
-// @param {px} $tag-font-size [$base-font-size * .875]
-// @param {px} $tag-line-height [$tag-font-size * $base-line-height]
-// @param {px} $tag-min-height [28]
+// @param {number} $tag-font-size [$base-font-size * .875]
+// @param {number} $tag-line-height [$tag-font-size * $base-line-height]
+// @param {number} $tag-min-height [28]
 // @param {color} $tag-outlined-color [$minor-contrast]
 // @param {color} $tag-outlined-border-color [$minor]
 .tag_outlined {
@@ -29,9 +29,9 @@
     color: set-hover($tag-outlined-border-color);
   }
 
-  // @param {px} $tag-small-font-size [$tag-font-size * 0.875]
-  // @param {px} $tag-small-line-height [$tag-small-font-size * $base-line]
-  // @param {px} $tag-small-min-height [24]
+  // @param {number} $tag-small-font-size [$tag-font-size * 0.875]
+  // @param {number} $tag-small-line-height [$tag-small-font-size * $base-line]
+  // @param {number} $tag-small-min-height [24]
   &.tag_small {
     @include metrics(
       $tag-small-font-size,
@@ -42,9 +42,9 @@
     );
   }
 
-  // @param {px} $tag-big-font-size [$tag-font-size * 1.125]
-  // @param {px} $tag-big-line-height [$tag-big-font-size * $base-line-height]
-  // @param {px} $tag-big-min-height [32]
+  // @param {number} $tag-big-font-size [$tag-font-size * 1.125]
+  // @param {number} $tag-big-line-height [$tag-big-font-size * $base-line-height]
+  // @param {number} $tag-big-min-height [32]
   &.tag_big {
     @include metrics(
       $tag-big-font-size,

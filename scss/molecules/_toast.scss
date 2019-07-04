@@ -41,9 +41,9 @@
 
 // @param {color} $toast-background
 // @param {color} $toast-color
-// @param {px} $toast-min-width [240]
+// @param {number} $toast-min-width [240]
 // @param {array} $toast-padding [4]
-// @param {px} $toast-radius [4]
+// @param {number} $toast-radius [4]
 // @param {number} $toast-z-index [100]
 // @param {array} $toast-style
 .toast {

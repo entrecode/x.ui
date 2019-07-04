@@ -3,9 +3,9 @@
 /// @access public
 /// @group atom modifier
 ///
-/// @param {px} $input-min-height [32]
-/// @param {px} $input-small-min-height [28]
-/// @param {px} $input-big-min-height [40]
+/// @param {number} $input-min-height [32]
+/// @param {number} $input-small-min-height [28]
+/// @param {number} $input-big-min-height [40]
 /// @param {boolean} $input-round [false]
 
 @if $input-round == true {

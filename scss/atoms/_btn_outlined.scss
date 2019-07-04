@@ -4,12 +4,12 @@
 /// @group atoms modifier
 ///
 /// @param {number} $btn-padding-ratio [1.5]
-/// @param {px} $btn-outlined-border-width [2]
+/// @param {number} $btn-outlined-border-width [2]
 /// @param {color} $btn-outlined-border-style [solid]
 
-// @param {px} $btn-font-size [$base-font-size]
-// @param {px} $btn-line-height [$btn-font-size * $base-line-height]
-// @param {px} $btn-min-height [40]
+// @param {number} $btn-font-size [$base-font-size]
+// @param {number} $btn-line-height [$btn-font-size * $base-line-height]
+// @param {number} $btn-min-height [40]
 // @param {color} $btn-outlined-border-color [$link]
 // @param {color} $btn-outlined-color [$link]
 // @param {array} $btn-outlined-style
@@ -27,9 +27,9 @@
   border-color: $btn-outlined-border-color;
   color: $btn-outlined-color;
 
-  // @param {px} $btn-small-font-size [$btn-font-size * .875]
-  // @param {px} $btn-small-line-height [$btn-small-font-size * $base-line-height]
-  // @param {px} $btn-small-min-height [32]
+  // @param {number} $btn-small-font-size [$btn-font-size * .875]
+  // @param {number} $btn-small-line-height [$btn-small-font-size * $base-line-height]
+  // @param {number} $btn-small-min-height [32]
   &.btn_small {
     @include metrics(
       $btn-small-font-size,
@@ -40,9 +40,9 @@
     );
   }
 
-  // @param {px} $btn-big-font-size [$btn-font-size * 1.125]
-  // @param {px} $btn-big-line-height [$btn-big-font-size * $base-line-height]
-  // @param {px} $btn-big-min-height [48]
+  // @param {number} $btn-big-font-size [$btn-font-size * 1.125]
+  // @param {number} $btn-big-line-height [$btn-big-font-size * $base-line-height]
+  // @param {number} $btn-big-min-height [48]
   &.btn_big {
     @include metrics(
       $btn-big-font-size,

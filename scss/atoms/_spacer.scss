@@ -6,9 +6,9 @@
 /// @example
 ///   <div class='spacer'></div>
 ///
-/// @param {px} $spacer-size [get-space(5)]
-/// @param {px} $spacer-small-size [get-space(3)]
-/// @param {px} $spacer-big-size [get-space(6)]
+/// @param {number} $spacer-size [get-space(5)]
+/// @param {number} $spacer-small-size [get-space(3)]
+/// @param {number} $spacer-big-size [get-space(6)]
 
 .spacer {
   align-self: center;

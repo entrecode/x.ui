@@ -3,8 +3,8 @@
 /// @access public
 /// @group atoms
 ///
-/// @param {px} $range-slider-height [8]
-/// @param {px} $range-slider-radius [4]
+/// @param {number} $range-slider-height [8]
+/// @param {number} $range-slider-radius [4]
 /// @param {color} $range-slider-background [$background-lightest]
 /// @param {array} $range-slider-style
 /// @param {array} $range-slider-hover-style
@@ -61,8 +61,8 @@
   }
 }
 
-// @param {px} $range-slider-thumb-size [16]
-// @param {px} $range-slider-thumb-radius [8]
+// @param {number} $range-slider-thumb-size [16]
+// @param {number} $range-slider-thumb-radius [8]
 // @param {color} $range-slider-thumb-color [$link]
 // @param {array} $range-slider-thumb-style
 // @param {array} $range-slider-thumb-hover-style

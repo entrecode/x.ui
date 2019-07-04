@@ -24,9 +24,9 @@
   }
 }
 
-// @param {px} $nav-divider-size [1]
+// @param {number} $nav-divider-size [1]
 // @param {color} $nav-divider-color [$divider]
-// @param {px} $nav-divider-spacing [8]
+// @param {number} $nav-divider-spacing [8]
 .nav__divider {
   display: block;
   align-self: stretch;
@@ -57,7 +57,7 @@
   }
 }
 
-// @param {px} $nav-link-radius [4]
+// @param {number} $nav-link-radius [4]
 // @param {array} $nav-links-padding [4]
 // @param {array} $nav-link-font-size [$base-font-size]
 // @param {color} $nav-link-background

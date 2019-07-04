@@ -26,7 +26,7 @@ export default {
               markup: `<div class="card">
   ...
 </div>`,
-              config: `@param {px} $card-radius [4]
+              config: `@param {number} $card-radius [4]
 @param {color} $card-background [$background]
 @param {color} $card-color [$text]
 @param {array} $card-padding [24]
