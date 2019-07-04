@@ -151,7 +151,7 @@ export default {
           default: '16',
         },
         {
-          name: '$modal-align-item',
+          name: '$modal-align-items',
           type: 'string',
           default: 'flex-start',
         },
