@@ -39,7 +39,7 @@
     @include inject-style($file-upload-hover-style);
   }
 
-  [type='file'] {
+  &__input {
     cursor: pointer;
     position: absolute;
     top: 0;

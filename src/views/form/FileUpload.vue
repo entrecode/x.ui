@@ -8,7 +8,7 @@
         <div class="demo-preview is-padding-8" data-flex="center">
           <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
             <form class="file-upload">
-              <input type="file" multiple="multiple" /> drop files here or
+              <input type="file" class="file-upload__input" multiple="multiple" /> drop files here or
               <a>upload</a>
             </form>
           </div>
@@ -36,7 +36,7 @@ export default {
   data: () => {
     return {
       markup: `<form class="file-upload">
-  <input type="file" multiple="multiple">
+  <input class="file-upload__input" type="file" multiple="multiple">
   drop files here or <a>upload</a>
 </form>`,
       params: [
