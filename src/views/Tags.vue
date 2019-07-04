@@ -1,180 +1,341 @@
 <template>
-  <blocks-group :groups="sectionGroups" section-title="tags"></blocks-group>
+  <section>
+    <div data-col="10 8@xl">
+      <div class="is-padding-center-3">
+        <h2>tags</h2>
+      </div>
+      <div class="demo-preview is-padding-8" data-flex="column center-items">
+        <div class="is-theme is-padding-center-5 is-padding-middle-3">
+          <div data-grid data-flex="center-items">
+            <div data-col="fit">
+              <span class="tag" :class="combinedClass">1</span>
+            </div>
+            <div data-col="fit">
+              <a href class="btn">
+                Button &emsp;
+                <span class="tag" :class="combinedClass">1</span>
+              </a>
+            </div>
+            <div data-col="fit">
+              <a href class="tag" :class="combinedClass">
+                <svg class="ixo">
+                  <use xlink:href="#fire" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+          <div class="nav">
+            <div class="nav__item">
+              <div class="input-group">
+                <label for="tagStyle" class="input-group__addon">
+                  <svg class="ixo is-ink-link">
+                    <use xlink:href="#color-palette" />
+                  </svg>
+                </label>
+                <div class="input-group__addon">
+                  <select id="tagStyle" v-model="tagStyle" class="input">
+                    <option
+                      :value="style"
+                      v-for="(style, index) in tagStyles"
+                      :key="index"
+                      v-text="style === '' ? 'default' : style.slice(4)"
+                    ></option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="nav__item">
+              <div class="input-group">
+                <label for="tagSize" class="input-group__addon">
+                  <svg class="ixo is-ink-link">
+                    <use xlink:href="#move-vertical" />
+                  </svg>
+                </label>
+                <div class="input-group__addon">
+                  <select id="tagSize" v-model="tagSize" class="input">
+                    <option
+                      :value="size"
+                      v-for="(size, index) in tagSizes"
+                      :key="index"
+                      v-text="size === '' ? 'default' : size.slice(4)"
+                    ></option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="nav__item">
+              <div class="xui-checkbox">
+                <input type="checkbox" id="tagRound" v-model="tagRound" />
+                <label for="tagRound" class="xui-checkbox__label">round</label>
+              </div>
+            </div>
+            <div class="nav__item">
+              <div class="xui-checkbox">
+                <input type="checkbox" id="tagOutlined" v-model="tagOutlined" />
+                <label for="tagOutlined" class="xui-checkbox__label">outlined</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <pre v-highlightjs="markup"><code class="html"></code></pre>
+      <div class="spacer"></div>
+      <params-table :params="coreParams" title="default params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="smallParams" title="default params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="bigParams" title="default params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="outlinedParams" title="default params"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
+    </div>
+  </section>
 </template>
 
 <script>
-import BlocksGroup from '@/components/BlocksGroup.vue';
+import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   name: 'Tag',
   components: {
-    BlocksGroup,
+    ParamsTable,
+    RequiresList,
   },
   data: () => {
     return {
-      sectionGroups: [
-        {
-          title: '',
-          id: 'tag',
-          navTitle: 'Tag',
-          groupItems: [
-            {
-              title: 'Default Tag',
-              preview: `<span class="tag">1</span>&emsp;&emsp;<a href class="btn">Button&emsp;<span class="tag">1</span></a>`,
-              markup: `<span class="tag">1</span>
-<a href class="btn">Button&emsp;<span class="tag">1</span></a>`,
-              config: `// general tag config
-$tag-font-family: $body-font-family;
-$tag-weight: $is-bold;
-$tag-padding-ratio: 1;
-$tag-background: $minor;
-$tag-round: false;
+      tagStyles: [
+        '',
+        'tag_minor',
+        'tag_link',
+        'tag_super',
+        'tag_highlight',
+        'tag_info',
+        'tag_error',
+        'tag_success',
+        'tag_warning',
+      ],
+      tagStyle: '',
+      tagSizes: ['', 'tag_small', 'tag_big'],
+      tagSize: '',
+      tagRound: false,
+      tagOutlined: false,
+      markup: `<span class="tag">1</span>
 
-// default tag config
-$tag-font-size: 14;
-$tag-line-height: 14;
-$tag-min-height: 20;
-$tag-style: ();`,
-            },
-            {
-              title: 'Small Tag',
-              preview: `<span class="tag tag_small">1</span>&emsp;&emsp;<a href class="btn">Button&emsp;<span class="tag tag_small">1</span></a>`,
-              markup: `<span class="tag tag_small">1</span>
-<a href class="btn">Button&emsp;<span class="tag tag_small">1</span></a>`,
-              config: `$tag-small-font-size: 12;
-$tag-small-line-height: 12;
-$tag-small-min-height: 16;
-$tag-small-style: ()`,
-            },
-            {
-              title: 'Big Tag',
-              preview: `<span class="tag tag_big">1</span>&emsp;&emsp;<a href class="btn">Button&emsp;<span class="tag tag_big">1</span></a>`,
-              markup: `<span class="tag tag_big">1</span>
-<a href class="btn">Button&emsp;<span class="tag tag_big">1</span></a>`,
-              config: `$tag-big-font-size: 14;
-$tag-big-line-height: 14;
-$tag-big-min-height: 28;
-$tag-big-style: ();`,
-            },
-            {
-              title: 'Rounded Tag',
-              preview: `<span class="tag tag_round">1</span>&emsp;&emsp;<a href class="btn">Button&emsp;<span class="tag tag_round">1</span></a>`,
-              markup: `<span class="tag tag_round">1</span>
-<a href class="btn">Button&emsp;<span class="tag tag_round">1</span></a>`,
-              config: `$tag-radius: 2;
-$tag-small-radius: $tag-radius;
-$tag-big-radius: $tag-radius;`,
-            },
-          ],
+<a href class="btn">
+  Button 
+  <span class="tag">1</span>
+</a>`,
+      coreParams: [
+        {
+          name: '$tag-font-family',
+          type: 'string',
+          description: 'font-face used by buttons',
+          default: '$body-font-family',
         },
         {
-          title: '',
-          id: 'tag_styles',
-          navTitle: 'Tag Styles',
-          groupItems: [
-            {
-              title: 'Tag Styles',
-              preview: `<ul data-grid="small-gutter">
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_minor">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_link">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_super">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_highlight">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_info">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_error">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_success">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_warning">tag</span></li>
-</ul>`,
-              markup: `<span class="tag">tag</span>
-<span class="tag tag_minor">tag</span>
-<span class="tag tag_link">tag</span>
-<span class="tag tag_super">tag</span>
-<span class="tag tag_highlight">tag</span>
-<span class="tag tag_info">tag</span>
-<span class="tag tag_error">tag</span>
-<span class="tag tag_success">tag</span>
-<span class="tag tag_warning">tag</span>`,
-              config: `$tag-array:(
+          name: '$tag-weight',
+          type: 'string',
+          default: '$is-bold',
+        },
+        {
+          name: '$tag-font-size',
+          type: 'number',
+          default: '14',
+        },
+        {
+          name: '$tag-line-height',
+          type: 'number',
+          default: '16',
+        },
+        {
+          name: '$tag-min-height',
+          type: 'number',
+          default: '20',
+        },
+        {
+          name: '$tag-style',
+          type: 'array',
+          default: '',
+        },
+        {
+          name: '$tag-padding-ratio',
+          type: 'number',
+          description: 'ratio by which padding-left and padding-right are bigger',
+          default: '2',
+        },
+        {
+          name: '$tag-spacing',
+          type: 'number',
+          description: 'margin around a tag',
+          default: '0',
+        },
+        {
+          name: '$tag-round',
+          type: 'boolean',
+          description: 'for default rounded tags',
+          default: 'false',
+        },
+        {
+          name: '$tag-radius',
+          type: 'number',
+          default: '2',
+        },
+        {
+          name: '$tag-small-radius',
+          type: 'number',
+          default: '$tag-radius',
+        },
+        {
+          name: '$tag-big-radius',
+          type: 'number',
+          default: '$tag-radius',
+        },
+        {
+          name: '$tag-styles',
+          type: 'array',
+          description: 'style color width postfix, background, text-color, hover-color',
+          default: `(
   'minor': (
-      $minor,
-      $minor-contrast,
-      $minor-hover,
-    ),
-    'link': (
-      $link,
-      $link-contrast,
-      $link-hover,
-    ),
-    'super': (
-      $super,
-      $super-contrast,
-      $super-hover,
-    ),
-    'highlight': (
-      $highlight,
-      $highlight-contrast,
-      $highlight-hover,
-    ),
-    'info': (
-      $state-info,
-      $state-info-contrast,
-      $state-info-hover,
-    ),
-    'error': (
-      $state-error,
-      $state-error-contrast,
-      $state-error-hover,
-    ),
-    'success': (
-      $state-success,
-      $state-success-contrast,
-      $state-success-hover,
-    ),
-    'warning': (
-      $state-warning,
-      $state-warning-contrast,
-      $state-warning-hover,
-    ),
-);`,
-            },
-          ],
-        },
-        {
-          title: '',
-          id: 'tag_outlined',
-          navTitle: 'Outlined Tag',
-          groupItems: [
-            {
-              title: 'Outlined Tag',
-              preview: `<ul data-grid="small-gutter">
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_minor">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_link">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_super">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_highlight">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_info">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_error">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_success">tag</span></li>
-  <li data-col="fit" class="is-padding-bottom-2"><span class="tag tag_big tag_outlined tag_warning">tag</span></li>
-</ul>`,
-              markup: `<span class="tag tag_outlined">tag</span>
-<span class="tag tag_outlined tag_minor">tag</span>
-<span class="tag tag_outlined tag_link">tag</span>
-<span class="tag tag_outlined tag_super">tag</span>
-<span class="tag tag_outlined tag_highlight">tag</span>
-<span class="tag tag_outlined tag_info">tag</span>
-<span class="tag tag_outlined tag_error">tag</span>
-<span class="tag tag_outlined tag_success">tag</span>
-<span class="tag tag_outlined tag_warning">tag</span>`,
-              config: `$tag-outlined-color: set-contrast($minor);
-$tag-outlined-border-color: $minor;
-$tag-outlined-border-width: 1;
-$tag-outlined-border-style: solid;`,
-            },
-          ],
+    $minor,
+    $minor-contrast,
+    $minor-hover,
+  ),
+  'link': (
+    $link,
+    $link-contrast,
+    $link-hover,
+  ),
+  'super': (
+    $super,
+    $super-contrast,
+    $super-hover,
+  ),
+  'highlight': (
+    $highlight,
+    $highlight-contrast,
+    $highlight-hover,
+  ),
+  'info': (
+    $state-info,
+    $state-info-contrast,
+    $state-info-hover,
+  ),
+  'error': (
+    $state-error,
+    $state-error-contrast,
+    $state-error-hover,
+  ),
+  'success': (
+    $state-success,
+    $state-success-contrast,
+    $state-success-hover,
+  ),
+  'warning': (
+    $state-warning,
+    $state-warning-contrast,
+    $state-warning-hover,
+  ),
+)`,
         },
       ],
+      smallParams: [
+        {
+          name: '$tag-small-font-size',
+          type: 'number',
+          default: '12',
+        },
+        {
+          name: '$tag-small-line-height',
+          type: 'number',
+          default: '12',
+        },
+        {
+          name: '$tag-small-min-height',
+          type: 'number',
+          default: '16',
+        },
+        {
+          name: '$tag-small-style',
+          type: 'array',
+          default: '',
+        },
+      ],
+      bigParams: [
+        {
+          name: '$tag-big-font-size',
+          type: 'number',
+          default: '16',
+        },
+        {
+          name: '$tag-big-line-height',
+          type: 'number',
+          default: '20',
+        },
+        {
+          name: '$tag-big-min-height',
+          type: 'number',
+          default: '24',
+        },
+        {
+          name: '$tag-big-style',
+          type: 'array',
+          default: '',
+        },
+      ],
+      outlinedParams: [
+        {
+          name: '$tag-outlined-color',
+          type: 'color',
+          default: '$minor-contrast',
+        },
+        {
+          name: '$tag-outlined-border-color',
+          type: 'color',
+          default: '$minor',
+        },
+        {
+          name: '$tag-outlined-border-width',
+          type: 'number',
+          default: '1',
+        },
+        {
+          name: '$tag-outlined-border-style',
+          type: 'enum',
+          default: 'solid',
+        },
+      ],
+      requires: [
+        { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
+        { name: 'inject-style()', type: 'mixin', link: '#scroll-to-inject-style' },
+        { name: 'metrics()', type: 'mixin', link: '#scroll-to-metrics' },
+      ],
     };
+  },
+  computed: {
+    combinedClass() {
+      return [
+        this.tagStyle ? ' ' + this.tagStyle : null,
+        this.tagSize ? ' ' + this.tagSize : null,
+        this.tagRound ? ' tag_round' : null,
+        this.tagOutlined ? ' tag_outlined' : null,
+      ].join('');
+    },
+  },
+  watch: {
+    combinedClass: function(val) {
+      this.markup = `<span class="tag${val}">1</span>
+
+<a href class="btn">
+  Button 
+  <span class="tag${val}">1</span>
+</a>`;
+    },
   },
 };
 </script>

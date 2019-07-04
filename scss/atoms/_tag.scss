@@ -6,7 +6,12 @@
 /// @param {variable} $tag-font-family [$body-font-family]
 /// @param {number} $tag-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
 /// @param {string} $tag-weight [$is-bold]
+/// @param {number} $tag-spacing [0]
 /// @param {color} $tag-background [$minor]
+///
+/// @require {function} array-magic
+/// @require {mixin} inject-style
+/// @require {mixin} metrics
 
 // @param {number} $tag-font-size [14]
 // @param {number} $tag-line-height [14]
@@ -26,6 +31,7 @@
   vertical-align: text-bottom;
   @include inject-style($tag-style);
   @include metrics($tag-font-size, $tag-line-height, $tag-min-height, $padding-ratio: $tag-padding-ratio);
+  margin: array-magic($tag-spacing);
   background: $tag-background;
   color: $tag-color;
   border-radius: array-magic($tag-radius);

@@ -6,7 +6,7 @@
       </div>
       <div class="demo-preview is-padding-8" data-flex="column center-items">
         <div class="align-center is-padding-bottom-5">
-          <div data-grid="smal-gutter">
+          <div data-grid="small-gutter">
             <div data-col="fit">
               <input
                 type="button"
@@ -624,7 +624,6 @@ export default {
         { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
         { name: 'inject-style()', type: 'mixin', link: '#scroll-to-inject-style' },
         { name: 'metrics()', type: 'mixin', link: '#scroll-to-metrics' },
-        { name: 'rem()', type: 'function', link: '#scroll-to-rem' },
       ],
     };
   },

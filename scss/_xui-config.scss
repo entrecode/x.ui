@@ -773,12 +773,14 @@ $loader-is-global-background: $backdrop !default;
 // @param {variable} $tag-font-family [$body-font-family]
 // @param {number} $tag-padding-ratio [1] - ratio by which padding-left and padding-right are bigger
 // @param {string} $tag-weight [$is-bold]
+// @param {number} $tag-spacing [0]
 // @param {color} $tag-background [$minor]
 // @param {color} $tag-color [$minor-contrast]
 // @param {boolean} $tag-round [false] - sets border-radius to 50% of tag height
 $tag-font-family: $body-font-family !default;
 $tag-weight: $is-bold !default;
 $tag-padding-ratio: 2 !default;
+$tag-spacing: 0 !default;
 $tag-background: $minor !default;
 $tag-color: $minor-contrast !default;
 $tag-round: false !default;
