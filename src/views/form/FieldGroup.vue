@@ -23,7 +23,7 @@
         </div>
 
         <div class="demo-preview is-padding-8" data-flex="center" v-if="activeTab === 1">
-          <div class="is-theme is-padding-5 is-radius" data-col="6">
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
             <div class="field-group">
               <label for class="field-group__label">field-group label</label>
               <input type="text" placeholder="input..." class="input" />
@@ -41,7 +41,7 @@
           data-flex="column center-items"
           v-if="activeTab === 2"
         >
-          <div class="is-theme is-padding-5 is-radius" data-col="6">
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
             <div data-grid>
               <div data-col="6">
                 <div class="field-group">

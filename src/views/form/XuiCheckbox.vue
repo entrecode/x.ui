@@ -5,8 +5,8 @@
         <div class="is-padding-center-3">
           <h2>xui-checkbox</h2>
         </div>
-        <div class="demo-preview is-padding-8" data-flex="column center-items">
-          <div class="is-theme is-padding-5 is-radius">
+        <div class="demo-preview is-padding-8" data-flex="center">
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
             <div class="xui-checkbox">
               <input type="checkbox" id="boollean-1" />
               <label for="boollean-1" class="xui-checkbox__label">checkbox</label>

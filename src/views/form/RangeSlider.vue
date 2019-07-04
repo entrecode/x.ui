@@ -6,7 +6,7 @@
           <h2>range-slider</h2>
         </div>
         <div class="demo-preview is-padding-8" data-flex="center">
-          <div class="is-theme is-padding-5 is-radius" data-col="8">
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
             <input type="range" class="range-slider" />
           </div>
         </div>

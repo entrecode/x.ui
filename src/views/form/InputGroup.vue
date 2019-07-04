@@ -55,25 +55,27 @@
           data-flex="column center-items"
           v-if="activeTab === 1"
         >
-          <div class="input-group">
-            <div class="input-group__addon">
-              <small>addon</small>
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
+            <div class="input-group">
+              <div class="input-group__addon">
+                <small>addon</small>
+              </div>
+              <input type="text" placeholder="input..." class="input" />
             </div>
-            <input type="text" placeholder="input..." class="input" />
-          </div>
-          <div class="y-space-3"></div>
-          <div class="input-group">
-            <input type="text" placeholder="input..." class="input" />
-            <div class="input-group__addon">
-              <small>addon</small>
+            <div class="y-space-3"></div>
+            <div class="input-group">
+              <input type="text" placeholder="input..." class="input" />
+              <div class="input-group__addon">
+                <small>addon</small>
+              </div>
             </div>
-          </div>
-          <div class="y-space-3"></div>
-          <div class="input-group">
-            <div class="input-group__addon is-round-left">
-              <small>addon</small>
+            <div class="y-space-3"></div>
+            <div class="input-group">
+              <div class="input-group__addon is-round-left">
+                <small>addon</small>
+              </div>
+              <input type="text" placeholder="input..." class="input input_round" />
             </div>
-            <input type="text" placeholder="input..." class="input input_round" />
           </div>
         </div>
 
@@ -82,13 +84,15 @@
           data-flex="column center-items"
           v-if="activeTab === 2"
         >
-          <div class="input-group">
-            <div class="input-group__addon">
-              <small>addon</small>
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
+            <div class="input-group">
+              <div class="input-group__addon">
+                <small>addon</small>
+              </div>
+              <input type="text" placeholder="input..." class="input" />
+              <div class="x-space-1"></div>
+              <input type="text" placeholder="input..." class="input" />
             </div>
-            <input type="text" placeholder="input..." class="input" />
-            <div class="x-space-1"></div>
-            <input type="text" placeholder="input..." class="input" />
           </div>
         </div>
 
@@ -97,11 +101,13 @@
           data-flex="column center-items"
           v-if="activeTab === 3"
         >
-          <div class="input-group">
-            <div class="input-group__addon" data-col="4">
-              <small>addon</small>
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
+            <div class="input-group">
+              <div class="input-group__addon" data-col="4">
+                <small>addon</small>
+              </div>
+              <input type="text" placeholder="input..." class="input" />
             </div>
-            <input type="text" placeholder="input..." class="input" />
           </div>
         </div>
 
@@ -110,44 +116,46 @@
           data-flex="column center-items"
           v-if="activeTab === 4"
         >
-          <div class="input-group">
-            <input type="text" placeholder="input..." class="input" />
-            <div class="input-group__addon" data-col="6">
-              <select class="input input_clear">
-                <option value selected>select option</option>
-                <option value>option</option>
-                <option value>option</option>
-              </select>
-            </div>
-          </div>
-          <div class="y-space-3"></div>
-          <div class="input-group">
-            <input type="text" placeholder="input..." class="input" />
-            <div class="x-space-1" style="width:2px;"></div>
-            <div class="input-group__addon">
-              <div class="xui-checkbox">
-                <input type="checkbox" id="checkbox-3" />
-                <label for="checkbox-3" class="xui-checkbox__label">checkbox</label>
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
+            <div class="input-group">
+              <input type="text" placeholder="input..." class="input" />
+              <div class="input-group__addon" data-col="6">
+                <select class="input input_clear">
+                  <option value selected>select option</option>
+                  <option value>option</option>
+                  <option value>option</option>
+                </select>
               </div>
             </div>
-          </div>
-          <div class="y-space-3"></div>
-          <div class="input-group">
-            <input type="text" placeholder="input..." class="input" />
-            <div tabindex="0" class="xui-select">
-              <span class="xui-select__placeholder">select</span>
-              <span class="xui-select__caret"></span>
-              <ul class="xui-select-options">
-                <li>
-                  <a href tabindex="0" class="xui-select-option">option 1</a>
-                </li>
-                <li>
-                  <a href tabindex="0" class="xui-select-option">option 2</a>
-                </li>
-                <li>
-                  <a href tabindex="0" class="xui-select-option">option 3</a>
-                </li>
-              </ul>
+            <div class="y-space-3"></div>
+            <div class="input-group">
+              <input type="text" placeholder="input..." class="input" />
+              <div class="x-space-1" style="width:2px;"></div>
+              <div class="input-group__addon">
+                <div class="xui-checkbox">
+                  <input type="checkbox" id="checkbox-3" />
+                  <label for="checkbox-3" class="xui-checkbox__label">checkbox</label>
+                </div>
+              </div>
+            </div>
+            <div class="y-space-3"></div>
+            <div class="input-group">
+              <input type="text" placeholder="input..." class="input" />
+              <div tabindex="0" class="xui-select">
+                <span class="xui-select__placeholder">select</span>
+                <span class="xui-select__caret"></span>
+                <ul class="xui-select-options">
+                  <li>
+                    <a href tabindex="0" class="xui-select-option">option 1</a>
+                  </li>
+                  <li>
+                    <a href tabindex="0" class="xui-select-option">option 2</a>
+                  </li>
+                  <li>
+                    <a href tabindex="0" class="xui-select-option">option 3</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -157,18 +165,20 @@
           data-flex="column center-items"
           v-if="activeTab === 5"
         >
-          <div class="input-group">
-            <div class="input-group__addon">
-              <small>addon</small>
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
+            <div class="input-group">
+              <div class="input-group__addon">
+                <small>addon</small>
+              </div>
+              <input type="text" placeholder="input..." class="input" />
+              <a class="btn">submit</a>
             </div>
-            <input type="text" placeholder="input..." class="input" />
-            <a class="btn">submit</a>
-          </div>
-          <div class="y-space-3"></div>
-          <div class="input-group">
-            <input type="text" placeholder="input..." class="input" />
-            <div class="input-group__addon">
-              <a class="btn btn_clear">submit</a>
+            <div class="y-space-3"></div>
+            <div class="input-group">
+              <input type="text" placeholder="input..." class="input" />
+              <div class="input-group__addon">
+                <a class="btn btn_clear">submit</a>
+              </div>
             </div>
           </div>
         </div>
@@ -178,12 +188,14 @@
           data-flex="column center-items"
           v-if="activeTab === 6"
         >
-          <div class="input-group">
-            <input type="text" placeholder="input..." class="input" />
-            <div class="input-group__addon">
-              <svg class="ixo">
-                <use xlink:href="#fire" />
-              </svg>
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
+            <div class="input-group">
+              <input type="text" placeholder="input..." class="input" />
+              <div class="input-group__addon">
+                <svg class="ixo">
+                  <use xlink:href="#fire" />
+                </svg>
+              </div>
             </div>
           </div>
         </div>

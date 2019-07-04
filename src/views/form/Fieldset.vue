@@ -7,7 +7,7 @@
         </div>
 
         <div class="demo-preview is-padding-8" data-flex="center">
-          <div class="is-theme is-padding-5 is-radius" data-col="6">
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="10 6@xl">
             <fieldset class="fieldset">
               <div data-grid="small-gutter">
                 <div data-col="8">

@@ -7,11 +7,23 @@
       class="doc-menubar is-theme-menubar is-fixed is-height-vh-full is-scrollable-auto-y-contain"
     />
     <router-view name="main" class="doc-body" />
-    <footer class="is-padding-8 is-ink-light align-center doc-footer">
-      placeholder images
-      <a href="https://unsplash.com/@princearkman" target="_blank" rel="nofollow">https://unsplash.com/@princearkman</a>
-      &bull; filltext:
-      <a href="http://socialgoodipsum.com/#/" target="_blank" rel="nofollow">http://socialgoodipsum.com/#/</a>
+    <footer class="doc-footer">
+      <div data-col="10 8@xl">
+        <div class="is-padding-5 is-ink-light align-center doc-footer">
+          placeholder images
+          <a
+            href="https://unsplash.com/@princearkman"
+            target="_blank"
+            rel="nofollow"
+          >https://unsplash.com/@princearkman</a>
+          &bull; filltext:
+          <a
+            href="http://socialgoodipsum.com/#/"
+            target="_blank"
+            rel="nofollow"
+          >http://socialgoodipsum.com/#/</a>
+        </div>
+      </div>
     </footer>
   </div>
 </template>
@@ -71,6 +83,7 @@ body {
 
   .doc-footer {
     grid-area: footer;
+    font-size: 0.875em;
   }
 }
 </style>

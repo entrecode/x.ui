@@ -6,7 +6,7 @@
           <h2>xui-select</h2>
         </div>
         <div class="demo-preview is-padding-8" data-flex="center">
-          <div class="is-theme is-padding-5 is-radius" data-col="8 6@lg 4@xl">
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
             <div tabindex="0" class="xui-select">
               <span class="xui-select__placeholder" v-if="!selected">select</span>
               <span class="xui-select__selected" v-else v-text="selected"></span>
