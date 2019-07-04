@@ -1,8 +1,8 @@
 <template>
   <section>
     <div data-col="10@md 8@lg">
-      <div class="is-padding-center-3">
-        <h2>alert</h2>
+      <div class="titlebar">
+        <h1>well</h1>
       </div>
       <div class="is-margin-bottom-5">
         <div class="demo-preview is-padding-8" data-flex="column center">

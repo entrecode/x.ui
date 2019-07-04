@@ -1,7 +1,7 @@
 <template>
   <section>
-    <div class="is-padding-center-3">
-      <h2>card</h2>
+    <div class="titlebar">
+      <h1>card</h1>
     </div>
     <div data-col="10@md 8@lg">
       <div class="demo-preview is-padding-8">

@@ -1,8 +1,8 @@
 <template>
   <section>
     <div data-col="10 8@xl">
-      <div class="is-padding-center-3">
-        <h2>button</h2>
+      <div class="titlebar">
+        <h1>button</h1>
       </div>
       <div class="demo-preview is-padding-8" data-flex="column center-items">
         <div class="align-center is-padding-bottom-5">

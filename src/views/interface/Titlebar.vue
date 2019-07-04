@@ -1,7 +1,7 @@
 <template>
   <section>
-    <div class="is-padding-center-3">
-      <h2>button-group</h2>
+    <div class="titlebar">
+      <h1>titlebar</h1>
     </div>
     <div class="nav">
       <div class="nav__item">

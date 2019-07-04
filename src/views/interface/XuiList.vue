@@ -1,8 +1,8 @@
 <template>
   <section>
     <div data-col="10 8@xl">
-      <div class="is-padding-center-3">
-        <h2>xui-list</h2>
+      <div class="titlebar">
+        <h1>xui-list</h1>
       </div>
       <div class="nav">
         <div class="nav__item">

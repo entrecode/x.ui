@@ -59,12 +59,12 @@ export const router = new Router({
     {
       path: '/button',
       name: 'button',
-      components: { main: () => import('./views/Button.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interaction/Button.vue'), menu: DemoMenubar },
     },
     {
       path: '/button-group',
       name: 'button-group',
-      components: { main: () => import('./views/ButtonGroup.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interaction/ButtonGroup.vue'), menu: DemoMenubar },
     },
     {
       path: '/field-group',
@@ -119,22 +119,22 @@ export const router = new Router({
     {
       path: '/loader',
       name: 'loader',
-      components: { main: () => import('./views/Loader.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interaction/Loader.vue'), menu: DemoMenubar },
     },
     {
       path: '/alert',
       name: 'alert',
-      components: { main: () => import('./views/Alert.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interaction/Alert.vue'), menu: DemoMenubar },
     },
     {
       path: '/well',
       name: 'well',
-      components: { main: () => import('./views/Well.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interface/Well.vue'), menu: DemoMenubar },
     },
     {
       path: '/titlebar',
       name: 'titlebar',
-      components: { main: () => import('./views/ui/Titlebar.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interface/Titlebar.vue'), menu: DemoMenubar },
     },
     {
       path: '/avatar',
@@ -144,42 +144,42 @@ export const router = new Router({
     {
       path: '/tags',
       name: 'tags',
-      components: { main: () => import('./views/Tags.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interaction/Tags.vue'), menu: DemoMenubar },
     },
     {
       path: '/modal',
       name: 'modal',
-      components: { main: () => import('./views/ui/Modal.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interface/Modal.vue'), menu: DemoMenubar },
     },
     {
       path: '/xui-list',
       name: 'xui-list',
-      components: { main: () => import('./views/ui/XuiList.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interface/XuiList.vue'), menu: DemoMenubar },
     },
     {
       path: '/xui-accordion',
       name: 'xui-accordion',
-      components: { main: () => import('./views/ui/XuiAccordion.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interface/XuiAccordion.vue'), menu: DemoMenubar },
     },
     {
       path: '/table',
       name: 'table',
-      components: { main: () => import('./views/ui/Table.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interface/Table.vue'), menu: DemoMenubar },
     },
     {
       path: '/card',
       name: 'card',
-      components: { main: () => import('./views/ui/Card.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interface/Card.vue'), menu: DemoMenubar },
     },
     {
       path: '/nav',
       name: 'nav',
-      components: { main: () => import('./views/ui/Nav.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interaction/Nav.vue'), menu: DemoMenubar },
     },
     {
       path: '/dropdown',
       name: 'dropdown',
-      components: { main: () => import('./views/ui/Dropdown.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interaction/Dropdown.vue'), menu: DemoMenubar },
     },
     {
       path: '/functions',

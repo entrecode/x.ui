@@ -1,8 +1,8 @@
 <template>
   <section>
     <div data-col="10@md 8@lg">
-      <div class="is-padding-center-3">
-        <h2>button-group</h2>
+      <div class="titlebar">
+        <h1>button-group</h1>
       </div>
       <div class="nav">
         <div class="nav__item">
