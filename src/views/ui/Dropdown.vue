@@ -173,7 +173,7 @@ export default {
         },
         {
           name: '$dropdown-option-alignment',
-          type: '[enum | center | left | right]',
+          type: 'center | left | right',
           default: '$dropdown-option-font-size * $base-line-height',
         },
         {

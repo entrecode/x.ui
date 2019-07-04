@@ -111,9 +111,9 @@
       <li class="nav__item">
         <router-link to="modal" class="is-mega is-uppercase">modal</router-link>
       </li>
-      <router-link class="nav__item">
+      <li class="nav__item">
         <router-link to="card" class="is-mega is-uppercase">card</router-link>
-      </router-link>
+      </li>
       <li class="nav__item">
         <router-link to="well" class="is-mega is-uppercase">well</router-link>
       </li>

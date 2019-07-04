@@ -6,29 +6,37 @@
       </div>
       <div class="demo-preview is-padding-8" data-flex="column center-items">
         <div class="align-center is-padding-bottom-5">
-          <input
-            type="button"
-            class="btn demo-transition"
-            :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
-            value="button"
-          />
-          <button
-            class="btn demo-transition"
-            :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
-          >
-            <svg class="ixo">
-              <use xlink:href="#fire" />
-            </svg> Button
-          </button>
-          <a
-            href
-            class="btn demo-transition"
-            :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
-          >
-            <svg class="ixo">
-              <use xlink:href="#fire" />
-            </svg>
-          </a>
+          <div data-grid="smal-gutter">
+            <div data-col="fit">
+              <input
+                type="button"
+                class="btn demo-transition"
+                :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
+                value="button"
+              />
+            </div>
+            <div data-col="fit">
+              <button
+                class="btn demo-transition"
+                :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
+              >
+                <svg class="ixo">
+                  <use xlink:href="#fire" />
+                </svg> Button
+              </button>
+            </div>
+            <div data-col="fit">
+              <a
+                href
+                class="btn demo-transition"
+                :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
+              >
+                <svg class="ixo">
+                  <use xlink:href="#fire" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
@@ -130,7 +138,7 @@
       <params-table :params="superOutlinedStyleParams" title="super outline style params"></params-table>
       <div class="divider"></div>
       <params-table :params="invertOutlinedStyleParams" title="invert outline style params"></params-table>
-      <div class="spacer"> </div>
+      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

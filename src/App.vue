@@ -9,7 +9,7 @@
     <router-view name="main" class="doc-body" />
     <footer class="doc-footer">
       <div data-col="10 8@xl">
-        <div class="is-padding-5 is-ink-light align-center doc-footer">
+        <div class="is-padding-5 is-margin-middle-5 is-ink-light align-center doc-footer">
           placeholder images
           <a
             href="https://unsplash.com/@princearkman"
