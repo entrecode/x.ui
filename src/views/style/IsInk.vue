@@ -97,7 +97,7 @@ export default {
       params: [
         {
           name: `$is-ink`,
-          type: 'array',
+          type: 'map',
           default: `(
   '': $text,
   'light': $text-light,

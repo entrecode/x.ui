@@ -56,40 +56,35 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>
 
 <script>
 import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   name: 'IsInk',
   components: {
     ParamsTable,
+    RequiresList,
   },
   data: () => {
     return {
       markup: `<div class="is-theme">
   <h1>change my color <a>i'm a link</a></h1>
 </div>`,
-      styles: [
-        'is-theme',
-        'is-theme-lightest',
-        'is-theme-invert',
-      ],
+      styles: ['is-theme', 'is-theme-lightest', 'is-theme-invert'],
       style: 'is-theme',
-      hoverStyles: [
-        '',
-        'hover:is-theme',
-        'hover:is-theme-lightest',
-        'hover:is-theme-invert',
-      ],
+      hoverStyles: ['', 'hover:is-theme', 'hover:is-theme-lightest', 'hover:is-theme-invert'],
       hoverStyle: '',
       params: [
         {
           name: `$is-theme`,
-          type: 'array',
+          type: 'map',
           default: `(
   '': (
     $background,
@@ -108,7 +103,13 @@ export default {
   ),
 )`,
         },
+        {
+          name: '$is-theme-style',
+          type: 'map',
+          default: '',
+        },
       ],
+      requires: [{ name: 'inject-styles()', type: 'mixin', link: '#scroll-to-inject-styles' }],
     };
   },
   computed: {

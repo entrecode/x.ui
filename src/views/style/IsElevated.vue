@@ -1,78 +1,113 @@
 <template>
-  <section class="demo-section">
-    <div data-container>
-      <div data-grid>
-        <div data-col="10">
-          <doc-tab>
-            <div slot="preview">
-              <div
-                class="demo-card"
-                :class="[
-                  'is-elevated-' + elevation,
-                  hoverElevationActive ? 'hover:is-elevated-' + hoverElevation : null,
-                ]"
-              >
-                <div class="field-group">
-                  <div class="is-giga">is-elevated- <span class="is-ink-link" v-text="elevation"></span></div>
-                  <div class="is-padding-middle-3">
-                    <input type="range" min="0" max="24" v-model="elevation" class="range-slider" />
-                  </div>
-                </div>
-                <div class="field-group" :style="hoverElevationActive ? 'opacity: 1' : 'opacity: 0.4'">
-                  <div class="xui-checkbox">
-                    <input type="checkbox" id="hoverElevationActive" v-model="hoverElevationActive" />
-                    <label for="hoverElevationActive" class="xui-checkbox__label" data-flex="center-items">
-                      <div class="is-giga" style="margin: 0;">
-                        hover:is-elevated- <span class="is-ink-link" v-text="hoverElevation"></span>
-                      </div>
-                    </label>
-                  </div>
-                  <div class="is-padding-middle-3">
-                    <input type="range" min="0" max="24" v-model="hoverElevation" class="range-slider" />
-                  </div>
-                </div>
+  <section>
+    <div data-col="10 8@xl">
+      <div class="titlebar">
+        <h1>table</h1>
+      </div>
+      <div class="demo-preview is-padding-8" data-flex="column center-items">
+        <div v-html="markup"></div>
+
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+          <div class="nav" data-flex="center">
+            <div class="nav__item" data-col="6">
+              <div class="field-">
+                <label class="field-group__label align-center">
+                  <div
+                    class="tag tag_big"
+                    :class="{tag_link : elevation > -1}"
+                  >{{elevation > -1 ? elevation : '-'}}</div>
+                </label>
+                <input type="range" min="-1" max="24" v-model="elevation" class="range-slider" />
+                <div class="field-group__info align-center">elevation</div>
               </div>
             </div>
-            <div slot="markup">
-              <pre v-highlightjs="markup"><code class="html"></code></pre>
+            <div class="nav__item" data-col="fit" data-flex="center">
+              <div class="field-">
+                <label class="field-group__label align-center">
+                  <div
+                    class="tag tag_big"
+                    :class="{tag_link : hoverElevation > -1}"
+                  >{{hoverElevation > -1 ? hoverElevation : '-'}}</div>
+                </label>
+                <input type="range" min="-1" max="24" v-model="hoverElevation" class="range-slider" />
+                <div class="field-group__info align-center">hover:elevation</div>
+              </div>
             </div>
-            <div slot="config">
-              <pre v-highlightjs="config"><code class="scss"></code></pre>
-            </div>
-          </doc-tab>
-        </div>
-        <div data-col="2">
-          <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-            <li class="nav__item"><h2>is-elevated</h2></li>
-          </ul>
+          </div>
         </div>
       </div>
+
+      <div class="spacer"></div>
+      <pre v-highlightjs="markup"><code class="html"></code></pre>
+      <div class="spacer"></div>
+      <params-table :params="params"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>
 
 <script>
 import DocTab from '@/components/DocTab.vue';
+import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   name: 'IsElevated',
   components: {
     DocTab,
+    ParamsTable,
+    RequiresList,
   },
   data: () => {
     return {
+      markup: `<div class="is-padding-5 is-elevated-4">
+  <h1>watch me elevate</h1>
+</div>`,
       elevation: 4,
-      hoverElevationActive: false,
-      hoverElevation: 0,
-      markup: `<div class="is-elevated-#"></div>
-<div class="hover:is-elevated-#"></div>`,
-      config: `$elevation-color: #000;
-$elevation-opacity: 1;
-$elevation-prefix: 'is-elevated-';
-
-$elevation-transition-duration: 280ms;
-$elevation-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);`,
+      hoverElevation: -1,
+      params: [
+        {
+          name: '$elevation-color',
+          type: 'color',
+          default: '#000',
+        },
+        {
+          name: '$elevation-opacity',
+          type: 'number',
+          default: '1',
+          description: `multiplier for umbra (&times; 0.1), penumbra (&times; 0.08) and ambient (&times; 0.06)`,
+        },
+        {
+          name: '$elevation-transition-duration',
+          type: 'ms | s',
+          default: '280ms',
+        },
+        {
+          name: '$elevation-transition-timing-function',
+          type: 'string',
+          default: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        },
+      ],
+      requires: [{ name: 'elevation()', type: 'mixin' }, { name: 'elevation-transition()', type: 'mixin' }],
     };
+  },
+  computed: {
+    classes() {
+      return [
+        this.elevation > 1 ? 'is-elevated-' + this.elevation : null,
+        this.hoverElevation > 1 ? 'hover:is-elevated-' + this.hoverElevation : null,
+      ]
+        .join(' ')
+        .trim();
+    },
+  },
+  watch: {
+    classes: function(val) {
+      this.markup = `<div class="is-padding-5 ${val}">
+  <h1>watch me elevate</h1>
+</div>`;
+    },
   },
 };
 </script>
