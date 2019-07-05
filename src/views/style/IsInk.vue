@@ -1,77 +1,104 @@
 <template>
-  <blocks-group :groups="sectionGroups" section-title="is-ink"></blocks-group>
+  <section>
+    <div data-col="10 8@xl">
+      <div class="titlebar">
+        <h1>is-ink</h1>
+      </div>
+      <div class="demo-preview is-padding-8" data-flex="column center-items">
+        <div v-html="markup"></div>
+
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+          <div class="nav" data-flex="center">
+            <div class="nav__item" data-col="fit">
+              <div class="input-group is-margin-top-2">
+                <label for="alerStyle" class="input-group__addon">
+                  <svg class="ixo is-ink-link">
+                    <use xlink:href="#saturation" />
+                  </svg>
+                </label>
+                <div class="input-group__addon">
+                  <select class="input input_round" id="alerStyle" v-model="style">
+                    <option
+                      :value="style"
+                      v-for="(style, index) in styles"
+                      :key="index"
+                      v-text="style === 'is-ink' ? 'default' : style.slice(7)"
+                    ></option>
+                  </select>
+                </div>
+              </div>
+              <div class="field-group__info align-center">change color</div>
+            </div>
+            <div class="nav__item" data-col="fit">
+              <div class="input-group is-margin-top-2">
+                <label for="alerStyle" class="input-group__addon">
+                  <svg class="ixo is-ink-link">
+                    <use xlink:href="#saturation" />
+                  </svg>
+                </label>
+                <div class="input-group__addon">
+                  <select class="input input_round" id="alerStyle" v-model="hoverStyle">
+                    <option
+                      :value="style"
+                      v-for="(style, index) in hoverStyles"
+                      :key="index"
+                      v-text="style === '' ? 'select' : style === 'hover:is-ink' ? 'default' : style.slice(13)"
+                    ></option>
+                  </select>
+                </div>
+              </div>
+              <div class="field-group__info align-center">change hover:color</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <pre v-highlightjs="markup"><code class="html"></code></pre>
+      <div class="spacer"></div>
+      <params-table :params="params"></params-table>
+    </div>
+  </section>
 </template>
 
 <script>
-import BlocksGroup from '@/components/BlocksGroup.vue';
+import ParamsTable from '@/components/ParamsTable.vue';
 
 export default {
   name: 'IsInk',
   components: {
-    BlocksGroup,
+    ParamsTable,
   },
   data: () => {
     return {
-      sectionGroups: [
+      markup: `<h1 class="is-ink">change my color</h1>`,
+      styles: [
+        'is-ink',
+        'is-ink-light',
+        'is-ink-lighter',
+        'is-ink-lightest',
+        'is-ink-link',
+        'is-ink-super',
+        'is-ink-highlight',
+        'is-ink-invert',
+      ],
+      style: 'is-ink',
+      hoverStyles: [
+        '',
+        'hover:is-ink',
+        'hover:is-ink-light',
+        'hover:is-ink-lighter',
+        'hover:is-ink-lightest',
+        'hover:is-ink-link',
+        'hover:is-ink-super',
+        'hover:is-ink-highlight',
+        'hover:is-ink-invert',
+      ],
+      hoverStyle: '',
+      params: [
         {
-          title: '',
-          id: 'is-ink',
-          navTitle: 'is-ink',
-          groupItems: [
-            {
-              title: '',
-              preview: `<div data-grid>
-  <div data-col="6">
-    <div class="is-giga is-margin-bottom-3 well align-center is-ink">
-      is-ink
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="is-giga is-margin-bottom-3 well align-center is-ink-light">
-      is-ink-light
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="is-giga is-margin-bottom-3 well align-center is-ink-lighter">
-      is-ink-lighter
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="is-giga is-margin-bottom-3 well align-center is-ink-lightest">
-      is-ink-lightest
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="is-giga is-margin-bottom-3 well align-center is-ink-link">
-      is-ink-link
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="is-giga is-margin-bottom-3 well align-center is-ink-super">
-      is-ink-super
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="is-giga is-margin-bottom-3 well align-center is-ink-highlight">
-      is-ink-highlight
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="is-giga is-margin-bottom-3 well align-center is-ink-invert">
-      is-ink-invert
-    </div>
-  </div>
-</div>
-`,
-              markup: `<div class="is-ink"></div>
-<div class="is-ink-light"></div>
-<div class="is-ink-lighter"></div>
-<div class="is-ink-lightest"></div>
-<div class="is-ink-link"></div>
-<div class="is-ink-super"></div>
-<div class="is-ink-highlight"></div>
-<div class="is-ink-invert"></div>`,
-              config: `$is-ink: (
+          name: `$is-ink`,
+          type: 'array',
+          default: `(
   '': $text,
   'light': $text-light,
   'lighter': $text-lighter,
@@ -81,71 +108,19 @@ export default {
   'highlight': $highlight,
   'invert': $text-invert,
 );`,
-            },
-          ],
-        },
-        {
-          title: '',
-          id: 'hover-is-ink',
-          navTitle: 'hover:is-ink',
-          groupItems: [
-            {
-              title: '',
-              preview: `<div data-grid>
-  <div data-col="6">
-    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink">
-      hover:is-ink
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-light">
-      hover:is-ink-light
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-lighter">
-      hover:is-ink-lighter
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-lightest">
-      hover:is-ink-lightest
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-link">
-      hover:is-ink-link
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-super">
-      hover:is-ink-super
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-highlight">
-      hover:is-ink-highlight
-    </div>
-  </div>
-  <div data-col="6">
-    <div class="demo-type is-giga is-margin-bottom-3 well align-center hover:is-ink-invert">
-      hover:is-ink-invert
-    </div>
-  </div>
-</div>`,
-              markup: `<div class="hover:is-ink"></div>
-<div class="hover:is-ink-light"></div>
-<div class="hover:is-ink-lighter"></div>
-<div class="hover:is-ink-lightest"></div>
-<div class="hover:is-ink-link"></div>
-<div class="hover:is-ink-super"></div>
-<div class="hover:is-ink-highlight"></div>
-<div class="hover:is-ink-invert"></div>`,
-            },
-          ],
         },
       ],
     };
+  },
+  computed: {
+    classes() {
+      return [this.style ? this.style : null, this.hoverStyle ? this.hoverStyle : null].join(' ');
+    },
+  },
+  watch: {
+    classes: function(val) {
+      this.markup = `<h1 class="${val}">change my color</h1>`;
+    },
   },
 };
 </script>

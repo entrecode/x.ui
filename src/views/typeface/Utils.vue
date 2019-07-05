@@ -54,7 +54,7 @@
           <pre v-highlightjs="alignPreview"><code class="html"></code></pre>
         </section>
 
-        <div class="divider"></div>
+        <div class="spacer"></div>
         <!-- scroll-to-font-weight -->
         <section class="is-margin-middle-8" id="scroll-to-font-weight">
           <h2>font-weight</h2>
@@ -120,7 +120,7 @@
           <params-table :params="fontWeightParams" title="core params"></params-table>
         </section>
 
-        <div class="divider"></div>
+        <div class="spacer"></div>
 
         <!-- scroll-to-font-family -->
         <section class="is-margin-middle-8" id="scroll-to-font-family">
@@ -161,7 +161,7 @@
           <params-table :params="fontFamilyParams" title="core params"></params-table>
         </section>
 
-        <div class="divider"></div>
+        <div class="spacer"></div>
 
         <section class="is-margin-middle-8" id="scroll-to-text-transform">
           <h2>text-transform</h2>
@@ -203,7 +203,7 @@
           <pre v-highlightjs="textTransformPreview"><code class="html"></code></pre>
         </section>
 
-        <div class="divider"></div>
+        <div class="spacer"></div>
 
         <section class="is-margin-middle-8" id="scroll-to-word-wrap">
           <h2>word-wrap</h2>
