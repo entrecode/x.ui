@@ -3,7 +3,7 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {array} $is-border
+/// @param {string} $is-border
 
 .is-border {
   border: array-magic($is-border);
