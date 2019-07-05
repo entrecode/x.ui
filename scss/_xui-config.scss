@@ -2139,7 +2139,7 @@ $is-radius-options: () !default;
 $is-radius-options: map-merge(
   (
     '0': 0,
-    '': 4,
+    '': 8,
   ),
   $is-radius-options
 );
