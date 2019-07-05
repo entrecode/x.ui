@@ -3,7 +3,7 @@
   <section>
     <div data-grid>
       <div data-col="8 6@xl">
-        <section class="is-margin-bottom-8" id="scroll-to-align">
+        <section id="scroll-to-align">
           <h2>align</h2>
           <div class="demo-preview is-padding-8" data-flex="column center center-items">
             <div data-col="8">
@@ -55,8 +55,9 @@
         </section>
 
         <div class="spacer"></div>
+        
         <!-- scroll-to-font-weight -->
-        <section class="is-margin-middle-8" id="scroll-to-font-weight">
+        <section id="scroll-to-font-weight">
           <h2>font-weight</h2>
           <div class="demo-preview is-padding-8" data-flex="column center center-items">
             <div data-col="8">
