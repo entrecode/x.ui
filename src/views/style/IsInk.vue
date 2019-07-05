@@ -114,7 +114,7 @@ export default {
   },
   computed: {
     classes() {
-      return [this.style ? this.style : null, this.hoverStyle ? this.hoverStyle : null].join(' ');
+      return [this.style ? this.style : null, this.hoverStyle ? this.hoverStyle : null].join(' ').trim();
     },
   },
   watch: {
