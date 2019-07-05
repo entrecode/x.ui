@@ -74,9 +74,9 @@
       @media (min-width: ($modal-max-width-absolute * 1px)) {
         max-width: $modal-max-width-relative * 1%;
 
-        .modal__header,
-        .modal__body,
-        .modal__footer {
+        > .modal__header,
+        > .modal__body,
+        > .modal__footer {
           max-width: rem($modal-max-width-absolute);
         }
       }
