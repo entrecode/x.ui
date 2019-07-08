@@ -85,7 +85,7 @@ export default {
         },
         {
           name: '$xui-list-group-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],
@@ -117,7 +117,7 @@ export default {
         },
         {
           name: '$xui-list-group-header-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],
@@ -149,7 +149,7 @@ export default {
         },
         {
           name: '$xui-list-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],
@@ -186,7 +186,7 @@ export default {
         },
         {
           name: '$xui-list-item-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
@@ -201,7 +201,7 @@ export default {
         },
         {
           name: '$xui-list-item-hover-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
@@ -216,7 +216,7 @@ export default {
         },
         {
           name: '$xui-list-item-active-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
 

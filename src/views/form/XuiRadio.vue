@@ -61,17 +61,17 @@ export default {
         },
         {
           name: '$xui-radio-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
           name: '$xui-radio-hover-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
           name: '$xui-radio-checked-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {

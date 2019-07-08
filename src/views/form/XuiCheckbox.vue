@@ -56,17 +56,17 @@ export default {
         },
         {
           name: '$xui-checkbox-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
           name: '$xui-checkbox-hover-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
           name: '$xui-checkbox-checked-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {

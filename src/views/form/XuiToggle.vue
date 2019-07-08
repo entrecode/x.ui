@@ -67,7 +67,7 @@ export default {
         },
         {
           name: '$xui-toggle-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         { name: '$xui-toggle-pin-background', type: 'color', default: '$background' },
@@ -76,7 +76,7 @@ export default {
         { name: '$xui-toggle-pin-radius', type: 'number', default: '$xui-toggle-pin-height / 2;' },
         {
           name: '$xui-toggle-pin-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
@@ -91,7 +91,7 @@ export default {
         },
         {
           name: '$xui-toggle-label-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],

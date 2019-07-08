@@ -21,7 +21,7 @@
                     :class="{'is-ink': alignClass !== 'align-left'}"
                   >
                     <svg class="ixo">
-                      <use xlink:href="#align-left"></use>
+                      <use xlink:href="#align-left" />
                     </svg>
                   </a>
                 </div>
@@ -32,7 +32,7 @@
                     :class="{'is-ink': alignClass !== 'align-center'}"
                   >
                     <svg class="ixo">
-                      <use xlink:href="#align-center"></use>
+                      <use xlink:href="#align-center" />
                     </svg>
                   </a>
                 </div>
@@ -43,7 +43,7 @@
                     :class="{'is-ink': alignClass !== 'align-right'}"
                   >
                     <svg class="ixo">
-                      <use xlink:href="#align-right"></use>
+                      <use xlink:href="#align-right" />
                     </svg>
                   </a>
                 </div>
@@ -55,7 +55,7 @@
         </section>
 
         <div class="spacer"></div>
-        
+
         <!-- scroll-to-font-weight -->
         <section id="scroll-to-font-weight">
           <h2>font-weight</h2>
@@ -75,7 +75,7 @@
                     :class="{'is-ink': fontWeightClass !== 'is-light'}"
                   >
                     <svg class="ixo">
-                      <use xlink:href="#is-light"></use>
+                      <use xlink:href="#is-light" />
                     </svg>
                   </a>
                 </div>
@@ -86,7 +86,7 @@
                     :class="{'is-ink': fontWeightClass !== 'is-normal'}"
                   >
                     <svg class="ixo">
-                      <use xlink:href="#is-normal"></use>
+                      <use xlink:href="#is-normal" />
                     </svg>
                   </a>
                 </div>
@@ -97,7 +97,7 @@
                     :class="{'is-ink': fontWeightClass !== 'is-medium'}"
                   >
                     <svg class="ixo">
-                      <use xlink:href="#is-medium"></use>
+                      <use xlink:href="#is-medium" />
                     </svg>
                   </a>
                 </div>
@@ -108,7 +108,7 @@
                     :class="{'is-ink': fontWeightClass !== 'is-bold'}"
                   >
                     <svg class="ixo">
-                      <use xlink:href="#is-bold"></use>
+                      <use xlink:href="#is-bold" />
                     </svg>
                   </a>
                 </div>
@@ -182,7 +182,7 @@
                     :class="{'is-ink': textTransformClass !== 'is-lowercase'}"
                   >
                     <svg class="ixo">
-                      <use xlink:href="#lowercase"></use>
+                      <use xlink:href="#lowercase" />
                     </svg>
                   </a>
                 </div>
@@ -193,7 +193,7 @@
                     :class="{'is-ink': textTransformClass !== 'is-uppercase'}"
                   >
                     <svg class="ixo">
-                      <use xlink:href="#uppercase"></use>
+                      <use xlink:href="#uppercase" />
                     </svg>
                   </a>
                 </div>
@@ -253,6 +253,21 @@
           <div class="spacer"></div>
           <pre v-highlightjs="wordWrapPreview"><code class="html"></code></pre>
         </section>
+
+        <div class="spacer"></div>
+
+        <section class="is-margin-middle-8" id="scroll-to-mark">
+          <h2>mark</h2>
+          <div class="demo-preview is-padding-8" data-flex="column center center-items">
+            <div data-col="8">
+              <div class="is-h1" v-html="markPreview"></div>
+            </div>
+          </div>
+          <div class="spacer"></div>
+          <pre v-highlightjs="markPreview"><code class="html"></code></pre>
+          <div class="spacer"></div>
+          <params-table :params="markParams" title="core params"></params-table>
+        </section>
       </div>
       <div data-col="4">
         <ul class="nav nav_stacked is-sticky" style="top: 120px;">
@@ -273,6 +288,9 @@
           </li>
           <li class="nav__item">
             <a href="#scroll-to-word-wrap" class="is-kilo is-ink hover:is-ink-link">word-wrap</a>
+          </li>
+          <li class="nav__item">
+            <a href="#scroll-to-mark" class="is-kilo is-ink hover:is-ink-link">mark</a>
           </li>
         </ul>
       </div>
@@ -298,6 +316,9 @@ export default {
       textTransformPreview: `<div class="is-uppercase">...</div>`,
       fontWeightClass: 'is-light',
       fontWeightPreview: `<p class="is-light">...</p>`,
+      markPreview: `<mark>Move the needle synergy indicators</mark> collaborative 
+consumption problem-solvers black lives matter co-create. Rubric 
+scalable commitment, shine our work shared unit of analysis.`,
       fontWeightParams: [
         {
           name: '$is-light',
@@ -337,6 +358,23 @@ export default {
           name: '$monospace-font',
           type: 'string',
           default: 'monospace',
+        },
+      ],
+      markParams: [
+        {
+          name: '$mark-color',
+          type: 'color | false',
+          default: 'false',
+        },
+        {
+          name: '$mark-background',
+           type: 'color | false',
+          default: 'false',
+        },
+        {
+          name: '$mark-style',
+          type: 'map',
+          default: '',
         },
       ],
     };

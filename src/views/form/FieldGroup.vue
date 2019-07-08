@@ -70,20 +70,29 @@
       <pre v-highlightjs="withGridMarkup" v-show="activeTab === 2"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="inputParams"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>
 
 <script>
 import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   name: 'Form',
   components: {
+    RequiresList,
     ParamsTable,
   },
   data: () => {
     return {
+      requires: [
+        { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
+        { name: 'inject-style()', type: 'mixin', link: '#scroll-to-inject-style' },
+        { name: 'em()', type: 'mixin', link: '#scroll-to-em' },
+      ],
       activeTab: 1,
       defaultMarkup: `<div class="field-group">
   <label for="" class="field-group__label">field-group label</label>
@@ -139,7 +148,7 @@ export default {
         },
         {
           name: '$field-group-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
@@ -154,7 +163,7 @@ export default {
         },
         {
           name: '$field-group-label-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
@@ -169,7 +178,7 @@ export default {
         },
         {
           name: '$field-group-info-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],

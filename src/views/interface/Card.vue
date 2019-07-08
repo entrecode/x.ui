@@ -72,7 +72,7 @@ export default {
         },
         {
           name: '$card-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],

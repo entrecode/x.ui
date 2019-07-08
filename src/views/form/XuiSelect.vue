@@ -102,12 +102,12 @@ export default {
         },
         {
           name: '$file-upload-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
           name: '$file-upload-hover-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],
