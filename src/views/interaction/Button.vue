@@ -127,7 +127,7 @@
       <div class="divider"></div>
       <params-table :params="invertStyleParams" title="invert style params"></params-table>
       <div class="divider"></div>
-      <params-table :params="clearStyleParams" title="invert style params"></params-table>
+      <params-table :params="clearStyleParams" title="clear style params"></params-table>
       <div class="divider"></div>
       <params-table :params="defaultOutlinedParams" title="default outline params"></params-table>
       <div class="divider"></div>

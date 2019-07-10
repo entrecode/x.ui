@@ -90,7 +90,7 @@ $state-hover-contrast: $link !default;
 // @param {color} $state-info-safe [set-contrast($background, $state-info)]
 // @param {color} $state-info-hover [set-hover($state-info)]
 $state-info: #cae6fe !default;
-$state-info-contrast: set-contrast($background, $state-info) !default;
+$state-info-contrast: set-contrast($state-info) !default;
 $state-info-safe: set-contrast($background, $state-info) !default;
 $state-info-hover: set-hover($state-info) !default;
 
@@ -99,7 +99,7 @@ $state-info-hover: set-hover($state-info) !default;
 // @param {color} $state-error-safe [set-contrast($background, $state-error)]
 // @param {color} $state-error-hover [set-hover($state-error)]
 $state-error: #f9d7da !default;
-$state-error-contrast: set-contrast($background, $state-error) !default;
+$state-error-contrast: set-contrast($state-error) !default;
 $state-error-safe: set-contrast($background, $state-error) !default;
 $state-error-hover: set-hover($state-error) !default;
 
@@ -108,7 +108,7 @@ $state-error-hover: set-hover($state-error) !default;
 // @param {color} $state-success-safe [set-contrast($background, $state-success)]
 // @param {color} $state-success-hover [set-hover($state-success)]
 $state-success: #d3ecdb !default;
-$state-success-contrast: set-contrast($background, $state-success) !default;
+$state-success-contrast: set-contrast($state-success) !default;
 $state-success-safe: set-contrast($background, $state-success) !default;
 $state-success-hover: set-hover($state-success) !default;
 
@@ -117,7 +117,7 @@ $state-success-hover: set-hover($state-success) !default;
 // @param {color} $state-warning-safe [set-contrast($background, $state-warning)]
 // @param {color} $state-warning-hover [set-hover($state-warning)]
 $state-warning: #fff2cf !default;
-$state-warning-contrast: set-contrast($background, $state-warning) !default;
+$state-warning-contrast: set-contrast($state-warning) !default;
 $state-warning-safe: set-contrast($background, $state-warning) !default;
 $state-warning-hover: set-hover($state-warning) !default;
 
@@ -984,16 +984,16 @@ $nav-link-style: () !default;
 // @param {color} $nav-link-hover-background
 // @param {color} $nav-link-hover-color
 // @param {array} $nav-link-hover-style
-$nav-link-hover-background: $state-hover !default;
-$nav-link-hover-color: inherit !default;
+$nav-link-hover-background: $nav-link-background !default;
+$nav-link-hover-color: $nav-link-color !default;
 $nav-link-hover-style: () !default;
 
-// @param {color} $nav-link-selected-background
-// @param {color} $nav-link-selected-color
-// @param {array} $nav-link-selected-style
-$nav-link-selected-background: $nav-link-hover-background !default;
-$nav-link-selected-color: $nav-link-hover-color !default;
-$nav-link-selected-style: $nav-link-hover-style !default;
+// @param {color} $nav-link-active-background
+// @param {color} $nav-link-active-color
+// @param {array} $nav-link-active-style
+$nav-link-active-background: $nav-link-hover-background !default;
+$nav-link-active-color: $nav-link-hover-color !default;
+$nav-link-active-style: () !default;
 
 //
 // TITLE
@@ -1690,6 +1690,7 @@ $is-ink: map-merge(
     'lighter': $text-lighter,
     'lightest': $text-lightest,
     'link': $link,
+    'minor': $minor-safe,
     'super': $super,
     'highlight': $highlight,
     'invert': $text-invert,

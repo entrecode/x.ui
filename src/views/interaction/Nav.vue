@@ -36,6 +36,12 @@
       <params-table :params="params"></params-table>
       <div class="divider"></div>
       <params-table :params="stackedParams" title="stacked params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="itemParams" title="item params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="linkParams" title="link params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="dividerParams" title="divider params"></params-table>
       <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
@@ -65,16 +71,33 @@ export default {
         { name: '$nav-padding', type: 'array', default: '0' },
         { name: '$nav-spacing', type: 'array', default: '0' },
         { name: '$nav-style', type: 'map' },
-        { name: '$nav-item-padding', type: 'array', default: '8' },
-        { name: '$nav-divider-color', type: 'color', default: '$base-divider-color // rgba($text, .1)' },
-        { name: '$nav-divider-size', type: 'number', default: '1' },
-        { name: '$nav-divider-spacing', type: 'array', default: '$nav-item-padding' },
       ],
       stackedParams: [
         { name: '$nav-stacked-padding', type: 'array', default: '0' },
         { name: '$nav-stacked-spacing', type: 'array', default: '0' },
         { name: '$nav-stacked-style', type: 'map' },
         { name: '$nav-stacked-item-padding', type: 'array', default: '$nav-item-padding' },
+      ],
+      linkParams: [
+        { name: '$nav-link-radius', type: 'array', default: '4' },
+        { name: '$nav-link-spacing', type: 'array', default: '0' },
+        { name: '$nav-link-padding', type: 'array', default: '4' },
+        { name: '$nav-link-font-size', type: 'number', default: '$base-font-size' },
+        { name: '$nav-link-background', type: 'color', default: 'none' },
+        { name: '$nav-link-color', type: 'color', default: '$text' },
+        { name: '$nav-link-style', type: 'array', default: '' },
+        { name: '$nav-link-hover-background', type: 'color', default: '$nav-link-background' },
+        { name: '$nav-link-hover-color', type: 'color', default: '$nav-link-color' },
+        { name: '$nav-link-hover-style', type: 'array', default: '' },
+        { name: '$nav-link-active-background', type: 'color', default: '$nav-link-hover-background' },
+        { name: '$nav-link-active-color', type: 'color', default: '$nav-link-hover-color' },
+        { name: '$nav-link-active-style', type: 'array', default: '' },
+      ],
+      itemParams: [{ name: '$nav-item-padding', type: 'array', default: '8' }],
+      dividerParams: [
+        { name: '$nav-divider-color', type: 'color', default: '$base-divider-color // rgba($text, .1)' },
+        { name: '$nav-divider-size', type: 'number', default: '1' },
+        { name: '$nav-divider-spacing', type: 'array', default: '$nav-item-padding' },
       ],
       requires: [
         { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
