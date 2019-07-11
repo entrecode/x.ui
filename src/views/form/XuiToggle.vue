@@ -38,7 +38,8 @@ export default {
       markup: `<div class="xui-toggle">
   <input id="toggle-1" type="checkbox">
   <label for="toggle-1" class="xui-toggle__label">
-    <div class="xui-toggle__switch"></div>toggle with a longer label
+    <div class="xui-toggle__switch"></div> 
+    toggle with a longer label
   </label>
 </div>`,
       params: [
