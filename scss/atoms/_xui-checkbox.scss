@@ -42,6 +42,22 @@
     }
   }
 
+  // function to set equal margin for xui-checkbox without a label
+  $_length: length($xui-checkbox-spacing);
+  $_s: $xui-checkbox-spacing;
+
+  @if ($_length == 4) {
+    $_s: nth($xui-checkbox-spacing, 4);
+  } @else if ($_length > 1) {
+    $_s: nth($xui-checkbox-spacing, 2);
+  }
+
+  &:empty {
+    &::before {
+      margin-right: rem($_s);
+    }
+  }
+
   &::before {
     content: '\2714\fe0e';
     font-family: 'sans-serif';
