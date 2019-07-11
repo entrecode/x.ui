@@ -55,6 +55,8 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>
@@ -71,6 +73,7 @@ export default {
   },
   data: () => {
     return {
+      requires: [{ name: 'rem()', type: 'function', link: '#scroll-to-rem' }],
       radiusOptions: ['is-radius-0', 'is-radius', 'is-round'],
       radiusOption: 'is-radius',
       tl: true,

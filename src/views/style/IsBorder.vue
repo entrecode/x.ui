@@ -88,7 +88,7 @@ export default {
   },
   data: () => {
     return {
-      requires: [{ name: 'array-magic()', type: 'mixin', link: '#scroll-to-array-magic' }],
+      requires: [{ name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' }],
       border: new Set(),
       borderClass: '',
       markup: `<div class="is-border"></div>`,
@@ -96,7 +96,7 @@ export default {
         {
           name: '$is-border',
           type: 'string',
-          value: '1 solid rgba($text, 0.1)',
+          default: '1 solid $base-divider-color',
         },
       ],
     };

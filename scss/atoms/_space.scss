@@ -6,6 +6,10 @@
 /// @example
 ///   <div class='y-space-2 x-space-2-md'></div>
 ///   <div class='x-space-2'></div>
+///
+/// @require {variable} $spacings
+/// @require {function} get-space
+/// @require {mixin} set-breakpoints
 
 @each $_spacing, $_h in $spacings {
   .y-space-#{$_spacing} {

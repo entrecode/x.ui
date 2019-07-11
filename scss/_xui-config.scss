@@ -1670,7 +1670,7 @@ $avatar-style: () !default;
 //
 // is-border
 // ------------------------------------------------------
-// @param {string} $is-border
+// @param {string} $is-border [1 solid $base-divider-color]
 $is-border: 1 solid $base-divider-color !default;
 
 //

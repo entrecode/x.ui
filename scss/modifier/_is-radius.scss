@@ -4,6 +4,8 @@
 /// @group modifier
 ///
 /// @param {map} $is-radius-options
+///
+/// @require {function} rem
 
 @mixin _is-radius($radius) {
   border-radius: $radius;

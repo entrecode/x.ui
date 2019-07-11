@@ -1,6 +1,8 @@
 <template>
   <section id="scroll-to-bumper">
-    <h2>bumper</h2>
+    <div class="titlebar">
+      <h2>bumper</h2>
+    </div>
     <div class="demo-preview is-padding-8">
       <div class="is-placed-ne is-absolute">
         <div class="is-padding-2 is-theme">
@@ -66,7 +68,7 @@ export default {
       params: [
         {
           name: '$bumper-size',
-          default: 4,
+          default: '4',
           type: 'number',
         },
         {
@@ -109,5 +111,3 @@ export default {
   },
 };
 </script>
-
-<style scoped lang="scss"></style>
