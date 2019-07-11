@@ -2176,6 +2176,12 @@ $is-radius-options: map-merge(
 $is-padding-options: $spacings !default;
 
 //
+// IS-MARGIN
+// -------------------------------------------------------------------------------------------------
+// @param {map} $is-margin-options [$spacings]
+$is-margin-options: $spacings !default;
+
+//
 // IS-HEIGHT
 // -------------------------------------------------------------------------------------------------
 // @param {map} $is-height-map

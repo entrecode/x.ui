@@ -4,7 +4,6 @@
       <div class="titlebar">
         <h1>is-margin</h1>
       </div>
-
       <div class="demo-preview is-padding-8" data-flex="center">
         <div class="demo-bg" style="--spacingColor: 0,255,0;">
           <div class="is-theme is-padding-3" :class="isMarginClass + marginSize">
@@ -72,16 +71,20 @@
       <div class="spacer"></div>
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
+      <params-table :params="params"></params-table>
+      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>
 
 <script>
+import ParamsTable from '@/components/ParamsTable.vue';
 import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   components: {
+    ParamsTable,
     RequiresList,
   },
   data: () => {
@@ -91,10 +94,16 @@ export default {
         { name: 'get-space()', type: 'function', link: '#scroll-to-get-space' },
         { name: 'set-breakpoints()', type: 'mixin', link: '#scroll-to-set-breakpoints' },
       ],
+      params: [
+        {
+          name: '$is-margin-options',
+          type: 'map',
+          default: '$spacings',
+        },
+      ],
       isMarginClass: 'is-margin-',
       marginSize: 3,
       markup: `<div class="is-margin-3"></div>`,
-      config: `$is-margin-options: $spacings;`,
     };
   },
   computed: {
