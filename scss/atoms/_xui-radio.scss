@@ -41,6 +41,22 @@
     }
   }
 
+  // function to set equal margin for xui-checkbox without a label
+  $_length: length($xui-radio-spacing);
+  $_s: $xui-radio-spacing;
+
+  @if ($_length == 4) {
+    $_s: nth($xui-radio-spacing, 4);
+  } @else if ($_length > 1) {
+    $_s: nth($xui-radio-spacing, 2);
+  }
+
+  &:empty {
+    &::before {
+      margin-right: rem($_s);
+    }
+  }
+
   &::before {
     content: '';
     display: inline-flex;

@@ -7,16 +7,22 @@
       <div class="demo-preview is-padding-8" data-flex="center">
         <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
           <div data-grid>
-            <div data-col="6">
+            <div data-col="auto">
               <div class="xui-radio">
-                <input type="radio" name="choice" id="boollean-1" />
-                <label for="boollean-1" class="xui-radio__label">checkbox</label>
+                <input type="radio" name="choice" id="gdhf" />
+                <label for="gdhf" class="xui-radio__label">checkbox</label>
               </div>
             </div>
-            <div data-col="6">
+            <div data-col="auto">
               <div class="xui-radio">
-                <input type="radio" name="choice" id="boollean-2" />
-                <label for="boollean-2" class="xui-radio__label">checkbox</label>
+                <input type="radio" name="choice" id="g3jhg" />
+                <label for="g3jhg" class="xui-radio__label">checkbox</label>
+              </div>
+            </div>
+            <div data-col="fit">
+              <div class="xui-radio">
+                <input type="radio" name="choice" id="hg3hg" />
+                <label for="hg3hg" class="xui-radio__label"></label>
               </div>
             </div>
           </div>
@@ -46,6 +52,12 @@ export default {
       markup: `<div class="xui-radio">
   <input type="radio" id="" name>
   <label for="" class="xui-radio__label">checkbox</label>
+</div>
+
+<!-- without label -->
+<div class="xui-radio">
+  <input type="radio" id="" name>
+  <label for="" class="xui-radio__label"></label>
 </div>`,
       params: [
         { name: '$xui-radio-spacing', type: 'array', default: '0 12 0 0' },
