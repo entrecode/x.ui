@@ -128,7 +128,7 @@ $state-warning-hover: set-hover($state-warning) !default;
 $xui-colors: () !default;
 $xui-colors: map-merge(
   (
-    base: (
+    'base': (
       'text': $text,
       'background': $background,
       'link': $link,
@@ -137,18 +137,38 @@ $xui-colors: map-merge(
       'highlight': $highlight,
       'divider': $base-divider-color,
     ),
-    text: (
+    'text': (
       'invert': $text-invert,
       'light': $text-light,
       'lighter': $text-lighter,
       'lightest': $text-lightest,
     ),
-    background: (
+    'background': (
       'invert': $background-invert,
       'light': $background-light,
       'lighter': $background-lighter,
       'lightest': $background-lightest,
     ),
+    'link': (
+      'contrast': $link-contrast,
+      'safe': $link-safe,
+      'hover': $link-hover,
+    ),
+    'minor': (
+      'contrast': $minor-contrast,
+      'safe': $minor-safe,
+      'hover': $minor-hover,
+    ),
+    'super': (
+      'contrast': $super-contrast,
+      'safe': $super-safe,
+      'hover': $super-hover,
+    ),
+    'highlight': (
+      'contrast': $highlight-contrast,
+      'safe': $highlight-safe,
+      'hover': $highlight-hover,
+    )
   ),
   $xui-colors
 );
@@ -1217,6 +1237,7 @@ $modal-footer-padding: 16 !default;
 $modal-footer-style: () !default;
 
 // DIALOG
+// @deprecated since 10.0.0
 // ------------------------------------------------------
 // @param {array} $dialog-padding [16]
 // @param {color} $dialog-wrapper-background [$backdrop]
@@ -1274,6 +1295,7 @@ $dialog-footer-padding: 8 !default;
 $dialog-footer-style: () !default;
 
 // DECK
+// @deprecated since 10.0.0
 // ------------------------------------------------------
 // @param {color} $deck-wrapper-background [$backdrop]
 // @param {number} $deck-z-index [100]
@@ -1330,6 +1352,7 @@ $deck-footer-padding: 8 !default;
 $deck-footer-style: () !default;
 
 // TOAST
+// @deprecated since 10.0.0
 // ------------------------------------------------------
 // @param {color} $toast-wrapper-background [$backdrop]
 // @param {number} $toast-z-index [100]
@@ -1379,6 +1402,7 @@ $toast-footer-padding: 8 !default;
 $toast-footer-style: () !default;
 
 // snackbar
+// @deprecated since 10.0.0
 // ------------------------------------------------------
 // @param {color} $snackbar-wrapper-background [$backdrop]
 // @param {number} $snackbar-z-index [100]
@@ -1797,10 +1821,10 @@ $field-group-label-spacing: 4 !default;
 $field-group-label-font-size: $base-font-size !default;
 $field-group-label-style: () !default;
 
-// @param {array} $field-group-info-spacing [8]
+// @param {array} $field-group-info-spacing [8 4]
 // @param {number} $field-group-info-font-size [$base-font-size * 0.75]
 // @param {array} $field-group-info-style
-$field-group-info-spacing: 8 !default;
+$field-group-info-spacing: 8 4 !default;
 $field-group-info-font-size: $base-font-size * 0.75 !default;
 $field-group-info-style: () !default;
 
