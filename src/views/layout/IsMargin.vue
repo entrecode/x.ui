@@ -1,95 +1,111 @@
 <template>
-  <section class="demo-section" id="scroll-to-is-margin">
-    <div data-container>
-      <div data-grid>
-        <div data-col="10">
-          <doc-tab>
-            <div slot="preview">
-              <div class="demo-bg" style="--spacingColor: 0,255,0;">
-                <div class="is-theme is-padding-3" :class="hasMarginClass + marginSize">
-                  <div class="nav" data-flex="center">
-                    <div class="nav__item">
-                      <div
-                        class="btn btn_clear"
-                        @click="hasMarginClass = 'is-margin-'"
-                        :class="hasMarginClass === 'is-margin-' ? 'is-ink-link' : 'is-ink-lighter'"
-                      >
-                        <svg class="ixo"><use xlink:href="#border-outside"></use></svg>
-                      </div>
-                    </div>
-                    <div class="nav__item">
-                      <div
-                        class="btn btn_clear"
-                        @click="hasMarginClass = 'is-margin-top-'"
-                        :class="hasMarginClass === 'is-margin-top-' ? 'is-ink-link' : 'is-ink-lighter'"
-                      >
-                        <svg class="ixo"><use xlink:href="#border-top"></use></svg>
-                      </div>
-                    </div>
-                    <div class="nav__item">
-                      <div
-                        class="btn btn_clear"
-                        @click="hasMarginClass = 'is-margin-right-'"
-                        :class="hasMarginClass === 'is-margin-right-' ? 'is-ink-link' : 'is-ink-lighter'"
-                      >
-                        <svg class="ixo"><use xlink:href="#border-right"></use></svg>
-                      </div>
-                    </div>
-                    <div class="nav__item">
-                      <div
-                        class="btn btn_clear"
-                        @click="hasMarginClass = 'is-margin-bottom-'"
-                        :class="hasMarginClass === 'is-margin-bottom-' ? 'is-ink-link' : 'is-ink-lighter'"
-                      >
-                        <svg class="ixo"><use xlink:href="#border-bottom"></use></svg>
-                      </div>
-                    </div>
-                    <div class="nav__item">
-                      <div
-                        class="btn btn_clear"
-                        @click="hasMarginClass = 'is-margin-left-'"
-                        :class="hasMarginClass === 'is-margin-left-' ? 'is-ink-link' : 'is-ink-lighter'"
-                      >
-                        <svg class="ixo"><use xlink:href="#border-left"></use></svg>
-                      </div>
-                    </div>
-                  </div>
-                  <input type="range" class="range-slider" min="0" max="8" v-model="marginSize" />
+  <section>
+    <div data-col="10 8@xl">
+      <div class="titlebar">
+        <h1>is-margin</h1>
+      </div>
+
+      <div class="demo-preview is-padding-8" data-flex="center">
+        <div class="demo-bg" style="--spacingColor: 0,255,0;">
+          <div class="is-theme is-padding-3" :class="isMarginClass + marginSize">
+            <div class="nav" data-flex="center">
+              <div class="nav__item">
+                <div
+                  class="btn btn_clear"
+                  @click="isMarginClass = 'is-margin-'"
+                  :class="isMarginClass === 'is-margin-' ? 'is-ink-link' : 'is-ink-lighter'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#border-outside" />
+                  </svg>
+                </div>
+              </div>
+              <div class="nav__item">
+                <div
+                  class="btn btn_clear"
+                  @click="isMarginClass = 'is-margin-top-'"
+                  :class="isMarginClass === 'is-margin-top-' ? 'is-ink-link' : 'is-ink-lighter'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#border-top" />
+                  </svg>
+                </div>
+              </div>
+              <div class="nav__item">
+                <div
+                  class="btn btn_clear"
+                  @click="isMarginClass = 'is-margin-right-'"
+                  :class="isMarginClass === 'is-margin-right-' ? 'is-ink-link' : 'is-ink-lighter'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#border-right" />
+                  </svg>
+                </div>
+              </div>
+              <div class="nav__item">
+                <div
+                  class="btn btn_clear"
+                  @click="isMarginClass = 'is-margin-bottom-'"
+                  :class="isMarginClass === 'is-margin-bottom-' ? 'is-ink-link' : 'is-ink-lighter'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#border-bottom" />
+                  </svg>
+                </div>
+              </div>
+              <div class="nav__item">
+                <div
+                  class="btn btn_clear"
+                  @click="isMarginClass = 'is-margin-left-'"
+                  :class="isMarginClass === 'is-margin-left-' ? 'is-ink-link' : 'is-ink-lighter'"
+                >
+                  <svg class="ixo">
+                    <use xlink:href="#border-left" />
+                  </svg>
                 </div>
               </div>
             </div>
-            <div slot="markup">
-              <pre v-highlightjs="markup"><code class="html"></code></pre>
-            </div>
-            <div slot="config">
-              <pre v-highlightjs="config"><code class="scss"></code></pre>
-            </div>
-          </doc-tab>
-        </div>
-        <div data-col="2">
-          <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-            <li class="nav__item"><h2>is-margin</h2></li>
-          </ul>
+            <input type="range" class="range-slider" min="0" max="8" v-model="marginSize" />
+          </div>
         </div>
       </div>
+      <div class="spacer"></div>
+      <pre v-highlightjs="markup"><code class="html"></code></pre>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>
 
 <script>
-import DocTab from '@/components/DocTab.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   components: {
-    DocTab,
+    RequiresList,
   },
   data: () => {
     return {
-      hasMarginClass: 'is-margin-',
+      requires: [
+        { name: '$spacings', type: 'variable', link: '#scroll-to-spacings' },
+        { name: 'get-space()', type: 'function', link: '#scroll-to-get-space' },
+        { name: 'set-breakpoints()', type: 'mixin', link: '#scroll-to-set-breakpoints' },
+      ],
+      isMarginClass: 'is-margin-',
       marginSize: 3,
-      markup: `...`,
+      markup: `<div class="is-margin-3"></div>`,
       config: `$is-margin-options: $spacings;`,
     };
+  },
+  computed: {
+    dirty() {
+      return [this.isMarginClass, this.marginSize].join('');
+    },
+  },
+  watch: {
+    dirty: function(val) {
+      this.markup = `<div class="${val}"></div>`;
+    },
   },
 };
 </script>

@@ -65,7 +65,7 @@ export default {
   data: () => {
     return {
       requires: [
-        { name: 'spacings()', type: 'variable', link: '#scroll-to-spacings' },
+        { name: '$spacings', type: 'variable', link: '#scroll-to-spacings' },
         { name: 'get-space()', type: 'function', link: '#scroll-to-get-space' },
         { name: 'set-breakpoints()', type: 'mixin', link: '#scroll-to-set-breakpoints' },
       ],

@@ -5,7 +5,7 @@
 ///
 /// @require {mixin} set-breakpoints
 /// @require {function} get-space
-/// @param {map} $spacings
+/// @require {map} $spacings
 
 .is-margin {
   @each $_spacing, $_h in $spacings {
