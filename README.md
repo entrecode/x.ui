@@ -118,4 +118,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### x.ui 9.x doc
 
-[https://xuidoc.entrecode.de/]()
+[x.ui 9.x documentation](https://xuidoc.entrecode.de/)
