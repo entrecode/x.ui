@@ -31,6 +31,9 @@ $darker-fallback: false !default;
   }
 }
 
+// @param {color} $_flatten-color-base
+$_flatten-color-base: $background !default;
+
 $link: #00cd97 !default;
 $link-contrast: set-contrast($link) !default;
 $link-safe: $link !default;
@@ -175,9 +178,6 @@ $xui-colors: map-merge(
 
 // @param {variable} $color-map-id [$xui-colors] - can be changed use a different colormap
 $color-map-id: $xui-colors !default;
-
-// @param {color} $flatten-color-base
-$flatten-color-base: $background;
 
 //
 // ROOT

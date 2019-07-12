@@ -369,8 +369,8 @@ bp(sm, max) // returns 479px`,
             { name: 'set-contrast()', link: '#scroll-to-set-contrast' },
           ],
           example: `color: flatten-color(rgba(black, .2);`,
-          codeShort: `@function flatten-color($fg, $bg: $flatten-color-base) {...}`,
-          code: `@function flatten-color($fg, $bg: $flatten-color-base) {
+          codeShort: `@function flatten-color($fg, $bg: $_flatten-color-base) {...}`,
+          code: `@function flatten-color($fg, $bg: $_flatten-color-base) {
   $a1: alpha($bg);
   $a2: alpha($fg);
 
@@ -387,7 +387,7 @@ bp(sm, max) // returns 479px`,
 
   @return rgba($r, $g, $b, $a);
 }`,
-          require: [{ name: '$flatten-color-base', type: 'color' }],
+          require: [{ name: '$_flatten-color-base', type: 'color', default: '$background // #fff' }],
           params: [
             {
               name: '$fg',
