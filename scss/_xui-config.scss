@@ -1107,29 +1107,29 @@ $xui-list-style: () !default;
 // @param {array} $xui-list-item-spacing [0]
 // @param {array} $xui-list-item-gutter [$base-spacing]
 // @param {number} $xui-list-item-radius [4]
-// @param {color} $xui-list-item-background [none]
-// @param {color} $xui-list-item-color [inherit]
+// @param {color} $xui-list-item-background [transparent]
+// @param {color} $xui-list-item-color [none]
 // @param {array} $xui-list-item-style
 $xui-list-item-padding: 8 !default;
 $xui-list-item-spacing: 0 !default;
 $xui-list-item-gutter: $base-spacing !default;
 $xui-list-item-radius: 4 !default;
-$xui-list-item-background: none !default;
-$xui-list-item-color: inherit !default;
+$xui-list-item-background: transparent !default;
+$xui-list-item-color: none !default;
 $xui-list-item-style: () !default;
 
-// @param {color} $xui-list-item-hover-background [none]
-// @param {color} $xui-list-item-hover-color [inherit]
+// @param {color} $xui-list-item-hover-background [$xui-list-item-background]
+// @param {color} $xui-list-item-hover-color [$xui-list-item-color]
 // @param {array} $xui-list-item-hover-style
-$xui-list-item-hover-background: none !default;
-$xui-list-item-hover-color: inherit !default;
+$xui-list-item-hover-background: $xui-list-item-background !default;
+$xui-list-item-hover-color: $xui-list-item-color !default;
 $xui-list-item-hover-style: () !default;
 
-// @param {color} $xui-list-item-active-background [none]
-// @param {color} $xui-list-item-active-color [inherit]
+// @param {color} $xui-list-item-active-background [$xui-list-item-hover-background]
+// @param {color} $xui-list-item-active-color [$xui-list-item-hover-color]
 // @param {array} $xui-list-item-active-style
-$xui-list-item-active-background: none !default;
-$xui-list-item-active-color: inherit !default;
+$xui-list-item-active-background: $xui-list-item-hover-background !default;
+$xui-list-item-active-color: $xui-list-item-hover-color !default;
 $xui-list-item-active-style: () !default;
 
 // @param {color} $xui-list-group-background [none]
