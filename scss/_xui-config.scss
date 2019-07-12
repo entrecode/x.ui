@@ -31,6 +31,9 @@ $darker-fallback: false !default;
   }
 }
 
+// @param {color} $_flatten-color-base
+$_flatten-color-base: $background !default;
+
 $link: #00cd97 !default;
 $link-contrast: set-contrast($link) !default;
 $link-safe: $link !default;
@@ -90,7 +93,7 @@ $state-hover-contrast: $link !default;
 // @param {color} $state-info-safe [set-contrast($background, $state-info)]
 // @param {color} $state-info-hover [set-hover($state-info)]
 $state-info: #cae6fe !default;
-$state-info-contrast: set-contrast($background, $state-info) !default;
+$state-info-contrast: set-contrast($state-info) !default;
 $state-info-safe: set-contrast($background, $state-info) !default;
 $state-info-hover: set-hover($state-info) !default;
 
@@ -99,7 +102,7 @@ $state-info-hover: set-hover($state-info) !default;
 // @param {color} $state-error-safe [set-contrast($background, $state-error)]
 // @param {color} $state-error-hover [set-hover($state-error)]
 $state-error: #f9d7da !default;
-$state-error-contrast: set-contrast($background, $state-error) !default;
+$state-error-contrast: set-contrast($state-error) !default;
 $state-error-safe: set-contrast($background, $state-error) !default;
 $state-error-hover: set-hover($state-error) !default;
 
@@ -108,7 +111,7 @@ $state-error-hover: set-hover($state-error) !default;
 // @param {color} $state-success-safe [set-contrast($background, $state-success)]
 // @param {color} $state-success-hover [set-hover($state-success)]
 $state-success: #d3ecdb !default;
-$state-success-contrast: set-contrast($background, $state-success) !default;
+$state-success-contrast: set-contrast($state-success) !default;
 $state-success-safe: set-contrast($background, $state-success) !default;
 $state-success-hover: set-hover($state-success) !default;
 
@@ -117,7 +120,7 @@ $state-success-hover: set-hover($state-success) !default;
 // @param {color} $state-warning-safe [set-contrast($background, $state-warning)]
 // @param {color} $state-warning-hover [set-hover($state-warning)]
 $state-warning: #fff2cf !default;
-$state-warning-contrast: set-contrast($background, $state-warning) !default;
+$state-warning-contrast: set-contrast($state-warning) !default;
 $state-warning-safe: set-contrast($background, $state-warning) !default;
 $state-warning-hover: set-hover($state-warning) !default;
 
@@ -128,7 +131,7 @@ $state-warning-hover: set-hover($state-warning) !default;
 $xui-colors: () !default;
 $xui-colors: map-merge(
   (
-    base: (
+    'base': (
       'text': $text,
       'background': $background,
       'link': $link,
@@ -137,27 +140,44 @@ $xui-colors: map-merge(
       'highlight': $highlight,
       'divider': $base-divider-color,
     ),
-    text: (
+    'text': (
       'invert': $text-invert,
       'light': $text-light,
       'lighter': $text-lighter,
       'lightest': $text-lightest,
     ),
-    background: (
+    'background': (
       'invert': $background-invert,
       'light': $background-light,
       'lighter': $background-lighter,
       'lightest': $background-lightest,
     ),
+    'link': (
+      'contrast': $link-contrast,
+      'safe': $link-safe,
+      'hover': $link-hover,
+    ),
+    'minor': (
+      'contrast': $minor-contrast,
+      'safe': $minor-safe,
+      'hover': $minor-hover,
+    ),
+    'super': (
+      'contrast': $super-contrast,
+      'safe': $super-safe,
+      'hover': $super-hover,
+    ),
+    'highlight': (
+      'contrast': $highlight-contrast,
+      'safe': $highlight-safe,
+      'hover': $highlight-hover,
+    )
   ),
   $xui-colors
 );
 
 // @param {variable} $color-map-id [$xui-colors] - can be changed use a different colormap
 $color-map-id: $xui-colors !default;
-
-// @param {color} $flatten-color-base
-$flatten-color-base: $background;
 
 //
 // ROOT
@@ -984,16 +1004,16 @@ $nav-link-style: () !default;
 // @param {color} $nav-link-hover-background
 // @param {color} $nav-link-hover-color
 // @param {array} $nav-link-hover-style
-$nav-link-hover-background: $state-hover !default;
-$nav-link-hover-color: inherit !default;
+$nav-link-hover-background: $nav-link-background !default;
+$nav-link-hover-color: $nav-link-color !default;
 $nav-link-hover-style: () !default;
 
-// @param {color} $nav-link-selected-background
-// @param {color} $nav-link-selected-color
-// @param {array} $nav-link-selected-style
-$nav-link-selected-background: $nav-link-hover-background !default;
-$nav-link-selected-color: $nav-link-hover-color !default;
-$nav-link-selected-style: $nav-link-hover-style !default;
+// @param {color} $nav-link-active-background
+// @param {color} $nav-link-active-color
+// @param {array} $nav-link-active-style
+$nav-link-active-background: $nav-link-hover-background !default;
+$nav-link-active-color: $nav-link-hover-color !default;
+$nav-link-active-style: () !default;
 
 //
 // TITLE
@@ -1087,29 +1107,29 @@ $xui-list-style: () !default;
 // @param {array} $xui-list-item-spacing [0]
 // @param {array} $xui-list-item-gutter [$base-spacing]
 // @param {number} $xui-list-item-radius [4]
-// @param {color} $xui-list-item-background [none]
-// @param {color} $xui-list-item-color [inherit]
+// @param {color} $xui-list-item-background [transparent]
+// @param {color} $xui-list-item-color [none]
 // @param {array} $xui-list-item-style
 $xui-list-item-padding: 8 !default;
 $xui-list-item-spacing: 0 !default;
 $xui-list-item-gutter: $base-spacing !default;
 $xui-list-item-radius: 4 !default;
-$xui-list-item-background: none !default;
-$xui-list-item-color: inherit !default;
+$xui-list-item-background: transparent !default;
+$xui-list-item-color: none !default;
 $xui-list-item-style: () !default;
 
-// @param {color} $xui-list-item-hover-background [none]
-// @param {color} $xui-list-item-hover-color [inherit]
+// @param {color} $xui-list-item-hover-background [$xui-list-item-background]
+// @param {color} $xui-list-item-hover-color [$xui-list-item-color]
 // @param {array} $xui-list-item-hover-style
-$xui-list-item-hover-background: none !default;
-$xui-list-item-hover-color: inherit !default;
+$xui-list-item-hover-background: $xui-list-item-background !default;
+$xui-list-item-hover-color: $xui-list-item-color !default;
 $xui-list-item-hover-style: () !default;
 
-// @param {color} $xui-list-item-active-background [none]
-// @param {color} $xui-list-item-active-color [inherit]
+// @param {color} $xui-list-item-active-background [$xui-list-item-hover-background]
+// @param {color} $xui-list-item-active-color [$xui-list-item-hover-color]
 // @param {array} $xui-list-item-active-style
-$xui-list-item-active-background: none !default;
-$xui-list-item-active-color: inherit !default;
+$xui-list-item-active-background: $xui-list-item-hover-background !default;
+$xui-list-item-active-color: $xui-list-item-hover-color !default;
 $xui-list-item-active-style: () !default;
 
 // @param {color} $xui-list-group-background [none]
@@ -1217,6 +1237,7 @@ $modal-footer-padding: 16 !default;
 $modal-footer-style: () !default;
 
 // DIALOG
+// @deprecated since 10.0.0
 // ------------------------------------------------------
 // @param {array} $dialog-padding [16]
 // @param {color} $dialog-wrapper-background [$backdrop]
@@ -1274,6 +1295,7 @@ $dialog-footer-padding: 8 !default;
 $dialog-footer-style: () !default;
 
 // DECK
+// @deprecated since 10.0.0
 // ------------------------------------------------------
 // @param {color} $deck-wrapper-background [$backdrop]
 // @param {number} $deck-z-index [100]
@@ -1330,6 +1352,7 @@ $deck-footer-padding: 8 !default;
 $deck-footer-style: () !default;
 
 // TOAST
+// @deprecated since 10.0.0
 // ------------------------------------------------------
 // @param {color} $toast-wrapper-background [$backdrop]
 // @param {number} $toast-z-index [100]
@@ -1379,6 +1402,7 @@ $toast-footer-padding: 8 !default;
 $toast-footer-style: () !default;
 
 // snackbar
+// @deprecated since 10.0.0
 // ------------------------------------------------------
 // @param {color} $snackbar-wrapper-background [$backdrop]
 // @param {number} $snackbar-z-index [100]
@@ -1646,7 +1670,7 @@ $avatar-style: () !default;
 //
 // is-border
 // ------------------------------------------------------
-// @param {array} $is-border
+// @param {string} $is-border [1 solid $base-divider-color]
 $is-border: 1 solid $base-divider-color !default;
 
 //
@@ -1690,6 +1714,7 @@ $is-ink: map-merge(
     'lighter': $text-lighter,
     'lightest': $text-lightest,
     'link': $link,
+    'minor': $minor-safe,
     'super': $super,
     'highlight': $highlight,
     'invert': $text-invert,
@@ -1796,10 +1821,10 @@ $field-group-label-spacing: 4 !default;
 $field-group-label-font-size: $base-font-size !default;
 $field-group-label-style: () !default;
 
-// @param {array} $field-group-info-spacing [8]
+// @param {array} $field-group-info-spacing [8 4]
 // @param {number} $field-group-info-font-size [$base-font-size * 0.75]
 // @param {array} $field-group-info-style
-$field-group-info-spacing: 8 !default;
+$field-group-info-spacing: 8 4 !default;
 $field-group-info-font-size: $base-font-size * 0.75 !default;
 $field-group-info-style: () !default;
 
@@ -2139,7 +2164,7 @@ $is-radius-options: () !default;
 $is-radius-options: map-merge(
   (
     '0': 0,
-    '': 4,
+    '': 8,
   ),
   $is-radius-options
 );
@@ -2149,6 +2174,12 @@ $is-radius-options: map-merge(
 // -------------------------------------------------------------------------------------------------
 // @param {map} $is-padding-options [$spacings]
 $is-padding-options: $spacings !default;
+
+//
+// IS-MARGIN
+// -------------------------------------------------------------------------------------------------
+// @param {map} $is-margin-options [$spacings]
+$is-margin-options: $spacings !default;
 
 //
 // IS-HEIGHT

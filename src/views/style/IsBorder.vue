@@ -1,92 +1,104 @@
 <template>
-  <section class="demo-section" id="scroll-to-is-border">
-    <div data-container>
-      <div data-grid>
-        <div data-col="10">
-          <doc-tab>
-            <div slot="preview">
-              <div :class="borderClass">
-                <div class="nav" data-flex="center">
-                  <div class="nav__item">
-                    <div
-                      class="btn btn_clear"
-                      @click="setBorder('outside')"
-                      :class="border.has('outside') ? 'is-ink-link' : 'is-ink-lighter'"
-                    >
-                      <svg class="ixo"><use xlink:href="#border-outside"></use></svg>
-                    </div>
-                  </div>
-                  <div class="nav__item">
-                    <div
-                      class="btn btn_clear"
-                      @click="setBorder('top')"
-                      :class="border.has('top') ? 'is-ink-link' : 'is-ink-lighter'"
-                    >
-                      <svg class="ixo"><use xlink:href="#border-top"></use></svg>
-                    </div>
-                  </div>
-                  <div class="nav__item">
-                    <div
-                      class="btn btn_clear"
-                      @click="setBorder('right')"
-                      :class="border.has('right') ? 'is-ink-link' : 'is-ink-lighter'"
-                    >
-                      <svg class="ixo"><use xlink:href="#border-right"></use></svg>
-                    </div>
-                  </div>
-                  <div class="nav__item">
-                    <div
-                      class="btn btn_clear"
-                      @click="setBorder('bottom')"
-                      :class="border.has('bottom') ? 'is-ink-link' : 'is-ink-lighter'"
-                    >
-                      <svg class="ixo"><use xlink:href="#border-bottom"></use></svg>
-                    </div>
-                  </div>
-                  <div class="nav__item">
-                    <div
-                      class="btn btn_clear"
-                      @click="setBorder('left')"
-                      :class="border.has('left') ? 'is-ink-link' : 'is-ink-lighter'"
-                    >
-                      <svg class="ixo"><use xlink:href="#border-left"></use></svg>
-                    </div>
-                  </div>
-                </div>
+  <section>
+    <div data-col="10 8@xl">
+      <div class="titlebar">
+        <h1>is-border</h1>
+      </div>
+
+      <div class="demo-preview is-padding-8" data-flex="center">
+        <div :class="borderClass">
+          <div class="nav" data-flex="center">
+            <div class="nav__item">
+              <div
+                class="btn btn_clear"
+                @click="setBorder('outside')"
+                :class="border.has('outside') ? 'is-ink-link' : 'is-ink-lighter'"
+              >
+                <svg class="ixo">
+                  <use xlink:href="#border-outside" />
+                </svg>
               </div>
             </div>
-            <div slot="markup">
-              <pre v-highlightjs="markup"><code class="html"></code></pre>
+            <div class="nav__item">
+              <div
+                class="btn btn_clear"
+                @click="setBorder('top')"
+                :class="border.has('top') ? 'is-ink-link' : 'is-ink-lighter'"
+              >
+                <svg class="ixo">
+                  <use xlink:href="#border-top" />
+                </svg>
+              </div>
             </div>
-            <div slot="config">
-              <pre v-highlightjs="config"><code class="scss"></code></pre>
+            <div class="nav__item">
+              <div
+                class="btn btn_clear"
+                @click="setBorder('right')"
+                :class="border.has('right') ? 'is-ink-link' : 'is-ink-lighter'"
+              >
+                <svg class="ixo">
+                  <use xlink:href="#border-right" />
+                </svg>
+              </div>
             </div>
-          </doc-tab>
-        </div>
-        <div data-col="2">
-          <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-            <li class="nav__item"><h2>is-border</h2></li>
-          </ul>
+            <div class="nav__item">
+              <div
+                class="btn btn_clear"
+                @click="setBorder('bottom')"
+                :class="border.has('bottom') ? 'is-ink-link' : 'is-ink-lighter'"
+              >
+                <svg class="ixo">
+                  <use xlink:href="#border-bottom" />
+                </svg>
+              </div>
+            </div>
+            <div class="nav__item">
+              <div
+                class="btn btn_clear"
+                @click="setBorder('left')"
+                :class="border.has('left') ? 'is-ink-link' : 'is-ink-lighter'"
+              >
+                <svg class="ixo">
+                  <use xlink:href="#border-left" />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="spacer"></div>
+      <pre v-highlightjs="markup"><code class="html"></code></pre>
+      <div class="spacer"></div>
+      <params-table :params="params"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>
 
 <script>
-import DocTab from '@/components/DocTab.vue';
+import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
-  name: 'HasBorder',
+  name: 'IsBorder',
   components: {
-    DocTab,
+    ParamsTable,
+    RequiresList,
   },
   data: () => {
     return {
+      requires: [{ name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' }],
       border: new Set(),
       borderClass: '',
-      markup: `...`,
-      config: `$is-border: 1 solid rgba($text, 0.1);`,
+      markup: `<div class="is-border"></div>`,
+      params: [
+        {
+          name: '$is-border',
+          type: 'string',
+          default: '1 solid $base-divider-color',
+        },
+      ],
     };
   },
   methods: {
@@ -151,11 +163,16 @@ export default {
         vb = null;
       }
 
-      this.borderClass = hb + ' ' + vb;
+      this.borderClass = [hb, vb].filter(x => !!x).join(' ');
     },
   },
   mounted() {
     this.setBorder('outside');
+  },
+  watch: {
+    borderClass: function() {
+      this.markup = `<div class="${this.borderClass}"></div>`;
+    },
   },
 };
 </script>

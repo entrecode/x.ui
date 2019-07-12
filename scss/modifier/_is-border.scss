@@ -3,7 +3,9 @@
 /// @access public
 /// @group modifier
 ///
-/// @param {array} $is-border
+/// @param {string} $is-border [1 solid $base-divider-color]
+///
+/// @require {function} array-magic
 
 .is-border {
   border: array-magic($is-border);
@@ -34,4 +36,3 @@
     border-right: array-magic($is-border);
   }
 }
-

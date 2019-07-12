@@ -321,7 +321,7 @@ export default {
         },
         {
           name: '$input-group-addon-border-style',
-          type: 'array',
+          type: 'map',
           default: '$input-border-style',
         },
         {
@@ -331,7 +331,7 @@ export default {
         },
         {
           name: '$input-group-addon-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],

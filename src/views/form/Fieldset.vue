@@ -39,20 +39,28 @@
       <pre v-highlightjs="defaultMarkup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="inputParams"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>
 
 <script>
 import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   name: 'Form',
   components: {
+    RequiresList,
     ParamsTable,
   },
   data: () => {
     return {
+      requires: [
+        { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
+        { name: 'inject-style()', type: 'mixin', link: '#scroll-to-inject-style' },
+      ],
       defaultMarkup: `<fieldset class="fieldset">
   <div data-grid="small-gutter">
     <div data-col="8">
@@ -103,7 +111,7 @@ export default {
         },
         {
           name: '$fieldset-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],

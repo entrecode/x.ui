@@ -52,8 +52,8 @@
   color: $xui-list-color;
 }
 
-// @param {color} $xui-list-item-background [none]
-// @param {color} $xui-list-item-color [inherit]
+// @param {color} $xui-list-item-background [transparent]
+// @param {color} $xui-list-item-color [none]
 // @param {array} $xui-list-item-padding [8]
 // @param {array} $xui-list-item-spacing [0]
 // @param {array} $xui-list-item-gutter [$base-spacing]
@@ -69,8 +69,8 @@
   background: $xui-list-item-background;
   color: $xui-list-item-color;
 
-  // @param {color} $xui-list-item-hover-background [none]
-  // @param {color} $xui-list-item-hover-color [inherit]
+  // @param {color} $xui-list-item-active-background [$xui-list-item-hover-background]
+  // @param {color} $xui-list-item-active-color [$xui-list-item-hover-color]
   // @param {array} $xui-list-item-hover-style
   &:hover {
     @include inject-style($xui-list-item-hover-style);
@@ -78,8 +78,8 @@
     color: $xui-list-item-hover-color;
   }
 
-  // @param {color} $xui-list-item-active-background [none]
-  // @param {color} $xui-list-item-active-color [inherit]
+  // @param {color} $xui-list-item-active-background [$xui-list-item-hover-background]
+  // @param {color} $xui-list-item-active-color [$xui-list-item-hover-color]
   // @param {array} $xui-list-item-active-style
   &.is-active {
     @include inject-style($xui-list-item-active-style);

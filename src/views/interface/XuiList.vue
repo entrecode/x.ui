@@ -85,7 +85,7 @@ export default {
         },
         {
           name: '$xui-list-group-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],
@@ -117,7 +117,7 @@ export default {
         },
         {
           name: '$xui-list-group-header-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],
@@ -149,7 +149,7 @@ export default {
         },
         {
           name: '$xui-list-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],
@@ -157,7 +157,7 @@ export default {
         {
           name: '$xui-list-item-background',
           type: 'color',
-          default: 'none',
+          default: 'transparent',
         },
         {
           name: '$xui-list-item-color',
@@ -186,37 +186,37 @@ export default {
         },
         {
           name: '$xui-list-item-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
           name: '$xui-list-item-hover-background',
           type: 'color',
-          default: 'none',
+          default: '$xui-list-item-background',
         },
         {
           name: '$xui-list-item-hover-color',
           type: 'color',
-          default: 'inherit',
+          default: '$xui-list-item-color',
         },
         {
           name: '$xui-list-item-hover-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
           name: '$xui-list-item-active-background',
           type: 'color',
-          default: 'none',
+          default: '$xui-list-item-hover-background',
         },
         {
           name: '$xui-list-item-active-color',
           type: 'color',
-          default: 'inherit',
+          default: '$xui-list-item-hover-color',
         },
         {
           name: '$xui-list-item-active-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
 

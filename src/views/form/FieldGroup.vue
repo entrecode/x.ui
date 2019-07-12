@@ -22,17 +22,11 @@
       </div>
 
       <div class="demo-preview is-padding-8" data-flex="center" v-if="activeTab === 1">
-        <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
-          <div class="field-group">
-            <label for class="field-group__label">field-group label</label>
-            <input type="text" placeholder="input..." class="input" />
-            <p class="field-group__info">field-group info</p>
-          </div>
-          <div class="field-group">
-            <input type="checkbox" id="3gjh3" />
-            <label for="3gjh3">field-group label</label>
-          </div>
-        </div>
+        <div
+          class="is-theme is-padding-5 is-radius is-elevated-24"
+          data-col="8@lg 6@xl"
+          v-html="defaultMarkup"
+        ></div>
       </div>
 
       <div class="demo-preview is-padding-8" data-flex="column center-items" v-if="activeTab === 2">
@@ -70,29 +64,62 @@
       <pre v-highlightjs="withGridMarkup" v-show="activeTab === 2"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="inputParams"></params-table>
+      <div class="divider"></div>
+      <params-table :params="labelParams" title="label params"></params-table>
+      <div class="divider"></div>
+      <params-table :params="infoParams" title="info params"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>
 
 <script>
 import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   name: 'Form',
   components: {
+    RequiresList,
     ParamsTable,
   },
   data: () => {
     return {
+      requires: [
+        { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
+        { name: 'inject-style()', type: 'mixin', link: '#scroll-to-inject-style' },
+        { name: 'em()', type: 'mixin', link: '#scroll-to-em' },
+      ],
       activeTab: 1,
       defaultMarkup: `<div class="field-group">
-  <label for="" class="field-group__label">field-group label</label>
-  <input type="text" placeholder="input..." class="input">
+  <label for class="field-group__label">field-group label</label>
+  <input type="text" placeholder="input..." class="input" />
   <p class="field-group__info">field-group info</p>
 </div>
+
+
+<div class="field-group field-group_boolean">
+  <label for="3gjh3" class="field-group__label">field-group label</label>
+  <input type="checkbox" id="3gjh3" />
+</div>
+
+<!-- boolean with infotext -->
 <div class="field-group">
-  <input type="checkbox" id="3gjh3">
-  <label for="3gjh3">field-group label</label>
+  <div class="field-group_boolean">
+    <label for="3gjh3" class="field-group__label">field-group label</label>
+    <input type="checkbox" id="3gjh3" />
+  </div>
+  <p class="field-group__info">field-group info</p>
+</div>
+
+<!-- boolean with infotext -->
+<div class="field-group field-group_boolean">
+  <label for="3gjh3" class="field-group__label">
+    field-group label
+    <p class="field-group__info">field-group info</p>
+  </label>
+  <input type="checkbox" id="3gjh3" />
 </div>`,
       withGridMarkup: `<div data-grid>
   <div data-col="6">
@@ -139,9 +166,11 @@ export default {
         },
         {
           name: '$field-group-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
+      ],
+      labelParams: [
         {
           name: '$field-group-label-spacing',
           type: 'array',
@@ -154,13 +183,15 @@ export default {
         },
         {
           name: '$field-group-label-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
+      ],
+      infoParams: [
         {
           name: '$field-group-info-spacing',
           type: 'array',
-          default: '8',
+          default: '8 4',
         },
         {
           name: '$field-group-info-font-size',
@@ -169,7 +200,7 @@ export default {
         },
         {
           name: '$field-group-info-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],

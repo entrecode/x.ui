@@ -160,7 +160,7 @@ export default {
         },
         {
           name: '$tag-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
@@ -262,7 +262,7 @@ export default {
         },
         {
           name: '$tag-small-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],
@@ -284,7 +284,7 @@ export default {
         },
         {
           name: '$tag-big-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],

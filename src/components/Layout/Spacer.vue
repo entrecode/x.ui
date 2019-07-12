@@ -1,37 +1,74 @@
 <template>
-  <blocks-group :groups="sectionGroups" section-title="spacer"></blocks-group>
+  <section id="scroll-to-spacer">
+    <div class="titlebar">
+      <h2>spacer</h2>
+    </div>
+    <div class="demo-preview is-padding-8">
+      <div class="is-margin-bottom-5 spacing-demo" style="overflow: hidden;" v-html="markup"></div>
+      <div data-flex="center">
+        <div class="is-theme is-padding-center-2 is-round is-elevated-16">
+          <div class="nav">
+            <div class="nav__item">
+              <select class="input" v-model="option">
+                <option
+                  :value="option"
+                  v-for="(option, index) in options"
+                  :key="index"
+                  v-text="option === '' ? 'default' : option.slice(7)"
+                ></option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <pre v-highlightjs="markup"><code class="html"></code></pre>
+    <div class="spacer"></div>
+    <params-table :params="params"></params-table>
+    <div class="spacer"></div>
+    <requires-list :requires="requires"></requires-list>
+  </section>
 </template>
 
 <script>
-import BlocksGroup from './../BlocksGroup.vue';
+import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
-  name: 'Spacer',
   components: {
-    BlocksGroup,
+    ParamsTable,
+    RequiresList,
   },
   data: () => {
     return {
-      sectionGroups: [
+      requires: [{ name: 'get-space()', type: 'function', link: '#scroll-to-get-space' }],
+      markup: `<div class="spacer"></div>`,
+      option: '',
+      options: ['', 'spacer_small', 'spacer_big'],
+      params: [
         {
-          title: '',
-          id: 'spacer',
-          groupItems: [
-            {
-              preview: `<div class="typo-demo is-margin-bottom-5"><div class="spacer"></div></div>
-              <div class="typo-demo is-margin-bottom-5"><div class="spacer spacer_big"></div></div>
-              <div class="typo-demo is-margin-bottom-5"><div class="spacer spacer_small"></div></div>`,
-              markup: `<div class="spacer"></div>
-<div class="spacer spacer_big"></div>
-<div class="spacer spacer_small"></div>`,
-              config: `$spacer-size: get-space(5); // 32
-$spacer-small-size: get-space(3); // 16
-$spacer-big-size: get-space(6); // 48`,
-            },
-          ],
+          name: '$spacer-size',
+          type: 'number',
+          default: 'get-space(5); // 32',
+        },
+        {
+          name: '$spacer-small-size',
+          type: 'number',
+          default: 'get-space(3); // 16',
+        },
+        {
+          name: '$spacer-big-size',
+          type: 'number',
+          default: 'get-space(6); // 48',
         },
       ],
     };
+  },
+  watch: {
+    option: function(val) {
+      this.markup = `<div class="spacer${val ? ' ' + val : ''}"></div>`;
+    },
   },
 };
 </script>

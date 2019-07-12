@@ -3,12 +3,14 @@
 /// @access public
 /// @group modifier
 ///
+/// @param {map} $is-margin-options [$spacings]
+///
 /// @require {mixin} set-breakpoints
 /// @require {function} get-space
-/// @param {map} $spacings
+/// @require {map} $spacings
 
 .is-margin {
-  @each $_spacing, $_h in $spacings {
+  @each $_spacing, $_h in $is-margin-options {
     &-#{$_spacing} {
       @include set-breakpoints {
         margin: get-space($_spacing);
@@ -18,7 +20,7 @@
 }
 
 .is-margin-middle {
-  @each $_spacing, $_h in $spacings {
+  @each $_spacing, $_h in $is-margin-options {
     &-#{$_spacing} {
       @include set-breakpoints {
         margin-bottom: get-space($_spacing);
@@ -29,7 +31,7 @@
 }
 
 .is-margin-top {
-  @each $_spacing, $_h in $spacings {
+  @each $_spacing, $_h in $is-margin-options {
     &-#{$_spacing} {
       @include set-breakpoints {
         margin-top: get-space($_spacing);
@@ -39,7 +41,7 @@
 }
 
 .is-margin-bottom {
-  @each $_spacing, $_h in $spacings {
+  @each $_spacing, $_h in $is-margin-options {
     &-#{$_spacing} {
       @include set-breakpoints {
         margin-bottom: get-space($_spacing);
@@ -56,7 +58,7 @@
     }
   }
 
-  @each $_spacing, $_h in $spacings {
+  @each $_spacing, $_h in $is-margin-options {
     &-#{$_spacing} {
       @include set-breakpoints {
         margin-left: get-space($_spacing);
@@ -73,7 +75,7 @@
     }
   }
 
-  @each $_spacing, $_h in $spacings {
+  @each $_spacing, $_h in $is-margin-options {
     &-#{$_spacing} {
       @include set-breakpoints {
         margin-left: get-space($_spacing);
@@ -89,7 +91,7 @@
     }
   }
 
-  @each $_spacing, $_h in $spacings {
+  @each $_spacing, $_h in $is-margin-options {
     &-#{$_spacing} {
       @include set-breakpoints {
         margin-right: get-space($_spacing);

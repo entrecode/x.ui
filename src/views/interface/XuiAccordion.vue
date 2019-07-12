@@ -77,18 +77,12 @@
         <pre v-highlightjs="combinedPreviewAlt"><code class="html"></code></pre>
       </div>
     </div>
-    <blocks-group :groups="sectionGroups" section-title="xui-accordion"></blocks-group>
   </section>
 </template>
 
 <script>
-import BlocksGroup from '@/components/BlocksGroup.vue';
-
 export default {
-  name: 'XuiAccordion',
-  components: {
-    BlocksGroup,
-  },
+  components: {},
   data: () => {
     return {
       activeTab: 1,
@@ -100,28 +94,28 @@ export default {
     checked="checked"
   />
   <label for="toggleList1" class="xui-accordion__handle">
-    click to toggle
+    <div class="is-mega is-ink-link is-padding-2 align-center">click to toggle</div>
   </label>
   <div class="xui-accordion__target">
-    <strong>here i am</strong>
+    <div class="well align-center">here i am</div>
   </div>
 </div>
 <div class="xui-accordion">
   <input type="radio" name="xuiToggleGroup" id="toggleList2" />
   <label for="toggleList2" class="xui-accordion__handle">
-    click to toggle
+    <div class="is-mega is-ink-link is-padding-2 align-center">click to toggle</div>
   </label>
   <div class="xui-accordion__target">
-    <strong>here i am</strong>
+    <div class="well align-center">here i am</div>
   </div>
 </div>
 <div class="xui-accordion">
   <input type="radio" name="xuiToggleGroup" id="toggleList3" />
   <label for="toggleList3" class="xui-accordion__handle">
-    click to toggle
+    <div class="is-mega is-ink-link is-padding-2 align-center">click to toggle</div>
   </label>
   <div class="xui-accordion__target">
-    <strong>here i am</strong>
+    <div class="well align-center">here i am</div>
   </div>
 </div>`,
       multiplePreview: `<div class="xui-accordion">
@@ -131,28 +125,28 @@ export default {
     checked="checked"
   />
   <label for="toggleListMulti1" class="xui-accordion__handle">
-    click to toggle
+    <div class="is-mega is-ink-link is-padding-2 align-center">click to toggle</div>
   </label>
   <div class="xui-accordion__target">
-    <strong>here i am</strong>
+    <div class="well align-center">here i am</div>
   </div>
 </div>
 <div class="xui-accordion">
   <input type="checkbox" id="toggleListMulti2" />
   <label for="toggleListMulti2" class="xui-accordion__handle">
-    click to toggle
+    <div class="is-mega is-ink-link is-padding-2 align-center">click to toggle</div>
   </label>
   <div class="xui-accordion__target">
-    <strong>here i am</strong>
+    <div class="well align-center">here i am</div>
   </div>
 </div>
 <div class="xui-accordion">
   <input type="checkbox" id="toggleListMulti3" />
   <label for="toggleListMulti3" class="xui-accordion__handle">
-    click to toggle
+    <div class="is-mega is-ink-link is-padding-2 align-center">click to toggle</div>
   </label>
   <div class="xui-accordion__target">
-    <strong>here i am</strong>
+    <div class="well align-center">here i am</div>
   </div>
 </div>`,
       handlePreview: `<div class="xui-accordion is-padding-3">

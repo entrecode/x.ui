@@ -2,7 +2,12 @@
   <section class="demo-blocks-group">
     <div data-grid>
       <div data-col="8">
-        <div v-for="(item, index) in sortedArray" :key="index" :id="item.anchor" class="is-margin-middle-8">
+        <div
+          v-for="(item, index) in sortedArray"
+          :key="index"
+          :id="item.anchor"
+          class="is-margin-middle-8"
+        >
           <h3 v-if="item.title">
             {{ item.title }}&ensp;
             <div class="tag">{{ item.type }}</div>
@@ -38,10 +43,14 @@
               </thead>
               <tbody>
                 <tr v-for="(param, index) in item.params" :key="index">
-                  <td><div class="code" v-text="param.name"></div></td>
+                  <td>
+                    <div class="code" v-text="param.name"></div>
+                  </td>
                   <td v-text="param.description"></td>
                   <td v-text="param.type"></td>
-                  <td><div class="code" v-text="param.default"></div></td>
+                  <td>
+                    <div class="code" v-text="param.default"></div>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -71,7 +80,13 @@
             <h4 class="is-h4">used by</h4>
             <ul data-grid="small-gutter">
               <li v-for="(used, index) in item.usedBy" :key="index" data-col="fit">
-                <a :href="used.link" class="code" v-text="used.name" v-if="used.link" v-smooth-scroll></a>
+                <a
+                  :href="used.link"
+                  class="code"
+                  v-text="used.name"
+                  v-if="used.link"
+                  v-smooth-scroll
+                ></a>
                 <span class="code" v-text="used.name" v-else></span>
               </li>
             </ul>
@@ -80,9 +95,11 @@
       </div>
       <div data-col="4">
         <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-          <li class="nav__item"><h2>functions</h2></li>
+          <li class="nav__item">
+            <h2>functions</h2>
+          </li>
           <li class="nav__item" v-for="(item, index) in sortedArray" :key="index">
-            <a :href="'#' + item.anchor" v-smooth-scroll class="is-kilo is-ink hover:is-ink-link">{{ item.title }}</a>
+            <a :to="link(item.anchor)" class="is-kilo is-ink hover:is-ink-link">{{ item.title }}</a>
           </li>
         </ul>
       </div>
@@ -352,8 +369,8 @@ bp(sm, max) // returns 479px`,
             { name: 'set-contrast()', link: '#scroll-to-set-contrast' },
           ],
           example: `color: flatten-color(rgba(black, .2);`,
-          codeShort: `@function flatten-color($fg, $bg: $flatten-color-base) {...}`,
-          code: `@function flatten-color($fg, $bg: $flatten-color-base) {
+          codeShort: `@function flatten-color($fg, $bg: $_flatten-color-base) {...}`,
+          code: `@function flatten-color($fg, $bg: $_flatten-color-base) {
   $a1: alpha($bg);
   $a2: alpha($fg);
 
@@ -370,7 +387,7 @@ bp(sm, max) // returns 479px`,
 
   @return rgba($r, $g, $b, $a);
 }`,
-          require: [{ name: '$flatten-color-base', type: 'color' }],
+          require: [{ name: '$_flatten-color-base', type: 'color', default: '$background // #fff' }],
           params: [
             {
               name: '$fg',
@@ -1271,6 +1288,12 @@ color: get-color(link);`,
       }
 
       return this.items.sort(compare);
+    },
+  },
+  methods: {
+    link(anchor) {
+      console.log('test');
+      return '/functions#' + anchor;
     },
   },
 };

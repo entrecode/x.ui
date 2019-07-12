@@ -45,12 +45,12 @@ export default {
         },
         {
           name: '$range-slider-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
           name: '$range-slider-hover-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
@@ -70,12 +70,12 @@ export default {
         },
         {
           name: '$range-slider-thumb-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
           name: '$range-slider-thumb-hover-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],

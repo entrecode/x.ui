@@ -10,11 +10,11 @@
 /// @param {color} $fg - forground-color to be flattened
 /// @param {color} $bg [$background] - background-color
 ///
-/// @require {color} $flatten-color-base
+/// @require {color} $_flatten-color-base
 ///
 /// @return {rgba}
 
-@function flatten-color($fg, $bg: $flatten-color-base) {
+@function flatten-color($fg, $bg: $_flatten-color-base) {
   $a1: alpha($bg);
   $a2: alpha($fg);
 

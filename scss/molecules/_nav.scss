@@ -83,12 +83,12 @@
     color: $nav-link-hover-color;
   }
 
-  // @param {color} $nav-link-selected-background
-  // @param {color} $nav-link-selected-color
-  // @param {array} $nav-link-selected-style
+  // @param {color} $nav-link-active-background
+  // @param {color} $nav-link-active-color
+  // @param {array} $nav-link-active-style
   &.is-active {
-    @include inject-style($nav-link-selected-style);
-    background: $nav-link-selected-background;
-    color: $nav-link-selected-color;
+    @include inject-style($nav-link-active-style);
+    background: $nav-link-active-background;
+    color: $nav-link-active-color;
   }
 }

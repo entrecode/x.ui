@@ -136,7 +136,7 @@ export default {
         },
         {
           name: '$dropdown-options-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],
@@ -178,12 +178,12 @@ export default {
         },
         {
           name: '$dropdown-option-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
         {
           name: '$dropdown-option-hover-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],
@@ -205,7 +205,7 @@ export default {
         },
         {
           name: '$dropdown-option-divider-style',
-          type: 'array',
+          type: 'map',
           default: '',
         },
       ],

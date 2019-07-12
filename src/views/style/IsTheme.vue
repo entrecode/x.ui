@@ -1,49 +1,91 @@
 <template>
-  <blocks-group :groups="sectionGroups" section-title="is-theme"></blocks-group>
+  <section>
+    <div data-col="10 8@xl">
+      <div class="titlebar">
+        <h1>is-theme</h1>
+      </div>
+      <div class="demo-preview is-padding-8" data-flex="column center-items">
+        <div v-html="markup"></div>
+
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+          <div class="nav" data-flex="center">
+            <div class="nav__item" data-col="fit">
+              <div class="input-group is-margin-top-2">
+                <label for="alerStyle" class="input-group__addon">
+                  <svg class="ixo is-ink-link">
+                    <use xlink:href="#saturation" />
+                  </svg>
+                </label>
+                <div class="input-group__addon">
+                  <select class="input input_round" id="alerStyle" v-model="style">
+                    <option
+                      :value="style"
+                      v-for="(style, index) in styles"
+                      :key="index"
+                      v-text="style === 'is-theme' ? 'default' : style.slice(9)"
+                    ></option>
+                  </select>
+                </div>
+              </div>
+              <div class="field-group__info align-center">change color</div>
+            </div>
+            <div class="nav__item" data-col="fit">
+              <div class="input-group is-margin-top-2">
+                <label for="alerStyle" class="input-group__addon">
+                  <svg class="ixo is-ink-link">
+                    <use xlink:href="#saturation" />
+                  </svg>
+                </label>
+                <div class="input-group__addon">
+                  <select class="input input_round" id="alerStyle" v-model="hoverStyle">
+                    <option
+                      :value="style"
+                      v-for="(style, index) in hoverStyles"
+                      :key="index"
+                      v-text="style === '' ? 'select' : style === 'hover:is-theme' ? 'default' : style.slice(15)"
+                    ></option>
+                  </select>
+                </div>
+              </div>
+              <div class="field-group__info align-center">change hover:color</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <pre v-highlightjs="markup"><code class="html"></code></pre>
+      <div class="spacer"></div>
+      <params-table :params="params"></params-table>
+      <div class="spacer"></div>
+      <requires-list :requires="requires"></requires-list>
+    </div>
+  </section>
 </template>
 
 <script>
-import BlocksGroup from '@/components/BlocksGroup.vue';
+import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
 
 export default {
-  name: 'IsTheme',
+  name: 'IsInk',
   components: {
-    BlocksGroup,
+    ParamsTable,
+    RequiresList,
   },
   data: () => {
     return {
-      sectionGroups: [
-        {
-          title: '',
-          id: 'is-theme',
-          navTitle: 'is-theme',
-          groupItems: [
-            {
-              title: '',
-              preview: `<div data-grid>
-  <div data-col="12">
-    <div class="is-giga is-margin-bottom-2 is-padding-2 align-center is-theme">
-      is-theme
-      <a>link</a>
-    </div>
-  </div>
-  <div data-col="12">
-    <div class="is-giga is-margin-bottom-2 is-padding-2 align-center is-theme-lightest">
-      is-theme-lightest
-      <a>link</a>
-    </div>
-  </div>
-  <div data-col="12">
-    <div class="is-giga is-margin-bottom-2 is-padding-2 align-center is-theme-invert">
-      is-theme-invert
-      <a>link</a>
-    </div>
-  </div>
+      markup: `<div class="is-theme">
+  <h1>change my color <a>i'm a link</a></h1>
 </div>`,
-              markup: `<div class="is-theme"></div>
-<div class="is-theme-lightest"></div>
-<div class="is-theme-invert"></div>`,
-              config: `$is-theme: (
+      styles: ['is-theme', 'is-theme-lightest', 'is-theme-invert'],
+      style: 'is-theme',
+      hoverStyles: ['', 'hover:is-theme', 'hover:is-theme-lightest', 'hover:is-theme-invert'],
+      hoverStyle: '',
+      params: [
+        {
+          name: `$is-theme`,
+          type: 'map',
+          default: `(
   '': (
     $background,
     $text,
@@ -59,45 +101,28 @@ export default {
     $text-invert,
     $link,
   ),
-);`,
-            },
-          ],
+)`,
         },
         {
-          title: '',
-          id: 'hover-is-theme',
-          navTitle: 'hover:is-theme',
-          groupItems: [
-            {
-              title: '',
-              preview: `<div data-grid>
-  <div data-col="12">
-    <div class="demo-bg is-giga is-margin-bottom-2 is-padding-2 align-center hover:is-theme">
-      hover:is-theme
-      <a>link</a>
-    </div>
-  </div>
-  <div data-col="12">
-    <div class="demo-bg is-giga is-margin-bottom-2 is-padding-2 align-center hover:is-theme-lightest">
-      hover:is-theme-lightest
-      <a>link</a>
-    </div>
-  </div>
-  <div data-col="12">
-    <div class="demo-bg is-giga is-margin-bottom-2 is-padding-2 align-center hover:is-theme-invert">
-      hover:is-theme-invert
-      <a>link</a>
-    </div>
-  </div>
-</div>`,
-              markup: `<div class="hover:is-theme"></div>
-<div class="hover:is-theme-lightest"></div>
-<div class="hover:is-theme-invert"></div>`,
-            },
-          ],
+          name: '$is-theme-style',
+          type: 'map',
+          default: '',
         },
       ],
+      requires: [{ name: 'inject-styles()', type: 'mixin', link: '#scroll-to-inject-styles' }],
     };
+  },
+  computed: {
+    classes() {
+      return [this.style ? this.style : null, this.hoverStyle ? this.hoverStyle : null].join(' ').trim();
+    },
+  },
+  watch: {
+    classes: function(val) {
+      this.markup = `<div class="${val}">
+  <h1>change my color <a>i'm a link</a></h1>
+</div>`;
+    },
   },
 };
 </script>

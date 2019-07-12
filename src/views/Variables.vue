@@ -1,44 +1,65 @@
 <template>
-  <section class="demo-blocks-group">
+  <section>
+    <div class="titlebar">
+      <h1>variables</h1>
+    </div>
     <div data-grid>
       <div data-col="8">
-        <div v-for="(item, index) in sortedArray" :key="index" class="is-margin-middle-8" :id="item.anchor">
-          <h3 v-if="item.title">
-            {{ item.title }}&ensp;
-            <div class="tag">{{ item.type }}</div>
-          </h3>
-          <div class="is-margin-bottom-5" v-if="item.code">
-            <pre v-highlightjs="item.code"><code class="scss" style="font-size: 14px;"></code></pre>
+        <div v-for="(item, index) in sortedArray" :key="index" :id="item.anchor">
+          <div class="is-margin-middle-8">
+            <h3 v-if="item.title">
+              {{ item.title }}&ensp;
+              <div class="tag">{{ item.type }}</div>
+            </h3>
+            <div class="is-margin-bottom-5" v-if="item.code">
+              <pre v-highlightjs="item.code"><code class="scss" style="font-size: 14px;"></code></pre>
+            </div>
+            <div class="is-margin-bottom-5" v-if="item.description">
+              <h4 class="is-h4">description</h4>
+              <p v-text="item.description"></p>
+            </div>
+            <div class="is-margin-bottom-5" v-if="item.require">
+              <h4 class="is-h4">requires</h4>
+              <ul data-grid="small-gutter">
+                <li v-for="(req, index) in item.require" :key="index" data-col="fit">
+                  <a
+                    :href="req.link"
+                    class="code"
+                    v-text="req.name"
+                    v-if="req.link"
+                    v-smooth-scroll
+                  ></a>
+                  <span class="code" v-text="req.name" v-else></span>
+                </li>
+              </ul>
+            </div>
+            <div class="is-margin-bottom-5" v-if="item.usedBy">
+              <h4 class="is-h4">used by</h4>
+              <ul data-grid="small-gutter">
+                <li v-for="(used, index) in item.usedBy" :key="index" data-col="fit">
+                  <a
+                    :href="used.link"
+                    class="code"
+                    v-text="used.name"
+                    v-if="used.link"
+                    v-smooth-scroll
+                  ></a>
+                  <span class="code" v-text="used.name" v-else></span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="is-margin-bottom-5" v-if="item.description">
-            <h4 class="is-h4">description</h4>
-            <p v-text="item.description"></p>
-          </div>
-          <div class="is-margin-bottom-5" v-if="item.require">
-            <h4 class="is-h4">requires</h4>
-            <ul data-grid="small-gutter">
-              <li v-for="(req, index) in item.require" :key="index" data-col="fit">
-                <a :href="req.link" class="code" v-text="req.name" v-if="req.link" v-smooth-scroll></a>
-                <span class="code" v-text="req.name" v-else></span>
-              </li>
-            </ul>
-          </div>
-          <div class="is-margin-bottom-5" v-if="item.usedBy">
-            <h4 class="is-h4">used by</h4>
-            <ul data-grid="small-gutter">
-              <li v-for="(used, index) in item.usedBy" :key="index" data-col="fit">
-                <a :href="used.link" class="code" v-text="used.name" v-if="used.link" v-smooth-scroll></a>
-                <span class="code" v-text="used.name" v-else></span>
-              </li>
-            </ul>
-          </div>
+          <div class="divider divider_big"></div>
         </div>
       </div>
       <div data-col="4">
         <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-          <li class="nav__item"><h2>variables</h2></li>
           <li class="nav__item" v-for="(item, index) in sortedArray" :key="index">
-            <a :href="'#' + item.anchor" v-smooth-scroll class="is-kilo is-ink hover:is-ink-link">{{ item.title }}</a>
+            <a
+              :href="'#' + item.anchor"
+              v-smooth-scroll
+              class="is-kilo is-ink hover:is-ink-link"
+            >{{ item.title }}</a>
           </li>
         </ul>
       </div>
@@ -274,6 +295,14 @@ export default {
           code: `$type-scale-unit: $base-scale-unit !default;`,
           require: [{ name: '$base-scale-unit', link: '#scroll-to-base-scale-unit' }],
           type: 'string',
+        },
+        {
+          title: '$_flatten-color-base',
+          anchor: 'scroll-to-type-flatten-color-base',
+          usedBy: [{ name: 'flatten-color()', type: 'function', link: '#scroll-to-flatten-color' }],
+          code: `$_flatten-color-base: $background !default;`,
+          require: [{ name: '$background' }],
+          type: 'color',
         },
         {
           title: '$base-scale-unit',

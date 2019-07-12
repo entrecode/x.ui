@@ -160,19 +160,19 @@ export default {
         },
         {
           name: '$input-style',
-          type: 'array',
+          type: 'map',
         },
         {
           name: '$input-hover-style',
-          type: 'array',
+          type: 'map',
         },
         {
           name: '$input-focus-style',
-          type: 'array',
+          type: 'map',
         },
         {
           name: '$input-disabled-style',
-          type: 'array',
+          type: 'map',
         },
         {
           name: '$input-placeholder-color',
@@ -181,15 +181,15 @@ export default {
         },
         {
           name: '$input-placeholder-style',
-          type: 'array',
+          type: 'map',
         },
         {
           name: '$input-placeholder-hover-style',
-          type: 'array',
+          type: 'map',
         },
         {
           name: '$input-placeholder-focus-style',
-          type: 'array',
+          type: 'map',
         },
         {
           name: '$input-round',
@@ -221,7 +221,7 @@ export default {
         },
         {
           name: '$input-small-style',
-          type: 'array',
+          type: 'map',
         },
         {
           name: '$input-big-font-size',
@@ -240,7 +240,7 @@ export default {
         },
         {
           name: '$input-big-style',
-          type: 'array',
+          type: 'map',
         },
       ],
     };

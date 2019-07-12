@@ -3,7 +3,8 @@
 ## 10.0.0
 
 ### breaking changes
-
+- changed `$xui-checkbox-` config variables
+- changed `$xui-radio-` config variables
 - removed deprecated `.flex-spacer` use `.flex-space` instead
 - removed deprecated `.bumper-small` and `.bumper-big` use `.bumper.bumper_small` or `.bumper.bumper_big` instead
 - removed deprecated `.spacer-small` and `.spacer-big` use `.spacer.spacer_small` or `.spacer.spacer_big` instead
@@ -19,10 +20,10 @@
 - refactored and combined `is-positioned` and `is-fab`
 - removed `.img_responsive` and `.img_full` use `.img-responsive` or `.img-fullwidth` instead
 - removed `.title` and `.toolbar` use `.titlebar` instead
-- removed `.no-margin` use `.is-margin-0` instead
-- removed `.no-padding` use `.is-padding-0` instead
 - removed `.xui-overlay`
 - removed float grid styles `data-row`
+- removed `.no-margin` use `.is-margin-0` instead
+- removed `.no-padding` use `.is-padding-0` instead
 - renamed `.has-margin` to `.is-margin`
 - renamed `.has-padding` to `.is-padding`
 - renamed `.has-radius` to `.is-radius`
@@ -30,49 +31,25 @@
 - renamed `.has-min-height` to `.is-min-height`
 - renamed `.has-width` to `.is-width`
 - renamed `.has-min-width` to `.is-min-width`
+- renamed `.is-bordered` to `.is-border`
 - removed `.has-margin#`, `.has-margin#-smallest`, `.has-margin#-small`, `.has-margin#-big`
 - removed `.has-padding#`, `.has-padding#-smallets`, `.has-padding#-small`, `.has-padding#-big`
-- renamed `.is-bordered` to `.is-border`
 - removed breakpoints for `align-`
 - removed breakpoints for `is-clipped#`
 - removed breakpoints for `.is-bordered`
 - removed breakpoints for `.is-scrollable`
 - removed `.not-positioned`
 - removed breakpoints from `.is-placed` and `.is-position`
-- renamed `set-map-breakpoints()` to `set-data-map-breakpoints()`
-- renamed `getBreakpoint()` to `bp()`
 - removed `.form-group` use `.field-group` instead
 - removed input validation styles
 - removed `.bubble` use `.tag` instead
-- changed `$xui-checkbox-` config variables
-- changed `$xui-radio-` config variables
 - renamed `.slider` to `.range-slider`
 - removed all `is-` prefixes from `data-flex` values
 - optimized `.nav` - dropped `.nav__items`
-- changed `macro-metrics()` to `metrics()`
 - improved `.xui-accordion`
-- removed state values in `$xui-colors` map
 - removed `data-animate` use third-party libraries like animate.css instead
 - removed `.pull`
 - removed placeholder `%toggle` and `%toggle-is-active`
-- renamed `arrayMagic()` to `array-magic()`
-- renamed `getColor()` to `get-color()`
-- renamed `flattenColor()` to `flatten-color()`
-- renamed `setContrast()` to `set-contrast()`
-- renamed `setHover()` to `set-hover()`
-- renamed `shadeByContrast()` to `shade-by-contrast()`
-- renamed `stripUnit()` to `strip-unit()`
-- renamed `systemColor()` to `system-color()`
-- renamed `varColor()` to `var-color()`
-- renamed `nextBp()` to `next-bp()`
-- renamed `getBrightness()` to `get-brightness()`
-- renamed `brightnessDifference()` to `brightness-difference()`
-- renamed `colorDifference()` to `color-difference()`
-- renamed `colorPass()` to `color-pass()`
-- renamed `colorMargin()` to `color-margin()`
-- renamed `contrastRatio()` to `contrast-ratio()`
-- renamed `checkCompliance()` to `check-compliance()`
-- renamed `findContrastLoop()` to `find-contrast-loop()`
 - removed placeholder `%ec-icon`
 - removed `xui-tabs`
 - changed breakpoint postfix from `-` to `@` e.g. `@sm`
@@ -83,27 +60,50 @@
 - changed `data-grid="is-start"` to `data-grid="start"`
 - renamed `$divider-color` to `$base-divider-color`
 - renamed `$divider-background` and `$divider-background-invert` to `$divider-color` and `$divider-color-invert`
+- renamed `arrayMagic()` to `array-magic()`
+- renamed `getBreakpoint()` to `bp()`
+- renamed `flattenColor()` to `flatten-color()`
+- renamed `getColor()` to `get-color()`
+- renamed `getSpace()` to `get-space()`
+- renamed `setContrast()` to `set-contrast()`
+- renamed `setHover()` to `set-hover()`
+- renamed `shadeByContrast()` to `shade-by-contrast()`
+- renamed `stripUnit()` to `strip-unit()`
+- renamed `systemColor()` to `system-color()`
+- renamed `varColor()` to `var-color()`
+- renamed `nextBp()` to `next-bp()`
+- renamed `getBrightness()` to `get-brightness()`
+- renamed `colorDifference()` to `color-difference()`
+- renamed `colorPass()` to `color-pass()`
+- renamed `colorMargin()` to `color-margin()`
+- renamed `contrastRatio()` to `contrast-ratio()`
+- renamed `checkCompliance()` to `check-compliance()`
+- renamed `findContrastLoop()` to `find-contrast-loop()`
+- renamed `brightnessDifference()` to `brightness-difference()`
+- renamed `set-map-breakpoints()` to `set-data-map-breakpoints()`
+- changed `macro-metrics()` to `metrics()`
+- changed `@extend %btn;` to `@include _btn-reset;`
 
 ### changes
 
+- changed `$base-weight` to `$base-font-weight`
+- changed `$body-font` to `$body-font-family`
+- changed `$headings-font` to `$headings-font-family`
+- changed `$hover-shading` to `$_set-hover-shading`
+- added `$alert-styles` for alert styles
+- added `$tag-styles` for tag styles
+- renamed `$nav-link-selected#` variabels to `$nav-link-active#`
 - updated headings styles
 - refactored `.avatar`
 - refactored `.file-upload`
 - refactored `.is-layer-#`
-- refactored `.is-position-#`
+- refactored `.[is-position]`
 - refactored `.is-theme-#`
-- refactored `btn-group`
+- refactored `.btn-group`
 - refactored color variables
 - removed background variables from `.btn_outline`
-- changed `@extend %btn;` to `@include _btn-reset;`
 - improved `.input_round`
 - improved `.btn_round`
-- changed `$base-weight` to `$base-font-weight`
-- changed `$body-font` to `$body-font-family`
-- changed `$headings-font` to `$headings-font-family`
-- renamed `$hover-shading` to `$_set-hover-shading`
-- added `$alert-styles` for alert styles
-- added `$tag-styles` for tag styles
 - removed `.form-boolean`
 - removed `.alert_outlined`
 
