@@ -13,6 +13,7 @@
 ///
 /// @require {mixin} array-magic()
 /// @require {mixin} inject-style()
+/// @require {mixin} elevation()
 /// @require {mixin} metrics()
 /// @require {mixin} is-scrollable()
 /// @require {function} array-magic
@@ -101,7 +102,7 @@
 // @param {array} $xui-select-options-padding [4]
 // @param {px | null} $xui-select-options-max-height [240]
 // @param {color} $xui-select-options-background
-// @param {string} $xui-select-options-shadow
+// @param {[1-24] | false} $xui-select-options-elevation [8]
 // @param {array} $xui-select-options-style
 .xui-select-options {
   width: 100%;
@@ -116,9 +117,11 @@
   z-index: 10;
   @include is-scrollable(y, contain, $behavior: auto);
   @include inject-style($xui-select-options-style);
+  @if $xui-select-options-elevation {
+    @include elevation($xui-select-options-elevation);
+  }
   background: $xui-select-options-background;
   border-radius: array-magic($xui-select-options-radius);
-  box-shadow: array-magic($xui-select-options-shadow);
   max-height: rem($xui-select-options-max-height);
   padding: array-magic($xui-select-options-padding);
 
@@ -130,7 +133,7 @@
 
 // @param {number} $xui-select-option-radius [4]
 // @param {array} $xui-select-options-padding [4]
-// @param {array} $xui-select-option-font-size [$xui-select-font-size]
+// @param {number} $xui-select-option-font-size [$xui-select-font-size]
 // @param {color} $xui-select-option-background
 // @param {color} $xui-select-option-color
 // @param {array} $xui-select-option-style
