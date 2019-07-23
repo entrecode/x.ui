@@ -4,9 +4,9 @@
 /// @group modifier
 ///
 /// @param {map} $is-display-map
-/// @param {map} $breakpoints
 ///
 /// @requires {function} bp
+/// @requires {map} $breakpoints
 
 // scss-lint:disable ImportantRule
 $_keys: map-keys($is-display-map);
