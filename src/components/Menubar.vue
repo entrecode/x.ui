@@ -162,13 +162,13 @@
         <router-link to="is-width" class="is-mega is-uppercase">is-width</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="position" class="is-mega is-uppercase">position</router-link>
+        <router-link to="position" class="is-mega is-uppercase">position helper</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="display" class="is-mega is-uppercase">display</router-link>
+        <router-link to="display" class="is-mega is-uppercase">display helper</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="is-scrollable" class="is-mega is-uppercase">is-scrollable</router-link>
+        <router-link to="overflow" class="is-mega is-uppercase">overflow helper</router-link>
       </li>
       <li class="y-space-5"></li>
       <li>

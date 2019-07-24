@@ -262,9 +262,9 @@ export const router = new Router({
       components: { main: () => import('./views/layout/Display.vue'), menu: DemoMenubar },
     },
     {
-      path: '/is-scrollable',
-      name: 'is-scrollable',
-      components: { main: () => import('./views/layout/IsScrollable.vue'), menu: DemoMenubar },
+      path: '/overflow',
+      name: 'overflow',
+      components: { main: () => import('./views/layout/Overflow.vue'), menu: DemoMenubar },
     },
     {
       path: '/data-tooltip',
