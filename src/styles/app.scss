@@ -195,3 +195,16 @@
     }
   }
 }
+
+.input_number {
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.demo-grid {
+  background-color: rgba(var(--spacingColor), 0.2);
+}
+.demo-col {
+  background-color: var(--background);
+}
