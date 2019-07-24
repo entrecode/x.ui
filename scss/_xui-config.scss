@@ -928,6 +928,35 @@ $tag-styles: map-merge(
 );
 
 //
+// MEATBALL
+// ------------------------------------------------------
+// @param {variable} $meatball-family [$body-font-family]
+// @param {number} $meatball-size [12]
+// @param {number} $meatball-font-size [12]
+// @param {number} $meatball-position-top [0]
+// @param {number} $meatball-position-right [0]
+// @param {number} $meatball-offset-x [25%]
+// @param {number} $meatball-offset-y [-25%]
+// @param {number} $meatball-border-color [$super]
+// @param {color} $meatball-background [$super]
+// @param {color} $meatball-color [$super-contrast]
+// @param {[1-24] | false} $meatball-elevation [4]
+// @param {map} $meatball-style
+$meatball-family: $body-font-family !default;
+$meatball-size: 12 !default;
+$meatball-font-size: 12 !default;
+$meatball-position-top: 0 !default;
+$meatball-position-right: 0 !default;
+$meatball-offset-x: 25% !default;
+$meatball-offset-y: -25% !default;
+$meatball-border-width: 2 !default;
+$meatball-border-color: $super !default;
+$meatball-background: $super !default;
+$meatball-color: $super-contrast !default;
+$meatball-elevation: 4 !default;
+$meatball-style: () !default;
+
+//
 // DROPDOWN
 // ------------------------------------------------------
 // @param {boolean} $dropdown-in-hover [false]

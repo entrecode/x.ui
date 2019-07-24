@@ -90,6 +90,9 @@
         <router-link to="tags" class="is-mega is-uppercase">tags</router-link>
       </li>
       <li class="nav__item">
+        <router-link to="meatball" class="is-mega is-uppercase">meatball</router-link>
+      </li>
+      <li class="nav__item">
         <router-link to="loader" class="is-mega is-uppercase">loader</router-link>
       </li>
       <li class="nav__item">

@@ -147,6 +147,11 @@ export const router = new Router({
       components: { main: () => import('./views/interaction/Tags.vue'), menu: DemoMenubar },
     },
     {
+      path: '/meatball',
+      name: 'meatball',
+      components: { main: () => import('./views/interaction/Meatball.vue'), menu: DemoMenubar },
+    },
+    {
       path: '/modal',
       name: 'modal',
       components: { main: () => import('./views/interface/Modal.vue'), menu: DemoMenubar },
