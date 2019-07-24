@@ -98,6 +98,9 @@
       <li class="nav__item">
         <router-link to="alert" class="is-mega is-uppercase">alert</router-link>
       </li>
+      <li class="nav__item">
+        <router-link to="data-tooltip" class="is-mega is-uppercase">data-tooltip</router-link>
+      </li>
       <li class="y-space-5"></li>
       <li>
         <div class="is-h6">interface</div>
@@ -172,13 +175,6 @@
       </li>
       <li class="nav__item">
         <router-link to="overflow" class="is-mega is-uppercase">overflow helper</router-link>
-      </li>
-      <li class="y-space-5"></li>
-      <li>
-        <div class="is-h6">utilities</div>
-      </li>
-      <li class="nav__item">
-        <router-link to="data-tooltip" class="is-mega is-uppercase">data-tooltip</router-link>
       </li>
       <li class="y-space-5"></li>
       <li class="nav__item">

@@ -79,6 +79,7 @@ body {
   .doc-body {
     grid-area: body;
     padding-right: 80px;
+    padding-left: 32px;
     min-width: 0;
   }
 

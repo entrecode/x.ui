@@ -274,7 +274,7 @@ export const router = new Router({
     {
       path: '/data-tooltip',
       name: 'data-tooltip',
-      components: { main: () => import('./views/utilities/DataTooltip.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interaction/DataTooltip.vue'), menu: DemoMenubar },
     },
   ],
   scrollBehavior() {
