@@ -88,15 +88,6 @@ $base-divider-color: rgba($text, 0.1) !default;
 $state-hover: rgba($link, 0.1) !default;
 $state-hover-contrast: $link !default;
 
-// @param {color} $state-info [#cae6fe]
-// @param {color} $state-info-contrast [set-contrast($background, $state-info)]
-// @param {color} $state-info-safe [set-contrast($background, $state-info)]
-// @param {color} $state-info-hover [set-hover($state-info)]
-$state-info: #cae6fe !default;
-$state-info-contrast: set-contrast($state-info) !default;
-$state-info-safe: set-contrast($background, $state-info) !default;
-$state-info-hover: set-hover($state-info) !default;
-
 // @param {color} $state-error [#f9d7da]
 // @param {color} $state-error-contrast [set-contrast($background, $state-error)]
 // @param {color} $state-error-safe [set-contrast($background, $state-error)]
@@ -123,6 +114,15 @@ $state-warning: #fff2cf !default;
 $state-warning-contrast: set-contrast($state-warning) !default;
 $state-warning-safe: set-contrast($background, $state-warning) !default;
 $state-warning-hover: set-hover($state-warning) !default;
+
+// @param {color} $state-info [#cae6fe]
+// @param {color} $state-info-contrast [set-contrast($background, $state-info)]
+// @param {color} $state-info-safe [set-contrast($background, $state-info)]
+// @param {color} $state-info-hover [set-hover($state-info)]
+$state-info: #cae6fe !default;
+$state-info-contrast: set-contrast($state-info) !default;
+$state-info-safe: set-contrast($background, $state-info) !default;
+$state-info-hover: set-hover($state-info) !default;
 
 //
 // COLORMAP
@@ -171,7 +171,37 @@ $xui-colors: map-merge(
       'contrast': $highlight-contrast,
       'safe': $highlight-safe,
       'hover': $highlight-hover,
-    )
+    ),
+    'state': (
+      'hover': $state-hover,
+      'error': $state-error,
+      'success': $state-success,
+      'warning': $state-warning,
+      'info': $state-info,
+    ),
+    'hover': (
+      'contrast': $state-hover-contrast,
+    ),
+    'error': (
+      'contrast': $state-error-contrast,
+      'safe': $state-error-safe,
+      'hover': $state-error-hover,
+    ),
+    'success': (
+      'contrast': $state-success-contrast,
+      'safe': $state-success-safe,
+      'hover': $state-success-hover,
+    ),
+    'warning': (
+      'contrast': $state-warning-contrast,
+      'safe': $state-warning-safe,
+      'hover': $state-warning-hover,
+    ),
+    'info': (
+      'contrast': $state-info-contrast,
+      'safe': $state-info-safe,
+      'hover': $state-info-hover,
+    ),
   ),
   $xui-colors
 );
