@@ -3,8 +3,10 @@
 /// @access public
 /// @group grid-columns
 ///
-/// @param {map} $_offset
+/// @param {number} $grid-num-columns [16]
+///
 /// @require {function} bp()
+/// @require {variable} $breakpoints
 
 [data-col] {
   flex: 100%;

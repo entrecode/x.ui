@@ -3,8 +3,10 @@
 /// @access public
 /// @group grid-columns
 ///
-/// @param {map} $_offset
+/// @param {number} $grid-num-columns
+///
 /// @require {function} bp()
+/// @require {variable} $breakpoints
 
 $_offset: $grid-num-columns - 1;
 
