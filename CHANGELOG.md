@@ -110,6 +110,7 @@
 ### added
 
 - added `.is-font` for `font-family` styles
+- added `.meatball`
 - added addional config for `.nav_stacked`
 - added color-modifier `.hover:is-ink-#`
 - added theme-modifier `.hover:is-theme-#`

@@ -27,6 +27,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  position: relative;
   font-family: $btn-font-family;
   margin: array-magic($btn-spacing);
 }

@@ -5,6 +5,9 @@
 ///
 /// @param {number} $grid-container-width [1200] - max-width of container
 /// @param {string} $grid-container-gutter [16]
+///
+/// @require {mixins} set-data-breakpoints()
+/// @require {functions} rem()
 
 [data-container] {
   box-sizing: border-box;

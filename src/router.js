@@ -147,6 +147,11 @@ export const router = new Router({
       components: { main: () => import('./views/interaction/Tags.vue'), menu: DemoMenubar },
     },
     {
+      path: '/meatball',
+      name: 'meatball',
+      components: { main: () => import('./views/interaction/Meatball.vue'), menu: DemoMenubar },
+    },
+    {
       path: '/modal',
       name: 'modal',
       components: { main: () => import('./views/interface/Modal.vue'), menu: DemoMenubar },
@@ -262,14 +267,14 @@ export const router = new Router({
       components: { main: () => import('./views/layout/Display.vue'), menu: DemoMenubar },
     },
     {
-      path: '/is-scrollable',
-      name: 'is-scrollable',
-      components: { main: () => import('./views/layout/IsScrollable.vue'), menu: DemoMenubar },
+      path: '/overflow',
+      name: 'overflow',
+      components: { main: () => import('./views/layout/Overflow.vue'), menu: DemoMenubar },
     },
     {
       path: '/data-tooltip',
       name: 'data-tooltip',
-      components: { main: () => import('./views/utilities/DataTooltip.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/interaction/DataTooltip.vue'), menu: DemoMenubar },
     },
   ],
   scrollBehavior() {

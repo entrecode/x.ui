@@ -1,0 +1,56 @@
+/// @author Bernhard Ruoff
+/// @since 10.0.0
+/// @access public
+/// @group atoms
+///
+/// @param {variable} $meatball-family [$body-font-family]
+/// @param {number} $meatball-size [12]
+/// @param {number} $meatball-font-size [12]
+/// @param {number} $meatball-position-top [0]
+/// @param {number} $meatball-position-right [0]
+/// @param {number} $meatball-offset-x [25%]
+/// @param {number} $meatball-offset-y [-25%]
+/// @param {number} $meatball-border-width [2]
+/// @param {number} $meatball-border-color [$super]
+/// @param {color} $meatball-background [$super]
+/// @param {color} $meatball-color [$super-contrast]
+/// @param {[1-24] | false} $meatball-elevation [4]
+/// @param {map} $meatball-style
+///
+/// @require {mixin} inject-style
+/// @require {mixin} elevation
+/// @require {function} rem
+
+.meatball {
+  border-radius: 50vh;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  line-height: 1em;
+  text-align: center;
+  padding: rem(2);
+  @if $meatball-elevation {
+    @include elevation($meatball-elevation);
+  }
+  @include inject-style($meatball-style);
+  transform: translateX(rem($meatball-offset-x)) translateY(rem($meatball-offset-y));
+  font-family: $meatball-family;
+  font-size: rem($meatball-font-size);
+  min-width: rem($meatball-font-size + ($meatball-border-width * 2) + 4);
+  min-height: rem($meatball-font-size + ($meatball-border-width * 2) + 4);
+  border-width: rem($meatball-border-width);
+  border-color: $meatball-border-color;
+  background: $meatball-background;
+  color: $meatball-color;
+  top: rem($meatball-position-top);
+  right: rem($meatball-position-right);
+
+  &:empty {
+    padding: 0;
+    min-width: rem($meatball-size);
+    min-height: rem($meatball-size);
+  }
+}

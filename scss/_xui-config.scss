@@ -88,15 +88,6 @@ $base-divider-color: rgba($text, 0.1) !default;
 $state-hover: rgba($link, 0.1) !default;
 $state-hover-contrast: $link !default;
 
-// @param {color} $state-info [#cae6fe]
-// @param {color} $state-info-contrast [set-contrast($background, $state-info)]
-// @param {color} $state-info-safe [set-contrast($background, $state-info)]
-// @param {color} $state-info-hover [set-hover($state-info)]
-$state-info: #cae6fe !default;
-$state-info-contrast: set-contrast($state-info) !default;
-$state-info-safe: set-contrast($background, $state-info) !default;
-$state-info-hover: set-hover($state-info) !default;
-
 // @param {color} $state-error [#f9d7da]
 // @param {color} $state-error-contrast [set-contrast($background, $state-error)]
 // @param {color} $state-error-safe [set-contrast($background, $state-error)]
@@ -123,6 +114,15 @@ $state-warning: #fff2cf !default;
 $state-warning-contrast: set-contrast($state-warning) !default;
 $state-warning-safe: set-contrast($background, $state-warning) !default;
 $state-warning-hover: set-hover($state-warning) !default;
+
+// @param {color} $state-info [#cae6fe]
+// @param {color} $state-info-contrast [set-contrast($background, $state-info)]
+// @param {color} $state-info-safe [set-contrast($background, $state-info)]
+// @param {color} $state-info-hover [set-hover($state-info)]
+$state-info: #cae6fe !default;
+$state-info-contrast: set-contrast($state-info) !default;
+$state-info-safe: set-contrast($background, $state-info) !default;
+$state-info-hover: set-hover($state-info) !default;
 
 //
 // COLORMAP
@@ -171,7 +171,37 @@ $xui-colors: map-merge(
       'contrast': $highlight-contrast,
       'safe': $highlight-safe,
       'hover': $highlight-hover,
-    )
+    ),
+    'state': (
+      'hover': $state-hover,
+      'error': $state-error,
+      'success': $state-success,
+      'warning': $state-warning,
+      'info': $state-info,
+    ),
+    'hover': (
+      'contrast': $state-hover-contrast,
+    ),
+    'error': (
+      'contrast': $state-error-contrast,
+      'safe': $state-error-safe,
+      'hover': $state-error-hover,
+    ),
+    'success': (
+      'contrast': $state-success-contrast,
+      'safe': $state-success-safe,
+      'hover': $state-success-hover,
+    ),
+    'warning': (
+      'contrast': $state-warning-contrast,
+      'safe': $state-warning-safe,
+      'hover': $state-warning-hover,
+    ),
+    'info': (
+      'contrast': $state-info-contrast,
+      'safe': $state-info-safe,
+      'hover': $state-info-hover,
+    ),
   ),
   $xui-colors
 );
@@ -896,6 +926,35 @@ $tag-styles: map-merge(
   ),
   $tag-styles
 );
+
+//
+// MEATBALL
+// ------------------------------------------------------
+// @param {variable} $meatball-family [$body-font-family]
+// @param {number} $meatball-size [12]
+// @param {number} $meatball-font-size [12]
+// @param {number} $meatball-position-top [0]
+// @param {number} $meatball-position-right [0]
+// @param {number} $meatball-offset-x [25%]
+// @param {number} $meatball-offset-y [-25%]
+// @param {number} $meatball-border-color [$super]
+// @param {color} $meatball-background [$super]
+// @param {color} $meatball-color [$super-contrast]
+// @param {[1-24] | false} $meatball-elevation [4]
+// @param {map} $meatball-style
+$meatball-family: $body-font-family !default;
+$meatball-size: 12 !default;
+$meatball-font-size: 12 !default;
+$meatball-position-top: 0 !default;
+$meatball-position-right: 0 !default;
+$meatball-offset-x: 25% !default;
+$meatball-offset-y: -25% !default;
+$meatball-border-width: 2 !default;
+$meatball-border-color: $super !default;
+$meatball-background: $super !default;
+$meatball-color: $super-contrast !default;
+$meatball-elevation: 4 !default;
+$meatball-style: () !default;
 
 //
 // DROPDOWN
@@ -1981,15 +2040,15 @@ $xui-select-radius: $input-radius !default;
 // @param {color} $xui-select-border-color [$input-border-color]
 // @param {number} $xui-select-border-width [$input-border-width]
 // @param {string} $xui-select-border-style [$input-border-style]
-// @param {array} $xui-select-style
+// @param {map} $xui-select-style
 $xui-select-border-color: $input-border-color !default;
 $xui-select-border-width: $input-border-width !default;
 $xui-select-border-style: $input-border-style !default;
 $xui-select-style: () !default;
 
 // @param {color} $xui-select-placeholder-color [$input-placeholder-color]
-// @param {array} $xui-select-placeholder-style
-// @param {array} $xui-select-placeholder-hover-style
+// @param {map} $xui-select-placeholder-style
+// @param {map} $xui-select-placeholder-hover-style
 $xui-select-placeholder-color: $input-placeholder-color !default;
 $xui-select-placeholder-style: () !default;
 $xui-select-placeholder-hover-style: () !default;
@@ -1998,22 +2057,22 @@ $xui-select-placeholder-hover-style: () !default;
 // @param {array} $xui-select-options-padding [4]
 // @param {px | null} $xui-select-options-max-height [240]
 // @param {color} $xui-select-options-background
-// @param {string} $xui-select-options-shadow
-// @param {array} $xui-select-options-style
+// @param {[1-24] | false} $xui-select-options-elevation [8]
+// @param {map} $xui-select-options-style
 $xui-select-options-radius: 4 !default;
 $xui-select-options-padding: 4 !default;
 $xui-select-options-max-height: 240 !default;
 $xui-select-options-background: $background !default;
-$xui-select-options-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
+$xui-select-options-elevation: 8 !default;
 $xui-select-options-style: () !default;
 
 // @param {number} $xui-select-option-radius [4]
 // @param {array} $xui-select-option-spacing [4 0]
 // @param {array} $xui-select-option-padding [4]
-// @param {array} $xui-select-option-font-size [$xui-select-font-size]
+// @param {number} $xui-select-option-font-size [$xui-select-font-size]
 // @param {color} $xui-select-option-background
 // @param {color} $xui-select-option-color
-// @param {array} $xui-select-option-style
+// @param {map} $xui-select-option-style
 $xui-select-option-radius: 4 !default;
 $xui-select-option-spacing: 2 0 !default;
 $xui-select-option-padding: 4 !default;
@@ -2024,17 +2083,17 @@ $xui-select-option-style: () !default;
 
 // @param {color} $xui-select-option-hover-background
 // @param {color} $xui-select-option-hover-color
-// @param {array} $xui-select-option-hover-style
+// @param {map} $xui-select-option-hover-style
 $xui-select-option-hover-background: $state-hover !default;
-$xui-select-option-hover-color: inherit !default;
+$xui-select-option-hover-color: $xui-select-option-color !default;
 $xui-select-option-hover-style: () !default;
 
 // @param {color} $xui-select-option-selected-background
 // @param {color} $xui-select-option-selected-color
-// @param {array} $xui-select-option-selected-style
+// @param {map} $xui-select-option-selected-style
 $xui-select-option-selected-background: $xui-select-option-hover-background !default;
 $xui-select-option-selected-color: $xui-select-option-hover-color !default;
-$xui-select-option-selected-style: $xui-select-option-hover-style !default;
+$xui-select-option-selected-style: () !default;
 
 //
 // XUI-CHECKBOX

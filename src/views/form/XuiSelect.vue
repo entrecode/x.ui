@@ -23,7 +23,7 @@
                   @mousedown="selected = 'option 1'"
                   tabindex="0"
                   class="xui-select-option"
-                  :class="{ 'is-active': selected === 'option 1' }"
+                  :class="{ 'is-selected': selected === 'option 1' }"
                 >option 1</a>
               </li>
               <li>
@@ -31,7 +31,7 @@
                   @mousedown="selected = 'option 2'"
                   tabindex="0"
                   class="xui-select-option"
-                  :class="{ 'is-active': selected === 'option 2' }"
+                  :class="{ 'is-selected': selected === 'option 2' }"
                 >option 2</a>
               </li>
               <li>
@@ -39,7 +39,7 @@
                   @mousedown="selected = 'option 3'"
                   tabindex="0"
                   class="xui-select-option"
-                  :class="{ 'is-active': selected === 'option 3' }"
+                  :class="{ 'is-selected': selected === 'option 3' }"
                 >option 3</a>
               </li>
             </ul>
@@ -50,6 +50,12 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
+      <div class="spacer"></div>
+      <params-table :params="placeholderParams" title="placeholder params"></params-table>
+      <div class="spacer"></div>
+      <params-table :params="optionsParams" title="options params"></params-table>
+      <div class="spacer"></div>
+      <params-table :params="optionParams" title="option params"></params-table>
       <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
@@ -83,37 +89,57 @@ export default {
 </div>`,
       selected: '',
       params: [
-        { name: '$file-upload-spacing', type: 'array', default: '0 0 16' },
-        { name: '$file-upload-padding', type: 'array', default: '16' },
-        {
-          name: '$file-upload-border-radius',
-          type: 'number',
-          default: '4',
-        },
-        {
-          name: '$file-upload-border',
-          type: 'string',
-          default: '2px dashed $minor',
-        },
-        {
-          name: '$file-upload-background',
-          type: 'color',
-          default: 'none',
-        },
-        {
-          name: '$file-upload-style',
-          type: 'map',
-          default: '',
-        },
-        {
-          name: '$file-upload-hover-style',
-          type: 'map',
-          default: '',
-        },
+        { name: '$xui-select-background', type: 'color', default: '$input-background' },
+        { name: '$xui-select-color', type: 'color', default: '$input-color' },
+        { name: '$xui-select-spacing', type: 'array', default: '$input-spacing' },
+        { name: '$xui-select-padding-ratio', type: 'number', default: '$input-padding-ratio' },
+        { name: '$xui-select-font-size', type: 'number', default: '$input-font-size' },
+        { name: '$xui-select-line-height', type: 'number', default: '$input-line-height' },
+        { name: '$xui-select-min-height', type: 'number', default: '$input-min-height' },
+        { name: '$xui-select-round', type: 'boolean', default: '$input-round' },
+        { name: '$xui-select-radius', type: 'array', default: '$input-radius' },
+        { name: '$xui-select-border-color', type: 'color', default: '$input-border-color' },
+        { name: '$xui-select-border-width', type: 'number', default: '$input-border-width' },
+        { name: '$xui-select-border-style', type: 'string', default: '$input-border-style' },
+        { name: '$xui-select-style', type: 'map', default: '' },
+      ],
+      placeholderParams: [
+        { name: '$xui-select-placeholder-color', type: 'color', default: '$input-placeholder-color' },
+        { name: '$xui-select-placeholder-style', type: 'map', default: '' },
+        { name: '$xui-select-placeholder-hover-style', type: 'map', default: '' },
+      ],
+      optionsParams: [
+        { name: '$xui-select-options-radius', type: 'number', default: '4' },
+        { name: '$xui-select-options-padding', type: 'array', default: '4' },
+        { name: '$xui-select-options-max-height', type: 'px | null', default: '240' },
+        { name: '$xui-select-options-background', type: 'color', default: '$background' },
+        { name: '$xui-select-options-elevation', type: '[1-24] | false', default: '8' },
+        { name: '$xui-select-options-style', type: 'map', default: '' },
+      ],
+      optionParams: [
+        { name: '$xui-select-option-radius', type: 'array', default: '4' },
+        { name: '$xui-select-option-spacing', type: 'array', default: '4 0' },
+        { name: '$xui-select-option-padding', type: 'array', default: '4' },
+        { name: '$xui-select-option-font-size', type: 'number', default: '$xui-select-font-size' },
+        { name: '$xui-select-option-background', type: 'color', default: 'none' },
+        { name: '$xui-select-option-color', type: 'color', default: '$text' },
+        { name: '$xui-select-option-style', type: 'map', default: '' },
+        { name: '$xui-select-option-hover-background', type: 'color', default: '$state-hover' },
+        { name: '$xui-select-option-hover-color', type: 'color', default: '$xui-select-option-color' },
+        { name: '$xui-select-option-hover-style', type: 'map', default: '' },
+        { name: '$xui-select-option-selected-background', type: 'color', default: '$xui-select-option-hover-background' },
+        { name: '$xui-select-option-selected-color', type: 'color', default: '$xui-select-option-hover-color' },
+        { name: '$xui-select-option-selected-style', type: 'map', default: '' },
       ],
       requires: [
-        { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
+        { name: 'array-magic()', type: 'mixin', link: '#scroll-to-array-magic' },
         { name: 'inject-style()', type: 'mixin', link: '#scroll-to-inject-style' },
+        { name: 'elevation()', type: 'mixin', link: '#scroll-to-elevation' },
+        { name: 'metrics()', type: 'mixin', link: '#scroll-to-metrics' },
+        { name: 'is-scrollable()', type: 'mixin', link: '#scroll-to-is-scrollable' },
+        { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
+        { name: 'em()', type: 'function', link: '#scroll-to-em' },
+        { name: 'rem()', type: 'function', link: '#scroll-to-rem' },
       ],
     };
   },

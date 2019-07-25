@@ -90,10 +90,16 @@
         <router-link to="tags" class="is-mega is-uppercase">tags</router-link>
       </li>
       <li class="nav__item">
+        <router-link to="meatball" class="is-mega is-uppercase">meatball</router-link>
+      </li>
+      <li class="nav__item">
         <router-link to="loader" class="is-mega is-uppercase">loader</router-link>
       </li>
       <li class="nav__item">
         <router-link to="alert" class="is-mega is-uppercase">alert</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="data-tooltip" class="is-mega is-uppercase">data-tooltip</router-link>
       </li>
       <li class="y-space-5"></li>
       <li>
@@ -162,20 +168,13 @@
         <router-link to="is-width" class="is-mega is-uppercase">is-width</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="position" class="is-mega is-uppercase">position</router-link>
+        <router-link to="position" class="is-mega is-uppercase">position helper</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="display" class="is-mega is-uppercase">display</router-link>
+        <router-link to="display" class="is-mega is-uppercase">display helper</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="is-scrollable" class="is-mega is-uppercase">is-scrollable</router-link>
-      </li>
-      <li class="y-space-5"></li>
-      <li>
-        <div class="is-h6">utilities</div>
-      </li>
-      <li class="nav__item">
-        <router-link to="data-tooltip" class="is-mega is-uppercase">data-tooltip</router-link>
+        <router-link to="overflow" class="is-mega is-uppercase">overflow helper</router-link>
       </li>
       <li class="y-space-5"></li>
       <li class="nav__item">

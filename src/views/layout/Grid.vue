@@ -1,66 +1,243 @@
 <template>
-  <section id="scroll-to-grid">
-    <div data-container>
-      <div class="titlebar">
-        <h2>data-grid</h2>
-        <div class="nav">
-          <div class="nav__item">
-            <a
-              @click.prevent="gridContainer = !gridContainer"
-              class="btn btn_clear"
-              :class="gridContainer ? 'is-ink-link' : 'is-ink-lighter'"
-              data-tooltip-top="use a container"
-            >
-              <svg class="ixo"><use xlink:href="#grid-half"></use></svg>
-            </a>
+  <section>
+    <div data-grid="center">
+      <div data-col="10 8@xl">
+        <div class="titlebar">
+          <h2>data-grid</h2>
+        </div>
+      </div>
+
+      <div data-col="12">
+        <div class="demo-preview is-padding-middle-8">
+          <div :data-container="gridContainer">
+            <div :data-grid="[gridAlign, gridGutter].join(' ')" class="demo-grid demo-bg">
+              <div
+                :data-col="[col.size + col.sizeBreakpoint, col.offset > 0 ? '+' + col.offset + col.offsetBreakpoint : ''].join(' ')"
+                v-for="(col, index) in cols"
+                :key="index"
+              >
+                <div class="is-theme is-padding-center-2 is-padding-middle-6" data-flex="center">
+                  <div class="is-theme">
+                    <div class="nav" data-flex="wrap">
+                      <div class="nav__item">
+                        <div class="input-group" data-tooltip-top="size">
+                          <div class="input-group__addon">
+                            <svg class="ixo">
+                              <use xlink:href="#move-horizontal" />
+                            </svg>
+                          </div>
+                          <input
+                            type="number"
+                            min="0"
+                            max="12"
+                            v-model="col.size"
+                            class="input input_number"
+                          />
+                          <div class="input-group__addon">
+                            <div class="dropdown" tabindex="0">
+                              <div
+                                class="btn btn_clear btn_small is-body-font"
+                                :class="{'is-ink-light' : col.sizeBreakpoint === ''}"
+                                v-text="col.sizeBreakpoint === '' ? '@' : col.sizeBreakpoint"
+                              ></div>
+                              <div class="dropdown-options">
+                                <a
+                                  href
+                                  class="dropdown-option"
+                                  @click.prevent="col.sizeBreakpoint = value"
+                                  v-for="(value, index) in breakpoints"
+                                  :key="index"
+                                  v-text="value === '' ? 'always' : value"
+                                ></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="nav__item">
+                        <div class="input-group" data-tooltip-top="offset">
+                          <div class="input-group__addon">
+                            <svg class="ixo">
+                              <use xlink:href="#add" />
+                            </svg>
+                          </div>
+                          <input
+                            type="number"
+                            min="0"
+                            max="11"
+                            placeholder="0"
+                            v-model="col.offset"
+                            class="input input_number"
+                          />
+                          <div class="input-group__addon">
+                            <div class="dropdown" tabindex="0">
+                              <div
+                                class="btn btn_clear btn_small is-body-font"
+                                :class="{'is-ink-light' : col.offsetBreakpoint === ''}"
+                                v-text="col.offsetBreakpoint === '' ? '@' : col.offsetBreakpoint"
+                              ></div>
+                              <div class="dropdown-options">
+                                <a
+                                  href
+                                  class="dropdown-option"
+                                  @click.prevent="col.offsetBreakpoint = value"
+                                  v-for="(value, index) in breakpoints"
+                                  :key="index"
+                                  v-text="value === '' ? 'always' : value"
+                                ></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="nav__item">
+                        <div
+                          class="btn btn_small btn_clear hover:is-ink-error is-ink-lightest btn_square"
+                          @click="removeCol(index)"
+                        >
+                          <svg class="ixo">
+                            <use xlink:href="#clear" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="nav__item">
-            <a @click.prevent="addCol" class="btn btn_clear">
-              <svg class="ixo"><use xlink:href="#add"></use></svg>
+          <div class="is-absolute is-placed-s">
+            <a @click.prevent="addCol" class="btn btn_square btn_big btn_invert">
+              <svg class="ixo">
+                <use xlink:href="#add" />
+              </svg>
             </a>
           </div>
         </div>
       </div>
-    </div>
 
-    <div :data-container="gridContainer">
-      <div :data-grid="[gridAlign + ' ' + gridGutterSize]" class>
-        <div
-          :data-col="[col.size, col.offset ? '+' + col.offset : null].join(' ')"
-          v-for="(col, index) in cols"
-          :key="index"
-        >
-          <div class="typo-demo is-padding-3 is-margin-bottom-3" data-flex="center center-items">
-            <div data-flex="center center-items" class="is-padding-3 is-theme" style="user-select: none;">
-              <a class="is-mega" @click.prevent="upSize(col)">{{ col.size }}</a
-              >&ensp;
-              <a
-                class="is-mega"
-                :class="col.offset ? 'is-ink-link' : 'is-ink-lightest'"
-                @click.prevent="upOffset(col)"
-                >{{ '+' + col.offset }}</a
-              >
+      <div data-col="10 8@xl">
+        <div class="spacer"></div>
+
+        <div class="nav" data-flex="center">
+          <div class="nav__item">
+            <select id="displaySelected" class="input" v-model="gridGutter">
+              <option value>default</option>
+              <option value="small-gutter">small-gutter</option>
+              <option value="no-gutter">no-gutter</option>
+            </select>
+          </div>
+          <div class="nav__item">
+            <div
+              class="btn btn_clear btn_square"
+              @click="gridAlign = 'start'"
+              :class="{'is-ink-lightest' : gridAlign !== 'start'}"
+            >
+              <svg class="ixo">
+                <use xlink:href="#align-left" />
+              </svg>
+            </div>
+            <div
+              class="btn btn_clear btn_square"
+              @click="gridAlign = 'center'"
+              :class="{'is-ink-lightest' : gridAlign !== 'center'}"
+            >
+              <svg class="ixo">
+                <use xlink:href="#align-center" />
+              </svg>
+            </div>
+            <div
+              class="btn btn_clear btn_square"
+              @click="gridAlign = 'end'"
+              :class="{'is-ink-lightest' : gridAlign !== 'end'}"
+            >
+              <svg class="ixo">
+                <use xlink:href="#align-right" />
+              </svg>
+            </div>
+          </div>
+          <div class="nav__item">
+            <div class="xui-toggle">
+              <input id="gridContainer" type="checkbox" v-model="gridContainer" />
+              <label for="gridContainer" class="xui-toggle__label" data-flex="center-items">
+                <div class="xui-toggle__switch"></div>
+                <div>
+                  use a container
+                  <br />
+                  <small>max. 1200px</small>
+                </div>
+              </label>
             </div>
           </div>
         </div>
+
+        <div class="spacer"></div>
+        <pre v-highlightjs="markup" v-if="showMarkup"><code class="html"></code></pre>
+        <div class="spacer"></div>
+        <params-table :params="containerParams" title="container params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="gutterParams" title="gutter params"></params-table>
+        <div class="divider"></div>
+        <params-table :params="colParams" title="column params"></params-table>
+        <div class="spacer"></div>
+        <requires-list :requires="requires"></requires-list>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import ParamsTable from '@/components/ParamsTable.vue';
+import RequiresList from '@/components/RequiresList.vue';
+
 export default {
+  components: {
+    ParamsTable,
+    RequiresList,
+  },
   data: () => {
     return {
-      cols: [{ size: 4, offset: null }, { size: 4, offset: null }, { size: 4, offset: null }],
+      requires: [
+        { name: '$breakpoints', type: 'variable', link: '#scroll-to-breakpoints' },
+        { name: 'rem()', type: 'function', link: '#scroll-to-rem' },
+        { name: 'bp()', type: 'function', link: '#scroll-to-bp' },
+        { name: 'set-data-breakpoints()', type: 'mixin', link: '#scroll-to-set-data-breakpoints' },
+      ],
+      containerParams: [
+        { name: '$grid-container-width ', type: 'number', default: '1200' },
+        { name: '$grid-container-gutter ', type: 'number', default: '16' },
+      ],
+      gutterParams: [
+        { name: '$grid-gutter', type: 'number', default: '32' },
+        { name: '$grid-small-gutter', type: 'number', default: '16' },
+      ],
+      colParams: [
+        { name: '$grid-num-columns', type: 'number', default: '12' },
+      ],
+      breakpoints: ['', '@xs', '@sm', '@md', '@lg', '@xl', '@xxl'],
+      cols: [
+        { size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '' },
+        { size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '' },
+        { size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '' },
+      ],
+      colsWatch: '',
+      gridGutter: '',
       gridAlign: 'center',
       gridContainer: false,
-      gridGutterSize: 'small-gutter',
+      markup: `<div data-grid="center">
+  <div data-col="4">...</div>
+  <div data-col="4">...</div>
+  <div data-col="4">...</div>
+</div>`,
+      showMarkup: true,
     };
   },
   methods: {
     addCol: function() {
-      this.cols.push({ size: 4, offset: 0 });
+      this.cols.push({ size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '' });
+    },
+    removeCol: function(index) {
+      this.cols.splice(index, 1);
     },
     upSize: function(event) {
       if (event.size === 12) {
@@ -77,7 +254,31 @@ export default {
       }
     },
   },
+  computed: {
+    dirty() {
+      return [this.colsWatch, this.gridGutter, this.gridAlign, this.gridContainer].join('');
+    },
+  },
+  watch: {
+    cols: {
+      deep: true,
+      handler() {
+        this.colsWatch = JSON.stringify(this.cols);
+      },
+    },
+    dirty: function(val) {
+      this.markup = `${this.gridContainer ? '<div data-container>' : ''}
+  <div data-grid="${[this.gridAlign, this.gridGutter].join(' ').trim()}">
+    ${this.cols
+      .map((c) => {
+        return `<div data-col="${[c.size + c.sizeBreakpoint, c.offset > 0 ? '+' + c.offset + c.offsetBreakpoint : '']
+          .join(' ')
+          .trim()}">...</div>`;
+      })
+      .join('\n    ')}
+  </div>
+${this.gridContainer ? '</div>' : ''}`;
+    },
+  },
 };
 </script>
-
-<style scoped lang="scss"></style>

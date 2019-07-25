@@ -19,10 +19,6 @@
   --demo-contrast: #{set-contrast(#f00)};
 }
 
-.headings-font {
-  font-family: $headings-font-family;
-}
-
 .code {
   font-family: monospace;
   background-color: $text;
@@ -142,6 +138,7 @@
 
 .demo-preview {
   background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 .5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0' fill='%23000000' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-position: center;
   position: relative;
 
   &::after {
@@ -195,3 +192,16 @@
     }
   }
 }
+
+.input_number {
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+/* .demo-grid {
+  background-color: rgba(var(--spacingColor), 0.2);
+}
+.demo-col {
+  background-color: var(--background);
+} */
