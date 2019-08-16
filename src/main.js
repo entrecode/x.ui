@@ -19,6 +19,8 @@ const store = new Vuex.Store({
       backgroundLighter: '#ebebeb',
       backgroundLightest: '#f7f7f7',
       backgroundInvert: '#0d2e48',
+      inputBackground: '#edf2f7',
+      inputColor: '#0d2e48',
       text: '#0d2e48',
       textLight: 'rgba(13, 46, 72, 0.6)',
       textLighter: 'rgba(13, 46, 72, 0.4)',

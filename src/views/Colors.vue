@@ -24,6 +24,8 @@
                 <div class="input-group">
                   <verte
                     v-model="colorset[key]"
+                    :value="colorset[key]"
+                    :rgbSliders="true"
                     @input="updateColor(colorset[key], key)"
                     model="rgb"
                     :draggable="false"
@@ -75,6 +77,10 @@ export default {
           'text-lighter': this.$store.state.colors.textLighter,
           'text-lightest': this.$store.state.colors.textLightest,
           'text-invert': this.$store.state.colors.textInvert,
+        },
+        input: {
+          'input-background': this.$store.state.colors.inputBackground,
+          'input-color': this.$store.state.colors.inputColor,
         },
         link: {
           link: this.$store.state.colors.link,
