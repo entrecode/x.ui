@@ -1,0 +1,57 @@
+$lighter-fallback: #000;
+$darker-fallback: #fff;
+
+$background: var(--background);
+$background-light: var(--background-light);
+$background-lighter: var(--background-lighter);
+$background-lightest: var(--background-lightest);
+$background-invert: var(--background-invert);
+
+$text: var(--text);
+$text-light: var(--text-light);
+$text-lighter: var(--text-lighter);
+$text-lightest: var(--text-lightest);
+$text-invert: var(--text-invert);
+
+$link: var(--link);
+$link-contrast: var(--link-contrast);
+$link-safe: var(--link-safe);
+$link-hover: var(--link-hover);
+
+$super: var(--super);
+$super-contrast: var(--super-contrast);
+$super-safe: var(--super-safe);
+$super-hover: var(--super-hover);
+
+$minor: var(--minor);
+$minor-contrast: var(--minor-contrast);
+$minor-safe: var(--minor-safe);
+$minor-hover: var(--minor-hover);
+
+$highlight: var(--highlight);
+$highlight-contrast: var(--highlight-contrast);
+$highlight-safe: var(--highlight-safe);
+$highlight-hover: var(--highlight-hover);
+
+$state-hover: var(--state-hover);
+$state-hover-contrast: var(--state-hover-contrast);
+
+$state-error: var(--state-error);
+$state-error-contrast: var(--state-error-contrast);
+$state-error-safe: var(--state-error-safe);
+$state-error-hover: var(--state-error-hover);
+
+$state-success: var(--state-success);
+$state-success-contrast: var(--state-success-contrast);
+$state-success-safe: var(--state-success-safe);
+$state-success-hover: var(--state-success-hover);
+
+$state-warning: var(--state-warning);
+$state-warning-contrast: var(--state-warning-contrast);
+$state-warning-safe: var(--state-warning-safe);
+$state-warning-hover: var(--state-warning-hover);
+
+$state-info: var(--state-info);
+$state-info-contrast: var(--state-info-contrast);
+$state-info-safe: var(--state-info-safe);
+$state-info-hover: var(--state-info-hover);

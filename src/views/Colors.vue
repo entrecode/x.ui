@@ -1,42 +1,143 @@
 <template>
-  <section id="scroll-colors">
-    <h2 class="align-center">colors</h2>
+  <section>
     <div data-grid>
-      <div data-col="3">
-        <div class="doc-color-sample">
-          <div v-text="colors.link" class="is-giga is-padding-2" :style="`color: ${colors.link};`"></div>
+      <div data-col="10 8@xl">
+        <div class="titlebar">
+          <h1>colors</h1>
+        </div>
+        <div data-grid>
           <div
-            v-text="colors.linkContrast"
-            class="is-giga is-radius is-padding-2"
-            :style="`color: ${colors.linkContrast}; background-color: ${colors.link};`"
-          ></div>
-          <div v-text="colors.linkSafe" class="is-giga is-padding-2" :style="`color: ${colors.linkSafe};`"></div>
-          <div v-text="colors.linkHover" class="is-giga is-padding-2" :style="`color: ${colors.linkHover};`"></div>
+            data-col="6@md"
+            v-for="(colorset, key, index) in colors"
+            :key="index"
+            class="is-margin-bottom-5"
+          >
+            <h2 class="is-h4" v-text="key"></h2>
+            <div
+              class="field-group"
+              data-grid="small-gutter"
+              data-flex="center-items"
+              v-for="(val, key, index) in colorset"
+              :key="index"
+            >
+              <div data-col="6@md">
+                <div class="input-group">
+                  <verte
+                    v-model="colorset[key]"
+                    @input="updateColor(colorset[key], key)"
+                    model="rgb"
+                    :draggable="false"
+                  >
+                    <div class="demo-color-picker" :style="{backgroundColor: val}"></div>
+                  </verte>
+                  <input
+                    type="text"
+                    v-model="colorset[key]"
+                    @change="updateColor(colorset[key], key)"
+                    class="input"
+                  />
+                </div>
+              </div>
+              <div data-col="6@md">
+                <label for="background">
+                  <code class="code" v-text="'$' + key"></code>
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div data-col="3"></div>
-      <div data-col="3"></div>
     </div>
   </section>
 </template>
 
 <script>
+import Verte from 'verte';
+import 'verte/dist/verte.css';
+
 export default {
-  name: 'Grid',
-  data: () => {
-    return {
-      colors: {
-        background: '#fff',
-        backgroundLight: '#fff',
-        backgroundLighter: '#fff',
-        backgroundLightest: '#fff',
-        backgroundInvert: '#fff',
-        link: '#2fce6f',
-        linkContrast: '#fff',
-        linkSafe: '#2fce6f',
-        linkHover: '#1eb159',
-      },
-    };
+  components: {
+    Verte,
+  },
+  computed: {
+    colors() {
+      return {
+        background: {
+          background: this.$store.state.colors.background,
+          'background-light': this.$store.state.colors.backgroundLight,
+          'background-lighter': this.$store.state.colors.backgroundLighter,
+          'background-lightest': this.$store.state.colors.backgroundLightest,
+          'background-invert': this.$store.state.colors.backgroundInvert,
+        },
+        text: {
+          text: this.$store.state.colors.text,
+          'text-light': this.$store.state.colors.textLight,
+          'text-lighter': this.$store.state.colors.textLighter,
+          'text-lightest': this.$store.state.colors.textLightest,
+          'text-invert': this.$store.state.colors.textInvert,
+        },
+        link: {
+          link: this.$store.state.colors.link,
+          'link-contrast': this.$store.state.colors.linkContrast,
+          'link-safe': this.$store.state.colors.linkSafe,
+          'link-hover': this.$store.state.colors.linkHover,
+        },
+        super: {
+          super: this.$store.state.colors.super,
+          'super-contrast': this.$store.state.colors.superContrast,
+          'super-safe': this.$store.state.colors.superSafe,
+          'super-hover': this.$store.state.colors.superHover,
+        },
+        minor: {
+          minor: this.$store.state.colors.minor,
+          'minor-contrast': this.$store.state.colors.minorContrast,
+          'minor-safe': this.$store.state.colors.minorSafe,
+          'minor-hover': this.$store.state.colors.minorHover,
+        },
+        highlight: {
+          highlight: this.$store.state.colors.highlight,
+          'highlight-contrast': this.$store.state.colors.highlightContrast,
+          'highlight-safe': this.$store.state.colors.highlightSafe,
+          'highlight-hover': this.$store.state.colors.highlightHover,
+        },
+        'state-hover': {
+          'state-hover': this.$store.state.colors.stateHover,
+          'state-hover-contrast': this.$store.state.colors.stateHoverContrast,
+        },
+        'state-error': {
+          'state-error': this.$store.state.colors.stateError,
+          'state-error-contrast': this.$store.state.colors.stateErrorContrast,
+          'state-error-safe': this.$store.state.colors.stateErrorSafe,
+          'state-error-hover': this.$store.state.colors.stateErrorHover,
+        },
+        'state-success': {
+          'state-success': this.$store.state.colors.stateSuccess,
+          'state-success-contrast': this.$store.state.colors.stateSuccessContrast,
+          'state-success-safe': this.$store.state.colors.stateSuccessSafe,
+          'state-success-hover': this.$store.state.colors.stateSuccessHover,
+        },
+        'state-warning': {
+          'state-warning': this.$store.state.colors.stateWarning,
+          'state-warning-contrast': this.$store.state.colors.stateWarningContrast,
+          'state-warning-safe': this.$store.state.colors.stateWarningSafe,
+          'state-warning-hover': this.$store.state.colors.stateWarningHover,
+        },
+        'state-info': {
+          'state-info': this.$store.state.colors.stateInfo,
+          'state-info-contrast': this.$store.state.colors.stateInfoContrast,
+          'state-info-safe': this.$store.state.colors.stateInfoSafe,
+          'state-info-hover': this.$store.state.colors.stateInfoHover,
+        },
+      };
+    },
+  },
+  methods: {
+    updateColor(color, key) {
+      key = key.replace(/\W+(.)/g, function(match, chr) {
+        return chr.toUpperCase();
+      });
+      this.$store.commit('updateColor', { color, key });
+    },
   },
 };
 </script>
