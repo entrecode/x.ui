@@ -6,6 +6,7 @@ Vue.use(Router);
 
 export const router = new Router({
   mode: 'history',
+  base: process.env.NODE_ENV === 'production' ? '/x.ui/' : '/',
   routes: [
     {
       path: '/',
@@ -278,7 +279,7 @@ export const router = new Router({
       components: { main: () => import('./views/interaction/DataTooltip.vue'), menu: DemoMenubar },
     },
   ],
-  scrollBehavior: (to, from, savedPosition) => {
+  scrollBehavior: (to) => {
     if (to.hash) {
       return { selector: to.hash };
     } else {
