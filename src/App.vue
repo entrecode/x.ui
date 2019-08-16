@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="doc-layout">
+    <inline-style />
     <router-view name="hero" class="doc-hero" />
     <demo-navbar class="doc-navbar" />
     <router-view
@@ -7,6 +8,7 @@
       class="doc-menubar is-theme-menubar is-fixed is-height-vh-full is-scrollable-auto-y-contain"
     />
     <router-view name="main" class="doc-body" />
+
     <footer class="doc-footer">
       <div data-col="10 8@xl">
         <div class="is-padding-5 is-margin-middle-5 is-ink-light align-center doc-footer">
@@ -30,10 +32,12 @@
 
 <script>
 import DemoNavbar from '@/components/Navbar.vue';
+import InlineStyle from '@/components/Style.vue';
 
 export default {
   name: 'app',
   components: {
+    InlineStyle,
     DemoNavbar,
   },
 };

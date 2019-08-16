@@ -87,7 +87,7 @@
       <pre v-highlightjs="inputMarkup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="inputParams"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="inputSizeParama" title="size params"></params-table>
     </div>
   </section>

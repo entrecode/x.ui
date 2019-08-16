@@ -54,11 +54,11 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="paramsOptions" title="dropdown-options params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="paramsOption" title="dropdown-option params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="paramsDivider" title="dropdown-divider params"></params-table>
       <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>

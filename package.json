@@ -1,17 +1,19 @@
 {
   "name": "x.ui",
-  "version": "10.0.0-beta.9",
+  "version": "10.0.0-beta.10",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
   "dependencies": {
     "core-js": "^2.6.9",
+    "verte": "0.0.12",
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0",
     "vue-highlightjs": "^1.3.3",
     "vue-router": "^3.0.3",
-    "vue2-smooth-scroll": "^1.1.0"
+    "vue2-smooth-scroll": "^1.1.0",
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",

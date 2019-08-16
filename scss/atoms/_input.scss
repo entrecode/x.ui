@@ -73,6 +73,8 @@
 
   @at-root select#{&} {
     height: rem($input-min-height);
+    padding-top: 0;
+    padding-bottom: 0;
 
     &[multiple] {
       height: auto;
@@ -116,6 +118,8 @@
 
   @at-root select#{&} {
     height: rem($input-small-min-height);
+    padding-top: 0;
+    padding-bottom: 0;
 
     &[multiple] {
       height: auto;
@@ -136,6 +140,8 @@
 
   @at-root select#{&} {
     height: rem($input-big-min-height);
+    padding-top: 0;
+    padding-bottom: 0;
 
     &[multiple] {
       height: auto;

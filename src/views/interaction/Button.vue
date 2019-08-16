@@ -110,33 +110,33 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="coreParams" title="default params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="smallParams" title="small params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="bigParams" title="big params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="wideParams" title="wide params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="stateParams" title="state params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="defaultStyleParams" title="default style params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="minorStyleParams" title="minor style params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="superStyleParams" title="super style params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="invertStyleParams" title="invert style params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="clearStyleParams" title="clear style params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="defaultOutlinedParams" title="default outline params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="defaultOutlinedStyleParams" title="default outline style params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="minorOutlinedStyleParams" title="minor outline style params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="superOutlinedStyleParams" title="super outline style params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="invertOutlinedStyleParams" title="invert outline style params"></params-table>
       <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>

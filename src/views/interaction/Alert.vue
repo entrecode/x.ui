@@ -53,11 +53,11 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params" title="default params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="smallParams" title="small params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="bigParams" title="big params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="stylesParams" title="style params"></params-table>
       <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>

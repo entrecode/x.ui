@@ -5,10 +5,13 @@
 ### breaking changes
 - changed `$xui-checkbox-` config variables
 - changed `$xui-radio-` config variables
-- removed deprecated `.flex-spacer` use `.flex-space` instead
-- removed deprecated `.bumper-small` and `.bumper-big` use `.bumper.bumper_small` or `.bumper.bumper_big` instead
-- removed deprecated `.spacer-small` and `.spacer-big` use `.spacer.spacer_small` or `.spacer.spacer_big` instead
-- removed deprecated `.alert-small` and `.alert-big` use `.alert.alert_small` or `.alert.alert_big` instead
+- renamed `.flex-spacer` to `.flex-space`
+- renamed `.bumper-small` to `.bumper.bumper_small`
+- renamed `.bumper-big` to `.bumper.bumper_big`
+- renamed `.spacer-small` to `.spacer.spacer_small`
+- renamed `.spacer-big` to `.spacer.spacer_big`
+- renamed `.alert-small` to `.alert.alert_small`
+- renamed `.alert-big` to `.alert.alert_big`
 - removed deprecated `.well-small` and `.well-big`
 - removed deprecated `.is-visible#` use `is-block#` or `is-flex#`
 - removed deprecated `.is-raised#` use `is-elevated#` instead

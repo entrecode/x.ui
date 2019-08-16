@@ -2,8 +2,8 @@
   display: block;
   overflow-x: auto;
   padding: rem(16);
-  background: $text;
-  color: #fff;
+  background: $background-invert;
+  color: $text-invert;
   font-size: em(12);
   line-height: em(20, 12);
   border-radius: rem(4);
