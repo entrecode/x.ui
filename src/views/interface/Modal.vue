@@ -40,7 +40,7 @@
 
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="layoutParams" title="layout params"></params-table>
       <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>

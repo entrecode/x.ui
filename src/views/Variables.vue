@@ -49,7 +49,7 @@
               </ul>
             </div>
           </div>
-          <div class="divider divider_big"></div>
+          <div class="spacer"></div>
         </div>
       </div>
       <div data-col="4">

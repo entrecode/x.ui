@@ -42,7 +42,9 @@
               </div>
               <div data-col="6@md">
                 <label for="background">
-                  <code class="code" v-text="'$' + key"></code>
+                  <small>
+                    <code class="is-bold" v-text="'$' + key"></code>
+                  </small>
                 </label>
               </div>
             </div>

@@ -36,11 +36,11 @@
       </div>
       <div class="spacer"></div>
       <params-table :params="paramsGroup" title="group params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="paramsGroupHeader" title="group-header params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="paramsList" title="list params"></params-table>
-      <div class="divider"></div>
+      <div class="spacer"></div>
       <params-table :params="paramsListItem" title="list-item params"></params-table>
       <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
