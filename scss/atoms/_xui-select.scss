@@ -125,7 +125,8 @@
   max-height: rem($xui-select-options-max-height);
   padding: array-magic($xui-select-options-padding);
 
-  @at-root .xui-select:focus & {
+  @at-root .xui-select:focus &,
+    .xui-select:focus-within & {
     opacity: 1;
     visibility: visible;
   }

@@ -25,12 +25,7 @@
             <span class="xui-select__caret"></span>
             <ul class="xui-select-options align-center">
               <li>
-                <a
-                  href="https://xuidoc.entrecode.de/"
-                  tabindex="0"
-                  target="_blank"
-                  class="xui-select-option"
-                >9</a>
+                <a href="https://xuidoc.entrecode.de/" target="_blank" class="xui-select-option">9</a>
               </li>
             </ul>
           </div>

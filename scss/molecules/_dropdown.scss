@@ -45,7 +45,8 @@
   padding: array-magic($dropdown-options-padding);
 
   @if $dropdown-on-hover == false {
-    @at-root :focus > & {
+    @at-root :focus > &,
+      :focus-within > & {
       opacity: 1;
       visibility: visible;
     }
