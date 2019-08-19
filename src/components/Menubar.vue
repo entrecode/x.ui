@@ -8,6 +8,21 @@
         <router-link to="colors" class="is-mega is-uppercase">colors</router-link>
       </li>
       <li class="y-space-5"></li>
+      <li class="nav__item">
+        <a
+          href="https://entrecode.github.io/ixo/"
+          target="_blank"
+          class="is-mega is-uppercase"
+          data-flex="center-items"
+        >
+          ixo
+          <div class="x-space-2"></div>
+          <svg class="ixo is-ink-lighter">
+            <use xlink:href="#open" />
+          </svg>
+        </a>
+      </li>
+      <li class="y-space-5"></li>
       <li>
         <div class="is-h6">typeface</div>
       </li>
