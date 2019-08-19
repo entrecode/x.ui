@@ -79,7 +79,7 @@ export default {
         {
           name: '$divider-invert-color',
           type: 'color',
-          default: 'rgba($background, 0.2)',
+          default: '$base-divider-inverted-color',
         },
         {
           name: '$divider-spacing',

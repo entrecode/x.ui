@@ -5,6 +5,8 @@
 ### breaking changes
 - changed `$xui-checkbox-` config variables
 - changed `$xui-radio-` config variables
+- renamed `$hamburger-btn-` to `$hamburger-btn-`
+- renamed `.hamburger-btn` to `.hamburger`
 - renamed `.flex-spacer` to `.flex-space`
 - renamed `.bumper-small` to `.bumper.bumper_small`
 - renamed `.bumper-big` to `.bumper.bumper_big`

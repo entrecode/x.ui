@@ -894,10 +894,10 @@ h6 {
   computed: {
     sortedArray: function() {
       function compare(a, b) {
-        if (a.type < b.type) {
+        if (a.title < b.title) {
           return -1;
         }
-        if (a.type > b.type) {
+        if (a.title > b.title) {
           return 1;
         }
         return 0;

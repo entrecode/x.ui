@@ -1,5 +1,3 @@
-$grid-small-gutter: 16;
-
 @import url('https://fonts.googleapis.com/css?family=Geo|Rubik:300,400,500,700');
 $body-font-family: 'Rubik', sans-serif;
 $headings-font-family: 'Geo', sans-serif;
@@ -9,14 +7,7 @@ $is-normal: 400;
 $is-medium: 500;
 $is-bold: 700;
 
-$divider-color: var(--text);
-
 $base-font-size: 14;
-
-$link: #00cd97;
-$minor: #edf2f7;
-
-$input-background: #edf2f7;
 
 $type-scale: (
   is-kilo: 1.25,

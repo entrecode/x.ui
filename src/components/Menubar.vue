@@ -8,6 +8,21 @@
         <router-link to="colors" class="is-mega is-uppercase">colors</router-link>
       </li>
       <li class="y-space-5"></li>
+      <li class="nav__item">
+        <a
+          href="https://entrecode.github.io/ixo/"
+          target="_blank"
+          class="is-mega is-uppercase"
+          data-flex="center-items"
+        >
+          ixo
+          <div class="x-space-2"></div>
+          <svg class="ixo is-ink-lighter">
+            <use xlink:href="#open" />
+          </svg>
+        </a>
+      </li>
+      <li class="y-space-5"></li>
       <li>
         <div class="is-h6">typeface</div>
       </li>
@@ -78,19 +93,22 @@
         <div class="is-h6">interaction</div>
       </li>
       <li class="nav__item">
-        <router-link to="nav" class="is-mega is-uppercase">nav</router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="dropdown" class="is-mega is-uppercase">dropdown</router-link>
-      </li>
-      <li class="nav__item">
         <router-link to="button" class="is-mega is-uppercase">button</router-link>
       </li>
       <li class="nav__item">
         <router-link to="button-group" class="is-mega is-uppercase">button-group</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="tags" class="is-mega is-uppercase">tags</router-link>
+        <router-link to="hamburger" class="is-mega is-uppercase">hamburger</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="nav" class="is-mega is-uppercase">nav</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="dropdown" class="is-mega is-uppercase">dropdown</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="tag" class="is-mega is-uppercase">tag</router-link>
       </li>
       <li class="nav__item">
         <router-link to="meatball" class="is-mega is-uppercase">meatball</router-link>

@@ -21,6 +21,9 @@
           <li class="nav__item">
             <a href="#scroll-to-spacer" class="is-kilo is-ink hover:is-ink-link">spacer</a>
           </li>
+          <li class="nav__item">
+            <a href="#scroll-to-space" class="is-kilo is-ink hover:is-ink-link">space</a>
+          </li>
         </ul>
       </div>
     </div>

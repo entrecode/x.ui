@@ -44,7 +44,7 @@ $super-contrast: set-contrast($super) !default;
 $super-safe: set-contrast($background, $super) !default;
 $super-hover: set-hover($super) !default;
 
-$minor: #f4f5f6 !default;
+$minor: #edf2f7 !default;
 $minor-contrast: set-contrast($minor, $link) !default;
 $minor-safe: set-contrast($background, $minor) !default;
 $minor-hover: set-hover($minor) !default;
@@ -60,9 +60,9 @@ $highlight-hover: set-hover($highlight) !default;
 // @param {color} $background-lighter [null] - set value too overwrite generated color
 // @param {color} $background-lightest [null] - set value too overwrite generated color
 $background-invert: $text !default;
-$background-light: shade-by-contrast($background, 12) !default;
-$background-lighter: shade-by-contrast($background, 8) !default;
-$background-lightest: shade-by-contrast($background, 3) !default;
+$background-light: shade-by-contrast($background-lightest, 8) !default;
+$background-lighter: shade-by-contrast($background-lightest, 4) !default;
+$background-lightest: #f7f7f8 !default;
 
 // @param {color} $base-background [$background]
 $base-background: $background !default;
@@ -80,8 +80,11 @@ $text-lightest: rgba($text, 0.2) !default;
 // @param {color} $backdrop [rgba(#000, .2)]
 $backdrop: rgba(#000, 0.2) !default;
 
-// @param {color} $base-divider-color [rgba($text,.1)] -  color if divider used by e.b. .bumper
-$base-divider-color: rgba($text, 0.1) !default;
+// @param {color} $base-divider-color [rgba(#000, 0.1)]
+$base-divider-color: rgba($background-invert, 0.1) !default;
+
+// @param {color} $base-divider-inverted-color [rgba(#fff, 0.1)]
+$base-divider-inverted-color: rgba($background, 0.1) !default;
 
 // @param {color} $state-hover [rgba($link, 0.1)]
 // @param {color} $state-hover-contrast [$link]
@@ -775,20 +778,20 @@ $btn-clear-hover-style: () !default;
 //
 // HAMBURGER BUTTON
 // ------------------------------------------------------
-// @param {array} $hamburger-btn-spacing [$btn-spacing]
-// @param {number} $hamburger-btn-width [16] - width of hamburger menu
-// @param {color} $hamburger-btn-background [transparent]
-// @param {number} $hamburger-btn-line-weight [2] - height of hamburger menu bars
-// @param {number} $hamburger-btn-line-spacing [4]
-// @param {color} $hamburger-btn-line-color [$link]
-// @param {array} $hamburger-btn-style
-$hamburger-btn-spacing: $btn-spacing !default;
-$hamburger-btn-background: transparent !default;
-$hamburger-btn-line-width: 16 !default;
-$hamburger-btn-line-weight: 2 !default;
-$hamburger-btn-line-spacing: 4 !default;
-$hamburger-btn-line-color: $link !default;
-$hamburger-btn-style: () !default;
+// @param {array} $hamburger-spacing [$btn-spacing]
+// @param {number} $hamburger-width [16] - width of hamburger menu
+// @param {color} $hamburger-background [transparent]
+// @param {number} $hamburger-line-weight [2] - height of hamburger menu bars
+// @param {number} $hamburger-line-spacing [4]
+// @param {color} $hamburger-line-color [$link]
+// @param {array} $hamburger-style
+$hamburger-spacing: $btn-spacing !default;
+$hamburger-background: transparent !default;
+$hamburger-line-width: 16 !default;
+$hamburger-line-weight: 2 !default;
+$hamburger-line-spacing: 4 !default;
+$hamburger-line-color: $link !default;
+$hamburger-style: () !default;
 
 //
 // LOADER
@@ -1794,13 +1797,13 @@ $is-ink: map-merge(
 // ------------------------------------------------------
 // @param {number} $bumper-size [4]
 // @param {color} $bumper-color [$base-divider-color]
-// @param {color} $bumper-invert-color [rgba($background, .2)]
+// @param {color} $bumper-invert-color [$base-divider-inverted-color]
 // @param {array} $bumper-spacing [get-space(5) 0]
 // @param {array} $bumper-small-spacing [get-space(3) 0]
 // @param {array} $bumper-big-spacing [get-space(6) 0]
 $bumper-size: 4 !default;
 $bumper-color: $base-divider-color !default;
-$bumper-invert-color: rgba($background, 0.2) !default;
+$bumper-invert-color: $base-divider-inverted-color !default;
 $bumper-spacing: get-space(5) 0 !default;
 $bumper-small-spacing: get-space(3) 0 !default;
 $bumper-big-spacing: get-space(6) 0 !default;
@@ -1810,13 +1813,13 @@ $bumper-big-spacing: get-space(6) 0 !default;
 // ------------------------------------------------------
 // @param {number} $divider-height [1]
 // @param {color} $divider-color [$base-divider-color]
-// @param {color} $divider-invert-color [rgba($background, .2)]
+// @param {color} $divider-invert-color [$base-divider-inverted-color]
 // @param {array} $divider-spacing [get-space(3) 0]
 // @param {array} $divider-small-spacing [get-space(1) 0]
 // @param {array} $divider-big-spacing [get-space(5) 0]
 $divider-height: 1 !default;
 $divider-color: $base-divider-color !default;
-$divider-invert-color: rgba($background, 0.2) !default;
+$divider-invert-color: $base-divider-inverted-color !default;
 $divider-spacing: get-space(3) 0 !default;
 $divider-small-spacing: get-space(1) 0 !default;
 $divider-big-spacing: get-space(5) 0 !default;
@@ -1912,7 +1915,7 @@ $input-spacing: 0 !default;
 $input-border-color: transparent !default;
 $input-border-width: 0 !default;
 $input-border-style: solid !default;
-$input-background: $background-lighter !default;
+$input-background: #edf2f7 !default;
 $input-color: $text !default;
 $input-style: () !default;
 $input-hover-style: () !default;

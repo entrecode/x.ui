@@ -6,7 +6,7 @@
           v-for="(item, index) in sortedArray"
           :key="index"
           :id="item.anchor"
-          class="is-margin-middle-8"
+          class="is-margin-middle-8 is-border-bottom is-padding-bottom-8"
         >
           <h3 v-if="item.title">
             {{ item.title }}&ensp;
@@ -99,7 +99,11 @@
             <h2>functions</h2>
           </li>
           <li class="nav__item" v-for="(item, index) in sortedArray" :key="index">
-            <a :to="link(item.anchor)" class="is-kilo is-ink hover:is-ink-link">{{ item.title }}</a>
+            <a
+              :href="'#' + item.anchor"
+              v-smooth-scroll
+              class="is-kilo is-ink hover:is-ink-link"
+            >{{ item.title }}</a>
           </li>
         </ul>
       </div>
@@ -1278,22 +1282,16 @@ color: get-color(link);`,
   computed: {
     sortedArray: function() {
       function compare(a, b) {
-        if (a.type < b.type) {
+        if (a.title < b.title) {
           return -1;
         }
-        if (a.type > b.type) {
+        if (a.title > b.title) {
           return 1;
         }
         return 0;
       }
 
       return this.items.sort(compare);
-    },
-  },
-  methods: {
-    link(anchor) {
-      console.log('test');
-      return '/functions#' + anchor;
     },
   },
 };

@@ -19,6 +19,8 @@ const store = new Vuex.Store({
       backgroundLighter: '#ebebeb',
       backgroundLightest: '#f7f7f7',
       backgroundInvert: '#0d2e48',
+      baseDividerColor: 'rgba(13, 46, 72, 0.1)',
+      baseDividerInvertedColor: 'rgba(255, 255, 255, 0.1)',
       inputBackground: '#edf2f7',
       inputColor: '#0d2e48',
       text: '#0d2e48',
