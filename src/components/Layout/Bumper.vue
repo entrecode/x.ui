@@ -78,7 +78,7 @@ export default {
         },
         {
           name: '$bumper-invert-color',
-          default: 'rgba($background, 0.2)',
+          default: '$base-divider-inverted-color',
           type: 'color',
         },
         {

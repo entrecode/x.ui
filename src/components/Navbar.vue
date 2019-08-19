@@ -1,5 +1,5 @@
 <template>
-  <div class="is-sticky is-padding-3 is-layer-10 is-theme" style="top:0;">
+  <div class="is-sticky is-padding-3 is-layer-10" style="top:0;">
     <div class="is-padding-center-4" data-flex="center-items">
       <router-link to="/">
         <svg class="xui-logo">

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="scroll-to-space">
     <div class="titlebar">
       <h2>space</h2>
     </div>

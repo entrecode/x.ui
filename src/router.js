@@ -144,14 +144,19 @@ export const router = new Router({
       components: { main: () => import('./views/img/Avatar.vue'), menu: DemoMenubar },
     },
     {
-      path: '/tags',
-      name: 'tags',
-      components: { main: () => import('./views/interaction/Tags.vue'), menu: DemoMenubar },
+      path: '/tag',
+      name: 'tag',
+      components: { main: () => import('./views/interaction/Tag.vue'), menu: DemoMenubar },
     },
     {
       path: '/meatball',
       name: 'meatball',
       components: { main: () => import('./views/interaction/Meatball.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/hamburger',
+      name: 'hamburger',
+      components: { main: () => import('./views/interface/Hamburger.vue'), menu: DemoMenubar },
     },
     {
       path: '/modal',
@@ -267,6 +272,11 @@ export const router = new Router({
       path: '/display',
       name: 'display',
       components: { main: () => import('./views/layout/Display.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/data-flex',
+      name: 'data-flex',
+      components: { main: () => import('./views/layout/DataFlex.vue'), menu: DemoMenubar },
     },
     {
       path: '/overflow',

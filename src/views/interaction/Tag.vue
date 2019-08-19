@@ -2,7 +2,7 @@
   <section>
     <div data-col="10 8@xl">
       <div class="titlebar">
-        <h1>tags</h1>
+        <h1>tag</h1>
       </div>
       <div class="demo-preview is-padding-8" data-flex="column center-items">
         <div class="is-theme is-padding-center-5 is-padding-middle-3">
