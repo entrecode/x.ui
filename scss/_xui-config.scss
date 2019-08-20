@@ -60,9 +60,9 @@ $highlight-hover: set-hover($highlight) !default;
 // @param {color} $background-lighter [null] - set value too overwrite generated color
 // @param {color} $background-lightest [null] - set value too overwrite generated color
 $background-invert: $text !default;
-$background-light: shade-by-contrast($background-lightest, 8) !default;
-$background-lighter: shade-by-contrast($background-lightest, 4) !default;
 $background-lightest: #f7f7f8 !default;
+$background-lighter: shade-by-contrast($background-lightest, 4) !default;
+$background-light: shade-by-contrast($background-lightest, 8) !default;
 
 // @param {color} $base-background [$background]
 $base-background: $background !default;
