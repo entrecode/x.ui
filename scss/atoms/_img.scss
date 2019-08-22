@@ -2,14 +2,17 @@
 /// @since 10.0.0
 /// @access public
 /// @group atoms modifier
+///
+/// @deprecated since 10.0.0 `.img_responsive` and `.img_full`
 
 // image grows up to its initial width
-.img-responsive {
+.img_responsive .img-responsive {
   height: auto;
   max-width: 100%;
 }
 
 // image grows up to its parents width
+.img_full,
 .img-fullwidth {
   height: auto;
   width: 100%;
