@@ -7,6 +7,8 @@
 ///
 /// @require {function} bp()
 /// @require {variable} $breakpoints
+///
+/// @deprecated since 10.0.0 breakpoints with '-' prefix
 
 [data-col] {
   flex: 100%;
@@ -31,6 +33,7 @@
 
 @each $bp in map-keys($breakpoints) {
   @for $i from 1 through $grid-num-columns {
+    [data-col~='#{$i}-#{$bp}'],
     [data-col~='#{$i}\@#{$bp}'] {
       @media (min-width: bp(#{$bp})) {
         max-width: ($i / $grid-num-columns) * 100%;
@@ -40,6 +43,7 @@
 }
 
 @each $bp in map-keys($breakpoints) {
+  [data-col~='auto-#{$bp}'],
   [data-col~='auto\@#{$bp}'] {
     @media (min-width: bp(#{$bp})) {
       flex: 1;
@@ -48,6 +52,7 @@
 }
 
 @each $bp in map-keys($breakpoints) {
+  [data-col~='fit-#{$bp}'],
   [data-col~='fit\@#{$bp}'] {
     @media (min-width: bp(#{$bp})) {
       flex: none;
