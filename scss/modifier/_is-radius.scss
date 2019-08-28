@@ -6,6 +6,8 @@
 /// @param {map} $is-radius-options
 ///
 /// @require {function} rem
+///
+/// @deprecated since 10.0.0 `.has-#`
 
 @mixin _is-radius($radius) {
   border-radius: $radius;
@@ -47,6 +49,7 @@
   }
 }
 
+.has-radius,
 .is-radius {
   $_states: map-keys($is-radius-options);
   $_values: map-values($is-radius-options);

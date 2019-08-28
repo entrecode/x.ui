@@ -32,9 +32,6 @@
       display: flex;
     }
 
-    > .opens-top {
-    }
-
     > .opens-bottom {
       margin-top: auto;
     }
@@ -81,6 +78,11 @@
 
   &.is-active {
     top: 0;
+    display: flex;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: $snackbar-z-index;
   }
 
   // @param {string} $snackbar-opens-top-shadow
@@ -101,14 +103,6 @@
       top: auto;
       bottom: rem($base-spacing);
     }
-  }
-
-  &.is-active {
-    display: flex;
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: $snackbar-z-index;
   }
 }
 

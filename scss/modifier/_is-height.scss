@@ -4,7 +4,10 @@
 /// @group modifier
 ///
 /// @param {map} $is-height-map
+///
+/// @deprecated since 10.0.0 `.has-#`
 
+.has-height,
 .is-height {
   $keys: map-keys($is-height-map);
 
@@ -46,6 +49,7 @@
   }
 }
 
+.has-min-height,
 .is-min-height {
   $keys: map-keys($is-height-map);
 

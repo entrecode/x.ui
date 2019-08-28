@@ -8,7 +8,10 @@
 /// @require {mixin} set-breakpoints
 /// @require {function} get-space
 /// @require {map} $spacings
+///
+/// @deprecated since 10.0.0 `.has-#`
 
+.has-margin,
 .is-margin {
   @each $_spacing, $_h in $is-margin-options {
     &-#{$_spacing} {
@@ -19,6 +22,7 @@
   }
 }
 
+.has-margin-middle,
 .is-margin-middle {
   @each $_spacing, $_h in $is-margin-options {
     &-#{$_spacing} {
@@ -30,6 +34,7 @@
   }
 }
 
+.has-margin-top,
 .is-margin-top {
   @each $_spacing, $_h in $is-margin-options {
     &-#{$_spacing} {
@@ -40,6 +45,7 @@
   }
 }
 
+.has-margin-bottom,
 .is-margin-bottom {
   @each $_spacing, $_h in $is-margin-options {
     &-#{$_spacing} {
@@ -50,6 +56,7 @@
   }
 }
 
+.has-margin-center,
 .is-margin-center {
   &-auto {
     @include set-breakpoints {
@@ -68,6 +75,7 @@
   }
 }
 
+.has-margin-left,
 .is-margin-left {
   &-auto {
     @include set-breakpoints {
@@ -84,6 +92,7 @@
   }
 }
 
+.has-margin-right,
 .is-margin-right {
   &-auto {
     @include set-breakpoints {

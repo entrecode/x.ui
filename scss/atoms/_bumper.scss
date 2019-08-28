@@ -12,7 +12,11 @@
 /// @param {array} $bumper-spacing [get-space(5) 0]
 /// @param {array} $bumper-small-spacing [get-space(3) 0]
 /// @param {array} $bumper-big-spacing [get-space(6) 0]
+///
+/// @deprecated `.bumper-small` and `.bumper-big` since 10.0.0
 
+.bumper-small,
+.bumper-big,
 .bumper {
   flex-shrink: 0;
   width: 100%;
@@ -40,10 +44,12 @@
   }
 }
 
+.bumper-small,
 .bumper_small {
   margin: array-magic($bumper-small-spacing);
 }
 
+.bumper-big,
 .bumper_big {
   margin: array-magic($bumper-big-spacing);
 }

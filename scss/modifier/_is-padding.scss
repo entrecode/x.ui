@@ -6,7 +6,10 @@
 /// @require {mixin} set-breakpoints
 /// @require {function} get-space
 /// @param {map} $is-padding-options [$is-padding-options]
+///
+/// @deprecated since 10.0.0 `.has-#`
 
+.has-padding,
 .is-padding {
   @each $_spacing, $_h in $is-padding-options {
     &-#{$_spacing} {
@@ -17,6 +20,7 @@
   }
 }
 
+.has-padding-middle,
 .is-padding-middle {
   @each $_spacing, $_h in $is-padding-options {
     &-#{$_spacing} {
@@ -28,6 +32,7 @@
   }
 }
 
+.has-padding-top,
 .is-padding-top {
   @each $_spacing, $_h in $is-padding-options {
     &-#{$_spacing} {
@@ -38,6 +43,7 @@
   }
 }
 
+.has-padding-bottom,
 .is-padding-bottom {
   @each $_spacing, $_h in $is-padding-options {
     &-#{$_spacing} {
@@ -48,6 +54,7 @@
   }
 }
 
+.has-padding-center,
 .is-padding-center {
   @each $_spacing, $_h in $is-padding-options {
     &-#{$_spacing} {
@@ -59,6 +66,7 @@
   }
 }
 
+.has-padding-left,
 .is-padding-left {
   @each $_spacing, $_h in $is-padding-options {
     &-#{$_spacing} {
@@ -69,6 +77,7 @@
   }
 }
 
+.has-padding-right,
 .is-padding-right {
   @each $_spacing, $_h in $is-padding-options {
     &-#{$_spacing} {
