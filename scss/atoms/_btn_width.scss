@@ -25,6 +25,7 @@
   flex: auto;
 
   @at-root [type='button']#{&},
+    [type='submit']#{&},
     button#{&} {
     width: 100%;
   }
