@@ -130,6 +130,11 @@
     opacity: 1;
     visibility: visible;
   }
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 // @param {number} $xui-select-option-radius [4]
