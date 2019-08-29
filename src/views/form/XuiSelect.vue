@@ -117,6 +117,42 @@
         <pre v-highlightjs="markup2"><code class="html"></code></pre>
       </div>
       <div class="spacer"></div>
+      <h2>special feature</h2>
+      <p>the <code class="code">.xui-select-options</code> can be used outside an <code class="code">.xui-select</code> for a custom elements. without the <code class="code">xui-select</code> wrapper there is no <code class="code">:focus</code> or <code class="code">.is-active</code> functionality.</p>
+      <div class="demo-preview is-padding-8" data-flex="center">
+        <div data-col="8@lg 6@xl">
+          <ul class="xui-select-options" style="position: inherit; top: inherit;">
+            <li>
+              <a @mousedown="selected = ''" tabindex="0" class="xui-select-option">make a selection</a>
+            </li>
+            <li>
+              <a
+                @mousedown="selected = 'option 1'"
+                tabindex="0"
+                class="xui-select-option"
+                :class="{ 'is-selected': selected === 'option 1' }"
+              >option 1</a>
+            </li>
+            <li>
+              <a
+                @mousedown="selected = 'option 2'"
+                tabindex="0"
+                class="xui-select-option"
+                :class="{ 'is-selected': selected === 'option 2' }"
+              >option 2</a>
+            </li>
+            <li>
+              <a
+                @mousedown="selected = 'option 3'"
+                tabindex="0"
+                class="xui-select-option"
+                :class="{ 'is-selected': selected === 'option 3' }"
+              >option 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="spacer"></div>
       <params-table :params="params"></params-table>
       <div class="spacer"></div>
       <params-table :params="placeholderParams" title="placeholder params"></params-table>
