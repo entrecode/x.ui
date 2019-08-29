@@ -118,7 +118,14 @@
       </div>
       <div class="spacer"></div>
       <h2>special feature</h2>
-      <p>the <code class="code">.xui-select-options</code> can be used outside an <code class="code">.xui-select</code> for a custom elements. without the <code class="code">xui-select</code> wrapper there is no <code class="code">:focus</code> or <code class="code">.is-active</code> functionality.</p>
+      <p>
+        the
+        <code class="is-ink-highlight">.xui-select-options</code> can be used outside an
+        <code class="is-ink-highlight">.xui-select</code> for a custom elements. without the
+        <code class="is-ink-highlight">xui-select</code> wrapper there is no
+        <code class="is-ink-highlight">:focus</code> or
+        <code class="is-ink-highlight">.is-active</code> functionality.
+      </p>
       <div class="demo-preview is-padding-8" data-flex="center">
         <div data-col="8@lg 6@xl">
           <ul class="xui-select-options" style="position: inherit; top: inherit;">

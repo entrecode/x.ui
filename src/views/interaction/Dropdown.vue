@@ -114,6 +114,29 @@
       <div class="spacer"></div>
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
+      <h2>special feature</h2>
+      <p class="is-lead">
+        the
+        <code class="code">.dropdown-options</code> can be used outside an
+        <code class="code">.dropdown</code> for a custom elements. without the
+        <code class="code">.dropdown</code> wrapper there is no
+        <code class="code">:focus</code> or
+        <code class="code">.is-active</code> functionality.
+      </p>
+      <div class="demo-preview is-padding-8" data-flex="center">
+        <div data-col="8@lg 6@xl">
+          <div class="dropdown-options" style="position: inherit; top: inherit;">
+            <a href class="dropdown-option">dropdown option</a>
+            <a href class="dropdown-option">dropdown option</a>
+            <a href class="dropdown-option">dropdown option</a>
+            <div class="dropdown_divider"></div>
+            <div class="dropdown-option">
+              <a href class="btn btn_block">a button</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
       <params-table :params="params"></params-table>
       <div class="spacer"></div>
       <params-table :params="paramsOptions" title="dropdown-options params"></params-table>
@@ -280,7 +303,9 @@ export default {
         this.posY ? 'dropdown_above' : null,
         this.onHover ? 'on-hover' : null,
         this.posX !== '' ? 'dropdown_' + this.posX : null,
-      ].join(' ').trim();
+      ]
+        .join(' ')
+        .trim();
     },
     dirty() {
       return [this.posY, this.onHover, this.posX, this.toggleDropdown];
