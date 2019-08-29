@@ -62,6 +62,11 @@
     visibility: visible;
   }
 
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
   @at-root .dropdown_center & {
     left: 50%;
     transform: translateX(-50%);
