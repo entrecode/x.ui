@@ -7,7 +7,7 @@
       <div class="demo-preview is-padding-8" data-flex="column center-items">
         <div v-html="markup"></div>
 
-        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
           <div class="nav" data-flex="center">
             <div class="nav__item" data-col="fit">
               <div class="input-group is-margin-top-2">
@@ -20,7 +20,7 @@
                   <select class="input input_round" id="alerStyle" v-model="style">
                     <option
                       :value="style"
-                      v-for="(style, index) in styles"
+                      v-for="(style, index) in styles"  
                       :key="index"
                       v-text="style === 'is-ink' ? 'default' : style.slice(7)"
                     ></option>

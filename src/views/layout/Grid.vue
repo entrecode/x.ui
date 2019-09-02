@@ -16,10 +16,13 @@
                 v-for="(col, index) in cols"
                 :key="index"
               >
-                <div class="is-theme is-padding-center-2 is-padding-middle-6" data-flex="center">
-                  <div class="is-theme">
-                    <div class="nav" data-flex="wrap">
-                      <div class="nav__item">
+                <div
+                  class="is-theme is-padding-center-3 is-padding-top-5 is-padding-bottom-2 is-margin-middle-2"
+                  data-flex="center"
+                >
+                  <div data-grid="small-gutter center">
+                    <div data-col="6">
+                      <div class="field-group">
                         <div class="input-group" data-tooltip-top="size">
                           <div class="input-group__addon">
                             <svg class="ixo">
@@ -54,7 +57,9 @@
                           </div>
                         </div>
                       </div>
-                      <div class="nav__item">
+                    </div>
+                    <div data-col="6">
+                      <div class="field-group">
                         <div class="input-group" data-tooltip-top="offset">
                           <div class="input-group__addon">
                             <svg class="ixo">
@@ -90,16 +95,12 @@
                           </div>
                         </div>
                       </div>
-                      <div class="nav__item">
-                        <div
-                          class="btn btn_small btn_clear hover:is-ink-error is-ink-lightest btn_square"
-                          @click="removeCol(index)"
-                        >
-                          <svg class="ixo">
-                            <use xlink:href="#clear" />
-                          </svg>
-                        </div>
-                      </div>
+                    </div>
+                    <div data-col="fit">
+                      <div
+                        class="btn btn_small btn_clear hover:is-ink-error is-ink-lightest btn_square"
+                        @click="removeCol(index)"
+                      >remove col</div>
                     </div>
                   </div>
                 </div>
@@ -211,9 +212,7 @@ export default {
         { name: '$grid-gutter', type: 'number', default: '32' },
         { name: '$grid-small-gutter', type: 'number', default: '16' },
       ],
-      colParams: [
-        { name: '$grid-num-columns', type: 'number', default: '12' },
-      ],
+      colParams: [{ name: '$grid-num-columns', type: 'number', default: '12' }],
       breakpoints: ['', '@xs', '@sm', '@md', '@lg', '@xl', '@xxl'],
       cols: [
         { size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '' },
