@@ -16,7 +16,9 @@
               class="is-outset demo-transition"
               :data-col="useCol && isOutsetClass !== 'is-outset_full' ? col : null"
             >
-              <img src="sample-image.jpg" />
+              <div :class="isOutsetClass !== 'is-outset_full' ? 'img-crop-1-1' : 'img-crop-16-9'">
+                <img src="sample-image.jpg" />
+              </div>
             </div>
             <p class="is-lead is-hyphen-block">
               Shine vibrant dynamic social entrepreneurship impact investing. Capacity building indicators, replicable
