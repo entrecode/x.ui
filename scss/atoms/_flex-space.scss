@@ -2,7 +2,10 @@
 /// @since 10.0.0
 /// @access public
 /// @group atoms
+///
+/// @deprecated `.flex-spacer` since 10.0.0
 
+.flex-spacer,
 .flex-space {
   flex-grow: 1;
 }

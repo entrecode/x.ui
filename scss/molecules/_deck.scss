@@ -79,7 +79,11 @@
   }
 
   &.is-active {
+    display: flex;
+    position: fixed;
     left: 0;
+    top: 0;
+    z-index: $deck-z-index;
   }
 
   // @param {string} $deck-opens-left-shadow
@@ -99,13 +103,6 @@
       left: auto;
       right: 0;
     }
-  }
-
-  &.is-active {
-    display: flex;
-    position: fixed;
-    top: 0;
-    z-index: $deck-z-index;
   }
 
   > .deck-dismiss + .deck-body {

@@ -49,7 +49,7 @@ $minor-contrast: set-contrast($minor, $link) !default;
 $minor-safe: set-contrast($background, $minor) !default;
 $minor-hover: set-hover($minor) !default;
 
-$highlight: #fcf3b5 !default;
+$highlight: #2196f3 !default;
 $highlight-contrast: set-contrast($highlight) !default;
 $highlight-safe: set-contrast($background, $highlight) !default;
 $highlight-hover: set-hover($highlight) !default;
@@ -1523,26 +1523,6 @@ $snackbar-footer-padding: 8 !default;
 $snackbar-footer-style: () !default;
 
 //
-// XUI-OVERLAY
-// ------------------------------------------------------
-// @param {number} $xui-overlay-radius [4]
-// @param {array} $xui-overlay-padding [4]
-// @param {color} $xui-overlay-background
-// @param {array} $xui-overlay-style
-// @param {string} $xui-overlay-shadow
-$xui-overlay-radius: 4 !default;
-$xui-overlay-padding: 4 !default;
-$xui-overlay-background: $background !default;
-$xui-overlay-color: $text !default;
-$xui-overlay-style: () !default;
-$xui-overlay-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
-
-// @param {color} $xui-overlay-backdrop-background [$backdrop]
-// @param {array} $xui-overlay-backdrop-style
-$xui-overlay-backdrop-background: $backdrop !default;
-$xui-overlay-backdrop-style: () !default;
-
-//
 // OVERLAY
 // ------------------------------------------------------]
 // @param {array} $overlay-padding [16]
@@ -1579,21 +1559,6 @@ $overlay-body-style: () !default;
 $overlay-footer-spacing: 0 !default;
 $overlay-footer-padding: 8 !default;
 $overlay-footer-style: () !default;
-
-//
-// POPOVER
-// ------------------------------------------------------
-// @param {number} $popover-radius [4]
-// @param {array} $popover-padding [4]
-// @param {color} $popover-background
-// @param {string} $popover-shadow
-// @param {array} $popover-style
-$popover-radius: 4 !default;
-$popover-padding: 4 !default;
-$popover-background: $background !default;
-$popover-color: $text !default;
-$popover-shadow: 0 8 16 -4 rgba(#000, 0.16) ',' 0 4 24 0 rgba(#000, 0.1) !default;
-$popover-style: () !default;
 
 //
 // WELL
@@ -2001,7 +1966,7 @@ $file-upload-hover-style: () !default;
 // INPUT-GROUP
 // ------------------------------------------------------
 // @param {array} $input-group-spacing [$input-spacing]
-$input-group-spacing: $input-spacing;
+$input-group-spacing: $input-spacing !default;
 
 // @param {color} $input-group-addon-color [$text-light]
 // @param {color} $input-group-addon-background [$input-background]
@@ -2341,4 +2306,4 @@ $elevation-color: #000 !default;
 $elevation-opacity: 1 !default;
 
 // @param {string} $elevation-prefix [is-elevated-]
-$elevation-prefix: 'is-elevated-';
+$elevation-prefix: 'is-elevated-' !default;

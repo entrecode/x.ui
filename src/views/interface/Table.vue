@@ -143,7 +143,7 @@ export default {
       <th${this.col3 ? ' data-col="' + this.col3 + '"' : ''}>date</th>
     </tr>
   </thead>
-  <tbody>#
+  <tbody>
     <tr${this.col1 || this.col2 || this.col3 ? ' data-flex' : ''}>
       <td${this.col1 ? ' data-col="' + this.col1 + '"' : ''}>Outcomes gender rights</td>
       <td${this.col2 ? ' data-col="' + this.col2 + '"' : ''}>

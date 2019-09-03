@@ -5,6 +5,8 @@
 ///
 /// @example
 ///   <p class='alert alert_error'>Error Message</p>
+///
+/// @deprecated `.alert-small` and `.alert-big` since 10.0.0
 
 // @param {color} $alert-background [$background-lightest]
 // @param {color} $alert-color [$text]
@@ -14,6 +16,8 @@
 // @param {array} $alert-padding [16 24]
 // @param {array} $alert-spacing [0 0 16 0]
 // @param {array} $alert-style
+.alert-small,
+.alert-big,
 .alert {
   text-align: center;
   @include inject-style($alert-style);
@@ -30,6 +34,7 @@
 // @param {array} $alert-small-padding [8 12]
 // @param {array} $alert-small-spacing [$alert-spacing]
 // @param {array} $alert-small-style
+.alert-small,
 .alert_small {
   @include inject-style($alert-small-style);
   font-size: em($alert-small-font-size);
@@ -41,6 +46,7 @@
 // @param {array} $alert-big-padding [24 28]
 // @param {array} $alert-big-spacing [$alert-spacing]
 // @param {array} $alert-big-style
+.alert-big,
 .alert_big {
   @include inject-style($alert-big-style);
   font-size: em($alert-big-font-size);

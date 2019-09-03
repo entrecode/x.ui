@@ -3,8 +3,10 @@
 ## 10.0.0
 
 ### breaking changes
+
 - changed `$xui-checkbox-` config variables
 - changed `$xui-radio-` config variables
+
 - renamed `$hamburger-btn-` to `$hamburger-btn-`
 - renamed `.hamburger-btn` to `.hamburger`
 - renamed `.flex-spacer` to `.flex-space`
@@ -14,21 +16,7 @@
 - renamed `.spacer-big` to `.spacer.spacer_big`
 - renamed `.alert-small` to `.alert.alert_small`
 - renamed `.alert-big` to `.alert.alert_big`
-- removed deprecated `.well-small` and `.well-big`
-- removed deprecated `.is-visible#` use `is-block#` or `is-flex#`
-- removed deprecated `.is-raised#` use `is-elevated#` instead
-- removed deprecated `.is-lifted#` use `is-elevated#` instead
-- removed deprecated `.is-rounded#` use `is-radius#` instead
-- removed deprecated `.is-hidden-from#`
-- removed deprecated `.btn_glow`
-- removed `data-flex-item` size values, use `data-col` instead
-- refactored and combined `is-positioned` and `is-fab`
-- removed `.img_responsive` and `.img_full` use `.img-responsive` or `.img-fullwidth` instead
-- removed `.title` and `.toolbar` use `.titlebar` instead
-- removed `.xui-overlay`
-- removed float grid styles `data-row`
-- removed `.no-margin` use `.is-margin-0` instead
-- removed `.no-padding` use `.is-padding-0` instead
+- renamed `.img_responsive` and `.img_full` use `.img-responsive` or `.img-fullwidth` instead
 - renamed `.has-margin` to `.is-margin`
 - renamed `.has-padding` to `.is-padding`
 - renamed `.has-radius` to `.is-radius`
@@ -37,32 +25,8 @@
 - renamed `.has-width` to `.is-width`
 - renamed `.has-min-width` to `.is-min-width`
 - renamed `.is-bordered` to `.is-border`
-- removed `.has-margin#`, `.has-margin#-smallest`, `.has-margin#-small`, `.has-margin#-big`
-- removed `.has-padding#`, `.has-padding#-smallets`, `.has-padding#-small`, `.has-padding#-big`
-- removed breakpoints for `align-`
-- removed breakpoints for `is-clipped#`
-- removed breakpoints for `.is-bordered`
-- removed breakpoints for `.is-scrollable`
-- removed `.not-positioned`
-- removed breakpoints from `.is-placed` and `.is-position`
-- removed `.form-group` use `.field-group` instead
-- removed input validation styles
-- removed `.bubble` use `.tag` instead
 - renamed `.slider` to `.range-slider`
-- removed all `is-` prefixes from `data-flex` values
-- optimized `.nav` - dropped `.nav__items`
-- improved `.xui-accordion`
-- removed `data-animate` use third-party libraries like animate.css instead
-- removed `.pull`
-- removed placeholder `%toggle` and `%toggle-is-active`
-- removed placeholder `%ec-icon`
-- removed `xui-tabs`
-- changed breakpoint postfix from `-` to `@` e.g. `@sm`
-- changed `data-grid="is-small"` to `data-grid="small-gutter"`
-- changed `data-grid="default"` to `data-grid="default-gutter"`
-- changed `data-grid="is-center"` to `data-grid="center"`
-- changed `data-grid="is-end"` to `data-grid="end"`
-- changed `data-grid="is-start"` to `data-grid="start"`
+- renamed `.title` and `.toolbar` to `.titlebar` instead
 - renamed `$divider-color` to `$base-divider-color`
 - renamed `$divider-background` and `$divider-background-invert` to `$divider-color` and `$divider-color-invert`
 - renamed `arrayMagic()` to `array-magic()`
@@ -86,6 +50,48 @@
 - renamed `findContrastLoop()` to `find-contrast-loop()`
 - renamed `brightnessDifference()` to `brightness-difference()`
 - renamed `set-map-breakpoints()` to `set-data-map-breakpoints()`
+
+- removed `.well-small` and `.well-big`
+- removed `.is-visible#` use `is-block#` or `is-flex#`
+- removed `.is-raised#` use `is-elevated#` instead
+- removed `.is-lifted#` use `is-elevated#` instead
+- removed `.is-rounded#` use `is-radius#` instead
+- removed `.is-hidden-from#`
+- removed `.btn_glow`
+- removed `data-flex-item` size values, use `data-col` instead
+- removed `.xui-overlay`
+- removed float grid styles `data-row`
+- removed `.no-margin` use `.is-margin-0` instead
+- removed `.no-padding` use `.is-padding-0` instead
+- removed `.has-margin#`, `.has-margin#-smallest`, `.has-margin#-small`, `.has-margin#-big`
+- removed `.has-padding#`, `.has-padding#-smallets`, `.has-padding#-small`, `.has-padding#-big`
+- removed breakpoints for `align-`
+- removed breakpoints for `is-clipped#`
+- removed breakpoints for `.is-bordered`
+- removed breakpoints for `.is-scrollable`
+- removed `.not-positioned`
+- removed breakpoints from `.is-placed` and `.is-position`
+- removed `.form-group` use `.field-group` instead
+- removed input validation styles
+- removed `.bubble` use `.tag` instead
+- removed all `is-` prefixes from `data-flex` values
+- removed `data-animate` use third-party libraries like animate.css instead
+- removed `.pull`
+- removed placeholder `%toggle` and `%toggle-is-active`
+- removed placeholder `%ec-icon`
+- removed `xui-tabs`
+
+- refactored and combined `is-positioned` and `is-fab`
+
+- optimized `.nav` - dropped `.nav__items`
+- improved `.xui-accordion`
+
+- changed breakpoint postfix from `-` to `@` e.g. `@sm`
+- changed `data-grid="is-small"` to `data-grid="small-gutter"`
+- changed `data-grid="default"` to `data-grid="default-gutter"`
+- changed `data-grid="is-center"` to `data-grid="center"`
+- changed `data-grid="is-end"` to `data-grid="end"`
+- changed `data-grid="is-start"` to `data-grid="start"`
 - changed `macro-metrics()` to `metrics()`
 - changed `@extend %btn;` to `@include _btn-reset;`
 

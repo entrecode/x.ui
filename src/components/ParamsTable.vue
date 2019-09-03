@@ -1,6 +1,6 @@
 <template>
   <div v-if="params" class="params-table">
-    <h4 class="is-h4 is-padding-left-5" v-text="title ? title : 'parameters'"></h4>
+    <h2 class="is-h3" v-text="title ? title : 'parameters'"></h2>
     <div class="is-padding-5 is-radius is-theme-lightest">
       <table class="table">
         <thead>

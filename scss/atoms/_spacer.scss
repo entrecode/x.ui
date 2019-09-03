@@ -9,18 +9,24 @@
 /// @param {number} $spacer-size [get-space(5)]
 /// @param {number} $spacer-small-size [get-space(3)]
 /// @param {number} $spacer-big-size [get-space(6)]
+///
+/// @deprecated `.spacer-small` and `.spacer-big` since 10.0.0
 
-.spacer {
+.spacer,
+.spacer-small,
+.spacer-big {
   align-self: center;
   flex-shrink: 0;
   width: 100%;
   height: $spacer-size;
+}
 
-  &_small {
-    height: $spacer-small-size;
-  }
+.spacer-small,
+.spacer_small {
+  height: $spacer-small-size;
+}
 
-  &_big {
-    height: $spacer-big-size;
-  }
+.spacer-big,
+.spacer_big {
+  height: $spacer-big-size;
 }

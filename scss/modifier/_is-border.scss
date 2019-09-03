@@ -6,7 +6,10 @@
 /// @param {string} $is-border [1 solid $base-divider-color]
 ///
 /// @require {function} array-magic
+///
+/// @deprecated since 10.0.0 `.is-bordered`
 
+.is-bordered,
 .is-border {
   border: array-magic($is-border);
 

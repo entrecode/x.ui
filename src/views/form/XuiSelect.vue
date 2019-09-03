@@ -4,50 +4,161 @@
       <div class="titlebar">
         <h1>xui-select</h1>
       </div>
-      <div class="demo-preview is-padding-8" data-flex="center">
-        <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
-          <div tabindex="0" class="xui-select">
-            <span class="xui-select__placeholder" v-if="!selected">select</span>
-            <span class="xui-select__selected" v-else v-text="selected"></span>
-            <span class="xui-select__caret"></span>
-            <ul class="xui-select-options">
-              <li>
-                <a
-                  @mousedown="selected = ''"
-                  tabindex="0"
-                  class="xui-select-option"
-                >make a selection</a>
-              </li>
-              <li>
-                <a
-                  @mousedown="selected = 'option 1'"
-                  tabindex="0"
-                  class="xui-select-option"
-                  :class="{ 'is-selected': selected === 'option 1' }"
-                >option 1</a>
-              </li>
-              <li>
-                <a
-                  @mousedown="selected = 'option 2'"
-                  tabindex="0"
-                  class="xui-select-option"
-                  :class="{ 'is-selected': selected === 'option 2' }"
-                >option 2</a>
-              </li>
-              <li>
-                <a
-                  @mousedown="selected = 'option 3'"
-                  tabindex="0"
-                  class="xui-select-option"
-                  :class="{ 'is-selected': selected === 'option 3' }"
-                >option 3</a>
-              </li>
-            </ul>
-          </div>
+
+      <div class="nav">
+        <div class="nav__item">
+          <a
+            @click="activeTab = 1"
+            class="btn btn_clear demo-tab"
+            :class="{ 'is-active': activeTab === 1 }"
+          >css only</a>
+        </div>
+        <div class="nav__item">
+          <a
+            @click="activeTab = 2"
+            class="btn btn_clear demo-tab"
+            :class="{ 'is-active': activeTab === 2 }"
+          >with js</a>
         </div>
       </div>
+
+      <div v-if="activeTab === 1" class="animated fadeIn">
+        <div class="demo-preview is-padding-8" data-flex="center">
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
+            <div tabindex="0" class="xui-select">
+              <span class="xui-select__placeholder" v-if="!selected">select</span>
+              <span class="xui-select__selected" v-else v-text="selected"></span>
+              <span class="xui-select__caret"></span>
+              <ul class="xui-select-options">
+                <li>
+                  <a
+                    @mousedown="selected = ''"
+                    tabindex="0"
+                    class="xui-select-option"
+                  >make a selection</a>
+                </li>
+                <li>
+                  <a
+                    @mousedown="selected = 'option 1'"
+                    tabindex="0"
+                    class="xui-select-option"
+                    :class="{ 'is-selected': selected === 'option 1' }"
+                  >option 1</a>
+                </li>
+                <li>
+                  <a
+                    @mousedown="selected = 'option 2'"
+                    tabindex="0"
+                    class="xui-select-option"
+                    :class="{ 'is-selected': selected === 'option 2' }"
+                  >option 2</a>
+                </li>
+                <li>
+                  <a
+                    @mousedown="selected = 'option 3'"
+                    tabindex="0"
+                    class="xui-select-option"
+                    :class="{ 'is-selected': selected === 'option 3' }"
+                  >option 3</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <pre v-highlightjs="markup"><code class="html"></code></pre>
+      </div>
+      <div v-if="activeTab === 2" class="animated fadeIn">
+        <div class="demo-preview is-padding-8" data-flex="center">
+          <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl">
+            <div class="xui-select">
+              <span
+                class="xui-select__placeholder"
+                @click="toggleSelect = !toggleSelect"
+                v-if="!selected"
+              >select</span>
+              <span
+                class="xui-select__selected"
+                @click="toggleSelect = !toggleSelect"
+                v-else
+                v-text="selected"
+              ></span>
+              <span class="xui-select__caret"></span>
+              <ul class="xui-select-options" :class="{'is-active' : toggleSelect}">
+                <li>
+                  <a @mousedown="selected = ''" class="xui-select-option">make a selection</a>
+                </li>
+                <li>
+                  <a
+                    @mousedown="selected = 'option 1'"
+                    class="xui-select-option"
+                    :class="{ 'is-selected': selected === 'option 1' }"
+                  >option 1</a>
+                </li>
+                <li>
+                  <a
+                    @mousedown="selected = 'option 2'"
+                    class="xui-select-option"
+                    :class="{ 'is-selected': selected === 'option 2' }"
+                  >option 2</a>
+                </li>
+                <li>
+                  <a
+                    @mousedown="selected = 'option 3'"
+                    class="xui-select-option"
+                    :class="{ 'is-selected': selected === 'option 3' }"
+                  >option 3</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <pre v-highlightjs="markup2"><code class="html"></code></pre>
+      </div>
       <div class="spacer"></div>
-      <pre v-highlightjs="markup"><code class="html"></code></pre>
+      <h2>special feature</h2>
+      <p>
+        the
+        <code class="is-ink-highlight">.xui-select-options</code> can be used outside an
+        <code class="is-ink-highlight">.xui-select</code> for a custom elements. without the
+        <code class="is-ink-highlight">xui-select</code> wrapper there is no
+        <code class="is-ink-highlight">:focus</code> or
+        <code class="is-ink-highlight">.is-active</code> functionality.
+      </p>
+      <div class="demo-preview is-padding-8" data-flex="center">
+        <div data-col="8@lg 6@xl">
+          <ul class="xui-select-options" style="position: inherit; top: inherit;">
+            <li>
+              <a @mousedown="selected = ''" tabindex="0" class="xui-select-option">make a selection</a>
+            </li>
+            <li>
+              <a
+                @mousedown="selected = 'option 1'"
+                tabindex="0"
+                class="xui-select-option"
+                :class="{ 'is-selected': selected === 'option 1' }"
+              >option 1</a>
+            </li>
+            <li>
+              <a
+                @mousedown="selected = 'option 2'"
+                tabindex="0"
+                class="xui-select-option"
+                :class="{ 'is-selected': selected === 'option 2' }"
+              >option 2</a>
+            </li>
+            <li>
+              <a
+                @mousedown="selected = 'option 3'"
+                tabindex="0"
+                class="xui-select-option"
+                :class="{ 'is-selected': selected === 'option 3' }"
+              >option 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
       <div class="spacer"></div>
@@ -81,13 +192,29 @@ export default {
   <span class="xui-select__caret"></span>
   <ul class="xui-select-options">
     <li>
-      <!-- add .is-ative for selected option -->
+      <!-- add .is-active for selected option -->
       <a href="" tabindex="0" class="xui-select-option">...</a>
     </li>
     ...
   </ul>
 </div>`,
+      markup2: `<div class="xui-select">
+  <!-- if no selection -->
+  <span class="xui-select__placeholder">...</span>
+  <!-- if selection -->
+  <span class="xui-select__selected">...</span>
+  <span class="xui-select__caret"></span>
+  <ul class="xui-select-options">
+    <li>
+      <!-- add .is-active for selected option -->
+      <a href="" class="xui-select-option">...</a>
+    </li>
+    ...
+  </ul>
+</div>`,
       selected: '',
+      activeTab: 1,
+      toggleSelect: false,
       params: [
         { name: '$xui-select-background', type: 'color', default: '$input-background' },
         { name: '$xui-select-color', type: 'color', default: '$input-color' },
@@ -127,7 +254,11 @@ export default {
         { name: '$xui-select-option-hover-background', type: 'color', default: '$state-hover' },
         { name: '$xui-select-option-hover-color', type: 'color', default: '$xui-select-option-color' },
         { name: '$xui-select-option-hover-style', type: 'map', default: '' },
-        { name: '$xui-select-option-selected-background', type: 'color', default: '$xui-select-option-hover-background' },
+        {
+          name: '$xui-select-option-selected-background',
+          type: 'color',
+          default: '$xui-select-option-hover-background',
+        },
         { name: '$xui-select-option-selected-color', type: 'color', default: '$xui-select-option-hover-color' },
         { name: '$xui-select-option-selected-style', type: 'map', default: '' },
       ],
@@ -142,6 +273,24 @@ export default {
         { name: 'rem()', type: 'function', link: '#scroll-to-rem' },
       ],
     };
+  },
+  watch: {
+    toggleSelect: function(val) {
+      this.markup2 = `<div class="xui-select">
+  <!-- if no selection -->
+  <span class="xui-select__placeholder">...</span>
+  <!-- if selection -->
+  <span class="xui-select__selected">...</span>
+  <span class="xui-select__caret"></span>
+  <ul class="xui-select-options${this.toggleSelect ? ' is-active' : ''}">
+    <li>
+      <!-- add .is-active for selected option -->
+      <a href="" class="xui-select-option">...</a>
+    </li>
+    ...
+  </ul>
+</div>`;
+    },
   },
 };
 </script>

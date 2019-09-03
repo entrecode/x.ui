@@ -2,10 +2,14 @@
 /// @since 10.0.0
 /// @access public
 /// @group organism
+///
+/// @param {array} $titlebar-spacing [0]
+/// @param {array} $titlebar-padding [0]
+/// @param {array} $titlebar-style
+///
+/// @deprecated since 10.0.0 `.title`
 
-// @param {array} $titlebar-spacing [0]
-// @param {array} $titlebar-padding [0]
-// @param {array} $titlebar-style
+.title,
 .titlebar {
   display: flex;
   align-items: center;

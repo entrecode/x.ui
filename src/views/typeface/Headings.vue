@@ -49,7 +49,7 @@
                   @click="[headingStyle = 'is-h6', headingsElement = 'h6']"
                   class="btn btn_clear is-uppercase"
                   :class="{'is-ink': headingStyle !== 'is-h6'}"
-                >h1</a>
+                >h6</a>
               </div>
               <div class="nav__divider"></div>
               <div class="nav__item">
