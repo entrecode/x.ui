@@ -15,28 +15,26 @@
                 :data-col="[col.size + col.sizeBreakpoint, col.offset > 0 ? '+' + col.offset + col.offsetBreakpoint : ''].join(' ')"
                 v-for="(col, index) in cols"
                 :key="index"
+                :data-flex-order="col.order ? col.order + col.orderBreakpoint : null"
               >
                 <div
                   class="is-theme is-padding-center-3 is-padding-top-5 is-padding-bottom-2 is-margin-middle-2"
-                  data-flex="center"
                 >
                   <div data-grid="small-gutter center">
-                    <div data-col="6">
+                    <div data-col="12">
+                      <div class="is-h2 is-ink-light align-center">{{index}}</div>
+                    </div>
+                    <div data-col="4">
                       <div class="field-group">
                         <div class="input-group" data-tooltip-top="size">
-                          <div class="input-group__addon">
-                            <svg class="ixo">
-                              <use xlink:href="#move-horizontal" />
-                            </svg>
-                          </div>
                           <input
                             type="number"
                             min="0"
                             max="12"
                             v-model="col.size"
-                            class="input input_number"
+                            class="input input_number align-center"
                           />
-                          <div class="input-group__addon">
+                          <div class="input-group__addon is-padding-0">
                             <div class="dropdown" tabindex="0">
                               <div
                                 class="btn btn_clear btn_small is-body-font"
@@ -56,25 +54,23 @@
                             </div>
                           </div>
                         </div>
+                        <label class="field-group__label" data-flex="center">
+                          <small>width</small>
+                        </label>
                       </div>
                     </div>
-                    <div data-col="6">
+                    <div data-col="4">
                       <div class="field-group">
                         <div class="input-group" data-tooltip-top="offset">
-                          <div class="input-group__addon">
-                            <svg class="ixo">
-                              <use xlink:href="#add" />
-                            </svg>
-                          </div>
                           <input
                             type="number"
                             min="0"
                             max="11"
                             placeholder="0"
                             v-model="col.offset"
-                            class="input input_number"
+                            class="input input_number align-center"
                           />
-                          <div class="input-group__addon">
+                          <div class="input-group__addon is-padding-0">
                             <div class="dropdown" tabindex="0">
                               <div
                                 class="btn btn_clear btn_small is-body-font"
@@ -94,6 +90,45 @@
                             </div>
                           </div>
                         </div>
+                        <label class="field-group__label" data-flex="center">
+                          <small>offest</small>
+                        </label>
+                      </div>
+                    </div>
+                    <div data-col="4">
+                      <div class="field-group">
+                        <div class="input-group" data-tooltip-top="offset">
+                          <input
+                            type="number"
+                            min="-1"
+                            max="11"
+                            placeholder="0"
+                            v-model="col.order"
+                            class="input input_number align-center"
+                          />
+                          <div class="input-group__addon is-padding-0">
+                            <div class="dropdown" tabindex="0">
+                              <div
+                                class="btn btn_clear btn_small is-body-font"
+                                :class="{'is-ink-light' : col.orderBreakpoint === ''}"
+                                v-text="col.orderBreakpoint === '' ? '@' : col.orderBreakpoint"
+                              ></div>
+                              <div class="dropdown-options">
+                                <a
+                                  href
+                                  class="dropdown-option"
+                                  @click.prevent="col.orderBreakpoint = value"
+                                  v-for="(value, index) in breakpoints"
+                                  :key="index"
+                                  v-text="value === '' ? 'always' : value"
+                                ></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <label class="field-group__label" data-flex="center">
+                          <small>order</small>
+                        </label>
                       </div>
                     </div>
                     <div data-col="fit">
@@ -108,7 +143,10 @@
             </div>
           </div>
           <div class="is-absolute is-placed-s">
-            <a @click.prevent="addCol" class="btn btn_square btn_big btn_invert">
+            <a
+              @click.prevent="addCol"
+              class="btn btn_square btn_big btn_invert is-elevated-16 hover:is-elevated-4"
+            >
               <svg class="ixo">
                 <use xlink:href="#add" />
               </svg>
@@ -122,11 +160,18 @@
 
         <div class="nav" data-flex="center">
           <div class="nav__item">
-            <select id="displaySelected" class="input" v-model="gridGutter">
-              <option value>default</option>
-              <option value="small-gutter">small-gutter</option>
-              <option value="no-gutter">no-gutter</option>
-            </select>
+            <div class="input-group">
+              <div class="input-group__addon">
+                <small>gutter</small>
+              </div>
+              <div class="input-group__addon">
+                <select id="displaySelected" class="input" v-model="gridGutter">
+                  <option value>default</option>
+                  <option value="small-gutter">small-gutter</option>
+                  <option value="no-gutter">no-gutter</option>
+                </select>
+              </div>
+            </div>
           </div>
           <div class="nav__item">
             <div
@@ -215,9 +260,9 @@ export default {
       colParams: [{ name: '$grid-num-columns', type: 'number', default: '12' }],
       breakpoints: ['', '@xs', '@sm', '@md', '@lg', '@xl', '@xxl'],
       cols: [
-        { size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '' },
-        { size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '' },
-        { size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '' },
+        { size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '', order: '', orderBreakpoint: '' },
+        { size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '', order: '', orderBreakpoint: '' },
+        { size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '', order: '', orderBreakpoint: '' },
       ],
       colsWatch: '',
       gridGutter: '',
@@ -233,7 +278,7 @@ export default {
   },
   methods: {
     addCol: function() {
-      this.cols.push({ size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '' });
+      this.cols.push({ size: 4, offset: 0, sizeBreakpoint: '', offsetBreakpoint: '', order: '', orderBreakpoint: '' });
     },
     removeCol: function(index) {
       this.cols.splice(index, 1);
@@ -272,7 +317,7 @@ export default {
       .map((c) => {
         return `<div data-col="${[c.size + c.sizeBreakpoint, c.offset > 0 ? '+' + c.offset + c.offsetBreakpoint : '']
           .join(' ')
-          .trim()}">...</div>`;
+          .trim()}"${[c.order ? ' data-flex-order="' + c.order + c.orderBreakpoint + '"' : '']}>...</div>`;
       })
       .join('\n    ')}
   </div>
