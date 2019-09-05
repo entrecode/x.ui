@@ -64,7 +64,21 @@
                 </div>
               </div>
             </div>
-            <input type="range" class="range-slider" min="0" max="8" v-model="paddingSize" />
+            <div data-grid="small-gutter" data-flex="center-items">
+              <div data-col="auto">
+                <input type="range" class="range-slider" min="0" max="8" v-model="paddingSize" />
+              </div>
+              <div data-col="fit">
+                <select id="displaySelected" class="input" v-model="breakpoint">
+                  <option
+                    :value="value"
+                    v-for="(value, index) in breakpoints"
+                    :key="index"
+                    v-text="value === '' ? 'always' : value"
+                  ></option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -103,12 +117,14 @@ export default {
       ],
       isPaddingClass: 'is-padding-',
       paddingSize: 3,
+      breakpoints: ['', '@xs', '@sm', '@md', '@lg', '@xl', '@xxl'],
+      breakpoint: '',
       markup: `<div class="is-padding-3"></div>`,
     };
   },
   computed: {
     dirty() {
-      return [this.isPaddingClass, this.paddingSize].join('');
+      return [this.isPaddingClass, this.paddingSize, this.breakpoint].join('');
     },
   },
   watch: {

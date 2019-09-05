@@ -8,7 +8,9 @@
 .is-layer {
   @each $l in $is-layer {
     &-#{$l} {
-      z-index: $l;
+      @include set-breakpoints {
+        z-index: $l;
+      }
     }
   }
 }

@@ -10,28 +10,64 @@
           style="max-width: 320px; width: 100%"
           :class="previewClass"
         >
-          <div class="field-group">
-            <label for="isPosition" class="field-group__label">is-position</label>
-            <select id="isPosition" class="input" v-model="isPosition">
-              <option
-                :value="value"
-                v-for="(value, index) in isPositions"
-                :key="index"
-                v-text="value"
-              ></option>
-            </select>
+          <div data-grid="small-gutter" data-flex="end-items">
+            <div data-col="6">
+              <div class="field-group">
+                <label for="isPosition" class="field-group__label">is-position</label>
+                <select id="isPosition" class="input" v-model="isPosition">
+                  <option
+                    :value="value"
+                    v-for="(value, index) in isPositions"
+                    :key="index"
+                    v-text="value"
+                  ></option>
+                </select>
+              </div>
+            </div>
+            <div data-col="6">
+              <div class="field-group">
+                <select id="displaySelected" class="input" v-model="isPositionBreakpoint">
+                  <option
+                    :value="value"
+                    v-for="(value, index) in breakpoints"
+                    :key="index"
+                    v-text="value === '' ? 'always' : value"
+                  ></option>
+                </select>
+              </div>
+            </div>
           </div>
-          <div class="field-group">
-            <label for="isPlaced" class="field-group__label">is-placed</label>
-            <select id="isPlaced" class="input" v-model="isPlaced">
-              <option
-                :value="value"
-                v-for="(value, index) in isPlaceds"
-                :key="index"
-                v-text="value"
-              ></option>
-            </select>
+
+          <div data-grid="small-gutter" data-flex="end-items">
+            <div data-col="6">
+              <div class="field-group">
+                <label for="isPlaced" class="field-group__label">is-placed</label>
+                <select id="isPlaced" class="input" v-model="isPlaced">
+                  <option
+                    :value="value"
+                    v-for="(value, index) in isPlaceds"
+                    :key="index"
+                    v-text="value"
+                  ></option>
+                </select>
+              </div>
+            </div>
+            <div data-col="6">
+              <div class="field-group">
+                <select id="displaySelected" class="input" v-model="isPlacedBreakpoint">
+                  <option
+                    :value="value"
+                    v-for="(value, index) in breakpoints"
+                    :key="index"
+                    v-text="value === '' ? 'always' : value"
+                  ></option>
+                </select>
+              </div>
+            </div>
           </div>
+
+          <div class="spacer spacer_small"></div>
+
           <div class="demo-compass is-margin-bottom-3">
             <div class="xui-radio">
               <input type="radio" id="nw" name="compass" value="nw" v-model="orientation" />
@@ -70,11 +106,33 @@
               <label for="se" class="xui-radio__label"></label>
             </div>
           </div>
-          <div class="field-group">
-            <label for="isLayer" class="field-group__label">is-layer</label>
-            <select id="isLayer" class="input" v-model="isLayer">
-              <option :value="value" v-for="(value, index) in isLayers" :key="index" v-text="value"></option>
-            </select>
+
+          <div data-grid="small-gutter" data-flex="end-items">
+            <div data-col="6">
+              <div class="field-group">
+                <label for="isLayer" class="field-group__label">is-layer</label>
+                <select id="isLayer" class="input" v-model="isLayer">
+                  <option
+                    :value="value"
+                    v-for="(value, index) in isLayers"
+                    :key="index"
+                    v-text="value"
+                  ></option>
+                </select>
+              </div>
+            </div>
+            <div data-col="6">
+              <div class="field-group">
+                <select id="displaySelected" class="input" v-model="isLayerBreakpoint">
+                  <option
+                    :value="value"
+                    v-for="(value, index) in breakpoints"
+                    :key="index"
+                    v-text="value === '' ? 'always' : value"
+                  ></option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -99,7 +157,10 @@ export default {
   },
   data: () => {
     return {
-      requires: [{ name: 'rem()', type: 'function', link: '#scroll-to-rem' }],
+      requires: [
+        { name: 'set-breakpoints()', type: 'mixin', link: '#scroll-to-set-breakpoints' },
+        { name: 'rem()', type: 'function', link: '#scroll-to-rem' },
+      ],
       params: [
         {
           name: '$is-position-map',
@@ -132,13 +193,21 @@ export default {
       orientation: '0',
       isLayers: ['1', '10', '100', '9999'],
       isLayer: '10',
+      breakpoints: ['', '@xs', '@sm', '@md', '@lg', '@xl', '@xxl'],
+      isPositionBreakpoint: '',
+      isPlacedBreakpoint: '',
+      isLayerBreakpoint: '',
       markup: `<div class="is-absolute is-placed-0 is-layer-10">...</div>`,
       previewClass: 'is-absolute is-placed-0 is-layer-10',
     };
   },
   computed: {
     dirty() {
-      return [this.isPosition, this.isPlaced + '-' + this.orientation, 'is-layer-' + this.isLayer].join(' ');
+      return [
+        this.isPosition + this.isPositionBreakpoint,
+        this.isPlaced + '-' + this.orientation + this.isPlacedBreakpoint,
+        'is-layer-' + this.isLayer + this.isLayerBreakpoint,
+      ].join(' ');
     },
   },
   watch: {

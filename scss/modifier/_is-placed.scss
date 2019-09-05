@@ -7,53 +7,71 @@
 
 @mixin _is-placed($p) {
   &-n {
-    left: 50%;
-    top: rem($p);
-    transform: translateX(-50%);
+    @include set-breakpoints {
+      left: 50%;
+      top: rem($p);
+      transform: translateX(-50%);
+    }
   }
 
   &-ne {
-    right: rem($p);
-    top: rem($p);
+    @include set-breakpoints {
+      right: rem($p);
+      top: rem($p);
+    }
   }
 
   &-e {
-    right: rem($p);
-    top: 50%;
-    transform: translateY(-50%);
+    @include set-breakpoints {
+      right: rem($p);
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   &-se {
-    bottom: rem($p);
-    right: rem($p);
+    @include set-breakpoints {
+      bottom: rem($p);
+      right: rem($p);
+    }
   }
 
   &-s {
-    bottom: rem($p);
-    left: 50%;
-    transform: translateX(-50%);
+    @include set-breakpoints {
+      bottom: rem($p);
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &-sw {
-    bottom: rem($p);
-    left: rem($p);
+    @include set-breakpoints {
+      bottom: rem($p);
+      left: rem($p);
+    }
   }
 
   &-w {
-    left: rem($p);
-    top: 50%;
-    transform: translateY(-50%);
+    @include set-breakpoints {
+      left: rem($p);
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   &-nw {
-    left: rem($p);
-    top: rem($p);
+    @include set-breakpoints {
+      left: rem($p);
+      top: rem($p);
+    }
   }
 
   &-0 {
-    left: 50%;
-    top: 50%;
-    transform: translateY(-50%) translateX(-50%);
+    @include set-breakpoints {
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
   }
 }
 
