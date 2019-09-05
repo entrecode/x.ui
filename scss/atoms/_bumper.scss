@@ -13,6 +13,10 @@
 /// @param {array} $bumper-small-spacing [get-space(3) 0]
 /// @param {array} $bumper-big-spacing [get-space(6) 0]
 ///
+/// @require {mixin} set-breakpoints()
+/// @require {function} rem()
+/// @require {function} array-magic()
+///
 /// @deprecated `.bumper-small` and `.bumper-big` since 10.0.0
 
 .bumper-small,
@@ -46,27 +50,31 @@
 
 .bumper-small,
 .bumper_small {
-  margin: array-magic($bumper-small-spacing);
+  @include set-breakpoints {
+    margin: array-magic($bumper-small-spacing);
+  }
 }
 
 .bumper-big,
 .bumper_big {
-  margin: array-magic($bumper-big-spacing);
+  @include set-breakpoints {
+    margin: array-magic($bumper-big-spacing);
+  }
 }
 
 @mixin bumper {
   position: relative;
-  height: rem($bumper-size);
   text-align: center;
+  height: rem($bumper-size);
 
   &::before {
+    content: '';
+    position: absolute;
     background-color: $bumper-color;
     border-radius: 50%;
     box-shadow: rem($bumper-size * 2) 0 0 $bumper-color, rem($bumper-size * 4) 0 0 $bumper-color;
-    content: '';
     height: rem($bumper-size);
     margin-left: rem($bumper-size * 5 / -2);
-    position: absolute;
     width: rem($bumper-size);
   }
 
