@@ -1,5 +1,5 @@
 /// @author Bernhard Ruoff
-/// @since 9.1.1
+/// @since 10.0.0
 /// @access public
 /// @group atoms
 ///
@@ -12,6 +12,10 @@
 /// @param {array} $divider-spacing [get-space(5) 0]
 /// @param {array} $divider-small-spacing [get-space(3) 0]
 /// @param {array} $divider-big-spacing [get-space(6) 0]
+///
+/// @require {mixin} set-breakpoints()
+/// @require {function} rem()
+/// @require {function} array-magic()
 
 .divider {
   border: 0;

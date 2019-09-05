@@ -44,6 +44,16 @@
                 </div>
               </div>
             </div>
+            <div class="nav__item">
+              <select id="displaySelected" class="input" v-model="breakpoint">
+                <option
+                  :value="value"
+                  v-for="(value, index) in breakpoints"
+                  :key="index"
+                  v-text="value === '' ? 'always' : value"
+                ></option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
@@ -69,6 +79,8 @@ export default {
         { name: 'get-space()', type: 'function', link: '#scroll-to-get-space' },
         { name: 'set-breakpoints()', type: 'mixin', link: '#scroll-to-set-breakpoints' },
       ],
+      breakpoints: ['', '@xs', '@sm', '@md', '@lg', '@xl', '@xxl'],
+      breakpoint: '',
       space: 9,
       axis: 'x',
       markup: `<div class="flex-space"></div>`,
@@ -78,12 +90,14 @@ export default {
   },
   computed: {
     dirty() {
-      return [this.axis, this.space].join('');
+      return [this.axis, this.space, this.breakpoint].join('');
     },
   },
   watch: {
     dirty: function(val) {
-      this.spacerClass = this.space < 9 ? this.axis + '-space-' + this.space : 'flex-space';
+      this.spacerClass = [this.space < 9 ? this.axis + '-space-' + this.space : 'flex-space', this.breakpoint]
+        .join('')
+        .trim();
       this.markup = `<div class="${this.spacerClass}"></div>`;
     },
   },

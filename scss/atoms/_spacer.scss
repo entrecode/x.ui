@@ -10,6 +10,8 @@
 /// @param {number} $spacer-small-size [get-space(3)]
 /// @param {number} $spacer-big-size [get-space(6)]
 ///
+/// @require {mixin} set-breakpoints()
+///
 /// @deprecated `.spacer-small` and `.spacer-big` since 10.0.0
 
 .spacer,
@@ -18,15 +20,22 @@
   align-self: center;
   flex-shrink: 0;
   width: 100%;
-  height: $spacer-size;
+
+  @include set-breakpoints {
+    height: $spacer-size;
+  }
 }
 
 .spacer-small,
 .spacer_small {
-  height: $spacer-small-size;
+  @include set-breakpoints {
+    height: $spacer-small-size;
+  }
 }
 
 .spacer-big,
 .spacer_big {
-  height: $spacer-big-size;
+  @include set-breakpoints {
+    height: $spacer-big-size;
+  }
 }

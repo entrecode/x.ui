@@ -27,7 +27,10 @@
   position: relative;
   text-align: center;
   height: rem($bumper-size);
-  margin: array-magic($bumper-spacing);
+
+  @include set-breakpoints {
+    margin: array-magic($bumper-spacing);
+  }
 
   &::before {
     content: '';
