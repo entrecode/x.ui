@@ -19,7 +19,7 @@
         v-html="markup"
       ></div>
       <div data-flex="center">
-        <div class="is-theme is-padding-center-2 is-round is-elevated-16">
+        <div class="is-theme is-padding-center-2 is-radius is-elevated-16">
           <div class="nav">
             <div class="nav__item">
               <select class="input" v-model="option">
@@ -28,6 +28,16 @@
                   v-for="(option, index) in options"
                   :key="index"
                   v-text="option === '' ? 'default' : option.slice(8)"
+                ></option>
+              </select>
+            </div>
+            <div class="nav__item">
+              <select id="displaySelected" class="input" v-model="breakpoint">
+                <option
+                  :value="value"
+                  v-for="(value, index) in breakpoints"
+                  :key="index"
+                  v-text="value === '' ? 'always' : value"
                 ></option>
               </select>
             </div>
@@ -60,7 +70,14 @@ export default {
   },
   data: () => {
     return {
+      breakpoints: ['', '@xs', '@sm', '@md', '@lg', '@xl', '@xxl'],
+      breakpoint: '',
       markup: `<div class="divider"></div>`,
+      requires: [
+        { name: 'set-breakpoints()', type: 'mixin', link: '#scroll-to-set-breakpoints' },
+        { name: 'rem()', type: 'function', link: '#scroll-to-rem' },
+        { name: 'array-magic()', type: 'function', link: '#scroll-to-array-magic' },
+      ],
       option: '',
       options: ['', 'divider_small', 'divider_big'],
       showHelper: true,
@@ -101,12 +118,17 @@ export default {
   },
   computed: {
     classes() {
-      return [this.option, this.invert ? 'divider_invert' : null].join(' ');
+      return [
+        this.option ? 'divider ' + this.option + this.breakpoint : 'divider' + this.breakpoint,
+        this.invert ? 'divider_invert' : null,
+      ]
+        .join(' ')
+        .trim();
     },
   },
   watch: {
     classes: function(val) {
-      this.markup = `<div class="divider ${val}"></div>`;
+      this.markup = `<div class="${val}"></div>`;
     },
   },
 };

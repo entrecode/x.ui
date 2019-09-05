@@ -4,8 +4,12 @@
 /// @group atoms
 ///
 /// @deprecated `.flex-spacer` since 10.0.0
+///
+/// @require {mixin} set-breakpoints
 
 .flex-spacer,
 .flex-space {
-  flex-grow: 1;
+  @include set-breakpoints {
+    flex-grow: 1;
+  }
 }

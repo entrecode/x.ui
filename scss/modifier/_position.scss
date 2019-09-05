@@ -4,6 +4,8 @@
 /// @group modifier
 ///
 /// @param {map} $is-position-map
+///
+/// @require {mixin} set-breakpoints
 
 $_keys: map-keys($is-position-map);
 $_values: map-values($is-position-map);
@@ -13,6 +15,8 @@ $_values: map-values($is-position-map);
   $_v: nth($_values, $_i);
 
   .#{$_key} {
-    position: #{$_v};
+    @include set-breakpoints {
+      position: #{$_v};
+    }
   }
 }

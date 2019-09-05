@@ -3,9 +3,10 @@
 /// @access public
 /// @group modifier
 ///
+/// @param {map} $is-padding-options [$is-padding-options]
+///
 /// @require {mixin} set-breakpoints
 /// @require {function} get-space
-/// @param {map} $is-padding-options [$is-padding-options]
 ///
 /// @deprecated since 10.0.0 `.has-#`
 

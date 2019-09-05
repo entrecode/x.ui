@@ -58,14 +58,10 @@
   }
 }
 
-@include set-data-breakpoints('grid', 'center') {
-  justify-content: center;
-}
+$_justify-content: (
+  'center': 'center',
+  'start': 'flex-start',
+  'end': 'flex-end',
+);
 
-@include set-data-breakpoints('grid', 'start') {
-  justify-content: flex-start;
-}
-
-@include set-data-breakpoints('grid', 'end') {
-  justify-content: flex-end;
-}
+@include set-data-map-breakpoints(grid, justify-content, $_justify-content);

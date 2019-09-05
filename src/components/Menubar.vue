@@ -174,6 +174,9 @@
         <router-link to="grid" class="is-mega is-uppercase">grid</router-link>
       </li>
       <li class="nav__item">
+        <router-link to="data-flex" class="is-mega is-uppercase">data-flex</router-link>
+      </li>
+      <li class="nav__item">
         <router-link to="spacer" class="is-mega is-uppercase">spacer</router-link>
       </li>
       <li class="nav__item">

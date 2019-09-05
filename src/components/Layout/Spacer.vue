@@ -6,7 +6,7 @@
     <div class="demo-preview is-padding-8">
       <div class="is-margin-bottom-5 spacing-demo" style="overflow: hidden;" v-html="markup"></div>
       <div data-flex="center">
-        <div class="is-theme is-padding-center-2 is-round is-elevated-16">
+        <div class="is-theme is-padding-center-2 is-radius is-elevated-16">
           <div class="nav">
             <div class="nav__item">
               <select class="input" v-model="option">
@@ -15,6 +15,16 @@
                   v-for="(option, index) in options"
                   :key="index"
                   v-text="option === '' ? 'default' : option.slice(7)"
+                ></option>
+              </select>
+            </div>
+            <div class="nav__item">
+              <select id="displaySelected" class="input" v-model="breakpoint">
+                <option
+                  :value="value"
+                  v-for="(value, index) in breakpoints"
+                  :key="index"
+                  v-text="value === '' ? 'always' : value"
                 ></option>
               </select>
             </div>
@@ -42,7 +52,12 @@ export default {
   },
   data: () => {
     return {
-      requires: [{ name: 'get-space()', type: 'function', link: '#scroll-to-get-space' }],
+      requires: [
+        { name: 'set-breakpoints()', type: 'mixin', link: '#scroll-to-set-breakpoints' },
+        { name: 'get-space()', type: 'function', link: '#scroll-to-get-space' },
+      ],
+      breakpoints: ['', '@xs', '@sm', '@md', '@lg', '@xl', '@xxl'],
+      breakpoint: '',
       markup: `<div class="spacer"></div>`,
       option: '',
       options: ['', 'spacer_small', 'spacer_big'],
@@ -65,9 +80,14 @@ export default {
       ],
     };
   },
+  computed: {
+    classes() {
+      return [this.option ? 'spacer ' + this.option + this.breakpoint : 'spacer' + this.breakpoint].join(' ').trim();
+    },
+  },
   watch: {
-    option: function(val) {
-      this.markup = `<div class="spacer${val ? ' ' + val : ''}"></div>`;
+    classes: function(val) {
+      this.markup = `<div class="${val}"></div>`;
     },
   },
 };
