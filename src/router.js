@@ -239,6 +239,11 @@ export const router = new Router({
       components: { main: () => import('./views/layout/Grid.vue'), menu: DemoMenubar },
     },
     {
+      path: '/data-flex',
+      name: 'data-flex',
+      components: { main: () => import('./views/layout/DataFlex.vue'), menu: DemoMenubar },
+    },
+    {
       path: '/spacer',
       name: 'spacer',
       components: { main: () => import('./views/layout/Spacer.vue'), menu: DemoMenubar },
