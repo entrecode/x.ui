@@ -80,6 +80,8 @@
         <pre v-highlightjs="markup"><code class="html"></code></pre>
         <div class="spacer"></div>
         <params-table :params="coreParams" title="core params"></params-table>
+        <params-table :params="styleParams" title="style params"></params-table>
+        <params-table :params="spacingParams" title="spacing params"></params-table>
         <div class="spacer"></div>
         <params-table :params="params"></params-table>
         <div class="spacer"></div>
@@ -148,6 +150,8 @@ export default {
           description: 'for inline &lt;small&gt; elements ',
           type: 'map',
         },
+      ],
+      styleParams: [
         {
           name: '$h1-style',
           type: 'map',
@@ -184,6 +188,8 @@ export default {
           name: '$kilo-style',
           type: 'map',
         },
+      ],
+      spacingParams: [
         {
           name: '$_headings-vertical-rhythm',
           type: 'number',

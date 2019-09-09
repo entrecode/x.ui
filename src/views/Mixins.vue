@@ -588,7 +588,8 @@ h6 {
           toggleCode: false,
           title: 'is-scrollable',
           anchor: 'scroll-to-is-scrollable-mixin',
-          codeShort: `@mixin is-scrollable($axis: both, $contain: false, $behavior: scroll) {
+          codeShort: `@mixin is-scrollable($axis: both, $contain: false, $behavior: scroll) {...}`,
+          code: `@mixin is-scrollable($axis: both, $contain: false, $behavior: scroll) {
   -webkit-overflow-scrolling: touch;
 
   @if $axis == 'both' {

@@ -66,12 +66,12 @@ export default {
         {
           name: '$meatball-border-color',
           type: 'color',
-          default: '#f00',
+          default: '$super',
         },
         {
           name: '$meatball-background',
           type: 'color',
-          default: '#fff',
+          default: '$super',
         },
         {
           name: '$meatball-elevation',
