@@ -14,11 +14,6 @@ export const router = new Router({
       components: { main: () => import('./views/GettingStarted.vue'), menu: DemoMenubar },
     },
     {
-      path: '/introduction',
-      name: 'introduction',
-      components: { main: () => import('./views/Introduction.vue'), menu: DemoMenubar },
-    },
-    {
       path: '/colors',
       name: 'colors',
       components: { main: () => import('./views/Colors.vue'), menu: DemoMenubar },
