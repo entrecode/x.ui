@@ -17,14 +17,14 @@
             <div class="nav__item">
               <a
                 @click="paragraphClass = ''"
-                class="btn btn_clear is-uppercase"
+                class="btn btn_clear"
                 :class="{ 'is-ink': paragraphClass !== '' }"
               >default</a>
             </div>
             <div class="nav__item">
               <a
                 @click="paragraphClass = 'is-lead'"
-                class="btn btn_clear is-uppercase"
+                class="btn btn_clear"
                 :class="{ 'is-ink': paragraphClass !== 'is-lead' }"
               >is-lead</a>
             </div>

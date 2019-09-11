@@ -2,17 +2,17 @@
   <div class="is-padding-5">
     <ul class="nav nav_stacked">
       <li class="nav__item">
-        <router-link to="/" class="is-kilo is-uppercase">getting started</router-link>
+        <router-link to="/" class="is-kilo">getting started</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="colors" class="is-mega is-uppercase">colors</router-link>
+        <router-link to="colors" class="is-mega">colors</router-link>
       </li>
       <li class="y-space-5"></li>
       <li class="nav__item">
         <a
           href="https://entrecode.github.io/ixo/"
           target="_blank"
-          class="is-mega is-uppercase"
+          class="is-mega"
           data-flex="center-items"
         >
           ixo
@@ -27,188 +27,188 @@
         <div class="is-h6">typeface</div>
       </li>
       <li class="nav__item">
-        <router-link to="headings" class="is-mega is-uppercase">headings</router-link>
+        <router-link to="headings" class="is-mega">headings</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="paragraphs" class="is-mega is-uppercase">paragraphs</router-link>
+        <router-link to="paragraphs" class="is-mega">paragraphs</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="lists" class="is-mega is-uppercase">lists</router-link>
+        <router-link to="lists" class="is-mega">lists</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="utils" class="is-mega is-uppercase">utils</router-link>
+        <router-link to="utils" class="is-mega">utils</router-link>
       </li>
       <li class="y-space-5"></li>
       <li>
         <div class="is-h6">images</div>
       </li>
       <li class="nav__item">
-        <router-link to="img-crop" class="is-mega is-uppercase">img-crop</router-link>
+        <router-link to="img-crop" class="is-mega">img-crop</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="is-outset" class="is-mega is-uppercase">is-outset</router-link>
+        <router-link to="is-outset" class="is-mega">is-outset</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="avatar" class="is-mega is-uppercase">avatar</router-link>
+        <router-link to="avatar" class="is-mega">avatar</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="img-utils" class="is-mega is-uppercase">utils</router-link>
+        <router-link to="img-utils" class="is-mega">utils</router-link>
       </li>
       <li class="y-space-5"></li>
       <li>
         <div class="is-h6">form</div>
       </li>
       <li class="nav__item">
-        <router-link to="fieldset" class="is-mega is-uppercase">fieldset</router-link>
+        <router-link to="fieldset" class="is-mega">fieldset</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="field-group" class="is-mega is-uppercase">field-group</router-link>
+        <router-link to="field-group" class="is-mega">field-group</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="input" class="is-mega is-uppercase">input</router-link>
+        <router-link to="input" class="is-mega">input</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="input-group" class="is-mega is-uppercase">input-group</router-link>
+        <router-link to="input-group" class="is-mega">input-group</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="xui-checkbox" class="is-mega is-uppercase">xui-checkbox</router-link>
+        <router-link to="xui-checkbox" class="is-mega">xui-checkbox</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="xui-radio" class="is-mega is-uppercase">xui-radio</router-link>
+        <router-link to="xui-radio" class="is-mega">xui-radio</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="xui-toggle" class="is-mega is-uppercase">xui-toggle</router-link>
+        <router-link to="xui-toggle" class="is-mega">xui-toggle</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="xui-select" class="is-mega is-uppercase">xui-select</router-link>
+        <router-link to="xui-select" class="is-mega">xui-select</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="range-slider" class="is-mega is-uppercase">range-slider</router-link>
+        <router-link to="range-slider" class="is-mega">range-slider</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="file-upload" class="is-mega is-uppercase">file-upload</router-link>
+        <router-link to="file-upload" class="is-mega">file-upload</router-link>
       </li>
       <li class="y-space-5"></li>
       <li>
         <div class="is-h6">interaction</div>
       </li>
       <li class="nav__item">
-        <router-link to="button" class="is-mega is-uppercase">button</router-link>
+        <router-link to="button" class="is-mega">button</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="button-group" class="is-mega is-uppercase">button-group</router-link>
+        <router-link to="button-group" class="is-mega">button-group</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="hamburger" class="is-mega is-uppercase">hamburger</router-link>
+        <router-link to="hamburger" class="is-mega">hamburger</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="nav" class="is-mega is-uppercase">nav</router-link>
+        <router-link to="nav" class="is-mega">nav</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="dropdown" class="is-mega is-uppercase">dropdown</router-link>
+        <router-link to="dropdown" class="is-mega">dropdown</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="tag" class="is-mega is-uppercase">tag</router-link>
+        <router-link to="tag" class="is-mega">tag</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="meatball" class="is-mega is-uppercase">meatball</router-link>
+        <router-link to="meatball" class="is-mega">meatball</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="loader" class="is-mega is-uppercase">loader</router-link>
+        <router-link to="loader" class="is-mega">loader</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="alert" class="is-mega is-uppercase">alert</router-link>
+        <router-link to="alert" class="is-mega">alert</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="data-tooltip" class="is-mega is-uppercase">data-tooltip</router-link>
+        <router-link to="data-tooltip" class="is-mega">data-tooltip</router-link>
       </li>
       <li class="y-space-5"></li>
       <li>
         <div class="is-h6">interface</div>
       </li>
       <li class="nav__item">
-        <router-link to="titlebar" class="is-mega is-uppercase">titlebar</router-link>
+        <router-link to="titlebar" class="is-mega">titlebar</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="xui-list" class="is-mega is-uppercase">xui-list</router-link>
+        <router-link to="xui-list" class="is-mega">xui-list</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="xui-accordion" class="is-mega is-uppercase">xui-accordion</router-link>
+        <router-link to="xui-accordion" class="is-mega">xui-accordion</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="modal" class="is-mega is-uppercase">modal</router-link>
+        <router-link to="modal" class="is-mega">modal</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="card" class="is-mega is-uppercase">card</router-link>
+        <router-link to="card" class="is-mega">card</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="well" class="is-mega is-uppercase">well</router-link>
+        <router-link to="well" class="is-mega">well</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="table" class="is-mega is-uppercase">table</router-link>
+        <router-link to="table" class="is-mega">table</router-link>
       </li>
       <li class="y-space-5"></li>
       <li>
         <div class="is-h6">styling</div>
       </li>
       <li class="nav__item">
-        <router-link to="is-ink" class="is-mega is-uppercase">is-ink</router-link>
+        <router-link to="is-ink" class="is-mega">is-ink</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="is-theme" class="is-mega is-uppercase">is-theme</router-link>
+        <router-link to="is-theme" class="is-mega">is-theme</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="is-elevated" class="is-mega is-uppercase">is-elevated</router-link>
+        <router-link to="is-elevated" class="is-mega">is-elevated</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="is-radius" class="is-mega is-uppercase">is-radius</router-link>
+        <router-link to="is-radius" class="is-mega">is-radius</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="is-border" class="is-mega is-uppercase">is-border</router-link>
+        <router-link to="is-border" class="is-mega">is-border</router-link>
       </li>
       <li class="y-space-5"></li>
       <li>
         <div class="is-h6">layout</div>
       </li>
       <li class="nav__item">
-        <router-link to="grid" class="is-mega is-uppercase">grid</router-link>
+        <router-link to="grid" class="is-mega">grid</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="data-flex" class="is-mega is-uppercase">data-flex</router-link>
+        <router-link to="data-flex" class="is-mega">data-flex</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="spacer" class="is-mega is-uppercase">spacer</router-link>
+        <router-link to="spacer" class="is-mega">spacer</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="is-margin" class="is-mega is-uppercase">is-margin</router-link>
+        <router-link to="is-margin" class="is-mega">is-margin</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="is-padding" class="is-mega is-uppercase">is-padding</router-link>
+        <router-link to="is-padding" class="is-mega">is-padding</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="is-height" class="is-mega is-uppercase">is-height</router-link>
+        <router-link to="is-height" class="is-mega">is-height</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="is-width" class="is-mega is-uppercase">is-width</router-link>
+        <router-link to="is-width" class="is-mega">is-width</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="position" class="is-mega is-uppercase">position helper</router-link>
+        <router-link to="position" class="is-mega">position helper</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="display" class="is-mega is-uppercase">display helper</router-link>
+        <router-link to="display" class="is-mega">display helper</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="overflow" class="is-mega is-uppercase">overflow helper</router-link>
+        <router-link to="overflow" class="is-mega">overflow helper</router-link>
       </li>
       <li class="y-space-5"></li>
       <li class="nav__item">
-        <router-link to="mixins" class="is-kilo is-uppercase">mixins</router-link>
+        <router-link to="mixins" class="is-kilo">mixins</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="functions" class="is-kilo is-uppercase">functions</router-link>
+        <router-link to="functions" class="is-kilo">functions</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="variables" class="is-kilo is-uppercase">variables</router-link>
+        <router-link to="variables" class="is-kilo">variables</router-link>
       </li>
     </ul>
   </div>

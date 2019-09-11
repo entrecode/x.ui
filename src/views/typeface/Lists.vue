@@ -40,14 +40,14 @@
               <div class="nav__item">
                 <a
                   @click="elementClass = 'is-unstyled'"
-                  class="btn btn_clear is-uppercase"
+                  class="btn btn_clear"
                   :class="{ 'is-ink': elementClass !== 'is-unstyled' }"
                 >is-unstyled</a>
               </div>
               <div class="nav__item">
                 <a
                   @click="elementClass = 'is-inline'"
-                  class="btn btn_clear is-uppercase"
+                  class="btn btn_clear"
                   :class="{ 'is-ink': elementClass !== 'is-inline' }"
                 >is-inline</a>
               </div>

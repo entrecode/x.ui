@@ -17,7 +17,7 @@
                 <div class="nav__item">
                   <a
                     @click="alignClass = 'align-left'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': alignClass !== 'align-left'}"
                   >
                     <svg class="ixo">
@@ -28,7 +28,7 @@
                 <div class="nav__item">
                   <a
                     @click="alignClass = 'align-center'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': alignClass !== 'align-center'}"
                   >
                     <svg class="ixo">
@@ -39,7 +39,7 @@
                 <div class="nav__item">
                   <a
                     @click="alignClass = 'align-right'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': alignClass !== 'align-right'}"
                   >
                     <svg class="ixo">
@@ -71,7 +71,7 @@
                 <div class="nav__item">
                   <a
                     @click="fontWeightClass = 'is-light'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontWeightClass !== 'is-light'}"
                   >
                     <svg class="ixo">
@@ -82,7 +82,7 @@
                 <div class="nav__item">
                   <a
                     @click="fontWeightClass = 'is-normal'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontWeightClass !== 'is-normal'}"
                   >
                     <svg class="ixo">
@@ -93,7 +93,7 @@
                 <div class="nav__item">
                   <a
                     @click="fontWeightClass = 'is-medium'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontWeightClass !== 'is-medium'}"
                   >
                     <svg class="ixo">
@@ -104,7 +104,7 @@
                 <div class="nav__item">
                   <a
                     @click="fontWeightClass = 'is-bold'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontWeightClass !== 'is-bold'}"
                   >
                     <svg class="ixo">
@@ -135,21 +135,21 @@
                 <div class="nav__item">
                   <a
                     @click="fontFamilyClass = 'is-body-font'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontFamilyClass !== 'is-body-font'}"
                   >body-font</a>
                 </div>
                 <div class="nav__item">
                   <a
                     @click="fontFamilyClass = 'is-headings-font'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontFamilyClass !== 'is-headings-font'}"
                   >headings-font</a>
                 </div>
                 <div class="nav__item">
                   <a
                     @click="fontFamilyClass = 'is-monospace-font'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontFamilyClass !== 'is-monospace-font'}"
                   >monospace-font</a>
                 </div>
@@ -178,7 +178,7 @@
                 <div class="nav__item">
                   <a
                     @click="textTransformClass = 'is-lowercase'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': textTransformClass !== 'is-lowercase'}"
                   >
                     <svg class="ixo">
@@ -189,7 +189,7 @@
                 <div class="nav__item">
                   <a
                     @click="textTransformClass = 'is-uppercase'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': textTransformClass !== 'is-uppercase'}"
                   >
                     <svg class="ixo">
@@ -222,28 +222,28 @@
                 <div class="nav__item">
                   <a
                     @click="wordWrapClass = 'is-nowrap'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': wordWrapClass !== 'is-nowrap'}"
                   >is-nowrap</a>
                 </div>
                 <div class="nav__item">
                   <a
                     @click="wordWrapClass = 'is-ellipsis'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': wordWrapClass !== 'is-ellipsis'}"
                   >is-ellipsis</a>
                 </div>
                 <div class="nav__item">
                   <a
                     @click="wordWrapClass = 'is-hyphen'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': wordWrapClass !== 'is-hyphen'}"
                   >is-hyphen</a>
                 </div>
                 <div class="nav__item">
                   <a
                     @click="wordWrapClass = 'is-hyphen-block'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': wordWrapClass !== 'is-hyphen-block'}"
                   >is-hyphen-block</a>
                 </div>

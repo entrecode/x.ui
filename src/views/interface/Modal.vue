@@ -207,16 +207,13 @@
 </template>
 
 <script>
-import DocTab from '@/components/DocTab.vue';
 import ParamsTable from '@/components/ParamsTable.vue';
 import RequiresList from '@/components/RequiresList.vue';
-import { maxHeaderSize } from 'http';
 
 export default {
   components: {
     ParamsTable,
     RequiresList,
-    DocTab,
   },
   data: () => {
     return {

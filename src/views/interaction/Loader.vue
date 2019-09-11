@@ -76,13 +76,11 @@
 </template>
 
 <script>
-import DocTab from '@/components/DocTab.vue';
 import ParamsTable from '@/components/ParamsTable.vue';
 import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   components: {
-    DocTab,
     ParamsTable,
     RequiresList,
   },
