@@ -5,7 +5,7 @@
 ///
 /// @param {number} $input-font-size [16]
 /// @param {number} $input-line-height [24]
-/// @param {number} $input-min-height [32]
+/// @param {number} $input-min-height [40]
 /// @param {number} $input-padding-ratio [1]
 /// @param {array} $input-spacing [0]
 /// @param {color} $input-border-color [transparent]
@@ -108,7 +108,7 @@
 
 // @param {number} $input-small-font-size [14]
 // @param {number} $input-small-line-height [18]
-// @param {number} $input-small-min-height [28]
+// @param {number} $input-small-min-height [32]
 // @param {array} $input-small-style]
 .input_small {
   @include inject-style($input-small-style);
@@ -129,7 +129,7 @@
 
 // @param {number} $input-big-font-size [18]
 // @param {number} $input-big-line-height [24]
-// @param {number} $input-big-min-height [40]
+// @param {number} $input-big-min-height [48]
 // @param {array} $input-big-radius [$input-radius]
 // @param {array} $input-big-style
 .input_big {

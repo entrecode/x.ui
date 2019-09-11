@@ -6,7 +6,7 @@
       </div>
       <div class="is-relative">
         <div
-          class="is-theme is-padding-center-2 is-round is-elevated-16 is-absolute is-placed-0 is-layer-10"
+          class="is-theme is-padding-center-2 is-radius is-elevated-16 is-absolute is-placed-0 is-layer-10"
         >
           <div class="nav">
             <div class="nav__item">

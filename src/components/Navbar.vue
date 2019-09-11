@@ -8,6 +8,7 @@
       </router-link>
       <div class="x-space-3"></div>
       <div class="flex-space"></div>
+      <Searchbar />
       <div class="nav">
         <div class="nav__item">
           <a
@@ -37,10 +38,12 @@
 
 <script>
 import Ixo from './Ixo.vue';
+import Searchbar from './Searchbar.vue';
 export default {
   name: 'Navbar',
   components: {
     Ixo,
+    Searchbar,
   },
   data: () => {
     return {

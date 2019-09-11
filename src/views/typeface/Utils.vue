@@ -12,7 +12,7 @@
                 :class="alignClass"
               >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
             </div>
-            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
@@ -66,7 +66,7 @@
                 :class="fontWeightClass"
               >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
             </div>
-            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
@@ -130,7 +130,7 @@
             <div data-col="8">
               <div class="is-h1" :class="fontFamilyClass">our work shared unit of analysis.</div>
             </div>
-            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
@@ -173,7 +173,7 @@
                 :class="textTransformClass"
               >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
             </div>
-            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
@@ -217,7 +217,7 @@
                 >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</div>
               </div>
             </div>
-            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a

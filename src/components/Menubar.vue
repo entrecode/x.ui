@@ -2,7 +2,10 @@
   <div class="is-padding-5">
     <ul class="nav nav_stacked">
       <li class="nav__item">
-        <router-link to="/" class="is-kilo">getting started</router-link>
+        <router-link to="/" class="is-mega">intro</router-link>
+      </li>
+      <li class="nav__item">
+        <router-link to="/getting-started" class="is-mega">getting started</router-link>
       </li>
       <li class="nav__item">
         <router-link to="colors" class="is-mega">colors</router-link>

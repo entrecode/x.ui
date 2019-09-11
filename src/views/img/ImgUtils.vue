@@ -13,7 +13,7 @@
           </div>
         </div>
         <div
-          class="demo-preview-settings is-absolute is-fab-s is-theme is-elevated-16 is-padding-middle-2 is-padding-center-3 is-round"
+          class="demo-preview-settings is-absolute is-fab-s is-theme is-elevated-16 is-padding-middle-2 is-padding-center-3 is-radius"
         >
           <div class="nav">
             <div class="nav__item">

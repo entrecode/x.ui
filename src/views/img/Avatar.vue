@@ -12,9 +12,9 @@
             </div>
           </div>
           <div
-            class="is-theme is-padding-middle-2 is-padding-center-3"
-            data-col="fit"
+            class="is-theme is-padding-middle-1 is-padding-center-2 is-radius is-elevated-16"
             data-grid="small"
+            data-flex="center-items"
           >
             <div data-col="fit">
               <select class="input input_round" v-model="avatarSize">

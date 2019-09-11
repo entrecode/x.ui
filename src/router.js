@@ -11,6 +11,11 @@ export const router = new Router({
     {
       path: '/',
       name: 'home',
+      components: { main: () => import('./views/Home.vue'), menu: DemoMenubar },
+    },
+    {
+      path: '/getting-started',
+      name: 'getting-started',
       components: { main: () => import('./views/GettingStarted.vue'), menu: DemoMenubar },
     },
     {
@@ -232,11 +237,6 @@ export const router = new Router({
       path: '/grid',
       name: 'grid',
       components: { main: () => import('./views/layout/Grid.vue'), menu: DemoMenubar },
-    },
-    {
-      path: '/data-flex',
-      name: 'data-flex',
-      components: { main: () => import('./views/layout/DataFlex.vue'), menu: DemoMenubar },
     },
     {
       path: '/spacer',

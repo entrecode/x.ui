@@ -6,7 +6,7 @@
       </div>
       <div class="demo-preview is-padding-8" data-flex="column center-items">
         <div v-html="markup"></div>
-        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
           <div class="nav">
             <div class="nav__item">
               <select class="input input_round" id="alerStyle" v-model="orientation">
