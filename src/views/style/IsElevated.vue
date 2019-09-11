@@ -2,7 +2,7 @@
   <section>
     <div data-col="10 8@xl">
       <div class="titlebar">
-        <h1>table</h1>
+        <h1>is-elevated</h1>
       </div>
       <div class="demo-preview is-padding-8" data-flex="column center-items">
         <div v-html="markup"></div>

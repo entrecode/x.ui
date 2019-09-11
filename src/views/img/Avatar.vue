@@ -105,12 +105,12 @@ export default {
   },
   computed: {
     computedClasses() {
-      return [this.avatarStyle ? 'avatar_square' : null, this.avatarSize ? ' ' + this.avatarSize : null].join('');
+      return [this.avatarStyle ? 'avatar_square' : null, this.avatarSize ? this.avatarSize : null].join(' ').trim();
     },
   },
   watch: {
     computedClasses: function(val) {
-      this.markup = `<div class="avatar${this.computedClasses}">
+      this.markup = `<div class="avatar ${this.computedClasses}">
   <img ...>
 </div>`;
     },

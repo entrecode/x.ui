@@ -2,7 +2,7 @@
   <section>
     <div data-col="10 8@xl">
       <div class="titlebar">
-        <h1>is-width</h1>
+        <h1>position helper</h1>
       </div>
       <div class="demo-preview is-relative is-height-vh-golden">
         <div

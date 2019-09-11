@@ -123,8 +123,10 @@
   background-color: var(--background);
 }
 
-.router-link-exact-active {
-  color: var(--link) !important;
+.doc-menubar {
+  .router-link-exact-active {
+    color: var(--link) !important;
+  }
 }
 
 .demo-code {

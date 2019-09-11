@@ -6,9 +6,9 @@
           <use xlink:href="#logo" />
         </svg>
       </router-link>
+      <div class="x-space-3 flex-space"></div>
+      <Searchbar data-col="fit" />
       <div class="x-space-3"></div>
-      <div class="flex-space"></div>
-      <Searchbar />
       <div class="nav">
         <div class="nav__item">
           <a

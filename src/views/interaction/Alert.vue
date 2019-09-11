@@ -193,7 +193,7 @@ export default {
   },
   computed: {
     alertClasses() {
-      return [this.size ? this.size + ' ' : null, this.style ? this.style + ' ' : null].join('');
+      return [this.size ? this.size + ' ' : null, this.style ? this.style + ' ' : null].join('').trim();
     },
   },
   watch: {
