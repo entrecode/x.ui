@@ -11,7 +11,7 @@
       </h1>
       <p
         class="is-lead"
-      >x.ui is a scss-framework based on the atomic design methodology. starting with its smallest parts, the atoms, combinded to bigger structures like molecules and eventually organisms.</p>
+      >x.ui is a scss-framework based on the atomic design methodology. starting with its smallest parts, the atoms, which are combinded into bigger structures like molecules and eventually organisms.</p>
       <p>Its modular and semantic structure eliminates redundancies and is very comprehensive.</p>
       <div class="spacer"></div>
       <h2>atoms</h2>
