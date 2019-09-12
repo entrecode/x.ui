@@ -239,10 +239,12 @@ $grid-container-gutter: 16 !default;
 // @param {number} $grid-num-columns [12] - number of columns in a row
 $grid-num-columns: 12 !default;
 
-// @param {number} $grid-gutter [32] - default gutter size
-// @param {number} $grid-small-gutter [16] - default gutter size
+// @param {number} $grid-gutter [32]
+// @param {number} $grid-small-gutter [16]
+// @param {number} $grid-smaller-gutter [4]
 $grid-gutter: 32 !default;
 $grid-small-gutter: 16 !default;
+$grid-smaller-gutter: 4 !default;
 
 //
 // SPACING

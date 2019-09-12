@@ -47,7 +47,7 @@ export default {
       params: [
         { name: '$xui-toggle-background', type: 'color', default: '$background-lighter' },
         { name: '$xui-toggle-hover-background', type: 'color', default: 'set-hover($xui-toggle-background)' },
-        { name: '$$xui-toggle-active-background', type: 'color', default: 'link' },
+        { name: '$xui-toggle-active-background', type: 'color', default: 'link' },
         {
           name: '$xui-toggle-height',
           type: 'number',
