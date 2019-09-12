@@ -6,11 +6,7 @@
       <pre v-highlightjs><code class="shell">npm i x.ui --save</code></pre>
       <div class="spacer spacer_big"></div>
       <h2>2. create your config</h2>
-      <p>
-        <strong>x.ui</strong> is based on a detailed config with default parameters. it has a hierarchical structure so
-        some parameters inherit values from stromnger core parameters.
-      </p>
-      <p>for a full overview of all config parameters you se the complete defautl config file here</p>
+      <p>the config is the most important file in a x.ui project. basically it is all you need to make x.ui your own. for a full overview of all config parameters you se the complete defautl config file here</p>
       <a
         href="https://raw.githubusercontent.com/entrecode/x.ui/master/scss/_xui-config.scss"
         title="config file for x.ui"
