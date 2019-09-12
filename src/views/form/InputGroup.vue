@@ -129,13 +129,13 @@
               <span class="xui-select__caret"></span>
               <ul class="xui-select-options">
                 <li>
-                  <a href tabindex="0" class="xui-select-option">option 1</a>
+                  <a tabindex="0" class="xui-select-option">option 1</a>
                 </li>
                 <li>
-                  <a href tabindex="0" class="xui-select-option">option 2</a>
+                  <a tabindex="0" class="xui-select-option">option 2</a>
                 </li>
                 <li>
-                  <a href tabindex="0" class="xui-select-option">option 3</a>
+                  <a tabindex="0" class="xui-select-option">option 3</a>
                 </li>
               </ul>
             </div>
@@ -262,13 +262,13 @@ export default {
     <span class="xui-select__caret"></span>
     <ul class="xui-select-options">
       <li>
-        <a href="" tabindex="0" class="xui-select-option">option 1</a>
+        <a tabindex="0" class="xui-select-option">option 1</a>
       </li>
       <li>
-        <a href="" tabindex="0" class="xui-select-option">option 2</a>
+        <a tabindex="0" class="xui-select-option">option 2</a>
       </li>
       <li>
-        <a href="" tabindex="0" class="xui-select-option">option 3</a>
+        <a tabindex="0" class="xui-select-option">option 3</a>
       </li>
     </ul>
   </div>

@@ -18,7 +18,7 @@
               </button>
             </div>
             <div data-col="fit">
-              <a href class="btn demo-transition" :class="btnClasses">
+              <a class="btn demo-transition" :class="btnClasses">
                 <svg class="ixo">
                   <use xlink:href="#fire" />
                 </svg>
@@ -139,7 +139,7 @@ export default {
       btnOutlined: false,
       markup: `<input type="button" class="btn" value="...">
 <button class="btn">...</button>
-<a href class="btn">...</a>`,
+<a class="btn">...</a>`,
       coreParams: [
         {
           name: '$btn-font-family',
@@ -622,7 +622,7 @@ export default {
     btnClasses: function(val) {
       this.markup = `<input type="button" class="btn ${this.btnClasses}" value="...">
 <button class="btn ${this.btnClasses}">...</button>
-<a href class="btn ${this.btnClasses}">...</a>`;
+<a class="btn ${this.btnClasses}">...</a>`;
     },
   },
 };

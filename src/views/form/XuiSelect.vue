@@ -189,7 +189,7 @@ export default {
   <ul class="xui-select-options">
     <li>
       <!-- add .is-active for selected option -->
-      <a href="" tabindex="0" class="xui-select-option">...</a>
+      <a tabindex="0" class="xui-select-option">...</a>
     </li>
     ...
   </ul>
@@ -203,7 +203,7 @@ export default {
   <ul class="xui-select-options">
     <li>
       <!-- add .is-active for selected option -->
-      <a href="" class="xui-select-option">...</a>
+      <a class="xui-select-option">...</a>
     </li>
     ...
   </ul>
@@ -281,7 +281,7 @@ export default {
   <ul class="xui-select-options${this.toggleSelect ? ' is-active' : ''}">
     <li>
       <!-- add .is-active for selected option -->
-      <a href="" class="xui-select-option">...</a>
+      <a class="xui-select-option">...</a>
     </li>
     ...
   </ul>

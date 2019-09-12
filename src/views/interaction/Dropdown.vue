@@ -32,12 +32,12 @@
             >
               <a class="btn">click here</a>
               <div class="dropdown-options">
-                <a href class="dropdown-option">dropdown option</a>
-                <a href class="dropdown-option">dropdown option</a>
-                <a href class="dropdown-option">dropdown option</a>
+                <a class="dropdown-option">dropdown option</a>
+                <a class="dropdown-option">dropdown option</a>
+                <a class="dropdown-option">dropdown option</a>
                 <div class="dropdown_divider"></div>
                 <div class="dropdown-option">
-                  <a href class="btn btn_block">a button</a>
+                  <a class="btn btn_block">a button</a>
                 </div>
               </div>
             </div>
@@ -79,12 +79,12 @@
             >
               <a class="btn" @click="toggleDropdown = !toggleDropdown">click here</a>
               <div class="dropdown-options" :class="{'is-active' : toggleDropdown}">
-                <a href class="dropdown-option">dropdown option</a>
-                <a href class="dropdown-option">dropdown option</a>
-                <a href class="dropdown-option">dropdown option</a>
+                <a class="dropdown-option">dropdown option</a>
+                <a class="dropdown-option">dropdown option</a>
+                <a class="dropdown-option">dropdown option</a>
                 <div class="dropdown_divider"></div>
                 <div class="dropdown-option">
-                  <a href class="btn btn_block">a button</a>
+                  <a class="btn btn_block">a button</a>
                 </div>
               </div>
             </div>
@@ -126,12 +126,12 @@
       <div class="demo-preview is-padding-8" data-flex="center">
         <div data-col="8@lg 6@xl">
           <div class="dropdown-options" style="position: inherit; top: inherit;">
-            <a href class="dropdown-option">dropdown option</a>
-            <a href class="dropdown-option">dropdown option</a>
-            <a href class="dropdown-option">dropdown option</a>
+            <a class="dropdown-option">dropdown option</a>
+            <a class="dropdown-option">dropdown option</a>
+            <a class="dropdown-option">dropdown option</a>
             <div class="dropdown_divider"></div>
             <div class="dropdown-option">
-              <a href class="btn btn_block">a button</a>
+              <a class="btn btn_block">a button</a>
             </div>
           </div>
         </div>
@@ -159,7 +159,7 @@ export default {
       markup: `<div class="dropdown" tabindex="0">
   <a class="btn">click here</a>
   <div class="dropdown-options">
-    <a href class="dropdown-option">...</a>
+    <a class="dropdown-option">...</a>
     <div class="dropdown_divider"></div>
     ...
   </div>
@@ -312,7 +312,7 @@ export default {
       this.markup = `<div class="dropdown ${this.classes}" tabindex="0">
   <a class="btn">click here</a>
   <div class="dropdown-options${this.toggleDropdown && this.activeTab === 2 ? ' is-active' : ''}">
-    <a href class="dropdown-option">...</a>
+    <a class="dropdown-option">...</a>
     <div class="dropdown_divider"></div>
     ...
   </div>
