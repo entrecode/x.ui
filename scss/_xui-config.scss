@@ -60,9 +60,9 @@ $highlight-hover: set-hover($highlight) !default;
 // @param {color} $background-lighter [null] - set value too overwrite generated color
 // @param {color} $background-lightest [null] - set value too overwrite generated color
 $background-invert: $text !default;
-$background-lightest: #f7f7f8 !default;
-$background-lighter: shade-by-contrast($background-lightest, 4) !default;
-$background-light: shade-by-contrast($background-lightest, 8) !default;
+$background-lightest: shade-by-contrast($background, 2) !default;
+$background-lighter: shade-by-contrast($background, 4) !default;
+$background-light: shade-by-contrast($background, 8) !default;
 
 // @param {color} $base-background [$background]
 $base-background: $background !default;
@@ -239,10 +239,12 @@ $grid-container-gutter: 16 !default;
 // @param {number} $grid-num-columns [12] - number of columns in a row
 $grid-num-columns: 12 !default;
 
-// @param {number} $grid-gutter [32] - default gutter size
-// @param {number} $grid-small-gutter [16] - default gutter size
+// @param {number} $grid-gutter [32]
+// @param {number} $grid-small-gutter [16]
+// @param {number} $grid-smaller-gutter [4]
 $grid-gutter: 32 !default;
 $grid-small-gutter: 16 !default;
+$grid-smaller-gutter: 4 !default;
 
 //
 // SPACING
@@ -1860,7 +1862,7 @@ $field-group-info-style: () !default;
 // ------------------------------------------------------
 // @param {number} $input-font-size [16]
 // @param {number} $input-line-height [24]
-// @param {number} $input-min-height [32]
+// @param {number} $input-min-height [40]
 // @param {number} $input-padding-ratio [1]
 // @param {array} $input-spacing [0]
 // @param {color} $input-border-color [transparent]
@@ -1874,7 +1876,7 @@ $field-group-info-style: () !default;
 // @param {array} $input-disabled-style
 $input-font-size: $base-font-size !default;
 $input-line-height: $input-font-size * 1.125 !default;
-$input-min-height: 32 !default;
+$input-min-height: 40 !default;
 $input-padding-ratio: 1 !default;
 $input-spacing: 0 !default;
 $input-border-color: transparent !default;
@@ -1898,20 +1900,20 @@ $input-placeholder-focus-style: () !default;
 
 // @param {number} $input-small-font-size [14]
 // @param {number} $input-small-line-height [18]
-// @param {number} $input-small-min-height [28]
+// @param {number} $input-small-min-height [32]
 // @param {array} $input-small-style
 $input-small-font-size: $input-font-size * 0.875 !default;
 $input-small-line-height: $input-small-font-size * 1.125 !default;
-$input-small-min-height: 28 !default;
+$input-small-min-height: 32 !default;
 $input-small-style: () !default;
 
 // @param {number} $input-big-font-size [18]
 // @param {number} $input-big-line-height [24]
-// @param {number} $input-big-min-height [40]
+// @param {number} $input-big-min-height [48]
 // @param {array} $input-big-style
 $input-big-font-size: $input-font-size * 1.125 !default;
 $input-big-line-height: $input-big-font-size * 1.125 !default;
-$input-big-min-height: 40 !default;
+$input-big-min-height: 48 !default;
 $input-big-style: () !default;
 
 // @param {boolean} $input-round [false] - sets border-radius to 50% of input height

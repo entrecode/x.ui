@@ -23,7 +23,7 @@
         </div>
       </div>
       <div data-flex="center">
-        <div class="is-theme is-padding-center-2 is-round is-elevated-16">
+        <div class="is-theme is-padding-center-2 is-elevated-16">
           <div class="nav">
             <div class="nav__item">
               <input type="range" v-model="space" class="range-slider" min="0" max="9" />

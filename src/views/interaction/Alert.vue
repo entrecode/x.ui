@@ -10,7 +10,7 @@
           :class="alertClasses"
         >ecosystem families energize correlation, social enterprise citizen-centered.</div>
 
-        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
           <div class="nav">
             <div class="nav__item">
               <div class="input-group">
@@ -53,13 +53,9 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params" title="default params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="smallParams" title="small params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="bigParams" title="big params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="stylesParams" title="style params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>
@@ -193,7 +189,7 @@ export default {
   },
   computed: {
     alertClasses() {
-      return [this.size ? this.size + ' ' : null, this.style ? this.style + ' ' : null].join('');
+      return [this.size ? this.size + ' ' : null, this.style ? this.style + ' ' : null].join('').trim();
     },
   },
   watch: {

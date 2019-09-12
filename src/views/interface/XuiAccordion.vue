@@ -4,6 +4,9 @@
       <div class="titlebar">
         <h1>xui-accordion</h1>
       </div>
+      <p
+        class="is-lead"
+      >this molecule only manages the behavior of the accordion. for styling you have to combine it with other molecules and atoms.</p>
       <div class="nav">
         <div class="nav__item">
           <a

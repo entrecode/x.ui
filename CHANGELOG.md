@@ -127,7 +127,9 @@
 - added theme-modifier `.hover:is-theme-#`
 - added theme-modifier `.hover:is-elevated-#`
 - added `data-col="fit"`
+- added `data-grid="smaller-gutter"`
 - added grid config `$grid-small-gutter`
+- added grid config `$grid-smaller-gutter`
 - added `is-round` modifier
 - added `.nav__link` styles
 - added `.btn_square` styles

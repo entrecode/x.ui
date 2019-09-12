@@ -2,7 +2,7 @@
   <section>
     <div data-col="10 8@xl">
       <div class="titlebar">
-        <h1>is-width</h1>
+        <h1>position helper</h1>
       </div>
       <div class="demo-preview is-relative is-height-vh-golden">
         <div
@@ -140,7 +140,6 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

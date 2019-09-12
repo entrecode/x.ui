@@ -11,12 +11,12 @@ export const router = new Router({
     {
       path: '/',
       name: 'home',
-      components: { main: () => import('./views/GettingStarted.vue'), menu: DemoMenubar },
+      components: { main: () => import('./views/Home.vue'), menu: DemoMenubar },
     },
     {
-      path: '/introduction',
-      name: 'introduction',
-      components: { main: () => import('./views/Introduction.vue'), menu: DemoMenubar },
+      path: '/getting-started',
+      name: 'getting-started',
+      components: { main: () => import('./views/GettingStarted.vue'), menu: DemoMenubar },
     },
     {
       path: '/colors',
@@ -239,11 +239,6 @@ export const router = new Router({
       components: { main: () => import('./views/layout/Grid.vue'), menu: DemoMenubar },
     },
     {
-      path: '/data-flex',
-      name: 'data-flex',
-      components: { main: () => import('./views/layout/DataFlex.vue'), menu: DemoMenubar },
-    },
-    {
       path: '/spacer',
       name: 'spacer',
       components: { main: () => import('./views/layout/Spacer.vue'), menu: DemoMenubar },
@@ -294,11 +289,10 @@ export const router = new Router({
       components: { main: () => import('./views/interaction/DataTooltip.vue'), menu: DemoMenubar },
     },
   ],
-  scrollBehavior: (to) => {
-    if (to.hash) {
-      return { selector: to.hash };
-    } else {
-      return { x: 0, y: 0 };
-    }
+  scrollBehavior(to, from, savedPosition) {
+    return {
+      x: 0,
+      y: 0,
+    };
   },
 });

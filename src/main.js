@@ -3,13 +3,25 @@ import Vuex from 'vuex';
 import App from './App.vue';
 import { router } from './router';
 import VueHighlightJS from 'vue-highlightjs';
-import vueSmoothScroll from 'vue2-smooth-scroll';
 
-Vue.use(vueSmoothScroll);
 Vue.use(VueHighlightJS);
 Vue.config.productionTip = false;
 
 Vue.use(Vuex);
+
+const fixIdScrolling = {
+  watch: {
+    $route(to, from) {
+      const currentRoute = this.$router.currentRoute;
+      const idToScrollTo = currentRoute.hash;
+      this.$nextTick(() => {
+        if (idToScrollTo && document.querySelector(idToScrollTo)) {
+          document.querySelector(idToScrollTo).scrollIntoView();
+        }
+      });
+    },
+  },
+};
 
 const store = new Vuex.Store({
   state: {
@@ -73,6 +85,7 @@ const store = new Vuex.Store({
 });
 
 new Vue({
+  mixins: [fixIdScrolling],
   router,
   store,
   render: (h) => h(App),

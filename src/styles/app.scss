@@ -94,24 +94,6 @@
   }
 }
 
-.demo-card {
-  padding: 48px;
-  border-radius: 16px;
-}
-
-.demo-section {
-  margin: 80px 0;
-}
-
-.demo-texture {
-  mask-image: url('/screen.png');
-  mask-position: center;
-}
-
-.demo-blocks-group {
-  margin: 80px 0;
-}
-
 .demo-fullscreen {
   @include is-scrollable(both, contain, auto);
   position: fixed;
@@ -123,8 +105,10 @@
   background-color: var(--background);
 }
 
-.router-link-active {
-  color: var(--link) !important;
+.doc-menubar {
+  .router-link-exact-active {
+    color: var(--link);
+  }
 }
 
 .demo-code {
@@ -211,4 +195,17 @@
 .verte__guide {
   width: auto !important;
   height: auto !important;
+}
+
+.xui-logo {
+  height: 48px;
+  width: 144px;
+  fill: currentColor;
+  transition: opacity .4s;
+  
+  &:hover {
+    .doc-logo-hide {
+        opacity: 0;
+      }
+    }
 }

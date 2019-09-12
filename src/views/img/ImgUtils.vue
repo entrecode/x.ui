@@ -13,20 +13,20 @@
           </div>
         </div>
         <div
-          class="demo-preview-settings is-absolute is-fab-s is-theme is-elevated-16 is-padding-middle-2 is-padding-center-3 is-round"
+          class="demo-preview-settings is-absolute is-fab-s is-theme is-elevated-16 is-padding-middle-2 is-padding-center-3 is-radius"
         >
           <div class="nav">
             <div class="nav__item">
               <a
                 @click="responsiveness = 'img-responsive'"
-                class="btn btn_clear is-uppercase"
+                class="btn btn_clear"
                 :class="{ 'is-ink': responsiveness !== 'img-responsive' }"
               >img-responsive</a>
             </div>
             <div class="nav__item">
               <a
                 @click="responsiveness = 'img-fullwidth'"
-                class="btn btn_clear is-uppercase"
+                class="btn btn_clear"
                 :class="{ 'is-ink': responsiveness !== 'img-fullwidth' }"
               >img-fullwidth</a>
             </div>

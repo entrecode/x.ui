@@ -12,9 +12,9 @@
             </div>
           </div>
           <div
-            class="is-theme is-padding-middle-2 is-padding-center-3"
-            data-col="fit"
+            class="is-theme is-padding-middle-1 is-padding-center-2 is-radius is-elevated-16"
             data-grid="small"
+            data-flex="center-items"
           >
             <div data-col="fit">
               <select class="input input_round" v-model="avatarSize">
@@ -36,7 +36,6 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>
@@ -105,12 +104,12 @@ export default {
   },
   computed: {
     computedClasses() {
-      return [this.avatarStyle ? 'avatar_square' : null, this.avatarSize ? ' ' + this.avatarSize : null].join('');
+      return [this.avatarStyle ? 'avatar_square' : null, this.avatarSize ? this.avatarSize : null].join(' ').trim();
     },
   },
   watch: {
     computedClasses: function(val) {
-      this.markup = `<div class="avatar${this.computedClasses}">
+      this.markup = `<div class="avatar ${this.computedClasses}">
   <img ...>
 </div>`;
     },

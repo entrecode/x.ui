@@ -2,7 +2,7 @@
   <section>
     <div data-col="10 8@xl">
       <div class="titlebar">
-        <h1>table</h1>
+        <h1>is-elevated</h1>
       </div>
       <div class="demo-preview is-padding-8" data-flex="column center-items">
         <div v-html="markup"></div>
@@ -41,21 +41,18 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>
 
 <script>
-import DocTab from '@/components/DocTab.vue';
 import ParamsTable from '@/components/ParamsTable.vue';
 import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   name: 'IsElevated',
   components: {
-    DocTab,
     ParamsTable,
     RequiresList,
   },

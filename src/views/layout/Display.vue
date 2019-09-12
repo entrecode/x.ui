@@ -13,7 +13,7 @@
           <div>watch how&nbsp;</div>
           <div>i behave</div>
         </h2>
-        <div class="is-theme is-padding-center-2 is-round is-elevated-16">
+        <div class="is-theme is-padding-center-2 is-radius is-elevated-16">
           <div class="nav">
             <div class="nav__item">
               <select id="displaySelected" class="input" v-model="displaySelected">
@@ -48,7 +48,6 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

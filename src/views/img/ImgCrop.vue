@@ -22,7 +22,7 @@
           </div>
         </div>
         <div
-          class="demo-preview-settings is-absolute is-fab-s is-theme is-elevated-16 is-padding-middle-2 is-padding-center-3 is-round"
+          class="demo-preview-settings is-absolute is-fab-s is-theme is-elevated-16 is-padding-middle-2 is-padding-center-3 is-radius"
         >
           <select class="input input_round" v-model="imgCrop">
             <option value="img-crop-1-1">1:1</option>

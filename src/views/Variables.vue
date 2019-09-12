@@ -5,51 +5,46 @@
     </div>
     <div data-grid>
       <div data-col="8">
-        <div v-for="(item, index) in sortedArray" :key="index" :id="item.anchor">
-          <div class="is-margin-middle-8">
-            <h3 v-if="item.title">
-              {{ item.title }}&ensp;
-              <div class="tag">{{ item.type }}</div>
-            </h3>
-            <div class="is-margin-bottom-5" v-if="item.code">
-              <pre v-highlightjs="item.code"><code class="scss" style="font-size: 14px;"></code></pre>
-            </div>
-            <div class="is-margin-bottom-5" v-if="item.description">
-              <h4 class="is-h4">description</h4>
-              <p v-text="item.description"></p>
-            </div>
-            <div class="is-margin-bottom-5" v-if="item.require">
-              <h4 class="is-h4">requires</h4>
-              <ul data-grid="small-gutter">
-                <li v-for="(req, index) in item.require" :key="index" data-col="fit">
-                  <a
-                    :href="req.link"
-                    class="code"
-                    v-text="req.name"
-                    v-if="req.link"
-                    v-smooth-scroll
-                  ></a>
-                  <span class="code" v-text="req.name" v-else></span>
-                </li>
-              </ul>
-            </div>
-            <div class="is-margin-bottom-5" v-if="item.usedBy">
-              <h4 class="is-h4">used by</h4>
-              <ul data-grid="small-gutter">
-                <li v-for="(used, index) in item.usedBy" :key="index" data-col="fit">
-                  <a
-                    :href="used.link"
-                    class="code"
-                    v-text="used.name"
-                    v-if="used.link"
-                    v-smooth-scroll
-                  ></a>
-                  <span class="code" v-text="used.name" v-else></span>
-                </li>
-              </ul>
-            </div>
+        <div
+          v-for="(item, index) in sortedArray"
+          :key="index"
+          :id="item.anchor"
+          class="is-margin-bottom-8 is-border-bottom is-padding-bottom-4"
+        >
+          <h3 v-if="item.title">
+            {{ item.title }}&ensp;
+            <div class="tag">{{ item.type }}</div>
+          </h3>
+          <div class="is-margin-bottom-5" v-if="item.code">
+            <pre v-highlightjs="item.code"><code class="scss" style="font-size: 14px;"></code></pre>
           </div>
-          <div class="spacer"></div>
+          <div class="is-margin-bottom-5" v-if="item.description">
+            <h4 class="is-h4">description</h4>
+            <p v-text="item.description"></p>
+          </div>
+          <div class="is-margin-bottom-5" v-if="item.require">
+            <h4 class="is-h4">requires</h4>
+            <ul data-grid="smaller-gutter">
+              <li v-for="(req, index) in item.require" :key="index" data-col="fit">
+                <a :href="req.link" class="code" v-text="req.name" v-if="req.link"></a>
+                <span class="code" v-text="req.name" v-else></span>
+              </li>
+            </ul>
+          </div>
+          <div class="is-margin-bottom-5" v-if="item.usedBy">
+            <h4 class="is-h4">used by</h4>
+            <ul data-grid="smaller-gutter">
+              <li v-for="(used, index) in item.usedBy" :key="index" data-col="fit">
+                <a
+                  :href="used.link"
+                  class="code"
+                  v-text="used.name"
+                  v-if="used.link"
+                ></a>
+                <span class="code" v-text="used.name" v-else></span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div data-col="4">
@@ -57,7 +52,6 @@
           <li class="nav__item" v-for="(item, index) in sortedArray" :key="index">
             <a
               :href="'#' + item.anchor"
-              v-smooth-scroll
               class="is-kilo is-ink hover:is-ink-link"
             >{{ item.title }}</a>
           </li>

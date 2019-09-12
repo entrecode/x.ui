@@ -12,12 +12,12 @@
                 :class="alignClass"
               >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
             </div>
-            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
                     @click="alignClass = 'align-left'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': alignClass !== 'align-left'}"
                   >
                     <svg class="ixo">
@@ -28,7 +28,7 @@
                 <div class="nav__item">
                   <a
                     @click="alignClass = 'align-center'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': alignClass !== 'align-center'}"
                   >
                     <svg class="ixo">
@@ -39,7 +39,7 @@
                 <div class="nav__item">
                   <a
                     @click="alignClass = 'align-right'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': alignClass !== 'align-right'}"
                   >
                     <svg class="ixo">
@@ -66,12 +66,12 @@
                 :class="fontWeightClass"
               >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
             </div>
-            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
                     @click="fontWeightClass = 'is-light'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontWeightClass !== 'is-light'}"
                   >
                     <svg class="ixo">
@@ -82,7 +82,7 @@
                 <div class="nav__item">
                   <a
                     @click="fontWeightClass = 'is-normal'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontWeightClass !== 'is-normal'}"
                   >
                     <svg class="ixo">
@@ -93,7 +93,7 @@
                 <div class="nav__item">
                   <a
                     @click="fontWeightClass = 'is-medium'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontWeightClass !== 'is-medium'}"
                   >
                     <svg class="ixo">
@@ -104,7 +104,7 @@
                 <div class="nav__item">
                   <a
                     @click="fontWeightClass = 'is-bold'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontWeightClass !== 'is-bold'}"
                   >
                     <svg class="ixo">
@@ -130,26 +130,26 @@
             <div data-col="8">
               <div class="is-h1" :class="fontFamilyClass">our work shared unit of analysis.</div>
             </div>
-            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
                     @click="fontFamilyClass = 'is-body-font'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontFamilyClass !== 'is-body-font'}"
                   >body-font</a>
                 </div>
                 <div class="nav__item">
                   <a
                     @click="fontFamilyClass = 'is-headings-font'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontFamilyClass !== 'is-headings-font'}"
                   >headings-font</a>
                 </div>
                 <div class="nav__item">
                   <a
                     @click="fontFamilyClass = 'is-monospace-font'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': fontFamilyClass !== 'is-monospace-font'}"
                   >monospace-font</a>
                 </div>
@@ -173,12 +173,12 @@
                 :class="textTransformClass"
               >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
             </div>
-            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
                     @click="textTransformClass = 'is-lowercase'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': textTransformClass !== 'is-lowercase'}"
                   >
                     <svg class="ixo">
@@ -189,7 +189,7 @@
                 <div class="nav__item">
                   <a
                     @click="textTransformClass = 'is-uppercase'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': textTransformClass !== 'is-uppercase'}"
                   >
                     <svg class="ixo">
@@ -217,33 +217,33 @@
                 >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</div>
               </div>
             </div>
-            <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+            <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
                 <div class="nav__item">
                   <a
                     @click="wordWrapClass = 'is-nowrap'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': wordWrapClass !== 'is-nowrap'}"
                   >is-nowrap</a>
                 </div>
                 <div class="nav__item">
                   <a
                     @click="wordWrapClass = 'is-ellipsis'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': wordWrapClass !== 'is-ellipsis'}"
                   >is-ellipsis</a>
                 </div>
                 <div class="nav__item">
                   <a
                     @click="wordWrapClass = 'is-hyphen'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': wordWrapClass !== 'is-hyphen'}"
                   >is-hyphen</a>
                 </div>
                 <div class="nav__item">
                   <a
                     @click="wordWrapClass = 'is-hyphen-block'"
-                    class="btn btn_clear is-uppercase"
+                    class="btn btn_clear"
                     :class="{'is-ink': wordWrapClass !== 'is-hyphen-block'}"
                   >is-hyphen-block</a>
                 </div>
@@ -368,7 +368,7 @@ scalable commitment, shine our work shared unit of analysis.`,
         },
         {
           name: '$mark-background',
-           type: 'color | false',
+          type: 'color | false',
           default: 'false',
         },
         {
@@ -398,27 +398,3 @@ scalable commitment, shine our work shared unit of analysis.`,
   },
 };
 </script>
-
-/* 
-sectionGroups: [
-        {
-          config: `
-// link styles
-$link-color: $link;
-$link-decoration: none;
-$link-weight: $is-normal; // normal
-$link-style: ();
-
-$link-hover-color: set-hover($link-hover);
-$link-hover-decoration: $link-decoration;
-$link-hover-style: ();
-
-// for <small> elements
-$inline-small-style: ();
-
-// <mark> style
-$mark-color: $highlight-contrast;
-$mark-background: $highlight;
-$mark-style: ();`,
-        },
-      ], */

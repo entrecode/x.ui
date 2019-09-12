@@ -1,12 +1,15 @@
 <template>
-  <section class="demo-blocks-group">
+  <section>
     <div data-grid>
       <div data-col="8">
+        <div class="titlebar">
+          <h1>functions</h1>
+        </div>
         <div
           v-for="(item, index) in sortedArray"
           :key="index"
           :id="item.anchor"
-          class="is-margin-middle-8 is-border-bottom is-padding-bottom-8"
+          class="is-margin-bottom-8 is-border-bottom is-padding-bottom-4"
         >
           <h3 v-if="item.title">
             {{ item.title }}&ensp;
@@ -32,28 +35,30 @@
           </div>
           <div class="is-margin-bottom-5" v-if="item.params">
             <h4 class="is-h4">parameters</h4>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                  <th>Type</th>
-                  <th>Default Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="(param, index) in item.params" :key="index">
-                  <td>
-                    <div class="code" v-text="param.name"></div>
-                  </td>
-                  <td v-text="param.description"></td>
-                  <td v-text="param.type"></td>
-                  <td>
-                    <div class="code" v-text="param.default"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="is-padding-5 is-radius is-theme-lightest">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Default Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(param, index) in item.params" :key="index">
+                    <td>
+                      <div class="code" v-text="param.name"></div>
+                    </td>
+                    <td v-text="param.description"></td>
+                    <td v-text="param.type"></td>
+                    <td>
+                      <div class="code" v-text="param.default"></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
           <div class="is-margin-bottom-5" v-if="item.description">
             <h4 class="is-h4">description</h4>
@@ -69,23 +74,22 @@
           </div>
           <div class="is-margin-bottom-5" v-if="item.require">
             <h4 class="is-h4">requires</h4>
-            <ul data-grid="small-gutter">
+            <ul data-grid="smaller-gutter">
               <li v-for="(req, index) in item.require" :key="index" data-col="fit">
-                <a :href="req.link" class="code" v-text="req.name" v-if="req.link" v-smooth-scroll></a>
+                <a :href="req.link" class="code" v-text="req.name" v-if="req.link"></a>
                 <span class="code" v-text="req.name" v-else></span>
               </li>
             </ul>
           </div>
           <div class="is-margin-bottom-5" v-if="item.usedBy">
             <h4 class="is-h4">used by</h4>
-            <ul data-grid="small-gutter">
+            <ul data-grid="smaller-gutter">
               <li v-for="(used, index) in item.usedBy" :key="index" data-col="fit">
                 <a
                   :href="used.link"
                   class="code"
                   v-text="used.name"
                   v-if="used.link"
-                  v-smooth-scroll
                 ></a>
                 <span class="code" v-text="used.name" v-else></span>
               </li>
@@ -95,13 +99,9 @@
       </div>
       <div data-col="4">
         <ul class="nav nav_stacked is-sticky" style="top: 120px;">
-          <li class="nav__item">
-            <h2>functions</h2>
-          </li>
           <li class="nav__item" v-for="(item, index) in sortedArray" :key="index">
             <a
               :href="'#' + item.anchor"
-              v-smooth-scroll
               class="is-kilo is-ink hover:is-ink-link"
             >{{ item.title }}</a>
           </li>

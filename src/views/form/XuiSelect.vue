@@ -161,13 +161,9 @@
       </div>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="placeholderParams" title="placeholder params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="optionsParams" title="options params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="optionParams" title="option params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

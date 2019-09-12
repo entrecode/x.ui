@@ -8,29 +8,17 @@
         <div class="align-center is-padding-bottom-5">
           <div data-grid="small-gutter">
             <div data-col="fit">
-              <input
-                type="button"
-                class="btn demo-transition"
-                :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
-                value="button"
-              />
+              <input type="button" class="btn demo-transition" :class="btnClasses" value="button" />
             </div>
             <div data-col="fit">
-              <button
-                class="btn demo-transition"
-                :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
-              >
+              <button class="btn demo-transition" :class="btnClasses">
                 <svg class="ixo">
                   <use xlink:href="#fire" />
                 </svg> Button
               </button>
             </div>
             <div data-col="fit">
-              <a
-                href
-                class="btn demo-transition"
-                :class="[btnStyle, btnSize, { btn_round: btnRound }, { btn_outlined: btnOutlined }, btnWide]"
-              >
+              <a href class="btn demo-transition" :class="btnClasses">
                 <svg class="ixo">
                   <use xlink:href="#fire" />
                 </svg>
@@ -39,57 +27,39 @@
           </div>
         </div>
 
-        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
-          <div class="nav">
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
+          <div class="nav" data-flex="start-items">
             <div class="nav__item">
-              <div class="input-group">
-                <label for="btnStyle" class="input-group__addon">
-                  <svg class="ixo is-ink-link">
-                    <use xlink:href="#color-palette" />
-                  </svg>
-                </label>
-                <div class="input-group__addon">
-                  <select id="btnStyle" v-model="btnStyle" class="input">
-                    <option value>default</option>
-                    <option value="btn_minor">minor</option>
-                    <option value="btn_super">super</option>
-                    <option value="btn_invert">inverted</option>
-                    <option value="btn_clear">clear</option>
-                  </select>
-                </div>
-              </div>
+              <select id="btnStyle" v-model="btnStyle" class="input input_small">
+                <option value>default</option>
+                <option value="btn_minor">minor</option>
+                <option value="btn_super">super</option>
+                <option value="btn_invert">inverted</option>
+                <option value="btn_clear">clear</option>
+              </select>
+              <label for="btnStyle" class="field-group__label align-center">
+                <small>style</small>
+              </label>
             </div>
             <div class="nav__item">
-              <div class="input-group">
-                <label for="btnSize" class="input-group__addon">
-                  <svg class="ixo is-ink-link">
-                    <use xlink:href="#move-vertical" />
-                  </svg>
-                </label>
-                <div class="input-group__addon">
-                  <select id="btnSize" v-model="btnSize" class="input">
-                    <option value>default</option>
-                    <option value="btn_small">small</option>
-                    <option value="btn_big">big</option>
-                  </select>
-                </div>
-              </div>
+              <select id="btnSize" v-model="btnSize" class="input input_small">
+                <option value>default</option>
+                <option value="btn_small">small</option>
+                <option value="btn_big">big</option>
+              </select>
+              <label for="btnSize" class="field-group__label align-center">
+                <small>size</small>
+              </label>
             </div>
             <div class="nav__item">
-              <div class="input-group">
-                <label for="btnWide" class="input-group__addon">
-                  <svg class="ixo is-ink-link">
-                    <use xlink:href="#move-horizontal" />
-                  </svg>
-                </label>
-                <div class="input-group__addon">
-                  <select id="btnWide" v-model="btnWide" class="input">
-                    <option value>default</option>
-                    <option value="btn_wide">wide</option>
-                    <option value="btn_block">block</option>
-                  </select>
-                </div>
-              </div>
+              <select id="btnWide" v-model="btnWide" class="input input_small">
+                <option value>default</option>
+                <option value="btn_wide">wide</option>
+                <option value="btn_block">block</option>
+              </select>
+              <label for="btnWide" class="field-group__label align-center">
+                <small>width</small>
+              </label>
             </div>
             <div class="nav__item">
               <div class="xui-checkbox">
@@ -101,6 +71,12 @@
               <div class="xui-checkbox">
                 <input type="checkbox" id="btnOutlined" v-model="btnOutlined" />
                 <label for="btnOutlined" class="xui-checkbox__label">outlined</label>
+              </div>
+            </div>
+            <div class="nav__item">
+              <div class="xui-checkbox">
+                <input type="checkbox" id="btnSquare" v-model="btnSquare" />
+                <label for="btnSquare" class="xui-checkbox__label">square</label>
               </div>
             </div>
           </div>
@@ -158,6 +134,7 @@ export default {
       btnStyle: '',
       btnSize: '',
       btnWide: '',
+      btnSquare: '',
       btnRound: false,
       btnOutlined: false,
       markup: `<input type="button" class="btn" value="...">
@@ -630,12 +607,15 @@ export default {
   computed: {
     btnClasses() {
       return [
-        this.btnStyle ? this.btnStyle + ' ' : null,
-        this.btnSize ? this.btnSize + ' ' : null,
-        this.btnWide ? 'btn_wide ' : null,
-        this.btnRound ? 'btn_round ' : null,
+        this.btnStyle ? this.btnStyle : null,
+        this.btnSize ? this.btnSize : null,
+        this.btnWide ? this.btnWide : null,
+        this.btnRound ? 'btn_round' : null,
         this.btnOutlined ? 'btn_outlined' : null,
-      ].join('');
+        this.btnSquare ? 'btn_square' : null,
+      ]
+        .join(' ')
+        .trim();
     },
   },
   watch: {

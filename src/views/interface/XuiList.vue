@@ -17,6 +17,13 @@
             @click="activeTab = 2"
             class="btn btn_clear demo-tab"
             :class="{ 'is-active': activeTab === 2 }"
+          >group</a>
+        </div>
+        <div class="nav__item">
+          <a
+            @click="activeTab = 3"
+            class="btn btn_clear demo-tab"
+            :class="{ 'is-active': activeTab === 3 }"
           >example</a>
         </div>
       </div>
@@ -29,6 +36,13 @@
       </div>
       <div v-show="activeTab === 2">
         <div class="demo-preview is-padding-8">
+          <div class="is-theme is-padding-center-5 is-radius" v-html="previewGroup"></div>
+        </div>
+        <div class="spacer"></div>
+        <pre v-highlightjs="previewGroup"><code class="html"></code></pre>
+      </div>
+      <div v-show="activeTab === 3">
+        <div class="demo-preview is-padding-8">
           <div class="is-theme is-padding-center-5 is-radius" v-html="previewExample"></div>
         </div>
         <div class="spacer"></div>
@@ -36,13 +50,9 @@
       </div>
       <div class="spacer"></div>
       <params-table :params="paramsGroup" title="group params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="paramsGroupHeader" title="group-header params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="paramsList" title="list params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="paramsListItem" title="list-item params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>
@@ -219,7 +229,6 @@ export default {
           type: 'map',
           default: '',
         },
-
       ],
       previewBasic: `<div class="xui-list">
   <div class="xui-list-item">
@@ -235,6 +244,58 @@ export default {
       <a class="btn">
         <svg class="ixo"><use xlink:href="#fire"></use></svg>
       </a>
+    </div>
+  </div>
+</div>`,
+      previewGroup: `<div class="xui-list-group">
+  <div class="xui-list-header">
+    <h2 class="is-kilo">list header</h2>
+  </div>
+  <div class="xui-list">
+    <div class="xui-list-item">
+      <div class="xui-list-item__start">
+        <div class="avatar">
+          <img src="avatar.png" />
+        </div>
+      </div>
+      <div class="xui-list-item__label">
+        <h3 class="is-kilo">Itemtitle</h3>
+      </div>
+      <div class="xui-list-item__end">
+        <a class="btn btn_clear btn_square">
+          <svg class="ixo"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+    </div>
+    <div class="xui-list-item">
+      <div class="xui-list-item__start">
+        <div class="avatar">
+          <img src="avatar.png" />
+        </div>
+      </div>
+      <div class="xui-list-item__label">
+        <h3 class="is-kilo">Itemtitle</h3>
+      </div>
+      <div class="xui-list-item__end">
+        <a class="btn btn_clear btn_square">
+          <svg class="ixo"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+    </div>
+    <div class="xui-list-item">
+      <div class="xui-list-item__start">
+        <div class="avatar">
+          <img src="avatar.png" />
+        </div>
+      </div>
+      <div class="xui-list-item__label">
+        <h3 class="is-kilo">Itemtitle</h3>
+      </div>
+      <div class="xui-list-item__end">
+        <a class="btn btn_clear btn_square">
+          <svg class="ixo"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
     </div>
   </div>
 </div>`,

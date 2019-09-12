@@ -18,7 +18,8 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
-      <div class="spacer"></div>
+      <params-table :params="toggleParams" title="pin params"></params-table>
+      <params-table :params="labelParams" title="label params"></params-table>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>
@@ -45,7 +46,7 @@ export default {
       params: [
         { name: '$xui-toggle-background', type: 'color', default: '$background-lighter' },
         { name: '$xui-toggle-hover-background', type: 'color', default: 'set-hover($xui-toggle-background)' },
-        { name: '$$xui-toggle-active-background', type: 'color', default: 'link' },
+        { name: '$xui-toggle-active-background', type: 'color', default: 'link' },
         {
           name: '$xui-toggle-height',
           type: 'number',
@@ -71,6 +72,8 @@ export default {
           type: 'map',
           default: '',
         },
+      ],
+      toggleParams: [
         { name: '$xui-toggle-pin-background', type: 'color', default: '$background' },
         { name: '$xui-toggle-pin-height', type: 'number', default: '$xui-toggle-height - 8' },
         { name: '$xui-toggle-pin-width', type: 'number', default: '$xui-toggle-pin-height' },
@@ -80,6 +83,8 @@ export default {
           type: 'map',
           default: '',
         },
+      ],
+      labelParams: [
         {
           name: '$xui-toggle-label-font-size',
           type: 'number',

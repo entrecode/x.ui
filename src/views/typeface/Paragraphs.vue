@@ -12,19 +12,19 @@
             greenwashing benefit corporation innovation white paper, innovate, blended.
           </p>
         </div>
-        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
           <div class="nav">
             <div class="nav__item">
               <a
                 @click="paragraphClass = ''"
-                class="btn btn_clear is-uppercase"
+                class="btn btn_clear"
                 :class="{ 'is-ink': paragraphClass !== '' }"
               >default</a>
             </div>
             <div class="nav__item">
               <a
                 @click="paragraphClass = 'is-lead'"
-                class="btn btn_clear is-uppercase"
+                class="btn btn_clear"
                 :class="{ 'is-ink': paragraphClass !== 'is-lead' }"
               >is-lead</a>
             </div>
@@ -35,11 +35,8 @@
       <pre v-highlightjs="preview"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="coreParams" title="core params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="paragraphParams" title="paragraph params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="leadParams" title="lead params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

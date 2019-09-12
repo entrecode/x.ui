@@ -64,11 +64,8 @@
       <pre v-highlightjs="withGridMarkup" v-show="activeTab === 2"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="inputParams"></params-table>
-      <div class="spacer"></div>
       <params-table :params="labelParams" title="label params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="infoParams" title="info params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

@@ -7,47 +7,47 @@
         </div>
         <div class="demo-preview is-padding-8" data-flex="column center-items">
           <div class="typo-demo" v-html="preview"></div>
-          <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+          <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
             <div class="nav">
               <div class="nav__item">
                 <a
                   @click="[headingStyle = 'is-h1', headingsElement = 'h1']"
-                  class="btn btn_clear is-uppercase"
+                  class="btn btn_clear"
                   :class="{'is-ink': headingStyle !== 'is-h1'}"
                 >h1</a>
               </div>
               <div class="nav__item">
                 <a
                   @click="[headingStyle = 'is-h2', headingsElement = 'h2']"
-                  class="btn btn_clear is-uppercase"
+                  class="btn btn_clear"
                   :class="{'is-ink': headingStyle !== 'is-h2'}"
                 >h2</a>
               </div>
               <div class="nav__item">
                 <a
                   @click="[headingStyle = 'is-h3', headingsElement = 'h3']"
-                  class="btn btn_clear is-uppercase"
+                  class="btn btn_clear"
                   :class="{'is-ink': headingStyle !== 'is-h3'}"
                 >h3</a>
               </div>
               <div class="nav__item">
                 <a
                   @click="[headingStyle = 'is-h4', headingsElement = 'h4']"
-                  class="btn btn_clear is-uppercase"
+                  class="btn btn_clear"
                   :class="{'is-ink': headingStyle !== 'is-h4'}"
                 >h4</a>
               </div>
               <div class="nav__item">
                 <a
                   @click="[headingStyle = 'is-h5', headingsElement = 'h5']"
-                  class="btn btn_clear is-uppercase"
+                  class="btn btn_clear"
                   :class="{'is-ink': headingStyle !== 'is-h5'}"
                 >h5</a>
               </div>
               <div class="nav__item">
                 <a
                   @click="[headingStyle = 'is-h6', headingsElement = 'h6']"
-                  class="btn btn_clear is-uppercase"
+                  class="btn btn_clear"
                   :class="{'is-ink': headingStyle !== 'is-h6'}"
                 >h6</a>
               </div>
@@ -55,21 +55,21 @@
               <div class="nav__item">
                 <a
                   @click="[headingStyle = 'is-giga', headingsElement = 'h2']"
-                  class="btn btn_clear is-uppercase"
+                  class="btn btn_clear"
                   :class="{'is-ink': headingStyle !== 'is-giga'}"
                 >giga</a>
               </div>
               <div class="nav__item">
                 <a
                   @click="[headingStyle = 'is-mega', headingsElement = 'h2']"
-                  class="btn btn_clear is-uppercase"
+                  class="btn btn_clear"
                   :class="{'is-ink': headingStyle !== 'is-mega'}"
                 >mega</a>
               </div>
               <div class="nav__item">
                 <a
                   @click="[headingStyle = 'is-kilo', headingsElement = 'h2']"
-                  class="btn btn_clear is-uppercase"
+                  class="btn btn_clear"
                   :class="{'is-ink': headingStyle !== 'is-kilo'}"
                 >kilo</a>
               </div>
@@ -80,9 +80,9 @@
         <pre v-highlightjs="markup"><code class="html"></code></pre>
         <div class="spacer"></div>
         <params-table :params="coreParams" title="core params"></params-table>
-        <div class="spacer"></div>
+        <params-table :params="styleParams" title="style params"></params-table>
+        <params-table :params="spacingParams" title="spacing params"></params-table>
         <params-table :params="params"></params-table>
-        <div class="spacer"></div>
         <requires-list :requires="requires"></requires-list>
       </div>
     </div>
@@ -148,6 +148,8 @@ export default {
           description: 'for inline &lt;small&gt; elements ',
           type: 'map',
         },
+      ],
+      styleParams: [
         {
           name: '$h1-style',
           type: 'map',
@@ -184,6 +186,8 @@ export default {
           name: '$kilo-style',
           type: 'map',
         },
+      ],
+      spacingParams: [
         {
           name: '$_headings-vertical-rhythm',
           type: 'number',

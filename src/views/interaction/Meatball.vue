@@ -19,7 +19,6 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>
@@ -66,12 +65,12 @@ export default {
         {
           name: '$meatball-border-color',
           type: 'color',
-          default: '#f00',
+          default: '$super',
         },
         {
           name: '$meatball-background',
           type: 'color',
-          default: '#fff',
+          default: '$super',
         },
         {
           name: '$meatball-elevation',

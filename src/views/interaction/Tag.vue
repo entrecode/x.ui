@@ -26,7 +26,7 @@
           </div>
         </div>
 
-        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
           <div class="nav">
             <div class="nav__item">
               <div class="input-group">
@@ -85,13 +85,9 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="coreParams" title="default params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="smallParams" title="size params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="bigParams" title="size params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="outlinedParams" title="outlined params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

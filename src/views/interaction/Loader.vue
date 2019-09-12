@@ -69,20 +69,17 @@
       </div>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>
 </template>
 
 <script>
-import DocTab from '@/components/DocTab.vue';
 import ParamsTable from '@/components/ParamsTable.vue';
 import RequiresList from '@/components/RequiresList.vue';
 
 export default {
   components: {
-    DocTab,
     ParamsTable,
     RequiresList,
   },

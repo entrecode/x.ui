@@ -3,8 +3,9 @@
 /// @group flex-grid
 /// @access public
 ///
-/// @param {number} $grid-gutter [32] - default gutter size
-/// @param {number} $grid-small-gutter [16] - default gutter size
+/// @param {number} $grid-gutter [32]
+/// @param {number} $grid-small-gutter [16]
+/// @param {number} $grid-smaller-gutter [4]
 ///
 /// @require {mixins} set-data-breakpoints()
 /// @require {functions} rem()
@@ -45,6 +46,16 @@
   > [data-col] {
     padding-left: rem($grid-small-gutter / 2);
     padding-right: rem($grid-small-gutter / 2);
+  }
+}
+
+@include set-data-breakpoints('grid', 'smaller-gutter') {
+  margin-left: rem($grid-smaller-gutter / -2);
+  margin-right: rem($grid-smaller-gutter / -2);
+
+  > [data-col] {
+    padding-left: rem($grid-smaller-gutter / 2);
+    padding-right: rem($grid-smaller-gutter / 2);
   }
 }
 

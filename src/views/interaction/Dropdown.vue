@@ -42,7 +42,7 @@
               </div>
             </div>
           </div>
-          <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+          <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
             <div class="nav">
               <div class="nav__item">
                 <select class="input" v-model="posX">
@@ -89,7 +89,7 @@
               </div>
             </div>
           </div>
-          <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+          <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
             <div class="nav">
               <div class="nav__item">
                 <select class="input" v-model="posX">
@@ -138,13 +138,9 @@
       </div>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="paramsOptions" title="dropdown-options params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="paramsOption" title="dropdown-option params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="paramsDivider" title="dropdown-divider params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

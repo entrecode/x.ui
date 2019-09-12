@@ -32,7 +32,7 @@
           />
         </div>
 
-        <div class="is-theme is-margin-top-5 is-padding-center-2 is-round is-elevated-16">
+        <div class="is-theme is-margin-top-5 is-padding-center-2 is-elevated-16 is-radius">
           <div class="nav">
             <div class="nav__item">
               <div class="input-group">
@@ -87,8 +87,11 @@
       <pre v-highlightjs="inputMarkup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="inputParams"></params-table>
-      <div class="spacer"></div>
-      <params-table :params="inputSizeParama" title="size params"></params-table>
+      <params-table :params="stateParams" title="state params"></params-table>
+      <params-table :params="placeholderParams" title="placeholder params"></params-table>
+      <params-table :params="defaultSizeParams" title="size params"></params-table>
+      <params-table :params="smallSizeParams" title="small size params"></params-table>
+      <params-table :params="bigSizeParams" title="big size params"></params-table>
     </div>
   </section>
 </template>
@@ -108,21 +111,6 @@ export default {
       inputRound: false,
       inputMarkup: `<input type="text" class="input" placeholder="...">`,
       inputParams: [
-        {
-          name: '$input-font-size',
-          type: 'number',
-          default: '$base-font-size',
-        },
-        {
-          name: '$input-line-height',
-          type: 'number',
-          default: '$input-font-size * 1.125',
-        },
-        {
-          name: '$input-min-height',
-          type: 'number',
-          default: '32',
-        },
         {
           name: '$input-padding-ratio',
           type: 'number',
@@ -159,9 +147,18 @@ export default {
           default: '$text',
         },
         {
-          name: '$input-style',
-          type: 'map',
+          name: '$input-round',
+          description: 'sets a full smooth radius',
+          type: 'boolean',
+          default: 'false',
         },
+        {
+          name: '$input-radius',
+          type: 'number',
+          default: '4',
+        },
+      ],
+      stateParams: [
         {
           name: '$input-hover-style',
           type: 'map',
@@ -174,6 +171,8 @@ export default {
           name: '$input-disabled-style',
           type: 'map',
         },
+      ],
+      placeholderParams: [
         {
           name: '$input-placeholder-color',
           type: 'color',
@@ -191,19 +190,29 @@ export default {
           name: '$input-placeholder-focus-style',
           type: 'map',
         },
+      ],
+      defaultSizeParams: [
         {
-          name: '$input-round',
-          description: 'sets a full smooth radius',
-          type: 'boolean',
-          default: 'false',
+          name: '$input-font-size',
+          type: 'number',
+          default: '$base-font-size',
         },
         {
-          name: '$input-radius',
+          name: '$input-line-height',
           type: 'number',
-          default: '4',
+          default: '$input-font-size * 1.125',
+        },
+        {
+          name: '$input-min-height',
+          type: 'number',
+          default: '40',
+        },
+        {
+          name: '$input-style',
+          type: 'map',
         },
       ],
-      inputSizeParama: [
+      smallSizeParams: [
         {
           name: '$input-small-font-size',
           type: 'number',
@@ -217,12 +226,14 @@ export default {
         {
           name: '$input-small-min-height',
           type: 'number',
-          default: '28',
+          default: '32',
         },
         {
           name: '$input-small-style',
           type: 'map',
         },
+      ],
+      bigSizeParams: [
         {
           name: '$input-big-font-size',
           type: 'number',
@@ -236,7 +247,7 @@ export default {
         {
           name: '$input-big-min-height',
           type: 'number',
-          default: '40',
+          default: '48',
         },
         {
           name: '$input-big-style',
