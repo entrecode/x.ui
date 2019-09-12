@@ -2,9 +2,34 @@
   <section>
     <div data-grid>
       <div data-col="10 8@xl">
-        <div class="titlebar">
-          <h1>colors</h1>
-        </div>
+        <h1>colors</h1>
+        <p class="is-lead">
+          here you find almost all the colors used in the config file of x.ui. when compiled the colors are very modular and hierarchic as well. basically it is enought to modify only four values for your project.
+          <code
+            class="code"
+          >$background</code>,
+          <code class="code">$text</code>,
+          <code class="code">$link</code> and
+          <code class="code">$super</code> are the four values that inform all the other colors.
+        </p>
+        <h2>smart colors</h2>
+        <p>
+          multiple helper functions try to make the configuration as simple as possible. most colors are adapted and generated from the four main variables.
+          <code
+            class="code"
+          >#-contrast</code> and
+          <code class="code">#-safe</code> variables are calculated with
+          <a href="/functions#scroll-to-set-contrast">
+            <code class="code">set-contrast()</code>
+          </a>. it calculates a contrast color with the best reading capabilities based on a background-color.
+          <code
+            class="code"
+          >#-hover</code> are generated via the
+          <a href="/functions#scroll-to-set-hover">
+            <code class="code">set-hover()</code>
+          </a> functions. Dependening on the color it lightens or darkens the color for a nice hover-effekt.
+        </p>
+        <div class="spacer"></div>
         <div data-grid>
           <div
             data-col="6@md"
