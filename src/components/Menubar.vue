@@ -1,5 +1,10 @@
 <template>
   <div class="is-padding-5">
+    <router-link to="/" class="is-block is-padding-middle-6">
+      <svg class="xui-logo">
+        <use xlink:href="#logo" />
+      </svg>
+    </router-link>
     <ul class="nav nav_stacked">
       <li class="nav__item">
         <router-link to="/" class="is-mega">intro</router-link>
@@ -214,6 +219,56 @@
         <router-link to="variables" class="is-kilo">variables</router-link>
       </li>
     </ul>
+    <div class="is-margin-middle-5 is-ink" style="font-size: 10px;">
+      placeholder images
+      <a
+        href="https://unsplash.com/@princearkman"
+        target="_blank"
+        rel="nofollow"
+        class="is-ink-link"
+      >unsplash.com/@princearkman</a>
+      &emsp; filltext:
+      <a
+        href="http://socialgoodipsum.com/#/"
+        target="_blank"
+        rel="nofollow"
+        class="is-ink-link"
+      >socialgoodipsum.com</a> &emsp;
+      contributor:
+      <a
+        href="https://github.com/bernester"
+        target="_blank"
+        rel="nofollow"
+        class="is-ink-link"
+      >@bernester</a> &emsp;
+      created with
+      <small>&#10084;</small> by
+      <a
+        href="https://entrecode.de"
+        target="_blank"
+        rel="nofollow"
+        class="is-ink-link"
+      >entrecode.de</a> &emsp;
+      <a
+        href="https://entrecode.de/datenschutz"
+        target="_blank"
+        rel="nofollow"
+        class="is-ink-link"
+      >imprint &amp; privacy</a>&emsp;
+      Code licensed
+      <a
+        href="https://github.com/entrecode/x.ui/blob/master/LICENSE"
+        target="_blank"
+        rel="license noopener"
+        class="is-ink-link"
+      >MIT</a>, docs
+      <a
+        href="https://creativecommons.org/licenses/by/3.0/"
+        target="_blank"
+        rel="license noopener"
+        class="is-ink-link"
+      >CC BY 3.0</a>.
+    </div>
   </div>
 </template>
 

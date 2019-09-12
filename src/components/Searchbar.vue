@@ -20,7 +20,7 @@
         <use xlink:href="#shrink-horizontal" />
       </svg>
     </div>
-    <div class="xui-select-options is-padding-middle-2" v-if="searchActive">
+    <div class="xui-select-options is-padding-middle-2 is-elevated-24" v-if="searchActive">
       <router-link
         v-for="(element, index) in filtered(elements)"
         :key="index"
@@ -50,7 +50,7 @@
           </div>
         </div>
       </router-link>
-      <div class="well" v-if="filtered(elements).length === 0">no match found</div>
+      <div class="alert alert_small is-margin-bottom-0" v-if="filtered(elements).length === 0">no match found</div>
     </div>
   </div>
 </template>

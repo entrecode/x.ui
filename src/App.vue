@@ -5,27 +5,12 @@
     <demo-navbar class="doc-navbar" />
     <router-view
       name="menu"
-      class="doc-menubar is-theme-menubar is-fixed is-height-vh-full is-scrollable-auto-y-contain"
+      class="doc-menubar is-theme-menubar is-fixed is-height-vh-full is-scrollable-auto-y-contain is-border-right"
     />
-    <router-view name="main" class="doc-body" />
+    <router-view name="main" class="doc-body is-padding-8" />
 
     <footer class="doc-footer">
-      <div data-col="10 8@xl">
-        <div class="is-padding-5 is-margin-middle-5 is-ink-light align-center doc-footer">
-          placeholder images
-          <a
-            href="https://unsplash.com/@princearkman"
-            target="_blank"
-            rel="nofollow"
-          >https://unsplash.com/@princearkman</a>
-          &bull; filltext:
-          <a
-            href="http://socialgoodipsum.com/#/"
-            target="_blank"
-            rel="nofollow"
-          >http://socialgoodipsum.com/#/</a>
-        </div>
-      </div>
+      <div data-col="10 8@xl"></div>
     </footer>
   </div>
 </template>
@@ -62,34 +47,16 @@ body {
 .doc-layout {
   display: grid;
   grid-template-columns: 320px auto;
-  grid-template-rows: auto;
-  grid-template-areas: 'hero hero' 'navbar navbar' 'menubar body' '. footer';
-
-  .doc-hero {
-    grid-area: hero;
-  }
-
-  .doc-navbar {
-    grid-area: navbar;
-  }
+  grid-template-areas: 'menubar body';
 
   .doc-menubar {
     grid-area: menubar;
     width: 320px;
-    padding-top: 120px;
-    padding-bottom: 120px;
   }
 
   .doc-body {
     grid-area: body;
-    padding-right: 80px;
-    padding-left: 32px;
     min-width: 0;
-  }
-
-  .doc-footer {
-    grid-area: footer;
-    font-size: 0.875em;
   }
 }
 </style>
