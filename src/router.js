@@ -289,11 +289,10 @@ export const router = new Router({
       components: { main: () => import('./views/interaction/DataTooltip.vue'), menu: DemoMenubar },
     },
   ],
-  scrollBehavior: (to) => {
-    if (to.hash) {
-      return { selector: to.hash };
-    } else {
-      return { x: 0, y: 0 };
-    }
+  scrollBehavior(to, from, savedPosition) {
+    return {
+      x: 0,
+      y: 0,
+    };
   },
 });
