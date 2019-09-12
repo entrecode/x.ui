@@ -9,7 +9,7 @@
           v-for="(item, index) in sortedArray"
           :key="index"
           :id="item.anchor"
-          class="is-margin-bottom-5 is-border is-radius is-padding-5"
+          class="is-margin-bottom-8 is-border-bottom is-padding-bottom-4"
         >
           <h3 v-if="item.title">
             {{ item.title }}&ensp;

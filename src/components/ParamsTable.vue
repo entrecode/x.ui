@@ -1,5 +1,5 @@
 <template>
-  <div v-if="params" class="is-margin-bottom-8">
+  <div v-if="params" class="is-margin-bottom-5 is-padding-bottom-5 is-border-bottom">
     <h2 class="is-h3" v-text="title ? title : 'parameters'"></h2>
     <div class="is-padding-5 is-radius is-theme-lightest">
       <table class="table">
