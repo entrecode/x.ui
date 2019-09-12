@@ -11,10 +11,10 @@
           </div>
         </div>
       </div>
+      <div class="spacer"></div>
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params" title="default params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

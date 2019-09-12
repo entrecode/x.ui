@@ -82,9 +82,7 @@
         <params-table :params="coreParams" title="core params"></params-table>
         <params-table :params="styleParams" title="style params"></params-table>
         <params-table :params="spacingParams" title="spacing params"></params-table>
-        <div class="spacer"></div>
         <params-table :params="params"></params-table>
-        <div class="spacer"></div>
         <requires-list :requires="requires"></requires-list>
       </div>
     </div>

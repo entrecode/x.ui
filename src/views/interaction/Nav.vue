@@ -34,15 +34,10 @@
       <pre v-highlightjs="markup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="stackedParams" title="stacked params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="itemParams" title="item params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="linkParams" title="link params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="dividerParams" title="divider params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

@@ -35,11 +35,8 @@
       <pre v-highlightjs="preview"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="coreParams" title="core params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="paragraphParams" title="paragraph params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="leadParams" title="lead params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

@@ -20,7 +20,6 @@
       <params-table :params="params"></params-table>
       <params-table :params="toggleParams" title="pin params"></params-table>
       <params-table :params="labelParams" title="label params"></params-table>
-      <div class="spacer"></div>
       <requires-list :requires="requires"></requires-list>
     </div>
   </section>

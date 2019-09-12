@@ -1,5 +1,5 @@
 <template>
-  <div v-if="requires" class="requires-list">
+  <div v-if="requires" class="is-margin-bottom-8">
     <h4 class="is-h2">requires</h4>
     <ul data-grid="small-gutter">
       <li v-for="(req, index) in requires" :key="index" data-col="fit" class="is-margin-bottom-2">
@@ -16,14 +16,8 @@ export default {
 
   methods: {
     url(req) {
-      return ('/' + req.type + 's' + req.link );
+      return '/' + req.type + 's' + req.link;
     },
-  }
+  },
 };
 </script>
-
-<style scoped lang="scss">
-.requires-list {
-  margin: 32px 0;
-}
-</style>

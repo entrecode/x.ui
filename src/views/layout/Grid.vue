@@ -221,11 +221,8 @@
         <pre v-highlightjs="markup" v-if="showMarkup"><code class="html"></code></pre>
         <div class="spacer"></div>
         <params-table :params="containerParams" title="container params"></params-table>
-        <div class="spacer"></div>
         <params-table :params="gutterParams" title="gutter params"></params-table>
-        <div class="spacer"></div>
         <params-table :params="colParams" title="column params"></params-table>
-        <div class="spacer"></div>
         <requires-list :requires="requires"></requires-list>
       </div>
     </div>

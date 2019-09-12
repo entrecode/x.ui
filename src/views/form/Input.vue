@@ -87,15 +87,10 @@
       <pre v-highlightjs="inputMarkup"><code class="html"></code></pre>
       <div class="spacer"></div>
       <params-table :params="inputParams"></params-table>
-      <div class="spacer"></div>
       <params-table :params="stateParams" title="state params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="placeholderParams" title="placeholder params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="defaultSizeParams" title="size params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="smallSizeParams" title="small size params"></params-table>
-      <div class="spacer"></div>
       <params-table :params="bigSizeParams" title="big size params"></params-table>
     </div>
   </section>
