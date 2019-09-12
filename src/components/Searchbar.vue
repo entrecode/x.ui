@@ -21,26 +21,32 @@
       </svg>
     </div>
     <div class="xui-select-options is-padding-middle-2" v-if="searchActive">
-      <router-link
-        v-for="(element, index) in filtered(elements)"
-        :key="index"
-        :to="element.link"
-        class="is-ink is-padding-middle-2 is-padding-center-3 is-block is-border-bottom"
-      >
-        <div data-flex="center-items" @click="searchActive = false">
-          <span class="is-kilo">{{element.name}}</span>
-          <div class="flex-space"></div>
-          <div class="tag tag_small is-ink" v-text="element.type"></div>
-        </div>
+      <router-link v-for="(element, index) in filtered(elements)" :key="index" :to="element.link">
         <div
-          v-if="element.variables && query.length && query.indexOf('$') !== -1"
-          data-grid="smaller-gutter"
+          @click="searchActive = false"
+          class="is-ink is-padding-middle-2 is-padding-center-3"
+          :class="{'is-border-bottom': index + 1 < filtered(elements).length}"
         >
-          <div data-col="fit" v-for="(variable, index) in matched(element.variables)" :key="index">
-            <span class="tag is-ink tag_small" v-text="variable"></span>
+          <div data-flex="center-items">
+            <span class="is-kilo">{{element.name}}</span>
+            <div class="flex-space"></div>
+            <div class="tag tag_small is-ink" v-text="element.type"></div>
+          </div>
+          <div
+            v-if="element.variables && query.length && query.indexOf('$') !== -1"
+            data-grid="smaller-gutter"
+          >
+            <div
+              data-col="fit"
+              v-for="(variable, index) in matched(element.variables)"
+              :key="index"
+            >
+              <span class="tag is-ink tag_small" v-text="variable"></span>
+            </div>
           </div>
         </div>
       </router-link>
+      <div class="well" v-if="filtered(elements).length === 0">no match found</div>
     </div>
   </div>
 </template>
