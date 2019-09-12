@@ -15,7 +15,7 @@
       <li class="nav__item">
         <router-link to="colors" class="is-mega">colors</router-link>
       </li>
-      <li class="y-space-5"></li>
+      <li class="divider"></li>
       <li class="nav__item">
         <a
           href="https://entrecode.github.io/ixo/"
@@ -30,7 +30,7 @@
           </svg>
         </a>
       </li>
-      <li class="y-space-5"></li>
+      <li class="divider"></li>
       <li>
         <div class="is-h6">typeface</div>
       </li>
@@ -46,7 +46,7 @@
       <li class="nav__item">
         <router-link to="utils" class="is-mega">utils</router-link>
       </li>
-      <li class="y-space-5"></li>
+      <li class="divider"></li>
       <li>
         <div class="is-h6">images</div>
       </li>
@@ -62,7 +62,7 @@
       <li class="nav__item">
         <router-link to="img-utils" class="is-mega">utils</router-link>
       </li>
-      <li class="y-space-5"></li>
+      <li class="divider"></li>
       <li>
         <div class="is-h6">form</div>
       </li>
@@ -96,7 +96,7 @@
       <li class="nav__item">
         <router-link to="file-upload" class="is-mega">file-upload</router-link>
       </li>
-      <li class="y-space-5"></li>
+      <li class="divider"></li>
       <li>
         <div class="is-h6">interaction</div>
       </li>
@@ -130,7 +130,7 @@
       <li class="nav__item">
         <router-link to="data-tooltip" class="is-mega">data-tooltip</router-link>
       </li>
-      <li class="y-space-5"></li>
+      <li class="divider"></li>
       <li>
         <div class="is-h6">interface</div>
       </li>
@@ -155,7 +155,7 @@
       <li class="nav__item">
         <router-link to="table" class="is-mega">table</router-link>
       </li>
-      <li class="y-space-5"></li>
+      <li class="divider"></li>
       <li>
         <div class="is-h6">styling</div>
       </li>
@@ -174,7 +174,7 @@
       <li class="nav__item">
         <router-link to="is-border" class="is-mega">is-border</router-link>
       </li>
-      <li class="y-space-5"></li>
+      <li class="divider"></li>
       <li>
         <div class="is-h6">layout</div>
       </li>
@@ -208,16 +208,17 @@
       <li class="nav__item">
         <router-link to="overflow" class="is-mega">overflow helper</router-link>
       </li>
-      <li class="y-space-5"></li>
+      <li class="divider"></li>
       <li class="nav__item">
-        <router-link to="mixins" class="is-kilo">mixins</router-link>
+        <router-link to="mixins" class="is-mega">mixins</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="functions" class="is-kilo">functions</router-link>
+        <router-link to="functions" class="is-mega">functions</router-link>
       </li>
       <li class="nav__item">
-        <router-link to="variables" class="is-kilo">variables</router-link>
+        <router-link to="variables" class="is-mega">variables</router-link>
       </li>
+      <li class="divider"></li>
     </ul>
     <div class="is-margin-middle-5 is-ink" style="font-size: 10px;">
       placeholder images
