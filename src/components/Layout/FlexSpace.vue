@@ -18,7 +18,7 @@
           :style="axis === 'y' ? 'min-height: 200px' : ''"
         >
           <div class="is-giga">space</div>
-          <div :class="[{'spacing-demo': showHelper}, spacerClass]" data-flex-item="stretch"></div>
+          <div :class="[{ 'spacing-demo': showHelper }, spacerClass]" data-flex-item="stretch"></div>
           <div class="is-giga">space</div>
         </div>
       </div>

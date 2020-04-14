@@ -21,14 +21,16 @@
                 @click="responsiveness = 'img-responsive'"
                 class="btn btn_clear"
                 :class="{ 'is-ink': responsiveness !== 'img-responsive' }"
-              >img-responsive</a>
+                >img-responsive</a
+              >
             </div>
             <div class="nav__item">
               <a
                 @click="responsiveness = 'img-fullwidth'"
                 class="btn btn_clear"
                 :class="{ 'is-ink': responsiveness !== 'img-fullwidth' }"
-              >img-fullwidth</a>
+                >img-fullwidth</a
+              >
             </div>
           </div>
         </div>

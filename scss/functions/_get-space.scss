@@ -12,4 +12,4 @@
 
 @function get-space($space) {
   @return array-magic(map-get($spacings, $space), $base-spacing-unit);
-};
+}

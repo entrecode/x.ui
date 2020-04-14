@@ -27,17 +27,17 @@
               thought leadership external partners incubator incubator academic.
             </p>
             <p>
-              Social enterprise gender rights, natural resources optimism but gender rights academic transparent save the
-              world. Youth boots on the ground; relief social return on investment social entrepreneur thought partnership
-              resist policymaker. Vibrant her body her rights empower communities scalable empower rubric contextualize
-              families. Expose the truth, social innovation B-corp a natural resources. Technology synergy, initiative
-              initiative, thought leadership parse.
+              Social enterprise gender rights, natural resources optimism but gender rights academic transparent save
+              the world. Youth boots on the ground; relief social return on investment social entrepreneur thought
+              partnership resist policymaker. Vibrant her body her rights empower communities scalable empower rubric
+              contextualize families. Expose the truth, social innovation B-corp a natural resources. Technology
+              synergy, initiative initiative, thought leadership parse.
             </p>
             <p>
-              Data compassion low-hanging fruit green space state of play. The resistance our work; because global global,
-              empower communities shine granular leverage. Game-changer preliminary thinking, external partners, big data
-              best practices state of play policymaker improve the world when. Inspirational challenges and opportunities,
-              engaging or co-create, efficient, think tank technology;
+              Data compassion low-hanging fruit green space state of play. The resistance our work; because global
+              global, empower communities shine granular leverage. Game-changer preliminary thinking, external partners,
+              big data best practices state of play policymaker improve the world when. Inspirational challenges and
+              opportunities, engaging or co-create, efficient, think tank technology;
             </p>
           </div>
         </div>

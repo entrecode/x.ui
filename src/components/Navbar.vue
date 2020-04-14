@@ -4,12 +4,7 @@
     <div class="x-space-3"></div>
     <div class="nav">
       <div class="nav__item">
-        <a
-          class="btn btn_clear"
-          href="https://github.com/entrecode/x.ui"
-          rel="nofollow"
-          target="_blank"
-        >
+        <a class="btn btn_clear" href="https://github.com/entrecode/x.ui" rel="nofollow" target="_blank">
           <ixo name="github"></ixo>
         </a>
       </div>

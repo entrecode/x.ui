@@ -7,18 +7,12 @@
 
       <div class="nav">
         <div class="nav__item">
-          <a
-            @click="activeTab = 1"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 1 }"
-          >css only</a>
+          <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }"
+            >css only</a
+          >
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 2"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 2 }"
-          >with js</a>
+          <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }">with js</a>
         </div>
       </div>
 
@@ -28,7 +22,7 @@
             <div
               class="dropdown"
               tabindex="0"
-              :class="[posX !== '' ? 'dropdown_' + posX : '', {'dropdown_above' : posY } , { 'on-hover': onHover }]"
+              :class="[posX !== '' ? 'dropdown_' + posX : '', { dropdown_above: posY }, { 'on-hover': onHover }]"
             >
               <a class="btn">click here</a>
               <div class="dropdown-options">
@@ -75,10 +69,10 @@
           <div class="align-center is-padding-bottom-5">
             <div
               class="dropdown"
-              :class="[posX !== '' ? 'dropdown_' + posX : '', {'dropdown_above' : posY } , { 'on-hover': onHover }]"
+              :class="[posX !== '' ? 'dropdown_' + posX : '', { dropdown_above: posY }, { 'on-hover': onHover }]"
             >
               <a class="btn" @click="toggleDropdown = !toggleDropdown">click here</a>
-              <div class="dropdown-options" :class="{'is-active' : toggleDropdown}">
+              <div class="dropdown-options" :class="{ 'is-active': toggleDropdown }">
                 <a class="dropdown-option">dropdown option</a>
                 <a class="dropdown-option">dropdown option</a>
                 <a class="dropdown-option">dropdown option</a>
@@ -117,11 +111,9 @@
       <h2>special feature</h2>
       <p class="is-lead">
         the
-        <code class="code">.dropdown-options</code> can be used outside an
-        <code class="code">.dropdown</code> for a custom elements. without the
-        <code class="code">.dropdown</code> wrapper there is no
-        <code class="code">:focus</code> or
-        <code class="code">.is-active</code> functionality.
+        <code class="code">.dropdown-options</code> can be used outside an <code class="code">.dropdown</code> for a
+        custom elements. without the <code class="code">.dropdown</code> wrapper there is no
+        <code class="code">:focus</code> or <code class="code">.is-active</code> functionality.
       </p>
       <div class="demo-preview is-padding-8" data-flex="center">
         <div data-col="8@lg 6@xl">

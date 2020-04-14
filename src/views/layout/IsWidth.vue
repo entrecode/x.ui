@@ -4,24 +4,13 @@
       <div class="titlebar">
         <h1>is-width</h1>
       </div>
-      <div
-        data-flex="center-items center"
-        :class="{ 'demo-fullscreen': openDemo }"
-        class="is-relative"
-      >
-        <div
-          class="btn btn_minor btn_square is-absolute is-fab-ne is-layer-10"
-          @click="openDemo = !openDemo"
-        >
+      <div data-flex="center-items center" :class="{ 'demo-fullscreen': openDemo }" class="is-relative">
+        <div class="btn btn_minor btn_square is-absolute is-fab-ne is-layer-10" @click="openDemo = !openDemo">
           <svg class="ixo">
             <use xlink:href="#fullscreen" />
           </svg>
         </div>
-        <div
-          class="demo-preview is-padding-8"
-          data-flex="center-items center"
-          :class="previewClass"
-        >
+        <div class="demo-preview is-padding-8" data-flex="center-items center" :class="previewClass">
           <div class="is-theme is-padding-5 is-radius is-elevated-16">
             <div data-grid="small-gutter" data-flex="center-items">
               <div data-col="fit">

@@ -4,44 +4,33 @@
       <div class="titlebar">
         <h1>xui-accordion</h1>
       </div>
-      <p
-        class="is-lead"
-      >this molecule only manages the behavior of the accordion. for styling you have to combine it with other molecules and atoms.</p>
+      <p class="is-lead">
+        this molecule only manages the behavior of the accordion. for styling you have to combine it with other
+        molecules and atoms.
+      </p>
       <div class="nav">
         <div class="nav__item">
-          <a
-            @click="activeTab = 1"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 1 }"
-          >single</a>
+          <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">single</a>
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 2"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 2 }"
-          >multiple</a>
+          <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }"
+            >multiple</a
+          >
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 3"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 3 }"
-          >with handle</a>
+          <a @click="activeTab = 3" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 3 }"
+            >with handle</a
+          >
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 4"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 4 }"
-          >combined</a>
+          <a @click="activeTab = 4" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 4 }"
+            >combined</a
+          >
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 5"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 5 }"
-          >combined</a>
+          <a @click="activeTab = 5" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 5 }"
+            >combined</a
+          >
         </div>
       </div>
       <div v-show="activeTab === 1">

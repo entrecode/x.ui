@@ -8,7 +8,7 @@
 npm i x.ui --save
 ```
 
-### import x.ui in your [project].scss 
+### import x.ui in your [project].scss
 
 ```sh
 @import '~x.ui/scss/x.ui'
@@ -32,7 +32,6 @@ in x.ui there are several breaking changes. please follow this instruction to up
  `~x.ui/src/x.ui` // old
  `~x.ui/scss/x.ui` // new
 ```
-
 
 ### 1. update mixins and funcion references
 
@@ -78,7 +77,7 @@ all functions and mixins are kebab-case now. Also some names are simplified for 
 
 all modifier classes now have the same prefix `is-`
 
-- rename `.has-margin#` to `.is-margin#` 
+- rename `.has-margin#` to `.is-margin#`
 - rename `.has-padding#` to `.is-padding#`
 - rename `.has-radius#` to `.is-radius#`
 - rename `.has-height#` to `.is-height#`
@@ -96,7 +95,6 @@ all modifier classes now have the same prefix `is-`
 - change `.has-margin[-side]-smallest` to `.has-margin[-side]-1`
 - change `.has-margin[-side]-small` to `.has-margin[-side]-2`
 - change `.has-margin[-side]-big` to `.has-margin[-side]-5`
-
 
 ### 4. update changed class names
 
@@ -118,7 +116,7 @@ all modifier classes now have the same prefix `is-`
 - change `.img_full` to `.img-fullwidth`
 - change `.bubble` to `.tag`
 - rename `.slider` to `.range-slider`
-- 
+-
 
 ### 5. remove classes
 
@@ -131,6 +129,7 @@ all modifier classes now have the same prefix `is-`
 ### 6. update markup
 
 - change `.form-group` markup to
+
   ```
   <div class="field-group">
     <label class="field-group__label">...</label>
@@ -143,6 +142,7 @@ all modifier classes now have the same prefix `is-`
     <input type="checkbox" />
   </div>
   ```
+
 - change `.xui-checkbox` markup to
   ```
   <div class="xui-checkbox">
@@ -162,7 +162,7 @@ all modifier classes now have the same prefix `is-`
   <div class="xui-toggle">
     <input id="" type="checkbox">
     <label for="" class="xui-toggle__label">
-      <div class="xui-toggle__switch"></div> 
+      <div class="xui-toggle__switch"></div>
       ...
     </label>
   </div>
@@ -175,7 +175,7 @@ all modifier classes now have the same prefix `is-`
     <li class="nav__item">...</li>
   </ul>
   ```
-- change `.dialog`, `.deck`, `.overlay`, `.toast`, `.snackbar` markup to 
+- change `.dialog`, `.deck`, `.overlay`, `.toast`, `.snackbar` markup to
   ```
   <div class="modal-wrapper">
     <div class="modal">
@@ -183,7 +183,7 @@ all modifier classes now have the same prefix `is-`
     </div>
   </div>
   ```
-- change `.xui-accordion` markup to 
+- change `.xui-accordion` markup to
   ```
   <div class="xui-accordion">
     <input id="" name="" type="radio"/>
@@ -191,7 +191,6 @@ all modifier classes now have the same prefix `is-`
     <div class="xui-accordion__target">...</div>
   </div>
   ```
-
 
 ### 7. update grid markup
 
@@ -206,7 +205,6 @@ all modifier classes now have the same prefix `is-`
 - change `data-grid="is-center"` to `data-grid="center"`
 - change `data-grid="is-end"` to `data-grid="end"`
 - change `data-grid="is-start"` to `data-grid="start"`
-
 
 ## Project setup
 
@@ -229,7 +227,6 @@ npm run build
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
-
 
 ### x.ui 9.x doc
 

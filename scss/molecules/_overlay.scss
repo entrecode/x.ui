@@ -37,15 +37,14 @@
   }
 }
 
-
 // @param {array} $overlay-dismiss-style
 .overlay-dismiss {
   position: absolute;
   right: 0;
   top: 0;
   z-index: 1;
-  opacity: .4;
-  transition: opacity .2s;
+  opacity: 0.4;
+  transition: opacity 0.2s;
   background: none;
   @include _btn-reset;
   @include inject-style($overlay-dismiss-style);
@@ -101,4 +100,3 @@
   margin: array-magic($overlay-footer-spacing);
   padding: array-magic($overlay-footer-padding);
 }
-

@@ -24,27 +24,20 @@
       <router-link
         v-for="(element, index) in filtered(elements)"
         :key="index"
-        :to="{name: element.link, hash: element.hash}"
+        :to="{ name: element.link, hash: element.hash }"
       >
         <div
           @click="searchActive = false"
           class="is-ink is-padding-middle-2 is-padding-center-3"
-          :class="{'is-border-bottom': index + 1 < filtered(elements).length}"
+          :class="{ 'is-border-bottom': index + 1 < filtered(elements).length }"
         >
           <div data-flex="center-items">
-            <span class="is-kilo">{{element.name}}</span>
+            <span class="is-kilo">{{ element.name }}</span>
             <div class="flex-space"></div>
             <div class="tag tag_small is-ink" v-text="element.type"></div>
           </div>
-          <div
-            v-if="element.variables && query.length && query.indexOf('$') !== -1"
-            data-grid="smaller-gutter"
-          >
-            <div
-              data-col="fit"
-              v-for="(variable, index) in matched(element.variables)"
-              :key="index"
-            >
+          <div v-if="element.variables && query.length && query.indexOf('$') !== -1" data-grid="smaller-gutter">
+            <div data-col="fit" v-for="(variable, index) in matched(element.variables)" :key="index">
               <span class="tag is-ink tag_small" v-text="variable"></span>
             </div>
           </div>
@@ -1918,5 +1911,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

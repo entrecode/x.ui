@@ -14,7 +14,8 @@
               <button class="btn demo-transition" :class="btnClasses">
                 <svg class="ixo">
                   <use xlink:href="#fire" />
-                </svg> Button
+                </svg>
+                Button
               </button>
             </div>
             <div data-col="fit">

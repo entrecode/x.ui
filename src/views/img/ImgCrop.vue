@@ -8,12 +8,12 @@
         <div data-grid="center">
           <div
             :data-col="[
-            imgCrop === 'img-crop-16-9' || imgCrop === 'img-crop-golden' || imgCrop === 'img-crop-silver'
-              ? '8'
-              : imgCrop === 'img-crop-ultrawide'
-              ? '12'
-              : '4',
-          ]"
+              imgCrop === 'img-crop-16-9' || imgCrop === 'img-crop-golden' || imgCrop === 'img-crop-silver'
+                ? '8'
+                : imgCrop === 'img-crop-ultrawide'
+                ? '12'
+                : '4',
+            ]"
             class="demo-transition"
           >
             <div :class="imgCrop" class="demo-transition">

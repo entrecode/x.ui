@@ -201,11 +201,11 @@
   height: 48px;
   width: 144px;
   fill: currentColor;
-  transition: opacity .4s;
-  
+  transition: opacity 0.4s;
+
   &:hover {
     .doc-logo-hide {
-        opacity: 0;
-      }
+      opacity: 0;
     }
+  }
 }

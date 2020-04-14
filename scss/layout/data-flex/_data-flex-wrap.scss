@@ -6,7 +6,7 @@
 $_flex-wrap: (
   'wrap': 'wrap',
   'nowrap': 'nowrap',
-  'wrap-reverse': 'wrap-reverse'
+  'wrap-reverse': 'wrap-reverse',
 );
 
 @include set-data-map-breakpoints(flex, flex-wrap, $_flex-wrap);

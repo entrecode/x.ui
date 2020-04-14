@@ -12,10 +12,9 @@
             <div class="nav__item" data-col="6">
               <div class="field-">
                 <label class="field-group__label align-center">
-                  <div
-                    class="tag tag_big"
-                    :class="{tag_link : elevation > -1}"
-                  >{{elevation > -1 ? elevation : '-'}}</div>
+                  <div class="tag tag_big" :class="{ tag_link: elevation > -1 }">
+                    {{ elevation > -1 ? elevation : '-' }}
+                  </div>
                 </label>
                 <input type="range" min="-1" max="24" v-model="elevation" class="range-slider" />
                 <div class="field-group__info align-center">elevation</div>
@@ -24,10 +23,9 @@
             <div class="nav__item" data-col="fit" data-flex="center">
               <div class="field-">
                 <label class="field-group__label align-center">
-                  <div
-                    class="tag tag_big"
-                    :class="{tag_link : hoverElevation > -1}"
-                  >{{hoverElevation > -1 ? hoverElevation : '-'}}</div>
+                  <div class="tag tag_big" :class="{ tag_link: hoverElevation > -1 }">
+                    {{ hoverElevation > -1 ? hoverElevation : '-' }}
+                  </div>
                 </label>
                 <input type="range" min="-1" max="24" v-model="hoverElevation" class="range-slider" />
                 <div class="field-group__info align-center">hover:elevation</div>
@@ -86,7 +84,10 @@ export default {
           default: 'cubic-bezier(0.4, 0, 0.2, 1)',
         },
       ],
-      requires: [{ name: 'elevation()', type: 'mixin' }, { name: 'elevation-transition()', type: 'mixin' }],
+      requires: [
+        { name: 'elevation()', type: 'mixin' },
+        { name: 'elevation-transition()', type: 'mixin' },
+      ],
     };
   },
   computed: {

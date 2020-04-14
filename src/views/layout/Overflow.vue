@@ -5,18 +5,11 @@
         <h1>overflow helper</h1>
       </div>
       <div class="is-relative">
-        <div
-          class="is-theme is-padding-center-2 is-radius is-elevated-16 is-absolute is-placed-0 is-layer-10"
-        >
+        <div class="is-theme is-padding-center-2 is-radius is-elevated-16 is-absolute is-placed-0 is-layer-10">
           <div class="nav">
             <div class="nav__item">
               <select id="behavior" class="input" v-model="behavior">
-                <option
-                  :value="value"
-                  v-for="(value, index) in behaviors"
-                  :key="index"
-                  v-text="value"
-                ></option>
+                <option :value="value" v-for="(value, index) in behaviors" :key="index" v-text="value"></option>
               </select>
             </div>
             <div class="nav__item" v-show="behavior !== 'clipped'">
@@ -103,5 +96,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

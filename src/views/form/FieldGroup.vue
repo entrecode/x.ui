@@ -6,27 +6,17 @@
       </div>
       <div class="nav">
         <div class="nav__item">
-          <a
-            @click="activeTab = 1"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 1 }"
-          >default</a>
+          <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">default</a>
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 2"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 2 }"
-          >with grid</a>
+          <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }"
+            >with grid</a
+          >
         </div>
       </div>
 
       <div class="demo-preview is-padding-8" data-flex="center" v-if="activeTab === 1">
-        <div
-          class="is-theme is-padding-5 is-radius is-elevated-24"
-          data-col="8@lg 6@xl"
-          v-html="defaultMarkup"
-        ></div>
+        <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl" v-html="defaultMarkup"></div>
       </div>
 
       <div class="demo-preview is-padding-8" data-flex="column center-items" v-if="activeTab === 2">

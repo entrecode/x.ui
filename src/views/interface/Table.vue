@@ -17,29 +17,11 @@
                   </svg>
                 </label>
                 <div class="x-space-1"></div>
-                <input
-                  type="text"
-                  class="input"
-                  v-model="col1"
-                  placeholder="auto"
-                  style="width: 80px;"
-                />
+                <input type="text" class="input" v-model="col1" placeholder="auto" style="width: 80px;" />
                 <div class="x-space-1"></div>
-                <input
-                  type="text"
-                  class="input"
-                  v-model="col2"
-                  placeholder="auto"
-                  style="width: 80px;"
-                />
+                <input type="text" class="input" v-model="col2" placeholder="auto" style="width: 80px;" />
                 <div class="x-space-1"></div>
-                <input
-                  type="text"
-                  class="input"
-                  v-model="col3"
-                  placeholder="auto"
-                  style="width: 80px;"
-                />
+                <input type="text" class="input" v-model="col3" placeholder="auto" style="width: 80px;" />
               </div>
             </div>
             <div class="nav__item" data-col="fit">

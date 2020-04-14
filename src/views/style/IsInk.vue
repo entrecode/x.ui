@@ -20,7 +20,7 @@
                   <select class="input input_round" id="alerStyle" v-model="style">
                     <option
                       :value="style"
-                      v-for="(style, index) in styles"  
+                      v-for="(style, index) in styles"
                       :key="index"
                       v-text="style === 'is-ink' ? 'default' : style.slice(7)"
                     ></option>

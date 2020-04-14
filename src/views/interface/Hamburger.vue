@@ -8,11 +8,7 @@
         <div class="align-center is-padding-bottom-5">
           <div data-grid="small-gutter">
             <div data-col="fit">
-              <div
-                @click="isActive = !isActive"
-                :class="{'is-active' : isActive}"
-                class="hamburger"
-              ></div>
+              <div @click="isActive = !isActive" :class="{ 'is-active': isActive }" class="hamburger"></div>
             </div>
           </div>
         </div>

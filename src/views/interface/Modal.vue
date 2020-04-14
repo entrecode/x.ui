@@ -6,18 +6,12 @@
       </div>
       <div class="nav">
         <div class="nav__item">
-          <a
-            @click="activeTab = 1"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 1 }"
-          >simple</a>
+          <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">simple</a>
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 2"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 2 }"
-          >advanced</a>
+          <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }"
+            >advanced</a
+          >
         </div>
       </div>
       <div v-if="activeTab === 1" class="animated fadeIn">
@@ -29,10 +23,7 @@
       </div>
       <div v-if="activeTab === 2" class="animated fadeIn">
         <div class="demo-preview is-padding-8" data-flex="center">
-          <a
-            @click.prevent="showModalAdvanced = !showModalAdvanced"
-            class="btn btn_big is-elevated-16"
-          >open modal</a>
+          <a @click.prevent="showModalAdvanced = !showModalAdvanced" class="btn btn_big is-elevated-16">open modal</a>
         </div>
         <div class="spacer"></div>
         <pre v-highlightjs="markupAdvanded"><code class="html"></code></pre>
@@ -52,17 +43,18 @@
         <div class="modal" data-col="4@lg 2@xxl">
           <div class="modal__header">
             <h2 class="is-mega">Agile blended</h2>
-            <a
-              class="modal__dismiss btn btn_clear"
-              @click.prevent="showModalAdvanced = !showModalAdvanced"
-            >
+            <a class="modal__dismiss btn btn_clear" @click.prevent="showModalAdvanced = !showModalAdvanced">
               <svg class="ixo">
                 <use xlink:href="#close" />
               </svg>
             </a>
           </div>
           <div class="modal__body">
-            <p>Agile blended value thought partnership systems thinking parse radical. Social impact uplift, social entrepreneur preliminary thinking human-centered, families the resistance save the world shared value. Support dynamic, a cultivate strengthening infrastructure.</p>
+            <p>
+              Agile blended value thought partnership systems thinking parse radical. Social impact uplift, social
+              entrepreneur preliminary thinking human-centered, families the resistance save the world shared value.
+              Support dynamic, a cultivate strengthening infrastructure.
+            </p>
           </div>
           <div class="modal__footer">
             <div class="nav" data-flex="center">
@@ -70,10 +62,7 @@
                 <a @click.prevent="showModalAdvanced = !showModalAdvanced" class="btn">okay</a>
               </div>
               <div class="nav__item">
-                <a
-                  @click.prevent="showModalAdvanced = !showModalAdvanced"
-                  class="btn btn_minor"
-                >cancel</a>
+                <a @click.prevent="showModalAdvanced = !showModalAdvanced" class="btn btn_minor">cancel</a>
               </div>
             </div>
           </div>
@@ -110,27 +99,13 @@
             </div>
             <div class="field-group">
               <label for class="field-group__label">[data-col]</label>
-              <input
-                type="number"
-                class="input"
-                min="1"
-                max="12"
-                v-model="dataCol"
-                placeholder="1-12"
-              />
+              <input type="number" class="input" min="1" max="12" v-model="dataCol" placeholder="1-12" />
             </div>
             <div class="field-group">
               <label for class="field-group__label">elevation</label>
               <div data-grid>
                 <div data-col="8" data-flex="center-items">
-                  <input
-                    type="range"
-                    class="range-slider"
-                    v-model="elevated"
-                    min="0"
-                    max="24"
-                    step="1"
-                  />
+                  <input type="range" class="range-slider" v-model="elevated" min="0" max="24" step="1" />
                 </div>
                 <div data-col="4">
                   <input type="number" class="input" v-model="elevated" placeholder="0-24" />
@@ -146,10 +121,7 @@
 
             <div class="position-settings well">
               <div class="position-settings-item position-settings-item_top">
-                <span
-                  @click="setSectionFlex('top')"
-                  :class="flexConfig.has('top') ? 'is-ink-link' : 'is-ink-light'"
-                >
+                <span @click="setSectionFlex('top')" :class="flexConfig.has('top') ? 'is-ink-link' : 'is-ink-light'">
                   <svg class="ixo">
                     <use xlink:href="#flex-position-top" />
                   </svg>
@@ -176,10 +148,7 @@
                 </span>
               </div>
               <div class="position-settings-item position-settings-item_left">
-                <span
-                  @click="setSectionFlex('left')"
-                  :class="flexConfig.has('left') ? 'is-ink-link' : 'is-ink-light'"
-                >
+                <span @click="setSectionFlex('left')" :class="flexConfig.has('left') ? 'is-ink-link' : 'is-ink-light'">
                   <svg class="ixo">
                     <use xlink:href="#flex-position-left" />
                   </svg>

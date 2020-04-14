@@ -15,12 +15,7 @@
               <div class="field-group">
                 <label for="isPosition" class="field-group__label">is-position</label>
                 <select id="isPosition" class="input" v-model="isPosition">
-                  <option
-                    :value="value"
-                    v-for="(value, index) in isPositions"
-                    :key="index"
-                    v-text="value"
-                  ></option>
+                  <option :value="value" v-for="(value, index) in isPositions" :key="index" v-text="value"></option>
                 </select>
               </div>
             </div>
@@ -43,12 +38,7 @@
               <div class="field-group">
                 <label for="isPlaced" class="field-group__label">is-placed</label>
                 <select id="isPlaced" class="input" v-model="isPlaced">
-                  <option
-                    :value="value"
-                    v-for="(value, index) in isPlaceds"
-                    :key="index"
-                    v-text="value"
-                  ></option>
+                  <option :value="value" v-for="(value, index) in isPlaceds" :key="index" v-text="value"></option>
                 </select>
               </div>
             </div>
@@ -112,12 +102,7 @@
               <div class="field-group">
                 <label for="isLayer" class="field-group__label">is-layer</label>
                 <select id="isLayer" class="input" v-model="isLayer">
-                  <option
-                    :value="value"
-                    v-for="(value, index) in isLayers"
-                    :key="index"
-                    v-text="value"
-                  ></option>
+                  <option :value="value" v-for="(value, index) in isLayers" :key="index" v-text="value"></option>
                 </select>
               </div>
             </div>

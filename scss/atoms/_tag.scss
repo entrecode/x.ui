@@ -63,12 +63,7 @@
   // @param {array} $tag-big-style
   &_big {
     @include inject-style($tag-big-style);
-    @include metrics(
-      $tag-big-font-size,
-      $tag-big-line-height,
-      $tag-big-min-height,
-      $padding-ratio: $tag-padding-ratio
-    );
+    @include metrics($tag-big-font-size, $tag-big-line-height, $tag-big-min-height, $padding-ratio: $tag-padding-ratio);
     border-radius: array-magic($tag-big-radius);
   }
 }

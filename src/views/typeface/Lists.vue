@@ -6,18 +6,12 @@
       </div>
       <div class="nav">
         <div class="nav__item">
-          <a
-            @click="activeTab = 1"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 1 }"
-          >default</a>
+          <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">default</a>
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 2"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 2 }"
-          >data-grid</a>
+          <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }"
+            >data-grid</a
+          >
         </div>
       </div>
       <div v-if="activeTab === 1" class="animated fadeIn">
@@ -42,14 +36,16 @@
                   @click="elementClass = 'is-unstyled'"
                   class="btn btn_clear"
                   :class="{ 'is-ink': elementClass !== 'is-unstyled' }"
-                >is-unstyled</a>
+                  >is-unstyled</a
+                >
               </div>
               <div class="nav__item">
                 <a
                   @click="elementClass = 'is-inline'"
                   class="btn btn_clear"
                   :class="{ 'is-ink': elementClass !== 'is-inline' }"
-                >is-inline</a>
+                  >is-inline</a
+                >
               </div>
             </div>
           </div>

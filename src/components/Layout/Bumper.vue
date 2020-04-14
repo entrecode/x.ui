@@ -14,7 +14,7 @@
       </div>
       <div
         class="is-margin-bottom-5"
-        :class="[{'spacing-demo': showHelper}, invert ? 'is-theme-invert' : 'is-theme']"
+        :class="[{ 'spacing-demo': showHelper }, invert ? 'is-theme-invert' : 'is-theme']"
         style="overflow: hidden;"
         v-html="markup"
       ></div>
