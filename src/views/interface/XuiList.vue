@@ -6,25 +6,13 @@
       </div>
       <div class="nav">
         <div class="nav__item">
-          <a
-            @click="activeTab = 1"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 1 }"
-          >basic</a>
+          <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">basic</a>
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 2"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 2 }"
-          >group</a>
+          <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }">group</a>
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 3"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 3 }"
-          >example</a>
+          <a @click="activeTab = 3" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 3 }">example</a>
         </div>
       </div>
       <div v-show="activeTab === 1">

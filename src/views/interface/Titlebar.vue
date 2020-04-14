@@ -5,18 +5,10 @@
     </div>
     <div class="nav">
       <div class="nav__item">
-        <a
-          @click="activeTab = 1"
-          class="btn btn_clear demo-tab"
-          :class="{ 'is-active': activeTab === 1 }"
-        >standard</a>
+        <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">standard</a>
       </div>
       <div class="nav__item">
-        <a
-          @click="activeTab = 2"
-          class="btn btn_clear demo-tab"
-          :class="{ 'is-active': activeTab === 2 }"
-        >example</a>
+        <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }">example</a>
       </div>
     </div>
 
@@ -30,10 +22,7 @@
             </li>
           </ul>
         </div>
-        <div
-          class="titlebar is-theme is-elevated-16 is-round is-padding-left-5"
-          v-if="activeTab === 2"
-        >
+        <div class="titlebar is-theme is-elevated-16 is-round is-padding-left-5" v-if="activeTab === 2">
           <h2 class="is-giga">Titel</h2>
           <ul class="nav">
             <li class="nav__item">

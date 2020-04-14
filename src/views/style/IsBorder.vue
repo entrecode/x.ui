@@ -162,7 +162,7 @@ export default {
         vb = null;
       }
 
-      this.borderClass = [hb, vb].filter(x => !!x).join(' ');
+      this.borderClass = [hb, vb].filter((x) => !!x).join(' ');
     },
   },
   mounted() {

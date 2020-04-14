@@ -8,7 +8,7 @@ $_align-items: (
   'start-items': 'flex-start',
   'center-items': 'center',
   'baseline-items': 'baseline',
-  'stretch-items': 'stretch'
+  'stretch-items': 'stretch',
 );
 
 @include set-data-map-breakpoints(flex, align-items, $_align-items);

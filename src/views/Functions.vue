@@ -85,12 +85,7 @@
             <h4 class="is-h4">used by</h4>
             <ul data-grid="smaller-gutter">
               <li v-for="(used, index) in item.usedBy" :key="index" data-col="fit">
-                <a
-                  :href="used.link"
-                  class="code"
-                  v-text="used.name"
-                  v-if="used.link"
-                ></a>
+                <a :href="used.link" class="code" v-text="used.name" v-if="used.link"></a>
                 <span class="code" v-text="used.name" v-else></span>
               </li>
             </ul>
@@ -100,10 +95,7 @@
       <div data-col="4">
         <ul class="nav nav_stacked is-sticky" style="top: 120px;">
           <li class="nav__item" v-for="(item, index) in sortedArray" :key="index">
-            <a
-              :href="'#' + item.anchor"
-              class="is-kilo is-ink hover:is-ink-link"
-            >{{ item.title }}</a>
+            <a :href="'#' + item.anchor" class="is-kilo is-ink hover:is-ink-link">{{ item.title }}</a>
           </li>
         </ul>
       </div>

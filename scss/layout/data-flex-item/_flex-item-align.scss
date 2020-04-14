@@ -9,7 +9,7 @@ $_align-self: (
   'stretch': 'stretch',
   'center': 'center',
   'start': 'flex-start',
-  'end': 'flex-end'
+  'end': 'flex-end',
 );
 
 @include set-data-map-breakpoints(flex-item, align-self, $_align-self);

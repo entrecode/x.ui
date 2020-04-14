@@ -6,25 +6,15 @@
       </div>
       <div class="nav">
         <div class="nav__item">
-          <a
-            @click="activeTab = 1"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 1 }"
-          >normal</a>
+          <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">normal</a>
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 2"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 2 }"
-          >rounded</a>
+          <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }">rounded</a>
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 3"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 3 }"
-          >dropdown</a>
+          <a @click="activeTab = 3" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 3 }"
+            >dropdown</a
+          >
         </div>
       </div>
       <div v-if="activeTab === 1" class="animated fadeIn">

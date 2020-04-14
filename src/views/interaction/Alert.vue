@@ -5,10 +5,9 @@
         <h1>alert</h1>
       </div>
       <div class="demo-preview is-padding-8" data-flex="column center-items">
-        <div
-          class="alert demo-transition"
-          :class="alertClasses"
-        >ecosystem families energize correlation, social enterprise citizen-centered.</div>
+        <div class="alert demo-transition" :class="alertClasses">
+          ecosystem families energize correlation, social enterprise citizen-centered.
+        </div>
 
         <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
           <div class="nav">

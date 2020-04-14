@@ -6,42 +6,21 @@
       </div>
       <div class="nav">
         <div class="nav__item">
-          <a
-            @click="activeTab = 1"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 1 }"
-          >default</a>
+          <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">default</a>
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 2"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 2 }"
-          >with tooltip</a>
+          <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }"
+            >with tooltip</a
+          >
         </div>
       </div>
 
       <div class="demo-preview is-padding-8" data-flex="center">
-        <div
-          class="is-theme is-padding-5 is-radius is-elevated-24"
-          data-col="8@lg 6@xl"
-          v-if="activeTab === 1"
-        >
+        <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl" v-if="activeTab === 1">
           <input type="range" class="range-slider" />
         </div>
-        <div
-          class="is-theme is-padding-5 is-radius is-elevated-24"
-          data-col="8@lg 6@xl"
-          v-if="activeTab === 2"
-        >
-          <input
-            type="range"
-            min="0"
-            max="10"
-            class="range-slider"
-            v-model="testRange"
-            :data-tooltip-top="testRange"
-          />
+        <div class="is-theme is-padding-5 is-radius is-elevated-24" data-col="8@lg 6@xl" v-if="activeTab === 2">
+          <input type="range" min="0" max="10" class="range-slider" v-model="testRange" :data-tooltip-top="testRange" />
         </div>
       </div>
       <div class="spacer"></div>

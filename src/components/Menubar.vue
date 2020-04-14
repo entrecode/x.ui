@@ -17,12 +17,7 @@
       </li>
       <li class="divider"></li>
       <li class="nav__item">
-        <a
-          href="https://entrecode.github.io/ixo/"
-          target="_blank"
-          class="is-mega"
-          data-flex="center-items"
-        >
+        <a href="https://entrecode.github.io/ixo/" target="_blank" class="is-mega" data-flex="center-items">
           ixo
           <div class="x-space-2"></div>
           <svg class="ixo is-ink-lighter">
@@ -222,53 +217,28 @@
     </ul>
     <div class="is-margin-middle-5 is-ink" style="font-size: 10px;">
       placeholder images
-      <a
-        href="https://unsplash.com/@princearkman"
-        target="_blank"
-        rel="nofollow"
-        class="is-ink-link"
-      >unsplash.com/@princearkman</a>
+      <a href="https://unsplash.com/@princearkman" target="_blank" rel="nofollow" class="is-ink-link"
+        >unsplash.com/@princearkman</a
+      >
       &emsp; filltext:
-      <a
-        href="http://socialgoodipsum.com/#/"
-        target="_blank"
-        rel="nofollow"
-        class="is-ink-link"
-      >socialgoodipsum.com</a> &emsp;
-      contributor:
-      <a
-        href="https://github.com/bernester"
-        target="_blank"
-        rel="nofollow"
-        class="is-ink-link"
-      >@bernester</a> &emsp;
-      created with
-      <small>&#10084;</small> by
-      <a
-        href="https://entrecode.de"
-        target="_blank"
-        rel="nofollow"
-        class="is-ink-link"
-      >entrecode.de</a> &emsp;
-      <a
-        href="https://entrecode.de/datenschutz"
-        target="_blank"
-        rel="nofollow"
-        class="is-ink-link"
-      >imprint &amp; privacy</a>&emsp;
-      Code licensed
+      <a href="http://socialgoodipsum.com/#/" target="_blank" rel="nofollow" class="is-ink-link">socialgoodipsum.com</a>
+      &emsp; contributor:
+      <a href="https://github.com/bernester" target="_blank" rel="nofollow" class="is-ink-link">@bernester</a> &emsp;
+      created with <small>&#10084;</small> by
+      <a href="https://entrecode.de" target="_blank" rel="nofollow" class="is-ink-link">entrecode.de</a> &emsp;
+      <a href="https://entrecode.de/datenschutz" target="_blank" rel="nofollow" class="is-ink-link"
+        >imprint &amp; privacy</a
+      >&emsp; Code licensed
       <a
         href="https://github.com/entrecode/x.ui/blob/master/LICENSE"
         target="_blank"
         rel="license noopener"
         class="is-ink-link"
-      >MIT</a>, docs
-      <a
-        href="https://creativecommons.org/licenses/by/3.0/"
-        target="_blank"
-        rel="license noopener"
-        class="is-ink-link"
-      >CC BY 3.0</a>.
+        >MIT</a
+      >, docs
+      <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener" class="is-ink-link"
+        >CC BY 3.0</a
+      >.
     </div>
   </div>
 </template>

@@ -111,7 +111,9 @@ export default {
         this.isHeightRelation,
         this.isHeightRatio,
         this.breakpoint,
-      ].join('').trim();
+      ]
+        .join('')
+        .trim();
     },
   },
   watch: {

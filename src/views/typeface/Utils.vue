@@ -1,4 +1,3 @@
-
 <template>
   <section>
     <div data-grid>
@@ -7,10 +6,10 @@
           <h2>align</h2>
           <div class="demo-preview is-padding-8" data-flex="column center center-items">
             <div data-col="8">
-              <p
-                class="is-lead"
-                :class="alignClass"
-              >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
+              <p class="is-lead" :class="alignClass">
+                Move the needle synergy indicators collaborative consumption problem-solvers black lives matter
+                co-create. Rubric scalable commitment, shine our work shared unit of analysis.
+              </p>
             </div>
             <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
@@ -18,7 +17,7 @@
                   <a
                     @click="alignClass = 'align-left'"
                     class="btn btn_clear"
-                    :class="{'is-ink': alignClass !== 'align-left'}"
+                    :class="{ 'is-ink': alignClass !== 'align-left' }"
                   >
                     <svg class="ixo">
                       <use xlink:href="#align-left" />
@@ -29,7 +28,7 @@
                   <a
                     @click="alignClass = 'align-center'"
                     class="btn btn_clear"
-                    :class="{'is-ink': alignClass !== 'align-center'}"
+                    :class="{ 'is-ink': alignClass !== 'align-center' }"
                   >
                     <svg class="ixo">
                       <use xlink:href="#align-center" />
@@ -40,7 +39,7 @@
                   <a
                     @click="alignClass = 'align-right'"
                     class="btn btn_clear"
-                    :class="{'is-ink': alignClass !== 'align-right'}"
+                    :class="{ 'is-ink': alignClass !== 'align-right' }"
                   >
                     <svg class="ixo">
                       <use xlink:href="#align-right" />
@@ -61,10 +60,10 @@
           <h2>font-weight</h2>
           <div class="demo-preview is-padding-8" data-flex="column center center-items">
             <div data-col="8">
-              <p
-                class="is-lead"
-                :class="fontWeightClass"
-              >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
+              <p class="is-lead" :class="fontWeightClass">
+                Move the needle synergy indicators collaborative consumption problem-solvers black lives matter
+                co-create. Rubric scalable commitment, shine our work shared unit of analysis.
+              </p>
             </div>
             <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
@@ -72,7 +71,7 @@
                   <a
                     @click="fontWeightClass = 'is-light'"
                     class="btn btn_clear"
-                    :class="{'is-ink': fontWeightClass !== 'is-light'}"
+                    :class="{ 'is-ink': fontWeightClass !== 'is-light' }"
                   >
                     <svg class="ixo">
                       <use xlink:href="#is-light" />
@@ -83,7 +82,7 @@
                   <a
                     @click="fontWeightClass = 'is-normal'"
                     class="btn btn_clear"
-                    :class="{'is-ink': fontWeightClass !== 'is-normal'}"
+                    :class="{ 'is-ink': fontWeightClass !== 'is-normal' }"
                   >
                     <svg class="ixo">
                       <use xlink:href="#is-normal" />
@@ -94,7 +93,7 @@
                   <a
                     @click="fontWeightClass = 'is-medium'"
                     class="btn btn_clear"
-                    :class="{'is-ink': fontWeightClass !== 'is-medium'}"
+                    :class="{ 'is-ink': fontWeightClass !== 'is-medium' }"
                   >
                     <svg class="ixo">
                       <use xlink:href="#is-medium" />
@@ -105,7 +104,7 @@
                   <a
                     @click="fontWeightClass = 'is-bold'"
                     class="btn btn_clear"
-                    :class="{'is-ink': fontWeightClass !== 'is-bold'}"
+                    :class="{ 'is-ink': fontWeightClass !== 'is-bold' }"
                   >
                     <svg class="ixo">
                       <use xlink:href="#is-bold" />
@@ -136,22 +135,25 @@
                   <a
                     @click="fontFamilyClass = 'is-body-font'"
                     class="btn btn_clear"
-                    :class="{'is-ink': fontFamilyClass !== 'is-body-font'}"
-                  >body-font</a>
+                    :class="{ 'is-ink': fontFamilyClass !== 'is-body-font' }"
+                    >body-font</a
+                  >
                 </div>
                 <div class="nav__item">
                   <a
                     @click="fontFamilyClass = 'is-headings-font'"
                     class="btn btn_clear"
-                    :class="{'is-ink': fontFamilyClass !== 'is-headings-font'}"
-                  >headings-font</a>
+                    :class="{ 'is-ink': fontFamilyClass !== 'is-headings-font' }"
+                    >headings-font</a
+                  >
                 </div>
                 <div class="nav__item">
                   <a
                     @click="fontFamilyClass = 'is-monospace-font'"
                     class="btn btn_clear"
-                    :class="{'is-ink': fontFamilyClass !== 'is-monospace-font'}"
-                  >monospace-font</a>
+                    :class="{ 'is-ink': fontFamilyClass !== 'is-monospace-font' }"
+                    >monospace-font</a
+                  >
                 </div>
               </div>
             </div>
@@ -168,10 +170,10 @@
           <h2>text-transform</h2>
           <div class="demo-preview is-padding-8" data-flex="column center center-items">
             <div data-col="8">
-              <p
-                class="is-lead"
-                :class="textTransformClass"
-              >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</p>
+              <p class="is-lead" :class="textTransformClass">
+                Move the needle synergy indicators collaborative consumption problem-solvers black lives matter
+                co-create. Rubric scalable commitment, shine our work shared unit of analysis.
+              </p>
             </div>
             <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
               <div class="nav">
@@ -179,7 +181,7 @@
                   <a
                     @click="textTransformClass = 'is-lowercase'"
                     class="btn btn_clear"
-                    :class="{'is-ink': textTransformClass !== 'is-lowercase'}"
+                    :class="{ 'is-ink': textTransformClass !== 'is-lowercase' }"
                   >
                     <svg class="ixo">
                       <use xlink:href="#lowercase" />
@@ -190,7 +192,7 @@
                   <a
                     @click="textTransformClass = 'is-uppercase'"
                     class="btn btn_clear"
-                    :class="{'is-ink': textTransformClass !== 'is-uppercase'}"
+                    :class="{ 'is-ink': textTransformClass !== 'is-uppercase' }"
                   >
                     <svg class="ixo">
                       <use xlink:href="#uppercase" />
@@ -211,10 +213,10 @@
           <div class="demo-preview is-padding-8" data-flex="column center center-items">
             <div data-col="8">
               <div class="is-clipped">
-                <div
-                  class="is-lead"
-                  :class="wordWrapClass"
-                >Move the needle synergy indicators collaborative consumption problem-solvers black lives matter co-create. Rubric scalable commitment, shine our work shared unit of analysis.</div>
+                <div class="is-lead" :class="wordWrapClass">
+                  Move the needle synergy indicators collaborative consumption problem-solvers black lives matter
+                  co-create. Rubric scalable commitment, shine our work shared unit of analysis.
+                </div>
               </div>
             </div>
             <div class="is-theme is-margin-top-5 is-padding-center-2 is-radius is-elevated-16">
@@ -223,29 +225,33 @@
                   <a
                     @click="wordWrapClass = 'is-nowrap'"
                     class="btn btn_clear"
-                    :class="{'is-ink': wordWrapClass !== 'is-nowrap'}"
-                  >is-nowrap</a>
+                    :class="{ 'is-ink': wordWrapClass !== 'is-nowrap' }"
+                    >is-nowrap</a
+                  >
                 </div>
                 <div class="nav__item">
                   <a
                     @click="wordWrapClass = 'is-ellipsis'"
                     class="btn btn_clear"
-                    :class="{'is-ink': wordWrapClass !== 'is-ellipsis'}"
-                  >is-ellipsis</a>
+                    :class="{ 'is-ink': wordWrapClass !== 'is-ellipsis' }"
+                    >is-ellipsis</a
+                  >
                 </div>
                 <div class="nav__item">
                   <a
                     @click="wordWrapClass = 'is-hyphen'"
                     class="btn btn_clear"
-                    :class="{'is-ink': wordWrapClass !== 'is-hyphen'}"
-                  >is-hyphen</a>
+                    :class="{ 'is-ink': wordWrapClass !== 'is-hyphen' }"
+                    >is-hyphen</a
+                  >
                 </div>
                 <div class="nav__item">
                   <a
                     @click="wordWrapClass = 'is-hyphen-block'"
                     class="btn btn_clear"
-                    :class="{'is-ink': wordWrapClass !== 'is-hyphen-block'}"
-                  >is-hyphen-block</a>
+                    :class="{ 'is-ink': wordWrapClass !== 'is-hyphen-block' }"
+                    >is-hyphen-block</a
+                  >
                 </div>
               </div>
             </div>
@@ -281,10 +287,7 @@
             <a href="#scroll-to-font-family" class="is-kilo is-ink hover:is-ink-link">font-family</a>
           </li>
           <li class="nav__item">
-            <a
-              href="#scroll-to-text-transform"
-              class="is-kilo is-ink hover:is-ink-link"
-            >text-transform</a>
+            <a href="#scroll-to-text-transform" class="is-kilo is-ink hover:is-ink-link">text-transform</a>
           </li>
           <li class="nav__item">
             <a href="#scroll-to-word-wrap" class="is-kilo is-ink hover:is-ink-link">word-wrap</a>

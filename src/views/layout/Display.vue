@@ -4,11 +4,7 @@
       <div class="titlebar">
         <h1>display helper</h1>
       </div>
-      <div
-        class="demo-preview is-relative"
-        data-flex="column center center-items"
-        style="min-height: 320px;"
-      >
+      <div class="demo-preview is-relative" data-flex="column center center-items" style="min-height: 320px;">
         <h2 class="is-h1 is-ink-super align-center" :class="previewClass">
           <div>watch how&nbsp;</div>
           <div>i behave</div>

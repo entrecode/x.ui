@@ -11,13 +11,13 @@
               <span class="tag" :class="combinedClass">1</span>
             </div>
             <div data-col="fit">
-              <a href class="btn">
+              <a class="btn">
                 Button &emsp;
                 <span class="tag" :class="combinedClass">1</span>
               </a>
             </div>
             <div data-col="fit">
-              <a href class="tag" :class="combinedClass">
+              <a class="tag" :class="combinedClass">
                 <svg class="ixo">
                   <use xlink:href="#fire" />
                 </svg>
@@ -123,7 +123,7 @@ export default {
       tagOutlined: false,
       markup: `<span class="tag">1</span>
 
-<a href class="btn">
+<a class="btn">
   Button 
   <span class="tag">1</span>
 </a>`,
@@ -327,7 +327,7 @@ export default {
     combinedClass: function(val) {
       this.markup = `<span class="tag${val}">1</span>
 
-<a href class="btn">
+<a class="btn">
   Button 
   <span class="tag${val}">1</span>
 </a>`;

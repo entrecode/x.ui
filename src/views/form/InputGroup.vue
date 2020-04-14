@@ -6,46 +6,32 @@
       </div>
       <div class="nav">
         <div class="nav__item">
-          <a
-            @click="activeTab = 1"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 1 }"
-          >default</a>
+          <a @click="activeTab = 1" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 1 }">default</a>
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 2"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 2 }"
-          >advanced</a>
+          <a @click="activeTab = 2" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 2 }"
+            >advanced</a
+          >
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 3"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 3 }"
-          >with grid</a>
+          <a @click="activeTab = 3" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 3 }"
+            >with grid</a
+          >
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 4"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 4 }"
-          >mixed inputs</a>
+          <a @click="activeTab = 4" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 4 }"
+            >mixed inputs</a
+          >
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 5"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 5 }"
-          >with button</a>
+          <a @click="activeTab = 5" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 5 }"
+            >with button</a
+          >
         </div>
         <div class="nav__item">
-          <a
-            @click="activeTab = 6"
-            class="btn btn_clear demo-tab"
-            :class="{ 'is-active': activeTab === 6 }"
-          >with ixo</a>
+          <a @click="activeTab = 6" class="btn btn_clear demo-tab" :class="{ 'is-active': activeTab === 6 }"
+            >with ixo</a
+          >
         </div>
       </div>
 
@@ -129,13 +115,13 @@
               <span class="xui-select__caret"></span>
               <ul class="xui-select-options">
                 <li>
-                  <a href tabindex="0" class="xui-select-option">option 1</a>
+                  <a tabindex="0" class="xui-select-option">option 1</a>
                 </li>
                 <li>
-                  <a href tabindex="0" class="xui-select-option">option 2</a>
+                  <a tabindex="0" class="xui-select-option">option 2</a>
                 </li>
                 <li>
-                  <a href tabindex="0" class="xui-select-option">option 3</a>
+                  <a tabindex="0" class="xui-select-option">option 3</a>
                 </li>
               </ul>
             </div>
@@ -262,13 +248,13 @@ export default {
     <span class="xui-select__caret"></span>
     <ul class="xui-select-options">
       <li>
-        <a href="" tabindex="0" class="xui-select-option">option 1</a>
+        <a tabindex="0" class="xui-select-option">option 1</a>
       </li>
       <li>
-        <a href="" tabindex="0" class="xui-select-option">option 2</a>
+        <a tabindex="0" class="xui-select-option">option 2</a>
       </li>
       <li>
-        <a href="" tabindex="0" class="xui-select-option">option 3</a>
+        <a tabindex="0" class="xui-select-option">option 3</a>
       </li>
     </ul>
   </div>

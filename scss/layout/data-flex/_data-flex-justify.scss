@@ -9,7 +9,7 @@ $_justify-content: (
   'center': 'center',
   'stretch': 'stretch',
   'start': 'flex-start',
-  'end': 'flex-end'
+  'end': 'flex-end',
 );
 
 @include set-data-map-breakpoints(flex, justify-content, $_justify-content);

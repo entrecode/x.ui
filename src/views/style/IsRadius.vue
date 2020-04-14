@@ -6,10 +6,7 @@
       </div>
       <div class="demo-preview is-padding-8" data-flex="center">
         <div class="demo-bg is-padding-6" :class="isRadiusClass">
-          <div
-            class="demo-radius-settings is-theme is-padding-center-6 is-padding-middle-3"
-            :class="isRadiusClass"
-          >
+          <div class="demo-radius-settings is-theme is-padding-center-6 is-padding-middle-3" :class="isRadiusClass">
             <div>
               <div class="xui-checkbox">
                 <input type="checkbox" id="radiusTL" v-model="tl" />
@@ -26,12 +23,7 @@
             <div></div>
             <div>
               <select name id class="input" v-model="radiusOption">
-                <option
-                  :value="option"
-                  v-for="(option, index) in radiusOptions"
-                  :key="index"
-                  v-text="option"
-                ></option>
+                <option :value="option" v-for="(option, index) in radiusOptions" :key="index" v-text="option"></option>
               </select>
             </div>
             <div></div>

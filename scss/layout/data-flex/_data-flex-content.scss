@@ -9,7 +9,7 @@ $_align-content: (
   'center-content': 'center',
   'stretch-content': 'stretch',
   'between-content': 'space-between',
-  'around-content': 'space-around'
+  'around-content': 'space-around',
 );
 
 @include set-data-map-breakpoints(flex, align-content, $_align-content);
