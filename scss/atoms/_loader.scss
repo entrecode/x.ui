@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -69,7 +71,7 @@
 }
 
 .btn {
-  $_position: ($btn-min-height - $loader-size) / 2 * -1;
+  $_position: math.div($btn-min-height - $loader-size, 2) * -1;
 
   .loader:not(.is-local) {
     margin-top: rem($_position);
@@ -78,7 +80,7 @@
 }
 
 .btn_small {
-  $_position: ($btn-small-min-height - $loader-size) / 2 * -1;
+  $_position: math.div($btn-small-min-height - $loader-size, 2) * -1;
 
   .loader:not(.is-local) {
     margin-top: rem($_position);
@@ -87,7 +89,7 @@
 }
 
 .btn_big {
-  $_position: ($btn-big-min-height - $loader-size) / 2 * -1;
+  $_position: math.div($btn-big-min-height - $loader-size, 2) * -1;
 
   .loader:not(.is-local) {
     margin-top: rem($_position);

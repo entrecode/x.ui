@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -27,7 +29,7 @@
 
 @for $i from 1 through $grid-num-columns {
   [data-col~='#{$i}'] {
-    max-width: ($i / $grid-num-columns) * 100%;
+    max-width: math.div($i, $grid-num-columns) * 100%;
   }
 }
 
@@ -36,7 +38,7 @@
     [data-col~='#{$i}-#{$bp}'],
     [data-col~='#{$i}\@#{$bp}'] {
       @media (min-width: bp(#{$bp})) {
-        max-width: ($i / $grid-num-columns) * 100%;
+        max-width: math.div($i, $grid-num-columns) * 100%;
       }
     }
   }

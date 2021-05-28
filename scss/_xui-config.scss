@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -385,13 +387,13 @@ $h1-spacing: 0 0 ($_headings-vertical-rhythm * 2) 0 !default;
 $h2-spacing: 0 0 $_headings-vertical-rhythm 0 !default;
 $h3-spacing: $h2-spacing !default;
 $h4-spacing: $h3-spacing !default;
-$h5-spacing: 0 0 ($_headings-vertical-rhythm / 2) 0 !default;
+$h5-spacing: 0 0 math.div($_headings-vertical-rhythm, 2) 0 !default;
 $h6-spacing: $h5-spacing !default;
 
 // @param {array} $giga-spacing [($_headings-vertical-rhythm / 2) 0]
 // @param {array} $mega-spacing [$giga-spacing]
 // @param {array} $kilo-spacing [$mega-spacing]
-$giga-spacing: ($_headings-vertical-rhythm / 2) 0 !default;
+$giga-spacing: math.div($_headings-vertical-rhythm, 2) 0 !default;
 $mega-spacing: $giga-spacing !default;
 $kilo-spacing: $mega-spacing !default;
 
@@ -2141,7 +2143,7 @@ $xui-toggle-hover-background: set-hover($xui-toggle-background) !default;
 $xui-toggle-active-background: $link !default;
 $xui-toggle-height: 20 !default;
 $xui-toggle-width: $xui-toggle-height * 1.75 !default;
-$xui-toggle-radius: $xui-toggle-height / 2 !default;
+$xui-toggle-radius: math.div($xui-toggle-height, 2) !default;
 $xui-toggle-spacing: 0 8 0 0 !default;
 $xui-toggle-style: () !default;
 
@@ -2153,7 +2155,7 @@ $xui-toggle-style: () !default;
 $xui-toggle-pin-background: $background !default;
 $xui-toggle-pin-height: $xui-toggle-height - 8 !default;
 $xui-toggle-pin-width: $xui-toggle-pin-height !default;
-$xui-toggle-pin-radius: $xui-toggle-pin-height / 2 !default;
+$xui-toggle-pin-radius: math.div($xui-toggle-pin-height, 2) !default;
 $xui-toggle-pin-style: () !default;
 
 // @param {number} $xui-toggle-label-font-size [base-font-size]

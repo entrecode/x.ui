@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 9.1.0
 /// @access public
@@ -7,7 +9,7 @@
 
 @each $_postfix, $_array in $img-crop-ratio {
   .img-crop-#{$_postfix} {
-    padding-top: 100% / nth($_array, 1) * nth($_array, 2);
+    padding-top: math.div(100%, nth($_array, 1)) * nth($_array, 2);
     position: relative;
     width: 100%;
 

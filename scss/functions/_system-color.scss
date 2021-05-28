@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -32,9 +34,9 @@ $_system-color-ref: null !default;
     $_total-light: $_total-light + lightness($_color);
   }
 
-  $_total-hue: $_total-hue / length($colors);
-  $_total-sat: $_total-sat / length($colors);
-  $_total-light: $_total-light / length($colors);
+  $_total-hue: math.div($_total-hue, length($colors));
+  $_total-sat: math.div($_total-sat, length($colors));
+  $_total-light: math.div($_total-light, length($colors));
 
   @return hsl($_target-hue, $_total-sat, $_total-light);
 }
