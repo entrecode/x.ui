@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -15,9 +17,9 @@
 
   // check if $min-height is a number, some of the styles will not be rendered
   @if type-of($min-height) == 'number' {
-    $padding: ($min-height - $line-height) / 2;
+    $padding: math.div($min-height - $line-height, 2);
   } @else {
-    $padding: ($line-height - $font-size) / 2;
+    $padding: math.div($line-height - $font-size, 2);
   }
 
   // remove border from padding

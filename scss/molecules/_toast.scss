@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 9.1.0
 /// @access public
@@ -88,7 +90,7 @@
 
   @for $i from 1 through $grid-num-columns {
     &[data-col~='#{$i}'] {
-      margin-left: (($grid-num-columns - $i) / $grid-num-columns) * 50%;
+      margin-left: math.div($grid-num-columns - $i, $grid-num-columns) * 50%;
     }
   }
 }

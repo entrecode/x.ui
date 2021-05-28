@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -39,7 +41,7 @@
     background-color: $bumper-color;
     box-shadow: rem($bumper-size * 2) 0 0 $bumper-color, rem($bumper-size * 4) 0 0 $bumper-color;
     height: rem($bumper-size);
-    margin-left: rem($bumper-size * 5 / -2);
+    margin-left: rem(math.div($bumper-size * 5, -2));
     width: rem($bumper-size);
   }
 
@@ -77,7 +79,7 @@
     border-radius: 50%;
     box-shadow: rem($bumper-size * 2) 0 0 $bumper-color, rem($bumper-size * 4) 0 0 $bumper-color;
     height: rem($bumper-size);
-    margin-left: rem($bumper-size * 5 / -2);
+    margin-left: rem(math.div($bumper-size * 5, -2));
     width: rem($bumper-size);
   }
 

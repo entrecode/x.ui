@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -34,11 +36,11 @@
     top: 50%;
     transition: all 0.4s;
     background-color: $_c;
-    border-radius: array-magic($_h / 2);
+    border-radius: array-magic(math.div($_h, 2));
     box-shadow: 0 rem(($_s)) 0 0 $_c, 0 rem(-($_s)) 0 0 $_c;
     height: rem($_h);
-    left: rem((($btn-min-height - $_w) / 2));
-    margin-top: rem(-$_h / 2);
+    left: rem(math.div($btn-min-height - $_w, 2));
+    margin-top: rem(math.div(-$_h, 2));
     width: rem($_w);
   }
 
@@ -48,10 +50,10 @@
     top: 50%;
     transition: all 0.4s;
     background-color: $_c;
-    border-radius: array-magic($_h / 2);
+    border-radius: array-magic(math.div($_h, 2));
     height: rem($_h);
-    left: rem((($btn-min-height - $_w) / 2));
-    margin-top: rem(-$_h / 2);
+    left: rem(math.div($btn-min-height - $_w, 2));
+    margin-top: rem(math.div(-$_h, 2));
     width: rem($_w);
   }
 
@@ -62,10 +64,10 @@
       top: 50%;
       box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
       background-color: $_c;
-      border-radius: array-magic($_h / 2);
+      border-radius: array-magic(math.div($_h, 2));
       height: rem($_h);
-      left: rem((($btn-min-height - $_w) / 2));
-      margin-top: rem(-$_h / 2);
+      left: rem(math.div($btn-min-height - $_w, 2));
+      margin-top: rem(math.div(-$_h, 2));
       transform: rotate(45deg);
       width: rem($_w);
     }

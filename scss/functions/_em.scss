@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -16,7 +18,7 @@
 
 @function em($value, $base: $base-font-size) {
   @if type-of($value) == 'number' and unitless($value) {
-    @return ($value / $base) * 1em;
+    @return math.div($value, $base) * 1em;
   } @else {
     @return $value;
   }

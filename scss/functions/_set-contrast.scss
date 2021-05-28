@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -15,7 +17,7 @@
 // values to YIQ values. This brightness value gives a perceived brightness for
 // a color.
 @function get-brightness($_c) {
-  @return ((red($_c) * 299) + (green($_c) * 587) + (blue($_c) * 587)) / 1000;
+  @return math.div((red($_c) * 299) + (green($_c) * 587) + (blue($_c) * 587), 1000);
 }
 
 //
@@ -79,12 +81,12 @@
 // @param {color} $_c
 // @return calculates the perceptual brightness or luma of a color object.
 @function luma($_c) {
-  $_r: red($_c) / 255;
-  $_g: green($_c) / 255;
-  $_b: blue($_c) / 255;
-  $_r: if($_r < 0.03928, $_r / 12.92, pow(($_r + 0.055) / 1.055, 2.4));
-  $_g: if($_g < 0.03928, $_g / 12.92, pow(($_g + 0.055) / 1.055, 2.4));
-  $_b: if($_b < 0.03928, $_b / 12.92, pow(($_b + 0.055) / 1.055, 2.4));
+  $_r: math.div(red($_c), 255);
+  $_g: math.div(green($_c), 255);
+  $_b: math.div(blue($_c), 255);
+  $_r: if($_r < 0.03928, math.div($_r, 12.92), pow(math.div($_r + 0.055, 1.055), 2.4));
+  $_g: if($_g < 0.03928, math.div($_g, 12.92), pow(math.div($_g + 0.055, 1.055), 2.4));
+  $_b: if($_b < 0.03928, math.div($_b, 12.92), pow(math.div($_b + 0.055, 1.055), 2.4));
   $_l: (0.2126 * $_r + 0.7152 * $_g + 0.0722 * $_b);
   @return $_l;
 }
@@ -100,7 +102,7 @@
 @function contrast-ratio($_c1, $_c2) {
   $_l1: luma($_c1);
   $_l2: luma($_c2);
-  @return round((max($_l1, $_l2) + 0.05) / (min($_l1, $_l2) + 0.05) * 100) / 100;
+  @return math.div(round(math.div(max($_l1, $_l2) + 0.05, min($_l1, $_l2) + 0.05) * 100), 100);
 }
 
 //

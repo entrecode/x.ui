@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @group flex-grid
@@ -13,8 +15,8 @@
 [data-grid] {
   display: flex;
   flex-wrap: wrap;
-  margin-left: rem($grid-gutter / -2);
-  margin-right: rem($grid-gutter / -2);
+  margin-left: rem(math.div($grid-gutter, -2));
+  margin-right: rem(math.div($grid-gutter, -2));
 
   @at-root ul#{&} {
     list-style: none;
@@ -24,38 +26,38 @@
   }
 
   > [data-col] {
-    padding-left: rem($grid-gutter / 2);
-    padding-right: rem($grid-gutter / 2);
+    padding-left: rem(math.div($grid-gutter, 2));
+    padding-right: rem(math.div($grid-gutter, 2));
   }
 }
 
 @include set-data-breakpoints('grid', 'default-gutter') {
-  margin-left: rem($grid-gutter / -2);
-  margin-right: rem($grid-gutter / -2);
+  margin-left: rem(math.div($grid-gutter, -2));
+  margin-right: rem(math.div($grid-gutter, -2));
 
   > [data-col] {
-    padding-left: rem($grid-gutter / 2);
-    padding-right: rem($grid-gutter / 2);
+    padding-left: rem(math.div($grid-gutter, 2));
+    padding-right: rem(math.div($grid-gutter, 2));
   }
 }
 
 @include set-data-breakpoints('grid', 'small-gutter') {
-  margin-left: rem($grid-small-gutter / -2);
-  margin-right: rem($grid-small-gutter / -2);
+  margin-left: rem(math.div($grid-small-gutter, -2));
+  margin-right: rem(math.div($grid-small-gutter, -2));
 
   > [data-col] {
-    padding-left: rem($grid-small-gutter / 2);
-    padding-right: rem($grid-small-gutter / 2);
+    padding-left: rem(math.div($grid-small-gutter, 2));
+    padding-right: rem(math.div($grid-small-gutter, 2));
   }
 }
 
 @include set-data-breakpoints('grid', 'smaller-gutter') {
-  margin-left: rem($grid-smaller-gutter / -2);
-  margin-right: rem($grid-smaller-gutter / -2);
+  margin-left: rem(math.div($grid-smaller-gutter, -2));
+  margin-right: rem(math.div($grid-smaller-gutter, -2));
 
   > [data-col] {
-    padding-left: rem($grid-smaller-gutter / 2);
-    padding-right: rem($grid-smaller-gutter / 2);
+    padding-left: rem(math.div($grid-smaller-gutter, 2));
+    padding-right: rem(math.div($grid-smaller-gutter, 2));
   }
 }
 

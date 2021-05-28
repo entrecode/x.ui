@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -36,7 +38,7 @@
       &::before {
         @include inject-style($xui-radio-hover-style);
         background-color: $xui-radio-dot-hover-color;
-        border-width: rem(($xui-radio-height - $xui-radio-dot-size) / 2);
+        border-width: rem(math.div($xui-radio-height - $xui-radio-dot-size, 2));
       }
     }
   }
@@ -65,8 +67,8 @@
     transition: all 0.2s;
     border-style: solid;
     @include inject-style($xui-radio-style);
-    border-width: rem($xui-radio-height / 2);
-    border-radius: array-magic($xui-radio-height / 2);
+    border-width: rem(math.div($xui-radio-height, 2));
+    border-radius: array-magic(math.div($xui-radio-height, 2));
     border-color: $xui-radio-background;
     background-color: $xui-radio-dot-color;
     height: rem($xui-radio-height);
@@ -78,7 +80,7 @@
     @at-root :checked ~ & {
       @include inject-style($xui-radio-checked-style);
       background-color: $xui-radio-dot-checked-color;
-      border-width: rem(($xui-radio-height - $xui-radio-dot-size) / 2);
+      border-width: rem(math.div($xui-radio-height - $xui-radio-dot-size, 2));
     }
   }
 }

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -54,7 +56,7 @@
     border-radius: array-magic($xui-toggle-pin-radius);
     height: rem($xui-toggle-pin-height);
     width: rem($xui-toggle-pin-width);
-    margin: rem(($xui-toggle-height - $xui-toggle-pin-height) / 2);
+    margin: rem(math.div($xui-toggle-height - $xui-toggle-pin-height, 2));
   }
 
   @at-root :hover > & {

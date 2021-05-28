@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -13,8 +15,8 @@
 
 @mixin _btn-inline-elements($parent, $child) {
   $margin: $parent - $child;
-  margin-top: rem($margin / 2);
-  margin-bottom: rem($margin / 2);
+  margin-top: rem(math.div($margin, 2));
+  margin-bottom: rem(math.div($margin, 2));
 }
 
 .btn {

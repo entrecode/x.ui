@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @access public
 /// @group math-functions
 ///
@@ -17,7 +19,7 @@
   $x: 1;
 
   @for $i from 0 through $prec {
-    $x: 1 / $n * (($n - 1) * $x + ($num / pow($x, $n - 1)));
+    $x: math.div(1, $n) * (($n - 1) * $x + math.div($num, pow($x, $n - 1)));
   }
 
   @return $x;
@@ -29,7 +31,7 @@
     $prec2: pow(10, $prec);
     $exponent: round($exponent * $prec2);
     $denominator: gcd($exponent, $prec2);
-    @return nth-root(pow($base, $exponent / $denominator), $prec2 / $denominator, $prec);
+    @return nth-root(pow($base, math.div($exponent, $denominator)), math.div($prec2, $denominator), $prec);
   }
 
   $value: $base;
@@ -39,7 +41,7 @@
     }
   } @else if $exponent < 1 {
     @for $i from 0 through -$exponent {
-      $value: $value / $base;
+      $value: math.div($value, $base);
     }
   }
 

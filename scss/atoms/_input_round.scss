@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// @author Bernhard Ruoff
 /// @since 10.0.0
 /// @access public
@@ -11,13 +13,13 @@
 @if $input-round == true {
   .input {
     border-radius: 100vw;
-    padding-left: rem($input-min-height / 2);
-    padding-right: rem($input-min-height / 2);
+    padding-left: rem(math.div($input-min-height, 2));
+    padding-right: rem(math.div($input-min-height, 2));
   }
 }
 
 .input_round {
-  padding-left: rem($input-min-height / 2);
-  padding-right: rem($input-min-height / 2);
+  padding-left: rem(math.div($input-min-height, 2));
+  padding-right: rem(math.div($input-min-height, 2));
   border-radius: 100vw;
 }
